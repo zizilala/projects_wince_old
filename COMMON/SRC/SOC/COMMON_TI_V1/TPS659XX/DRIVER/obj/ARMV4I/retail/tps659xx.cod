@@ -238,7 +238,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37139| DCD	|$LN5@SetEvent|
+|$T37147| DCD	|$LN5@SetEvent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -250,7 +250,7 @@
 
   00000		 |$LN5@SetEvent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M37136|
+  00004		 |$M37144|
 
 ; 236  : 	return EventModify(h,EVENT_SET);
 
@@ -261,14 +261,14 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M37137|
+  00014		 |$M37145|
 
 			 ENDP  ; |SetEvent|
 
 	EXPORT	|GetCurrentProcess|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37148| DCD	|$LN5@GetCurrent|
+|$T37156| DCD	|$LN5@GetCurrent|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -279,7 +279,7 @@
 ; 361  : _inline HANDLE GetCurrentProcess(void) {
 
   00000		 |$LN5@GetCurrent|
-  00000		 |$M37145|
+  00000		 |$M37153|
 
 ; 362  : 	return ((HANDLE)(SH_CURPROC+SYS_HANDLE_BASE));
 
@@ -288,7 +288,7 @@
 ; 363  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M37146|
+  00008		 |$M37154|
 
 			 ENDP  ; |GetCurrentProcess|
 
@@ -296,7 +296,7 @@
 	IMPORT	|__GetUserKData|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37157| DCD	|$LN5@GetCurrent@2|
+|$T37165| DCD	|$LN5@GetCurrent@2|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -308,7 +308,7 @@
 
   00000		 |$LN5@GetCurrent@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M37154|
+  00004		 |$M37162|
 
 ; 374  :     return __GetUserKData (SYSHANDLE_OFFSET + (SH_CURPROC * sizeof(HANDLE)));
 
@@ -319,7 +319,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M37155|
+  00014		 |$M37163|
 
 			 ENDP  ; |GetCurrentProcessId|
 
@@ -328,7 +328,7 @@
 ; File c:\wince600\public\common\sdk\inc\objbase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37171| DCD	|$LN7@IsEqualGUI|
+|$T37179| DCD	|$LN7@IsEqualGUI|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -340,7 +340,7 @@
 
   00000		 |$LN7@IsEqualGUI|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M37168|
+  00004		 |$M37176|
 
 ; 494  :     return !memcmp(&rguid1, &rguid2, sizeof(GUID));
 
@@ -361,7 +361,7 @@
 
   0001c	149de004	 ldrne       lr, [sp], #4
   00020	e12fff1e	 bx          lr
-  00024		 |$M37169|
+  00024		 |$M37177|
 
 			 ENDP  ; |?IsEqualGUID@@YAHABU_GUID@@0@Z|, IsEqualGUID
 
@@ -369,7 +369,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\tps659xx\driver\tps659xx.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37183| DCD	|$LN13@GetFirstEv|
+|$T37191| DCD	|$LN13@GetFirstEv|
 	DCD	0x40001a00
 ; Function compile flags: /Ogspy
 
@@ -380,7 +380,7 @@
 ; 248  : {
 
   00000		 |$LN13@GetFirstEv|
-  00000		 |$M37180|
+  00000		 |$M37188|
   00000	e3510000	 cmp         r1, #0
   00004	e1a03000	 mov         r3, r0
 
@@ -491,7 +491,7 @@
 ; 273  : }
 
   00064	e12fff1e	 bx          lr
-  00068		 |$M37181|
+  00068		 |$M37189|
 
 			 ENDP  ; |?GetFirstEventByGroup@@YAPAPAXPAUDevice_t@@K@Z|, GetFirstEventByGroup
 
@@ -503,7 +503,7 @@
 	IMPORT	|EnterCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37197| DCD	|$LN8@ReadRegs|
+|$T37205| DCD	|$LN8@ReadRegs|
 	DCD	0x40001f01
 ; Function compile flags: /Ogspy
 
@@ -515,7 +515,7 @@
 
   00000		 |$LN8@ReadRegs|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
-  00004		 |$M37194|
+  00004		 |$M37202|
   00004	e1a07003	 mov         r7, r3
   00008	e1a09002	 mov         r9, r2
   0000c	e1a08001	 mov         r8, r1
@@ -571,7 +571,7 @@
 ; 306  :     rc = TRUE;
 
   00064	03a05001	 moveq       r5, #1
-  00068		 |$cleanUp$36431|
+  00068		 |$cleanUp$36439|
 
 ; 307  : 
 ; 308  : cleanUp:    
@@ -586,7 +586,7 @@
   00070	e1a00005	 mov         r0, r5
   00074	e8bd43f0	 ldmia       sp!, {r4 - r9, lr}
   00078	e12fff1e	 bx          lr
-  0007c		 |$M37195|
+  0007c		 |$M37203|
 
 			 ENDP  ; |?ReadRegs@@YAHPAUDevice_t@@KPAXK@Z|, ReadRegs
 
@@ -594,7 +594,7 @@
 	IMPORT	|I2CWrite|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37211| DCD	|$LN8@WriteRegs|
+|$T37219| DCD	|$LN8@WriteRegs|
 	DCD	0x40001f01
 ; Function compile flags: /Ogspy
 
@@ -606,7 +606,7 @@
 
   00000		 |$LN8@WriteRegs|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
-  00004		 |$M37208|
+  00004		 |$M37216|
   00004	e1a07003	 mov         r7, r3
   00008	e1a09002	 mov         r9, r2
   0000c	e1a08001	 mov         r8, r1
@@ -663,7 +663,7 @@
 ; 345  :     rc = TRUE;
 
   00064	03a05001	 moveq       r5, #1
-  00068		 |$cleanUp$36449|
+  00068		 |$cleanUp$36457|
 
 ; 346  : 
 ; 347  : cleanUp:  
@@ -678,7 +678,7 @@
   00070	e1a00005	 mov         r0, r5
   00074	e8bd43f0	 ldmia       sp!, {r4 - r9, lr}
   00078	e12fff1e	 bx          lr
-  0007c		 |$M37209|
+  0007c		 |$M37217|
 
 			 ENDP  ; |?WriteRegs@@YAHPAUDevice_t@@KPBXK@Z|, WriteRegs
 
@@ -688,7 +688,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37230| DCD	|$LN13@WriteKeypa|
+|$T37238| DCD	|$LN13@WriteKeypa|
 	DCD	0x40001c01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\tps659xx\driver\tps659xx.cpp
@@ -701,7 +701,7 @@
 
   00000		 |$LN13@WriteKeypa|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M37227|
+  00004		 |$M37235|
   00004	e1a05001	 mov         r5, r1
 
 ; 364  :     DEBUGMSG(ZONE_INFO, 
@@ -784,7 +784,7 @@
   0006c		 |$LN14@WriteKeypa|
   0006c		 |$LN15@WriteKeypa|
   0006c	00000000	 DCD         |?_rgKeypadMatrixQueue@@3PAY07EA|
-  00070		 |$M37228|
+  00070		 |$M37236|
 
 			 ENDP  ; |?WriteKeypadMatrixQueue@@YAHQAEPAX@Z|, WriteKeypadMatrixQueue
 
@@ -793,7 +793,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37246| DCD	|$LN9@ReadKeypad|
+|$T37254| DCD	|$LN9@ReadKeypad|
 	DCD	0x40001c01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\tps659xx\driver\tps659xx.cpp
@@ -806,7 +806,7 @@
 
   00000		 |$LN9@ReadKeypad|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M37243|
+  00004		 |$M37251|
   00004	e1a05001	 mov         r5, r1
 
 ; 405  :     DEBUGMSG(ZONE_INFO, 
@@ -878,7 +878,7 @@
   0006c		 |$LN10@ReadKeypad|
   0006c		 |$LN11@ReadKeypad|
   0006c	00000000	 DCD         |?_rgKeypadMatrixQueue@@3PAY07EA|
-  00070		 |$M37244|
+  00070		 |$M37252|
 
 			 ENDP  ; |?ReadKeypadMatrixQueue@@YAHQAEPAX@Z|, ReadKeypadMatrixQueue
 
@@ -889,17 +889,17 @@
 	IMPORT	|__security_check_cookie|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37268| DCD	|$LN11@SendPBMess|
+|$T37276| DCD	|$LN11@SendPBMess|
 	DCD	0xc0003102
 
   00000			 AREA	 |.xdata|, DATA
-|$T37264| DCD	0xffffffec
+|$T37272| DCD	0xffffffec
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T37264|
+  00004	00000000	 DCD         |$T37272|
 
   00008		 |?SendPBMessage@@YAHPAUDevice_t@@EE@Z| PROC ; SendPBMessage
 
@@ -908,7 +908,7 @@
   00008		 |$LN11@SendPBMess|
   00008	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   0000c	e24dd00c	 sub         sp, sp, #0xC
-  00010		 |$M37265|
+  00010		 |$M37273|
   00010	e1a04002	 mov         r4, r2
   00014	e1a06001	 mov         r6, r1
   00018	e1a05000	 mov         r5, r0
@@ -930,7 +930,7 @@
   0003c	e5cde000	 strb        lr, [sp]
   00040	eb000000	 bl          |?WriteRegs@@YAHPAUDevice_t@@KPBXK@Z|
   00044	e3500000	 cmp         r0, #0
-  00048	0a000018	 beq         |$cleanUp$36475|
+  00048	0a000018	 beq         |$cleanUp$36483|
 
 ; 445  :         goto cleanUp;
 ; 446  :     
@@ -956,7 +956,7 @@
   0006c	e1a00005	 mov         r0, r5
   00070	eb000000	 bl          |?WriteRegs@@YAHPAUDevice_t@@KPBXK@Z|
   00074	e3500000	 cmp         r0, #0
-  00078	0a00000c	 beq         |$cleanUp$36475|
+  00078	0a00000c	 beq         |$cleanUp$36483|
   0007c	e3a03803	 mov         r3, #3, 16
 
 ; 453  :         goto cleanUp;
@@ -972,7 +972,7 @@
   00090	e5cd4000	 strb        r4, [sp]
   00094	eb000000	 bl          |?WriteRegs@@YAHPAUDevice_t@@KPBXK@Z|
   00098	e3500000	 cmp         r0, #0
-  0009c	0a000003	 beq         |$cleanUp$36475|
+  0009c	0a000003	 beq         |$cleanUp$36483|
 
 ; 458  :         goto cleanUp;
 ; 459  :     
@@ -982,7 +982,7 @@
   000a4	eb000000	 bl          __security_check_cookie
   000a8	e3a00001	 mov         r0, #1
   000ac	ea000002	 b           |$LN7@SendPBMess|
-  000b0		 |$cleanUp$36475|
+  000b0		 |$cleanUp$36483|
 
 ; 461  :     
 ; 462  : cleanUp:
@@ -1001,14 +1001,14 @@
   000c8		 |$LN12@SendPBMess|
   000c8		 |$LN13@SendPBMess|
   000c8	00000000	 DCD         |__security_cookie|
-  000cc		 |$M37266|
+  000cc		 |$M37274|
 
 			 ENDP  ; |?SendPBMessage@@YAHPAUDevice_t@@EE@Z|, SendPBMessage
 
 	EXPORT	|?InitializeHardware@@YAHPAUDevice_t@@@Z| ; InitializeHardware
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37281| DCD	|$LN5@Initialize|
+|$T37289| DCD	|$LN5@Initialize|
 	DCD	0x40001001
 ; Function compile flags: /Ogspy
 
@@ -1020,7 +1020,7 @@
 
   00000		 |$LN5@Initialize|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M37278|
+  00004		 |$M37286|
   00004	e1a04000	 mov         r4, r0
 
 ; 478  :     // Enable LDO for T2 PHY
@@ -1053,7 +1053,7 @@
 
   00038	e8bd4010	 ldmia       sp!, {r4, lr}
   0003c	e12fff1e	 bx          lr
-  00040		 |$M37279|
+  00040		 |$M37287|
 
 			 ENDP  ; |?InitializeHardware@@YAHPAUDevice_t@@@Z|, InitializeHardware
 
@@ -1064,18 +1064,18 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37302| DCD	|$LN9@ProcessSec|
+|$T37310| DCD	|$LN9@ProcessSec|
 	DCD	0xc0004602
 
   00000			 AREA	 |.xdata|, DATA
-|$T37298| DCD	0xffffffec
+|$T37306| DCD	0xffffffec
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\tps659xx\driver\tps659xx.cpp
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T37298|
+  00004	00000000	 DCD         |$T37306|
 
   00008		 |?ProcessSecondaryInterrupts_USB@@YAHPAUDevice_t@@PAPAXPBUSIHEntry_t@@@Z| PROC ; ProcessSecondaryInterrupts_USB
 
@@ -1084,7 +1084,7 @@
   00008		 |$LN9@ProcessSec|
   00008	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   0000c	e24dd00c	 sub         sp, sp, #0xC
-  00010		 |$M37299|
+  00010		 |$M37307|
   00010	e1a05001	 mov         r5, r1
   00014	e1a04000	 mov         r4, r0
   00018	e59f30fc	 ldr         r3, [pc, #0xFC]
@@ -1219,7 +1219,7 @@
   0011c		 |$LN10@ProcessSec|
   0011c		 |$LN11@ProcessSec|
   0011c	00000000	 DCD         |__security_cookie|
-  00120		 |$M37300|
+  00120		 |$M37308|
 
 			 ENDP  ; |?ProcessSecondaryInterrupts_USB@@YAHPAUDevice_t@@PAPAXPBUSIHEntry_t@@@Z|, ProcessSecondaryInterrupts_USB
 
@@ -1229,11 +1229,11 @@
 	IMPORT	|NKDbgPrintfW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37328| DCD	|$LN8@ProcessSec@2|
+|$T37336| DCD	|$LN8@ProcessSec@2|
 	DCD	0xc0002f02
 
   00000			 AREA	 |.xdata|, DATA
-|$T37324| DCD	0xffffffec
+|$T37332| DCD	0xffffffec
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1JE@MPDFOMGM@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAP?$AAr?$AAo?$AAc?$AAe?$AAs?$AAs?$AAS?$AAe?$AAc?$AAo?$AAn?$AAd?$AAa?$AAr?$AAy?$AAI?$AAn?$AAt?$AAe?$AAr?$AAr?$AAu?$AAp?$AAt@| DCB "E"
@@ -1255,7 +1255,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T37324|
+  00004	00000000	 DCD         |$T37332|
 
   00008		 |?ProcessSecondaryInterrupts_Keypad@@YAHPAUDevice_t@@PAPAXPBUSIHEntry_t@@@Z| PROC ; ProcessSecondaryInterrupts_Keypad
 
@@ -1264,7 +1264,7 @@
   00008		 |$LN8@ProcessSec@2|
   00008	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   0000c	e24dd010	 sub         sp, sp, #0x10
-  00010		 |$M37325|
+  00010		 |$M37333|
   00010	e1a04002	 mov         r4, r2
   00014	e1a06001	 mov         r6, r1
   00018	e1a05000	 mov         r5, r0
@@ -1360,7 +1360,7 @@
   000bc	00000000	 DCD         |dpCurSettings|
   000c0		 |$LN12@ProcessSec@2|
   000c0	00000000	 DCD         |__security_cookie|
-  000c4		 |$M37326|
+  000c4		 |$M37334|
 
 			 ENDP  ; |?ProcessSecondaryInterrupts_Keypad@@YAHPAUDevice_t@@PAPAXPBUSIHEntry_t@@@Z|, ProcessSecondaryInterrupts_Keypad
 
@@ -1368,7 +1368,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37362| DCD	|$LN23@ProcessSec@3|
+|$T37370| DCD	|$LN23@ProcessSec@3|
 	DCD	0x40004002
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\tps659xx\driver\tps659xx.cpp
@@ -1382,7 +1382,7 @@
   00000		 |$LN23@ProcessSec@3|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M37359|
+  00008		 |$M37367|
   00008	e1a07001	 mov         r7, r1
   0000c	e1a08000	 mov         r8, r0
 
@@ -1549,14 +1549,14 @@
   000f8	00000000	 DCD         |??_C@_1JE@MPDFOMGM@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAP?$AAr?$AAo?$AAc?$AAe?$AAs?$AAs?$AAS?$AAe?$AAc?$AAo?$AAn?$AAd?$AAa?$AAr?$AAy?$AAI?$AAn?$AAt?$AAe?$AAr?$AAr?$AAu?$AAp?$AAt@|
   000fc		 |$LN26@ProcessSec@3|
   000fc	00000000	 DCD         |dpCurSettings|
-  00100		 |$M37360|
+  00100		 |$M37368|
 
 			 ENDP  ; |?ProcessSecondaryInterrupts@@YAHPAUDevice_t@@PAPAXPBUSIHEntry_t@@@Z|, ProcessSecondaryInterrupts
 
 	EXPORT	|?SetInterruptMode@@YAHPAUDevice_t@@W4InterruptMode_e@@@Z| ; SetInterruptMode
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37413| DCD	|$LN61@SetInterru|
+|$T37421| DCD	|$LN61@SetInterru|
 	DCD	0x40007602
 ; Function compile flags: /Ogspy
 
@@ -1569,7 +1569,7 @@
   00000		 |$LN61@SetInterru|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M37410|
+  00008		 |$M37418|
   00008	e3510000	 cmp         r1, #0
   0000c	e1a07000	 mov         r7, r0
 
@@ -1890,7 +1890,7 @@
   001d4		 |$LN62@SetInterru|
   001d4		 |$LN63@SetInterru|
   001d4	00000000	 DCD         |s_pSIHEntries|
-  001d8		 |$M37411|
+  001d8		 |$M37419|
 
 			 ENDP  ; |?SetInterruptMode@@YAHPAUDevice_t@@W4InterruptMode_e@@@Z|, SetInterruptMode
 
@@ -1905,7 +1905,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37430| DCD	|$LN15@TWL_Deinit|
+|$T37438| DCD	|$LN15@TWL_Deinit|
 	DCD	0x40002f01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\tps659xx\driver\tps659xx.cpp
@@ -1918,7 +1918,7 @@
 
   00000		 |$LN15@TWL_Deinit|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M37427|
+  00004		 |$M37435|
   00004	e1b04000	 movs        r4, r0
 
 ; 930  :     BOOL rc = FALSE;
@@ -1933,11 +1933,11 @@
 ; 936  :     // Check if we get correct context
 ; 937  :     if ((pDevice == NULL) || (pDevice->cookie != TWL_DEVICE_COOKIE))
 
-  0000c	0a000027	 beq         |$cleanUp$36627|
+  0000c	0a000027	 beq         |$cleanUp$36635|
   00010	e5942000	 ldr         r2, [r4]
   00014	e59f309c	 ldr         r3, [pc, #0x9C]
   00018	e1520003	 cmp         r2, r3
-  0001c	1a000023	 bne         |$cleanUp$36627|
+  0001c	1a000023	 bne         |$cleanUp$36635|
 
 ; 938  :         {
 ; 939  :         DEBUGMSG (ZONE_ERROR, (L"ERROR: TWL_Deinit: "
@@ -2042,7 +2042,7 @@
 ; 980  :     rc = TRUE;
 
   000ac	e3a00001	 mov         r0, #1
-  000b0		 |$cleanUp$36627|
+  000b0		 |$cleanUp$36635|
 
 ; 981  : 
 ; 982  : cleanUp:
@@ -2055,7 +2055,7 @@
   000b8		 |$LN16@TWL_Deinit|
   000b8		 |$LN17@TWL_Deinit|
   000b8	74776c44	 DCD         0x74776c44
-  000bc		 |$M37428|
+  000bc		 |$M37436|
 
 			 ENDP  ; |?TWL_Deinit@@YAHK@Z|, TWL_Deinit
 
@@ -2063,7 +2063,7 @@
 	IMPORT	|LocalAlloc|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37443| DCD	|$LN6@TWL_Open|
+|$T37451| DCD	|$LN6@TWL_Open|
 	DCD	0x40001001
 ; Function compile flags: /Ogspy
 
@@ -2075,7 +2075,7 @@
 
   00000		 |$LN6@TWL_Open|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M37440|
+  00004		 |$M37448|
   00004	e1a04000	 mov         r4, r0
 
 ; 1000 :     Instance_t *pInstance = (Instance_t*)LocalAlloc(LPTR, sizeof(Instance_t));
@@ -2127,14 +2127,14 @@
   0003c		 |$LN7@TWL_Open|
   0003c		 |$LN8@TWL_Open|
   0003c	74776c49	 DCD         0x74776c49
-  00040		 |$M37441|
+  00040		 |$M37449|
 
 			 ENDP  ; |?TWL_Open@@YAKKKK@Z|, TWL_Open
 
 	EXPORT	|?TWL_Close@@YAHK@Z|			; TWL_Close
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37456| DCD	|$LN6@TWL_Close|
+|$T37464| DCD	|$LN6@TWL_Close|
 	DCD	0x40000e01
 ; Function compile flags: /Ogspy
 
@@ -2146,7 +2146,7 @@
 
   00000		 |$LN6@TWL_Close|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M37453|
+  00004		 |$M37461|
   00004	e1b01000	 movs        r1, r0
 
 ; 1031 :     BOOL rc = FALSE;
@@ -2184,14 +2184,14 @@
   00034		 |$LN7@TWL_Close|
   00034		 |$LN8@TWL_Close|
   00034	74776c49	 DCD         0x74776c49
-  00038		 |$M37454|
+  00038		 |$M37462|
 
 			 ENDP  ; |?TWL_Close@@YAHK@Z|, TWL_Close
 
 	EXPORT	|?TWL_Seek@@YAHKJG@Z|			; TWL_Seek
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37470| DCD	|$LN8@TWL_Seek|
+|$T37478| DCD	|$LN8@TWL_Seek|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -2203,7 +2203,7 @@
 
   00000		 |$LN8@TWL_Seek|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M37467|
+  00004		 |$M37475|
   00004	e1b0e000	 movs        lr, r0
 
 ; 1113 :     BOOL rc = FALSE;
@@ -2216,7 +2216,7 @@
 ; 1117 : 
 ; 1118 :     if (pInstance == NULL || pInstance->cookie != TWL_INSTANCE_COOKIE)
 
-  0000c	0a000004	 beq         |$cleanUp$36687|
+  0000c	0a000004	 beq         |$cleanUp$36695|
   00010	e59e2000	 ldr         r2, [lr]
   00014	e59f3010	 ldr         r3, [pc, #0x10]
   00018	e1520003	 cmp         r2, r3
@@ -2233,7 +2233,7 @@
 ; 1125 :     rc = TRUE;
 
   00020	03a00001	 moveq       r0, #1
-  00024		 |$cleanUp$36687|
+  00024		 |$cleanUp$36695|
 
 ; 1126 : 
 ; 1127 : cleanUp:
@@ -2245,7 +2245,7 @@
   0002c		 |$LN9@TWL_Seek|
   0002c		 |$LN10@TWL_Seek|
   0002c	74776c49	 DCD         0x74776c49
-  00030		 |$M37468|
+  00030		 |$M37476|
 
 			 ENDP  ; |?TWL_Seek@@YAHKJG@Z|, TWL_Seek
 
@@ -2253,7 +2253,7 @@
 	IMPORT	|GPIOSetMode|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37480| DCD	|$LN7@TWL_PowerU|
+|$T37488| DCD	|$LN7@TWL_PowerU|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -2265,7 +2265,7 @@
 
   00000		 |$LN7@TWL_PowerU|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M37477|
+  00004		 |$M37485|
   00004	e3500000	 cmp         r0, #0
 
 ; 1142 :     Device_t *pDevice = (Device_t*)context;
@@ -2300,14 +2300,14 @@
   00030		 |$LN8@TWL_PowerU|
   00030		 |$LN9@TWL_PowerU|
   00030	74776c44	 DCD         0x74776c44
-  00034		 |$M37478|
+  00034		 |$M37486|
 
 			 ENDP  ; |?TWL_PowerUp@@YAXK@Z|, TWL_PowerUp
 
 	EXPORT	|?TWL_PowerDown@@YAXK@Z|		; TWL_PowerDown
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37490| DCD	|$LN7@TWL_PowerD|
+|$T37498| DCD	|$LN7@TWL_PowerD|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -2319,7 +2319,7 @@
 
   00000		 |$LN7@TWL_PowerD|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M37487|
+  00004		 |$M37495|
   00004	e3500000	 cmp         r0, #0
 
 ; 1167 :     Device_t *pDevice = (Device_t*)context;
@@ -2358,7 +2358,7 @@
   00030		 |$LN8@TWL_PowerD|
   00030		 |$LN9@TWL_PowerD|
   00030	74776c44	 DCD         0x74776c44
-  00034		 |$M37488|
+  00034		 |$M37496|
 
 			 ENDP  ; |?TWL_PowerDown@@YAXK@Z|, TWL_PowerDown
 
@@ -2366,17 +2366,17 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37529| DCD	|$LN24@TWL_ReadRe|
+|$T37537| DCD	|$LN24@TWL_ReadRe|
 	DCD	0xc0003002
 
   00000			 AREA	 |.xdata|, DATA
-|$T37525| DCD	0xffffffec
+|$T37533| DCD	0xffffffec
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T37525|
+  00004	00000000	 DCD         |$T37533|
 
   00008		 |?TWL_ReadRegs@@YAHKKPAXK@Z| PROC	; TWL_ReadRegs
 
@@ -2385,7 +2385,7 @@
   00008		 |$LN24@TWL_ReadRe|
   00008	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   0000c	e24dd00c	 sub         sp, sp, #0xC
-  00010		 |$M37526|
+  00010		 |$M37534|
   00010	e1a05003	 mov         r5, r3
   00014	e1a06002	 mov         r6, r2
   00018	e59fe0a4	 ldr         lr, [pc, #0xA4]
@@ -2412,7 +2412,7 @@
 ; 1209 :     if (size > 0xFF) goto cleanUp;
 
   0002c	e35500ff	 cmp         r5, #0xFF
-  00030	8a00001c	 bhi         |$cleanUp$36716|
+  00030	8a00001c	 bhi         |$cleanUp$36724|
   00034	e3a030db	 mov         r3, #0xDB
 
 ; 1210 : 
@@ -2435,7 +2435,7 @@
 
   00048	059f3070	 ldreq       r3, [pc, #0x70]
   0004c	05934000	 ldreq       r4, [r3]
-  00050	0a000014	 beq         |$cleanUp$36716|
+  00050	0a000014	 beq         |$cleanUp$36724|
 
 ; 1219 :             goto cleanUp;
 ; 1220 :             }
@@ -2477,7 +2477,7 @@
 ; 1231 :         }
 ; 1232 :     else
 
-  00090	ea000004	 b           |$cleanUp$36716|
+  00090	ea000004	 b           |$cleanUp$36724|
   00094		 |$LN5@TWL_ReadRe|
 
 ; 1233 :         {
@@ -2488,7 +2488,7 @@
   0009c	e1a0000e	 mov         r0, lr
   000a0	eb000000	 bl          |?ReadRegs@@YAHPAUDevice_t@@KPAXK@Z|
   000a4	e1a04000	 mov         r4, r0
-  000a8		 |$cleanUp$36716|
+  000a8		 |$cleanUp$36724|
 
 ; 1235 :         }
 ; 1236 : 
@@ -2509,13 +2509,13 @@
   000c0	00000000	 DCD         |?_nKeypadMatrixQueueCount@@3JA|
   000c4		 |$LN27@TWL_ReadRe|
   000c4	00000000	 DCD         |__security_cookie|
-  000c8		 |$M37527|
+  000c8		 |$M37535|
 
 			 ENDP  ; |?TWL_ReadRegs@@YAHKKPAXK@Z|, TWL_ReadRegs
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37548| DCD	|$LN9@TWL_WriteR|
+|$T37556| DCD	|$LN9@TWL_WriteR|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -2527,7 +2527,7 @@
 
   00000		 |$LN9@TWL_WriteR|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M37545|
+  00004		 |$M37553|
 
 ; 1252 :     BOOL rc = FALSE;
 ; 1253 :     Device_t *pDevice = ((Instance_t*)context)->pDevice;
@@ -2548,7 +2548,7 @@
 ; 1264 :     if (size > 0xFF) goto cleanUp;
 
   0000c	e35300ff	 cmp         r3, #0xFF
-  00010	8a000002	 bhi         |$cleanUp$36733|
+  00010	8a000002	 bhi         |$cleanUp$36741|
 
 ; 1265 :     if (address & 0xFF000000) goto cleanUp;
 
@@ -2559,7 +2559,7 @@
 
   00018	01a0000e	 moveq       r0, lr
   0001c	0b000000	 bleq        |?WriteRegs@@YAHPAUDevice_t@@KPBXK@Z|
-  00020		 |$cleanUp$36733|
+  00020		 |$cleanUp$36741|
 
 ; 1268 :     
 ; 1269 : cleanUp:
@@ -2568,7 +2568,7 @@
 
   00020	e49de004	 ldr         lr, [sp], #4
   00024	e12fff1e	 bx          lr
-  00028		 |$M37546|
+  00028		 |$M37554|
 
 			 ENDP  ; |?TWL_WriteRegs@@YAHKKPBXK@Z|, TWL_WriteRegs
 
@@ -2580,7 +2580,7 @@
 |s_pSIHRoutines| % 0x18
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37569| DCD	|$LN18@TWL_Interr|
+|$T37577| DCD	|$LN18@TWL_Interr|
 	DCD	0x40003702
 ; Function compile flags: /Ogspy
 
@@ -2593,7 +2593,7 @@
   00000		 |$LN18@TWL_Interr|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M37566|
+  00008		 |$M37574|
   00008	e1a04000	 mov         r4, r0
 
 ; 1285 :     Device_t *pDevice = (Device_t*)pContext;
@@ -2731,13 +2731,13 @@
   000d4	00000000	 DCD         |s_pSIHRoutines|
   000d8		 |$LN21@TWL_Interr|
   000d8	00000000	 DCD         |s_pSIHEntries|
-  000dc		 |$M37567|
+  000dc		 |$M37575|
 
 			 ENDP  ; |?TWL_InterruptThread@@YAKPAX@Z|, TWL_InterruptThread
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37595| DCD	|$LN22@TWL_Interr@2|
+|$T37603| DCD	|$LN22@TWL_Interr@2|
 	DCD	0x40004502
 ; Function compile flags: /Ogspy
 
@@ -2750,7 +2750,7 @@
   00000		 |$LN22@TWL_Interr@2|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M37592|
+  00008		 |$M37600|
   00008	e1a08002	 mov         r8, r2
   0000c	e1a04001	 mov         r4, r1
   00010	e3a03c0f	 mov         r3, #0xF, 24
@@ -2806,7 +2806,7 @@
 ; 1377 :     if (nArrayIndex >= MAX_SIH_COUNT)
 
   0003c	e3510006	 cmp         r1, #6
-  00040	aa00002c	 bge         |$cleanUp$36770|
+  00040	aa00002c	 bge         |$cleanUp$36778|
 
 ; 1378 :         {
 ; 1379 :         DEBUGMSG(ZONE_ERROR, (L"ERROR: TWL_InterruptMask: "
@@ -2872,7 +2872,7 @@
   00098	e1a00007	 mov         r0, r7
   0009c	eb000000	 bl          |?ReadRegs@@YAHPAUDevice_t@@KPAXK@Z|
   000a0	e3500000	 cmp         r0, #0
-  000a4	0a000013	 beq         |$cleanUp$36770|
+  000a4	0a000013	 beq         |$cleanUp$36778|
 
 ; 1404 :             {
 ; 1405 :             goto cleanUp;
@@ -2928,7 +2928,7 @@
 ; 1425 :     rc = TRUE;
 
   000f4	13a06001	 movne       r6, #1
-  000f8		 |$cleanUp$36770|
+  000f8		 |$cleanUp$36778|
 
 ; 1426 :     
 ; 1427 : cleanUp:
@@ -2948,7 +2948,7 @@
   00110		 |$LN23@TWL_Interr@2|
   00110		 |$LN24@TWL_Interr@2|
   00110	00000000	 DCD         |s_pSIHEntries|
-  00114		 |$M37593|
+  00114		 |$M37601|
 
 			 ENDP  ; |?TWL_InterruptMask@@YAHKKH@Z|, TWL_InterruptMask
 
@@ -2956,7 +2956,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37618| DCD	|$LN20@TWL_Interr@3|
+|$T37626| DCD	|$LN20@TWL_Interr@3|
 	DCD	0x40003f02
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\tps659xx\driver\tps659xx.cpp
@@ -2970,7 +2970,7 @@
   00000		 |$LN20@TWL_Interr@3|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M37615|
+  00008		 |$M37623|
   00008	e1a05002	 mov         r5, r2
   0000c	e1a07001	 mov         r7, r1
   00010	e1a08000	 mov         r8, r0
@@ -3002,7 +3002,7 @@
 ; 1454 :     if ((nArrayIndex > TWL_MAX_INTR))
 
   00030	e35e0056	 cmp         lr, #0x56
-  00034	ca000029	 bgt         |$cleanUp$36798|
+  00034	ca000029	 bgt         |$cleanUp$36806|
   00038	e3a03a01	 mov         r3, #1, 20
 
 ; 1455 :         {
@@ -3051,7 +3051,7 @@
   00068	e084310e	 add         r3, r4, lr, lsl #2
   0006c	e5933048	 ldr         r3, [r3, #0x48]
   00070	e3530000	 cmp         r3, #0
-  00074	1a000019	 bne         |$cleanUp$36798|
+  00074	1a000019	 bne         |$cleanUp$36806|
 
 ; 1476 :             {
 ; 1477 :             DEBUGMSG(ZONE_ERROR, (L"ERROR: TWL_InterruptSetEvent: "
@@ -3088,7 +3088,7 @@
 ; 1494 :         }
 ; 1495 :     else
 
-  000a8	ea00000c	 b           |$cleanUp$36798|
+  000a8	ea00000c	 b           |$cleanUp$36806|
   000ac		 |$LN8@TWL_Interr@3|
 
 ; 1496 :     {
@@ -3097,7 +3097,7 @@
   000ac	e084510e	 add         r5, r4, lr, lsl #2
   000b0	e5953048	 ldr         r3, [r5, #0x48]
   000b4	e3530000	 cmp         r3, #0
-  000b8	0a000008	 beq         |$cleanUp$36798|
+  000b8	0a000008	 beq         |$cleanUp$36806|
 
 ; 1498 :             {
 ; 1499 :             DEBUGMSG(ZONE_ERROR, (L"ERROR: TWL_InterruptSetEvent: "
@@ -3123,7 +3123,7 @@
   000d4	e1a01007	 mov         r1, r7
   000d8	e5853048	 str         r3, [r5, #0x48]
   000dc	eb000000	 bl          |?TWL_InterruptMask@@YAHKKH@Z|
-  000e0		 |$cleanUp$36798|
+  000e0		 |$cleanUp$36806|
 
 ; 1508 :     }
 ; 1509 :     
@@ -3143,13 +3143,13 @@
   000f8		 |$LN21@TWL_Interr@3|
   000f8		 |$LN22@TWL_Interr@3|
   000f8	00000000	 DCD         |?_nKeypadMatrixQueueHead@@3KA|
-  000fc		 |$M37616|
+  000fc		 |$M37624|
 
 			 ENDP  ; |?TWL_InterruptSetEvent@@YAHKKPAX@Z|, TWL_InterruptSetEvent
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37633| DCD	|$LN6@TWL_Interr@4|
+|$T37641| DCD	|$LN6@TWL_Interr@4|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 
@@ -3161,7 +3161,7 @@
 
   00000		 |$LN6@TWL_Interr@4|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M37630|
+  00004		 |$M37638|
   00004	e3520000	 cmp         r2, #0
   00008	e1a03000	 mov         r3, r0
 
@@ -3184,13 +3184,13 @@
 
   00018	e49de004	 ldr         lr, [sp], #4
   0001c	e12fff1e	 bx          lr
-  00020		 |$M37631|
+  00020		 |$M37639|
 
 			 ENDP  ; |?TWL_InterruptInitialize@@YAHKKPAX@Z|, TWL_InterruptInitialize
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37644| DCD	|$LN5@TWL_Interr@5|
+|$T37652| DCD	|$LN5@TWL_Interr@5|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -3202,7 +3202,7 @@
 
   00000		 |$LN5@TWL_Interr@5|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M37641|
+  00004		 |$M37649|
 
 ; 1545 :     return TWL_InterruptSetEvent(context, intrId, NULL);
 
@@ -3213,7 +3213,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M37642|
+  00014		 |$M37650|
 
 			 ENDP  ; |?TWL_InterruptDisable@@YAHKK@Z|, TWL_InterruptDisable
 
@@ -3223,7 +3223,7 @@
 	IMPORT	|OpenProcess|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37676| DCD	|$LN21@TWL_Interr@6|
+|$T37684| DCD	|$LN21@TWL_Interr@6|
 	DCD	0x40004202
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -3270,7 +3270,7 @@
   00000		 |$LN21@TWL_Interr@6|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd010	 sub         sp, sp, #0x10
-  00008		 |$M37673|
+  00008		 |$M37681|
   00008	e1b08003	 movs        r8, r3
   0000c	e1a06002	 mov         r6, r2
   00010	e1a07000	 mov         r7, r0
@@ -3314,7 +3314,7 @@
   0003c	e59f30bc	 ldr         r3, [pc, #0xBC]
   00040	e5933440	 ldr         r3, [r3, #0x440]
   00044	e3130001	 tst         r3, #1
-  00048	0a000027	 beq         |$cleanUp$36835|
+  00048	0a000027	 beq         |$cleanUp$36843|
   0004c	eb000000	 bl          GetLastError
   00050	e1a01000	 mov         r1, r0
   00054	e59f00a8	 ldr         r0, [pc, #0xA8]
@@ -3330,7 +3330,7 @@
 ; 1601 :             
 ; 1602 : cleanUp:
 
-  0005c	ea000022	 b           |$cleanUp$36835|
+  0005c	ea000022	 b           |$cleanUp$36843|
   00060		 |$LN4@TWL_Interr@6|
 
 ; 1574 :             goto cleanUp;
@@ -3376,7 +3376,7 @@
   0009c	e59f305c	 ldr         r3, [pc, #0x5C]
   000a0	e5933440	 ldr         r3, [r3, #0x440]
   000a4	e3130001	 tst         r3, #1
-  000a8	0a00000f	 beq         |$cleanUp$36835|
+  000a8	0a00000f	 beq         |$cleanUp$36843|
   000ac	eb000000	 bl          GetLastError
   000b0	e1a01000	 mov         r1, r0
   000b4	e59f0040	 ldr         r0, [pc, #0x40]
@@ -3385,7 +3385,7 @@
 ; 1601 :             
 ; 1602 : cleanUp:
 
-  000bc	ea00000a	 b           |$cleanUp$36835|
+  000bc	ea00000a	 b           |$cleanUp$36843|
   000c0		 |$LN17@TWL_Interr@6|
   000c0	e59d000c	 ldr         r0, [sp, #0xC]
   000c4		 |$LN2@TWL_Interr@6|
@@ -3413,7 +3413,7 @@
 ; 1600 :     CloseHandle(hEvent);
 
   000e8	eb000000	 bl          CloseHandle
-  000ec		 |$cleanUp$36835|
+  000ec		 |$cleanUp$36843|
 
 ; 1603 :     return rc;
 ; 1604 : }
@@ -3429,7 +3429,7 @@
   00100	00000000	 DCD         |dpCurSettings|
   00104		 |$LN25@TWL_Interr@6|
   00104	00000000	 DCD         |??_C@_1KC@MMBGIKIK@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?$CB?$AA?5?$AAT?$AAW?$AAL?$AA_?$AAI?$AAn?$AAt?$AAe?$AAr?$AAr?$AAu?$AAp?$AAt?$AAI?$AAn?$AAi?$AAt?$AAi?$AAa?$AAl?$AAi?$AAz?$AAe?$AAP?$AAr@|
-  00108		 |$M37674|
+  00108		 |$M37682|
 
 			 ENDP  ; |?TWL_InterruptInitializeProxy@@YAHKIKPAX@Z|, TWL_InterruptInitializeProxy
 
@@ -3437,7 +3437,7 @@
 	IMPORT	|GPIOInterruptWakeUp|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37703| DCD	|$LN25@TWL_Enable|
+|$T37711| DCD	|$LN25@TWL_Enable|
 	DCD	0x40003d01
 ; Function compile flags: /Ogspy
 
@@ -3449,7 +3449,7 @@
 
   00000		 |$LN25@TWL_Enable|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M37700|
+  00004		 |$M37708|
   00004	e1a07002	 mov         r7, r2
   00008	e1a06001	 mov         r6, r1
   0000c	e3a03c0f	 mov         r3, #0xF, 24
@@ -3504,7 +3504,7 @@
 ; 1646 :     if (nArrayIndex > MAX_SIH_COUNT)
 
   00038	e3510006	 cmp         r1, #6
-  0003c	ca000026	 bgt         |$cleanUp$36854|
+  0003c	ca000026	 bgt         |$cleanUp$36862|
 
 ; 1647 :         {
 ; 1648 :         DEBUGMSG(ZONE_ERROR, (L"ERROR: TWL_EnableWakeup: "
@@ -3622,7 +3622,7 @@
 ; 1698 :     rc = TRUE;
 
   000d8	e3a05001	 mov         r5, #1
-  000dc		 |$cleanUp$36854|
+  000dc		 |$cleanUp$36862|
 
 ; 1699 :     
 ; 1700 : cleanUp:
@@ -3641,7 +3641,7 @@
   000f0		 |$LN26@TWL_Enable|
   000f0		 |$LN27@TWL_Enable|
   000f0	00000000	 DCD         |s_pSIHEntries|
-  000f4		 |$M37701|
+  000f4		 |$M37709|
 
 			 ENDP  ; |?TWL_EnableWakeup@@YAHKKH@Z|, TWL_EnableWakeup
 
@@ -3654,23 +3654,23 @@
 	IMPORT	|__C_specific_handler|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37803| DCD	|$LN110@TWL_IOCont|
+|$T37811| DCD	|$LN110@TWL_IOCont|
 	DCD	0xc0011d04
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37805| DCD	|$LN61@TWL_IOCont|
+|$T37813| DCD	|$LN61@TWL_IOCont|
 	DCD	0x40000301
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37807| DCD	|$LN75@TWL_IOCont|
+|$T37815| DCD	|$LN75@TWL_IOCont|
 	DCD	0x40000301
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37809| DCD	|$LN68@TWL_IOCont|
+|$T37817| DCD	|$LN68@TWL_IOCont|
 	DCD	0x40001601
 
   00000			 AREA	 |.xdata|, DATA
-|$T37801| DCD	0x3
+|$T37809| DCD	0x3
 	DCD	|$LN65@TWL_IOCont|
 	DCD	|$LN66@TWL_IOCont|
 	DCD	|$LN61@TWL_IOCont|
@@ -3702,7 +3702,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T37801|
+  00004	00000000	 DCD         |$T37809|
 
   00008		 |?TWL_IOControl@@YAHKKPAEK0KPAK@Z| PROC ; TWL_IOControl
 
@@ -3736,11 +3736,11 @@
 ; 1734 : 
 ; 1735 :     if (pInstance == NULL || pInstance->cookie != TWL_INSTANCE_COOKIE)
 
-  0002c	0a00010e	 beq         |$cleanUp$36892|
+  0002c	0a00010e	 beq         |$cleanUp$36900|
   00030	e5994000	 ldr         r4, [r9]
   00034	e59fe4ac	 ldr         lr, [pc, #0x4AC]
   00038	e154000e	 cmp         r4, lr
-  0003c	1a00010a	 bne         |$cleanUp$36892|
+  0003c	1a00010a	 bne         |$cleanUp$36900|
 
 ; 1736 :         {
 ; 1737 :         goto cleanUp;
@@ -3756,11 +3756,11 @@
 ; 1743 :     // Check if we get correct context
 ; 1744 :     if ((pDevice == NULL) || (pDevice->cookie != TWL_DEVICE_COOKIE))
 
-  00048	0a000107	 beq         |$cleanUp$36892|
+  00048	0a000107	 beq         |$cleanUp$36900|
   0004c	e5974000	 ldr         r4, [r7]
   00050	e59fe48c	 ldr         lr, [pc, #0x48C]
   00054	e154000e	 cmp         r4, lr
-  00058	1a000103	 bne         |$cleanUp$36892|
+  00058	1a000103	 bne         |$cleanUp$36900|
 
 ; 1745 :         {
 ; 1746 :         DEBUGMSG(ZONE_ERROR, (L"ERROR: TWL_IOControl: "
@@ -3792,16 +3792,16 @@
   000a4	e3a03822	 mov         r3, #0x22, 16
   000a8	e3833ec1	 orr         r3, r3, #0xC1, 28
   000ac	e1510003	 cmp         r1, r3
-  000b0	1a0000ed	 bne         |$cleanUp$36892|
+  000b0	1a0000ed	 bne         |$cleanUp$36900|
 
 ; 1959 : 
 ; 1960 :         case IOCTL_TWL_INTRDISABLE:
 ; 1961 :             if (pInBuffer != NULL && inSize == sizeof(DWORD))
 
   000b4	e3550000	 cmp         r5, #0
-  000b8	0a0000eb	 beq         |$cleanUp$36892|
+  000b8	0a0000eb	 beq         |$cleanUp$36900|
   000bc	e3580004	 cmp         r8, #4
-  000c0	1a0000e9	 bne         |$cleanUp$36892|
+  000c0	1a0000e9	 bne         |$cleanUp$36900|
 
 ; 1962 :                 {
 ; 1963 :                 rc = TWL_InterruptDisable(context, *(DWORD*)pInBuffer);
@@ -3825,9 +3825,9 @@
 ; 1937 :             if (pInBuffer != NULL && inSize == sizeof(IOCTL_TWL_INTRINIT_IN))
 
   000d8	e3550000	 cmp         r5, #0
-  000dc	0a0000e2	 beq         |$cleanUp$36892|
+  000dc	0a0000e2	 beq         |$cleanUp$36900|
   000e0	e358000c	 cmp         r8, #0xC
-  000e4	1a0000e0	 bne         |$cleanUp$36892|
+  000e4	1a0000e0	 bne         |$cleanUp$36900|
 
 ; 1938 :                 {
 ; 1939 :                 IOCTL_TWL_INTRINIT_IN *pInParam = (IOCTL_TWL_INTRINIT_IN*)pInBuffer;
@@ -3926,11 +3926,11 @@
   00164	e35300ff	 cmp         r3, #0xFF
   00168	e5990008	 ldr         r0, [r9, #8]
   0016c	e3a06000	 mov         r6, #0
-  00170	8a0000bd	 bhi         |$cleanUp$36892|
+  00170	8a0000bd	 bhi         |$cleanUp$36900|
   00174	e31104ff	 tst         r1, #0xFF, 8
-  00178	1a0000bb	 bne         |$cleanUp$36892|
+  00178	1a0000bb	 bne         |$cleanUp$36900|
   0017c	eb000000	 bl          |?WriteRegs@@YAHPAUDevice_t@@KPBXK@Z|
-  00180		 |$cleanUp$37754|
+  00180		 |$cleanUp$37762|
 
 ; 1833 :             break;
 
@@ -3962,7 +3962,7 @@
 
 ; 1764 :                 break;
 
-  001a4	ea0000b0	 b           |$cleanUp$36892|
+  001a4	ea0000b0	 b           |$cleanUp$36900|
   001a8		 |$LN41@TWL_IOCont|
 
 ; 1765 :                 }
@@ -4054,7 +4054,7 @@
 ; 1789 :                     SetLastError(ERROR_INVALID_PARAMETER);
 ; 1790 :                     break;
 
-  00240	1a000089	 bne         |$cleanUp$36892|
+  00240	1a000089	 bne         |$cleanUp$36900|
   00244		 |$LN39@TWL_IOCont|
 
 ; 1768 :                 {
@@ -4074,7 +4074,7 @@
 
 ; 1764 :                 break;
 
-  0024c	ea000086	 b           |$cleanUp$36892|
+  0024c	ea000086	 b           |$cleanUp$36900|
   00250		 |$LN4@TWL_IOCont|
 
 ; 1949 :                 }
@@ -4084,9 +4084,9 @@
 ; 1953 :             if (pInBuffer != NULL && inSize == sizeof(IOCTL_TWL_INTRMASK_IN))
 
   00250	e3550000	 cmp         r5, #0
-  00254	0a000084	 beq         |$cleanUp$36892|
+  00254	0a000084	 beq         |$cleanUp$36900|
   00258	e358000c	 cmp         r8, #0xC
-  0025c	1a000082	 bne         |$cleanUp$36892|
+  0025c	1a000082	 bne         |$cleanUp$36900|
 
 ; 1954 :                 {
 ; 1955 :                 IOCTL_TWL_INTRMASK_IN *pInParam = (IOCTL_TWL_INTRMASK_IN*)pInBuffer;
@@ -4127,7 +4127,7 @@
   002a4	0a000004	 beq         |$LN20@TWL_IOCont|
   002a8	e59f31fc	 ldr         r3, [pc, #0x1FC]
   002ac	e1510003	 cmp         r1, r3
-  002b0	1a00006d	 bne         |$cleanUp$36892|
+  002b0	1a00006d	 bne         |$cleanUp$36900|
 
 ; 1791 :                     }
 ; 1792 :                 rc = TRUE;
@@ -4136,7 +4136,7 @@
 
 ; 1793 :                 break;
 
-  002b8	ea00006b	 b           |$cleanUp$36892|
+  002b8	ea00006b	 b           |$cleanUp$36900|
   002bc		 |$LN20@TWL_IOCont|
 
 ; 1857 :                         }
@@ -4156,10 +4156,10 @@
 
   002bc	e59b4000	 ldr         r4, [r11]
   002c0	e3540000	 cmp         r4, #0
-  002c4	0a000068	 beq         |$cleanUp$36892|
+  002c4	0a000068	 beq         |$cleanUp$36900|
   002c8	e59b3004	 ldr         r3, [r11, #4]
   002cc	e3530004	 cmp         r3, #4
-  002d0	3a000065	 bcc         |$cleanUp$36892|
+  002d0	3a000065	 bcc         |$cleanUp$36900|
   002d4		 |$LN72@TWL_IOCont|
 
 ; 1871 :                 {
@@ -4275,7 +4275,7 @@
 
 ; 1905 :                     }
 
-  0036c	ea00003e	 b           |$cleanUp$36892|
+  0036c	ea00003e	 b           |$cleanUp$36900|
   00370		 |$LN69@TWL_IOCont|
 
 ; 1907 :                     {
@@ -4287,7 +4287,7 @@
   0037c	159f0124	 ldrne       r0, [pc, #0x124]
   00380	1b000000	 blne        NKDbgPrintfW
   00384	e51b6048	 ldr         r6, [r11, #-0x48]
-  00388	ea000037	 b           |$cleanUp$36892|
+  00388	ea000037	 b           |$cleanUp$36900|
   0038c		 |$LN11@TWL_IOCont|
 
 ; 1909 :                     }
@@ -4301,10 +4301,10 @@
 
   0038c	e59b2000	 ldr         r2, [r11]
   00390	e3520000	 cmp         r2, #0
-  00394	0a000034	 beq         |$cleanUp$36892|
+  00394	0a000034	 beq         |$cleanUp$36900|
   00398	e59b3004	 ldr         r3, [r11, #4]
   0039c	e3530004	 cmp         r3, #4
-  003a0	3a000031	 bcc         |$cleanUp$36892|
+  003a0	3a000031	 bcc         |$cleanUp$36900|
   003a4		 |$LN79@TWL_IOCont|
 
 ; 1917 :                 {
@@ -4329,7 +4329,7 @@
 ; 1927 :                             ));
 ; 1928 :                     }
 
-  003b4	ea00002c	 b           |$cleanUp$36892|
+  003b4	ea00002c	 b           |$cleanUp$36900|
   003b8		 |$LN76@TWL_IOCont|
 
 ; 1930 :                     {
@@ -4341,7 +4341,7 @@
   003c4	159f00dc	 ldrne       r0, [pc, #0xDC]
   003c8	1b000000	 blne        NKDbgPrintfW
   003cc	e51b6048	 ldr         r6, [r11, #-0x48]
-  003d0	ea000025	 b           |$cleanUp$36892|
+  003d0	ea000025	 b           |$cleanUp$36900|
   003d4		 |$LN24@TWL_IOCont|
 
 ; 1834 : 
@@ -4352,13 +4352,13 @@
 
   003d4	e59b4000	 ldr         r4, [r11]
   003d8	e3540000	 cmp         r4, #0
-  003dc	0a000022	 beq         |$cleanUp$36892|
+  003dc	0a000022	 beq         |$cleanUp$36900|
   003e0	e59b3004	 ldr         r3, [r11, #4]
   003e4	e3530030	 cmp         r3, #0x30
-  003e8	3a00001f	 bcc         |$cleanUp$36892|
+  003e8	3a00001f	 bcc         |$cleanUp$36900|
   003ec	e59b5008	 ldr         r5, [r11, #8]
   003f0	e3550000	 cmp         r5, #0
-  003f4	0a00001c	 beq         |$cleanUp$36892|
+  003f4	0a00001c	 beq         |$cleanUp$36900|
   003f8		 |$LN65@TWL_IOCont|
 
 ; 1839 :                 {
@@ -4396,7 +4396,7 @@
 
 ; 1853 :                         }
 
-  00420	ea000011	 b           |$cleanUp$36892|
+  00420	ea000011	 b           |$cleanUp$36900|
   00424		 |$LN62@TWL_IOCont|
 
 ; 1855 :                         {
@@ -4408,7 +4408,7 @@
   00430	159f0068	 ldrne       r0, [pc, #0x68]
   00434	1b000000	 blne        NKDbgPrintfW
   00438	e51b6048	 ldr         r6, [r11, #-0x48]
-  0043c	ea00000a	 b           |$cleanUp$36892|
+  0043c	ea00000a	 b           |$cleanUp$36900|
   00440		 |$LN104@TWL_IOCont|
 
 ; 1966 :         }
@@ -4418,7 +4418,7 @@
 ; 1970 :     return rc;
 
   00440	e51b6044	 ldr         r6, [r11, #-0x44]
-  00444	ea000008	 b           |$cleanUp$36892|
+  00444	ea000008	 b           |$cleanUp$36900|
   00448		 |$LN6@TWL_IOCont|
 
 ; 1943 : 
@@ -4426,9 +4426,9 @@
 ; 1945 :             if (pInBuffer != NULL && inSize == sizeof(IOCTL_TWL_WAKEENABLE_IN))
 
   00448	e3550000	 cmp         r5, #0
-  0044c	0a000006	 beq         |$cleanUp$36892|
+  0044c	0a000006	 beq         |$cleanUp$36900|
   00450	e3580008	 cmp         r8, #8
-  00454	1a000004	 bne         |$cleanUp$36892|
+  00454	1a000004	 bne         |$cleanUp$36900|
 
 ; 1946 :                 {
 ; 1947 :                 IOCTL_TWL_WAKEENABLE_IN *pInParam = (IOCTL_TWL_WAKEENABLE_IN*)pInBuffer;
@@ -4440,7 +4440,7 @@
   00464	eb000000	 bl          |?TWL_EnableWakeup@@YAHKKH@Z|
   00468		 |$LN105@TWL_IOCont|
   00468	e1a06000	 mov         r6, r0
-  0046c		 |$cleanUp$36892|
+  0046c		 |$cleanUp$36900|
 
 ; 1971 : }
 
@@ -4530,17 +4530,17 @@
 	EXPORT	|__$ArrayPad$| [ DATA ]
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37853| DCD	|$LN5@Initialize@2|
+|$T37861| DCD	|$LN5@Initialize@2|
 	DCD	0xc0009a02
 
   00000			 AREA	 |.xdata|, DATA
-|$T37849| DCD	0xffffffe8
+|$T37857| DCD	0xffffffe8
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T37849|
+  00004	00000000	 DCD         |$T37857|
 
   00008		 |?InitializeInterrupts@@YAHPAUDevice_t@@@Z| PROC ; InitializeInterrupts
 
@@ -4549,7 +4549,7 @@
   00008		 |$LN5@Initialize@2|
   00008	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   0000c	e24dd00c	 sub         sp, sp, #0xC
-  00010		 |$M37850|
+  00010		 |$M37858|
   00010	e1a04000	 mov         r4, r0
   00014	e59f3250	 ldr         r3, [pc, #0x250]
   00018	e5933000	 ldr         r3, [r3]
@@ -4837,7 +4837,7 @@
   0026c		 |$LN6@Initialize@2|
   0026c		 |$LN7@Initialize@2|
   0026c	00000000	 DCD         |__security_cookie|
-  00270		 |$M37851|
+  00270		 |$M37859|
 
 			 ENDP  ; |?InitializeInterrupts@@YAHPAUDevice_t@@@Z|, InitializeInterrupts
 
@@ -4846,7 +4846,7 @@
 	IMPORT	|RegisterDbgZones|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37867| DCD	|$LN8@DllMain|
+|$T37875| DCD	|$LN8@DllMain|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -4858,7 +4858,7 @@
 
   00000		 |$LN8@DllMain|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M37864|
+  00004		 |$M37872|
   00004	e1a04000	 mov         r4, r0
 
 ; 2065 :     UNREFERENCED_PARAMETER(pReserved);
@@ -4893,7 +4893,7 @@
   0002c		 |$LN9@DllMain|
   0002c		 |$LN10@DllMain|
   0002c	00000000	 DCD         |dpCurSettings|
-  00030		 |$M37865|
+  00030		 |$M37873|
 
 			 ENDP  ; |DllMain|
 
@@ -4909,7 +4909,7 @@
 	IMPORT	|InitializeCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37882| DCD	|$LN23@TWL_Init|
+|$T37890| DCD	|$LN23@TWL_Init|
 	DCD	0x40006802
 ; Function compile flags: /Ogspy
 
@@ -4922,7 +4922,7 @@
   00000		 |$LN23@TWL_Init|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M37879|
+  00008		 |$M37887|
   00008	e1a04000	 mov         r4, r0
 
 ; 789  :     DWORD rc = (DWORD)NULL;
@@ -5186,7 +5186,7 @@
 ; 911  :     rc = (DWORD)pDevice;
 
   00164	e1a06005	 mov         r6, r5
-  00168		 |$cleanUp$36589|
+  00168		 |$cleanUp$36597|
 
 ; 912  :     
 ; 913  : cleanUp:
@@ -5221,14 +5221,14 @@
   00198	00000000	 DCD         |s_deviceRegParams|
   0019c		 |$LN31@TWL_Init|
   0019c	74776c44	 DCD         0x74776c44
-  001a0		 |$M37880|
+  001a0		 |$M37888|
 
 			 ENDP  ; |?TWL_Init@@YAKPBGPBX@Z|, TWL_Init
 
 	EXPORT	|?TWL_Read@@YAKKPAXK@Z|			; TWL_Read
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37903| DCD	|$LN8@TWL_Read|
+|$T37911| DCD	|$LN8@TWL_Read|
 	DCD	0x40001201
 ; Function compile flags: /Ogspy
 
@@ -5240,7 +5240,7 @@
 
   00000		 |$LN8@TWL_Read|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M37900|
+  00004		 |$M37908|
   00004	e1a04001	 mov         r4, r1
   00008	e3500000	 cmp         r0, #0
 
@@ -5277,7 +5277,7 @@
 ; 1060 :         count = 0;
 
   00038	e3a00000	 mov         r0, #0
-  0003c		 |$cleanUp$36663|
+  0003c		 |$cleanUp$36671|
 
 ; 1065 : 
 ; 1066 : cleanUp:
@@ -5289,14 +5289,14 @@
   00044		 |$LN9@TWL_Read|
   00044		 |$LN10@TWL_Read|
   00044	74776c49	 DCD         0x74776c49
-  00048		 |$M37901|
+  00048		 |$M37909|
 
 			 ENDP  ; |?TWL_Read@@YAKKPAXK@Z|, TWL_Read
 
 	EXPORT	|?TWL_Write@@YAKKPBXK@Z|		; TWL_Write
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37931| DCD	|$LN16@TWL_Write|
+|$T37939| DCD	|$LN16@TWL_Write|
 	DCD	0x40001801
 ; Function compile flags: /Ogspy
 
@@ -5308,7 +5308,7 @@
 
   00000		 |$LN16@TWL_Write|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M37928|
+  00004		 |$M37936|
   00004	e1a04002	 mov         r4, r2
   00008	e1a02001	 mov         r2, r1
   0000c	e3500000	 cmp         r0, #0
@@ -5337,15 +5337,15 @@
   0003c	e1a03004	 mov         r3, r4
   00040	eb000000	 bl          |?WriteRegs@@YAHPAUDevice_t@@KPBXK@Z|
   00044	e3500000	 cmp         r0, #0
-  00048		 |$cleanUp$37915|
-  00048	1a000000	 bne         |$cleanUp$36674|
+  00048		 |$cleanUp$37923|
+  00048	1a000000	 bne         |$cleanUp$36682|
   0004c		 |$LN3@TWL_Write|
 
 ; 1086 :         {
 ; 1087 :         count = 0;
 
   0004c	e3a04000	 mov         r4, #0
-  00050		 |$cleanUp$36674|
+  00050		 |$cleanUp$36682|
 
 ; 1092 :         {
 ; 1093 :         count = 0;
@@ -5361,7 +5361,7 @@
   0005c		 |$LN17@TWL_Write|
   0005c		 |$LN18@TWL_Write|
   0005c	74776c49	 DCD         0x74776c49
-  00060		 |$M37929|
+  00060		 |$M37937|
 
 			 ENDP  ; |?TWL_Write@@YAKKPBXK@Z|, TWL_Write
 

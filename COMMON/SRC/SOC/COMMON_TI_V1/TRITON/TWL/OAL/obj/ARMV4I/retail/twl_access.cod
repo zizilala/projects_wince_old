@@ -80,7 +80,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\triton\twl\oal\twl_access.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44077| DCD	|$LN7@TWLOpen|
+|$T44087| DCD	|$LN7@TWLOpen|
 	DCD	0x40001801
 ; Function compile flags: /Ogspy
 
@@ -92,7 +92,7 @@
 
   00000		 |$LN7@TWLOpen|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M44074|
+  00004		 |$M44084|
 
 ; 36   :     static  Device_t Device = {NULL,0,FALSE,0};     
 ; 37   : 
@@ -156,7 +156,7 @@
   0005c		 |$LN8@TWLOpen|
   0005c		 |$LN9@TWLOpen|
   0005c	00000000	 DCD         |?Device@?1??TWLOpen@@9@9|
-  00060		 |$M44075|
+  00060		 |$M44085|
 
 			 ENDP  ; |TWLOpen|
 
@@ -164,7 +164,7 @@
 	IMPORT	|I2CClose|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44087| DCD	|$LN7@TWLClose|
+|$T44097| DCD	|$LN7@TWLClose|
 	DCD	0x40000f01
 ; Function compile flags: /Ogspy
 
@@ -176,7 +176,7 @@
 
   00000		 |$LN7@TWLClose|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M44084|
+  00004		 |$M44094|
   00004	e1a04000	 mov         r4, r0
 
 ; 62   :     Device_t * pDevice = (Device_t *) hContext;
@@ -216,7 +216,7 @@
 
   00034	e8bd4010	 ldmia       sp!, {r4, lr}
   00038	e12fff1e	 bx          lr
-  0003c		 |$M44085|
+  0003c		 |$M44095|
 
 			 ENDP  ; |TWLClose|
 
@@ -226,7 +226,7 @@
 	IMPORT	|EnterCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44101| DCD	|$LN9@TWLReadReg|
+|$T44111| DCD	|$LN9@TWLReadReg|
 	DCD	0x40002301
 ; Function compile flags: /Ogspy
 
@@ -238,7 +238,7 @@
 
   00000		 |$LN9@TWLReadReg|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
-  00004		 |$M44098|
+  00004		 |$M44108|
   00004	e1a08003	 mov         r8, r3
   00008	e1a09002	 mov         r9, r2
   0000c	e1a07001	 mov         r7, r1
@@ -298,7 +298,7 @@
 ; 107  :     rc = TRUE;
 
   0006c	03a05001	 moveq       r5, #1
-  00070		 |$cleanUp$43993|
+  00070		 |$cleanUp$44003|
 
 ; 108  : 
 ; 109  : 
@@ -325,7 +325,7 @@
   00080	e1a00005	 mov         r0, r5
   00084	e8bd43f0	 ldmia       sp!, {r4 - r9, lr}
   00088	e12fff1e	 bx          lr
-  0008c		 |$M44099|
+  0008c		 |$M44109|
 
 			 ENDP  ; |TWLReadRegs|
 
@@ -333,7 +333,7 @@
 	IMPORT	|I2CWrite|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44115| DCD	|$LN9@TWLWriteRe|
+|$T44125| DCD	|$LN9@TWLWriteRe|
 	DCD	0x40002301
 ; Function compile flags: /Ogspy
 
@@ -345,7 +345,7 @@
 
   00000		 |$LN9@TWLWriteRe|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
-  00004		 |$M44112|
+  00004		 |$M44122|
   00004	e1a08003	 mov         r8, r3
   00008	e1a09002	 mov         r9, r2
   0000c	e1a07001	 mov         r7, r1
@@ -408,7 +408,7 @@
 ; 160  :     rc = TRUE;
 
   0006c	03a05001	 moveq       r5, #1
-  00070		 |$cleanUp$44017|
+  00070		 |$cleanUp$44027|
 
 ; 161  : 
 ; 162  : cleanUp:  
@@ -432,14 +432,14 @@
   00080	e1a00005	 mov         r0, r5
   00084	e8bd43f0	 ldmia       sp!, {r4 - r9, lr}
   00088	e12fff1e	 bx          lr
-  0008c		 |$M44113|
+  0008c		 |$M44123|
 
 			 ENDP  ; |TWLWriteRegs|
 
 	EXPORT	|TWLSetValue|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44129| DCD	|$LN10@TWLSetValu|
+|$T44139| DCD	|$LN10@TWLSetValu|
 	DCD	0x40003002
 ; Function compile flags: /Ogspy
 
@@ -452,7 +452,7 @@
   00000		 |$LN10@TWLSetValu|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M44126|
+  00008		 |$M44136|
   00008	e1a08003	 mov         r8, r3
   0000c	e1a09002	 mov         r9, r2
   00010	e1a06001	 mov         r6, r1
@@ -505,7 +505,7 @@
   00064	e28d2000	 add         r2, sp, #0
   00068	eb000000	 bl          I2CRead
   0006c	e3500001	 cmp         r0, #1
-  00070	1a00000a	 bne         |$cleanUp$44042|
+  00070	1a00000a	 bne         |$cleanUp$44052|
 
 ; 197  :         {
 ; 198  :         goto cleanUp;
@@ -536,7 +536,7 @@
 ; 209  :     rc = TRUE;
 
   0009c	03a05001	 moveq       r5, #1
-  000a0		 |$cleanUp$44042|
+  000a0		 |$cleanUp$44052|
 
 ; 210  : 
 ; 211  : cleanUp:  
@@ -555,7 +555,7 @@
   000b4	e28dd004	 add         sp, sp, #4
   000b8	e8bd43f0	 ldmia       sp!, {r4 - r9, lr}
   000bc	e12fff1e	 bx          lr
-  000c0		 |$M44127|
+  000c0		 |$M44137|
 
 			 ENDP  ; |TWLSetValue|
 

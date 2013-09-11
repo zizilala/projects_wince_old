@@ -78,7 +78,7 @@
 ; File c:\wince600\platform\z2170p\src\bootloader\eboot\mmu.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43125| DCD	|$LN18@OALPAtoVA|
+|$T43128| DCD	|$LN18@OALPAtoVA|
 	DCD	0x40002b01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -99,7 +99,7 @@
 
   00000		 |$LN18@OALPAtoVA|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M43122|
+  00004		 |$M43125|
   00004	e1a06001	 mov         r6, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -210,14 +210,14 @@
   000a4	00000000	 DCD         |g_oalAddressTableHynix|
   000a8		 |$LN23@OALPAtoVA|
   000a8	00000000	 DCD         |g_CPUFamily|
-  000ac		 |$M43123|
+  000ac		 |$M43126|
 
 			 ENDP  ; |OALPAtoVA|
 
 	EXPORT	|OALVAtoPA|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43147| DCD	|$LN19@OALVAtoPA|
+|$T43150| DCD	|$LN19@OALVAtoPA|
 	DCD	0x40002c01
 ; Function compile flags: /Ogspy
 
@@ -229,7 +229,7 @@
 
   00000		 |$LN19@OALVAtoPA|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M43144|
+  00004		 |$M43147|
   00004	e1a04000	 mov         r4, r0
 
 ; 106  :     OAL_ADDRESS_TABLE *pTable = NULL;
@@ -275,9 +275,9 @@
 ; 125  :     if (va < 0x80000000 || va >= 0xC0000000)
 
   00030	e3540102	 cmp         r4, #2, 2
-  00034	3a000016	 bcc         |$cleanUp$43088|
+  00034	3a000016	 bcc         |$cleanUp$43091|
   00038	e3540103	 cmp         r4, #3, 2
-  0003c	2a000014	 bcs         |$cleanUp$43088|
+  0003c	2a000014	 bcs         |$cleanUp$43091|
 
 ; 126  : 	{
 ; 127  :         goto cleanUp;
@@ -292,7 +292,7 @@
   00040	e5913008	 ldr         r3, [r1, #8]
   00044	e3c40202	 bic         r0, r4, #2, 4
   00048	e1b02003	 movs        r2, r3
-  0004c	0a000010	 beq         |$cleanUp$43088|
+  0004c	0a000010	 beq         |$cleanUp$43091|
   00050		 |$LL4@OALVAtoPA|
 
 ; 135  :         if (va >= pTable->CA && va <= pTable->CA + (pTable->size << 20) - 1) {
@@ -327,7 +327,7 @@
   00088	15913000	 ldrne       r3, [r1]
   0008c	10423003	 subne       r3, r2, r3
   00090	10835000	 addne       r5, r3, r0
-  00094		 |$cleanUp$43088|
+  00094		 |$cleanUp$43091|
 
 ; 143  : 
 ; 144  : cleanUp:
@@ -347,7 +347,7 @@
   000a8	00000000	 DCD         |g_oalAddressTableHynix|
   000ac		 |$LN24@OALVAtoPA|
   000ac	00000000	 DCD         |g_CPUFamily|
-  000b0		 |$M43145|
+  000b0		 |$M43148|
 
 			 ENDP  ; |OALVAtoPA|
 

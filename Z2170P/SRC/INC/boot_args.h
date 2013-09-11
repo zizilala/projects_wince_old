@@ -59,8 +59,9 @@ typedef struct {
 
     OMAP_LCD_DVI_RES displayRes;                  // display resolution
 
-	OMAP_LCM_BACKLIGHT_MENU backlight;				//Setup Backlight
-	SD_TO_FLASH_MENU	sdtoflash;				   // File transfer from SD card to flash, Ray 13-09-10 	
+	OMAP_LCM_BACKLIGHT backlight;	//Setup Backlight,The variable "backlight" it is use typedef enum,
+	                                //not is typedef enum Variable
+	OMAP_SD_TO_FLASH	sdtoflash;				   // File transfer from SD card to flash, Ray 13-09-10 	
 	
 
     UINT32 flashNKFlags;

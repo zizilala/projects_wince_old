@@ -88,7 +88,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\oal\omap_intr\intr.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45823| DCD	|$LN13@GetGPIOCtx|
+|$T45833| DCD	|$LN13@GetGPIOCtx|
 	DCD	0x40001901
 ; Function compile flags: /Ogspy
 
@@ -100,7 +100,7 @@
 
   00000		 |$LN13@GetGPIOCtx|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M45820|
+  00004		 |$M45830|
 
 ; 85   :     DWORD i;
 ; 86   :     for (i=0;i<s_intr.nbGpioBank;i++)
@@ -158,7 +158,7 @@
   00060		 |$LN14@GetGPIOCtx|
   00060		 |$LN15@GetGPIOCtx|
   00060	00000000	 DCD         |s_intr|
-  00064		 |$M45821|
+  00064		 |$M45831|
 
 			 ENDP  ; |GetGPIOCtxtByIrq|
 
@@ -167,7 +167,7 @@
 	IMPORT	|_CountLeadingZeros|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45844| DCD	|$LN11@OALGPIOInt|
+|$T45854| DCD	|$LN11@OALGPIOInt|
 	DCD	0x40002a01
 ; Function compile flags: /Ogspy
 
@@ -179,7 +179,7 @@
 
   00000		 |$LN11@OALGPIOInt|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M45841|
+  00004		 |$M45851|
   00004	e1a04000	 mov         r4, r0
 
 ; 97   :     DWORD i;
@@ -269,13 +269,13 @@
   000a4		 |$LN12@OALGPIOInt|
   000a4		 |$LN13@OALGPIOInt|
   000a4	00000000	 DCD         |s_intr|
-  000a8		 |$M45842|
+  000a8		 |$M45852|
 
 			 ENDP  ; |OALGPIOIntrHandler|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45855| DCD	|$LN10@OALGPIOEna|
+|$T45865| DCD	|$LN10@OALGPIOEna|
 	DCD	0x40002701
 ; Function compile flags: /Ogspy
 
@@ -287,7 +287,7 @@
 
   00000		 |$LN10@OALGPIOEna|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M45852|
+  00004		 |$M45862|
   00004	e1a04000	 mov         r4, r0
 
 ; 124  :     register INTR_GPIO_CTXT* ctxt = GetGPIOCtxtByIrq(irq);
@@ -374,13 +374,13 @@
   00098		 |$LN11@OALGPIOEna|
   00098		 |$LN12@OALGPIOEna|
   00098	00000000	 DCD         |s_intr|
-  0009c		 |$M45853|
+  0009c		 |$M45863|
 
 			 ENDP  ; |OALGPIOEnableIRQ|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45866| DCD	|$LN6@OALGPIODis|
+|$T45876| DCD	|$LN6@OALGPIODis|
 	DCD	0x40001801
 ; Function compile flags: /Ogspy
 
@@ -392,7 +392,7 @@
 
   00000		 |$LN6@OALGPIODis|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M45863|
+  00004		 |$M45873|
   00004	e1a04000	 mov         r4, r0
 
 ; 148  :     register INTR_GPIO_CTXT* ctxt = GetGPIOCtxtByIrq(irq);
@@ -439,13 +439,13 @@
 
   00058	e8bd4010	 ldmia       sp!, {r4, lr}
   0005c	e12fff1e	 bx          lr
-  00060		 |$M45864|
+  00060		 |$M45874|
 
 			 ENDP  ; |OALGPIODisableIRQ|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45875| DCD	|$LN6@OALGPIODon|
+|$T45885| DCD	|$LN6@OALGPIODon|
 	DCD	0x40001801
 ; Function compile flags: /Ogspy
 
@@ -457,7 +457,7 @@
 
   00000		 |$LN6@OALGPIODon|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M45872|
+  00004		 |$M45882|
   00004	e1a04000	 mov         r4, r0
 
 ; 161  :     register INTR_GPIO_CTXT* ctxt = GetGPIOCtxtByIrq(irq);
@@ -502,13 +502,13 @@
 
   00058	e8bd4010	 ldmia       sp!, {r4, lr}
   0005c	e12fff1e	 bx          lr
-  00060		 |$M45873|
+  00060		 |$M45883|
 
 			 ENDP  ; |OALGPIODoneIRQ|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45887| DCD	|$LN6@OALGPIOIsI|
+|$T45897| DCD	|$LN6@OALGPIOIsI|
 	DCD	0x40000e01
 ; Function compile flags: /Ogspy
 
@@ -520,7 +520,7 @@
 
   00000		 |$LN6@OALGPIOIsI|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M45884|
+  00004		 |$M45894|
   00004	e1a05000	 mov         r5, r0
 
 ; 172  :     BOOL rc = FALSE;
@@ -548,7 +548,7 @@
   0002c	e1a00004	 mov         r0, r4
   00030	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00034	e12fff1e	 bx          lr
-  00038		 |$M45885|
+  00038		 |$M45895|
 
 			 ENDP  ; |OALGPIOIsIrqPending|
 
@@ -560,7 +560,7 @@
 	IMPORT	|dpCurSettings|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45904| DCD	|$LN14@OALIntrReq|
+|$T45914| DCD	|$LN14@OALIntrReq|
 	DCD	0x40002d02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -596,7 +596,7 @@
   00000		 |$LN14@OALIntrReq|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   00004	e24dd010	 sub         sp, sp, #0x10
-  00008		 |$M45901|
+  00008		 |$M45911|
   00008	e1a09002	 mov         r9, r2
   0000c	e1a06001	 mov         r6, r1
   00010	e1a07000	 mov         r7, r0
@@ -636,7 +636,7 @@
 
   00060	e5963000	 ldr         r3, [r6]
   00064	e3530001	 cmp         r3, #1
-  00068	3a000005	 bcc         |$cleanUp$45570|
+  00068	3a000005	 bcc         |$cleanUp$45580|
 
 ; 316  : 
 ; 317  :     switch (pDevLoc->IfcType)
@@ -683,7 +683,7 @@
   00078	eb000000	 bl          BSPIntrRequestIrqs
   0007c	e598e440	 ldr         lr, [r8, #0x440]
   00080	e1a05000	 mov         r5, r0
-  00084		 |$cleanUp$45570|
+  00084		 |$cleanUp$45580|
 
 ; 354  : 
 ; 355  : cleanUp:
@@ -709,7 +709,7 @@
   000ac	00000000	 DCD         |??_C@_1HO@EBPJKEJJ@?$AA?$CL?$AAO?$AAA?$AAL?$AAI?$AAn?$AAt?$AAr?$AAR?$AAe?$AAq?$AAu?$AAe?$AAs?$AAt?$AAI?$AAr?$AAq?$AAs?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?9?$AA?$DO?$AA?$CF?$AAd?$AA?1?$AA?$CF@|
   000b0		 |$LN18@OALIntrReq|
   000b0	00000000	 DCD         |dpCurSettings|
-  000b4		 |$M45902|
+  000b4		 |$M45912|
 
 			 ENDP  ; |OALIntrRequestIrqs|
 
@@ -719,7 +719,7 @@
 	IMPORT	|OALSWIntrSetDataIrq|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45925| DCD	|$LN15@OALIntrSet|
+|$T45935| DCD	|$LN15@OALIntrSet|
 	DCD	0x40002a02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -750,7 +750,7 @@
   00000		 |$LN15@OALIntrSet|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M45922|
+  00008		 |$M45932|
   00008	e1a07003	 mov         r7, r3
   0000c	e1a08002	 mov         r8, r2
   00010	e1a04001	 mov         r4, r1
@@ -833,7 +833,7 @@
   000a0	00000000	 DCD         |??_C@_1FM@NKDACBOK@?$AA?$CL?$AAO?$AAA?$AAL?$AAI?$AAn?$AAt?$AAr?$AAS?$AAe?$AAt?$AAD?$AAa?$AAt?$AAa?$AAI?$AAr?$AAq?$AAs?$AA?$CI?$AA?$CF?$AAd?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?0?$AA?5@|
   000a4		 |$LN19@OALIntrSet|
   000a4	00000000	 DCD         |dpCurSettings|
-  000a8		 |$M45923|
+  000a8		 |$M45933|
 
 			 ENDP  ; |OALIntrSetDataIrqs|
 
@@ -843,7 +843,7 @@
 	IMPORT	|OALSWIntrEnableIrq|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45959| DCD	|$LN31@OALIntrEna|
+|$T45969| DCD	|$LN31@OALIntrEna|
 	DCD	0x40006301
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -872,7 +872,7 @@
 
   00000		 |$LN31@OALIntrEna|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
-  00004		 |$M45956|
+  00004		 |$M45966|
   00004	e1a08001	 mov         r8, r1
   00008	e1a06000	 mov         r6, r0
 
@@ -1064,7 +1064,7 @@
   00184	00000000	 DCD         |s_intr|
   00188		 |$LN36@OALIntrEna|
   00188	00000000	 DCD         |??_C@_1EA@MEDKAPAI@?$AA?$CL?$AAO?$AAA?$AAL?$AAn?$AAt?$AAr?$AAE?$AAn?$AAa?$AAb?$AAl?$AAe?$AAI?$AAr?$AAq?$AAs?$AA?$CI?$AA?$CF?$AAd?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@|
-  0018c		 |$M45957|
+  0018c		 |$M45967|
 
 			 ENDP  ; |OALIntrEnableIrqs|
 
@@ -1074,7 +1074,7 @@
 	IMPORT	|OALSWIntrDisableIrq|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45986| DCD	|$LN26@OALIntrDis|
+|$T45996| DCD	|$LN26@OALIntrDis|
 	DCD	0x40005001
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1102,7 +1102,7 @@
 
   00000		 |$LN26@OALIntrDis|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
-  00004		 |$M45983|
+  00004		 |$M45993|
   00004	e1a06001	 mov         r6, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -1262,7 +1262,7 @@
   00138	00000000	 DCD         |s_intr|
   0013c		 |$LN31@OALIntrDis|
   0013c	00000000	 DCD         |??_C@_1EE@NIPMEMC@?$AA?$CL?$AAO?$AAA?$AAL?$AAI?$AAn?$AAt?$AAr?$AAD?$AAi?$AAs?$AAa?$AAb?$AAl?$AAe?$AAI?$AAr?$AAq?$AAs?$AA?$CI?$AA?$CF?$AAd?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?$CJ?$AA?$AN@|
-  00140		 |$M45984|
+  00140		 |$M45994|
 
 			 ENDP  ; |OALIntrDisableIrqs|
 
@@ -1272,7 +1272,7 @@
 	IMPORT	|OALSWIntrDoneIrq|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46013| DCD	|$LN26@OALIntrDon|
+|$T46023| DCD	|$LN26@OALIntrDon|
 	DCD	0x40005001
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1300,7 +1300,7 @@
 
   00000		 |$LN26@OALIntrDon|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
-  00004		 |$M46010|
+  00004		 |$M46020|
   00004	e1a06001	 mov         r6, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -1462,14 +1462,14 @@
   00138	00000000	 DCD         |s_intr|
   0013c		 |$LN31@OALIntrDon|
   0013c	00000000	 DCD         |??_C@_1DO@FCJPHKGC@?$AA?$CL?$AAO?$AAA?$AAL?$AAI?$AAn?$AAt?$AAr?$AAD?$AAo?$AAn?$AAe?$AAI?$AAr?$AAq?$AAs?$AA?$CI?$AA?$CF?$AAd?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@|
-  00140		 |$M46011|
+  00140		 |$M46021|
 
 			 ENDP  ; |OALIntrDoneIrqs|
 
 	EXPORT	|OALIntrIsIrqPending|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46041| DCD	|$LN20@OALIntrIsI|
+|$T46051| DCD	|$LN20@OALIntrIsI|
 	DCD	0x40002c01
 ; Function compile flags: /Ogspy
 
@@ -1481,7 +1481,7 @@
 
   00000		 |$LN20@OALIntrIsI|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M46038|
+  00004		 |$M46048|
   00004	e1a04000	 mov         r4, r0
 
 ; 557  :     BOOL rc = FALSE;
@@ -1587,7 +1587,7 @@
   000ac		 |$LN21@OALIntrIsI|
   000ac		 |$LN22@OALIntrIsI|
   000ac	00000000	 DCD         |s_intr|
-  000b0		 |$M46039|
+  000b0		 |$M46049|
 
 			 ENDP  ; |OALIntrIsIrqPending|
 
@@ -1604,7 +1604,7 @@
 	IMPORT	|g_oalILT|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46084| DCD	|$LN39@OEMInterru|
+|$T46094| DCD	|$LN39@OEMInterru|
 	DCD	0x40009802
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1625,7 +1625,7 @@
   00000		 |$LN39@OEMInterru|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M46081|
+  00008		 |$M46091|
   00008	e1a0a000	 mov         r10, r0
 
 ; 595  :     UINT32 irq = (UINT32) OAL_INTR_IRQ_UNDEFINED;
@@ -1954,7 +1954,7 @@
   00258	00000000	 DCD         |s_intr|
   0025c		 |$LN47@OEMInterru|
   0025c	00000000	 DCD         |g_oalILT|
-  00260		 |$M46082|
+  00260		 |$M46092|
 
 			 ENDP  ; |OEMInterruptHandler|
 
@@ -1975,7 +1975,7 @@
 	IMPORT	|g_BSP_icL1Level|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46132| DCD	|$LN45@OALIntrIni|
+|$T46142| DCD	|$LN45@OALIntrIni|
 	DCD	0x4000b701
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2038,7 +2038,7 @@
 
   00000		 |$LN45@OALIntrIni|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
-  00004		 |$M46129|
+  00004		 |$M46139|
 
 ; 191  :     BOOL rc = FALSE;
 ; 192  :     UINT32 i, mask;    
@@ -2420,7 +2420,7 @@
   002d4	00000000	 DCD         |??_C@_1CI@LJHDCJDG@?$AA?$CL?$AAO?$AAA?$AAL?$AAI?$AAn?$AAt?$AAe?$AAr?$AAr?$AAu?$AAp?$AAt?$AAI?$AAn?$AAi?$AAt?$AA?$AN?$AA?6?$AA?$AA@|
   002d8		 |$LN54@OALIntrIni|
   002d8	00000000	 DCD         |dpCurSettings|
-  002dc		 |$M46130|
+  002dc		 |$M46140|
 
 			 ENDP  ; |OALIntrInit|
 

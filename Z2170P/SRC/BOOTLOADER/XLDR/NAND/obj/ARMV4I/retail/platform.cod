@@ -452,7 +452,7 @@
 ; File c:\wince600\platform\z2170p\src\inc\bsp_padcfg.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46840| DCD	|$LN9@ConfigureP|
+|$T46842| DCD	|$LN9@ConfigureP|
 	DCD	0x40001601
 ; Function compile flags: /Ogspy
 
@@ -464,7 +464,7 @@
 
   00000		 |$LN9@ConfigureP|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M46837|
+  00004		 |$M46839|
   00004	e1a04000	 mov         r4, r0
 
 ; 582  :     int i=0;
@@ -503,14 +503,14 @@
 
   00050	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   00054	e12fff1e	 bx          lr
-  00058		 |$M46838|
+  00058		 |$M46840|
 
 			 ENDP  ; |ConfigurePadArray|
 
 ; File c:\wince600\platform\z2170p\src\bootloader\xldr\platform.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46862| DCD	|$LN15@WaitOnValu|
+|$T46864| DCD	|$LN15@WaitOnValu|
 	DCD	0x40001001
 ; Function compile flags: /Ogspy
 
@@ -522,7 +522,7 @@
 
   00000		 |$LN15@WaitOnValu|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M46859|
+  00004		 |$M46861|
 
 ; 146  : 	UINT32 i = 0, val;
 ; 147  : 	for(;;)
@@ -566,14 +566,14 @@
 
   00038	e8bd4010	 ldmia       sp!, {r4, lr}
   0003c	e12fff1e	 bx          lr
-  00040		 |$M46860|
+  00040		 |$M46862|
 
 			 ENDP  ; |WaitOnValue|
 
 	EXPORT	|OALGetTickCount|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46871| DCD	|$LN5@OALGetTick|
+|$T46873| DCD	|$LN5@OALGetTick|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -584,7 +584,7 @@
 ; 166  : {
 
   00000		 |$LN5@OALGetTick|
-  00000		 |$M46868|
+  00000		 |$M46870|
 
 ; 167  :     return 1;
 
@@ -593,7 +593,7 @@
 ; 168  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M46869|
+  00008		 |$M46871|
 
 			 ENDP  ; |OALGetTickCount|
 
@@ -601,7 +601,7 @@
 	IMPORT	|OALPAtoVA|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46883| DCD	|$LN11@Mpu_dpll_i|
+|$T46885| DCD	|$LN11@Mpu_dpll_i|
 	DCD	0x40001e01
 ; Function compile flags: /Ogspy
 
@@ -613,7 +613,7 @@
 
   00000		 |$LN11@Mpu_dpll_i|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M46880|
+  00004		 |$M46882|
   00004	e1a04000	 mov         r4, r0
   00008	e3a03312	 mov         r3, #0x12, 6
 
@@ -687,7 +687,7 @@
 
   00070	e8bd4010	 ldmia       sp!, {r4, lr}
   00074	e12fff1e	 bx          lr
-  00078		 |$M46881|
+  00078		 |$M46883|
 
 			 ENDP  ; |Mpu_dpll_init|
 
@@ -695,7 +695,7 @@
 	IMPORT	|gCPU_family|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46896| DCD	|$LN13@Iva_dpll_i|
+|$T46898| DCD	|$LN13@Iva_dpll_i|
 	DCD	0x40002301
 ; Function compile flags: /Ogspy
 
@@ -707,7 +707,7 @@
 
   00000		 |$LN13@Iva_dpll_i|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M46893|
+  00004		 |$M46895|
   00004	e1a04000	 mov         r4, r0
   00008	e3a03312	 mov         r3, #0x12, 6
 
@@ -811,14 +811,14 @@
   00088		 |$LN14@Iva_dpll_i|
   00088		 |$LN15@Iva_dpll_i|
   00088	00000000	 DCD         |gCPU_family|
-  0008c		 |$M46894|
+  0008c		 |$M46896|
 
 			 ENDP  ; |Iva_dpll_init|
 
 	EXPORT	|Omap37xx_dpll4_init|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46910| DCD	|$LN8@Omap37xx_d|
+|$T46912| DCD	|$LN8@Omap37xx_d|
 	DCD	0x40002501
 ; Function compile flags: /Ogspy
 
@@ -830,7 +830,7 @@
 
   00000		 |$LN8@Omap37xx_d|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M46907|
+  00004		 |$M46909|
   00004	e3a06312	 mov         r6, #0x12, 6
 
 ; 256  :     OMAP_PRCM_EMU_CM_REGS* pPrcmEmuCM = OALPAtoUA(OMAP_PRCM_EMU_CM_REGS_PA);
@@ -916,14 +916,14 @@
   00090		 |$LN9@Omap37xx_d|
   00090		 |$LN10@Omap37xx_d|
   00090	03020a50	 DCD         0x3020a50
-  00094		 |$M46908|
+  00094		 |$M46910|
 
 			 ENDP  ; |Omap37xx_dpll4_init|
 
 	EXPORT	|Dpll4_init|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46923| DCD	|$LN8@Dpll4_init|
+|$T46925| DCD	|$LN8@Dpll4_init|
 	DCD	0x40002501
 ; Function compile flags: /Ogspy
 
@@ -935,7 +935,7 @@
 
   00000		 |$LN8@Dpll4_init|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M46920|
+  00004		 |$M46922|
   00004	e3a06312	 mov         r6, #0x12, 6
 
 ; 291  :     OMAP_PRCM_EMU_CM_REGS* pPrcmEmuCM = OALPAtoUA(OMAP_PRCM_EMU_CM_REGS_PA);
@@ -1006,14 +1006,14 @@
   00090		 |$LN9@Dpll4_init|
   00090		 |$LN10@Dpll4_init|
   00090	03020a50	 DCD         0x3020a50
-  00094		 |$M46921|
+  00094		 |$M46923|
 
 			 ENDP  ; |Dpll4_init|
 
 	EXPORT	|Omap37xx_core_dpll_init|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46934| DCD	|$LN5@Omap37xx_c|
+|$T46936| DCD	|$LN5@Omap37xx_c|
 	DCD	0x40001101
 ; Function compile flags: /Ogspy
 
@@ -1025,7 +1025,7 @@
 
   00000		 |$LN5@Omap37xx_c|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M46931|
+  00004		 |$M46933|
   00004	e3a05312	 mov         r5, #0x12, 6
 
 ; 315  :     OMAP_PRCM_CORE_CM_REGS* pPrcmCoreCM = OALPAtoUA(OMAP_PRCM_CORE_CM_REGS_PA);
@@ -1069,14 +1069,14 @@
   00040		 |$LN6@Omap37xx_c|
   00040		 |$LN7@Omap37xx_c|
   00040	08c80c00	 DCD         0x8c80c00
-  00044		 |$M46932|
+  00044		 |$M46934|
 
 			 ENDP  ; |Omap37xx_core_dpll_init|
 
 	EXPORT	|Core_dpll_init|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46945| DCD	|$LN5@Core_dpll_|
+|$T46947| DCD	|$LN5@Core_dpll_|
 	DCD	0x40001101
 ; Function compile flags: /Ogspy
 
@@ -1088,7 +1088,7 @@
 
   00000		 |$LN5@Core_dpll_|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M46942|
+  00004		 |$M46944|
   00004	e3a05312	 mov         r5, #0x12, 6
 
 ; 341  :     OMAP_PRCM_CORE_CM_REGS* pPrcmCoreCM = OALPAtoUA(OMAP_PRCM_CORE_CM_REGS_PA);
@@ -1130,14 +1130,14 @@
   00040		 |$LN6@Core_dpll_|
   00040		 |$LN7@Core_dpll_|
   00040	08a60c00	 DCD         0x8a60c00
-  00044		 |$M46943|
+  00044		 |$M46945|
 
 			 ENDP  ; |Core_dpll_init|
 
 	EXPORT	|Per_dpll_init|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46956| DCD	|$LN8@Per_dpll_i|
+|$T46958| DCD	|$LN8@Per_dpll_i|
 	DCD	0x40001201
 ; Function compile flags: /Ogspy
 
@@ -1149,7 +1149,7 @@
 
   00000		 |$LN8@Per_dpll_i|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46953|
+  00004		 |$M46955|
   00004	e3a03312	 mov         r3, #0x12, 6
 
 ; 364  : 
@@ -1199,14 +1199,14 @@
 
   00040	e49de004	 ldr         lr, [sp], #4
   00044	e12fff1e	 bx          lr
-  00048		 |$M46954|
+  00048		 |$M46956|
 
 			 ENDP  ; |Per_dpll_init|
 
 	EXPORT	|Omap37xx_per_dpll_init|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46965| DCD	|$LN8@Omap37xx_p|
+|$T46967| DCD	|$LN8@Omap37xx_p|
 	DCD	0x40001201
 ; Function compile flags: /Ogspy
 
@@ -1218,7 +1218,7 @@
 
   00000		 |$LN8@Omap37xx_p|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46962|
+  00004		 |$M46964|
   00004	e3a03312	 mov         r3, #0x12, 6
 
 ; 392  : 
@@ -1273,13 +1273,13 @@
 
   00040	e49de004	 ldr         lr, [sp], #4
   00044	e12fff1e	 bx          lr
-  00048		 |$M46963|
+  00048		 |$M46965|
 
 			 ENDP  ; |Omap37xx_per_dpll_init|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46996| DCD	|$LN21@WatchdogSe|
+|$T46998| DCD	|$LN21@WatchdogSe|
 	DCD	0x40002401
 ; Function compile flags: /Ogspy
 
@@ -1291,7 +1291,7 @@
 
   00000		 |$LN21@WatchdogSe|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M46993|
+  00004		 |$M46995|
   00004	e3a05312	 mov         r5, #0x12, 6
 
 ; 470  : 	/* There are 3 watch dogs WD1=Secure, WD2=MPU, WD3=IVA. WD1 is
@@ -1364,14 +1364,14 @@
 
   00088	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0008c	e12fff1e	 bx          lr
-  00090		 |$M46994|
+  00090		 |$M46996|
 
 			 ENDP  ; |WatchdogSetup|
 
 ; File c:\wince600\platform\z2170p\src\inc\bsp_padcfg.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47012| DCD	|$LN11@PinMuxSetu|
+|$T47014| DCD	|$LN11@PinMuxSetu|
 	DCD	0x40001601
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\bootloader\xldr\platform.c
@@ -1384,7 +1384,7 @@
 
   00000		 |$LN11@PinMuxSetu|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M47009|
+  00004		 |$M47011|
 
 ; 496  :     static const PAD_INFO initialPinMux[] = {
 ; 497  :             SDRC_PADS            
@@ -1428,13 +1428,13 @@
   00054		 |$LN12@PinMuxSetu|
   00054		 |$LN13@PinMuxSetu|
   00054	00000000	 DCD         |?initialPinMux@?1??PinMuxSetup@@9@9|
-  00058		 |$M47010|
+  00058		 |$M47012|
 
 			 ENDP  ; |PinMuxSetup|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47021| DCD	|$LN5@GpioSetup|
+|$T47023| DCD	|$LN5@GpioSetup|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -1446,7 +1446,7 @@
 
   00000		 |$LN5@GpioSetup|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M47018|
+  00004		 |$M47020|
   00004	e3a03312	 mov         r3, #0x12, 6
 
 ; 520  :     OMAP_GPIO_REGS* pGpio;
@@ -1474,13 +1474,13 @@
 
   0001c	e49de004	 ldr         lr, [sp], #4
   00020	e12fff1e	 bx          lr
-  00024		 |$M47019|
+  00024		 |$M47021|
 
 			 ENDP  ; |GpioSetup|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47033| DCD	|$LN7@ClockSetup|
+|$T47035| DCD	|$LN7@ClockSetup|
 	DCD	0x40003601
 ; Function compile flags: /Ogspy
 
@@ -1492,7 +1492,7 @@
 
   00000		 |$LN7@ClockSetup|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M47030|
+  00004		 |$M47032|
   00004	e1a05000	 mov         r5, r0
 
 ; 543  :     
@@ -1620,14 +1620,14 @@
   000d0	00000000	 DCD         |gCPU_family|
   000d4		 |$LN10@ClockSetup|
   000d4	48306d00	 DCD         0x48306d00
-  000d8		 |$M47031|
+  000d8		 |$M47033|
 
 			 ENDP  ; |ClockSetup|
 
 	IMPORT	|OALStall|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47052| DCD	|$LN13@MemorySetu|
+|$T47054| DCD	|$LN13@MemorySetu|
 	DCD	0x4000b501
 ; Function compile flags: /Ogspy
 
@@ -1639,7 +1639,7 @@
 
   00000		 |$LN13@MemorySetu|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
-  00004		 |$M47049|
+  00004		 |$M47051|
 
 ; 594  :     OMAP_GPMC_REGS* pGpmc = OALPAtoUA(OMAP_GPMC_REGS_PA);
 
@@ -2159,13 +2159,13 @@
   002cc	48002030	 DCD         0x48002030
   002d0		 |$LN27@MemorySetu|
   002d0	48307200	 DCD         0x48307200
-  002d4		 |$M47050|
+  002d4		 |$M47052|
 
 			 ENDP  ; |MemorySetup|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47075| DCD	|$LN5@UpdateVolt|
+|$T47077| DCD	|$LN5@UpdateVolt|
 	DCD	0x40004a01
 ; Function compile flags: /Ogspy
 
@@ -2177,7 +2177,7 @@
 
   00000		 |$LN5@UpdateVolt|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M47072|
+  00004		 |$M47074|
   00004	e1a04000	 mov         r4, r0
 
 ; 811  :     OMAP_PRCM_GLOBAL_PRM_REGS* pPrcmGblPRM = OALPAtoUA(OMAP_PRCM_GLOBAL_PRM_REGS_PA);
@@ -2343,7 +2343,7 @@
   00124		 |$LN6@UpdateVolt|
   00124		 |$LN7@UpdateVolt|
   00124	48307200	 DCD         0x48307200
-  00128		 |$M47073|
+  00128		 |$M47075|
 
 			 ENDP  ; |UpdateVoltageLevels|
 
@@ -2353,7 +2353,7 @@
 	IMPORT	|OALI2CInit|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47163| DCD	|$LN39@PlatformSe|
+|$T47165| DCD	|$LN39@PlatformSe|
 	DCD	0x4000bd01
 ; Function compile flags: /Ogspy
 
@@ -2365,7 +2365,7 @@
 
   00000		 |$LN39@PlatformSe|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M47160|
+  00004		 |$M47162|
 
 ; 426  :     pCPU_OPP_Settings opp_setting;
 ; 427  : 	
@@ -2621,7 +2621,7 @@
   002ec	48306d00	 DCD         0x48306d00
   002f0		 |$LN45@PlatformSe|
   002f0	00000000	 DCD         |?initialPinMux@?1??PinMuxSetup@@9@9|
-  002f4		 |$M47161|
+  002f4		 |$M47163|
 
 			 ENDP  ; |PlatformSetup|
 

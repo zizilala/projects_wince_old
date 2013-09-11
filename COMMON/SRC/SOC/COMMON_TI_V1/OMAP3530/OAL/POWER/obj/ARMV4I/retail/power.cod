@@ -79,7 +79,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\omap3530\oal\power\power.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47339| DCD	|$LN16@OEMInterru|
+|$T47349| DCD	|$LN16@OEMInterru|
 	DCD	0x40002c02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -109,7 +109,7 @@
   00000		 |$LN16@OEMInterru|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M47336|
+  00008		 |$M47346|
   00008	e1a05000	 mov         r5, r0
 
 ; 74   :     BOOL pending = FALSE;
@@ -191,7 +191,7 @@
   000a8	00000000	 DCD         |??_C@_1DG@KCFEDALK@?$AA?$CL?$AAO?$AAE?$AAM?$AAI?$AAn?$AAt?$AAe?$AAr?$AAr?$AAu?$AAp?$AAt?$AAP?$AAe?$AAn?$AAd?$AAi?$AAn?$AAg?$AA?$CI?$AA?$CF?$AAd?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@|
   000ac		 |$LN20@OEMInterru|
   000ac	00000000	 DCD         |dpCurSettings|
-  000b0		 |$M47337|
+  000b0		 |$M47347|
 
 			 ENDP  ; |OEMInterruptPending|
 
@@ -223,7 +223,7 @@
 	IMPORT	|g_oalWakeSource|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47389| DCD	|$LN57@OEMPowerOf|
+|$T47399| DCD	|$LN57@OEMPowerOf|
 	DCD	0x4000ef02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -257,7 +257,7 @@
   00000		 |$LN57@OEMPowerOf|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd014	 sub         sp, sp, #0x14
-  00008		 |$M47386|
+  00008		 |$M47396|
 
 ; 106  :     DWORD i;
 ; 107  :     UINT32 sysIntr;
@@ -873,7 +873,7 @@
   003b4	00000000	 DCD         |g_oalWakeSource|
   003b8		 |$LN65@OEMPowerOf|
   003b8	00000000	 DCD         |g_pIntr|
-  003bc		 |$M47387|
+  003bc		 |$M47397|
 
 			 ENDP  ; |OEMPowerOff|
 

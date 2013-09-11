@@ -98,7 +98,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37653| DCD	|$LN5@GetCurrent|
+|$T37661| DCD	|$LN5@GetCurrent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -110,7 +110,7 @@
 
   00000		 |$LN5@GetCurrent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M37650|
+  00004		 |$M37658|
 
 ; 374  :     return __GetUserKData (SYSHANDLE_OFFSET + (SH_CURPROC * sizeof(HANDLE)));
 
@@ -121,7 +121,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M37651|
+  00014		 |$M37659|
 
 			 ENDP  ; |GetCurrentProcessId|
 
@@ -130,7 +130,7 @@
 ; File c:\wince600\public\common\sdk\inc\objbase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37667| DCD	|$LN7@IsEqualGUI|
+|$T37675| DCD	|$LN7@IsEqualGUI|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -142,7 +142,7 @@
 
   00000		 |$LN7@IsEqualGUI|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M37664|
+  00004		 |$M37672|
 
 ; 494  :     return !memcmp(&rguid1, &rguid2, sizeof(GUID));
 
@@ -163,7 +163,7 @@
 
   0001c	149de004	 ldrne       lr, [sp], #4
   00020	e12fff1e	 bx          lr
-  00024		 |$M37665|
+  00024		 |$M37673|
 
 			 ENDP  ; |?IsEqualGUID@@YAHABU_GUID@@0@Z|, IsEqualGUID
 
@@ -171,7 +171,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\gpio\omap_gpio\omap35xx_gpio.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37686| DCD	|$LN16@SetGpioBan|
+|$T37694| DCD	|$LN16@SetGpioBan|
 	DCD	0x40001c01
 ; Function compile flags: /Ogspy
 
@@ -183,7 +183,7 @@
 
   00000		 |$LN16@SetGpioBan|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M37683|
+  00004		 |$M37691|
 
 ; 156  :     // determine GPIO bank
 ; 157  :     UINT bit = GPIO_BIT(id);
@@ -257,14 +257,14 @@
 
   00068	e8bd4010	 ldmia       sp!, {r4, lr}
   0006c	e12fff1e	 bx          lr
-  00070		 |$M37684|
+  00070		 |$M37692|
 
 			 ENDP  ; |?SetGpioBankPowerState@@YAXPAUOmapGpioDevice_t@@IW4_CEDEVICE_POWER_STATE@@@Z|, SetGpioBankPowerState
 
 	EXPORT	|?InternalSetGpioBankPowerState@@YAXPAUOmapGpioDevice_t@@IW4_CEDEVICE_POWER_STATE@@@Z| ; InternalSetGpioBankPowerState
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37698| DCD	|$LN9@InternalSe|
+|$T37706| DCD	|$LN9@InternalSe|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -276,7 +276,7 @@
 
   00000		 |$LN9@InternalSe|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M37695|
+  00004		 |$M37703|
 
 ; 198  :     // determine GPIO bank
 ; 199  :     UINT bank = GPIO_BANK(id);
@@ -313,14 +313,14 @@
 
   0002c	e49de004	 ldr         lr, [sp], #4
   00030	e12fff1e	 bx          lr
-  00034		 |$M37696|
+  00034		 |$M37704|
 
 			 ENDP  ; |?InternalSetGpioBankPowerState@@YAXPAUOmapGpioDevice_t@@IW4_CEDEVICE_POWER_STATE@@@Z|, InternalSetGpioBankPowerState
 
 	IMPORT	|InitializeCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37711| DCD	|$LN10@OmapGpioPo|
+|$T37719| DCD	|$LN10@OmapGpioPo|
 	DCD	0x40001601
 ; Function compile flags: /Ogspy
 
@@ -332,7 +332,7 @@
 
   00000		 |$LN10@OmapGpioPo|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M37708|
+  00004		 |$M37716|
   00004	e1a04000	 mov         r4, r0
 
 ; 307  :     UINT8 i;
@@ -377,7 +377,7 @@
 
   00050	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00054	e12fff1e	 bx          lr
-  00058		 |$M37709|
+  00058		 |$M37717|
 
 			 ENDP  ; |?OmapGpioPostInit@@YAHPAX@Z|, OmapGpioPostInit
 
@@ -386,7 +386,7 @@
 	IMPORT	|DeleteCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37728| DCD	|$LN20@OmapGpioDe|
+|$T37736| DCD	|$LN20@OmapGpioDe|
 	DCD	0x40003401
 ; Function compile flags: /Ogspy
 
@@ -398,7 +398,7 @@
 
   00000		 |$LN20@OmapGpioDe|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M37725|
+  00004		 |$M37733|
   00004	e1b04000	 movs        r4, r0
 
 ; 329  :     BOOL rc = FALSE;
@@ -413,11 +413,11 @@
 ; 335  :     // Check if we get correct context
 ; 336  :     if ((pDevice == NULL) || (pDevice->cookie != GPIO_DEVICE_COOKIE))
 
-  0000c	0a00002c	 beq         |$cleanUp$37125|
+  0000c	0a00002c	 beq         |$cleanUp$37133|
   00010	e5942000	 ldr         r2, [r4]
   00014	e59f30b0	 ldr         r3, [pc, #0xB0]
   00018	e1520003	 cmp         r2, r3
-  0001c	1a000028	 bne         |$cleanUp$37125|
+  0001c	1a000028	 bne         |$cleanUp$37133|
 
 ; 337  :     {
 ; 338  :         DEBUGMSG (ZONE_ERROR, (L"ERROR: OmapGpioDeinit: "
@@ -511,7 +511,7 @@
 ; 366  :     rc = TRUE;
 
   000c0	e3a00001	 mov         r0, #1
-  000c4		 |$cleanUp$37125|
+  000c4		 |$cleanUp$37133|
 
 ; 367  : 
 ; 368  : cleanUp:
@@ -524,7 +524,7 @@
   000cc		 |$LN21@OmapGpioDe|
   000cc		 |$LN22@OmapGpioDe|
   000cc	11223344	 DCD         0x11223344
-  000d0		 |$M37726|
+  000d0		 |$M37734|
 
 			 ENDP  ; |?OmapGpioDeinit@@YAHPAX@Z|, OmapGpioDeinit
 
@@ -533,7 +533,7 @@
 	IMPORT	|EnterCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37769| DCD	|$LN39@OmapGpioSe|
+|$T37777| DCD	|$LN39@OmapGpioSe|
 	DCD	0x40004a01
 ; Function compile flags: /Ogspy
 
@@ -545,7 +545,7 @@
 
   00000		 |$LN39@OmapGpioSe|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
-  00004		 |$M37766|
+  00004		 |$M37774|
   00004	e1a06002	 mov         r6, r2
   00008	e1b07000	 movs        r7, r0
 
@@ -563,11 +563,11 @@
 ; 390  :     // Check if we get correct context
 ; 391  :     if ((pDevice == NULL) || (pDevice->cookie != GPIO_DEVICE_COOKIE))
 
-  00014	0a000040	 beq         |$cleanUp$37152|
+  00014	0a000040	 beq         |$cleanUp$37160|
   00018	e597e000	 ldr         lr, [r7]
   0001c	e59f3100	 ldr         r3, [pc, #0x100]
   00020	e15e0003	 cmp         lr, r3
-  00024	1a00003c	 bne         |$cleanUp$37152|
+  00024	1a00003c	 bne         |$cleanUp$37160|
 
 ; 392  :     {
 ; 393  :         DEBUGMSG(ZONE_ERROR, (L"ERROR: OmapGpioSetMode: "
@@ -580,7 +580,7 @@
 
   00028	e5973004	 ldr         r3, [r7, #4]
   0002c	e1510283	 cmp         r1, r3, lsl #5
-  00030	2a000039	 bcs         |$cleanUp$37152|
+  00030	2a000039	 bcs         |$cleanUp$37160|
 
 ; 400  :     {
 ; 401  :         UINT32 mask = 1 << (bit);
@@ -759,7 +759,7 @@
 ; 471  :         rc = TRUE;
 
   00118	e3a00001	 mov         r0, #1
-  0011c		 |$cleanUp$37152|
+  0011c		 |$cleanUp$37160|
 
 ; 472  :     }
 ; 473  : 
@@ -772,13 +772,13 @@
   00124		 |$LN40@OmapGpioSe|
   00124		 |$LN41@OmapGpioSe|
   00124	11223344	 DCD         0x11223344
-  00128		 |$M37767|
+  00128		 |$M37775|
 
 			 ENDP  ; |?OmapGpioSetMode@@YAHPAXII@Z|, OmapGpioSetMode
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37803| DCD	|$LN28@OmapGpioGe|
+|$T37811| DCD	|$LN28@OmapGpioGe|
 	DCD	0x40003d01
 ; Function compile flags: /Ogspy
 
@@ -790,7 +790,7 @@
 
   00000		 |$LN28@OmapGpioGe|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
-  00004		 |$M37800|
+  00004		 |$M37808|
   00004	e1b05000	 movs        r5, r0
 
 ; 488  :     DWORD mode = (DWORD) -1;
@@ -807,11 +807,11 @@
 ; 493  :     // Check if we get correct context
 ; 494  :     if ((pDevice == NULL) || (pDevice->cookie != GPIO_DEVICE_COOKIE))
 
-  00010	0a000033	 beq         |$cleanUp$37221|
+  00010	0a000033	 beq         |$cleanUp$37229|
   00014	e5952000	 ldr         r2, [r5]
   00018	e59f30d0	 ldr         r3, [pc, #0xD0]
   0001c	e1520003	 cmp         r2, r3
-  00020	1a00002f	 bne         |$cleanUp$37221|
+  00020	1a00002f	 bne         |$cleanUp$37229|
 
 ; 495  :     {
 ; 496  :         DEBUGMSG(ZONE_ERROR, (L"ERROR: OmapGpioGetMode: "
@@ -824,7 +824,7 @@
 
   00024	e5953004	 ldr         r3, [r5, #4]
   00028	e1510283	 cmp         r1, r3, lsl #5
-  0002c	2a00002c	 bcs         |$cleanUp$37221|
+  0002c	2a00002c	 bcs         |$cleanUp$37229|
 
 ; 503  :     {
 ; 504  :         mode = 0;
@@ -930,7 +930,7 @@
   000d8	e3530000	 cmp         r3, #0
   000dc	12890004	 addne       r0, r9, #4
   000e0	1b000000	 blne        LeaveCriticalSection
-  000e4		 |$cleanUp$37221|
+  000e4		 |$cleanUp$37229|
 
 ; 551  : 
 ; 552  :     }
@@ -945,13 +945,13 @@
   000f0		 |$LN29@OmapGpioGe|
   000f0		 |$LN30@OmapGpioGe|
   000f0	11223344	 DCD         0x11223344
-  000f4		 |$M37801|
+  000f4		 |$M37809|
 
 			 ENDP  ; |?OmapGpioGetMode@@YAKPAXI@Z|, OmapGpioGetMode
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37814| DCD	|$LN5@OmapGpioPu|
+|$T37822| DCD	|$LN5@OmapGpioPu|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -962,7 +962,7 @@
 ; 571  : {
 
   00000		 |$LN5@OmapGpioPu|
-  00000		 |$M37811|
+  00000		 |$M37819|
 
 ; 572  :     UNREFERENCED_PARAMETER(context);
 ; 573  :     UNREFERENCED_PARAMETER(id);
@@ -974,13 +974,13 @@
 ; 576  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M37812|
+  00008		 |$M37820|
 
 			 ENDP  ; |?OmapGpioPullup@@YAHPAXII@Z|, OmapGpioPullup
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37823| DCD	|$LN5@OmapGpioPu@2|
+|$T37831| DCD	|$LN5@OmapGpioPu@2|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -991,7 +991,7 @@
 ; 589  : {
 
   00000		 |$LN5@OmapGpioPu@2|
-  00000		 |$M37820|
+  00000		 |$M37828|
 
 ; 590  :     UNREFERENCED_PARAMETER(context);
 ; 591  :     UNREFERENCED_PARAMETER(id);
@@ -1003,13 +1003,13 @@
 ; 594  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M37821|
+  00008		 |$M37829|
 
 			 ENDP  ; |?OmapGpioPulldown@@YAHPAXII@Z|, OmapGpioPulldown
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37855| DCD	|$LN21@OmapGpioSe@2|
+|$T37863| DCD	|$LN21@OmapGpioSe@2|
 	DCD	0x40002e01
 ; Function compile flags: /Ogspy
 
@@ -1021,7 +1021,7 @@
 
   00000		 |$LN21@OmapGpioSe@2|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M37852|
+  00004		 |$M37860|
   00004	e1b04000	 movs        r4, r0
 
 ; 717  :     BOOL rc = FALSE;
@@ -1040,11 +1040,11 @@
 ; 721  :     // Check if we get correct context & pin id
 ; 722  :     if ((pDevice == NULL) || (pDevice->cookie != GPIO_DEVICE_COOKIE))
 
-  00014	0a000024	 beq         |$cleanUp$37264|
+  00014	0a000024	 beq         |$cleanUp$37272|
   00018	e5942000	 ldr         r2, [r4]
   0001c	e59f3090	 ldr         r3, [pc, #0x90]
   00020	e1520003	 cmp         r2, r3
-  00024	1a000020	 bne         |$cleanUp$37264|
+  00024	1a000020	 bne         |$cleanUp$37272|
 
 ; 723  :     {
 ; 724  :         DEBUGMSG(ZONE_ERROR, (L"ERROR: OmapGpioSetBit: Incorrect context\r\n"));
@@ -1055,7 +1055,7 @@
 
   00028	e5943004	 ldr         r3, [r4, #4]
   0002c	e1510283	 cmp         r1, r3, lsl #5
-  00030	2a00001d	 bcs         |$cleanUp$37264|
+  00030	2a00001d	 bcs         |$cleanUp$37272|
 
 ; 729  :     {
 ; 730  :         volatile UINT *p = &pDevice->bank[bank].ppGpioRegs->DATAOUT;
@@ -1116,7 +1116,7 @@
 ; 742  :         rc = TRUE;
 
   000a8	e3a00001	 mov         r0, #1
-  000ac		 |$cleanUp$37264|
+  000ac		 |$cleanUp$37272|
 
 ; 743  :     }
 ; 744  : 
@@ -1129,13 +1129,13 @@
   000b4		 |$LN22@OmapGpioSe@2|
   000b4		 |$LN23@OmapGpioSe@2|
   000b4	11223344	 DCD         0x11223344
-  000b8		 |$M37853|
+  000b8		 |$M37861|
 
 			 ENDP  ; |?OmapGpioSetBit@@YAHPAXI@Z|, OmapGpioSetBit
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37889| DCD	|$LN21@OmapGpioCl|
+|$T37897| DCD	|$LN21@OmapGpioCl|
 	DCD	0x40002e01
 ; Function compile flags: /Ogspy
 
@@ -1147,7 +1147,7 @@
 
   00000		 |$LN21@OmapGpioCl|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M37886|
+  00004		 |$M37894|
   00004	e1b04000	 movs        r4, r0
 
 ; 759  :     BOOL rc = FALSE;
@@ -1166,11 +1166,11 @@
 ; 763  :     // Check if we get correct context & pin id
 ; 764  :     if ((pDevice == NULL) || (pDevice->cookie != GPIO_DEVICE_COOKIE))
 
-  00014	0a000024	 beq         |$cleanUp$37286|
+  00014	0a000024	 beq         |$cleanUp$37294|
   00018	e5942000	 ldr         r2, [r4]
   0001c	e59f3090	 ldr         r3, [pc, #0x90]
   00020	e1520003	 cmp         r2, r3
-  00024	1a000020	 bne         |$cleanUp$37286|
+  00024	1a000020	 bne         |$cleanUp$37294|
 
 ; 765  :     {
 ; 766  :         DEBUGMSG(ZONE_ERROR, (L"ERROR: OmapGpioClrBit: Incorrect context\r\n"));
@@ -1180,7 +1180,7 @@
 
   00028	e5943004	 ldr         r3, [r4, #4]
   0002c	e1510283	 cmp         r1, r3, lsl #5
-  00030	2a00001d	 bcs         |$cleanUp$37286|
+  00030	2a00001d	 bcs         |$cleanUp$37294|
 
 ; 770  :     {
 ; 771  :         volatile UINT *p = &pDevice->bank[bank].ppGpioRegs->DATAOUT;
@@ -1239,7 +1239,7 @@
 ; 781  :         rc = TRUE;
 
   000a8	e3a00001	 mov         r0, #1
-  000ac		 |$cleanUp$37286|
+  000ac		 |$cleanUp$37294|
 
 ; 782  :     }
 ; 783  : cleanUp:
@@ -1251,13 +1251,13 @@
   000b4		 |$LN22@OmapGpioCl|
   000b4		 |$LN23@OmapGpioCl|
   000b4	11223344	 DCD         0x11223344
-  000b8		 |$M37887|
+  000b8		 |$M37895|
 
 			 ENDP  ; |?OmapGpioClrBit@@YAHPAXI@Z|, OmapGpioClrBit
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37923| DCD	|$LN21@OmapGpioGe@2|
+|$T37931| DCD	|$LN21@OmapGpioGe@2|
 	DCD	0x40002b01
 ; Function compile flags: /Ogspy
 
@@ -1269,7 +1269,7 @@
 
   00000		 |$LN21@OmapGpioGe@2|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M37920|
+  00004		 |$M37928|
   00004	e1b04000	 movs        r4, r0
 
 ; 797  :     DWORD value = (DWORD) -1;
@@ -1289,11 +1289,11 @@
 ; 802  :     // Check if we get correct context & pin id
 ; 803  :     if ((pDevice == NULL) || (pDevice->cookie != GPIO_DEVICE_COOKIE))
 
-  00014	0a000020	 beq         |$cleanUp$37309|
+  00014	0a000020	 beq         |$cleanUp$37317|
   00018	e5942000	 ldr         r2, [r4]
   0001c	e59f3084	 ldr         r3, [pc, #0x84]
   00020	e1520003	 cmp         r2, r3
-  00024	1a00001c	 bne         |$cleanUp$37309|
+  00024	1a00001c	 bne         |$cleanUp$37317|
 
 ; 804  :     {
 ; 805  :         DEBUGMSG(ZONE_ERROR, (L"ERROR: OmapGpioGetBit: Incorrect context\r\n"));
@@ -1304,7 +1304,7 @@
 
   00028	e5943004	 ldr         r3, [r4, #4]
   0002c	e1510283	 cmp         r1, r3, lsl #5
-  00030	2a000019	 bcs         |$cleanUp$37309|
+  00030	2a000019	 bcs         |$cleanUp$37317|
 
 ; 810  :     {
 ; 811  :         volatile UINT *p = &pDevice->bank[bank].ppGpioRegs->DATAIN;
@@ -1349,7 +1349,7 @@
   00090	e3530000	 cmp         r3, #0
   00094	12850004	 addne       r0, r5, #4
   00098	1b000000	 blne        LeaveCriticalSection
-  0009c		 |$cleanUp$37309|
+  0009c		 |$cleanUp$37317|
 
 ; 818  :     }
 ; 819  : 
@@ -1363,13 +1363,13 @@
   000a8		 |$LN22@OmapGpioGe@2|
   000a8		 |$LN23@OmapGpioGe@2|
   000a8	11223344	 DCD         0x11223344
-  000ac		 |$M37921|
+  000ac		 |$M37929|
 
 			 ENDP  ; |?OmapGpioGetBit@@YAKPAXI@Z|, OmapGpioGetBit
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37932| DCD	|$LN5@OmapGpioPo@2|
+|$T37940| DCD	|$LN5@OmapGpioPo@2|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -1380,19 +1380,19 @@
 ; 1236 : {
 
   00000		 |$LN5@OmapGpioPo@2|
-  00000		 |$M37929|
+  00000		 |$M37937|
 
 ; 1237 :     UNREFERENCED_PARAMETER(hContext);
 ; 1238 : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M37930|
+  00004		 |$M37938|
 
 			 ENDP  ; |?OmapGpioPowerUp@@YAXPAX@Z|, OmapGpioPowerUp
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37939| DCD	|$LN5@OmapGpioPo@3|
+|$T37947| DCD	|$LN5@OmapGpioPo@3|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -1403,20 +1403,20 @@
 ; 1250 : {
 
   00000		 |$LN5@OmapGpioPo@3|
-  00000		 |$M37936|
+  00000		 |$M37944|
 
 ; 1251 :     UNREFERENCED_PARAMETER(hContext);
 ; 1252 : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M37937|
+  00004		 |$M37945|
 
 			 ENDP  ; |?OmapGpioPowerDown@@YAXPAX@Z|, OmapGpioPowerDown
 
 	IMPORT	|BSPGetGpioIrq|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37949| DCD	|$LN5@OmapGpioGe@3|
+|$T37957| DCD	|$LN5@OmapGpioGe@3|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -1428,7 +1428,7 @@
 
   00000		 |$LN5@OmapGpioGe@3|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M37946|
+  00004		 |$M37954|
 
 ; 1259 :     UNREFERENCED_PARAMETER(hContext);
 ; 1260 : 	//get the interrupt number associated with this pin
@@ -1441,7 +1441,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M37947|
+  00014		 |$M37955|
 
 			 ENDP  ; |?OmapGpioGetSystemIrq@@YAKPAXI@Z|, OmapGpioGetSystemIrq
 
@@ -1449,7 +1449,7 @@
 	IMPORT	|KernelIoControl|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37962| DCD	|$LN12@OmapGpioIn|
+|$T37970| DCD	|$LN12@OmapGpioIn|
 	DCD	0x40003502
 ; Function compile flags: /Ogspy
 
@@ -1462,7 +1462,7 @@
   00000		 |$LN12@OmapGpioIn|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M37959|
+  00008		 |$M37967|
   00008	e1a05003	 mov         r5, r3
   0000c	e1a04002	 mov         r4, r2
   00010	e3500000	 cmp         r0, #0
@@ -1511,7 +1511,7 @@
   00068	e58d6000	 str         r6, [sp]
   0006c	eb000000	 bl          KernelIoControl
   00070	e3500000	 cmp         r0, #0
-  00074	0a000007	 beq         |$failed$37474|
+  00074	0a000007	 beq         |$failed$37482|
 
 ; 1286 :     {
 ; 1287 :         goto failed;
@@ -1534,7 +1534,7 @@
 
   00090	13a00001	 movne       r0, #1
   00094	1a000009	 bne         |$LN8@OmapGpioIn|
-  00098		 |$failed$37474|
+  00098		 |$failed$37482|
 
 ; 1296 : 
 ; 1297 : failed:
@@ -1574,14 +1574,14 @@
   000cc	010100d8	 DCD         0x10100d8
   000d0		 |$LN15@OmapGpioIn|
   000d0	01010098	 DCD         0x1010098
-  000d4		 |$M37960|
+  000d4		 |$M37968|
 
 			 ENDP  ; |?OmapGpioInterruptInitialize@@YAHPAXKPAK0@Z|, OmapGpioInterruptInitialize
 
 	IMPORT	|InterruptMask|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37974| DCD	|$LN5@OmapGpioIn@2|
+|$T37982| DCD	|$LN5@OmapGpioIn@2|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -1593,7 +1593,7 @@
 
   00000		 |$LN5@OmapGpioIn@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M37971|
+  00004		 |$M37979|
 
 ; 1313 :     UNREFERENCED_PARAMETER(hContext);
 ; 1314 :     UNREFERENCED_PARAMETER(id);
@@ -1608,14 +1608,14 @@
 
   00010	e49de004	 ldr         lr, [sp], #4
   00014	e12fff1e	 bx          lr
-  00018		 |$M37972|
+  00018		 |$M37980|
 
 			 ENDP  ; |?OmapGpioInterruptMask@@YAXPAXKKH@Z|, OmapGpioInterruptMask
 
 	IMPORT	|InterruptDisable|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37982| DCD	|$LN6@OmapGpioIn@3|
+|$T37990| DCD	|$LN6@OmapGpioIn@3|
 	DCD	0x40001504
 ; Function compile flags: /Ogspy
 
@@ -1630,7 +1630,7 @@
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5000	 stmdb       sp!, {r12, lr}
   0000c	e24dd008	 sub         sp, sp, #8
-  00010		 |$M37979|
+  00010		 |$M37987|
   00010	e58d2018	 str         r2, [sp, #0x18]
 
 ; 1326 :     UNREFERENCED_PARAMETER(hContext);
@@ -1668,14 +1668,14 @@
   00050		 |$LN7@OmapGpioIn@3|
   00050		 |$LN8@OmapGpioIn@3|
   00050	010100d8	 DCD         0x10100d8
-  00054		 |$M37980|
+  00054		 |$M37988|
 
 			 ENDP  ; |?OmapGpioInterruptDisable@@YAXPAXKK@Z|, OmapGpioInterruptDisable
 
 	IMPORT	|InterruptDone|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37992| DCD	|$LN5@OmapGpioIn@4|
+|$T38000| DCD	|$LN5@OmapGpioIn@4|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -1687,7 +1687,7 @@
 
   00000		 |$LN5@OmapGpioIn@4|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M37989|
+  00004		 |$M37997|
 
 ; 1344 :     UNREFERENCED_PARAMETER(hContext);
 ; 1345 :     UNREFERENCED_PARAMETER(id);
@@ -1700,13 +1700,13 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M37990|
+  00014		 |$M37998|
 
 			 ENDP  ; |?OmapGpioInterruptDone@@YAXPAXKK@Z|, OmapGpioInterruptDone
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38004| DCD	|$LN7@OmapGpioIn@5|
+|$T38012| DCD	|$LN7@OmapGpioIn@5|
 	DCD	0x40001304
 ; Function compile flags: /Ogspy
 
@@ -1721,7 +1721,7 @@
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5000	 stmdb       sp!, {r12, lr}
   0000c	e24dd008	 sub         sp, sp, #8
-  00010		 |$M38001|
+  00010		 |$M38009|
   00010	e3530000	 cmp         r3, #0
 
 ; 1358 :     UNREFERENCED_PARAMETER(hContext);
@@ -1749,14 +1749,14 @@
   00044	010100a4	 DCD         0x10100a4
   00048		 |$LN10@OmapGpioIn@5|
   00048	010100a0	 DCD         0x10100a0
-  0004c		 |$M38002|
+  0004c		 |$M38010|
 
 			 ENDP  ; |?OmapGpioInterruptWakeUp@@YAHPAXKKH@Z|, OmapGpioInterruptWakeUp
 
 	EXPORT	|?GIO_Deinit@@YAHK@Z|			; GIO_Deinit
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38017| DCD	|$LN5@GIO_Deinit|
+|$T38025| DCD	|$LN5@GIO_Deinit|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -1768,7 +1768,7 @@
 
   00000		 |$LN5@GIO_Deinit|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M38014|
+  00004		 |$M38022|
 
 ; 1391 :     return OmapGpioDeinit((HANDLE)hDeviceContext);
 
@@ -1778,14 +1778,14 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M38015|
+  00010		 |$M38023|
 
 			 ENDP  ; |?GIO_Deinit@@YAHK@Z|, GIO_Deinit
 
 	EXPORT	|?GIO_Open@@YAKKKK@Z|			; GIO_Open
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38027| DCD	|$LN5@GIO_Open|
+|$T38035| DCD	|$LN5@GIO_Open|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -1796,7 +1796,7 @@
 ; 1399 : {
 
   00000		 |$LN5@GIO_Open|
-  00000		 |$M38024|
+  00000		 |$M38032|
 
 ; 1400 :     UNREFERENCED_PARAMETER(AccessCode);
 ; 1401 :     UNREFERENCED_PARAMETER(ShareMode);
@@ -1804,14 +1804,14 @@
 ; 1403 : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M38025|
+  00004		 |$M38033|
 
 			 ENDP  ; |?GIO_Open@@YAKKKK@Z|, GIO_Open
 
 	EXPORT	|?GIO_Close@@YAHK@Z|			; GIO_Close
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38036| DCD	|$LN5@GIO_Close|
+|$T38044| DCD	|$LN5@GIO_Close|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -1822,7 +1822,7 @@
 ; 1408 : {
 
   00000		 |$LN5@GIO_Close|
-  00000		 |$M38033|
+  00000		 |$M38041|
 
 ; 1409 :     UNREFERENCED_PARAMETER(hOpenContext);
 ; 1410 :     return TRUE;
@@ -1832,14 +1832,14 @@
 ; 1411 : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M38034|
+  00008		 |$M38042|
 
 			 ENDP  ; |?GIO_Close@@YAHK@Z|, GIO_Close
 
 	EXPORT	|?GIO_PowerDown@@YAXK@Z|		; GIO_PowerDown
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38046| DCD	|$LN7@GIO_PowerD|
+|$T38054| DCD	|$LN7@GIO_PowerD|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -1850,20 +1850,20 @@
 ; 1416 : {
 
   00000		 |$LN7@GIO_PowerD|
-  00000		 |$M38043|
+  00000		 |$M38051|
 
 ; 1417 :     OmapGpioPowerDown((HANDLE) hDeviceContext);
 ; 1418 : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M38044|
+  00004		 |$M38052|
 
 			 ENDP  ; |?GIO_PowerDown@@YAXK@Z|, GIO_PowerDown
 
 	EXPORT	|?GIO_PowerUp@@YAXK@Z|			; GIO_PowerUp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38056| DCD	|$LN7@GIO_PowerU|
+|$T38064| DCD	|$LN7@GIO_PowerU|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -1874,13 +1874,13 @@
 ; 1422 : {
 
   00000		 |$LN7@GIO_PowerU|
-  00000		 |$M38053|
+  00000		 |$M38061|
 
 ; 1423 :     OmapGpioPowerUp((HANDLE) hDeviceContext);
 ; 1424 : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M38054|
+  00004		 |$M38062|
 
 			 ENDP  ; |?GIO_PowerUp@@YAXK@Z|, GIO_PowerUp
 
@@ -1891,7 +1891,7 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38081| DCD	|$LN24@OmapGpioIn@6|
+|$T38089| DCD	|$LN24@OmapGpioIn@6|
 	DCD	0x40005601
 ; Function compile flags: /Ogspy
 
@@ -1903,7 +1903,7 @@
 
   00000		 |$LN24@OmapGpioIn@6|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
-  00004		 |$M38078|
+  00004		 |$M38086|
   00004	e1a07002	 mov         r7, r2
   00008	e1a08001	 mov         r8, r1
 
@@ -2089,7 +2089,7 @@
 
   00130	e5943004	 ldr         r3, [r4, #4]
   00134	e3a06001	 mov         r6, #1
-  00138		 |$cleanUp$37080|
+  00138		 |$cleanUp$37088|
   00138	e5873000	 str         r3, [r7]
 
 ; 293  : 
@@ -2112,7 +2112,7 @@
   00154		 |$LN25@OmapGpioIn@6|
   00154		 |$LN26@OmapGpioIn@6|
   00154	11223344	 DCD         0x11223344
-  00158		 |$M38079|
+  00158		 |$M38087|
 
 			 ENDP  ; |?OmapGpioInit@@YAHPBGPAPAXPAI@Z|, OmapGpioInit
 
@@ -2125,7 +2125,7 @@
 	IMPORT	|CeSafeCopyMemory|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38216| DCD	|$LN130@OmapGpioIo|
+|$T38224| DCD	|$LN130@OmapGpioIo|
 	DCD	0x4001cb02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2181,7 +2181,7 @@
   00000		 |$LN130@OmapGpioIo|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd058	 sub         sp, sp, #0x58
-  00008		 |$M38213|
+  00008		 |$M38221|
   00008	e1b05000	 movs        r5, r0
   0000c	e58d500c	 str         r5, [sp, #0xC]
   00010	e1a07003	 mov         r7, r3
@@ -2288,7 +2288,7 @@
   000dc	e1a00005	 mov         r0, r5
   000e0	eb000000	 bl          |?OmapGpioSetMode@@YAHPAXII@Z|
   000e4	e3a04001	 mov         r4, #1
-  000e8	ea000172	 b           |$cleanUp$37339|
+  000e8	ea000172	 b           |$cleanUp$37347|
   000ec		 |$LN28@OmapGpioIo|
 
 ; 966  :         {
@@ -2398,7 +2398,7 @@
   001b4	e1a00005	 mov         r0, r5
   001b8	eb000000	 bl          |?OmapGpioClrBit@@YAHPAXI@Z|
   001bc	e3a04001	 mov         r4, #1
-  001c0	ea00013c	 b           |$cleanUp$37339|
+  001c0	ea00013c	 b           |$cleanUp$37347|
   001c4		 |$LN44@OmapGpioIo|
 
 ; 911  :         }
@@ -2437,7 +2437,7 @@
   00200	e1a00005	 mov         r0, r5
   00204	eb000000	 bl          |?OmapGpioSetBit@@YAHPAXI@Z|
   00208	e3a04001	 mov         r4, #1
-  0020c	ea000129	 b           |$cleanUp$37339|
+  0020c	ea000129	 b           |$cleanUp$37347|
   00210		 |$LN54@OmapGpioIo|
 
 ; 866  :     {
@@ -2579,7 +2579,7 @@
 
 ; 910  :             break;
 
-  00318	ea0000e6	 b           |$cleanUp$37339|
+  00318	ea0000e6	 b           |$cleanUp$37347|
   0031c		 |$LN27@OmapGpioIo|
 
 ; 971  :         rc = TRUE;
@@ -2862,7 +2862,7 @@
   004f8	e5961000	 ldr         r1, [r6]
   004fc	e5953004	 ldr         r3, [r5, #4]
   00500	e1510283	 cmp         r1, r3, lsl #5
-  00504	2a00006b	 bcs         |$cleanUp$37339|
+  00504	2a00006b	 bcs         |$cleanUp$37347|
 
 ; 1153 :             {
 ; 1154 :                 CRITICAL_SECTION *pCs;
@@ -2926,7 +2926,7 @@
   00588	e3a00001	 mov         r0, #1
   0058c	eb000000	 bl          HalContextUpdateDirtyRegister
   00590	e3a04001	 mov         r4, #1
-  00594	ea000047	 b           |$cleanUp$37339|
+  00594	ea000047	 b           |$cleanUp$37347|
   00598		 |$LN10@OmapGpioIo|
 
 ; 1143 :             {
@@ -2937,7 +2937,7 @@
 
 ; 1145 :                 break;
 
-  005a0	ea000044	 b           |$cleanUp$37339|
+  005a0	ea000044	 b           |$cleanUp$37347|
   005a4		 |$LN15@OmapGpioIo|
 
 ; 1112 :             {
@@ -3129,7 +3129,7 @@
   00670	e2840004	 add         r0, r4, #4
   00674	eb000000	 bl          LeaveCriticalSection
   00678	e3a04001	 mov         r4, #1
-  0067c	ea00000d	 b           |$cleanUp$37339|
+  0067c	ea00000d	 b           |$cleanUp$37347|
   00680		 |$LN20@OmapGpioIo|
 
 ; 1086 :             {
@@ -3164,7 +3164,7 @@
 ; 1089 :                     L"IOCTL_GPIO_SET_POWER_STATE - Invalid parameter\r\n"
 ; 1090 :                     ));
 
-  006b8		 |$cleanUp$37339|
+  006b8		 |$cleanUp$37347|
 
 ; 1207 :     }
 ; 1208 : 
@@ -3240,14 +3240,14 @@
   00724	00220c14	 DCD         0x220c14
   00728		 |$LN156@OmapGpioIo|
   00728	11223344	 DCD         0x11223344
-  0072c		 |$M38214|
+  0072c		 |$M38222|
 
 			 ENDP  ; |?OmapGpioIoControl@@YAHPAXIPAEI1IPAK@Z|, OmapGpioIoControl
 
 	EXPORT	|?GIO_Init@@YAKPBGK@Z|			; GIO_Init
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38253| DCD	|$LN7@GIO_Init|
+|$T38261| DCD	|$LN7@GIO_Init|
 	DCD	0x40001102
 ; Function compile flags: /Ogspy
 
@@ -3260,7 +3260,7 @@
   00000		 |$LN7@GIO_Init|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M38250|
+  00008		 |$M38258|
 
 ; 1372 :     HANDLE devCtxt;
 ; 1373 :     UINT count;
@@ -3302,14 +3302,14 @@
   00038	e28dd008	 add         sp, sp, #8
   0003c	e8bd4010	 ldmia       sp!, {r4, lr}
   00040	e12fff1e	 bx          lr
-  00044		 |$M38251|
+  00044		 |$M38259|
 
 			 ENDP  ; |?GIO_Init@@YAKPBGK@Z|, GIO_Init
 
 	EXPORT	|?GIO_IOControl@@YAHKKPAEK0KPAK@Z|	; GIO_IOControl
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38266| DCD	|$LN5@GIO_IOCont|
+|$T38274| DCD	|$LN5@GIO_IOCont|
 	DCD	0x40000c02
 ; Function compile flags: /Ogspy
 
@@ -3322,7 +3322,7 @@
   00000		 |$LN5@GIO_IOCont|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M38263|
+  00008		 |$M38271|
 
 ; 1438 :     return OmapGpioIoControl(
 ; 1439 :         (HANDLE)hOpenContext,
@@ -3347,7 +3347,7 @@
   00024	e28dd00c	 add         sp, sp, #0xC
   00028	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0002c	e12fff1e	 bx          lr
-  00030		 |$M38264|
+  00030		 |$M38272|
 
 			 ENDP  ; |?GIO_IOControl@@YAHKKPAEK0KPAK@Z|, GIO_IOControl
 

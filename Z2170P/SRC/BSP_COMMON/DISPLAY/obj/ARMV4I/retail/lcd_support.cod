@@ -81,7 +81,7 @@
 ; File c:\wince600\platform\z2170p\src\bsp_common\display\lcd_support.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45687| DCD	|$LN5@LcdInitGpi|
+|$T45690| DCD	|$LN5@LcdInitGpi|
 	DCD	0x40001901
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -99,7 +99,7 @@
 
   00000		 |$LN5@LcdInitGpi|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M45684|
+  00004		 |$M45687|
 
 ; 17   :     // Configure Backlight/Power pins as outputs
 ; 18   :     RETAILMSG(1,(L"LcdInitGpio\n\r"));
@@ -169,7 +169,7 @@
   0005c	00000000	 DCD         |g_hGpio|
   00060		 |$LN8@LcdInitGpi|
   00060	00000000	 DCD         |??_C@_1BM@CAGMDMLN@?$AAL?$AAc?$AAd?$AAI?$AAn?$AAi?$AAt?$AAG?$AAp?$AAi?$AAo?$AA?6?$AA?$AN?$AA?$AA@|
-  00064		 |$M45685|
+  00064		 |$M45688|
 
 			 ENDP  ; |LcdInitGpio|
 
@@ -177,7 +177,7 @@
 	IMPORT	|GPIOClose|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45699| DCD	|$LN5@LcdDeinitG|
+|$T45702| DCD	|$LN5@LcdDeinitG|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 
@@ -189,7 +189,7 @@
 
   00000		 |$LN5@LcdDeinitG|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M45696|
+  00004		 |$M45699|
 
 ; 46   : 	// Close GPIO driver
 ; 47   :     GPIOClose(g_hGpio);
@@ -210,7 +210,7 @@
   0001c		 |$LN6@LcdDeinitG|
   0001c		 |$LN7@LcdDeinitG|
   0001c	00000000	 DCD         |g_hGpio|
-  00020		 |$M45697|
+  00020		 |$M45700|
 
 			 ENDP  ; |LcdDeinitGpio|
 
@@ -218,7 +218,7 @@
 	IMPORT	|GPIOClrBit|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45709| DCD	|$LN7@LcdPowerCo|
+|$T45712| DCD	|$LN7@LcdPowerCo|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -230,7 +230,7 @@
 
   00000		 |$LN7@LcdPowerCo|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M45706|
+  00004		 |$M45709|
   00004	e3500000	 cmp         r0, #0
 
 ; 54   :     if (!bEnable)
@@ -265,14 +265,14 @@
   00030		 |$LN8@LcdPowerCo|
   00030		 |$LN9@LcdPowerCo|
   00030	00000000	 DCD         |g_hGpio|
-  00034		 |$M45707|
+  00034		 |$M45710|
 
 			 ENDP  ; |LcdPowerControl|
 
 	EXPORT	|LcdResBControl|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45719| DCD	|$LN7@LcdResBCon|
+|$T45722| DCD	|$LN7@LcdResBCon|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -284,7 +284,7 @@
 
   00000		 |$LN7@LcdResBCon|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M45716|
+  00004		 |$M45719|
   00004	e3500000	 cmp         r0, #0
 
 ; 66   :     if (bEnable)
@@ -319,14 +319,14 @@
   00030		 |$LN8@LcdResBCon|
   00030		 |$LN9@LcdResBCon|
   00030	00000000	 DCD         |g_hGpio|
-  00034		 |$M45717|
+  00034		 |$M45720|
 
 			 ENDP  ; |LcdResBControl|
 
 	EXPORT	|LcdIniControl|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45728| DCD	|$LN7@LcdIniCont|
+|$T45731| DCD	|$LN7@LcdIniCont|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -337,7 +337,7 @@
 ; 77   : {
 
   00000		 |$LN7@LcdIniCont|
-  00000		 |$M45725|
+  00000		 |$M45728|
 
 ; 78   :     if (!bEnable)
 ; 79   :     {
@@ -350,14 +350,14 @@
 ; 86   : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M45726|
+  00004		 |$M45729|
 
 			 ENDP  ; |LcdIniControl|
 
 	EXPORT	|LcdDviEnableControl|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45735| DCD	|$LN7@LcdDviEnab|
+|$T45738| DCD	|$LN7@LcdDviEnab|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -368,7 +368,7 @@
 ; 90   : {
 
   00000		 |$LN7@LcdDviEnab|
-  00000		 |$M45732|
+  00000		 |$M45735|
 
 ; 91   :     if (!bEnable)
 ; 92   :     {
@@ -381,7 +381,7 @@
 ; 99   : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M45733|
+  00004		 |$M45736|
 
 			 ENDP  ; |LcdDviEnableControl|
 

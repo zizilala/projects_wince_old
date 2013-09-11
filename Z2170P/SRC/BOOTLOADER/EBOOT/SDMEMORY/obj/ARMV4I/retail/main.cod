@@ -358,7 +358,7 @@
 ; File c:\wince600\platform\z2170p\src\inc\bsp_padcfg.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48033| DCD	|$LN9@ConfigureP|
+|$T48035| DCD	|$LN9@ConfigureP|
 	DCD	0x40001601
 ; Function compile flags: /Ogspy
 
@@ -370,7 +370,7 @@
 
   00000		 |$LN9@ConfigureP|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M48030|
+  00004		 |$M48032|
   00004	e1a04000	 mov         r4, r0
 
 ; 582  :     int i=0;
@@ -409,7 +409,7 @@
 
   00050	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   00054	e12fff1e	 bx          lr
-  00058		 |$M48031|
+  00058		 |$M48033|
 
 			 ENDP  ; |ConfigurePadArray|
 
@@ -420,7 +420,7 @@
 ; File c:\wince600\platform\z2170p\src\bootloader\eboot\main.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48040| DCD	|$LN5@BSPGpioIni|
+|$T48042| DCD	|$LN5@BSPGpioIni|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -432,7 +432,7 @@
 
   00000		 |$LN5@BSPGpioIni|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M48037|
+  00004		 |$M48039|
 
 ; 98   :    BSPInsertGpioDevice(0,&Omap_Gpio,NULL);
 
@@ -458,7 +458,7 @@
   0002c	00000000	 DCD         |Tps659xx_Gpio|
   00030		 |$LN8@BSPGpioIni|
   00030	00000000	 DCD         |Omap_Gpio|
-  00034		 |$M48038|
+  00034		 |$M48040|
 
 			 ENDP  ; |BSPGpioInit|
 
@@ -469,7 +469,7 @@
 	IMPORT	|Get_CPUVersion|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48052| DCD	|$LN5@main|
+|$T48054| DCD	|$LN5@main|
 	DCD	0x40001101
 ; Function compile flags: /Ogspy
 
@@ -481,7 +481,7 @@
 
   00000		 |$LN5@main|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M48049|
+  00004		 |$M48051|
 
 ; 104  : 	UINT32 CpuRevision;
 ; 105  : 
@@ -522,7 +522,7 @@
   00040		 |$LN6@main|
   00040		 |$LN7@main|
   00040	00000000	 DCD         |g_CPUFamily|
-  00044		 |$M48050|
+  00044		 |$M48052|
 
 			 ENDP  ; |main|
 
@@ -543,8 +543,8 @@
 	EXPORT	|??_C@_1M@MMBAGLLJ@?$AAE?$AAS?$AA2?$AA?4?$AA1?$AA?$AA@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1M@HEKMAMNM@?$AAE?$AAS?$AA2?$AA?4?$AA0?$AA?$AA@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1M@PKCDALDP@?$AAE?$AAS?$AA1?$AA?4?$AA0?$AA?$AA@| [ DATA ] ; `string'
-	EXPORT	|??_C@_08KLFPEOPI@18?303?316?$AA@| [ DATA ] ; `string'
-	EXPORT	|??_C@_0M@GEHNJIGI@Sep?5?55?52013?$AA@| [ DATA ] ; `string'
+	EXPORT	|??_C@_08HJBLOJOO@17?310?319?$AA@| [ DATA ] ; `string'
+	EXPORT	|??_C@_0M@CACDINMO@Sep?511?52013?$AA@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1IO@IGLADHOM@?$AAZ?$AAE?$AAB?$AAE?$AAX?$AA?5?$AAW?$AAi?$AAn?$AAd?$AAo?$AAw?$AAs?$AA?5?$AAC?$AAE?$AA?5?$AAE?$AAB?$AAO?$AAO?$AAT?$AA?5?$AAf?$AAo?$AAr?$AA?5?$AAZ?$AA?9?$AA2?$AA1?$AA7@| [ DATA ] ; `string'
 	IMPORT	|TWLReadIDCode|
 	IMPORT	|GPIOSetBit|
@@ -564,7 +564,7 @@
 ; File c:\wince600\platform\z2170p\src\inc\bsp_padcfg.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48110| DCD	|$LN49@OEMPlatfor|
+|$T48112| DCD	|$LN49@OEMPlatfor|
 	DCD	0x4000d702
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -656,10 +656,10 @@
 	DCB	"1", 0x0, ".", 0x0, "0", 0x0, 0x0, 0x0	; `string'
 
   00000			 AREA	 |.rdata|, DATA, READONLY
-|??_C@_08KLFPEOPI@18?303?316?$AA@| DCB "18:03:16", 0x0	; `string'
+|??_C@_08HJBLOJOO@17?310?319?$AA@| DCB "17:10:19", 0x0	; `string'
 
   00000			 AREA	 |.rdata|, DATA, READONLY
-|??_C@_0M@GEHNJIGI@Sep?5?55?52013?$AA@| DCB "Sep  5 2013", 0x0 ; `string'
+|??_C@_0M@CACDINMO@Sep?511?52013?$AA@| DCB "Sep 11 2013", 0x0 ; `string'
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1IO@IGLADHOM@?$AAZ?$AAE?$AAB?$AAE?$AAX?$AA?5?$AAW?$AAi?$AAn?$AAd?$AAo?$AAw?$AAs?$AA?5?$AAC?$AAE?$AA?5?$AAE?$AAB?$AAO?$AAO?$AAT?$AA?5?$AAf?$AAo?$AAr?$AA?5?$AAZ?$AA?9?$AA2?$AA1?$AA7@| DCB "Z"
@@ -687,7 +687,7 @@
   00000		 |$LN49@OEMPlatfor|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M48107|
+  00008		 |$M48109|
 
 ; 125  :     OMAP_GPTIMER_REGS *pTimerRegs;
 ; 126  :     UINT32 CpuRevision, version;
@@ -1161,16 +1161,16 @@
   00350		 |$LN71@OEMPlatfor|
   00350	00000000	 DCD         |??_C@_1IO@IGLADHOM@?$AAZ?$AAE?$AAB?$AAE?$AAX?$AA?5?$AAW?$AAi?$AAn?$AAd?$AAo?$AAw?$AAs?$AA?5?$AAC?$AAE?$AA?5?$AAE?$AAB?$AAO?$AAO?$AAT?$AA?5?$AAf?$AAo?$AAr?$AA?5?$AAZ?$AA?9?$AA2?$AA1?$AA7@|
   00354		 |$LN72@OEMPlatfor|
-  00354	00000000	 DCD         |??_C@_0M@GEHNJIGI@Sep?5?55?52013?$AA@|
+  00354	00000000	 DCD         |??_C@_0M@CACDINMO@Sep?511?52013?$AA@|
   00358		 |$LN73@OEMPlatfor|
-  00358	00000000	 DCD         |??_C@_08KLFPEOPI@18?303?316?$AA@|
-  0035c		 |$M48108|
+  00358	00000000	 DCD         |??_C@_08HJBLOJOO@17?310?319?$AA@|
+  0035c		 |$M48110|
 
 			 ENDP  ; |OEMPlatformInit|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48143| DCD	|$LN8@OEMPlatfor@2|
+|$T48145| DCD	|$LN8@OEMPlatfor@2|
 	DCD	0x40003901
 ; Function compile flags: /Ogspy
 
@@ -1182,7 +1182,7 @@
 
   00000		 |$LN8@OEMPlatfor@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M48140|
+  00004		 |$M48142|
   00004	e3a03312	 mov         r3, #0x12, 6
 
 ; 276  :     OMAP_GPTIMER_REGS *pTimerRegs = OALPAtoUA(OMAP_GPTIMER1_REGS_PA);
@@ -1302,7 +1302,7 @@
 
   000dc	e49de004	 ldr         lr, [sp], #4
   000e0	e12fff1e	 bx          lr
-  000e4		 |$M48141|
+  000e4		 |$M48143|
 
 			 ENDP  ; |OEMPlatformDeinit|
 
@@ -1326,11 +1326,11 @@
 	IMPORT	|__security_check_cookie|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48199| DCD	|$LN62@OEMMultiBi|
+|$T48201| DCD	|$LN62@OEMMultiBi|
 	DCD	0xc000a302
 
   00000			 AREA	 |.xdata|, DATA
-|$T48195| DCD	0xffffffdc
+|$T48197| DCD	0xffffffdc
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1CK@FDDKFJJE@?$AA?9?$AAO?$AAE?$AAM?$AAM?$AAu?$AAl?$AAt?$AAi?$AAB?$AAi?$AAn?$AAN?$AAo?$AAt?$AAi?$AAf?$AAy?$AA?$AN?$AA?6?$AA?$AA@| DCB "-"
@@ -1413,7 +1413,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T48195|
+  00004	00000000	 DCD         |$T48197|
 
   00008		 |OEMMultiBinNotify| PROC
 
@@ -1422,7 +1422,7 @@
   00008		 |$LN62@OEMMultiBi|
   00008	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
   0000c	e24ddf43	 sub         sp, sp, #0x43, 30
-  00010		 |$M48196|
+  00010		 |$M48198|
   00010	e1a06000	 mov         r6, r0
   00014	e59f3274	 ldr         r3, [pc, #0x274]
   00018	e5933000	 ldr         r3, [r3]
@@ -1791,7 +1791,7 @@
   00238	159f0028	 ldrne       r0, [pc, #0x28]
   0023c	1b000000	 blne        NKDbgPrintfW
   00240	e5953440	 ldr         r3, [r5, #0x440]
-  00244		 |$cleanUp$47815|
+  00244		 |$cleanUp$47817|
 
 ; 894  : 	}
 ; 895  :     OALMSG(OAL_INFO, (L"-OEMMultiBinNotify\r\n"));
@@ -1832,7 +1832,7 @@
   0028c	00000000	 DCD         |dpCurSettings|
   00290		 |$LN75@OEMMultiBi|
   00290	00000000	 DCD         |__security_cookie|
-  00294		 |$M48197|
+  00294		 |$M48199|
 
 			 ENDP  ; |OEMMultiBinNotify|
 
@@ -1840,7 +1840,7 @@
 	EXPORT	|??_C@_1GC@BMCFFGLH@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAO?$AAE?$AAM?$AAM?$AAa?$AAp?$AAM?$AAe?$AAm?$AAA?$AAd?$AAd?$AAr?$AA?3?$AA?5?$AAI?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAd?$AAo@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48227| DCD	|$LN14@OEMMapMemA|
+|$T48229| DCD	|$LN14@OEMMapMemA|
 	DCD	0x40002701
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1864,7 +1864,7 @@
 
   00000		 |$LN14@OEMMapMemA|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M48224|
+  00004		 |$M48226|
   00004	e1a02001	 mov         r2, r1
 
 ; 914  :     UINT8 *pAddress = NULL;
@@ -1975,7 +1975,7 @@
   00094	00000000	 DCD         |dpCurSettings|
   00098		 |$LN18@OEMMapMemA|
   00098	00000000	 DCD         |g_eboot|
-  0009c		 |$M48225|
+  0009c		 |$M48227|
 
 			 ENDP  ; |OEMMapMemAddr|
 
@@ -1984,7 +1984,7 @@
 	EXPORT	|??_C@_1DE@JMLJAABG@?$AA?$CL?$AAO?$AAE?$AAM?$AAI?$AAs?$AAF?$AAl?$AAa?$AAs?$AAh?$AAA?$AAd?$AAd?$AAr?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48246| DCD	|$LN13@OEMIsFlash|
+|$T48248| DCD	|$LN13@OEMIsFlash|
 	DCD	0x40002001
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2012,7 +2012,7 @@
 
   00000		 |$LN13@OEMIsFlash|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M48243|
+  00004		 |$M48245|
   00004	e1a01000	 mov         r1, r0
 
 ; 972  :     BOOL rc;
@@ -2092,7 +2092,7 @@
   00078	00000000	 DCD         |??_C@_1DE@JMLJAABG@?$AA?$CL?$AAO?$AAE?$AAM?$AAI?$AAs?$AAF?$AAl?$AAa?$AAs?$AAh?$AAA?$AAd?$AAd?$AAr?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@|
   0007c		 |$LN18@OEMIsFlash|
   0007c	00000000	 DCD         |dpCurSettings|
-  00080		 |$M48244|
+  00080		 |$M48246|
 
 			 ENDP  ; |OEMIsFlashAddr|
 
@@ -2101,7 +2101,7 @@
 	IMPORT	|BLSDCardReadData|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48263| DCD	|$LN9@OEMReadDat|
+|$T48265| DCD	|$LN9@OEMReadDat|
 	DCD	0x40001201
 ; Function compile flags: /Ogspy
 
@@ -2113,7 +2113,7 @@
 
   00000		 |$LN9@OEMReadDat|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M48260|
+  00004		 |$M48262|
   00004	e1a02000	 mov         r2, r0
 
 ; 1011 :     BOOL rc = FALSE;
@@ -2163,7 +2163,7 @@
   00044		 |$LN10@OEMReadDat|
   00044		 |$LN11@OEMReadDat|
   00044	00000000	 DCD         |g_eboot|
-  00048		 |$M48261|
+  00048		 |$M48263|
 
 			 ENDP  ; |OEMReadData|
 
@@ -2171,7 +2171,7 @@
 	EXPORT	|??_C@_13JOFGPIOO@?$AA?4?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48272| DCD	|$LN5@OEMShowPro@2|
+|$T48274| DCD	|$LN5@OEMShowPro@2|
 	DCD	0x40000601
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2186,7 +2186,7 @@
 
   00000		 |$LN5@OEMShowPro@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M48269|
+  00004		 |$M48271|
 
 ; 1038 :     UNREFERENCED_PARAMETER(packetNumber);
 ; 1039 :     RETAILMSG(1,(TEXT(".")));
@@ -2201,14 +2201,14 @@
   00014		 |$LN6@OEMShowPro@2|
   00014		 |$LN7@OEMShowPro@2|
   00014	00000000	 DCD         |??_C@_13JOFGPIOO@?$AA?4?$AA?$AA@|
-  00018		 |$M48270|
+  00018		 |$M48272|
 
 			 ENDP  ; |OEMShowProgress|
 
 	EXPORT	|OALGetTickCount|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48284| DCD	|$LN5@OALGetTick|
+|$T48286| DCD	|$LN5@OALGetTick|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -2220,7 +2220,7 @@
 
   00000		 |$LN5@OALGetTick|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M48281|
+  00004		 |$M48283|
   00004	e3a03312	 mov         r3, #0x12, 6
 
 ; 1050 :     OMAP_GPTIMER_REGS *pGPTimerRegs = OALPAtoUA(OMAP_GPTIMER1_REGS_PA);
@@ -2238,14 +2238,14 @@
 
   0001c	e49de004	 ldr         lr, [sp], #4
   00020	e12fff1e	 bx          lr
-  00024		 |$M48282|
+  00024		 |$M48284|
 
 			 ENDP  ; |OALGetTickCount|
 
 	EXPORT	|OEMKitlGetSecs|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48298| DCD	|$LN7@OEMKitlGet|
+|$T48300| DCD	|$LN7@OEMKitlGet|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -2257,7 +2257,7 @@
 
   00000		 |$LN7@OEMKitlGet|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M48295|
+  00004		 |$M48297|
   00004	e3a03312	 mov         r3, #0x12, 6
 
 ; 1064 :     return OALGetTickCount()/1000;
@@ -2278,14 +2278,14 @@
   00030		 |$LN8@OEMKitlGet|
   00030		 |$LN9@OEMKitlGet|
   00030	10624dd3	 DCD         0x10624dd3
-  00034		 |$M48296|
+  00034		 |$M48298|
 
 			 ENDP  ; |OEMKitlGetSecs|
 
 	EXPORT	|GetDisplayResolutionFromBootArgs|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48308| DCD	|$LN5@GetDisplay|
+|$T48310| DCD	|$LN5@GetDisplay|
 	DCD	0x40000500
 ; Function compile flags: /Ogspy
 
@@ -2296,7 +2296,7 @@
 ; 1072 : {
 
   00000		 |$LN5@GetDisplay|
-  00000		 |$M48305|
+  00000		 |$M48307|
 
 ; 1073 :     *pDispRes=g_bootCfg.displayRes;
 
@@ -2310,14 +2310,14 @@
   00010		 |$LN6@GetDisplay|
   00010		 |$LN7@GetDisplay|
   00010	00000000	 DCD         |g_bootCfg|
-  00014		 |$M48306|
+  00014		 |$M48308|
 
 			 ENDP  ; |GetDisplayResolutionFromBootArgs|
 
 	EXPORT	|IsDVIMode|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48322| DCD	|$LN9@IsDVIMode|
+|$T48324| DCD	|$LN9@IsDVIMode|
 	DCD	0x40000700
 ; Function compile flags: /Ogspy
 
@@ -2328,7 +2328,7 @@
 ; 1078 : {
 
   00000		 |$LN9@IsDVIMode|
-  00000		 |$M48319|
+  00000		 |$M48321|
 
 ; 1079 :     DWORD dispRes;    
 ; 1080 :     GetDisplayResolutionFromBootArgs(&dispRes);
@@ -2353,14 +2353,14 @@
   00018		 |$LN10@IsDVIMode|
   00018		 |$LN11@IsDVIMode|
   00018	00000000	 DCD         |g_bootCfg|
-  0001c		 |$M48320|
+  0001c		 |$M48322|
 
 			 ENDP  ; |IsDVIMode|
 
 	EXPORT	|ConvertCAtoPA|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48334| DCD	|$LN5@ConvertCAt|
+|$T48336| DCD	|$LN5@ConvertCAt|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -2372,7 +2372,7 @@
 
   00000		 |$LN5@ConvertCAt|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M48331|
+  00004		 |$M48333|
 
 ; 1090 :     return OALVAtoPA(va);
 
@@ -2382,7 +2382,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M48332|
+  00010		 |$M48334|
 
 			 ENDP  ; |ConvertCAtoPA|
 
@@ -2405,7 +2405,7 @@
 	IMPORT	|memcpy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48389| DCD	|$LN66@OEMPreDown|
+|$T48391| DCD	|$LN66@OEMPreDown|
 	DCD	0x4000e801
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2477,7 +2477,7 @@
 
   00000		 |$LN66@OEMPreDown|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
-  00004		 |$M48386|
+  00004		 |$M48388|
 
 ; 410  :     ULONG rc = (ULONG) BL_ERROR;
 ; 411  :     BSP_ARGS *pArgs = OALCAtoUA(IMAGE_SHARE_ARGS_CA);
@@ -2890,7 +2890,7 @@
   0022c	e59f7128	 ldr         r7, [pc, #0x128]
   00230	e59f8120	 ldr         r8, [pc, #0x120]
   00234	e3a00000	 mov         r0, #0
-  00238		 |$retryBootMenu$47708|
+  00238		 |$retryBootMenu$47710|
 
 ; 541  :    
 ; 542  : retryBootMenu:
@@ -3066,7 +3066,7 @@
 
 ; 596  :         goto retryBootMenu; 
 
-  0034c	eaffffb9	 b           |$retryBootMenu$47708|
+  0034c	eaffffb9	 b           |$retryBootMenu$47710|
   00350		 |$LN1@OEMPreDown|
 
 ; 597  :     }   
@@ -3113,7 +3113,7 @@
   00398	480022f0	 DCD         0x480022f0
   0039c		 |$LN85@OEMPreDown|
   0039c	48307200	 DCD         0x48307200
-  003a0		 |$M48387|
+  003a0		 |$M48389|
 
 			 ENDP  ; |OEMPreDownload|
 
@@ -3130,7 +3130,7 @@
 	IMPORT	|BLEthConfig|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48461| DCD	|$LN76@OEMLaunch|
+|$T48463| DCD	|$LN76@OEMLaunch|
 	DCD	0x40006f02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -3230,7 +3230,7 @@
   00000		 |$LN76@OEMLaunch|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M48458|
+  00008		 |$M48460|
   00008	e1a09003	 mov         r9, r3
   0000c	e1a07002	 mov         r7, r2
   00010	e1a08000	 mov         r8, r0
@@ -3354,13 +3354,13 @@
 
   000a0	e5953440	 ldr         r3, [r5, #0x440]
   000a4	e3130001	 tst         r3, #1
-  000a8	0a000035	 beq         |$cleanUp$47748|
+  000a8	0a000035	 beq         |$cleanUp$47750|
   000ac	e59f00f0	 ldr         r0, [pc, #0xF0]
   000b0	eb000000	 bl          NKDbgPrintfW
 
 ; 656  :                         goto cleanUp;
 
-  000b4	ea000032	 b           |$cleanUp$47748|
+  000b4	ea000032	 b           |$cleanUp$47750|
   000b8		 |$LN19@OEMLaunch|
 
 ; 675  :                     break;
@@ -3538,7 +3538,7 @@
   00178	e1a00004	 mov         r0, r4
   0017c	eb000000	 bl          OALVAtoPA
   00180	eb000000	 bl          JumpTo
-  00184		 |$cleanUp$47748|
+  00184		 |$cleanUp$47750|
 
 ; 761  : 
 ; 762  : cleanUp:
@@ -3571,7 +3571,7 @@
   001b4	00000000	 DCD         |g_eboot|
   001b8		 |$LN88@OEMLaunch|
   001b8	00000000	 DCD         |dpCurSettings|
-  001bc		 |$M48459|
+  001bc		 |$M48461|
 
 			 ENDP  ; |OEMLaunch|
 

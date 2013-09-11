@@ -89,7 +89,7 @@ typedef enum OMAP_LCD_DVI_RES {
 //Backlight enum Ray 13-07-26
 //------------------------------------------------------------------------
 
-typedef enum _OMAP_LCM_BACKLIGHT {
+typedef enum OMAP_LCM_BACKLIGHT {
      BACKLIGHT_ON=0,
 	 BACKLIGHT_OFF,
 	 BACKLIGHT_EXIT=2
@@ -98,7 +98,7 @@ typedef enum _OMAP_LCM_BACKLIGHT {
 //SD to Flash enum Ray 13-09-10
 //------------------------------------------------------------------------
 
-typedef enum _OMAP_SD_TO_FLASH{
+typedef enum OMAP_SD_TO_FLASH{
 	READING=0,
 	WRITING,
 	FLASH_EXIT=2

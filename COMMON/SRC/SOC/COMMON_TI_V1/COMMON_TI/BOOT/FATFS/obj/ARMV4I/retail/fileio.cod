@@ -1269,9 +1269,9 @@
 ; 581  :     UINT8 * pSector = (UINT8 *)Sector;
 ; 582  :     int status;
 ; 583  :     int i;
-; 584  :     UINT32 boot_sector = 0;
-; 585  :     UCHAR partition_type = 0;
-; 586  :     int ExtendedPartitionDepth = 0;
+; 584  :     UINT32 boot_sector          = 0;
+; 585  :     UCHAR partition_type        = 0;
+; 586  :     int ExtendedPartitionDepth  = 0;
 ; 587  :     int PartitionTableEntryCount = 4;
 ; 588  :         
 ; 589  :     // initialize device driver
@@ -2336,7 +2336,7 @@
 
   00000		 |FileIoRead| PROC
 
-; 1077 : {
+; 1080 : {
 
   00000		 |$LN28@FileIoRead@2|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
@@ -2346,85 +2346,84 @@
   0000c	e1a05001	 mov         r5, r1
   00010	e1a08000	 mov         r8, r0
 
-; 1078 :     int status;
-; 1079 :     UINT8 * s;
-; 1080 : 
-; 1081 :     UINT32 numSectorsToRead = 0;
-; 1082 :             
-; 1083 :     while (Count)
+; 1081 :     int status;
+; 1082 :     UINT8 * s;
+; 1083 :     UINT32 numSectorsToRead = 0;
+; 1084 :             
+; 1085 :     while (Count)
 
   00014	0a000038	 beq         |$LN11@FileIoRead@2|
   00018	e59f90e8	 ldr         r9, [pc, #0xE8]
   0001c	e3a0ac02	 mov         r10, #2, 24
   00020		 |$LL12@FileIoRead@2|
 
-; 1084 :     {
-; 1085 :         // create pointer to start of valid data in buffer
-; 1086 :         s = pFile->buffer + (SECTOR_SIZE - pFile->bytes_in_buffer); 
+; 1086 :     {
+; 1087 :         // create pointer to start of valid data in buffer
+; 1088 :         s = pFile->buffer + (SECTOR_SIZE - pFile->bytes_in_buffer); 
 
   00020	e595e020	 ldr         lr, [r5, #0x20]
   00024	e045e00e	 sub         lr, r5, lr
   00028	e28e2f89	 add         r2, lr, #0x89, 30
   0002c		 |$LL10@FileIoRead@2|
 
-; 1087 : 
-; 1088 :         // if any bytes are in the buffer copy them to destination
-; 1089 :         while (Count && pFile->bytes_in_buffer)
+; 1089 : 
+; 1090 :         // if any bytes are in the buffer copy them to destination
+; 1091 :         while (Count && pFile->bytes_in_buffer)
 
   0002c	e595e020	 ldr         lr, [r5, #0x20]
   00030	e35e0000	 cmp         lr, #0
   00034	0a000019	 beq         |$LN25@FileIoRead@2|
 
-; 1090 :         {
-; 1091 :             *pDest = *s;
+; 1092 :         {
+; 1093 :             *pDest = *s;
 
   00038	e4d2e001	 ldrb        lr, [r2], #1
 
-; 1092 :             pDest++;
-; 1093 :             s++;
-; 1094 :             Count--;
+; 1094 :             pDest++;
+; 1095 :             s++;
+; 1096 :             Count--;
 
   0003c	e2544001	 subs        r4, r4, #1
   00040	e4c6e001	 strb        lr, [r6], #1
 
-; 1095 :             pFile->bytes_in_buffer--;
+; 1097 :             pFile->bytes_in_buffer--;
 
   00044	e5953020	 ldr         r3, [r5, #0x20]
   00048	e2433001	 sub         r3, r3, #1
   0004c	e5853020	 str         r3, [r5, #0x20]
   00050	1afffff5	 bne         |$LL10@FileIoRead@2|
 
-; 1131 :                 return status;
-; 1132 : 
-; 1133 :             pDest += (SECTOR_SIZE * numSectorsToRead);
-; 1134 :             Count -= (SECTOR_SIZE * numSectorsToRead);
+; 1133 :                 return status;
+; 1134 : 
+; 1135 :             pDest += (SECTOR_SIZE * numSectorsToRead);
+; 1136 :             Count -= (SECTOR_SIZE * numSectorsToRead);
 
   00054	ea000011	 b           |$LN25@FileIoRead@2|
   00058		 |$LL8@FileIoRead@2|
 
-; 1096 :         }
-; 1097 : 
-; 1098 :         // Note: After the above while loop, the read is sector aligned
+; 1098 :         }
 ; 1099 : 
-; 1100 :         // if Count is at least one sector size then read sector directly into caller's buffer
-; 1101 :         while (Count >= SECTOR_SIZE)
-; 1102 :         {
-; 1103 :             if (Count < 2*SECTOR_SIZE)
+; 1100 :         // Note: After the above while loop, the read is sector aligned
+; 1101 : 
+; 1102 :         // if Count is at least one sector size then read sector directly into caller's buffer
+; 1103 :         while (Count >= SECTOR_SIZE)
+; 1104 :         {
+; 1105 :             if (Count < 2*SECTOR_SIZE)
 
   00058	e3540b01	 cmp         r4, #1, 22
   0005c	3a000012	 bcc         |$LN18@FileIoRead@2|
 
-; 1111 :     
-; 1112 :                 break;
-; 1113 :             }
-; 1114 : 
-; 1115 :             // Condition for multi sector read is met 
-; 1116 :             // read sectors in the cluster
-; 1117 :             numSectorsToRead = Count/SECTOR_SIZE;  // number of sectors to read
-; 1118 : 
-; 1119 :             // make sure numSectorsToRead is within the current cluster's limit
-; 1120 :             // number of sectors remain in cluster to be read
-; 1121 :             if (numSectorsToRead + pFile->current_sector_in_cluster > FilesysInfo.BiosParameterBlock.sectors_per_cluster)
+; 1113 :     
+; 1114 :                 break;
+; 1115 :             }
+; 1116 : 
+; 1117 :             // Condition for multi sector read is met 
+; 1118 :             // read sectors in the cluster
+; 1119 :             numSectorsToRead = Count/SECTOR_SIZE;  // number of sectors to read
+; 1120 : 
+; 1121 :             // make sure numSectorsToRead is within the current cluster's limit
+; 1122 :             // number of sectors remain in cluster to be read
+; 1123 :             if (numSectorsToRead + pFile->current_sector_in_cluster > FilesysInfo.BiosParameterBlock.sectors_per_cluster)
 
   00060	e1d521bc	 ldrh        r2, [r5, #0x1C]
   00064	e5d91002	 ldrb        r1, [r9, #2]
@@ -2432,17 +2431,17 @@
   0006c	e0823007	 add         r3, r2, r7
   00070	e1530001	 cmp         r3, r1
 
-; 1122 :             {
-; 1123 :                 // TODO: what if this is the last cluster of the file.
-; 1124 :                 //       in that case, the cluster may be partially filled.
-; 1125 :                 //Read all the remaining sectors in the cluster
-; 1126 :                 numSectorsToRead = (FilesysInfo.BiosParameterBlock.sectors_per_cluster - pFile->current_sector_in_cluster);
+; 1124 :             {
+; 1125 :                 // TODO: what if this is the last cluster of the file.
+; 1126 :                 //       in that case, the cluster may be partially filled.
+; 1127 :                 //Read all the remaining sectors in the cluster
+; 1128 :                 numSectorsToRead = (FilesysInfo.BiosParameterBlock.sectors_per_cluster - pFile->current_sector_in_cluster);
 
   00074	80417002	 subhi       r7, r1, r2
 
-; 1127 :             }
-; 1128 : 
-; 1129 :             status = FileIoReadNextSectors(pfileio_ops, pFile, pDest, (UINT16)numSectorsToRead);
+; 1129 :             }
+; 1130 : 
+; 1131 :             status = FileIoReadNextSectors(pfileio_ops, pFile, pDest, (UINT16)numSectorsToRead);
 
   00078	e1a03807	 mov         r3, r7, lsl #16
   0007c	e1a03823	 mov         r3, r3, lsr #16
@@ -2452,14 +2451,14 @@
   0008c	eb000000	 bl          FileIoReadNextSectors
   00090	e3500000	 cmp         r0, #0
 
-; 1130 :             if (status != FILEIO_STATUS_OK)
+; 1132 :             if (status != FILEIO_STATUS_OK)
 
   00094	1a000019	 bne         |$LN13@FileIoRead@2|
 
-; 1131 :                 return status;
-; 1132 : 
-; 1133 :             pDest += (SECTOR_SIZE * numSectorsToRead);
-; 1134 :             Count -= (SECTOR_SIZE * numSectorsToRead);
+; 1133 :                 return status;
+; 1134 : 
+; 1135 :             pDest += (SECTOR_SIZE * numSectorsToRead);
+; 1136 :             Count -= (SECTOR_SIZE * numSectorsToRead);
 
   00098	e0444487	 sub         r4, r4, r7, lsl #9
   0009c	e0866487	 add         r6, r6, r7, lsl #9
@@ -2467,15 +2466,15 @@
   000a0	e3540c02	 cmp         r4, #2, 24
   000a4	2affffeb	 bcs         |$LL8@FileIoRead@2|
 
-; 1139 :         {
-; 1140 :             if ((status = FileIoReadNextSectors(pfileio_ops, pFile, pFile->buffer, 1)) != FILEIO_STATUS_OK)
+; 1141 :         {
+; 1142 :             if ((status = FileIoReadNextSectors(pfileio_ops, pFile, pFile->buffer, 1)) != FILEIO_STATUS_OK)
 
   000a8	ea000008	 b           |$LN7@FileIoRead@2|
   000ac		 |$LN18@FileIoRead@2|
 
-; 1104 :             {
-; 1105 :                 // can only read SINGLE sector
-; 1106 :                 if ((status = FileIoReadNextSectors(pfileio_ops, pFile, pDest, 1)) != FILEIO_STATUS_OK)
+; 1106 :             {
+; 1107 :                 // can only read SINGLE sector
+; 1108 :                 if ((status = FileIoReadNextSectors(pfileio_ops, pFile, pDest, 1)) != FILEIO_STATUS_OK)
 
   000ac	e3a03001	 mov         r3, #1
   000b0	e1a02006	 mov         r2, r6
@@ -2485,27 +2484,27 @@
   000c0	e3500000	 cmp         r0, #0
   000c4	1a00000d	 bne         |$LN13@FileIoRead@2|
 
-; 1107 :                     return status;
-; 1108 :     
-; 1109 :                 pDest += SECTOR_SIZE;
+; 1109 :                     return status;
+; 1110 :     
+; 1111 :                 pDest += SECTOR_SIZE;
 
   000c8	e2866c02	 add         r6, r6, #2, 24
 
-; 1110 :                 Count -= SECTOR_SIZE;
+; 1112 :                 Count -= SECTOR_SIZE;
 
   000cc	e2444c02	 sub         r4, r4, #2, 24
   000d0		 |$LN7@FileIoRead@2|
 
-; 1135 :         }
-; 1136 : 
-; 1137 :         // if Count is not zero, read a sector into the file structure sector buffer
-; 1138 :         if (Count)
+; 1137 :         }
+; 1138 : 
+; 1139 :         // if Count is not zero, read a sector into the file structure sector buffer
+; 1140 :         if (Count)
 
   000d0	e3540000	 cmp         r4, #0
   000d4	0a000008	 beq         |$LN11@FileIoRead@2|
 
-; 1139 :         {
-; 1140 :             if ((status = FileIoReadNextSectors(pfileio_ops, pFile, pFile->buffer, 1)) != FILEIO_STATUS_OK)
+; 1141 :         {
+; 1142 :             if ((status = FileIoReadNextSectors(pfileio_ops, pFile, pFile->buffer, 1)) != FILEIO_STATUS_OK)
 
   000d8	e3a03001	 mov         r3, #1
   000dc	e2852024	 add         r2, r5, #0x24
@@ -2515,29 +2514,28 @@
   000ec	e3500000	 cmp         r0, #0
   000f0	1a000002	 bne         |$LN13@FileIoRead@2|
 
-; 1141 :                 return status;
-; 1142 :             pFile->bytes_in_buffer = SECTOR_SIZE;
+; 1143 :                 return status;
+; 1144 :             pFile->bytes_in_buffer = SECTOR_SIZE;
 
   000f4	e585a020	 str         r10, [r5, #0x20]
 
-; 1078 :     int status;
-; 1079 :     UINT8 * s;
-; 1080 : 
-; 1081 :     UINT32 numSectorsToRead = 0;
-; 1082 :             
-; 1083 :     while (Count)
+; 1081 :     int status;
+; 1082 :     UINT8 * s;
+; 1083 :     UINT32 numSectorsToRead = 0;
+; 1084 :             
+; 1085 :     while (Count)
 
   000f8	eaffffc8	 b           |$LL12@FileIoRead@2|
   000fc		 |$LN11@FileIoRead@2|
 
-; 1143 :         }
-; 1144 :     }
-; 1145 :     return FILEIO_STATUS_OK;
+; 1145 :         }
+; 1146 :     }
+; 1147 :     return FILEIO_STATUS_OK;
 
   000fc	e3a00000	 mov         r0, #0
   00100		 |$LN13@FileIoRead@2|
 
-; 1146 : }
+; 1148 : }
 
   00100	e8bd47f0	 ldmia       sp!, {r4 - r10, lr}
   00104	e12fff1e	 bx          lr

@@ -52,8 +52,9 @@ UINT32 disable_lcd_power(void);
 UINT32 disable_lcd_backlight(void);
 void SetupDisplaySize(DWORD*, DWORD*);
 static void FlipFrameBuffer(PUCHAR , DWORD, DWORD ,PUCHAR);
-BOOL BLSDCardReadLogo(WCHAR *, UCHAR *, DWORD);
-BOOL BLSDCardToFlash(WCHAR *);			//Initial SD Card, Ray13-09-03 
+BOOL BLSDCardReadLogo(WCHAR *, UCHAR *, DWORD);		
+BOOL BLSDCardToFlash(WCHAR *);   //Initial SD Card, Ray13-09-03 
+
 
 
 //static void FlipFrameASCIIBuffer(PUCHAR, DWORD, DWORD,PUCHAR);
@@ -775,13 +776,15 @@ BOOL ShowSDLogo()
 }
 
 //------------------------------------------------------------------------------
-//
+//  this fuction are used calling next function direction. Ray, 
 //  Function:   BLSDtoFlash
-BOOL BLSDtoFlash(WCHAR *)
+BOOL BLSDtoFlash()
 {
-	//if()
-		BLSDCardToFlash(L"OUT_DATA.txt");
-	return	TRUE;
+	if(BLSDCardToFlash(L"OUT_DATA.txt")){
+        return	TRUE;
+    }else{
+        return	FALSE;
+    }
 }
 
 //------------------------------------------------------------------------------

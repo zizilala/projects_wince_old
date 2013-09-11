@@ -97,9 +97,7 @@ void main()
 //  from boot loader after OEMDebugInit is called.  Note that boot loader
 //  BootloaderMain is called from  s/init.s code which is run after reset.
 //
-BOOL 
-OEMPlatformInit(
-    )
+BOOL OEMPlatformInit()
 {
     UINT32 dwIdReg;
     OMAP_GPTIMER_REGS *pTimerRegs = OALPAtoUA(OMAP_GPTIMER1_REGS_PA);
@@ -124,22 +122,23 @@ OEMPlatformInit(
     //           (1<<OAL_LOG_IO)     |
     //           0);
 
-    OALLog(
-        L"\r\nTexas Instruments Windows CE EBOOT for AM35x, "
-        L"Built %S at %S\r\n", __DATE__, __TIME__
-        );
-    OALLog(
-        L"EBOOT Version %d.%d, BSP %d.%02d.%02d.%02d\r\n", 
-        EBOOT_VERSION_MAJOR, EBOOT_VERSION_MINOR, 
-        BSP_VERSION_MAJOR, BSP_VERSION_MINOR, BSP_VERSION_QFES, BSP_VERSION_INCREMENTAL
-        );
+    OALLog(L"\r\nTexas Instruments Windows CE EBOOT for AM35x, "
+           L"Built %S at %S\r\n", __DATE__, __TIME__ );
+    
+    OALLog(L"EBOOT Version %d.%d, BSP %d.%02d.%02d.%02d\r\n", 
+           EBOOT_VERSION_MAJOR, EBOOT_VERSION_MINOR, 
+           BSP_VERSION_MAJOR, BSP_VERSION_MINOR, BSP_VERSION_QFES, BSP_VERSION_INCREMENTAL
+           );
 
     // Soft reset GPTIMER1
     OUTREG32(&pTimerRegs->TIOCP, SYSCONFIG_SOFTRESET);
+
     // While until done
     while ((INREG32(&pTimerRegs->TISTAT) & GPTIMER_TISTAT_RESETDONE) == 0);
+
     // Enable posted mode
     OUTREG32(&pTimerRegs->TSICR, GPTIMER_TSICR_POSTED);
+
     // Start timer
     OUTREG32(&pTimerRegs->TCLR, GPTIMER_TCLR_AR|GPTIMER_TCLR_ST);
     
@@ -184,10 +183,7 @@ OEMPlatformInit(
 //
 //  Function:  OEMPlatformDeinit
 //
-static
-VOID
-OEMPlatformDeinit(
-    )
+static VOID OEMPlatformDeinit()
 {
     OMAP_GPTIMER_REGS *pTimerRegs = OALPAtoUA(OMAP_GPTIMER1_REGS_PA);
 
@@ -321,9 +317,7 @@ static void CpuGpioOutput(DWORD GpioNumber, DWORD Value)
 //  This function is called before downloading an image. There is place
 //  where user can be asked about device setup.
 //
-ULONG
-OEMPreDownload(
-    )
+ULONG OEMPreDownload()
 {
     ULONG rc = (ULONG) BL_ERROR;
     BSP_ARGS *pArgs = OALCAtoUA(IMAGE_SHARE_ARGS_CA);

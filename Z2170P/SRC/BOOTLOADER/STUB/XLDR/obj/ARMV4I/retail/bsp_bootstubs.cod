@@ -73,7 +73,7 @@
 ; File c:\wince600\platform\z2170p\src\bootloader\stub\bsp_bootstubs.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46319| DCD	|$LN5@INTERRUPTS|
+|$T46327| DCD	|$LN5@INTERRUPTS|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -84,7 +84,7 @@
 ; 26   : {
 
   00000		 |$LN5@INTERRUPTS|
-  00000		 |$M46316|
+  00000		 |$M46324|
 
 ; 27   :     return FALSE;
 
@@ -93,14 +93,14 @@
 ; 28   : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M46317|
+  00008		 |$M46325|
 
 			 ENDP  ; |INTERRUPTS_STATUS|
 
 	EXPORT	|CloseHandle|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46328| DCD	|$LN5@CloseHandl|
+|$T46336| DCD	|$LN5@CloseHandl|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -111,7 +111,7 @@
 ; 71   : {
 
   00000		 |$LN5@CloseHandl|
-  00000		 |$M46325|
+  00000		 |$M46333|
 
 ; 72   :     UNREFERENCED_PARAMETER(hObject);
 ; 73   :     return TRUE;
@@ -121,14 +121,14 @@
 ; 74   : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M46326|
+  00008		 |$M46334|
 
 			 ENDP  ; |CloseHandle|
 
 	EXPORT	|EnterCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46335| DCD	|$LN5@EnterCriti|
+|$T46343| DCD	|$LN5@EnterCriti|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -139,20 +139,20 @@
 ; 82   : {
 
   00000		 |$LN5@EnterCriti|
-  00000		 |$M46332|
+  00000		 |$M46340|
 
 ; 83   :     UNREFERENCED_PARAMETER(lpcs);
 ; 84   : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M46333|
+  00004		 |$M46341|
 
 			 ENDP  ; |EnterCriticalSection|
 
 	EXPORT	|LeaveCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46342| DCD	|$LN5@LeaveCriti|
+|$T46350| DCD	|$LN5@LeaveCriti|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -163,20 +163,20 @@
 ; 92   : {
 
   00000		 |$LN5@LeaveCriti|
-  00000		 |$M46339|
+  00000		 |$M46347|
 
 ; 93   :     UNREFERENCED_PARAMETER(lpcs);
 ; 94   : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M46340|
+  00004		 |$M46348|
 
 			 ENDP  ; |LeaveCriticalSection|
 
 	EXPORT	|InitializeCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46349| DCD	|$LN5@Initialize|
+|$T46357| DCD	|$LN5@Initialize|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -187,20 +187,20 @@
 ; 103  : {
 
   00000		 |$LN5@Initialize|
-  00000		 |$M46346|
+  00000		 |$M46354|
 
 ; 104  :     UNREFERENCED_PARAMETER(lpcs);
 ; 105  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M46347|
+  00004		 |$M46355|
 
 			 ENDP  ; |InitializeCriticalSection|
 
 	EXPORT	|DeleteCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46356| DCD	|$LN5@DeleteCrit|
+|$T46364| DCD	|$LN5@DeleteCrit|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -211,20 +211,20 @@
 ; 111  : {
 
   00000		 |$LN5@DeleteCrit|
-  00000		 |$M46353|
+  00000		 |$M46361|
 
 ; 112  :     UNREFERENCED_PARAMETER(lpCriticalSection);
 ; 113  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M46354|
+  00004		 |$M46362|
 
 			 ENDP  ; |DeleteCriticalSection|
 
 	EXPORT	|SC_CreateMutex|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46365| DCD	|$LN5@SC_CreateM|
+|$T46373| DCD	|$LN5@SC_CreateM|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -235,7 +235,7 @@
 ; 123  : {
 
   00000		 |$LN5@SC_CreateM|
-  00000		 |$M46362|
+  00000		 |$M46370|
 
 ; 124  :     UNREFERENCED_PARAMETER(lpsa);
 ; 125  :     UNREFERENCED_PARAMETER(bInitialOwner);
@@ -247,14 +247,14 @@
 ; 128  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M46363|
+  00008		 |$M46371|
 
 			 ENDP  ; |SC_CreateMutex|
 
 	EXPORT	|SC_WaitForMultiple|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46374| DCD	|$LN5@SC_WaitFor|
+|$T46382| DCD	|$LN5@SC_WaitFor|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -265,7 +265,7 @@
 ; 139  : {
 
   00000		 |$LN5@SC_WaitFor|
-  00000		 |$M46371|
+  00000		 |$M46379|
 
 ; 140  :     UNREFERENCED_PARAMETER(cObjects);
 ; 141  :     UNREFERENCED_PARAMETER(lphObjects);
@@ -278,14 +278,14 @@
 ; 145  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M46372|
+  00008		 |$M46380|
 
 			 ENDP  ; |SC_WaitForMultiple|
 
 	EXPORT	|SC_ReleaseMutex|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46383| DCD	|$LN5@SC_Release|
+|$T46391| DCD	|$LN5@SC_Release|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -296,7 +296,7 @@
 ; 152  : {
 
   00000		 |$LN5@SC_Release|
-  00000		 |$M46380|
+  00000		 |$M46388|
 
 ; 153  :     UNREFERENCED_PARAMETER(hMutex);
 ; 154  :     return TRUE;
@@ -306,7 +306,7 @@
 ; 155  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M46381|
+  00008		 |$M46389|
 
 			 ENDP  ; |SC_ReleaseMutex|
 
@@ -314,7 +314,7 @@
 	IMPORT	|OALPAtoVA|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46401| DCD	|$LN26@EnableDevi|
+|$T46409| DCD	|$LN26@EnableDevi|
 	DCD	0x40004d01
 ; Function compile flags: /Ogspy
 
@@ -326,7 +326,7 @@
 
   00000		 |$LN26@EnableDevi|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M46398|
+  00004		 |$M46406|
   00004	e1a04001	 mov         r4, r1
 
 ; 166  :     OMAP_CM_REGS* pCmRegs;
@@ -504,14 +504,14 @@
 
   0012c	e8bd4010	 ldmia       sp!, {r4, lr}
   00130	e12fff1e	 bx          lr
-  00134		 |$M46399|
+  00134		 |$M46407|
 
 			 ENDP  ; |EnableDeviceClocks|
 
 	EXPORT	|PrcmDeviceGetContextState|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46410| DCD	|$LN5@PrcmDevice|
+|$T46418| DCD	|$LN5@PrcmDevice|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -522,7 +522,7 @@
 ; 571  : {
 
   00000		 |$LN5@PrcmDevice|
-  00000		 |$M46407|
+  00000		 |$M46415|
 
 ; 572  :     UNREFERENCED_PARAMETER(devId);
 ; 573  :     UNREFERENCED_PARAMETER(bSet);
@@ -534,14 +534,14 @@
 ; 576  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M46408|
+  00008		 |$M46416|
 
 			 ENDP  ; |PrcmDeviceGetContextState|
 
 	EXPORT	|EnableDeviceClocksNoRefCount|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46421| DCD	|$LN5@EnableDevi@2|
+|$T46429| DCD	|$LN5@EnableDevi@2|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -553,7 +553,7 @@
 
   00000		 |$LN5@EnableDevi@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46418|
+  00004		 |$M46426|
 
 ; 584  : 	return EnableDeviceClocks( devId, bEnable );
 
@@ -563,14 +563,14 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M46419|
+  00010		 |$M46427|
 
 			 ENDP  ; |EnableDeviceClocksNoRefCount|
 
 	EXPORT	|BusClockRelease|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46431| DCD	|$LN5@BusClockRe|
+|$T46439| DCD	|$LN5@BusClockRe|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -582,7 +582,7 @@
 
   00000		 |$LN5@BusClockRe|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46428|
+  00004		 |$M46436|
   00004	e1a00001	 mov         r0, r1
 
 ; 593  : //    RETAILMSG(1,(TEXT("clockrelease %d\r\n"),id));
@@ -596,14 +596,14 @@
 
   00010	e49de004	 ldr         lr, [sp], #4
   00014	e12fff1e	 bx          lr
-  00018		 |$M46429|
+  00018		 |$M46437|
 
 			 ENDP  ; |BusClockRelease|
 
 	EXPORT	|BusClockRequest|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46441| DCD	|$LN5@BusClockRe@2|
+|$T46449| DCD	|$LN5@BusClockRe@2|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -615,7 +615,7 @@
 
   00000		 |$LN5@BusClockRe@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46438|
+  00004		 |$M46446|
   00004	e1a00001	 mov         r0, r1
 
 ; 604  : //    RETAILMSG(1,(TEXT("clockrequest %d\r\n"),id));
@@ -629,14 +629,14 @@
 
   00010	e49de004	 ldr         lr, [sp], #4
   00014	e12fff1e	 bx          lr
-  00018		 |$M46439|
+  00018		 |$M46447|
 
 			 ENDP  ; |BusClockRequest|
 
 	EXPORT	|MmUnmapIoSpace|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46448| DCD	|$LN5@MmUnmapIoS|
+|$T46456| DCD	|$LN5@MmUnmapIoS|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -647,21 +647,21 @@
 ; 613  : {
 
   00000		 |$LN5@MmUnmapIoS|
-  00000		 |$M46445|
+  00000		 |$M46453|
 
 ; 614  :     UNREFERENCED_PARAMETER(BaseAddress);
 ; 615  :     UNREFERENCED_PARAMETER(NumberOfBytes);
 ; 616  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M46446|
+  00004		 |$M46454|
 
 			 ENDP  ; |MmUnmapIoSpace|
 
 	EXPORT	|MmMapIoSpace|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46459| DCD	|$LN5@MmMapIoSpa|
+|$T46467| DCD	|$LN5@MmMapIoSpa|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -673,7 +673,7 @@
 
   00000		 |$LN5@MmMapIoSpa|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46456|
+  00004		 |$M46464|
 
 ; 624  :     UNREFERENCED_PARAMETER(NumberOfBytes);
 ; 625  :     return OALPAtoVA(PhysicalAddress.LowPart,CacheEnable);
@@ -685,14 +685,14 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M46457|
+  00014		 |$M46465|
 
 			 ENDP  ; |MmMapIoSpace|
 
 	EXPORT	|CreateBusAccessHandle|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46468| DCD	|$LN5@CreateBusA|
+|$T46476| DCD	|$LN5@CreateBusA|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -703,7 +703,7 @@
 ; 631  : {    
 
   00000		 |$LN5@CreateBusA|
-  00000		 |$M46465|
+  00000		 |$M46473|
 
 ; 632  :     UNREFERENCED_PARAMETER(lpActiveRegPath);
 ; 633  :     return (HANDLE) 0xAA;
@@ -713,14 +713,14 @@
 ; 634  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M46466|
+  00008		 |$M46474|
 
 			 ENDP  ; |CreateBusAccessHandle|
 
 	EXPORT	|HalContextUpdateDirtyRegister|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46475| DCD	|$LN5@HalContext|
+|$T46483| DCD	|$LN5@HalContext|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -731,13 +731,13 @@
 ; 640  : {
 
   00000		 |$LN5@HalContext|
-  00000		 |$M46472|
+  00000		 |$M46480|
 
 ; 641  :     UNREFERENCED_PARAMETER(ffRegister);
 ; 642  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M46473|
+  00004		 |$M46481|
 
 			 ENDP  ; |HalContextUpdateDirtyRegister|
 

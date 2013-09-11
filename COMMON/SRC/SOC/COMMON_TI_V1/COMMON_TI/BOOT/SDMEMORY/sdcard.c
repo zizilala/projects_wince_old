@@ -43,9 +43,11 @@
 #else
     #define OALMSGX(z, m)   {}
 #endif
-    
+
 static BOOL bFileIoInit = FALSE;
 S_FILEIO_OPERATIONS fileio_ops;
+//*S_FILEIO_OPERATIONS_PTR fileio_ops;      //Ray 13-09-11  
+	    
 FILEHANDLE  File;
 PFILEHANDLE pFile;
 DISK Disk;
@@ -1386,16 +1388,16 @@ UINT32 BLSDCardDownload(WCHAR *filename)
     // This function is called after MMC/SD image download is selected in menu or config
     pFile = &File;
 
-    OALMSGX(OAL_INFo, (L"BLSDCardDownload: Filename %s\r\n", filename));
+    OALMSGX(OAL_INFO, (L"BLSDCardDownload: Filename %s\r\n", filename));
 
 	if (!bFileIoInit)
 	{
 		// set up data structure used by file system driver
-		fileio_ops.init = &SDCardInit;
-		fileio_ops.identify = &SDCardIdentify;
+		fileio_ops.init        = &SDCardInit;
+		fileio_ops.identify    = &SDCardIdentify;
 		fileio_ops.read_sector = &SDCardReadSector;
 		fileio_ops.read_multi_sectors = &SDCardReadMultiSectors;
-		fileio_ops.drive_info = (PVOID)&Disk;
+		fileio_ops.drive_info  = (PVOID)&Disk;
 
 		// initialize file system driver
 		if (FileIoInit(&fileio_ops) != FILEIO_STATUS_OK)
@@ -1423,45 +1425,13 @@ UINT32 BLSDCardDownload(WCHAR *filename)
 }
 
 //------------------------------------------------------------------------------
-//Ray13-09-10
-//  Function:  BLSDCardToFlash
-//
-//  This function initialize SDCard the file and prepare burning to flash memory
-//  
-//
-BOOL BLSDCardToFlash(WCHAR *filename)
-{
-	// This function is called after MMC/SD image download is selected in menu or config
-	pFile = &File;
-
-	OALMSGX(OAL_INFo, (L"BLSDCardToFlash: Filename %s\r\n", filename));
-	//?? OAL_INFo, Ray
-
-	if (!bFileIoInit)
-	{
-		// set up data structure used by file system driver
-		fileio_ops
-		
-	}
-
-	
-
-	
-}
-
-
-//------------------------------------------------------------------------------
 //
 //  Function:   BLSDCardReadData
 //
 //  This function is called to read data from the transport during
 //  the download process.
 //
-BOOL
-BLSDCardReadData(
-    ULONG size, 
-    UCHAR *pData
-    )
+BOOL BLSDCardReadData(ULONG size, UCHAR *pData)
 {
     // called to read data from MMC/SD card as stream data, not as block data
 
@@ -1477,16 +1447,59 @@ BLSDCardReadData(
 }
 
 //------------------------------------------------------------------------------
+//  Ray13-09-10
+//  Function:  BLSDCardToFlash
+//
+//  This function initialize SDCard the file and prepare burning to flash memory
+//  
+BOOL BLSDCardToFlash(WCHAR *filename)
+{
+	// This function is called after MMC/SD image download is selected in menu or config
+	pFile = &File;
+
+	OALMSGX(OAL_INFO, (L"BLSDCardToFlash: Filename %s\r\n", filename));
+	//?? OAL_INFo, Ray  13-09-11
+
+	if (!bFileIoInit)
+	{
+		// set up data structure used by file system driver
+		fileio_ops.init         = &SDCardInit;
+		fileio_ops.identify     = &SDCardIdentify;
+        fileio_ops.read_sector  = &SDCardReadSector;
+        fileio_ops.read_multi_sectors = &SDCardReadMultiSectors;
+	    fileio_ops.drive_info = (PVOID)&Disk;
+	
+        // initialize file system driver
+        if(FileIoInit(&fileio_ops) != FILEIO_STATUS_OK)
+        {
+		    OALMSG(OAL_ERROR, (L"BLSDCardToFlash:  fileio init failed\r\n"));
+            return FALSE;
+        }
+        bFileIoInit = TRUE;
+	}
+
+    // fill in file name (8.3 format)
+    FileNameToDirEntry(filename, pFile->name, pFile->extension);
+
+    // try to open file specified by pConfig->filename, return FALSE on failure
+    if (FileIoOpen(&fileio_ops, pFile) != FILEIO_STATUS_OK)
+    {
+        OALMSG(OAL_ERROR, (L"BLSDCardToFlash:  cannot open file\r\n"));
+        return FALSE;
+    }
+
+    // return TRUE, File will Reading
+    return TRUE;
+}
+
+//------------------------------------------------------------------------------
 //
 //  Function:   BLSDCardReadLogo
 //
 //  This function is called to read the splaschreen bitmap from SDCard
 //
 //
-BOOL BLSDCardReadLogo(WCHAR *filename,
-    						    UCHAR *pData,
-								DWORD size 
-							  )
+BOOL BLSDCardReadLogo(WCHAR *filename, UCHAR *pData, DWORD size)
 {
 	FILEHANDLE logoFile;
 	WORD	   wSignature = 0;

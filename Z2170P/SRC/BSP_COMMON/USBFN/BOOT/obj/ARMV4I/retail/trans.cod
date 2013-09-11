@@ -73,7 +73,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\triton\inc\twl.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47523| DCD	|$LN5@TWLWriteBy|
+|$T47525| DCD	|$LN5@TWLWriteBy|
 	DCD	0x40000803
 ; Function compile flags: /Ogspy
 
@@ -87,7 +87,7 @@
   00000	e1a0c00d	 mov         r12, sp
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5000	 stmdb       sp!, {r12, lr}
-  0000c		 |$M47520|
+  0000c		 |$M47522|
 
 ; 58   :     return TWLWriteRegs(hTWL,address,&data,sizeof(data));
 
@@ -99,14 +99,14 @@
 
   00018	e89d6000	 ldmia       sp, {sp, lr}
   0001c	e12fff1e	 bx          lr
-  00020		 |$M47521|
+  00020		 |$M47523|
 
 			 ENDP  ; |TWLWriteByteReg|
 
 	IMPORT	|TWLReadRegs|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47535| DCD	|$LN5@TWLReadByt|
+|$T47537| DCD	|$LN5@TWLReadByt|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -118,7 +118,7 @@
 
   00000		 |$LN5@TWLReadByt|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M47532|
+  00004		 |$M47534|
 
 ; 68   :     return TWLReadRegs(hTWL,address,data,sizeof(*data));
 
@@ -129,14 +129,14 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M47533|
+  00014		 |$M47535|
 
 			 ENDP  ; |TWLReadByteReg|
 
 	EXPORT	|PowerOnT2USBTransceiver|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47602| DCD	|$LN41@PowerOnT2U|
+|$T47604| DCD	|$LN41@PowerOnT2U|
 	DCD	0x40008102
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\bsp_common\usbfn\trans.c
@@ -150,7 +150,7 @@
   00000		 |$LN41@PowerOnT2U|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M47599|
+  00008		 |$M47601|
   00008	e1a04000	 mov         r4, r0
 
 ; 84   :     BOOL  rc = FALSE;
@@ -169,7 +169,7 @@
   00024	e3a05000	 mov         r5, #0
   00028	eb000000	 bl          TWLWriteRegs
   0002c	e3500000	 cmp         r0, #0
-  00030	0a00006f	 beq         |$cleanUp$47351|
+  00030	0a00006f	 beq         |$cleanUp$47353|
 
 ; 90   :         {
 ; 91   :         OALMSG(OAL_LOG_ERROR, (L"RNDIS ERROR: UfnPdd_Init: "
@@ -189,7 +189,7 @@
   00048	e1a00004	 mov         r0, r4
   0004c	eb000000	 bl          TWLWriteRegs
   00050	e3500000	 cmp         r0, #0
-  00054	0a000066	 beq         |$cleanUp$47351|
+  00054	0a000066	 beq         |$cleanUp$47353|
   00058	e3a03803	 mov         r3, #3, 16
 
 ; 99   :         {
@@ -210,7 +210,7 @@
   00070	e5cde000	 strb        lr, [sp]
   00074	eb000000	 bl          TWLWriteRegs
   00078	e3500000	 cmp         r0, #0
-  0007c	0a00005c	 beq         |$cleanUp$47351|
+  0007c	0a00005c	 beq         |$cleanUp$47353|
   00080	e3a03803	 mov         r3, #3, 16
 
 ; 108  :         {
@@ -232,7 +232,7 @@
   00098	e5cde000	 strb        lr, [sp]
   0009c	eb000000	 bl          TWLWriteRegs
   000a0	e3500000	 cmp         r0, #0
-  000a4	0a000052	 beq         |$cleanUp$47351|
+  000a4	0a000052	 beq         |$cleanUp$47353|
   000a8	e3a03803	 mov         r3, #3, 16
 
 ; 118  :         {
@@ -254,7 +254,7 @@
   000c0	e5cde000	 strb        lr, [sp]
   000c4	eb000000	 bl          TWLWriteRegs
   000c8	e3500000	 cmp         r0, #0
-  000cc	0a000048	 beq         |$cleanUp$47351|
+  000cc	0a000048	 beq         |$cleanUp$47353|
   000d0	e3a03803	 mov         r3, #3, 16
 
 ; 128  :         {
@@ -276,7 +276,7 @@
   000e8	e5cde000	 strb        lr, [sp]
   000ec	eb000000	 bl          TWLWriteRegs
   000f0	e3500000	 cmp         r0, #0
-  000f4	0a00003e	 beq         |$cleanUp$47351|
+  000f4	0a00003e	 beq         |$cleanUp$47353|
   000f8	e3a03803	 mov         r3, #3, 16
 
 ; 138  :         {
@@ -298,7 +298,7 @@
   00110	e5cde000	 strb        lr, [sp]
   00114	eb000000	 bl          TWLWriteRegs
   00118	e3500000	 cmp         r0, #0
-  0011c	0a000034	 beq         |$cleanUp$47351|
+  0011c	0a000034	 beq         |$cleanUp$47353|
 
 ; 148  :         {
 ; 149  :         OALMSG(OAL_LOG_ERROR, (L"RNDIS ERROR: UfnPdd_Init: "
@@ -319,7 +319,7 @@
   00134	e1a00004	 mov         r0, r4
   00138	eb000000	 bl          TWLWriteRegs
   0013c	e3500000	 cmp         r0, #0
-  00140	0a00002b	 beq         |$cleanUp$47351|
+  00140	0a00002b	 beq         |$cleanUp$47353|
 
 ; 158  :         {
 ; 159  :         OALMSG(OAL_LOG_ERROR, (L"RNDIS ERROR: UfnPdd_Init: "
@@ -404,7 +404,7 @@
 ; 183  :     rc = TRUE;
 
   001f0	e3a05001	 mov         r5, #1
-  001f4		 |$cleanUp$47351|
+  001f4		 |$cleanUp$47353|
 
 ; 184  : 
 ; 185  : cleanUp:
@@ -416,7 +416,7 @@
   001f8	e28dd004	 add         sp, sp, #4
   001fc	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00200	e12fff1e	 bx          lr
-  00204		 |$M47600|
+  00204		 |$M47602|
 
 			 ENDP  ; |PowerOnT2USBTransceiver|
 
@@ -425,7 +425,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\triton\inc\twl.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47621| DCD	|$LN13@RequestPHY|
+|$T47623| DCD	|$LN13@RequestPHY|
 	DCD	0x40002002
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\bsp_common\usbfn\trans.c
@@ -439,7 +439,7 @@
   00000		 |$LN13@RequestPHY|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M47618|
+  00008		 |$M47620|
   00008	e1a04000	 mov         r4, r0
 
 ; 200  :     UCHAR value = 0;
@@ -522,7 +522,7 @@
   00074	e28dd008	 add         sp, sp, #8
   00078	e8bd4010	 ldmia       sp!, {r4, lr}
   0007c	e12fff1e	 bx          lr
-  00080		 |$M47619|
+  00080		 |$M47621|
 
 			 ENDP  ; |RequestPHYAccess|
 
@@ -530,7 +530,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\triton\inc\twl.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47676| DCD	|$LN45@InitTransc|
+|$T47678| DCD	|$LN45@InitTransc|
 	DCD	0x40007502
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\bsp_common\usbfn\trans.c
@@ -544,7 +544,7 @@
   00000		 |$LN45@InitTransc|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M47673|
+  00008		 |$M47675|
   00008	e1a04000	 mov         r4, r0
 
 ; 238  :     BOOL    rc = FALSE;
@@ -644,7 +644,7 @@
   00080	e1a00004	 mov         r0, r4
   00084	eb000000	 bl          TWLWriteRegs
   00088	e3500000	 cmp         r0, #0
-  0008c	0a00004c	 beq         |$cleanUp$47409|
+  0008c	0a00004c	 beq         |$cleanUp$47411|
 
 ; 290  :         goto cleanUp;
 ; 291  :     
@@ -664,7 +664,7 @@
   000ac	e1a00004	 mov         r0, r4
   000b0	eb000000	 bl          TWLWriteRegs
   000b4	e3500000	 cmp         r0, #0
-  000b8	0a000041	 beq         |$cleanUp$47409|
+  000b8	0a000041	 beq         |$cleanUp$47411|
 
 ; 295  :         goto cleanUp;
 ; 296  :         
@@ -685,7 +685,7 @@
   000d8	e1a00004	 mov         r0, r4
   000dc	eb000000	 bl          TWLWriteRegs
   000e0	e3500000	 cmp         r0, #0
-  000e4	0a000036	 beq         |$cleanUp$47409|
+  000e4	0a000036	 beq         |$cleanUp$47411|
 
 ; 301  :         goto cleanUp;
 ; 302  :         
@@ -705,7 +705,7 @@
   00104	e1a00004	 mov         r0, r4
   00108	eb000000	 bl          TWLWriteRegs
   0010c	e3500000	 cmp         r0, #0
-  00110	0a00002b	 beq         |$cleanUp$47409|
+  00110	0a00002b	 beq         |$cleanUp$47411|
 
 ; 306  :         goto cleanUp;
 ; 307  : 
@@ -725,7 +725,7 @@
   00130	e1a00004	 mov         r0, r4
   00134	eb000000	 bl          TWLWriteRegs
   00138	e3500000	 cmp         r0, #0
-  0013c	0a000020	 beq         |$cleanUp$47409|
+  0013c	0a000020	 beq         |$cleanUp$47411|
 
 ; 311  :         goto cleanUp;
 ; 312  : 
@@ -745,7 +745,7 @@
   0015c	e1a00004	 mov         r0, r4
   00160	eb000000	 bl          TWLWriteRegs
   00164	e3500000	 cmp         r0, #0
-  00168	0a000015	 beq         |$cleanUp$47409|
+  00168	0a000015	 beq         |$cleanUp$47411|
 
 ; 316  :         goto cleanUp;
 ; 317  : 
@@ -764,7 +764,7 @@
   00188	e1a00004	 mov         r0, r4
   0018c	eb000000	 bl          TWLWriteRegs
   00190	e3500000	 cmp         r0, #0
-  00194	0a00000a	 beq         |$cleanUp$47409|
+  00194	0a00000a	 beq         |$cleanUp$47411|
 
 ; 320  :         goto cleanUp;
 ; 321  : 
@@ -791,7 +791,7 @@
 ; 328  :     rc = TRUE;
 
   001c0	13a05001	 movne       r5, #1
-  001c4		 |$cleanUp$47409|
+  001c4		 |$cleanUp$47411|
 
 ; 329  : 
 ; 330  : cleanUp:
@@ -803,7 +803,7 @@
   001c8	e28dd008	 add         sp, sp, #8
   001cc	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   001d0	e12fff1e	 bx          lr
-  001d4		 |$M47674|
+  001d4		 |$M47676|
 
 			 ENDP  ; |InitTransceiver|
 
@@ -816,7 +816,7 @@
 	IMPORT	|dpCurSettings|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47691| DCD	|$LN14@Initialize|
+|$T47693| DCD	|$LN14@Initialize|
 	DCD	0x40002501
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -844,7 +844,7 @@
 
   00000		 |$LN14@Initialize|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M47688|
+  00004		 |$M47690|
 
 ; 343  :     BOOL   rc   = FALSE;
 ; 344  : 
@@ -898,7 +898,7 @@
   0002c	e1a00005	 mov         r0, r5
   00030	eb000000	 bl          PowerOnT2USBTransceiver
   00034	e3500000	 cmp         r0, #0
-  00038	0a000007	 beq         |$cleanUp$47425|
+  00038	0a000007	 beq         |$cleanUp$47427|
 
 ; 375  :     {
 ; 376  :         goto cleanUp;
@@ -909,7 +909,7 @@
   0003c	e1a00005	 mov         r0, r5
   00040	eb000000	 bl          RequestPHYAccess
   00044	e3500000	 cmp         r0, #0
-  00048	0a000003	 beq         |$cleanUp$47425|
+  00048	0a000003	 beq         |$cleanUp$47427|
 
 ; 380  :     {
 ; 381  :         goto cleanUp;
@@ -930,7 +930,7 @@
 ; 391  :     rc = TRUE;
 
   00058	13a04001	 movne       r4, #1
-  0005c		 |$cleanUp$47425|
+  0005c		 |$cleanUp$47427|
 
 ; 392  : 
 ; 393  : cleanUp:
@@ -971,14 +971,14 @@
   0008c	00000000	 DCD         |??_C@_1CM@EAMJHAFB@?$AA?$CL?$AAI?$AAn?$AAi?$AAt?$AAi?$AAa?$AAl?$AAi?$AAz?$AAe?$AAH?$AAa?$AAr?$AAd?$AAw?$AAa?$AAr?$AAe?$AA?$AN?$AA?6?$AA?$AA@|
   00090		 |$LN18@Initialize|
   00090	00000000	 DCD         |dpCurSettings|
-  00094		 |$M47689|
+  00094		 |$M47691|
 
 			 ENDP  ; |InitializeHardware|
 
 	EXPORT	|ResetHardware|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47702| DCD	|$LN5@ResetHardw|
+|$T47704| DCD	|$LN5@ResetHardw|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -989,12 +989,12 @@
 ; 413  : {
 
   00000		 |$LN5@ResetHardw|
-  00000		 |$M47699|
+  00000		 |$M47701|
 
 ; 414  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M47700|
+  00004		 |$M47702|
 
 			 ENDP  ; |ResetHardware|
 
@@ -1004,7 +1004,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\triton\inc\twl.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47718| DCD	|$LN13@ConnectHar|
+|$T47720| DCD	|$LN13@ConnectHar|
 	DCD	0x40001f02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1032,7 +1032,7 @@
   00000		 |$LN13@ConnectHar|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M47715|
+  00008		 |$M47717|
 
 ; 423  : #ifdef BSP_OMAP_MUSBOTG_TPS659XX
 ; 424  : 
@@ -1119,7 +1119,7 @@
   00074	00000000	 DCD         |??_C@_1CG@LMJLIBMJ@?$AA?$CL?$AAC?$AAo?$AAn?$AAn?$AAe?$AAc?$AAt?$AAH?$AAa?$AAr?$AAd?$AAw?$AAa?$AAr?$AAe?$AA?$AN?$AA?6?$AA?$AA@|
   00078		 |$LN17@ConnectHar|
   00078	00000000	 DCD         |dpCurSettings|
-  0007c		 |$M47716|
+  0007c		 |$M47718|
 
 			 ENDP  ; |ConnectHardware|
 
@@ -1129,7 +1129,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\triton\inc\twl.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47738| DCD	|$LN13@Disconnect|
+|$T47740| DCD	|$LN13@Disconnect|
 	DCD	0x40001f02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1157,7 +1157,7 @@
   00000		 |$LN13@Disconnect|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M47735|
+  00008		 |$M47737|
 
 ; 469  : #ifdef BSP_OMAP_MUSBOTG_TPS659XX
 ; 470  : 
@@ -1244,7 +1244,7 @@
   00074	00000000	 DCD         |??_C@_1CM@JBHMEPNP@?$AA?$CL?$AAD?$AAi?$AAs?$AAc?$AAo?$AAn?$AAn?$AAe?$AAc?$AAt?$AAH?$AAa?$AAr?$AAd?$AAw?$AAa?$AAr?$AAe?$AA?$AN?$AA?6?$AA?$AA@|
   00078		 |$LN17@Disconnect|
   00078	00000000	 DCD         |dpCurSettings|
-  0007c		 |$M47736|
+  0007c		 |$M47738|
 
 			 ENDP  ; |DisconnectHardware|
 
@@ -1254,7 +1254,7 @@
 	IMPORT	|EnableDeviceClocks|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47757| DCD	|$LN9@EnableUSBC|
+|$T47759| DCD	|$LN9@EnableUSBC|
 	DCD	0x40001701
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1280,7 +1280,7 @@
 
   00000		 |$LN9@EnableUSBC|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M47754|
+  00004		 |$M47756|
   00004	e1a05000	 mov         r5, r0
 
 ; 515  : 	BOOL bRet = TRUE;
@@ -1332,7 +1332,7 @@
   00054	00000000	 DCD         |??_C@_1CG@CEBIPPPH@?$AA?$CL?$AAE?$AAn?$AAa?$AAb?$AAl?$AAe?$AAU?$AAS?$AAB?$AAC?$AAl?$AAo?$AAc?$AAk?$AAs?$AA?$AN?$AA?6?$AA?$AA@|
   00058		 |$LN13@EnableUSBC|
   00058	00000000	 DCD         |dpCurSettings|
-  0005c		 |$M47755|
+  0005c		 |$M47757|
 
 			 ENDP  ; |EnableUSBClocks|
 

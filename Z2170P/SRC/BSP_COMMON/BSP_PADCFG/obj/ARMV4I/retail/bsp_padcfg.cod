@@ -1488,7 +1488,7 @@
 ; File c:\wince600\platform\z2170p\src\bsp_common\bsp_padcfg\bsp_padcfg.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48217| DCD	|$LN5@BSPGetAllP|
+|$T48219| DCD	|$LN5@BSPGetAllP|
 	DCD	0x40000300
 ; Function compile flags: /Ogspy
 
@@ -1499,7 +1499,7 @@
 ; 66   : {    
 
   00000		 |$LN5@BSPGetAllP|
-  00000		 |$M48214|
+  00000		 |$M48216|
 
 ; 67   :     return g_allowedPadCfg;
 
@@ -1511,7 +1511,7 @@
   00008		 |$LN6@BSPGetAllP|
   00008		 |$LN7@BSPGetAllP|
   00008	00000000	 DCD         |g_allowedPadCfg|
-  0000c		 |$M48215|
+  0000c		 |$M48217|
 
 			 ENDP  ; |BSPGetAllPadsInfo|
 
@@ -1520,7 +1520,7 @@
 	IMPORT	|NKDbgPrintfW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48232| DCD	|$LN27@BSPGetDevi|
+|$T48234| DCD	|$LN27@BSPGetDevi|
 	DCD	0x40007201
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1540,7 +1540,7 @@
 
   00000		 |$LN27@BSPGetDevi|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M48229|
+  00004		 |$M48231|
   00004	e1a04000	 mov         r4, r0
 
 ; 71   : 	RETAILMSG(1,(L"BSPGetDevicePadInfo : %d\r\n",device)); 
@@ -1801,7 +1801,7 @@
   001c0	00000000	 DCD         |USBOTGPads|
   001c4		 |$LN31@BSPGetDevi|
   001c4	00000000	 DCD         |??_C@_1DG@KEGIJFGI@?$AAB?$AAS?$AAP?$AAG?$AAe?$AAt?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAP?$AAa?$AAd?$AAI?$AAn?$AAf?$AAo?$AA?5?$AA?3?$AA?5?$AA?$CF?$AAd?$AA?$AN?$AA?6?$AA?$AA@|
-  001c8		 |$M48230|
+  001c8		 |$M48232|
 
 			 ENDP  ; |BSPGetDevicePadInfo|
 

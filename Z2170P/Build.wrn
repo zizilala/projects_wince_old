@@ -1,20 +1,8 @@
 BUILD: [Thrd:Sequence:Type  ] Message
 BUILD: [00:0000000008:WARNS ] COMMON is not a subdirectory of C:\WINCE600\PLATFORM\Z2170P\SRC\.
-BUILD: [00:0000000010:WARNN ] File: C:\WINCE600\public\common\ddk\inc\sdcardddk.h.bak does not exist (2).
-BUILD: [00:0000000011:WARNN ] File: C:\WINCE600\public\common\oak\inc\bt_ddi.h.110622_KB2556378 does not exist (2).
-BUILD: [00:0000000012:WARNN ] File: C:\WINCE600\public\common\oak\inc\flashmdd.h.110310_KB2504074 does not exist (2).
-BUILD: [00:0000000013:WARNN ] File: C:\WINCE600\public\common\oak\inc\pkfuncs.h.100813_KB2286508 does not exist (2).
-BUILD: [00:0000000014:WARNN ] File: C:\WINCE600\public\common\oak\inc\pkfuncs.h.bak does not exist (2).
-BUILD: [00:0000000015:WARNN ] File: C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659XX\keypad\Build.log does not exist (2).
-BUILD: [00:0000000016:WARNN ] File: C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\DSS\inc\dssai.h.bak does not exist (2).
-BUILD: [00:0000000017:WARNN ] File: C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\OMAP3530\inc\omap3530_irq.h.bak does not exist (2).
-BUILD: [00:0000000018:WARNN ] File: C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\inc\omap_cpuver.h.bak does not exist (2).
-BUILD: [00:0000000019:WARNN ] File: C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\inc\omap_gpio_regs.h.bak does not exist (2).
-BUILD: [00:0000000020:WARNN ] File: C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\inc\soc_cfg.h.bak does not exist (2).
-BUILD: [00:0000000021:WARNN ] File: C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659xx\inc\tps659xx_tled.h.bak does not exist (2).
-BUILD: [00:0000000037:WARNS ] PWRKEY is not a subdirectory of C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\.
-BUILD: [00:0000000038:WARNS ] HEAD is not a subdirectory of C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\.
-BUILD: [00:0000000039:WARNS ] KEYPAD is not a subdirectory of C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\.
-BUILD: [00:0000000040:WARNS ] WAVEDEV2 is not a subdirectory of C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\.
-BUILD: [00:0000000064:WARNS ] Directory: C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659XX\keypad C:\WINCE600\public\directx\sdk\inc\ does not exist.
-BUILD: [00:0000000067:WARNS ] Directory: C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659XX\keypad C:\WINCE600\public\directx\sdk\inc\ does not exist.
+BUILD: [00:0000000025:WARNS ] PWRKEY is not a subdirectory of C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\.
+BUILD: [00:0000000026:WARNS ] HEAD is not a subdirectory of C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\.
+BUILD: [00:0000000027:WARNS ] KEYPAD is not a subdirectory of C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\.
+BUILD: [00:0000000028:WARNS ] WAVEDEV2 is not a subdirectory of C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\.
+BUILD: [00:0000000052:WARNS ] Directory: C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659XX\keypad C:\WINCE600\public\directx\sdk\inc\ does not exist.
+BUILD: [00:0000000055:WARNS ] Directory: C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659XX\keypad C:\WINCE600\public\directx\sdk\inc\ does not exist.

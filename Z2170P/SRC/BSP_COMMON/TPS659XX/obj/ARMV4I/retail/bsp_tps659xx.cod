@@ -73,7 +73,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\triton\inc\twl.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46140| DCD	|$LN5@TWLWriteBy|
+|$T46143| DCD	|$LN5@TWLWriteBy|
 	DCD	0x40000803
 ; Function compile flags: /Ogspy
 
@@ -87,7 +87,7 @@
   00000	e1a0c00d	 mov         r12, sp
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5000	 stmdb       sp!, {r12, lr}
-  0000c		 |$M46137|
+  0000c		 |$M46140|
 
 ; 58   :     return TWLWriteRegs(hTWL,address,&data,sizeof(data));
 
@@ -99,14 +99,14 @@
 
   00018	e89d6000	 ldmia       sp, {sp, lr}
   0001c	e12fff1e	 bx          lr
-  00020		 |$M46138|
+  00020		 |$M46141|
 
 			 ENDP  ; |TWLWriteByteReg|
 
 ; File c:\wince600\platform\z2170p\src\bsp_common\tps659xx\bsp_tps659xx.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46150| DCD	|$LN7@DecideTwlV|
+|$T46153| DCD	|$LN7@DecideTwlV|
 	DCD	0x40000700
 ; Function compile flags: /Ogspy
 
@@ -117,7 +117,7 @@
 ; 40   : {
 
   00000		 |$LN7@DecideTwlV|
-  00000		 |$M46147|
+  00000		 |$M46150|
 
 ; 41   :     if(slot == 0)   // SLOT1
 
@@ -153,7 +153,7 @@
 ; 52   : }
 
   00018	e12fff1e	 bx          lr
-  0001c		 |$M46148|
+  0001c		 |$M46151|
 
 			 ENDP  ; |DecideTwlVMMC|
 
@@ -163,7 +163,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\triton\inc\twl.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46366| DCD	|$LN111@InitTwlPow|
+|$T46369| DCD	|$LN111@InitTwlPow|
 	DCD	0x40016102
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\bsp_common\tps659xx\bsp_tps659xx.c
@@ -177,7 +177,7 @@
   00000		 |$LN111@InitTwlPow|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M46363|
+  00008		 |$M46366|
 
 ; 71   :     void* hTwl;
 ; 72   :     UINT16 val;
@@ -949,7 +949,7 @@
   00578	e28dd004	 add         sp, sp, #4
   0057c	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00580	e12fff1e	 bx          lr
-  00584		 |$M46364|
+  00584		 |$M46367|
 
 			 ENDP  ; |InitTwlPower|
 
@@ -960,7 +960,7 @@
 	IMPORT	|GPIOOpen|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46377| DCD	|$LN8@BSPSetT2MS|
+|$T46380| DCD	|$LN8@BSPSetT2MS|
 	DCD	0x40001301
 ; Function compile flags: /Ogspy
 
@@ -972,7 +972,7 @@
 
   00000		 |$LN8@BSPSetT2MS|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M46374|
+  00004		 |$M46377|
   00004	e1a05000	 mov         r5, r0
 
 ; 390  : #ifdef BSP_EVM2
@@ -1037,7 +1037,7 @@
 
   00044	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00048	e12fff1e	 bx          lr
-  0004c		 |$M46375|
+  0004c		 |$M46378|
 
 			 ENDP  ; |BSPSetT2MSECURE|
 

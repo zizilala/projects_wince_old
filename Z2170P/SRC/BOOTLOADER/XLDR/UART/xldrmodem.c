@@ -15,6 +15,8 @@
 //
 //  This file contains X-Loader implementation xmodem protocol
 //
+//#pragma error(disable: 2220 2094)
+//#pragma warning(disable 4068 4081)
 #ifdef UART_BOOT
 
 #define XSOH 0x01
@@ -255,7 +257,7 @@ int XReceive(unsigned char *p_data_buff, int buff_size, unsigned int *p_receive_
     
     }  /* while */
 
-//DONE:
+DONE:		//Ray 13-09-11
 	*p_receive_size = (unsigned int)i;
     return done;
 }  /* XReceive */

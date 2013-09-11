@@ -49,10 +49,10 @@ static VOID SaveSettings(OAL_BLMENU_ITEM *pMenu);
 static VOID SetRetailMsgMode(OAL_BLMENU_ITEM *pMenu);
 static VOID SetDisplayResolution(OAL_BLMENU_ITEM *pMenu);
 static VOID SetOPPmode(OAL_BLMENU_ITEM *pMenu);
-static VOID SetBacklight(OAL_BLMENU_ITEM *);	//setup backlight, Ray 13-07-26 
-static VOID SDtoFlash(OAL_BLMENU_ITEM *);	//File Send To Flash By SD Card, Ray 13-09-03 
+static VOID SetBacklight(OAL_BLMENU_ITEM *pMenu);	//setup backlight, Ray 13-07-26 
+static VOID SDtoFlash(OAL_BLMENU_ITEM *pMenu);	//File Send To Flash By SD Card, Ray 13-09-03 
 //BOOL BLSDCardToFlash(WCHAR *);			//Initial SD Card, Ray13-09-03 
-BOOL BLSDtoFlash(WCHAR *);					////Initial SD Card, Ray13-09-10
+BOOL BLSDtoFlash(void);					////Initial SD Card, Ray13-09-10
 
 
 //VOID KeypadState();									//keypad testing, Ray 13-08-14
@@ -437,7 +437,7 @@ VOID ShowSettings(OAL_BLMENU_ITEM *pMenu)
         L"  Backlight:   %s\r\n", disBacklight[g_bootCfg.backlight].blName	//Ray 13-07-29
     );
 	OALLog(
-        L"  SD Card to Flash status:   %s\r\n", sdtoFlash[g_bootCfg.sdtoflash].sdName	//Ray 13-07-29
+        L"  SD Card to Flash status:   %s\r\n", sdToFlash[g_bootCfg.sdtoflash].sdName //Ray 13-07-29
     );
 	
 #if BUILDING_EBOOT_SD
@@ -756,15 +756,15 @@ VOID SDtoFlash(OAL_BLMENU_ITEM *pMenu)
 {
 	WCHAR key;
 	UINT32 i;
-	//BOOL pRead = 1;
-	//BOOL check;
+	BOOL read;
+	BOOL check = TRUE;
 //	int ch;
 	
 	//This function Initial SD Card file prepare file R/W
 	//pRead =
 	//BLSDtoFlash();
 	//check = BLSDCardToFlash(L"OUT_DATA.txt");
-	BLSDtoFlash(L"OUT_DATA.txt");
+	read = BLSDtoFlash();
 
 	//pRead  = fopen("c:/wince600/file/output_data.txt", "r");
 	//pWrite = fopen("c:/wince600/file/input_data.txt", "w");
@@ -789,9 +789,9 @@ VOID SDtoFlash(OAL_BLMENU_ITEM *pMenu)
 	{
 		case L'1':
 			OALLog(L"\tReading: \r");
-			//if(pRead == check){
+			if(read == check){
 				OALLog(L"\rFile Read ok!!\n");
-			/*}else{
+			}else{
 				OALLog(L"\rFile Read failure!!\n");
 			} 
 			

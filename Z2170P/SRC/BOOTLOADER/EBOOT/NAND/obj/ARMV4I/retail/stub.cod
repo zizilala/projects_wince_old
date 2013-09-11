@@ -74,7 +74,7 @@
 ; File c:\wince600\platform\z2170p\src\bootloader\eboot\stub.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45405| DCD	|$LN5@NKCreateSt|
+|$T45408| DCD	|$LN5@NKCreateSt|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -86,7 +86,7 @@
 
   00000		 |$LN5@NKCreateSt|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M45402|
+  00004		 |$M45405|
 
 ; 27   : 	UNREFERENCED_PARAMETER(phBase);
 ; 28   : 	UNREFERENCED_PARAMETER(size);
@@ -101,7 +101,7 @@
 
   00010	e49de004	 ldr         lr, [sp], #4
   00014	e12fff1e	 bx          lr
-  00018		 |$M45403|
+  00018		 |$M45406|
 
 			 ENDP  ; |NKCreateStaticMapping|
 

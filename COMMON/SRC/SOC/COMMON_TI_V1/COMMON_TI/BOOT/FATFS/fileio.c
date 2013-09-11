@@ -581,9 +581,9 @@ int FileIoInit(S_FILEIO_OPERATIONS_PTR pfileio_ops)
     UINT8 * pSector = (UINT8 *)Sector;
     int status;
     int i;
-    UINT32 boot_sector = 0;
-    UCHAR partition_type = 0;
-    int ExtendedPartitionDepth = 0;
+    UINT32 boot_sector          = 0;
+    UCHAR partition_type        = 0;
+    int ExtendedPartitionDepth  = 0;
     int PartitionTableEntryCount = 4;
         
     // initialize device driver
@@ -1073,11 +1073,13 @@ int FileIoOpen(S_FILEIO_OPERATIONS_PTR pfileio_ops, PFILEHANDLE pFile)
  *  RETURNS: 0 on success, error code on failure
  *
  */
-int FileIoRead(S_FILEIO_OPERATIONS_PTR pfileio_ops, PFILEHANDLE pFile, UINT8 * pDest, DWORD Count)
+int FileIoRead(S_FILEIO_OPERATIONS_PTR pfileio_ops, 
+                PFILEHANDLE pFile, 
+                UINT8 * pDest, 
+                DWORD Count)
 {
     int status;
     UINT8 * s;
-
     UINT32 numSectorsToRead = 0;
             
     while (Count)

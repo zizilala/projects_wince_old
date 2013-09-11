@@ -1,644 +1,108 @@
 BUILD: [Thrd:Sequence:Type  ] Message
-BUILD: [00:0000000000:PROGC ] Build started with parameters: -c
+BUILD: [00:0000000000:PROGC ] Build started with parameters:
 BUILD: [00:0000000001:PROGC ] Build started in directory: C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY
 BUILD: [00:0000000002:PROGC ] Checking for C:\WINCE600\sdk\bin\i386\srccheck.exe.
 BUILD: [00:0000000003:PROGC ] Running passes WCEFILES0, MIDL, MC, ASN, THUNK, PRECOMPHEADER, COMPILE, LIB, LINK, MANAGEDRESX, MANAGEDMOD, MANAGEDDLL, MANAGEDEXE, MANAGEDWIN for ARM.
-BUILD: [00:0000000004:PROGC ] Ignoring build database (-c specified).
-BUILD: [00:0000000005:PROGC ] Computing include file dependencies:
-BUILD: [00:0000000006:PROGC ] Checking for SDK include directory: C:\WINCE600\sdk\CE\inc.
-BUILD: [00:0000000007:PROGC ] Scan C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\
-BUILD: [00:0000000008:PROGC ] Saving C:\WINCE600\PLATFORM\Z2170P\Build.dat.
-BUILD: [00:0000000009:INFO  ] Done.
-BUILD: [00:0000000010:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\main.c because target: obj\ARMV4I\retail\main.obj is missing.
-BUILD: [00:0000000011:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\eth.c because target: obj\ARMV4I\retail\eth.obj is missing.
-BUILD: [00:0000000012:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\menu.c because target: obj\ARMV4I\retail\menu.obj is missing.
-BUILD: [00:0000000013:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\stub.c because target: obj\ARMV4I\retail\stub.obj is missing.
-BUILD: [00:0000000014:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\flashmenu.c because target: obj\ARMV4I\retail\flashmenu.obj is missing.
-BUILD: [00:0000000015:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\mmu.c because target: obj\ARMV4I\retail\mmu.obj is missing.
-BUILD: [00:0000000016:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\flash.c because target: obj\ARMV4I\retail\flash.obj is missing.
-BUILD: [00:0000000017:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\cfg.c because target: obj\ARMV4I\retail\cfg.obj is missing.
-BUILD: [00:0000000018:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\startup.s because target: obj\ARMV4I\retail\startup.obj is missing.
-BUILD: [00:0000000019:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\jumpto.s because target: obj\ARMV4I\retail\jumpto.obj is missing.
-BUILD: [00:0000000020:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\ because target: BootImage is missing.
-BUILD: [00:0000000021:PROGC ] Building COMPILE Pass in C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\ directory.
-BUILD: [00:0000000022:PROG  ] 'NMAKE.EXE TargetCompilePass  -i -c BUILDMSG=Stop.  BUILDROOT=C:\WINCE600\PLATFORM\Z2170P CLEANBUILD=1 NOLINK=1 NOPASS0=1'
-BUILD: [01:0000000023:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\Sources.default
-BUILD: [01:0000000024:INFO  ] makefile.def: BUILDROOT is C:\WINCE600\PLATFORM\Z2170P
-BUILD: [01:0000000025:INFO  ] makefile.def: Including C:\WINCE600\PLATFORM\Z2170P\sources.cmn
-BUILD: [01:0000000026:INFO  ] makefile.def: Including C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\sources
-BUILD: [01:0000000027:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\Sources.CE
-BUILD: [01:0000000028:INFO  ] Directory: C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY
-BUILD: [01:0000000029:INFO  ] TARGETNAME: ebootsd
-BUILD: [01:0000000030:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORM
-BUILD: [01:0000000031:INFO  ] FULLLIBC.LIB found in TARGETLIBS; forcing NOLIBC=1
-BUILD: [01:0000000032:INFO  ] FULLLIBC.LIB found in TARGETLIBS; forcing NOCRTDLL=1
-BUILD: [01:0000000033:PROGC ] Compiling ..\main.c
-BUILD: [01:0000000034:INFO  ] cl -nologo   /Gy -Foobj\ARMV4I\retail\main.obj -c -IARM\ -I. -IC:\WINCE600\platform\COMMON\src\inc -IC:\WINCE600\platform\Z2170P\src\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TRITON\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659xx\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\OMAP3530\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\DSS\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659XX\keypad -IC:\WINCE600\public\common\oak\drivers\block\msflashfmd\inc -I.. -IC:\WINCE600\public\common\sdk\inc -IC:\WINCE600\public\common\oak\inc -IC:\WINCE600\public\common\ddk\inc -IC:\WINCE600\sdk\CE\inc -I.\Resource\0409 -Ox -Os -GF -Zi -FdC:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.pdb -D_CRT_SECURE_NO_DEPRECATE -D_USE_32BIT_TIME_T -DUNICODE -D_UNICODE -DUNDER_CE=600 -D_WIN32_WCE=0x600 -DWINCEOEM -DWINCEINTERNAL -DWIN32 -DSTRICT -DARM -DARMV4I -D_ARM_ -DNDEBUG=1  -D_SOC_MODEL=OMAP3530 -D_TRITON_MODEL=TPS659xx -DCEDDK_USEDDKMACRO -D_WINCEOSVER=600 -DBSP_EVM2 -DBSP_OPM_SELECT_37XX=4 -DBSP_OPM_SELECT_35XX=5 -DBSP_RTC_WAKES_CPU -DBSP_SDRAM_BANK1_ENABLE -DCOREDLL -DBUILDING_EBOOT_SD -DBSP_NO_NAND_IN_SDBOOT -DINTERNATIONAL -DINTLMSG_CODEPAGE=1252 -FAsc -Faobj\ARMV4I\retail\main.cod -WX -QRimplicit-import- -Zi  -Zc:wchar_t- -Zc:forScope- -wd4867 -wd4430 -MT -U_MT -W4 /analyze   /GR- -QRarch4T -DTHUMBSUPPORT -QRinterwork-return   C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\..\main.c
-BUILD: [01:0000000035:INFO  ] main.c
-BUILD: [01:0000000036:PROGC ] Compiling ..\eth.c
-BUILD: [01:0000000037:INFO  ] cl -nologo   /Gy -Foobj\ARMV4I\retail\eth.obj -c -IARM\ -I. -IC:\WINCE600\platform\COMMON\src\inc -IC:\WINCE600\platform\Z2170P\src\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TRITON\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659xx\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\OMAP3530\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\DSS\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659XX\keypad -IC:\WINCE600\public\common\oak\drivers\block\msflashfmd\inc -I.. -IC:\WINCE600\public\common\sdk\inc -IC:\WINCE600\public\common\oak\inc -IC:\WINCE600\public\common\ddk\inc -IC:\WINCE600\sdk\CE\inc -I.\Resource\0409 -Ox -Os -GF -Zi -FdC:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.pdb -D_CRT_SECURE_NO_DEPRECATE -D_USE_32BIT_TIME_T -DUNICODE -D_UNICODE -DUNDER_CE=600 -D_WIN32_WCE=0x600 -DWINCEOEM -DWINCEINTERNAL -DWIN32 -DSTRICT -DARM -DARMV4I -D_ARM_ -DNDEBUG=1  -D_SOC_MODEL=OMAP3530 -D_TRITON_MODEL=TPS659xx -DCEDDK_USEDDKMACRO -D_WINCEOSVER=600 -DBSP_EVM2 -DBSP_OPM_SELECT_37XX=4 -DBSP_OPM_SELECT_35XX=5 -DBSP_RTC_WAKES_CPU -DBSP_SDRAM_BANK1_ENABLE -DCOREDLL -DBUILDING_EBOOT_SD -DBSP_NO_NAND_IN_SDBOOT -DINTERNATIONAL -DINTLMSG_CODEPAGE=1252 -FAsc -Faobj\ARMV4I\retail\eth.cod -WX -QRimplicit-import- -Zi  -Zc:wchar_t- -Zc:forScope- -wd4867 -wd4430 -MT -U_MT -W4 /analyze   /GR- -QRarch4T -DTHUMBSUPPORT -QRinterwork-return   C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\..\eth.c
-BUILD: [01:0000000038:INFO  ] eth.c
-BUILD: [01:0000000039:PROGC ] Compiling ..\menu.c
-BUILD: [01:0000000040:INFO  ] cl -nologo   /Gy -Foobj\ARMV4I\retail\menu.obj -c -IARM\ -I. -IC:\WINCE600\platform\COMMON\src\inc -IC:\WINCE600\platform\Z2170P\src\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TRITON\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659xx\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\OMAP3530\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\DSS\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659XX\keypad -IC:\WINCE600\public\common\oak\drivers\block\msflashfmd\inc -I.. -IC:\WINCE600\public\common\sdk\inc -IC:\WINCE600\public\common\oak\inc -IC:\WINCE600\public\common\ddk\inc -IC:\WINCE600\sdk\CE\inc -I.\Resource\0409 -Ox -Os -GF -Zi -FdC:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.pdb -D_CRT_SECURE_NO_DEPRECATE -D_USE_32BIT_TIME_T -DUNICODE -D_UNICODE -DUNDER_CE=600 -D_WIN32_WCE=0x600 -DWINCEOEM -DWINCEINTERNAL -DWIN32 -DSTRICT -DARM -DARMV4I -D_ARM_ -DNDEBUG=1  -D_SOC_MODEL=OMAP3530 -D_TRITON_MODEL=TPS659xx -DCEDDK_USEDDKMACRO -D_WINCEOSVER=600 -DBSP_EVM2 -DBSP_OPM_SELECT_37XX=4 -DBSP_OPM_SELECT_35XX=5 -DBSP_RTC_WAKES_CPU -DBSP_SDRAM_BANK1_ENABLE -DCOREDLL -DBUILDING_EBOOT_SD -DBSP_NO_NAND_IN_SDBOOT -DINTERNATIONAL -DINTLMSG_CODEPAGE=1252 -FAsc -Faobj\ARMV4I\retail\menu.cod -WX -QRimplicit-import- -Zi  -Zc:wchar_t- -Zc:forScope- -wd4867 -wd4430 -MT -U_MT -W4 /analyze   /GR- -QRarch4T -DTHUMBSUPPORT -QRinterwork-return   C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\..\menu.c
-BUILD: [01:0000000041:INFO  ] menu.c
-BUILD: [01:0000000042:PROGC ] Compiling ..\stub.c
-BUILD: [01:0000000043:INFO  ] cl -nologo   /Gy -Foobj\ARMV4I\retail\stub.obj -c -IARM\ -I. -IC:\WINCE600\platform\COMMON\src\inc -IC:\WINCE600\platform\Z2170P\src\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TRITON\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659xx\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\OMAP3530\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\DSS\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659XX\keypad -IC:\WINCE600\public\common\oak\drivers\block\msflashfmd\inc -I.. -IC:\WINCE600\public\common\sdk\inc -IC:\WINCE600\public\common\oak\inc -IC:\WINCE600\public\common\ddk\inc -IC:\WINCE600\sdk\CE\inc -I.\Resource\0409 -Ox -Os -GF -Zi -FdC:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.pdb -D_CRT_SECURE_NO_DEPRECATE -D_USE_32BIT_TIME_T -DUNICODE -D_UNICODE -DUNDER_CE=600 -D_WIN32_WCE=0x600 -DWINCEOEM -DWINCEINTERNAL -DWIN32 -DSTRICT -DARM -DARMV4I -D_ARM_ -DNDEBUG=1  -D_SOC_MODEL=OMAP3530 -D_TRITON_MODEL=TPS659xx -DCEDDK_USEDDKMACRO -D_WINCEOSVER=600 -DBSP_EVM2 -DBSP_OPM_SELECT_37XX=4 -DBSP_OPM_SELECT_35XX=5 -DBSP_RTC_WAKES_CPU -DBSP_SDRAM_BANK1_ENABLE -DCOREDLL -DBUILDING_EBOOT_SD -DBSP_NO_NAND_IN_SDBOOT -DINTERNATIONAL -DINTLMSG_CODEPAGE=1252 -FAsc -Faobj\ARMV4I\retail\stub.cod -WX -QRimplicit-import- -Zi  -Zc:wchar_t- -Zc:forScope- -wd4867 -wd4430 -MT -U_MT -W4 /analyze   /GR- -QRarch4T -DTHUMBSUPPORT -QRinterwork-return   C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\..\stub.c
-BUILD: [01:0000000044:INFO  ] stub.c
-BUILD: [01:0000000045:PROGC ] Compiling ..\flashmenu.c
-BUILD: [01:0000000046:INFO  ] cl -nologo   /Gy -Foobj\ARMV4I\retail\flashmenu.obj -c -IARM\ -I. -IC:\WINCE600\platform\COMMON\src\inc -IC:\WINCE600\platform\Z2170P\src\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TRITON\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659xx\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\OMAP3530\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\DSS\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659XX\keypad -IC:\WINCE600\public\common\oak\drivers\block\msflashfmd\inc -I.. -IC:\WINCE600\public\common\sdk\inc -IC:\WINCE600\public\common\oak\inc -IC:\WINCE600\public\common\ddk\inc -IC:\WINCE600\sdk\CE\inc -I.\Resource\0409 -Ox -Os -GF -Zi -FdC:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.pdb -D_CRT_SECURE_NO_DEPRECATE -D_USE_32BIT_TIME_T -DUNICODE -D_UNICODE -DUNDER_CE=600 -D_WIN32_WCE=0x600 -DWINCEOEM -DWINCEINTERNAL -DWIN32 -DSTRICT -DARM -DARMV4I -D_ARM_ -DNDEBUG=1  -D_SOC_MODEL=OMAP3530 -D_TRITON_MODEL=TPS659xx -DCEDDK_USEDDKMACRO -D_WINCEOSVER=600 -DBSP_EVM2 -DBSP_OPM_SELECT_37XX=4 -DBSP_OPM_SELECT_35XX=5 -DBSP_RTC_WAKES_CPU -DBSP_SDRAM_BANK1_ENABLE -DCOREDLL -DBUILDING_EBOOT_SD -DBSP_NO_NAND_IN_SDBOOT -DINTERNATIONAL -DINTLMSG_CODEPAGE=1252 -FAsc -Faobj\ARMV4I\retail\flashmenu.cod -WX -QRimplicit-import- -Zi  -Zc:wchar_t- -Zc:forScope- -wd4867 -wd4430 -MT -U_MT -W4 /analyze   /GR- -QRarch4T -DTHUMBSUPPORT -QRinterwork-return   C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\..\flashmenu.c
-BUILD: [01:0000000047:INFO  ] flashmenu.c
-BUILD: [01:0000000048:PROGC ] Compiling ..\mmu.c
-BUILD: [01:0000000049:INFO  ] cl -nologo   /Gy -Foobj\ARMV4I\retail\mmu.obj -c -IARM\ -I. -IC:\WINCE600\platform\COMMON\src\inc -IC:\WINCE600\platform\Z2170P\src\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TRITON\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659xx\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\OMAP3530\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\DSS\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659XX\keypad -IC:\WINCE600\public\common\oak\drivers\block\msflashfmd\inc -I.. -IC:\WINCE600\public\common\sdk\inc -IC:\WINCE600\public\common\oak\inc -IC:\WINCE600\public\common\ddk\inc -IC:\WINCE600\sdk\CE\inc -I.\Resource\0409 -Ox -Os -GF -Zi -FdC:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.pdb -D_CRT_SECURE_NO_DEPRECATE -D_USE_32BIT_TIME_T -DUNICODE -D_UNICODE -DUNDER_CE=600 -D_WIN32_WCE=0x600 -DWINCEOEM -DWINCEINTERNAL -DWIN32 -DSTRICT -DARM -DARMV4I -D_ARM_ -DNDEBUG=1  -D_SOC_MODEL=OMAP3530 -D_TRITON_MODEL=TPS659xx -DCEDDK_USEDDKMACRO -D_WINCEOSVER=600 -DBSP_EVM2 -DBSP_OPM_SELECT_37XX=4 -DBSP_OPM_SELECT_35XX=5 -DBSP_RTC_WAKES_CPU -DBSP_SDRAM_BANK1_ENABLE -DCOREDLL -DBUILDING_EBOOT_SD -DBSP_NO_NAND_IN_SDBOOT -DINTERNATIONAL -DINTLMSG_CODEPAGE=1252 -FAsc -Faobj\ARMV4I\retail\mmu.cod -WX -QRimplicit-import- -Zi  -Zc:wchar_t- -Zc:forScope- -wd4867 -wd4430 -MT -U_MT -W4 /analyze   /GR- -QRarch4T -DTHUMBSUPPORT -QRinterwork-return   C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\..\mmu.c
-BUILD: [01:0000000050:INFO  ] mmu.c
-BUILD: [01:0000000051:PROGC ] Assembling ..\startup.s
-BUILD: [01:0000000052:INFO  ] 	armasm -coff  -list obj\ARMV4I\retail\startup.lst -wi 150 -l 0 -cr -pd "BSP_SDRAM_BANK1_ENABLE SETL {TRUE}"  -i C:\WINCE600\platform\COMMON\src\inc,C:\WINCE600\platform\Z2170P\src\inc,C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TRITON\inc,C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659xx\inc,C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\inc,C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\OMAP3530\inc,C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\DSS\inc,C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659XX\keypad,C:\WINCE600\public\common\oak\drivers\block\msflashfmd\inc,..,C:\WINCE600\public\common\sdk\inc,C:\WINCE600\public\common\oak\inc,C:\WINCE600\public\common\ddk\inc,C:\WINCE600\sdk\CE\inc -i arm -arch 4t -pd "Thumbing SETL {FALSE}" -pd "Interworking SETL {TRUE}"  C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\..\startup.s obj\ARMV4I\retail\startup.obj
-BUILD: [01:0000000053:INFO  ] Microsoft (R) ARM Macro Assembler Version 14.01.60511
-BUILD: [01:0000000054:INFO  ] Copyright (C) Microsoft Corporation.  All rights reserved.
-BUILD: [01:0000000055:INFO  ] 
-BUILD: [01:0000000056:PROGC ] Assembling ..\jumpto.s
-BUILD: [01:0000000057:INFO  ] 	armasm -coff  -list obj\ARMV4I\retail\jumpto.lst -wi 150 -l 0 -cr -pd "BSP_SDRAM_BANK1_ENABLE SETL {TRUE}"  -i C:\WINCE600\platform\COMMON\src\inc,C:\WINCE600\platform\Z2170P\src\inc,C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TRITON\inc,C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659xx\inc,C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\inc,C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\OMAP3530\inc,C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\DSS\inc,C:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659XX\keypad,C:\WINCE600\public\common\oak\drivers\block\msflashfmd\inc,..,C:\WINCE600\public\common\sdk\inc,C:\WINCE600\public\common\oak\inc,C:\WINCE600\public\common\ddk\inc,C:\WINCE600\sdk\CE\inc -i arm -arch 4t -pd "Thumbing SETL {FALSE}" -pd "Interworking SETL {TRUE}"  C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\..\jumpto.s obj\ARMV4I\retail\jumpto.obj
-BUILD: [01:0000000058:INFO  ] Microsoft (R) ARM Macro Assembler Version 14.01.60511
-BUILD: [01:0000000059:INFO  ] Copyright (C) Microsoft Corporation.  All rights reserved.
-BUILD: [01:0000000060:INFO  ] 
-BUILD: [01:0000000061:PROGC ] Compiling .\flash.c
-BUILD: [01:0000000062:INFO  ] cl -nologo   /Gy -Foobj\ARMV4I\retail\flash.obj -c -IARM\ -I. -IC:\WINCE600\platform\COMMON\src\inc -IC:\WINCE600\platform\Z2170P\src\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TRITON\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659xx\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\OMAP3530\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\DSS\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659XX\keypad -IC:\WINCE600\public\common\oak\drivers\block\msflashfmd\inc -I.. -IC:\WINCE600\public\common\sdk\inc -IC:\WINCE600\public\common\oak\inc -IC:\WINCE600\public\common\ddk\inc -IC:\WINCE600\sdk\CE\inc -I.\Resource\0409 -Ox -Os -GF -Zi -FdC:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.pdb -D_CRT_SECURE_NO_DEPRECATE -D_USE_32BIT_TIME_T -DUNICODE -D_UNICODE -DUNDER_CE=600 -D_WIN32_WCE=0x600 -DWINCEOEM -DWINCEINTERNAL -DWIN32 -DSTRICT -DARM -DARMV4I -D_ARM_ -DNDEBUG=1  -D_SOC_MODEL=OMAP3530 -D_TRITON_MODEL=TPS659xx -DCEDDK_USEDDKMACRO -D_WINCEOSVER=600 -DBSP_EVM2 -DBSP_OPM_SELECT_37XX=4 -DBSP_OPM_SELECT_35XX=5 -DBSP_RTC_WAKES_CPU -DBSP_SDRAM_BANK1_ENABLE -DCOREDLL -DBUILDING_EBOOT_SD -DBSP_NO_NAND_IN_SDBOOT -DINTERNATIONAL -DINTLMSG_CODEPAGE=1252 -FAsc -Faobj\ARMV4I\retail\flash.cod -WX -QRimplicit-import- -Zi  -Zc:wchar_t- -Zc:forScope- -wd4867 -wd4430 -MT -U_MT -W4 /analyze   /GR- -QRarch4T -DTHUMBSUPPORT -QRinterwork-return   C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\.\flash.c
-BUILD: [01:0000000063:INFO  ] flash.c
-BUILD: [01:0000000064:PROGC ] Compiling .\cfg.c
-BUILD: [01:0000000065:INFO  ] cl -nologo   /Gy -Foobj\ARMV4I\retail\cfg.obj -c -IARM\ -I. -IC:\WINCE600\platform\COMMON\src\inc -IC:\WINCE600\platform\Z2170P\src\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TRITON\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659xx\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\OMAP3530\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\DSS\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659XX\keypad -IC:\WINCE600\public\common\oak\drivers\block\msflashfmd\inc -I.. -IC:\WINCE600\public\common\sdk\inc -IC:\WINCE600\public\common\oak\inc -IC:\WINCE600\public\common\ddk\inc -IC:\WINCE600\sdk\CE\inc -I.\Resource\0409 -Ox -Os -GF -Zi -FdC:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.pdb -D_CRT_SECURE_NO_DEPRECATE -D_USE_32BIT_TIME_T -DUNICODE -D_UNICODE -DUNDER_CE=600 -D_WIN32_WCE=0x600 -DWINCEOEM -DWINCEINTERNAL -DWIN32 -DSTRICT -DARM -DARMV4I -D_ARM_ -DNDEBUG=1  -D_SOC_MODEL=OMAP3530 -D_TRITON_MODEL=TPS659xx -DCEDDK_USEDDKMACRO -D_WINCEOSVER=600 -DBSP_EVM2 -DBSP_OPM_SELECT_37XX=4 -DBSP_OPM_SELECT_35XX=5 -DBSP_RTC_WAKES_CPU -DBSP_SDRAM_BANK1_ENABLE -DCOREDLL -DBUILDING_EBOOT_SD -DBSP_NO_NAND_IN_SDBOOT -DINTERNATIONAL -DINTLMSG_CODEPAGE=1252 -FAsc -Faobj\ARMV4I\retail\cfg.cod -WX -QRimplicit-import- -Zi  -Zc:wchar_t- -Zc:forScope- -wd4867 -wd4430 -MT -U_MT -W4 /analyze   /GR- -QRarch4T -DTHUMBSUPPORT -QRinterwork-return   C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\.\cfg.c
-BUILD: [01:0000000066:INFO  ] cfg.c
-BUILD: [00:0000000067:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\BootImage does not exist (2).
-BUILD: [00:0000000068:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_io.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000069:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_kitl_boot.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000070:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_log.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000071:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_blmenu.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000072:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_blnk.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000073:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_blcommon.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000074:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_cortexA8_cache.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000075:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_flashstore.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000076:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_fmd_nand_boot.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000077:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_alloc.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000078:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_debugserial.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000079:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oali2c.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000080:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\omap3530_oalcpuver.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000081:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_devicesmap.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000082:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_fatfs.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000083:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdmemory.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000084:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdhc.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000085:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_lan911x.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000086:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_usbfn.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000087:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_rndis.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000088:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\tps659xx_misc.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000089:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_gpiodispatch.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000090:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_omap_gpio.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000091:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\tps659xx_oal_gpio.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000092:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\triton_oal.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000093:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\omap3530_soccfg.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000094:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\omap3530_sdhc_boot.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000095:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\omap3530_oal_padcfg.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000096:INFO  ] Will Build C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\BSPCFG.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000097:INFO  ] Will Build C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_bootstubs.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000098:INFO  ] Will Build C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_stall.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000099:INFO  ] Will Build C:\WINCE600\public\common\oak\lib\ARMV4I\retail\rne_mdd.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000100:INFO  ] Will Build C:\WINCE600\public\common\oak\lib\ARMV4I\retail\gsnull.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000101:INFO  ] Will Build C:\WINCE600\public\common\oak\lib\ARMV4I\retail\fulllibc.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000102:INFO  ] Will Build C:\WINCE600\public\common\oak\lib\ARMV4I\retail\bootpart.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000103:INFO  ] Will Build C:\WINCE600\public\common\oak\lib\ARMV4I\retail\eboot.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000104:INFO  ] Will Build C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_boot_ethdrv_usbfn.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000105:INFO  ] Will Build C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_display.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000106:INFO  ] Will Build C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_display_init.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000107:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_spi_lib.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000108:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\obj\ARMV4I\retail\main.obj because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000109:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\obj\ARMV4I\retail\eth.obj because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000110:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\obj\ARMV4I\retail\menu.obj because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000111:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\obj\ARMV4I\retail\stub.obj because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000112:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\obj\ARMV4I\retail\flashmenu.obj because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000113:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\obj\ARMV4I\retail\mmu.obj because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000114:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\obj\ARMV4I\retail\flash.obj because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000115:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\obj\ARMV4I\retail\cfg.obj because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000116:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\obj\ARMV4I\retail\startup.obj because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000117:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\obj\ARMV4I\retail\jumpto.obj because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000118:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\ because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
-BUILD: [00:0000000119:PROGC ] Building LINK Pass in C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\ directory.
-BUILD: [00:0000000120:PROG  ] 'NMAKE.EXE TargetExeFiles  -i -c BUILDMSG=Stop.  BUILDROOT=C:\WINCE600\PLATFORM\Z2170P CLEANBUILD=1 LINKONLY=1 NOPASS0=1'
-BUILD: [01:0000000121:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\Sources.default
-BUILD: [01:0000000122:INFO  ] makefile.def: BUILDROOT is C:\WINCE600\PLATFORM\Z2170P
-BUILD: [01:0000000123:INFO  ] makefile.def: Including C:\WINCE600\PLATFORM\Z2170P\sources.cmn
-BUILD: [01:0000000124:INFO  ] makefile.def: Including C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\sources
-BUILD: [01:0000000125:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\Sources.CE
-BUILD: [01:0000000126:INFO  ] Directory: C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY
-BUILD: [01:0000000127:INFO  ] TARGETNAME: ebootsd
-BUILD: [01:0000000128:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORM
-BUILD: [01:0000000129:INFO  ] FULLLIBC.LIB found in TARGETLIBS; forcing NOLIBC=1
-BUILD: [01:0000000130:INFO  ] FULLLIBC.LIB found in TARGETLIBS; forcing NOCRTDLL=1
-BUILD: [01:0000000131:INFO  ] 	set LIB=C:\WINCE600\sdk\CE\lib
-BUILD: [01:0000000132:PROGC ] Linking C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe
-BUILD: [01:0000000133:INFO  ] 	link /LARGEADDRESSAWARE -out:C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm2FB.tmp
-BUILD: [01:0000000134:INFO  ] Microsoft (R) Incremental Linker Version 8.00.50727.42
-BUILD: [01:0000000135:INFO  ] Copyright (C) Microsoft Corporation.  All rights reserved.
-BUILD: [01:0000000136:INFO  ] 
-BUILD: [01:0000000137:INFO  ] -nodefaultlib 
-BUILD: [01:0000000138:INFO  ] -entry:StartUp 
-BUILD: [01:0000000139:INFO  ] -pdb:C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.pdb 
-BUILD: [01:0000000140:INFO  ] -pdbaltpath:ebootsd.pdb 
-BUILD: [01:0000000141:INFO  ] /opt:ref /verbose 
-BUILD: [01:0000000142:INFO  ] -debug -debugtype:cv -incremental:no 
-BUILD: [01:0000000143:INFO  ] -map:C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.map 
-BUILD: [01:0000000144:INFO  ] -savebaserelocations:C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.rel 
-BUILD: [01:0000000145:INFO  ] -MERGE:.rdata=.text -merge:.astart=.text /DEBUG /DEBUGTYPE:CV /FIXED:NO -align:4096 -ignore:4001,4070,4078,4086,4089,4096,4099,4108,4229 /STACK:65536,4096 -debugtype:cv,fixup -incremental:no 
-BUILD: [01:0000000146:INFO  ] /subsystem:windowsce,6.00 
-BUILD: [01:0000000147:INFO  ] -base:0x00000000 
-BUILD: [01:0000000148:INFO  ] obj\ARMV4I\retail\main.obj obj\ARMV4I\retail\eth.obj obj\ARMV4I\retail\menu.obj obj\ARMV4I\retail\stub.obj obj\ARMV4I\retail\flashmenu.obj obj\ARMV4I\retail\mmu.obj obj\ARMV4I\retail\startup.obj obj\ARMV4I\retail\jumpto.obj obj\ARMV4I\retail\flash.obj obj\ARMV4I\retail\cfg.obj 
-BUILD: [01:0000000149:INFO  ] C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_io.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_kitl_boot.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_log.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_blmenu.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_blnk.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_blcommon.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_cortexA8_cache.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_flashstore.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_fmd_nand_boot.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_alloc.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_debugserial.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oali2c.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\OMAP3530_oalcpuver.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_devicesmap.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_fatfs.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdmemory.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdhc.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_lan911x.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_usbfn.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_rndis.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\TPS659xx_misc.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_gpiodispatch.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_omap_gpio.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\TPS659xx_oal_gpio.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\triton_oal.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\OMAP3530_soccfg.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\OMAP3530_sdhc_boot.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\OMAP3530_oal_padcfg.lib C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bspcfg.lib C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_bootstubs.lib C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_stall.lib C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\rne_mdd.lib C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\gsnull.lib C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\bootpart.lib C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\eboot.lib C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_boot_ethdrv_usbfn.lib C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_display.lib C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_display_init.lib C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_spi_lib.lib 
-BUILD: [01:0000000150:INFO  ] 
-BUILD: [01:0000000151:INFO  ] Starting pass 1
-BUILD: [01:0000000152:INFO  ] 
-BUILD: [01:0000000153:INFO  ] Searching libraries
-BUILD: [01:0000000154:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_io.lib:
-BUILD: [01:0000000155:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_kitl_boot.lib:
-BUILD: [01:0000000156:INFO  ]       Found OALKitlDeviceType
-BUILD: [01:0000000157:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000158:INFO  ]         Loaded oal_kitl_boot.lib(device.obj)
-BUILD: [01:0000000159:INFO  ]       Found OALKitlCreateName
-BUILD: [01:0000000160:INFO  ]         Referenced in eth.obj
-BUILD: [01:0000000161:INFO  ]         Loaded oal_kitl_boot.lib(name.obj)
-BUILD: [01:0000000162:INFO  ]       Found OALKitlMACtoString
-BUILD: [01:0000000163:INFO  ]         Referenced in eth.obj
-BUILD: [01:0000000164:INFO  ]         Referenced in menu.obj
-BUILD: [01:0000000165:INFO  ]         Loaded oal_kitl_boot.lib(format.obj)
-BUILD: [01:0000000166:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_log.lib:
-BUILD: [01:0000000167:INFO  ]       Found dpCurSettings
-BUILD: [01:0000000168:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000169:INFO  ]         Referenced in eth.obj
-BUILD: [01:0000000170:INFO  ]         Referenced in oal_kitl_boot.lib(device.obj)
-BUILD: [01:0000000171:INFO  ]         Referenced in oal_kitl_boot.lib(name.obj)
-BUILD: [01:0000000172:INFO  ]         Loaded oal_log.lib(debug.obj)
-BUILD: [01:0000000173:INFO  ]       Found OALLogPrintf
-BUILD: [01:0000000174:INFO  ]         Referenced in oal_kitl_boot.lib(format.obj)
-BUILD: [01:0000000175:INFO  ]         Loaded oal_log.lib(log.obj)
-BUILD: [01:0000000176:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_blmenu.lib:
-BUILD: [01:0000000177:INFO  ]       Found OALBLMenuShow
-BUILD: [01:0000000178:INFO  ]         Referenced in menu.obj
-BUILD: [01:0000000179:INFO  ]         Loaded oal_blmenu.lib(menu.obj)
-BUILD: [01:0000000180:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_blnk.lib:
-BUILD: [01:0000000181:INFO  ]       Found NKDbgPrintfW
-BUILD: [01:0000000182:INFO  ]         Referenced in mmu.obj
-BUILD: [01:0000000183:INFO  ]         Referenced in oal_log.lib(debug.obj)
-BUILD: [01:0000000184:INFO  ]         Referenced in oal_blmenu.lib(menu.obj)
-BUILD: [01:0000000185:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000186:INFO  ]         Referenced in eth.obj
-BUILD: [01:0000000187:INFO  ]         Referenced in menu.obj
-BUILD: [01:0000000188:INFO  ]         Referenced in flashmenu.obj
-BUILD: [01:0000000189:INFO  ]         Loaded oal_blnk.lib(wrappers.obj)
-BUILD: [01:0000000190:INFO  ]       Found NKwvsprintfW
-BUILD: [01:0000000191:INFO  ]         Referenced in oal_log.lib(log.obj)
-BUILD: [01:0000000192:INFO  ]         Referenced in oal_blnk.lib(wrappers.obj)
-BUILD: [01:0000000193:INFO  ]         Loaded oal_blnk.lib(format.obj)
-BUILD: [01:0000000194:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_blcommon.lib:
-BUILD: [01:0000000195:INFO  ]       Found BootloaderMain
-BUILD: [01:0000000196:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000197:INFO  ]         Loaded oal_blcommon.lib(blcommon.obj)
-BUILD: [01:0000000198:INFO  ]       Found KITLOutputDebugString
-BUILD: [01:0000000199:INFO  ]         Referenced in oal_kitl_boot.lib(device.obj)
-BUILD: [01:0000000200:INFO  ]         Referenced in oal_kitl_boot.lib(name.obj)
-BUILD: [01:0000000201:INFO  ]         Referenced in oal_blcommon.lib(blcommon.obj)
-BUILD: [01:0000000202:INFO  ]         Loaded oal_blcommon.lib(format.obj)
-BUILD: [01:0000000203:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_cortexA8_cache.lib:
-BUILD: [01:0000000204:INFO  ]       Found OALCleanDCache
-BUILD: [01:0000000205:INFO  ]         Referenced in jumpto.obj
-BUILD: [01:0000000206:INFO  ]         Loaded common_ti_cortexA8_cache.lib(dcache.obj)
-BUILD: [01:0000000207:INFO  ]       Found g_oalCacheInfo
-BUILD: [01:0000000208:INFO  ]         Referenced in common_ti_cortexA8_cache.lib(dcache.obj)
-BUILD: [01:0000000209:INFO  ]         Loaded common_ti_cortexA8_cache.lib(global.obj)
-BUILD: [01:0000000210:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_flashstore.lib:
-BUILD: [01:0000000211:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_fmd_nand_boot.lib:
-BUILD: [01:0000000212:INFO  ]       Found FMD_Deinit
-BUILD: [01:0000000213:INFO  ]         Referenced in flashmenu.obj
-BUILD: [01:0000000214:INFO  ]         Loaded common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000215:INFO  ]       Found ECC_Result
-BUILD: [01:0000000216:INFO  ]         Referenced in common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000217:INFO  ]         Loaded common_ti_fmd_nand_boot.lib(gpmc_ecc.obj)
-BUILD: [01:0000000218:INFO  ]       Found decode_bch
-BUILD: [01:0000000219:INFO  ]         Referenced in common_ti_fmd_nand_boot.lib(gpmc_ecc.obj)
-BUILD: [01:0000000220:INFO  ]         Loaded common_ti_fmd_nand_boot.lib(omap_bch_decoder.obj)
-BUILD: [01:0000000221:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_alloc.lib:
-BUILD: [01:0000000222:INFO  ]       Found OALLocalAllocInit
-BUILD: [01:0000000223:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000224:INFO  ]         Loaded common_ti_oal_alloc.lib(alloc.obj)
-BUILD: [01:0000000225:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_debugserial.lib:
-BUILD: [01:0000000226:INFO  ]       Found OEMDeinitDebugSerial
-BUILD: [01:0000000227:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000228:INFO  ]         Loaded common_ti_debugserial.lib(debugserial.obj)
-BUILD: [01:0000000229:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oali2c.lib:
-BUILD: [01:0000000230:INFO  ]       Found OALI2CInit
-BUILD: [01:0000000231:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000232:INFO  ]         Loaded common_ti_oali2c.lib(oali2c.obj)
-BUILD: [01:0000000233:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\OMAP3530_oalcpuver.lib:
-BUILD: [01:0000000234:INFO  ]       Found Get_CPUVersion
-BUILD: [01:0000000235:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000236:INFO  ]         Loaded OMAP3530_oalcpuver.lib(oalcpuver.obj)
-BUILD: [01:0000000237:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_devicesmap.lib:
-BUILD: [01:0000000238:INFO  ]       Found GetAddressByDevice
-BUILD: [01:0000000239:INFO  ]         Referenced in common_ti_debugserial.lib(debugserial.obj)
-BUILD: [01:0000000240:INFO  ]         Referenced in common_ti_oali2c.lib(oali2c.obj)
-BUILD: [01:0000000241:INFO  ]         Loaded common_ti_devicesmap.lib(devicemap.obj)
-BUILD: [01:0000000242:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_fatfs.lib:
-BUILD: [01:0000000243:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdmemory.lib:
-BUILD: [01:0000000244:INFO  ]       Found BLSDCardReadData
-BUILD: [01:0000000245:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000246:INFO  ]         Loaded common_ti_boot_sdmemory.lib(sdcard.obj)
-BUILD: [01:0000000247:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdhc.lib:
-BUILD: [01:0000000248:INFO  ]       Found SdhcControllerIstThread
-BUILD: [01:0000000249:INFO  ]         Referenced in common_ti_boot_sdmemory.lib(sdcard.obj)
-BUILD: [01:0000000250:INFO  ]         Loaded common_ti_boot_sdhc.lib(sdhc.obj)
-BUILD: [01:0000000251:INFO  ]       Found OALGetSiliconIdCode
-BUILD: [01:0000000252:INFO  ]         Referenced in common_ti_boot_sdhc.lib(sdhc.obj)
-BUILD: [01:0000000253:INFO  ]         Loaded common_ti_boot_sdhc.lib(getidcode.obj)
-BUILD: [01:0000000254:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_lan911x.lib:
-BUILD: [01:0000000255:INFO  ]       Found LAN911XMulticastList
-BUILD: [01:0000000256:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000257:INFO  ]         Loaded common_ti_ethdrv_lan911x.lib(lan911x.obj)
-BUILD: [01:0000000258:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_usbfn.lib:
-BUILD: [01:0000000259:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_rndis.lib:
-BUILD: [01:0000000260:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\TPS659xx_misc.lib:
-BUILD: [01:0000000261:INFO  ]       Found TWLReadIDCode
-BUILD: [01:0000000262:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000263:INFO  ]         Loaded TPS659xx_misc.lib(misc.obj)
-BUILD: [01:0000000264:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_gpiodispatch.lib:
-BUILD: [01:0000000265:INFO  ]       Found GPIOSetBit
-BUILD: [01:0000000266:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000267:INFO  ]         Referenced in menu.obj
-BUILD: [01:0000000268:INFO  ]         Loaded common_ti_oal_gpiodispatch.lib(gpio_dispatch.obj)
-BUILD: [01:0000000269:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_omap_gpio.lib:
-BUILD: [01:0000000270:INFO  ]       Found Omap_Gpio
-BUILD: [01:0000000271:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000272:INFO  ]         Loaded common_ti_oal_omap_gpio.lib(omap35xx_gpio.obj)
-BUILD: [01:0000000273:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\TPS659xx_oal_gpio.lib:
-BUILD: [01:0000000274:INFO  ]       Found Tps659xx_Gpio
-BUILD: [01:0000000275:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000276:INFO  ]         Loaded TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
-BUILD: [01:0000000277:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\triton_oal.lib:
-BUILD: [01:0000000278:INFO  ]       Found TWLOpen
-BUILD: [01:0000000279:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000280:INFO  ]         Referenced in TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
-BUILD: [01:0000000281:INFO  ]         Loaded triton_oal.lib(twl_access.obj)
-BUILD: [01:0000000282:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\OMAP3530_soccfg.lib:
-BUILD: [01:0000000283:INFO  ]       Found SOCGetGPMCAddress
-BUILD: [01:0000000284:INFO  ]         Referenced in common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000285:INFO  ]         Loaded OMAP3530_soccfg.lib(soccfg.obj)
-BUILD: [01:0000000286:INFO  ]       Found s_DeviceAddressMap
-BUILD: [01:0000000287:INFO  ]         Referenced in common_ti_devicesmap.lib(devicemap.obj)
-BUILD: [01:0000000288:INFO  ]         Loaded OMAP3530_soccfg.lib(devicemap.obj)
-BUILD: [01:0000000289:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\OMAP3530_sdhc_boot.lib:
-BUILD: [01:0000000290:INFO  ]       Found SocSdhcDevconf
-BUILD: [01:0000000291:INFO  ]         Referenced in common_ti_boot_sdhc.lib(sdhc.obj)
-BUILD: [01:0000000292:INFO  ]         Loaded OMAP3530_sdhc_boot.lib(sdhc.obj)
-BUILD: [01:0000000293:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\OMAP3530_oal_padcfg.lib:
-BUILD: [01:0000000294:INFO  ]       Found SOCSetPadConfig
-BUILD: [01:0000000295:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000296:INFO  ]         Loaded OMAP3530_oal_padcfg.lib(soc_padcfg.obj)
-BUILD: [01:0000000297:INFO  ]     Searching C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bspcfg.lib:
-BUILD: [01:0000000298:INFO  ]       Found BSPInsertGpioDevice
-BUILD: [01:0000000299:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000300:INFO  ]         Loaded bspcfg.lib(bspcfg.obj)
-BUILD: [01:0000000301:INFO  ]     Searching C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_bootstubs.lib:
-BUILD: [01:0000000302:INFO  ]       Found EnableDeviceClocks
-BUILD: [01:0000000303:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000304:INFO  ]         Referenced in common_ti_debugserial.lib(debugserial.obj)
-BUILD: [01:0000000305:INFO  ]         Referenced in common_ti_oali2c.lib(oali2c.obj)
-BUILD: [01:0000000306:INFO  ]         Referenced in common_ti_oal_omap_gpio.lib(omap35xx_gpio.obj)
-BUILD: [01:0000000307:INFO  ]         Loaded bsp_bootstubs.lib(bsp_bootstubs.obj)
-BUILD: [01:0000000308:INFO  ]     Searching C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_stall.lib:
-BUILD: [01:0000000309:INFO  ]       Found OALStall
-BUILD: [01:0000000310:INFO  ]         Referenced in common_ti_boot_sdmemory.lib(sdcard.obj)
-BUILD: [01:0000000311:INFO  ]         Referenced in common_ti_boot_sdhc.lib(sdhc.obj)
-BUILD: [01:0000000312:INFO  ]         Referenced in common_ti_ethdrv_lan911x.lib(lan911x.obj)
-BUILD: [01:0000000313:INFO  ]         Referenced in OMAP3530_sdhc_boot.lib(sdhc.obj)
-BUILD: [01:0000000314:INFO  ]         Loaded bsp_stall.lib(stall.obj)
-BUILD: [01:0000000315:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\rne_mdd.lib:
-BUILD: [01:0000000316:INFO  ]       Found RndisMulticastList
-BUILD: [01:0000000317:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000318:INFO  ]         Loaded rne_mdd.lib(rndis.obj)
-BUILD: [01:0000000319:INFO  ]       Found HostMiniInit
-BUILD: [01:0000000320:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000321:INFO  ]         Loaded rne_mdd.lib(hostmini.obj)
-BUILD: [01:0000000322:INFO  ]       Found FreeBuffer
-BUILD: [01:0000000323:INFO  ]         Referenced in rne_mdd.lib(rndis.obj)
-BUILD: [01:0000000324:INFO  ]         Loaded rne_mdd.lib(util.obj)
-BUILD: [01:0000000325:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\gsnull.lib:
-BUILD: [01:0000000326:INFO  ]       Found __security_cookie
-BUILD: [01:0000000327:INFO  ]         Referenced in common_ti_boot_sdmemory.lib(sdcard.obj)
-BUILD: [01:0000000328:INFO  ]         Referenced in oal_kitl_boot.lib(format.obj)
-BUILD: [01:0000000329:INFO  ]         Referenced in oal_log.lib(log.obj)
-BUILD: [01:0000000330:INFO  ]         Referenced in oal_blmenu.lib(menu.obj)
-BUILD: [01:0000000331:INFO  ]         Referenced in common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000332:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000333:INFO  ]         Referenced in eth.obj
-BUILD: [01:0000000334:INFO  ]         Referenced in menu.obj
-BUILD: [01:0000000335:INFO  ]         Referenced in flashmenu.obj
-BUILD: [01:0000000336:INFO  ]         Loaded gsnull.lib(gsnull.obj)
-BUILD: [01:0000000337:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib:
-BUILD: [01:0000000338:INFO  ]       Found __GSHandlerCheck
-BUILD: [01:0000000339:INFO  ]         Referenced in common_ti_boot_sdmemory.lib(sdcard.obj)
-BUILD: [01:0000000340:INFO  ]         Referenced in oal_kitl_boot.lib(format.obj)
-BUILD: [01:0000000341:INFO  ]         Referenced in oal_log.lib(log.obj)
-BUILD: [01:0000000342:INFO  ]         Referenced in oal_blmenu.lib(menu.obj)
-BUILD: [01:0000000343:INFO  ]         Referenced in common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000344:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000345:INFO  ]         Referenced in eth.obj
-BUILD: [01:0000000346:INFO  ]         Referenced in menu.obj
-BUILD: [01:0000000347:INFO  ]         Referenced in flashmenu.obj
-BUILD: [01:0000000348:INFO  ]         Loaded fulllibc.lib(gshandler.obj)
-BUILD: [01:0000000349:INFO  ]       Found strncmp
-BUILD: [01:0000000350:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000351:INFO  ]         Loaded fulllibc.lib(astrncmp.obj)
-BUILD: [01:0000000352:INFO  ]       Found memset
-BUILD: [01:0000000353:INFO  ]         Referenced in common_ti_oal_omap_gpio.lib(omap35xx_gpio.obj)
-BUILD: [01:0000000354:INFO  ]         Referenced in rne_mdd.lib(rndis.obj)
-BUILD: [01:0000000355:INFO  ]         Referenced in common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000356:INFO  ]         Referenced in common_ti_fmd_nand_boot.lib(omap_bch_decoder.obj)
-BUILD: [01:0000000357:INFO  ]         Referenced in common_ti_oal_alloc.lib(alloc.obj)
-BUILD: [01:0000000358:INFO  ]         Referenced in common_ti_boot_sdmemory.lib(sdcard.obj)
-BUILD: [01:0000000359:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000360:INFO  ]         Referenced in oal_kitl_boot.lib(format.obj)
-BUILD: [01:0000000361:INFO  ]         Referenced in oal_blmenu.lib(menu.obj)
-BUILD: [01:0000000362:INFO  ]         Referenced in oal_blcommon.lib(blcommon.obj)
-BUILD: [01:0000000363:INFO  ]         Loaded fulllibc.lib(memset.obj)
-BUILD: [01:0000000364:INFO  ]       Found __security_check_cookie
-BUILD: [01:0000000365:INFO  ]         Referenced in common_ti_boot_sdmemory.lib(sdcard.obj)
-BUILD: [01:0000000366:INFO  ]         Referenced in fulllibc.lib(gshandler.obj)
-BUILD: [01:0000000367:INFO  ]         Referenced in oal_kitl_boot.lib(format.obj)
-BUILD: [01:0000000368:INFO  ]         Referenced in oal_log.lib(log.obj)
-BUILD: [01:0000000369:INFO  ]         Referenced in oal_blmenu.lib(menu.obj)
-BUILD: [01:0000000370:INFO  ]         Referenced in common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000371:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000372:INFO  ]         Referenced in eth.obj
-BUILD: [01:0000000373:INFO  ]         Referenced in menu.obj
-BUILD: [01:0000000374:INFO  ]         Referenced in flashmenu.obj
-BUILD: [01:0000000375:INFO  ]         Loaded fulllibc.lib(armsecgs.obj)
-BUILD: [01:0000000376:INFO  ]       Found wcscpy
-BUILD: [01:0000000377:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000378:INFO  ]         Loaded fulllibc.lib(wcscpy.obj)
-BUILD: [01:0000000379:INFO  ]       Found memcpy
-BUILD: [01:0000000380:INFO  ]         Referenced in rne_mdd.lib(hostmini.obj)
-BUILD: [01:0000000381:INFO  ]         Referenced in oal_blcommon.lib(blcommon.obj)
-BUILD: [01:0000000382:INFO  ]         Referenced in common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000383:INFO  ]         Referenced in common_ti_ethdrv_lan911x.lib(lan911x.obj)
-BUILD: [01:0000000384:INFO  ]         Referenced in rne_mdd.lib(rndis.obj)
-BUILD: [01:0000000385:INFO  ]         Referenced in main.obj
-BUILD: [01:0000000386:INFO  ]         Referenced in eth.obj
-BUILD: [01:0000000387:INFO  ]         Referenced in menu.obj
-BUILD: [01:0000000388:INFO  ]         Referenced in oal_blmenu.lib(menu.obj)
-BUILD: [01:0000000389:INFO  ]         Loaded fulllibc.lib(memcpy.obj)
-BUILD: [01:0000000390:INFO  ]       Found __rt_udiv
-BUILD: [01:0000000391:INFO  ]         Referenced in flashmenu.obj
-BUILD: [01:0000000392:INFO  ]         Referenced in common_ti_boot_sdhc.lib(sdhc.obj)
-BUILD: [01:0000000393:INFO  ]         Loaded fulllibc.lib(__udiv.obj)
-BUILD: [01:0000000394:INFO  ]       Found __rt_sdiv
-BUILD: [01:0000000395:INFO  ]         Referenced in oal_kitl_boot.lib(name.obj)
-BUILD: [01:0000000396:INFO  ]         Loaded fulllibc.lib(__div.obj)
-BUILD: [01:0000000397:INFO  ]       Found __rt_urem64by64
-BUILD: [01:0000000398:INFO  ]         Referenced in oal_blnk.lib(format.obj)
-BUILD: [01:0000000399:INFO  ]         Loaded fulllibc.lib(mdsdiv64.obj)
-BUILD: [01:0000000400:INFO  ]       Found memcmp
-BUILD: [01:0000000401:INFO  ]         Referenced in oal_blcommon.lib(blcommon.obj)
-BUILD: [01:0000000402:INFO  ]         Referenced in common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000403:INFO  ]         Loaded fulllibc.lib(memcmp.obj)
-BUILD: [01:0000000404:INFO  ]       Found strcmp
-BUILD: [01:0000000405:INFO  ]         Referenced in oal_blcommon.lib(blcommon.obj)
-BUILD: [01:0000000406:INFO  ]         Loaded fulllibc.lib(mdsstrcmp.obj)
-BUILD: [01:0000000407:INFO  ]       Found atoi
-BUILD: [01:0000000408:INFO  ]         Referenced in oal_blcommon.lib(format.obj)
-BUILD: [01:0000000409:INFO  ]         Loaded fulllibc.lib(atox.obj)
-BUILD: [01:0000000410:INFO  ]       Found wcscmp
-BUILD: [01:0000000411:INFO  ]         Referenced in common_ti_devicesmap.lib(devicemap.obj)
-BUILD: [01:0000000412:INFO  ]         Loaded fulllibc.lib(wcscmp.obj)
-BUILD: [01:0000000413:INFO  ]       Found strlen
-BUILD: [01:0000000414:INFO  ]         Referenced in rne_mdd.lib(hostmini.obj)
-BUILD: [01:0000000415:INFO  ]         Loaded fulllibc.lib(mdsstrlen.obj)
-BUILD: [01:0000000416:INFO  ]       Found __raise_int_divide_by_zero
-BUILD: [01:0000000417:INFO  ]         Referenced in fulllibc.lib(__udiv.obj)
-BUILD: [01:0000000418:INFO  ]         Referenced in fulllibc.lib(__div.obj)
-BUILD: [01:0000000419:INFO  ]         Referenced in fulllibc.lib(mdsdiv64.obj)
-BUILD: [01:0000000420:INFO  ]         Loaded fulllibc.lib(diverr.obj)
-BUILD: [01:0000000421:INFO  ]       Found __crtRaiseException
-BUILD: [01:0000000422:INFO  ]         Referenced in fulllibc.lib(diverr.obj)
-BUILD: [01:0000000423:INFO  ]         Loaded fulllibc.lib(raiseexc.obj)
-BUILD: [01:0000000424:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\bootpart.lib:
-BUILD: [01:0000000425:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\eboot.lib:
-BUILD: [01:0000000426:INFO  ]       Found EbootInitEtherTransport
-BUILD: [01:0000000427:INFO  ]         Referenced in eth.obj
-BUILD: [01:0000000428:INFO  ]         Loaded eboot.lib(ebsimp.obj)
-BUILD: [01:0000000429:INFO  ]       Found EbootTFtpdServerRegister
-BUILD: [01:0000000430:INFO  ]         Referenced in eboot.lib(ebsimp.obj)
-BUILD: [01:0000000431:INFO  ]         Loaded eboot.lib(tftpd.obj)
-BUILD: [01:0000000432:INFO  ]       Found EbootInitTFtp
-BUILD: [01:0000000433:INFO  ]         Referenced in eboot.lib(ebsimp.obj)
-BUILD: [01:0000000434:INFO  ]         Loaded eboot.lib(tftp.obj)
-BUILD: [01:0000000435:INFO  ]       Found EbootCheckUDP
-BUILD: [01:0000000436:INFO  ]         Referenced in eboot.lib(ebsimp.obj)
-BUILD: [01:0000000437:INFO  ]         Loaded eboot.lib(udp.obj)
-BUILD: [01:0000000438:INFO  ]       Found EbootProcessDHCP
-BUILD: [01:0000000439:INFO  ]         Referenced in eboot.lib(ebsimp.obj)
-BUILD: [01:0000000440:INFO  ]         Loaded eboot.lib(dhcp.obj)
-BUILD: [01:0000000441:INFO  ]       Found EbootProcessEDBG
-BUILD: [01:0000000442:INFO  ]         Referenced in eboot.lib(ebsimp.obj)
-BUILD: [01:0000000443:INFO  ]         Loaded eboot.lib(edbg.obj)
-BUILD: [01:0000000444:INFO  ]     Searching C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_boot_ethdrv_usbfn.lib:
-BUILD: [01:0000000445:INFO  ]     Searching C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_display.lib:
-BUILD: [01:0000000446:INFO  ]       Found ShowSDLogo
-BUILD: [01:0000000447:INFO  ]         Referenced in cfg.obj
-BUILD: [01:0000000448:INFO  ]         Loaded bsp_display.lib(bsp_logo.obj)
-BUILD: [01:0000000449:INFO  ]     Searching C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_display_init.lib:
-BUILD: [01:0000000450:INFO  ]       Found LcdPdd_LCD_Initialize
-BUILD: [01:0000000451:INFO  ]         Referenced in bsp_display.lib(bsp_logo.obj)
-BUILD: [01:0000000452:INFO  ]         Loaded bsp_display_init.lib(lcd_qvga.obj)
-BUILD: [01:0000000453:INFO  ]       Found LcdPowerControl
-BUILD: [01:0000000454:INFO  ]         Referenced in bsp_display_init.lib(lcd_qvga.obj)
-BUILD: [01:0000000455:INFO  ]         Loaded bsp_display_init.lib(lcd_support.obj)
-BUILD: [01:0000000456:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_spi_lib.lib:
-BUILD: [01:0000000457:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_io.lib:
-BUILD: [01:0000000458:INFO  ]       Found OALIoTransBusAddress
-BUILD: [01:0000000459:INFO  ]         Referenced in oal_kitl_boot.lib(device.obj)
-BUILD: [01:0000000460:INFO  ]         Loaded oal_io.lib(trans.obj)
-BUILD: [01:0000000461:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_kitl_boot.lib:
-BUILD: [01:0000000462:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_log.lib:
-BUILD: [01:0000000463:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_blmenu.lib:
-BUILD: [01:0000000464:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_blnk.lib:
-BUILD: [01:0000000465:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_blcommon.lib:
-BUILD: [01:0000000466:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_cortexA8_cache.lib:
-BUILD: [01:0000000467:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_flashstore.lib:
-BUILD: [01:0000000468:INFO  ]       Found OALFlashStoreClose
-BUILD: [01:0000000469:INFO  ]         Referenced in bsp_display.lib(bsp_logo.obj)
-BUILD: [01:0000000470:INFO  ]         Loaded common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000471:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_fmd_nand_boot.lib:
-BUILD: [01:0000000472:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_alloc.lib:
-BUILD: [01:0000000473:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_debugserial.lib:
-BUILD: [01:0000000474:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oali2c.lib:
-BUILD: [01:0000000475:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\OMAP3530_oalcpuver.lib:
-BUILD: [01:0000000476:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_devicesmap.lib:
-BUILD: [01:0000000477:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_fatfs.lib:
-BUILD: [01:0000000478:INFO  ]       Found FileIoRead
-BUILD: [01:0000000479:INFO  ]         Referenced in common_ti_boot_sdmemory.lib(sdcard.obj)
-BUILD: [01:0000000480:INFO  ]         Loaded common_ti_boot_fatfs.lib(fileio.obj)
-BUILD: [01:0000000481:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdmemory.lib:
-BUILD: [01:0000000482:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdhc.lib:
-BUILD: [01:0000000483:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_lan911x.lib:
-BUILD: [01:0000000484:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_usbfn.lib:
-BUILD: [01:0000000485:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_rndis.lib:
-BUILD: [01:0000000486:INFO  ]       Found PDDInit
-BUILD: [01:0000000487:INFO  ]         Referenced in rne_mdd.lib(rndis.obj)
-BUILD: [01:0000000488:INFO  ]         Loaded common_ti_ethdrv_rndis.lib(rndis.obj)
-BUILD: [01:0000000489:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\TPS659xx_misc.lib:
-BUILD: [01:0000000490:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_gpiodispatch.lib:
-BUILD: [01:0000000491:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_omap_gpio.lib:
-BUILD: [01:0000000492:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\TPS659xx_oal_gpio.lib:
-BUILD: [01:0000000493:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\triton_oal.lib:
-BUILD: [01:0000000494:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\OMAP3530_soccfg.lib:
-BUILD: [01:0000000495:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\OMAP3530_sdhc_boot.lib:
-BUILD: [01:0000000496:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\OMAP3530_oal_padcfg.lib:
-BUILD: [01:0000000497:INFO  ]     Searching C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bspcfg.lib:
-BUILD: [01:0000000498:INFO  ]     Searching C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_bootstubs.lib:
-BUILD: [01:0000000499:INFO  ]     Searching C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_stall.lib:
-BUILD: [01:0000000500:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\rne_mdd.lib:
-BUILD: [01:0000000501:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\gsnull.lib:
-BUILD: [01:0000000502:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib:
-BUILD: [01:0000000503:INFO  ]       Found strcpy
-BUILD: [01:0000000504:INFO  ]         Referenced in eboot.lib(tftpd.obj)
-BUILD: [01:0000000505:INFO  ]         Referenced in eboot.lib(tftp.obj)
-BUILD: [01:0000000506:INFO  ]         Loaded fulllibc.lib(strcpy.obj)
-BUILD: [01:0000000507:INFO  ]       Found _itoa
-BUILD: [01:0000000508:INFO  ]         Referenced in eboot.lib(tftpd.obj)
-BUILD: [01:0000000509:INFO  ]         Referenced in eboot.lib(edbg.obj)
-BUILD: [01:0000000510:INFO  ]         Loaded fulllibc.lib(xtoa.obj)
-BUILD: [01:0000000511:INFO  ]       Found strncpy
-BUILD: [01:0000000512:INFO  ]         Referenced in eboot.lib(edbg.obj)
-BUILD: [01:0000000513:INFO  ]         Loaded fulllibc.lib(astrncpy.obj)
-BUILD: [01:0000000514:INFO  ]       Found strcat
-BUILD: [01:0000000515:INFO  ]         Referenced in eboot.lib(edbg.obj)
-BUILD: [01:0000000516:INFO  ]         Loaded fulllibc.lib(mdsstrcat.obj)
-BUILD: [01:0000000517:INFO  ]       Found toupper
-BUILD: [01:0000000518:INFO  ]         Referenced in common_ti_boot_fatfs.lib(fileio.obj)
-BUILD: [01:0000000519:INFO  ]         Loaded fulllibc.lib(toupper.obj)
-BUILD: [01:0000000520:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\bootpart.lib:
-BUILD: [01:0000000521:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\eboot.lib:
-BUILD: [01:0000000522:INFO  ]     Searching C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_boot_ethdrv_usbfn.lib:
-BUILD: [01:0000000523:INFO  ]       Found InitializeHardware
-BUILD: [01:0000000524:INFO  ]         Referenced in common_ti_ethdrv_rndis.lib(rndis.obj)
-BUILD: [01:0000000525:INFO  ]         Loaded bsp_boot_ethdrv_usbfn.lib(trans.obj)
-BUILD: [01:0000000526:INFO  ]     Searching C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_display.lib:
-BUILD: [01:0000000527:INFO  ]     Searching C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_display_init.lib:
-BUILD: [01:0000000528:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_spi_lib.lib:
-BUILD: [01:0000000529:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_io.lib:
-BUILD: [01:0000000530:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_kitl_boot.lib:
-BUILD: [01:0000000531:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_log.lib:
-BUILD: [01:0000000532:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_blmenu.lib:
-BUILD: [01:0000000533:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_blnk.lib:
-BUILD: [01:0000000534:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_blcommon.lib:
-BUILD: [01:0000000535:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_cortexA8_cache.lib:
-BUILD: [01:0000000536:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_flashstore.lib:
-BUILD: [01:0000000537:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_fmd_nand_boot.lib:
-BUILD: [01:0000000538:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_alloc.lib:
-BUILD: [01:0000000539:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_debugserial.lib:
-BUILD: [01:0000000540:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oali2c.lib:
-BUILD: [01:0000000541:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\OMAP3530_oalcpuver.lib:
-BUILD: [01:0000000542:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_devicesmap.lib:
-BUILD: [01:0000000543:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_fatfs.lib:
-BUILD: [01:0000000544:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdmemory.lib:
-BUILD: [01:0000000545:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdhc.lib:
-BUILD: [01:0000000546:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_lan911x.lib:
-BUILD: [01:0000000547:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_usbfn.lib:
-BUILD: [01:0000000548:INFO  ]       Found InterruptThread
-BUILD: [01:0000000549:INFO  ]         Referenced in common_ti_ethdrv_rndis.lib(rndis.obj)
-BUILD: [01:0000000550:INFO  ]         Loaded common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000551:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_rndis.lib:
-BUILD: [01:0000000552:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\TPS659xx_misc.lib:
-BUILD: [01:0000000553:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_gpiodispatch.lib:
-BUILD: [01:0000000554:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_omap_gpio.lib:
-BUILD: [01:0000000555:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\TPS659xx_oal_gpio.lib:
-BUILD: [01:0000000556:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\triton_oal.lib:
-BUILD: [01:0000000557:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\OMAP3530_soccfg.lib:
-BUILD: [01:0000000558:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\OMAP3530_sdhc_boot.lib:
-BUILD: [01:0000000559:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\OMAP3530_oal_padcfg.lib:
-BUILD: [01:0000000560:INFO  ]     Searching C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bspcfg.lib:
-BUILD: [01:0000000561:INFO  ]     Searching C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_bootstubs.lib:
-BUILD: [01:0000000562:INFO  ]     Searching C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_stall.lib:
-BUILD: [01:0000000563:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\rne_mdd.lib:
-BUILD: [01:0000000564:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\gsnull.lib:
-BUILD: [01:0000000565:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib:
-BUILD: [01:0000000566:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\bootpart.lib:
-BUILD: [01:0000000567:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\eboot.lib:
-BUILD: [01:0000000568:INFO  ]     Searching C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_boot_ethdrv_usbfn.lib:
-BUILD: [01:0000000569:INFO  ]     Searching C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_display.lib:
-BUILD: [01:0000000570:INFO  ]     Searching C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_display_init.lib:
-BUILD: [01:0000000571:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_spi_lib.lib:
-BUILD: [01:0000000572:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_io.lib:
-BUILD: [01:0000000573:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_kitl_boot.lib:
-BUILD: [01:0000000574:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_log.lib:
-BUILD: [01:0000000575:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_blmenu.lib:
-BUILD: [01:0000000576:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_blnk.lib:
-BUILD: [01:0000000577:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_blcommon.lib:
-BUILD: [01:0000000578:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_cortexA8_cache.lib:
-BUILD: [01:0000000579:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_flashstore.lib:
-BUILD: [01:0000000580:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_fmd_nand_boot.lib:
-BUILD: [01:0000000581:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_alloc.lib:
-BUILD: [01:0000000582:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_debugserial.lib:
-BUILD: [01:0000000583:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oali2c.lib:
-BUILD: [01:0000000584:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\OMAP3530_oalcpuver.lib:
-BUILD: [01:0000000585:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_devicesmap.lib:
-BUILD: [01:0000000586:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_fatfs.lib:
-BUILD: [01:0000000587:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdmemory.lib:
-BUILD: [01:0000000588:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdhc.lib:
-BUILD: [01:0000000589:INFO  ]     Searching C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_lan911x.lib:
-BUILD: [01:0000000590:INFO  ] 
-BUILD: [01:0000000591:INFO  ] Finished searching libraries
-BUILD: [01:0000000592:INFO  ] 
-BUILD: [01:0000000593:INFO  ] Finished pass 1
-BUILD: [01:0000000594:INFO  ] 
-BUILD: [01:0000000595:ERRORE] menu.obj : error LNK2019: unresolved external symbol BLSDCardToFlash referenced in function SDtoFlash
-BUILD: [01:0000000596:ERRORE] C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe : fatal error LNK1120: 1 unresolved externals
-BUILD: [01:0000000597:INFO  ] 	editbin /nxcompat C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe
-BUILD: [01:0000000598:INFO  ] Microsoft (R) COFF/PE Editor Version 8.00.50727.42
-BUILD: [01:0000000599:INFO  ] Copyright (C) Microsoft Corporation.  All rights reserved.
-BUILD: [01:0000000600:INFO  ] 
-BUILD: [01:0000000601:ERRORE] EDITBIN : fatal error LNK1104: cannot open file 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe'
-BUILD: [01:0000000602:INFO  ] 	copylink /S:a /D:f /E:a /R:n C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe C:\WINCE600\OSDesigns\Z2170P\Z2170P\RelDir\Z2170P_ARMV4I_Release\ebootsd.exe
-BUILD: [01:0000000603:INFO  ] 	copylink /S:a /D:f /E:a /R:n C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.map C:\WINCE600\OSDesigns\Z2170P\Z2170P\RelDir\Z2170P_ARMV4I_Release\ebootsd.map
-BUILD: [01:0000000604:INFO  ] 	if exist C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.pdb copylink /S:a /D:f /E:a /R:n C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.pdb C:\WINCE600\OSDesigns\Z2170P\Z2170P\RelDir\Z2170P_ARMV4I_Release
-BUILD: [01:0000000605:INFO  ] 	if exist C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.rel copylink /S:a /D:f /E:a /R:n C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.rel C:\WINCE600\OSDesigns\Z2170P\Z2170P\RelDir\Z2170P_ARMV4I_Release\ebootsd.rel
-BUILD: [01:0000000606:INFO  ] 	romimage  ebootsd.bib
-BUILD: [01:0000000607:INFO  ] 
-BUILD: [01:0000000608:INFO  ] Windows CE ROM Image Builder v4.0.000 Copyright (c) Microsoft Corporation
-BUILD: [01:0000000609:INFO  ] Built: Jul 25 2006 16:36:51
-BUILD: [01:0000000610:INFO  ] 
-BUILD: [01:0000000611:INFO  ] Error: Could not find file 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe' on disk
-BUILD: [01:0000000612:INFO  ] nk.exe C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe EBOOTSD 
-BUILD: [01:0000000613:INFO  ] 
-BUILD: [01:0000000614:INFO  ] Error: failed setting line
-BUILD: [01:0000000615:INFO  ] 	xcopy /Q /I C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.bin C:\WINCE600\OSDesigns\Z2170P\Z2170P\RelDir\Z2170P_ARMV4I_Release
-BUILD: [01:0000000616:INFO  ] 複製 1 個檔案
-BUILD: [01:0000000617:INFO  ] 	xcopy /Q /I C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.nb0 C:\WINCE600\OSDesigns\Z2170P\Z2170P\RelDir\Z2170P_ARMV4I_Release
-BUILD: [01:0000000618:INFO  ] 複製 1 個檔案
-BUILD: [00:0000000619:PROGC ]                        Files  Warnings  Errors
-BUILD: [00:0000000620:PROGC ] Midl                       0         0       0
-BUILD: [00:0000000621:PROGC ] Message                    0         0       0
-BUILD: [00:0000000622:PROGC ] Precomp Header             0         0       0
-BUILD: [00:0000000623:PROGC ] Resource                   0         0       0
-BUILD: [00:0000000624:PROGC ] MASM                       0         0       0
-BUILD: [00:0000000625:PROGC ] SHASM                      0         0       0
-BUILD: [00:0000000626:PROGC ] ARMASM                     2         0       0
-BUILD: [00:0000000627:PROGC ] MIPSASM                    0         0       0
-BUILD: [00:0000000628:PROGC ] C++                        0         0       0
-BUILD: [00:0000000629:PROGC ] C                          8         0       0
-BUILD: [00:0000000630:PROGC ] Static Libraries           0         0       0
-BUILD: [00:0000000631:PROGC ] Exe's                      1         0       3
-BUILD: [00:0000000632:PROGC ] Dll's                      0         0       0
-BUILD: [00:0000000633:PROGC ] Preprocess deffile         0         0       0
-BUILD: [00:0000000634:PROGC ] Resx                       0         0       0
-BUILD: [00:0000000635:PROGC ] CSharp Compile             0         0       0
-BUILD: [00:0000000636:PROGC ] Other                      0         0       1
-BUILD: [00:0000000637:PROGC ] 
-BUILD: [00:0000000638:PROGC ] Total                     11         0       4
-BUILD: [00:0000000639:PROGC ] 
-BUILD: [00:0000000640:PROGC ] 0 Warnings,  4 Errors
-BUILD: [00:0000000641:PROGC ] GetSystemTimes (seconds): Idle: 8     Kernel: 11    User: 4    
-BUILD: [00:0000000642:PROGC ] Elapsed  time  (seconds): 8    
+BUILD: [00:0000000004:PROGC ] Loading database "C:\WINCE600\PLATFORM\Z2170P\Build.dat".
+BUILD: [00:0000000005:PROGC ] Done.
+BUILD: [00:0000000006:PROGC ] Computing include file dependencies:
+BUILD: [00:0000000007:PROGC ] Checking for SDK include directory: C:\WINCE600\sdk\CE\inc.
+BUILD: [00:0000000008:PROGC ] Scan C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\
+BUILD: [00:0000000009:PROGC ] Saving C:\WINCE600\PLATFORM\Z2170P\Build.dat.
+BUILD: [00:0000000010:INFO  ] Done.
+BUILD: [00:0000000011:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\ because target: BootImage is missing.
+BUILD: [00:0000000012:WARNN ] C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\: Missing source file: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bspcfg.lib.
+BUILD: [00:0000000013:WARNN ] C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\: Missing source file: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_bootstubs.lib.
+BUILD: [00:0000000014:WARNN ] C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\: Missing source file: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_stall.lib.
+BUILD: [00:0000000015:WARNN ] C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\: Missing source file: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_boot_ethdrv_usbfn.lib.
+BUILD: [00:0000000016:WARNN ] C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\: Missing source file: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_display_init.lib.
+BUILD: [00:0000000017:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_io.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000018:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_kitl_boot.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000019:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_log.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000020:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_blmenu.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000021:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_blnk.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000022:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_blcommon.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000023:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_cortexA8_cache.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000024:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_flashstore.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000025:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_fmd_nand_boot.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000026:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_alloc.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000027:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_debugserial.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000028:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oali2c.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000029:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\omap3530_oalcpuver.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000030:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_devicesmap.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000031:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_fatfs.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000032:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdmemory.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000033:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdhc.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000034:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_lan911x.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000035:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_usbfn.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000036:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_rndis.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000037:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\tps659xx_misc.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000038:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_gpiodispatch.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000039:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_omap_gpio.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000040:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\tps659xx_oal_gpio.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000041:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\triton_oal.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000042:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\omap3530_soccfg.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000043:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\omap3530_sdhc_boot.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000044:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\omap3530_oal_padcfg.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000045:INFO  ] Will Build C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bspcfg.lib because filename is missing from build database
+BUILD: [00:0000000046:INFO  ] Will Build C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_bootstubs.lib because filename is missing from build database
+BUILD: [00:0000000047:INFO  ] Will Build C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_stall.lib because filename is missing from build database
+BUILD: [00:0000000048:INFO  ] Will Build C:\WINCE600\public\common\oak\lib\ARMV4I\retail\rne_mdd.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000049:INFO  ] Will Build C:\WINCE600\public\common\oak\lib\ARMV4I\retail\gsnull.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000050:INFO  ] Will Build C:\WINCE600\public\common\oak\lib\ARMV4I\retail\fulllibc.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000051:INFO  ] Will Build C:\WINCE600\public\common\oak\lib\ARMV4I\retail\bootpart.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000052:INFO  ] Will Build C:\WINCE600\public\common\oak\lib\ARMV4I\retail\eboot.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000053:INFO  ] Will Build C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_boot_ethdrv_usbfn.lib because filename is missing from build database
+BUILD: [00:0000000054:INFO  ] Will Build C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_display.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000055:INFO  ] Will Build C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_display_init.lib because filename is missing from build database
+BUILD: [00:0000000056:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_spi_lib.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000057:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\obj\ARMV4I\retail\main.obj because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000058:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\obj\ARMV4I\retail\eth.obj because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000059:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\obj\ARMV4I\retail\menu.obj because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000060:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\obj\ARMV4I\retail\stub.obj because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000061:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\obj\ARMV4I\retail\flashmenu.obj because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000062:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\obj\ARMV4I\retail\mmu.obj because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000063:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\obj\ARMV4I\retail\flash.obj because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000064:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\obj\ARMV4I\retail\cfg.obj because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000065:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\obj\ARMV4I\retail\startup.obj because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000066:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\obj\ARMV4I\retail\jumpto.obj because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000067:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\ because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe is missing.
+BUILD: [00:0000000068:PROGC ] Building LINK Pass in C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\ directory.
+BUILD: [00:0000000069:PROG  ] 'NMAKE.EXE TargetExeFiles  -i -c BUILDMSG=Stop.  BUILDROOT=C:\WINCE600\PLATFORM\Z2170P LINKONLY=1 NOPASS0=1'
+BUILD: [01:0000000070:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\Sources.default
+BUILD: [01:0000000071:INFO  ] makefile.def: BUILDROOT is C:\WINCE600\PLATFORM\Z2170P
+BUILD: [01:0000000072:INFO  ] makefile.def: Including C:\WINCE600\PLATFORM\Z2170P\sources.cmn
+BUILD: [01:0000000073:INFO  ] makefile.def: Including C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\sources
+BUILD: [01:0000000074:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\Sources.CE
+BUILD: [01:0000000075:INFO  ] Directory: C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY
+BUILD: [01:0000000076:INFO  ] TARGETNAME: ebootsd
+BUILD: [01:0000000077:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORM
+BUILD: [01:0000000078:INFO  ] FULLLIBC.LIB found in TARGETLIBS; forcing NOLIBC=1
+BUILD: [01:0000000079:INFO  ] FULLLIBC.LIB found in TARGETLIBS; forcing NOCRTDLL=1
+BUILD: [01:0000000080:ERRORE] NMAKE :  U1073: don't know how to make 'C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bspcfg.lib'
+BUILD: [01:0000000081:INFO  ] Stop.
+BUILD: [01:0000000082:ERRORE] NMAKE.EXE TargetExeFiles  -i -c BUILDMSG=Stop.  BUILDROOT=C:\WINCE600\PLATFORM\Z2170P LINKONLY=1 NOPASS0=1 failed - rc = 2
+BUILD: [00:0000000083:PROGC ]                        Files  Warnings  Errors
+BUILD: [00:0000000084:PROGC ] Midl                       0         0       0
+BUILD: [00:0000000085:PROGC ] Message                    0         0       0
+BUILD: [00:0000000086:PROGC ] Precomp Header             0         0       0
+BUILD: [00:0000000087:PROGC ] Resource                   0         0       0
+BUILD: [00:0000000088:PROGC ] MASM                       0         0       0
+BUILD: [00:0000000089:PROGC ] SHASM                      0         0       0
+BUILD: [00:0000000090:PROGC ] ARMASM                     0         0       0
+BUILD: [00:0000000091:PROGC ] MIPSASM                    0         0       0
+BUILD: [00:0000000092:PROGC ] C++                        0         0       0
+BUILD: [00:0000000093:PROGC ] C                          0         0       0
+BUILD: [00:0000000094:PROGC ] Static Libraries           0         0       0
+BUILD: [00:0000000095:PROGC ] Exe's                      0         0       0
+BUILD: [00:0000000096:PROGC ] Dll's                      0         0       0
+BUILD: [00:0000000097:PROGC ] Preprocess deffile         0         0       0
+BUILD: [00:0000000098:PROGC ] Resx                       0         0       0
+BUILD: [00:0000000099:PROGC ] CSharp Compile             0         0       0
+BUILD: [00:0000000100:PROGC ] Other                      0         0       2
+BUILD: [00:0000000101:PROGC ] 
+BUILD: [00:0000000102:PROGC ] Total                      0         0       2
+BUILD: [00:0000000103:PROGC ] 
+BUILD: [00:0000000104:PROGC ] 0 Warnings,  2 Errors
+BUILD: [00:0000000105:PROGC ] GetSystemTimes (seconds): Idle: 0     Kernel: 0     User: 0    
+BUILD: [00:0000000106:PROGC ] Elapsed  time  (seconds): 0    

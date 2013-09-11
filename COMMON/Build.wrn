@@ -1,12 +1,8 @@
 BUILD: [Thrd:Sequence:Type  ] Message
-BUILD: [00:0000000052:WARNS ] Directory: C:\WINCE600\public\ossvcs\oak\inc\ does not exist.
-BUILD: [00:0000000109:WARNS ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\eboot\ does not exist.
-BUILD: [00:0000000112:WARNS ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\eboot\ does not exist.
-BUILD: [01:0000001507:WARNN ] C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\OMAP3530\OAL\CPUIDLE\cpu.s(205) warning : A0241: Instruction clz not supported for -cpu "-arch 4t"
-BUILD: [01:0000002039:WARNN ] C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\CORTEXA8_CACHE\dcache.s(56) warning : A0241: Instruction clz not supported for -cpu "-arch 4t"
-BUILD: [01:0000002041:WARNN ] C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\CORTEXA8_CACHE\dcache.s(140) warning : A0241: Instruction clz not supported for -cpu "-arch 4t"
-BUILD: [01:0000003389:WARNN ] C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\AM3517\OAL\CPUIDLE\cpu.s(204) warning : A0241: Instruction clz not supported for -cpu "-arch 4t"
-BUILD: [01:0000006344:WARNN ] haldebug.obj : warning LNK4221: no public symbols found; archive member will be inaccessible
-BUILD: [01:0000007730:WARNN ] oal_cache.lib(ioctl.obj) : warning LNK4006: OALIoCtlHalGetCacheInfo already defined in oal_cache_arm920t.lib(ioctl.obj); second definition ignored
-BUILD: [01:0000007731:WARNN ] oal_cache.lib(ioctl.obj) : warning LNK4221: no public symbols found; archive member will be inaccessible
-BUILD: [01:0000008384:WARNN ] gperotate.lib(aablt.obj) : warning LNK4099: PDB 'aablt.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\gperotate.lib' or at 'C:\WINCE600\platform\common\target\ARMV4I\retail\aablt.pdb'; linking object as if no debug info
+BUILD: [00:0000000053:WARNS ] Directory: C:\WINCE600\public\ossvcs\oak\inc\ does not exist.
+BUILD: [00:0000000110:WARNS ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\eboot\ does not exist.
+BUILD: [00:0000000112:WARNN ] File: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\SDMEMORY\Build.err does not exist (2).
+BUILD: [00:0000000114:WARNS ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\eboot\ does not exist.
+BUILD: [01:0000004568:WARNN ] haldebug.obj : warning LNK4221: no public symbols found; archive member will be inaccessible
+BUILD: [01:0000005458:WARNN ] oal_cache.lib(ioctl.obj) : warning LNK4006: OALIoCtlHalGetCacheInfo already defined in oal_cache_arm920t.lib(ioctl.obj); second definition ignored
+BUILD: [01:0000005459:WARNN ] oal_cache.lib(ioctl.obj) : warning LNK4221: no public symbols found; archive member will be inaccessible

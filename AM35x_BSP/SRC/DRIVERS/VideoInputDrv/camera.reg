@@ -1,0 +1,43 @@
+; All rights reserved ADENEO EMBEDDED 2010
+
+IF BSP_OMAP_VIDEOIN
+[HKEY_LOCAL_MACHINE\Drivers\BuiltIn\Camera]
+    "Prefix"="CAM"
+    "Dll"="camera.dll"
+    "Index"=dword:1
+    "Order"=dword:1000
+    "PowerFlags"=dword:00000103         ; send pre/post device state changes
+    "MemBase"=dword:5c060000  ;CamSub address
+    "MemLen"=dword:4000
+    ; PMCLASS_PMEXT_GUID, CE_DRIVER_CAMERA_GUID
+    "IClass"=multi_sz:"{0AE2066F-89A2-4D70-8FC2-29AEFA68413C}",
+                      "{CB998A05-122C-4166-846A-933E4D7E3C86}"
+    "Dma"=dword:0   
+    
+    ;Formats : YUV422_YUY2 = 0, YUV422_UYVY = 1, IJPG = 2,BGR565 = 3, RAW10 = 4
+    ; NOTE: 35xx 20.x SR does not require BGR565 support. so it is not available for configuration
+    "ColorSpaceStill"=dword:0      ; select YUV422 - YUY2 format for still camera operation
+    "ColorSpacePreview"=dword:0    ; select YUV422 - YUY2 format for preview camera operation
+    "ColorSpaceCapture"=dword:0    ; select YUV422 - YUY2 format for capture camera operation
+    "SensorFormat"=dword:2         ; select YUV/RAW format. RAW = 1 YUV = 2,default is YUV
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\DirectX\DirectShow\Capture]
+    "Prefix"="PIN"
+    "Dll"="camera.dll"
+    "Index"=dword:1
+    "Order"=dword:1001
+    ; WM7 only DEVCLASS_PIN_GUID
+    "IClass"="{C9D092D6-827A-45E2-8144-DE1982BFC3A8}"
+
+[HKEY_LOCAL_MACHINE\System\Camera\OEM\ModeProfiles\Photo\Options\Contrast]
+	"Index"=dword:9
+[HKEY_LOCAL_MACHINE\System\Camera\OEM\ModeProfiles\Video\Options\Contrast]
+	"Index"=dword:9
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\DirectX\DirectShow\VMR]
+    "RenderingPrefs"=dword:8
+    
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MediaPlayer\Preferences]
+    "RenderMethod"=dword:2
+    
+ENDIF	;BSP_OMAP_VIDEOIN

@@ -1,0 +1,13 @@
+; All rights reserved ADENEO EMBEDDED 2010
+IF BSP_OMAP_CAN
+[HKEY_LOCAL_MACHINE\Drivers\BuiltIn\CAN]
+    "Prefix"="CAN"
+    "Dll"="omap_can.dll"
+    "Index"=dword:1
+    "order"=dword:8
+    "priority"=dword:80
+    "StrobePin"=dword:126			; Can Strobe is connectd to GPIO 294 (126h)
+    "StrobePinPolarity"=dword:0		; Can Strobe is active Low
+    "BaudRate"=dword:3D090			; baudrate 250kHz
+    "CanCtrlIndex"=dword:0			; CAN ctrl index 0
+ENDIF BSP_OMAP_CAN

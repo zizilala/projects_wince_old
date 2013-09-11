@@ -1,0 +1,297 @@
+ smsc9118
+
+ Timestamp is 522e7043 (Tue Sep 10 09:05:07 2013)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 000017b0H .rdata                  CODE
+ 0001:000017b0 00000025H .rdata$debug            CODE
+ 0001:000017d8 00005a88H .text                   CODE
+ 0001:00007260 00000018H .xdata                  CODE
+ 0001:00007278 0000003cH .idata$2                CODE
+ 0001:000072b4 00000014H .idata$3                CODE
+ 0001:000072c8 000000c8H .idata$4                CODE
+ 0001:00007390 000002faH .idata$6                CODE
+ 0001:00007690 0000004bH .edata                  CODE
+ 0002:00000000 00000054H text                    CODE
+ 0003:00000000 000000c8H .idata$5                DATA
+ 0003:000000c8 00000008H .data                   DATA
+ 0003:000000e0 00000074H .bss                    DATA
+ 0004:00000000 000002c0H .pdata                  DATA
+
+  Address         Publics by Value              Rva+Base       Lib:Object
+
+ 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
+ 0000:00000000       ___safe_se_handler_count   00000000     <absolute>
+ 0001:00000020       ??_C@_1GI@OFIENJPC@?$AAO?$AAv?$AAe?$AAr?$AAr?$AAi?$AAd?$AAe?$AA?5?$AAS?$AAt?$AAr?$AAa?$AAp?$AA?0?$AA?5?$AAD?$AAi?$AAs?$AAa?$AAb?$AAl?$AAe?$AA?5?$AAA?$AAu?$AAt?$AAo?$AA?9?$AAM?$AAD?$AAI@ 10001020     lan9118.obj
+ 0001:00000088       ??_C@_1GK@GDMLNGBP@?$AAO?$AAv?$AAe?$AAr?$AAr?$AAi?$AAd?$AAe?$AA?5?$AAS?$AAt?$AAr?$AAa?$AAp?$AA?0?$AA?5?$AAD?$AAi?$AAs?$AAa?$AAb?$AAl?$AAe?$AA?5?$AAA?$AAu?$AAt?$AAo?$AA?9?$AAM?$AAD?$AAI@ 10001088     lan9118.obj
+ 0001:000000f8       ??_C@_1EG@EAGAKKCI@?$AAO?$AAv?$AAe?$AAr?$AAr?$AAi?$AAd?$AAe?$AA?5?$AAS?$AAt?$AAr?$AAa?$AAp?$AA?0?$AA?5?$AAE?$AAn?$AAa?$AAb?$AAl?$AAe?$AA?5?$AAA?$AAu?$AAt?$AAo?$AA?9?$AAM?$AAD?$AAI?$AAX@ 100010f8     lan9118.obj
+ 0001:00000140       ??_C@_1EE@GEMGJCLD@?$AAA?$AAu?$AAt?$AAo?$AA?9?$AAM?$AAD?$AAI?$AAX?$AA?5?$AAD?$AAi?$AAs?$AAa?$AAb?$AAl?$AAe?$AA?5?$AAb?$AAy?$AA?5?$AAd?$AAe?$AAf?$AAa?$AAu?$AAl?$AAt?$AA?$CB?$AA?$CB?$AA?$CB?$AA?$AN@ 10001140     lan9118.obj
+ 0001:00000188       ??_C@_1EC@MJJEFLIN@?$AAA?$AAu?$AAt?$AAo?$AA?9?$AAM?$AAD?$AAI?$AAX?$AA?5?$AAE?$AAn?$AAa?$AAb?$AAl?$AAe?$AA?5?$AAb?$AAy?$AA?5?$AAd?$AAe?$AAf?$AAa?$AAu?$AAl?$AAt?$AA?$CB?$AA?$CB?$AA?$CB?$AA?$AN?$AA?6@ 10001188     lan9118.obj
+ 0001:000001d0       ??_C@_1FC@FOJCMIGM@?$AAT?$AAh?$AAi?$AAs?$AA?5?$AAc?$AAh?$AAi?$AAp?$AA?5?$AAd?$AAo?$AAe?$AAs?$AAn?$AA?8?$AAt?$AA?5?$AAs?$AAu?$AAp?$AAp?$AAo?$AAr?$AAt?$AA?5?$AAA?$AAu?$AAt?$AAo?$AA?5?$AAM@ 100011d0     lan9118.obj
+ 0001:00000224       ??_C@_1DK@NPAGJJIH@?$AAD?$AAe?$AAt?$AAe?$AAc?$AAt?$AA?5?$AAP?$AAh?$AAy?$AA?5?$AAa?$AAt?$AA?5?$AAA?$AAd?$AAd?$AAr?$AAe?$AAs?$AAs?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@ 10001224     lan9118.obj
+ 0001:00000260       ??_C@_1CE@JFKKFCL@?$AAU?$AAs?$AAe?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?5?$AAE?$AAx?$AAt?$AAP?$AAh?$AAy?$AA?$AN?$AA?6?$AA?$AA@ 10001260     lan9118.obj
+ 0001:00000284       ??_C@_1BK@CJDAMBLM@?$AAU?$AAs?$AAe?$AA?5?$AAI?$AAn?$AAt?$AAP?$AAh?$AAy?$AA?$AN?$AA?6?$AA?$AA@ 10001284     lan9118.obj
+ 0001:000002a0       ??_C@_1DO@LKKECHCE@?$AAE?$AAr?$AAr?$AAo?$AAr?$AA?$CB?$AA?5?$AAN?$AAo?$AA?5?$AAL?$AAi?$AAn?$AAk?$AA?5?$AAM?$AAo?$AAd?$AAe?$AA?5?$AAw?$AAa?$AAs?$AA?5?$AAS?$AAe?$AAt?$AA?4?$AA?$AN?$AA?6?$AA?$AA@ 100012a0     lan9118.obj
+ 0001:00000dec       ??_C@_1DA@JKBLGOCH@?$AAE?$AAr?$AAr?$AAo?$AAr?$AA?$CB?$AA?5?$AAA?$AAr?$AAr?$AAa?$AAy?$AAS?$AAi?$AAz?$AAe?$AA?5?$AA?$DN?$AA?5?$AA?$CF?$AAd?$AA?$AN?$AA?6?$AA?$AA@ 10001dec     smsc9118.obj
+ 0001:00000e20       ??_C@_1EO@KLJEKBFP@?$AAL?$AAa?$AAn?$AA9?$AA2?$AA1?$AA7?$AA?5?$AAi?$AAd?$AAe?$AAn?$AAt?$AAi?$AAf?$AAi?$AAe?$AAd?$AA?4?$AA?5?$AAI?$AAD?$AA_?$AAR?$AAE?$AAV?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF@ 10001e20     smsc9118.obj
+ 0001:00000e70       ??_C@_1EO@KPKHIGHI@?$AAL?$AAa?$AAn?$AA9?$AA2?$AA1?$AA8?$AA?5?$AAi?$AAd?$AAe?$AAn?$AAt?$AAi?$AAf?$AAi?$AAe?$AAd?$AA?4?$AA?5?$AAI?$AAD?$AA_?$AAR?$AAE?$AAV?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF@ 10001e70     smsc9118.obj
+ 0001:00000ec0       ??_C@_1EO@MEJAEJFM@?$AAL?$AAa?$AAn?$AA9?$AA2?$AA1?$AA1?$AA?5?$AAi?$AAd?$AAe?$AAn?$AAt?$AAi?$AAf?$AAi?$AAe?$AAd?$AA?4?$AA?5?$AAI?$AAD?$AA_?$AAR?$AAE?$AAV?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF@ 10001ec0     smsc9118.obj
+ 0001:00000f10       ??_C@_1EO@CCDPEMCF@?$AAL?$AAa?$AAn?$AA9?$AA2?$AA2?$AA0?$AA?5?$AAi?$AAd?$AAe?$AAn?$AAt?$AAi?$AAf?$AAi?$AAe?$AAd?$AA?4?$AA?5?$AAI?$AAD?$AA_?$AAR?$AAE?$AAV?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF@ 10001f10     smsc9118.obj
+ 0001:00000f60       ??_C@_1EO@OCHNAMEA@?$AAL?$AAa?$AAn?$AA9?$AA2?$AA1?$AA6?$AA?5?$AAi?$AAd?$AAe?$AAn?$AAt?$AAi?$AAf?$AAi?$AAe?$AAd?$AA?4?$AA?5?$AAI?$AAD?$AA_?$AAR?$AAE?$AAV?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF@ 10001f60     smsc9118.obj
+ 0001:00000fb0       ??_C@_1EO@NDONLDNM@?$AAL?$AAa?$AAn?$AA9?$AA1?$AA1?$AA5?$AA?5?$AAi?$AAd?$AAe?$AAn?$AAt?$AAi?$AAf?$AAi?$AAe?$AAd?$AA?4?$AA?5?$AAI?$AAD?$AA_?$AAR?$AAE?$AAV?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF@ 10001fb0     smsc9118.obj
+ 0001:00001000       ??_C@_1EO@JNHEEPN@?$AAL?$AAa?$AAn?$AA9?$AA1?$AA1?$AA6?$AA?5?$AAi?$AAd?$AAe?$AAn?$AAt?$AAi?$AAf?$AAi?$AAe?$AAd?$AA?4?$AA?5?$AAI?$AAD?$AA_?$AAR?$AAE?$AAV?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF@ 10002000     smsc9118.obj
+ 0001:00001050       ??_C@_1EO@EADOOJOC@?$AAL?$AAa?$AAn?$AA9?$AA1?$AA1?$AA7?$AA?5?$AAi?$AAd?$AAe?$AAn?$AAt?$AAi?$AAf?$AAi?$AAe?$AAd?$AA?4?$AA?5?$AAI?$AAD?$AA_?$AAR?$AAE?$AAV?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF@ 10002050     smsc9118.obj
+ 0001:000010a0       ??_C@_1EO@EEANMOMF@?$AAL?$AAa?$AAn?$AA9?$AA1?$AA1?$AA8?$AA?5?$AAi?$AAd?$AAe?$AAn?$AAt?$AAi?$AAf?$AAi?$AAe?$AAd?$AA?4?$AA?5?$AAI?$AAD?$AA_?$AAR?$AAE?$AAV?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF@ 100020a0     smsc9118.obj
+ 0001:000010f0       ??_C@_1EO@DIEHPLGB@?$AAL?$AAa?$AAn?$AA9?$AA2?$AA1?$AA5?$AA?5?$AAi?$AAd?$AAe?$AAn?$AAt?$AAi?$AAf?$AAi?$AAe?$AAd?$AA?4?$AA?5?$AAI?$AAD?$AA_?$AAR?$AAE?$AAV?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF@ 100020f0     smsc9118.obj
+ 0001:00001140       ??_C@_1CA@OJEMANNL@?$AA?$CF?$AA2?$AA0?$AAs?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?$AN?$AA?6?$AA?$AA@ 10002140     smsc9118.obj
+ 0001:00001160       ??_C@_1FK@ONMBDJOG@?$AAD?$AAu?$AAm?$AAp?$AA?5?$AA9?$AA1?$AA1?$AA8?$AA?5?$AAS?$AAl?$AAa?$AAv?$AAe?$AA?5?$AAI?$AAn?$AAt?$AAe?$AAr?$AAf?$AAa?$AAc?$AAe?$AA?5?$AAM?$AAo?$AAd?$AAu?$AAl?$AAe@ 10002160     smsc9118.obj
+ 0001:000011bc       ??_C@_1DE@BJMNGFCC@?$AAD?$AAu?$AAm?$AAp?$AA?5?$AA9?$AA1?$AA1?$AA8?$AA?5?$AAM?$AAA?$AAC?$AA?5?$AAR?$AAe?$AAg?$AAi?$AAs?$AAt?$AAe?$AAr?$AAs?$AA?$AN?$AA?6?$AA?$AA@ 100021bc     smsc9118.obj
+ 0001:000011f0       ??_C@_1CA@PDHAONFF@?$AA?$CF?$AA2?$AA0?$AAs?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA4?$AAx?$AA?$AN?$AA?6?$AA?$AA@ 100021f0     smsc9118.obj
+ 0001:00001210       ??_C@_1DE@HGFNBOBE@?$AAD?$AAu?$AAm?$AAp?$AA?5?$AA9?$AA1?$AA1?$AA8?$AA?5?$AAP?$AAH?$AAY?$AA?5?$AAR?$AAe?$AAg?$AAi?$AAs?$AAt?$AAe?$AAr?$AAs?$AA?$AN?$AA?6?$AA?$AA@ 10002210     smsc9118.obj
+ 0001:00001244       ??_C@_1DE@PLPEILBO@?$AAD?$AAu?$AAm?$AAp?$AA?5?$AAA?$AAl?$AAl?$AA?5?$AA9?$AA1?$AA1?$AA8?$AA?5?$AAR?$AAe?$AAg?$AAi?$AAs?$AAt?$AAe?$AAr?$AAs?$AA?$AN?$AA?6?$AA?$AA@ 10002244     smsc9118.obj
+ 0001:00001278       ??_C@_0BO@MGJEOFM@SMSC9118?5Ethernet?5Controller?4?$AA@ 10002278     smsc9118.obj
+ 0001:00001298       ??_C@_1EI@FGEKPOEA@?$AAp?$AAk?$AAt?$AA_?$AAl?$AAe?$AAn?$AA?5?$AA?$DN?$AA?5?$AA?$CF?$AAd?$AA?0?$AA?5?$AAu?$AAi?$AAP?$AAa?$AAc?$AAk?$AAe?$AAt?$AAL?$AAe?$AAn?$AAg?$AAt?$AAh?$AA?5?$AA?$DN?$AA?5?$AA?$CF@ 10002298     smsc9118.obj
+ 0001:000012e0       ??_C@_1MA@JLECBOHM@?$AAO?$AAo?$AAp?$AAs?$AA?$CB?$AA?5?$AAT?$AAo?$AAo?$AA?5?$AAm?$AAa?$AAn?$AAy?$AA?5?$AAP?$AAk?$AAt?$AAs?$AA?5?$AAa?$AAr?$AAe?$AA?5?$AAd?$AAe?$AAf?$AAe?$AAr?$AAe?$AAd?$AA?4@ 100022e0     smsc9118.obj
+ 0001:000013a0       ??_C@_1FE@IFGIKNCL@?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AA?5?$AAP?$AAo?$AAw?$AAe?$AAr?$AA?5?$AAS?$AAt?$AAa?$AAt?$AAe?$AA?5?$AA?$DN?$AA?5?$AAN?$AAd?$AAi?$AAs?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAS@ 100023a0     smsc9118.obj
+ 0001:000013f8       ??_C@_1FE@GKKKMGBF@?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AA?5?$AAP?$AAo?$AAw?$AAe?$AAr?$AA?5?$AAS?$AAt?$AAa?$AAt?$AAe?$AA?5?$AA?$DN?$AA?5?$AAN?$AAd?$AAi?$AAs?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAS@ 100023f8     smsc9118.obj
+ 0001:00001450       ??_C@_1FE@IBJNHNBG@?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AA?5?$AAP?$AAo?$AAw?$AAe?$AAr?$AA?5?$AAS?$AAt?$AAa?$AAt?$AAe?$AA?5?$AA?$DN?$AA?5?$AAN?$AAd?$AAi?$AAs?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAS@ 10002450     smsc9118.obj
+ 0001:000014a4       ??_C@_1BC@BLDJMKNP@?$AAT?$AAx?$AA?5?$AAP?$AAI?$AAO?$AA?$AN?$AA?6?$AA?$AA@ 100024a4     smsc9118.obj
+ 0001:000014b8       ??_C@_1BC@IEGKOBE@?$AAT?$AAx?$AA?5?$AAD?$AAM?$AAA?$AA?$AN?$AA?6?$AA?$AA@ 100024b8     smsc9118.obj
+ 0001:000014cc       ??_C@_1BC@BFEFHGFK@?$AAR?$AAx?$AA?5?$AAP?$AAI?$AAO?$AA?$AN?$AA?6?$AA?$AA@ 100024cc     smsc9118.obj
+ 0001:000014e0       ??_C@_1BC@GDKBCJB@?$AAR?$AAx?$AA?5?$AAD?$AAM?$AAA?$AA?$AN?$AA?6?$AA?$AA@ 100024e0     smsc9118.obj
+ 0001:000014f4       ??_C@_1BM@LBPDLMNJ@?$AAI?$AAo?$AAB?$AAa?$AAs?$AAe?$AAA?$AAd?$AAd?$AAr?$AAe?$AAs?$AAs?$AA?$AA@ 100024f4     smsc9118.obj
+ 0001:00001510       ??_C@_1BG@BHGDDGNK@?$AAP?$AAh?$AAy?$AAA?$AAd?$AAd?$AAr?$AAe?$AAs?$AAs?$AA?$AA@ 10002510     smsc9118.obj
+ 0001:00001528       ??_C@_1CA@INPFDDEP@?$AAI?$AAn?$AAt?$AAe?$AAr?$AAr?$AAu?$AAp?$AAt?$AAN?$AAu?$AAm?$AAb?$AAe?$AAr?$AA?$AA@ 10002528     smsc9118.obj
+ 0001:00001548       ??_C@_1BE@GLDLJBLL@?$AAR?$AAx?$AAD?$AAM?$AAA?$AAM?$AAo?$AAd?$AAe?$AA?$AA@ 10002548     smsc9118.obj
+ 0001:0000155c       ??_C@_1BE@OPBIAMGO@?$AAT?$AAx?$AAD?$AAM?$AAA?$AAM?$AAo?$AAd?$AAe?$AA?$AA@ 1000255c     smsc9118.obj
+ 0001:00001570       ??_C@_1BC@DJDONMFE@?$AAL?$AAi?$AAn?$AAk?$AAM?$AAo?$AAd?$AAe?$AA?$AA@ 10002570     smsc9118.obj
+ 0001:00001584       ??_C@_1BI@JDCIAHNE@?$AAF?$AAl?$AAo?$AAw?$AAC?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl?$AA?$AA@ 10002584     smsc9118.obj
+ 0001:0000159c       ??_C@_1BC@HPJEKDKL@?$AAA?$AAu?$AAt?$AAo?$AAM?$AAd?$AAi?$AAx?$AA?$AA@ 1000259c     smsc9118.obj
+ 0001:000015b0       ??_C@_1CI@DAOPMGH@?$AAM?$AAi?$AAn?$AAL?$AAi?$AAn?$AAk?$AAC?$AAh?$AAa?$AAn?$AAg?$AAe?$AAW?$AAa?$AAk?$AAe?$AAU?$AAp?$AA?$AA@ 100025b0     smsc9118.obj
+ 0001:000015d8       ??_C@_1CK@NJMIBKBG@?$AAM?$AAi?$AAn?$AAM?$AAa?$AAg?$AAi?$AAc?$AAP?$AAa?$AAc?$AAk?$AAe?$AAt?$AAW?$AAa?$AAk?$AAe?$AAU?$AAp?$AA?$AA@ 100025d8     smsc9118.obj
+ 0001:00001604       ??_C@_1CC@HBOIAFJA@?$AAM?$AAi?$AAn?$AAP?$AAa?$AAt?$AAt?$AAe?$AAr?$AAn?$AAW?$AAa?$AAk?$AAe?$AAU?$AAp?$AA?$AA@ 10002604     smsc9118.obj
+ 0001:00001628       ??_C@_1DO@OONHECBM@?$AAE?$AAr?$AAr?$AAo?$AAr?$AA?$CB?$AA?5?$AAP?$AAa?$AAc?$AAk?$AAe?$AAt?$AAF?$AAi?$AAl?$AAt?$AAe?$AAr?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?$AN?$AA?6?$AA?$AA@ 10002628     smsc9118.obj
+ 0001:00001668       ??_C@_1M@OAJFFPML@?$AAF?$AAl?$AAa?$AAg?$AAs?$AA?$AA@ 10002668     smsc9118.obj
+ 0001:00001678       ??_C@_1EG@PICDNKAN@?$AAE?$AAr?$AAr?$AAo?$AAr?$AA?5?$AAo?$AAp?$AAe?$AAn?$AAi?$AAn?$AAg?$AA?5?$AAr?$AAe?$AAg?$AAi?$AAs?$AAt?$AAr?$AAy?$AA?5?$AAp?$AAa?$AAt?$AAh?$AA?5?$AA?$CF?$AAs?$AA?$CB?$AA?$CB@ 10002678     smsc9118.obj
+ 0001:000016c0       ??_C@_1CM@BMKKLFCG@?$AAD?$AAR?$AAI?$AAV?$AAE?$AAR?$AA_?$AAV?$AAE?$AAR?$AAS?$AAI?$AAO?$AAN?$AA?5?$AA?3?$AA?5?$AA?$CF?$AAX?$AA?0?$AA?5?$AA?$AA@ 100026c0     smsc9118.obj
+ 0001:000016ec       ??_C@_1O@PDACLLCA@?$AA0?$AA4?$AA1?$AA7?$AA0?$AA7?$AA?$AA@ 100026ec     smsc9118.obj
+ 0001:000016fc       ??_C@_1CA@NMAMIKDG@?$AAD?$AAA?$AAT?$AAE?$AAC?$AAO?$AAD?$AAE?$AA?5?$AA?3?$AA?5?$AA?$CF?$AAs?$AA?$AN?$AA?6?$AA?$AA@ 100026fc     smsc9118.obj
+ 0001:000017d8       Lan_WriteTxFifo            100027d8 f   lan9118.obj
+ 0001:00001810       Lan_GetMacRegDW            10002810 f i lan9118.obj
+ 0001:00001880       Lan_SetMacRegDW            10002880 f i lan9118.obj
+ 0001:000018e4       Lan_GetMiiRegW             100028e4 f i lan9118.obj
+ 0001:00001990       Lan_SetMiiRegW             10002990 f i lan9118.obj
+ 0001:00001a24       Lan_Initialize             10002a24 f   lan9118.obj
+ 0001:00001ab8       Phy_Reset                  10002ab8 f   lan9118.obj
+ 0001:00001b28       Phy_LBT_GetTxStatus        10002b28 f   lan9118.obj
+ 0001:00001b80       Phy_CheckLoopBackPacket    10002b80 f   lan9118.obj
+ 0001:00001d04       Phy_LoopBackTest           10002d04 f   lan9118.obj
+ 0001:00001e80       Lan_AutoNegotiate          10002e80 f   lan9118.obj
+ 0001:00001f08       Lan_GetLinkMode            10002f08 f   lan9118.obj
+ 0001:00002088       Lan_SetAutoMdixSts         10003088 f   lan9118.obj
+ 0001:0000215c       Lan_EnableInterrupt        1000315c f   lan9118.obj
+ 0001:00002174       Lan_DisableInterrupt       10003174 f   lan9118.obj
+ 0001:0000218c       Lan_GetInterruptStatus     1000318c f   lan9118.obj
+ 0001:000021a0       Lan_ClearInterruptStatus   100031a0 f   lan9118.obj
+ 0001:000021b0       Lan_InitializeInterrupts   100031b0 f   lan9118.obj
+ 0001:000021f8       Lan_SetMacAddress          100031f8 f   lan9118.obj
+ 0001:0000223c       Lan_InitializeTx           1000323c f   lan9118.obj
+ 0001:000022bc       Lan_GetTxStatusCount       100032bc f   lan9118.obj
+ 0001:000022d8       Lan_InitializeRx           100032d8 f   lan9118.obj
+ 0001:0000232c       Lan_InitializePhy          1000332c f   lan9118.obj
+ 0001:0000274c       Lan_EstablishLink          1000374c f   lan9118.obj
+ 0001:00002944       DllEntry                   10003944 f   smsc9118.obj
+ 0001:0000295c       InitializeQueues           1000395c f   smsc9118.obj
+ 0001:00002b9c       RegisterAdapter            10003b9c f   smsc9118.obj
+ 0001:00002c3c       ChipIdentify               10003c3c f   smsc9118.obj
+ 0001:00002e88       LinkIndicate               10003e88 f   smsc9118.obj
+ 0001:00002f68       UpdateFilterAndMacReg      10003f68 f   smsc9118.obj
+ 0001:00002fac       Smsc9118QueryInformation   10003fac f   smsc9118.obj
+ 0001:00003394       ComputeCrc                 10004394 f   smsc9118.obj
+ 0001:0000341c       DisableMacRxEn             1000441c f   smsc9118.obj
+ 0001:000034dc       DelayUsingFreeRun          100044dc f   smsc9118.obj
+ 0001:00003510       EnableMacRxEn              10004510 f   smsc9118.obj
+ 0001:00003560       SetMulticastAddressListForRev1 10004560 f   smsc9118.obj
+ 0001:0000369c       SetMulticastAddressList    1000469c f   smsc9118.obj
+ 0001:0000374c       SetPacketFilterForRev1     1000474c f   smsc9118.obj
+ 0001:0000382c       SetPacketFilter            1000482c f   smsc9118.obj
+ 0001:000038c0       ChipStart                  100048c0 f   smsc9118.obj
+ 0001:0000391c       ChipReset                  1000491c f   smsc9118.obj
+ 0001:000039b0       Smsc9118Shutdown           100049b0 f   smsc9118.obj
+ 0001:000039c0       Smsc9118Halt               100049c0 f   smsc9118.obj
+ 0001:00003b74       GetPktFromEmptyArray       10004b74 f i smsc9118.obj
+ 0001:00003be4       GetPktFromFullArray        10004be4 f i smsc9118.obj
+ 0001:00003c58       PutPktToEmptyArray         10004c58 f i smsc9118.obj
+ 0001:00003ce0       PutPktToFullArray          10004ce0 f i smsc9118.obj
+ 0001:00003d70       HandlerRxDPC               10004d70 f   smsc9118.obj
+ 0001:00003f14       RxFastForward              10004f14 f   smsc9118.obj
+ 0001:00003f6c       HandlerRxISR               10004f6c f i smsc9118.obj
+ 0001:000042fc       Smsc9118GetReturnedPackets 100052fc f   smsc9118.obj
+ 0001:0000492c       SyncSetTDFALevel           1000592c f   smsc9118.obj
+ 0001:00004950       HandlerTxDPC               10005950 f   smsc9118.obj
+ 0001:00004ac4       CheckPhyStatus             10005ac4 f   smsc9118.obj
+ 0001:00004c40       HandlerRxStopISR           10005c40 f   smsc9118.obj
+ 0001:00004c98       MacRxEnWorkaround          10005c98 f   smsc9118.obj
+ 0001:00004d24       Smsc9118HandleInterrupt    10005d24 f   smsc9118.obj
+ 0001:00004f2c       Smsc9118CheckForHang       10005f2c f   smsc9118.obj
+ 0001:00004f68       EnableSwFlowControlFD      10005f68 f   smsc9118.obj
+ 0001:00004fcc       CalculateCrc16             10005fcc f   smsc9118.obj
+ 0001:000050b0       SetWakeUpFrameFilter       100060b0 f   smsc9118.obj
+ 0001:000051b8       Reset118                   100061b8 f   smsc9118.obj
+ 0001:000052bc       ResetWakeUpFrameFilter     100062bc f   smsc9118.obj
+ 0001:000053c4       ConfigWUFFReg              100063c4 f   smsc9118.obj
+ 0001:00005484       Wakeup9118                 10006484 f   smsc9118.obj
+ 0001:000054d0       ChipSetup                  100064d0 f   smsc9118.obj
+ 0001:00005610       Smsc9118Reset              10006610 f   smsc9118.obj
+ 0001:000059ec       Smsc9118SendPackets        100069ec f   smsc9118.obj
+ 0001:00005a18       HandlerPmeISR              10006a18 f   smsc9118.obj
+ 0001:00005b24       Smsc9118Isr                10006b24 f   smsc9118.obj
+ 0001:00005e1c       SetPowerState              10006e1c f   smsc9118.obj
+ 0001:00006040       Smsc9118Initialize         10007040 f   smsc9118.obj
+ 0001:0000692c       Smsc9118SetInformation     1000792c f   smsc9118.obj
+ 0001:00006c74       DriverEntry                10007c74 f   smsc9118.obj
+ 0001:00006e6c       PlatformInitialize         10007e6c f   platform.obj
+ 0001:00006e98       PlatformSetBusTiming       10007e98 f   platform.obj
+ 0001:00006e9c       PlatformDisplayInfo        10007e9c f   platform.obj
+ 0001:00006ea0       DmaStartXfer               10007ea0 f   platform.obj
+ 0001:00006ea8       DmaInitialize              10007ea8 f   platform.obj
+ 0001:00006eb0       DmaComplete                10007eb0 f   platform.obj
+ 0001:00006eb4       BufferCacheFlush           10007eb4 f   platform.obj
+ 0001:00006eb8       LeaveCriticalSection       10007eb8 f   coredll:COREDLL.dll
+ 0001:00006ec8       EnterCriticalSection       10007ec8 f   coredll:COREDLL.dll
+ 0001:00006ed8       InitializeCriticalSection  10007ed8 f   coredll:COREDLL.dll
+ 0001:00006ee8       NKDbgPrintfW               10007ee8 f   coredll:COREDLL.dll
+ 0001:00006ef8       DisableThreadLibraryCalls  10007ef8 f   coredll:COREDLL.dll
+ 0001:00006f08       VirtualFree                10007f08 f   coredll:COREDLL.dll
+ 0001:00006f18       GetLastError               10007f18 f   coredll:COREDLL.dll
+ 0001:00006f28       VirtualCopy                10007f28 f   coredll:COREDLL.dll
+ 0001:00006f38       VirtualAlloc               10007f38 f   coredll:COREDLL.dll
+ 0001:00006f48       RegCloseKey                10007f48 f   coredll:COREDLL.dll
+ 0001:00006f58       RegQueryValueExW           10007f58 f   coredll:COREDLL.dll
+ 0001:00006f68       RegOpenKeyExW              10007f68 f   coredll:COREDLL.dll
+ 0001:00006f78       GPIOSetMode                10007f78 f   ceddk:CEDDK.dll
+ 0001:00006f88       GPIOOpen                   10007f88 f   ceddk:CEDDK.dll
+ 0001:00006f98       NdisStallExecution         10007f98 f   ndis:NDIS.dll
+ 0001:00006fa8       NdisMStartBufferPhysicalMapping 10007fa8 f   ndis:NDIS.dll
+ 0001:00006fb8       NdisAllocateBuffer         10007fb8 f   ndis:NDIS.dll
+ 0001:00006fc8       NdisAllocateBufferPool     10007fc8 f   ndis:NDIS.dll
+ 0001:00006fd8       NdisAllocatePacket         10007fd8 f   ndis:NDIS.dll
+ 0001:00006fe8       NdisAllocatePacketPool     10007fe8 f   ndis:NDIS.dll
+ 0001:00006ff8       NdisMRegisterInterrupt     10007ff8 f   ndis:NDIS.dll
+ 0001:00007008       NdisMSetAttributesEx       10008008 f   ndis:NDIS.dll
+ 0001:00007018       NdisFreeMemory             10008018 f   ndis:NDIS.dll
+ 0001:00007028       NdisFreePacketPool         10008028 f   ndis:NDIS.dll
+ 0001:00007038       NdisFreePacket             10008038 f   ndis:NDIS.dll
+ 0001:00007048       NdisFreeBufferPool         10008048 f   ndis:NDIS.dll
+ 0001:00007058       NdisFreeBuffer             10008058 f   ndis:NDIS.dll
+ 0001:00007068       NdisUnchainBufferAtBack    10008068 f   ndis:NDIS.dll
+ 0001:00007078       NdisTerminateWrapper       10008078 f   ndis:NDIS.dll
+ 0001:00007088       NdisMSleep                 10008088 f   ndis:NDIS.dll
+ 0001:00007098       NdisMDeregisterInterrupt   10008098 f   ndis:NDIS.dll
+ 0001:000070a8       NdisMDeregisterAdapterShutdownHandler 100080a8 f   ndis:NDIS.dll
+ 0001:000070b8       NdisQueryPacket            100080b8 f   ndis:NDIS.dll
+ 0001:000070c8       NdisMCompleteBufferPhysicalMapping 100080c8 f   ndis:NDIS.dll
+ 0001:000070d8       NdisMSynchronizeWithInterrupt 100080d8 f   ndis:NDIS.dll
+ 0001:000070e8       NdisMAllocateSharedMemory  100080e8 f   ndis:NDIS.dll
+ 0001:000070f8       NdisMRegisterAdapterShutdownHandler 100080f8 f   ndis:NDIS.dll
+ 0001:00007108       NdisCloseConfiguration     10008108 f   ndis:NDIS.dll
+ 0001:00007118       NdisReadConfiguration      10008118 f   ndis:NDIS.dll
+ 0001:00007128       NdisOpenConfiguration      10008128 f   ndis:NDIS.dll
+ 0001:00007138       NdisAllocateMemory         10008138 f   ndis:NDIS.dll
+ 0001:00007148       NdisMRegisterMiniport      10008148 f   ndis:NDIS.dll
+ 0001:00007158       NdisInitializeWrapper      10008158 f   ndis:NDIS.dll
+ 0001:00007168       __GSHandlerCheckCommon     10008168 f   corelib0:gshandler.obj
+ 0001:000071a4       __GSHandlerCheck           100081a4 f   corelib0:gshandler.obj
+ 0001:000071c8       __security_check_cookie    100081c8 f   corelib0:armsecgs.obj
+ 0001:000071dc       __gsfailure                100081dc f   corelib0:armsecgs.obj
+ 0001:00007220       memset                     10008220 f   corelib1:COREDLL.dll
+ 0001:00007230       memcpy                     10008230 f   corelib1:COREDLL.dll
+ 0001:00007240       memcmp                     10008240 f   corelib1:COREDLL.dll
+ 0001:00007250       __report_gsfailure         10008250 f   corelib1:COREDLL.dll
+ 0001:00007278       __IMPORT_DESCRIPTOR_COREDLL 10008278     coredll:COREDLL.dll
+ 0001:0000728c       __IMPORT_DESCRIPTOR_CEDDK  1000828c     ceddk:CEDDK.dll
+ 0001:000072a0       __IMPORT_DESCRIPTOR_NDIS   100082a0     ndis:NDIS.dll
+ 0001:000072b4       __NULL_IMPORT_DESCRIPTOR   100082b4     coredll:COREDLL.dll
+ 0002:00000000       CleanCacheLine             10009000     util.obj
+ 0002:0000000c       DrainWriteBuffers          1000900c     util.obj
+ 0002:00000014       GetCPSR                    10009014     util.obj
+ 0002:0000001c       GetTTB                     1000901c     util.obj
+ 0002:00000024       GetPID                     10009024     util.obj
+ 0002:0000002c       ReadCLKCFG                 1000902c     util.obj
+ 0002:00000034       DisableCPUInt              10009034     util.obj
+ 0002:00000044       EnableCPUInt               10009044     util.obj
+ 0003:00000000       __imp_GPIOSetMode          1000a000     ceddk:CEDDK.dll
+ 0003:00000004       __imp_GPIOOpen             1000a004     ceddk:CEDDK.dll
+ 0003:00000008       \177CEDDK_NULL_THUNK_DATA  1000a008     ceddk:CEDDK.dll
+ 0003:0000000c       __imp_NKDbgPrintfW         1000a00c     coredll:COREDLL.dll
+ 0003:00000010       __imp_DisableThreadLibraryCalls 1000a010     coredll:COREDLL.dll
+ 0003:00000014       __imp_VirtualFree          1000a014     coredll:COREDLL.dll
+ 0003:00000018       __imp_GetLastError         1000a018     coredll:COREDLL.dll
+ 0003:0000001c       __imp_InitializeCriticalSection 1000a01c     coredll:COREDLL.dll
+ 0003:00000020       __imp_VirtualAlloc         1000a020     coredll:COREDLL.dll
+ 0003:00000024       __imp_RegCloseKey          1000a024     coredll:COREDLL.dll
+ 0003:00000028       __imp_RegQueryValueExW     1000a028     coredll:COREDLL.dll
+ 0003:0000002c       __imp_RegOpenKeyExW        1000a02c     coredll:COREDLL.dll
+ 0003:00000030       __imp_EnterCriticalSection 1000a030     coredll:COREDLL.dll
+ 0003:00000034       __imp_VirtualCopy          1000a034     coredll:COREDLL.dll
+ 0003:00000038       __imp_LeaveCriticalSection 1000a038     coredll:COREDLL.dll
+ 0003:0000003c       __imp_memcmp               1000a03c     corelib1:COREDLL.dll
+ 0003:00000040       __imp_memcpy               1000a040     corelib1:COREDLL.dll
+ 0003:00000044       __imp_memset               1000a044     corelib1:COREDLL.dll
+ 0003:00000048       __imp___report_gsfailure   1000a048     corelib1:COREDLL.dll
+ 0003:0000004c       \177COREDLL_NULL_THUNK_DATA 1000a04c     coredll:COREDLL.dll
+ 0003:00000050       __imp_NdisAllocatePacketPool 1000a050     ndis:NDIS.dll
+ 0003:00000054       __imp_NdisMRegisterInterrupt 1000a054     ndis:NDIS.dll
+ 0003:00000058       __imp_NdisMSetAttributesEx 1000a058     ndis:NDIS.dll
+ 0003:0000005c       __imp_NdisFreeMemory       1000a05c     ndis:NDIS.dll
+ 0003:00000060       __imp_NdisAllocatePacket   1000a060     ndis:NDIS.dll
+ 0003:00000064       __imp_NdisFreePacket       1000a064     ndis:NDIS.dll
+ 0003:00000068       __imp_NdisFreeBufferPool   1000a068     ndis:NDIS.dll
+ 0003:0000006c       __imp_NdisFreeBuffer       1000a06c     ndis:NDIS.dll
+ 0003:00000070       __imp_NdisUnchainBufferAtBack 1000a070     ndis:NDIS.dll
+ 0003:00000074       __imp_NdisTerminateWrapper 1000a074     ndis:NDIS.dll
+ 0003:00000078       __imp_NdisMSleep           1000a078     ndis:NDIS.dll
+ 0003:0000007c       __imp_NdisMDeregisterInterrupt 1000a07c     ndis:NDIS.dll
+ 0003:00000080       __imp_NdisMDeregisterAdapterShutdownHandler 1000a080     ndis:NDIS.dll
+ 0003:00000084       __imp_NdisQueryPacket      1000a084     ndis:NDIS.dll
+ 0003:00000088       __imp_NdisMCompleteBufferPhysicalMapping 1000a088     ndis:NDIS.dll
+ 0003:0000008c       __imp_NdisMSynchronizeWithInterrupt 1000a08c     ndis:NDIS.dll
+ 0003:00000090       __imp_NdisMAllocateSharedMemory 1000a090     ndis:NDIS.dll
+ 0003:00000094       __imp_NdisMRegisterAdapterShutdownHandler 1000a094     ndis:NDIS.dll
+ 0003:00000098       __imp_NdisCloseConfiguration 1000a098     ndis:NDIS.dll
+ 0003:0000009c       __imp_NdisReadConfiguration 1000a09c     ndis:NDIS.dll
+ 0003:000000a0       __imp_NdisOpenConfiguration 1000a0a0     ndis:NDIS.dll
+ 0003:000000a4       __imp_NdisAllocateMemory   1000a0a4     ndis:NDIS.dll
+ 0003:000000a8       __imp_NdisMRegisterMiniport 1000a0a8     ndis:NDIS.dll
+ 0003:000000ac       __imp_NdisInitializeWrapper 1000a0ac     ndis:NDIS.dll
+ 0003:000000b0       __imp_NdisAllocateBufferPool 1000a0b0     ndis:NDIS.dll
+ 0003:000000b4       __imp_NdisAllocateBuffer   1000a0b4     ndis:NDIS.dll
+ 0003:000000b8       __imp_NdisMStartBufferPhysicalMapping 1000a0b8     ndis:NDIS.dll
+ 0003:000000bc       __imp_NdisStallExecution   1000a0bc     ndis:NDIS.dll
+ 0003:000000c0       __imp_NdisFreePacketPool   1000a0c0     ndis:NDIS.dll
+ 0003:000000c4       \177NDIS_NULL_THUNK_DATA   1000a0c4     ndis:NDIS.dll
+ 0003:000000c8       __security_cookie          1000a0c8     corelib0:seccinit.obj
+ 0003:000000cc       __security_cookie_complement 1000a0cc     corelib0:seccinit.obj
+ 0003:000000e8       dwTxReported               1000a0e8     smsc9118.obj
+ 0003:000000ec       dwTxSent                   1000a0ec     smsc9118.obj
+ 0003:000000f0       dwTxPend                   1000a0f0     smsc9118.obj
+ 0003:000000f4       dwRxPktToFull              1000a0f4     smsc9118.obj
+ 0003:000000f8       dwRxPktToEmpty             1000a0f8     smsc9118.obj
+ 0003:000000fc       dwRxPktFromFull            1000a0fc     smsc9118.obj
+ 0003:00000100       dwRxPktFromEmpty           1000a100     smsc9118.obj
+ 0003:00000104       dwRxTotalPkt               1000a104     smsc9118.obj
+ 0003:00000108       dwRxDiscard                1000a108     smsc9118.obj
+ 0003:0000010c       dwRxNumIndicate            1000a10c     smsc9118.obj
+ 0003:00000120       csAccessPhyReg             1000a120     <common>
+ 0003:00000140       csAccessMacReg             1000a140     <common>
+
+ entry point at        0001:00002944
+
+ Static symbols
+
+ 0001:00002da0       DumpAllRegs                10003da0 f   smsc9118.obj
+ 0001:00002f14       Smsc9118SetMacFilter       10003f14 f   smsc9118.obj
+ 0001:00004328       Smsc9118XmitOnePacket      10005328 f   smsc9118.obj
+ 0001:00005644       Smsc9118TransmitPackets    10006644 f   smsc9118.obj

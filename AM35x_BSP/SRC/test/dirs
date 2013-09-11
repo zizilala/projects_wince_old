@@ -1,0 +1,15 @@
+DIRS=\
+  TestGPIO\
+  testSerial\
+  testSerialPerf\
+  CANBench\
+  CANBenchRx\
+  wakeme\
+  testNAND\
+  PMTEST\
+  testRTC\
+  testKeypad\
+  Tux_I2C\
+  Tux_SPI\
+  Tux_PowerManagement\
+  FSTEST

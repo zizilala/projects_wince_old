@@ -1,0 +1,61 @@
+;
+; Copyright (c) Microsoft Corporation.  All rights reserved.
+;
+;
+; Use of this sample source code is subject to the terms of the Microsoft
+; license agreement under which you licensed this sample source code. If
+; you did not accept the terms of the license agreement, you are not
+; authorized to use this sample source code. For the terms of the license,
+; please see the license agreement between you and Microsoft or, if applicable,
+; see the LICENSE.RTF on your install media or the root of your tools installation.
+; THE SAMPLE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES OR INDEMNITIES.
+;
+;=======================================================================
+;  COPYRIGHT (C) STMicroelectronics 2007.  ALL RIGHTS RESERVED
+;
+;  Use of this source code is subject to the terms of your STMicroelectronics
+;  development license agreement. If you did not accept the terms of such a license,
+;  you are not authorized to use this source code.
+;
+;  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+;  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+;  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+;  PURPOSE.
+;========================================================================
+        .include "kxshx.h"
+        .include "shx.inc"
+
+    .align 4
+
+; MMU control register
+CCN_MMUCR_OFFSET                .equ    h'0010          ; MMU control register offset
+CCN_MMUCR                               .equ    (CCN_REGBASE + CCN_MMUCR_OFFSET)        ; MMU control register
+
+; MMUCR values
+TLB_ENABLE                              .equ    h'0001          ; enable TLB
+TLB_FLUSH                               .equ    h'0004          ; flush TLB
+
+
+;++
+; Routine Description:
+;    Flush and invalidate the entire unified TLB.
+;
+; Syntax:
+;       void SH4ClearTLB(void);
+;
+; Arguments:
+;       -- none --
+;
+; Return Value:
+;       -- none --
+;--
+    LEAF_ENTRY _SH4ClearTLB
+
+    mov         #CCN_MMUCR, r1                          ; r1 = MMUCR
+    mov         #(TLB_ENABLE+TLB_FLUSH), r0     ; r0 = TLB Flush and Enable
+    rts
+    mov.l       r0, @r1                                         ; (delay slot) flush TLB
+
+    .endf
+
+        .end

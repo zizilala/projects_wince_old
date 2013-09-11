@@ -1,0 +1,71 @@
+;
+; Copyright (c) Microsoft Corporation.  All rights reserved.
+;
+;
+; Use of this sample source code is subject to the terms of the Microsoft
+; license agreement under which you licensed this sample source code. If
+; you did not accept the terms of the license agreement, you are not
+; authorized to use this sample source code. For the terms of the license,
+; please see the license agreement between you and Microsoft or, if applicable,
+; see the LICENSE.RTF on your install media or the root of your tools installation.
+; THE SAMPLE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES OR INDEMNITIES.
+;
+;=======================================================================
+;  COPYRIGHT (C) STMicroelectronics 2007.  ALL RIGHTS RESERVED
+;
+;  Use of this source code is subject to the terms of your STMicroelectronics
+;  development license agreement. If you did not accept the terms of such a license,
+;  you are not authorized to use this source code.
+;
+;  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+;  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+;  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+;  PURPOSE.
+;========================================================================
+
+; This file is to be included in platform.reg if required.
+;
+;------------------------------------------------------------------------
+;
+; ST202T SATA Controller (Built-in)
+;
+;------------------------------------------------------------------------
+
+; TransferMode Key
+;   PIO default mode                0x00
+;   PIO default mode, disable IORDY 0x01
+;   PIO flow control transfer mode  0x08 (mode 0), 0x09 (mode 1), 0x0A (mode 2), 0x0B (mode 3), 0x0C (mode 4)
+;   Multiword DMA mode              0x20 (mode 0), 0x21 (mode 1), 0x22 (mode 2)
+;   Ultra DMA mode                  0x40 (mode 0), 0x41 (mode 1), 0x42 (mode 2), 0x43 (mode 3), 0x44 (mode 4), ...
+;   Default                         0xFF
+
+[HKEY_LOCAL_MACHINE\Drivers\BuiltIn\SATA]
+   "IClass"=multi_sz:"{CDDC3621-3512-4b3f-BB6F-B4DD5E061795}"
+   "Prefix"="IDE"
+   "Legacy"=dword:00               ; not legacy; only one drive per channel (ST Micro SATA driver ignores this value)
+   "InterfaceType"=dword:0
+   "DMAAlignment"=dword:04         ; All transfers must be 4 bytes in length; need DWORD alignment
+   "SoftResetTimeout"=dword:03     ; ATA/ATAPI spec defines 31s ceiling; this is too long
+   "StatusPollCycles"=dword:100    ; Status register DRQ/BSY polling; 256 poll cycles
+   "StatusPollsPerCycle"=dword:20  ; Status register DRQ/BSY polling; 32 polls per cycle
+   "StatusPollCyclePause"=dword:05 ; Status register DRQ/BSY polling; 50 microseconds between poll cycles
+;  "IsrDll"=""                     ; not required
+;  "IsrHandler"=""                 ; not required
+   "RegisterStride"=dword:04       ; ATA register stride; registers are all 32 bits in size (ST Micro SATA driver ignores this value)
+   "NumRetriesOnSATAError"=dword:0A    ; Number of times to retry a command when a transient SATA error is detected.
+
+[HKEY_LOCAL_MACHINE\Drivers\BuiltIn\SATA\Device0]
+   "IClass"=multi_sz:"{A4E7EDDA-E575-4252-9D6B-4195D48BB865}"
+   "Prefix"="DSK"
+   "InterruptDriven"=dword:01      ; interrupt driven I/O {0=disable, 1=enable}
+   "DMA"=dword:01                  ; DMA {0=disable, 1=enable, 2=enable ATA only}
+   "DoubleBufferSize"=dword:10000  ; double buffer size (bytes); should be larger than DRQ data block {0=disabled, ..., 131072}
+   "DrqDataBlockSize"=dword:0      ; sector-aligned DRQ data block size (bytes), i.e., R/W Multiple sectors/interrupt {0=device default, 512, ..., 130560}
+   "WriteCache"=dword:01           ; write cache {0=disable, 1=enable}
+   "LookAhead"=dword:01            ; lookahead {0=disable, 1=enable}
+   "DeviceId"=dword:00             ; device 0
+   "TransferMode"=dword:45         ; transfer mode; see TransferMode Key
+   "IstPriority256"=dword:1        ; run SATA IST at THREAD_PRIORITY_HIGHEST
+
+
+

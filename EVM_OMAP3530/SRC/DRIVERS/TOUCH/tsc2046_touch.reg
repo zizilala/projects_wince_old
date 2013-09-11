@@ -1,0 +1,21 @@
+; All rights reserved ADENEO EMBEDDED 2010
+IF BSP_TSC2046_TOUCH
+[HKEY_LOCAL_MACHINE\HARDWARE\DEVICEMAP\TOUCH]
+    "DriverName"="touch.dll"
+
+IF IMGNOCALIBRATION
+    "CalibrationData"="2016,1888 1056,864 992,2912 3040,2976 3072,896"
+ENDIF IMGNOCALIBRATION
+    "MaxCalError"="6"
+
+
+	;"SPIBaudrate"=dword:5              ; SPI clock divider (SPI clock = SYS_CLK / (2^SPIBaudrate))
+	;"SampleRate"=dword:c8              ; samples per second, default is 100
+	"SPIBus"="SPI1:"					; SPI bus used to access to the TSC2046
+    "SPIAddr"=dword:0                   ; McSPI1 channel 0
+    "PenGPIO"=dword:AF                  ; gpio_175
+    "PenUpDebounceMS"=dword:28          ; PenUp debounce time in MS, 0 to disable debounce process
+    "InitialSamplesDropped"=dword:2     ; Number of samples to be dropped after pen down detection
+                                        ; Default is 1
+
+ENDIF

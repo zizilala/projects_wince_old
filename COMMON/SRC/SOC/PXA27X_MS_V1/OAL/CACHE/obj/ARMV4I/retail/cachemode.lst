@@ -1,0 +1,65 @@
+ARM macroassembler      Page:1 
+    1 00000000          ; 
+    2 00000000          ; Copyright (c) Microsoft Corporation.  All rights reserved. 
+    3 00000000          ; 
+    4 00000000          ; 
+    5 00000000          ; Use of this sample source code is subject to the terms of the Microsoft 
+    6 00000000          ; license agreement under which you licensed this sample source code. If 
+    7 00000000          ; you did not accept the terms of the license agreement, you are not 
+    8 00000000          ; authorized to use this sample source code. For the terms of the license, 
+    9 00000000          ; please see the license agreement between you and Microsoft or, if applicable, 
+   10 00000000          ; see the LICENSE.RTF on your install media or the root of your tools installation. 
+   11 00000000          ; THE SAMPLE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES. 
+   12 00000000          ; 
+   13 00000000            
+   17 00000000              OPT 1   ; reenable listing 
+   18 00000000              OPT 128 ; disable listing of macro expansions 
+   19 00000000            
+   20 00000000            
+   21 00000000              TEXTAREA 
+   22 00000000                   
+   23 00000000          ; ************************************************************************* 
+   24 00000000              LEAF_ENTRY OEMARMCacheMode 
+   25 00000000          ;++ 
+   26 00000000          ; Routine Description: 
+   27 00000000          ;    Sets the C and B bits to be used to build page tables 
+   28 00000000          ; 
+   29 00000000          ; C and B bits are part of the page table entries and control write through vs. write back cache 
+   30 00000000          ; modes, cacheability, and write buffer use. Note that C and B bit functionality is processor  
+   31 00000000          ; specific and different for the 720, 920, and SA1100. Consult the CPU hardware manual for the CPU  
+   32 00000000          ; in question before altering these bit configurations!! 
+   33 00000000          ; This default configuration (C=B=1)works on all current ARM CPU's and gives the following behaviour 
+   34 00000000          ; ARM720: write through, write buffer enabled 
+   35 00000000          ; ARM920: write back cache mode 
+   36 00000000          ; SA1100: write back, write buffer enabled 
+   37 00000000          ; 
+   38 00000000          ; The four valid options are: 
+   39 00000000          ;   ARM_NoBits      0x00000000   ; do not use 
+   40 00000000          ;   ARM_CBit        0x00000008 
+   41 00000000          ;   ARM_BBit        0x00000004   ; do not use 
+   42 00000000          ;   ARM_CBBits      0x0000000C 
+   43 00000000          ; 
+   44 00000000          ; *Note:  XScale has altered the way the mini Dcache is configured.  It now uses 
+   45 00000000          ;         an additional bit, the 'X' bit, to designate a mini DCache configuration operation. 
+   46 00000000          ; 
+   47 00000000          ; Syntax: 
+   48 00000000          ;   DWORD OEMARMCacheMode(void); 
+   49 00000000          ; 
+   50 00000000          ; Arguments: 
+   51 00000000          ;   -- none -- 
+   52 00000000          ; 
+   53 00000000          ; Return Value: 
+   54 00000000          ;   r0 must contain the desired C and B bit configuration. See description above for valid bit patterns. 
+   55 00000000          ; 
+   56 00000000          ; Caution:  
+   57 00000000          ;   The value placed in r0 MUST be an immediate data value and NOT a predefined constant. This function 
+   58 00000000          ;   is called at a point in the boot cycle where the memory containing predefined constants has NOT been  
+   59 00000000          ;   initialized yet.  
+   60 00000000          ;-- 
+   61 00000000            
+   62 00000000 e3a0000c     mov r0, #0x0000000C     ; C=1,B=1; write back, read allocate 
+   63 00000004            
+   64 00000004              RETURN 
+   65 00000008            
+   66 00000008              END 
+Assembly terminated, errors: 0, warnings: 0 

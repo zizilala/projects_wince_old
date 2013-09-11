@@ -1,0 +1,104 @@
+
+;-- Power Management Extension -------------------------------------------------
+; @CESYSGEN IF CE_MODULES_PM
+; @CESYSGEN IF GWES_MGBASE
+; @XIPREGION IF PACKAGE_OEMXIPKERNEL
+; HIVE BOOT SECTION
+
+IF BSP_NOPMEXT !
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\Extension\Omap]
+    "Dll"="pmext.dll"
+    "ConstraintRoot"="\\OMAPPMX\\Constraints"
+    "PowerPolicyRoot"="\\OMAPPMX\\Policies"
+
+IF BSP_NODVFS !
+[HKEY_LOCAL_MACHINE\OMAPPMX\Constraints\DVFS]
+    "Order"=dword:100
+    "Name"="DVFS"
+    "Dll"="ti_constraintadapters.dll"
+    "ConstraintClass"="00000001"                ;DVFS Constraint class
+    
+[HKEY_LOCAL_MACHINE\OMAPPMX\Constraints\DVFS\3517]
+    "OpmInit"=dword:4                           ;kOpm4
+    "OpmFloor"=dword:1                          ;kOpm0
+    "OpmCeiling"=dword:4                        ;kOpm4
+    ;MPU1Map lists the MPU/IVA OPP associated with each OPM (0..4)
+    ;MPU (VDD1) kOpp values for each kOpm value (kOpm0, kOpm1, ..., kOpm6) see inc\bsp_opp_map.h
+	;Each MPU kOpp value represents a VDD1 voltage, MPU DPLL1 frequency and IVA2 (DSP) DPLL2 frequency triple used fo each kOpm
+    "MPU1Map"=multi_sz:"0","1","2","3","4"
+	;CORE1Map lists the CORE OPP associated with each OPM (0..6) 
+    ;CORE (VDD2) kOpp values for each kOpm value (kOpm0, kOpm1, ..., kOpm6) see inc\bsp_opp_map.h
+	;Each CORE kOpp value represents a VDD2 voltage and CORE DPLL3 frequency pair used for each kOpm
+    "CORE1Map"=multi_sz:"0","0","0","0","0"
+ENDIF BSP_NODVFS !
+
+IF BSP_NOINTRLAT !
+[HKEY_LOCAL_MACHINE\OMAPPMX\Constraints\INTRLAT]
+    "Order"=dword:100
+    "Name"="INTRLAT"
+    "min"=dword:0                               ;min interrupt latency in ticks
+    "max"=dword:7FFFFFFF                        ;max interrupt latency in ticks
+    "Dll"="ti_constraintadapters.dll"
+ENDIF BSP_NOINTRLAT !
+
+
+[HKEY_LOCAL_MACHINE\OMAPPMX\Policies\DEVMON]
+    "Order"=dword:100
+    "Name"="DEVMON"
+    "Dll"="ti_policies.dll"
+    ;LATENCY_STATE_CHIP_OFF      0, CORE+MPU+OTHER = OFF",
+    ;LATENCY_STATE_CHIP_OSWR     1, CORE+OTHER = OSWR, MPU = CSWR",
+    ;LATENCY_STATE_CHIP_CSWR     2, CORE+OTHER = CSWR, MPU = CSWR",
+    ;LATENCY_STATE_CORE_CSWR     3, OTHER=OFF/OSWR/CSWR/INACTIVE, CORE = CSWR, MPU=CSWR",
+    ;LATENCY_STATE_CORE_INACTIVE 4, OTHER=OFF/OSWR/CSWR/INACTIVE, CORE = INACTIVE, MPU=CSWR",
+    ;LATENCY_STATE_MPU_INACTIVE  5, OTHER=OFF/OSWR/CSWR/INACTIVE, CORE+MPU = INACTIVE"
+	; CSWR = Clock Stopped With Retention
+	; OSWR = Off State With Retention
+    "SuspendState"=dword:1
+
+IF BSP_NOCPUPOLICY !
+[HKEY_LOCAL_MACHINE\OMAPPMX\Policies\CPULOAD]
+    "Order"=dword:999
+    "Name"="CPULD"
+    "Dll"="ti_cpuloadpolicy.dll"
+    "MonitorPeriod"=dword:1f4
+    "MonitorWindow"=dword:7d0                   ;2 second monitor window
+    "InterruptThreshold"=dword:41               ;cpu-load for sw interrupt- 65%
+    "BootEventName"="Shell_Ready"
+    "BootTimeout"=dword:ea60                    ;60 sec max wait for bootup
+    "priority256"=dword:63
+    "irq"=dword:65                              ;cpu load interrupt
+
+
+[HKEY_LOCAL_MACHINE\OMAPPMX\Policies\CPULOAD\3517] 
+    "CeilingOpm"=dword:4
+    "FloorOpm"=dword:0
+    ;"NominalOpm"=dword:3
+    "BootOpm"=dword:4                           
+    ; OpmFrequency has one entry per operating mode (kOpm0..kOpm9), uppercase hex values
+    "OpmFrequency"=multi_sz:"1F4","1F4","1F4","1F4","226","258","0","0","0","0"
+    ;"OpmFrequency"=multi_sz:"500","500","500","500","550","600","0","0","0","0" ;in decimal for reference
+    ; OpmThreshold has one entry per operating mode (kOpm0..kOpm9), uppercase hex values
+    "OpmThreshold"=multi_sz:"46","64","D2","1A9","20D","23F","0","0","0","0"
+    ;"OpmThreshold"=multi_sz:"70","100","210","425","525","575","0","0","0","0"  ;in decimal for reference
+
+    
+ENDIF BSP_NOCPUPOLICY !
+
+IF BSP_NOSMARTREFLEXPOLICY !
+[HKEY_LOCAL_MACHINE\OMAPPMX\Policies\SMARTREFLEX]
+    "Order"=dword:999
+    "Name"="SMARTREFLEX"
+    "Dll"="ti_policies.dll"
+    "SensingPeriod"=dword:3e8
+    "SensingDelay"=dword:3e8
+    "LprOffOpm"=dword:2                           ;opm2
+ENDIF BSP_NOSMARTREFLEXPOLICY !
+
+
+ENDIF BSP_NOPMEXT !
+
+; END HIVE BOOT SECTION
+; @XIPREGION ENDIF PACKAGE_OEMXIPKERNEL
+; @CESYSGEN ENDIF GWES_MGBASE
+; @CESYSGEN ENDIF CE_MODULES_PM

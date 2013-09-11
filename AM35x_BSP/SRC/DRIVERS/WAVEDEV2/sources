@@ -1,0 +1,21 @@
+# All rights reserved ADENEO EMBEDDED 2010
+
+TARGETNAME=omap_wavedev2
+TARGETTYPE=DYNLINK
+DEFFILE=$(TARGETNAME).def
+
+CDEFINES=$(CDEFINES) -DWAVEDEV2_EXPORTS
+
+SOURCES=
+
+SOURCELIBS= \
+    $(_TILIBS)\$(_SOC)_soccfg.lib	\
+    $(_TILIBS)\omap_wavedev2_lib.lib
+
+TARGETLIBS= \
+    $(_TARGETPLATLIB)\$(_CPUDEPPATH)\ceddk.lib \
+    $(_COMMONSDKROOT)\lib\$(_CPUINDPATH)\coredll.lib
+    
+FILE_VIEW_RESOURCE_FOLDER= \
+	omap_wavedev2.reg
+

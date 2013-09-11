@@ -1,0 +1,488 @@
+ARM macroassembler      Page:1 
+    1 00000000          ; 
+    2 00000000          ; Copyright (c) Microsoft Corporation.  All rights reserved. 
+    3 00000000          ; 
+    4 00000000          ; 
+    5 00000000          ; Use of this sample source code is subject to the terms of the Microsoft 
+    6 00000000          ; license agreement under which you licensed this sample source code. If 
+    7 00000000          ; you did not accept the terms of the license agreement, you are not 
+    8 00000000          ; authorized to use this sample source code. For the terms of the license, 
+    9 00000000          ; please see the license agreement between you and Microsoft or, if applicable, 
+   10 00000000          ; see the LICENSE.RTF on your install media or the root of your tools installation. 
+   11 00000000          ; THE SAMPLE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES. 
+   12 00000000          ; 
+   13 00000000          ;++ 
+   14 00000000          ; 
+   15 00000000          ; Copyright 2002-2003 Intel Corp. All Rights Reserved. 
+   16 00000000          ; 
+   17 00000000          ; Portions of the source code contained or described herein and all documents 
+   18 00000000          ; related to such source code (Material) are owned by Intel Corporation 
+   19 00000000          ; or its suppliers or licensors and is licensed by Microsoft Corporation for distribution.   
+   20 00000000          ; Title to the Material remains with Intel Corporation or its suppliers and licensors.  
+   21 00000000          ; Use of the Materials is subject to the terms of the Microsoft license agreement which accompanied the Materials.   
+   22 00000000          ; No other license under any patent, copyright, trade secret or other intellectual 
+   23 00000000          ; property right is granted to or conferred upon you by disclosure or 
+   24 00000000          ; delivery of the Materials, either expressly, by implication, inducement, 
+   25 00000000          ; estoppel or otherwise  
+   26 00000000          ; Some portion of the Materials may be copyrighted by Microsoft Corporation. 
+   27 00000000          ; 
+   28 00000000          ;++ 
+   29 00000000          ; 
+   30 00000000          ;      TITLE("XSC Debug Browser Extenstions") 
+   31 00000000          ; 
+   32 00000000          ;-- 
+   33 00000000          ; 
+   34 00000000          ; Module Name: 
+   35 00000000          ; 
+   36 00000000          ;    xdbextns.s 
+   37 00000000          ; 
+   38 00000000          ; Abstract: 
+   39 00000000          ; 
+   40 00000000          ; 
+   41 00000000          ; 
+   42 00000000          ;-- 
+   45 00000000              OPT     1  ; reenable listing 
+   46 00000000            
+   47 00000000            
+   48 00000000            
+   49 00000000             IMPORT       XSCBwrHandleTraceBufferException 
+   50 00000000             IMPORT       DataAbortHandler 
+   51 00000000             IMPORT       NKSetDataAbortHandler 
+   52 00000000            
+   53 00000000              ;; code piece in data segment. The first dword is patched 
+   54 00000000              ;; by the bsp to a CP read/write instruction. 
+   55                       AREA |.data|, DATA 
+   56 00000000          asm_patch_value 
+   57 00000000 00000000     DCD  0x00000000         ;  patch field 
+   58 00000004 e12fff1e     DCD  0xE12FFF1E         ;  BX LR 
+   59 00000008            
+   60 00000008              TEXTAREA 
+   45                           AREA |.text|,ALIGN=2,CODE,READONLY 
+   46 00000000          AreaName SETS "|.text|" 
+   61 00000000            
+   62 00000000          ;------------------------------------------------------------------------ 
+   63 00000000          ; This macro issues a CPWAIT by using a specific register 
+   64 00000000          ; 
+   65 00000000              MACRO  
+   66 00000000              CPWAIT_RX $tag 
+   67 00000000            
+   68 00000000              mrc p15, 0, $tag, c2, c0, 0 
+   69 00000000              mov $tag, $tag 
+   70 00000000              sub pc, pc, #4 
+   71 00000000            
+   72 00000000              MEND 
+   73 00000000          ;------------------------------------------------------------------------ 
+   74 00000000          ; This macro will Clean a given Data Cache line dictated by bits [31:5] of $tag 
+   75 00000000          ;         
+   76 00000000              MACRO 
+   77 00000000              CLEAN_DCACHE_LINE $tag 
+   78 00000000                   
+   79 00000000              ; Issue clean command 
+   80 00000000                  ; 
+   81 00000000                  mcr p15, 0, $tag, c7, c10, 1 
+   82 00000000            
+   83 00000000              MEND 
+   84 00000000            
+   85 00000000          ;------------------------------------------------------------------------ 
+   86 00000000          ; This macro will Drain the Wite & Fill Buffers dictated by bits [31:5] of $tag 
+   87 00000000          ;         
+   88 00000000              MACRO 
+   89 00000000              DRAIN_BUFFER $tag 
+   90 00000000                   
+   91 00000000              ; Issue buffer drain command 
+   92 00000000                  ; 
+   93 00000000                  mcr p15, 0, $tag, c7, c10, 4 
+   94 00000000            
+   95 00000000              MEND 
+   96 00000000            
+   97 00000000          ;------------------------------------------------------------------------ 
+   98 00000000          ; This macro will Invalidate a given Data Cache line dictated by bits [31:5] of $tag 
+   99 00000000          ;         
+  100 00000000              MACRO 
+  101 00000000              INVALIDATE_D_CACHE_LINE $tag 
+  102 00000000                   
+  103 00000000              ; Issue invalidate command 
+  104 00000000                  ; 
+  105 00000000                  mcr p15, 0, $tag, c7, c6, 1 
+  106 00000000            
+  107 00000000              MEND 
+  108 00000000            
+  109 00000000          ;------------------------------------------------------------------------ 
+  110 00000000          ; This macro will Invalidate a given I Cache line dictated by bits [31:5] of $tag 
+  111 00000000          ;         
+  112 00000000              MACRO 
+  113 00000000              INVALIDATE_I_CACHE_LINE $tag 
+  114 00000000                   
+  115 00000000              ; Issue invalidate command 
+  116 00000000                  ; 
+  117 00000000                  mcr p15, 0, $tag, c7, c5, 1 
+  118 00000000            
+  119 00000000              MEND 
+  120 00000000            
+  121 00000000            
+  122 00000000              LEAF_ENTRY INVALIDATE_DRAIN_PIPELINE         
+  175 00000000          FuncName SETS    VBar:CC:"INVALIDATE_DRAIN_PIPELINE":CC:VBar 
+  176 00000000          PrologName SETS "Invalid Prolog" 
+  177 00000000          FuncEndName SETS    VBar:CC:"INVALIDATE_DRAIN_PIPELINE":CC:"_end":CC:VBar 
+  178 00000000                  ALIGN   2 
+  179 00000000                  EXPORT  |INVALIDATE_DRAIN_PIPELINE| [FUNC] 
+  180 00000000          |INVALIDATE_DRAIN_PIPELINE| 
+  181 00000000                  ROUT 
+  123 00000000               
+  124 00000000               ;Stack all registers 
+  125 00000000 e92d5fff     stmdb r13!,{r0-r12,r14} 
+  126 00000004               
+  127 00000004              ;  unlock data cache - DON'T need to do this right now - have to research 
+  128 00000004              ; into our future locking plans, we may need to return error here  
+  129 00000004              ; in the future  
+  130 00000004              ;mcr p15,0,r0,c9,c2,1  
+  131 00000004               
+  132 00000004              ;  Clean the data cache line 
+  133 00000004              CLEAN_DCACHE_LINE r0  ;  R0: address of the memory region 
+   78 00000004                   
+   79 00000004              ; Issue clean command 
+   80 00000004                  ; 
+   81 00000004 ee070f3a         mcr p15, 0, r0, c7, c10, 1 
+   82 00000008            
+  134 00000008              CPWAIT_RX r2 
+   67 00000008            
+   68 00000008 ee122f10     mrc p15, 0, r2, c2, c0, 0 
+   69 0000000c e1a02002     mov r2, r2 
+   70 00000010 e24ff004     sub pc, pc, #4 
+   71 00000014            
+  135 00000014              ;   drain: clean the write memory fifo 
+  136 00000014              DRAIN_BUFFER r0 
+   90 00000014                   
+   91 00000014              ; Issue buffer drain command 
+   92 00000014                  ; 
+   93 00000014 ee070f9a         mcr p15, 0, r0, c7, c10, 4 
+   94 00000018            
+  137 00000018              CPWAIT_RX r2 
+   67 00000018            
+   68 00000018 ee122f10     mrc p15, 0, r2, c2, c0, 0 
+   69 0000001c e1a02002     mov r2, r2 
+   70 00000020 e24ff004     sub pc, pc, #4 
+   71 00000024            
+  138 00000024               
+  139 00000024              ;  unlock the instruction cache:only unlocked lines can be invalidated -  
+  140 00000024              ; AGAIN, DON't DO this now, need to research into how we plan on locking 
+  141 00000024              ; things into the cache which could break this 
+  142 00000024              ;mcr p15,0,r0,c9,c1,1 
+  143 00000024               
+  144 00000024              ;  invalid the instruction cache 
+  145 00000024              INVALIDATE_I_CACHE_LINE r0 
+  114 00000024                   
+  115 00000024              ; Issue invalidate command 
+  116 00000024                  ; 
+  117 00000024 ee070f35         mcr p15, 0, r0, c7, c5, 1 
+  118 00000028            
+  146 00000028              CPWAIT_RX r2 
+   67 00000028            
+   68 00000028 ee122f10     mrc p15, 0, r2, c2, c0, 0 
+   69 0000002c e1a02002     mov r2, r2 
+   70 00000030 e24ff004     sub pc, pc, #4 
+   71 00000034            
+  147 00000034            
+  148 00000034              ; Invalidate the BTB - Use r0, as you've just invalidated that instruction 
+  149 00000034 ee070fd5     mcr p15,0, r0, c7,c5,6 
+  150 00000038            
+  151 00000038              ; At this point the piplene is empty 
+  152 00000038              ; 
+  153 00000038            
+  154 00000038              ; Invalide DCACHE line 
+  155 00000038              ; 
+  156 00000038 ee070f36     mcr p15,0,R0,c7,c6,1 
+  157 0000003c              CPWAIT_RX r2 
+   67 0000003c            
+   68 0000003c ee122f10     mrc p15, 0, r2, c2, c0, 0 
+   69 00000040 e1a02002     mov r2, r2 
+   70 00000044 e24ff004     sub pc, pc, #4 
+   71 00000048            
+  158 00000048            
+  159 00000048 e8bd5fff     ldmia r13!,{r0-r12,r14} 
+  160 0000004c                
+  161 0000004c              IF Interworking :LOR: Thumbing 
+  162 0000004c e12fff1e        bx  lr 
+  163 00000050              ELSE 
+  165 00000050              ENDIF 
+  166 00000050               
+  167 00000050               
+  168 00000050               
+  169 00000050          ; 
+  170 00000050          ;   XSCBwrExecuteCoProcCode- Execute a given "Write 64-bit register"  
+  171 00000050          ;    OpCode, passed in by R0 for the XDB Browser support 
+  172 00000050          ; 
+  173 00000050          ;  Assumptions:  R0 contains the Instruction/Opcode 
+  174 00000050          ;        R1 contains the 1st arg lower 32-bits 
+  175 00000050          ;        R2 contains the 2nd arg upper 32-bits  
+  176 00000050          ;  Uses 
+  177 00000050          ; 
+  178 00000050              LEAF_ENTRY  XSCBwrExecuteCoProcCode 
+  175 00000050          FuncName SETS    VBar:CC:"XSCBwrExecuteCoProcCode":CC:VBar 
+  176 00000050          PrologName SETS "Invalid Prolog" 
+  177 00000050          FuncEndName SETS    VBar:CC:"XSCBwrExecuteCoProcCode":CC:"_end":CC:VBar 
+  178 00000050                  ALIGN   2 
+  179 00000050                  EXPORT  |XSCBwrExecuteCoProcCode| [FUNC] 
+  180 00000050          |XSCBwrExecuteCoProcCode| 
+  181 00000050                  ROUT 
+  179 00000050            
+  180 00000050 e92d5fff     STMDB sp!,{r0-r12,r14} 
+  181 00000054            
+  182 00000054              ;Move the return value pointers up out of the way 
+  183 00000054 e1a03002     mov r3,r2 ;Should contain the upper 32-bit address 
+  184 00000058 e1a02001     mov r2,r1 ;Should contain the lowest 32-bit address 
+  185 0000005c               
+  186 0000005c              ; read_dsp_asm_patch must contain the opcode 
+  187 0000005c              ; so perform the patch and sychnonize the cache 
+  188 0000005c e59f4118     ldr r4, =asm_patch_value 
+  189 00000060 e5840000     str r0,[r4] 
+  190 00000064 e1a00004     mov r0,r4 
+  191 00000068 ebffffe4     bl  INVALIDATE_DRAIN_PIPELINE 
+  192 0000006c            
+  193 0000006c              ; load the values from the addresses 
+  194 0000006c              ; If this is a 'read', these won't matter, in addition 
+  195 0000006c              ; if it's a 32-bit write, the upper address (R1) is set to a  
+  196 0000006c              ; dummy variable, so it won't harm the system 
+  197 0000006c e5920000     ldr r0,[r2]   
+  198 00000070 e5931000     ldr r1,[r3] 
+  199 00000074            
+  200 00000074              ; jump into opcode patch field 
+  201 00000074 e1a0e00f      mov lr, pc 
+  202 00000078 e1a0f004      mov pc, r4 
+  203 0000007c            
+  204 0000007c              ; Need to throw a CPWAIT in here as data on read won't be valid 
+  205 0000007c              ; yet - takes 3 to 4 cycles for data to be 'read' into dest. regs. 
+  206 0000007c              ; Make sure not to use r0 - r2 (already in use), so use r4 
+  207 0000007c              CPWAIT_RX  r4 
+   67 0000007c            
+   68 0000007c ee124f10     mrc p15, 0, r4, c2, c0, 0 
+   69 00000080 e1a04004     mov r4, r4 
+   70 00000084 e24ff004     sub pc, pc, #4 
+   71 00000088            
+  208 00000088              ; store the result of the operation 
+  209 00000088              ; Again, if it was a load, then these are essentially No Ops 
+  210 00000088              ; If it's a 32-bit, then R1 is pointing to a dummy variable passed 
+  211 00000088              ; in, so it's a valid address that contains 0 
+  212 00000088 e5820000     str r0,[r2] 
+  213 0000008c e5831000     str r1,[r3] 
+  214 00000090               
+  215 00000090 e8bd5fff     ldmia     sp!, {r0-r12,r14} 
+  216 00000094               
+  217 00000094              IF Interworking :LOR: Thumbing 
+  218 00000094 e12fff1e        bx  lr 
+  219 00000098              ELSE 
+  221 00000098              ENDIF 
+  222 00000098            
+  223 00000098          ;  
+  224 00000098          ;  XSCBwrEnableTrace 
+  225 00000098          ;  activate the trace buffer 
+  226 00000098          ; 
+  227 00000098          ;  Assumptions:  none  
+  228 00000098          ;  
+  229 00000098              LEAF_ENTRY XSCBwrEnableTrace 
+  175 00000098          FuncName SETS    VBar:CC:"XSCBwrEnableTrace":CC:VBar 
+  176 00000098          PrologName SETS "Invalid Prolog" 
+  177 00000098          FuncEndName SETS    VBar:CC:"XSCBwrEnableTrace":CC:"_end":CC:VBar 
+  178 00000098                  ALIGN   2 
+  179 00000098                  EXPORT  |XSCBwrEnableTrace| [FUNC] 
+  180 00000098          |XSCBwrEnableTrace| 
+  181 00000098                  ROUT 
+  230 00000098 e3a01106     mov  r1, #0x80000001 
+  231 0000009c ee1a0e10     mrc  p14, 0, R0, c10, c0, 0         ; read DCSR 
+  232 000000a0 e1801001     orr  r1, r0, r1                     ; set bit 0 (== trace on)   
+  233 000000a4 ee0a1e10     mcr p14, 0, R1, c10, c0, 0          ; write DCSR 
+  234 000000a8            
+  235 000000a8              IF Interworking :LOR: Thumbing 
+  236 000000a8 e12fff1e        bx  lr 
+  237 000000ac              ELSE 
+  239 000000ac              ENDIF 
+  240 000000ac            
+  241 000000ac          ;  
+  242 000000ac          ;  XSCBwrDisableTrace 
+  243 000000ac          ;  Disable the trace buffer 
+  244 000000ac          ; 
+  245 000000ac          ;  Assumptions:  none  
+  246 000000ac          ;  
+  247 000000ac              LEAF_ENTRY XSCBwrDisableTrace 
+  175 000000ac          FuncName SETS    VBar:CC:"XSCBwrDisableTrace":CC:VBar 
+  176 000000ac          PrologName SETS "Invalid Prolog" 
+  177 000000ac          FuncEndName SETS    VBar:CC:"XSCBwrDisableTrace":CC:"_end":CC:VBar 
+  178 000000ac                  ALIGN   2 
+  179 000000ac                  EXPORT  |XSCBwrDisableTrace| [FUNC] 
+  180 000000ac          |XSCBwrDisableTrace| 
+  181 000000ac                  ROUT 
+  248 000000ac e3e01001     mvn  r1, #1 
+  249 000000b0 ee1a0e10     mrc  p14, 0, R0, c10, c0, 0         ; read DCSR 
+  250 000000b4 e0001001     and  r1, r0, r1                     ; clear bit 0 (== trace off)   
+  251 000000b8 ee0a1e10     mcr p14, 0, R1, c10, c0, 0          ; write DCSR 
+  252 000000bc            
+  253 000000bc              IF Interworking :LOR: Thumbing 
+  254 000000bc e12fff1e        bx  lr 
+  255 000000c0              ELSE 
+  257 000000c0              ENDIF 
+  258 000000c0            
+  259 000000c0              ;  
+  260 000000c0          ;  XSCBwrTraceSetFillOnce 
+  261 000000c0          ;  Enable the trace buffer full exception (fill once mode) 
+  262 000000c0          ; 
+  263 000000c0          ;  Assumptions:  none  
+  264 000000c0          ;  
+  265 000000c0              LEAF_ENTRY XSCBwrTraceSetFillOnce 
+  175 000000c0          FuncName SETS    VBar:CC:"XSCBwrTraceSetFillOnce":CC:VBar 
+  176 000000c0          PrologName SETS "Invalid Prolog" 
+  177 000000c0          FuncEndName SETS    VBar:CC:"XSCBwrTraceSetFillOnce":CC:"_end":CC:VBar 
+  178 000000c0                  ALIGN   2 
+  179 000000c0                  EXPORT  |XSCBwrTraceSetFillOnce| [FUNC] 
+  180 000000c0          |XSCBwrTraceSetFillOnce| 
+  181 000000c0                  ROUT 
+  266 000000c0 e3a01002     mov  r1, #02 
+  267 000000c4 ee1a0e10     mrc  p14, 0, R0, c10, c0, 0     ; read DCSR 
+  268 000000c8 e1801001     orr  r1, r0, r1                 ; set bit 1 (== trace fill-once mode)   
+  269 000000cc ee0a1e10     mcr p14, 0, R1, c10, c0, 0      ; write DCSR 
+  270 000000d0            
+  271 000000d0              IF Interworking :LOR: Thumbing 
+  272 000000d0 e12fff1e        bx  lr 
+  273 000000d4              ELSE 
+  275 000000d4              ENDIF 
+  276 000000d4               
+  277 000000d4          ;  
+  278 000000d4          ;  XSCBwrReadTraceByte 
+  279 000000d4          ;  Read a single trace buffer byte int r0 
+  280 000000d4          ; 
+  281 000000d4          ;  Assumptions:  none  
+  282 000000d4          ;  
+  283 000000d4              LEAF_ENTRY XSCBwrReadTraceByte 
+  175 000000d4          FuncName SETS    VBar:CC:"XSCBwrReadTraceByte":CC:VBar 
+  176 000000d4          PrologName SETS "Invalid Prolog" 
+  177 000000d4          FuncEndName SETS    VBar:CC:"XSCBwrReadTraceByte":CC:"_end":CC:VBar 
+  178 000000d4                  ALIGN   2 
+  179 000000d4                  EXPORT  |XSCBwrReadTraceByte| [FUNC] 
+  180 000000d4          |XSCBwrReadTraceByte| 
+  181 000000d4                  ROUT 
+  284 000000d4 ee1b0e10     mrc p14, 0, r0, c11, c0,  0     ; read TBREG 
+  285 000000d8            
+  286 000000d8              IF Interworking :LOR: Thumbing 
+  287 000000d8 e12fff1e        bx  lr 
+  288 000000dc              ELSE 
+  290 000000dc              ENDIF 
+  291 000000dc                   
+  292 000000dc          ; 
+  293 000000dc          ;  XSCBwrSaveTrace 
+  294 000000dc          ;  Store the trace buffer and the checkpoint registers into a user  
+  295 000000dc          ; supplied buffer 
+  296 000000dc          ; 
+  297 000000dc          ;  Assumptions:  R0 contains the address of the user buffer that must  
+  298 000000dc          ;                be 264 bytes large 
+  299 000000dc          ;  
+  300 000000dc              LEAF_ENTRY  XSCBwrSaveTrace 
+  175 000000dc          FuncName SETS    VBar:CC:"XSCBwrSaveTrace":CC:VBar 
+  176 000000dc          PrologName SETS "Invalid Prolog" 
+  177 000000dc          FuncEndName SETS    VBar:CC:"XSCBwrSaveTrace":CC:"_end":CC:VBar 
+  178 000000dc                  ALIGN   2 
+  179 000000dc                  EXPORT  |XSCBwrSaveTrace| [FUNC] 
+  180 000000dc          |XSCBwrSaveTrace| 
+  181 000000dc                  ROUT 
+  301 000000dc            
+  302 000000dc e92d401f     stmdb sp!,{r0-r4,r14} 
+  303 000000e0            
+  304 000000e0 ee1a1e10     mrc p14, 0, R1, c10, c0, 0          ;  read DCSR into R1 
+  305 000000e4 e3e02001     mvn r2, #1                          ;  disable trace by clearing bit 0 
+  306 000000e8 e0012002     and r2, r1, r2 
+  307 000000ec ee0a2e10     mcr p14, 0, R2, c10, c0, 0          ;  write DCSR back, old value is in R1  
+  308 000000f0              CPWAIT_RX  r4 
+   67 000000f0            
+   68 000000f0 ee124f10     mrc p15, 0, r4, c2, c0, 0 
+   69 000000f4 e1a04004     mov r4, r4 
+   70 000000f8 e24ff004     sub pc, pc, #4 
+   71 000000fc            
+  309 000000fc                   
+  310 000000fc ee1c2e10     mrc p14, 0, R2, c12, c0, 0          ;  save CHKPT0 into buffer 
+  311 00000100 e4802004     str r2, [r0],#4 
+  312 00000104            
+  313 00000104 ee1d2e10     mrc p14, 0, R2, c13, c0, 0          ;  save CHKPT1 into buffer 
+  314 00000108 e4802004     str r2, [r0],#4 
+  315 0000010c            
+  316 0000010c e3a03c01     ldr r3, =256                        ; load the 256 byte trace buffer 
+  317 00000110          trace_loop 
+  318 00000110 ee1b2e10     mrc p14, 0, r2, c11, c0,  0         ; read TBREG 
+  319 00000114 e4c02001     strb r2, [r0], #1 
+  320 00000118 e2533001     adds r3, r3, #-1 
+  321 0000011c 1afffffb     bne trace_loop 
+  322 00000120            
+  323 00000120 ee0a1e10     mcr p14, 0, r1, c10, c0, 0          ; restore DCSR 
+  324 00000124              CPWAIT_RX r4 
+   67 00000124            
+   68 00000124 ee124f10     mrc p15, 0, r4, c2, c0, 0 
+   69 00000128 e1a04004     mov r4, r4 
+   70 0000012c e24ff004     sub pc, pc, #4 
+   71 00000130            
+  325 00000130            
+  326 00000130 e8bd401f     ldmia     sp!, {r0-r4,r14} 
+  327 00000134            
+  328 00000134              IF Interworking :LOR: Thumbing 
+  329 00000134 e12fff1e        bx  lr 
+  330 00000138              ELSE 
+  332 00000138              ENDIF 
+  333 00000138            
+  334 00000138          ; 
+  335 00000138          ;  XSCBwrDebugAbortHandler 
+  336 00000138          ;  Process exceptions from the debug unit that are signaled via data abort 
+  337 00000138          ; 
+  338 00000138          ;  Assumptions:  CPU is in abort mode. Label is called directly from 
+  339 00000138          ;                exception entry 
+  340 00000138          ; 
+  341 00000138            
+  342 00000138             LEAF_ENTRY  XSCBwrDebugAbortHandler 
+  175 00000138          FuncName SETS    VBar:CC:"XSCBwrDebugAbortHandler":CC:VBar 
+  176 00000138          PrologName SETS "Invalid Prolog" 
+  177 00000138          FuncEndName SETS    VBar:CC:"XSCBwrDebugAbortHandler":CC:"_end":CC:VBar 
+  178 00000138                  ALIGN   2 
+  179 00000138                  EXPORT  |XSCBwrDebugAbortHandler| [FUNC] 
+  180 00000138          |XSCBwrDebugAbortHandler| 
+  181 00000138                  ROUT 
+  343 00000138 e92d5fff     stmdb sp!,{r0-r12, r14}             ; need to retain all registers 
+  344 0000013c            
+  345 0000013c ee1a0e10     mrc   p14, 0, r0, c10, c0, 0        ; test MOE bit in DCSR  
+  346 00000140 e200001c     and   r0, r0, #0x1c 
+  347 00000144 e3500018     cmp   r0, #0x18                     ; trace buffer full ? 
+  348 00000148 1a000003     bne   unknown_debug_exception       ; unkown exception -> OS  
+  349 0000014c             
+  350 0000014c eb000000     bl    XSCBwrHandleTraceBufferException 
+  351 00000150 ebffffd0     bl    XSCBwrEnableTrace 
+  352 00000154            
+  353 00000154 e8bd5fff     ldmia sp!,{r0-r12, r14}             ; restore all registers 
+  354 00000158 e25ef004     subs  pc, lr, #4                    ; return from abort mode 
+  355 0000015c            
+  356 0000015c          unknown_debug_exception 
+  357 0000015c e8bd5fff     ldmia sp!,{r0-r12, r14}             ; restore all registers 
+  358 00000160 ea000000     b     DataAbortHandler              ; let OS handle the exception 
+  359 00000164            
+  360 00000164            
+  361 00000164          ; 
+  362 00000164          ;  XSCBwrTraceDataAbortHandler 
+  363 00000164          ;  Trace aware data abort handler that vectors to the os data abort 
+  364 00000164          ;  handler if the DataAbort was not cause by the debug unit. 
+  365 00000164          ;  If the debug unit caused the excecption, capture the trace and 
+  366 00000164          ;  continue as if no Abort happend. 
+  367 00000164          ;  
+  368 00000164          ;  Assumptions:  CPU is in abort mode. Label is called directly from 
+  369 00000164          ;                exception entry 
+  370 00000164          ; 
+  371 00000164            LEAF_ENTRY XSCBwrTraceDataAbortHandler 
+  175 00000164          FuncName SETS    VBar:CC:"XSCBwrTraceDataAbortHandler":CC:VBar 
+  176 00000164          PrologName SETS "Invalid Prolog" 
+  177 00000164          FuncEndName SETS    VBar:CC:"XSCBwrTraceDataAbortHandler":CC:"_end":CC:VBar 
+  178 00000164                  ALIGN   2 
+  179 00000164                  EXPORT  |XSCBwrTraceDataAbortHandler| [FUNC] 
+  180 00000164          |XSCBwrTraceDataAbortHandler| 
+  181 00000164                  ROUT 
+  372 00000164 e92d0001     stmdb sp!,{r0} ; temp. save of R0 
+  373 00000168 ee150f10     mrc p15, 0, r0, c5, c0, 0 ; read FAULT_STATUS into R0 
+  374 0000016c e2100c02     ands r0, r0, #0x200 ; test debug exception bit 
+  375 00000170 e8bd0001     ldmia sp!, {r0} ; restore r0 
+  376 00000174 0a000000     beq DataAbortHandler ; Jump to the main data abort handler 
+  377 00000178 eaffffee     b XSCBwrDebugAbortHandler ; call debug handler on debug abo 
+  378 0000017c            
+  379 0000017c              END 
+  380 0000017c 00000000 *literal pool: symbol:  asm_patch_value + 0x0 
+Assembly terminated, errors: 0, warnings: 0 

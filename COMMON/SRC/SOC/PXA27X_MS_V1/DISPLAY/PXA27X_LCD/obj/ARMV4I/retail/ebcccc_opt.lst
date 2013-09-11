@@ -1,0 +1,915 @@
+ARM macroassembler      Page:1 
+    1 00000000          ; 
+    2 00000000          ; Copyright (c) Microsoft Corporation.  All rights reserved. 
+    3 00000000          ; 
+    4 00000000          ; 
+    5 00000000          ; Use of this sample source code is subject to the terms of the Microsoft 
+    6 00000000          ; license agreement under which you licensed this sample source code. If 
+    7 00000000          ; you did not accept the terms of the license agreement, you are not 
+    8 00000000          ; authorized to use this sample source code. For the terms of the license, 
+    9 00000000          ; please see the license agreement between you and Microsoft or, if applicable, 
+   10 00000000          ; see the LICENSE.RTF on your install media or the root of your tools installation. 
+   11 00000000          ; THE SAMPLE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES. 
+   12 00000000          ; 
+   13 00000000          ;/*  
+   14 00000000          ;** Copyright 2000-2003 Intel Corporation All Rights Reserved. 
+   15 00000000          ;** 
+   16 00000000          ;** Portions of the source code contained or described herein and all documents 
+   17 00000000          ;** related to such source code (Material) are owned by Intel Corporation 
+   18 00000000          ;** or its suppliers or licensors and is licensed by Microsoft Corporation for distribution.   
+   19 00000000          ;** Title to the Material remains with Intel Corporation or its suppliers and licensors.  
+   20 00000000          ;** Use of the Materials is subject to the terms of the Microsoft license agreement which accompanied the Materials.   
+   21 00000000          ;** No other license under any patent, copyright, trade secret or other intellectual 
+   22 00000000          ;** property right is granted to or conferred upon you by disclosure or 
+   23 00000000          ;** delivery of the Materials, either expressly, by implication, inducement, 
+   24 00000000          ;** estoppel or otherwise  
+   25 00000000          ;** Some portion of the Materials may be copyrighted by Microsoft Corporation. 
+   26 00000000          ;*/ 
+   27 00000000                  INCLUDE memcopy_macro.inc 
+    1 00000000          ; 
+    2 00000000          ; Copyright (c) Microsoft Corporation.  All rights reserved. 
+    3 00000000          ; 
+    4 00000000          ; 
+    5 00000000          ; Use of this sample source code is subject to the terms of the Microsoft 
+    6 00000000          ; license agreement under which you licensed this sample source code. If 
+    7 00000000          ; you did not accept the terms of the license agreement, you are not 
+    8 00000000          ; authorized to use this sample source code. For the terms of the license, 
+    9 00000000          ; please see the license agreement between you and Microsoft or, if applicable, 
+   10 00000000          ; see the LICENSE.RTF on your install media or the root of your tools installation. 
+   11 00000000          ; THE SAMPLE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES. 
+   12 00000000          ; 
+   13 00000000          ;/*  
+   14 00000000          ;** Copyright 2000-2003 Intel Corporation All Rights Reserved. 
+   15 00000000          ;** 
+   16 00000000          ;** Portions of the source code contained or described herein and all documents 
+   17 00000000          ;** related to such source code (Material) are owned by Intel Corporation 
+   18 00000000          ;** or its suppliers or licensors and is licensed by Microsoft Corporation for distribution.   
+   19 00000000          ;** Title to the Material remains with Intel Corporation or its suppliers and licensors.  
+   20 00000000          ;** Use of the Materials is subject to the terms of the Microsoft license agreement which accompanied the Materials.   
+   21 00000000          ;** No other license under any patent, copyright, trade secret or other intellectual 
+   22 00000000          ;** property right is granted to or conferred upon you by disclosure or 
+   23 00000000          ;** delivery of the Materials, either expressly, by implication, inducement, 
+   24 00000000          ;** estoppel or otherwise  
+   25 00000000          ;** Some portion of the Materials may be copyrighted by Microsoft Corporation. 
+   26 00000000          ;*/ 
+   27 00000000                  IF              :LNOT:  :DEF:   __MEMCOPY_MACRO_INC_ 
+   28 00000000                  GBLL    __MEMCOPY_MACRO_INC_ 
+   29 00000000                  ; len >= 16, use this method to avoid much pipeline stalls 
+   30 00000000                  MACRO 
+   31 00000000          $mmbtl  MEMCOPYMBTS_LG16 $pSrc, $pDst, $len, $inc0, $inc1, $tReg, $dReg0, $dReg1, $dReg2, $dReg3, $ldrop, $strop  
+   32 00000000                  ; loop unrooling at 8 now 
+   33 00000000                  movs    $tReg,          $len,           lsr #3 ; $len   --> width 
+   34 00000000                  beq             $mmbtl.COPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT 
+   35 00000000          $mmbtl.COPY_IN_16BIT_HEIGHT_LOOP_B8      
+   36 00000000                  $ldrop  $dReg0,         [$pSrc],        $inc0 
+   37 00000000                  $ldrop  $dReg1,         [$pSrc],        $inc0 
+   38 00000000                  $ldrop  $dReg2,         [$pSrc],        $inc0 
+   39 00000000                  $ldrop  $dReg3,         [$pSrc],        $inc0 
+   40 00000000                  subs    $tReg,          $tReg,          #1 
+   41 00000000            
+   42 00000000                  $strop  $dReg0,         [$pDst],        $inc1 
+   43 00000000                  $strop  $dReg1,         [$pDst],        $inc1 
+   44 00000000                  $strop  $dReg2,         [$pDst],        $inc1 
+   45 00000000                  $strop  $dReg3,         [$pDst],        $inc1 
+   46 00000000            
+   47 00000000                  $ldrop  $dReg0,         [$pSrc],        $inc0 
+   48 00000000                  $ldrop  $dReg1,         [$pSrc],        $inc0 
+   49 00000000                  $ldrop  $dReg2,         [$pSrc],        $inc0 
+   50 00000000                  $ldrop  $dReg3,         [$pSrc],        $inc0 
+   51 00000000            
+   52 00000000                  $strop  $dReg0,         [$pDst],        $inc1 
+   53 00000000                  $strop  $dReg1,         [$pDst],        $inc1 
+   54 00000000                  $strop  $dReg2,         [$pDst],        $inc1 
+   55 00000000                  $strop  $dReg3,         [$pDst],        $inc1 
+   56 00000000            
+   57 00000000                  bgt             $mmbtl.COPY_IN_16BIT_HEIGHT_LOOP_B8      
+   58 00000000                   
+   59 00000000          $mmbtl.COPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT         
+   60 00000000                  ands    $tReg,          $len,           #7 
+   61 00000000                  beq             $mmbtl.COPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   62 00000000            
+   63 00000000          $mmbtl.COPY_IN_16BIT_HEIGHT_LOOP_B1      
+   64 00000000                  $ldrop  $dReg0,         [$pSrc],        $inc0 
+   65 00000000                  subs    $tReg,          $tReg,          #1 
+   66 00000000                  $strop  $dReg0,         [$pDst],        $inc1 
+   67 00000000                  bgt             $mmbtl.COPY_IN_16BIT_HEIGHT_LOOP_B1      
+   68 00000000            
+   69 00000000          $mmbtl.COPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   70 00000000            
+   71 00000000                  MEND 
+   72 00000000                   
+   73 00000000                  ; len < 16, use this method to avoid much overheader: less register required, less branch 
+   74 00000000                  ; input: 
+   75 00000000                  ; $pSrc  ->reg pointer to the source buffer 
+   76 00000000                  ; $pDst  ->reg pointer to the destination buffer 
+   77 00000000                  ; $len   ->reg buffer length 
+   78 00000000                  ; $inc0  ->reg or immediate data(8bit?), address increasement offset for pSrc 
+   79 00000000                  ; $inc1  ->reg or immediate data(8bit?), address increasement offset for pDst 
+   80 00000000                  ; $ldrop ->load operation, can be ldr, ldrh, ldrb 
+   81 00000000                  ; $strop ->store operation, can be str, strh, strb 
+   82 00000000                  ; work registers 
+   83 00000000                  ; $dReg0 -> data reg0 
+   84 00000000                  ; $dReg1 -> data reg1, must use different register from $dReg0   
+   85 00000000                  ; use 5 registers 
+   86 00000000                  MACRO 
+   87 00000000          $mmbts  MEMCOPYMBTS_LT16 $pSrc, $pDst, $len, $inc0, $inc1, $dReg0, $dReg1, $ldrop, $strop, $ldrop2, $strop2  
+   88 00000000                  ; loop unrooling at 8 now 
+   89 00000000                  cmp                     $len,           #0 
+   90 00000000                  ble                     $mmbts.COPY_IN_16BIT_HEIGHT_LOOP_B2_EXIT 
+   91 00000000                   
+   92 00000000                  tst                     $len,           #1 
+   93 00000000                  $ldrop2         $dReg0,         [$pSrc],        $inc0 
+   94 00000000                  $strop2         $dReg0,         [$pDst],        $inc1 
+   95 00000000            
+   96 00000000                  movs    $len,           $len,           lsr #1 ; $len   --> width 
+   97 00000000                  beq             $mmbts.COPY_IN_16BIT_HEIGHT_LOOP_B2_EXIT 
+   98 00000000          $mmbts.COPY_IN_16BIT_HEIGHT_LOOP_B2      
+   99 00000000                  $ldrop  $dReg0,         [$pSrc],        $inc0 
+  100 00000000                  $ldrop  $dReg1,         [$pSrc],        $inc0 
+  101 00000000                  subs    $len,           $len,           #1 
+  102 00000000                  $strop  $dReg0,         [$pDst],        $inc1 
+  103 00000000                  $strop  $dReg1,         [$pDst],        $inc1 
+  104 00000000                  bgt             $mmbts.COPY_IN_16BIT_HEIGHT_LOOP_B2      
+  105 00000000          $mmbts.COPY_IN_16BIT_HEIGHT_LOOP_B2_EXIT         
+  106 00000000            
+  107 00000000                  MEND 
+  108 00000000                   
+  109 00000000                   
+  110 00000000                  ENDIF    
+  111 00000000                   
+  112 00000000                  END 
+   28 00000000                  EXPORT  Memmove1616_ASM_LE16 
+   29 00000000                  EXPORT  Memmove1616_ASM_GT16 
+   30 00000000                  EXPORT  EmulatedBltSrcCopy1616ASM 
+   31 00000000                   
+   32                           AREA    EBCOPY16OPT,    CODE,   READONLY 
+   33 00000000                   
+   34 00000000          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;       
+   35 00000000                  ; void Memmove1616_ASM_LE16(WORD* pSrc, WORD *pDst, int len)    ; 
+   36 00000000                  ;                                                                                                                      
+                                ; 
+   37 00000000          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;       
+   38 00000000          Memmove1616_ASM_LE16 
+   39 00000000            
+   40 00000000                  ; r0->pSrc, r1->pDst, r2->len 
+   41 00000000                  ; if ( pSrc > pDst ), use increase mode 
+   42 00000000 e3520000         cmp             r2,             #0 
+   43 00000004            
+   44 00000004              IF Thumbing :LOR: Interworking 
+   45 00000004 d12fff1e         bxle  lr 
+   46 00000008              ELSE 
+   48 00000008              ENDIF 
+   49 00000008                   
+   50 00000008 e1500001         cmp     r0,     r1 
+   51 0000000c da00000d         ble             Memmove1616_ASM_LE16_DEC 
+   52 00000010          Memmove1616_ASM_LE16_INC 
+   53 00000010            
+   54 00000010          Memmove1616_ASM_LE16_INC_LABEL MEMCOPYMBTS_LT16 r0, r1, r2, #2, #2, r3, r12, ldrh, strh, ldrneh, strneh 
+   88 00000010                  ; loop unrooling at 8 now 
+   89 00000010 e3520000         cmp                     r2,             #0 
+   90 00000014 da00000a         ble                     Memmove1616_ASM_LE16_INC_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2_EXIT 
+   91 00000018                   
+   92 00000018 e3120001         tst                     r2,             #1 
+   93 0000001c 10d030b2         ldrneh          r3,             [r0],   #2 
+   94 00000020 10c130b2         strneh          r3,             [r1],   #2 
+   95 00000024            
+   96 00000024 e1b020a2         movs    r2,             r2,             lsr #1 ; r2     --> width 
+   97 00000028 0a000005         beq             Memmove1616_ASM_LE16_INC_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2_EXIT 
+   98 0000002c          Memmove1616_ASM_LE16_INC_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2       
+   99 0000002c e0d030b2         ldrh    r3,             [r0],   #2 
+  100 00000030 e0d0c0b2         ldrh    r12,            [r0],   #2 
+  101 00000034 e2522001         subs    r2,             r2,             #1 
+  102 00000038 e0c130b2         strh    r3,             [r1],   #2 
+  103 0000003c e0c1c0b2         strh    r12,            [r1],   #2 
+  104 00000040 cafffff9         bgt             Memmove1616_ASM_LE16_INC_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2       
+  105 00000044          Memmove1616_ASM_LE16_INC_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2_EXIT  
+  106 00000044            
+   55 00000044              IF Thumbing :LOR: Interworking 
+   56 00000044 e12fff1e         bx  lr 
+   57 00000048              ELSE 
+   59 00000048              ENDIF 
+   60 00000048            
+   61 00000048          ; (pSrc <= pDst ) use decrease mode 
+   62 00000048          Memmove1616_ASM_LE16_DEC 
+   63 00000048 e0800082         add             r0,             r0,             r2, lsl #1 
+   64 0000004c e0811082         add             r1,             r1,             r2, lsl #1 
+   65 00000050 e2400002         sub             r0,             r0,             #2 
+   66 00000054 e2411002         sub             r1,             r1,             #2 
+   67 00000058          Memmove1616_ASM_LE16_DEC_LABEL MEMCOPYMBTS_LT16 r0, r1, r2, #-2, #-2, r3, r12, ldrh, strh, ldrneh, strneh 
+   88 00000058                  ; loop unrooling at 8 now 
+   89 00000058 e3520000         cmp                     r2,             #0 
+   90 0000005c da00000a         ble                     Memmove1616_ASM_LE16_DEC_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2_EXIT 
+   91 00000060                   
+   92 00000060 e3120001         tst                     r2,             #1 
+   93 00000064 105030b2         ldrneh          r3,             [r0],   #-2 
+   94 00000068 104130b2         strneh          r3,             [r1],   #-2 
+   95 0000006c            
+   96 0000006c e1b020a2         movs    r2,             r2,             lsr #1 ; r2     --> width 
+   97 00000070 0a000005         beq             Memmove1616_ASM_LE16_DEC_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2_EXIT 
+   98 00000074          Memmove1616_ASM_LE16_DEC_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2       
+   99 00000074 e05030b2         ldrh    r3,             [r0],   #-2 
+  100 00000078 e050c0b2         ldrh    r12,            [r0],   #-2 
+  101 0000007c e2522001         subs    r2,             r2,             #1 
+  102 00000080 e04130b2         strh    r3,             [r1],   #-2 
+  103 00000084 e041c0b2         strh    r12,            [r1],   #-2 
+  104 00000088 cafffff9         bgt             Memmove1616_ASM_LE16_DEC_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2       
+  105 0000008c          Memmove1616_ASM_LE16_DEC_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2_EXIT  
+  106 0000008c            
+   68 0000008c              IF Thumbing :LOR: Interworking 
+   69 0000008c e12fff1e         bx  lr 
+   70 00000090              ELSE 
+   72 00000090              ENDIF 
+   73 00000090            
+   74 00000090                   
+   75 00000090          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;       
+   76 00000090                  ; void Memmove1616_ASM_GT16(WORD* pSrc, WORD *pDst, int len)    ; 
+   77 00000090                  ;                                                                                                                      
+                                ; 
+   78 00000090          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;       
+   79 00000090          Memmove1616_ASM_GT16 
+   80 00000090            
+   81 00000090 e3520000         cmp             r2,             #0                      ; len >= 0? 
+   82 00000094              IF Thumbing :LOR: Interworking 
+   83 00000094 d12fff1e         bxle  lr 
+   84 00000098              ELSE 
+   86 00000098              ENDIF 
+   87 00000098            
+   88 00000098 e92d4070         stmdb   sp!,    {r4-r6,r14} 
+   89 0000009c            
+   90 0000009c            
+   91 0000009c e0503001         subs    r3,             r0,             r1 
+   92 000000a0 b2633000         rsblt   r3,             r3,             #0 
+   93 000000a4                   
+   94 000000a4 e1530082         cmp             r3,             r2,             lsl #1 
+   95 000000a8 d1500001         cmple   r0,             r1 
+   96 000000ac da000040         ble             Memmove1616_ASM_GT16_DEC 
+   97 000000b0          Memmove1616_ASM_GT16_INC 
+   98 000000b0 e0203001         eor             r3,             r0,             r1 
+   99 000000b4 e3130002         tst             r3,             #2 
+  100 000000b8 1a000022         bne             Memmove1616_ASM_GT16_INC_2B 
+  101 000000bc          Memmove1616_ASM_GT16_INC_4B 
+  102 000000bc e3100002         tst             r0,             #0x2 
+  103 000000c0 10d0c0b2         ldrneh  r12,    [r0], #2 
+  104 000000c4 12422001         subne   r2,             r2,       #1 
+  105 000000c8 e1a0e0a2         mov             r14,    r2,     lsr     #1 ; r14->number in 4-byte 
+  106 000000cc 10c1c0b2         strneh  r12,    [r1], #2 
+  107 000000d0                   
+  108 000000d0                   
+  109 000000d0          Memmove1616_ASM_GT16_INC_4B_LABLE   MEMCOPYMBTS_LG16 r0, r1, r14, #4, #4, r3, r12, r4, r5, r6, ldr, str 
+   32 000000d0                  ; loop unrooling at 8 now 
+   33 000000d0 e1b031ae         movs    r3,             r14,            lsr #3 ; r14    --> width 
+   34 000000d4 0a000011         beq             Memmove1616_ASM_GT16_INC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT 
+   35 000000d8          Memmove1616_ASM_GT16_INC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8    
+   36 000000d8 e490c004         ldr     r12,            [r0],   #4 
+   37 000000dc e4904004         ldr     r4,             [r0],   #4 
+   38 000000e0 e4905004         ldr     r5,             [r0],   #4 
+   39 000000e4 e4906004         ldr     r6,             [r0],   #4 
+   40 000000e8 e2533001         subs    r3,             r3,             #1 
+   41 000000ec            
+   42 000000ec e481c004         str     r12,            [r1],   #4 
+   43 000000f0 e4814004         str     r4,             [r1],   #4 
+   44 000000f4 e4815004         str     r5,             [r1],   #4 
+   45 000000f8 e4816004         str     r6,             [r1],   #4 
+   46 000000fc            
+   47 000000fc e490c004         ldr     r12,            [r0],   #4 
+   48 00000100 e4904004         ldr     r4,             [r0],   #4 
+   49 00000104 e4905004         ldr     r5,             [r0],   #4 
+   50 00000108 e4906004         ldr     r6,             [r0],   #4 
+   51 0000010c            
+   52 0000010c e481c004         str     r12,            [r1],   #4 
+   53 00000110 e4814004         str     r4,             [r1],   #4 
+   54 00000114 e4815004         str     r5,             [r1],   #4 
+   55 00000118 e4816004         str     r6,             [r1],   #4 
+   56 0000011c            
+   57 0000011c caffffed         bgt             Memmove1616_ASM_GT16_INC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8    
+   58 00000120                   
+   59 00000120          Memmove1616_ASM_GT16_INC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT       
+   60 00000120 e21e3007         ands    r3,             r14,            #7 
+   61 00000124 0a000003         beq             Memmove1616_ASM_GT16_INC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   62 00000128            
+   63 00000128          Memmove1616_ASM_GT16_INC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B1    
+   64 00000128 e490c004         ldr     r12,            [r0],   #4 
+   65 0000012c e2533001         subs    r3,             r3,             #1 
+   66 00000130 e481c004         str     r12,            [r1],   #4 
+   67 00000134 cafffffb         bgt             Memmove1616_ASM_GT16_INC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B1    
+   68 00000138            
+   69 00000138          Memmove1616_ASM_GT16_INC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   70 00000138            
+  110 00000138                    
+  111 00000138 e3120001         tst             r2,             #0x1 
+  112 0000013c 10d0c0b2         ldrneh  r12,    [r0], #2 
+  113 00000140 10c1c0b2         strneh  r12,    [r1], #2 
+  114 00000144 ea000062         b               Memmove1616_ASM_GT16_EXIT 
+  115 00000148                   
+  116 00000148                                   
+  117 00000148          Memmove1616_ASM_GT16_INC_2B      
+  118 00000148          Memmove1616_ASM_GT16_INC_2B_LABLE       MEMCOPYMBTS_LG16 r0, r1, r2, #2, #2, r3, r12, r4, r5, r6, ldrh, strh 
+   32 00000148                  ; loop unrooling at 8 now 
+   33 00000148 e1b031a2         movs    r3,             r2,             lsr #3 ; r2     --> width 
+   34 0000014c 0a000011         beq             Memmove1616_ASM_GT16_INC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT 
+   35 00000150          Memmove1616_ASM_GT16_INC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8    
+   36 00000150 e0d0c0b2         ldrh    r12,            [r0],   #2 
+   37 00000154 e0d040b2         ldrh    r4,             [r0],   #2 
+   38 00000158 e0d050b2         ldrh    r5,             [r0],   #2 
+   39 0000015c e0d060b2         ldrh    r6,             [r0],   #2 
+   40 00000160 e2533001         subs    r3,             r3,             #1 
+   41 00000164            
+   42 00000164 e0c1c0b2         strh    r12,            [r1],   #2 
+   43 00000168 e0c140b2         strh    r4,             [r1],   #2 
+   44 0000016c e0c150b2         strh    r5,             [r1],   #2 
+   45 00000170 e0c160b2         strh    r6,             [r1],   #2 
+   46 00000174            
+   47 00000174 e0d0c0b2         ldrh    r12,            [r0],   #2 
+   48 00000178 e0d040b2         ldrh    r4,             [r0],   #2 
+   49 0000017c e0d050b2         ldrh    r5,             [r0],   #2 
+   50 00000180 e0d060b2         ldrh    r6,             [r0],   #2 
+   51 00000184            
+   52 00000184 e0c1c0b2         strh    r12,            [r1],   #2 
+   53 00000188 e0c140b2         strh    r4,             [r1],   #2 
+   54 0000018c e0c150b2         strh    r5,             [r1],   #2 
+   55 00000190 e0c160b2         strh    r6,             [r1],   #2 
+   56 00000194            
+   57 00000194 caffffed         bgt             Memmove1616_ASM_GT16_INC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8    
+   58 00000198                   
+   59 00000198          Memmove1616_ASM_GT16_INC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT       
+   60 00000198 e2123007         ands    r3,             r2,             #7 
+   61 0000019c 0a000003         beq             Memmove1616_ASM_GT16_INC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   62 000001a0            
+   63 000001a0          Memmove1616_ASM_GT16_INC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B1    
+   64 000001a0 e0d0c0b2         ldrh    r12,            [r0],   #2 
+   65 000001a4 e2533001         subs    r3,             r3,             #1 
+   66 000001a8 e0c1c0b2         strh    r12,            [r1],   #2 
+   67 000001ac cafffffb         bgt             Memmove1616_ASM_GT16_INC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B1    
+   68 000001b0            
+   69 000001b0          Memmove1616_ASM_GT16_INC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   70 000001b0            
+  119 000001b0 ea000047         b               Memmove1616_ASM_GT16_EXIT 
+  120 000001b4            
+  121 000001b4                   
+  122 000001b4          Memmove1616_ASM_GT16_DEC 
+  123 000001b4 e0800082         add             r0,             r0,             r2, lsl #1 
+  124 000001b8 e0811082         add             r1,             r1,             r2, lsl #1 
+  125 000001bc e2400002         sub             r0,             r0,             #2 
+  126 000001c0 e2411002         sub             r1,             r1,             #2 
+  127 000001c4 e0203001         eor             r3,             r0,             r1 
+  128 000001c8 e3130002         tst             r3,             #2 
+  129 000001cc 1a000026         bne             Memmove1616_ASM_GT16_DEC_2B 
+  130 000001d0                   
+  131 000001d0          Memmove1616_ASM_GT16_DEC_4B 
+  132 000001d0 e3100002         tst             r0,             #0x2 
+  133 000001d4 0050c0b2         ldreqh  r12,    [r0], #-2 
+  134 000001d8 02422001         subeq   r2,             r2,       #1 
+  135 000001dc e1a0e0a2         mov             r14,    r2,   lsr       #1 
+  136 000001e0 0041c0b2         streqh  r12,    [r1], #-2 
+  137 000001e4                   
+  138 000001e4 e2400002         sub             r0,             r0,             #2 
+  139 000001e8 e2411002         sub             r1,             r1,             #2 
+  140 000001ec                   
+  141 000001ec          Memmove1616_ASM_GT16_DEC_4B_LABLE       MEMCOPYMBTS_LG16 r0, r1, r14, #-4, #-4, r3, r12, r4, r5, r6, ldr, str 
+   32 000001ec                  ; loop unrooling at 8 now 
+   33 000001ec e1b031ae         movs    r3,             r14,            lsr #3 ; r14    --> width 
+   34 000001f0 0a000011         beq             Memmove1616_ASM_GT16_DEC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT 
+   35 000001f4          Memmove1616_ASM_GT16_DEC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8    
+   36 000001f4 e410c004         ldr     r12,            [r0],   #-4 
+   37 000001f8 e4104004         ldr     r4,             [r0],   #-4 
+   38 000001fc e4105004         ldr     r5,             [r0],   #-4 
+   39 00000200 e4106004         ldr     r6,             [r0],   #-4 
+   40 00000204 e2533001         subs    r3,             r3,             #1 
+   41 00000208            
+   42 00000208 e401c004         str     r12,            [r1],   #-4 
+   43 0000020c e4014004         str     r4,             [r1],   #-4 
+   44 00000210 e4015004         str     r5,             [r1],   #-4 
+   45 00000214 e4016004         str     r6,             [r1],   #-4 
+   46 00000218            
+   47 00000218 e410c004         ldr     r12,            [r0],   #-4 
+   48 0000021c e4104004         ldr     r4,             [r0],   #-4 
+   49 00000220 e4105004         ldr     r5,             [r0],   #-4 
+   50 00000224 e4106004         ldr     r6,             [r0],   #-4 
+   51 00000228            
+   52 00000228 e401c004         str     r12,            [r1],   #-4 
+   53 0000022c e4014004         str     r4,             [r1],   #-4 
+   54 00000230 e4015004         str     r5,             [r1],   #-4 
+   55 00000234 e4016004         str     r6,             [r1],   #-4 
+   56 00000238            
+   57 00000238 caffffed         bgt             Memmove1616_ASM_GT16_DEC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8    
+   58 0000023c                   
+   59 0000023c          Memmove1616_ASM_GT16_DEC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT       
+   60 0000023c e21e3007         ands    r3,             r14,            #7 
+   61 00000240 0a000003         beq             Memmove1616_ASM_GT16_DEC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   62 00000244            
+   63 00000244          Memmove1616_ASM_GT16_DEC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B1    
+   64 00000244 e410c004         ldr     r12,            [r0],   #-4 
+   65 00000248 e2533001         subs    r3,             r3,             #1 
+   66 0000024c e401c004         str     r12,            [r1],   #-4 
+   67 00000250 cafffffb         bgt             Memmove1616_ASM_GT16_DEC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B1    
+   68 00000254            
+   69 00000254          Memmove1616_ASM_GT16_DEC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   70 00000254            
+  142 00000254            
+  143 00000254 e2800002         add             r0,             r0,             #2 
+  144 00000258 e2811002         add             r1,             r1,             #2 
+  145 0000025c                    
+  146 0000025c e3120001         tst             r2,             #0x1 
+  147 00000260 1050c0b2         ldrneh  r12,    [r0], #-2 
+  148 00000264 1041c0b2         strneh  r12,    [r1], #-2 
+  149 00000268 ea000019         b               Memmove1616_ASM_GT16_EXIT 
+  150 0000026c                   
+  151 0000026c                                   
+  152 0000026c          Memmove1616_ASM_GT16_DEC_2B      
+  153 0000026c          Memmove1616_ASM_GT16_DEC_2B_LABLE       MEMCOPYMBTS_LG16 r0, r1, r2, #-2, #-2, r3, r12, r4, r5, r6, ldrh, strh 
+   32 0000026c                  ; loop unrooling at 8 now 
+   33 0000026c e1b031a2         movs    r3,             r2,             lsr #3 ; r2     --> width 
+   34 00000270 0a000011         beq             Memmove1616_ASM_GT16_DEC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT 
+   35 00000274          Memmove1616_ASM_GT16_DEC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8    
+   36 00000274 e050c0b2         ldrh    r12,            [r0],   #-2 
+   37 00000278 e05040b2         ldrh    r4,             [r0],   #-2 
+   38 0000027c e05050b2         ldrh    r5,             [r0],   #-2 
+   39 00000280 e05060b2         ldrh    r6,             [r0],   #-2 
+   40 00000284 e2533001         subs    r3,             r3,             #1 
+   41 00000288            
+   42 00000288 e041c0b2         strh    r12,            [r1],   #-2 
+   43 0000028c e04140b2         strh    r4,             [r1],   #-2 
+   44 00000290 e04150b2         strh    r5,             [r1],   #-2 
+   45 00000294 e04160b2         strh    r6,             [r1],   #-2 
+   46 00000298            
+   47 00000298 e050c0b2         ldrh    r12,            [r0],   #-2 
+   48 0000029c e05040b2         ldrh    r4,             [r0],   #-2 
+   49 000002a0 e05050b2         ldrh    r5,             [r0],   #-2 
+   50 000002a4 e05060b2         ldrh    r6,             [r0],   #-2 
+   51 000002a8            
+   52 000002a8 e041c0b2         strh    r12,            [r1],   #-2 
+   53 000002ac e04140b2         strh    r4,             [r1],   #-2 
+   54 000002b0 e04150b2         strh    r5,             [r1],   #-2 
+   55 000002b4 e04160b2         strh    r6,             [r1],   #-2 
+   56 000002b8            
+   57 000002b8 caffffed         bgt             Memmove1616_ASM_GT16_DEC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8    
+   58 000002bc                   
+   59 000002bc          Memmove1616_ASM_GT16_DEC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT       
+   60 000002bc e2123007         ands    r3,             r2,             #7 
+   61 000002c0 0a000003         beq             Memmove1616_ASM_GT16_DEC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   62 000002c4            
+   63 000002c4          Memmove1616_ASM_GT16_DEC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B1    
+   64 000002c4 e050c0b2         ldrh    r12,            [r0],   #-2 
+   65 000002c8 e2533001         subs    r3,             r3,             #1 
+   66 000002cc e041c0b2         strh    r12,            [r1],   #-2 
+   67 000002d0 cafffffb         bgt             Memmove1616_ASM_GT16_DEC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B1    
+   68 000002d4            
+   69 000002d4          Memmove1616_ASM_GT16_DEC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   70 000002d4            
+  154 000002d4            
+  155 000002d4                   
+  156 000002d4          Memmove1616_ASM_GT16_EXIT        
+  157 000002d4 e8bd8070         ldmia   sp!,    {r4-r6,pc}  
+  158 000002d8                   
+  159 000002d8                   
+  160 000002d8          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;        
+  161 000002d8                  ; void EmulatedBltSrcCopy1616ASM(WORD* pSrc, WORD *pDst, int len, int cRows,                    ; 
+  162 000002d8                  ;                                                               UINT32 iScanStrideSrc,                                 
+                                                        ;  
+  163 000002d8                  ;                                                               UINT32 iScanStrideDst)                                 
+                                                        ; 
+  164 000002d8                  ;                                                                                                                      
+                                                                                ; 
+  165 000002d8          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;        
+  166 000002d8            
+  167 000002d8          STACKDEPTH                                      EQU             (4*4) 
+  168 000002d8                   
+  169 000002d8          ISCANSTRIDESRC                          EQU             (STACKDEPTH+0) 
+  170 000002d8          ISCANSTRIDEDST                          EQU             (STACKDEPTH+4) 
+  171 000002d8          EmulatedBltSrcCopy1616ASM        
+  172 000002d8 e3520000         cmp             r2,             #0 
+  173 000002dc c3530000         cmpgt   r3,             #0 
+  174 000002e0            
+  175 000002e0              IF Thumbing :LOR: Interworking 
+  176 000002e0 d12fff1e         bxle  lr 
+  177 000002e4              ELSE 
+  179 000002e4              ENDIF 
+  180 000002e4            
+  181 000002e4                   
+  182 000002e4 e52d4004         str             r4,             [sp,    #-4]! 
+  183 000002e8 e52d5004         str             r5,             [sp,    #-4]! 
+  184 000002ec e52d6004         str             r6,             [sp,    #-4]! 
+  185 000002f0 e52d7004         str             r7,             [sp,    #-4]! 
+  186 000002f4 e3520010         cmp             r2,             #16 
+  187 000002f8                   
+  188 000002f8 e59d4010         ldr             r4,             [sp,    #ISCANSTRIDESRC] 
+  189 000002fc e59d5014         ldr             r5,             [sp,    #ISCANSTRIDEDST]         
+  190 00000300 e1a07002         mov             r7,             r2                      ; keep len in one line 
+  191 00000304                   
+  192 00000304 ca000037         bgt             SrcCopy1616_ASM_GT16 
+  193 00000308                   
+  194 00000308                  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;   
+  195 00000308          SrcCopy1616_ASM_LE16     
+  196 00000308          SrcCopy1616_ASM_LE16_LOOP        
+  197 00000308 e1500001         cmp     r0,     r1 
+  198 0000030c da000018         ble             SrcCopy1616_ASM_LE16_DEC 
+  199 00000310                           
+  200 00000310          SrcCopy1616_ASM_LE16_INC 
+  201 00000310          SrcCopy1616_ASM_LE16_INC_LABEL MEMCOPYMBTS_LT16 r0, r1, r2, #2, #2, r6, r12, ldrh, strh, ldrneh, strneh 
+   88 00000310                  ; loop unrooling at 8 now 
+   89 00000310 e3520000         cmp                     r2,             #0 
+   90 00000314 da00000a         ble                     SrcCopy1616_ASM_LE16_INC_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2_EXIT 
+   91 00000318                   
+   92 00000318 e3120001         tst                     r2,             #1 
+   93 0000031c 10d060b2         ldrneh          r6,             [r0],   #2 
+   94 00000320 10c160b2         strneh          r6,             [r1],   #2 
+   95 00000324            
+   96 00000324 e1b020a2         movs    r2,             r2,             lsr #1 ; r2     --> width 
+   97 00000328 0a000005         beq             SrcCopy1616_ASM_LE16_INC_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2_EXIT 
+   98 0000032c          SrcCopy1616_ASM_LE16_INC_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2       
+   99 0000032c e0d060b2         ldrh    r6,             [r0],   #2 
+  100 00000330 e0d0c0b2         ldrh    r12,            [r0],   #2 
+  101 00000334 e2522001         subs    r2,             r2,             #1 
+  102 00000338 e0c160b2         strh    r6,             [r1],   #2 
+  103 0000033c e0c1c0b2         strh    r12,            [r1],   #2 
+  104 00000340 cafffff9         bgt             SrcCopy1616_ASM_LE16_INC_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2       
+  105 00000344          SrcCopy1616_ASM_LE16_INC_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2_EXIT  
+  106 00000344            
+  202 00000344 e2533001         subs    r3,             r3,             #1 
+  203 00000348 e0800084         add             r0,             r0,             r4, lsl #1 
+  204 0000034c e0811085         add             r1,             r1,             r5, lsl #1 
+  205 00000350 e1a02007         mov             r2,             r7 
+  206 00000354 e0400082         sub             r0,             r0,             r2, lsl #1 
+  207 00000358 e0411082         sub             r1,             r1,             r2, lsl #1 
+  208 0000035c                   
+  209 0000035c caffffe9         bgt             SrcCopy1616_ASM_LE16_LOOP 
+  210 00000360                  ; return from the function       
+  211 00000360 e49d7004         ldr             r7,             [sp],   #4 
+  212 00000364 e49d6004         ldr             r6,             [sp],   #4 
+  213 00000368 e49d5004         ldr             r5,             [sp],   #4 
+  214 0000036c e49d4004         ldr             r4,             [sp],   #4 
+  215 00000370              IF Thumbing :LOR: Interworking 
+  216 00000370 e12fff1e         bx  lr 
+  217 00000374              ELSE 
+  219 00000374              ENDIF 
+  220 00000374            
+  221 00000374                   
+  222 00000374          ; (pSrc <= pDst ) use decrease mode 
+  223 00000374          SrcCopy1616_ASM_LE16_DEC 
+  224 00000374 e0800082         add             r0,             r0,             r2, lsl #1 
+  225 00000378 e0811082         add             r1,             r1,             r2, lsl #1 
+  226 0000037c e2400002         sub             r0,             r0,             #2 
+  227 00000380 e2411002         sub             r1,             r1,             #2 
+  228 00000384          SrcCopy1616_ASM_LE16_DEC_LABEL MEMCOPYMBTS_LT16 r0, r1, r2, #-2, #-2, r6, r12, ldrh, strh, ldrneh, strneh 
+   88 00000384                  ; loop unrooling at 8 now 
+   89 00000384 e3520000         cmp                     r2,             #0 
+   90 00000388 da00000a         ble                     SrcCopy1616_ASM_LE16_DEC_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2_EXIT 
+   91 0000038c                   
+   92 0000038c e3120001         tst                     r2,             #1 
+   93 00000390 105060b2         ldrneh          r6,             [r0],   #-2 
+   94 00000394 104160b2         strneh          r6,             [r1],   #-2 
+   95 00000398            
+   96 00000398 e1b020a2         movs    r2,             r2,             lsr #1 ; r2     --> width 
+   97 0000039c 0a000005         beq             SrcCopy1616_ASM_LE16_DEC_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2_EXIT 
+   98 000003a0          SrcCopy1616_ASM_LE16_DEC_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2       
+   99 000003a0 e05060b2         ldrh    r6,             [r0],   #-2 
+  100 000003a4 e050c0b2         ldrh    r12,            [r0],   #-2 
+  101 000003a8 e2522001         subs    r2,             r2,             #1 
+  102 000003ac e04160b2         strh    r6,             [r1],   #-2 
+  103 000003b0 e041c0b2         strh    r12,            [r1],   #-2 
+  104 000003b4 cafffff9         bgt             SrcCopy1616_ASM_LE16_DEC_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2       
+  105 000003b8          SrcCopy1616_ASM_LE16_DEC_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2_EXIT  
+  106 000003b8            
+  229 000003b8 e2533001         subs    r3,             r3,             #1 
+  230 000003bc e2800002         add             r0,             r0,             #2  ;; important 
+  231 000003c0 e2811002         add             r1,             r1,             #2 
+  232 000003c4 e0800084         add             r0,             r0,             r4, lsl #1 
+  233 000003c8 e0811085         add             r1,             r1,             r5, lsl #1 
+  234 000003cc e1a02007         mov             r2,             r7 
+  235 000003d0 caffffcc         bgt             SrcCopy1616_ASM_LE16_LOOP 
+  236 000003d4                  ; return from the function 
+  237 000003d4 e49d7004         ldr             r7,             [sp],   #4 
+  238 000003d8 e49d6004         ldr             r6,             [sp],   #4 
+  239 000003dc e49d5004         ldr             r5,             [sp],   #4 
+  240 000003e0 e49d4004         ldr             r4,             [sp],   #4 
+  241 000003e4              IF Thumbing 
+  243 000003e4              ELSE 
+  244 000003e4 e1a0f00e         mov  pc, lr          ; return 
+  245 000003e8              ENDIF 
+  246 000003e8            
+  247 000003e8                  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+  248 000003e8                   
+  249 000003e8          SrcCopy1616_ASM_GT16 
+  250 000003e8 e52d8004         str             r8,             [sp,    #-4]! 
+  251 000003ec e52d9004         str             r9,             [sp,    #-4]! 
+  252 000003f0 e52da004         str             r10,    [sp,    #-4]! 
+  253 000003f4 e52db004         str             r11,    [sp,    #-4]! 
+  254 000003f8                   
+  255 000003f8          SrcCopy1616_ASM_GT16_LOOP        
+  256 000003f8 e050c001         subs    r12,    r0,             r1 
+  257 000003fc b26cc000         rsblt   r12,    r12,    #0 
+  258 00000400                   
+  259 00000400 e15c0082         cmp             r12,    r2,             lsl #1 
+  260 00000404 b1500001         cmplt   r0,             r1 
+  261 00000408 ba00005e         blt             SrcCopy1616_ASM_GT16_DEC 
+  262 0000040c                   
+  263 0000040c          SrcCopy1616_ASM_GT16_INC 
+  264 0000040c e020c001         eor             r12,    r0,             r1 
+  265 00000410 e31c0002         tst             r12,    #2 
+  266 00000414 1a000031         bne             SrcCopy1616_ASM_GT16_INC_2B 
+  267 00000418          SrcCopy1616_ASM_GT16_INC_4B 
+  268 00000418 e3100002         tst             r0,             #0x2 
+  269 0000041c 10d0c0b2         ldrneh  r12,    [r0], #2 
+  270 00000420 12422001         subne   r2,             r2,       #1 
+  271 00000424 e1a0b0a2         mov             r11,    r2,     lsr     #1 ; r11->number in 4-byte 
+  272 00000428 10c1c0b2         strneh  r12,    [r1], #2 
+  273 0000042c                   
+  274 0000042c                   
+  275 0000042c          SrcCopy1616_ASM_GT16_INC_4B_LABLE   MEMCOPYMBTS_LG16 r0, r1, r11, #4, #4, r6, r12, r8, r9, r10, ldr, str 
+   32 0000042c                  ; loop unrooling at 8 now 
+   33 0000042c e1b061ab         movs    r6,             r11,            lsr #3 ; r11    --> width 
+   34 00000430 0a000011         beq             SrcCopy1616_ASM_GT16_INC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT 
+   35 00000434          SrcCopy1616_ASM_GT16_INC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8    
+   36 00000434 e490c004         ldr     r12,            [r0],   #4 
+   37 00000438 e4908004         ldr     r8,             [r0],   #4 
+   38 0000043c e4909004         ldr     r9,             [r0],   #4 
+   39 00000440 e490a004         ldr     r10,            [r0],   #4 
+   40 00000444 e2566001         subs    r6,             r6,             #1 
+   41 00000448            
+   42 00000448 e481c004         str     r12,            [r1],   #4 
+   43 0000044c e4818004         str     r8,             [r1],   #4 
+   44 00000450 e4819004         str     r9,             [r1],   #4 
+   45 00000454 e481a004         str     r10,            [r1],   #4 
+   46 00000458            
+   47 00000458 e490c004         ldr     r12,            [r0],   #4 
+   48 0000045c e4908004         ldr     r8,             [r0],   #4 
+   49 00000460 e4909004         ldr     r9,             [r0],   #4 
+   50 00000464 e490a004         ldr     r10,            [r0],   #4 
+   51 00000468            
+   52 00000468 e481c004         str     r12,            [r1],   #4 
+   53 0000046c e4818004         str     r8,             [r1],   #4 
+   54 00000470 e4819004         str     r9,             [r1],   #4 
+   55 00000474 e481a004         str     r10,            [r1],   #4 
+   56 00000478            
+   57 00000478 caffffed         bgt             SrcCopy1616_ASM_GT16_INC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8    
+   58 0000047c                   
+   59 0000047c          SrcCopy1616_ASM_GT16_INC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT       
+   60 0000047c e21b6007         ands    r6,             r11,            #7 
+   61 00000480 0a000003         beq             SrcCopy1616_ASM_GT16_INC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   62 00000484            
+   63 00000484          SrcCopy1616_ASM_GT16_INC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B1    
+   64 00000484 e490c004         ldr     r12,            [r0],   #4 
+   65 00000488 e2566001         subs    r6,             r6,             #1 
+   66 0000048c e481c004         str     r12,            [r1],   #4 
+   67 00000490 cafffffb         bgt             SrcCopy1616_ASM_GT16_INC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B1    
+   68 00000494            
+   69 00000494          SrcCopy1616_ASM_GT16_INC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   70 00000494            
+  276 00000494                    
+  277 00000494 e3120001         tst             r2,             #0x1 
+  278 00000498 10d0c0b2         ldrneh  r12,    [r0], #2 
+  279 0000049c e1a02007         mov             r2,             r7 
+  280 000004a0 10c1c0b2         strneh  r12,    [r1], #2 
+  281 000004a4                   
+  282 000004a4 e0400082         sub             r0,             r0,             r2, lsl #1 
+  283 000004a8 e0411082         sub             r1,             r1,             r2, lsl #1 
+  284 000004ac e0800084         add             r0,             r0,             r4, lsl #1 
+  285 000004b0 e0811085         add             r1,             r1,             r5, lsl #1 
+  286 000004b4 e2533001         subs    r3,             r3,             #1 
+  287 000004b8 caffffce         bgt             SrcCopy1616_ASM_GT16_LOOP 
+  288 000004bc            
+  289 000004bc                  ;return from the function 
+  290 000004bc e49db004         ldr             r11,    [sp],   #4 
+  291 000004c0 e49da004         ldr             r10,    [sp],   #4 
+  292 000004c4 e49d9004         ldr             r9,             [sp],   #4 
+  293 000004c8 e49d8004         ldr             r8,             [sp],   #4 
+  294 000004cc e49d7004         ldr             r7,             [sp],   #4 
+  295 000004d0 e49d6004         ldr             r6,             [sp],   #4 
+  296 000004d4 e49d5004         ldr             r5,             [sp],   #4 
+  297 000004d8 e49d4004         ldr             r4,             [sp],   #4 
+  298 000004dc              IF Thumbing :LOR: Interworking 
+  299 000004dc e12fff1e         bx  lr 
+  300 000004e0              ELSE 
+  302 000004e0              ENDIF 
+  303 000004e0            
+  304 000004e0                   
+  305 000004e0                                   
+  306 000004e0          SrcCopy1616_ASM_GT16_INC_2B      
+  307 000004e0          SrcCopy1616_ASM_GT16_INC_2B_LABLE       MEMCOPYMBTS_LG16 r0, r1, r2, #2, #2, r6, r12, r8, r9, r10, ldrh, strh 
+   32 000004e0                  ; loop unrooling at 8 now 
+   33 000004e0 e1b061a2         movs    r6,             r2,             lsr #3 ; r2     --> width 
+   34 000004e4 0a000011         beq             SrcCopy1616_ASM_GT16_INC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT 
+   35 000004e8          SrcCopy1616_ASM_GT16_INC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8    
+   36 000004e8 e0d0c0b2         ldrh    r12,            [r0],   #2 
+   37 000004ec e0d080b2         ldrh    r8,             [r0],   #2 
+   38 000004f0 e0d090b2         ldrh    r9,             [r0],   #2 
+   39 000004f4 e0d0a0b2         ldrh    r10,            [r0],   #2 
+   40 000004f8 e2566001         subs    r6,             r6,             #1 
+   41 000004fc            
+   42 000004fc e0c1c0b2         strh    r12,            [r1],   #2 
+   43 00000500 e0c180b2         strh    r8,             [r1],   #2 
+   44 00000504 e0c190b2         strh    r9,             [r1],   #2 
+   45 00000508 e0c1a0b2         strh    r10,            [r1],   #2 
+   46 0000050c            
+   47 0000050c e0d0c0b2         ldrh    r12,            [r0],   #2 
+   48 00000510 e0d080b2         ldrh    r8,             [r0],   #2 
+   49 00000514 e0d090b2         ldrh    r9,             [r0],   #2 
+   50 00000518 e0d0a0b2         ldrh    r10,            [r0],   #2 
+   51 0000051c            
+   52 0000051c e0c1c0b2         strh    r12,            [r1],   #2 
+   53 00000520 e0c180b2         strh    r8,             [r1],   #2 
+   54 00000524 e0c190b2         strh    r9,             [r1],   #2 
+   55 00000528 e0c1a0b2         strh    r10,            [r1],   #2 
+   56 0000052c            
+   57 0000052c caffffed         bgt             SrcCopy1616_ASM_GT16_INC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8    
+   58 00000530                   
+   59 00000530          SrcCopy1616_ASM_GT16_INC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT       
+   60 00000530 e2126007         ands    r6,             r2,             #7 
+   61 00000534 0a000003         beq             SrcCopy1616_ASM_GT16_INC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   62 00000538            
+   63 00000538          SrcCopy1616_ASM_GT16_INC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B1    
+   64 00000538 e0d0c0b2         ldrh    r12,            [r0],   #2 
+   65 0000053c e2566001         subs    r6,             r6,             #1 
+   66 00000540 e0c1c0b2         strh    r12,            [r1],   #2 
+   67 00000544 cafffffb         bgt             SrcCopy1616_ASM_GT16_INC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B1    
+   68 00000548            
+   69 00000548          SrcCopy1616_ASM_GT16_INC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   70 00000548            
+  308 00000548 e1a02007         mov             r2,             r7 
+  309 0000054c e2533001         subs    r3,             r3,             #1 
+  310 00000550 e0800084         add             r0,             r0,             r4, lsl #1 
+  311 00000554 e0811085         add             r1,             r1,             r5, lsl #1 
+  312 00000558 e0400082         sub             r0,             r0,             r2, lsl #1 
+  313 0000055c e0411082         sub             r1,             r1,             r2, lsl #1 
+  314 00000560            
+  315 00000560 caffffa4         bgt             SrcCopy1616_ASM_GT16_LOOP 
+  316 00000564            
+  317 00000564                  ;return from the function 
+  318 00000564 e49db004         ldr             r11,    [sp],   #4 
+  319 00000568 e49da004         ldr             r10,    [sp],   #4 
+  320 0000056c e49d9004         ldr             r9,             [sp],   #4 
+  321 00000570 e49d8004         ldr             r8,             [sp],   #4 
+  322 00000574 e49d7004         ldr             r7,             [sp],   #4 
+  323 00000578 e49d6004         ldr             r6,             [sp],   #4 
+  324 0000057c e49d5004         ldr             r5,             [sp],   #4 
+  325 00000580 e49d4004         ldr             r4,             [sp],   #4 
+  326 00000584              IF Thumbing :LOR: Interworking 
+  327 00000584 e12fff1e         bx  lr 
+  328 00000588              ELSE 
+  330 00000588              ENDIF 
+  331 00000588            
+  332 00000588            
+  333 00000588            
+  334 00000588                   
+  335 00000588          SrcCopy1616_ASM_GT16_DEC 
+  336 00000588 e0800082         add             r0,             r0,             r2, lsl #1 
+  337 0000058c e0811082         add             r1,             r1,             r2, lsl #1 
+  338 00000590 e2400002         sub             r0,             r0,             #2 
+  339 00000594 e2411002         sub             r1,             r1,             #2 
+  340 00000598 e020c001         eor             r12,    r0,             r1 
+  341 0000059c e31c0002         tst             r12,    #2 
+  342 000005a0 1a000035         bne             SrcCopy1616_ASM_GT16_DEC_2B 
+  343 000005a4                   
+  344 000005a4          SrcCopy1616_ASM_GT16_DEC_4B 
+  345 000005a4 e3100002         tst             r0,             #0x2 
+  346 000005a8 0050c0b2         ldreqh  r12,    [r0], #-2 
+  347 000005ac 02422001         subeq   r2,             r2,       #1 
+  348 000005b0 e1a0b0a2         mov             r11,    r2,   lsr       #1 
+  349 000005b4 0041c0b2         streqh  r12,    [r1], #-2 
+  350 000005b8                   
+  351 000005b8 e2400002         sub             r0,             r0,             #2 
+  352 000005bc e2411002         sub             r1,             r1,             #2 
+  353 000005c0                   
+  354 000005c0          SrcCopy1616_ASM_GT16_DEC_4B_LABLE       MEMCOPYMBTS_LG16 r0, r1, r11, #-4, #-4, r6, r12, r8, r9, r10, ldr, str 
+   32 000005c0                  ; loop unrooling at 8 now 
+   33 000005c0 e1b061ab         movs    r6,             r11,            lsr #3 ; r11    --> width 
+   34 000005c4 0a000011         beq             SrcCopy1616_ASM_GT16_DEC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT 
+   35 000005c8          SrcCopy1616_ASM_GT16_DEC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8    
+   36 000005c8 e410c004         ldr     r12,            [r0],   #-4 
+   37 000005cc e4108004         ldr     r8,             [r0],   #-4 
+   38 000005d0 e4109004         ldr     r9,             [r0],   #-4 
+   39 000005d4 e410a004         ldr     r10,            [r0],   #-4 
+   40 000005d8 e2566001         subs    r6,             r6,             #1 
+   41 000005dc            
+   42 000005dc e401c004         str     r12,            [r1],   #-4 
+   43 000005e0 e4018004         str     r8,             [r1],   #-4 
+   44 000005e4 e4019004         str     r9,             [r1],   #-4 
+   45 000005e8 e401a004         str     r10,            [r1],   #-4 
+   46 000005ec            
+   47 000005ec e410c004         ldr     r12,            [r0],   #-4 
+   48 000005f0 e4108004         ldr     r8,             [r0],   #-4 
+   49 000005f4 e4109004         ldr     r9,             [r0],   #-4 
+   50 000005f8 e410a004         ldr     r10,            [r0],   #-4 
+   51 000005fc            
+   52 000005fc e401c004         str     r12,            [r1],   #-4 
+   53 00000600 e4018004         str     r8,             [r1],   #-4 
+   54 00000604 e4019004         str     r9,             [r1],   #-4 
+   55 00000608 e401a004         str     r10,            [r1],   #-4 
+   56 0000060c            
+   57 0000060c caffffed         bgt             SrcCopy1616_ASM_GT16_DEC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8    
+   58 00000610                   
+   59 00000610          SrcCopy1616_ASM_GT16_DEC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT       
+   60 00000610 e21b6007         ands    r6,             r11,            #7 
+   61 00000614 0a000003         beq             SrcCopy1616_ASM_GT16_DEC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   62 00000618            
+   63 00000618          SrcCopy1616_ASM_GT16_DEC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B1    
+   64 00000618 e410c004         ldr     r12,            [r0],   #-4 
+   65 0000061c e2566001         subs    r6,             r6,             #1 
+   66 00000620 e401c004         str     r12,            [r1],   #-4 
+   67 00000624 cafffffb         bgt             SrcCopy1616_ASM_GT16_DEC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B1    
+   68 00000628            
+   69 00000628          SrcCopy1616_ASM_GT16_DEC_4B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   70 00000628            
+  355 00000628            
+  356 00000628 e2800002         add             r0,             r0,             #2 
+  357 0000062c e2811002         add             r1,             r1,             #2 
+  358 00000630                    
+  359 00000630 e3120001         tst             r2,             #0x1 
+  360 00000634 1050c0b2         ldrneh  r12,    [r0], #-2 
+  361 00000638 1041c0b2         strneh  r12,    [r1], #-2 
+  362 0000063c                   
+  363 0000063c e2800002         add             r0,             r0,             #2  ;; important 
+  364 00000640 e2811002         add             r1,             r1,             #2 
+  365 00000644            
+  366 00000644 e2533001         subs    r3,             r3,             #1 
+  367 00000648 e0800084         add             r0,             r0,             r4, lsl #1 
+  368 0000064c e0811085         add             r1,             r1,             r5, lsl #1 
+  369 00000650 e1a02007         mov             r2,             r7 
+  370 00000654 caffff67         bgt             SrcCopy1616_ASM_GT16_LOOP 
+  371 00000658            
+  372 00000658                  ;return from the function 
+  373 00000658 e49db004         ldr             r11,    [sp],   #4 
+  374 0000065c e49da004         ldr             r10,    [sp],   #4 
+  375 00000660 e49d9004         ldr             r9,             [sp],   #4 
+  376 00000664 e49d8004         ldr             r8,             [sp],   #4 
+  377 00000668 e49d7004         ldr             r7,             [sp],   #4 
+  378 0000066c e49d6004         ldr             r6,             [sp],   #4 
+  379 00000670 e49d5004         ldr             r5,             [sp],   #4 
+  380 00000674 e49d4004         ldr             r4,             [sp],   #4 
+  381 00000678              IF Thumbing :LOR: Interworking 
+  382 00000678 e12fff1e         bx  lr 
+  383 0000067c              ELSE 
+  385 0000067c              ENDIF 
+  386 0000067c            
+  387 0000067c            
+  388 0000067c                   
+  389 0000067c                                   
+  390 0000067c          SrcCopy1616_ASM_GT16_DEC_2B      
+  391 0000067c          SrcCopy1616_ASM_GT16_DEC_2B_LABLE       MEMCOPYMBTS_LG16 r0, r1, r2, #-2, #-2, r6, r12, r8, r9, r10, ldrh, strh 
+   32 0000067c                  ; loop unrooling at 8 now 
+   33 0000067c e1b061a2         movs    r6,             r2,             lsr #3 ; r2     --> width 
+   34 00000680 0a000011         beq             SrcCopy1616_ASM_GT16_DEC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT 
+   35 00000684          SrcCopy1616_ASM_GT16_DEC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8    
+   36 00000684 e050c0b2         ldrh    r12,            [r0],   #-2 
+   37 00000688 e05080b2         ldrh    r8,             [r0],   #-2 
+   38 0000068c e05090b2         ldrh    r9,             [r0],   #-2 
+   39 00000690 e050a0b2         ldrh    r10,            [r0],   #-2 
+   40 00000694 e2566001         subs    r6,             r6,             #1 
+   41 00000698            
+   42 00000698 e041c0b2         strh    r12,            [r1],   #-2 
+   43 0000069c e04180b2         strh    r8,             [r1],   #-2 
+   44 000006a0 e04190b2         strh    r9,             [r1],   #-2 
+   45 000006a4 e041a0b2         strh    r10,            [r1],   #-2 
+   46 000006a8            
+   47 000006a8 e050c0b2         ldrh    r12,            [r0],   #-2 
+   48 000006ac e05080b2         ldrh    r8,             [r0],   #-2 
+   49 000006b0 e05090b2         ldrh    r9,             [r0],   #-2 
+   50 000006b4 e050a0b2         ldrh    r10,            [r0],   #-2 
+   51 000006b8            
+   52 000006b8 e041c0b2         strh    r12,            [r1],   #-2 
+   53 000006bc e04180b2         strh    r8,             [r1],   #-2 
+   54 000006c0 e04190b2         strh    r9,             [r1],   #-2 
+   55 000006c4 e041a0b2         strh    r10,            [r1],   #-2 
+   56 000006c8            
+   57 000006c8 caffffed         bgt             SrcCopy1616_ASM_GT16_DEC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8    
+   58 000006cc                   
+   59 000006cc          SrcCopy1616_ASM_GT16_DEC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT       
+   60 000006cc e2126007         ands    r6,             r2,             #7 
+   61 000006d0 0a000003         beq             SrcCopy1616_ASM_GT16_DEC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   62 000006d4            
+   63 000006d4          SrcCopy1616_ASM_GT16_DEC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B1    
+   64 000006d4 e050c0b2         ldrh    r12,            [r0],   #-2 
+   65 000006d8 e2566001         subs    r6,             r6,             #1 
+   66 000006dc e041c0b2         strh    r12,            [r1],   #-2 
+   67 000006e0 cafffffb         bgt             SrcCopy1616_ASM_GT16_DEC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_B1    
+   68 000006e4            
+   69 000006e4          SrcCopy1616_ASM_GT16_DEC_2B_LABLECOPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   70 000006e4            
+  392 000006e4            
+  393 000006e4 e2800002         add             r0,             r0,             #2  ;; important 
+  394 000006e8 e2811002         add             r1,             r1,             #2 
+  395 000006ec            
+  396 000006ec e2533001         subs    r3,             r3,             #1 
+  397 000006f0 e0800084         add             r0,             r0,             r4, lsl #1 
+  398 000006f4 e0811085         add             r1,             r1,             r5, lsl #1 
+  399 000006f8 e1a02007         mov             r2,             r7 
+  400 000006fc caffff3d         bgt             SrcCopy1616_ASM_GT16_LOOP 
+  401 00000700            
+  402 00000700                  ;return from the function 
+  403 00000700 e49db004         ldr             r11,    [sp],   #4 
+  404 00000704 e49da004         ldr             r10,    [sp],   #4 
+  405 00000708 e49d9004         ldr             r9,             [sp],   #4 
+  406 0000070c e49d8004         ldr             r8,             [sp],   #4 
+  407 00000710 e49d7004         ldr             r7,             [sp],   #4 
+  408 00000714 e49d6004         ldr             r6,             [sp],   #4 
+  409 00000718 e49d5004         ldr             r5,             [sp],   #4 
+  410 0000071c e49d4004         ldr             r4,             [sp],   #4 
+  411 00000720              IF Thumbing :LOR: Interworking 
+  412 00000720 e12fff1e         bx  lr 
+  413 00000724              ELSE 
+  415 00000724              ENDIF 
+  416 00000724            
+  417 00000724            
+  418 00000724                   
+  419 00000724                  END 
+Assembly terminated, errors: 0, warnings: 0 

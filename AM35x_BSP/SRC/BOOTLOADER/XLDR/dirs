@@ -1,0 +1,6 @@
+DIRS=\
+	nand\
+	nor\
+	sdmemory\
+	uart
+

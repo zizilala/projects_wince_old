@@ -1,0 +1,4 @@
+BUILD: [Thrd:Sequence:Type  ] Message
+BUILD: [01:0000000595:ERRORE] menu.obj : error LNK2019: unresolved external symbol BLSDCardToFlash referenced in function SDtoFlash
+BUILD: [01:0000000596:ERRORE] C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe : fatal error LNK1120: 1 unresolved externals
+BUILD: [01:0000000601:ERRORE] EDITBIN : fatal error LNK1104: cannot open file 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe'

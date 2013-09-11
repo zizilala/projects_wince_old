@@ -1,0 +1,12 @@
+; All rights reserved ADENEO EMBEDDED 2010
+IF BSP_TSC2004_TOUCH
+[HKEY_LOCAL_MACHINE\HARDWARE\DEVICEMAP\TOUCH]
+    "DriverName"="touch.dll"
+    "MaxCalError"="6"
+    "PenGPIO"=dword:41           		; gpio_175
+    "SampleRate"=dword:6F				; samples per second
+    "I2CBaudrateIndex"=	dword:4			; I2C baudrate index are defined in bspcfg.c (index 4 is 3.2 MHz)
+	"I2CBus"=dword:1					; I2C bus used to access to the TSC2004
+	"I2CAddr"=dword:4b					; Device address of the TSC2004
+
+ENDIF

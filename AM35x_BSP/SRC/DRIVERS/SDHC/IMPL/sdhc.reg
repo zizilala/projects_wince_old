@@ -1,0 +1,129 @@
+; All rights reserved ADENEO EMBEDDED 2010
+;-- SDIO host controller driver ------------------------------------------------
+; @CESYSGEN IF CE_MODULES_SDBUS
+;; @XIPREGION IF PACKAGE_OEMDRIVERS
+IF BSP_SD 
+
+IF BSP_SDHC_1 
+[HKEY_LOCAL_MACHINE\Drivers\BuiltIn\SDHC1]
+    "Prefix"="SHC"
+    "Dll"="omap_sdhc.dll"
+    "Index"=dword:1
+    "Order"=dword:21
+    "PowerFlags"=dword:00000103         ; send pre/post device state changes
+    "MemBase"=multi_sz:"4809C000"
+    "MemLen"=multi_sz:"00000200"
+
+    "SDIOPriority"=dword:d3
+    "CDPriority"=dword:d4
+
+    "BaseClockFrequency"=dword:16e3600 ; override the max clock rate (24 MHz default)
+
+    "ReadWriteTimeout"=dword:1000   ; (0x1000 clock ticks default)
+    "DTOTimeout"=dword:200          ; Data timeout in milliseconds - 512 ms default
+ 
+    "WakeupSources"=dword:3         ; 0 - no wakeup, 1 - wakeup on SDIO, 
+                                    ; 2 - wakeup on card detect, 
+                                    ; 3 - wakeup on both
+
+    "CardDetectGPIO"=dword:7F         ; card insertion detection is GPIO_127
+    "CardInsertedState"=dword:0       ; logical 0 means a card is inserted
+
+    "CardWPGPIO"=dword:7E             ; card R/W protection detection is done via GPIO_126
+    "CardWriteProtectedState"=dword:1 ; logical 1 means the card is write protected
+    
+    "SlotNumber"=dword:1
+
+IF MMCHS1_LOW_VOLTAGE
+    "LowVoltageSlot"=dword:1        ; 1 if MMC/SD/SDIO slot 1 is a low voltage (1.8V slot)
+ENDIF
+    
+    "Sdio4BitDisable"=dword:0         ; 1 if SDIO cards must use 1 bit data path, 0 for 4 bit data path
+    "SdMem4BitDisable"=dword:0        ; 1 if SD Memory cards must use 1 bit data path, 0 for 4 bit data path
+
+    ; CE_DRIVER_POWER_MANAGEABLE_GENERIC_GUID, PMCLASS_PMEXT_GUID   
+    "IClass"=multi_sz:"{A32942B7-920C-486b-B0E6-92A702A99B35}",
+                      "{0AE2066F-89A2-4D70-8FC2-29AEFA68413C}"
+ENDIF BSP_SDHC_1 
+
+IF BSP_SDHC_2 
+[HKEY_LOCAL_MACHINE\Drivers\BuiltIn\SDHC2]
+    "Prefix"="SHC"
+    "Dll"="omap_sdhc.dll"
+    "Index"=dword:2
+    "Order"=dword:21
+    "PowerFlags"=dword:00000103         ; send pre/post device state changes
+    "MemBase"=multi_sz:"480B4000"
+    "MemLen"=multi_sz:"00000200"
+
+    "SDIOPriority"=dword:d3
+    "CDPriority"=dword:d4
+
+    "BaseClockFrequency"=dword:16e3600 ; override the max clock rate (24 MHz default)
+
+    "ReadWriteTimeout"=dword:1000   ; (0x1000 clock ticks default)
+    "DTOTimeout"=dword:200          ; Data timeout in 1000's cycles - (512K default)
+ 
+    "WakeupSources"=dword:3         ; 0 - no wakeup, 1 - wakeup on SDIO, 
+                                    ; 2 - wakeup on card detect, 
+                                    ; 3 - wakeup on both
+
+    "CardDetectGPIO"=dword:AF         ; card insertion detection is GPIO_175
+    "CardInsertedState"=dword:0       ; logical 0 means a card is inserted
+
+	; Disable Write-Protect feature on this slot as GPIO 176 is used by the LCD
+	; To enable it, deselect display driver from catalog, select SDHC slot 2 
+    ;"CardWPGPIO"=dword:B0			  ; card R/W protection detection is done via GPIO_176
+    ;"CardWriteProtectedState"=dword:1 ; logical 1 means the card is write protected
+    
+    "SlotNumber"=dword:2
+    
+IF MMCHS2_LOW_VOLTAGE
+    "LowVoltageSlot"=dword:1        ; 1 if MMC/SD/SDIO slot 2 is a low voltage (1.8V slot)
+ENDIF
+    
+    "Sdio4BitDisable"=dword:0         ; 1 if SDIO cards must use 1 bit data path, 0 for 4 bit data path
+    "SdMem4BitDisable"=dword:0        ; 1 if SD Memory cards must use 1 bit data path, 0 for 4 bit data path
+
+    ; CE_DRIVER_POWER_MANAGEABLE_GENERIC_GUID, PMCLASS_PMEXT_GUID   
+    "IClass"=multi_sz:"{A32942B7-920C-486b-B0E6-92A702A99B35}",
+                      "{0AE2066F-89A2-4D70-8FC2-29AEFA68413C}"
+ENDIF BSP_SDHC_2 
+
+[HKEY_LOCAL_MACHINE\Drivers\SDCARD\ClientDrivers\Class\SDMemory_Class]
+   "IdlePowerState"=dword:3        ; 0 == D0, 1 == D1, etc.
+
+[HKEY_LOCAL_MACHINE\Drivers\SDCARD\ClientDrivers\Class\MMC_Class]
+   "IdlePowerState"=dword:3        ; 0 == D0, 1 == D1, etc.
+
+; @CESYSGEN IF CE_MODULES_SDMEMORY
+; SDHC Memory Storage class driver
+[HKEY_LOCAL_MACHINE\Drivers\SDCARD\ClientDrivers\Class\MMC_Class\High_Capacity]
+   "Dll"="omap_SDMemory.dll"
+   "Prefix"="DSK"
+   "BlockTransferSize"=dword:40  ; send no more than 64 blocks of data per bus transfer
+   ;"SingleBlockWrites"=dword:1  ; alternatively force the driver to use single block access
+   ;"IdleTimeout"=dword:7D0      ; 2000 milliseconds
+   ;"IdlePowerState"=dword:2     ; 0 == D0, 1 == D1, etc.
+   ;"DisablePowerManagement"=""  ; if value present, then disable (remove value to enable)
+ 
+   "Profile"="MMC"
+    ; CE_DRIVER_BLOCK_GUID, CE_DRIVER_POWER_MANAGEABLE_BLOCK_GUID
+   "IClass"=multi_sz:"{A4E7EDDA-E575-4252-9D6B-4195D48BB865}",
+                     "{8DD679CE-8AB4-43c8-A14A-EA4963FAA715}"
+ 
+; @CESYSGEN ENDIF CE_MODULES_SDMEMORY
+   
+ENDIF BSP_SD 
+;; @XIPREGION ENDIF PACKAGE_OEMDRIVERS
+; @CESYSGEN ENDIF CE_MODULES_SDBUS
+;-------------------------------------------------------------------------------
+
+
+
+
+[HKEY_LOCAL_MACHINE\Drivers\BuiltIn\SDBusDriver]
+   "Dll"=-
+   "Dll"="bsp_sdbus2.dll"
+   
+   

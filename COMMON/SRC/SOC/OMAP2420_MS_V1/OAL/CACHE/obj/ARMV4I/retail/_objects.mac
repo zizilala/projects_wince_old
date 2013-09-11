@@ -1,0 +1,10 @@
+OBJECTS=\
+    obj\ARMV4I\retail\flush.obj\
+    obj\ARMV4I\retail\cachemode.obj\
+    obj\ARMV4I\retail\flushdc.obj\
+    obj\ARMV4I\retail\cleandc.obj\
+    obj\ARMV4I\retail\cleardtlbentry.obj\
+    obj\ARMV4I\retail\clearitlbentry.obj\
+    obj\ARMV4I\retail\clearutlbentry.obj\
+    obj\ARMV4I\retail\flushiclines.obj
+

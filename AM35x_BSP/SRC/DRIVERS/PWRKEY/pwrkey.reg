@@ -1,0 +1,12 @@
+; All rights reserved ADENEO EMBEDDED 2010
+IF BSP_PWRKEY
+[HKEY_LOCAL_MACHINE\Drivers\BuiltIn\PWRKEY]
+    "Prefix"="PKD"
+    "Dll"="pwrkey.dll"
+    "Index"=dword:1
+    "order"=dword:8
+    "priority"=dword:80
+;    "pinId"=dword:145							; PWR key is connectd to GPIO 325 
+    "pinId"=dword:108							; PWR key is connectd to GPIO 264 (108h)
+    "debouncePeriod"=dword:3E8
+ENDIF BSP_PWRKEY

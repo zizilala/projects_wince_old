@@ -1,0 +1,74 @@
+ARM macroassembler      Page:1 
+    1 00000000          ; 
+    2 00000000          ; Copyright (c) Microsoft Corporation.  All rights reserved. 
+    3 00000000          ; 
+    4 00000000          ; 
+    5 00000000          ; Use of this sample source code is subject to the terms of the Microsoft 
+    6 00000000          ; license agreement under which you licensed this sample source code. If 
+    7 00000000          ; you did not accept the terms of the license agreement, you are not 
+    8 00000000          ; authorized to use this sample source code. For the terms of the license, 
+    9 00000000          ; please see the license agreement between you and Microsoft or, if applicable, 
+   10 00000000          ; see the LICENSE.RTF on your install media or the root of your tools installation. 
+   11 00000000          ; THE SAMPLE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES. 
+   12 00000000          ; 
+   13 00000000          ;++ 
+   14 00000000          ; 
+   15 00000000          ; Module Name: 
+   16 00000000          ; 
+   17 00000000          ;    idle.s 
+   18 00000000          ; 
+   19 00000000          ; Abstract: 
+   20 00000000          ; 
+   21 00000000          ;    This module implements Bulverde cpuidle code. 
+   22 00000000          ; 
+   23 00000000          ; Environment: 
+   24 00000000          ; 
+   25 00000000          ; Revision History: 
+   26 00000000          ; 
+   27 00000000          ; Notes: 
+   28 00000000          ; 
+   29 00000000            
+   30 00000000          ;------------------------------------------------------------------------------- 
+   31 00000000          ; 
+   32 00000000            
+   33 00000000              ; Disable listing 
+   39 00000000              OPT 1 
+   40 00000000             
+   41 00000000              TEXTAREA 
+   45                           AREA |.text|,ALIGN=2,CODE,READONLY 
+   46 00000000          AreaName SETS "|.text|" 
+   42 00000000              
+   43 00000000          ;******************************************************************************* 
+   44 00000000          ; 
+   45 00000000          ;   CPUEnterIdle() is called by OALCPUIdle to put the CPU in idle mode 
+   46 00000000          ;     
+   47 00000000          ;******************************************************************************* 
+   48 00000000            
+   49 00000000              LEAF_ENTRY CPUEnterIdle 
+  175 00000000          FuncName SETS    VBar:CC:"CPUEnterIdle":CC:VBar 
+  176 00000000          PrologName SETS "Invalid Prolog" 
+  177 00000000          FuncEndName SETS    VBar:CC:"CPUEnterIdle":CC:"_end":CC:VBar 
+  178 00000000                  ALIGN   2 
+  179 00000000                  EXPORT  |CPUEnterIdle| [FUNC] 
+  180 00000000          |CPUEnterIdle| 
+  181 00000000                  ROUT 
+   50 00000000               
+   51 00000000          ; Enter idle mode 
+   52 00000000 e3a00001     ldr     r0, =0x01                               ; 1 = Idle Mode 
+   53 00000004 ee070e10     mcr   p14, 0, r0, c7, c0, 0               ; Enter Idle mode 
+   54 00000008            
+   55 00000008            
+   56 00000008            IF Interworking :LOR: Thumbing 
+   57 00000008 e12fff1e     bx  lr 
+   58 0000000c            ELSE 
+   60 0000000c            ENDIF 
+   61 0000000c            
+   62 0000000c            
+   63 0000000c              ENTRY_END 
+  194 0000000c          |CPUEnterIdle_end| 
+   64 0000000c          ;------------------------------------------------------------------------------- 
+   65 0000000c            
+   66 0000000c              LTORG                           ; insert a literal pool here. 
+   67 0000000c            
+   68 0000000c              END 
+Assembly terminated, errors: 0, warnings: 0 

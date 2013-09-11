@@ -1,0 +1,9 @@
+OBJECTS=\
+    obj\ARMV4I\retail\sa2video.obj\
+    obj\ARMV4I\retail\dispdrvr.obj\
+    obj\ARMV4I\retail\dirtyrectdumpcore_asm.obj\
+    obj\ARMV4I\retail\ebtext16_opt.obj\
+    obj\ARMV4I\retail\ebcccc_opt.obj\
+    obj\ARMV4I\retail\ebfill16_opt.obj\
+    obj\ARMV4I\retail\halcaps.obj
+

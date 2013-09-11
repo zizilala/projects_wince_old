@@ -1,0 +1,41 @@
+!if 0
+Copyright (c) MPC Data Ltd.  All rights reserved.
+!endif
+
+!IF "$(BSP_OMAP_EMAC)" == ""
+SKIPBUILD=1
+!ENDIF
+
+
+TARGETNAME=omap_emac
+TARGETTYPE=DYNLINK
+
+TARGETDEFNAME=ndisminiport
+DEFFILE=ndisminiport.def
+
+SOURCELIBS= \
+    $(_TILIBS)\omap_emac_lib.lib \
+	$(_TILIBS)\$(_SOC)_emac.lib  \
+	$(_TILIBS)\$(_SOC)_soccfg.lib
+
+TARGETLIBS=     \
+    $(_PROJECTROOT)\cesysgen\sdk\lib\$(_CPUINDPATH)\ndis.lib \
+    $(_PROJECTROOT)\cesysgen\sdk\lib\$(_CPUINDPATH)\coredll.lib \
+    $(_TARGETPLATLIB)\$(_CPUDEPPATH)\ceddk.lib \
+    
+
+CDEFINES=$(CDEFINES) -DNDIS_MINIPORT_DRIVER=1 -DNDIS51_MINIPORT=1
+
+SOURCES= \
+    emac.c \
+
+
+WARNISERROR=
+WARNLEVEL=
+FILE_VIEW_ROOT_FOLDER= \
+
+FILE_VIEW_INCLUDES_FOLDER= \
+
+FILE_VIEW_RESOURCE_FOLDER= \
+    omap_emac.reg \
+

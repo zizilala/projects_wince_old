@@ -1,0 +1,366 @@
+;
+; Copyright (c) Microsoft Corporation.  All rights reserved.
+;
+;
+; Use of this sample source code is subject to the terms of the Microsoft
+; license agreement under which you licensed this sample source code. If
+; you did not accept the terms of the license agreement, you are not
+; authorized to use this sample source code. For the terms of the license,
+; please see the license agreement between you and Microsoft or, if applicable,
+; see the LICENSE.RTF on your install media or the root of your tools installation.
+; THE SAMPLE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES OR INDEMNITIES.
+;
+;=======================================================================
+;  COPYRIGHT (C) STMicroelectronics 2007.  ALL RIGHTS RESERVED
+;
+;  Use of this source code is subject to the terms of your STMicroelectronics
+;  development license agreement. If you did not accept the terms of such a license,
+;  you are not authorized to use this source code.
+;
+;  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+;  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+;  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+;  PURPOSE.
+;========================================================================
+;;-----------------------------------------------------------------------------
+;;
+;;  File:  startup.src
+;;
+;;  This file implements initial platform initialization code and few additional
+;;  utility functions.
+;;
+;;-----------------------------------------------------------------------------
+
+        .list       OFF
+        .include    "kxshx.h"
+        .include    "shx.inc"
+        .list       ON
+
+        .import     KernelStart
+
+;;------------------------------------------------------------------------------
+;;  Function:  StartUp
+;;
+;;  This code is run after hardware reset, runtime reset and when system wakes
+;;  from sleep. The current hardware state depends on event type but - most
+;;  hardware must be initialized there. The function does necessary hardware
+;;  initialization and detect if it is wakeup. In such case it gets saved
+;;  address and jump on it. Otherwise the bootloader is copied to memory
+;;  and is run.
+;;------------------------------------------------------------------------------
+
+        LEAF_ENTRY _StartUp
+
+        ;;----------------------------------------------------------------------
+        ;; CPU Initialization
+        ;;----------------------------------------------------------------------
+
+        ;; Make sure that we are running in privilaged mode
+
+        mov.l   #TM_SR, r0
+        ldc     r0, sr
+
+        ;; Clear out the vector base register
+
+        mov.l   #h'00000000, r0
+        ldc     r0, vbr
+
+        ;;----------------------------------------------------------------------
+        ;; Clock Initialization
+        ;;----------------------------------------------------------------------
+
+        ;; Halt the Watchdog Timer
+
+        mov.l   #CPG_WTCSR, r1
+        mov.w   #ZERO_TME, r0
+        mov.w   r0, @r1
+        nop
+
+        ;; Zero the Watchdog Timer Count
+
+        mov.l   #CPG_WTCNT, r1
+        mov.w   #COUNT_INIT, r0
+        mov.w   r0, @r1
+        nop
+
+        ;;----------------------------------------------------------------------
+        ;; Jump to KernelStart
+        ;;
+        ;; NOTE: If we are starting up the bootloader, KernelStart is a routine
+        ;;       that is defined by the platform that will continue to
+        ;;       initialize the hardware and then jump to BootloaderMain.
+        ;;----------------------------------------------------------------------
+
+        mov.l   #KernelStart, r0
+        mov.l   #Base, r1
+        sub     r1, r0
+        mov.l   #4, r1
+        sub     r1, r0
+
+Base:   braf    r0
+        nop
+
+Halt:   bra     Halt
+        nop
+
+        ENTRY_END   _StartUp
+
+;;------------------------------------------------------------------------------
+
+;;------------------------------------------------------------------------------
+;;  Function:  BusInit
+;;
+;;  This function can be called by the bootloader initialize system busses.
+;;  This function uses a configuration data table, which is expected to be
+;;  at the memory location pointed to by register r1.
+;;
+;;  Note: This function first executes a series of jumps into itself which
+;;        serve to load the entire parser function into the I-cache.
+;;------------------------------------------------------------------------------
+
+        LEAF_ENTRY _BusInit
+
+        ;;----------------------------------------------------------------------
+        ;; Bus Initialization
+        ;;----------------------------------------------------------------------
+
+        ;; Jump to cached section
+        mova    Parser, r0                  ;; R0: Parser start address
+        mov.l   #h'DFFFFFFF, r3             ;; R3: P2 -> P1 mapping
+        and     r3, r0                      ;; convert to P1 addresses
+        jmp     @r0
+        nop
+
+Parser:
+        ;; We need to run the parsing function entirely from within the I-cache.  So we
+        ;; first perform jumps to strategic locations in the parsing function, which
+        ;; results in the CPU loading an entire line of the I-cache from where we wind up.
+        ;; We set a flag in r6 here to signify to later executions of the parsing function
+        ;; that the I-cache loading jump instruction should not be executed.
+        mov     #1, r6
+
+        cmp/pl  r6
+        bt      Jump1       ;; Loading I-cache
+
+ReadOpcode:
+        mov.l   @r1,r0      ;; r0 = next opcode
+        tst     r0,r0
+        bt      DoneParsing ;; If opcode == 0, we have hit the end of the data table
+        add     #4,r1       ;; r1 now points to the opcode's first argument
+
+Jump1:
+        cmp/pl  r6
+        bt      Jump2       ;; Loading I-cache
+
+ParseOpcode:                ;; Determine proper action to perform based on opcode
+        cmp/eq  #1,r0
+        bt      PokeChar
+        cmp/eq  #2,r0
+        bt      PokeShort
+        cmp/eq  #4,r0
+        bt      PokeLong
+        cmp/eq  #5,r0
+        bt      OrLong
+        cmp/eq  #6,r0
+        bt      UpdateLong
+        cmp/eq  #7,r0
+        bt      WhileNE
+        cmp/eq  #8,r0
+        bf      ReadOpcode  ;; Fall through to PokeUpdateLong if opcode == 8
+
+Jump2:
+        cmp/pl  r6
+        bt      Jump3       ;; Loading I-cache
+
+PokeUpdateLong:
+        mov.l   @r1+,r4     ;; r4 = Address1
+        mov.l   @r1+,r3     ;; r3 = Address2
+        mov.l   @r3,r5      ;; r5 = contents of r3 (Address2)
+        mov.l   @r1+,r3     ;; r3 = AndMask
+        and     r5,r3       ;; r3 = r5 & r3
+        mov.l   @r1+,r5     ;; r5 = ShiftVal
+        mov.l   @r1,r2      ;; r2 = OrMask
+        shld    r5,r3       ;; Shift r3 appropriately
+        or      r3,r2       ;; r2 = r3 | r2
+        mov.l   r2,@r4      ;; Write back new value
+        add     #4,r1       ;; r1 = Next opcode
+
+        bra     Delay
+        nop
+
+Jump3:
+        cmp/pl  r6
+        bt      Jump4       ;; Loading I-cache
+
+WhileNE:
+        mov.l   @r1+,r4     ;; r4 = Address
+        mov.l   @r1+,r3     ;; r3 = Mask
+        mov.l   @r1,r5      ;; r5 = Val
+WaitForBit:
+        mov.l   @r4,r2      ;; r2 = current value at r4
+        and     r3,r2       ;; r2 = r3 & r2
+        cmp/eq  r5,r2       ;; r2 == r5?
+        bf      WaitForBit
+        add     #4,r1       ;; r1 = Next opcode
+
+        bra     Delay
+        nop
+
+Jump4:
+        cmp/pl  r6
+        bt      Jump5       ;; Loading I-cache
+
+UpdateLong:
+        mov.l   @r1+,r4     ;; r4 = Address
+        mov.l   @r1+,r3     ;; r3 = AndMask
+        mov.l   @r4,r5      ;; r5 = Current value at r4
+        and     r5,r3       ;; r3 = r5 & r3
+        mov.l   @r1,r5      ;; r5 = OrVal
+        or      r5,r3       ;; r3 = r5 | r3
+        mov.l   r3,@r4      ;; Write back new value
+        add     #4,r1       ;; r1 = Next opcode
+
+        bra     Delay
+        nop
+
+Jump5:
+        cmp/pl  r6
+        bt      Jump6       ;; Loading I-cache
+
+OrLong:
+        mov.l   @r1+,r4     ;; r4 = Address
+        mov.l   @r1,r3      ;; r3 = OrVal
+        mov.l   @r4,r2      ;; r2 = current value at r4
+        or      r3,r2
+        mov.l   r2,@r4      ;; Write back new value
+        add     #4,r1       ;; r1 = Next opcode
+
+        bra     Delay
+        nop
+
+Jump6:
+        cmp/pl  r6
+        bt      Jump7       ;; Loading I-cache
+
+PokeLong:
+        mov.l   @r1+,r4     ;; r4 = Address
+        mov.l   @r1,r3      ;; r3 = Val
+        mov.l   r3,@r4
+        add     #4,r1       ;; r1 = Next opcode
+
+        bra     Delay
+        nop
+
+Jump7:
+        cmp/pl  r6
+        bt      Jump8       ;; Loading I-cache
+
+PokeShort:
+        mov.l   @r1+,r4     ;; r4 = Address
+        mov.w   @r1,r3      ;; r3 = Val
+        mov.w   r3,@r4
+        add     #4,r1       ;; r1 = Next opcode
+
+        bra     Delay
+        nop
+
+Jump8:
+        cmp/pl  r6
+        bt      Jump9       ;; Loading I-cache
+
+PokeChar:
+        mov.l   @r1+,r4     ;; r4 = Address
+        mov.b   @r1,r3      ;; r3 = Val
+        mov.b   r3,@r4
+        add     #4,r1       ;; r1 = Next opcode
+
+Jump9:
+        cmp/pl  r6
+        bt      Jump10      ;; Loading I-cache
+
+Delay:                      ;; Wait a small amount of time before processing next opcode
+        mov.w   #-1,r3
+        extu.w  r3,r3
+DelayLoop:
+        add     #-1,r3
+        tst     r3,r3
+        bt      ReadOpcode
+        bra     DelayLoop
+        nop
+
+Jump10:
+        bra     ReadOpcode  ;; Finished loading I-cache, continue to parse routine
+        mov     #0, r6      ;; Clear flag so we don't reload I-cache.
+
+DoneParsing:
+        rts
+        nop
+
+        ENTRY_END _BusInit
+;;------------------------------------------------------------------------------
+
+;;------------------------------------------------------------------------------
+;;  Function: _BootRelocate
+;;
+;;  Simply a memcopy from one location to another for a given amount of size
+;;
+;;  VOID _BootRelocate(UINT32 *dest, UINT32 *src, UINT32 size)
+;;  R4 - dest, R5 - src, R6 - size
+;;------------------------------------------------------------------------------
+
+        LEAF_ENTRY _BootRelocate
+
+        shlr2   r6                      ; Size / 4
+        add     #1, r6
+
+RelLp:  dt      r6
+        bt      RelEx
+        nop
+
+        mov.l   @r5, r0
+        mov.l   r0, @r4
+        add     #4, r5
+        add     #4, r4
+        bra     RelLp
+        nop
+
+RelEx:  rts
+        nop
+
+        ENTRY_END _BootRelocate
+
+;;------------------------------------------------------------------------------
+
+;;------------------------------------------------------------------------------
+;;  Function:  JumpTo
+;;
+;;  Hardware assisted jump to a specific address. Register 4 will contain
+;;  that address.
+;;------------------------------------------------------------------------------
+
+        LEAF_ENTRY  _JumpTo
+        jmp     @r4
+        nop
+        ENTRY_END   _JumpTo
+
+;;------------------------------------------------------------------------------
+
+;;------------------------------------------------------------------------------
+;; OEMNMI - non-maskable interrupt handler
+;;
+;; This routine is called when a non-maskable interrupt occurs. It should always
+;; return SYSINTR_NOP as NMI signaling IST is not supported.
+;;
+SYSINTR_NOP     .equ    0
+
+        LEAF_ENTRY _OEMNMI
+
+        mov #SYSINTR_NOP, r0
+        rts
+        nop
+
+        ENTRY_END OEMNMI
+
+;;------------------------------------------------------------------------------
+
+        .end

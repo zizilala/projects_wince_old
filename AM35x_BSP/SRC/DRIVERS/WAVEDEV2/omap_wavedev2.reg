@@ -1,0 +1,47 @@
+; All rights reserved ADENEO EMBEDDED 2010
+;
+; Copyright (c) Microsoft Corporation.  All rights reserved.
+;
+;
+; Use of this sample source code is subject to the terms of the Microsoft
+; license agreement under which you licensed this sample source code. If
+; you did not accept the terms of the license agreement, you are not
+; authorized to use this sample source code. For the terms of the license,
+; please see the license agreement between you and Microsoft or, if applicable,
+; see the LICENSE.RTF on your install media or the root of your tools installation.
+; THE SAMPLE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES.
+;
+
+IF BSP_OMAP_AUDIO_CODEC1
+[HKEY_LOCAL_MACHINE\Drivers\BuiltIn\WaveDev]
+   "Prefix"="WAV"
+   "Dll"="omap_wavedev2.dll"
+   "Order"=dword:20
+   "Flags"=dword:00010000   
+   "Index"=dword:1
+   "IClass"=multi_sz:"{E92BC203-8354-4043-A06F-2A170BF6F227}",
+                     "{37168569-61C4-45fd-BD54-9442C7DBA46F}",
+                     "{A32942B7-920C-486b-B0E6-92A702A99B35}"
+   
+   "PortDriver"="MCP1:"
+   "I2CBaudrateIndex"=dword:1	
+   "I2CBus"=dword:2
+   "I2CAddress"=dword:1A
+ENDIF
+  
+IF BSP_OMAP_AUDIO_CODEC2
+  [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\WaveDev]
+   "Prefix"="WAV"
+   "Dll"="omap_wavedev2.dll"
+   "Order"=dword:20
+   "Flags"=dword:00010000   
+   "Index"=dword:2
+   "IClass"=multi_sz:"{E92BC203-8354-4043-A06F-2A170BF6F227}",
+                     "{37168569-61C4-45fd-BD54-9442C7DBA46F}",
+                     "{A32942B7-920C-486b-B0E6-92A702A99B35}"
+   
+   "PortDriver"="MCP2:"
+   "I2CBaudrateIndex"=dword:1	
+   "I2CBus"=dword:2
+   "I2CAddress"=dword:1B
+ENDIF

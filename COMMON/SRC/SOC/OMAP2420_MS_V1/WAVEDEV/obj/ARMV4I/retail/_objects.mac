@@ -1,0 +1,16 @@
+OBJECTS=\
+    obj\ARMV4I\retail\wavemain.obj\
+    obj\ARMV4I\retail\devctxt.obj\
+    obj\ARMV4I\retail\input.obj\
+    obj\ARMV4I\retail\output.obj\
+    obj\ARMV4I\retail\strmctxt.obj\
+    obj\ARMV4I\retail\midistrm.obj\
+    obj\ARMV4I\retail\midinote.obj\
+    obj\ARMV4I\retail\hwctxt.obj\
+    obj\ARMV4I\retail\dma.obj\
+    obj\ARMV4I\retail\audiomodem.obj\
+    obj\ARMV4I\retail\audioctl.obj\
+    obj\ARMV4I\retail\xhwctxt.obj\
+    obj\ARMV4I\retail\btauspi.obj\
+    obj\ARMV4I\retail\rilpm.obj
+

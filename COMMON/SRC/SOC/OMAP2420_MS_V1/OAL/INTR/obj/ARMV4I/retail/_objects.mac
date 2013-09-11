@@ -1,0 +1,5 @@
+OBJECTS=\
+    obj\ARMV4I\retail\intr.obj\
+    obj\ARMV4I\retail\fiq.obj\
+    obj\ARMV4I\retail\map.obj
+

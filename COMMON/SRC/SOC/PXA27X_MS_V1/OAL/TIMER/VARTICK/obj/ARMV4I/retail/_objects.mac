@@ -1,0 +1,5 @@
+OBJECTS=\
+    obj\ARMV4I\retail\timer.obj\
+    obj\ARMV4I\retail\idle.obj\
+    obj\ARMV4I\retail\cpuidle.obj
+

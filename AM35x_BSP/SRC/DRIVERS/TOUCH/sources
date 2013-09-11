@@ -1,0 +1,44 @@
+# All rights reserved ADENEO EMBEDDED 2010
+!if 0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+!endif
+!if 0
+Use of this source code is subject to the terms of the Microsoft end-user
+license agreement (EULA) under which you licensed this SOFTWARE PRODUCT.
+If you did not accept the terms of the EULA, you are not authorized to use
+this source code. For a copy of the EULA, please see the LICENSE.RTF on your
+install media.
+!endif
+!if 0
+Copyright (c) Texas Instruments Incorporated.  All rights reserved.
+!endif
+
+!IF "$(BSP_TSC2004_TOUCH)" == ""
+SKIPBUILD=1
+!ENDIF
+
+
+TARGETNAME=tsc2004_touch
+TARGETTYPE=DYNLINK
+
+PREPROCESSDEFFILE=1
+DEFFILE=$(_COMMONOAKROOT)\INC\touch.def
+
+
+DLLENTRY=_DllMainCRTStartup
+
+SOURCES=\
+     touchscreen.cpp
+
+SOURCELIBS= \
+        $(_SYSGENOAKROOT)\lib\$(_CPUINDPATH)\tch_cal.lib \
+        $(_SYSGENOAKROOT)\lib\$(_CPUINDPATH)\tchmdd.lib  \
+        $(_TILIBS)\$(_SOC)_soccfg.lib                                               \
+
+TARGETLIBS= \
+    $(_TARGETPLATLIB)\$(_CPUINDPATH)\ceddk.lib \
+    $(_SYSGENSDKROOT)\lib\$(_CPUINDPATH)\coredll.lib
+
+FILE_VIEW_RESOURCE_FOLDER= \
+    tsc2004_touch.reg \
+

@@ -1,0 +1,46 @@
+; All rights reserved ADENEO EMBEDDED 2010
+
+; CAUTION: If you change the driver registry name (/EMACMiniport)
+; don't forget to change the KITLReg.c to disable the driver in
+; KITL use case.
+
+IF BSP_OMAP_EMAC
+
+[HKEY_LOCAL_MACHINE\Comm\EMACMiniport]
+   "DisplayName"="EMAC Miniport Driver"
+   "Group"="NDIS"
+   "ImagePath"="omap_emac.dll"
+
+[HKEY_LOCAL_MACHINE\Comm\EMACMiniport\Linkage]
+   "Route"=multi_sz:"EMAC1"
+
+[HKEY_LOCAL_MACHINE\Comm\EMAC1]
+   "DisplayName"="EMAC Miniport Driver"
+   "Group"="NDIS"
+   "ImagePath"="omap_emac.dll"
+
+[HKEY_LOCAL_MACHINE\Comm\EMAC1\Parms]
+   "BusNumber"=dword:0
+   "BusType"=dword:0
+
+;   "RxIntrNum"=dword:44
+;   "TxIntrNum"=dword:45
+;   "LinkIntrNum"=dword:46
+;   "EMACBufferBase"=dword:83F3F800 ; EMAC base address to allocate Tx/Rx buffers
+
+IF DEBUG
+[HKEY_LOCAL_MACHINE\Comm\NDIS\Parms]
+  "DebugLevel"=dword:00000000
+  "DebugSystems"=dword:00000000
+  "DebugBreakPoint"=dword:00000000
+ENDIF
+
+[HKEY_LOCAL_MACHINE\Comm\EMAC1\Parms\TcpIp]
+    "EnableDhcp"=dword:1
+    ; If not using DHCP then use these values:
+    "DefaultGateway"=""
+    "UseZeroBroadcast"=dword:0
+    "IpAddress"="192.168.114.222"
+    "SubnetMask"="255.255.255.0"   
+
+ENDIF

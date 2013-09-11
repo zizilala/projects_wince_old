@@ -1,0 +1,145 @@
+ nand_test_driver
+
+ Timestamp is 522e7069 (Tue Sep 10 09:05:45 2013)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00000850H .rdata                  CODE
+ 0001:00000850 0000002dH .rdata$debug            CODE
+ 0001:00000880 000024b0H .text                   CODE
+ 0001:00002d30 00000010H .xdata                  CODE
+ 0001:00002d40 00000028H .idata$2                CODE
+ 0001:00002d68 00000014H .idata$3                CODE
+ 0001:00002d7c 00000048H .idata$4                CODE
+ 0001:00002dc4 00000016H .idata$6                CODE
+ 0001:00002de0 0000009dH .edata                  CODE
+ 0002:00000000 00000048H .idata$5                DATA
+ 0002:00000048 00000194H .data                   DATA
+ 0002:000001e0 000000b0H .bss                    DATA
+ 0003:00000000 00000180H .pdata                  DATA
+
+  Address         Publics by Value              Rva+Base       Lib:Object
+
+ 0000:00000000       ___safe_se_handler_count   00000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
+ 0001:000000b0       ??_C@_1MC@PIPHFCFE@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAn?$AAa?$AAn?$AAd?$AA_?$AAe?$AAc?$AAc?$AA_?$AAt?$AAe?$AAs?$AAt?$AA?5?$AAR?$AAE?$AAA?$AAD?$AA?5?$AAd?$AAa?$AAt?$AAa?$AA?5?$AAa@ 100010b0     nand_test_driver.obj
+ 0001:00000174       ??_C@_1BA@HGCBINMF@?$AAE?$AAC?$AAC?$AAt?$AAy?$AAp?$AAe?$AA?$AA@ 10001174     common_ti_fmd_nand_device:fmd.obj
+ 0001:00000184       ??_C@_1BA@BKONPLFM@?$AAT?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AA?$AA@ 10001184     common_ti_fmd_nand_device:fmd.obj
+ 0001:00000194       ??_C@_1O@LBBNFMDB@?$AAM?$AAe?$AAm?$AAL?$AAe?$AAn?$AA?$AA@ 10001194     common_ti_fmd_nand_device:fmd.obj
+ 0001:000001a4       ??_C@_1BA@INLDIDEN@?$AAM?$AAe?$AAm?$AAB?$AAa?$AAs?$AAe?$AA?$AA@ 100011a4     common_ti_fmd_nand_device:fmd.obj
+ 0001:000002a8       ??_C@_1KM@BKLPJHHD@?$AAC?$AA?3?$AA?2?$AAW?$AAI?$AAN?$AAC?$AAE?$AA6?$AA0?$AA0?$AA?2?$AAP?$AAL?$AAA?$AAT?$AAF?$AAO?$AAR?$AAM?$AA?2?$AAC?$AAO?$AAM?$AAM?$AAO?$AAN?$AA?2?$AAS?$AAR?$AAC?$AA?2@ 100012a8     common_ti_fmd_nand_device:fmd.obj
+ 0001:00000354       ??_C@_1CI@OHCJFJPM@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AA?$CF?$AAs?$AA?5?$AAl?$AAi?$AAn?$AAe?$AA?5?$AA?$CF?$AAd?$AA?3?$AA?5?$AA?$AA@ 10001354     common_ti_fmd_nand_device:fmd.obj
+ 0001:00000380       ??_C@_1HG@DCOIKHPB@?$AAF?$AAM?$AAD?$AA?5?$AAd?$AAr?$AAi?$AAv?$AAe?$AAr?$AA?5?$AAs?$AAu?$AAp?$AAp?$AAo?$AAr?$AAt?$AAs?$AA?5?$AAo?$AAn?$AAl?$AAy?$AA?5?$AA1?$AA6?$AAb?$AAi?$AAt?$AAs?$AA?5@ 10001380     common_ti_fmd_nand_device:fmd.obj
+ 0001:000003f8       ??_C@_1CC@BEPLJHBE@?$AAE?$AAC?$AAC?$AA?5?$AAT?$AAY?$AAP?$AAE?$AA?5?$AAi?$AAs?$AA?5?$AA?$CF?$AAs?$AA?$AN?$AA?6?$AA?$AA@ 100013f8     common_ti_fmd_nand_device:fmd.obj
+ 0001:0000041c       ??_C@_1BE@MLAOIDDC@?$AAB?$AAC?$AAH?$AA?5?$AA8?$AA?5?$AAb?$AAi?$AAt?$AA?$AA@ 1000141c     common_ti_fmd_nand_device:fmd.obj
+ 0001:00000430       ??_C@_1BE@MOAEMOLD@?$AAB?$AAC?$AAH?$AA?5?$AA4?$AA?5?$AAb?$AAi?$AAt?$AA?$AA@ 10001430     common_ti_fmd_nand_device:fmd.obj
+ 0001:00000444       ??_C@_1BM@FIEJIIEI@?$AAH?$AAa?$AAm?$AAm?$AAi?$AAn?$AAg?$AA?5?$AA1?$AA?5?$AAb?$AAi?$AAt?$AA?$AA@ 10001444     common_ti_fmd_nand_device:fmd.obj
+ 0001:00000460       ??_C@_1DE@HHCNAOKK@?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AAt?$AAo?$AA?5?$AAr?$AAe?$AAa?$AAd?$AA?5?$AAE?$AAc?$AAc?$AA?5?$AAt?$AAy?$AAp?$AAe?$AA?$AN?$AA?6?$AA?$AA@ 10001460     common_ti_fmd_nand_device:fmd.obj
+ 0001:00000528       ??_C@_1EA@JNFKONCC@?$AAE?$AAr?$AAr?$AAo?$AAr?$AA?3?$AA?5?$AAU?$AAn?$AAr?$AAe?$AAc?$AAo?$AAg?$AAn?$AAi?$AAz?$AAe?$AAd?$AA?5?$AAM?$AAo?$AAd?$AAe?$AA?$FL?$AA?$CF?$AAd?$AA?$FN?$AA?$CB?$AA?$AN?$AA?6?$AA?$AA@ 10001528     common_ti_fmd_nand_device:gpmc_ecc.obj
+ 0001:00000568       ??_C@_1EI@LMGHLBK@?$AAE?$AAC?$AAC?$AA_?$AAI?$AAn?$AAi?$AAt?$AA?3?$AA?5?$AAu?$AAn?$AAs?$AAu?$AAp?$AAp?$AAo?$AAr?$AAt?$AAe?$AAd?$AA?5?$AAe?$AAc?$AAc?$AA?5?$AAm?$AAo?$AAd?$AAe?$AA?3?$AA?$CF@ 10001568     common_ti_fmd_nand_device:gpmc_ecc.obj
+ 0001:00000650       I2CDefaultI2CTimeout       10001650     bspcfg:bspcfg.obj
+ 0001:00000658       g_BSP_icL1Level            10001658     bspcfg:bspcfg.obj
+ 0001:000007d8       ??_C@_1HI@JDGLDLD@?$AAN?$AAA?$AAN?$AAD?$AA?5?$AAm?$AAa?$AAn?$AAu?$AAf?$AAa?$AAc?$AAt?$AAu?$AAr?$AAe?$AAr?$AA?5?$AA?$CF?$AAx?$AA?5?$AAd?$AAe?$AAv?$AAi?$AAc?$AAe?$AA?5?$AA?$CF?$AAx?$AA?5?$AA?3@ 100017d8     bspcfg:bspcfg.obj
+ 0001:00000888       nand_ecc_test              10001888 f   nand_test_driver.obj
+ 0001:000009dc       DFT_Init                   100019dc f   nand_test_driver.obj
+ 0001:00000a04       DFT_Deinit                 10001a04 f   nand_test_driver.obj
+ 0001:00000a24       DFT_Open                   10001a24 f   nand_test_driver.obj
+ 0001:00000a28       DFT_Close                  10001a28 f   nand_test_driver.obj
+ 0001:00000a38       DFT_IOControl              10001a38 f   nand_test_driver.obj
+ 0001:00000b84       InitializePointers         10001b84 f   common_ti_fmd_nand_device:fmd.obj
+ 0001:00000e84       NAND_CorrectEccData        10001e84 f   common_ti_fmd_nand_device:fmd.obj
+ 0001:00000ef0       FMD_Deinit                 10001ef0 f   common_ti_fmd_nand_device:fmd.obj
+ 0001:00000f9c       FMD_GetInfo                10001f9c f   common_ti_fmd_nand_device:fmd.obj
+ 0001:00001004       FMD_ReadSector             10002004 f   common_ti_fmd_nand_device:fmd.obj
+ 0001:00001424       FMD_WriteSector            10002424 f   common_ti_fmd_nand_device:fmd.obj
+ 0001:000017b0       FMD_GetBlockStatus         100027b0 f   common_ti_fmd_nand_device:fmd.obj
+ 0001:00001ae4       FMD_Init                   10002ae4 f   common_ti_fmd_nand_device:fmd.obj
+ 0001:00001b10       FMD_EraseBlock             10002b10 f   common_ti_fmd_nand_device:fmd.obj
+ 0001:00002090       ECC_Init                   10003090 f   common_ti_fmd_nand_device:gpmc_ecc.obj
+ 0001:0000212c       ECC_Result                 1000312c f   common_ti_fmd_nand_device:gpmc_ecc.obj
+ 0001:00002154       ECC_Reset                  10003154 f   common_ti_fmd_nand_device:gpmc_ecc.obj
+ 0001:0000217c       ECC_CorrectData            1000317c f   common_ti_fmd_nand_device:gpmc_ecc.obj
+ 0001:00002a54       decode_bch                 10003a54 f   common_ti_fmd_nand_device:omap_bch_decoder.obj
+ 0001:00002ae0       NKDbgPrintfW               10003ae0 f   coredll:COREDLL.dll
+ 0001:00002af0       LocalAlloc                 10003af0 f   coredll:COREDLL.dll
+ 0001:00002b00       LocalFree                  10003b00 f   coredll:COREDLL.dll
+ 0001:00002b10       InitializeCriticalSection  10003b10 f   coredll:COREDLL.dll
+ 0001:00002b20       EnterCriticalSection       10003b20 f   coredll:COREDLL.dll
+ 0001:00002b30       LeaveCriticalSection       10003b30 f   coredll:COREDLL.dll
+ 0001:00002b40       KernelIoControl            10003b40 f   coredll:COREDLL.dll
+ 0001:00002b50       MmMapIoSpace               10003b50 f   ceddk:CEDDK.dll
+ 0001:00002b60       GetDeviceRegistryParams    10003b60 f   ceddk:CEDDK.dll
+ 0001:00002b70       MmUnmapIoSpace             10003b70 f   ceddk:CEDDK.dll
+ 0001:00002b80       BSPGetNandIrqWait          10003b80 f   bspcfg:bspcfg.obj
+ 0001:00002b88       BSPGetNandCS               10003b88 f   bspcfg:bspcfg.obj
+ 0001:00002b90       BSPGetNandInfo             10003b90 f   bspcfg:bspcfg.obj
+ 0001:00002c00       DllMain                    10003c00 f   corelib0:dllmain.obj
+ 0001:00002c18       __GSHandlerCheckCommon     10003c18 f   corelib0:gshandler.obj
+ 0001:00002c54       __GSHandlerCheck           10003c54 f   corelib0:gshandler.obj
+ 0001:00002c78       __security_check_cookie    10003c78 f   corelib0:armsecgs.obj
+ 0001:00002c8c       __gsfailure                10003c8c f   corelib0:armsecgs.obj
+ 0001:00002cd0       memcpy                     10003cd0 f   corelib1:COREDLL.dll
+ 0001:00002ce0       memcmp                     10003ce0 f   corelib1:COREDLL.dll
+ 0001:00002cf0       __rt_udiv                  10003cf0 f   corelib1:COREDLL.dll
+ 0001:00002d00       memset                     10003d00 f   corelib1:COREDLL.dll
+ 0001:00002d10       __report_gsfailure         10003d10 f   corelib1:COREDLL.dll
+ 0001:00002d20       DisableThreadLibraryCalls  10003d20 f   coredll:COREDLL.dll
+ 0001:00002d40       __IMPORT_DESCRIPTOR_COREDLL 10003d40     coredll:COREDLL.dll
+ 0001:00002d54       __IMPORT_DESCRIPTOR_CEDDK  10003d54     ceddk:CEDDK.dll
+ 0001:00002d68       __NULL_IMPORT_DESCRIPTOR   10003d68     coredll:COREDLL.dll
+ 0002:00000000       __imp_GetDeviceRegistryParams 10004000     ceddk:CEDDK.dll
+ 0002:00000004       __imp_MmUnmapIoSpace       10004004     ceddk:CEDDK.dll
+ 0002:00000008       __imp_MmMapIoSpace         10004008     ceddk:CEDDK.dll
+ 0002:0000000c       \177CEDDK_NULL_THUNK_DATA  1000400c     ceddk:CEDDK.dll
+ 0002:00000010       __imp_LeaveCriticalSection 10004010     coredll:COREDLL.dll
+ 0002:00000014       __imp_InitializeCriticalSection 10004014     coredll:COREDLL.dll
+ 0002:00000018       __imp_LocalFree            10004018     coredll:COREDLL.dll
+ 0002:0000001c       __imp_NKDbgPrintfW         1000401c     coredll:COREDLL.dll
+ 0002:00000020       __imp_LocalAlloc           10004020     coredll:COREDLL.dll
+ 0002:00000024       __imp_KernelIoControl      10004024     coredll:COREDLL.dll
+ 0002:00000028       __imp_EnterCriticalSection 10004028     coredll:COREDLL.dll
+ 0002:0000002c       __imp_memcpy               1000402c     corelib1:COREDLL.dll
+ 0002:00000030       __imp_memcmp               10004030     corelib1:COREDLL.dll
+ 0002:00000034       __imp___rt_udiv            10004034     corelib1:COREDLL.dll
+ 0002:00000038       __imp_memset               10004038     corelib1:COREDLL.dll
+ 0002:0000003c       __imp___report_gsfailure   1000403c     corelib1:COREDLL.dll
+ 0002:00000040       __imp_DisableThreadLibraryCalls 10004040     coredll:COREDLL.dll
+ 0002:00000044       \177COREDLL_NULL_THUNK_DATA 10004044     coredll:COREDLL.dll
+ 0002:00000048       gpmc_ecc_hamming_code      10004048     common_ti_fmd_nand_device:gpmc_ecc.obj
+ 0002:00000058       gpmc_ecc_bch_4bits         10004058     common_ti_fmd_nand_device:gpmc_ecc.obj
+ 0002:00000068       gpmc_ecc_bch_8bits         10004068     common_ti_fmd_nand_device:gpmc_ecc.obj
+ 0002:00000078       g_dwMeasuredSysClkFreq     10004078     bspcfg:bspcfg.obj
+ 0002:0000007c       _rgScaleTable              1000407c     bspcfg:bspcfg.obj
+ 0002:000000a0       _rgI2CDevice               100040a0     bspcfg:bspcfg.obj
+ 0002:00000180       SupportedNands             10004180     bspcfg:bspcfg.obj
+ 0002:000001bc       BSPGpioTables              100041bc     bspcfg:bspcfg.obj
+ 0002:000001d4       __security_cookie          100041d4     corelib0:seccinit.obj
+ 0002:000001d8       __security_cookie_complement 100041d8     corelib0:seccinit.obj
+ 0002:0000024c       gpmc_ecc_func              1000424c     common_ti_fmd_nand_device:gpmc_ecc.obj
+
+ entry point at        0001:00002c00
+
+ Static symbols
+
+ 0001:00000c10       NAND_Read                  10001c10 f   common_ti_fmd_nand_device:fmd.obj
+ 0001:00000d10       NAND_Write                 10001d10 f   common_ti_fmd_nand_device:fmd.obj
+ 0001:00000e18       NAND_Enable                10001e18 f   common_ti_fmd_nand_device:fmd.obj
+ 0001:00001834       NAND_Initialize            10002834 f   common_ti_fmd_nand_device:fmd.obj
+ 0001:00001c20       Hamming_ECC_Init           10002c20 f   common_ti_fmd_nand_device:gpmc_ecc.obj
+ 0001:00001c50       Hamming_ECC_Calculate      10002c50 f   common_ti_fmd_nand_device:gpmc_ecc.obj
+ 0001:00001cb8       Hamming_ECC_Reset          10002cb8 f   common_ti_fmd_nand_device:gpmc_ecc.obj
+ 0001:00001cc8       Hamming_ECC_CorrectData    10002cc8 f   common_ti_fmd_nand_device:gpmc_ecc.obj
+ 0001:00001de0       BCH4_ECC_Init              10002de0 f   common_ti_fmd_nand_device:gpmc_ecc.obj
+ 0001:00001e58       BCH4_ECC_Calculate         10002e58 f   common_ti_fmd_nand_device:gpmc_ecc.obj
+ 0001:00001ef8       BCH4_ECC_Reset             10002ef8 f   common_ti_fmd_nand_device:gpmc_ecc.obj
+ 0001:00001f08       BCH8_ECC_Init              10002f08 f   common_ti_fmd_nand_device:gpmc_ecc.obj
+ 0001:00001f80       BCH8_ECC_Calculate         10002f80 f   common_ti_fmd_nand_device:gpmc_ecc.obj
+ 0001:00002080       BCH8_ECC_Reset             10003080 f   common_ti_fmd_nand_device:gpmc_ecc.obj
+ 0001:000021c0       BCH_correct_data           100031c0 f   common_ti_fmd_nand_device:gpmc_ecc.obj
+ 0001:0000231c       BCH4_ECC_CorrectData       1000331c f   common_ti_fmd_nand_device:gpmc_ecc.obj
+ 0001:00002350       BCH8_ECC_CorrectData       10003350 f   common_ti_fmd_nand_device:gpmc_ecc.obj
+ 0001:00002384       mpy_mod_gf                 10003384 f   common_ti_fmd_nand_device:omap_bch_decoder.obj
+ 0001:000023e4       chien                      100033e4 f   common_ti_fmd_nand_device:omap_bch_decoder.obj
+ 0001:00002644       berlekamp                  10003644 f   common_ti_fmd_nand_device:omap_bch_decoder.obj
+ 0001:000028b4       syndrome                   100038b4 f   common_ti_fmd_nand_device:omap_bch_decoder.obj

@@ -1,0 +1,6 @@
+DIRS= \
+	USBCDMA\
+	USBFN\
+	USBH\
+	USBOTG
+

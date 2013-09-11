@@ -1,0 +1,5 @@
+OBJECTS=\
+    obj\ARMV4I\retail\hwinit.obj\
+    obj\ARMV4I\retail\rndis.obj\
+    obj\ARMV4I\retail\pdd.obj
+

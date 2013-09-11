@@ -1,0 +1,218 @@
+ backlight
+
+ Timestamp is 522e7048 (Tue Sep 10 09:05:12 2013)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00000004H .CRT$XCA                CODE
+ 0001:00000004 00000004H .CRT$XCZ                CODE
+ 0001:00000008 00000004H .CRT$XIA                CODE
+ 0001:0000000c 00000004H .CRT$XIZ                CODE
+ 0001:00000010 00000004H .CRT$XPA                CODE
+ 0001:00000014 00000004H .CRT$XPZ                CODE
+ 0001:00000018 00000004H .CRT$XTA                CODE
+ 0001:0000001c 00000004H .CRT$XTZ                CODE
+ 0001:00000020 0000030eH .rdata                  CODE
+ 0001:00000330 00000026H .rdata$debug            CODE
+ 0001:00000358 000016f8H .text                   CODE
+ 0001:00001a50 00000074H .xdata                  CODE
+ 0001:00001ac4 00000028H .idata$2                CODE
+ 0001:00001aec 00000014H .idata$3                CODE
+ 0001:00001b00 000000dcH .idata$4                CODE
+ 0001:00001bdc 00000016H .idata$6                CODE
+ 0001:00001c00 0000009dH .edata                  CODE
+ 0002:00000000 000000dcH .idata$5                DATA
+ 0002:000000e0 0000044cH .data                   DATA
+ 0002:0000052c 00000018H .bss                    DATA
+ 0003:00000000 00000130H .pdata                  DATA
+
+  Address         Publics by Value              Rva+Base       Lib:Object
+
+ 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
+ 0000:00000000       ___safe_se_handler_count   00000000     <absolute>
+ 0001:00000000       __xc_a                     10001000     corelib0:crt0init.obj
+ 0001:00000004       __xc_z                     10001004     corelib0:crt0init.obj
+ 0001:00000008       __xi_a                     10001008     corelib0:crt0init.obj
+ 0001:0000000c       __xi_z                     1000100c     corelib0:crt0init.obj
+ 0001:00000010       __xp_a                     10001010     corelib0:crt0init.obj
+ 0001:00000014       __xp_z                     10001014     corelib0:crt0init.obj
+ 0001:00000018       __xt_a                     10001018     corelib0:crt0init.obj
+ 0001:0000001c       __xt_z                     1000101c     corelib0:crt0init.obj
+ 0001:0000003c       ??_C@_1BG@PNLAHJCF@?$AAD?$AAu?$AAt?$AAy?$AAC?$AAy?$AAc?$AAl?$AAe?$AAs?$AA?$AA@ 1000103c     tled_backlight.obj
+ 0001:00000054       ??_C@_1BI@IDINCEPD@?$AAT?$AAL?$AAe?$AAd?$AAC?$AAh?$AAa?$AAn?$AAn?$AAe?$AAl?$AA?$AA@ 10001054     tled_backlight.obj
+ 0001:0000006c       DEVICE_IFC_TLED_GUID       1000106c     tled_backlight.obj
+ 0001:000000ac       ??_C@_1M@MCLGLPBH@?$AAT?$AAL?$AAD?$AA1?$AA?3?$AA?$AA@ 100010ac     tled_backlight.obj
+ 0001:000000b8       ??_C@_1BE@MAKEJFGC@?$AAP?$AAo?$AAw?$AAe?$AAr?$AAM?$AAa?$AAs?$AAk?$AA?$AA@ 100010b8     gpio_backlight.obj
+ 0001:000000cc       ??_C@_19IAPNKDAH@?$AAG?$AAp?$AAi?$AAo?$AA?$AA@ 100010cc     gpio_backlight.obj
+ 0001:00000108       ??_7GPIO_Backlight@@6B@    10001108     gpio_backlight.obj
+ 0001:00000118       ??_C@_1DA@PCOFNLNE@?$AAG?$AAe?$AAt?$AAS?$AAy?$AAs?$AAt?$AAe?$AAm?$AAP?$AAo?$AAw?$AAe?$AAr?$AAS?$AAt?$AAa?$AAt?$AAu?$AAs?$AAE?$AAx?$AA2?$AA?$AA@ 10001118     common_ti_backlight_mdd:bkldrvapi.obj
+ 0001:00000148       ??_C@_1BI@CJKPFBEK@?$AAc?$AAo?$AAr?$AAe?$AAd?$AAl?$AAl?$AA?4?$AAd?$AAl?$AAl?$AA?$AA@ 10001148     common_ti_backlight_mdd:bkldrvapi.obj
+ 0001:00000160       ??_C@_19DINFBLAK@?$AAN?$AAa?$AAm?$AAe?$AA?$AA@ 10001160     common_ti_backlight_mdd:bkldrvapi.obj
+ 0001:0000016c       ??_C@_13FPGAJAPJ@?$AA?2?$AA?$AA@ 1000116c     common_ti_backlight_mdd:bkldrvapi.obj
+ 0001:00000178       ??_C@_1GI@LBPPMOKF@?$AA?$HL?$AA?$CF?$AA0?$AA8?$AAl?$AAX?$AA?9?$AA?$CF?$AA0?$AA4?$AAX?$AA?9?$AA?$CF?$AA0?$AA4?$AAX?$AA?9?$AA?$CF?$AA0?$AA2?$AAX?$AA?$CF?$AA0?$AA2?$AAX?$AA?9?$AA?$CF?$AA0?$AA2?$AAX?$AA?$CF?$AA0@ 10001178     common_ti_backlight_mdd:bkldrvmain.obj
+ 0001:000001e0       ??_C@_1FI@GIAHMGCK@?$AAB?$AAa?$AAc?$AAk?$AAl?$AAi?$AAg?$AAh?$AAt?$AA?5?$AAd?$AAr?$AAi?$AAv?$AAe?$AAr?$AA?3?$AA?5?$AAW?$AAa?$AAi?$AAt?$AAF?$AAo?$AAr?$AAA?$AAP?$AAI?$AAR?$AAe?$AAa?$AAd@ 100011e0     common_ti_backlight_mdd:bkldrvmain.obj
+ 0001:00000238       ??_C@_1BE@PJBHBNNG@?$AAA?$AAC?$AAT?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AA?$AA@ 10001238     common_ti_backlight_mdd:bkldrvmain.obj
+ 0001:0000024c       ??_C@_1BO@PELGLPFE@?$AAB?$AAa?$AAt?$AAt?$AAe?$AAr?$AAy?$AAT?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AA?$AA@ 1000124c     common_ti_backlight_mdd:bkldrvmain.obj
+ 0001:0000026c       ??_C@_1CC@FKEHPNLB@?$AAA?$AAC?$AAB?$AAa?$AAc?$AAk?$AAl?$AAi?$AAg?$AAh?$AAt?$AAO?$AAn?$AAT?$AAa?$AAp?$AA?$AA@ 1000126c     common_ti_backlight_mdd:bkldrvmain.obj
+ 0001:00000290       ??_C@_1BO@BFBCCLIP@?$AAB?$AAa?$AAc?$AAk?$AAl?$AAi?$AAg?$AAh?$AAt?$AAO?$AAn?$AAT?$AAa?$AAp?$AA?$AA@ 10001290     common_ti_backlight_mdd:bkldrvmain.obj
+ 0001:000002b0       ??_C@_1CO@MGKPHPG@?$AAC?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl?$AAP?$AAa?$AAn?$AAe?$AAl?$AA?2?$AAB?$AAa?$AAc?$AAk?$AAl?$AAi?$AAg?$AAh?$AAt?$AA?$AA@ 100012b0     common_ti_backlight_mdd:bkldrvmain.obj
+ 0001:000002e0       ??_C@_1EO@BHDHHEGO@?$AA?$HL?$AAE?$AAB?$AA9?$AA1?$AAC?$AA7?$AAC?$AA9?$AA?9?$AA8?$AAB?$AAF?$AA6?$AA?9?$AA4?$AAa?$AA2?$AAd?$AA?9?$AA9?$AAA?$AAB?$AA8?$AA?9?$AA6?$AA9?$AA7?$AA2?$AA4?$AAE?$AAE@ 100012e0     common_ti_backlight_mdd:bkldrvmain.obj
+ 0001:00000358       TLEDOpen                   10001358 f i tled_backlight.obj
+ 0001:00000418       ?Initialize@TLED_Backlight@@UAAHPBG@Z 10001418 f   tled_backlight.obj
+ 0001:0000047c       ?Uninitialize@TLED_Backlight@@UAAHXZ 1000147c f   tled_backlight.obj
+ 0001:000004b4       ?SetPowerState@TLED_Backlight@@UAAHW4_CEDEVICE_POWER_STATE@@@Z 100014b4 f   tled_backlight.obj
+ 0001:000004e4       ?Initialize@GPIO_Backlight@@UAAHPBG@Z 100014e4 f   gpio_backlight.obj
+ 0001:00000558       ?Uninitialize@GPIO_Backlight@@UAAHXZ 10001558 f   gpio_backlight.obj
+ 0001:0000058c       ?SetPowerState@GPIO_Backlight@@UAAHW4_CEDEVICE_POWER_STATE@@@Z 1000158c f   gpio_backlight.obj
+ 0001:000005e0       ?BacklightGetSupportedStates@GPIO_Backlight@@UAAEXZ 100015e0 f   gpio_backlight.obj
+ 0001:000005ec       ?GetBacklightObject@@YAPAVCBacklightRoot@@XZ 100015ec f   gpio_backlight.obj
+ 0001:000006c4       BKL_Init                   100016c4 f   common_ti_backlight_mdd:bkldrvapi.obj
+ 0001:0000086c       BKL_Deinit                 1000186c f   common_ti_backlight_mdd:bkldrvapi.obj
+ 0001:000008a4       BKL_Open                   100018a4 f   common_ti_backlight_mdd:bkldrvapi.obj
+ 0001:000008a8       BKL_Close                  100018a8 f   common_ti_backlight_mdd:bkldrvapi.obj
+ 0001:000008c0       BKL_IOControl              100018c0 f   common_ti_backlight_mdd:bkldrvapi.obj
+ 0001:00000bac       DllMain                    10001bac f   common_ti_backlight_mdd:bkldrvapi.obj
+ 0001:00000bbc       ?ConvertStringToGuid@@YAHPBGPAU_GUID@@@Z 10001bbc f   common_ti_backlight_mdd:bkldrvmain.obj
+ 0001:00000c9c       ?UpdateACStatus@@YAXPAUBKL_MDD_INFO@@@Z 10001c9c f   common_ti_backlight_mdd:bkldrvmain.obj
+ 0001:00000d2c       ?GetBestSupportedState@@YAHPAUBKL_MDD_INFO@@W4_CEDEVICE_POWER_STATE@@PAW42@@Z 10001d2c f   common_ti_backlight_mdd:bkldrvmain.obj
+ 0001:00000dd8       ?BacklightUpdateMDDRegSettings@@YAXPAUBKL_MDD_INFO@@@Z 10001dd8 f   common_ti_backlight_mdd:bkldrvmain.obj
+ 0001:00000f50       ?UpdateBacklight@@YAXPAUBKL_MDD_INFO@@K@Z 10001f50 f   common_ti_backlight_mdd:bkldrvmain.obj
+ 0001:00001058       ?fnBackLightThread@@YAKPAX@Z 10002058 f   common_ti_backlight_mdd:bkldrvmain.obj
+ 0001:00001338       GetDeviceRegistryParams    10002338 f   ceddk:CEDDK.dll
+ 0001:00001348       GPIOSetMode                10002348 f   ceddk:CEDDK.dll
+ 0001:00001358       GPIOOpen                   10002358 f   ceddk:CEDDK.dll
+ 0001:00001368       GPIOClose                  10002368 f   ceddk:CEDDK.dll
+ 0001:00001378       GPIOSetBit                 10002378 f   ceddk:CEDDK.dll
+ 0001:00001388       GPIOClrBit                 10002388 f   ceddk:CEDDK.dll
+ 0001:00001398       IsDVIMode                  10002398 f   ceddk:CEDDK.dll
+ 0001:000013a8       LocalFree                  100023a8 f   coredll:COREDLL.dll
+ 0001:000013b8       DeviceIoControl            100023b8 f   coredll:COREDLL.dll
+ 0001:000013c8       CloseHandle                100023c8 f   coredll:COREDLL.dll
+ 0001:000013d8       LocalAlloc                 100023d8 f   coredll:COREDLL.dll
+ 0001:000013e8       CreateFileW                100023e8 f   coredll:COREDLL.dll
+ 0001:000013f8       EventModify                100023f8 f   coredll:COREDLL.dll
+ 0001:00001408       FreeLibrary                10002408 f   coredll:COREDLL.dll
+ 0001:00001418       WaitForSingleObject        10002418 f   coredll:COREDLL.dll
+ 0001:00001428       CreateThread               10002428 f   coredll:COREDLL.dll
+ 0001:00001438       GetProcAddressW            10002438 f   coredll:COREDLL.dll
+ 0001:00001448       LoadLibraryW               10002448 f   coredll:COREDLL.dll
+ 0001:00001458       CreateEventW               10002458 f   coredll:COREDLL.dll
+ 0001:00001468       RegCloseKey                10002468 f   coredll:COREDLL.dll
+ 0001:00001478       RegQueryValueExW           10002478 f   coredll:COREDLL.dll
+ 0001:00001488       RegOpenKeyExW              10002488 f   coredll:COREDLL.dll
+ 0001:00001498       SetLastError               10002498 f   coredll:COREDLL.dll
+ 0001:000014a8       ReleasePowerRequirement    100024a8 f   coredll:COREDLL.dll
+ 0001:000014b8       SetPowerRequirement        100024b8 f   coredll:COREDLL.dll
+ 0001:000014c8       StringCbCatW               100024c8 f   coredll:COREDLL.dll
+ 0001:000014d8       NKDbgPrintfW               100024d8 f   coredll:COREDLL.dll
+ 0001:000014e8       WaitForAPIReady            100024e8 f   coredll:COREDLL.dll
+ 0001:000014f8       SetDevicePower             100024f8 f   coredll:COREDLL.dll
+ 0001:00001508       CeFindNextRegChange        10002508 f   coredll:COREDLL.dll
+ 0001:00001518       CeFindCloseRegChange       10002518 f   coredll:COREDLL.dll
+ 0001:00001528       StopDeviceNotifications    10002528 f   coredll:COREDLL.dll
+ 0001:00001538       CloseMsgQueue              10002538 f   coredll:COREDLL.dll
+ 0001:00001548       StopPowerNotifications     10002548 f   coredll:COREDLL.dll
+ 0001:00001558       ReadMsgQueue               10002558 f   coredll:COREDLL.dll
+ 0001:00001568       WaitForMultipleObjects     10002568 f   coredll:COREDLL.dll
+ 0001:00001578       CeFindFirstRegChange       10002578 f   coredll:COREDLL.dll
+ 0001:00001588       RequestDeviceNotifications 10002588 f   coredll:COREDLL.dll
+ 0001:00001598       RequestPowerNotifications  10002598 f   coredll:COREDLL.dll
+ 0001:000015a8       CreateMsgQueue             100025a8 f   coredll:COREDLL.dll
+ 0001:000016bc       _DllMainCRTStartup         100026bc f   corelib0:pegdmain.obj
+ 0001:000016ec       __GSHandlerCheckCommon     100026ec f   corelib0:gshandler.obj
+ 0001:00001728       __GSHandlerCheck           10002728 f   corelib0:gshandler.obj
+ 0001:0000174c       __security_init_cookie     1000274c f   corelib0:seccinit.obj
+ 0001:000017a8       __security_check_cookie    100027a8 f   corelib0:armsecgs.obj
+ 0001:000017bc       __gsfailure                100027bc f   corelib0:armsecgs.obj
+ 0001:000018fc       _cexit                     100028fc f   corelib0:cexit.obj
+ 0001:00001918       _initterm                  10002918 f   corelib0:crt0dat.obj
+ 0001:0000194c       _cinit                     1000294c f   corelib0:crt0dat.obj
+ 0001:00001980       ??2@YAPAXI@Z               10002980 f   corelib1:COREDLL.dll
+ 0001:00001990       ??3@YAXPAX@Z               10002990 f   corelib1:COREDLL.dll
+ 0001:000019a0       __C_specific_handler       100029a0 f   corelib1:COREDLL.dll
+ 0001:000019b0       memset                     100029b0 f   corelib1:COREDLL.dll
+ 0001:000019c0       swscanf                    100029c0 f   corelib1:COREDLL.dll
+ 0001:000019d0       memcpy                     100029d0 f   corelib1:COREDLL.dll
+ 0001:000019e0       _XcptFilter                100029e0 f   corelib1:COREDLL.dll
+ 0001:000019f0       __security_gen_cookie2     100029f0 f   corelib1:COREDLL.dll
+ 0001:00001a00       __report_gsfailure         10002a00 f   corelib1:COREDLL.dll
+ 0001:00001a10       free                       10002a10 f   corelib1:COREDLL.dll
+ 0001:00001a20       DeleteCriticalSection      10002a20 f   coredll:COREDLL.dll
+ 0001:00001a30       InterlockedExchange        10002a30 f   coredll:COREDLL.dll
+ 0001:00001a40       TerminateProcess           10002a40 f   coredll:COREDLL.dll
+ 0001:00001ac4       __IMPORT_DESCRIPTOR_CEDDK  10002ac4     ceddk:CEDDK.dll
+ 0001:00001ad8       __IMPORT_DESCRIPTOR_COREDLL 10002ad8     coredll:COREDLL.dll
+ 0001:00001aec       __NULL_IMPORT_DESCRIPTOR   10002aec     ceddk:CEDDK.dll
+ 0002:00000000       __imp_GPIOSetMode          10003000     ceddk:CEDDK.dll
+ 0002:00000004       __imp_GPIOOpen             10003004     ceddk:CEDDK.dll
+ 0002:00000008       __imp_GPIOClose            10003008     ceddk:CEDDK.dll
+ 0002:0000000c       __imp_GPIOSetBit           1000300c     ceddk:CEDDK.dll
+ 0002:00000010       __imp_GPIOClrBit           10003010     ceddk:CEDDK.dll
+ 0002:00000014       __imp_IsDVIMode            10003014     ceddk:CEDDK.dll
+ 0002:00000018       __imp_GetDeviceRegistryParams 10003018     ceddk:CEDDK.dll
+ 0002:0000001c       \177CEDDK_NULL_THUNK_DATA  1000301c     ceddk:CEDDK.dll
+ 0002:00000020       __imp_LocalFree            10003020     coredll:COREDLL.dll
+ 0002:00000024       __imp_DeviceIoControl      10003024     coredll:COREDLL.dll
+ 0002:00000028       __imp_CloseHandle          10003028     coredll:COREDLL.dll
+ 0002:0000002c       __imp_LocalAlloc           1000302c     coredll:COREDLL.dll
+ 0002:00000030       __imp_CreateFileW          10003030     coredll:COREDLL.dll
+ 0002:00000034       __imp_EventModify          10003034     coredll:COREDLL.dll
+ 0002:00000038       __imp_FreeLibrary          10003038     coredll:COREDLL.dll
+ 0002:0000003c       __imp_WaitForSingleObject  1000303c     coredll:COREDLL.dll
+ 0002:00000040       __imp_CreateThread         10003040     coredll:COREDLL.dll
+ 0002:00000044       __imp_GetProcAddressW      10003044     coredll:COREDLL.dll
+ 0002:00000048       __imp_LoadLibraryW         10003048     coredll:COREDLL.dll
+ 0002:0000004c       __imp_CreateEventW         1000304c     coredll:COREDLL.dll
+ 0002:00000050       __imp_RegCloseKey          10003050     coredll:COREDLL.dll
+ 0002:00000054       __imp_RegQueryValueExW     10003054     coredll:COREDLL.dll
+ 0002:00000058       __imp_RegOpenKeyExW        10003058     coredll:COREDLL.dll
+ 0002:0000005c       __imp_SetLastError         1000305c     coredll:COREDLL.dll
+ 0002:00000060       __imp_ReleasePowerRequirement 10003060     coredll:COREDLL.dll
+ 0002:00000064       __imp_SetPowerRequirement  10003064     coredll:COREDLL.dll
+ 0002:00000068       __imp_StringCbCatW         10003068     coredll:COREDLL.dll
+ 0002:0000006c       __imp_NKDbgPrintfW         1000306c     coredll:COREDLL.dll
+ 0002:00000070       __imp_WaitForAPIReady      10003070     coredll:COREDLL.dll
+ 0002:00000074       __imp_SetDevicePower       10003074     coredll:COREDLL.dll
+ 0002:00000078       __imp_CeFindNextRegChange  10003078     coredll:COREDLL.dll
+ 0002:0000007c       __imp_CeFindCloseRegChange 1000307c     coredll:COREDLL.dll
+ 0002:00000080       __imp_StopDeviceNotifications 10003080     coredll:COREDLL.dll
+ 0002:00000084       __imp_CloseMsgQueue        10003084     coredll:COREDLL.dll
+ 0002:00000088       __imp_StopPowerNotifications 10003088     coredll:COREDLL.dll
+ 0002:0000008c       __imp_ReadMsgQueue         1000308c     coredll:COREDLL.dll
+ 0002:00000090       __imp_WaitForMultipleObjects 10003090     coredll:COREDLL.dll
+ 0002:00000094       __imp_CeFindFirstRegChange 10003094     coredll:COREDLL.dll
+ 0002:00000098       __imp_RequestDeviceNotifications 10003098     coredll:COREDLL.dll
+ 0002:0000009c       __imp_RequestPowerNotifications 1000309c     coredll:COREDLL.dll
+ 0002:000000a0       __imp_CreateMsgQueue       100030a0     coredll:COREDLL.dll
+ 0002:000000a4       __imp_??2@YAPAXI@Z         100030a4     corelib1:COREDLL.dll
+ 0002:000000a8       __imp_??3@YAXPAX@Z         100030a8     corelib1:COREDLL.dll
+ 0002:000000ac       __imp___C_specific_handler 100030ac     corelib1:COREDLL.dll
+ 0002:000000b0       __imp_memset               100030b0     corelib1:COREDLL.dll
+ 0002:000000b4       __imp_swscanf              100030b4     corelib1:COREDLL.dll
+ 0002:000000b8       __imp_memcpy               100030b8     corelib1:COREDLL.dll
+ 0002:000000bc       __imp__XcptFilter          100030bc     corelib1:COREDLL.dll
+ 0002:000000c0       __imp___security_gen_cookie2 100030c0     corelib1:COREDLL.dll
+ 0002:000000c4       __imp___report_gsfailure   100030c4     corelib1:COREDLL.dll
+ 0002:000000c8       __imp_free                 100030c8     corelib1:COREDLL.dll
+ 0002:000000cc       __imp_DeleteCriticalSection 100030cc     coredll:COREDLL.dll
+ 0002:000000d0       __imp_InterlockedExchange  100030d0     coredll:COREDLL.dll
+ 0002:000000d4       __imp_TerminateProcess     100030d4     coredll:COREDLL.dll
+ 0002:000000d8       \177COREDLL_NULL_THUNK_DATA 100030d8     coredll:COREDLL.dll
+ 0002:000000e0       ?dpCurSettings@@3U_DBGPARAM@@A 100030e0     common_ti_backlight_mdd:bkldrvmain.obj
+ 0002:00000524       __security_cookie          10003524     corelib0:seccinit.obj
+ 0002:00000528       __security_cookie_complement 10003528     corelib0:seccinit.obj
+ 0002:0000052c       ?g_pBacklight@@3PAVCBacklightRoot@@A 1000352c     common_ti_backlight_mdd:bkldrvapi.obj
+ 0002:00000530       _exitflag                  10003530     corelib0:cexit.obj
+ 0002:00000534       __onexitend                10003534     <common>
+ 0002:00000538       __onexitbegin              10003538     <common>
+ 0002:0000053c       g_pcsExit                  1000353c     <common>
+ 0002:00000540       _pRawDllMain               10003540     <common>
+
+ entry point at        0001:000016bc
+
+ Static symbols
+
+ 0001:00000638       ?FreeContext@@YAXPAUBKL_MDD_INFO@@@Z 10001638 f   common_ti_backlight_mdd:bkldrvapi.obj
+ 0001:000015c0       _DllMainCRTStartupHelper   100025c0 f   corelib0:pegdmain.obj
+ 0001:00001800       doexit                     10002800 f   corelib0:cexit.obj

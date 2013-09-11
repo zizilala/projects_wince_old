@@ -1,0 +1,17 @@
+OBJECTS=\
+    obj\ARMV4I\retail\xllp_ci.obj\
+    obj\ARMV4I\retail\xllp_ac97.obj\
+    obj\ARMV4I\retail\xllp_gpio.obj\
+    obj\ARMV4I\retail\xllp_i2c.obj\
+    obj\ARMV4I\retail\xllp_keypad.obj\
+    obj\ARMV4I\retail\xllp_lcd.obj\
+    obj\ARMV4I\retail\xllp_ost.obj\
+    obj\ARMV4I\retail\xllp_pccardsocket.obj\
+    obj\ARMV4I\retail\xllp_serialization.obj\
+    obj\ARMV4I\retail\xllp_pm_sleepcontext.obj\
+    obj\ARMV4I\retail\xlli_lowlev_init.obj\
+    obj\ARMV4I\retail\xllp_pm_sleepfwa.obj\
+    obj\ARMV4I\retail\xllp_pm_sleepcontexta.obj\
+    obj\ARMV4I\retail\xllp_cpdvm.obj\
+    obj\ARMV4I\retail\xllp_wmmx.obj
+

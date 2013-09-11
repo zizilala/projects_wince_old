@@ -1,0 +1,4 @@
+OBJECTS=\
+    obj\ARMV4I\retail\pmumain.obj\
+    obj\ARMV4I\retail\pmudll.obj
+

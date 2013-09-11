@@ -1,0 +1,40 @@
+# All rights reserved ADENEO EMBEDDED 2010
+!if 0
+;
+;================================================================================
+;             Texas Instruments OMAP(TM) Platform Software
+; (c) Copyright Texas Instruments, Incorporated. All Rights Reserved.
+;
+; Use of this software is controlled by the terms and conditions found
+; in the license agreement under which this software has been supplied.
+;
+;================================================================================
+;
+!endif
+
+!IF "$(BSP_OMAP_USBOTG)" == ""
+SKIPBUILD=1
+!ENDIF
+
+TARGETNAME=omap_usbotg
+TARGETTYPE=DYNLINK
+RELEASETYPE=PLATFORM
+DLLENTRY=_DllEntryCRTStartup
+
+DEFFILE=usbotg.def
+
+TARGETLIBS= \
+        $(_COMMONSDKROOT)\lib\$(_CPUINDPATH)\coredll.lib \
+		$(_TARGETPLATLIB)\$(_CPUDEPPATH)\ceddk.lib		\
+
+SOURCELIBS= \
+        $(_TILIBS)\$(AM3517)_usbotg.lib \
+        $(_COMMONOAKROOT)\lib\$(_CPUINDPATH)\usbotgcm.lib \
+        $(_COMMONOAKROOT)\lib\$(_CPUINDPATH)\usbotgxc.lib \
+        $(_COMMONOAKROOT)\lib\$(_CPUINDPATH)\defbuslib.lib \
+
+SOURCES= \
+
+FILE_VIEW_RESOURCE_FOLDER= \
+	usbotg.reg
+        

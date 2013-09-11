@@ -1,0 +1,7 @@
+OBJECTS=\
+    obj\ARMV4I\retail\dmadrv.obj\
+    obj\ARMV4I\retail\dmasys.obj\
+    obj\ARMV4I\retail\contsys.obj\
+    obj\ARMV4I\retail\contcam.obj\
+    obj\ARMV4I\retail\contstd.obj
+

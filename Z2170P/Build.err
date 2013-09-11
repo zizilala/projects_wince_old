@@ -1,0 +1,5 @@
+BUILD: [Thrd:Sequence:Type  ] Message
+BUILD: [01:0000000170:ERRORE] C:\WINCE600\platform\Z2170P\src\inc\boot_args.h(65) : error C2061: syntax error : identifier 'OMAP_LCM_BACKLIGHT'
+BUILD: [01:0000000171:ERRORE] C:\WINCE600\platform\Z2170P\src\inc\boot_args.h(66) : error C2061: syntax error : identifier 'sdtoflash'
+BUILD: [01:0000000172:ERRORE] C:\WINCE600\platform\Z2170P\src\inc\boot_args.h(66) : error C2059: syntax error : ';'
+BUILD: [01:0000000173:ERRORE] C:\WINCE600\platform\Z2170P\src\inc\boot_args.h(72) : error C2059: syntax error : '}'

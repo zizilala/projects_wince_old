@@ -1,0 +1,108 @@
+;
+; Copyright (c) Microsoft Corporation.  All rights reserved.
+;
+;
+; Use of this sample source code is subject to the terms of the Microsoft
+; license agreement under which you licensed this sample source code. If
+; you did not accept the terms of the license agreement, you are not
+; authorized to use this sample source code. For the terms of the license,
+; please see the license agreement between you and Microsoft or, if applicable,
+; see the LICENSE.RTF on your install media or the root of your tools installation.
+; THE SAMPLE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES OR INDEMNITIES.
+;
+;=======================================================================
+;  COPYRIGHT (C) STMicroelectronics 2007.  ALL RIGHTS RESERVED
+;
+;  Use of this source code is subject to the terms of your STMicroelectronics
+;  development license agreement. If you did not accept the terms of such a license,
+;  you are not authorized to use this source code.
+;
+;  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+;  KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+;  IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+;  PURPOSE.
+;========================================================================
+
+; This file is to be included in platform.reg if required.
+;
+; $(PCI_BUS_ROOT) is a variable that needs to be set in the including
+; platform.reg. It's value will be something like
+; HKEY_LOCAL_MACHINE\Drivers\BuiltIn\PCI
+
+; SpawnFunction specified in platform.reg.
+
+[$(PCI_BUS_ROOT)\Template\GenericIDE]
+   "IClass"=multi_sz:"{CDDC3621-3512-4b3f-BB6F-B4DD5E061795}"
+   "Prefix"="IDE"
+   "Dll"="atapi.dll"
+   "Order"=dword:2
+   "Class"=dword:01
+   "SubClass"=dword:01
+   "ConfigEntry"="GenericConfig"   ; PCI configuration entry point
+   "Legacy"=dword:01               ; legacy, use Irq for primary and Irq+1 for secondary
+   "Irq"=dword:0E                  ; 14
+   "SysIntr"=dword:00              ; SysIntr not specified
+   "DMAAlignment"=dword:04         ; default DMA alignment
+   "SoftResetTimeout"=dword:03     ; ATA/ATAPI spec defines 31s ceiling; this is too long
+   "StatusPollCycles"=dword:100    ; Status register DRQ/BSY polling; 256 poll cycles
+   "StatusPollsPerCycle"=dword:20  ; Status register DRQ/BSY polling; 32 polls per cycle
+   "StatusPollCyclePause"=dword:05 ; Status register DRQ/BSY polling; 5 milliseconds between poll cycles
+;  "IsrDll"=""                     ; not required
+;  "IsrHandler"=""                 ; not required
+   "RegisterStride"=dword:01       ; ATA register stride; register block is contiguous
+[$(PCI_BUS_ROOT)\Template\GenericIDE\Device0]
+   "IClass"=multi_sz:"{A4E7EDDA-E575-4252-9D6B-4195D48BB865}"
+   "Prefix"="DSK"
+   "Dll"="atapi.dll"
+   "InterruptDriven"=dword:01      ; enable interrupt driven I/O
+   "DMA"=dword:00                  ; disable DMA
+   "DoubleBufferSize"=dword:10000  ; 128 sector (65536 byte) double buffer
+   "DrqDataBlockSize"=dword:200    ; 1 sector (512 byte) DRQ data block
+   "WriteCache"=dword:01           ; enable on-disk write cache
+   "LookAhead"=dword:01            ; enable on-disk look-ahead
+   "DeviceId"=dword:00             ; device 0, i.e., primary master
+   "TransferMode"=dword:FF         ; use device default transfer mode (Ultra DMA 3, 4 require 80-conductor cable)
+[$(PCI_BUS_ROOT)\Template\GenericIDE\Device1]
+   "IClass"=multi_sz:"{A4E7EDDA-E575-4252-9D6B-4195D48BB865}"
+   "Prefix"="DSK"
+   "Dll"="atapi.dll"
+   "InterruptDriven"=dword:01      ; enable interrupt driven I/O
+   "DMA"=dword:00                  ; disable DMA
+   "DoubleBufferSize"=dword:10000  ; 128 sector (65536 byte) double buffer
+   "DrqDataBlockSize"=dword:200    ; 1 sector (512 byte) DRQ data block
+   "WriteCache"=dword:01           ; enable on-disk write cache
+   "LookAhead"=dword:01            ; enable on-disk look-ahead
+   "DeviceId"=dword:01             ; device 1, i.e., primary slave
+   "TransferMode"=dword:FF         ; use device default transfer mode (Ultra DMA 3, 4 require 80-conductor cable)
+[$(PCI_BUS_ROOT)\Template\GenericIDE\Device2]
+   "IClass"=multi_sz:"{A4E7EDDA-E575-4252-9D6B-4195D48BB865}"
+   "Prefix"="DSK"
+   "Dll"="atapi.dll"
+   "InterruptDriven"=dword:01      ; enable interrupt driven I/O
+   "DMA"=dword:00                  ; disable DMA
+   "DoubleBufferSize"=dword:10000  ; 128 sector (65536 byte) double buffer
+   "DrqDataBlockSize"=dword:200    ; 1 sector (512 byte) DRQ data block
+   "WriteCache"=dword:01           ; enable on-disk write cache
+   "LookAhead"=dword:01            ; enable on-disk look-ahead
+   "DeviceId"=dword:02             ; device 2, i.e., secondary master
+   "TransferMode"=dword:FF         ; use device default transfer mode (Ultra DMA 3, 4 require 80-conductor cable)
+[$(PCI_BUS_ROOT)\Template\GenericIDE\Device3]
+   "IClass"=multi_sz:"{A4E7EDDA-E575-4252-9D6B-4195D48BB865}"
+   "Prefix"="DSK"
+   "Dll"="atapi.dll"
+   "InterruptDriven"=dword:01      ; enable interrupt driven I/O
+   "DMA"=dword:00                  ; disable DMA
+   "DoubleBufferSize"=dword:10000  ; 128 sector (65536 byte) double buffer
+   "DrqDataBlockSize"=dword:200    ; 1 sector (512 byte) DRQ data block
+   "WriteCache"=dword:01           ; enable on-disk write cache
+   "LookAhead"=dword:01            ; enable on-disk look-ahead
+   "DeviceId"=dword:03             ; device 3, i.e., secondary slave
+   "TransferMode"=dword:FF         ; use device default transfer mode (Ultra DMA 3, 4 require 80-conductor cable)
+IF PRJ_ENABLE_FSREGHIVE
+; HIVE BOOT SECTION
+[$(PCI_BUS_ROOT)\Template\GenericIDE]
+    "Flags"=dword:1000
+[$(PCI_BUS_ROOT)\Template\GenericIDE\Device0]
+    "Flags"=dword:1000
+; END HIVE BOOT SECTION
+ENDIF PRJ_ENABLE_FSREGHIVE

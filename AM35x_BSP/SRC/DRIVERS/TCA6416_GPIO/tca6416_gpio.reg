@@ -1,0 +1,35 @@
+; All rights reserved ADENEO EMBEDDED 2010
+IF BSP_TCA6416_GPIO1
+[HKEY_LOCAL_MACHINE\Drivers\BuiltIn\TCA6416_GPIO1]
+    "Prefix"="GIO"
+    "Dll"="tca6416_gpio.dll"
+    "Index"=dword:2
+    "order"=dword:0
+    "I2CBaudrateIndex"=	dword:1			; I2C baudrate index are defined in bspcfg.c (index 1 is 400 kHz)
+	"I2CBus"=dword:3					; I2C bus used to access to the gpio expander
+	"I2CAddr"=dword:20					; Device address of the gpio expander
+	"IntrGpio"=dword:A0					; intr output of expander is connected to GPIO 160 
+ENDIF BSP_OMAP_GPIO1
+
+IF BSP_TCA6416_GPIO2
+[HKEY_LOCAL_MACHINE\Drivers\BuiltIn\TCA6416_GPIO2]
+    "Prefix"="GIO"
+    "Dll"="tca6416_gpio.dll"
+    "Index"=dword:3
+    "order"=dword:0
+    "I2CBaudrateIndex"=	dword:1			; I2C baudrate index are defined in bspcfg.c (index 1 is 400 kHz)
+	"I2CBus"=dword:3					; I2C bus used to access to the gpio expander
+	"I2CAddr"=dword:21					; Device address of the gpio expander
+ENDIF BSP_OMAP_GPIO2
+
+IF BSP_TCA6416_GPIO3
+[HKEY_LOCAL_MACHINE\Drivers\BuiltIn\TCA6416_GPIO3]
+    "Prefix"="GIO"
+    "Dll"="tca6416_gpio.dll"
+    "Index"=dword:4
+    "order"=dword:0
+    "I2CBaudrateIndex"=	dword:1			; I2C baudrate index are defined in bspcfg.c (index 1 is 400 kHz)
+	"I2CBus"=dword:2					; I2C bus used to access to the gpio expander
+	"I2CAddr"=dword:21					; Device address of the gpio expander
+	;"IntrGpio"=dword:0					; intr output of expander is connected to GPIO 0 (default : NOT POPULATED)
+ENDIF BSP_OMAP_GPIO3

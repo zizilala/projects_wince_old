@@ -1,0 +1,230 @@
+ xldruart
+
+ Timestamp is 522e7036 (Tue Sep 10 09:04:54 2013)
+
+ Preferred load address is 00010000
+
+ Start         Length     Name                   Class
+ 0001:00000000 0000019cH .astart                 CODE
+ 0001:000001a0 00001c48H .rdata                  CODE
+ 0001:00001de8 00000025H .rdata$debug            CODE
+ 0001:00001e10 00006954H .text                   CODE
+ 0001:00008764 00000014H .xdata                  CODE
+ 0001:00008778 00000000H .edata                  CODE
+ 0002:00000000 0000031cH .data                   DATA
+ 0002:00000320 00000320H .bss                    DATA
+ 0003:00000000 000003f0H .pdata                  DATA
+
+  Address         Publics by Value              Rva+Base       Lib:Object
+
+ 0000:00000000       ___safe_se_handler_count   00000000     <absolute>
+ 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
+ 0001:00000000       StartUp                    00011000 f   startup.obj
+ 0001:00000054       EnableCache_GP             00011054 f   startup.obj
+ 0001:000000b0       EnableCache_HS             000110b0 f   startup.obj
+ 0001:00000138       CopyCode                   00011138 f   startup.obj
+ 0001:00000250       pTOC                       00011250     main.obj
+ 0001:00000254       dwOEMHighSecurity          00011254     main.obj
+ 0001:00000258       dwEbootECCtype             00011258     main.obj
+ 0001:0000025c       ??_C@_1BC@MABDLOIF@?$AA?$AN?$AA?6?$AAH?$AAA?$AAL?$AAT?$AA?$AN?$AA?6?$AA?$AA@ 0001125c     main.obj
+ 0001:00000270       ??_C@_1CO@FNBIBCAH@?$AA?$AN?$AA?6?$AAR?$AAe?$AAc?$AAe?$AAi?$AAv?$AAe?$AA?5?$AAr?$AAe?$AAt?$AAu?$AAr?$AAn?$AA?5?$AAc?$AAo?$AAd?$AAe?$AA?5?$AA?$AA@ 00011270     main.obj
+ 0001:000002a0       ??_C@_1CA@FAKMAHKG@?$AAb?$AAl?$AAo?$AAc?$AAk?$AAs?$AA?5?$AAw?$AAr?$AAi?$AAt?$AAt?$AAe?$AAn?$AA?5?$AA?$AA@ 000112a0     main.obj
+ 0001:000002c0       ??_C@_1BE@JCBNJGDH@?$AAb?$AAy?$AAt?$AAe?$AAs?$AA?5?$AAr?$AAx?$AA?5?$AA?$AA@ 000112c0     main.obj
+ 0001:000002d4       ??_C@_1BC@HEGKNIDF@?$AAp?$AAk?$AAt?$AAs?$AA?5?$AAr?$AAx?$AA?5?$AA?$AA@ 000112d4     main.obj
+ 0001:000002e8       ??_C@_1BG@DCKOCMFB@?$AAa?$AAc?$AAk?$AAs?$AA?5?$AAs?$AAe?$AAn?$AAt?$AA?5?$AA?$AA@ 000112e8     main.obj
+ 0001:00000300       ??_C@_1BG@CEPKECJN@?$AAn?$AAa?$AAk?$AAs?$AA?5?$AAs?$AAe?$AAn?$AAt?$AA?5?$AA?$AA@ 00011300     main.obj
+ 0001:00000318       ??_C@_1BE@DNEDGKLA@?$AAc?$AAa?$AAn?$AA?5?$AAs?$AAe?$AAn?$AAt?$AA?5?$AA?$AA@ 00011318     main.obj
+ 0001:0000032c       ??_C@_1BK@MBABNMMG@?$AAo?$AAt?$AAh?$AAe?$AAr?$AAs?$AA?5?$AAs?$AAe?$AAn?$AAt?$AA?5?$AA?$AA@ 0001132c     main.obj
+ 0001:00000348       ??_C@_1BK@BAIMCFMI@?$AAc?$AAh?$AAk?$AAs?$AAu?$AAm?$AA?5?$AAe?$AAr?$AAr?$AAs?$AA?5?$AA?$AA@ 00011348     main.obj
+ 0001:00000364       ??_C@_1BE@KGIAHABA@?$AAd?$AAu?$AAp?$AA?5?$AAp?$AAk?$AAt?$AAs?$AA?5?$AA?$AA@ 00011364     main.obj
+ 0001:00000378       ??_C@_1BO@MBOCIIDG@?$AAE?$AAr?$AAa?$AAs?$AAe?$AA?5?$AAF?$AAA?$AAI?$AAL?$AAE?$AAD?$AA?$AN?$AA?6?$AA?$AA@ 00011378     main.obj
+ 0001:00000398       ??_C@_1BO@KNPOGIOP@?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?5?$AAF?$AAA?$AAI?$AAL?$AAE?$AAD?$AA?$AN?$AA?6?$AA?$AA@ 00011398     main.obj
+ 0001:000003b8       ??_C@_1EE@IIHIGBCF@?$AA?$AN?$AA?6?$AAD?$AAN?$AAL?$AAD?$AA?5?$AAT?$AAI?$AAE?$AAV?$AAM?$AA3?$AA5?$AA3?$AA0?$AA?9?$AAn?$AAa?$AAn?$AAd?$AA?4?$AAr?$AAa?$AAw?$AA?5?$AAI?$AAm?$AAa?$AAg?$AAe?$AA?$AN@ 000113b8     main.obj
+ 0001:000003fc       ??_C@_1CO@MAFCCJBC@?$AA?$AN?$AA?6?$AAF?$AAM?$AAD?$AA_?$AAG?$AAe?$AAt?$AAI?$AAn?$AAf?$AAo?$AA?5?$AAf?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?$AN?$AA?6?$AA?$AA@ 000113fc     main.obj
+ 0001:0000042c       ??_C@_1CI@HOAHMIF@?$AA?$AN?$AA?6?$AAF?$AAM?$AAD?$AA_?$AAI?$AAn?$AAi?$AAt?$AA?5?$AAf?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?$AN?$AA?6?$AA?$AA@ 0001142c     main.obj
+ 0001:00000458       ??_C@_1EM@NBLNKKFN@?$AAV?$AAe?$AAr?$AAs?$AAi?$AAo?$AAn?$AA?5?$AAB?$AAS?$AAP?$AA_?$AAW?$AAI?$AAN?$AAC?$AAE?$AA_?$AAA?$AAR?$AAM?$AA_?$AAA?$AA8?$AA?5?$AA1?$AA?4?$AA0?$AA2?$AA?4?$AA0?$AA0@ 00011458     main.obj
+ 0001:00000910       ??_C@_1EA@CJMKJJJH@?$AAO?$AAA?$AAL?$AAL?$AAo?$AAc?$AAa?$AAl?$AAA?$AAl?$AAl?$AAo?$AAc?$AA?5?$AAr?$AAe?$AAt?$AAu?$AAr?$AAn?$AAe?$AAd?$AA?5?$AAN?$AAU?$AAL?$AAL?$AA?5?$AA?$CB?$AA?$AN?$AA?6?$AA?$AA@ 00011910     common_ti_oal_alloc:alloc.obj
+ 0001:000009e0       ??_C@_1KI@MDFCMHMG@?$AAC?$AA?3?$AA?2?$AAW?$AAI?$AAN?$AAC?$AAE?$AA6?$AA0?$AA0?$AA?2?$AAP?$AAL?$AAA?$AAT?$AAF?$AAO?$AAR?$AAM?$AA?2?$AAC?$AAO?$AAM?$AAM?$AAO?$AAN?$AA?2?$AAS?$AAR?$AAC?$AA?2@ 000119e0     common_ti_fmd_nand_boot:fmd.obj
+ 0001:00000a88       ??_C@_1CI@OHCJFJPM@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AA?$CF?$AAs?$AA?5?$AAl?$AAi?$AAn?$AAe?$AA?5?$AA?$CF?$AAd?$AA?3?$AA?5?$AA?$AA@ 00011a88     common_ti_fmd_nand_boot:fmd.obj
+ 0001:00000ab0       ??_C@_1HG@DCOIKHPB@?$AAF?$AAM?$AAD?$AA?5?$AAd?$AAr?$AAi?$AAv?$AAe?$AAr?$AA?5?$AAs?$AAu?$AAp?$AAp?$AAo?$AAr?$AAt?$AAs?$AA?5?$AAo?$AAn?$AAl?$AAy?$AA?5?$AA1?$AA6?$AAb?$AAi?$AAt?$AAs?$AA?5@ 00011ab0     common_ti_fmd_nand_boot:fmd.obj
+ 0001:00000b28       ??_C@_1DK@CAAJGKFH@?$AAI?$AAn?$AAc?$AAo?$AAr?$AAr?$AAe?$AAc?$AAt?$AA?5?$AAE?$AAC?$AAC?$AA?5?$AAt?$AAy?$AAp?$AAe?$AA?5?$AAs?$AAe?$AAt?$AAt?$AAi?$AAn?$AAg?$AA?$AN?$AA?6?$AA?$AA@ 00011b28     common_ti_fmd_nand_boot:fmd.obj
+ 0001:00000bf8       ??_C@_1EA@JNFKONCC@?$AAE?$AAr?$AAr?$AAo?$AAr?$AA?3?$AA?5?$AAU?$AAn?$AAr?$AAe?$AAc?$AAo?$AAg?$AAn?$AAi?$AAz?$AAe?$AAd?$AA?5?$AAM?$AAo?$AAd?$AAe?$AA?$FL?$AA?$CF?$AAd?$AA?$FN?$AA?$CB?$AA?$AN?$AA?6?$AA?$AA@ 00011bf8     common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0001:00000c38       ??_C@_1EI@LMGHLBK@?$AAE?$AAC?$AAC?$AA_?$AAI?$AAn?$AAi?$AAt?$AA?3?$AA?5?$AAu?$AAn?$AAs?$AAu?$AAp?$AAp?$AAo?$AAr?$AAt?$AAe?$AAd?$AA?5?$AAe?$AAc?$AAc?$AA?5?$AAm?$AAo?$AAd?$AAe?$AA?3?$AA?$CF@ 00011c38     common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0001:00000da8       ??_C@_1KM@EEHAFCCJ@?$AAC?$AA?3?$AA?2?$AAW?$AAI?$AAN?$AAC?$AAE?$AA6?$AA0?$AA0?$AA?2?$AAP?$AAL?$AAA?$AAT?$AAF?$AAO?$AAR?$AAM?$AA?2?$AAC?$AAO?$AAM?$AAM?$AAO?$AAN?$AA?2?$AAS?$AAR?$AAC?$AA?2@ 00011da8     common_ti_oali2c:oali2c.obj
+ 0001:00000e54       ??_C@_1CC@EHKJMBJI@?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAf?$AAo?$AAu?$AAn?$AAd?$AA?$AA@ 00011e54     common_ti_oali2c:oali2c.obj
+ 0001:00000e78       ??_C@_1KA@GOKKFLEJ@?$AAW?$AAA?$AAR?$AAN?$AA?3?$AA?5?$AAI?$AA2?$AAC?$AA?3?$AA?3?$AAI?$AA2?$AAC?$AAP?$AAo?$AAl?$AAl?$AAS?$AAt?$AAa?$AAt?$AAu?$AAs?$AA?5?$AA?9?$AA?5?$AAc?$AAh?$AAe?$AAc?$AAk@ 00011e78     common_ti_oali2c:oali2c.obj
+ 0001:00000f18       ??_C@_1GK@FLELOHLG@?$AAW?$AAA?$AAR?$AAN?$AA?3?$AA?5?$AAI?$AA2?$AAC?$AA?3?$AA?3?$AAI?$AA2?$AAC?$AAR?$AAe?$AAs?$AAe?$AAt?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AA?5?$AA?9?$AA?5?$AAf?$AAa?$AAi?$AAl@ 00011f18     common_ti_oali2c:oali2c.obj
+ 0001:00000f88       ??_C@_1GO@NCGHHJFM@?$AAW?$AAA?$AAR?$AAN?$AA?3?$AA?5?$AAI?$AA2?$AAC?$AA?3?$AA?5?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?5?$AAf?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AA?$CI?$AAS?$AAA?$AA?$DN?$AA0?$AAx?$AA?$CF?$AA0@ 00011f88     common_ti_oali2c:oali2c.obj
+ 0001:00000ff8       ??_C@_1CO@EBLPIMOB@?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAA?$AAt?$AAt?$AAe?$AAm?$AAp?$AAt?$AAs?$AA?5?$AA?$DN?$AA?5?$AA?$CF?$AAd?$AA?$AN?$AA?6?$AA?$AA@ 00011ff8     common_ti_oali2c:oali2c.obj
+ 0001:000011d8       ??_C@_15BMCNAON@?$AAR?$AAX?$AA?$AA@ 000121d8     OMAP3530_soccfg:devicemap.obj
+ 0001:000011e0       ??_C@_15NHJLDDPA@?$AAT?$AAX?$AA?$AA@ 000121e0     OMAP3530_soccfg:devicemap.obj
+ 0001:000011e8       ??_C@_17GHFABBII@?$AAM?$AAM?$AAU?$AA?$AA@ 000121e8     OMAP3530_soccfg:devicemap.obj
+ 0001:000011f0       ??_C@_19EMJFMDEF@?$AAI?$AAR?$AAQ?$AA3?$AA?$AA@ 000121f0     OMAP3530_soccfg:devicemap.obj
+ 0001:000011fc       ??_C@_19PECJKECA@?$AAI?$AAR?$AAQ?$AA2?$AA?$AA@ 000121fc     OMAP3530_soccfg:devicemap.obj
+ 0001:00001208       ??_C@_19OGJMALMO@?$AAI?$AAR?$AAQ?$AA1?$AA?$AA@ 00012208     OMAP3530_soccfg:devicemap.obj
+ 0001:00001214       ??_C@_19FOCAGMKL@?$AAI?$AAR?$AAQ?$AA0?$AA?$AA@ 00012214     OMAP3530_soccfg:devicemap.obj
+ 0001:00001220       ??_C@_1BC@JBFPJMDB@?$AAo?$AAv?$AAe?$AAr?$AAf?$AAl?$AAo?$AAw?$AA?$AA@ 00012220     OMAP3530_soccfg:devicemap.obj
+ 0001:000012c8       s_DeviceAddressMap         000122c8     OMAP3530_soccfg:devicemap.obj
+ 0001:000014c8       s_DeviceIrqMap             000124c8     OMAP3530_soccfg:devicemap.obj
+ 0001:00001910       ??_C@_1HK@FIHOCGBD@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAG?$AAI?$AAO?$AA_?$AAI?$AAn?$AAi?$AAt?$AA?3?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AAt?$AAo?$AA?5?$AAi?$AAn?$AAi?$AAt?$AAi@ 00012910     common_ti_oal_gpiodispatch:gpio_dispatch.obj
+ 0001:0000198c       ??_C@_19NNFDHLJH@?$AAb?$AAo?$AAo?$AAt?$AA?$AA@ 0001298c     common_ti_oal_gpiodispatch:gpio_dispatch.obj
+ 0001:00001a38       I2CDefaultI2CTimeout       00012a38     bspcfg:bspcfg.obj
+ 0001:00001a40       g_BSP_icL1Level            00012a40     bspcfg:bspcfg.obj
+ 0001:00001bc0       ??_C@_1HI@JDGLDLD@?$AAN?$AAA?$AAN?$AAD?$AA?5?$AAm?$AAa?$AAn?$AAu?$AAf?$AAa?$AAc?$AAt?$AAu?$AAr?$AAe?$AAr?$AA?5?$AA?$CF?$AAx?$AA?5?$AAd?$AAe?$AAv?$AAi?$AAc?$AAe?$AA?5?$AA?$CF?$AAx?$AA?5?$AA?3@ 00012bc0     bspcfg:bspcfg.obj
+ 0001:00001e10       XLDRReadCharMaxTime        00012e10 f   main.obj
+ 0001:00001e58       XLDRWriteChar              00012e58 f   main.obj
+ 0001:00001e70       XLDRPrintUint8             00012e70 f   main.obj
+ 0001:00001f90       XLDRPrintUlong             00012f90 f   main.obj
+ 0001:000020a8       BSPGpioInit                000130a8 f   main.obj
+ 0001:000020c8       OALPAtoVA                  000130c8 f   main.obj
+ 0001:000020cc       NKDbgPrintfW               000130cc f   main.obj
+ 0001:000020e8       XLDRMain                   000130e8 f   main.obj
+ 0001:0000259c       JumpTo                     0001359c f   jumpto.obj
+ 0001:000025a0       XGetStats                  000135a0 f   xldrmodem.obj
+ 0001:000025fc       XWriteStats                000135fc f   xldrmodem.obj
+ 0001:0000264c       XReceive                   0001364c f   xldrmodem.obj
+ 0001:000028e8       OALGetTickCount            000138e8 f   platform.obj
+ 0001:000028f0       Mpu_dpll_init              000138f0 f   platform.obj
+ 0001:00002968       Iva_dpll_init              00013968 f   platform.obj
+ 0001:000029f4       Omap37xx_dpll4_init        000139f4 f   platform.obj
+ 0001:00002a88       Dpll4_init                 00013a88 f   platform.obj
+ 0001:00002b1c       Omap37xx_core_dpll_init    00013b1c f   platform.obj
+ 0001:00002b60       Core_dpll_init             00013b60 f   platform.obj
+ 0001:00002ba4       Per_dpll_init              00013ba4 f   platform.obj
+ 0001:00002bec       Omap37xx_per_dpll_init     00013bec f   platform.obj
+ 0001:00002f08       PlatformSetup              00013f08 f   platform.obj
+ 0001:00003230       __report_gsfailure         00014230 f   gsnull:gsnull.obj
+ 0001:00003234       __GSHandlerCheckCommon     00014234 f   fulllibc:gshandler.obj
+ 0001:00003270       __GSHandlerCheck           00014270 f   fulllibc:gshandler.obj
+ 0001:00003294       __security_check_cookie    00014294 f   fulllibc:armsecgs.obj
+ 0001:000032a8       __gsfailure                000142a8 f   fulllibc:armsecgs.obj
+ 0001:000032ec       memset                     000142ec f   fulllibc:memset.obj
+ 0001:00003374       OALLocalAllocInit          00014374 f   common_ti_oal_alloc:alloc.obj
+ 0001:000033dc       OALLocalAlloc              000143dc f   common_ti_oal_alloc:alloc.obj
+ 0001:000034cc       OALLocalFree               000144cc f   common_ti_oal_alloc:alloc.obj
+ 0001:000037a8       NAND_CorrectEccData        000147a8 f   common_ti_fmd_nand_boot:fmd.obj
+ 0001:00003814       FMD_Deinit                 00014814 f   common_ti_fmd_nand_boot:fmd.obj
+ 0001:00003898       FMD_GetInfo                00014898 f   common_ti_fmd_nand_boot:fmd.obj
+ 0001:00003900       FMD_ReadSector             00014900 f   common_ti_fmd_nand_boot:fmd.obj
+ 0001:00003cf8       FMD_WriteSector            00014cf8 f   common_ti_fmd_nand_boot:fmd.obj
+ 0001:00004064       FMD_GetBlockStatus         00015064 f   common_ti_fmd_nand_boot:fmd.obj
+ 0001:000042f8       FMD_Init                   000152f8 f   common_ti_fmd_nand_boot:fmd.obj
+ 0001:00004324       FMD_EraseBlock             00015324 f   common_ti_fmd_nand_boot:fmd.obj
+ 0001:00004894       ECC_Init                   00015894 f   common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0001:00004930       ECC_Result                 00015930 f   common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0001:00004958       ECC_Reset                  00015958 f   common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0001:00004980       ECC_CorrectData            00015980 f   common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0001:00005258       decode_bch                 00016258 f   common_ti_fmd_nand_boot:omap_bch_decoder.obj
+ 0001:000052e4       OEMInitDebugSerial         000162e4 f   common_ti_debugserial:debugserial.obj
+ 0001:00005378       OEMDeinitDebugSerial       00016378 f   common_ti_debugserial:debugserial.obj
+ 0001:000053c4       OEMWriteDebugByte          000163c4 f   common_ti_debugserial:debugserial.obj
+ 0001:0000540c       OEMReadDebugByte           0001640c f   common_ti_debugserial:debugserial.obj
+ 0001:00005474       OEMWriteDebugString        00016474 f   common_ti_debugserial:debugserial.obj
+ 0001:000054a0       I2CLock                    000164a0 f   common_ti_oali2c:oali2c.obj
+ 0001:000054e8       I2CUnlock                  000164e8 f   common_ti_oali2c:oali2c.obj
+ 0001:00005530       I2CPollStatus              00016530 f i common_ti_oali2c:oali2c.obj
+ 0001:000056c4       OALI2CInit                 000166c4 f   common_ti_oali2c:oali2c.obj
+ 0001:000057b0       OALI2CPostInit             000167b0 f   common_ti_oali2c:oali2c.obj
+ 0001:00005810       I2CSetSlaveAddress         00016810 f   common_ti_oali2c:oali2c.obj
+ 0001:0000581c       I2COpen                    0001681c f   common_ti_oali2c:oali2c.obj
+ 0001:000058e8       I2CClose                   000168e8 f   common_ti_oali2c:oali2c.obj
+ 0001:00005d80       I2CWrite                   00016d80 f   common_ti_oali2c:oali2c.obj
+ 0001:00005f4c       Get_CPUVersion             00016f4c f   OMAP3530_oalcpuver:oalcpuver.obj
+ 0001:000060fc       GetAddressByDevice         000170fc f   common_ti_devicesmap:devicemap.obj
+ 0001:0000614c       SOCGetGPIODeviceByBank     0001714c f   OMAP3530_soccfg:soccfg.obj
+ 0001:000061ac       SOCGetGPMCAddress          000171ac f   OMAP3530_soccfg:soccfg.obj
+ 0001:000061b4       SOCSetPadConfig            000171b4 f   OMAP3530_oal_padcfg:soc_padcfg.obj
+ 0001:0000698c       GPIOInit                   0001798c f   common_ti_oal_gpiodispatch:gpio_dispatch.obj
+ 0001:00006a24       GPIOOpen                   00017a24 f   common_ti_oal_gpiodispatch:gpio_dispatch.obj
+ 0001:00006a34       GPIOSetBit                 00017a34 f   common_ti_oal_gpiodispatch:gpio_dispatch.obj
+ 0001:00006a8c       GPIOSetMode                00017a8c f   common_ti_oal_gpiodispatch:gpio_dispatch.obj
+ 0001:00006aec       BSPGetDebugUARTConfig      00017aec f   bspcfg:bspcfg.obj
+ 0001:00006af8       BSPGetNandIrqWait          00017af8 f   bspcfg:bspcfg.obj
+ 0001:00006b00       BSPGetNandCS               00017b00 f   bspcfg:bspcfg.obj
+ 0001:00006b08       BSPGetNandInfo             00017b08 f   bspcfg:bspcfg.obj
+ 0001:00006b78       BSPInsertGpioDevice        00017b78 f   bspcfg:bspcfg.obj
+ 0001:00006bcc       BSPGetGpioDevicesTable     00017bcc f   bspcfg:bspcfg.obj
+ 0001:00006bd8       BSPGetTritonBusID          00017bd8 f   bspcfg:bspcfg.obj
+ 0001:00006be0       BSPGetTritonSlaveAddress   00017be0 f   bspcfg:bspcfg.obj
+ 0001:00006be8       INTERRUPTS_STATUS          00017be8 f   bsp_bootstubs:bsp_bootstubs.obj
+ 0001:00006bf0       EnterCriticalSection       00017bf0 f   bsp_bootstubs:bsp_bootstubs.obj
+ 0001:00006bf4       LeaveCriticalSection       00017bf4 f   bsp_bootstubs:bsp_bootstubs.obj
+ 0001:00006bf8       InitializeCriticalSection  00017bf8 f   bsp_bootstubs:bsp_bootstubs.obj
+ 0001:00006bfc       DeleteCriticalSection      00017bfc f   bsp_bootstubs:bsp_bootstubs.obj
+ 0001:00006c00       EnableDeviceClocks         00017c00 f   bsp_bootstubs:bsp_bootstubs.obj
+ 0001:00007250       PrcmDeviceGetContextState  00018250 f   bsp_bootstubs:bsp_bootstubs.obj
+ 0001:00007258       MmUnmapIoSpace             00018258 f   bsp_bootstubs:bsp_bootstubs.obj
+ 0001:0000725c       MmMapIoSpace               0001825c f   bsp_bootstubs:bsp_bootstubs.obj
+ 0001:00007270       HalContextUpdateDirtyRegister 00018270 f   bsp_bootstubs:bsp_bootstubs.obj
+ 0001:00007274       OALStall                   00018274 f   bsp_stall:stall.obj
+ 0001:0000728c       InitTwlPower               0001828c f   bsp_tps659xx:bsp_tps659xx.obj
+ 0001:00007810       memcpy                     00018810 f   fulllibc:memcpy.obj
+ 0001:00007bbc       memcpybigblk               00018bbc f   fulllibc:memcpy.obj
+ 0001:00008570       memcmp                     00019570 f   fulllibc:memcmp.obj
+ 0001:0000863c       TWLOpen                    0001963c f   triton_oal:twl_access.obj
+ 0001:0000869c       TWLClose                   0001969c f   triton_oal:twl_access.obj
+ 0001:000086d8       TWLWriteRegs               000196d8 f   triton_oal:twl_access.obj
+ 0002:00000000       OMAP35x_OPP_Table          0001a000     platform.obj
+ 0002:00000060       OMAP37x_OPP_Table          0001a060     platform.obj
+ 0002:000000a0       BSP_DDR_device_params      0001a0a0     platform.obj
+ 0002:000000e0       __security_cookie          0001a0e0     gsnull:gsnull.obj
+ 0002:000000e4       __security_cookie_complement 0001a0e4     gsnull:gsnull.obj
+ 0002:000000e8       gpmc_ecc_hamming_code      0001a0e8     common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0002:000000f8       gpmc_ecc_bch_4bits         0001a0f8     common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0002:00000108       gpmc_ecc_bch_8bits         0001a108     common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0002:00000120       OMAPCpuInfo                0001a120     OMAP3530_oalcpuver:oalcpuver.obj
+ 0002:00000168       CPUMaxSpeed                0001a168     OMAP3530_oalcpuver:oalcpuver.obj
+ 0002:00000178       Omap_Gpio                  0001a178     common_ti_oal_omap_gpio:omap35xx_gpio.obj
+ 0002:000001c0       g_dwMeasuredSysClkFreq     0001a1c0     bspcfg:bspcfg.obj
+ 0002:000001c4       _rgScaleTable              0001a1c4     bspcfg:bspcfg.obj
+ 0002:000001e8       _rgI2CDevice               0001a1e8     bspcfg:bspcfg.obj
+ 0002:000002c8       SupportedNands             0001a2c8     bspcfg:bspcfg.obj
+ 0002:00000304       BSPGpioTables              0001a304     bspcfg:bspcfg.obj
+ 0002:00000520       g_ecctype                  0001a520     main.obj
+ 0002:000005ac       gpmc_ecc_func              0001a5ac     common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0002:0000062c       gCPU_family                0001a62c     <common>
+ 0002:00000630       map                        0001a630     <common>
+ 0002:00000634       nbBlock                    0001a634     <common>
+ 0002:00000638       poolSize                   0001a638     <common>
+ 0002:0000063c       pool                       0001a63c     <common>
+
+ entry point at        0001:00000000
+
+ Static symbols
+
+ 0001:00002c34       MemorySetup                00013c34 f   platform.obj
+ 0001:00003534       NAND_Read                  00014534 f   common_ti_fmd_nand_boot:fmd.obj
+ 0001:00003634       NAND_Write                 00014634 f   common_ti_fmd_nand_boot:fmd.obj
+ 0001:0000373c       NAND_Enable                0001473c f   common_ti_fmd_nand_boot:fmd.obj
+ 0001:000040e8       NAND_Initialize            000150e8 f   common_ti_fmd_nand_boot:fmd.obj
+ 0001:00004424       Hamming_ECC_Init           00015424 f   common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0001:00004454       Hamming_ECC_Calculate      00015454 f   common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0001:000044bc       Hamming_ECC_Reset          000154bc f   common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0001:000044cc       Hamming_ECC_CorrectData    000154cc f   common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0001:000045e4       BCH4_ECC_Init              000155e4 f   common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0001:0000465c       BCH4_ECC_Calculate         0001565c f   common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0001:000046fc       BCH4_ECC_Reset             000156fc f   common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0001:0000470c       BCH8_ECC_Init              0001570c f   common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0001:00004784       BCH8_ECC_Calculate         00015784 f   common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0001:00004884       BCH8_ECC_Reset             00015884 f   common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0001:000049c4       BCH_correct_data           000159c4 f   common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0001:00004b20       BCH4_ECC_CorrectData       00015b20 f   common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0001:00004b54       BCH8_ECC_CorrectData       00015b54 f   common_ti_fmd_nand_boot:gpmc_ecc.obj
+ 0001:00004b88       mpy_mod_gf                 00015b88 f   common_ti_fmd_nand_boot:omap_bch_decoder.obj
+ 0001:00004be8       chien                      00015be8 f   common_ti_fmd_nand_boot:omap_bch_decoder.obj
+ 0001:00004e48       berlekamp                  00015e48 f   common_ti_fmd_nand_boot:omap_bch_decoder.obj
+ 0001:000050b8       syndrome                   000160b8 f   common_ti_fmd_nand_boot:omap_bch_decoder.obj
+ 0001:000055e0       I2CResetDevice             000165e0 f   common_ti_oali2c:oali2c.obj
+ 0001:000058f8       I2CTransaction             000168f8 f   common_ti_oali2c:oali2c.obj
+ 0001:00006270       ?OmapGpioPostInit@@YAHPAX@Z 00017270 f   common_ti_oal_omap_gpio:omap35xx_gpio.obj
+ 0001:000062c8       ?OmapGpioDeinit@@YAHPAX@Z  000172c8 f   common_ti_oal_omap_gpio:omap35xx_gpio.obj
+ 0001:00006398       ?OmapGpioSetMode@@YAHPAXII@Z 00017398 f   common_ti_oal_omap_gpio:omap35xx_gpio.obj
+ 0001:000064c0       ?OmapGpioGetMode@@YAKPAXI@Z 000174c0 f   common_ti_oal_omap_gpio:omap35xx_gpio.obj
+ 0001:000065b4       ?OmapGpioPullup@@YAHPAXII@Z 000175b4 f   common_ti_oal_omap_gpio:omap35xx_gpio.obj
+ 0001:000065bc       ?OmapGpioPulldown@@YAHPAXII@Z 000175bc f   common_ti_oal_omap_gpio:omap35xx_gpio.obj
+ 0001:000065c4       ?OmapGpioSetBit@@YAHPAXI@Z 000175c4 f   common_ti_oal_omap_gpio:omap35xx_gpio.obj
+ 0001:0000667c       ?OmapGpioClrBit@@YAHPAXI@Z 0001767c f   common_ti_oal_omap_gpio:omap35xx_gpio.obj
+ 0001:00006734       ?OmapGpioGetBit@@YAKPAXI@Z 00017734 f   common_ti_oal_omap_gpio:omap35xx_gpio.obj
+ 0001:000067e0       ?OmapGpioIoControl@@YAHPAXIPAEI1IPAK@Z 000177e0 f   common_ti_oal_omap_gpio:omap35xx_gpio.obj
+ 0001:000067e8       ?OmapGpioInit@@YAHPBGPAPAXPAI@Z 000177e8 f   common_ti_oal_omap_gpio:omap35xx_gpio.obj
+ 0001:00006940       GetGroupByID               00017940 f   common_ti_oal_gpiodispatch:gpio_dispatch.obj

@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CatalogFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" RequiredVersion="6.00" xsi:schemaLocation="urn:Microsoft.PlatformBuilder/Catalog PbcXml600.xsd" xmlns="urn:Microsoft.PlatformBuilder/Catalog">
+  <FileInformation Id="FileInformation:TexasInstruments:AM35x_BSP">
+    <Title>Texas Instruments AM35x BSP</Title>
+    <Description>Texas Instruments AM35x BSP Catalog Items</Description>
+    <Comment>BSP for AM35x reference board</Comment>
+    <Vendor>Texas Instruments</Vendor>
+    <OSVersion>6.00</OSVersion>
+    <FileVersion>0.0.1</FileVersion>
+  </FileInformation>
+  <Bsp Id="Bsp:TexasInstruments:AM35x_BSP:ARMV4I">
+    <Title>AM35x_BSP:ARMV4I</Title>
+    <Description>BSP for the AM35x reference platform. Uses OS build for ARMV4I architecture.</Description>
+    <PlatformDirectory>AM35x_BSP</PlatformDirectory>
+    <CpuId>Cpu:ARMV4I</CpuId>
+    <BspItemId>AM35x:TI:omapgpio</BspItemId>
+    <BspItemId>AM35x:TI:tca6416gpio1</BspItemId>
+    <BspItemId>AM35x:TI:tca6416gpio2</BspItemId>
+    <BspItemId>AM35x:TI:tca6416gpio3</BspItemId>
+    <BspItemId>AM35x:TI:pwrkey</BspItemId>
+    <BspItemId>AM35x:TI:keypad</BspItemId>
+    <BspItemId>AM35x:TI:omapsdma</BspItemId>
+    <BspItemId>AM35x:TI:omapmcspi1</BspItemId>
+    <BspItemId>AM35x:TI:omapmcspi2</BspItemId>
+    <BspItemId>AM35x:TI:omapmcspi3</BspItemId>
+    <BspItemId>AM35x:TI:omapmcspi4</BspItemId>
+    <BspItemId>AM35x:TI:omaphdq</BspItemId>
+    <BspItemId>AM35x:TI:omapdss</BspItemId>
+    <BspItemId>AM35x:TI:omapvrfb</BspItemId>
+    <BspItemId>AM35x:TI:tsc2004touch</BspItemId>
+    <BspItemId>AM35x:TI:omapuart1</BspItemId>
+    <BspItemId>AM35x:TI:omapuart2</BspItemId>
+    <BspItemId>AM35x:TI:omapuart3</BspItemId>
+    <BspItemId>AM35x:TI:omapnand</BspItemId>
+    <BspItemId>AM35x:TI:Hamming1bit</BspItemId>
+    <BspItemId>AM35x:TI:BCH4bit</BspItemId>
+    <BspItemId>AM35x:TI:BCH8bit</BspItemId>    
+    <BspItemId>AM35x:TI:smsc</BspItemId>
+    <BspItemId>AM35x:TI:emac</BspItemId>
+    <BspItemId>AM35x:TI:can</BspItemId>
+    <BspItemId>AM35x:TI:omapmcbsp1</BspItemId>
+    <BspItemId>AM35x:TI:omapmcbsp2</BspItemId>
+    <BspItemId>AM35x:TI:omapmcbsp3</BspItemId>
+    <BspItemId>AM35x:TI:omapmcbsp4</BspItemId>
+    <BspItemId>AM35x:TI:omapmcbsp5</BspItemId>
+    <BspItemId>AM35x:TI:omapSDHC_Slot1</BspItemId>
+    <BspItemId>AM35x:TI:omapSDHC_Slot2</BspItemId>
+    <BspItemId>AM35x:TI:omapWatchdog</BspItemId>
+    <BspItemId>AM35x:TI:audio_codec1</BspItemId>
+    <BspItemId>AM35x:TI:audio_codec2</BspItemId>
+    <BspItemId>AM35x:TI:omapRtcWakesCPU</BspItemId>
+    <BspItemId>AM35x:TI:omapusbh1</BspItemId>
+    <BspItemId>AM35x:TI:omapusbh2</BspItemId>
+    <BspItemId>AM35x:TI:omapmusbhcd</BspItemId>
+    <BspItemId>AM35x:TI:omapmusbfn</BspItemId>
+    <BspItemId>AM35x:TI:omapmusbotg</BspItemId>
+    <BspItemId>AM35x:TI:videoinput</BspItemId>
+    <BspItemId>AM35x:TI:TIshell</BspItemId>
+    <BspItemId>AM35x:TI:omapnled</BspItemId>
+    <BspItemId>AM35x:TI:OliviaAM35x</BspItemId>
+    <BspItemId>AM35x:TI:TestApps</BspItemId>
+  </Bsp>
+  <Item Id="AM35x:TI:omapgpio">
+    <Title>Gpio driver</Title>
+    <Description>Omap Gpio driver</Description>
+    <Comment>Omap Gpio driver</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_GPIO</Variable>
+    <Module>omap_gpio.dll</Module>
+    <Location>Drivers\GPIO</Location>
+  </Item>
+  <Item Id="AM35x:TI:tca6416gpio1">
+    <Title>TCA6416 GPIO expander 1 (App board)</Title>
+    <Description>TCA6416 GPIO expander 1 driver</Description>
+    <Comment>TCA6416 GPIO expander 1</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_TCA6416_GPIO1</Variable>
+    <Module>tca6416_gpio.dll</Module>
+    <Location>Drivers\GPIO</Location>
+  </Item>
+  <Item Id="AM35x:TI:tca6416gpio2">
+    <Title>TCA6416 GPIO expander 2  (App board)</Title>
+    <Description>TCA6416 GPIO expander 2 driver</Description>
+    <Comment>TCA6416 GPIO expander 2</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_TCA6416_GPIO2</Variable>
+    <Module>tca6416_gpio.dll</Module>
+    <Location>Drivers\GPIO</Location>
+  </Item>
+  <Item Id="AM35x:TI:tca6416gpio3">
+    <Title>TCA6416 GPIO expander 3 (Experimenter board)</Title>
+    <Description>TCA6416 GPIO expander 3 driver</Description>
+    <Comment>TCA6416 GPIO expander 3</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_TCA6416_GPIO3</Variable>
+    <Module>tca6416_gpio.dll</Module>
+    <Location>Drivers\GPIO</Location>
+  </Item>
+  <Item Id="AM35x:TI:pwrkey">
+    <Title>Power Key driver</Title>
+    <Description>Power Key driver</Description>
+    <Comment>Power Key driver</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_PWRKEY</Variable>
+    <Variable>BSP_OMAP_GPIO</Variable>
+    <Variable>BSP_TCA6416_GPIO1</Variable>
+    <Module>pwrkey.dll</Module>
+    <ChooseOneGroup>true</ChooseOneGroup>
+    <Location>Drivers\KEYS</Location>
+  </Item>
+  <Item Id="AM35x:TI:keypad">
+    <Title>Keypad driver</Title>
+    <Description>Keypad driver</Description>
+    <Comment>Keypad driver</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_KEYPAD</Variable>
+    <Variable>BSP_OMAP_GPIO</Variable>
+    <Variable>BSP_TCA6416_GPIO1</Variable>
+    <Module>keypad.dll</Module>
+    <ChooseOneGroup>true</ChooseOneGroup>
+    <Location>Drivers\KEYS</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapsdma">
+    <Title>SDMA driver</Title>
+    <Description>Omap SDMA driver</Description>
+    <Comment>Omap SDMA driver</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_SDMA</Variable>
+    <Module>omap_sdma.dll</Module>
+    <Location>Drivers</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapmcspi1">
+    <Title>SPI driver (MCSPI1)</Title>
+    <Description>Omap MCSPI driver 1</Description>
+    <Comment>Omap MCSPI driver 1</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_MCSPI1</Variable>
+    <Variable>BSP_OMAP_SDMA</Variable>
+    <Module>omap_mcspi.dll</Module>
+    <Location>Drivers\MCSPI</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapmcspi2">
+    <Title>SPI driver (MCSPI2)</Title>
+    <Description>Omap MCSPI driver 2</Description>
+    <Comment>Omap MCSPI driver 2</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_MCSPI2</Variable>
+    <Variable>BSP_OMAP_SDMA</Variable>
+    <Module>omap_mcspi.dll</Module>
+    <Location>Drivers\MCSPI</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapmcspi3">
+    <Title>SPI driver (MCSPI3)</Title>
+    <Description>Omap MCSPI driver 3</Description>
+    <Comment>Omap MCSPI driver 3</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_MCSPI3</Variable>
+    <Variable>BSP_OMAP_SDMA</Variable>
+    <Module>omap_mcspi.dll</Module>
+    <Location>Drivers\MCSPI</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapmcspi4">
+    <Title>SPI driver (MCSPI4)</Title>
+    <Description>Omap MCSPI driver 4</Description>
+    <Comment>Omap MCSPI driver 4</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_MCSPI4</Variable>
+    <Variable>BSP_OMAP_SDMA</Variable>
+    <Module>omap_mcspi.dll</Module>
+    <Location>Drivers\MCSPI</Location>
+  </Item>
+  <Item Id="AM35x:TI:omaphdq">
+    <Title>HDQ (1-wire) driver</Title>
+    <Description>HDQ (1-Wire) driver</Description>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_HDQ</Variable>
+    <Location>Drivers</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapvrfb">
+    <Title>VRFB driver</Title>
+    <Description>Virtual Rotate Frame Buffer driver: To be used for efficient rotation, but this will introduce stride in every surface and ARM based codecs do not work well with stride present</Description>
+    <Comment>Virtual Rotate Frame Buffer driver.</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_VRFB</Variable>
+    <Location>Drivers\DISPLAY</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapdss">
+    <Title>Display driver</Title>
+    <Description>Display driver</Description>
+    <Comment>Display driver</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_DSS</Variable>
+    <Variable>BSP_OMAP_SDMA</Variable>
+    <Location>Drivers\DISPLAY</Location>
+  </Item>
+  <Item Id="AM35x:TI:tsc2004touch">
+    <Title>Touch panel driver</Title>
+    <Description>TSC2004 Touch panel driver</Description>
+    <Comment>TSC2004 Touch panel driver</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_TSC2004_TOUCH</Variable>
+    <Variable>BSP_OMAP_GPIO</Variable>
+    <Module>tsc2004_touch.dll</Module>
+    <Location>Drivers</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapuart1">
+    <Title>UART1 driver</Title>
+    <Description>Omap UART driver</Description>
+    <Comment>Omap UART driver</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_UART1</Variable>
+    <Variable>BSP_OMAP_GPIO</Variable>
+    <Variable>BSP_OMAP_SDMA</Variable>
+    <Module>omap_uart.dll</Module>
+    <Location>Drivers\UART</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapuart2">
+    <Title>UART2 driver</Title>
+    <Description>Omap UART driver</Description>
+    <Comment>Omap UART driver</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_UART2</Variable>
+    <Variable>BSP_OMAP_GPIO</Variable>
+    <Variable>BSP_OMAP_SDMA</Variable>
+    <Module>omap_uart.dll</Module>
+    <Location>Drivers\UART</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapuart3">
+    <Title>UART3 driver</Title>
+    <Description>Omap UART driver</Description>
+    <Comment>Omap UART driver</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_UART3</Variable>
+    <Variable>BSP_OMAP_GPIO</Variable>
+    <Variable>BSP_OMAP_SDMA</Variable>
+    <Module>omap_uart.dll</Module>
+    <Location>Drivers\UART</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapnand">
+    <Title>Nand driver</Title>
+    <Description>Omap Nand driver</Description>
+    <Comment>Omap Nand driver</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_NAND</Variable>
+    <Module>omap_nand.dll</Module>
+    <Location>Drivers\NAND</Location>
+  </Item>
+  <Item Id="AM35x:TI:Hamming1bit">
+    <Title>Hamming 1 bit ECC</Title>
+    <Description>Hamming 1 bit ECC for NAND driver</Description>
+    <Comment>Hamming 1 bit ECC for NAND driver</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_NAND_ECC_HAMMING1BIT</Variable>
+    <Variable>BSP_OMAP_NAND</Variable>
+    <ChooseOneGroup>true</ChooseOneGroup>    
+    <Location>Drivers\NAND</Location>
+  </Item>
+  <Item Id="AM35x:TI:BCH4bit">
+    <Title>BCH 4 bit ECC</Title>
+    <Description>BCH 4 bit ECC for NAND driver</Description>
+    <Comment>BCH 4 bit ECC for NAND driver</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_NAND_ECC_BCH4BIT</Variable>
+    <Variable>BSP_OMAP_NAND</Variable>
+    <ChooseOneGroup>true</ChooseOneGroup>    
+    <Location>Drivers\NAND</Location>
+  </Item>
+    <Item Id="AM35x:TI:BCH8bit">
+    <Title>BCH 8 bit ECC</Title>
+    <Description>BCH 8 bit ECC for NAND driver</Description>
+    <Comment>BCH 8 bit ECC for NAND driver</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_NAND_ECC_BCH8BIT</Variable>
+    <Variable>BSP_OMAP_NAND</Variable>
+    <ChooseOneGroup>true</ChooseOneGroup>    
+    <Location>Drivers\NAND</Location>
+  </Item>
+  <Item Id="AM35x:TI:smsc">
+    <Title>NDIS SMSC driver</Title>
+    <Description>NDIS SMSC driver</Description>
+    <Comment>NDIS SMSC driver</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_SMSC911X</Variable>
+    <Variable>BSP_OMAP_GPIO</Variable>
+    <Variable>SYSGEN_NDIS</Variable>
+    <Variable>SYSGEN_ETHERNET</Variable>
+    <Module>smsc9118.dll</Module>
+    <Location>Drivers</Location>
+  </Item>
+  <Item Id="AM35x:TI:emac">
+    <Title>NDIS EMAC driver</Title>
+    <Description>NDIS EMAC driver</Description>
+    <Comment>NDIS EMAC driver</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_EMAC</Variable>
+    <Variable>SYSGEN_NDIS</Variable>
+    <Variable>SYSGEN_ETHERNET</Variable>
+    <Module>omap_emac.dll</Module>
+    <Location>Drivers</Location>
+  </Item>
+  <Item Id="AM35x:TI:can">
+    <Title>CAN driver</Title>
+    <Description>CAN driver</Description>
+    <Comment>CAN driver</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_CAN</Variable>
+    <Variable>BSP_OMAP_GPIO</Variable>
+    <Module>omap_can.dll</Module>
+    <Location>Drivers</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapmcbsp1">
+    <Title>MCBSP driver (MCBSP1)</Title>
+    <Description>MCBSP1 driver</Description>
+    <Comment>MCBSP1 driver</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_MCBSP1</Variable>
+    <Variable>BSP_OMAP_SDMA</Variable>
+    <Module>omap_mcbsp.dll</Module>
+    <Location>Drivers\MCBSP</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapmcbsp2">
+    <Title>MCBSP driver (MCBSP2)</Title>
+    <Description>MCBSP2 driver</Description>
+    <Comment>MCBSP2 driver</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_MCBSP2</Variable>
+    <Variable>BSP_OMAP_SDMA</Variable>
+    <Module>omap_mcbsp.dll</Module>
+    <Location>Drivers\MCBSP</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapmcbsp3">
+    <Title>MCBSP driver (MCBSP3)</Title>
+    <Description>MCBSP3 driver</Description>
+    <Comment>MCBSP3 driver</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_MCBSP3</Variable>
+    <Variable>BSP_OMAP_SDMA</Variable>
+    <Module>omap_mcbsp.dll</Module>
+    <Location>Drivers\MCBSP</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapmcbsp4">
+    <Title>MCBSP driver (MCBSP4)</Title>
+    <Description>MCBSP4 driver</Description>
+    <Comment>MCBSP4 driver</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_MCBSP4</Variable>
+    <Variable>BSP_OMAP_SDMA</Variable>
+    <Module>omap_mcbsp.dll</Module>
+    <Location>Drivers\MCBSP</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapmcbsp5">
+    <Title>MCBSP driver (MCBSP5)</Title>
+    <Description>MCBSP5 driver</Description>
+    <Comment>MCBSP5 driver</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_MCBSP5</Variable>
+    <Variable>BSP_OMAP_SDMA</Variable>
+    <Module>omap_mcbsp.dll</Module>
+    <Location>Drivers\MCBSP</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapSDHC_Slot1">
+    <Title>SDHC Slot 1</Title>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_SDHC_1</Variable>
+    <Variable>BSP_SD</Variable>
+    <Variable>BSP_SDMEMORY</Variable>
+    <Variable>BSP_OMAP_SDMA</Variable>
+    <Variable>SYSGEN_SD_MEMORY</Variable>
+    <Variable>SYSGEN_SD_BUS</Variable>
+    <Variable>IMGSDBUS2</Variable>
+    <Module>omap_sdhc.dll</Module>
+    <Module>omap_SDMemory.dll</Module>
+    <Location>Drivers\SD</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapSDHC_Slot2">
+    <Title>SDHC Slot 2</Title>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_SDHC_2</Variable>
+    <Variable>BSP_SD</Variable>
+    <Variable>BSP_SDMEMORY</Variable>
+    <Variable>BSP_OMAP_SDMA</Variable>
+    <Variable>SYSGEN_SD_MEMORY</Variable>
+    <Variable>SYSGEN_SD_BUS</Variable>
+    <Variable>IMGSDBUS2</Variable>
+    <Module>omap_sdhc.dll</Module>
+    <Module>omap_SDMemory.dll</Module>
+    <Location>Drivers\SD</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapWatchdog">
+    <Title>Internal Watchdog</Title>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_WATCHDOG</Variable>
+    <Location>\Kernel features</Location>
+  </Item>
+  <Item Id="AM35x:TI:audio_codec1">
+    <Title>Codec 1 (AIC23)</Title>
+    <Description>Audio driver for Codec 1</Description>
+    <Comment>Codec 1 (AIC23)</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_AUDIO_CODEC1</Variable>
+    <Variable>BSP_OMAP_MCBSP1</Variable>
+    <Variable>SYSGEN_AUDIO</Variable>
+    <Module>omap_wavedev2.dll</Module>
+    <Location>Drivers\Audio</Location>
+  </Item>
+  <Item Id="AM35x:TI:audio_codec2">
+    <Title>Codec 2 (AIC23)</Title>
+    <Description>Audio driver for Codec 2</Description>
+    <Comment>Codec 2 (AIC23)</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_AUDIO_CODEC2</Variable>
+    <Variable>BSP_OMAP_MCBSP2</Variable>
+    <Variable>SYSGEN_AUDIO</Variable>
+    <Module>omap_wavedev2.dll</Module>
+    <Location>Drivers\Audio</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapRtcWakesCPU">
+    <Title>External RTC wake up</Title>
+    <Description>A RTC alarm can wake up the system when its suspended.</Description>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_RTC_WAKES_CPU</Variable>
+    <Location>\Kernel features</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapusbh1">
+    <Title>Host Port 1 (Experimenter board)</Title>
+    <Description>Host Port 1 (Experimenter board)</Description>
+    <Comment>Host Port 1 (Experimenter board)</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_USB_HOST1</Variable>
+    <Variable>BSP_OMAP_GPIO</Variable>
+    <Variable>SYSGEN_USB</Variable>
+    <Module>omap_ehcihcd.dll</Module>
+    <Location>Drivers\USB</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapusbh2">
+    <Title>Host Port 2 (App board)</Title>
+    <Description>Host Port 2 (App board)</Description>
+    <Comment>Host Port 2 (App board)</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_USB_HOST2</Variable>
+    <Variable>BSP_OMAP_GPIO</Variable>
+    <Variable>SYSGEN_USB</Variable>
+    <Module>omap_ehcihcd.dll</Module>
+    <Location>Drivers\USB</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapmusbhcd">
+    <Title>OTG Host (Experimenter board)</Title>
+    <Description>OTG Host (Experimenter board)</Description>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_USBH</Variable>
+    <Variable>BSP_OMAP_USBOTG</Variable>
+    <Variable>BSP_OMAP_USBFN</Variable>
+    <Variable>SYSGEN_USB</Variable>
+    <Module>omap_usbh.dll</Module>
+    <Location>Drivers\USB</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapmusbfn">
+    <Title>OTG Device (Experimenter board)</Title>
+    <Description>OTG Device (Experimenter board)</Description>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_USBFN</Variable>
+    <Variable>BSP_OMAP_USBH</Variable>
+    <Variable>BSP_OMAP_USBOTG</Variable>
+    <Variable>SYSGEN_USB</Variable>
+    <Module>omap_usbfn.dll</Module>
+    <Location>Drivers\USB</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapmusbotg">
+    <Title>OTG (Experimenter board)</Title>
+    <Description>OTG (Experimenter board)</Description>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_USBOTG</Variable>
+    <Variable>SYSGEN_USB</Variable>
+    <Module>omap_usbotg.dll</Module>
+    <Location>Drivers\USB</Location>
+  </Item>
+  <Item Id="AM35x:TI:videoinput">
+    <Title>Video input driver</Title>
+    <Description>Video input driver</Description>
+    <Comment>Video input driver</Comment>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_VIDEOIN</Variable>
+    <Variable>BSP_OMAP_SDMA</Variable>
+    <Variable>SYSGEN_STREAMAV</Variable>
+    <Variable>SYSGEN_DSHOW_CAPTURE</Variable>
+    <Module>camera.dll</Module>
+    <Location>Drivers\VideoInputDrv</Location>
+  </Item>
+  <Item Id="AM35x:TI:TIshell">
+    <Title>TI shell extensions</Title>
+    <Description>provides various command useful for debugging</Description>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_SHELL_EXTENSIONS_DO_CMD</Variable>
+    <Module>omap_shell.dll</Module>
+    <Module>proxydriver.dll</Module>
+    <Module>i2cproxy.dll</Module>
+    <Module>do.exe</Module>
+    <Location>\Kernel features</Location>
+  </Item>
+  <Item Id="AM35x:TI:omapnled">
+    <Title>Notification LED Driver</Title>
+    <Description>Notification LED Driver</Description>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OMAP_NLED</Variable>
+    <Variable>BSP_OMAP_GPIO</Variable>
+    <Variable>BSP_TCA6416_GPIO3</Variable>
+    <Variable>SYSGEN_NLED</Variable>
+    <Module>omap_nled.dll</Module>
+    <Location>Drivers\NLED</Location>
+  </Item>
+  <Item Id="AM35x:TI:OliviaAM35x">
+    <Title>Adeneo Silverlight Sample Application</Title>
+    <Description>Adeneo Silverlight Sample Application</Description>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_OLIVIA_AM35X</Variable>
+    <SupportedCpuId>Cpu:ARMV4I</SupportedCpuId>
+    <Module>Olivia_AM35x.exe</Module>
+    <Location>\Demo Applications</Location>
+  </Item>
+  <Item Id="AM35x:TI:TestApps">
+    <Title>BSP Test Applications</Title>
+    <Description>Includes BSP test applications</Description>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_TEST_APPS</Variable>    
+    <Location>BSP test</Location>
+  </Item>
+</CatalogFile>

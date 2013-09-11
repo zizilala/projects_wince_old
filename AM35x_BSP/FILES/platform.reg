@@ -1,0 +1,159 @@
+; All rights reserved ADENEO EMBEDDED 2010
+;
+;               Texas Instruments OMAP(TM) Platform Software
+; (c) Copyright Texas Instruments, Incorporated. All Rights Reserved.
+;
+;
+;   Use of this software is controlled by the terms and conditions found
+;   in the license agreement under which this software has been supplied.
+;
+;===============================================================================
+
+#define PLAT_DRIVERS_DIR $(_TARGETPLATROOT)\src\drivers
+#define PLAT_APP_DIR $(_TARGETPLATROOT)\src\app
+#define PLAT_TEST_DIR $(_TARGETPLATROOT)\src\test
+
+;===============================================================================
+; OMAP own bus enumerator
+#include "$(PLAT_DRIVERS_DIR)\BUS\OmapBus.reg"
+
+;===============================================================================
+; OMAP GPIO driver
+#include "$(PLAT_DRIVERS_DIR)\gpio\gpio.reg"
+
+;===============================================================================
+; OMAP TOUCH driver
+#include "$(PLAT_DRIVERS_DIR)\touch\tsc2004_touch.reg"
+
+;===============================================================================
+; OMAP DMA driver
+#include "$(PLAT_DRIVERS_DIR)\DMA\dma.reg"
+
+;===============================================================================
+; OMAP Display driver (DSS)
+#include "$(PLAT_DRIVERS_DIR)\display\dss\dss.reg"
+
+;===============================================================================
+; OMAP serial driver (UART)
+#include "$(PLAT_DRIVERS_DIR)\UART\uart.reg"
+
+;===============================================================================
+; OMAP SPI driver (MCSPI)
+#include "$(PLAT_DRIVERS_DIR)\MCSPI\mcspi.reg"
+
+;===============================================================================
+; NAND driver
+#include "$(PLAT_DRIVERS_DIR)\BLOCK\NAND\omap_nand.reg"
+#include "$(PLAT_TEST_DIR)\testNAND\Driver\nand_test_driver.reg"
+
+;===============================================================================
+; Notification LED driver
+#include "$(PLAT_DRIVERS_DIR)\NLED\omap_nled.reg"
+
+;===============================================================================
+; NDIS SMSC driver
+#include "$(PLAT_DRIVERS_DIR)\SMSC9118\smsc9118.reg"
+
+;===============================================================================
+; TCA6416 GPIO expander driver
+#include "$(PLAT_DRIVERS_DIR)\tca6416_gpio\tca6416_gpio.reg"
+
+;===============================================================================
+; Power KEY driver
+#include "$(PLAT_DRIVERS_DIR)\pwrkey\pwrkey.reg"
+
+;===============================================================================
+; CAN driver
+#include "$(PLAT_DRIVERS_DIR)\CAN\omap_can.reg"
+
+;===============================================================================
+; VRFB driver
+#include "$(PLAT_DRIVERS_DIR)\VRFB\omap_vrfb.reg"
+
+;===============================================================================
+; HDQ bus driver
+#include "$(PLAT_DRIVERS_DIR)\HDQ\omap_hdq.reg"
+
+;===============================================================================
+; Ethernet (internal) driver
+#include "$(PLAT_DRIVERS_DIR)\EMAC\omap_emac.reg"
+
+;===============================================================================
+; MCBSP driver
+#include "$(PLAT_DRIVERS_DIR)\MCBSP\mcbsp.reg"
+
+;===============================================================================
+; Keypad driver
+#include "$(PLAT_DRIVERS_DIR)\KEYPAD\keypad.reg"
+
+;===============================================================================
+; Audio driver
+#include "$(PLAT_DRIVERS_DIR)\WAVEDEV2\omap_wavedev2.reg"
+
+;===============================================================================
+; SDHC driver
+#include "$(PLAT_DRIVERS_DIR)\SDHC\IMPL\sdhc.reg"
+
+;===============================================================================
+; USB Host driver
+#include "$(PLAT_DRIVERS_DIR)\USBHS\omap_usbhs.reg"
+
+;===============================================================================
+#include "$(PLAT_DRIVERS_DIR)\USB\USBCDMA\usbcdma.reg"
+#include "$(PLAT_DRIVERS_DIR)\USB\USBFN\usbfn.reg"
+#include "$(PLAT_DRIVERS_DIR)\USB\USBH\usbh.reg"
+#include "$(PLAT_DRIVERS_DIR)\USB\USBOTG\usbotg.reg"
+
+;===============================================================================
+; Video Input driver
+#include "$(PLAT_DRIVERS_DIR)\VideoInputDrv\camera.reg"
+IF BSP_OMAP_VIDEOIN
+#include "$(PLAT_APP_DIR)\SampleGrabber\SampleGrabber.reg"
+#include "$(PLAT_APP_DIR)\NullSink\NullSink.reg"
+ENDIF
+
+
+;===============================================================================
+; OMAP Shell Extensions
+#include "$(PLAT_APP_DIR)\SHELL\omap_shell.reg"
+
+;===============================================================================
+; OMAP PM Extensions
+#include "$(PLAT_DRIVERS_DIR)\PM\omap_pm.reg"
+
+;===============================================================================
+; overwrite the default dll (defined in public code) used for the usb keyboard
+[HKEY_LOCAL_MACHINE\HARDWARE\DEVICEMAP\KEYBD]
+	"DriverName"=-
+    "DriverName"="KbdNopUs.dll"
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Layouts\00000409]
+	"Layout File"=-
+    "Layout File"="KbdNopUs.dll" 
+    "Layout Text"="US"
+    "PS2_AT"=-
+    "PS2_AT"="KbdNopUs.dll" 
+    
+;===============================================================================
+; enable telnet server
+[HKEY_LOCAL_MACHINE\Comm\TELNETD]
+	"IsEnabled"=dword:1
+	"UseAuthentication"=dword:0
+	
+;===============================================================================
+; enable ftp server
+[HKEY_LOCAL_MACHINE\COMM\FTPD]
+    "IsEnabled"=dword:1
+    "UseAuthentication"=dword:0
+    "AllowAnonymous"=dword:1
+    "AllowAnonymousUpload"=dword:1
+    "AllowAnonymousVroots"=dword:1
+    "DefaultDir"="\\"
+
+; @CESYSGEN IF CPLMAIN_DISPLAY
+[HKEY_CURRENT_USER\ControlPanel\Desktop]
+; @CESYSGEN IF IMAGING_IMG_JPEGDECODER
+    "wallpaper"="\\Windows\\wallpaper.jpg"
+; @CESYSGEN ELSE
+; @CESYSGEN ENDIF IMAGING_IMG_JPEGDECODER
+; @CESYSGEN ENDIF CPLMAIN_DISPLAY

@@ -1,0 +1,5 @@
+OBJECTS=\
+    obj\ARMV4I\retail\feature.obj\
+    obj\ARMV4I\retail\feature_arm.obj\
+    obj\ARMV4I\retail\getidcode.obj
+

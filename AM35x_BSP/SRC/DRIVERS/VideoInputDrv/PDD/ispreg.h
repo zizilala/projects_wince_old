@@ -1,0 +1,244 @@
+// All rights reserved ADENEO EMBEDDED 2010
+/*
+ * Portions Copyright (c) 2009 BSQUARE Corporation. All rights reserved.
+ * drivers/media/video/omap/isp/ispreg.h
+ *
+ * Header file for all the ISP module in TI's OMAP35XX Camera ISP.
+ * It has the OMAP HW register definitions.
+ *
+ * Copyright (C) 2007 Texas Instruments.
+ *
+ * This package is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundation.
+ *
+ * THIS PACKAGE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
+ * IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+ * WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ */
+
+#ifndef __ISPREG_H__
+#define __ISPREG_H__
+
+#define ISP_32B_BOUNDARY_BUF				0xFFFFFFE0
+#define ISP_32B_BOUNDARY_OFFSET				0x0000FFE0
+
+#define ISPCCDC_PID_PREV_SHIFT      		0
+#define ISPCCDC_PID_CID_SHIFT       		8
+#define ISPCCDC_PID_TID_SHIFT       		16
+
+#define ISPCCDC_PCR_EN						1
+#define ISPCCDC_PCR_BUSY					(1 << 1)
+
+#define ISPCCDC_SYN_MODE_VDHDOUT    		0x1
+#define ISPCCDC_SYN_MODE_FLDOUT 			(1 << 1)
+#define ISPCCDC_SYN_MODE_VDPOL  			(1 << 2)
+#define ISPCCDC_SYN_MODE_HDPOL  			(1 << 3)
+#define ISPCCDC_SYN_MODE_FLDPOL 			(1 << 4)
+#define ISPCCDC_SYN_MODE_EXWEN  			(1 << 5)
+#define ISPCCDC_SYN_MODE_DATAPOL    		(1 << 6)
+#define ISPCCDC_SYN_MODE_FLDMODE    		(1 << 7)
+#define ISPCCDC_SYN_MODE_DATSIZ_MASK    	0xFFFFF8FF
+#define ISPCCDC_SYN_MODE_DATSIZ_8_16    	(0x0 << 8)
+#define ISPCCDC_SYN_MODE_DATSIZ_12  		(0x4 << 8)
+#define ISPCCDC_SYN_MODE_DATSIZ_11  		(0x5 << 8)
+#define ISPCCDC_SYN_MODE_DATSIZ_10  		(0x6 << 8)
+#define ISPCCDC_SYN_MODE_DATSIZ_8   		(0x7 << 8)
+#define ISPCCDC_SYN_MODE_PACK8				(1 << 11)
+#define ISPCCDC_SYN_MODE_INPMOD_MASK    	0xFFFFCFFF
+#define ISPCCDC_SYN_MODE_INPMOD_RAW     	(0 << 12)
+#define ISPCCDC_SYN_MODE_INPMOD_YCBCR16 	(1 << 12)
+#define ISPCCDC_SYN_MODE_INPMOD_YCBCR8  	(2 << 12)
+#define ISPCCDC_SYN_MODE_LPF            	(1 << 14)
+#define ISPCCDC_SYN_MODE_FLDSTAT        	(1 << 15)
+#define ISPCCDC_SYN_MODE_VDHDEN				(1 << 16)
+#define ISPCCDC_SYN_MODE_WEN            	(1 << 17)
+#define ISPCCDC_SYN_MODE_VP2SDR				(1 << 18)
+#define ISPCCDC_SYN_MODE_SDR2RSZ        	(1 << 19)
+
+#define ISPCCDC_HD_VD_WID_VDW_SHIFT     	0
+#define ISPCCDC_HD_VD_WID_HDW_SHIFT     	16
+
+#define ISPCCDC_PIX_LINES_HLPRF_SHIFT   	0
+#define ISPCCDC_PIX_LINES_PPLN_SHIFT    	16
+
+#define ISPCCDC_HORZ_INFO_NPH_SHIFT     	0
+#define ISPCCDC_HORZ_INFO_NPH_MASK      	0xFFFF8000
+#define ISPCCDC_HORZ_INFO_SPH_MASK      	0x1000FFFF
+#define ISPCCDC_HORZ_INFO_SPH_SHIFT     	16
+
+#define ISPCCDC_VERT_START_SLV0_SHIFT   	16
+#define ISPCCDC_VERT_START_SLV0_MASK    	0x1000FFFF
+#define ISPCCDC_VERT_START_SLV1_SHIFT   	0
+
+#define ISPCCDC_VERT_LINES_NLV_MASK     	0xFFFF8000
+#define ISPCCDC_VERT_LINES_NLV_SHIFT    	0
+
+#define ISPCCDC_CULLING_CULV_SHIFT      	0
+#define ISPCCDC_CULLING_CULHODD_SHIFT   	16
+#define ISPCCDC_CULLING_CULHEVN_SHIFT   	24
+
+#define ISPCCDC_HSIZE_OFF_SHIFT				0
+
+#define ISPCCDC_SDOFST_FINV					(1 << 14)
+#define ISPCCDC_SDOFST_FOFST_1L				(~(3 << 12))
+#define ISPCCDC_SDOFST_FOFST_4L				(3 << 12)
+#define ISPCCDC_SDOFST_LOFST3_SHIFT     	0
+#define ISPCCDC_SDOFST_LOFST2_SHIFT     	3
+#define ISPCCDC_SDOFST_LOFST1_SHIFT     	6
+#define ISPCCDC_SDOFST_LOFST0_SHIFT     	9
+#define EVENEVEN            				1
+#define ODDEVEN             				2
+#define EVENODD             				3
+#define ODDODD              				4
+
+#define ISPCCDC_CLAMP_OBGAIN_SHIFT      	0
+#define ISPCCDC_CLAMP_OBST_SHIFT        	10
+#define ISPCCDC_CLAMP_OBSLN_SHIFT       	25
+#define ISPCCDC_CLAMP_OBSLEN_SHIFT      	28
+#define ISPCCDC_CLAMP_CLAMPEN           	(1 << 31)
+
+#define ISPCCDC_COLPTN_R_Ye					0x0
+#define ISPCCDC_COLPTN_Gr_Cy            	0x1
+#define ISPCCDC_COLPTN_Gb_G					0x2
+#define ISPCCDC_COLPTN_B_Mg					0x3
+#define ISPCCDC_COLPTN_CP0PLC0_SHIFT    	0
+#define ISPCCDC_COLPTN_CP0PLC1_SHIFT    	2
+#define ISPCCDC_COLPTN_CP0PLC2_SHIFT    	4
+#define ISPCCDC_COLPTN_CP0PLC3_SHIFT    	6
+#define ISPCCDC_COLPTN_CP1PLC0_SHIFT    	8
+#define ISPCCDC_COLPTN_CP1PLC1_SHIFT    	10
+#define ISPCCDC_COLPTN_CP1PLC2_SHIFT    	12
+#define ISPCCDC_COLPTN_CP1PLC3_SHIFT    	14
+#define ISPCCDC_COLPTN_CP2PLC0_SHIFT    	16
+#define ISPCCDC_COLPTN_CP2PLC1_SHIFT    	18
+#define ISPCCDC_COLPTN_CP2PLC2_SHIFT    	20
+#define ISPCCDC_COLPTN_CP2PLC3_SHIFT    	22
+#define ISPCCDC_COLPTN_CP3PLC0_SHIFT    	24
+#define ISPCCDC_COLPTN_CP3PLC1_SHIFT    	26
+#define ISPCCDC_COLPTN_CP3PLC2_SHIFT    	28
+#define ISPCCDC_COLPTN_CP3PLC3_SHIFT    	30
+
+#define ISPCCDC_BLKCMP_B_MG_SHIFT   		0
+#define ISPCCDC_BLKCMP_GB_G_SHIFT   		8
+#define ISPCCDC_BLKCMP_GR_CY_SHIFT  		6
+#define ISPCCDC_BLKCMP_R_YE_SHIFT   		24
+
+#define ISPCCDC_FPC_FPNUM_SHIFT 			0
+#define ISPCCDC_FPC_FPCEN       			(1 << 15)
+#define ISPCCDC_FPC_FPERR       			(1 << 16)
+
+#define ISPCCDC_VDINT_1_SHIFT       		0
+#define ISPCCDC_VDINT_0_SHIFT       		16
+#define ISPCCDC_VDINT_0_MASK        		0x7FFF
+#define ISPCCDC_VDINT_1_MASK        		0x7FFF
+
+#define ISPCCDC_ALAW_GWDI_SHIFT 			0
+#define ISPCCDC_ALAW_CCDTBL     			(1 << 3)
+
+#define ISPCCDC_REC656IF_R656ON 			1
+#define ISPCCDC_REC656IF_ECCFVH 			(1 << 1)
+
+#define ISPCCDC_CFG_BW656       			(1 << 5)
+#define ISPCCDC_CFG_FIDMD_SHIFT 			6
+#define ISPCCDC_CFG_WENLOG      			(1 << 8)
+#define ISPCCDC_CFG_Y8POS       			(1 << 11)
+#define ISPCCDC_CFG_BSWD        			(1 << 12)
+#define ISPCCDC_CFG_MSBINVI     			(1 << 13)
+#define ISPCCDC_CFG_VDLC        			(1 << 15)
+
+#define ISPCCDC_FMTCFG_FMTEN				0x1
+#define ISPCCDC_FMTCFG_LNALT				(1 << 1)
+#define ISPCCDC_FMTCFG_LNUM_SHIFT			2
+#define ISPCCDC_FMTCFG_PLEN_ODD_SHIFT   	4
+#define ISPCCDC_FMTCFG_PLEN_EVEN_SHIFT  	8
+#define ISPCCDC_FMTCFG_VPIN_MASK        	0xFFFF8000
+#define ISPCCDC_FMTCFG_VPIN_12_3        	(0x3 << 12)
+#define ISPCCDC_FMTCFG_VPIN_11_2        	(0x4 << 12)
+#define ISPCCDC_FMTCFG_VPIN_10_1        	(0x5 << 12)
+#define ISPCCDC_FMTCFG_VPIN_9_0				(0x6 << 12)
+#define ISPCCDC_FMTCFG_VPEN					(1 << 15)
+
+#define ISPCCDC_FMTCF_VPIF_FRQ_MASK     	0xFFF8FFFF
+#define ISPCCDC_FMTCF_VPIF_FRQ_BY2      	(0x0 << 16)
+#define ISPCCDC_FMTCF_VPIF_FRQ_BY3      	(0x1 << 16)
+#define ISPCCDC_FMTCF_VPIF_FRQ_BY4      	(0x2 << 16)
+#define ISPCCDC_FMTCF_VPIF_FRQ_BY5      	(0x3 << 16)
+#define ISPCCDC_FMTCF_VPIF_FRQ_BY6      	(0x4 << 16)
+
+#define ISPCCDC_FMT_HORZ_FMTLNH_SHIFT   	0
+#define ISPCCDC_FMT_HORZ_FMTSPH_SHIFT   	16
+
+#define ISPCCDC_FMT_VERT_FMTLNV_SHIFT   	0
+#define ISPCCDC_FMT_VERT_FMTSLV_SHIFT   	16
+
+#define ISPCCDC_FMT_HORZ_FMTSPH_MASK    	0x1FFF0000
+#define ISPCCDC_FMT_HORZ_FMTLNH_MASK    	0x1FFF
+
+#define ISPCCDC_FMT_VERT_FMTSLV_MASK    	0x1FFF0000
+#define ISPCCDC_FMT_VERT_FMTLNV_MASK    	0x1FFF
+
+
+#define ISPCCDC_LSC_GAIN_MODE_N_MASK    	0x700
+#define ISPCCDC_LSC_GAIN_MODE_N_SHIFT   	8
+#define ISPCCDC_LSC_GAIN_MODE_M_MASK    	0x3800
+#define ISPCCDC_LSC_GAIN_MODE_M_SHIFT   	12
+#define ISPCCDC_LSC_GAIN_FORMAT_MASK    	0xE
+#define ISPCCDC_LSC_GAIN_FORMAT_SHIFT   	1
+#define ISPCCDC_LSC_AFTER_REFORMATTER_MASK  (1<<6)
+
+
+#define ISPCCDC_LSC_INITIAL_X_MASK  		0x3F
+#define ISPCCDC_LSC_INITIAL_X_SHIFT 		0
+#define ISPCCDC_LSC_INITIAL_Y_MASK  		0x3F0000
+#define ISPCCDC_LSC_INITIAL_Y_SHIFT 		16
+
+// CCDC Register Summary
+#pragma pack(1)
+typedef volatile struct {
+
+  UINT32 CCDC_PID;               //0x00
+  UINT32 CCDC_PCR;               //0x04
+  UINT32 CCDC_SYN_MODE;          //0x08
+  UINT32 RESERVED0;			     //0x0C
+  UINT32 RESERVED1;		         //0x10
+  UINT32 CCDC_HORZ_INFO;         //0x14
+  UINT32 CCDC_VERT_START;        //0x18
+  UINT32 CCDC_VERT_LINES;        //0x1C
+  UINT32 CCDC_CULLING;           //0x20
+  UINT32 CCDC_HSIZE_OFF;         //0x24
+  UINT32 CCDC_SDOFST;            //0x28
+  UINT32 CCDC_SDR_ADDR;          //0x2c
+  UINT32 CCDC_CLAMP;             //0x30
+  UINT32 CCDC_DCSUB;             //0x34
+  UINT32 CCDC_COLTPIN;           //0x38
+  UINT32 CCDC_BLKCMP;            //0x3C
+  UINT32 RESERVED2;              //0x40
+  UINT32 RESERVED3;		         //0x44
+  UINT32 CCDC_VDINT;             //0x48
+  UINT32 CCDC_ALAW;              //0x4C
+  UINT32 CCDC_REC656IF;          //0x50
+  UINT32 CCDC_CFG;               //0x54
+  UINT32 RESERVED4;				 //0x58
+  UINT32 RESERVED5;				 //0x5C
+  UINT32 RESERVED6;              //0x60
+  UINT32 RESERVED7;         	 //0x64
+  UINT32 RESERVED8;         	 //0x68
+  UINT32 RESERVED9;         	 //0x6C
+  UINT32 RESERVED10;        	 //0x70
+  UINT32 RESERVED11;        	 //0x74
+  UINT32 RESERVED12;        	 //0x78
+  UINT32 RESERVED13;        	 //0x7C
+  UINT32 RESERVED14;        	 //0x80
+  UINT32 RESERVED15;        	 //0x84
+  UINT32 RESERVED16;        	 //0x88
+  UINT32 RESERVED17;        	 //0x8C
+  UINT32 RESERVED18;        	 //0x90
+  UINT32 RESERVED19;        	 //0x94
+  UINT32 CCDC_DMA_CTRL;     	 //0x98
+  
+} CAM_ISP_CCDC_REGS;
+#pragma pack()
+
+#endif  /* __ISPREG_H__ */
+

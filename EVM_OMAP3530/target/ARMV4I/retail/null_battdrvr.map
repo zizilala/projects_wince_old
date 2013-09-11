@@ -1,0 +1,175 @@
+ null_battdrvr
+
+ Timestamp is 522e7057 (Tue Sep 10 09:05:27 2013)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00000004H .CRT$XCA                CODE
+ 0001:00000004 00000004H .CRT$XCZ                CODE
+ 0001:00000008 00000004H .CRT$XIA                CODE
+ 0001:0000000c 00000004H .CRT$XIZ                CODE
+ 0001:00000010 00000004H .CRT$XPA                CODE
+ 0001:00000014 00000004H .CRT$XPZ                CODE
+ 0001:00000018 00000004H .CRT$XTA                CODE
+ 0001:0000001c 00000004H .CRT$XTZ                CODE
+ 0001:00000020 00000138H .rdata                  CODE
+ 0001:00000158 0000002aH .rdata$debug            CODE
+ 0001:00000184 00001570H .text                   CODE
+ 0001:000016f8 00000104H .xdata                  CODE
+ 0001:000017fc 00000014H .idata$2                CODE
+ 0001:00001810 00000014H .idata$3                CODE
+ 0001:00001824 0000008cH .idata$4                CODE
+ 0001:000018b0 0000000cH .idata$6                CODE
+ 0001:000018c0 000000dcH .edata                  CODE
+ 0002:00000000 0000008cH .idata$5                DATA
+ 0002:0000008c 00000008H .data                   DATA
+ 0002:000000a0 000000f8H .bss                    DATA
+ 0003:00000000 00000170H .pdata                  DATA
+
+  Address         Publics by Value              Rva+Base       Lib:Object
+
+ 0000:00000000       ___safe_se_handler_table   00000000     <absolute>
+ 0000:00000000       ___safe_se_handler_count   00000000     <absolute>
+ 0001:00000000       __xc_a                     10001000     corelib0:crt0init.obj
+ 0001:00000004       __xc_z                     10001004     corelib0:crt0init.obj
+ 0001:00000008       __xi_a                     10001008     corelib0:crt0init.obj
+ 0001:0000000c       __xi_z                     1000100c     corelib0:crt0init.obj
+ 0001:00000010       __xp_a                     10001010     corelib0:crt0init.obj
+ 0001:00000014       __xp_z                     10001014     corelib0:crt0init.obj
+ 0001:00000018       __xt_a                     10001018     corelib0:crt0init.obj
+ 0001:0000001c       __xt_z                     1000101c     corelib0:crt0init.obj
+ 0001:000000d0       ??_C@_1BM@KBMAGFOO@?$AAP?$AAd?$AAd?$AAB?$AAu?$AAf?$AAf?$AAe?$AAr?$AAS?$AAi?$AAz?$AAe?$AA?$AA@ 100010d0     battdrvr_mdd:battdrvr.obj
+ 0001:000000ec       ??_C@_1BK@GMCBNGHD@?$AAP?$AAo?$AAl?$AAl?$AAI?$AAn?$AAt?$AAe?$AAr?$AAv?$AAa?$AAl?$AA?$AA@ 100010ec     battdrvr_mdd:battdrvr.obj
+ 0001:00000108       ??_C@_1CA@NFABIDNC@?$AAP?$AAo?$AAl?$AAl?$AAP?$AAr?$AAi?$AAo?$AAr?$AAi?$AAt?$AAy?$AA2?$AA5?$AA6?$AA?$AA@ 10001108     battdrvr_mdd:battdrvr.obj
+ 0001:00000128       ??_C@_1DA@IBFGCKKH@?$AAS?$AAY?$AAS?$AAT?$AAE?$AAM?$AA?1?$AAB?$AAa?$AAt?$AAt?$AAe?$AAr?$AAy?$AAA?$AAP?$AAI?$AAs?$AAR?$AAe?$AAa?$AAd?$AAy?$AA?$AA@ 10001128     battdrvr_mdd:battdrvr.obj
+ 0001:00000184       BatteryPDDInitialize       10001184 f   null_batt_pdd.obj
+ 0001:0000018c       BatteryPDDDeinitialize     1000118c f   null_batt_pdd.obj
+ 0001:00000190       BatteryPDDResume           10001190 f   null_batt_pdd.obj
+ 0001:00000194       BatteryPDDPowerHandler     10001194 f   null_batt_pdd.obj
+ 0001:00000198       BatteryPDDGetLevels        10001198 f   null_batt_pdd.obj
+ 0001:000001a0       BatteryPDDSupportsChangeNotification 100011a0 f   null_batt_pdd.obj
+ 0001:000001a8       BatteryPDDGetStatus        100011a8 f   null_batt_pdd.obj
+ 0001:00000228       BatteryThreadProc          10001228 f   battdrvr_mdd:battdrvr.obj
+ 0001:00000310       Init                       10001310 f   battdrvr_mdd:battdrvr.obj
+ 0001:00000654       Deinit                     10001654 f   battdrvr_mdd:battdrvr.obj
+ 0001:00000734       IOControl                  10001734 f   battdrvr_mdd:battdrvr.obj
+ 0001:00000c98       PowerDown                  10001c98 f   battdrvr_mdd:battdrvr.obj
+ 0001:00000cac       PowerUp                    10001cac f   battdrvr_mdd:battdrvr.obj
+ 0001:00000cd4       Open                       10001cd4 f   battdrvr_mdd:battdrvr.obj
+ 0001:00000cd8       Close                      10001cd8 f   battdrvr_mdd:battdrvr.obj
+ 0001:00000ce0       Read                       10001ce0 f   battdrvr_mdd:battdrvr.obj
+ 0001:00000cf8       Write                      10001cf8 f   battdrvr_mdd:battdrvr.obj
+ 0001:00000d10       Seek                       10001d10 f   battdrvr_mdd:battdrvr.obj
+ 0001:00000d18       DllMain                    10001d18 f   battdrvr_mdd:battdrvr.obj
+ 0001:00000d30       BatteryAPIStopwatch        10001d30 f   battdrvr_mdd:battapi.obj
+ 0001:00000e0c       BatteryAPIGetSystemPowerStatusEx2 10001e0c f   battdrvr_mdd:battapi.obj
+ 0001:00001050       BatteryAPIGetSystemPowerStatusEx 10002050 f   battdrvr_mdd:battapi.obj
+ 0001:0000108c       BatteryAPIGetLifeTimeInfo  1000208c f   battdrvr_mdd:battapi.obj
+ 0001:00001140       BatteryAPINotifyOfTimeChange 10002140 f   battdrvr_mdd:battapi.obj
+ 0001:000011c4       EventModify                100021c4 f   coredll:COREDLL.dll
+ 0001:000011d4       WaitForSingleObject        100021d4 f   coredll:COREDLL.dll
+ 0001:000011e4       PowerPolicyNotify          100021e4 f   coredll:COREDLL.dll
+ 0001:000011f4       CeSetThreadPriority        100021f4 f   coredll:COREDLL.dll
+ 0001:00001204       DeleteCriticalSection      10002204 f   coredll:COREDLL.dll
+ 0001:00001214       LocalFree                  10002214 f   coredll:COREDLL.dll
+ 0001:00001224       CloseHandle                10002224 f   coredll:COREDLL.dll
+ 0001:00001234       CreateThread               10002234 f   coredll:COREDLL.dll
+ 0001:00001244       LocalAlloc                 10002244 f   coredll:COREDLL.dll
+ 0001:00001254       RegCloseKey                10002254 f   coredll:COREDLL.dll
+ 0001:00001264       RegQueryValueExW           10002264 f   coredll:COREDLL.dll
+ 0001:00001274       OpenDeviceKey              10002274 f   coredll:COREDLL.dll
+ 0001:00001284       CreateEventW               10002284 f   coredll:COREDLL.dll
+ 0001:00001294       InitializeCriticalSection  10002294 f   coredll:COREDLL.dll
+ 0001:000012a4       OpenEventW                 100022a4 f   coredll:COREDLL.dll
+ 0001:000012b4       GetLastError               100022b4 f   coredll:COREDLL.dll
+ 0001:000012c4       LeaveCriticalSection       100022c4 f   coredll:COREDLL.dll
+ 0001:000012d4       EnterCriticalSection       100022d4 f   coredll:COREDLL.dll
+ 0001:000012e4       SetLastError               100022e4 f   coredll:COREDLL.dll
+ 0001:000012f4       CeSetPowerOnEvent          100022f4 f   coredll:COREDLL.dll
+ 0001:00001304       DisableThreadLibraryCalls  10002304 f   coredll:COREDLL.dll
+ 0001:00001314       GetTickCount               10002314 f   coredll:COREDLL.dll
+ 0001:00001324       SystemTimeToFileTime       10002324 f   coredll:COREDLL.dll
+ 0001:00001334       GetLocalTime               10002334 f   coredll:COREDLL.dll
+ 0001:00001344       FileTimeToSystemTime       10002344 f   coredll:COREDLL.dll
+ 0001:00001458       _DllMainCRTStartup         10002458 f   corelib0:pegdmain.obj
+ 0001:00001584       _cexit                     10002584 f   corelib0:cexit.obj
+ 0001:000015a0       _initterm                  100025a0 f   corelib0:crt0dat.obj
+ 0001:000015d4       _cinit                     100025d4 f   corelib0:crt0dat.obj
+ 0001:00001608       __security_init_cookie     10002608 f   corelib0:seccinit.obj
+ 0001:00001664       memcpy                     10002664 f   corelib1:COREDLL.dll
+ 0001:00001674       memcmp                     10002674 f   corelib1:COREDLL.dll
+ 0001:00001684       memset                     10002684 f   corelib1:COREDLL.dll
+ 0001:00001694       __C_specific_handler       10002694 f   corelib1:COREDLL.dll
+ 0001:000016a4       _XcptFilter                100026a4 f   corelib1:COREDLL.dll
+ 0001:000016b4       free                       100026b4 f   corelib1:COREDLL.dll
+ 0001:000016c4       __security_gen_cookie2     100026c4 f   corelib1:COREDLL.dll
+ 0001:000016d4       InterlockedExchange        100026d4 f   coredll:COREDLL.dll
+ 0001:000016e4       TerminateProcess           100026e4 f   coredll:COREDLL.dll
+ 0001:000017fc       __IMPORT_DESCRIPTOR_COREDLL 100027fc     coredll:COREDLL.dll
+ 0001:00001810       __NULL_IMPORT_DESCRIPTOR   10002810     coredll:COREDLL.dll
+ 0002:00000000       __imp_EventModify          10003000     coredll:COREDLL.dll
+ 0002:00000004       __imp_WaitForSingleObject  10003004     coredll:COREDLL.dll
+ 0002:00000008       __imp_PowerPolicyNotify    10003008     coredll:COREDLL.dll
+ 0002:0000000c       __imp_CeSetThreadPriority  1000300c     coredll:COREDLL.dll
+ 0002:00000010       __imp_DeleteCriticalSection 10003010     coredll:COREDLL.dll
+ 0002:00000014       __imp_LocalFree            10003014     coredll:COREDLL.dll
+ 0002:00000018       __imp_CloseHandle          10003018     coredll:COREDLL.dll
+ 0002:0000001c       __imp_CreateThread         1000301c     coredll:COREDLL.dll
+ 0002:00000020       __imp_LocalAlloc           10003020     coredll:COREDLL.dll
+ 0002:00000024       __imp_RegCloseKey          10003024     coredll:COREDLL.dll
+ 0002:00000028       __imp_RegQueryValueExW     10003028     coredll:COREDLL.dll
+ 0002:0000002c       __imp_OpenDeviceKey        1000302c     coredll:COREDLL.dll
+ 0002:00000030       __imp_CreateEventW         10003030     coredll:COREDLL.dll
+ 0002:00000034       __imp_InitializeCriticalSection 10003034     coredll:COREDLL.dll
+ 0002:00000038       __imp_OpenEventW           10003038     coredll:COREDLL.dll
+ 0002:0000003c       __imp_GetLastError         1000303c     coredll:COREDLL.dll
+ 0002:00000040       __imp_LeaveCriticalSection 10003040     coredll:COREDLL.dll
+ 0002:00000044       __imp_EnterCriticalSection 10003044     coredll:COREDLL.dll
+ 0002:00000048       __imp_SetLastError         10003048     coredll:COREDLL.dll
+ 0002:0000004c       __imp_CeSetPowerOnEvent    1000304c     coredll:COREDLL.dll
+ 0002:00000050       __imp_DisableThreadLibraryCalls 10003050     coredll:COREDLL.dll
+ 0002:00000054       __imp_GetTickCount         10003054     coredll:COREDLL.dll
+ 0002:00000058       __imp_SystemTimeToFileTime 10003058     coredll:COREDLL.dll
+ 0002:0000005c       __imp_GetLocalTime         1000305c     coredll:COREDLL.dll
+ 0002:00000060       __imp_FileTimeToSystemTime 10003060     coredll:COREDLL.dll
+ 0002:00000064       __imp_memcpy               10003064     corelib1:COREDLL.dll
+ 0002:00000068       __imp_memcmp               10003068     corelib1:COREDLL.dll
+ 0002:0000006c       __imp_memset               1000306c     corelib1:COREDLL.dll
+ 0002:00000070       __imp___C_specific_handler 10003070     corelib1:COREDLL.dll
+ 0002:00000074       __imp__XcptFilter          10003074     corelib1:COREDLL.dll
+ 0002:00000078       __imp_free                 10003078     corelib1:COREDLL.dll
+ 0002:0000007c       __imp___security_gen_cookie2 1000307c     corelib1:COREDLL.dll
+ 0002:00000080       __imp_InterlockedExchange  10003080     coredll:COREDLL.dll
+ 0002:00000084       __imp_TerminateProcess     10003084     coredll:COREDLL.dll
+ 0002:00000088       \177COREDLL_NULL_THUNK_DATA 10003088     coredll:COREDLL.dll
+ 0002:0000008c       __security_cookie          1000308c     corelib0:seccinit.obj
+ 0002:00000090       __security_cookie_complement 10003090     corelib0:seccinit.obj
+ 0002:000000a0       _exitflag                  100030a0     corelib0:cexit.obj
+ 0002:000000a4       v_imsStart                 100030a4     <common>
+ 0002:000000a8       v_fStopwatchRunning        100030a8     <common>
+ 0002:000000b0       v_ftLastChange             100030b0     <common>
+ 0002:000000b8       v_cmsPreviousCpuUsage      100030b8     <common>
+ 0002:000000bc       v_fOnExternalPower         100030bc     <common>
+ 0002:000000c0       v_cmsUsed                  100030c0     <common>
+ 0002:000000e0       gcsPddBuffer               100030e0     <common>
+ 0002:00000100       gBatteryContext            10003100     <common>
+ 0002:00000140       ghevResume                 10003140     <common>
+ 0002:00000144       gpfnBatteryPddIOControl    10003144     <common>
+ 0002:00000160       gcsBattery                 10003160     <common>
+ 0002:00000174       gpPddBufferTemp            10003174     <common>
+ 0002:00000178       gpPddBuffer                10003178     <common>
+ 0002:0000017c       gdwPddBufferSize           1000317c     <common>
+ 0002:00000180       gfExiting                  10003180     <common>
+ 0002:00000184       ghtBattery                 10003184     <common>
+ 0002:00000188       __onexitend                10003188     <common>
+ 0002:0000018c       __onexitbegin              1000318c     <common>
+ 0002:00000190       g_pcsExit                  10003190     <common>
+ 0002:00000194       _pRawDllMain               10003194     <common>
+
+ entry point at        0001:00001458
+
+ Static symbols
+
+ 0001:0000135c       _DllMainCRTStartupHelper   1000235c f   corelib0:pegdmain.obj
+ 0001:00001488       doexit                     10002488 f   corelib0:cexit.obj

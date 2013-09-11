@@ -1,0 +1,11 @@
+GROUP=[PB]
+OWNER=cecam
+SYSGEN=CAMERA
+BUILDABLE=1
+FILE=CameraDriver.h
+FILE=contents.oak
+FILE=dbgsettings.h
+FILE=dstruct.h
+FILE=CameraPDD.h
+FILE=PinDriver.h
+FILE=CameraPDDProps.h

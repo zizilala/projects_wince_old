@@ -1,0 +1,124 @@
+ARM macroassembler      Page:1 
+    1 00000000          ; 
+    2 00000000          ; Copyright (c) Microsoft Corporation.  All rights reserved. 
+    3 00000000          ; 
+    4 00000000          ; 
+    5 00000000          ; Use of this sample source code is subject to the terms of the Microsoft 
+    6 00000000          ; license agreement under which you licensed this sample source code. If 
+    7 00000000          ; you did not accept the terms of the license agreement, you are not 
+    8 00000000          ; authorized to use this sample source code. For the terms of the license, 
+    9 00000000          ; please see the license agreement between you and Microsoft or, if applicable, 
+   10 00000000          ; see the LICENSE.RTF on your install media or the root of your tools installation. 
+   11 00000000          ; THE SAMPLE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES. 
+   12 00000000          ; 
+   13 00000000            
+   14 00000000          ;      TITLE("CoProcessor 14 Read / Write") 
+   15 00000000          ;++ 
+   16 00000000          ; 
+   17 00000000          ; Copyright (c) 2001  Intel Corporation 
+   18 00000000          ; 
+   19 00000000          ;-- 
+   20 00000000            
+   25 00000000              OPT     1                               ; reenable listing 
+   26 00000000            
+   27 00000000              TEXTAREA 
+   45                           AREA |.text|,ALIGN=2,CODE,READONLY 
+   46 00000000          AreaName SETS "|.text|" 
+   28 00000000            
+   29 00000000          ; 
+   30 00000000          ; ReadPMURegister - Read the PMU Register 
+   31 00000000          ; 
+   32 00000000          ; This routine reads the designated PMU register via CoProcesser 14. 
+   33 00000000          ; 
+   34 00000000          ;       Uses r0 - arg1 - PMU register number to read (0-3) 
+   35 00000000          ;            r0 - integer result - value read in register 
+   36 00000000          ;     
+   37 00000000          ; 
+   38 00000000            
+   39 00000000              LEAF_ENTRY ReadPMURegister 
+  175 00000000          FuncName SETS    VBar:CC:"ReadPMURegister":CC:VBar 
+  176 00000000          PrologName SETS "Invalid Prolog" 
+  177 00000000          FuncEndName SETS    VBar:CC:"ReadPMURegister":CC:"_end":CC:VBar 
+  178 00000000                  ALIGN   2 
+  179 00000000                  EXPORT  |ReadPMURegister| [FUNC] 
+  180 00000000          |ReadPMURegister| 
+  181 00000000                  ROUT 
+   40 00000000            
+   41 00000000 e3500003     cmp     r0, #3 
+   42 00000004 8a00000e     bhi     RRet 
+   43 00000008 e3500000     cmp     r0, #0 
+   44 0000000c 1a000001     bne     RReg1 
+   45 00000010 ee100e10     mrc     p14, 0, r0, c0, c0, 0 
+   46 00000014 ea00000a     b       RRet 
+   47 00000018          RReg1  
+   48 00000018 e3500001     cmp     r0, #1 
+   49 0000001c 1a000001     bne     RReg2 
+   50 00000020 ee110e10     mrc     p14, 0, r0, c1, c0, 0 
+   51 00000024 ea000006     b       RRet 
+   52 00000028          RReg2 
+   53 00000028 e3500002     cmp     r0, #2 
+   54 0000002c 1a000001     bne     RReg3 
+   55 00000030 ee120e10     mrc     p14, 0, r0, c2, c0, 0 
+   56 00000034 ea000002     b       RRet 
+   57 00000038          RReg3 
+   58 00000038 e3500003     cmp     r0, #3 
+   59 0000003c 1a000000     bne     RRet 
+   60 00000040 ee130e10     mrc     p14, 0,  r0, c3, c0, 0 
+   61 00000044          RRet 
+   62 00000044                IF Interworking :LOR: Thumbing 
+   63 00000044 e12fff1e          bx  lr 
+   64 00000048                ELSE 
+   66 00000048                ENDIF 
+   67 00000048            
+   68 00000048            
+   69 00000048          ; 
+   70 00000048          ; WritePMURegister - Writes to the PMU Register 
+   71 00000048          ; 
+   72 00000048          ; This routine writes to the designated PMU register via CoProcesser 14. 
+   73 00000048          ; 
+   74 00000048          ;       Uses     
+   75 00000048          ;            r0 - arg1 - PMU register number to write (0-3) 
+   76 00000048          ;            r1 - arg2 - Value to write to PMU register 
+   77 00000048          ; 
+   78 00000048            
+   79 00000048              LEAF_ENTRY WritePMURegister 
+  175 00000048          FuncName SETS    VBar:CC:"WritePMURegister":CC:VBar 
+  176 00000048          PrologName SETS "Invalid Prolog" 
+  177 00000048          FuncEndName SETS    VBar:CC:"WritePMURegister":CC:"_end":CC:VBar 
+  178 00000048                  ALIGN   2 
+  179 00000048                  EXPORT  |WritePMURegister| [FUNC] 
+  180 00000048          |WritePMURegister| 
+  181 00000048                  ROUT 
+   80 00000048            
+   81 00000048 e92d0002     stmfd   sp!, {r1}  
+   82 0000004c            
+   83 0000004c e3500003     cmp     r0, #3 
+   84 00000050 8a00000e     bhi     WRet 
+   85 00000054 e3500000     cmp     r0, #0 
+   86 00000058 1a000001     bne     WReg1 
+   87 0000005c ee001e10     mcr     p14, 0, r1, c0, c0, 0 
+   88 00000060 ea00000a     b       WRet 
+   89 00000064          WReg1  
+   90 00000064 e3500001     cmp     r0, #1 
+   91 00000068 1a000001     bne     WReg2 
+   92 0000006c ee011e10     mcr     p14, 0, r1, c1, c0, 0 
+   93 00000070 ea000006     b       WRet 
+   94 00000074          WReg2 
+   95 00000074 e3500002     cmp     r0, #2 
+   96 00000078 1a000001     bne     WReg3 
+   97 0000007c ee021e10     mcr     p14, 0, r1, c2, c0, 0 
+   98 00000080 ea000002     b       WRet 
+   99 00000084          WReg3 
+  100 00000084 e3500003     cmp     r0, #3 
+  101 00000088 1a000000     bne     WRet 
+  102 0000008c ee031e10     mcr     p14, 0,  r1, c3, c0, 0 
+  103 00000090          WRet 
+  104 00000090 e8bd0002     ldmfd   sp!, {r1}  
+  105 00000094              
+  106 00000094                IF Interworking :LOR: Thumbing 
+  107 00000094 e12fff1e          bx  lr 
+  108 00000098                ELSE 
+  110 00000098                ENDIF 
+  111 00000098            
+  112 00000098              END 
+Assembly terminated, errors: 0, warnings: 0 

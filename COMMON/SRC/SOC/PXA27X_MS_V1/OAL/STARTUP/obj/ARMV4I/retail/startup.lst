@@ -1,0 +1,379 @@
+ARM macroassembler      Page:1 
+    1 00000000          ; 
+    2 00000000          ; Copyright (c) Microsoft Corporation.  All rights reserved. 
+    3 00000000          ; 
+    4 00000000          ; 
+    5 00000000          ; Use of this sample source code is subject to the terms of the Microsoft 
+    6 00000000          ; license agreement under which you licensed this sample source code. If 
+    7 00000000          ; you did not accept the terms of the license agreement, you are not 
+    8 00000000          ; authorized to use this sample source code. For the terms of the license, 
+    9 00000000          ; please see the license agreement between you and Microsoft or, if applicable, 
+   10 00000000          ; see the LICENSE.RTF on your install media or the root of your tools installation. 
+   11 00000000          ; THE SAMPLE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES. 
+   12 00000000          ; 
+   13 00000000          ;++ 
+   14 00000000          ; 
+   15 00000000          ; Module Name: 
+   16 00000000          ; 
+   17 00000000          ;    startup.s 
+   18 00000000          ; 
+   19 00000000          ; Abstract: 
+   20 00000000          ; 
+   21 00000000          ;    This module implements Bulverde initialization code.  It's responsible 
+   22 00000000          ;    for setting up the Bulverde core.  Board-level initialization is done 
+   23 00000000          ;    in OEM-specific code. 
+   24 00000000          ; 
+   25 00000000          ; Environment: 
+   26 00000000          ; 
+   27 00000000          ; Revision History: 
+   28 00000000          ; 
+   29 00000000          ; Notes: 
+   30 00000000          ; 
+   31 00000000          ;  Register Useage:  r10 is used to hold the contents of the RCSR throughout  
+   32 00000000          ;                    this module.  The rest of the registers are fair game. 
+   33 00000000          ; 
+   34 00000000          ;-- 
+   35 00000000          ; 
+   36 00000000          ;------------------------------------------------------------------------------- 
+   37 00000000          ; Copyright 2000-2003 Intel Corporation All Rights Reserved. 
+   38 00000000          ; 
+   39 00000000          ; Portions of the source code contained or described herein and all documents 
+   40 00000000          ; related to such source code (Material) are owned by Intel Corporation 
+   41 00000000          ; or its suppliers or licensors and is licensed by Microsoft Corporation for distribution.   
+   42 00000000          ; Title to the Material remains with Intel Corporation or its suppliers and licensors.  
+   43 00000000          ; Use of the Materials is subject to the terms of the Microsoft license agreement which accompanied the Materials.   
+   44 00000000          ; No other license under any patent, copyright, trade secret or other intellectual 
+   45 00000000          ; property right is granted to or conferred upon you by disclosure or 
+   46 00000000          ; delivery of the Materials, either expressly, by implication, inducement, 
+   47 00000000          ; estoppel or otherwise  
+   48 00000000          ; Some portion of the Materials may be copyrighted by Microsoft Corporation. 
+   49 00000000          ; 
+   50 00000000          ;------------------------------------------------------------------------------- 
+   51 00000000          ; 
+   52 00000000            
+   53 00000000              ; Disable listing 
+   63 00000000              OPT 1 
+   64 00000000             
+   65 00000000              ; PQOAL BSP imports  
+   66 00000000              IMPORT OALStartUp  
+   67 00000000              IMPORT OALXScaleSetFrequencies 
+   68 00000000              
+   69 00000000              ; XLLI/XLLP imports 
+   70 00000000              IMPORT xlli_mem_init 
+   71 00000000              IMPORT xlli_intr_init 
+   72 00000000              IMPORT xlli_mem_Tmax 
+   73 00000000              IMPORT xlli_mem_Topt 
+   74 00000000              IMPORT xlli_mem_restart 
+   75 00000000              IMPORT xlli_ost_init 
+   76 00000000              IMPORT xlli_pwrmgr_init 
+   77 00000000              IMPORT xlli_IMpwr_init 
+   78 00000000              IMPORT XllpPmValidateResumeFromSleep 
+   79 00000000              IMPORT XllpPmGoToContextRestoration 
+   80 00000000              IMPORT xlli_GPIO_init 
+   81 00000000              IMPORT xlli_setClocks 
+   82 00000000              IMPORT xlli_freq_change 
+   83 00000000              
+   84 00000000            
+   85 00000000              STARTUPTEXT 
+   57                           AREA |.astart|,ALIGN=2,CODE 
+   58 00000000          AreaName SETS "|.astart|" 
+   86 00000000            
+   87 00000000            
+   88 00000000          ;******************************************************************************* 
+   89 00000000          ; 
+   90 00000000          ;   StartUp() is the entry point on Reset (all forms of Reset) 
+   91 00000000          ; 
+   92 00000000          ;   Desription:  StartUp is the first routine executed when powering on 
+   93 00000000          ;       the system.  It is also executed first after all forms of XScale 
+   94 00000000          ;       resets.  The code is shared between the bootloader and the CE kernel. 
+   95 00000000          ; 
+   96 00000000          ;       Regardless of the build type, we disable the MMU and caches 
+   97 00000000          ;       immediately and flush them. 
+   98 00000000          ; 
+   99 00000000          ;******************************************************************************* 
+  100 00000000            
+  101 00000000          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+  102 00000000          ; 
+  103 00000000          ;  Note 1:  Normally, we'd have our exception vectors here, but the linker  
+  104 00000000          ;   currently insert a 4K "jump page" at the start of the image.  Therefore,  
+  105 00000000          ;   we do NOT have control of the vector code.  They insert a branch to  
+  106 00000000          ;   StartUp at physical address 0. 
+  107 00000000          ; 
+  108 00000000          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+  109 00000000          ; 
+  110 00000000          ;  Note 2: - The MMU assumed to be inactive at this time so physical addresses 
+  111 00000000          ;   should be used. 
+  112 00000000          ; 
+  113 00000000          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+  114 00000000            
+  115 00000000              LEAF_ENTRY StartUp 
+  175 00000000          FuncName SETS    VBar:CC:"StartUp":CC:VBar 
+  176 00000000          PrologName SETS "Invalid Prolog" 
+  177 00000000          FuncEndName SETS    VBar:CC:"StartUp":CC:"_end":CC:VBar 
+  178 00000000                  ALIGN   2 
+  179 00000000                  EXPORT  |StartUp| [FUNC] 
+  180 00000000          |StartUp| 
+  181 00000000                  ROUT 
+  116 00000000            
+  117 00000000              ; Perform pre-initialization (enter supervisor mode, disable MMU and caches, 
+  118 00000000              ; and determine the reason for the reset. 
+  119 00000000              ; 
+  120 00000000 eb000027     bl      PreInit 
+  121 00000004            
+  122 00000004              ; r10 now contains the contents of the power manager registers RCSR in the  
+  123 00000004              ; lower half and PSSR in the upper half.  If we're in this routine because 
+  124 00000004              ; of a hardware/power-on reset, then we need to continue in this routine and 
+  125 00000004              ; initialize all hardware.  Otherwise, we'll assume the hardware's already 
+  126 00000004              ; been initialized and we can skip. 
+  127 00000004              ; 
+  128 00000004            
+  129 00000004              ;jump directly to OALstartup if this was not a reset 
+  130 00000004 e31a000f     tst     r10, #(RCSR_HARD_RESET :OR: RCSR_WDOG_RESET :OR: RCSR_SLEEP_RESET :OR: RCSR_GPIO_RESET) 
+  131 00000008 0a000000     beq     OALStartUp 
+  132 0000000c              
+  133 0000000c              ; If we're here because of a GPIO reset, skip the memory controller 
+  134 0000000c              ; initialization because all memory registers (except for configuration 
+  135 0000000c              ; registers are maintained across the reboot). 
+  136 0000000c              ; 
+  137 0000000c e31a0008     tst     r10, #RCSR_GPIO_RESET 
+  138 00000010 1a00000b     bne     Continue_StartUp 
+  139 00000014            
+  140 00000014              ; Initialize the Bulverde memory controller. 
+  141 00000014              ; 
+  142 00000014 eb000000     bl      xlli_mem_init 
+  143 00000018            
+  144 00000018              ; If we're here because of a hardware reset then skip sleep reset check 
+  145 00000018 e31a0001     tst     r10, #RCSR_HARD_RESET 
+  146 0000001c 1a000008     bne     Continue_StartUp 
+  147 00000020            
+  148 00000020              ; We may be here because of a sleep reset.  Try to resume from the sleep 
+  149 00000020              ; state.  At this point, it may be a watchdog reset or a sleep/software reset. 
+  150 00000020              ;  
+  151 00000020 e59f0078     ldr     r0, =xlli_PMRCREGS_PHYSICAL_BASE   ; read the PSPR register 
+  152 00000024 e5900008     ldr     r0, [r0, #xlli_PSPR_offset]        ;  
+  153 00000028 e1a0100a     mov     r1, r10                            ; packed RCSR+PSSR required in r1 
+  154 0000002c eb000000     bl      XllpPmValidateResumeFromSleep      ; r0-r6 are lost 
+  155 00000030 e3500000     cmp     r0, #0                             ; zero return: OK to restore 
+  156 00000034 1a000000     bne     Failed_Sleep_Resume                ; treat as a full-init reset 
+  157 00000038                  
+  158 00000038              ; At this point, the reset could have been caused by a resume from sleep 
+  159 00000038              ; or by a software reset.  For now, assume it was a sleep-based reset. 
+  160 00000038              ; 
+  161 00000038              ; TODO: handling a software reset requires use of a flag - where to put it? 
+  162 00000038              ; 
+  163 00000038 ea00000c     b       Sleep_Reset_Not_SoftReset 
+  164 0000003c              ; 
+  165 0000003c          Failed_Sleep_Resume 
+  166 0000003c            
+  167 0000003c              ; Make sure sleep-mediated reset flag is cleared (won't be set if we're here  
+  168 0000003c              ; because of a POR, hardware, or watchdog reset. 
+  169 0000003c              ; 
+  170 0000003c e3a01004     ldr     r1, =xlli_RCSR_SMR 
+  171 00000040 e1caa001     bic     r10, r10, r1 
+  172 00000044               
+  173 00000044          Continue_StartUp 
+  174 00000044            
+  175 00000044              ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+  176 00000044              ; Common startup code. 
+  177 00000044              ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+  178 00000044            
+  179 00000044              ; Initialize the interrupt controller. 
+  180 00000044              ;  
+  181 00000044 eb000000     bl      xlli_intr_init 
+  182 00000048            
+  183 00000048              ; Enable core clocks (don't touch the RTC). 
+  184 00000048              ; 
+  185 00000048 eb000032     bl      EnableClks 
+  186 0000004c            
+  187 0000004c              ; Set maximum memory controller values, then reset the controller for them 
+  188 0000004c              ; to take effect.  If we're here because of a GPIO reset, these are the 
+  189 0000004c              ; configuration values that didn't persist across the reboot. 
+  190 0000004c              ; 
+  191 0000004c eb000000     bl      xlli_mem_Tmax 
+  192 00000050 eb000000     bl      xlli_mem_restart 
+  193 00000054            
+  194 00000054              ; Use OEM-selected clock frequencies this is a function call into OEM code 
+  195 00000054              ; which may need to abstract board-specific GPIO switch reads, etc. to  
+  196 00000054              ; select clock frequencies. 
+  197 00000054              ; 
+  198 00000054 eb000000     bl      OALXScaleSetFrequencies 
+  199 00000058               
+  200 00000058              ; Set optimal memory controller values (based on the memory clock frequency 
+  201 00000058              ; chosen above, then reset the controller for them to take effect. 
+  202 00000058              ; 
+  203 00000058 eb000000     bl      xlli_mem_Topt 
+  204 0000005c eb000000     bl      xlli_mem_restart 
+  205 00000060            
+  206 00000060              ; Initialize the OS timers. 
+  207 00000060              ; 
+  208 00000060 eb000000     bl      xlli_ost_init 
+  209 00000064            
+  210 00000064              ; Initialize the power manager. 
+  211 00000064              ; 
+  212 00000064 eb000000     bl      xlli_pwrmgr_init 
+  213 00000068            
+  214 00000068              ; Power-up internal memory. 
+  215 00000068              ; 
+  216 00000068 eb000000     bl      xlli_IMpwr_init 
+  217 0000006c            
+  218 0000006c              ; Jump to OAL startup code. 
+  219 0000006c              ; 
+  220 0000006c ea000000     b       OALStartUp 
+  221 00000070            
+  222 00000070          Sleep_Reset_Not_SoftReset 
+  223 00000070            
+  224 00000070              ;Initialize the clocks with the following XLLI sequence 
+  225 00000070 eb000000     bl      xlli_mem_Tmax 
+  226 00000074 eb000000     bl      xlli_mem_restart 
+  227 00000078            
+  228 00000078 eb000000     bl      xlli_GPIO_init 
+  229 0000007c            
+  230 0000007c eb000000     bl      xlli_setClocks ; will poke CCCR so must do Frequency Change 
+  231 00000080 eb000000     bl      xlli_freq_change 
+  232 00000084            
+  233 00000084 eb000000     bl      xlli_mem_Topt 
+  234 00000088 eb000000     bl      xlli_mem_restart 
+  235 0000008c            
+  236 0000008c e59f000c     ldr     r0,  =xlli_PMRCREGS_PHYSICAL_BASE   ; Get the Power Manager base address 
+  237 00000090 e5900008     ldr     r0,  [r0, #xlli_PSPR_offset]        ; Phys. addr of save data 
+  238 00000094 e1a0100a     mov     r1,  r10                            ; Packed RCSR+PSSR 
+  239 00000098 ea000000     b       XllpPmGoToContextRestoration        ; Never returns. 
+  240 0000009c            
+  241 0000009c              ; if it returns jump to Failed Reset 
+  242 0000009c eaffffe6     b       Failed_Sleep_Resume 
+  243 000000a0               
+  244 000000a0              ENTRY_END 
+  194 000000a0          |StartUp_end| 
+  245 000000a0          ;------------------------------------------------------------------------------- 
+  246 000000a0            
+  247 000000a0 40f00000 *literal pool: constant 
+  247 000000a0              LTORG                           ; insert a literal pool here. 
+  248 000000a4               
+  249 000000a4          ;------------------------------------------------------------------------------- 
+  250 000000a4          ;------------------------------------------------------------------------------- 
+  251 000000a4          ; 
+  252 000000a4          ; PreInit: perform CPU pre-initialization tasks (enter supervisor mode, disable 
+  253 000000a4          ;          MMUs and caches, determine reset reason, etc. 
+  254 000000a4          ; 
+  255 000000a4          ; Inputs: r10 contains an optional flag - TBD 
+  256 000000a4          ;  
+  257 000000a4          ; On return: r10 has RCSR in lower half and PSSR in upper half 
+  258 000000a4          ; 
+  259 000000a4          ; Register used: r0-r2, r10, r12 
+  260 000000a4          ; 
+  261 000000a4          ;------------------------------------------------------------------------------- 
+  262 000000a4          ; 
+  263 000000a4              ALIGN 
+  264 000000a4          PreInit 
+  265 000000a4            
+  266 000000a4              ; Put the CPU in Supervisor mode (SVC) and disable IRQ and FIQ interrupts. 
+  267 000000a4              ; 
+  268 000000a4 e3a000d3     ldr     r0, =(Mode_SVC :OR: NoIntsMask) 
+  269 000000a8 e121f000     msr     cpsr_c, r0 
+  270 000000ac            
+  271 000000ac              ; Disable the MMU, caches, and write-buffer and flush. 
+  272 000000ac              ; 
+  273 000000ac e59f005c     ldr     r0, =0x2043             ; enable access to all coprocessors 
+  274 000000b0 ee0f0f11     mcr     p15, 0, r0, c15, c1, 0  ; 
+  275 000000b4              CPWAIT  r0                      ; 
+  173 000000b4               
+  174 000000b4 ee120f10     mrc     p15, 0, r0, c2, c0, 0       ; arbitrary read of CP15 
+  175 000000b8 e1a00000     mov     r0, r0                     ; wait for it (foward dependency) 
+  176 000000bc e24ff004     sub     pc, pc, #4                   ; branch to next instruction 
+  177 000000c0               
+  276 000000c0            
+  277 000000c0 e3a00078     ldr     r0, =0x00000078         ; get a zero to turn things off (must write bits[6:3] as 1s) 
+  278 000000c4 ee010f10     mcr     p15, 0, r0, c1, c0, 0   ; turn off MMU, I&D caches, and write buffer  
+  279 000000c8              CPWAIT  r0                      ; 
+  173 000000c8               
+  174 000000c8 ee120f10     mrc     p15, 0, r0, c2, c0, 0       ; arbitrary read of CP15 
+  175 000000cc e1a00000     mov     r0, r0                     ; wait for it (foward dependency) 
+  176 000000d0 e24ff004     sub     pc, pc, #4                   ; branch to next instruction 
+  177 000000d4               
+  280 000000d4            
+  281 000000d4              ;ldr     r0, =0x00000000         ; get a zero to turn things off 
+  282 000000d4              ;mcr     p15, 0, r0, c8, c7, 0   ; flush (invalidate) I/D TLBs 
+  283 000000d4              ;mcr     p15, 0, r0, c7, c7, 0   ; flush (invalidate) I/D caches 
+  284 000000d4              ;mcr     p15, 0, r0, c7, c10, 4  ; drain the write buffer 
+  285 000000d4              ;nop                             ; 
+  286 000000d4              ;nop                             ; 
+  287 000000d4              ;nop                             ; 
+  288 000000d4            
+  289 000000d4 e3e00000     mvn     r0, #0                  ; grant manager access to all domains 
+  290 000000d8 ee030f10     mcr     p15, 0, r0, c3, c0, 0   ; 
+  291 000000dc            
+  292 000000dc              ; Read the reset cause bits in RCSR. 
+  293 000000dc              ; 
+  294 000000dc e59f0030     ldr     r0,  =BULVERDE_BASE_REG_PA_PWR 
+  295 000000e0 e590a030     ldr     r10, [r0, #RCSR_OFFSET] 
+  296 000000e4            
+  297 000000e4              ; Extract the reset cause bits. 
+  298 000000e4              ; 
+  299 000000e4 e3a0201f     mov     r2,  #RCSR_ALL          ; Mask RCSR 
+  300 000000e8 e00aa002     and     r10,  r10,  r2          ; r10 now holds the conditioned Reset Reason 
+  301 000000ec            
+  302 000000ec              ; Clear the reset cause bits (they're sticky). 
+  303 000000ec              ; 
+  304 000000ec e5802030     str     r2,  [r0, #RCSR_OFFSET] 
+  305 000000f0            
+  306 000000f0              ; Read and store PSSR in the upper half of r10. 
+  307 000000f0              ; 
+  308 000000f0 e590c004     ldr     r12, [r0, #PSSR_OFFSET] 
+  309 000000f4 e3a0203f     mov     r2,   #PSSR_VALID_MASK  ; mask PSSR (all in lower byte) 
+  310 000000f8 e00cc002     and     r12,  r12,  r2          ; r12 now holds the conditioned PSSR 
+  311 000000fc e1a0c80c     mov     r12,  r12,  lsl #16     ; move to upper half of register 
+  312 00000100 e18aa00c     orr     r10,  r10,  r12         ; r10 now has RCSR in lower half and PSSR in upper 
+  313 00000104            
+  314 00000104              ; Enable data aborts for VDD and BATT faults (alternative is to use interrupt) 
+  315 00000104              ; 
+  316 00000104 e3a01005     mov     r1, #(PMCR_BIDAE:OR:PMCR_VIDAE)     ; Enable imprecise data aborts on VDD and BATT faults. 
+  317 00000108 e5801000     str     r1, [r0, #PMCR_OFFSET] 
+  318 0000010c            
+  319 0000010c            IF Interworking :LOR: Thumbing 
+  320 0000010c e12fff1e     bx  lr 
+  321 00000110            ELSE 
+  323 00000110            ENDIF 
+  324 00000110            
+  325 00000110               
+  326 00000110          ;------------------------------------------------------------------------------- 
+  327 00000110            
+  328 00000110 00002043 *literal pool: constant 
+  328 00000114 40f00000 *literal pool: constant 
+  328 00000110              LTORG                           ; insert a literal pool here. 
+  329 00000118               
+  330 00000118          ;------------------------------------------------------------------------------- 
+  331 00000118          ;------------------------------------------------------------------------------- 
+  332 00000118          ; 
+  333 00000118          ; EnableClks: Enable the Bulverde core clocks/timers. 
+  334 00000118          ; 
+  335 00000118          ; Inputs: None. 
+  336 00000118          ;  
+  337 00000118          ; On return: N/A. 
+  338 00000118          ; 
+  339 00000118          ; Register used: r1, r2 
+  340 00000118          ; 
+  341 00000118          ;------------------------------------------------------------------------------- 
+  342 00000118          ; 
+  343 00000118              ALIGN 
+  344 00000118          EnableClks 
+  345 00000118              ; Enable only the clocks that are necessary for startup (memory controller 
+  346 00000118              ; and OS timer clocks). 
+  347 00000118              ; 
+  348 00000118 e59f1008     ldr     r1, =BULVERDE_BASE_REG_PA_CLKMGR 
+  349 0000011c e59f2008     ldr     r2, =CKEN_DEFAULT 
+  350 00000120 e5812004     str     r2, [r1, #CKEN_OFFSET] 
+  351 00000124            
+  352 00000124            IF Interworking :LOR: Thumbing 
+  353 00000124 e12fff1e     bx  lr 
+  354 00000128            ELSE 
+  356 00000128            ENDIF 
+  357 00000128            
+  358 00000128               
+  359 00000128          ;------------------------------------------------------------------------------- 
+  360 00000128            
+  361 00000128 41300000 *literal pool: constant 
+  361 0000012c 00400200 *literal pool: constant 
+  361 00000128              LTORG                           ; insert a literal pool here. 
+  362 00000130            
+  363 00000130              END 
+Assembly terminated, errors: 0, warnings: 0 

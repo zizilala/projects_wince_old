@@ -1,0 +1,32 @@
+# All rights reserved ADENEO EMBEDDED 2010
+!if 0
+Copyright (c) MPC Data Limited 2007.  All rights reserved.
+!endif
+
+!IF "$(BSP_OMAP_USBFN)" == ""
+SKIPBUILD=1
+!ENDIF
+
+TARGETNAME=omap_usbfn
+TARGETTYPE=DYNLINK
+RELEASETYPE=PLATFORM    
+DEFFILE=usbfn.def
+DLLENTRY=DllEntry
+
+INCLUDES=$(INCLUDES);..\..\USBFN
+
+SOURCES= \
+    usbfnpdd.c
+
+TARGETLIBS= \
+		$(_TILIBS)\$(_SOC)_soccfg.lib						\
+		$(_TARGETPLATLIB)\$(_CPUDEPPATH)\ceddk.lib			\
+        $(_COMMONSDKROOT)\lib\$(_CPUINDPATH)\coredll.lib 
+
+SOURCELIBS= \
+        $(_COMMONOAKROOT)\lib\$(_CPUINDPATH)\ufnmdd.lib \
+        $(_TARGETPLATROOT)\lib\$(_CPUINDPATH)\omap_usbcdma.lib \
+        $(_TILIBS)\$(AM3517)_usbfn.lib \
+
+FILE_VIEW_RESOURCE_FOLDER= \
+	usbfn.reg

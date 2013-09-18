@@ -87,7 +87,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\oal\omap_watchdog\watchdog.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43584| DCD	|$LN37@WatchdogRe|
+|$T43591| DCD	|$LN37@WatchdogRe|
 	DCD	0x40004401
 ; Function compile flags: /Ogspy
 
@@ -99,7 +99,7 @@
 
   00000		 |$LN37@WatchdogRe|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M43581|
+  00004		 |$M43588|
 
 ; 24   :     static BOOL fWatchdogInit = FALSE;
 ; 25   :     if (fWatchdogInit == FALSE)
@@ -264,7 +264,7 @@
   00108	00000000	 DCD         |g_WatchdogDevice|
   0010c		 |$LN40@WatchdogRe|
   0010c	00000000	 DCD         |g_pWatchogTimerRegs|
-  00110		 |$M43582|
+  00110		 |$M43589|
 
 			 ENDP  ; |WatchdogRefresh|
 
@@ -272,7 +272,7 @@
 	IMPORT	|g_pOemGlobal|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43596| DCD	|$LN5@OALWatchdo|
+|$T43603| DCD	|$LN5@OALWatchdo|
 	DCD	0x40001101
 ; Function compile flags: /Ogspy
 
@@ -284,7 +284,7 @@
 
   00000		 |$LN5@OALWatchdo|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M43593|
+  00004		 |$M43600|
 
 ; 74   :     g_dwWatchdogPeriod = dwPeriod;
 ; 75   :     g_pOemGlobal->pfnRefreshWatchDog = WatchdogRefresh;
@@ -318,14 +318,14 @@
   0003c	00000000	 DCD         |WatchdogRefresh|
   00040		 |$LN9@OALWatchdo|
   00040	00000000	 DCD         |g_pOemGlobal|
-  00044		 |$M43594|
+  00044		 |$M43601|
 
 			 ENDP  ; |OALWatchdogInit|
 
 	EXPORT	|OALWatchdogEnable|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43612| DCD	|$LN20@OALWatchdo@2|
+|$T43619| DCD	|$LN20@OALWatchdo@2|
 	DCD	0x40003101
 ; Function compile flags: /Ogspy
 
@@ -337,7 +337,7 @@
 
   00000		 |$LN20@OALWatchdo@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M43609|
+  00004		 |$M43616|
   00004	e1a02000	 mov         r2, r0
 
 ; 87   :     if (g_WatchdogDevice != OMAP_DEVICE_NONE)
@@ -457,7 +457,7 @@
   000bc	00000000	 DCD         |g_pWatchogTimerRegs|
   000c0		 |$LN23@OALWatchdo@2|
   000c0	00000000	 DCD         |g_WatchdogDevice|
-  000c4		 |$M43610|
+  000c4		 |$M43617|
 
 			 ENDP  ; |OALWatchdogEnable|
 

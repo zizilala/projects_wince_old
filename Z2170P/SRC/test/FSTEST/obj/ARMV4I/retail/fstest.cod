@@ -28,7 +28,7 @@
 |?txtBuf@?1??BytesToString@@YAPAGK@Z@4PAGA| % 0x80	; `BytesToString'::`2'::txtBuf
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33001| DCD	|$LN10@BytesToStr|
+|$T33003| DCD	|$LN10@BytesToStr|
 	DCD	0x40002501
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -53,7 +53,7 @@
 
   00000		 |$LN10@BytesToStr|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M32998|
+  00004		 |$M33000|
 
 ; 39   :     static TCHAR txtBuf[64];
 ; 40   :     float calc;
@@ -142,7 +142,7 @@
   0008c	00000000	 DCD         |??_C@_1O@LIIDAJEL@?$AA?$CF?$AA?4?$AA2?$AAf?$AAK?$AAB?$AA?$AA@|
   00090		 |$LN15@BytesToStr|
   00090	00000000	 DCD         |??_C@_1BC@IOJPKNIG@?$AA?$CF?$AAu?$AA?5?$AAb?$AAy?$AAt?$AAe?$AAs?$AA?$AA@|
-  00094		 |$M32999|
+  00094		 |$M33001|
 
 			 ENDP  ; |?BytesToString@@YAPAGK@Z|, BytesToString
 
@@ -160,11 +160,11 @@
 	IMPORT	|__security_check_cookie|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33022| DCD	|$LN12@LogResult|
+|$T33024| DCD	|$LN12@LogResult|
 	DCD	0xc0003504
 
   00000			 AREA	 |.xdata|, DATA
-|$T33018| DCD	0xffffffd8
+|$T33020| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_19LJDFFCJJ@?$AA?$CF?$AAs?$AA?$CF?$AAs?$AA?$AA@| DCB "%", 0x0, "s", 0x0
@@ -186,7 +186,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T33018|
+  00004	00000000	 DCD         |$T33020|
 
   00008		 |?LogResult@@YAXKKPBGZZ| PROC		; LogResult
 
@@ -197,7 +197,7 @@
   0000c	e92d000f	 stmdb       sp!, {r0 - r3}
   00010	e92d5070	 stmdb       sp!, {r4 - r6, r12, lr}
   00014	e24ddf97	 sub         sp, sp, #0x97, 30
-  00018		 |$M33019|
+  00018		 |$M33021|
   00018	e1a0e002	 mov         lr, r2
   0001c	e58de278	 str         lr, [sp, #0x278]
   00020	e1a05001	 mov         r5, r1
@@ -311,7 +311,7 @@
   000d4	00000000	 DCD         |??_C@_11LOCGONAA@?$AA?$AA@|
   000d8		 |$LN21@LogResult|
   000d8	00000000	 DCD         |__security_cookie|
-  000dc		 |$M33020|
+  000dc		 |$M33022|
 
 			 ENDP  ; |?LogResult@@YAXKKPBGZZ|, LogResult
 
@@ -330,7 +330,7 @@
 	IMPORT	|__dtou|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33052| DCD	|$LN12@LogThrough|
+|$T33054| DCD	|$LN12@LogThrough|
 	DCD	0x40006102
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -397,7 +397,7 @@
   00000		 |$LN12@LogThrough|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M33049|
+  00008		 |$M33051|
   00008	e1a06002	 mov         r6, r2
   0000c	e1a08001	 mov         r8, r1
 
@@ -600,7 +600,7 @@
   0017c	00000000	 DCD         |??_C@_1DG@NMINGLMA@?$AA?5?$AA?5?$AAS?$AAy?$AAs?$AAt?$AAe?$AAm?$AA?5?$AAF?$AAi?$AAl?$AAe?$AA?5?$AAC?$AAa?$AAc?$AAh?$AAe?$AA?5?$AA?4?$AA?4?$AA?3?$AA?5?$AA?$CF?$AAs?$AA?$AA@|
   00180		 |$LN25@LogThrough|
   00180	00000000	 DCD         |?g_bNoCaching@@3_NA|
-  00184		 |$M33050|
+  00184		 |$M33052|
 
 			 ENDP  ; |?LogThroughput@@YAXKKK@Z|, LogThroughput
 
@@ -609,7 +609,7 @@
 	IMPORT	|ReadFile|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33086| DCD	|$LN14@ReadFileBl|
+|$T33088| DCD	|$LN14@ReadFileBl|
 	DCD	0x40002a02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -635,7 +635,7 @@
   00000		 |$LN14@ReadFileBl|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M33083|
+  00008		 |$M33085|
   00008	e1a07003	 mov         r7, r3
   0000c	e1a06002	 mov         r6, r2
   00010	e1a08001	 mov         r8, r1
@@ -749,7 +749,7 @@
   000a4		 |$LN15@ReadFileBl|
   000a4		 |$LN16@ReadFileBl|
   000a4	00000000	 DCD         |??_C@_1HI@KNGPAOME@?$AAU?$AAn?$AAa?$AAb?$AAl?$AAe?$AA?5?$AAt?$AAo?$AA?5?$AAr?$AAe?$AAa?$AAd?$AA?5?$AA?$CF?$AAu?$AA?5?$AAb?$AAy?$AAt?$AAe?$AAs?$AA?5?$AAf?$AAr?$AAo?$AAm?$AA?5?$AAf?$AAi?$AAl@|
-  000a8		 |$M33084|
+  000a8		 |$M33086|
 
 			 ENDP  ; |?ReadFileBlock@@YAHPAXPADKPAKK@Z|, ReadFileBlock
 
@@ -759,7 +759,7 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33108| DCD	|$LN19@BufferSetu|
+|$T33110| DCD	|$LN19@BufferSetu|
 	DCD	0x40004201
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -777,7 +777,7 @@
 
   00000		 |$LN19@BufferSetu|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
-  00004		 |$M33105|
+  00004		 |$M33107|
   00004	e1a07003	 mov         r7, r3
   00008	e1a05002	 mov         r5, r2
   0000c	e1a06001	 mov         r6, r1
@@ -972,7 +972,7 @@
   00100	00000000	 DCD         |??_C@_0N@KBGDHOIM@?5?$CD?5?$CF8u?5?$CF8u?5?$CD?$AA@|
   00104		 |$LN22@BufferSetu|
   00104	00000000	 DCD         |??_C@_0N@LAHPPIBA@?5?$EA?5?$CF8u?5?$CF8u?5?$EA?$AA@|
-  00108		 |$M33106|
+  00108		 |$M33108|
 
 			 ENDP  ; |?BufferSetup@@YAXHPADKK@Z|, BufferSetup
 
@@ -1010,7 +1010,7 @@
 	IMPORT	|malloc|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33155| DCD	|$LN55@WriteFile|
+|$T33157| DCD	|$LN55@WriteFile|
 	DCD	0x40017102
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1182,7 +1182,7 @@
   00000		 |$LN55@WriteFile|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd02c	 sub         sp, sp, #0x2C
-  00008		 |$M33152|
+  00008		 |$M33154|
   00008	e1a08002	 mov         r8, r2
   0000c	e58d8020	 str         r8, [sp, #0x20]
   00010	e58d3024	 str         r3, [sp, #0x24]
@@ -2022,7 +2022,7 @@
   005bc	00000000	 DCD         |??_C@_1FO@PAHIOOBJ@?$AAW?$AAr?$AAi?$AAt?$AAe?$AAF?$AAi?$AAl?$AAe?$AA?5?$AA?9?$AA?5?$AAI?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAp?$AAa?$AAr?$AAa?$AAm?$AAe?$AAt?$AAe?$AAr?$AA?5?$AAs?$AAu@|
   005c0		 |$LN81@WriteFile|
   005c0	00000000	 DCD         |??_C@_1GE@KEKPODKE@?$AAU?$AAn?$AAa?$AAb?$AAl?$AAe?$AA?5?$AAt?$AAo?$AA?5?$AAa?$AAl?$AAl?$AAo?$AAc?$AAa?$AAt?$AAe?$AA?5?$AAs?$AAp?$AAa?$AAc?$AAe?$AA?5?$AAf?$AAo?$AAr?$AA?5?$AA?$CF?$AAu?$AA?5@|
-  005c4		 |$M33153|
+  005c4		 |$M33155|
 
 			 ENDP  ; |?WriteFile@@YAHPAGKKHH@Z|, WriteFile
 
@@ -2043,7 +2043,7 @@
 	IMPORT	|memcmp|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33252| DCD	|$LN78@ReadFile|
+|$T33254| DCD	|$LN78@ReadFile|
 	DCD	0x4001b902
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2175,7 +2175,7 @@
   00000		 |$LN78@ReadFile|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd03c	 sub         sp, sp, #0x3C
-  00008		 |$M33249|
+  00008		 |$M33251|
   00008	e1a08003	 mov         r8, r3
   0000c	e1a03002	 mov         r3, r2
   00010	e1b09000	 movs        r9, r0
@@ -3159,7 +3159,7 @@
   006dc	00000000	 DCD         |??_C@_1GO@OBNDPPJK@?$AAU?$AAn?$AAa?$AAb?$AAl?$AAe?$AA?5?$AAt?$AAo?$AA?5?$AAa?$AAl?$AAl?$AAo?$AAc?$AAa?$AAt?$AAe?$AA?5?$AAs?$AAp?$AAa?$AAc?$AAe?$AA?5?$AAf?$AAo?$AAr?$AA?5?$AA?$CF?$AAu?$AA?5@|
   006e0		 |$LN106@ReadFile|
   006e0	00000000	 DCD         |??_C@_1GC@BHHKPOAK@?$AAU?$AAn?$AAa?$AAb?$AAl?$AAe?$AA?5?$AAt?$AAo?$AA?5?$AAa?$AAl?$AAl?$AAo?$AAc?$AAa?$AAt?$AAe?$AA?5?$AAs?$AAp?$AAa?$AAc?$AAe?$AA?5?$AAf?$AAo?$AAr?$AA?5?$AA?$CF?$AAu?$AA?5@|
-  006e4		 |$M33250|
+  006e4		 |$M33252|
 
 			 ENDP  ; |?ReadFile@@YAHPAGKKHH@Z|, ReadFile
 
@@ -3168,11 +3168,11 @@
 	IMPORT	|?g_dwNumTests@@3KA|			; g_dwNumTests
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33304| DCD	|$LN16@VerifyFile|
+|$T33306| DCD	|$LN16@VerifyFile|
 	DCD	0xc0004002
 
   00000			 AREA	 |.xdata|, DATA
-|$T33300| DCD	0xffffffd8
+|$T33302| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1CG@BDOCLOMC@?$AA?$CF?$AAs?$AA?2?$AAF?$AAS?$AAT?$AAe?$AAs?$AAt?$AA_?$AA?$CF?$AA0?$AA4?$AAu?$AA?4?$AAd?$AAa?$AAt?$AA?$AA@| DCB "%"
@@ -3185,7 +3185,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T33300|
+  00004	00000000	 DCD         |$T33302|
 
   00008		 |?VerifyFile@@YAHPAGK@Z| PROC		; VerifyFile
 
@@ -3194,7 +3194,7 @@
   00008		 |$LN16@VerifyFile|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24dde26	 sub         sp, sp, #0x26, 28
-  00010		 |$M33301|
+  00010		 |$M33303|
   00010	e1a0a001	 mov         r10, r1
   00014	e1a0b000	 mov         r11, r0
   00018	e59f30e4	 ldr         r3, [pc, #0xE4]
@@ -3323,7 +3323,7 @@
   00100	00000000	 DCD         |?g_dwNumTests@@3KA|
   00104		 |$LN21@VerifyFile|
   00104	00000000	 DCD         |__security_cookie|
-  00108		 |$M33302|
+  00108		 |$M33304|
 
 			 ENDP  ; |?VerifyFile@@YAHPAGK@Z|, VerifyFile
 
@@ -3337,7 +3337,7 @@
 	IMPORT	|?g_dwBlockSize@@3KA|			; g_dwBlockSize
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33328| DCD	|$LN36@TestProc_F|
+|$T33330| DCD	|$LN36@TestProc_F|
 	DCD	0x40007202
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -3389,7 +3389,7 @@
   00000		 |$LN36@TestProc_F|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M33325|
+  00008		 |$M33327|
   00008	e1a06002	 mov         r6, r2
 
 ; 188  :     int status = TPR_PASS;
@@ -3691,7 +3691,7 @@
   001c0	00000000	 DCD         |??_C@_1JA@LLLNKOFD@?$AAO?$AAn?$AAl?$AAy?$AA?5?$AAt?$AAe?$AAs?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAu?$AAs?$AAi?$AAn?$AAg?$AA?5?$AAt?$AAh?$AAe?$AA?5?$AAc?$AAu?$AAs?$AAt?$AAo?$AAm?$AA?5?$AAb?$AAu@|
   001c4		 |$LN46@TestProc_F|
   001c4	00000000	 DCD         |?g_dwBlockSize@@3KA|
-  001c8		 |$M33326|
+  001c8		 |$M33328|
 
 			 ENDP  ; |?TestProc_FileSystem@@YAHIPAKPAU_FUNCTION_TABLE_ENTRY@@@Z|, TestProc_FileSystem
 

@@ -113,7 +113,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40024| DCD	|$LN5@SetEvent|
+|$T40025| DCD	|$LN5@SetEvent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -125,7 +125,7 @@
 
   00000		 |$LN5@SetEvent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M40021|
+  00004		 |$M40022|
 
 ; 236  : 	return EventModify(h,EVENT_SET);
 
@@ -136,7 +136,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M40022|
+  00014		 |$M40023|
 
 			 ENDP  ; |SetEvent|
 
@@ -145,7 +145,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_rtc\rtc.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40035| DCD	|$LN9@SetPowerSt|
+|$T40036| DCD	|$LN9@SetPowerSt|
 	DCD	0x40001b02
 ; Function compile flags: /Ogspy
 
@@ -158,7 +158,7 @@
   00000		 |$LN9@SetPowerSt|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M40032|
+  00008		 |$M40033|
   00008	e1a0e001	 mov         lr, r1
   0000c	e1a04000	 mov         r4, r0
 
@@ -227,7 +227,7 @@
   00060	e28dd004	 add         sp, sp, #4
   00064	e8bd4010	 ldmia       sp!, {r4, lr}
   00068	e12fff1e	 bx          lr
-  0006c		 |$M40033|
+  0006c		 |$M40034|
 
 			 ENDP  ; |?SetPowerState@@YAHPAUDevice_t@@W4_CEDEVICE_POWER_STATE@@@Z|, SetPowerState
 
@@ -241,7 +241,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40050| DCD	|$LN14@RTC_Deinit|
+|$T40051| DCD	|$LN14@RTC_Deinit|
 	DCD	0x40002e01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_rtc\rtc.cpp
@@ -254,7 +254,7 @@
 
   00000		 |$LN14@RTC_Deinit|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M40047|
+  00004		 |$M40048|
   00004	e1b04000	 movs        r4, r0
 
 ; 313  :     BOOL rc = FALSE;
@@ -269,11 +269,11 @@
 ; 319  :     // Check if we get correct context
 ; 320  :     if ((pDevice == NULL) || (pDevice->cookie != RTC_DEVICE_COOKIE))
 
-  0000c	0a000025	 beq         |$cleanUp$39870|
+  0000c	0a000025	 beq         |$cleanUp$39871|
   00010	e5942000	 ldr         r2, [r4]
   00014	e59f3098	 ldr         r3, [pc, #0x98]
   00018	e1520003	 cmp         r2, r3
-  0001c	1a000021	 bne         |$cleanUp$39870|
+  0001c	1a000021	 bne         |$cleanUp$39871|
 
 ; 321  :         {
 ; 322  :         DEBUGMSG (ZONE_ERROR, (L"ERROR: RTC_Deinit: "
@@ -378,7 +378,7 @@
 ; 362  :     rc = TRUE;
 
   000a4	e3a00001	 mov         r0, #1
-  000a8		 |$cleanUp$39870|
+  000a8		 |$cleanUp$39871|
 
 ; 363  : 
 ; 364  : cleanUp:
@@ -393,14 +393,14 @@
   000b0	03005003	 DCD         0x3005003
   000b4		 |$LN17@RTC_Deinit|
   000b4	72746344	 DCD         0x72746344
-  000b8		 |$M40048|
+  000b8		 |$M40049|
 
 			 ENDP  ; |?RTC_Deinit@@YAHK@Z|, RTC_Deinit
 
 	EXPORT	|?RTC_Open@@YAKKKK@Z|			; RTC_Open
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40063| DCD	|$LN5@RTC_Open|
+|$T40064| DCD	|$LN5@RTC_Open|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -411,7 +411,7 @@
 ; 381  : {
 
   00000		 |$LN5@RTC_Open|
-  00000		 |$M40060|
+  00000		 |$M40061|
 
 ; 382  : 	UNREFERENCED_PARAMETER(context);
 ; 383  : 	UNREFERENCED_PARAMETER(accessCode);
@@ -421,14 +421,14 @@
 ; 387  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M40061|
+  00004		 |$M40062|
 
 			 ENDP  ; |?RTC_Open@@YAKKKK@Z|, RTC_Open
 
 	EXPORT	|?RTC_Close@@YAHK@Z|			; RTC_Close
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40072| DCD	|$LN5@RTC_Close|
+|$T40073| DCD	|$LN5@RTC_Close|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -439,7 +439,7 @@
 ; 399  : {
 
   00000		 |$LN5@RTC_Close|
-  00000		 |$M40069|
+  00000		 |$M40070|
 
 ; 400  : 	UNREFERENCED_PARAMETER(context);
 ; 401  : 
@@ -450,7 +450,7 @@
 ; 403  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M40070|
+  00008		 |$M40071|
 
 			 ENDP  ; |?RTC_Close@@YAHK@Z|, RTC_Close
 
@@ -465,23 +465,23 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40133| DCD	|$LN64@RTC_IOCont|
+|$T40134| DCD	|$LN64@RTC_IOCont|
 	DCD	0xc0007804
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40135| DCD	|$LN34@RTC_IOCont|
+|$T40136| DCD	|$LN34@RTC_IOCont|
 	DCD	0x40000301
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40137| DCD	|$LN48@RTC_IOCont|
+|$T40138| DCD	|$LN48@RTC_IOCont|
 	DCD	0x40000301
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40139| DCD	|$LN41@RTC_IOCont|
+|$T40140| DCD	|$LN41@RTC_IOCont|
 	DCD	0x40000c01
 
   00000			 AREA	 |.xdata|, DATA
-|$T40131| DCD	0x3
+|$T40132| DCD	0x3
 	DCD	|$LN38@RTC_IOCont|
 	DCD	|$LN39@RTC_IOCont|
 	DCD	|$LN34@RTC_IOCont|
@@ -543,7 +543,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T40131|
+  00004	00000000	 DCD         |$T40132|
 
   00008		 |?RTC_IOControl@@YAHKKPAEK0KPAK@Z| PROC ; RTC_IOControl
 
@@ -595,7 +595,7 @@
   00050	0a000027	 beq         |$LN3@RTC_IOCont|
   00054	e59f31c8	 ldr         r3, [pc, #0x1C8]
   00058	e1510003	 cmp         r1, r3
-  0005c	1a00005d	 bne         |$cleanUp$39901|
+  0005c	1a00005d	 bne         |$cleanUp$39902|
 
 ; 464  :                         }
 ; 465  :                 }
@@ -609,10 +609,10 @@
 
   00060	e59b6000	 ldr         r6, [r11]
   00064	e3560000	 cmp         r6, #0
-  00068	0a00005a	 beq         |$cleanUp$39901|
+  00068	0a00005a	 beq         |$cleanUp$39902|
   0006c	e59b3004	 ldr         r3, [r11, #4]
   00070	e3530004	 cmp         r3, #4
-  00074	3a000057	 bcc         |$cleanUp$39901|
+  00074	3a000057	 bcc         |$cleanUp$39902|
   00078		 |$LN45@RTC_IOCont|
 
 ; 473  :                 {
@@ -685,7 +685,7 @@
 ; 497  :                     }
 ; 498  :                }
 
-  000d4	ea00003f	 b           |$cleanUp$39901|
+  000d4	ea00003f	 b           |$cleanUp$39902|
   000d8		 |$LN42@RTC_IOCont|
 
 ; 500  :                {
@@ -697,7 +697,7 @@
   000e4	159f012c	 ldrne       r0, [pc, #0x12C]
   000e8	1b000000	 blne        NKDbgPrintfW
   000ec	e51b4024	 ldr         r4, [r11, #-0x24]
-  000f0	ea000038	 b           |$cleanUp$39901|
+  000f0	ea000038	 b           |$cleanUp$39902|
   000f4		 |$LN3@RTC_IOCont|
 
 ; 502  :                }
@@ -718,10 +718,10 @@
 
   00108	e59b2000	 ldr         r2, [r11]
   0010c	e3520000	 cmp         r2, #0
-  00110	0a000030	 beq         |$cleanUp$39901|
+  00110	0a000030	 beq         |$cleanUp$39902|
   00114	e59b3004	 ldr         r3, [r11, #4]
   00118	e3530004	 cmp         r3, #4
-  0011c	3a00002d	 bcc         |$cleanUp$39901|
+  0011c	3a00002d	 bcc         |$cleanUp$39902|
   00120		 |$LN52@RTC_IOCont|
 
 ; 510  :                 {
@@ -746,7 +746,7 @@
 ; 520  :                             ));
 ; 521  :                     }
 
-  00130	ea000028	 b           |$cleanUp$39901|
+  00130	ea000028	 b           |$cleanUp$39902|
   00134		 |$LN49@RTC_IOCont|
 
 ; 523  :                     {
@@ -758,7 +758,7 @@
   00140	159f00d0	 ldrne       r0, [pc, #0xD0]
   00144	1b000000	 blne        NKDbgPrintfW
   00148	e51b4024	 ldr         r4, [r11, #-0x24]
-  0014c	ea000021	 b           |$cleanUp$39901|
+  0014c	ea000021	 b           |$cleanUp$39902|
   00150		 |$LN13@RTC_IOCont|
 
 ; 443  :         {
@@ -769,13 +769,13 @@
 
   00150	e59b5000	 ldr         r5, [r11]
   00154	e3550000	 cmp         r5, #0
-  00158	0a00001e	 beq         |$cleanUp$39901|
+  00158	0a00001e	 beq         |$cleanUp$39902|
   0015c	e59b3004	 ldr         r3, [r11, #4]
   00160	e3530030	 cmp         r3, #0x30
-  00164	3a00001b	 bcc         |$cleanUp$39901|
+  00164	3a00001b	 bcc         |$cleanUp$39902|
   00168	e59b6008	 ldr         r6, [r11, #8]
   0016c	e3560000	 cmp         r6, #0
-  00170	0a000018	 beq         |$cleanUp$39901|
+  00170	0a000018	 beq         |$cleanUp$39902|
   00174		 |$LN38@RTC_IOCont|
 
 ; 448  :                 {
@@ -811,7 +811,7 @@
 
 ; 460  :                         }
 
-  0019c	ea00000d	 b           |$cleanUp$39901|
+  0019c	ea00000d	 b           |$cleanUp$39902|
   001a0		 |$LN35@RTC_IOCont|
 
 ; 462  :                         {
@@ -823,7 +823,7 @@
   001ac	159f0060	 ldrne       r0, [pc, #0x60]
   001b0	1b000000	 blne        NKDbgPrintfW
   001b4	e51b4024	 ldr         r4, [r11, #-0x24]
-  001b8	ea000006	 b           |$cleanUp$39901|
+  001b8	ea000006	 b           |$cleanUp$39902|
   001bc		 |$LN61@RTC_IOCont|
 
 ; 525  :                     }
@@ -836,7 +836,7 @@
 ; 532  :     return rc;
 
   001bc	e51b4020	 ldr         r4, [r11, #-0x20]
-  001c0	ea000004	 b           |$cleanUp$39901|
+  001c0	ea000004	 b           |$cleanUp$39902|
   001c4		 |$LN17@RTC_IOCont|
 
 ; 435  :         {
@@ -849,7 +849,7 @@
   001cc	e3130001	 tst         r3, #1
   001d0	159f0034	 ldrne       r0, [pc, #0x34]
   001d4	1b000000	 blne        NKDbgPrintfW
-  001d8		 |$cleanUp$39901|
+  001d8		 |$cleanUp$39902|
 
 ; 533  : }
 
@@ -920,7 +920,7 @@
 	IMPORT	|TWLReadRegs|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40174| DCD	|$LN14@RTC_IntrTh|
+|$T40175| DCD	|$LN14@RTC_IntrTh|
 	DCD	0x40004902
 ; Function compile flags: /Ogspy
 
@@ -933,7 +933,7 @@
   00000		 |$LN14@RTC_IntrTh|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M40171|
+  00008		 |$M40172|
   00008	e1a04000	 mov         r4, r0
 
 ; 546  :     Device_t *pDevice = (Device_t*)pContext;
@@ -1094,7 +1094,7 @@
   00120		 |$LN15@RTC_IntrTh|
   00120		 |$LN16@RTC_IntrTh|
   00120	01011004	 DCD         0x1011004
-  00124		 |$M40172|
+  00124		 |$M40173|
 
 			 ENDP  ; |?RTC_IntrThread@@YAKPAX@Z|, RTC_IntrThread
 
@@ -1103,7 +1103,7 @@
 	IMPORT	|RegisterDbgZones|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40187| DCD	|$LN8@DllMain|
+|$T40188| DCD	|$LN8@DllMain|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -1115,7 +1115,7 @@
 
   00000		 |$LN8@DllMain|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M40184|
+  00004		 |$M40185|
   00004	e1a04000	 mov         r4, r0
 
 ; 617  : 	UNREFERENCED_PARAMETER(pReserved);
@@ -1151,7 +1151,7 @@
   0002c		 |$LN9@DllMain|
   0002c		 |$LN10@DllMain|
   0002c	00000000	 DCD         |dpCurSettings|
-  00030		 |$M40185|
+  00030		 |$M40186|
 
 			 ENDP  ; |DllMain|
 
@@ -1169,7 +1169,7 @@
 	IMPORT	|LocalAlloc|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40203| DCD	|$LN21@RTC_Init|
+|$T40204| DCD	|$LN21@RTC_Init|
 	DCD	0x40005202
 ; Function compile flags: /Ogspy
 
@@ -1182,7 +1182,7 @@
   00000		 |$LN21@RTC_Init|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M40200|
+  00008		 |$M40201|
   00008	e1a06000	 mov         r6, r0
 
 ; 190  :     DWORD rc = (DWORD)NULL;
@@ -1397,7 +1397,7 @@
 ; 294  :     rc = (DWORD)pDevice;
 
   00118	e1a04005	 mov         r4, r5
-  0011c		 |$cleanUp$39835|
+  0011c		 |$cleanUp$39836|
 
 ; 295  :     
 ; 296  : cleanUp:
@@ -1426,7 +1426,7 @@
   00140	00000000	 DCD         |s_deviceRegParams|
   00144		 |$LN26@RTC_Init|
   00144	72746344	 DCD         0x72746344
-  00148		 |$M40201|
+  00148		 |$M40202|
 
 			 ENDP  ; |?RTC_Init@@YAKPBGPBX@Z|, RTC_Init
 

@@ -288,11 +288,11 @@
 ; File c:\wince600\platform\z2170p\src\app\proxydriver\dvfslatency.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39803| DCD	|$LN25@RunOppLate|
+|$T39805| DCD	|$LN25@RunOppLate|
 	DCD	0xc0010702
 
   00000			 AREA	 |.xdata|, DATA
-|$T39799| DCD	0xffffffd8
+|$T39801| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1BK@FLACBDMC@?$AAM?$AAP?$AAU?$AA?5?$AAO?$AAP?$AAP?$AA?$CF?$AAd?$AA?3?$AA?$AN?$AA?6?$AA?$AA@| DCB "M"
@@ -347,7 +347,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T39799|
+  00004	00000000	 DCD         |$T39801|
 
   00008		 |RunOppLatencyProfiler| PROC
 
@@ -356,7 +356,7 @@
   00008		 |$LN25@RunOppLate|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24ddd0b	 sub         sp, sp, #0xB, 26
-  00010		 |$M39800|
+  00010		 |$M39802|
   00010	e1a07000	 mov         r7, r0
   00014	e58d7014	 str         r7, [sp, #0x14]
   00018	e59f3400	 ldr         r3, [pc, #0x400]
@@ -885,14 +885,14 @@
   0041c	00000000	 DCD         |_pOmap_Prcm_Per_Cm|
   00420		 |$LN37@RunOppLate|
   00420	00000000	 DCD         |__security_cookie|
-  00424		 |$M39801|
+  00424		 |$M39803|
 
 			 ENDP  ; |RunOppLatencyProfiler|
 
 	EXPORT	|?ClearProfileControlData@@YAXPAUProfilerControlEx@@@Z| ; ClearProfileControlData
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39828| DCD	|$LN12@ClearProfi|
+|$T39830| DCD	|$LN12@ClearProfi|
 	DCD	0x40000700
 ; Function compile flags: /Ogspy
 
@@ -903,7 +903,7 @@
 ; 308  : {
 
   00000		 |$LN12@ClearProfi|
-  00000		 |$M39825|
+  00000		 |$M39827|
 
 ; 309  :     for (int i = 0; i < PROFILE_COUNT; ++i)
 ; 310  :         {
@@ -921,7 +921,7 @@
 ; 313  : }
 
   00018	e12fff1e	 bx          lr
-  0001c		 |$M39826|
+  0001c		 |$M39828|
 
 			 ENDP  ; |?ClearProfileControlData@@YAXPAUProfilerControlEx@@@Z|, ClearProfileControlData
 
@@ -937,11 +937,11 @@
 	IMPORT	|__muls|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39888| DCD	|$LN49@ProfileInt|
+|$T39890| DCD	|$LN49@ProfileInt|
 	DCD	0xc0011302
 
   00000			 AREA	 |.xdata|, DATA
-|$T39884| DCD	0xffffffd8
+|$T39886| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1DI@LCMHJCHD@?$AA?$CF?$AAs?$AA?7?$AA?$CF?$AA?4?$AA2?$AAf?$AA?7?$AA?$CF?$AA?4?$AA2?$AAf?$AA?7?$AA?$CF?$AA?4?$AA2?$AAf?$AA?7?$AA?$CF?$AA?4?$AA2?$AAf?$AA?7?$AA?$CF?$AAd?$AA?$AN?$AA?6?$AA?$AA@| DCB "%"
@@ -992,7 +992,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T39884|
+  00004	00000000	 DCD         |$T39886|
 
   00008		 |ProfileInterruptLatency| PROC
 
@@ -1001,7 +1001,7 @@
   00008		 |$LN49@ProfileInt|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24ddfb7	 sub         sp, sp, #0xB7, 30
-  00010		 |$M39885|
+  00010		 |$M39887|
   00010	e1a06000	 mov         r6, r0
   00014	e58d6020	 str         r6, [sp, #0x20]
   00018	e58d1024	 str         r1, [sp, #0x24]
@@ -1532,14 +1532,14 @@
   0044c	48306900	 DCD         0x48306900
   00450		 |$LN60@ProfileInt|
   00450	00000000	 DCD         |__security_cookie|
-  00454		 |$M39886|
+  00454		 |$M39888|
 
 			 ENDP  ; |ProfileInterruptLatency|
 
 	EXPORT	|??G@YAKT_LARGE_INTEGER@@0@Z|		; operator-
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39911| DCD	|$LN5@operator|
+|$T39913| DCD	|$LN5@operator|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -1550,7 +1550,7 @@
 ; 501  : {
 
   00000		 |$LN5@operator|
-  00000		 |$M39908|
+  00000		 |$M39910|
 
 ; 502  :     return (a.LowPart - b.LowPart);
 
@@ -1559,7 +1559,7 @@
 ; 503  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M39909|
+  00008		 |$M39911|
 
 			 ENDP  ; |??G@YAKT_LARGE_INTEGER@@0@Z|, operator-
 
@@ -1568,7 +1568,7 @@
 	IMPORT	|Random|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39930| DCD	|$LN19@ToggleOPM|
+|$T39932| DCD	|$LN19@ToggleOPM|
 	DCD	0x40005502
 ; Function compile flags: /Ogspy
 
@@ -1581,7 +1581,7 @@
   00000		 |$LN19@ToggleOPM|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd014	 sub         sp, sp, #0x14
-  00008		 |$M39927|
+  00008		 |$M39929|
   00008	e1a04001	 mov         r4, r1
   0000c	e1a06000	 mov         r6, r0
 
@@ -1790,7 +1790,7 @@
   0014c	00000000	 DCD         |?_rgTransitionTime@@3PAY06UDVFS_STRESS_TRANSITION_DATA@@A|
   00150		 |$LN22@ToggleOPM|
   00150	24924925	 DCD         0x24924925
-  00154		 |$M39928|
+  00154		 |$M39930|
 
 			 ENDP  ; |?ToggleOPM@@YAHPAXPAUDVFS_STRESS_TEST_PARAMETERS@@@Z|, ToggleOPM
 
@@ -1806,11 +1806,11 @@
 	IMPORT	|__rt_udiv|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39971| DCD	|$LN39@ProfileDVF|
+|$T39973| DCD	|$LN39@ProfileDVF|
 	DCD	0xc000ce02
 
   00000			 AREA	 |.xdata|, DATA
-|$T39967| DCD	0xffffffd8
+|$T39969| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1EG@KFCDNOAK@?$AA?$CF?$AAd?$AA?7?$AA?7?$AA?$CF?$AAd?$AA?7?$AA?$CF?$AA?4?$AA2?$AAf?$AA?7?$AA?$CF?$AA?4?$AA2?$AAf?$AA?7?$AA?$CF?$AA?4?$AA2?$AAf?$AA?7?$AA?$CF?$AAd?$AA?7?$AA?$CF?$AA?4?$AA2?$AAf?$AA?7?$AA?$CF?$AAd@| DCB "%"
@@ -1865,7 +1865,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T39967|
+  00004	00000000	 DCD         |$T39969|
 
   00008		 |ProfileDVFSLatency| PROC
 
@@ -1874,7 +1874,7 @@
   00008		 |$LN39@ProfileDVF|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24ddf91	 sub         sp, sp, #0x91, 30
-  00010		 |$M39968|
+  00010		 |$M39970|
   00010	e1a05001	 mov         r5, r1
   00014	e1a07000	 mov         r7, r0
   00018	e59f331c	 ldr         r3, [pc, #0x31C]
@@ -2285,7 +2285,7 @@
   00338	24924925	 DCD         0x24924925
   0033c		 |$LN51@ProfileDVF|
   0033c	00000000	 DCD         |__security_cookie|
-  00340		 |$M39969|
+  00340		 |$M39971|
 
 			 ENDP  ; |ProfileDVFSLatency|
 
@@ -2296,11 +2296,11 @@
 	EXPORT	|??_C@_1EI@OACHKHOM@?$AAt?$AAi?$AAm?$AAe?$AAr?$AA?5?$AAm?$AAa?$AAt?$AAc?$AAh?$AA?5?$AAa?$AAc?$AAc?$AAu?$AAr?$AAa?$AAc?$AAy?$AA?5?$AAp?$AAr?$AAo?$AAf?$AAi?$AAl?$AAi?$AAn?$AAg?$AA?5?$AA?$CF@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40068| DCD	|$LN67@ProfileWak|
+|$T40070| DCD	|$LN67@ProfileWak|
 	DCD	0xc0012602
 
   00000			 AREA	 |.xdata|, DATA
-|$T40064| DCD	0xffffffd8
+|$T40066| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1DG@BDMMFCAK@?$AA?$CF?$AAs?$AA?7?$AA?$CF?$AA5?$AAd?$AA?7?$AA?$CF?$AA5?$AAd?$AA?7?$AA?$CF?$AA5?$AA?4?$AA2?$AAf?$AA?7?$AA?$CF?$AA5?$AAd?$AA?7?$AA?$CF?$AA5?$AAd?$AA?$AN?$AA?6?$AA?$AA@| DCB "%"
@@ -2332,7 +2332,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T40064|
+  00004	00000000	 DCD         |$T40066|
 
   00008		 |ProfileWakupAccuracy| PROC
 
@@ -2341,7 +2341,7 @@
   00008		 |$LN67@ProfileWak|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24ddfda	 sub         sp, sp, #0xDA, 30
-  00010		 |$M40065|
+  00010		 |$M40067|
   00010	e1a07000	 mov         r7, r0
   00014	e58d7018	 str         r7, [sp, #0x18]
   00018	e1a09001	 mov         r9, r1
@@ -2925,7 +2925,7 @@
   00498	48306900	 DCD         0x48306900
   0049c		 |$LN77@ProfileWak|
   0049c	00000000	 DCD         |__security_cookie|
-  004a0		 |$M40066|
+  004a0		 |$M40068|
 
 			 ENDP  ; |ProfileWakupAccuracy|
 

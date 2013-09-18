@@ -20,11 +20,11 @@
 ; File c:\wince600\platform\z2170p\src\test\pmtest\pmget\get.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39156| DCD	|$LN5@RetailPrin|
+|$T39159| DCD	|$LN5@RetailPrin|
 	DCD	0xc0002905
 
   00000			 AREA	 |.xdata|, DATA
-|$T39152| DCD	0xffffffe4
+|$T39155| DCD	0xffffffe4
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1BG@BNMMPDJD@?$AAP?$AAM?$AAG?$AAE?$AAT?$AAD?$AA?3?$AA?5?$AA?$CF?$AAs?$AA?$AA@| DCB "P"
@@ -35,7 +35,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T39152|
+  00004	00000000	 DCD         |$T39155|
 
   00008		 |RetailPrint| PROC
 
@@ -47,7 +47,7 @@
   00010	e92d5000	 stmdb       sp!, {r12, lr}
   00014	e59fc08c	 ldr         r12, [pc, #0x8C]
   00018	e08dd00c	 add         sp, sp, r12
-  0001c		 |$M39153|
+  0001c		 |$M39156|
   0001c	e28dca02	 add         r12, sp, #2, 20
   00020	e58c000c	 str         r0, [r12, #0xC]
   00024	e59f3078	 ldr         r3, [pc, #0x78]
@@ -117,7 +117,7 @@
   000a4	00000000	 DCD         |__security_cookie|
   000a8		 |$LN9@RetailPrin|
   000a8	ffffdffc	 DCD         0xffffdffc
-  000ac		 |$M39154|
+  000ac		 |$M39157|
 
 			 ENDP  ; |RetailPrint|
 
@@ -137,11 +137,11 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39178| DCD	|$LN21@WinMain|
+|$T39181| DCD	|$LN21@WinMain|
 	DCD	0xc0005603
 
   00000			 AREA	 |.xdata|, DATA
-|$T39174| DCD	0xfffffff8
+|$T39177| DCD	0xfffffff8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1DC@FAFKIEO@?$AAP?$AAM?$AAG?$AAE?$AAT?$AA?$CB?$AA?7?$AAP?$AAO?$AAW?$AAE?$AAR?$AA_?$AAS?$AAT?$AAA?$AAT?$AAE?$AA_?$AAI?$AAD?$AAL?$AAE?$AA?6?$AA?$AA@| DCB "P"
@@ -232,7 +232,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T39174|
+  00004	00000000	 DCD         |$T39177|
 
   00008		 |WinMain| PROC
 
@@ -242,7 +242,7 @@
   00008	e52de004	 str         lr, [sp, #-4]!
   0000c	e59fc148	 ldr         r12, [pc, #0x148]
   00010	e08dd00c	 add         sp, sp, r12
-  00014		 |$M39175|
+  00014		 |$M39178|
   00014	e59f313c	 ldr         r3, [pc, #0x13C]
   00018	e5933000	 ldr         r3, [r3]
   0001c	e58d3804	 str         r3, [sp, #0x804]
@@ -460,7 +460,7 @@
   00158	00000000	 DCD         |__security_cookie|
   0015c		 |$LN34@WinMain|
   0015c	fffff7f8	 DCD         0xfffff7f8
-  00160		 |$M39176|
+  00160		 |$M39179|
 
 			 ENDP  ; |WinMain|
 

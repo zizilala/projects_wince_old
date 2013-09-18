@@ -75,7 +75,7 @@
 ; File c:\wince600\platform\z2170p\src\oal\oallib\oem_padwakeup.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47115| DCD	|$LN12@OEMEnableI|
+|$T47118| DCD	|$LN12@OEMEnableI|
 	DCD	0x40001401
 ; Function compile flags: /Ogspy
 
@@ -87,7 +87,7 @@
 
   00000		 |$LN12@OEMEnableI|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M47112|
+  00004		 |$M47115|
   00004	e3500000	 cmp         r0, #0
 
 ; 79   :     // NOTE:
@@ -148,14 +148,14 @@
   0004c		 |$LN13@OEMEnableI|
   0004c		 |$LN14@OEMEnableI|
   0004c	00000000	 DCD         |g_pSyscPadConfsRegs|
-  00050		 |$M47113|
+  00050		 |$M47116|
 
 			 ENDP  ; |OEMEnableIOPadWakeup|
 
 	EXPORT	|OEMGetIOPadWakeupStatus|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47126| DCD	|$LN5@OEMGetIOPa|
+|$T47129| DCD	|$LN5@OEMGetIOPa|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -166,7 +166,7 @@
 ; 123  : {
 
   00000		 |$LN5@OEMGetIOPa|
-  00000		 |$M47123|
+  00000		 |$M47126|
 
 ; 124  :     BOOL rc = FALSE;
 ; 125  : 
@@ -193,7 +193,7 @@
 ; 143  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M47124|
+  00008		 |$M47127|
 
 			 ENDP  ; |OEMGetIOPadWakeupStatus|
 
@@ -201,7 +201,7 @@
 	IMPORT	|g_PrcmPrm|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47133| DCD	|$LN5@OALEnableI|
+|$T47136| DCD	|$LN5@OALEnableI|
 	DCD	0x40000a00
 ; Function compile flags: /Ogspy
 
@@ -212,7 +212,7 @@
 ; 153  : {
 
   00000		 |$LN5@OALEnableI|
-  00000		 |$M47130|
+  00000		 |$M47133|
 
 ; 154  :     // clear wakeup status
 ; 155  :     OUTREG32(&g_PrcmPrm.pOMAP_WKUP_PRM->PM_WKST_WKUP, CM_CLKEN_IO);
@@ -237,14 +237,14 @@
   00024		 |$LN6@OALEnableI|
   00024		 |$LN7@OALEnableI|
   00024	00000000	 DCD         |g_PrcmPrm|
-  00028		 |$M47131|
+  00028		 |$M47134|
 
 			 ENDP  ; |OALEnableIOPadWakeup|
 
 	EXPORT	|OALDisableIOPadWakeup|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47142| DCD	|$LN5@OALDisable|
+|$T47145| DCD	|$LN5@OALDisable|
 	DCD	0x40000700
 ; Function compile flags: /Ogspy
 
@@ -255,7 +255,7 @@
 ; 169  : {
 
   00000		 |$LN5@OALDisable|
-  00000		 |$M47139|
+  00000		 |$M47142|
 
 ; 170  :     // Disable the IO pad wakeup
 ; 171  :     CLRREG32(&g_PrcmPrm.pOMAP_WKUP_PRM->PM_WKEN_WKUP, CM_CLKEN_IO);
@@ -272,7 +272,7 @@
   00018		 |$LN6@OALDisable|
   00018		 |$LN7@OALDisable|
   00018	00000000	 DCD         |g_PrcmPrm|
-  0001c		 |$M47140|
+  0001c		 |$M47143|
 
 			 ENDP  ; |OALDisableIOPadWakeup|
 
@@ -280,7 +280,7 @@
 	IMPORT	|g_dwCpuRevision|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47152| DCD	|$LN9@OALEnableI@2|
+|$T47155| DCD	|$LN9@OALEnableI@2|
 	DCD	0x40001300
 ; Function compile flags: /Ogspy
 
@@ -291,7 +291,7 @@
 ; 182  : {
 
   00000		 |$LN9@OALEnableI@2|
-  00000		 |$M47149|
+  00000		 |$M47152|
 
 ; 183  :     if (g_dwCpuRevision == CPU_FAMILY_35XX_REVISION_ES_3_1)
 
@@ -337,14 +337,14 @@
   00044	00000000	 DCD         |g_PrcmPrm|
   00048		 |$LN12@OALEnableI@2|
   00048	00000000	 DCD         |g_dwCpuRevision|
-  0004c		 |$M47150|
+  0004c		 |$M47153|
 
 			 ENDP  ; |OALEnableIOWakeupDaisyChain|
 
 	EXPORT	|OALDisableIOWakeupDaisyChain|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47162| DCD	|$LN6@OALDisable@2|
+|$T47165| DCD	|$LN6@OALDisable@2|
 	DCD	0x40000b00
 ; Function compile flags: /Ogspy
 
@@ -355,7 +355,7 @@
 ; 203  : {
 
   00000		 |$LN6@OALDisable@2|
-  00000		 |$M47159|
+  00000		 |$M47162|
 
 ; 204  :     if (g_dwCpuRevision == CPU_FAMILY_35XX_REVISION_ES_3_1)
 
@@ -382,14 +382,14 @@
   00024	00000000	 DCD         |g_PrcmPrm|
   00028		 |$LN9@OALDisable@2|
   00028	00000000	 DCD         |g_dwCpuRevision|
-  0002c		 |$M47160|
+  0002c		 |$M47163|
 
 			 ENDP  ; |OALDisableIOWakeupDaisyChain|
 
 	EXPORT	|OALIOPadWakeupEnableStatus|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47174| DCD	|$LN6@OALIOPadWa|
+|$T47177| DCD	|$LN6@OALIOPadWa|
 	DCD	0x40000800
 ; Function compile flags: /Ogspy
 
@@ -400,7 +400,7 @@
 ; 219  : {
 
   00000		 |$LN6@OALIOPadWa|
-  00000		 |$M47171|
+  00000		 |$M47174|
 
 ; 220  :     if (INREG32(&g_PrcmPrm.pOMAP_WKUP_PRM->PM_WKEN_WKUP) & CM_CLKEN_IO)
 
@@ -426,7 +426,7 @@
   0001c		 |$LN7@OALIOPadWa|
   0001c		 |$LN8@OALIOPadWa|
   0001c	00000000	 DCD         |g_PrcmPrm|
-  00020		 |$M47172|
+  00020		 |$M47175|
 
 			 ENDP  ; |OALIOPadWakeupEnableStatus|
 

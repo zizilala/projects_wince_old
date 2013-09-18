@@ -72,7 +72,7 @@
 ; File c:\wince600\platform\z2170p\src\app\wavmixer\wavmixer.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32372| DCD	|$LN10@Usage|
+|$T32374| DCD	|$LN10@Usage|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -84,7 +84,7 @@
 
   00000		 |$LN10@Usage|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M32369|
+  00004		 |$M32371|
 
 ; 20   : 	int i;
 ; 21   : 
@@ -110,7 +110,7 @@
   00024		 |$LN11@Usage|
   00024		 |$LN12@Usage|
   00024	00000000	 DCD         |?usage_text@@3PAPAGA|
-  00028		 |$M32370|
+  00028		 |$M32372|
 
 			 ENDP  ; |?Usage@@YAXXZ|, Usage
 
@@ -157,11 +157,11 @@
 	IMPORT	|__security_check_cookie|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32432| DCD	|$LN100@ListMixerC|
+|$T32434| DCD	|$LN100@ListMixerC|
 	DCD	0xc0020b02
 
   00000			 AREA	 |.xdata|, DATA
-|$T32428| DCD	0xffffffd8
+|$T32430| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1EG@LOHBBNOM@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?5?$AA?3?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AAt?$AAo?$AA?5?$AAa?$AAl?$AAl?$AAo?$AAc?$AAa?$AAt?$AAe?$AA?5?$AAm?$AAe?$AAm?$AAo?$AAr@| DCB "E"
@@ -307,7 +307,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T32428|
+  00004	00000000	 DCD         |$T32430|
 
   00008		 |?ListMixerControls@@YAHH@Z| PROC	; ListMixerControls
 
@@ -316,7 +316,7 @@
   00008		 |$LN100@ListMixerC|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24ddfa1	 sub         sp, sp, #0xA1, 30
-  00010		 |$M32429|
+  00010		 |$M32431|
   00010	e1a04000	 mov         r4, r0
   00014	e59f3814	 ldr         r3, [pc, #0x814]
   00018	e5933000	 ldr         r3, [r3]
@@ -1293,7 +1293,7 @@
 ; 326  : 	bRet = TRUE;
 
   00748	e3a05001	 mov         r5, #1
-  0074c		 |$cleanUp$32050|
+  0074c		 |$cleanUp$32052|
 
 ; 327  : 
 ; 328  : cleanUp:
@@ -1448,7 +1448,7 @@
 ; 326  : 	bRet = TRUE;
 
   007d8	e3a05000	 mov         r5, #0
-  007dc	eaffffda	 b           |$cleanUp$32050|
+  007dc	eaffffda	 b           |$cleanUp$32052|
   007e0		 |$LN101@ListMixerC|
   007e0		 |$LN102@ListMixerC|
   007e0	00000000	 DCD         |??_C@_1EO@LKMNKPFD@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?5?$AA?3?$AA?5?$AAC?$AAo?$AAu?$AAl?$AAd?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAg?$AAe?$AAt?$AA?5?$AAc?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl?$AA?5?$AAd?$AAe@|
@@ -1492,7 +1492,7 @@
   0082c	00000000	 DCD         |??_C@_1GG@HDFMGNCL@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?5?$AA?3?$AA?5?$AAN?$AAo?$AA?5?$AAw?$AAa?$AAv?$AAe?$AA?5?$AAd?$AAe?$AAv?$AAi?$AAc?$AAe?$AA?5?$AAa?$AAv?$AAa?$AAi?$AAl?$AAa?$AAb?$AAl?$AAe@|
   00830		 |$LN122@ListMixerC|
   00830	00000000	 DCD         |__security_cookie|
-  00834		 |$M32430|
+  00834		 |$M32432|
 
 			 ENDP  ; |?ListMixerControls@@YAHH@Z|, ListMixerControls
 
@@ -1503,11 +1503,11 @@
 	IMPORT	|mixerSetControlDetails|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32492| DCD	|$LN66@SetControl|
+|$T32494| DCD	|$LN66@SetControl|
 	DCD	0xc0014f02
 
   00000			 AREA	 |.xdata|, DATA
-|$T32488| DCD	0xffffffd8
+|$T32490| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1EO@EAIONPEG@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?5?$AA?3?$AA?5?$AAC?$AAo?$AAu?$AAl?$AAd?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAs?$AAe?$AAt?$AA?5?$AAc?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl?$AA?5?$AAd?$AAe@| DCB "E"
@@ -1531,7 +1531,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T32488|
+  00004	00000000	 DCD         |$T32490|
 
   00008		 |?SetControlValue@@YAHHJJ@Z| PROC	; SetControlValue
 
@@ -1540,7 +1540,7 @@
   00008		 |$LN66@SetControl|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24dde17	 sub         sp, sp, #0x17, 28
-  00010		 |$M32489|
+  00010		 |$M32491|
   00010	e1a04002	 mov         r4, r2
   00014	e1a06001	 mov         r6, r1
   00018	e1a05000	 mov         r5, r0
@@ -1771,7 +1771,7 @@
 ; 568  : 
 ; 569  : cleanUp:
 
-  001a0	ea0000c5	 b           |$cleanUp$32199|
+  001a0	ea0000c5	 b           |$cleanUp$32201|
   001a4		 |$LN38@SetControl|
 
 ; 443  : 		goto cleanUp;
@@ -1827,7 +1827,7 @@
 ; 568  : 
 ; 569  : cleanUp:
 
-  001f8	ea0000af	 b           |$cleanUp$32199|
+  001f8	ea0000af	 b           |$cleanUp$32201|
   001fc		 |$LN36@SetControl|
 
 ; 458  : 		goto cleanUp;
@@ -1954,7 +1954,7 @@
 ; 568  : 
 ; 569  : cleanUp:
 
-  002f4	ea000070	 b           |$cleanUp$32199|
+  002f4	ea000070	 b           |$cleanUp$32201|
   002f8		 |$LN26@SetControl|
 
 ; 506  : 				goto cleanUp;
@@ -2034,7 +2034,7 @@
 ; 568  : 
 ; 569  : cleanUp:
 
-  00340	ea00005d	 b           |$cleanUp$32199|
+  00340	ea00005d	 b           |$cleanUp$32201|
   00344		 |$LN22@SetControl|
 
 ; 521  : 		goto cleanUp;
@@ -2082,7 +2082,7 @@
 ; 568  : 
 ; 569  : cleanUp:
 
-  003a8	ea000043	 b           |$cleanUp$32199|
+  003a8	ea000043	 b           |$cleanUp$32201|
   003ac		 |$LN18@SetControl|
 
 ; 526  : 	{
@@ -2228,7 +2228,7 @@
 ; 568  : 
 ; 569  : cleanUp:
 
-  004b4	ea000000	 b           |$cleanUp$32199|
+  004b4	ea000000	 b           |$cleanUp$32201|
   004b8		 |$LN8@SetControl|
 
 ; 564  : 		goto cleanUp;
@@ -2237,7 +2237,7 @@
 ; 567  : 	bRet = TRUE;
 
   004b8	e3a0a001	 mov         r10, #1
-  004bc		 |$cleanUp$32199|
+  004bc		 |$cleanUp$32201|
 
 ; 570  : 
 ; 571  : 	if (pMixerControls != NULL)
@@ -2345,7 +2345,7 @@
   0053c	00000000	 DCD         |??_C@_1GG@HDFMGNCL@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?5?$AA?3?$AA?5?$AAN?$AAo?$AA?5?$AAw?$AAa?$AAv?$AAe?$AA?5?$AAd?$AAe?$AAv?$AAi?$AAc?$AAe?$AA?5?$AAa?$AAv?$AAa?$AAi?$AAl?$AAa?$AAb?$AAl?$AAe@|
   00540		 |$LN78@SetControl|
   00540	00000000	 DCD         |__security_cookie|
-  00544		 |$M32490|
+  00544		 |$M32492|
 
 			 ENDP  ; |?SetControlValue@@YAHHJJ@Z|, SetControlValue
 
@@ -2363,7 +2363,7 @@
 	IMPORT	|wcscmp|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32539| DCD	|$LN40@wmain|
+|$T32541| DCD	|$LN40@wmain|
 	DCD	0x40006501
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2435,7 +2435,7 @@
 
   00000		 |$LN40@wmain|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M32536|
+  00004		 |$M32538|
   00004	e1a06001	 mov         r6, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -2459,7 +2459,7 @@
 
 ; 611  : 		return 0;
 
-  0002c	ea00004b	 b           |$exit$32288|
+  0002c	ea00004b	 b           |$exit$32290|
   00030		 |$LN18@wmain|
 
 ; 612  : 	}
@@ -2499,7 +2499,7 @@
 
 ; 625  : 			}
 
-  00068	ea00003c	 b           |$exit$32288|
+  00068	ea00003c	 b           |$exit$32290|
   0006c		 |$LN15@wmain|
 
 ; 621  : 			}
@@ -2509,7 +2509,7 @@
   00070	e5960008	 ldr         r0, [r6, #8]
   00074	eb000000	 bl          wcscmp
   00078	e3500000	 cmp         r0, #0
-  0007c	1a000037	 bne         |$exit$32288|
+  0007c	1a000037	 bne         |$exit$32290|
   00080		 |$LN36@wmain|
 
 ; 623  : 			{
@@ -2520,7 +2520,7 @@
 
 ; 625  : 			}
 
-  00088	ea000034	 b           |$exit$32288|
+  00088	ea000034	 b           |$exit$32290|
   0008c		 |$LN16@wmain|
 
 ; 626  : 
@@ -2602,7 +2602,7 @@
 ; 666  : 
 ; 667  : exit:
 
-  00108	ea000014	 b           |$exit$32288|
+  00108	ea000014	 b           |$exit$32290|
   0010c		 |$LN6@wmain|
 
 ; 646  : 			}
@@ -2622,7 +2622,7 @@
 ; 666  : 
 ; 667  : exit:
 
-  0011c	ea00000f	 b           |$exit$32288|
+  0011c	ea00000f	 b           |$exit$32290|
   00120		 |$LN9@wmain|
 
 ; 655  : 
@@ -2643,7 +2643,7 @@
 ; 666  : 
 ; 667  : exit:
 
-  00130	ea00000a	 b           |$exit$32288|
+  00130	ea00000a	 b           |$exit$32290|
   00134		 |$LN10@wmain|
 
 ; 661  : 	}
@@ -2653,7 +2653,7 @@
   00138	e5960004	 ldr         r0, [r6, #4]
   0013c	eb000000	 bl          wcscmp
   00140	e3500000	 cmp         r0, #0
-  00144	1a000005	 bne         |$exit$32288|
+  00144	1a000005	 bne         |$exit$32290|
 
 ; 663  : 	{
 ; 664  : 		Usage();
@@ -2665,7 +2665,7 @@
   00154	eb000000	 bl          wprintf
   00158	e2555001	 subs        r5, r5, #1
   0015c	1afffffb	 bne         |$LL28@wmain|
-  00160		 |$exit$32288|
+  00160		 |$exit$32290|
 
 ; 668  : 
 ; 669  : 	return 0;
@@ -2697,7 +2697,7 @@
   0018c	00000000	 DCD         |??_C@_15IMIFEHMG@?$AA?9?$AAs?$AA?$AA@|
   00190		 |$LN51@wmain|
   00190	00000000	 DCD         |??_C@_15IEPPAAAP@?$AA?9?$AAl?$AA?$AA@|
-  00194		 |$M32537|
+  00194		 |$M32539|
 
 			 ENDP  ; |wmain|
 

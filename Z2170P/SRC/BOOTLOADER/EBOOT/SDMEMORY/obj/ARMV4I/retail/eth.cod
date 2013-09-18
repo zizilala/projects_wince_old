@@ -100,11 +100,11 @@
 ; File c:\wince600\platform\z2170p\src\bootloader\eboot\eth.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46872| DCD	|$LN35@BLEthDownl|
+|$T46880| DCD	|$LN35@BLEthDownl|
 	DCD	0xc0009502
 
   00000			 AREA	 |.xdata|, DATA
-|$T46868| DCD	0xffffffd8
+|$T46876| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1HA@PBOCKLG@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAB?$AAo?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAv?$AAi?$AAc?$AAe?$AA?5?$AAd?$AAo?$AAe?$AAs?$AAn?$AA?8?$AAt?$AA?5?$AAe?$AAx?$AAi?$AAs?$AAt@| DCB "E"
@@ -175,7 +175,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T46868|
+  00004	00000000	 DCD         |$T46876|
 
   00008		 |BLEthDownload| PROC
 
@@ -184,7 +184,7 @@
   00008		 |$LN35@BLEthDownl|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24dd040	 sub         sp, sp, #0x40
-  00010		 |$M46869|
+  00010		 |$M46877|
   00010	e1a06000	 mov         r6, r0
   00014	e59f323c	 ldr         r3, [pc, #0x23C]
   00018	e5933000	 ldr         r3, [r3]
@@ -272,7 +272,7 @@
   00080	e59f31b0	 ldr         r3, [pc, #0x1B0]
   00084	e5933440	 ldr         r3, [r3, #0x440]
   00088	e3130001	 tst         r3, #1
-  0008c	0a000062	 beq         |$cleanUp$46755|
+  0008c	0a000062	 beq         |$cleanUp$46763|
   00090	e59f01b8	 ldr         r0, [pc, #0x1B8]
 
 ; 99   :             goto cleanUp;
@@ -329,7 +329,7 @@
   000dc	e59f3154	 ldr         r3, [pc, #0x154]
   000e0	e5933440	 ldr         r3, [r3, #0x440]
   000e4	e3130001	 tst         r3, #1
-  000e8	0a00004b	 beq         |$cleanUp$46755|
+  000e8	0a00004b	 beq         |$cleanUp$46763|
   000ec	e59f0158	 ldr         r0, [pc, #0x158]
 
 ; 122  :         goto cleanUp;
@@ -448,7 +448,7 @@
 
   001cc	e5973440	 ldr         r3, [r7, #0x440]
   001d0	e3130001	 tst         r3, #1
-  001d4	0a000010	 beq         |$cleanUp$46755|
+  001d4	0a000010	 beq         |$cleanUp$46763|
   001d8	e59f005c	 ldr         r0, [pc, #0x5C]
 
 ; 162  :         goto cleanUp;
@@ -472,9 +472,9 @@
   001ec	e59d3018	 ldr         r3, [sp, #0x18]
   001f0	e3530000	 cmp         r3, #0
   001f4	13a08001	 movne       r8, #1
-  001f8	1a000007	 bne         |$cleanUp$46755|
+  001f8	1a000007	 bne         |$cleanUp$46763|
   001fc	e3a08000	 mov         r8, #0
-  00200	ea000005	 b           |$cleanUp$46755|
+  00200	ea000005	 b           |$cleanUp$46763|
   00204		 |$LN8@BLEthDownl|
 
 ; 79   :         {
@@ -485,11 +485,11 @@
   00204	e59f302c	 ldr         r3, [pc, #0x2C]
   00208	e5933440	 ldr         r3, [r3, #0x440]
   0020c	e3130001	 tst         r3, #1
-  00210	0a000001	 beq         |$cleanUp$46755|
+  00210	0a000001	 beq         |$cleanUp$46763|
   00214	e59f0018	 ldr         r0, [pc, #0x18]
   00218		 |$LN32@BLEthDownl|
   00218	eb000000	 bl          NKDbgPrintfW
-  0021c		 |$cleanUp$46755|
+  0021c		 |$cleanUp$46763|
 
 ; 170  : 
 ; 171  : cleanUp:
@@ -525,7 +525,7 @@
   00254	00000000	 DCD         |g_ethState|
   00258		 |$LN46@BLEthDownl|
   00258	00000000	 DCD         |__security_cookie|
-  0025c		 |$M46870|
+  0025c		 |$M46878|
 
 			 ENDP  ; |BLEthDownload|
 
@@ -533,7 +533,7 @@
 	IMPORT	|EbootWaitForHostConnect|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46893| DCD	|$LN6@BLEthConfi|
+|$T46901| DCD	|$LN6@BLEthConfi|
 	DCD	0x40000f01
 ; Function compile flags: /Ogspy
 
@@ -545,7 +545,7 @@
 
   00000		 |$LN6@BLEthConfi|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M46890|
+  00004		 |$M46898|
   00004	e1a04000	 mov         r4, r0
 
 ; 188  :     EDBG_OS_CONFIG_DATA *pConfig;
@@ -583,14 +583,14 @@
   00038		 |$LN7@BLEthConfi|
   00038		 |$LN8@BLEthConfi|
   00038	00000000	 DCD         |g_ethState|
-  0003c		 |$M46891|
+  0003c		 |$M46899|
 
 			 ENDP  ; |BLEthConfig|
 
 	EXPORT	|OEMEthGetFrame|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46908| DCD	|$LN7@OEMEthGetF|
+|$T46916| DCD	|$LN7@OEMEthGetF|
 	DCD	0x40000e01
 ; Function compile flags: /Ogspy
 
@@ -602,7 +602,7 @@
 
   00000		 |$LN7@OEMEthGetF|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46905|
+  00004		 |$M46913|
 
 ; 214  :     return g_ethState.pDriver->pfnGetFrame(pData, pLength) > 0;
 
@@ -630,14 +630,14 @@
   00034		 |$LN8@OEMEthGetF|
   00034		 |$LN9@OEMEthGetF|
   00034	00000000	 DCD         |g_ethState|
-  00038		 |$M46906|
+  00038		 |$M46914|
 
 			 ENDP  ; |OEMEthGetFrame|
 
 	EXPORT	|OEMEthSendFrame|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46923| DCD	|$LN7@OEMEthSend|
+|$T46931| DCD	|$LN7@OEMEthSend|
 	DCD	0x40000e01
 ; Function compile flags: /Ogspy
 
@@ -649,7 +649,7 @@
 
   00000		 |$LN7@OEMEthSend|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46920|
+  00004		 |$M46928|
 
 ; 229  :     return g_ethState.pDriver->pfnSendFrame(pData, length) == 0;
 
@@ -677,7 +677,7 @@
   00034		 |$LN8@OEMEthSend|
   00034		 |$LN9@OEMEthSend|
   00034	00000000	 DCD         |g_ethState|
-  00038		 |$M46921|
+  00038		 |$M46929|
 
 			 ENDP  ; |OEMEthSendFrame|
 
@@ -686,7 +686,7 @@
 	IMPORT	|g_eboot|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46936| DCD	|$LN5@BLEthReadD|
+|$T46944| DCD	|$LN5@BLEthReadD|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -698,7 +698,7 @@
 
   00000		 |$LN5@BLEthReadD|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46933|
+  00004		 |$M46941|
   00004	e1a0e001	 mov         lr, r1
   00008	e1a02000	 mov         r2, r0
 
@@ -722,7 +722,7 @@
   00024		 |$LN6@BLEthReadD|
   00024		 |$LN7@BLEthReadD|
   00024	00000000	 DCD         |g_eboot|
-  00028		 |$M46934|
+  00028		 |$M46942|
 
 			 ENDP  ; |BLEthReadData|
 

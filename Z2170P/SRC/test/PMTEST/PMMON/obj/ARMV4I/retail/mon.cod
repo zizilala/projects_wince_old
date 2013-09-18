@@ -20,7 +20,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39456| DCD	|$LN5@SetEvent|
+|$T39459| DCD	|$LN5@SetEvent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -32,7 +32,7 @@
 
   00000		 |$LN5@SetEvent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M39453|
+  00004		 |$M39456|
 
 ; 236  : 	return EventModify(h,EVENT_SET);
 
@@ -43,14 +43,14 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M39454|
+  00014		 |$M39457|
 
 			 ENDP  ; |SetEvent|
 
 	EXPORT	|GetCurrentThread|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39465| DCD	|$LN5@GetCurrent|
+|$T39468| DCD	|$LN5@GetCurrent|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -61,7 +61,7 @@
 ; 351  : _inline HANDLE GetCurrentThread(void) {
 
   00000		 |$LN5@GetCurrent|
-  00000		 |$M39462|
+  00000		 |$M39465|
 
 ; 352  : 	return ((HANDLE)(SH_CURTHREAD+SYS_HANDLE_BASE));
 
@@ -70,7 +70,7 @@
 ; 353  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M39463|
+  00008		 |$M39466|
 
 			 ENDP  ; |GetCurrentThread|
 
@@ -81,15 +81,15 @@
 ; File c:\wince600\platform\z2170p\src\test\pmtest\pmmon\mon.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39493| DCD	|$LN23@ConvertStr|
+|$T39496| DCD	|$LN23@ConvertStr|
 	DCD	0xc0003204
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39495| DCD	|$LN9@ConvertStr|
+|$T39498| DCD	|$LN9@ConvertStr|
 	DCD	0x40000602
 
   00000			 AREA	 |.xdata|, DATA
-|$T39491| DCD	0x1
+|$T39494| DCD	0x1
 	DCD	|$LN13@ConvertStr|
 	DCD	|$LN14@ConvertStr|
 	DCD	|$LN9@ConvertStr|
@@ -111,7 +111,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T39491|
+  00004	00000000	 DCD         |$T39494|
 
   00008		 |ConvertStringToGuid| PROC
 
@@ -256,11 +256,11 @@
 	IMPORT	|__security_check_cookie|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39514| DCD	|$LN5@RetailPrin|
+|$T39517| DCD	|$LN5@RetailPrin|
 	DCD	0xc0002905
 
   00000			 AREA	 |.xdata|, DATA
-|$T39510| DCD	0xffffffe4
+|$T39513| DCD	0xffffffe4
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1BG@BNMMPDJD@?$AAP?$AAM?$AAG?$AAE?$AAT?$AAD?$AA?3?$AA?5?$AA?$CF?$AAs?$AA?$AA@| DCB "P"
@@ -271,7 +271,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T39510|
+  00004	00000000	 DCD         |$T39513|
 
   00008		 |RetailPrint| PROC
 
@@ -283,7 +283,7 @@
   00010	e92d5000	 stmdb       sp!, {r12, lr}
   00014	e59fc08c	 ldr         r12, [pc, #0x8C]
   00018	e08dd00c	 add         sp, sp, r12
-  0001c		 |$M39511|
+  0001c		 |$M39514|
   0001c	e28dca02	 add         r12, sp, #2, 20
   00020	e58c000c	 str         r0, [r12, #0xC]
   00024	e59f3078	 ldr         r3, [pc, #0x78]
@@ -353,7 +353,7 @@
   000a4	00000000	 DCD         |__security_cookie|
   000a8		 |$LN9@RetailPrin|
   000a8	ffffdffc	 DCD         0xffffdffc
-  000ac		 |$M39512|
+  000ac		 |$M39515|
 
 			 ENDP  ; |RetailPrint|
 
@@ -394,11 +394,11 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39541| DCD	|$LN25@ProcessPow|
+|$T39544| DCD	|$LN25@ProcessPow|
 	DCD	0xc000c802
 
   00000			 AREA	 |.xdata|, DATA
-|$T39537| DCD	0xffffffd8
+|$T39540| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1EM@MKLJPOCD@?$AA?$CF?$AAs?$AA?3?$AA?7?$AAR?$AAe?$AAc?$AAe?$AAi?$AAv?$AAe?$AAd?$AA?5?$AAs?$AAh?$AAo?$AAr?$AAt?$AA?5?$AAm?$AAe?$AAs?$AAs?$AAa?$AAg?$AAe?$AA?3?$AA?5?$AA?$CF?$AAd?$AA?5?$AAb@| DCB "%"
@@ -628,7 +628,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T39537|
+  00004	00000000	 DCD         |$T39540|
 
   00008		 |ProcessPowerNotification| PROC
 
@@ -637,7 +637,7 @@
   00008		 |$LN25@ProcessPow|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24ddfb7	 sub         sp, sp, #0xB7, 30
-  00010		 |$M39538|
+  00010		 |$M39541|
   00010	e1a04000	 mov         r4, r0
   00014	e59f3308	 ldr         r3, [pc, #0x308]
   00018	e5933000	 ldr         r3, [r3]
@@ -1062,7 +1062,7 @@
   00320	00000000	 DCD         |??_C@_1DI@PLPNIFHE@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAR?$AAe?$AAa?$AAd?$AAM?$AAs?$AAg?$AAQ?$AAu?$AAe?$AAu?$AAe?$AA?3?$AA?5?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?$CF?$AAd?$AA?6?$AA?$AA@|
   00324		 |$LN56@ProcessPow|
   00324	00000000	 DCD         |__security_cookie|
-  00328		 |$M39539|
+  00328		 |$M39542|
 
 			 ENDP  ; |ProcessPowerNotification|
 
@@ -1086,11 +1086,11 @@
 	IMPORT	|wcscpy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39592| DCD	|$LN17@ProcessDev|
+|$T39595| DCD	|$LN17@ProcessDev|
 	DCD	0xc0008703
 
   00000			 AREA	 |.xdata|, DATA
-|$T39588| DCD	0xffffffdc
+|$T39591| DCD	0xffffffdc
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1EE@EFOEONDD@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAg?$AAo?$AAt?$AA?5?$AAr?$AAu?$AAn?$AAt?$AA?5?$AAm?$AAe?$AAs?$AAs?$AAa?$AAg?$AAe?$AA?5?$AA?$CI?$AA?$CF?$AAd?$AA?5?$AAb?$AAy?$AAt?$AAe?$AAs?$AA?$CJ?$AA?$AN@| DCB "%"
@@ -1187,7 +1187,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T39588|
+  00004	00000000	 DCD         |$T39591|
 
   00008		 |ProcessDeviceNotification| PROC
 
@@ -1197,7 +1197,7 @@
   00008	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
   0000c	e59fc20c	 ldr         r12, [pc, #0x20C]
   00010	e08dd00c	 add         sp, sp, r12
-  00014		 |$M39589|
+  00014		 |$M39592|
   00014	e1a04000	 mov         r4, r0
   00018	e59f31fc	 ldr         r3, [pc, #0x1FC]
   0001c	e5933000	 ldr         r3, [r3]
@@ -1448,7 +1448,7 @@
   0021c	00000000	 DCD         |__security_cookie|
   00220		 |$LN31@ProcessDev|
   00220	fffff85c	 DCD         0xfffff85c
-  00224		 |$M39590|
+  00224		 |$M39593|
 
 			 ENDP  ; |ProcessDeviceNotification|
 
@@ -1461,7 +1461,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39621| DCD	|$LN16@MonThreadP|
+|$T39624| DCD	|$LN16@MonThreadP|
 	DCD	0x40002f02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1503,7 +1503,7 @@
   00000		 |$LN16@MonThreadP|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M39618|
+  00008		 |$M39621|
 
 ; 235  :     HANDLE hEvents[3];
 ; 236  :     LPTSTR pszFname = _T("PMMON!MonThreadProc");
@@ -1623,7 +1623,7 @@
   000b4	00000000	 DCD         |??_C@_1EC@INJDOOHN@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAt?$AAe?$AAr?$AAm?$AAi?$AAn?$AAa?$AAt?$AAi?$AAo?$AAn?$AA?5?$AAe?$AAv?$AAe?$AAn?$AAt?$AA?5?$AAs?$AAi?$AAg?$AAn?$AAa?$AAl?$AAe?$AAd?$AA?$AN?$AA?6@|
   000b8		 |$LN21@MonThreadP|
   000b8	00000000	 DCD         |ghPowerNotifications|
-  000bc		 |$M39619|
+  000bc		 |$M39622|
 
 			 ENDP  ; |MonThreadProc|
 
@@ -1637,11 +1637,11 @@
 	IMPORT	|RegEnumValueW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39648| DCD	|$LN21@RequestPMD|
+|$T39651| DCD	|$LN21@RequestPMD|
 	DCD	0xc0005802
 
   00000			 AREA	 |.xdata|, DATA
-|$T39644| DCD	0xffffffd8
+|$T39647| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1FM@MMAENAFE@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAR?$AAe?$AAq?$AAu?$AAe?$AAs?$AAt?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAN?$AAo?$AAt?$AAi?$AAf?$AAi?$AAc?$AAa?$AAt?$AAi?$AAo?$AAn?$AAs?$AA?$CI?$AA?8@| DCB "%"
@@ -1685,7 +1685,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T39644|
+  00004	00000000	 DCD         |$T39647|
 
   00008		 |RequestPMDeviceNotifications| PROC
 
@@ -1694,7 +1694,7 @@
   00008		 |$LN21@RequestPMD|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24ddf8e	 sub         sp, sp, #0x8E, 30
-  00010		 |$M39645|
+  00010		 |$M39648|
   00010	e1a06001	 mov         r6, r1
   00014	e1a09000	 mov         r9, r0
   00018	e59f3144	 ldr         r3, [pc, #0x144]
@@ -1884,7 +1884,7 @@
   00160	00000000	 DCD         |??_C@_1EO@PFEFPDAL@?$AAS?$AAY?$AAS?$AAT?$AAE?$AAM?$AA?2?$AAC?$AAu?$AAr?$AAr?$AAe?$AAn?$AAt?$AAC?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl?$AAS?$AAe?$AAt?$AA?2?$AAC?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl@|
   00164		 |$LN30@RequestPMD|
   00164	00000000	 DCD         |__security_cookie|
-  00168		 |$M39646|
+  00168		 |$M39649|
 
 			 ENDP  ; |RequestPMDeviceNotifications|
 
@@ -1909,7 +1909,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39681| DCD	|$LN24@WinMain|
+|$T39684| DCD	|$LN24@WinMain|
 	DCD	0x40009402
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1994,7 +1994,7 @@
   00000		 |$LN24@WinMain|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24ddf47	 sub         sp, sp, #0x47, 30
-  00008		 |$M39678|
+  00008		 |$M39681|
 
 ; 358  :     HANDLE hNotifications = NULL;
 ; 359  :     HANDLE hDeviceNotifications[64];
@@ -2163,7 +2163,7 @@
 
 ; 409  :         goto _Exit;
 
-  0010c	ea000027	 b           |$_Exit$39314|
+  0010c	ea000027	 b           |$_Exit$39317|
   00110		 |$LN10@WinMain|
 
 ; 410  :     }
@@ -2235,7 +2235,7 @@
 
 ; 427  :     if(ht) {
 
-  0018c	0a000007	 beq         |$_Exit$39314|
+  0018c	0a000007	 beq         |$_Exit$39317|
 
 ; 428  :         // request device notifications (do this after the thread is
 ; 429  :         // created so we don't drop any notifications)
@@ -2257,7 +2257,7 @@
 
   001a8	e1a00006	 mov         r0, r6
   001ac	eb000000	 bl          CloseHandle
-  001b0		 |$_Exit$39314|
+  001b0		 |$_Exit$39317|
 
 ; 435  :     }
 ; 436  : 
@@ -2344,7 +2344,7 @@
   00248	00000000	 DCD         |ghPowerNotifications|
   0024c		 |$LN35@WinMain|
   0024c	00000000	 DCD         |??_C@_1FA@NIDJIEFI@?$AAS?$AAO?$AAF?$AAT?$AAW?$AAA?$AAR?$AAE?$AA?1?$AAP?$AAM?$AAT?$AAe?$AAs?$AAt?$AAP?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AAs?$AA?1?$AAP?$AAM?$AAM?$AAO?$AAN?$AA?1?$AAT?$AAe@|
-  00250		 |$M39679|
+  00250		 |$M39682|
 
 			 ENDP  ; |WinMain|
 

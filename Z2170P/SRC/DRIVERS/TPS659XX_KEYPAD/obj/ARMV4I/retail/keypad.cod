@@ -295,7 +295,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44304| DCD	|$LN5@SetEvent|
+|$T44305| DCD	|$LN5@SetEvent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -307,7 +307,7 @@
 
   00000		 |$LN5@SetEvent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M44301|
+  00004		 |$M44302|
 
 ; 236  : 	return EventModify(h,EVENT_SET);
 
@@ -318,7 +318,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M44302|
+  00014		 |$M44303|
 
 			 ENDP  ; |SetEvent|
 
@@ -328,7 +328,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_keypad\keypad.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44318| DCD	|$LN11@SetPowerSt|
+|$T44319| DCD	|$LN11@SetPowerSt|
 	DCD	0x40001201
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -348,69 +348,69 @@
 
   00000		 |SetPowerState| PROC
 
-; 282  : {
+; 286  : {
 
   00000		 |$LN11@SetPowerSt|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M44315|
+  00004		 |$M44316|
   00004	e3510000	 cmp         r1, #0
 
-; 283  :     BOOL rc = FALSE;
+; 287  :     BOOL rc = FALSE;
 
   00008	e3a04000	 mov         r4, #0
 
-; 284  :     
-; 285  :     DEBUGMSG(ZONE_FUNCTION, (
-; 286  :         L"+SetPowerState(0x%08X, 0x%08x)\r\n", pDevice, power
-; 287  :         ));
-; 288  : 
-; 289  :     switch (power)
+; 288  :     
+; 289  :     DEBUGMSG(ZONE_FUNCTION, (
+; 290  :         L"+SetPowerState(0x%08X, 0x%08x)\r\n", pDevice, power
+; 291  :         ));
+; 292  : 
+; 293  :     switch (power)
 
   0000c	4a000003	 bmi         |$LN1@SetPowerSt|
   00010	e3510004	 cmp         r1, #4
 
-; 302  :             goto cleanUp;
-; 303  :         }
-; 304  : 
-; 305  :     pDevice->powerState = power;
+; 306  :             goto cleanUp;
+; 307  :         }
+; 308  : 
+; 309  :     pDevice->powerState = power;
 
   00014	d5801030	 strle       r1, [r0, #0x30]
 
-; 306  : 
-; 307  :     rc = TRUE;
+; 310  : 
+; 311  :     rc = TRUE;
 
   00018	d3a04001	 movle       r4, #1
-  0001c	da000004	 ble         |$cleanUp$43813|
+  0001c	da000004	 ble         |$cleanUp$43816|
   00020		 |$LN1@SetPowerSt|
 
-; 290  :         {
-; 291  :         case D0:
-; 292  :         case D1:
-; 293  :         case D2:
-; 294  :         case D3:
-; 295  :         case D4:
-; 296  :             break;
-; 297  : 
-; 298  :         default:
-; 299  :             RETAILMSG(ZONE_WARN, (L"WARN: KPD::SetPowerState: "
-; 300  :                 L"Invalid power state (%d)\r\n", power
-; 301  :                 ));            
+; 294  :         {
+; 295  :         case D0:
+; 296  :         case D1:
+; 297  :         case D2:
+; 298  :         case D3:
+; 299  :         case D4:
+; 300  :             break;
+; 301  : 
+; 302  :         default:
+; 303  :             RETAILMSG(ZONE_WARN, (L"WARN: KPD::SetPowerState: "
+; 304  :                 L"Invalid power state (%d)\r\n", power
+; 305  :                 ));            
 
   00020	e59f301c	 ldr         r3, [pc, #0x1C]
   00024	e5933440	 ldr         r3, [r3, #0x440]
   00028	e3130002	 tst         r3, #2
   0002c	159f000c	 ldrne       r0, [pc, #0xC]
   00030	1b000000	 blne        NKDbgPrintfW
-  00034		 |$cleanUp$43813|
+  00034		 |$cleanUp$43816|
 
-; 308  :     
-; 309  : cleanUp:
-; 310  :     DEBUGMSG(ZONE_FUNCTION, (
-; 311  :         L"-SetPowerState(0x%08X, 0x%08x)\r\n", pDevice, power
-; 312  :         ));
-; 313  :         
-; 314  :     return rc;
-; 315  : }
+; 312  :     
+; 313  : cleanUp:
+; 314  :     DEBUGMSG(ZONE_FUNCTION, (
+; 315  :         L"-SetPowerState(0x%08X, 0x%08x)\r\n", pDevice, power
+; 316  :         ));
+; 317  :         
+; 318  :     return rc;
+; 319  : }
 
   00034	e1a00004	 mov         r0, r4
   00038	e8bd4010	 ldmia       sp!, {r4, lr}
@@ -420,7 +420,7 @@
   00040	00000000	 DCD         |??_C@_1GK@HKLOGBGD@?$AAW?$AAA?$AAR?$AAN?$AA?3?$AA?5?$AAK?$AAP?$AAD?$AA?3?$AA?3?$AAS?$AAe?$AAt?$AAP?$AAo?$AAw?$AAe?$AAr?$AAS?$AAt?$AAa?$AAt?$AAe?$AA?3?$AA?5?$AAI?$AAn?$AAv?$AAa?$AAl?$AAi@|
   00044		 |$LN14@SetPowerSt|
   00044	00000000	 DCD         |dpCurSettings|
-  00048		 |$M44316|
+  00048		 |$M44317|
 
 			 ENDP  ; |SetPowerState|
 
@@ -434,7 +434,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44340| DCD	|$LN17@KPD_Deinit|
+|$T44341| DCD	|$LN17@KPD_Deinit|
 	DCD	0x40003d01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_keypad\keypad.c
@@ -443,43 +443,43 @@
 
   00000		 |KPD_Deinit| PROC
 
-; 475  : {
+; 474  : {
 
   00000		 |$LN17@KPD_Deinit|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M44337|
+  00004		 |$M44338|
   00004	e1b04000	 movs        r4, r0
 
-; 476  :     BOOL rc = FALSE;
+; 475  :     BOOL rc = FALSE;
 
   00008	e3a00000	 mov         r0, #0
 
-; 477  :     KeypadDevice_t *pDevice = (KeypadDevice_t*)context;
+; 476  :     KeypadDevice_t *pDevice = (KeypadDevice_t*)context;
+; 477  : 
 ; 478  : 
-; 479  : 
-; 480  :     DEBUGMSG(ZONE_FUNCTION, (L"+KPD_Deinit(0x%08x)\r\n", context));
-; 481  : 
-; 482  :     // Check if we get correct context
-; 483  :     if ((pDevice == NULL) || (pDevice->cookie != KPD_DEVICE_COOKIE))
+; 479  :     DEBUGMSG(ZONE_FUNCTION, (L"+KPD_Deinit(0x%08x)\r\n", context));
+; 480  : 
+; 481  :     // Check if we get correct context
+; 482  :     if ((pDevice == NULL) || (pDevice->cookie != KPD_DEVICE_COOKIE))
 
-  0000c	0a000035	 beq         |$cleanUp$43880|
+  0000c	0a000035	 beq         |$cleanUp$43883|
   00010	e5942000	 ldr         r2, [r4]
   00014	e59f30d4	 ldr         r3, [pc, #0xD4]
   00018	e1520003	 cmp         r2, r3
-  0001c	1a000031	 bne         |$cleanUp$43880|
+  0001c	1a000031	 bne         |$cleanUp$43883|
 
-; 484  :         {
-; 485  :         DEBUGMSG (ZONE_ERROR, (L"ERROR: KPD_Deinit: "
-; 486  :             L"Incorrect context parameter\r\n"
-; 487  :             ));
-; 488  :         goto cleanUp;
-; 489  :         }
-; 490  : 
-; 491  :     // Signal stop to threads
-; 492  :     pDevice->intrThreadExit = TRUE;
-; 493  :         
-; 494  :     // Close interrupt thread
-; 495  :     if (pDevice->hIntrThreadKeypad != NULL)
+; 483  :         {
+; 484  :         DEBUGMSG (ZONE_ERROR, (L"ERROR: KPD_Deinit: "
+; 485  :             L"Incorrect context parameter\r\n"
+; 486  :             ));
+; 487  :         goto cleanUp;
+; 488  :         }
+; 489  : 
+; 490  :     // Signal stop to threads
+; 491  :     pDevice->intrThreadExit = TRUE;
+; 492  :         
+; 493  :     // Close interrupt thread
+; 494  :     if (pDevice->hIntrThreadKeypad != NULL)
 
   00020	e5943024	 ldr         r3, [r4, #0x24]
   00024	e3a02001	 mov         r2, #1
@@ -487,71 +487,71 @@
   0002c	e3530000	 cmp         r3, #0
   00030	0a000007	 beq         |$LN6@KPD_Deinit|
 
-; 496  :         {
-; 497  :         // Set event to wake it
-; 498  :         SetEvent(pDevice->hIntrEventKeypad);
+; 495  :         {
+; 496  :         // Set event to wake it
+; 497  :         SetEvent(pDevice->hIntrEventKeypad);
 
   00034	e5940020	 ldr         r0, [r4, #0x20]
   00038	e3a01003	 mov         r1, #3
   0003c	eb000000	 bl          EventModify
 
-; 499  :         // Wait until thread exits
-; 500  :         WaitForSingleObject(pDevice->hIntrThreadKeypad, INFINITE);
+; 498  :         // Wait until thread exits
+; 499  :         WaitForSingleObject(pDevice->hIntrThreadKeypad, INFINITE);
 
   00040	e5940024	 ldr         r0, [r4, #0x24]
   00044	e3e01000	 mvn         r1, #0
   00048	eb000000	 bl          WaitForSingleObject
 
-; 501  :         // Close handle
-; 502  :         CloseHandle(pDevice->hIntrThreadKeypad);
+; 500  :         // Close handle
+; 501  :         CloseHandle(pDevice->hIntrThreadKeypad);
 
   0004c	e5940024	 ldr         r0, [r4, #0x24]
   00050	eb000000	 bl          CloseHandle
   00054		 |$LN6@KPD_Deinit|
 
-; 503  :         }
-; 504  : 
-; 505  :     // Close interrupt thread
-; 506  :     if( pDevice->hLightThread )
+; 502  :         }
+; 503  : 
+; 504  :     // Close interrupt thread
+; 505  :     if( pDevice->hLightThread )
 
   00054	e5943038	 ldr         r3, [r4, #0x38]
   00058	e3530000	 cmp         r3, #0
   0005c	0a000007	 beq         |$LN5@KPD_Deinit|
 
-; 507  :             {
-; 508  :             // Set event to wake it
-; 509  :         SetEvent(pDevice->hKeypressEvent);
+; 506  :             {
+; 507  :             // Set event to wake it
+; 508  :         SetEvent(pDevice->hKeypressEvent);
 
   00060	e594003c	 ldr         r0, [r4, #0x3C]
   00064	e3a01003	 mov         r1, #3
   00068	eb000000	 bl          EventModify
 
-; 510  :             // Wait until thread exits
-; 511  :         WaitForSingleObject(pDevice->hLightThread, INFINITE);
+; 509  :             // Wait until thread exits
+; 510  :         WaitForSingleObject(pDevice->hLightThread, INFINITE);
 
   0006c	e5940038	 ldr         r0, [r4, #0x38]
   00070	e3e01000	 mvn         r1, #0
   00074	eb000000	 bl          WaitForSingleObject
 
-; 512  :             // Close handle
-; 513  :         CloseHandle(pDevice->hLightThread);
+; 511  :             // Close handle
+; 512  :         CloseHandle(pDevice->hLightThread);
 
   00078	e5940038	 ldr         r0, [r4, #0x38]
   0007c	eb000000	 bl          CloseHandle
   00080		 |$LN5@KPD_Deinit|
 
-; 514  :         }
+; 513  :         }
+; 514  : 
 ; 515  : 
-; 516  : 
-; 517  :     // Close TWL driver
-; 518  :     if (pDevice->hTWL != NULL)
+; 516  :     // Close TWL driver
+; 517  :     if (pDevice->hTWL != NULL)
 
   00080	e5943034	 ldr         r3, [r4, #0x34]
   00084	e3530000	 cmp         r3, #0
   00088	0a00000b	 beq         |$LN4@KPD_Deinit|
 
-; 519  :         {
-; 520  :         TWLInterruptMask(pDevice->hTWL, TWL_INTR_ITKPI, TRUE);
+; 518  :         {
+; 519  :         TWLInterruptMask(pDevice->hTWL, TWL_INTR_ITKPI, TRUE);
 
   0008c	e3a05a01	 mov         r5, #1, 20
   00090	e385102a	 orr         r1, r5, #0x2A
@@ -559,76 +559,76 @@
   00098	e1a00003	 mov         r0, r3
   0009c	eb000000	 bl          TWLInterruptMask
 
-; 521  :         
-; 522  :         if (pDevice->hIntrEventKeypad != NULL)
+; 520  :         
+; 521  :         if (pDevice->hIntrEventKeypad != NULL)
 
   000a0	e5943020	 ldr         r3, [r4, #0x20]
   000a4	e3530000	 cmp         r3, #0
 
-; 523  :             {
-; 524  :             TWLInterruptDisable(pDevice->hTWL, TWL_INTR_ITKPI);
+; 522  :             {
+; 523  :             TWLInterruptDisable(pDevice->hTWL, TWL_INTR_ITKPI);
 
   000a8	15940034	 ldrne       r0, [r4, #0x34]
   000ac	1385102a	 orrne       r1, r5, #0x2A
   000b0	1b000000	 blne        TWLInterruptDisable
 
-; 525  :             }
-; 526  :         
-; 527  :         TWLClose(pDevice->hTWL);
+; 524  :             }
+; 525  :         
+; 526  :         TWLClose(pDevice->hTWL);
 
   000b4	e5940034	 ldr         r0, [r4, #0x34]
   000b8	eb000000	 bl          TWLClose
   000bc		 |$LN4@KPD_Deinit|
 
-; 528  :         }
-; 529  : 
-; 530  :     // Close interrupt handler
-; 531  :     if (pDevice->hIntrEventKeypad != NULL) CloseHandle(pDevice->hIntrEventKeypad);
+; 527  :         }
+; 528  : 
+; 529  :     // Close interrupt handler
+; 530  :     if (pDevice->hIntrEventKeypad != NULL) CloseHandle(pDevice->hIntrEventKeypad);
 
   000bc	e5943020	 ldr         r3, [r4, #0x20]
   000c0	e3530000	 cmp         r3, #0
   000c4	11a00003	 movne       r0, r3
   000c8	1b000000	 blne        CloseHandle
 
-; 532  :     if (pDevice->hKeypressEvent != NULL) CloseHandle(pDevice->hKeypressEvent);
+; 531  :     if (pDevice->hKeypressEvent != NULL) CloseHandle(pDevice->hKeypressEvent);
 
   000cc	e594303c	 ldr         r3, [r4, #0x3C]
   000d0	e3530000	 cmp         r3, #0
   000d4	11a00003	 movne       r0, r3
   000d8	1b000000	 blne        CloseHandle
 
-; 533  :     // Free device structure
-; 534  :     LocalFree(pDevice);
+; 532  :     // Free device structure
+; 533  :     LocalFree(pDevice);
 
   000dc	e1a00004	 mov         r0, r4
   000e0	eb000000	 bl          LocalFree
 
-; 535  : 
-; 536  :     // Done
-; 537  :     rc = TRUE;
+; 534  : 
+; 535  :     // Done
+; 536  :     rc = TRUE;
 
   000e4	e3a00001	 mov         r0, #1
-  000e8		 |$cleanUp$43880|
+  000e8		 |$cleanUp$43883|
 
-; 538  : 
-; 539  : cleanUp:
-; 540  :     DEBUGMSG(ZONE_FUNCTION, (L"-KPD_Deinit(rc = %d)\r\n", rc));
-; 541  :     return rc;
-; 542  : }
+; 537  : 
+; 538  : cleanUp:
+; 539  :     DEBUGMSG(ZONE_FUNCTION, (L"-KPD_Deinit(rc = %d)\r\n", rc));
+; 540  :     return rc;
+; 541  : }
 
   000e8	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   000ec	e12fff1e	 bx          lr
   000f0		 |$LN18@KPD_Deinit|
   000f0		 |$LN19@KPD_Deinit|
   000f0	6b706444	 DCD         0x6b706444
-  000f4		 |$M44338|
+  000f4		 |$M44339|
 
 			 ENDP  ; |KPD_Deinit|
 
 	EXPORT	|KPD_Open|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44352| DCD	|$LN5@KPD_Open|
+|$T44353| DCD	|$LN5@KPD_Open|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -636,26 +636,26 @@
 
   00000		 |KPD_Open| PROC
 
-; 556  : {
+; 553  : {
 
   00000		 |$LN5@KPD_Open|
-  00000		 |$M44349|
+  00000		 |$M44350|
 
-; 557  :     UNREFERENCED_PARAMETER(context);
-; 558  :     UNREFERENCED_PARAMETER(accessCode);
-; 559  :     UNREFERENCED_PARAMETER(shareMode);
-; 560  :     return context;
-; 561  : }
+; 554  :     UNREFERENCED_PARAMETER(context);
+; 555  :     UNREFERENCED_PARAMETER(accessCode);
+; 556  :     UNREFERENCED_PARAMETER(shareMode);
+; 557  :     return context;
+; 558  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M44350|
+  00004		 |$M44351|
 
 			 ENDP  ; |KPD_Open|
 
 	EXPORT	|KPD_Close|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44361| DCD	|$LN5@KPD_Close|
+|$T44362| DCD	|$LN5@KPD_Close|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -663,27 +663,27 @@
 
   00000		 |KPD_Close| PROC
 
-; 573  : {
+; 567  : {
 
   00000		 |$LN5@KPD_Close|
-  00000		 |$M44358|
+  00000		 |$M44359|
 
-; 574  :     UNREFERENCED_PARAMETER(context);
-; 575  :     return TRUE;
+; 568  :     UNREFERENCED_PARAMETER(context);
+; 569  :     return TRUE;
 
   00000	e3a00001	 mov         r0, #1
 
-; 576  : }
+; 570  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M44359|
+  00008		 |$M44360|
 
 			 ENDP  ; |KPD_Close|
 
 	EXPORT	|KPD_PowerUp|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44368| DCD	|$LN5@KPD_PowerU|
+|$T44369| DCD	|$LN5@KPD_PowerU|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -691,16 +691,16 @@
 
   00000		 |KPD_PowerUp| PROC
 
-; 590  : {
+; 581  : {
 
   00000		 |$LN5@KPD_PowerU|
-  00000		 |$M44365|
+  00000		 |$M44366|
 
-; 591  :     UNREFERENCED_PARAMETER(context);
-; 592  : }
+; 582  :     UNREFERENCED_PARAMETER(context);
+; 583  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M44366|
+  00004		 |$M44367|
 
 			 ENDP  ; |KPD_PowerUp|
 
@@ -714,27 +714,27 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44442| DCD	|$LN76@KPD_IOCont|
+|$T44443| DCD	|$LN76@KPD_IOCont|
 	DCD	0xc0008904
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44444| DCD	|$LN37@KPD_IOCont|
+|$T44445| DCD	|$LN37@KPD_IOCont|
 	DCD	0x40000301
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44446| DCD	|$LN58@KPD_IOCont|
+|$T44447| DCD	|$LN58@KPD_IOCont|
 	DCD	0x40000301
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44448| DCD	|$LN51@KPD_IOCont|
+|$T44449| DCD	|$LN51@KPD_IOCont|
 	DCD	0x40000301
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44450| DCD	|$LN44@KPD_IOCont|
+|$T44451| DCD	|$LN44@KPD_IOCont|
 	DCD	0x40000d01
 
   00000			 AREA	 |.xdata|, DATA
-|$T44440| DCD	0x4
+|$T44441| DCD	0x4
 	DCD	|$LN41@KPD_IOCont|
 	DCD	|$LN42@KPD_IOCont|
 	DCD	|$LN37@KPD_IOCont|
@@ -800,11 +800,11 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T44440|
+  00004	00000000	 DCD         |$T44441|
 
   00008		 |KPD_IOControl| PROC
 
-; 610  : {
+; 599  : {
 
   00008		 |$LN76@KPD_IOCont|
   00008	e1a0c00d	 mov         r12, sp
@@ -814,23 +814,23 @@
   00018		 |$LN74@KPD_IOCont|
   00018	e1b06000	 movs        r6, r0
 
-; 611  :     BOOL rc = FALSE;
+; 600  :     BOOL rc = FALSE;
 
   0001c	e3a04000	 mov         r4, #0
   00020	e50b4024	 str         r4, [r11, #-0x24]
 
-; 612  :     KeypadDevice_t *pDevice = (KeypadDevice_t*)context;
-; 613  : 
-; 614  :     UNREFERENCED_PARAMETER(inSize);
-; 615  :     UNREFERENCED_PARAMETER(pInBuffer);
-; 616  : 
-; 617  :     DEBUGMSG(ZONE_FUNCTION, (
-; 618  :         L"+KPD_IOControl(0x%08x, 0x%08x, 0x%08x, %d, 0x%08x, %d, 0x%08x)\r\n",
-; 619  :         context, code, pInBuffer, inSize, pOutBuffer, outSize, pOutSize
-; 620  :         ));
-; 621  :         
-; 622  :     // Check if we get correct context
-; 623  :     if ((pDevice == NULL) || (pDevice->cookie != KPD_DEVICE_COOKIE))
+; 601  :     KeypadDevice_t *pDevice = (KeypadDevice_t*)context;
+; 602  : 
+; 603  :     UNREFERENCED_PARAMETER(inSize);
+; 604  :     UNREFERENCED_PARAMETER(pInBuffer);
+; 605  : 
+; 606  :     DEBUGMSG(ZONE_FUNCTION, (
+; 607  :         L"+KPD_IOControl(0x%08x, 0x%08x, 0x%08x, %d, 0x%08x, %d, 0x%08x)\r\n",
+; 608  :         context, code, pInBuffer, inSize, pOutBuffer, outSize, pOutSize
+; 609  :         ));
+; 610  :         
+; 611  :     // Check if we get correct context
+; 612  :     if ((pDevice == NULL) || (pDevice->cookie != KPD_DEVICE_COOKIE))
 
   00024	0a000077	 beq         |$LN18@KPD_IOCont|
   00028	e5962000	 ldr         r2, [r6]
@@ -839,10 +839,10 @@
   00034	1a000073	 bne         |$LN18@KPD_IOCont|
   00038	e3a03832	 mov         r3, #0x32, 16
 
-; 628  :         goto cleanUp;
-; 629  :         }
-; 630  :     
-; 631  :     switch (code)
+; 617  :         goto cleanUp;
+; 618  :         }
+; 619  :     
+; 620  :     switch (code)
 
   0003c	e3833a01	 orr         r3, r3, #1, 20
   00040	e1510003	 cmp         r1, r3
@@ -855,58 +855,58 @@
   0005c	0a000014	 beq         |$LN8@KPD_IOCont|
   00060	e59f320c	 ldr         r3, [pc, #0x20C]
   00064	e1510003	 cmp         r1, r3
-  00068	1a00006b	 bne         |$cleanUp$43933|
+  00068	1a00006b	 bne         |$cleanUp$43936|
 
-; 653  :                         }
-; 654  :                 }
-; 655  :             break;
-; 656  : 
-; 657  :         // determines whether changing power state is feasible
-; 658  :         case IOCTL_POWER_QUERY: 
-; 659  :             DEBUGMSG(ZONE_INFO,(L"KPD: Received IOCTL_POWER_QUERY\r\n"));
-; 660  :             if (pOutBuffer && outSize >= sizeof(CEDEVICE_POWER_STATE)) 
+; 642  :                         }
+; 643  :                 }
+; 644  :             break;
+; 645  : 
+; 646  :         // determines whether changing power state is feasible
+; 647  :         case IOCTL_POWER_QUERY: 
+; 648  :             DEBUGMSG(ZONE_INFO,(L"KPD: Received IOCTL_POWER_QUERY\r\n"));
+; 649  :             if (pOutBuffer && outSize >= sizeof(CEDEVICE_POWER_STATE)) 
 
   0006c	e59b2000	 ldr         r2, [r11]
   00070	e3520000	 cmp         r2, #0
-  00074	0a000068	 beq         |$cleanUp$43933|
+  00074	0a000068	 beq         |$cleanUp$43936|
   00078	e59b3004	 ldr         r3, [r11, #4]
   0007c	e3530004	 cmp         r3, #4
-  00080	3a000065	 bcc         |$cleanUp$43933|
+  00080	3a000065	 bcc         |$cleanUp$43936|
   00084		 |$LN48@KPD_IOCont|
 
-; 661  :                 {
-; 662  :                 // Return a good status on any valid query, since we are 
-; 663  :                 // always ready to change power states (if asked for state 
-; 664  :                 // we don't support, we move to next highest, eg D3->D4).
-; 665  :                 __try 
-; 666  :                     {
-; 667  :                     CEDEVICE_POWER_STATE ReqDx = *(PCEDEVICE_POWER_STATE)pOutBuffer;
+; 650  :                 {
+; 651  :                 // Return a good status on any valid query, since we are 
+; 652  :                 // always ready to change power states (if asked for state 
+; 653  :                 // we don't support, we move to next highest, eg D3->D4).
+; 654  :                 __try 
+; 655  :                     {
+; 656  :                     CEDEVICE_POWER_STATE ReqDx = *(PCEDEVICE_POWER_STATE)pOutBuffer;
 
   00084	e5923000	 ldr         r3, [r2]
 
-; 668  :  
-; 669  :                     if (VALID_DX(ReqDx)) 
+; 657  :  
+; 658  :                     if (VALID_DX(ReqDx)) 
 
   00088	e3530004	 cmp         r3, #4
 
-; 670  :                         {
-; 671  :                         // This is a valid Dx state so return a good status.
-; 672  :                         rc = TRUE;
+; 659  :                         {
+; 660  :                         // This is a valid Dx state so return a good status.
+; 661  :                         rc = TRUE;
 
   0008c	93a04001	 movls       r4, #1
   00090	950b4024	 strls       r4, [r11, #-0x24]
   00094		 |$LN49@KPD_IOCont|
 
-; 673  :                         }
-; 674  :  
-; 675  :                     DEBUGMSG(ZONE_INFO, (L"KPD: IOCTL_POWER_QUERY %d\r\n"));
-; 676  :                     }
+; 662  :                         }
+; 663  :  
+; 664  :                     DEBUGMSG(ZONE_INFO, (L"KPD: IOCTL_POWER_QUERY %d\r\n"));
+; 665  :                     }
 
-  00094	ea000060	 b           |$cleanUp$43933|
+  00094	ea000060	 b           |$cleanUp$43936|
   00098		 |$LN45@KPD_IOCont|
 
-; 678  :                     {
-; 679  :                     RETAILMSG(ZONE_ERROR, (L"Exception in ioctl\r\n"));
+; 667  :                     {
+; 668  :                     RETAILMSG(ZONE_ERROR, (L"Exception in ioctl\r\n"));
 
   00098	e59f31c0	 ldr         r3, [pc, #0x1C0]
   0009c	e5933440	 ldr         r3, [r3, #0x440]
@@ -914,74 +914,74 @@
   000a4	159f01bc	 ldrne       r0, [pc, #0x1BC]
   000a8	1b000000	 blne        NKDbgPrintfW
   000ac	e51b4024	 ldr         r4, [r11, #-0x24]
-  000b0	ea000059	 b           |$cleanUp$43933|
+  000b0	ea000059	 b           |$cleanUp$43936|
   000b4		 |$LN8@KPD_IOCont|
 
-; 680  :                     }
-; 681  :                 }
-; 682  :             break;
-; 683  : 
-; 684  :         // requests a change from one device power state to another
-; 685  :         case IOCTL_POWER_SET: 
-; 686  :             DEBUGMSG(ZONE_INFO,(L"KPD: Received IOCTL_POWER_SET\r\n"));
-; 687  :             if (pOutBuffer && outSize >= sizeof(CEDEVICE_POWER_STATE)) 
+; 669  :                     }
+; 670  :                 }
+; 671  :             break;
+; 672  : 
+; 673  :         // requests a change from one device power state to another
+; 674  :         case IOCTL_POWER_SET: 
+; 675  :             DEBUGMSG(ZONE_INFO,(L"KPD: Received IOCTL_POWER_SET\r\n"));
+; 676  :             if (pOutBuffer && outSize >= sizeof(CEDEVICE_POWER_STATE)) 
 
   000b4	e59b5000	 ldr         r5, [r11]
   000b8	e3550000	 cmp         r5, #0
-  000bc	0a000056	 beq         |$cleanUp$43933|
+  000bc	0a000056	 beq         |$cleanUp$43936|
   000c0	e59b3004	 ldr         r3, [r11, #4]
   000c4	e3530004	 cmp         r3, #4
-  000c8	3a000053	 bcc         |$cleanUp$43933|
+  000c8	3a000053	 bcc         |$cleanUp$43936|
   000cc		 |$LN55@KPD_IOCont|
 
-; 688  :                 {
-; 689  :                 __try 
-; 690  :                     {
-; 691  :                     CEDEVICE_POWER_STATE ReqDx = *(PCEDEVICE_POWER_STATE)pOutBuffer;
+; 677  :                 {
+; 678  :                 __try 
+; 679  :                     {
+; 680  :                     CEDEVICE_POWER_STATE ReqDx = *(PCEDEVICE_POWER_STATE)pOutBuffer;
 
   000cc	e5957000	 ldr         r7, [r5]
 
-; 692  :  
-; 693  :                     if (SetPowerState(pDevice, ReqDx))
+; 681  :  
+; 682  :                     if (SetPowerState(pDevice, ReqDx))
 
   000d0	e1a00006	 mov         r0, r6
   000d4	e1a01007	 mov         r1, r7
   000d8	eb000000	 bl          SetPowerState
   000dc	e3500000	 cmp         r0, #0
 
-; 694  :                         {   
-; 695  :                         *(PCEDEVICE_POWER_STATE)pOutBuffer = pDevice->powerState;
+; 683  :                         {   
+; 684  :                         *(PCEDEVICE_POWER_STATE)pOutBuffer = pDevice->powerState;
 
   000e0	15963030	 ldrne       r3, [r6, #0x30]
 
-; 696  :                         *pOutSize = sizeof(CEDEVICE_POWER_STATE);
+; 685  :                         *pOutSize = sizeof(CEDEVICE_POWER_STATE);
 
   000e4	159b2008	 ldrne       r2, [r11, #8]
   000e8	13a01004	 movne       r1, #4
   000ec	15853000	 strne       r3, [r5]
   000f0	15821000	 strne       r1, [r2]
 
-; 697  :  
-; 698  :                         rc = TRUE;
+; 686  :  
+; 687  :                         rc = TRUE;
 
   000f4	13a04001	 movne       r4, #1
   000f8	150b4024	 strne       r4, [r11, #-0x24]
 
-; 692  :  
-; 693  :                     if (SetPowerState(pDevice, ReqDx))
+; 681  :  
+; 682  :                     if (SetPowerState(pDevice, ReqDx))
 
   000fc	1a000005	 bne         |$LN56@KPD_IOCont|
 
-; 699  :                         DEBUGMSG(ZONE_INFO, (L"KPD: "
-; 700  :                             L"IOCTL_POWER_SET to D%u \r\n",
-; 701  :                             pDevice->powerState
-; 702  :                             ));
-; 703  :                         }
-; 704  :                     else 
-; 705  :                         {
-; 706  :                         RETAILMSG(ZONE_ERROR, (L"KPD: "
-; 707  :                             L"Invalid state request D%u \r\n", ReqDx
-; 708  :                             ));
+; 688  :                         DEBUGMSG(ZONE_INFO, (L"KPD: "
+; 689  :                             L"IOCTL_POWER_SET to D%u \r\n",
+; 690  :                             pDevice->powerState
+; 691  :                             ));
+; 692  :                         }
+; 693  :                     else 
+; 694  :                         {
+; 695  :                         RETAILMSG(ZONE_ERROR, (L"KPD: "
+; 696  :                             L"Invalid state request D%u \r\n", ReqDx
+; 697  :                             ));
 
   00100	e59f3158	 ldr         r3, [pc, #0x158]
   00104	e5933440	 ldr         r3, [r3, #0x440]
@@ -991,14 +991,14 @@
   00114	1b000000	 blne        NKDbgPrintfW
   00118		 |$LN56@KPD_IOCont|
 
-; 709  :                         }
-; 710  :                     }
+; 698  :                         }
+; 699  :                     }
 
-  00118	ea00003f	 b           |$cleanUp$43933|
+  00118	ea00003f	 b           |$cleanUp$43936|
   0011c		 |$LN52@KPD_IOCont|
 
-; 712  :                     {
-; 713  :                     RETAILMSG(ZONE_ERROR, (L"Exception in ioctl\r\n"));
+; 701  :                     {
+; 702  :                     RETAILMSG(ZONE_ERROR, (L"Exception in ioctl\r\n"));
 
   0011c	e59f313c	 ldr         r3, [pc, #0x13C]
   00120	e5933440	 ldr         r3, [r3, #0x440]
@@ -1006,16 +1006,16 @@
   00128	159f0138	 ldrne       r0, [pc, #0x138]
   0012c	1b000000	 blne        NKDbgPrintfW
   00130	e51b4024	 ldr         r4, [r11, #-0x24]
-  00134	ea000038	 b           |$cleanUp$43933|
+  00134	ea000038	 b           |$cleanUp$43936|
   00138		 |$LN3@KPD_IOCont|
 
-; 714  :                     }
-; 715  :             }
-; 716  :             break;
-; 717  : 
-; 718  :         // gets the current device power state
-; 719  :         case IOCTL_POWER_GET: 
-; 720  :             RETAILMSG(ZONE_INFO, (L"KPD: Received IOCTL_POWER_GET\r\n"));
+; 703  :                     }
+; 704  :             }
+; 705  :             break;
+; 706  : 
+; 707  :         // gets the current device power state
+; 708  :         case IOCTL_POWER_GET: 
+; 709  :             RETAILMSG(ZONE_INFO, (L"KPD: Received IOCTL_POWER_GET\r\n"));
 
   00138	e59f3120	 ldr         r3, [pc, #0x120]
   0013c	e5933440	 ldr         r3, [r3, #0x440]
@@ -1023,43 +1023,43 @@
   00144	159f0120	 ldrne       r0, [pc, #0x120]
   00148	1b000000	 blne        NKDbgPrintfW
 
-; 721  :             if (pOutBuffer != NULL && outSize >= sizeof(CEDEVICE_POWER_STATE)) 
+; 710  :             if (pOutBuffer != NULL && outSize >= sizeof(CEDEVICE_POWER_STATE)) 
 
   0014c	e59b2000	 ldr         r2, [r11]
   00150	e3520000	 cmp         r2, #0
-  00154	0a000030	 beq         |$cleanUp$43933|
+  00154	0a000030	 beq         |$cleanUp$43936|
   00158	e59b3004	 ldr         r3, [r11, #4]
   0015c	e3530004	 cmp         r3, #4
-  00160	3a00002d	 bcc         |$cleanUp$43933|
+  00160	3a00002d	 bcc         |$cleanUp$43936|
   00164		 |$LN62@KPD_IOCont|
 
-; 722  :                 {
-; 723  :                 __try 
-; 724  :                     {
-; 725  :                     *(PCEDEVICE_POWER_STATE)pOutBuffer = pDevice->powerState;
+; 711  :                 {
+; 712  :                 __try 
+; 713  :                     {
+; 714  :                     *(PCEDEVICE_POWER_STATE)pOutBuffer = pDevice->powerState;
 
   00164	e5963030	 ldr         r3, [r6, #0x30]
   00168	e5823000	 str         r3, [r2]
 
-; 726  :  
-; 727  :                     rc = TRUE;
+; 715  :  
+; 716  :                     rc = TRUE;
 
   0016c	e3a04001	 mov         r4, #1
   00170	e50b4024	 str         r4, [r11, #-0x24]
   00174		 |$LN63@KPD_IOCont|
 
-; 728  : 
-; 729  :                     DEBUGMSG(ZONE_INFO, (L"KPD: "
-; 730  :                             L"IOCTL_POWER_GET to D%u \r\n",
-; 731  :                             pDevice->powerState
-; 732  :                             ));
-; 733  :                     }
+; 717  : 
+; 718  :                     DEBUGMSG(ZONE_INFO, (L"KPD: "
+; 719  :                             L"IOCTL_POWER_GET to D%u \r\n",
+; 720  :                             pDevice->powerState
+; 721  :                             ));
+; 722  :                     }
 
-  00174	ea000028	 b           |$cleanUp$43933|
+  00174	ea000028	 b           |$cleanUp$43936|
   00178		 |$LN59@KPD_IOCont|
 
-; 735  :                     {
-; 736  :                     RETAILMSG(ZONE_ERROR, (L"Exception in ioctl\r\n"));
+; 724  :                     {
+; 725  :                     RETAILMSG(ZONE_ERROR, (L"Exception in ioctl\r\n"));
 
   00178	e59f30e0	 ldr         r3, [pc, #0xE0]
   0017c	e5933440	 ldr         r3, [r3, #0x440]
@@ -1067,64 +1067,64 @@
   00184	159f00dc	 ldrne       r0, [pc, #0xDC]
   00188	1b000000	 blne        NKDbgPrintfW
   0018c	e51b4024	 ldr         r4, [r11, #-0x24]
-  00190	ea000021	 b           |$cleanUp$43933|
+  00190	ea000021	 b           |$cleanUp$43936|
   00194		 |$LN15@KPD_IOCont|
 
-; 632  :         {
-; 633  :         case IOCTL_POWER_CAPABILITIES: 
-; 634  :             DEBUGMSG(ZONE_INFO, (L"KPD: Received IOCTL_POWER_CAPABILITIES\r\n"));
-; 635  :             if (pOutBuffer && outSize >= sizeof (POWER_CAPABILITIES) && 
-; 636  :                 pOutSize) 
+; 621  :         {
+; 622  :         case IOCTL_POWER_CAPABILITIES: 
+; 623  :             DEBUGMSG(ZONE_INFO, (L"KPD: Received IOCTL_POWER_CAPABILITIES\r\n"));
+; 624  :             if (pOutBuffer && outSize >= sizeof (POWER_CAPABILITIES) && 
+; 625  :                 pOutSize) 
 
   00194	e59b5000	 ldr         r5, [r11]
   00198	e3550000	 cmp         r5, #0
-  0019c	0a00001e	 beq         |$cleanUp$43933|
+  0019c	0a00001e	 beq         |$cleanUp$43936|
   001a0	e59b3004	 ldr         r3, [r11, #4]
   001a4	e3530030	 cmp         r3, #0x30
-  001a8	3a00001b	 bcc         |$cleanUp$43933|
+  001a8	3a00001b	 bcc         |$cleanUp$43936|
   001ac	e59b7008	 ldr         r7, [r11, #8]
   001b0	e3570000	 cmp         r7, #0
-  001b4	0a000018	 beq         |$cleanUp$43933|
+  001b4	0a000018	 beq         |$cleanUp$43936|
   001b8		 |$LN41@KPD_IOCont|
 
-; 637  :                 {
-; 638  :                     __try 
-; 639  :                         {
-; 640  :                         PPOWER_CAPABILITIES PowerCaps;
-; 641  :                         PowerCaps = (PPOWER_CAPABILITIES)pOutBuffer;
-; 642  :          
-; 643  :                         // Only supports D0 (permanently on) and D4(off.         
-; 644  :                         memset(PowerCaps, 0, sizeof(*PowerCaps));
+; 626  :                 {
+; 627  :                     __try 
+; 628  :                         {
+; 629  :                         PPOWER_CAPABILITIES PowerCaps;
+; 630  :                         PowerCaps = (PPOWER_CAPABILITIES)pOutBuffer;
+; 631  :          
+; 632  :                         // Only supports D0 (permanently on) and D4(off.         
+; 633  :                         memset(PowerCaps, 0, sizeof(*PowerCaps));
 
   001b8	e3a02030	 mov         r2, #0x30
   001bc	e3a01000	 mov         r1, #0
   001c0	e1a00005	 mov         r0, r5
   001c4	eb000000	 bl          memset
 
-; 645  :                         PowerCaps->DeviceDx = (UCHAR)pDevice->powerMask;
+; 634  :                         PowerCaps->DeviceDx = (UCHAR)pDevice->powerMask;
 
   001c8	e596302c	 ldr         r3, [r6, #0x2C]
 
-; 646  :                         *pOutSize = sizeof(*PowerCaps);
+; 635  :                         *pOutSize = sizeof(*PowerCaps);
 
   001cc	e3a02030	 mov         r2, #0x30
   001d0	e5c53000	 strb        r3, [r5]
   001d4	e5872000	 str         r2, [r7]
 
-; 647  :                         
-; 648  :                         rc = TRUE;
+; 636  :                         
+; 637  :                         rc = TRUE;
 
   001d8	e3a04001	 mov         r4, #1
   001dc	e50b4024	 str         r4, [r11, #-0x24]
   001e0		 |$LN42@KPD_IOCont|
 
-; 649  :                         }
+; 638  :                         }
 
-  001e0	ea00000d	 b           |$cleanUp$43933|
+  001e0	ea00000d	 b           |$cleanUp$43936|
   001e4		 |$LN38@KPD_IOCont|
 
-; 651  :                         {
-; 652  :                         RETAILMSG(ZONE_ERROR, (L"exception in ioctl\r\n"));
+; 640  :                         {
+; 641  :                         RETAILMSG(ZONE_ERROR, (L"exception in ioctl\r\n"));
 
   001e4	e59f3074	 ldr         r3, [pc, #0x74]
   001e8	e5933440	 ldr         r3, [r3, #0x440]
@@ -1132,35 +1132,35 @@
   001f0	159f006c	 ldrne       r0, [pc, #0x6C]
   001f4	1b000000	 blne        NKDbgPrintfW
   001f8	e51b4024	 ldr         r4, [r11, #-0x24]
-  001fc	ea000006	 b           |$cleanUp$43933|
+  001fc	ea000006	 b           |$cleanUp$43936|
   00200		 |$LN73@KPD_IOCont|
 
-; 737  :                     }
-; 738  :                 }     
-; 739  :             break;
-; 740  :         }
-; 741  : 
-; 742  : cleanUp:
-; 743  :     DEBUGMSG(ZONE_FUNCTION, (L"-KPD_IOControl(rc = %d)\r\n", rc));
-; 744  :     return rc;
+; 726  :                     }
+; 727  :                 }     
+; 728  :             break;
+; 729  :         }
+; 730  : 
+; 731  : cleanUp:
+; 732  :     DEBUGMSG(ZONE_FUNCTION, (L"-KPD_IOControl(rc = %d)\r\n", rc));
+; 733  :     return rc;
 
   00200	e51b4020	 ldr         r4, [r11, #-0x20]
-  00204	ea000004	 b           |$cleanUp$43933|
+  00204	ea000004	 b           |$cleanUp$43936|
   00208		 |$LN18@KPD_IOCont|
 
-; 624  :         {
-; 625  :         RETAILMSG(ZONE_ERROR, (L"ERROR: KPD_IOControl: "
-; 626  :             L"Incorrect context parameter\r\n"
-; 627  :             ));
+; 613  :         {
+; 614  :         RETAILMSG(ZONE_ERROR, (L"ERROR: KPD_IOControl: "
+; 615  :             L"Incorrect context parameter\r\n"
+; 616  :             ));
 
   00208	e59f3050	 ldr         r3, [pc, #0x50]
   0020c	e5933440	 ldr         r3, [r3, #0x440]
   00210	e3130001	 tst         r3, #1
   00214	159f0040	 ldrne       r0, [pc, #0x40]
   00218	1b000000	 blne        NKDbgPrintfW
-  0021c		 |$cleanUp$43933|
+  0021c		 |$cleanUp$43936|
 
-; 745  : }
+; 734  : }
 
   0021c	e1a00004	 mov         r0, r4
   00220	e24bd01c	 sub         sp, r11, #0x1C
@@ -1172,7 +1172,7 @@
   0022c		 |$LN37@KPD_IOCont|
   0022c		 |$LN75@KPD_IOCont|
 
-; 650  :                     __except(EXCEPTION_EXECUTE_HANDLER) 
+; 639  :                     __except(EXCEPTION_EXECUTE_HANDLER) 
 
   0022c	e52de004	 str         lr, [sp, #-4]!
   00230		 |$LN40@KPD_IOCont|
@@ -1184,7 +1184,7 @@
   00238		 |$LN58@KPD_IOCont|
   00238		 |$LN77@KPD_IOCont|
 
-; 734  :                 __except(EXCEPTION_EXECUTE_HANDLER) 
+; 723  :                 __except(EXCEPTION_EXECUTE_HANDLER) 
 
   00238	e52de004	 str         lr, [sp, #-4]!
   0023c		 |$LN61@KPD_IOCont|
@@ -1196,7 +1196,7 @@
   00244		 |$LN51@KPD_IOCont|
   00244		 |$LN78@KPD_IOCont|
 
-; 711  :                 __except(EXCEPTION_EXECUTE_HANDLER) 
+; 700  :                 __except(EXCEPTION_EXECUTE_HANDLER) 
 
   00244	e52de004	 str         lr, [sp, #-4]!
   00248		 |$LN54@KPD_IOCont|
@@ -1208,7 +1208,7 @@
   00250		 |$LN44@KPD_IOCont|
   00250		 |$LN79@KPD_IOCont|
 
-; 677  :                 __except(EXCEPTION_EXECUTE_HANDLER) 
+; 666  :                 __except(EXCEPTION_EXECUTE_HANDLER) 
 
   00250	e52de004	 str         lr, [sp, #-4]!
   00254		 |$LN47@KPD_IOCont|
@@ -1239,168 +1239,12 @@
   00280	6b706444	 DCD         0x6b706444
   00284		 |$LN88@KPD_IOCont|
   00284		 |$LN80@KPD_IOCont|
-	EXPORT	|??_C@_1FM@PJGOFBDI@?$AAP?$AAh?$AAy?$AAs?$AAi?$AAc?$AAa?$AAl?$AAS?$AAt?$AAa?$AAt?$AAe?$AAT?$AAo?$AAV?$AAi?$AAr?$AAt?$AAu?$AAa?$AAl?$AAS?$AAt?$AAa?$AAt?$AAe?$AA?3?$AA?5?$AA?$FL?$AA?$CF?$AAd@| [ DATA ] ; `string'
-	IMPORT	|g_keypadVK|
-
-  00000			 AREA	 |.pdata|, PDATA
-|$T44494| DCD	|$LN18@PhysicalSt|
-	DCD	0x40003302
-
-  00000			 AREA	 |.rdata|, DATA, READONLY
-|??_C@_1FM@PJGOFBDI@?$AAP?$AAh?$AAy?$AAs?$AAi?$AAc?$AAa?$AAl?$AAS?$AAt?$AAa?$AAt?$AAe?$AAT?$AAo?$AAV?$AAi?$AAr?$AAt?$AAu?$AAa?$AAl?$AAS?$AAt?$AAa?$AAt?$AAe?$AA?3?$AA?5?$AA?$FL?$AA?$CF?$AAd@| DCB "P"
-	DCB	0x0, "h", 0x0, "y", 0x0, "s", 0x0, "i", 0x0, "c", 0x0, "a"
-	DCB	0x0, "l", 0x0, "S", 0x0, "t", 0x0, "a", 0x0, "t", 0x0, "e"
-	DCB	0x0, "T", 0x0, "o", 0x0, "V", 0x0, "i", 0x0, "r", 0x0, "t"
-	DCB	0x0, "u", 0x0, "a", 0x0, "l", 0x0, "S", 0x0, "t", 0x0, "a"
-	DCB	0x0, "t", 0x0, "e", 0x0, ":", 0x0, " ", 0x0, "[", 0x0, "%"
-	DCB	0x0, "d", 0x0, ",", 0x0, "%", 0x0, "d", 0x0, "]", 0x0, " "
-	DCB	0x0, "=", 0x0, " ", 0x0, "0", 0x0, "x", 0x0, "%", 0x0, "x"
-	DCB	0x0, 0xd, 0x0, 0xa, 0x0, 0x0, 0x0	; `string'
-; Function compile flags: /Ogspy
-
-  00000			 AREA	 |.text|, CODE, ARM
-
-  00000		 |PhysicalStateToVirtualState| PROC
-
-; 759  : {
-
-  00000		 |$LN18@PhysicalSt|
-  00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
-  00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M44491|
-  00008	e1a0a000	 mov         r10, r0
-  0000c	e58da000	 str         r10, [sp]
-  00010	e58d2004	 str         r2, [sp, #4]
-  00014	e1a0b001	 mov         r11, r1
-
-; 760  :     BOOL keyDown = FALSE;
-; 761  :     USHORT state;
-; 762  :     ULONG ik, ix, row, column;
-; 763  : 
-; 764  :     for (row = 0, ik = 0; row < KEYPAD_ROWS; row++)
-
-  00018	e59f80a8	 ldr         r8, [pc, #0xA8]
-  0001c	e3a0e000	 mov         lr, #0
-  00020	e3a06000	 mov         r6, #0
-  00024	e3a07000	 mov         r7, #0
-  00028	e3a03001	 mov         r3, #1
-  0002c		 |$LL9@PhysicalSt|
-
-; 765  : 	{
-; 766  :         // Get matrix state        
-; 767  :         ix = row;
-; 768  :         state = matrix[ix] & 0xFF;
-
-  0002c	e7d6900a	 ldrb        r9, [r6, +r10]
-
-; 769  : 
-; 770  :         // If no-key is pressed continue with new rows
-; 771  :         if (state == 0) 
-
-  00030	e3590000	 cmp         r9, #0
-
-; 772  : 		{
-; 773  :             ik += KEYPAD_COLUMNS; // 8
-
-  00034	02877008	 addeq       r7, r7, #8
-  00038	0a000016	 beq         |$LN8@PhysicalSt|
-
-; 774  :             continue;
-; 775  : 		}
-; 776  :         
-; 777  :         for (column = 0; column < KEYPAD_COLUMNS; column++, ik++)
-
-  0003c	e3a05000	 mov         r5, #0
-  00040	e3a0a001	 mov         r10, #1
-  00044		 |$LL5@PhysicalSt|
-
-; 778  : 		{
-; 779  :             if ((state & (1 << column)) != 0)
-
-  00044	e1190513	 tst         r9, r3, lsl r5
-  00048	0a00000d	 beq         |$LN4@PhysicalSt|
-
-; 780  : 			{
-; 781  :                 // g_keypadVK is defined by the platform
-; 782  :                 UINT8 vk = g_keypadVK[ik]; // ik = row * 8 +column
-
-  0004c	e7d74008	 ldrb        r4, [r7, +r8]
-
-; 783  :                 RETAILMSG(1, (L"PhysicalStateToVirtualState: [%d,%d] = 0x%x\r\n",row,column, vk));
-
-  00050	e59f006c	 ldr         r0, [pc, #0x6C]
-  00054	e1a02005	 mov         r2, r5
-  00058	e1a03004	 mov         r3, r4
-  0005c	e1a01006	 mov         r1, r6
-  00060	eb000000	 bl          NKDbgPrintfW
-
-; 784  :                 //RETAILMSG(1, (L"PhysicalStateToVirtualState: ik=%d ix=%d\r\n",ik,ix));
-; 785  :                 vkNewState[vk >> 5] |= 1 << (vk & 0x1F);
-
-  00064	e1a032a4	 mov         r3, r4, lsr #5
-  00068	e1a0100b	 mov         r1, r11
-  0006c	e7b12103	 ldr         r2, [r1, +r3, lsl #2]!
-  00070	e204301f	 and         r3, r4, #0x1F
-
-; 786  :                 keyDown = TRUE;
-
-  00074	e3a0e001	 mov         lr, #1
-  00078	e182331a	 orr         r3, r2, r10, lsl r3
-  0007c	e5813000	 str         r3, [r1]
-  00080	e3a03001	 mov         r3, #1
-  00084		 |$LN4@PhysicalSt|
-  00084	e2855001	 add         r5, r5, #1
-  00088	e3550008	 cmp         r5, #8
-  0008c	e2877001	 add         r7, r7, #1
-  00090	3affffeb	 bcc         |$LL5@PhysicalSt|
-
-; 759  : {
-
-  00094	e59da000	 ldr         r10, [sp]
-  00098		 |$LN8@PhysicalSt|
-
-; 760  :     BOOL keyDown = FALSE;
-; 761  :     USHORT state;
-; 762  :     ULONG ik, ix, row, column;
-; 763  : 
-; 764  :     for (row = 0, ik = 0; row < KEYPAD_ROWS; row++)
-
-  00098	e2866001	 add         r6, r6, #1
-  0009c	e3560008	 cmp         r6, #8
-  000a0	3affffe1	 bcc         |$LL9@PhysicalSt|
-
-; 787  : 			}
-; 788  : 		}
-; 789  : 	}
-; 790  : 
-; 791  :     if (keyDown && (pKeyDown != NULL)) *pKeyDown = TRUE;
-
-  000a4	e59d8004	 ldr         r8, [sp, #4]
-  000a8	e35e0000	 cmp         lr, #0
-  000ac	13580000	 cmpne       r8, #0
-  000b0	13a03001	 movne       r3, #1
-  000b4	15883000	 strne       r3, [r8]
-
-; 792  : }
-
-  000b8	e28dd008	 add         sp, sp, #8
-  000bc	e8bd4ff0	 ldmia       sp!, {r4 - r11, lr}
-  000c0	e12fff1e	 bx          lr
-  000c4		 |$LN19@PhysicalSt|
-  000c4		 |$LN20@PhysicalSt|
-  000c4	00000000	 DCD         |??_C@_1FM@PJGOFBDI@?$AAP?$AAh?$AAy?$AAs?$AAi?$AAc?$AAa?$AAl?$AAS?$AAt?$AAa?$AAt?$AAe?$AAT?$AAo?$AAV?$AAi?$AAr?$AAt?$AAu?$AAa?$AAl?$AAS?$AAt?$AAa?$AAt?$AAe?$AA?3?$AA?5?$AA?$FL?$AA?$CF?$AAd@|
-  000c8		 |$LN21@PhysicalSt|
-  000c8	00000000	 DCD         |g_keypadVK|
-  000cc		 |$M44492|
-
-			 ENDP  ; |PhysicalStateToVirtualState|
-
 	EXPORT	|??_C@_1GI@NNCNBHH@?$AA?5?$AAK?$AAP?$AAD?$AA_?$AAI?$AAn?$AAt?$AAr?$AAT?$AAh?$AAr?$AAe?$AAa?$AAd?$AA?3?$AA?5?$AAM?$AAa?$AAp?$AAp?$AAe?$AAd?$AA?5?$AAp?$AAr?$AAe?$AAs?$AAs?$AA?5?$AAa?$AAn@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1EK@OBDNJICF@?$AA?5?$AAK?$AAP?$AAD?$AA_?$AAI?$AAn?$AAt?$AAr?$AAT?$AAh?$AAr?$AAe?$AAa?$AAd?$AA?3?$AA?5?$AAM?$AAa?$AAp?$AAp?$AAe?$AAd?$AA?5?$AAv?$AAk?$AAe?$AAy?$AA?3?$AA?5?$AA0?$AAx@| [ DATA ] ; `string'
 	IMPORT	|g_keypadRemap|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44541| DCD	|$LN53@VirtualKey|
+|$T44519| DCD	|$LN53@VirtualKey|
 	DCD	0x4000cd02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1430,12 +1274,12 @@
 
   00000		 |VirtualKeyRemap| PROC
 
-; 808  : {
+; 795  : {
 
   00000		 |$LN53@VirtualKey|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd018	 sub         sp, sp, #0x18
-  00008		 |$M44538|
+  00008		 |$M44516|
   00008	e1a04002	 mov         r4, r2
   0000c	e1a02000	 mov         r2, r0
   00010	e1a09001	 mov         r9, r1
@@ -1444,10 +1288,10 @@
   0001c	e58d400c	 str         r4, [sp, #0xC]
   00020	e58d9014	 str         r9, [sp, #0x14]
 
-; 809  :     BOOL keyDown = FALSE;
-; 810  :     int ix;
-; 811  :     
-; 812  :     for (ix = 0; ix < g_keypadRemap.count; ix++)
+; 796  :     BOOL keyDown = FALSE;
+; 797  :     int ix;
+; 798  :     
+; 799  :     for (ix = 0; ix < g_keypadRemap.count; ix++)
 
   00024	e59fb2fc	 ldr         r11, [pc, #0x2FC]
   00028	e3a06000	 mov         r6, #0
@@ -1460,23 +1304,23 @@
   00044		 |$LL32@VirtualKey|
   00044	e59b3004	 ldr         r3, [r11, #4]
 
-; 813  : 	{
-; 814  :         const KEYPAD_REMAP_ITEM *pItem = &g_keypadRemap.pItem[ix];
-; 815  :         KeypadRemapState_t *pState = &pRemapState[ix];
-; 816  :         DWORD state = 0;
+; 800  : 	{
+; 801  :         const KEYPAD_REMAP_ITEM *pItem = &g_keypadRemap.pItem[ix];
+; 802  :         KeypadRemapState_t *pState = &pRemapState[ix];
+; 803  :         DWORD state = 0;
 
   00048	e3a01000	 mov         r1, #0
   0004c	e58d1004	 str         r1, [sp, #4]
 
-; 817  :         USHORT down = 0;
+; 804  :         USHORT down = 0;
 
   00050	e0835186	 add         r5, r3, r6, lsl #3
 
-; 818  :         UINT8 vk = 0;
-; 819  : 
-; 820  :         // Count number of keys down & save down/up state
-; 821  :         int ik;
-; 822  :         for (ik = 0; ik < pItem->keys; ik++)
+; 805  :         UINT8 vk = 0;
+; 806  : 
+; 807  :         // Count number of keys down & save down/up state
+; 808  :         int ik;
+; 809  :         for (ik = 0; ik < pItem->keys; ik++)
 
   00054	e5d51001	 ldrb        r1, [r5, #1]
   00058	e3a0e000	 mov         lr, #0
@@ -1487,12 +1331,12 @@
   0006c	da000016	 ble         |$LN27@VirtualKey|
   00070	e5956004	 ldr         r6, [r5, #4]
 
-; 823  : 		{
-; 824  :             vk = pItem->pVKeys[ik];
-; 825  :             if ((vkNewState[vk >> 5] & (1 << (vk & 0x1F))) != 0)
-; 826  : 			{
-; 827  :                 state |= 1 << ik;
-; 828  :                 down++;
+; 810  : 		{
+; 811  :             vk = pItem->pVKeys[ik];
+; 812  :             if ((vkNewState[vk >> 5] & (1 << (vk & 0x1F))) != 0)
+; 813  : 			{
+; 814  :                 state |= 1 << ik;
+; 815  :                 down++;
 
   00074	e59db004	 ldr         r11, [sp, #4]
   00078	e3a09001	 mov         r9, #1
@@ -1511,9 +1355,9 @@
   000a8	e1500001	 cmp         r0, r1
   000ac	bafffff3	 blt         |$LL29@VirtualKey|
 
-; 907  : 		}
-; 908  :         // Save key state
-; 909  :         pState->state = state;
+; 894  : 		}
+; 895  :         // Save key state
+; 896  :         pState->state = state;
 
   000b0	e59d400c	 ldr         r4, [sp, #0xC]
   000b4	e59d5010	 ldr         r5, [sp, #0x10]
@@ -1524,20 +1368,20 @@
   000c8	e3a09001	 mov         r9, #1
   000cc		 |$LN27@VirtualKey|
 
-; 829  : 			}
-; 830  : 		}
-; 831  : 
-; 832  :         // Depending on number of keys down
-; 833  :         if (down >= pItem->keys && pItem->keys > 1)
+; 816  : 			}
+; 817  : 		}
+; 818  : 
+; 819  :         // Depending on number of keys down
+; 820  :         if (down >= pItem->keys && pItem->keys > 1)
 
   000cc	e15e0001	 cmp         lr, r1
   000d0	3a000020	 bcc         |$LN25@VirtualKey|
   000d4	e3510001	 cmp         r1, #1
   000d8	9a00001e	 bls         |$LN25@VirtualKey|
 
-; 834  : 		{
-; 835  :             // Clear all mapping keys
-; 836  :             for (ik = 0; ik < pItem->keys; ik++)
+; 821  : 		{
+; 822  :             // Clear all mapping keys
+; 823  :             for (ik = 0; ik < pItem->keys; ik++)
 
   000dc	e3a0e000	 mov         lr, #0
   000e0	e3510000	 cmp         r1, #0
@@ -1545,12 +1389,12 @@
   000e8	e3a0b001	 mov         r11, #1
   000ec		 |$LL24@VirtualKey|
 
-; 837  : 			{
-; 838  :                 vk = pItem->pVKeys[ik];
+; 824  : 			{
+; 825  :                 vk = pItem->pVKeys[ik];
 
   000ec	e5953004	 ldr         r3, [r5, #4]
 
-; 839  :                 vkNewState[vk >> 5] &= ~(1 << (vk & 0x1F));
+; 826  :                 vkNewState[vk >> 5] &= ~(1 << (vk & 0x1F));
 
   000f0	e1a0000a	 mov         r0, r10
   000f4	e7d3100e	 ldrb        r1, [r3, +lr]
@@ -1566,17 +1410,17 @@
   0011c	e59fb204	 ldr         r11, [pc, #0x204]
   00120		 |$LN22@VirtualKey|
 
-; 840  : 			}
-; 841  :             // All keys are down set final key
-; 842  :             vk = pItem->vkey;
+; 827  : 			}
+; 828  :             // All keys are down set final key
+; 829  :             vk = pItem->vkey;
 
   00120	e5d51000	 ldrb        r1, [r5]
 
-; 843  :             vkNewState[vk >> 5] |= 1 << (vk & 0x1F);
+; 830  :             vkNewState[vk >> 5] |= 1 << (vk & 0x1F);
 
   00124	e1a0e00a	 mov         lr, r10
 
-; 844  :             RETAILMSG(1, (L" KPD_IntrThread: "L"Mapped vkey: 0x%x\r\n", vk));
+; 831  :             RETAILMSG(1, (L" KPD_IntrThread: "L"Mapped vkey: 0x%x\r\n", vk));
 
   00128	e59f0200	 ldr         r0, [pc, #0x200]
   0012c	e1a032a1	 mov         r3, r1, lsr #5
@@ -1588,30 +1432,30 @@
   00144	eb000000	 bl          NKDbgPrintfW
   00148		 |$LN50@VirtualKey|
 
-; 845  :             // Clear remap pending flag
-; 846  :             pState->pending = FALSE;
+; 832  :             // Clear remap pending flag
+; 833  :             pState->pending = FALSE;
 
   00148	e3a03000	 mov         r3, #0
   0014c	e5843000	 str         r3, [r4]
 
-; 847  :             // Set remap processing flag
-; 848  :             pState->remapped = TRUE;
+; 834  :             // Set remap processing flag
+; 835  :             pState->remapped = TRUE;
 
   00150	e5849004	 str         r9, [r4, #4]
   00154	ea000061	 b           |$LN49@VirtualKey|
   00158		 |$LN25@VirtualKey|
 
-; 849  : 		}
-; 850  :         else if ( down > 0 )
+; 836  : 		}
+; 837  :         else if ( down > 0 )
 
   00158	e35e0000	 cmp         lr, #0
   0015c	0a000040	 beq         |$LN20@VirtualKey|
 
-; 851  :             {
-; 852  :             // If already remapping or remapping is not pending
-; 853  :             // or pending time expired
-; 854  :             if  ( !pState->remapped &&  
-; 855  :                  (!pState->pending || (INT32)( time - pState->time ) < 0 ) )
+; 838  :             {
+; 839  :             // If already remapping or remapping is not pending
+; 840  :             // or pending time expired
+; 841  :             if  ( !pState->remapped &&  
+; 842  :                  (!pState->pending || (INT32)( time - pState->time ) < 0 ) )
 
   00160	e5943004	 ldr         r3, [r4, #4]
   00164	e3530000	 cmp         r3, #0
@@ -1623,23 +1467,23 @@
   0017c	e0523003	 subs        r3, r2, r3
   00180	4a000024	 bmi         |$LN17@VirtualKey|
 
-; 871  :                      (pItem->keys == 1 && (INT32)( time - pState->time ) >= 0) )
+; 858  :                      (pItem->keys == 1 && (INT32)( time - pState->time ) >= 0) )
 
   00184	e3510001	 cmp         r1, #1
   00188	1a000055	 bne         |$LN7@VirtualKey|
   0018c		 |$LN11@VirtualKey|
 
-; 872  : 			{
-; 873  :                 // This is press and hold key
-; 874  :                 RETAILMSG(1, (L" KPD_IntrThread: "L"Mapped press and hold vkey: 0x%x\r\n", vk));
+; 859  : 			{
+; 860  :                 // This is press and hold key
+; 861  :                 RETAILMSG(1, (L" KPD_IntrThread: "L"Mapped press and hold vkey: 0x%x\r\n", vk));
 
   0018c	e59f0198	 ldr         r0, [pc, #0x198]
   00190	e1a01007	 mov         r1, r7
   00194	eb000000	 bl          NKDbgPrintfW
 
-; 875  :                     
-; 876  :                 // Clear all mapping keys
-; 877  :                 for (ik = 0; ik < pItem->keys; ik++)
+; 862  :                     
+; 863  :                 // Clear all mapping keys
+; 864  :                 for (ik = 0; ik < pItem->keys; ik++)
 
   00198	e5d53001	 ldrb        r3, [r5, #1]
   0019c	e3a0e000	 mov         lr, #0
@@ -1648,12 +1492,12 @@
   001a8	e3a0b001	 mov         r11, #1
   001ac		 |$LL10@VirtualKey|
 
-; 878  : 				{
-; 879  :                     vk = pItem->pVKeys[ik];
+; 865  : 				{
+; 866  :                     vk = pItem->pVKeys[ik];
 
   001ac	e5953004	 ldr         r3, [r5, #4]
 
-; 880  :                     vkNewState[vk >> 5] &= ~( 1 << ( vk & 0x1F ) );
+; 867  :                     vkNewState[vk >> 5] &= ~( 1 << ( vk & 0x1F ) );
 
   001b0	e1a0000a	 mov         r0, r10
   001b4	e7d3100e	 ldrb        r1, [r3, +lr]
@@ -1669,17 +1513,17 @@
   001dc	e59fb144	 ldr         r11, [pc, #0x144]
   001e0		 |$LN8@VirtualKey|
 
-; 881  : 				}
-; 882  :                     
-; 883  :                 vk = pItem->vkey;
+; 868  : 				}
+; 869  :                     
+; 870  :                 vk = pItem->vkey;
 
   001e0	e5d51000	 ldrb        r1, [r5]
 
-; 884  :                 vkNewState[vk >> 5] |= 1 << (vk & 0x1F);
+; 871  :                 vkNewState[vk >> 5] |= 1 << (vk & 0x1F);
 
   001e4	e1a0000a	 mov         r0, r10
 
-; 885  :                 keyDown = TRUE;
+; 872  :                 keyDown = TRUE;
 
   001e8	e3a08001	 mov         r8, #1
   001ec	e1a032a1	 mov         r3, r1, lsr #5
@@ -1689,33 +1533,33 @@
   001fc	e1823311	 orr         r3, r2, r1, lsl r3
   00200	e5803000	 str         r3, [r0]
 
-; 886  :                 pState->pending = FALSE;
-; 887  :                 pState->remapped = TRUE;
-; 888  : 			}
-; 889  : 		}
-; 890  :         else
+; 873  :                 pState->pending = FALSE;
+; 874  :                 pState->remapped = TRUE;
+; 875  : 			}
+; 876  : 		}
+; 877  :         else
 
   00204	eaffffcf	 b           |$LN50@VirtualKey|
   00208		 |$LN47@VirtualKey|
 
-; 856  :                 {                
-; 857  :                 // If we are not pending and not already remapping, start
-; 858  :                 if (!pState->pending && !pState->remapped)
-; 859  :                     {
-; 860  :                     pState->pending = TRUE;
+; 843  :                 {                
+; 844  :                 // If we are not pending and not already remapping, start
+; 845  :                 if (!pState->pending && !pState->remapped)
+; 846  :                     {
+; 847  :                     pState->pending = TRUE;
 
   00208	e5849000	 str         r9, [r4]
 
-; 861  :                     pState->time = time + pItem->delay;
+; 848  :                     pState->time = time + pItem->delay;
 
   0020c	e1d530b2	 ldrh        r3, [r5, #2]
   00210	e0833002	 add         r3, r3, r2
   00214	e5843008	 str         r3, [r4, #8]
   00218		 |$LN17@VirtualKey|
 
-; 862  :                     }
-; 863  :                 // Clear all mapping keys
-; 864  :                 for (ik = 0; ik < pItem->keys; ik++)
+; 849  :                     }
+; 850  :                 // Clear all mapping keys
+; 851  :                 for (ik = 0; ik < pItem->keys; ik++)
 
   00218	e5d53001	 ldrb        r3, [r5, #1]
   0021c	e3a0e000	 mov         lr, #0
@@ -1724,12 +1568,12 @@
   00228	e3a0b001	 mov         r11, #1
   0022c		 |$LL16@VirtualKey|
 
-; 865  :                     {
-; 866  :                     vk = pItem->pVKeys[ik];
+; 852  :                     {
+; 853  :                     vk = pItem->pVKeys[ik];
 
   0022c	e5953004	 ldr         r3, [r5, #4]
 
-; 867  :                     vkNewState[vk >> 5] &= ~( 1 << ( vk & 0x1F ) );
+; 854  :                     vkNewState[vk >> 5] &= ~( 1 << ( vk & 0x1F ) );
 
   00230	e1a0000a	 mov         r0, r10
   00234	e7d3100e	 ldrb        r1, [r3, +lr]
@@ -1743,24 +1587,24 @@
   00254	e15e0003	 cmp         lr, r3
   00258	bafffff3	 blt         |$LL16@VirtualKey|
 
-; 868  :                     }
-; 869  :                 }
-; 870  :             else if ( pState->remapped || 
+; 855  :                     }
+; 856  :                 }
+; 857  :             else if ( pState->remapped || 
 
   0025c	e59fb0c4	 ldr         r11, [pc, #0xC4]
   00260	ea00001e	 b           |$LN49@VirtualKey|
   00264		 |$LN20@VirtualKey|
 
-; 891  : 		{            
-; 892  :             // All keys are up, if remapping was pending set keys
-; 893  :             if ( pState->pending )
+; 878  : 		{            
+; 879  :             // All keys are up, if remapping was pending set keys
+; 880  :             if ( pState->pending )
 
   00264	e5943000	 ldr         r3, [r4]
   00268	e3530000	 cmp         r3, #0
   0026c	0a000019	 beq         |$LN48@VirtualKey|
 
-; 894  :                 {            
-; 895  :                 for (ik = 0; ik < pItem->keys; ik++)
+; 881  :                 {            
+; 882  :                 for (ik = 0; ik < pItem->keys; ik++)
 
   00270	e3a0e000	 mov         lr, #0
   00274	e3510000	 cmp         r1, #0
@@ -1769,23 +1613,23 @@
   00280	e3a0b001	 mov         r11, #1
   00284		 |$LL5@VirtualKey|
 
-; 896  : 				{
-; 897  :                     if ( ( pState->state & ( 1 << ik ) ) != 0 )
+; 883  : 				{
+; 884  :                     if ( ( pState->state & ( 1 << ik ) ) != 0 )
 
   00284	e594300c	 ldr         r3, [r4, #0xC]
   00288	e1130e12	 tst         r3, r2, lsl lr
   0028c	0a000009	 beq         |$LN4@VirtualKey|
 
-; 898  : 					{                        
-; 899  :                         vk = pItem->pVKeys[ik];
+; 885  : 					{                        
+; 886  :                         vk = pItem->pVKeys[ik];
 
   00290	e5953004	 ldr         r3, [r5, #4]
 
-; 900  :                         vkNewState[vk >> 5] |= 1 << (vk & 0x1F);
+; 887  :                         vkNewState[vk >> 5] |= 1 << (vk & 0x1F);
 
   00294	e1a0000a	 mov         r0, r10
 
-; 901  :                         keyDown = TRUE;
+; 888  :                         keyDown = TRUE;
 
   00298	e3a08001	 mov         r8, #1
   0029c	e7d3100e	 ldrb        r1, [r3, +lr]
@@ -1803,39 +1647,39 @@
   002c8	e59fb058	 ldr         r11, [pc, #0x58]
   002cc		 |$LN3@VirtualKey|
 
-; 902  : 					}
-; 903  : 				}
-; 904  :                 pState->pending = FALSE;
+; 889  : 					}
+; 890  : 				}
+; 891  :                 pState->pending = FALSE;
 
   002cc	e3a03000	 mov         r3, #0
   002d0	e5843000	 str         r3, [r4]
   002d4	ea000000	 b           |$LN6@VirtualKey|
   002d8		 |$LN48@VirtualKey|
 
-; 823  : 		{
-; 824  :             vk = pItem->pVKeys[ik];
-; 825  :             if ((vkNewState[vk >> 5] & (1 << (vk & 0x1F))) != 0)
-; 826  : 			{
-; 827  :                 state |= 1 << ik;
-; 828  :                 down++;
+; 810  : 		{
+; 811  :             vk = pItem->pVKeys[ik];
+; 812  :             if ((vkNewState[vk >> 5] & (1 << (vk & 0x1F))) != 0)
+; 813  : 			{
+; 814  :                 state |= 1 << ik;
+; 815  :                 down++;
 
   002d8	e3a03000	 mov         r3, #0
   002dc		 |$LN6@VirtualKey|
 
-; 905  : 			}
-; 906  :             pState->remapped = FALSE;
+; 892  : 			}
+; 893  :             pState->remapped = FALSE;
 
   002dc	e5843004	 str         r3, [r4, #4]
   002e0		 |$LN49@VirtualKey|
 
-; 808  : {
+; 795  : {
 
   002e0	e59d2000	 ldr         r2, [sp]
   002e4		 |$LN7@VirtualKey|
 
-; 907  : 		}
-; 908  :         // Save key state
-; 909  :         pState->state = state;
+; 894  : 		}
+; 895  :         // Save key state
+; 896  :         pState->state = state;
 
   002e4	e59d3004	 ldr         r3, [sp, #4]
   002e8	e2866001	 add         r6, r6, #1
@@ -1847,10 +1691,10 @@
   00300	e1560003	 cmp         r6, r3
   00304	baffff4e	 blt         |$LL32@VirtualKey|
 
-; 910  :         }
-; 911  : 
-; 912  :     // Set output variable
-; 913  :     if (keyDown && (pKeyDown != NULL)) *pKeyDown = TRUE;
+; 897  :         }
+; 898  : 
+; 899  :     // Set output variable
+; 900  :     if (keyDown && (pKeyDown != NULL)) *pKeyDown = TRUE;
 
   00308	e59d9014	 ldr         r9, [sp, #0x14]
   0030c	e3580000	 cmp         r8, #0
@@ -1859,7 +1703,7 @@
   00318	15893000	 strne       r3, [r9]
   0031c		 |$LN1@VirtualKey|
 
-; 914  : }
+; 901  : }
 
   0031c	e28dd018	 add         sp, sp, #0x18
   00320	e8bd4ff0	 ldmia       sp!, {r4 - r11, lr}
@@ -1871,7 +1715,7 @@
   0032c	00000000	 DCD         |??_C@_1GI@NNCNBHH@?$AA?5?$AAK?$AAP?$AAD?$AA_?$AAI?$AAn?$AAt?$AAr?$AAT?$AAh?$AAr?$AAe?$AAa?$AAd?$AA?3?$AA?5?$AAM?$AAa?$AAp?$AAp?$AAe?$AAd?$AA?5?$AAp?$AAr?$AAe?$AAs?$AAs?$AA?5?$AAa?$AAn@|
   00330		 |$LN57@VirtualKey|
   00330	00000000	 DCD         |??_C@_1EK@OBDNJICF@?$AA?5?$AAK?$AAP?$AAD?$AA_?$AAI?$AAn?$AAt?$AAr?$AAT?$AAh?$AAr?$AAe?$AAa?$AAd?$AA?3?$AA?5?$AAM?$AAa?$AAp?$AAp?$AAe?$AAd?$AA?5?$AAv?$AAk?$AAe?$AAy?$AA?3?$AA?5?$AA0?$AAx@|
-  00334		 |$M44539|
+  00334		 |$M44517|
 
 			 ENDP  ; |VirtualKeyRemap|
 
@@ -1882,42 +1726,42 @@
 	IMPORT	|__security_check_cookie|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44564| DCD	|$LN23@RemapVKeyT|
+|$T44542| DCD	|$LN23@RemapVKeyT|
 	DCD	0xc0004a02
 
   00000			 AREA	 |.xdata|, DATA
-|$T44560| DCD	0xffffffec
+|$T44538| DCD	0xffffffec
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T44560|
+  00004	00000000	 DCD         |$T44538|
 
   00008		 |RemapVKeyToScreenOrientation| PROC
 
-; 927  : {
+; 912  : {
 
   00008		 |$LN23@RemapVKeyT|
   00008	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   0000c	e24dd0c8	 sub         sp, sp, #0xC8
-  00010		 |$M44561|
+  00010		 |$M44539|
   00010	e1a04000	 mov         r4, r0
   00014	e59f3110	 ldr         r3, [pc, #0x110]
   00018	e5933000	 ldr         r3, [r3]
   0001c	e58d30c4	 str         r3, [sp, #0xC4]
 
-; 928  :     // Arrow key translation for rotate 0, 90, 180 and 270. 
-; 929  :     static const UCHAR   ucOrientationDMDO_0VKTable[4]   = {VK_TUP,    VK_TRIGHT, VK_TDOWN,  VK_TLEFT };
-; 930  :     static const UCHAR   ucOrientationDMDO_90VKTable[4]  = {VK_TRIGHT, VK_TDOWN,  VK_TLEFT,  VK_TUP   };
-; 931  :     static const UCHAR   ucOrientationDMDO_180VKTable[4] = {VK_TDOWN,  VK_TLEFT,  VK_TUP,    VK_TRIGHT};
-; 932  :     static const UCHAR   ucOrientationDMDO_270VKTable[4] = {VK_LEFT,   VK_TUP,    VK_TRIGHT, VK_TDOWN };
-; 933  : 
-; 934  :     UCHAR   ucRetVal = ucVKey;
-; 935  : 
-; 936  :     // if the input key is VK_TUP, VK_TRIGHT, VK_TDOWN, or VK_TLEFT, we might need to translate it
-; 937  :     // according to the screen rotation.
-; 938  :     if ( (ucVKey == VK_TUP) || (ucVKey == VK_TRIGHT) || (ucVKey == VK_TDOWN) || (ucVKey == VK_TLEFT) )
+; 913  :     // Arrow key translation for rotate 0, 90, 180 and 270. 
+; 914  :     static const UCHAR   ucOrientationDMDO_0VKTable[4]   = {VK_TUP,    VK_TRIGHT, VK_TDOWN,  VK_TLEFT };
+; 915  :     static const UCHAR   ucOrientationDMDO_90VKTable[4]  = {VK_TRIGHT, VK_TDOWN,  VK_TLEFT,  VK_TUP   };
+; 916  :     static const UCHAR   ucOrientationDMDO_180VKTable[4] = {VK_TDOWN,  VK_TLEFT,  VK_TUP,    VK_TRIGHT};
+; 917  :     static const UCHAR   ucOrientationDMDO_270VKTable[4] = {VK_LEFT,   VK_TUP,    VK_TRIGHT, VK_TDOWN };
+; 918  : 
+; 919  :     UCHAR   ucRetVal = ucVKey;
+; 920  : 
+; 921  :     // if the input key is VK_TUP, VK_TRIGHT, VK_TDOWN, or VK_TLEFT, we might need to translate it
+; 922  :     // according to the screen rotation.
+; 923  :     if ( (ucVKey == VK_TUP) || (ucVKey == VK_TRIGHT) || (ucVKey == VK_TDOWN) || (ucVKey == VK_TLEFT) )
 
   00020	e3540026	 cmp         r4, #0x26
   00024	0a000005	 beq         |$LN15@RemapVKeyT|
@@ -1929,11 +1773,11 @@
   0003c	1a000032	 bne         |$LN5@RemapVKeyT|
   00040		 |$LN15@RemapVKeyT|
 
-; 939  :     {
-; 940  :         int     iVKeyIndex = 0;
-; 941  : 
-; 942  :         // If we haven't determine the screen orientation, we need to figure it out first.
-; 943  :         if (g_iDisplayOrientation == -1) 
+; 924  :     {
+; 925  :         int     iVKeyIndex = 0;
+; 926  : 
+; 927  :         // If we haven't determine the screen orientation, we need to figure it out first.
+; 928  :         if (g_iDisplayOrientation == -1) 
 
   00040	e59f60e0	 ldr         r6, [pc, #0xE0]
   00044	e3a05000	 mov         r5, #0
@@ -1941,23 +1785,23 @@
   0004c	e3730001	 cmn         r3, #1
   00050	1a000010	 bne         |$LN13@RemapVKeyT|
 
-; 944  :         {
-; 945  :             DEVMODE devMode;
-; 946  :             
-; 947  :             //  Get current screen orientation
-; 948  :             devMode.dmSize = sizeof(devMode);
+; 929  :         {
+; 930  :             DEVMODE devMode;
+; 931  :             
+; 932  :             //  Get current screen orientation
+; 933  :             devMode.dmSize = sizeof(devMode);
 
   00054	e3a030c0	 mov         r3, #0xC0
 
-; 949  :             devMode.dmFields = DM_DISPLAYORIENTATION;
+; 934  :             devMode.dmFields = DM_DISPLAYORIENTATION;
 
   00058	e3a02502	 mov         r2, #2, 10
 
-; 950  :             devMode.dmDisplayOrientation = DMDO_0;
+; 935  :             devMode.dmDisplayOrientation = DMDO_0;
 
   0005c	e3a01000	 mov         r1, #0
 
-; 951  :             if (ChangeDisplaySettingsEx(NULL, &devMode, NULL, CDS_TEST, NULL) == DISP_CHANGE_SUCCESSFUL)
+; 936  :             if (ChangeDisplaySettingsEx(NULL, &devMode, NULL, CDS_TEST, NULL) == DISP_CHANGE_SUCCESSFUL)
 
   00060	e3a00000	 mov         r0, #0
   00064	e1cd34b8	 strh        r3, [sp, #0x48]
@@ -1971,19 +1815,19 @@
   00084	eb000000	 bl          ChangeDisplaySettingsEx
   00088	e3500000	 cmp         r0, #0
 
-; 952  :             {
-; 953  :                 g_iDisplayOrientation = devMode.dmDisplayOrientation;
+; 937  :             {
+; 938  :                 g_iDisplayOrientation = devMode.dmDisplayOrientation;
 
   0008c	059d30c0	 ldreq       r3, [sp, #0xC0]
   00090	05863000	 streq       r3, [r6]
   00094	15963000	 ldrne       r3, [r6]
   00098		 |$LN13@RemapVKeyT|
 
-; 954  :             }
-; 955  :         }
-; 956  : 
-; 957  :         // translate VK_XXX to index.
-; 958  :         switch (ucVKey)
+; 939  :             }
+; 940  :         }
+; 941  : 
+; 942  :         // translate VK_XXX to index.
+; 943  :         switch (ucVKey)
 
   00098	e3540025	 cmp         r4, #0x25
   0009c	0a00000b	 beq         |$LN7@RemapVKeyT|
@@ -1994,49 +1838,49 @@
   000b0	e3540028	 cmp         r4, #0x28
   000b4	1a000006	 bne         |$LN11@RemapVKeyT|
 
-; 966  :             case VK_TDOWN:
-; 967  :                 iVKeyIndex = 2;
+; 951  :             case VK_TDOWN:
+; 952  :                 iVKeyIndex = 2;
 
   000b8	e3a05002	 mov         r5, #2
 
-; 968  :                 break;
+; 953  :                 break;
 
   000bc	ea000004	 b           |$LN11@RemapVKeyT|
   000c0		 |$LN9@RemapVKeyT|
 
-; 963  :             case VK_TRIGHT:
-; 964  :                 iVKeyIndex = 1;
+; 948  :             case VK_TRIGHT:
+; 949  :                 iVKeyIndex = 1;
 
   000c0	e3a05001	 mov         r5, #1
 
-; 965  :                 break;
+; 950  :                 break;
 
   000c4	ea000002	 b           |$LN11@RemapVKeyT|
   000c8		 |$LN10@RemapVKeyT|
 
-; 959  :         {
-; 960  :             case VK_TUP:
-; 961  :                 iVKeyIndex = 0;
+; 944  :         {
+; 945  :             case VK_TUP:
+; 946  :                 iVKeyIndex = 0;
 
   000c8	e3a05000	 mov         r5, #0
 
-; 962  :                 break;
+; 947  :                 break;
 
   000cc	ea000000	 b           |$LN11@RemapVKeyT|
   000d0		 |$LN7@RemapVKeyT|
 
-; 969  :             case VK_TLEFT:
-; 970  :                 iVKeyIndex = 3;
+; 954  :             case VK_TLEFT:
+; 955  :                 iVKeyIndex = 3;
 
   000d0	e3a05003	 mov         r5, #3
   000d4		 |$LN11@RemapVKeyT|
 
-; 971  :                 break;
-; 972  :         }
-; 973  : 
-; 974  :         // Transalte VK_XXX according to the screen rotation. No translation is needed
-; 975  :         // if the screen is in DMD0 mode or we can't determine the screen orientation. 
-; 976  :         switch (g_iDisplayOrientation)
+; 956  :                 break;
+; 957  :         }
+; 958  : 
+; 959  :         // Transalte VK_XXX according to the screen rotation. No translation is needed
+; 960  :         // if the screen is in DMD0 mode or we can't determine the screen orientation. 
+; 961  :         switch (g_iDisplayOrientation)
 
   000d4	e3530001	 cmp         r3, #1
   000d8	0a000009	 beq         |$LN4@RemapVKeyT|
@@ -2045,50 +1889,50 @@
   000e4	e3530004	 cmp         r3, #4
   000e8	1a000007	 bne         |$LN5@RemapVKeyT|
 
-; 984  :             case DMDO_270:
-; 985  :                 ucRetVal = ucOrientationDMDO_270VKTable[iVKeyIndex];
+; 969  :             case DMDO_270:
+; 970  :                 ucRetVal = ucOrientationDMDO_270VKTable[iVKeyIndex];
 
   000ec	e59f3030	 ldr         r3, [pc, #0x30]
   000f0	e2833008	 add         r3, r3, #8
 
-; 986  :                 break;
+; 971  :                 break;
 
   000f4	ea000003	 b           |$LN20@RemapVKeyT|
   000f8		 |$LN3@RemapVKeyT|
 
-; 980  :                 break;
-; 981  :             case DMDO_180:
-; 982  :                 ucRetVal = ucOrientationDMDO_180VKTable[iVKeyIndex];
+; 965  :                 break;
+; 966  :             case DMDO_180:
+; 967  :                 ucRetVal = ucOrientationDMDO_180VKTable[iVKeyIndex];
 
   000f8	e59f3024	 ldr         r3, [pc, #0x24]
   000fc	e2833004	 add         r3, r3, #4
 
-; 983  :                 break;
+; 968  :                 break;
 
   00100	ea000000	 b           |$LN20@RemapVKeyT|
   00104		 |$LN4@RemapVKeyT|
 
-; 977  :         {
-; 978  :             case DMDO_90:
-; 979  :                 ucRetVal = ucOrientationDMDO_90VKTable[iVKeyIndex];
+; 962  :         {
+; 963  :             case DMDO_90:
+; 964  :                 ucRetVal = ucOrientationDMDO_90VKTable[iVKeyIndex];
 
   00104	e59f3018	 ldr         r3, [pc, #0x18]
   00108		 |$LN20@RemapVKeyT|
   00108	e7d54003	 ldrb        r4, [r5, +r3]
   0010c		 |$LN5@RemapVKeyT|
 
-; 987  :            case DMDO_0:
-; 988  :            default:
-; 989  :                 break;
-; 990  :         }
-; 991  :     }
-; 992  : 
-; 993  :     return ucRetVal;
+; 972  :            case DMDO_0:
+; 973  :            default:
+; 974  :                 break;
+; 975  :         }
+; 976  :     }
+; 977  : 
+; 978  :     return ucRetVal;
 
   0010c	e59d00c4	 ldr         r0, [sp, #0xC4]
   00110	eb000000	 bl          __security_check_cookie
 
-; 994  : }
+; 979  : }
 
   00114	e1a00004	 mov         r0, r4
   00118	e28dd0c8	 add         sp, sp, #0xC8
@@ -2101,7 +1945,7 @@
   00128	00000000	 DCD         |g_iDisplayOrientation|
   0012c		 |$LN27@RemapVKeyT|
   0012c	00000000	 DCD         |__security_cookie|
-  00130		 |$M44562|
+  00130		 |$M44540|
 
 			 ENDP  ; |RemapVKeyToScreenOrientation|
 
@@ -2110,7 +1954,7 @@
 	IMPORT	|CeSetThreadPriority|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44588| DCD	|$LN16@KPD_LightT|
+|$T44566| DCD	|$LN16@KPD_LightT|
 	DCD	0x40003902
 ; Function compile flags: /Ogspy
 
@@ -2118,30 +1962,30 @@
 
   00000		 |KPD_LightThread| PROC
 
-; 1206 : {
+; 1191 : {
 
   00000		 |$LN16@KPD_LightT|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   00004	e24dd01c	 sub         sp, sp, #0x1C
-  00008		 |$M44585|
+  00008		 |$M44563|
   00008	e1a05000	 mov         r5, r0
 
-; 1207 :     DWORD               rc;
-; 1208 :     struct NLED_SETTINGS_INFO  nledInfo;
-; 1209 :     KeypadDevice_t     *pDevice = (KeypadDevice_t*)pContext;
-; 1210 :     DWORD               keypadLightTimeout = pDevice->KpLightTimeout_ms;
-; 1211 :     
-; 1212 :     if( !pDevice ) 
-; 1213 :         {
-; 1214 :         DEBUGMSG(ZONE_ERROR, (L" KPD_LightThread: "
-; 1215 :             L"Invalid context passed to thread routine.\r\n"
-; 1216 :             ));
-; 1217 :         ASSERT( FALSE );
-; 1218 :         goto cleanUp;
-; 1219 :         }
-; 1220 : 
-; 1221 :     // Set Thread Priority
-; 1222 :     CeSetThreadPriority(pDevice->hLightThread, pDevice->priority256 + 1);
+; 1192 :     DWORD               rc;
+; 1193 :     struct NLED_SETTINGS_INFO  nledInfo;
+; 1194 :     KeypadDevice_t     *pDevice = (KeypadDevice_t*)pContext;
+; 1195 :     DWORD               keypadLightTimeout = pDevice->KpLightTimeout_ms;
+; 1196 :     
+; 1197 :     if( !pDevice ) 
+; 1198 :         {
+; 1199 :         DEBUGMSG(ZONE_ERROR, (L" KPD_LightThread: "
+; 1200 :             L"Invalid context passed to thread routine.\r\n"
+; 1201 :             ));
+; 1202 :         ASSERT( FALSE );
+; 1203 :         goto cleanUp;
+; 1204 :         }
+; 1205 : 
+; 1206 :     // Set Thread Priority
+; 1207 :     CeSetThreadPriority(pDevice->hLightThread, pDevice->priority256 + 1);
 
   0000c	e5953004	 ldr         r3, [r5, #4]
   00010	e5950038	 ldr         r0, [r5, #0x38]
@@ -2149,46 +1993,46 @@
   00018	e2831001	 add         r1, r3, #1
   0001c	eb000000	 bl          CeSetThreadPriority
 
-; 1223 : 
-; 1224 :     // initialize nled info
-; 1225 :     
-; 1226 :     // Setting NLED control parameters
-; 1227 :     memset(&nledInfo, 0, sizeof(struct NLED_SETTINGS_INFO));
+; 1208 : 
+; 1209 :     // initialize nled info
+; 1210 :     
+; 1211 :     // Setting NLED control parameters
+; 1212 :     memset(&nledInfo, 0, sizeof(struct NLED_SETTINGS_INFO));
 
   00020	e3a0201c	 mov         r2, #0x1C
   00024	e3a01000	 mov         r1, #0
   00028	e28d0000	 add         r0, sp, #0
   0002c	eb000000	 bl          memset
 
-; 1228 :     nledInfo.LedNum = pDevice->KpLedNum;
+; 1213 :     nledInfo.LedNum = pDevice->KpLedNum;
 
   00030	e5953044	 ldr         r3, [r5, #0x44]
 
-; 1229 :     nledInfo.TotalCycleTime = 0;
+; 1214 :     nledInfo.TotalCycleTime = 0;
 
   00034	e3a02000	 mov         r2, #0
 
-; 1230 :     nledInfo.OnTime = 0;
+; 1215 :     nledInfo.OnTime = 0;
 
   00038	e3a0e000	 mov         lr, #0
 
-; 1231 :     nledInfo.OffTime = 0;
+; 1216 :     nledInfo.OffTime = 0;
 
   0003c	e3a06000	 mov         r6, #0
 
-; 1232 :     nledInfo.MetaCycleOn = 1;
+; 1217 :     nledInfo.MetaCycleOn = 1;
 
   00040	e3a07001	 mov         r7, #1
 
-; 1233 :     nledInfo.MetaCycleOff = 0;
+; 1218 :     nledInfo.MetaCycleOff = 0;
 
   00044	e3a08000	 mov         r8, #0
 
-; 1234 :     nledInfo.OffOnBlink = 1;
+; 1219 :     nledInfo.OffOnBlink = 1;
 
   00048	e3a09001	 mov         r9, #1
 
-; 1235 :     NLedSetDevice(NLED_SETTINGS_INFO_ID, (void*)&nledInfo);
+; 1220 :     NLedSetDevice(NLED_SETTINGS_INFO_ID, (void*)&nledInfo);
 
   0004c	e28d1000	 add         r1, sp, #0
   00050	e3a00002	 mov         r0, #2
@@ -2201,48 +2045,48 @@
   0006c	e58d9004	 str         r9, [sp, #4]
   00070	eb000000	 bl          NLedSetDevice
 
-; 1236 :     
-; 1237 :     // Loop until we are not stopped
-; 1238 :     for(;;)
-; 1239 :         {
-; 1240 :         rc = WaitForSingleObject(pDevice->hKeypressEvent, keypadLightTimeout);
+; 1221 :     
+; 1222 :     // Loop until we are not stopped
+; 1223 :     for(;;)
+; 1224 :         {
+; 1225 :         rc = WaitForSingleObject(pDevice->hKeypressEvent, keypadLightTimeout);
 
   00074	e595003c	 ldr         r0, [r5, #0x3C]
   00078	e1a01004	 mov         r1, r4
   0007c	eb000000	 bl          WaitForSingleObject
 
-; 1241 : 
-; 1242 :         // check for thread termination
-; 1243 :         if (pDevice->intrThreadExit) break;
+; 1226 : 
+; 1227 :         // check for thread termination
+; 1228 :         if (pDevice->intrThreadExit) break;
 
   00080	e5953028	 ldr         r3, [r5, #0x28]
   00084	e3530000	 cmp         r3, #0
-  00088	1a000011	 bne         |$cleanUp$44184|
+  00088	1a000011	 bne         |$cleanUp$44188|
   0008c	e3a03c01	 mov         r3, #1, 24
   00090	e3836002	 orr         r6, r3, #2
   00094	e3a07000	 mov         r7, #0
   00098	e3a08001	 mov         r8, #1
   0009c		 |$LL4@KPD_LightT|
 
-; 1244 : 
-; 1245 :         // check for thread termination
-; 1246 :         if (WAIT_TIMEOUT == rc)
+; 1229 : 
+; 1230 :         // check for thread termination
+; 1231 :         if (WAIT_TIMEOUT == rc)
 
   0009c	e1500006	 cmp         r0, r6
 
-; 1247 :             {
-; 1248 :             keypadLightTimeout = INFINITE;
-; 1249 :             nledInfo.OffOnBlink = 0;
-; 1250 :             NLedSetDevice(NLED_SETTINGS_INFO_ID, (void*)&nledInfo);
+; 1232 :             {
+; 1233 :             keypadLightTimeout = INFINITE;
+; 1234 :             nledInfo.OffOnBlink = 0;
+; 1235 :             NLedSetDevice(NLED_SETTINGS_INFO_ID, (void*)&nledInfo);
 
   000a0	03e04000	 mvneq       r4, #0
 
-; 1251 :             continue;
-; 1252 :             }
-; 1253 : 
-; 1254 :         keypadLightTimeout = pDevice->KpLightTimeout_ms;
-; 1255 :         nledInfo.OffOnBlink = 1;
-; 1256 :         NLedSetDevice(NLED_SETTINGS_INFO_ID, (void*)&nledInfo);
+; 1236 :             continue;
+; 1237 :             }
+; 1238 : 
+; 1239 :         keypadLightTimeout = pDevice->KpLightTimeout_ms;
+; 1240 :         nledInfo.OffOnBlink = 1;
+; 1241 :         NLedSetDevice(NLED_SETTINGS_INFO_ID, (void*)&nledInfo);
 
   000a4	15954048	 ldrne       r4, [r5, #0x48]
   000a8	058d7004	 streq       r7, [sp, #4]
@@ -2256,21 +2100,21 @@
   000c8	e5953028	 ldr         r3, [r5, #0x28]
   000cc	e3530000	 cmp         r3, #0
   000d0	0afffff1	 beq         |$LL4@KPD_LightT|
-  000d4		 |$cleanUp$44184|
+  000d4		 |$cleanUp$44188|
 
-; 1257 :         }
-; 1258 : 
-; 1259 : cleanUp:
-; 1260 :     return ERROR_SUCCESS;
+; 1242 :         }
+; 1243 : 
+; 1244 : cleanUp:
+; 1245 :     return ERROR_SUCCESS;
 
   000d4	e3a00000	 mov         r0, #0
 
-; 1261 : }
+; 1246 : }
 
   000d8	e28dd01c	 add         sp, sp, #0x1C
   000dc	e8bd43f0	 ldmia       sp!, {r4 - r9, lr}
   000e0	e12fff1e	 bx          lr
-  000e4		 |$M44586|
+  000e4		 |$M44564|
 
 			 ENDP  ; |KPD_LightThread|
 
@@ -2279,7 +2123,7 @@
 	IMPORT	|RegisterDbgZones|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44599| DCD	|$LN8@DllMain|
+|$T44577| DCD	|$LN8@DllMain|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -2287,46 +2131,46 @@
 
   00000		 |DllMain| PROC
 
-; 1276 : {
+; 1261 : {
 
   00000		 |$LN8@DllMain|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M44596|
+  00004		 |$M44574|
   00004	e1a04000	 mov         r4, r0
 
-; 1277 :     UNREFERENCED_PARAMETER(pReserved);
-; 1278 :     switch (reason)
+; 1262 :     UNREFERENCED_PARAMETER(pReserved);
+; 1263 :     switch (reason)
 
   00008	e3510001	 cmp         r1, #1
   0000c	1a000003	 bne         |$LN2@DllMain|
 
-; 1279 :         {
-; 1280 :         case DLL_PROCESS_ATTACH:
-; 1281 :             RETAILREGISTERZONES((HMODULE)hDLL);
+; 1264 :         {
+; 1265 :         case DLL_PROCESS_ATTACH:
+; 1266 :             RETAILREGISTERZONES((HMODULE)hDLL);
 
   00010	e59f1014	 ldr         r1, [pc, #0x14]
   00014	eb000000	 bl          RegisterDbgZones
 
-; 1282 :             DisableThreadLibraryCalls((HMODULE)hDLL);
+; 1267 :             DisableThreadLibraryCalls((HMODULE)hDLL);
 
   00018	e1a00004	 mov         r0, r4
   0001c	eb000000	 bl          DisableThreadLibraryCalls
   00020		 |$LN2@DllMain|
 
-; 1283 :             break;
-; 1284 :         }
-; 1285 :     return TRUE;
+; 1268 :             break;
+; 1269 :         }
+; 1270 :     return TRUE;
 
   00020	e3a00001	 mov         r0, #1
 
-; 1286 : }
+; 1271 : }
 
   00024	e8bd4010	 ldmia       sp!, {r4, lr}
   00028	e12fff1e	 bx          lr
   0002c		 |$LN9@DllMain|
   0002c		 |$LN10@DllMain|
   0002c	00000000	 DCD         |dpCurSettings|
-  00030		 |$M44597|
+  00030		 |$M44575|
 
 			 ENDP  ; |DllMain|
 
@@ -2340,11 +2184,11 @@
 	IMPORT	|g_keypadExtraSeq|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44649| DCD	|$LN35@SendKeyPad|
+|$T44627| DCD	|$LN35@SendKeyPad|
 	DCD	0xc0008c02
 
   00000			 AREA	 |.xdata|, DATA
-|$T44645| DCD	0xffffffdc
+|$T44623| DCD	0xffffffdc
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1DC@LILGGEOG@?$AA?5?$AAS?$AAe?$AAn?$AAd?$AAK?$AAe?$AAy?$AAP?$AAa?$AAd?$AAE?$AAv?$AAe?$AAn?$AAt?$AA?3?$AA?5?$AA2?$AA2?$AA2?$AA2?$AA?$AN?$AA?6?$AA?$AA@| DCB " "
@@ -2374,16 +2218,16 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T44645|
+  00004	00000000	 DCD         |$T44623|
 
   00008		 |SendKeyPadEvent| PROC
 
-; 143  : {
+; 151  : {
 
   00008		 |$LN35@SendKeyPad|
   00008	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
   0000c	e24dd0c8	 sub         sp, sp, #0xC8
-  00010		 |$M44646|
+  00010		 |$M44624|
   00010	e1a0a003	 mov         r10, r3
   00014	e1a07002	 mov         r7, r2
   00018	e1a05000	 mov         r5, r0
@@ -2391,19 +2235,19 @@
   00020	e5911000	 ldr         r1, [r1]
   00024	e58d10c4	 str         r1, [sp, #0xC4]
 
-; 144  :     USHORT index;
-; 145  :     UCHAR vk_extra = 0, order;
+; 152  :     USHORT index;
+; 153  :     UCHAR vk_extra = 0, order;
 
   00028	e3a08000	 mov         r8, #0
 
-; 146  :     
-; 147  :     order = KEYPAD_EXTRASEQ_ORDER_NONE; // no extra key needed
+; 154  :     
+; 155  :     order = KEYPAD_EXTRASEQ_ORDER_NONE; // no extra key needed
 
   0002c	e3a090ff	 mov         r9, #0xFF
 
-; 148  :     //RETAILMSG(1, (L" SendKeyPadEvent: 0x%x %d %d %d\r\n", bVk,bScan,dwFlags,dwExtraInfo));
-; 149  :     // Remap for rotation angle
-; 150  :     bVk = RemapVKeyToScreenOrientation(bVk);
+; 156  :     //RETAILMSG(1, (L" SendKeyPadEvent: 0x%x %d %d %d\r\n", bVk,bScan,dwFlags,dwExtraInfo));
+; 157  :     // Remap for rotation angle
+; 158  :     bVk = RemapVKeyToScreenOrientation(bVk);
 
   00030	e3550026	 cmp         r5, #0x26
   00034	0a000005	 beq         |$LN25@SendKeyPad|
@@ -2475,9 +2319,9 @@
   00118	e7d45003	 ldrb        r5, [r4, +r3]
   0011c		 |$LN11@SendKeyPad|
 
-; 151  :     
-; 152  :     // Check extra virtual key sequence table
-; 153  :     for (index = 0; index < g_keypadExtraSeq.count; index ++)
+; 159  :     
+; 160  :     // Check extra virtual key sequence table
+; 161  :     for (index = 0; index < g_keypadExtraSeq.count; index ++)
 
   0011c	e59f1104	 ldr         r1, [pc, #0x104]
   00120	e3a02000	 mov         r2, #0
@@ -2488,19 +2332,19 @@
   00134	e3a01000	 mov         r1, #0
   00138		 |$LL8@SendKeyPad|
 
-; 154  : 	{
-; 155  :         if (g_keypadExtraSeq.pItem[index].vk_orig == bVk)
+; 162  : 	{
+; 163  :         if (g_keypadExtraSeq.pItem[index].vk_orig == bVk)
 
   00138	e0822082	 add         r2, r2, r2, lsl #1
   0013c	e7f23000	 ldrb        r3, [r2, +r0]!
   00140	e1530005	 cmp         r3, r5
 
-; 156  : 		{
-; 157  :             vk_extra = g_keypadExtraSeq.pItem[index].vk_extra;
+; 164  : 		{
+; 165  :             vk_extra = g_keypadExtraSeq.pItem[index].vk_extra;
 
   00144	05d28001	 ldreqb      r8, [r2, #1]
 
-; 158  :             order = g_keypadExtraSeq.pItem[index].order;
+; 166  :             order = g_keypadExtraSeq.pItem[index].order;
 
   00148	05d29002	 ldreqb      r9, [r2, #2]
   0014c	e2813001	 add         r3, r1, #1
@@ -2511,12 +2355,12 @@
   00160	3afffff4	 bcc         |$LL8@SendKeyPad|
   00164		 |$LN6@SendKeyPad|
 
-; 159  : 		}
-; 160  : 	}
-; 161  :       
-; 162  :     // Check to send extra vk first  
-; 163  :     if (order == KEYPAD_EXTRASEQ_ORDER_EXTRAFIRST || 
-; 164  :         (order == KEYPAD_EXTRASEQ_ORDER_EXTRAORIG && (dwFlags & KEYEVENTF_KEYUP) == 0) )
+; 167  : 		}
+; 168  : 	}
+; 169  :       
+; 170  :     // Check to send extra vk first  
+; 171  :     if (order == KEYPAD_EXTRASEQ_ORDER_EXTRAFIRST || 
+; 172  :         (order == KEYPAD_EXTRASEQ_ORDER_EXTRAORIG && (dwFlags & KEYEVENTF_KEYUP) == 0) )
 
   00164	e1b06009	 movs        r6, r9
   00168	0a000003	 beq         |$LN3@SendKeyPad|
@@ -2526,13 +2370,13 @@
   00178	1a000006	 bne         |$LN4@SendKeyPad|
   0017c		 |$LN3@SendKeyPad|
 
-; 165  : 	{
-; 166  : 		RETAILMSG(1, (L" SendKeyPadEvent: 11111\r\n"));
+; 173  : 	{
+; 174  : 		RETAILMSG(1, (L" SendKeyPadEvent: 11111\r\n"));
 
   0017c	e59f00a0	 ldr         r0, [pc, #0xA0]
   00180	eb000000	 bl          NKDbgPrintfW
 
-; 167  :         keybd_event(vk_extra,0,dwFlags | KEYEVENTF_SILENT,dwExtraInfo);
+; 175  :         keybd_event(vk_extra,0,dwFlags | KEYEVENTF_SILENT,dwExtraInfo);
 
   00184	e1a0300a	 mov         r3, r10
   00188	e3872004	 orr         r2, r7, #4
@@ -2541,15 +2385,15 @@
   00194	eb000000	 bl          keybd_event
   00198		 |$LN4@SendKeyPad|
 
-; 168  : 	}
-; 169  : 	bScan = (BYTE)MapVirtualKey(bVk, 0);
+; 176  : 	}
+; 177  : 	bScan = (BYTE)MapVirtualKey(bVk, 0);
 
   00198	e3a01000	 mov         r1, #0
   0019c	e1a00005	 mov         r0, r5
   001a0	eb000000	 bl          MapVirtualKeyW
   001a4	e1a04000	 mov         r4, r0
 
-; 170  : 	RETAILMSG(1, (L" keybd_event: 0x%x %d %d %d\r\n", bVk,bScan,dwFlags,dwExtraInfo));
+; 178  : 	RETAILMSG(1, (L" keybd_event: 0x%x %d %d %d\r\n", bVk,bScan,dwFlags,dwExtraInfo));
 
   001a8	e59f0070	 ldr         r0, [pc, #0x70]
   001ac	e20420ff	 and         r2, r4, #0xFF
@@ -2558,8 +2402,8 @@
   001b8	e58da000	 str         r10, [sp]
   001bc	eb000000	 bl          NKDbgPrintfW
 
-; 171  :     // Send original vk
-; 172  :     keybd_event(bVk,bScan,dwFlags,dwExtraInfo);
+; 179  :     // Send original vk
+; 180  :     keybd_event(bVk,bScan,dwFlags,dwExtraInfo);
 
   001c0	e1a0300a	 mov         r3, r10
   001c4	e1a02007	 mov         r2, r7
@@ -2567,10 +2411,10 @@
   001cc	e1a00005	 mov         r0, r5
   001d0	eb000000	 bl          keybd_event
 
-; 173  : 	
-; 174  : 	// Check to send extra key
-; 175  : 	if (order == KEYPAD_EXTRASEQ_ORDER_ORIGFIRST || 
-; 176  :        (order == KEYPAD_EXTRASEQ_ORDER_EXTRAORIG && (dwFlags & KEYEVENTF_KEYUP)))
+; 181  : 	
+; 182  : 	// Check to send extra key
+; 183  : 	if (order == KEYPAD_EXTRASEQ_ORDER_ORIGFIRST || 
+; 184  :        (order == KEYPAD_EXTRASEQ_ORDER_EXTRAORIG && (dwFlags & KEYEVENTF_KEYUP)))
 
   001d4	e3560002	 cmp         r6, #2
   001d8	0a000003	 beq         |$LN1@SendKeyPad|
@@ -2580,13 +2424,13 @@
   001e8	0a000006	 beq         |$LN2@SendKeyPad|
   001ec		 |$LN1@SendKeyPad|
 
-; 177  : 	{
-; 178  : 		RETAILMSG(1, (L" SendKeyPadEvent: 2222\r\n"));
+; 185  : 	{
+; 186  : 		RETAILMSG(1, (L" SendKeyPadEvent: 2222\r\n"));
 
   001ec	e59f0028	 ldr         r0, [pc, #0x28]
   001f0	eb000000	 bl          NKDbgPrintfW
 
-; 179  : 		keybd_event(vk_extra,0,dwFlags | KEYEVENTF_SILENT,dwExtraInfo);
+; 187  : 		keybd_event(vk_extra,0,dwFlags | KEYEVENTF_SILENT,dwExtraInfo);
 
   001f4	e1a0300a	 mov         r3, r10
   001f8	e3872004	 orr         r2, r7, #4
@@ -2597,8 +2441,8 @@
   00208	e59d00c4	 ldr         r0, [sp, #0xC4]
   0020c	eb000000	 bl          __security_check_cookie
 
-; 180  : 	}
-; 181  : }
+; 188  : 	}
+; 189  : }
 
   00210	e28dd0c8	 add         sp, sp, #0xC8
   00214	e8bd47f0	 ldmia       sp!, {r4 - r10, lr}
@@ -2618,7 +2462,7 @@
   00230	00000000	 DCD         |g_iDisplayOrientation|
   00234		 |$LN43@SendKeyPad|
   00234	00000000	 DCD         |__security_cookie|
-  00238		 |$M44647|
+  00238		 |$M44625|
 
 			 ENDP  ; |SendKeyPadEvent|
 
@@ -2629,7 +2473,7 @@
 	IMPORT	|PowerPolicyNotify|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44676| DCD	|$LN29@PressedRel|
+|$T44654| DCD	|$LN29@PressedRel|
 	DCD	0x40004f01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2666,62 +2510,62 @@
 
   00000		 |PressedReleasedKeys| PROC
 
-; 196  : {
+; 202  : {
 
   00000		 |$LN29@PressedRel|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
-  00004		 |$M44673|
+  00004		 |$M44651|
   00004	e1a05002	 mov         r5, r2
   00008	e1a09000	 mov         r9, r0
 
-; 197  :     UINT8 vk;
-; 198  :     int ic;
-; 199  : 
-; 200  :     for (ic = 0, vk = 0; ic < VK_KEYS/DWORD_BITS; ic++)
+; 203  :     UINT8 vk;
+; 204  :     int ic;
+; 205  : 
+; 206  :     for (ic = 0, vk = 0; ic < VK_KEYS/DWORD_BITS; ic++)
 
   0000c	e3a04000	 mov         r4, #0
   00010	e041a005	 sub         r10, r1, r5
   00014	e3a07008	 mov         r7, #8
   00018		 |$LL19@PressedRel|
 
-; 201  :         {
-; 202  :         DWORD change = vkState[ic] ^ vkNewState[ic];
+; 207  :         {
+; 208  :         DWORD change = vkState[ic] ^ vkNewState[ic];
 
   00018	e79a1005	 ldr         r1, [r10, +r5]
   0001c	e5953000	 ldr         r3, [r5]
   00020	e0318003	 eors        r8, r1, r3
 
-; 203  :         if (change == 0)
-; 204  :             {
-; 205  :             vk += DWORD_BITS;
+; 209  :         if (change == 0)
+; 210  :             {
+; 211  :             vk += DWORD_BITS;
 
   00024	02843020	 addeq       r3, r4, #0x20
   00028	020340ff	 andeq       r4, r3, #0xFF
   0002c	0a00003a	 beq         |$LN18@PressedRel|
 
-; 206  :             }
-; 207  :         else
-; 208  :             {
-; 209  :             DWORD mask;
-; 210  :             for (mask = 1; mask != 0; mask <<= 1, vk++)
+; 212  :             }
+; 213  :         else
+; 214  :             {
+; 215  :             DWORD mask;
+; 216  :             for (mask = 1; mask != 0; mask <<= 1, vk++)
 
   00030	e3a06001	 mov         r6, #1
   00034		 |$LL14@PressedRel|
 
-; 211  :                 {
-; 212  :                 // Check for change
-; 213  :                 if ((change & mask) != 0)
+; 217  :                 {
+; 218  :                 // Check for change
+; 219  :                 if ((change & mask) != 0)
 
   00034	e1160008	 tst         r6, r8
   00038	0a000033	 beq         |$LN13@PressedRel|
 
-; 214  :                     {
-; 215  :                     if ((vkNewState[ic] & mask) != 0)
+; 220  :                     {
+; 221  :                     if ((vkNewState[ic] & mask) != 0)
 
   0003c	e5953000	 ldr         r3, [r5]
 
-; 216  :                         {
-; 217  :                         RETAILMSG(1, (L" PressedReleasedKeys: Key Down: 0x%x\r\n", vk)); 
+; 222  :                         {
+; 223  :                         RETAILMSG(1, (L" PressedReleasedKeys: Key Down: 0x%x\r\n", vk)); 
 
   00040	e1a01004	 mov         r1, r4
   00044	e1130006	 tst         r3, r6
@@ -2729,14 +2573,14 @@
   0004c	e59f00e4	 ldr         r0, [pc, #0xE4]
   00050	eb000000	 bl          NKDbgPrintfW
 
-; 218  :                         // Send key down event
-; 219  :                         if (vk != VK_OFF)
+; 224  :                         // Send key down event
+; 225  :                         if (vk != VK_OFF)
 
   00054	e35400df	 cmp         r4, #0xDF
   00058	0a00002b	 beq         |$LN13@PressedRel|
 
-; 220  :                             {
-; 221  :                             SendKeyPadEvent(vk, 0, 0, 0);
+; 226  :                             {
+; 227  :                             SendKeyPadEvent(vk, 0, 0, 0);
 
   0005c	e3a03000	 mov         r3, #0
   00060	e3a02000	 mov         r2, #0
@@ -2744,30 +2588,30 @@
   00068	e1a00004	 mov         r0, r4
   0006c	eb000000	 bl          SendKeyPadEvent
 
-; 222  :                             }
-; 223  :                         }
-; 224  :                     else
+; 228  :                             }
+; 229  :                         }
+; 230  :                     else
 
   00070	ea000025	 b           |$LN13@PressedRel|
   00074		 |$LN10@PressedRel|
 
-; 225  :                         {
-; 226  :                         RETAILMSG(1, (L" PressedReleasedKeys: Key Up: 0x%x\r\n", vk));
+; 231  :                         {
+; 232  :                         RETAILMSG(1, (L" PressedReleasedKeys: Key Up: 0x%x\r\n", vk));
 
   00074	e59f00b8	 ldr         r0, [pc, #0xB8]
   00078	eb000000	 bl          NKDbgPrintfW
 
-; 227  : 
-; 228  :                         // Need to send the keydown as well as keyup for
-; 229  :                         // device to suspend under cebase.                          
-; 230  :                         if (pDevice->bEnableOffKey == TRUE && vk == VK_OFF)
+; 233  : 
+; 234  :                         // Need to send the keydown as well as keyup for
+; 235  :                         // device to suspend under cebase.                          
+; 236  :                         if (pDevice->bEnableOffKey == TRUE && vk == VK_OFF)
 
   0007c	e5993040	 ldr         r3, [r9, #0x40]
   00080	e3530001	 cmp         r3, #1
   00084	035400df	 cmpeq       r4, #0xDF
 
-; 231  :                             {
-; 232  :                             SendKeyPadEvent(vk, 0, 0, 0);
+; 237  :                             {
+; 238  :                             SendKeyPadEvent(vk, 0, 0, 0);
 
   00088	03a03000	 moveq       r3, #0
   0008c	03a02000	 moveq       r2, #0
@@ -2775,10 +2619,10 @@
   00094	01a00004	 moveq       r0, r4
   00098	0b000000	 bleq        SendKeyPadEvent
 
-; 233  :                             }
-; 234  :                         
-; 235  :                         // Send key down event
-; 236  :                         if (pDevice->bEnableOffKey != FALSE || vk != VK_OFF)
+; 239  :                             }
+; 240  :                         
+; 241  :                         // Send key down event
+; 242  :                         if (pDevice->bEnableOffKey != FALSE || vk != VK_OFF)
 
   0009c	e5993040	 ldr         r3, [r9, #0x40]
   000a0	e3530000	 cmp         r3, #0
@@ -2787,8 +2631,8 @@
   000ac	0a000004	 beq         |$LN6@PressedRel|
   000b0		 |$LN5@PressedRel|
 
-; 237  :                             {
-; 238  :                             SendKeyPadEvent(vk, 0, KEYEVENTF_KEYUP, 0);
+; 243  :                             {
+; 244  :                             SendKeyPadEvent(vk, 0, KEYEVENTF_KEYUP, 0);
 
   000b0	e3a03000	 mov         r3, #0
   000b4	e3a02002	 mov         r2, #2
@@ -2797,10 +2641,10 @@
   000c0	eb000000	 bl          SendKeyPadEvent
   000c4		 |$LN6@PressedRel|
 
-; 239  :                             }
-; 240  :                         
-; 241  :                         // send PowerPolicyNotify notification
-; 242  :                         switch (vk)
+; 245  :                             }
+; 246  :                         
+; 247  :                         // send PowerPolicyNotify notification
+; 248  :                         switch (vk)
 
   000c4	e354005d	 cmp         r4, #0x5D
   000c8	0a00000c	 beq         |$LN1@PressedRel|
@@ -2814,35 +2658,35 @@
   000e8	1a000007	 bne         |$LN13@PressedRel|
   000ec		 |$LN2@PressedRel|
 
-; 243  :                             {
-; 244  :                             case VK_TPOWER:
-; 245  :                             case VK_OFF:
-; 246  :                                 // only disable interrupts if we are about to enter
-; 247  :                                 // a suspend state
-; 248  :                                 RETAILMSG(1, (L" PressedReleasedKeys: 0x%02X\r\n", vk));
+; 249  :                             {
+; 250  :                             case VK_TPOWER:
+; 251  :                             case VK_OFF:
+; 252  :                                 // only disable interrupts if we are about to enter
+; 253  :                                 // a suspend state
+; 254  :                                 RETAILMSG(1, (L" PressedReleasedKeys: 0x%02X\r\n", vk));
 
   000ec	e59f003c	 ldr         r0, [pc, #0x3C]
   000f0	e1a01004	 mov         r1, r4
   000f4	eb000000	 bl          NKDbgPrintfW
 
-; 249  :                                 PowerPolicyNotify(PPN_SUSPENDKEYPRESSED, 0);
+; 255  :                                 PowerPolicyNotify(PPN_SUSPENDKEYPRESSED, 0);
 
   000f8	e3a00004	 mov         r0, #4
 
-; 250  :                                 break;
+; 256  :                                 break;
 
   000fc	ea000000	 b           |$LN26@PressedRel|
   00100		 |$LN1@PressedRel|
 
-; 251  : 
-; 252  :                             case VK_APPS:
-; 253  :                             case VK_APP1:
-; 254  :                             case VK_APP2:
-; 255  :                             case VK_APP3:
-; 256  :                             case VK_APP4:
-; 257  :                             case VK_APP5:
-; 258  :                             case VK_APP6:                     
-; 259  :                                 PowerPolicyNotify(PPN_APPBUTTONPRESSED, 0);
+; 257  : 
+; 258  :                             case VK_APPS:
+; 259  :                             case VK_APP1:
+; 260  :                             case VK_APP2:
+; 261  :                             case VK_APP3:
+; 262  :                             case VK_APP4:
+; 263  :                             case VK_APP5:
+; 264  :                             case VK_APP6:                     
+; 265  :                                 PowerPolicyNotify(PPN_APPBUTTONPRESSED, 0);
 
   00100	e3a00006	 mov         r0, #6
   00104		 |$LN26@PressedRel|
@@ -2855,24 +2699,24 @@
   00118	1affffc5	 bne         |$LL14@PressedRel|
   0011c		 |$LN18@PressedRel|
 
-; 197  :     UINT8 vk;
-; 198  :     int ic;
-; 199  : 
-; 200  :     for (ic = 0, vk = 0; ic < VK_KEYS/DWORD_BITS; ic++)
+; 203  :     UINT8 vk;
+; 204  :     int ic;
+; 205  : 
+; 206  :     for (ic = 0, vk = 0; ic < VK_KEYS/DWORD_BITS; ic++)
 
   0011c	e2855004	 add         r5, r5, #4
   00120	e2577001	 subs        r7, r7, #1
   00124	1affffbb	 bne         |$LL19@PressedRel|
 
-; 260  :                                 break;
-; 261  :                             }
-; 262  :                         
-; 263  :                         }
-; 264  :                     }
-; 265  :                 }
-; 266  :             }
-; 267  :         }
-; 268  : }
+; 266  :                                 break;
+; 267  :                             }
+; 268  :                         
+; 269  :                         }
+; 270  :                     }
+; 271  :                 }
+; 272  :             }
+; 273  :         }
+; 274  : }
 
   00128	e8bd47f0	 ldmia       sp!, {r4 - r10, lr}
   0012c	e12fff1e	 bx          lr
@@ -2883,7 +2727,7 @@
   00134	00000000	 DCD         |??_C@_1EK@OOAHNOJF@?$AA?5?$AAP?$AAr?$AAe?$AAs?$AAs?$AAe?$AAd?$AAR?$AAe?$AAl?$AAe?$AAa?$AAs?$AAe?$AAd?$AAK?$AAe?$AAy?$AAs?$AA?3?$AA?5?$AAK?$AAe?$AAy?$AA?5?$AAU?$AAp?$AA?3?$AA?5?$AA0?$AAx@|
   00138		 |$LN33@PressedRel|
   00138	00000000	 DCD         |??_C@_1EO@OKMNCGKP@?$AA?5?$AAP?$AAr?$AAe?$AAs?$AAs?$AAe?$AAd?$AAR?$AAe?$AAl?$AAe?$AAa?$AAs?$AAe?$AAd?$AAK?$AAe?$AAy?$AAs?$AA?3?$AA?5?$AAK?$AAe?$AAy?$AA?5?$AAD?$AAo?$AAw?$AAn?$AA?3?$AA?5@|
-  0013c		 |$M44674|
+  0013c		 |$M44652|
 
 			 ENDP  ; |PressedReleasedKeys|
 
@@ -2892,7 +2736,7 @@
 	IMPORT	|g_keypadRepeat|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44708| DCD	|$LN30@AutoRepeat|
+|$T44686| DCD	|$LN30@AutoRepeat|
 	DCD	0x40006702
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2921,12 +2765,12 @@
 
   00000		 |AutoRepeat| PROC
 
-; 1009 : {
+; 994  : {
 
   00000		 |$LN30@AutoRepeat|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M44705|
+  00008		 |$M44683|
   00008	e1a08002	 mov         r8, r2
   0000c	e1a02001	 mov         r2, r1
   00010	e1a06000	 mov         r6, r0
@@ -2934,9 +2778,9 @@
   00018	e1a04003	 mov         r4, r3
   0001c	e58d6000	 str         r6, [sp]
 
-; 1010 :     ULONG ix;
-; 1011 : 
-; 1012 :     for (ix = 0; ix < g_keypadRepeat.count; ix++)
+; 995  :     ULONG ix;
+; 996  : 
+; 997  :     for (ix = 0; ix < g_keypadRepeat.count; ix++)
 
   00020	e59f9170	 ldr         r9, [pc, #0x170]
   00024	e3a0a000	 mov         r10, #0
@@ -2950,17 +2794,17 @@
   00040	e599e004	 ldr         lr, [r9, #4]
   00044	e1a0500b	 mov         r5, r11
 
-; 1013 :         {
-; 1014 :         const KEYPAD_REPEAT_ITEM *pItem = &g_keypadRepeat.pItem[ix];
-; 1015 :         KeypadRepeatState_t *pState = &pRepeatState[ix];
-; 1016 :         DWORD delay;        
-; 1017 :         UINT8 vkBlock;
-; 1018 :         UINT8 vk = pItem->vkey;
+; 998  :         {
+; 999  :         const KEYPAD_REPEAT_ITEM *pItem = &g_keypadRepeat.pItem[ix];
+; 1000 :         KeypadRepeatState_t *pState = &pRepeatState[ix];
+; 1001 :         DWORD delay;        
+; 1002 :         UINT8 vkBlock;
+; 1003 :         UINT8 vk = pItem->vkey;
 
   00048	e7f5700e	 ldrb        r7, [r5, +lr]!
 
-; 1019 : 
-; 1020 :         if ((vkNewState[vk >> 5] & (1 << (vk & 0x1F))) != 0)
+; 1004 : 
+; 1005 :         if ((vkNewState[vk >> 5] & (1 << (vk & 0x1F))) != 0)
 
   0004c	e3a0e001	 mov         lr, #1
   00050	e1a032a7	 mov         r3, r7, lsr #5
@@ -2969,57 +2813,57 @@
   0005c	e112031e	 tst         r2, lr, lsl r3
   00060	0a00003e	 beq         |$LN13@AutoRepeat|
 
-; 1021 :             {
-; 1022 :             if (!pState->pending)
+; 1006 :             {
+; 1007 :             if (!pState->pending)
 
   00064	e5943000	 ldr         r3, [r4]
   00068	e3530000	 cmp         r3, #0
   0006c	1a000006	 bne         |$LN12@AutoRepeat|
 
-; 1023 :                 {
-; 1024 :                 // Key was just pressed
-; 1025 :                 delay = pItem->firstDelay;
+; 1008 :                 {
+; 1009 :                 // Key was just pressed
+; 1010 :                 delay = pItem->firstDelay;
 
   00070	e1d530b2	 ldrh        r3, [r5, #2]
   00074	e3530000	 cmp         r3, #0
 
-; 1026 :                 if (delay == 0) delay = pDevice->firstRepeat;
+; 1011 :                 if (delay == 0) delay = pDevice->firstRepeat;
 
   00078	05963018	 ldreq       r3, [r6, #0x18]
 
-; 1027 :                 pState->time = time + delay;
-; 1028 :                 pState->pending = TRUE;
+; 1012 :                 pState->time = time + delay;
+; 1013 :                 pState->pending = TRUE;
 
   0007c	e5840000	 str         r0, [r4]
   00080	e0833008	 add         r3, r3, r8
   00084	e5843004	 str         r3, [r4, #4]
 
-; 1029 :                 pState->blocked = FALSE;
+; 1014 :                 pState->blocked = FALSE;
 
   00088	ea000035	 b           |$LN26@AutoRepeat|
   0008c		 |$LN12@AutoRepeat|
 
-; 1030 :                 }
-; 1031 :             else if (((INT32)(time - pState->time)) >= 0)
+; 1015 :                 }
+; 1016 :             else if (((INT32)(time - pState->time)) >= 0)
 
   0008c	e5943004	 ldr         r3, [r4, #4]
   00090	e0583003	 subs        r3, r8, r3
   00094	4a000033	 bmi         |$LN15@AutoRepeat|
 
-; 1032 :                 {
-; 1033 :                 // Check if any blocking keys are pressed
-; 1034 :                 const KEYPAD_REPEAT_BLOCK *pBlock = pItem->pBlock;
+; 1017 :                 {
+; 1018 :                 // Check if any blocking keys are pressed
+; 1019 :                 const KEYPAD_REPEAT_BLOCK *pBlock = pItem->pBlock;
 
   00098	e595300c	 ldr         r3, [r5, #0xC]
   0009c	e3530000	 cmp         r3, #0
 
-; 1035 :                 if (pBlock != 0)
+; 1020 :                 if (pBlock != 0)
 
   000a0	0a000018	 beq         |$LN5@AutoRepeat|
 
-; 1036 :                     {
-; 1037 :                     int ik;
-; 1038 :                     for ( ik = 0; ik < pBlock->count; ik++ )
+; 1021 :                     {
+; 1022 :                     int ik;
+; 1023 :                     for ( ik = 0; ik < pBlock->count; ik++ )
 
   000a4	e5d3e000	 ldrb        lr, [r3]
   000a8	e3a01000	 mov         r1, #0
@@ -3028,13 +2872,13 @@
   000b4	e5936004	 ldr         r6, [r3, #4]
   000b8		 |$LL7@AutoRepeat|
 
-; 1039 :                         {
-; 1040 :                         vkBlock = pBlock->pVKey[ik];
+; 1024 :                         {
+; 1025 :                         vkBlock = pBlock->pVKey[ik];
 
   000b8	e7d60001	 ldrb        r0, [r6, +r1]
 
-; 1041 :                         if ((vkNewState[vkBlock >> 5] &
-; 1042 :                                (1 << (vkBlock & 0x1F))) != 0)
+; 1026 :                         if ((vkNewState[vkBlock >> 5] &
+; 1027 :                                (1 << (vkBlock & 0x1F))) != 0)
 
   000bc	e59d2004	 ldr         r2, [sp, #4]
   000c0	e3a09001	 mov         r9, #1
@@ -3050,10 +2894,10 @@
   000e8	ea000005	 b           |$LN27@AutoRepeat|
   000ec		 |$LN23@AutoRepeat|
 
-; 1043 :                             {
-; 1044 :                             pState->blocked = TRUE;
-; 1045 :                             RETAILMSG(1, (L" KPD_IntrThread: "
-; 1046 :                                 L"Block repeat: 0x%x bcause of 0x%x\r\n",vk, vkBlock));
+; 1028 :                             {
+; 1029 :                             pState->blocked = TRUE;
+; 1030 :                             RETAILMSG(1, (L" KPD_IntrThread: "
+; 1031 :                                 L"Block repeat: 0x%x bcause of 0x%x\r\n",vk, vkBlock));
 
   000ec	e1a02000	 mov         r2, r0
   000f0	e59f009c	 ldr         r0, [pc, #0x9C]
@@ -3063,37 +2907,37 @@
   00100	eb000000	 bl          NKDbgPrintfW
   00104		 |$LN27@AutoRepeat|
 
-; 1009 : {
+; 994  : {
 
   00104	e59d6000	 ldr         r6, [sp]
 
-; 1043 :                             {
-; 1044 :                             pState->blocked = TRUE;
-; 1045 :                             RETAILMSG(1, (L" KPD_IntrThread: "
-; 1046 :                                 L"Block repeat: 0x%x bcause of 0x%x\r\n",vk, vkBlock));
+; 1028 :                             {
+; 1029 :                             pState->blocked = TRUE;
+; 1030 :                             RETAILMSG(1, (L" KPD_IntrThread: "
+; 1031 :                                 L"Block repeat: 0x%x bcause of 0x%x\r\n",vk, vkBlock));
 
   00108		 |$LN5@AutoRepeat|
 
-; 1047 :                             break;
-; 1048 :                             }
-; 1049 :                         }
-; 1050 :                     }
-; 1051 :                 
-; 1052 :                 // Repeat if not blocked
-; 1053 :                 if (!pState->blocked)
+; 1032 :                             break;
+; 1033 :                             }
+; 1034 :                         }
+; 1035 :                     }
+; 1036 :                 
+; 1037 :                 // Repeat if not blocked
+; 1038 :                 if (!pState->blocked)
 
   00108	e5943008	 ldr         r3, [r4, #8]
   0010c	e3530000	 cmp         r3, #0
   00110	1a00000a	 bne         |$LN3@AutoRepeat|
 
-; 1054 :                     {
-; 1055 :                     RETAILMSG(1, (L" KPD_IntrThread: "L"Key Repeat: 0x%x\r\n", vk));
+; 1039 :                     {
+; 1040 :                     RETAILMSG(1, (L" KPD_IntrThread: "L"Key Repeat: 0x%x\r\n", vk));
 
   00114	e59f0074	 ldr         r0, [pc, #0x74]
   00118	e1a01007	 mov         r1, r7
   0011c	eb000000	 bl          NKDbgPrintfW
 
-; 1056 :                     SendKeyPadEvent(vk, 0, pItem->silent ? KEYEVENTF_SILENT : 0, 0);
+; 1041 :                     SendKeyPadEvent(vk, 0, pItem->silent ? KEYEVENTF_SILENT : 0, 0);
 
   00120	e5953008	 ldr         r3, [r5, #8]
   00124	e3a01000	 mov         r1, #0
@@ -3105,17 +2949,17 @@
   0013c	eb000000	 bl          SendKeyPadEvent
   00140		 |$LN3@AutoRepeat|
 
-; 1057 :                     }
-; 1058 :                 // Set time for next repeat
-; 1059 :                 delay = pItem->nextDelay;
+; 1042 :                     }
+; 1043 :                 // Set time for next repeat
+; 1044 :                 delay = pItem->nextDelay;
 
   00140	e1d530b4	 ldrh        r3, [r5, #4]
 
-; 1060 :                 if (delay == 0) delay = pDevice->nextRepeat;
-; 1061 :                 pState->time = time + delay;
-; 1062 :                 }
-; 1063 :             }
-; 1064 :         else
+; 1045 :                 if (delay == 0) delay = pDevice->nextRepeat;
+; 1046 :                 pState->time = time + delay;
+; 1047 :                 }
+; 1048 :             }
+; 1049 :         else
 
   00144	e3a01000	 mov         r1, #0
   00148	e3a00001	 mov         r0, #1
@@ -3126,13 +2970,13 @@
   0015c	ea000001	 b           |$LN15@AutoRepeat|
   00160		 |$LN13@AutoRepeat|
 
-; 1065 :             {
-; 1066 :             pState->pending = FALSE;
+; 1050 :             {
+; 1051 :             pState->pending = FALSE;
 
   00160	e5841000	 str         r1, [r4]
   00164		 |$LN26@AutoRepeat|
 
-; 1067 :             pState->blocked = FALSE;
+; 1052 :             pState->blocked = FALSE;
 
   00164	e5841008	 str         r1, [r4, #8]
   00168		 |$LN15@AutoRepeat|
@@ -3145,9 +2989,9 @@
   00180	3affffae	 bcc         |$LL16@AutoRepeat|
   00184		 |$LN14@AutoRepeat|
 
-; 1068 :             }
-; 1069 :         }
-; 1070 : }
+; 1053 :             }
+; 1054 :         }
+; 1055 : }
 
   00184	e28dd008	 add         sp, sp, #8
   00188	e8bd4ff0	 ldmia       sp!, {r4 - r11, lr}
@@ -3159,407 +3003,357 @@
   00194	00000000	 DCD         |??_C@_1GK@OIDADBP@?$AA?5?$AAK?$AAP?$AAD?$AA_?$AAI?$AAn?$AAt?$AAr?$AAT?$AAh?$AAr?$AAe?$AAa?$AAd?$AA?3?$AA?5?$AAB?$AAl?$AAo?$AAc?$AAk?$AA?5?$AAr?$AAe?$AAp?$AAe?$AAa?$AAt?$AA?3?$AA?5?$AA0@|
   00198		 |$LN34@AutoRepeat|
   00198	00000000	 DCD         |g_keypadRepeat|
-  0019c		 |$M44706|
+  0019c		 |$M44684|
 
 			 ENDP  ; |AutoRepeat|
 
 	EXPORT	|__$ArrayPad$| [ DATA ]
 	EXPORT	|KPD_IntrThread|
 	IMPORT	|GetTickCount|
+	IMPORT	|PhysicalStateToVirtualState|
 	IMPORT	|TWLReadRegs|
 	IMPORT	|LocalAlloc|
 	IMPORT	|memcpy|
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44770| DCD	|$LN40@KPD_IntrTh|
-	DCD	0xc000aa02
+|$T44719| DCD	|$LN25@KPD_IntrTh|
+	DCD	0xc0007d02
 
   00000			 AREA	 |.xdata|, DATA
-|$T44766| DCD	0xffffffd8
+|$T44715| DCD	0xffffffe0
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_keypad\keypad.c
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T44766|
+  00004	00000000	 DCD         |$T44715|
 
   00008		 |KPD_IntrThread| PROC
 
-; 1079 : {
+; 1064 : {
 
-  00008		 |$LN40@KPD_IntrTh|
-  00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
-  0000c	e24dd058	 sub         sp, sp, #0x58
-  00010		 |$M44767|
+  00008		 |$LN25@KPD_IntrTh|
+  00008	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
+  0000c	e24dd050	 sub         sp, sp, #0x50
+  00010		 |$M44716|
   00010	e1a05000	 mov         r5, r0
-  00014	e58d5008	 str         r5, [sp, #8]
-  00018	e59f328c	 ldr         r3, [pc, #0x28C]
-  0001c	e5933000	 ldr         r3, [r3]
-  00020	e58d3054	 str         r3, [sp, #0x54]
+  00014	e59f31dc	 ldr         r3, [pc, #0x1DC]
+  00018	e5933000	 ldr         r3, [r3]
+  0001c	e58d304c	 str         r3, [sp, #0x4C]
 
-; 1080 :     KeypadDevice_t *pDevice = (KeypadDevice_t*)pContext;
-; 1081 :     KeypadRemapState_t *pRemapState = NULL;
-; 1082 :     KeypadRepeatState_t *pRepeatState = NULL;
-; 1083 :     UINT8 matrix[MATRIX_SIZE]; // 8
-; 1084 :     DWORD vkState[VK_KEYS/DWORD_BITS]; // 256/32 = 8
-; 1085 :     DWORD vkNewState[VK_KEYS/DWORD_BITS];
-; 1086 :     DWORD timeout;
-; 1087 : 
-; 1088 :     // Init data
-; 1089 :     memset(matrix, 0, sizeof(matrix));
+; 1065 :     KeypadDevice_t *pDevice = (KeypadDevice_t*)pContext;
+; 1066 :     KeypadRemapState_t *pRemapState = NULL;
+; 1067 :     KeypadRepeatState_t *pRepeatState = NULL;
+; 1068 :     UINT8 matrix[MATRIX_SIZE]; // 8
+; 1069 :     DWORD vkState[VK_KEYS/DWORD_BITS]; // 256/32 = 8
+; 1070 :     DWORD vkNewState[VK_KEYS/DWORD_BITS];
+; 1071 :     DWORD timeout;
+; 1072 : 
+; 1073 :     // Init data
+; 1074 :     memset(matrix, 0, sizeof(matrix));
 
-  00024	e3a0a000	 mov         r10, #0
-  00028	e3a02008	 mov         r2, #8
-  0002c	e3a01000	 mov         r1, #0
-  00030	e28d004c	 add         r0, sp, #0x4C
-  00034	e58da004	 str         r10, [sp, #4]
-  00038	e3a09000	 mov         r9, #0
-  0003c	eb000000	 bl          memset
+  00020	e3a02008	 mov         r2, #8
+  00024	e3a01000	 mov         r1, #0
+  00028	e28d0044	 add         r0, sp, #0x44
+  0002c	e3a07000	 mov         r7, #0
+  00030	e3a06000	 mov         r6, #0
+  00034	eb000000	 bl          memset
 
-; 1090 :     memset(vkState, 0, sizeof(vkState));
+; 1075 :     memset(vkState, 0, sizeof(vkState));
 
-  00040	e3a02020	 mov         r2, #0x20
-  00044	e3a01000	 mov         r1, #0
-  00048	e28d002c	 add         r0, sp, #0x2C
-  0004c	eb000000	 bl          memset
+  00038	e3a02020	 mov         r2, #0x20
+  0003c	e3a01000	 mov         r1, #0
+  00040	e28d0024	 add         r0, sp, #0x24
+  00044	eb000000	 bl          memset
 
-; 1091 :     memset(vkNewState, 0, sizeof(vkNewState));
+; 1076 :     memset(vkNewState, 0, sizeof(vkNewState));
 
-  00050	e3a02020	 mov         r2, #0x20
-  00054	e3a01000	 mov         r1, #0
-  00058	e28d000c	 add         r0, sp, #0xC
-  0005c	eb000000	 bl          memset
+  00048	e3a02020	 mov         r2, #0x20
+  0004c	e3a01000	 mov         r1, #0
+  00050	e28d0004	 add         r0, sp, #4
+  00054	eb000000	 bl          memset
 
-; 1092 : 
-; 1093 :     // Set thread priority
-; 1094 :     CeSetThreadPriority(pDevice->hIntrThreadKeypad, pDevice->priority256);
+; 1077 : 
+; 1078 :     // Set thread priority
+; 1079 :     CeSetThreadPriority(pDevice->hIntrThreadKeypad, pDevice->priority256);
 
-  00060	e5951004	 ldr         r1, [r5, #4]
-  00064	e5950024	 ldr         r0, [r5, #0x24]
-  00068	eb000000	 bl          CeSetThreadPriority
+  00058	e5951004	 ldr         r1, [r5, #4]
+  0005c	e5950024	 ldr         r0, [r5, #0x24]
+  00060	eb000000	 bl          CeSetThreadPriority
 
-; 1095 : 
-; 1096 :     // Initialize remap informations
-; 1097 :     if (g_keypadRemap.count > 0)
+; 1080 : 
+; 1081 :     // Initialize remap informations
+; 1082 :     if (g_keypadRemap.count > 0)
 
-  0006c	e59f3234	 ldr         r3, [pc, #0x234]
-  00070	e1d330b0	 ldrh        r3, [r3]
-  00074	e3530000	 cmp         r3, #0
-  00078	0a000005	 beq         |$LN11@KPD_IntrTh|
+  00064	e59f3188	 ldr         r3, [pc, #0x188]
+  00068	e1d330b0	 ldrh        r3, [r3]
+  0006c	e3530000	 cmp         r3, #0
+  00070	0a000004	 beq         |$LN11@KPD_IntrTh|
 
-; 1098 :         {
-; 1099 :         // Allocate state structure for remap, zero initialized
-; 1100 :         pRemapState = LocalAlloc(
-; 1101 :             LPTR, g_keypadRemap.count * sizeof(KeypadRemapState_t)
-; 1102 :             );
+; 1083 :         {
+; 1084 :         // Allocate state structure for remap, zero initialized
+; 1085 :         pRemapState = LocalAlloc(
+; 1086 :             LPTR, g_keypadRemap.count * sizeof(KeypadRemapState_t)
+; 1087 :             );
 
-  0007c	e1a01203	 mov         r1, r3, lsl #4
-  00080	e3a00040	 mov         r0, #0x40
-  00084	eb000000	 bl          LocalAlloc
-  00088	e1b0a000	 movs        r10, r0
-  0008c	e58da004	 str         r10, [sp, #4]
+  00074	e1a01203	 mov         r1, r3, lsl #4
+  00078	e3a00040	 mov         r0, #0x40
+  0007c	eb000000	 bl          LocalAlloc
+  00080	e1b07000	 movs        r7, r0
 
-; 1103 :         if (pRemapState == NULL)
+; 1088 :         if (pRemapState == NULL)
 
-  00090	0a00007b	 beq         |$LN1@KPD_IntrTh|
-  00094		 |$LN11@KPD_IntrTh|
+  00084	0a000053	 beq         |$LN1@KPD_IntrTh|
+  00088		 |$LN11@KPD_IntrTh|
 
-; 1104 :             {
-; 1105 :             DEBUGMSG(ZONE_ERROR, (L" KPD_IntrThread: "
-; 1106 :                 L"Failed allocate memory for virtual key remap\r\n"
-; 1107 :                 ));
-; 1108 :             goto cleanUp;
-; 1109 :             }
-; 1110 :         }
-; 1111 : 
-; 1112 :     // Initialize repeat informations
-; 1113 :     if (g_keypadRepeat.count > 0)
+; 1089 :             {
+; 1090 :             DEBUGMSG(ZONE_ERROR, (L" KPD_IntrThread: "
+; 1091 :                 L"Failed allocate memory for virtual key remap\r\n"
+; 1092 :                 ));
+; 1093 :             goto cleanUp;
+; 1094 :             }
+; 1095 :         }
+; 1096 : 
+; 1097 :     // Initialize repeat informations
+; 1098 :     if (g_keypadRepeat.count > 0)
 
-  00094	e59f3208	 ldr         r3, [pc, #0x208]
-  00098	e1d330b0	 ldrh        r3, [r3]
-  0009c	e3530000	 cmp         r3, #0
-  000a0	0a000005	 beq         |$LN9@KPD_IntrTh|
+  00088	e59f3160	 ldr         r3, [pc, #0x160]
+  0008c	e1d330b0	 ldrh        r3, [r3]
+  00090	e3530000	 cmp         r3, #0
+  00094	0a000005	 beq         |$LN9@KPD_IntrTh|
 
-; 1114 :         {
-; 1115 :         // Allocate state structure for repeat, zero initialized
-; 1116 :         pRepeatState = LocalAlloc(
-; 1117 :             LPTR, g_keypadRepeat.count * sizeof(KeypadRepeatState_t)
-; 1118 :             );
+; 1099 :         {
+; 1100 :         // Allocate state structure for repeat, zero initialized
+; 1101 :         pRepeatState = LocalAlloc(
+; 1102 :             LPTR, g_keypadRepeat.count * sizeof(KeypadRepeatState_t)
+; 1103 :             );
 
-  000a4	e0833083	 add         r3, r3, r3, lsl #1
-  000a8	e1a01103	 mov         r1, r3, lsl #2
-  000ac	e3a00040	 mov         r0, #0x40
-  000b0	eb000000	 bl          LocalAlloc
-  000b4	e1b09000	 movs        r9, r0
+  00098	e0833083	 add         r3, r3, r3, lsl #1
+  0009c	e1a01103	 mov         r1, r3, lsl #2
+  000a0	e3a00040	 mov         r0, #0x40
+  000a4	eb000000	 bl          LocalAlloc
+  000a8	e1b06000	 movs        r6, r0
 
-; 1119 :         if (pRepeatState == NULL)
+; 1104 :         if (pRepeatState == NULL)
 
-  000b8	0a00006b	 beq         |$cleanUp$44152|
-  000bc		 |$LN9@KPD_IntrTh|
+  000ac	0a000043	 beq         |$cleanUp$44155|
+  000b0		 |$LN9@KPD_IntrTh|
 
-; 1120 :             {
-; 1121 :             DEBUGMSG(ZONE_ERROR, (L" KPD_IntrThread: "
-; 1122 :                 L"Failed allocate memory for virtual key auto repeat\r\n"
-; 1123 :                 ));
-; 1124 :             goto cleanUp;
-; 1125 :             }
-; 1126 :         }
-; 1127 : 
-; 1128 :     // Set delay to sample period
-; 1129 :     timeout = pDevice->samplePeriod;
-; 1130 : 
-; 1131 :     // Loop until we are not stopped...
-; 1132 :     while (!pDevice->intrThreadExit)
+; 1105 :             {
+; 1106 :             DEBUGMSG(ZONE_ERROR, (L" KPD_IntrThread: "
+; 1107 :                 L"Failed allocate memory for virtual key auto repeat\r\n"
+; 1108 :                 ));
+; 1109 :             goto cleanUp;
+; 1110 :             }
+; 1111 :         }
+; 1112 : 
+; 1113 :     // Set delay to sample period
+; 1114 :     timeout = pDevice->samplePeriod;
+; 1115 : 
+; 1116 :     // Loop until we are not stopped...
+; 1117 :     while (!pDevice->intrThreadExit)
 
-  000bc	e5953028	 ldr         r3, [r5, #0x28]
-  000c0	e5951014	 ldr         r1, [r5, #0x14]
-  000c4	e3530000	 cmp         r3, #0
-  000c8	1a000067	 bne         |$cleanUp$44152|
-  000cc	e3a060db	 mov         r6, #0xDB
-  000d0	e3a02000	 mov         r2, #0
-  000d4	e28d404c	 add         r4, sp, #0x4C
-  000d8		 |$LL8@KPD_IntrTh|
+  000b0	e5953028	 ldr         r3, [r5, #0x28]
+  000b4	e5951014	 ldr         r1, [r5, #0x14]
+  000b8	e3530000	 cmp         r3, #0
+  000bc	1a00003f	 bne         |$cleanUp$44155|
+  000c0	e3a080db	 mov         r8, #0xDB
+  000c4	e3a09000	 mov         r9, #0
+  000c8		 |$LL8@KPD_IntrTh|
 
-; 1133 :         {
-; 1134 :         DWORD time;
-; 1135 :         BOOL keyDown = FALSE;
-; 1136 : 
-; 1137 :         // Wait for event
-; 1138 :         WaitForSingleObject(pDevice->hIntrEventKeypad, timeout);
+; 1118 :         {
+; 1119 :         DWORD time;
+; 1120 :         BOOL keyDown = FALSE;
+; 1121 : 
+; 1122 :         // Wait for event
+; 1123 :         WaitForSingleObject(pDevice->hIntrEventKeypad, timeout);
 
-  000d8	e5950020	 ldr         r0, [r5, #0x20]
-  000dc	e58d2000	 str         r2, [sp]
-  000e0	eb000000	 bl          WaitForSingleObject
+  000c8	e5950020	 ldr         r0, [r5, #0x20]
+  000cc	e58d9000	 str         r9, [sp]
+  000d0	eb000000	 bl          WaitForSingleObject
 
-; 1139 :         if (pDevice->intrThreadExit) break;
+; 1124 :         if (pDevice->intrThreadExit) break;
 
-  000e4	e5953028	 ldr         r3, [r5, #0x28]
-  000e8	e3530000	 cmp         r3, #0
-  000ec	1a00005e	 bne         |$cleanUp$44152|
+  000d4	e5953028	 ldr         r3, [r5, #0x28]
+  000d8	e3530000	 cmp         r3, #0
+  000dc	1a000037	 bne         |$cleanUp$44155|
+
+; 1125 : 
+; 1126 :         // read MATRIX_SIZE amount of rows..
+; 1127 :         if (TWLReadRegs(pDevice->hTWL, TWL_LOGADDR_FULL_CODE_7_0, NULL, 0))
+
+  000e0	e5950034	 ldr         r0, [r5, #0x34]
+  000e4	e3a03000	 mov         r3, #0
+  000e8	e3a02000	 mov         r2, #0
+  000ec	e24818fe	 sub         r1, r8, #0xFE, 16
+  000f0	eb000000	 bl          TWLReadRegs
+  000f4	e3500000	 cmp         r0, #0
+  000f8	0a000005	 beq         |$LN5@KPD_IntrTh|
+
+; 1128 : 		{
+; 1129 :             TWLReadRegs(pDevice->hTWL, TWL_LOGADDR_FULL_CODE_7_0, matrix, sizeof(matrix));
+
+  000fc	e5950034	 ldr         r0, [r5, #0x34]
+  00100	e3a03008	 mov         r3, #8
+  00104	e28d2044	 add         r2, sp, #0x44
+  00108	e24818fe	 sub         r1, r8, #0xFE, 16
+  0010c	eb000000	 bl          TWLReadRegs
+
+; 1130 : 		}
+; 1131 :         else
+
+  00110	ea000003	 b           |$LN4@KPD_IntrTh|
+  00114		 |$LN5@KPD_IntrTh|
+
+; 1132 : 		{
+; 1133 :             memset(matrix, 0, sizeof(matrix));
+
+  00114	e3a02008	 mov         r2, #8
+  00118	e3a01000	 mov         r1, #0
+  0011c	e28d0044	 add         r0, sp, #0x44
+  00120	eb000000	 bl          memset
+  00124		 |$LN4@KPD_IntrTh|
+
+; 1134 : 		}
+; 1135 :        
+; 1136 :         // Convert physical state to virtual keys state
+; 1137 :         PhysicalStateToVirtualState(matrix, vkNewState, &keyDown);
+
+  00124	e28d2000	 add         r2, sp, #0
+  00128	e28d1004	 add         r1, sp, #4
+  0012c	e28d0044	 add         r0, sp, #0x44
+  00130	eb000000	 bl          PhysicalStateToVirtualState
+
+; 1138 : 
+; 1139 :         time = GetTickCount();
+
+  00134	eb000000	 bl          GetTickCount
 
 ; 1140 : 
-; 1141 :         // read MATRIX_SIZE amount of rows..
-; 1142 :         if (TWLReadRegs(pDevice->hTWL, TWL_LOGADDR_FULL_CODE_7_0, NULL, 0))
+; 1141 :         // Remap multi virtual keys to final virtual key
+; 1142 :         VirtualKeyRemap(time, &keyDown, pRemapState, vkNewState);
 
-  000f0	e5950034	 ldr         r0, [r5, #0x34]
-  000f4	e3a03000	 mov         r3, #0
-  000f8	e3a02000	 mov         r2, #0
-  000fc	e24618fe	 sub         r1, r6, #0xFE, 16
-  00100	eb000000	 bl          TWLReadRegs
-  00104	e3500000	 cmp         r0, #0
-  00108	0a000005	 beq         |$LN5@KPD_IntrTh|
+  00138	e28d3004	 add         r3, sp, #4
+  0013c	e1a02007	 mov         r2, r7
+  00140	e28d1000	 add         r1, sp, #0
+  00144	e1a04000	 mov         r4, r0
+  00148	eb000000	 bl          VirtualKeyRemap
 
-; 1143 : 		{
-; 1144 :             TWLReadRegs(pDevice->hTWL, TWL_LOGADDR_FULL_CODE_7_0, matrix, sizeof(matrix));
+; 1143 :         PressedReleasedKeys(pDevice, vkState, vkNewState);
 
-  0010c	e5950034	 ldr         r0, [r5, #0x34]
-  00110	e3a03008	 mov         r3, #8
-  00114	e28d204c	 add         r2, sp, #0x4C
-  00118	e24618fe	 sub         r1, r6, #0xFE, 16
-  0011c	eb000000	 bl          TWLReadRegs
+  0014c	e28d2004	 add         r2, sp, #4
+  00150	e28d1024	 add         r1, sp, #0x24
+  00154	e1a00005	 mov         r0, r5
+  00158	eb000000	 bl          PressedReleasedKeys
 
-; 1145 : 		}
-; 1146 :         else
+; 1144 :         AutoRepeat(pDevice, vkNewState, time, pRepeatState);
 
-  00120	ea000003	 b           |$LN4@KPD_IntrTh|
-  00124		 |$LN5@KPD_IntrTh|
+  0015c	e1a03006	 mov         r3, r6
+  00160	e1a02004	 mov         r2, r4
+  00164	e28d1004	 add         r1, sp, #4
+  00168	e1a00005	 mov         r0, r5
+  0016c	eb000000	 bl          AutoRepeat
+
+; 1145 : 
+; 1146 :         if( pDevice->hKeypressEvent != NULL )
+
+  00170	e595303c	 ldr         r3, [r5, #0x3C]
+  00174	e3530000	 cmp         r3, #0
 
 ; 1147 : 		{
-; 1148 :             memset(matrix, 0, sizeof(matrix));
+; 1148 :             // Signal keypad light thread
+; 1149 :             SetEvent(pDevice->hKeypressEvent);
 
-  00124	e3a02008	 mov         r2, #8
-  00128	e3a01000	 mov         r1, #0
-  0012c	e28d004c	 add         r0, sp, #0x4C
-  00130	eb000000	 bl          memset
-  00134		 |$LN4@KPD_IntrTh|
-  00134	e59f5164	 ldr         r5, [pc, #0x164]
+  00178	13a01003	 movne       r1, #3
+  0017c	11a00003	 movne       r0, r3
+  00180	1b000000	 blne        EventModify
 
-; 1149 : 		}
-; 1150 :        
-; 1151 :         // Convert physical state to virtual keys state
-; 1152 :         PhysicalStateToVirtualState(matrix, vkNewState, &keyDown);
-
-  00138	e3a00000	 mov         r0, #0
-  0013c	e3a07000	 mov         r7, #0
-  00140	e3a08000	 mov         r8, #0
-  00144	e3a0a001	 mov         r10, #1
-  00148		 |$LL25@KPD_IntrTh|
-  00148	e7d7b004	 ldrb        r11, [r7, +r4]
-  0014c	e35b0000	 cmp         r11, #0
-  00150	02888008	 addeq       r8, r8, #8
-  00154	0a000016	 beq         |$LN24@KPD_IntrTh|
-  00158	e3a06000	 mov         r6, #0
-  0015c	e3a03001	 mov         r3, #1
-  00160		 |$LL21@KPD_IntrTh|
-  00160	e11b0613	 tst         r11, r3, lsl r6
-  00164	0a00000d	 beq         |$LN20@KPD_IntrTh|
-  00168	e7d84005	 ldrb        r4, [r8, +r5]
-  0016c	e59f0128	 ldr         r0, [pc, #0x128]
-  00170	e1a02006	 mov         r2, r6
-  00174	e1a03004	 mov         r3, r4
-  00178	e1a01007	 mov         r1, r7
-  0017c	eb000000	 bl          NKDbgPrintfW
-  00180	e1a032a4	 mov         r3, r4, lsr #5
-  00184	e28d100c	 add         r1, sp, #0xC
-  00188	e7b12103	 ldr         r2, [r1, +r3, lsl #2]!
-  0018c	e204301f	 and         r3, r4, #0x1F
-  00190	e3a00001	 mov         r0, #1
-  00194	e182331a	 orr         r3, r2, r10, lsl r3
-  00198	e5813000	 str         r3, [r1]
-  0019c	e3a03001	 mov         r3, #1
-  001a0		 |$LN20@KPD_IntrTh|
-  001a0	e2866001	 add         r6, r6, #1
-  001a4	e3560008	 cmp         r6, #8
-  001a8	e2888001	 add         r8, r8, #1
-  001ac	3affffeb	 bcc         |$LL21@KPD_IntrTh|
-  001b0	e28d404c	 add         r4, sp, #0x4C
-  001b4		 |$LN24@KPD_IntrTh|
-  001b4	e2877001	 add         r7, r7, #1
-  001b8	e3570008	 cmp         r7, #8
-  001bc	3affffe1	 bcc         |$LL25@KPD_IntrTh|
-  001c0	e3500000	 cmp         r0, #0
-  001c4	13a03001	 movne       r3, #1
-  001c8	e59d5008	 ldr         r5, [sp, #8]
-  001cc	e59da004	 ldr         r10, [sp, #4]
-  001d0	158d3000	 strne       r3, [sp]
-
-; 1153 : 
-; 1154 :         time = GetTickCount();
-
-  001d4	eb000000	 bl          GetTickCount
-
+; 1150 : 		}
+; 1151 : 
+; 1152 :         //--------------------------------------------------------------
+; 1153 :         // Prepare for next run
+; 1154 :         //--------------------------------------------------------------
 ; 1155 : 
-; 1156 :         // Remap multi virtual keys to final virtual key
-; 1157 :         VirtualKeyRemap(time, &keyDown, pRemapState, vkNewState);
+; 1156 :         // New state become old
+; 1157 :         memcpy(vkState, vkNewState, sizeof(vkState));
 
-  001d8	e28d300c	 add         r3, sp, #0xC
-  001dc	e1a0200a	 mov         r2, r10
-  001e0	e28d1000	 add         r1, sp, #0
-  001e4	e1a04000	 mov         r4, r0
-  001e8	eb000000	 bl          VirtualKeyRemap
+  00184	e28d0024	 add         r0, sp, #0x24
+  00188	e28d1004	 add         r1, sp, #4
+  0018c	e3a02020	 mov         r2, #0x20
+  00190	eb000000	 bl          memcpy
 
-; 1158 :         PressedReleasedKeys(pDevice, vkState, vkNewState);
+; 1158 :         // Get new state for virtual key table
+; 1159 :         memset(vkNewState, 0, sizeof(vkNewState));
 
-  001ec	e28d200c	 add         r2, sp, #0xC
-  001f0	e28d102c	 add         r1, sp, #0x2C
-  001f4	e1a00005	 mov         r0, r5
-  001f8	eb000000	 bl          PressedReleasedKeys
-
-; 1159 :         AutoRepeat(pDevice, vkNewState, time, pRepeatState);
-
-  001fc	e1a03009	 mov         r3, r9
-  00200	e1a02004	 mov         r2, r4
-  00204	e28d100c	 add         r1, sp, #0xC
-  00208	e1a00005	 mov         r0, r5
-  0020c	eb000000	 bl          AutoRepeat
+  00194	e3a02020	 mov         r2, #0x20
+  00198	e3a01000	 mov         r1, #0
+  0019c	e28d0004	 add         r0, sp, #4
+  001a0	eb000000	 bl          memset
 
 ; 1160 : 
-; 1161 :         if( pDevice->hKeypressEvent != NULL )
+; 1161 :         // Set timeout period depending on data state
+; 1162 :         timeout = keyDown ? pDevice->samplePeriod : INFINITE;
 
-  00210	e595303c	 ldr         r3, [r5, #0x3C]
-  00214	e3530000	 cmp         r3, #0
+  001a4	e59d3000	 ldr         r3, [sp]
+  001a8	e3530000	 cmp         r3, #0
+  001ac	e5953028	 ldr         r3, [r5, #0x28]
+  001b0	15951014	 ldrne       r1, [r5, #0x14]
+  001b4	03e01000	 mvneq       r1, #0
+  001b8	e3530000	 cmp         r3, #0
+  001bc	0affffc1	 beq         |$LL8@KPD_IntrTh|
+  001c0		 |$cleanUp$44155|
 
-; 1162 : 		{
-; 1163 :             // Signal keypad light thread
-; 1164 :             SetEvent(pDevice->hKeypressEvent);
-
-  00218	13a01003	 movne       r1, #3
-  0021c	11a00003	 movne       r0, r3
-  00220	1b000000	 blne        EventModify
-
-; 1165 : 		}
+; 1163 : 
+; 1164 :         // Interrupt is done
+; 1165 :         }
 ; 1166 : 
-; 1167 :         //--------------------------------------------------------------
-; 1168 :         // Prepare for next run
-; 1169 :         //--------------------------------------------------------------
-; 1170 : 
-; 1171 :         // New state become old
-; 1172 :         memcpy(vkState, vkNewState, sizeof(vkState));
+; 1167 : cleanUp:
+; 1168 :     if ( pRemapState != NULL )
 
-  00224	e28d002c	 add         r0, sp, #0x2C
-  00228	e28d100c	 add         r1, sp, #0xC
-  0022c	e3a02020	 mov         r2, #0x20
-  00230	eb000000	 bl          memcpy
+  001c0	e3570000	 cmp         r7, #0
 
-; 1173 :         // Get new state for virtual key table
-; 1174 :         memset(vkNewState, 0, sizeof(vkNewState));
+; 1169 :         {
+; 1170 :         LocalFree(pRemapState);
 
-  00234	e3a02020	 mov         r2, #0x20
-  00238	e3a01000	 mov         r1, #0
-  0023c	e28d000c	 add         r0, sp, #0xC
-  00240	eb000000	 bl          memset
+  001c4	11a00007	 movne       r0, r7
+  001c8	1b000000	 blne        LocalFree
 
-; 1175 : 
-; 1176 :         // Set timeout period depending on data state
-; 1177 :         timeout = keyDown ? pDevice->samplePeriod : INFINITE;
+; 1171 :         }
+; 1172 : 
+; 1173 :     if ( pRepeatState != NULL )
 
-  00244	e59d3000	 ldr         r3, [sp]
-  00248	e28d404c	 add         r4, sp, #0x4C
-  0024c	e3a060db	 mov         r6, #0xDB
-  00250	e3530000	 cmp         r3, #0
-  00254	e5953028	 ldr         r3, [r5, #0x28]
-  00258	15951014	 ldrne       r1, [r5, #0x14]
-  0025c	03e01000	 mvneq       r1, #0
-  00260	e3530000	 cmp         r3, #0
-  00264	e3a02000	 mov         r2, #0
-  00268	0affff9a	 beq         |$LL8@KPD_IntrTh|
-  0026c		 |$cleanUp$44152|
+  001cc	e3560000	 cmp         r6, #0
 
-; 1178 : 
-; 1179 :         // Interrupt is done
-; 1180 :         }
-; 1181 : 
-; 1182 : cleanUp:
-; 1183 :     if ( pRemapState != NULL )
+; 1174 :         {
+; 1175 :         LocalFree(pRepeatState);
 
-  0026c	e35a0000	 cmp         r10, #0
+  001d0	11a00006	 movne       r0, r6
+  001d4	1b000000	 blne        LocalFree
+  001d8		 |$LN1@KPD_IntrTh|
 
-; 1184 :         {
-; 1185 :         LocalFree(pRemapState);
+; 1176 :         }
+; 1177 : 
+; 1178 :     return ERROR_SUCCESS;
 
-  00270	11a0000a	 movne       r0, r10
-  00274	1b000000	 blne        LocalFree
+  001d8	e59d004c	 ldr         r0, [sp, #0x4C]
+  001dc	eb000000	 bl          __security_check_cookie
+  001e0	e3a00000	 mov         r0, #0
 
-; 1186 :         }
-; 1187 : 
-; 1188 :     if ( pRepeatState != NULL )
+; 1179 : }
 
-  00278	e3590000	 cmp         r9, #0
-
-; 1189 :         {
-; 1190 :         LocalFree(pRepeatState);
-
-  0027c	11a00009	 movne       r0, r9
-  00280	1b000000	 blne        LocalFree
-  00284		 |$LN1@KPD_IntrTh|
-
-; 1191 :         }
-; 1192 : 
-; 1193 :     return ERROR_SUCCESS;
-
-  00284	e59d0054	 ldr         r0, [sp, #0x54]
-  00288	eb000000	 bl          __security_check_cookie
-  0028c	e3a00000	 mov         r0, #0
-
-; 1194 : }
-
-  00290	e28dd058	 add         sp, sp, #0x58
-  00294	e8bd4ff0	 ldmia       sp!, {r4 - r11, lr}
-  00298	e12fff1e	 bx          lr
-  0029c		 |$LN41@KPD_IntrTh|
-  0029c		 |$LN42@KPD_IntrTh|
-  0029c	00000000	 DCD         |??_C@_1FM@PJGOFBDI@?$AAP?$AAh?$AAy?$AAs?$AAi?$AAc?$AAa?$AAl?$AAS?$AAt?$AAa?$AAt?$AAe?$AAT?$AAo?$AAV?$AAi?$AAr?$AAt?$AAu?$AAa?$AAl?$AAS?$AAt?$AAa?$AAt?$AAe?$AA?3?$AA?5?$AA?$FL?$AA?$CF?$AAd@|
-  002a0		 |$LN43@KPD_IntrTh|
-  002a0	00000000	 DCD         |g_keypadVK|
-  002a4		 |$LN44@KPD_IntrTh|
-  002a4	00000000	 DCD         |g_keypadRepeat|
-  002a8		 |$LN45@KPD_IntrTh|
-  002a8	00000000	 DCD         |g_keypadRemap|
-  002ac		 |$LN46@KPD_IntrTh|
-  002ac	00000000	 DCD         |__security_cookie|
-  002b0		 |$M44768|
+  001e4	e28dd050	 add         sp, sp, #0x50
+  001e8	e8bd43f0	 ldmia       sp!, {r4 - r9, lr}
+  001ec	e12fff1e	 bx          lr
+  001f0		 |$LN26@KPD_IntrTh|
+  001f0		 |$LN27@KPD_IntrTh|
+  001f0	00000000	 DCD         |g_keypadRepeat|
+  001f4		 |$LN28@KPD_IntrTh|
+  001f4	00000000	 DCD         |g_keypadRemap|
+  001f8		 |$LN29@KPD_IntrTh|
+  001f8	00000000	 DCD         |__security_cookie|
+  001fc		 |$M44717|
 
 			 ENDP  ; |KPD_IntrThread|
 
@@ -3573,7 +3367,7 @@
 	IMPORT	|GetDeviceRegistryParams|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44790| DCD	|$LN18@KPD_Init|
+|$T44737| DCD	|$LN18@KPD_Init|
 	DCD	0x40007502
 ; Function compile flags: /Ogspy
 
@@ -3581,26 +3375,26 @@
 
   00000		 |KPD_Init| PROC
 
-; 328  : {
+; 330  : {
 
   00000		 |$LN18@KPD_Init|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M44787|
+  00008		 |$M44734|
   00008	e1a06000	 mov         r6, r0
 
-; 329  :     DWORD rc = (DWORD)NULL;
-; 330  :     KeypadDevice_t *pDevice = NULL;
-; 331  :     UINT8 regval;
-; 332  : 
-; 333  :     UNREFERENCED_PARAMETER(pBusContext);
+; 331  :     DWORD rc = (DWORD)NULL;
+; 332  :     KeypadDevice_t *pDevice = NULL;
+; 333  :     UINT8 regval;
 ; 334  : 
-; 335  :     DEBUGMSG(ZONE_FUNCTION, (
-; 336  :         L"+KPD_Init(%s, 0x%08x)\r\n", szContext, pBusContext
-; 337  :         ));
-; 338  : 
-; 339  :     // Create device structure
-; 340  :     pDevice = (KeypadDevice_t *)LocalAlloc(LPTR, sizeof(KeypadDevice_t));
+; 335  :     UNREFERENCED_PARAMETER(pBusContext);
+; 336  : 
+; 337  :     DEBUGMSG(ZONE_FUNCTION, (
+; 338  :         L"+KPD_Init(%s, 0x%08x)\r\n", szContext, pBusContext
+; 339  :         ));
+; 340  : 
+; 341  :     // Create device structure
+; 342  :     pDevice = (KeypadDevice_t *)LocalAlloc(LPTR, sizeof(KeypadDevice_t));
 
   0000c	e3a0104c	 mov         r1, #0x4C
   00010	e3a00040	 mov         r0, #0x40
@@ -3608,35 +3402,35 @@
   00018	eb000000	 bl          LocalAlloc
   0001c	e1b04000	 movs        r4, r0
 
-; 341  :     if (pDevice == NULL)
+; 343  :     if (pDevice == NULL)
 
   00020	0a000061	 beq         |$LN15@KPD_Init|
 
-; 342  :         {
-; 343  :         DEBUGMSG(ZONE_ERROR, (L"ERROR: KPD_Init: "
-; 344  :             L"Failed allocate KDP driver structure\r\n"
-; 345  :             ));
-; 346  :         goto cleanUp;
-; 347  :         }
-; 348  : 
-; 349  :     memset(pDevice, 0, sizeof(KeypadDevice_t));
+; 344  :         {
+; 345  :         DEBUGMSG(ZONE_ERROR, (L"ERROR: KPD_Init: "
+; 346  :             L"Failed allocate KDP driver structure\r\n"
+; 347  :             ));
+; 348  :         goto cleanUp;
+; 349  :         }
+; 350  : 
+; 351  :     memset(pDevice, 0, sizeof(KeypadDevice_t));
 
   00024	e3a0204c	 mov         r2, #0x4C
   00028	e3a01000	 mov         r1, #0
   0002c	e1a00004	 mov         r0, r4
   00030	eb000000	 bl          memset
 
-; 350  : 
-; 351  :     // Set cookie & initialize critical section
-; 352  :     pDevice->cookie = KPD_DEVICE_COOKIE;
+; 352  : 
+; 353  :     // Set cookie & initialize critical section
+; 354  :     pDevice->cookie = KPD_DEVICE_COOKIE;
 
   00034	e59f1194	 ldr         r1, [pc, #0x194]
 
-; 353  :     
-; 354  :     // Read device parameters
-; 355  :     if (GetDeviceRegistryParams(
-; 356  :             szContext, pDevice, dimof(s_deviceRegParams), s_deviceRegParams)
-; 357  :             != ERROR_SUCCESS)
+; 355  :     
+; 356  :     // Read device parameters
+; 357  :     if (GetDeviceRegistryParams(
+; 358  :             szContext, pDevice, dimof(s_deviceRegParams), s_deviceRegParams)
+; 359  :             != ERROR_SUCCESS)
 
   00038	e59f318c	 ldr         r3, [pc, #0x18C]
   0003c	e3a0200b	 mov         r2, #0xB
@@ -3647,38 +3441,38 @@
   00050	e3500000	 cmp         r0, #0
   00054	1a000054	 bne         |$LN15@KPD_Init|
 
-; 358  :         {
-; 359  :         DEBUGMSG(ZONE_ERROR, (L"ERROR: KPD_Init: "
-; 360  :             L"Failed read KPD driver registry parameters\r\n"
-; 361  :             ));
-; 362  :         goto cleanUp;
-; 363  :         }
-; 364  : 
-; 365  :     // Open parent bus
-; 366  :     pDevice->hTWL = TWLOpen();
+; 360  :         {
+; 361  :         DEBUGMSG(ZONE_ERROR, (L"ERROR: KPD_Init: "
+; 362  :             L"Failed read KPD driver registry parameters\r\n"
+; 363  :             ));
+; 364  :         goto cleanUp;
+; 365  :         }
+; 366  : 
+; 367  :     // Open parent bus
+; 368  :     pDevice->hTWL = TWLOpen();
 
   00058	eb000000	 bl          TWLOpen
   0005c	e3500000	 cmp         r0, #0
   00060	e5840034	 str         r0, [r4, #0x34]
 
-; 367  :     if (pDevice->hTWL == NULL)
+; 369  :     if (pDevice->hTWL == NULL)
 
   00064	0a000050	 beq         |$LN15@KPD_Init|
 
-; 368  :         {
-; 369  :         DEBUGMSG(ZONE_ERROR, (L"ERROR: KPD_Init: "
-; 370  :             L"Failed open TWL bus driver\r\n"
-; 371  :             ));
-; 372  :         goto cleanUp;
-; 373  :         }
-; 374  : 
-; 375  :     // Set debounce delay and enable hardware mode
-; 376  :     regval = TWL_KBD_CTRL_KBD_ON | TWL_KBD_CTRL_NRESET | TWL_KBD_CTRL_NSOFT_MODE;
+; 370  :         {
+; 371  :         DEBUGMSG(ZONE_ERROR, (L"ERROR: KPD_Init: "
+; 372  :             L"Failed open TWL bus driver\r\n"
+; 373  :             ));
+; 374  :         goto cleanUp;
+; 375  :         }
+; 376  : 
+; 377  :     // Set debounce delay and enable hardware mode
+; 378  :     regval = TWL_KBD_CTRL_KBD_ON | TWL_KBD_CTRL_NRESET | TWL_KBD_CTRL_NSOFT_MODE;
 
   00068	e3a03043	 mov         r3, #0x43
   0006c	e5cd3008	 strb        r3, [sp, #8]
 
-; 377  :     TWLWriteRegs(pDevice->hTWL, TWL_KEYP_CTRL_REG, &regval, sizeof(regval));
+; 379  :     TWLWriteRegs(pDevice->hTWL, TWL_KEYP_CTRL_REG, &regval, sizeof(regval));
 
   00070	e5940034	 ldr         r0, [r4, #0x34]
   00074	e3a06802	 mov         r6, #2, 16
@@ -3687,12 +3481,12 @@
   00080	e38610d2	 orr         r1, r6, #0xD2
   00084	eb000000	 bl          TWLWriteRegs
 
-; 378  :     regval = 0x07 << 5;
+; 380  :     regval = 0x07 << 5;
 
   00088	e3a030e0	 mov         r3, #0xE0
   0008c	e5cd3008	 strb        r3, [sp, #8]
 
-; 379  :     TWLWriteRegs(pDevice->hTWL, TWL_LK_PTV_REG, &regval, sizeof(regval));
+; 381  :     TWLWriteRegs(pDevice->hTWL, TWL_LK_PTV_REG, &regval, sizeof(regval));
 
   00090	e5940034	 ldr         r0, [r4, #0x34]
   00094	e3a03001	 mov         r3, #1
@@ -3700,11 +3494,11 @@
   0009c	e38610d5	 orr         r1, r6, #0xD5
   000a0	eb000000	 bl          TWLWriteRegs
 
-; 380  :     regval = (UINT8)pDevice->debounceCount & 0x3F;
+; 382  :     regval = (UINT8)pDevice->debounceCount & 0x3F;
 
   000a4	e5941010	 ldr         r1, [r4, #0x10]
 
-; 381  :     TWLWriteRegs(pDevice->hTWL, TWL_KEY_DEB_REG, &regval, sizeof(regval));
+; 383  :     TWLWriteRegs(pDevice->hTWL, TWL_KEY_DEB_REG, &regval, sizeof(regval));
 
   000a8	e3a03001	 mov         r3, #1
   000ac	e28d2008	 add         r2, sp, #8
@@ -3714,9 +3508,9 @@
   000bc	e38610d3	 orr         r1, r6, #0xD3
   000c0	eb000000	 bl          TWLWriteRegs
 
-; 382  :   
-; 383  :     // Create interrupt event
-; 384  :     pDevice->hIntrEventKeypad = CreateEvent(NULL, FALSE, FALSE, NULL);
+; 384  :   
+; 385  :     // Create interrupt event
+; 386  :     pDevice->hIntrEventKeypad = CreateEvent(NULL, FALSE, FALSE, NULL);
 
   000c4	e3a03000	 mov         r3, #0
   000c8	e3a02000	 mov         r2, #0
@@ -3726,19 +3520,19 @@
   000d8	e1b02000	 movs        r2, r0
   000dc	e5842020	 str         r2, [r4, #0x20]
 
-; 385  :     if (pDevice->hIntrEventKeypad == NULL)
+; 387  :     if (pDevice->hIntrEventKeypad == NULL)
 
   000e0	0a000031	 beq         |$LN15@KPD_Init|
 
-; 386  :         {
-; 387  :         DEBUGMSG(ZONE_ERROR, (L"ERROR: KPD_Init: "
-; 388  :             L"Failed create keypad interrupt event\r\n"
-; 389  :             ));
-; 390  :         goto cleanUp;
-; 391  :         }
-; 392  : 
-; 393  :     // Associate event with TWL KP interrupt
-; 394  :     if (!TWLInterruptInitialize(pDevice->hTWL, TWL_INTR_ITKPI, pDevice->hIntrEventKeypad))
+; 388  :         {
+; 389  :         DEBUGMSG(ZONE_ERROR, (L"ERROR: KPD_Init: "
+; 390  :             L"Failed create keypad interrupt event\r\n"
+; 391  :             ));
+; 392  :         goto cleanUp;
+; 393  :         }
+; 394  : 
+; 395  :     // Associate event with TWL KP interrupt
+; 396  :     if (!TWLInterruptInitialize(pDevice->hTWL, TWL_INTR_ITKPI, pDevice->hIntrEventKeypad))
 
   000e4	e5940034	 ldr         r0, [r4, #0x34]
   000e8	e3a06a01	 mov         r6, #1, 20
@@ -3747,47 +3541,47 @@
   000f4	e3500000	 cmp         r0, #0
   000f8	0a00002b	 beq         |$LN15@KPD_Init|
 
-; 395  :         {
-; 396  :         DEBUGMSG (ZONE_ERROR, (L"ERROR: KPD_Init: "
-; 397  :             L"Failed associate event with TWL KBD interrupt\r\n"
-; 398  :             ));
-; 399  :         goto cleanUp;
-; 400  :         }
-; 401  : 
-; 402  :     // Enable KP event
-; 403  :     if (!TWLInterruptMask(pDevice->hTWL, TWL_INTR_ITKPI, FALSE))
+; 397  :         {
+; 398  :         DEBUGMSG (ZONE_ERROR, (L"ERROR: KPD_Init: "
+; 399  :             L"Failed associate event with TWL KBD interrupt\r\n"
+; 400  :             ));
+; 401  :         goto cleanUp;
+; 402  :         }
+; 403  : 
+; 404  :     // Enable KP event
+; 405  :     if (!TWLInterruptMask(pDevice->hTWL, TWL_INTR_ITKPI, FALSE))
 
   000fc	e5940034	 ldr         r0, [r4, #0x34]
   00100	e3a02000	 mov         r2, #0
   00104	e386102a	 orr         r1, r6, #0x2A
   00108	eb000000	 bl          TWLInterruptMask
 
-; 404  :         {
-; 405  :         DEBUGMSG (ZONE_ERROR, (L"ERROR: KPD_Init: "
-; 406  :             L"Failed associate event with TWL KBD interrupt\r\n"
-; 407  :             ));
-; 408  :         }
-; 409  :         
-; 410  :     // register to be wake-up enabled
-; 411  :     if (pDevice->enableWake != 0)
+; 406  :         {
+; 407  :         DEBUGMSG (ZONE_ERROR, (L"ERROR: KPD_Init: "
+; 408  :             L"Failed associate event with TWL KBD interrupt\r\n"
+; 409  :             ));
+; 410  :         }
+; 411  :         
+; 412  :     // register to be wake-up enabled
+; 413  :     if (pDevice->enableWake != 0)
 
   0010c	e5943008	 ldr         r3, [r4, #8]
   00110	e3530000	 cmp         r3, #0
 
-; 412  :         {
-; 413  :         TWLWakeEnable(pDevice->hTWL, TWL_INTR_ITKPI, TRUE);
+; 414  :         {
+; 415  :         TWLWakeEnable(pDevice->hTWL, TWL_INTR_ITKPI, TRUE);
 
   00114	15940034	 ldrne       r0, [r4, #0x34]
   00118	13a02001	 movne       r2, #1
   0011c	1386102a	 orrne       r1, r6, #0x2A
   00120	1b000000	 blne        TWLWakeEnable
 
-; 414  :         }
-; 415  : 
-; 416  :     // Start keypad interrupt service thread
-; 417  :     pDevice->hIntrThreadKeypad = CreateThread(
-; 418  :         NULL, 0, KPD_IntrThread, pDevice, 0,NULL
-; 419  :         );
+; 416  :         }
+; 417  : 
+; 418  :     // Start keypad interrupt service thread
+; 419  :     pDevice->hIntrThreadKeypad = CreateThread(
+; 420  :         NULL, 0, KPD_IntrThread, pDevice, 0,NULL
+; 421  :         );
 
   00124	e59f209c	 ldr         r2, [pc, #0x9C]
   00128	e3a06000	 mov         r6, #0
@@ -3800,26 +3594,26 @@
   00144	e3500000	 cmp         r0, #0
   00148	e5840024	 str         r0, [r4, #0x24]
 
-; 420  :     if (!pDevice->hIntrThreadKeypad)
+; 422  :     if (!pDevice->hIntrThreadKeypad)
 
   0014c	0a000016	 beq         |$LN15@KPD_Init|
 
-; 421  :         {
-; 422  :         DEBUGMSG (ZONE_ERROR, (L"ERROR: KPD_Init: "
-; 423  :             L"Failed create keypad interrupt thread\r\n"
-; 424  :             ));
-; 425  :         goto cleanUp;
-; 426  :         }
-; 427  : 
-; 428  :     if( pDevice->KpLedNum != -1)
+; 423  :         {
+; 424  :         DEBUGMSG (ZONE_ERROR, (L"ERROR: KPD_Init: "
+; 425  :             L"Failed create keypad interrupt thread\r\n"
+; 426  :             ));
+; 427  :         goto cleanUp;
+; 428  :         }
+; 429  : 
+; 430  :     if( pDevice->KpLedNum != -1)
 
   00150	e5943044	 ldr         r3, [r4, #0x44]
   00154	e3730001	 cmn         r3, #1
   00158	0a000011	 beq         |$LN2@KPD_Init|
 
-; 429  :         {
-; 430  :         // Create keypress notification event
-; 431  :         pDevice->hKeypressEvent = CreateEvent(NULL, FALSE, FALSE, NULL);
+; 431  :         {
+; 432  :         // Create keypress notification event
+; 433  :         pDevice->hKeypressEvent = CreateEvent(NULL, FALSE, FALSE, NULL);
 
   0015c	e3a03000	 mov         r3, #0
   00160	e3a02000	 mov         r2, #0
@@ -3829,21 +3623,21 @@
   00170	e3500000	 cmp         r0, #0
   00174	e584003c	 str         r0, [r4, #0x3C]
 
-; 432  :         if ( pDevice->hKeypressEvent == NULL )
+; 434  :         if ( pDevice->hKeypressEvent == NULL )
 
   00178	0a00000b	 beq         |$LN15@KPD_Init|
 
-; 433  :             {
-; 434  :             DEBUGMSG (ZONE_ERROR, (L"ERROR: KPD_Init: "
-; 435  :                 L"Failed to create keypress event\r\n"
-; 436  :                 ));
-; 437  :             goto cleanUp;
-; 438  :             }
-; 439  :     
-; 440  :         // Start interrupt service thread
-; 441  :         pDevice->hLightThread = CreateThread(
-; 442  :             NULL, 0, KPD_LightThread, pDevice, 0,NULL
-; 443  :             );
+; 435  :             {
+; 436  :             DEBUGMSG (ZONE_ERROR, (L"ERROR: KPD_Init: "
+; 437  :                 L"Failed to create keypress event\r\n"
+; 438  :                 ));
+; 439  :             goto cleanUp;
+; 440  :             }
+; 441  :     
+; 442  :         // Start interrupt service thread
+; 443  :         pDevice->hLightThread = CreateThread(
+; 444  :             NULL, 0, KPD_LightThread, pDevice, 0,NULL
+; 445  :             );
 
   0017c	e59f2040	 ldr         r2, [pc, #0x40]
   00180	e1a03004	 mov         r3, r4
@@ -3855,43 +3649,43 @@
   00198	e3500000	 cmp         r0, #0
   0019c	e5840038	 str         r0, [r4, #0x38]
 
-; 444  :         if (!pDevice->hLightThread)
+; 446  :         if (!pDevice->hLightThread)
 
   001a0	0a000001	 beq         |$LN15@KPD_Init|
   001a4		 |$LN2@KPD_Init|
 
-; 445  :         {
-; 446  :             DEBUGMSG (ZONE_ERROR, (L"ERROR: KPD_Init: "
-; 447  :                 L"Failed to create keypad light thread\r\n"
-; 448  :                 ));
-; 449  :             goto cleanUp;
-; 450  :             }
-; 451  :         }
-; 452  : 
-; 453  :     // Return non-null value
-; 454  :     rc = (DWORD)pDevice;
+; 447  :         {
+; 448  :             DEBUGMSG (ZONE_ERROR, (L"ERROR: KPD_Init: "
+; 449  :                 L"Failed to create keypad light thread\r\n"
+; 450  :                 ));
+; 451  :             goto cleanUp;
+; 452  :             }
+; 453  :         }
+; 454  : 
+; 455  :     // Return non-null value
+; 456  :     rc = (DWORD)pDevice;
 
   001a4	e1a05004	 mov         r5, r4
-  001a8		 |$cleanUp$43833|
+  001a8		 |$cleanUp$43836|
 
-; 455  : 
-; 456  : cleanUp:
-; 457  :     if (rc == 0)
+; 457  : 
+; 458  : cleanUp:
+; 459  :     if (rc == 0)
 
   001a8	ea000001	 b           |$LN1@KPD_Init|
   001ac		 |$LN15@KPD_Init|
 
-; 458  :         {
-; 459  :         KPD_Deinit((DWORD)pDevice);
+; 460  :         {
+; 461  :         KPD_Deinit((DWORD)pDevice);
 
   001ac	e1a00004	 mov         r0, r4
   001b0	eb000000	 bl          KPD_Deinit
   001b4		 |$LN1@KPD_Init|
 
-; 460  :         }
-; 461  :     DEBUGMSG(ZONE_FUNCTION, (L"-KPD_Init(rc = %d\r\n", rc));
-; 462  :     return rc;
-; 463  : }
+; 462  :         }
+; 463  :     DEBUGMSG(ZONE_FUNCTION, (L"-KPD_Init(rc = %d\r\n", rc));
+; 464  :     return rc;
+; 465  : }
 
   001b4	e1a00005	 mov         r0, r5
   001b8	e28dd00c	 add         sp, sp, #0xC
@@ -3906,7 +3700,7 @@
   001cc	00000000	 DCD         |s_deviceRegParams|
   001d0		 |$LN23@KPD_Init|
   001d0	6b706444	 DCD         0x6b706444
-  001d4		 |$M44788|
+  001d4		 |$M44735|
 
 			 ENDP  ; |KPD_Init|
 

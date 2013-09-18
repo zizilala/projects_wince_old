@@ -139,7 +139,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\isp_resizer\isp_resizer.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40098| DCD	|$LN18@Initialize|
+|$T40100| DCD	|$LN18@Initialize|
 	DCD	0x40004b01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -193,7 +193,7 @@
 
   00000		 |$LN18@Initialize|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M40095|
+  00004		 |$M40097|
   00004	e1a04000	 mov         r4, r0
 
 ; 70   :     DWORD i = 0;
@@ -296,7 +296,7 @@
 
   0008c	e3a01000	 mov         r1, #0
   00090	e3a00043	 mov         r0, #0x43
-  00094		 |$clean$39472|
+  00094		 |$clean$39474|
   00094	eb000000	 bl          EnableDeviceClocks
 
 ; 137  :     return FALSE;
@@ -388,7 +388,7 @@
   00124	00000000	 DCD         |??_C@_1IC@NBADCMPK@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAI?$AAn?$AAi?$AAt?$AAi?$AAa?$AAl?$AAi?$AAz?$AAe?$AAR?$AAS?$AAZ?$AAH?$AAW?$AA?3?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AAt@|
   00128		 |$LN23@Initialize|
   00128	00000000	 DCD         |??_C@_1II@CPOLJEPG@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAI?$AAn?$AAi?$AAt?$AAi?$AAa?$AAl?$AAi?$AAz?$AAe?$AAR?$AAS?$AAZ?$AAH?$AAW?$AA?3?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AAt@|
-  0012c		 |$M40096|
+  0012c		 |$M40098|
 
 			 ENDP  ; |InitializeRSZHW|
 
@@ -396,7 +396,7 @@
 	IMPORT	|MmUnmapIoSpace|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40115| DCD	|$LN11@Deinitiali|
+|$T40117| DCD	|$LN11@Deinitiali|
 	DCD	0x40002201
 ; Function compile flags: /Ogspy
 
@@ -408,7 +408,7 @@
 
   00000		 |$LN11@Deinitiali|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M40112|
+  00004		 |$M40114|
   00004	e1a04000	 mov         r4, r0
 
 ; 152  :     /* restore old state */
@@ -477,7 +477,7 @@
 
   00080	e8bd4010	 ldmia       sp!, {r4, lr}
   00084	e12fff1e	 bx          lr
-  00088		 |$M40113|
+  00088		 |$M40115|
 
 			 ENDP  ; |DeinitializeRSZHW|
 
@@ -494,7 +494,7 @@
 	IMPORT	|__rt_udiv|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40166| DCD	|$LN50@CalculateR|
+|$T40168| DCD	|$LN50@CalculateR|
 	DCD	0x4000af01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -621,7 +621,7 @@
 
   00000		 |$LN50@CalculateR|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
-  00004		 |$M40163|
+  00004		 |$M40165|
   00004	e1a08000	 mov         r8, r0
 
 ; 184  :     ULONG rsz, rsz_7, rsz_4;
@@ -1115,7 +1115,7 @@
   002b4	00000000	 DCD         |??_C@_1HA@NBDNJICL@?$AAO?$AAM?$AAA?$AAP?$AA3?$AA5?$AAx?$AAx?$AAC?$AAa?$AAm?$AAe?$AAr?$AAa?$AAC?$AAt?$AAr?$AAl?$AA?3?$AA?3?$AAC?$AAa?$AAl?$AAc?$AAu?$AAl?$AAa?$AAt?$AAe?$AAR?$AAS?$AAZ@|
   002b8		 |$LN60@CalculateR|
   002b8	00000000	 DCD         |??_C@_1HA@PKJBCFAJ@?$AAO?$AAM?$AAA?$AAP?$AA3?$AA5?$AAx?$AAx?$AAC?$AAa?$AAm?$AAe?$AAr?$AAa?$AAC?$AAt?$AAr?$AAl?$AA?3?$AA?3?$AAC?$AAa?$AAl?$AAc?$AAu?$AAl?$AAa?$AAt?$AAe?$AAR?$AAS?$AAZ@|
-  002bc		 |$M40164|
+  002bc		 |$M40166|
 
 			 ENDP  ; |CalculateRSZHWParams|
 
@@ -1133,7 +1133,7 @@
 	IMPORT	|memcpy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40217| DCD	|$LN50@SetRSZPara|
+|$T40219| DCD	|$LN50@SetRSZPara|
 	DCD	0x40006101
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1263,7 +1263,7 @@
 
   00000		 |$LN50@SetRSZPara|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M40214|
+  00004		 |$M40216|
   00004	e1a04001	 mov         r4, r1
 
 ; 382  :     int mul = 1;
@@ -1528,7 +1528,7 @@
   0017c	00000000	 DCD         |??_C@_1FG@JIJCHBKI@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAS?$AAe?$AAt?$AAR?$AAS?$AAZ?$AAP?$AAa?$AAr?$AAa?$AAm?$AAs?$AA?3?$AA?5?$AAI?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAp?$AAi?$AAx@|
   00180		 |$LN61@SetRSZPara|
   00180	00000000	 DCD         |??_C@_1FC@LGMHBLBI@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAS?$AAe?$AAt?$AAR?$AAS?$AAZ?$AAP?$AAa?$AAr?$AAa?$AAm?$AAs?$AA?3?$AA?5?$AAI?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAi?$AAn?$AAp@|
-  00184		 |$M40215|
+  00184		 |$M40217|
 
 			 ENDP  ; |SetRSZParams|
 
@@ -1538,7 +1538,7 @@
 	EXPORT	|??_C@_1IG@PPJPHLFB@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAs?$AAe?$AAt?$AAA?$AAD?$AAD?$AAR?$AA_?$AAR?$AAS?$AAZ?$AAP?$AAa?$AAr?$AAa?$AAm?$AAs?$AA?3?$AA?5?$AAs?$AAr?$AAc?$AAA?$AAd?$AAd@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40251| DCD	|$LN22@setADDR_RS|
+|$T40253| DCD	|$LN22@setADDR_RS|
 	DCD	0x40002b01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1595,7 +1595,7 @@
 
   00000		 |$LN22@setADDR_RS|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M40248|
+  00004		 |$M40250|
   00004	e1a0e000	 mov         lr, r0
 
 ; 468  :     RSZParams_t *pRSZParams = &rszContext->params;
@@ -1714,7 +1714,7 @@
   000a4	00000000	 DCD         |??_C@_1II@DBLABLKN@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAs?$AAe?$AAt?$AAA?$AAD?$AAD?$AAR?$AA_?$AAR?$AAS?$AAZ?$AAP?$AAa?$AAr?$AAa?$AAm?$AAs?$AA?3?$AA?5?$AAd?$AAe?$AAs?$AAt?$AAA?$AAd@|
   000a8		 |$LN26@setADDR_RS|
   000a8	00000000	 DCD         |??_C@_1IG@PPJPHLFB@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAs?$AAe?$AAt?$AAA?$AAD?$AAD?$AAR?$AA_?$AAR?$AAS?$AAZ?$AAP?$AAa?$AAr?$AAa?$AAm?$AAs?$AA?3?$AA?5?$AAs?$AAr?$AAc?$AAA?$AAd?$AAd@|
-  000ac		 |$M40249|
+  000ac		 |$M40251|
 
 			 ENDP  ; |setADDR_RSZParams|
 
@@ -1724,7 +1724,7 @@
 	EXPORT	|??_C@_1FK@NOFEBGOO@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAC?$AAo?$AAn?$AAf?$AAi?$AAg?$AAu?$AAr?$AAe?$AAR?$AAS?$AAZ?$AAH?$AAW?$AA?3?$AA?5?$AAs?$AAt?$AAa?$AAt?$AAe?$AA?$CI?$AA?$CF?$AAd?$AA?$CJ@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40278| DCD	|$LN29@ConfigureR|
+|$T40280| DCD	|$LN29@ConfigureR|
 	DCD	0x40019701
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1774,7 +1774,7 @@
 
   00000		 |$LN29@ConfigureR|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M40275|
+  00004		 |$M40277|
   00004	e1a04000	 mov         r4, r0
 
 ; 517  :     ULONG rszCnt = 0;
@@ -2584,7 +2584,7 @@
   00654	00000000	 DCD         |??_C@_1HC@MICJPAAO@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAC?$AAo?$AAn?$AAf?$AAi?$AAg?$AAu?$AAr?$AAe?$AAR?$AAS?$AAZ?$AAH?$AAW?$AA?3?$AA?5?$AAi?$AAn?$AAU?$AAs?$AAe?$AAC?$AAo?$AAn?$AAt@|
   00658		 |$LN34@ConfigureR|
   00658	00000000	 DCD         |??_C@_1FK@NOFEBGOO@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAC?$AAo?$AAn?$AAf?$AAi?$AAg?$AAu?$AAr?$AAe?$AAR?$AAS?$AAZ?$AAH?$AAW?$AA?3?$AA?5?$AAs?$AAt?$AAa?$AAt?$AAe?$AA?$CI?$AA?$CF?$AAd?$AA?$CJ@|
-  0065c		 |$M40276|
+  0065c		 |$M40278|
 
 			 ENDP  ; |ConfigureRSZHW|
 
@@ -2594,7 +2594,7 @@
 	EXPORT	|??_C@_1FO@HEHJJHCB@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAE?$AAn?$AAa?$AAb?$AAl?$AAe?$AAR?$AAS?$AAZ?$AAH?$AAW?$AA?3?$AA?5?$AAs?$AAt?$AAa?$AAt?$AAe?$AA?$CI?$AA?$CF?$AAd?$AA?$CJ?$AA?5?$AAi?$AAs@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40302| DCD	|$LN18@EnableRSZH|
+|$T40304| DCD	|$LN18@EnableRSZH|
 	DCD	0x40003001
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2647,7 +2647,7 @@
 
   00000		 |$LN18@EnableRSZH|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M40299|
+  00004		 |$M40301|
   00004	e1a0e000	 mov         lr, r0
 
 ; 741  :     RSZ_DEVICE_CONTEXT_S * dev = rszContext->dev;
@@ -2782,14 +2782,14 @@
   000b8	00000000	 DCD         |??_C@_1IC@FBPDILK@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAE?$AAn?$AAa?$AAb?$AAl?$AAe?$AAR?$AAS?$AAZ?$AAH?$AAW?$AA?3?$AA?5?$AAC?$AAo?$AAn?$AAt?$AAe?$AAx?$AAt?$AA?$CI?$AA0?$AAx?$AA?$CF?$AAx@|
   000bc		 |$LN22@EnableRSZH|
   000bc	00000000	 DCD         |??_C@_1FO@HEHJJHCB@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAE?$AAn?$AAa?$AAb?$AAl?$AAe?$AAR?$AAS?$AAZ?$AAH?$AAW?$AA?3?$AA?5?$AAs?$AAt?$AAa?$AAt?$AAe?$AA?$CI?$AA?$CF?$AAd?$AA?$CJ?$AA?5?$AAi?$AAs@|
-  000c0		 |$M40300|
+  000c0		 |$M40302|
 
 			 ENDP  ; |EnableRSZHW|
 
 	EXPORT	|GetRSZHwStatus|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40318| DCD	|$LN5@GetRSZHwSt|
+|$T40320| DCD	|$LN5@GetRSZHwSt|
 	DCD	0x40000500
 ; Function compile flags: /Ogspy
 
@@ -2800,7 +2800,7 @@
 ; 780  : {
 
   00000		 |$LN5@GetRSZHwSt|
-  00000		 |$M40315|
+  00000		 |$M40317|
 
 ; 781  :     RSZ_DEVICE_CONTEXT_S * dev = rszContext->dev;
 
@@ -2816,7 +2816,7 @@
 ; 784  : }
 
   00010	e12fff1e	 bx          lr
-  00014		 |$M40316|
+  00014		 |$M40318|
 
 			 ENDP  ; |GetRSZHwStatus|
 
@@ -2827,7 +2827,7 @@
 	IMPORT	|Sleep|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40363| DCD	|$LN29@WaitRSZCom|
+|$T40365| DCD	|$LN29@WaitRSZCom|
 	DCD	0x40005d01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2876,7 +2876,7 @@
 
   00000		 |$LN29@WaitRSZCom|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
-  00004		 |$M40360|
+  00004		 |$M40362|
   00004	e1a08000	 mov         r8, r0
 
 ; 788  : #define MAX_TIMEOUT 20
@@ -3097,7 +3097,7 @@
   0016c	3288a603	 DCD         0x3288a603
   00170		 |$LN34@WaitRSZCom|
   00170	00000000	 DCD         |??_C@_1IK@HOLINNAB@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAW?$AAa?$AAi?$AAt?$AAR?$AAS?$AAZ?$AAC?$AAo?$AAm?$AAp?$AAl?$AAe?$AAt?$AAe?$AA?3?$AA?5?$AAC?$AAo?$AAn?$AAt?$AAe?$AAx?$AAt?$AA?$CI@|
-  00174		 |$M40361|
+  00174		 |$M40363|
 
 			 ENDP  ; |WaitRSZComplete|
 
@@ -3105,7 +3105,7 @@
 	IMPORT	|DisableThreadLibraryCalls|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40379| DCD	|$LN9@DllEntry|
+|$T40381| DCD	|$LN9@DllEntry|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -3117,7 +3117,7 @@
 
   00000		 |$LN9@DllEntry|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M40376|
+  00004		 |$M40378|
 
 ; 869  :     switch (nReason) {
 
@@ -3141,7 +3141,7 @@
 
   00010	e49de004	 ldr         lr, [sp], #4
   00014	e12fff1e	 bx          lr
-  00018		 |$M40377|
+  00018		 |$M40379|
 
 			 ENDP  ; |DllEntry|
 
@@ -3152,7 +3152,7 @@
 |rszDev| %	0x24
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40388| DCD	|$LN5@RSZ_Init|
+|$T40390| DCD	|$LN5@RSZ_Init|
 	DCD	0x40000f00
 ; Function compile flags: /Ogspy
 
@@ -3163,7 +3163,7 @@
 ; 884  : {
 
   00000		 |$LN5@RSZ_Init|
-  00000		 |$M40385|
+  00000		 |$M40387|
 
 ; 885  :     rszDev.isInitialized = FALSE;
 
@@ -3205,14 +3205,14 @@
   00038		 |$LN6@RSZ_Init|
   00038		 |$LN7@RSZ_Init|
   00038	00000000	 DCD         |rszDev|
-  0003c		 |$M40386|
+  0003c		 |$M40388|
 
 			 ENDP  ; |RSZ_Init|
 
 	EXPORT	|RSZ_Deinit|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40400| DCD	|$LN7@RSZ_Deinit|
+|$T40402| DCD	|$LN7@RSZ_Deinit|
 	DCD	0x40001501
 ; Function compile flags: /Ogspy
 
@@ -3224,7 +3224,7 @@
 
   00000		 |$LN7@RSZ_Deinit|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M40397|
+  00004		 |$M40399|
   00004	e1a04000	 mov         r4, r0
 
 ; 901  :     RSZ_DEVICE_CONTEXT_S * dev = (RSZ_DEVICE_CONTEXT_S *)hDeviceContext;
@@ -3287,7 +3287,7 @@
 
   0004c	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00050	e12fff1e	 bx          lr
-  00054		 |$M40398|
+  00054		 |$M40400|
 
 			 ENDP  ; |RSZ_Deinit|
 
@@ -3295,7 +3295,7 @@
 	IMPORT	|malloc|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40411| DCD	|$LN10@RSZ_Open|
+|$T40413| DCD	|$LN10@RSZ_Open|
 	DCD	0x40001801
 ; Function compile flags: /Ogspy
 
@@ -3307,7 +3307,7 @@
 
   00000		 |$LN10@RSZ_Open|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M40408|
+  00004		 |$M40410|
   00004	e1a04000	 mov         r4, r0
 
 ; 923  : 
@@ -3331,7 +3331,7 @@
 
   0001c	e5943000	 ldr         r3, [r4]
   00020	e3530000	 cmp         r3, #0
-  00024	0a00000a	 beq         |$cleanUP$39892|
+  00024	0a00000a	 beq         |$cleanUP$39894|
 
 ; 931  :         goto cleanUP;
 ; 932  : 
@@ -3360,7 +3360,7 @@
 
   0004c	18bd4010	 ldmneia     sp!, {r4, lr}
   00050	112fff1e	 bxne        lr
-  00054		 |$cleanUP$39892|
+  00054		 |$cleanUP$39894|
 
 ; 940  : 
 ; 941  :     return ((DWORD)rszContext);
@@ -3375,7 +3375,7 @@
 
   00058	e8bd4010	 ldmia       sp!, {r4, lr}
   0005c	e12fff1e	 bx          lr
-  00060		 |$M40409|
+  00060		 |$M40411|
 
 			 ENDP  ; |RSZ_Open|
 
@@ -3383,7 +3383,7 @@
 	IMPORT	|free|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40422| DCD	|$LN6@RSZ_Close|
+|$T40424| DCD	|$LN6@RSZ_Close|
 	DCD	0x40000f01
 ; Function compile flags: /Ogspy
 
@@ -3395,7 +3395,7 @@
 
   00000		 |$LN6@RSZ_Close|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M40419|
+  00004		 |$M40421|
   00004	e1a03000	 mov         r3, r0
 
 ; 953  :     RSZ_CONTEXT_T * rszContext = (RSZ_CONTEXT_T *)hOpenContext;    
@@ -3442,14 +3442,14 @@
 
   00034	e8bd4010	 ldmia       sp!, {r4, lr}
   00038	e12fff1e	 bx          lr
-  0003c		 |$M40420|
+  0003c		 |$M40422|
 
 			 ENDP  ; |RSZ_Close|
 
 	EXPORT	|RSZ_IOControl|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40449| DCD	|$LN25@RSZ_IOCont|
+|$T40451| DCD	|$LN25@RSZ_IOCont|
 	DCD	0x40005401
 ; Function compile flags: /Ogspy
 
@@ -3461,7 +3461,7 @@
 
   00000		 |$LN25@RSZ_IOCont|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M40446|
+  00004		 |$M40448|
   00004	e1a05000	 mov         r5, r0
 
 ; 977  :     RSZ_CONTEXT_T * rszContext = (RSZ_CONTEXT_T *)hOpenContext;    
@@ -3669,14 +3669,14 @@
   00144	e1a00004	 mov         r0, r4
   00148	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0014c	e12fff1e	 bx          lr
-  00150		 |$M40447|
+  00150		 |$M40449|
 
 			 ENDP  ; |RSZ_IOControl|
 
 	EXPORT	|RSZ_Read|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40458| DCD	|$LN5@RSZ_Read|
+|$T40460| DCD	|$LN5@RSZ_Read|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -3687,7 +3687,7 @@
 ; 1052 : {
 
   00000		 |$LN5@RSZ_Read|
-  00000		 |$M40455|
+  00000		 |$M40457|
 
 ; 1053 :     return (0);
 
@@ -3696,14 +3696,14 @@
 ; 1054 : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M40456|
+  00008		 |$M40458|
 
 			 ENDP  ; |RSZ_Read|
 
 	EXPORT	|RSZ_Write|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40467| DCD	|$LN5@RSZ_Write|
+|$T40469| DCD	|$LN5@RSZ_Write|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -3714,7 +3714,7 @@
 ; 1058 : {
 
   00000		 |$LN5@RSZ_Write|
-  00000		 |$M40464|
+  00000		 |$M40466|
 
 ; 1059 :     return (0);     
 
@@ -3723,14 +3723,14 @@
 ; 1060 : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M40465|
+  00008		 |$M40467|
 
 			 ENDP  ; |RSZ_Write|
 
 	EXPORT	|RSZ_PowerUp|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40474| DCD	|$LN5@RSZ_PowerU|
+|$T40476| DCD	|$LN5@RSZ_PowerU|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -3741,20 +3741,20 @@
 ; 1064 : {    
 
   00000		 |$LN5@RSZ_PowerU|
-  00000		 |$M40471|
+  00000		 |$M40473|
 
 ; 1065 :     return ;     
 ; 1066 : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M40472|
+  00004		 |$M40474|
 
 			 ENDP  ; |RSZ_PowerUp|
 
 	EXPORT	|RSZ_PowerDown|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40481| DCD	|$LN5@RSZ_PowerD|
+|$T40483| DCD	|$LN5@RSZ_PowerD|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -3765,13 +3765,13 @@
 ; 1070 : {
 
   00000		 |$LN5@RSZ_PowerD|
-  00000		 |$M40478|
+  00000		 |$M40480|
 
 ; 1071 :     return ;     
 ; 1072 : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M40479|
+  00004		 |$M40481|
 
 			 ENDP  ; |RSZ_PowerDown|
 

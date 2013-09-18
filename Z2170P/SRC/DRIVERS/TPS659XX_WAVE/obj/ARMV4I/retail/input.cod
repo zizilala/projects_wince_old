@@ -11,7 +11,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmmgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34244| DCD	|$LN5@get_Curren|
+|$T34246| DCD	|$LN5@get_Curren|
 	DCD	0x40000400
 ; Function compile flags: /Ogspy
 
@@ -22,7 +22,7 @@
 ; 126  :     {
 
   00000		 |$LN5@get_Curren|
-  00000		 |$M34241|
+  00000		 |$M34243|
 
 ; 127  :         return m_prgSampleRates[m_idxSampleRate].SampleRate;
 
@@ -33,7 +33,7 @@
 ; 128  :     }
 
   0000c	e12fff1e	 bx          lr
-  00010		 |$M34242|
+  00010		 |$M34244|
 
 			 ENDP  ; |?get_CurrentSampleRate@CStreamManager@@QBAKXZ|, CStreamManager::get_CurrentSampleRate
 
@@ -42,7 +42,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\input.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34257| DCD	|$LN5@Open|
+|$T34259| DCD	|$LN5@Open|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -54,7 +54,7 @@
 
   00000		 |$LN5@Open|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34254|
+  00004		 |$M34256|
 
 ; 39   :     HRESULT Result;
 ; 40   : 
@@ -68,14 +68,14 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M34255|
+  00010		 |$M34257|
 
 			 ENDP  ; |?Open@InputStreamContext@@UAAJPAVCStreamManager@@PAUwaveopendesc_tag@@K@Z|, InputStreamContext::Open
 
 	EXPORT	|?MapGain@InputStreamContext@@UAAKKK@Z|	; InputStreamContext::MapGain
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34266| DCD	|$LN5@MapGain|
+|$T34268| DCD	|$LN5@MapGain|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -86,7 +86,7 @@
 ; 57   : {
 
   00000		 |$LN5@MapGain|
-  00000		 |$M34263|
+  00000		 |$M34265|
 
 ; 58   :     UNREFERENCED_PARAMETER(StreamGain);
 ; 59   :     UNREFERENCED_PARAMETER(Channel);
@@ -98,7 +98,7 @@
 ; 62   : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M34264|
+  00008		 |$M34266|
 
 			 ENDP  ; |?MapGain@InputStreamContext@@UAAKKK@Z|, InputStreamContext::MapGain
 
@@ -107,7 +107,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmmgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34284| DCD	|$LN7@SetRate|
+|$T34286| DCD	|$LN7@SetRate|
 	DCD	0x40001c01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\input.cpp
@@ -120,7 +120,7 @@
 
   00000		 |$LN7@SetRate|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M34281|
+  00004		 |$M34283|
   00004	e1a05000	 mov         r5, r0
 
 ; 74   :     UINT64 Delta;
@@ -179,7 +179,7 @@
 
   00068	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0006c	e12fff1e	 bx          lr
-  00070		 |$M34282|
+  00070		 |$M34284|
 
 			 ENDP  ; |?SetRate@InputStreamContext@@UAAKK@Z|, InputStreamContext::SetRate
 
@@ -188,7 +188,7 @@
 	IMPORT	|?Stop@StreamContext@@UAAKXZ|		; StreamContext::Stop
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34294| DCD	|$LN6@Stop|
+|$T34296| DCD	|$LN6@Stop|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -200,7 +200,7 @@
 
   00000		 |$LN6@Stop|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M34291|
+  00004		 |$M34293|
   00004	e1a04000	 mov         r4, r0
 
 ; 107  :     // Stop the stream
@@ -235,14 +235,14 @@
 
   0002c	e8bd4010	 ldmia       sp!, {r4, lr}
   00030	e12fff1e	 bx          lr
-  00034		 |$M34292|
+  00034		 |$M34294|
 
 			 ENDP  ; |?Stop@InputStreamContext@@UAAKXZ|, InputStreamContext::Stop
 
 	EXPORT	|?GetStreamDirection@InputStreamContext@@UAAIXZ| ; InputStreamContext::GetStreamDirection
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34303| DCD	|$LN5@GetStreamD|
+|$T34305| DCD	|$LN5@GetStreamD|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -253,7 +253,7 @@
 ; 121  : {
 
   00000		 |$LN5@GetStreamD|
-  00000		 |$M34300|
+  00000		 |$M34302|
 
 ; 122  :     return CHardwareAudioBridge::kInput;
 
@@ -262,7 +262,7 @@
 ; 123  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M34301|
+  00008		 |$M34303|
 
 			 ENDP  ; |?GetStreamDirection@InputStreamContext@@UAAIXZ|, InputStreamContext::GetStreamDirection
 
@@ -270,7 +270,7 @@
 	IMPORT	|?RenderRawData@WaveStreamContext@@QAAPAEPAE00@Z| ; WaveStreamContext::RenderRawData
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34335| DCD	|$LN29@Render2|
+|$T34337| DCD	|$LN29@Render2|
 	DCD	0x40005b02
 ; Function compile flags: /Ogspy
 
@@ -283,7 +283,7 @@
   00000		 |$LN29@Render2|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M34332|
+  00008		 |$M34334|
   00008	e1a07002	 mov         r7, r2
   0000c	e1a04001	 mov         r4, r1
 
@@ -339,7 +339,7 @@
 ; 167  :             if (pBuffer>=pBufferEnd)
 
   00058	e1540007	 cmp         r4, r7
-  0005c	2a00002e	 bcs         |$Exit$34065|
+  0005c	2a00002e	 bcs         |$Exit$34067|
 
 ; 168  :             {
 ; 169  :                 goto Exit;
@@ -478,7 +478,7 @@
   00114		 |$LN25@Render2|
   00114	e15e0008	 cmp         lr, r8
   00118	3affffd7	 bcc         |$LN26@Render2|
-  0011c		 |$Exit$34065|
+  0011c		 |$Exit$34067|
 
 ; 216  :         }
 ; 217  : #else
@@ -549,7 +549,7 @@
   00160	e28dd008	 add         sp, sp, #8
   00164	e8bd4ff0	 ldmia       sp!, {r4 - r11, lr}
   00168	e12fff1e	 bx          lr
-  0016c		 |$M34333|
+  0016c		 |$M34335|
 
 			 ENDP  ; |?Render2@InputStreamContext@@UAAPAEPAE00H@Z|, InputStreamContext::Render2
 

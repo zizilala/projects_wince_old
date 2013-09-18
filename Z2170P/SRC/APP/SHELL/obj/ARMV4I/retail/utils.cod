@@ -1584,7 +1584,7 @@
 ; File c:\wince600\platform\z2170p\src\app\shell\utils.cxx
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39047| DCD	|$LN14@IsOptionCh|
+|$T39049| DCD	|$LN14@IsOptionCh|
 	DCD	0x40001401
 ; Function compile flags: /Ogspy
 
@@ -1596,7 +1596,7 @@
 
   00000		 |$LN14@IsOptionCh|
   00000	e24dd004	 sub         sp, sp, #4
-  00004		 |$M39044|
+  00004		 |$M39046|
   00004	e1a01000	 mov         r1, r0
 
 ; 22   :    const char acOptionChars[] = { _T('/'), _T('-') };
@@ -1643,7 +1643,7 @@
 
   00048	a28dd004	 addge       sp, sp, #4
   0004c	e12fff1e	 bx          lr
-  00050		 |$M39045|
+  00050		 |$M39047|
 
 			 ENDP  ; |?IsOptionChar@@YAHG@Z|, IsOptionChar
 
@@ -1651,7 +1651,7 @@
 	IMPORT	|_wcsicmp|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39068| DCD	|$LN19@GetOptionF|
+|$T39070| DCD	|$LN19@GetOptionF|
 	DCD	0x40002d01
 ; Function compile flags: /Ogspy
 
@@ -1663,7 +1663,7 @@
 
   00000		 |$LN19@GetOptionF|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
-  00004		 |$M39065|
+  00004		 |$M39067|
   00004	e1a0a002	 mov         r10, r2
   00008	e1a07001	 mov         r7, r1
   0000c	e1a04000	 mov         r4, r0
@@ -1762,7 +1762,7 @@
   000a8	e1a00008	 mov         r0, r8
   000ac	e8bd47f0	 ldmia       sp!, {r4 - r10, lr}
   000b0	e12fff1e	 bx          lr
-  000b4		 |$M39066|
+  000b4		 |$M39068|
 
 			 ENDP  ; |?GetOptionFlag@@YAHPAHQAPAGPBG@Z|, GetOptionFlag
 
@@ -1771,7 +1771,7 @@
 	IMPORT	|wcslen|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39091| DCD	|$LN20@GetOptionS|
+|$T39093| DCD	|$LN20@GetOptionS|
 	DCD	0x40004101
 ; Function compile flags: /Ogspy
 
@@ -1783,7 +1783,7 @@
 
   00000		 |$LN20@GetOptionS|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
-  00004		 |$M39088|
+  00004		 |$M39090|
   00004	e1a0b002	 mov         r11, r2
   00008	e1a09001	 mov         r9, r1
   0000c	e1a04000	 mov         r4, r0
@@ -1911,14 +1911,14 @@
   000f8	e1a00006	 mov         r0, r6
   000fc	e8bd4ff0	 ldmia       sp!, {r4 - r11, lr}
   00100	e12fff1e	 bx          lr
-  00104		 |$M39089|
+  00104		 |$M39091|
 
 			 ENDP  ; |?GetOptionString@@YAPAGPAHQAPAGPBG@Z|, GetOptionString
 
 	EXPORT	|?GetOptionLong@@YAJPAHQAPAGJPBG@Z|	; GetOptionLong
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39110| DCD	|$LN24@GetOptionL|
+|$T39112| DCD	|$LN24@GetOptionL|
 	DCD	0x40003701
 ; Function compile flags: /Ogspy
 
@@ -1930,7 +1930,7 @@
 
   00000		 |$LN24@GetOptionL|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M39107|
+  00004		 |$M39109|
   00004	e1a04002	 mov         r4, r2
 
 ; 88   :    LPTSTR szValue = NULL;
@@ -1949,7 +1949,7 @@
 ; 94   :    if (szValue == NULL) {
 ; 95   :       nResult = lDefault;
 
-  0001c	0a00002b	 beq         |$cleanUp$38411|
+  0001c	0a00002b	 beq         |$cleanUp$38413|
 
 ; 96   :       goto cleanUp;
 ; 97   :    }
@@ -2078,7 +2078,7 @@
 
   000c8	e3560000	 cmp         r6, #0
   000cc	12644000	 rsbne       r4, r4, #0
-  000d0		 |$cleanUp$38411|
+  000d0		 |$cleanUp$38413|
 
 ; 137  : 
 ; 138  : cleanUp:
@@ -2088,7 +2088,7 @@
   000d0	e1a00004	 mov         r0, r4
   000d4	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   000d8	e12fff1e	 bx          lr
-  000dc		 |$M39108|
+  000dc		 |$M39110|
 
 			 ENDP  ; |?GetOptionLong@@YAJPAHQAPAGJPBG@Z|, GetOptionLong
 
@@ -2096,7 +2096,7 @@
 	IMPORT	|iswctype|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39136| DCD	|$LN31@CommandLin|
+|$T39138| DCD	|$LN31@CommandLin|
 	DCD	0x40003e01
 ; Function compile flags: /Ogspy
 
@@ -2108,7 +2108,7 @@
 
   00000		 |$LN31@CommandLin|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
-  00004		 |$M39133|
+  00004		 |$M39135|
   00004	e1a07002	 mov         r7, r2
   00008	e1a05001	 mov         r5, r1
   0000c	e1b04000	 movs        r4, r0
@@ -2264,7 +2264,7 @@
 
   000f0	e8bd47f0	 ldmia       sp!, {r4 - r10, lr}
   000f4	e12fff1e	 bx          lr
-  000f8		 |$M39134|
+  000f8		 |$M39136|
 
 			 ENDP  ; |?CommandLineToArgs@@YAXQAGPAHQAPAG@Z|, CommandLineToArgs
 
@@ -2272,7 +2272,7 @@
 	EXPORT	|??_C@_1CI@LOKNIFLJ@?$AA?$CI?$AAU?$AAK?$AAN?$AAO?$AAW?$AAN?$AA?5?$AAD?$AAE?$AAV?$AA?4?$AA?5?$AAC?$AAL?$AAO?$AAC?$AAK?$AA?$CJ?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39147| DCD	|$LN6@GetDeviceC|
+|$T39149| DCD	|$LN6@GetDeviceC|
 	DCD	0x40000900
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2293,7 +2293,7 @@
 ; 280  : {
 
   00000		 |$LN6@GetDeviceC|
-  00000		 |$M39144|
+  00000		 |$M39146|
   00000	e1a02000	 mov         r2, r0
 
 ; 281  :     static WCHAR const* szUnknown = L"(UKNOWN DEV. CLOCK)";
@@ -2322,14 +2322,14 @@
   0001c	00000000	 DCD         |?_rgDeviceClockNames@@3PAPBGA|
   00020		 |$LN9@GetDeviceC|
   00020	00000000	 DCD         |?szUnknown@?1??GetDeviceClockText@@YAPBGH@Z@4PBGB|
-  00024		 |$M39145|
+  00024		 |$M39147|
 
 			 ENDP  ; |?GetDeviceClockText@@YAPBGH@Z|, GetDeviceClockText
 
 	EXPORT	|?FindClockIdByName@@YAIPBG@Z|		; FindClockIdByName
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39164| DCD	|$LN11@FindClockI|
+|$T39166| DCD	|$LN11@FindClockI|
 	DCD	0x40001701
 ; Function compile flags: /Ogspy
 
@@ -2341,7 +2341,7 @@
 
   00000		 |$LN11@FindClockI|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M39161|
+  00004		 |$M39163|
   00004	e1a06000	 mov         r6, r0
 
 ; 293  :     int i = 0;
@@ -2390,7 +2390,7 @@
   00058		 |$LN12@FindClockI|
   00058		 |$LN13@FindClockI|
   00058	00000000	 DCD         |?_rgDeviceClockNames@@3PAPBGA|
-  0005c		 |$M39162|
+  0005c		 |$M39164|
 
 			 ENDP  ; |?FindClockIdByName@@YAIPBG@Z|, FindClockIdByName
 
@@ -2398,7 +2398,7 @@
 	EXPORT	|??_C@_1CI@JBPJAPA@?$AA?$CI?$AAU?$AAK?$AAN?$AAO?$AAW?$AAN?$AA?5?$AAD?$AAP?$AAL?$AAL?$AA?5?$AAC?$AAL?$AAO?$AAC?$AAK?$AA?$CJ?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39177| DCD	|$LN6@GetDpllClo|
+|$T39179| DCD	|$LN6@GetDpllClo|
 	DCD	0x40000900
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2419,7 +2419,7 @@
 ; 328  : {
 
   00000		 |$LN6@GetDpllClo|
-  00000		 |$M39174|
+  00000		 |$M39176|
   00000	e1a02000	 mov         r2, r0
 
 ; 329  :     static WCHAR const* szUnknown = L"(UKNOWN DPLL CLOCK)";
@@ -2448,7 +2448,7 @@
   0001c	00000000	 DCD         |?_rgDpllClockNames@@3PAPBGA|
   00020		 |$LN9@GetDpllClo|
   00020	00000000	 DCD         |?szUnknown@?1??GetDpllClockText@@YAPBGH@Z@4PBGB|
-  00024		 |$M39175|
+  00024		 |$M39177|
 
 			 ENDP  ; |?GetDpllClockText@@YAPBGH@Z|, GetDpllClockText
 
@@ -2456,7 +2456,7 @@
 	EXPORT	|??_C@_1BM@OELBIGEM@?$AA?$CI?$AAU?$AAK?$AAN?$AAO?$AAW?$AAN?$AA?5?$AAD?$AAP?$AAL?$AAL?$AA?$CJ?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39191| DCD	|$LN6@GetDpllTex|
+|$T39193| DCD	|$LN6@GetDpllTex|
 	DCD	0x40000900
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2476,7 +2476,7 @@
 ; 351  : {
 
   00000		 |$LN6@GetDpllTex|
-  00000		 |$M39188|
+  00000		 |$M39190|
   00000	e1a02000	 mov         r2, r0
 
 ; 352  :     static WCHAR const* szUnknown = L"(UKNOWN DPLL)";
@@ -2505,7 +2505,7 @@
   0001c	00000000	 DCD         |?_rgDpllNames@@3PAPBGA|
   00020		 |$LN9@GetDpllTex|
   00020	00000000	 DCD         |?szUnknown@?1??GetDpllText@@YAPBGH@Z@4PBGB|
-  00024		 |$M39189|
+  00024		 |$M39191|
 
 			 ENDP  ; |?GetDpllText@@YAPBGH@Z|, GetDpllText
 
@@ -2513,7 +2513,7 @@
 	EXPORT	|??_C@_1BK@BILLIJOA@?$AA?$CI?$AAU?$AAK?$AAN?$AAO?$AAW?$AAN?$AA?5?$AAV?$AAd?$AAd?$AA?$CJ?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39205| DCD	|$LN6@GetVddText|
+|$T39207| DCD	|$LN6@GetVddText|
 	DCD	0x40000900
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2533,7 +2533,7 @@
 ; 377  : {
 
   00000		 |$LN6@GetVddText|
-  00000		 |$M39202|
+  00000		 |$M39204|
   00000	e1a02000	 mov         r2, r0
 
 ; 378  :     static WCHAR const* szUnknown = L"(UKNOWN Vdd)";
@@ -2562,14 +2562,14 @@
   0001c	00000000	 DCD         |?_rgVddNames@@3PAPBGA|
   00020		 |$LN9@GetVddText|
   00020	00000000	 DCD         |?szUnknown@?1??GetVddText@@YAPBGH@Z@4PBGB|
-  00024		 |$M39203|
+  00024		 |$M39205|
 
 			 ENDP  ; |?GetVddText@@YAPBGH@Z|, GetVddText
 
 	EXPORT	|?FindDeviceIdByName@@YAIPBG@Z|		; FindDeviceIdByName
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39222| DCD	|$LN11@FindDevice|
+|$T39224| DCD	|$LN11@FindDevice|
 	DCD	0x40001901
 ; Function compile flags: /Ogspy
 
@@ -2581,7 +2581,7 @@
 
   00000		 |$LN11@FindDevice|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M39219|
+  00004		 |$M39221|
   00004	e1a06000	 mov         r6, r0
 
 ; 477  :     int i = 0;
@@ -2637,14 +2637,14 @@
   00060		 |$LN12@FindDevice|
   00060		 |$LN13@FindDevice|
   00060	00000000	 DCD         |?_rgOmapDeviceMap@@3PAUOMAP_CLOCK_MAP@@A|
-  00064		 |$M39220|
+  00064		 |$M39222|
 
 			 ENDP  ; |?FindDeviceIdByName@@YAIPBG@Z|, FindDeviceIdByName
 
 	EXPORT	|?FindDeviceNameById@@YAPBGI@Z|		; FindDeviceNameById
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39238| DCD	|$LN12@FindDevice@2|
+|$T39240| DCD	|$LN12@FindDevice@2|
 	DCD	0x40001801
 ; Function compile flags: /Ogspy
 
@@ -2656,7 +2656,7 @@
 
   00000		 |$LN12@FindDevice@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M39235|
+  00004		 |$M39237|
 
 ; 491  :     for (int i = 0; _rgOmapDeviceMap[i].pszDevice; ++i)
 
@@ -2705,14 +2705,14 @@
   0005c		 |$LN13@FindDevice@2|
   0005c		 |$LN14@FindDevice@2|
   0005c	00000000	 DCD         |?_rgOmapDeviceMap@@3PAUOMAP_CLOCK_MAP@@A|
-  00060		 |$M39236|
+  00060		 |$M39238|
 
 			 ENDP  ; |?FindDeviceNameById@@YAPBGI@Z|, FindDeviceNameById
 
 	EXPORT	|?FindClockIdByName@@YAHPBGPAI1@Z|	; FindClockIdByName
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39260| DCD	|$LN16@FindClockI@2|
+|$T39262| DCD	|$LN16@FindClockI@2|
 	DCD	0x40002601
 ; Function compile flags: /Ogspy
 
@@ -2724,7 +2724,7 @@
 
   00000		 |$LN16@FindClockI@2|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
-  00004		 |$M39257|
+  00004		 |$M39259|
   00004	e1a07002	 mov         r7, r2
   00008	e1a08001	 mov         r8, r1
   0000c	e1a09000	 mov         r9, r0
@@ -2809,14 +2809,14 @@
   00094		 |$LN17@FindClockI@2|
   00094		 |$LN18@FindClockI@2|
   00094	00000000	 DCD         |?_rgClockMap@@3PAPAPBGA|
-  00098		 |$M39258|
+  00098		 |$M39260|
 
 			 ENDP  ; |?FindClockIdByName@@YAHPBGPAI1@Z|, FindClockIdByName
 
 	EXPORT	|?FindClockNameById@@YAPBGII@Z|		; FindClockNameById
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39273| DCD	|$LN5@FindClockN|
+|$T39275| DCD	|$LN5@FindClockN|
 	DCD	0x40000600
 ; Function compile flags: /Ogspy
 
@@ -2827,7 +2827,7 @@
 ; 586  : {
 
   00000		 |$LN5@FindClockN|
-  00000		 |$M39270|
+  00000		 |$M39272|
 
 ; 587  :     return _rgClockMap[nLevel - 1][clockId];
 
@@ -2842,7 +2842,7 @@
   00014		 |$LN6@FindClockN|
   00014		 |$LN7@FindClockN|
   00014	00000000	 DCD         |?_rgClockMap@@3PAPAPBGA|
-  00018		 |$M39271|
+  00018		 |$M39273|
 
 			 ENDP  ; |?FindClockNameById@@YAPBGII@Z|, FindClockNameById
 

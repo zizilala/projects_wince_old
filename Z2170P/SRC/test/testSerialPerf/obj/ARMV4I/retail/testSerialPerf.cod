@@ -33,7 +33,7 @@
 ; File c:\wince600\platform\z2170p\src\test\testserialperf\testserialperf.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32120| DCD	|$LN45@wmain|
+|$T32122| DCD	|$LN45@wmain|
 	DCD	0x4000d403
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -117,7 +117,7 @@
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e59fc340	 ldr         r12, [pc, #0x340]
   00008	e08dd00c	 add         sp, sp, r12
-  0000c		 |$M32117|
+  0000c		 |$M32119|
   0000c	e1a04001	 mov         r4, r1
   00010	e1a05000	 mov         r5, r0
 
@@ -553,7 +553,7 @@
   00348	00000000	 DCD         |??_C@_1EK@LIAPIEIH@?$AAS?$AAi?$AAm?$AAp?$AAl?$AAe?$AA?5?$AAt?$AAr?$AAa?$AAn?$AAs?$AAm?$AAi?$AAt?$AA?9?$AAr?$AAe?$AAc?$AAi?$AAe?$AAv?$AAe?$AA?5?$AAa?$AAp?$AAp?$AAl?$AAi?$AAc?$AAa?$AAt@|
   0034c		 |$LN55@wmain|
   0034c	ffffec94	 DCD         0xffffec94
-  00350		 |$M32118|
+  00350		 |$M32120|
 
 			 ENDP  ; |wmain|
 

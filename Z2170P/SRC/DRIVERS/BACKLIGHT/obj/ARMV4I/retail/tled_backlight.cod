@@ -49,7 +49,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\inc\backlight_class.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38802| DCD	|$LN5@Initialize|
+|$T38804| DCD	|$LN5@Initialize|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -60,17 +60,17 @@
 ; 44   :     virtual BOOL Initialize(LPCTSTR szContext)              {UNREFERENCED_PARAMETER(szContext); return TRUE;}
 
   00000		 |$LN5@Initialize|
-  00000		 |$M38799|
+  00000		 |$M38801|
   00000	e3a00001	 mov         r0, #1
   00004	e12fff1e	 bx          lr
-  00008		 |$M38800|
+  00008		 |$M38802|
 
 			 ENDP  ; |?Initialize@CBacklightRoot@@UAAHPBG@Z|, CBacklightRoot::Initialize
 
 	EXPORT	|?Uninitialize@CBacklightRoot@@UAAHXZ|	; CBacklightRoot::Uninitialize
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38811| DCD	|$LN5@Uninitiali|
+|$T38813| DCD	|$LN5@Uninitiali|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -81,17 +81,17 @@
 ; 45   :     virtual BOOL Uninitialize()                             {return TRUE;}
 
   00000		 |$LN5@Uninitiali|
-  00000		 |$M38808|
+  00000		 |$M38810|
   00000	e3a00001	 mov         r0, #1
   00004	e12fff1e	 bx          lr
-  00008		 |$M38809|
+  00008		 |$M38811|
 
 			 ENDP  ; |?Uninitialize@CBacklightRoot@@UAAHXZ|, CBacklightRoot::Uninitialize
 
 	EXPORT	|?SetPowerState@CBacklightRoot@@UAAHW4_CEDEVICE_POWER_STATE@@@Z| ; CBacklightRoot::SetPowerState
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38820| DCD	|$LN5@SetPowerSt|
+|$T38822| DCD	|$LN5@SetPowerSt|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -102,10 +102,10 @@
 ; 46   :     virtual BOOL SetPowerState(CEDEVICE_POWER_STATE power)  {UNREFERENCED_PARAMETER(power); return TRUE;}
 
   00000		 |$LN5@SetPowerSt|
-  00000		 |$M38817|
+  00000		 |$M38819|
   00000	e3a00001	 mov         r0, #1
   00004	e12fff1e	 bx          lr
-  00008		 |$M38818|
+  00008		 |$M38820|
 
 			 ENDP  ; |?SetPowerState@CBacklightRoot@@UAAHW4_CEDEVICE_POWER_STATE@@@Z|, CBacklightRoot::SetPowerState
 
@@ -119,7 +119,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\tps659xx\inc\tps659xx_tled.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38831| DCD	|$LN11@TLEDOpen|
+|$T38833| DCD	|$LN11@TLEDOpen|
 	DCD	0x40003002
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -131,17 +131,17 @@
 
   00000		 |TLEDOpen| PROC
 
-; 69   : {
+; 70   : {
 
   00000		 |$LN11@TLEDOpen|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd010	 sub         sp, sp, #0x10
-  00008		 |$M38828|
+  00008		 |$M38830|
 
-; 70   :     HANDLE hDevice;
-; 71   :     DEVICE_CONTEXT_TLED *pContext = NULL;
-; 72   : 
-; 73   :     hDevice = CreateFile(TLED_DEVICE_NAME, 0, 0, NULL, 0, 0, NULL);
+; 71   :     HANDLE hDevice;
+; 72   :     DEVICE_CONTEXT_TLED *pContext = NULL;
+; 73   : 
+; 74   :     hDevice = CreateFile(TLED_DEVICE_NAME, 0, 0, NULL, 0, 0, NULL);
 
   00008	e59f00ac	 ldr         r0, [pc, #0xAC]
   0000c	e3a06000	 mov         r6, #0
@@ -155,42 +155,44 @@
   0002c	eb000000	 bl          CreateFileW
   00030	e1a05000	 mov         r5, r0
 
-; 74   :     if (hDevice == INVALID_HANDLE_VALUE) goto cleanUp;
+; 75   :     if (hDevice == INVALID_HANDLE_VALUE) goto cleanUp;
 
   00034	e3750001	 cmn         r5, #1
-  00038	0a00001a	 beq         |$cleanUp$38667|
+  00038	0a00001a	 beq         |$cleanUp$38669|
 
-; 75   : 
-; 76   :     // Allocate memory for our handler...
-; 77   :     pContext = (DEVICE_CONTEXT_TLED*)LocalAlloc(LPTR, sizeof(DEVICE_CONTEXT_TLED));
+; 76   : 
+; 77   :     // Allocate memory for our handler...
+; 78   :     pContext = (DEVICE_CONTEXT_TLED*)LocalAlloc(
+; 79   :         LPTR, sizeof(DEVICE_CONTEXT_TLED)
+; 80   :         );
 
   0003c	e3a01010	 mov         r1, #0x10
   00040	e3a00040	 mov         r0, #0x40
   00044	eb000000	 bl          LocalAlloc
   00048	e1b04000	 movs        r4, r0
 
-; 78   :     if (pContext == NULL)
-; 79   : 	{
-; 80   :         CloseHandle(hDevice);
+; 81   :     if (pContext == NULL)
+; 82   :         {
+; 83   :         CloseHandle(hDevice);
 
   0004c	e1a00005	 mov         r0, r5
   00050	1a000001	 bne         |$LN4@TLEDOpen|
   00054	eb000000	 bl          CloseHandle
 
-; 98   : 
-; 99   : cleanUp:
+; 101  : 
+; 102  : cleanUp:
 
-  00058	ea000012	 b           |$cleanUp$38667|
+  00058	ea000012	 b           |$cleanUp$38669|
   0005c		 |$LN4@TLEDOpen|
 
-; 81   :         goto cleanUp;
-; 82   : 	}
-; 83   : 
-; 84   :     // Get function pointers, fail when IOCTL isn't supported...
-; 85   :     if (!DeviceIoControl(
-; 86   :             hDevice, IOCTL_DDK_GET_DRIVER_IFC, (VOID*)&DEVICE_IFC_TLED_GUID,
-; 87   :             sizeof(DEVICE_IFC_TLED_GUID), &pContext->ifc, sizeof(DEVICE_IFC_TLED),
-; 88   :             NULL, NULL))
+; 84   :         goto cleanUp;
+; 85   :         }
+; 86   : 
+; 87   :     // Get function pointers, fail when IOCTL isn't supported...
+; 88   :     if (!DeviceIoControl(
+; 89   :             hDevice, IOCTL_DDK_GET_DRIVER_IFC, (VOID*)&DEVICE_IFC_TLED_GUID,
+; 90   :             sizeof(DEVICE_IFC_TLED_GUID), &pContext->ifc, sizeof(DEVICE_IFC_TLED),
+; 91   :             NULL, NULL))
 
   0005c	e59f2054	 ldr         r2, [pc, #0x54]
   00060	e3a03822	 mov         r3, #0x22, 16
@@ -205,38 +207,38 @@
   00084	e3500000	 cmp         r0, #0
   00088	1a000005	 bne         |$LN2@TLEDOpen|
 
-; 89   : 	{
-; 90   :         CloseHandle(hDevice);
+; 92   :         {
+; 93   :         CloseHandle(hDevice);
 
   0008c	e1a00005	 mov         r0, r5
   00090	eb000000	 bl          CloseHandle
 
-; 91   :         LocalFree(pContext);
+; 94   :         LocalFree(pContext);
 
   00094	e1a00004	 mov         r0, r4
   00098	eb000000	 bl          LocalFree
 
-; 92   :         pContext = NULL;
+; 95   :         pContext = NULL;
 
   0009c	e3a04000	 mov         r4, #0
 
-; 98   : 
-; 99   : cleanUp:
+; 101  : 
+; 102  : cleanUp:
 
-  000a0	ea000000	 b           |$cleanUp$38667|
+  000a0	ea000000	 b           |$cleanUp$38669|
   000a4		 |$LN2@TLEDOpen|
 
-; 93   :         goto cleanUp;
-; 94   : 	}
-; 95   : 
-; 96   :     // Save device handle
-; 97   :     pContext->hDevice = hDevice;
+; 96   :         goto cleanUp;
+; 97   :         }
+; 98   : 
+; 99   :     // Save device handle
+; 100  :     pContext->hDevice = hDevice;
 
   000a4	e584500c	 str         r5, [r4, #0xC]
-  000a8		 |$cleanUp$38667|
+  000a8		 |$cleanUp$38669|
 
-; 100  :     return pContext;
-; 101  : }
+; 103  :     return pContext;
+; 104  : }
 
   000a8	e1a00004	 mov         r0, r4
   000ac	e28dd010	 add         sp, sp, #0x10
@@ -247,14 +249,14 @@
   000b8	00000000	 DCD         |DEVICE_IFC_TLED_GUID|
   000bc		 |$LN14@TLEDOpen|
   000bc	00000000	 DCD         |??_C@_1M@MCLGLPBH@?$AAT?$AAL?$AAD?$AA1?$AA?3?$AA?$AA@|
-  000c0		 |$M38829|
+  000c0		 |$M38831|
 
 			 ENDP  ; |TLEDOpen|
 
 	EXPORT	|TLEDClose|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38842| DCD	|$LN5@TLEDClose|
+|$T38844| DCD	|$LN5@TLEDClose|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 
@@ -262,36 +264,36 @@
 
   00000		 |TLEDClose| PROC
 
-; 108  : {
+; 111  : {
 
   00000		 |$LN5@TLEDClose|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M38839|
+  00004		 |$M38841|
   00004	e1a04000	 mov         r4, r0
 
-; 109  :     DEVICE_CONTEXT_TLED *pContext = (DEVICE_CONTEXT_TLED*)hContext;
-; 110  :     CloseHandle(pContext->hDevice);
+; 112  :     DEVICE_CONTEXT_TLED *pContext = (DEVICE_CONTEXT_TLED*)hContext;
+; 113  :     CloseHandle(pContext->hDevice);
 
   00008	e594000c	 ldr         r0, [r4, #0xC]
   0000c	eb000000	 bl          CloseHandle
 
-; 111  :     LocalFree(pContext);
+; 114  :     LocalFree(pContext);
 
   00010	e1a00004	 mov         r0, r4
   00014	eb000000	 bl          LocalFree
 
-; 112  : }
+; 115  : }
 
   00018	e8bd4010	 ldmia       sp!, {r4, lr}
   0001c	e12fff1e	 bx          lr
-  00020		 |$M38840|
+  00020		 |$M38842|
 
 			 ENDP  ; |TLEDClose|
 
 	EXPORT	|TLEDSetDutyCycle|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38853| DCD	|$LN5@TLEDSetDut|
+|$T38855| DCD	|$LN5@TLEDSetDut|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 
@@ -299,27 +301,28 @@
 
   00000		 |TLEDSetDutyCycle| PROC
 
-; 130  : {
+; 136  : {
 
   00000		 |$LN5@TLEDSetDut|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M38850|
+  00004		 |$M38852|
   00004	e1a03000	 mov         r3, r0
 
-; 131  :     DEVICE_CONTEXT_TLED *pContext = (DEVICE_CONTEXT_TLED*)hContext;
-; 132  :     
-; 133  :     return pContext->ifc.pfnSetDutyCycle(pContext->ifc.context, value);
+; 137  :     DEVICE_CONTEXT_TLED *pContext = (DEVICE_CONTEXT_TLED*)hContext;
+; 138  :     return pContext->ifc.pfnSetDutyCycle(
+; 139  :         pContext->ifc.context, value
+; 140  :         );
 
   00008	e5930000	 ldr         r0, [r3]
   0000c	e5933008	 ldr         r3, [r3, #8]
   00010	e1a0e00f	 mov         lr, pc
   00014	e12fff13	 bx          r3
 
-; 134  : }
+; 141  : }
 
   00018	e49de004	 ldr         lr, [sp], #4
   0001c	e12fff1e	 bx          lr
-  00020		 |$M38851|
+  00020		 |$M38853|
 
 			 ENDP  ; |TLEDSetDutyCycle|
 
@@ -331,7 +334,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\inc\backlight_class.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38872| DCD	|$LN17@Initialize@2|
+|$T38874| DCD	|$LN17@Initialize@2|
 	DCD	0x40001901
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -361,7 +364,7 @@
 
   00000		 |$LN17@Initialize@2|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M38869|
+  00004		 |$M38871|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -391,7 +394,7 @@
   00024	e3a04000	 mov         r4, #0
   00028	eb000000	 bl          GetDeviceRegistryParams
   0002c	e3500000	 cmp         r0, #0
-  00030	1a000003	 bne         |$cleanUp$38713|
+  00030	1a000003	 bne         |$cleanUp$38715|
 
 ; 57   : 	{
 ; 58   :         DEBUGMSG(ZONE_ERROR, (L"ERROR: TLED_Backlight::Initialize: "
@@ -417,7 +420,7 @@
 
   0003c	13a04001	 movne       r4, #1
   00040	e5850004	 str         r0, [r5, #4]
-  00044		 |$cleanUp$38713|
+  00044		 |$cleanUp$38715|
 
 ; 74   : 
 ; 75   : cleanUp:
@@ -440,7 +443,7 @@
   0005c	00000000	 DCD         |s_deviceRegParams|
   00060		 |$LN21@Initialize@2|
   00060	00000000	 DCD         |??_C@_1EE@LBMEHIFK@?$AA?$CL?$AAT?$AAL?$AAE?$AAD?$AA_?$AAB?$AAa?$AAc?$AAk?$AAl?$AAi?$AAg?$AAh?$AAt?$AA?3?$AA?3?$AAI?$AAn?$AAi?$AAt?$AAi?$AAa?$AAl?$AAi?$AAz?$AAe?$AA?$CI?$AA?$CF?$AAs?$AA?$CJ?$AA?$AN@|
-  00064		 |$M38870|
+  00064		 |$M38872|
 
 			 ENDP  ; |?Initialize@TLED_Backlight@@UAAHPBG@Z|, TLED_Backlight::Initialize
 
@@ -448,7 +451,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\tps659xx\inc\tps659xx_tled.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38895| DCD	|$LN10@Uninitiali@2|
+|$T38897| DCD	|$LN10@Uninitiali@2|
 	DCD	0x40000e01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\backlight\tled_backlight.cpp
@@ -461,7 +464,7 @@
 
   00000		 |$LN10@Uninitiali@2|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M38892|
+  00004		 |$M38894|
   00004	e1a04000	 mov         r4, r0
 
 ; 91   :     DEBUGMSG(ZONE_FUNCTION, (L"+TLED_Backlight::Uninitialize()\r\n"));
@@ -501,7 +504,7 @@
 
   00030	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00034	e12fff1e	 bx          lr
-  00038		 |$M38893|
+  00038		 |$M38895|
 
 			 ENDP  ; |?Uninitialize@TLED_Backlight@@UAAHXZ|, TLED_Backlight::Uninitialize
 
@@ -512,7 +515,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\tps659xx\inc\tps659xx_tled.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38922| DCD	|$LN16@SetPowerSt@2|
+|$T38924| DCD	|$LN16@SetPowerSt@2|
 	DCD	0x40001901
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -555,7 +558,7 @@
 
   00000		 |$LN16@SetPowerSt@2|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M38919|
+  00004		 |$M38921|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -613,7 +616,7 @@
   0005c	00000000	 DCD         |??_C@_1FC@PDFMFPMP@?$AA?5?$AAT?$AAL?$AAE?$AAD?$AA_?$AAB?$AAa?$AAc?$AAk?$AAl?$AAi?$AAg?$AAh?$AAt?$AA?3?$AA?3?$AAS?$AAe?$AAt?$AAP?$AAo?$AAw?$AAe?$AAr?$AAS?$AAt?$AAa?$AAt?$AAe?$AA?$CI?$AA0@|
   00060		 |$LN20@SetPowerSt@2|
   00060	00000000	 DCD         |??_C@_1FC@IODFGPCM@?$AA?$CL?$AAT?$AAL?$AAE?$AAD?$AA_?$AAB?$AAa?$AAc?$AAk?$AAl?$AAi?$AAg?$AAh?$AAt?$AA?3?$AA?3?$AAS?$AAe?$AAt?$AAP?$AAo?$AAw?$AAe?$AAr?$AAS?$AAt?$AAa?$AAt?$AAe?$AA?$CI?$AA0@|
-  00064		 |$M38920|
+  00064		 |$M38922|
 
 			 ENDP  ; |?SetPowerState@TLED_Backlight@@UAAHW4_CEDEVICE_POWER_STATE@@@Z|, TLED_Backlight::SetPowerState
 

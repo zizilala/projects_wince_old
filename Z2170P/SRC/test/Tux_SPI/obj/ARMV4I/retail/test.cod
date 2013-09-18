@@ -56,11 +56,11 @@
 ; File c:\wince600\platform\z2170p\src\test\tux_spi\test.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32971| DCD	|$LN34@WriteThrea|
+|$T32973| DCD	|$LN34@WriteThrea|
 	DCD	0xc000ca02
 
   00000			 AREA	 |.xdata|, DATA
-|$T32967| DCD	0xffffffd8
+|$T32969| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1CK@NLHJNDEG@?$AAC?$AAl?$AAo?$AAs?$AAi?$AAn?$AAg?$AA?5?$AAT?$AAh?$AAr?$AAe?$AAa?$AAd?$AA?5?$AA?$CF?$AAd?$AA?5?$AA?$AN?$AA?6?$AA?$AA@| DCB "C"
@@ -142,7 +142,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T32967|
+  00004	00000000	 DCD         |$T32969|
 
   00008		 |?WriteThread@@YAKPAX@Z| PROC		; WriteThread
 
@@ -151,7 +151,7 @@
   00008		 |$LN34@WriteThrea|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24ddf8b	 sub         sp, sp, #0x8B, 30
-  00010		 |$M32968|
+  00010		 |$M32970|
   00010	e59f3314	 ldr         r3, [pc, #0x314]
   00014	e5933000	 ldr         r3, [r3]
   00018	e58d3228	 str         r3, [sp, #0x228]
@@ -309,7 +309,7 @@
 
 ; 137  :     }
 
-  00168	ea000019	 b           |$CLOSE$32879|
+  00168	ea000019	 b           |$CLOSE$32881|
   0016c		 |$LN11@WriteThrea|
 
 ; 125  :         goto CLOSE;
@@ -361,7 +361,7 @@
 
 ; 99   :         bRet = FALSE;
 
-  001d4		 |$CLOSE$32879|
+  001d4		 |$CLOSE$32881|
 
 ; 138  : CLOSE:
 ; 139  :     if(hSpi != 0 && hSpi != INVALID_HANDLE_VALUE)
@@ -493,7 +493,7 @@
 
 ; 137  :     }
 
-  002bc	eaffffc4	 b           |$CLOSE$32879|
+  002bc	eaffffc4	 b           |$CLOSE$32881|
   002c0		 |$LN19@WriteThrea|
 
 ; 97   :     {
@@ -514,7 +514,7 @@
 
 ; 137  :     }
 
-  002e4	eaffffba	 b           |$CLOSE$32879|
+  002e4	eaffffba	 b           |$CLOSE$32881|
   002e8		 |$LN35@WriteThrea|
   002e8		 |$LN36@WriteThrea|
   002e8	00000000	 DCD         |??_C@_1EM@GJJDPBGB@?$AAF?$AAa?$AAi?$AAl?$AAu?$AAr?$AAe?$AA?5?$AAi?$AAn?$AA?5?$AAT?$AAh?$AAr?$AAe?$AAa?$AAd?$AA?5?$AA?$CF?$AAd?$AA?4?$AA?5?$AAO?$AAu?$AAt?$AA?5?$AAo?$AAf?$AA?5?$AAm?$AAe?$AAm@|
@@ -552,7 +552,7 @@
   00328	00000000	 DCD         |?g_pKato@@3PAVCKato@@A|
   0032c		 |$LN53@WriteThrea|
   0032c	00000000	 DCD         |__security_cookie|
-  00330		 |$M32969|
+  00330		 |$M32971|
 
 			 ENDP  ; |?WriteThread@@YAKPAX@Z|, WriteThread
 
@@ -567,7 +567,7 @@
 	IMPORT	|?g_NbThreads@@3KA|			; g_NbThreads
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33010| DCD	|$LN20@TestSPIMul|
+|$T33012| DCD	|$LN20@TestSPIMul|
 	DCD	0x40007602
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -624,7 +624,7 @@
   00000		 |$LN20@TestSPIMul|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M33007|
+  00008		 |$M33009|
 
 ; 40   :     HANDLE *ThreadHandles = NULL;
 ; 41   :     DWORD *ThreadId = NULL;
@@ -728,7 +728,7 @@
 
   0010c	e3a04000	 mov         r4, #0
   00110	e3530000	 cmp         r3, #0
-  00114	0a000012	 beq         |$CLOSE$32854|
+  00114	0a000012	 beq         |$CLOSE$32856|
   00118		 |$LL7@TestSPIMul|
 
 ; 58   :     {
@@ -748,7 +748,7 @@
   00134	e2855004	 add         r5, r5, #4
   00138	e1540003	 cmp         r4, r3
   0013c	3afffff5	 bcc         |$LL7@TestSPIMul|
-  00140	ea000007	 b           |$CLOSE$32854|
+  00140	ea000007	 b           |$CLOSE$32856|
   00144		 |$LN15@TestSPIMul|
 
 ; 62   :         {
@@ -762,7 +762,7 @@
   00158	e3e03000	 mvn         r3, #0
   0015c	e1a0e00f	 mov         lr, pc
   00160	e12fff14	 bx          r4
-  00164		 |$CLOSE$32854|
+  00164		 |$CLOSE$32856|
 
 ; 64   :             goto CLOSE;
 ; 65   :         }
@@ -832,7 +832,7 @@
   001d0	00000000	 DCD         |??_C@_1CI@PJJMDCLP@?$AAS?$AAt?$AAa?$AAr?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAS?$AAP?$AAI?$AAT?$AAe?$AAs?$AAt?$AA?5?$AA?$AN?$AA?6?$AA?$AA@|
   001d4		 |$LN35@TestSPIMul|
   001d4	00000000	 DCD         |?g_pKato@@3PAVCKato@@A|
-  001d8		 |$M33008|
+  001d8		 |$M33010|
 
 			 ENDP  ; |?TestSPIMultipleInstances@@YAHIPAKPAU_FUNCTION_TABLE_ENTRY@@@Z|, TestSPIMultipleInstances
 

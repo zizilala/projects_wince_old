@@ -25,7 +25,7 @@
 ; File c:\wince600\platform\z2170p\src\test\tux_spi\tux_spi.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32685| DCD	|$LN5@DllMain|
+|$T32687| DCD	|$LN5@DllMain|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -36,7 +36,7 @@
 ; 37   : {
 
   00000		 |$LN5@DllMain|
-  00000		 |$M32682|
+  00000		 |$M32684|
 
 ; 38   :     // Any initialization code goes here.
 ; 39   : 
@@ -47,7 +47,7 @@
 ; 41   : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M32683|
+  00008		 |$M32685|
 
 			 ENDP  ; |DllMain|
 
@@ -63,11 +63,11 @@
 	IMPORT	|__security_check_cookie|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32700| DCD	|$LN5@Debug|
+|$T32702| DCD	|$LN5@Debug|
 	DCD	0xc0002305
 
   00000			 AREA	 |.xdata|, DATA
-|$T32696| DCD	0xffffffe0
+|$T32698| DCD	0xffffffe0
 
   00000			 AREA	 |.data|, DATA
 |?szHeader@?1??Debug@@YAXPBGZZ@4PAGA| DCB "T", 0x0, "u", 0x0, "x", 0x0, "_"
@@ -81,7 +81,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T32696|
+  00004	00000000	 DCD         |$T32698|
 
   00008		 |?Debug@@YAXPBGZZ| PROC		; Debug
 
@@ -93,7 +93,7 @@
   00010	e92d5010	 stmdb       sp!, {r4, r12, lr}
   00014	e59fc074	 ldr         r12, [pc, #0x74]
   00018	e08dd00c	 add         sp, sp, r12
-  0001c		 |$M32697|
+  0001c		 |$M32699|
   0001c	e1a04000	 mov         r4, r0
   00020	e58d4810	 str         r4, [sp, #0x810]
   00024	e59f3060	 ldr         r3, [pc, #0x60]
@@ -155,7 +155,7 @@
   0008c	00000000	 DCD         |__security_cookie|
   00090		 |$LN10@Debug|
   00090	fffff7fc	 DCD         0xfffff7fc
-  00094		 |$M32698|
+  00094		 |$M32700|
 
 			 ENDP  ; |?Debug@@YAXPBGZZ|, Debug
 
@@ -178,11 +178,11 @@
 	IMPORT	|wcslen|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32740| DCD	|$LN44@SetTestOpt|
+|$T32742| DCD	|$LN44@SetTestOpt|
 	DCD	0xc000c002
 
   00000			 AREA	 |.xdata|, DATA
-|$T32736| DCD	0xffffffd8
+|$T32738| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1CC@OCNIMJBA@?$AAI?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAn?$AAu?$AAm?$AAb?$AAe?$AAr?$AA?5?$AA?6?$AA?$AA@| DCB "I"
@@ -277,7 +277,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T32736|
+  00004	00000000	 DCD         |$T32738|
 
   00008		 |?SetTestOptions@@YAHPAG@Z| PROC	; SetTestOptions
 
@@ -286,7 +286,7 @@
   00008		 |$LN44@SetTestOpt|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24dd01c	 sub         sp, sp, #0x1C
-  00010		 |$M32737|
+  00010		 |$M32739|
   00010	e1a05000	 mov         r5, r0
   00014	e59f32e8	 ldr         r3, [pc, #0x2E8]
   00018	e5933000	 ldr         r3, [r3]
@@ -739,7 +739,7 @@
   00300	00000000	 DCD         |??_C@_1BI@NHEFPFMB@?$AAr?$AAe?$AAt?$AAu?$AAr?$AAn?$AA?5?$AAT?$AAR?$AAU?$AAE?$AA?$AA@|
   00304		 |$LN62@SetTestOpt|
   00304	00000000	 DCD         |__security_cookie|
-  00308		 |$M32738|
+  00308		 |$M32740|
 
 			 ENDP  ; |?SetTestOptions@@YAHPAG@Z|, SetTestOptions
 
@@ -778,7 +778,7 @@
 	IMPORT	|memcpy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32798| DCD	|$LN46@ShellProc|
+|$T32800| DCD	|$LN46@ShellProc|
 	DCD	0x4000f302
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -996,7 +996,7 @@
   00000		 |$LN46@ShellProc|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M32795|
+  00008		 |$M32797|
   00008	e1a04001	 mov         r4, r1
 
 ; 86   :     LPSPS_BEGIN_TEST    pBT;
@@ -1600,7 +1600,7 @@
   003c4	00000000	 DCD         |??_C@_1EM@DHBFOELL@?$AAS?$AAh?$AAe?$AAl?$AAl?$AAP?$AAr?$AAo?$AAc?$AA?$CI?$AAS?$AAP?$AAM?$AA_?$AAU?$AAN?$AAL?$AAO?$AAA?$AAD?$AA_?$AAD?$AAL?$AAL?$AA?0?$AA?5?$AA?4?$AA?4?$AA?4?$AA?$CJ?$AA?5?$AAc@|
   003c8		 |$LN79@ShellProc|
   003c8	00000000	 DCD         |??_C@_1EI@LLGCEHFM@?$AAS?$AAh?$AAe?$AAl?$AAl?$AAP?$AAr?$AAo?$AAc?$AA?$CI?$AAS?$AAP?$AAM?$AA_?$AAL?$AAO?$AAA?$AAD?$AA_?$AAD?$AAL?$AAL?$AA?0?$AA?5?$AA?4?$AA?4?$AA?4?$AA?$CJ?$AA?5?$AAc?$AAa?$AAl@|
-  003cc		 |$M32796|
+  003cc		 |$M32798|
 
 			 ENDP  ; |ShellProc|
 

@@ -29,7 +29,7 @@
 ; File c:\wince600\platform\z2170p\src\test\testrtc\testrtc.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35754| DCD	|$LN14@wmain|
+|$T35756| DCD	|$LN14@wmain|
 	DCD	0x40004602
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -90,7 +90,7 @@
   00000		 |$LN14@wmain|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd018	 sub         sp, sp, #0x18
-  00008		 |$M35751|
+  00008		 |$M35753|
 
 ; 13   :     int nbsec = 25;
 ; 14   :     int notifDelay;
@@ -241,7 +241,7 @@
   00110	00000000	 DCD         |??_C@_1BE@PPGIPOAN@?$AAT?$AAe?$AAs?$AAt?$AA?5?$AAR?$AAT?$AAC?$AA?6?$AA?$AA@|
   00114		 |$LN23@wmain|
   00114	00000000	 DCD         |??_C@_1BI@IFDBABEA@?$AAM?$AAy?$AAT?$AAe?$AAs?$AAt?$AAE?$AAv?$AAe?$AAn?$AAt?$AA?$AA@|
-  00118		 |$M35752|
+  00118		 |$M35754|
 
 			 ENDP  ; |wmain|
 

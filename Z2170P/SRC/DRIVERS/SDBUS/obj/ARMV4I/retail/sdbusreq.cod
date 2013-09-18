@@ -16,7 +16,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbus.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36644| DCD	|$LN7@GetRetryCo|
+|$T36646| DCD	|$LN7@GetRetryCo|
 	DCD	0x40000700
 ; Function compile flags: /Ogspy
 
@@ -27,7 +27,7 @@
 ; 184  :     static DWORD    GetRetryCount()  { return g_pSdContainer!=NULL? g_pSdContainer->m_BusRequestRetryCount: 0; };
 
   00000		 |$LN7@GetRetryCo|
-  00000		 |$M36641|
+  00000		 |$M36643|
   00000	e59f3010	 ldr         r3, [pc, #0x10]
   00004	e5933000	 ldr         r3, [r3]
   00008	e3530000	 cmp         r3, #0
@@ -37,7 +37,7 @@
   00018		 |$LN8@GetRetryCo|
   00018		 |$LN9@GetRetryCo|
   00018	00000000	 DCD         |?g_pSdContainer@CSDHostContainer@@0PAV1@A|
-  0001c		 |$M36642|
+  0001c		 |$M36644|
 
 			 ENDP  ; |?GetRetryCount@CSDHostContainer@@SAKXZ|, CSDHostContainer::GetRetryCount
 
@@ -45,7 +45,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36656| DCD	|$LN5@GetDeviceT|
+|$T36658| DCD	|$LN5@GetDeviceT|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -56,17 +56,17 @@
 ; 134  :     SDCARD_DEVICE_TYPE GetDeviceType() { return m_DeviceType; };
 
   00000		 |$LN5@GetDeviceT|
-  00000		 |$M36653|
+  00000		 |$M36655|
   00000	e5900494	 ldr         r0, [r0, #0x494]
   00004	e12fff1e	 bx          lr
-  00008		 |$M36654|
+  00008		 |$M36656|
 
 			 ENDP  ; |?GetDeviceType@CSDDevice@@QAA?AW4_SDCARD_DEVICE_TYPE@@XZ|, CSDDevice::GetDeviceType
 
 	EXPORT	|?GetCardInfo@CSDDevice@@QAAAAU_SDCARD_INFORMATION@@XZ| ; CSDDevice::GetCardInfo
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36666| DCD	|$LN5@GetCardInf|
+|$T36668| DCD	|$LN5@GetCardInf|
 	DCD	0x40000300
 ; Function compile flags: /Ogspy
 
@@ -77,18 +77,18 @@
 ; 149  :     SDCARD_INFORMATION& GetCardInfo() { return m_SDCardInfo; };
 
   00000		 |$LN5@GetCardInf|
-  00000		 |$M36663|
+  00000		 |$M36665|
   00000	e2803b01	 add         r3, r0, #1, 22
   00004	e28300d8	 add         r0, r3, #0xD8
   00008	e12fff1e	 bx          lr
-  0000c		 |$M36664|
+  0000c		 |$M36666|
 
 			 ENDP  ; |?GetCardInfo@CSDDevice@@QAAAAU_SDCARD_INFORMATION@@XZ|, CSDDevice::GetCardInfo
 
 	EXPORT	|?GetDeviceContext@CSDDevice@@QAAPAXXZ|	; CSDDevice::GetDeviceContext
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36676| DCD	|$LN5@GetDeviceC|
+|$T36678| DCD	|$LN5@GetDeviceC|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -99,17 +99,17 @@
 ; 151  :     PVOID   GetDeviceContext() { return m_pDeviceContext; };
 
   00000		 |$LN5@GetDeviceC|
-  00000		 |$M36673|
+  00000		 |$M36675|
   00000	e5900498	 ldr         r0, [r0, #0x498]
   00004	e12fff1e	 bx          lr
-  00008		 |$M36674|
+  00008		 |$M36676|
 
 			 ENDP  ; |?GetDeviceContext@CSDDevice@@QAAPAXXZ|, CSDDevice::GetDeviceContext
 
 	EXPORT	|?GetClientFlags@CSDDevice@@QAAKXZ|	; CSDDevice::GetClientFlags
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36686| DCD	|$LN5@GetClientF|
+|$T36688| DCD	|$LN5@GetClientF|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -120,10 +120,10 @@
 ; 174  :     DWORD   GetClientFlags() { return m_ClientFlags; };
 
   00000		 |$LN5@GetClientF|
-  00000		 |$M36683|
+  00000		 |$M36685|
   00000	e5900490	 ldr         r0, [r0, #0x490]
   00004	e12fff1e	 bx          lr
-  00008		 |$M36684|
+  00008		 |$M36686|
 
 			 ENDP  ; |?GetClientFlags@CSDDevice@@QAAKXZ|, CSDDevice::GetClientFlags
 
@@ -131,7 +131,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbusreq.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36698| DCD	|$LN9@IsComplete|
+|$T36700| DCD	|$LN9@IsComplete|
 	DCD	0x40001301
 ; Function compile flags: /Ogspy
 
@@ -143,7 +143,7 @@
 
   00000		 |$LN9@IsComplete|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M36695|
+  00004		 |$M36697|
 
 ; 100  :         if (m_pChildListNext) 
 
@@ -186,7 +186,7 @@
 
   00044	e49de004	 ldr         lr, [sp], #4
   00048	e12fff1e	 bx          lr
-  0004c		 |$M36696|
+  0004c		 |$M36698|
 
 			 ENDP  ; |?IsComplete@CSDBusRequest@@QAAHXZ|, CSDBusRequest::IsComplete
 
@@ -194,7 +194,7 @@
 	IMPORT	|InterlockedIncrement|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36708| DCD	|$LN5@AddRef|
+|$T36710| DCD	|$LN5@AddRef|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -206,7 +206,7 @@
 
   00000		 |$LN5@AddRef|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M36705|
+  00004		 |$M36707|
 
 ; 108  :         return (DWORD)InterlockedIncrement(&m_lRefCount);
 
@@ -217,7 +217,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M36706|
+  00014		 |$M36708|
 
 			 ENDP  ; |?AddRef@CSDBusRequest@@QAAKXZ|, CSDBusRequest::AddRef
 
@@ -225,7 +225,7 @@
 	IMPORT	|InterlockedDecrement|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36723| DCD	|$LN8@DeRef|
+|$T36725| DCD	|$LN8@DeRef|
 	DCD	0x40001101
 ; Function compile flags: /Ogspy
 
@@ -237,7 +237,7 @@
 
   00000		 |$LN8@DeRef|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M36720|
+  00004		 |$M36722|
   00004	e1a04000	 mov         r4, r0
 
 ; 111  :         LONG lReturn = InterlockedDecrement(&m_lRefCount);
@@ -270,14 +270,14 @@
   00038	e1a00005	 mov         r0, r5
   0003c	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00040	e12fff1e	 bx          lr
-  00044		 |$M36721|
+  00044		 |$M36723|
 
 			 ENDP  ; |?DeRef@CSDBusRequest@@QAAKXZ|, CSDBusRequest::DeRef
 
 	EXPORT	|?GetRetryCount@CSDBusRequest@@QAAKXZ|	; CSDBusRequest::GetRetryCount
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36733| DCD	|$LN5@GetRetryCo@2|
+|$T36735| DCD	|$LN5@GetRetryCo@2|
 	DCD	0x40000300
 ; Function compile flags: /Ogspy
 
@@ -288,18 +288,18 @@
 ; 120  :     DWORD GetRetryCount(){ return (SystemFlags & SYSTEM_FLAGS_RETRY_COUNT_MASK); };
 
   00000		 |$LN5@GetRetryCo@2|
-  00000		 |$M36730|
+  00000		 |$M36732|
   00000	e5903010	 ldr         r3, [r0, #0x10]
   00004	e20300ff	 and         r0, r3, #0xFF
   00008	e12fff1e	 bx          lr
-  0000c		 |$M36731|
+  0000c		 |$M36733|
 
 			 ENDP  ; |?GetRetryCount@CSDBusRequest@@QAAKXZ|, CSDBusRequest::GetRetryCount
 
 	EXPORT	|?SetChildListNext@CSDBusRequest@@QAAXPAV1@@Z| ; CSDBusRequest::SetChildListNext
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36747| DCD	|$LN12@SetChildLi|
+|$T36749| DCD	|$LN12@SetChildLi|
 	DCD	0x40000700
 ; Function compile flags: /Ogspy
 
@@ -310,7 +310,7 @@
 ; 132  :     void SetChildListNext(CSDBusRequest * pNextBusRequest) { 
 
   00000		 |$LN12@SetChildLi|
-  00000		 |$M36744|
+  00000		 |$M36746|
 
 ; 133  :         if (m_pChildListNext!=NULL) {
 
@@ -334,14 +334,14 @@
 ; 138  :     };
 
   00018	e12fff1e	 bx          lr
-  0001c		 |$M36745|
+  0001c		 |$M36747|
 
 			 ENDP  ; |?SetChildListNext@CSDBusRequest@@QAAXPAV1@@Z|, CSDBusRequest::SetChildListNext
 
 	EXPORT	|?GetFirstFailedStatus@CSDBusRequest@@QAAJXZ| ; CSDBusRequest::GetFirstFailedStatus
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36762| DCD	|$LN12@GetFirstFa|
+|$T36764| DCD	|$LN12@GetFirstFa|
 	DCD	0x40000b00
 ; Function compile flags: /Ogspy
 
@@ -352,7 +352,7 @@
 ; 158  :     SD_API_STATUS GetFirstFailedStatus() {
 
   00000		 |$LN12@GetFirstFa|
-  00000		 |$M36759|
+  00000		 |$M36761|
 
 ; 159  :         if (SD_API_SUCCESS(Status) && m_pChildListNext!=NULL )
 
@@ -380,7 +380,7 @@
 ; 163  :     }
 
   00028	e12fff1e	 bx          lr
-  0002c		 |$M36760|
+  0002c		 |$M36762|
 
 			 ENDP  ; |?GetFirstFailedStatus@CSDBusRequest@@QAAJXZ|, CSDBusRequest::GetFirstFailedStatus
 
@@ -388,7 +388,7 @@
 	IMPORT	|InterlockedExchange|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36774| DCD	|$LN7@TerminateL|
+|$T36776| DCD	|$LN7@TerminateL|
 	DCD	0x40000f01
 ; Function compile flags: /Ogspy
 
@@ -400,7 +400,7 @@
 
   00000		 |$LN7@TerminateL|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M36771|
+  00004		 |$M36773|
   00004	e1a04000	 mov         r4, r0
 
 ; 165  :         CSDBusRequest * pCur = (CSDBusRequest *)InterlockedExchange((LONG *)&m_pChildListNext,(LONG)NULL);
@@ -437,7 +437,7 @@
 
   00034	e8bd4010	 ldmia       sp!, {r4, lr}
   00038	e12fff1e	 bx          lr
-  0003c		 |$M36772|
+  0003c		 |$M36774|
 
 			 ENDP  ; |?TerminateLink@CSDBusRequest@@QAAHXZ|, CSDBusRequest::TerminateLink
 
@@ -446,7 +446,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbusreq.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36784| DCD	|$LN5@operator|
+|$T36786| DCD	|$LN5@operator|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -458,7 +458,7 @@
 
   00000		 |$LN5@operator|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M36781|
+  00004		 |$M36783|
 
 ; 42   :     return CSDHostContainer::AllocateBusRequest(stSize);
 
@@ -468,7 +468,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M36782|
+  00010		 |$M36784|
 
 			 ENDP  ; |??2CSDBusRequest@@SAPAXI@Z|, CSDBusRequest::operator new
 
@@ -476,7 +476,7 @@
 	IMPORT	|?FreeBusRequest@CSDHostContainer@@SAXPAVCSDBusRequest@@@Z| ; CSDHostContainer::FreeBusRequest
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36792| DCD	|$LN5@operator@2|
+|$T36794| DCD	|$LN5@operator@2|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -488,7 +488,7 @@
 
   00000		 |$LN5@operator@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M36789|
+  00004		 |$M36791|
 
 ; 46   :     CSDHostContainer::FreeBusRequest((CSDBusRequest *)pointer);
 
@@ -498,7 +498,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M36790|
+  00010		 |$M36792|
 
 			 ENDP  ; |??3CSDBusRequest@@SAXPAX@Z|, CSDBusRequest::operator delete
 
@@ -511,7 +511,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbusreq.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36811| DCD	|$LN12@CSDBusRequ|
+|$T36813| DCD	|$LN12@CSDBusRequ|
 	DCD	0x40005e02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -529,7 +529,7 @@
   00000		 |$LN12@CSDBusRequ|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M36808|
+  00008		 |$M36810|
   00008	e1a06002	 mov         r6, r2
   0000c	e1a05000	 mov         r5, r0
   00010	e59d4014	 ldr         r4, [sp, #0x14]
@@ -710,7 +710,7 @@
   00170	00000000	 DCD         |?g_dwRequestIndex@CSDBusRequest@@0KA|
   00174		 |$LN15@CSDBusRequ|
   00174	00000000	 DCD         |??_7CSDBusRequest@@6B@|
-  00178		 |$M36809|
+  00178		 |$M36811|
 
 			 ENDP  ; |??0CSDBusRequest@@QAA@AAVCSDDevice@@AAU_SD_BUS_REQUEST@@PAXPAV0@@Z|, CSDBusRequest::CSDBusRequest
 
@@ -718,7 +718,7 @@
 	IMPORT	|CeFreeAsynchronousBuffer|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36822| DCD	|$LN7@CSDBusRequ@2|
+|$T36824| DCD	|$LN7@CSDBusRequ@2|
 	DCD	0x40001f01
 ; Function compile flags: /Ogspy
 
@@ -730,7 +730,7 @@
 
   00000		 |$LN7@CSDBusRequ@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M36819|
+  00004		 |$M36821|
   00004	e1a04000	 mov         r4, r0
   00008	e59f3068	 ldr         r3, [pc, #0x68]
 
@@ -787,7 +787,7 @@
   00078		 |$LN8@CSDBusRequ@2|
   00078		 |$LN9@CSDBusRequ@2|
   00078	00000000	 DCD         |??_7CSDBusRequest@@6B@|
-  0007c		 |$M36820|
+  0007c		 |$M36822|
 
 			 ENDP  ; |??1CSDBusRequest@@UAA@XZ|, CSDBusRequest::~CSDBusRequest
 
@@ -798,15 +798,15 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36869| DCD	|$LN32@CheckForCo|
+|$T36871| DCD	|$LN32@CheckForCo|
 	DCD	0xc0005004
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36871| DCD	|$LN12@CheckForCo|
+|$T36873| DCD	|$LN12@CheckForCo|
 	DCD	0x40000502
 
   00000			 AREA	 |.xdata|, DATA
-|$T36867| DCD	0x1
+|$T36869| DCD	0x1
 	DCD	|$LN16@CheckForCo|
 	DCD	|$LN17@CheckForCo|
 	DCD	|$LN12@CheckForCo|
@@ -817,7 +817,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T36867|
+  00004	00000000	 DCD         |$T36869|
 
   00008		 |?CheckForCompletion@CSDBusRequest@@IAAHXZ| PROC ; CSDBusRequest::CheckForCompletion
 
@@ -1054,7 +1054,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbusreq.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36892| DCD	|$LN12@IsRequestN|
+|$T36894| DCD	|$LN12@IsRequestN|
 	DCD	0x40001100
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbusreq.cpp
@@ -1066,7 +1066,7 @@
 ; 266  : {
 
   00000		 |$LN12@IsRequestN|
-  00000		 |$M36889|
+  00000		 |$M36891|
 
 ; 267  :     if ((m_sdDevice.GetClientFlags() & SD_CLIENT_HANDLES_RETRY)==0) { // we need retry.
 
@@ -1108,7 +1108,7 @@
 ; 275  : }
 
   00040	e12fff1e	 bx          lr
-  00044		 |$M36890|
+  00044		 |$M36892|
 
 			 ENDP  ; |?IsRequestNeedRetry@CSDBusRequest@@QAAHXZ|, CSDBusRequest::IsRequestNeedRetry
 
@@ -1121,18 +1121,18 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbusreq.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36945| DCD	|$LN41@BuildSoftB|
+|$T36947| DCD	|$LN41@BuildSoftB|
 	DCD	0xc000a102
 
   00000			 AREA	 |.xdata|, DATA
-|$T36941| DCD	0xffffffd8
+|$T36943| DCD	0xffffffd8
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbusreq.cpp
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T36941|
+  00004	00000000	 DCD         |$T36943|
 
   00008		 |?BuildSoftBlock@CSDBusRequest@@IAAHXZ| PROC ; CSDBusRequest::BuildSoftBlock
 
@@ -1141,7 +1141,7 @@
   00008		 |$LN41@BuildSoftB|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24dd06c	 sub         sp, sp, #0x6C
-  00010		 |$M36942|
+  00010		 |$M36944|
   00010	e1a07000	 mov         r7, r0
   00014	e59f326c	 ldr         r3, [pc, #0x26C]
   00018	e5933000	 ldr         r3, [r3]
@@ -1484,7 +1484,7 @@
   00288		 |$LN42@BuildSoftB|
   00288		 |$LN43@BuildSoftB|
   00288	00000000	 DCD         |__security_cookie|
-  0028c		 |$M36943|
+  0028c		 |$M36945|
 
 			 ENDP  ; |?BuildSoftBlock@CSDBusRequest@@IAAHXZ|, CSDBusRequest::BuildSoftBlock
 
@@ -1493,18 +1493,18 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbusreq.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36987| DCD	|$LN24@BuildOptio|
+|$T36989| DCD	|$LN24@BuildOptio|
 	DCD	0xc0007802
 
   00000			 AREA	 |.xdata|, DATA
-|$T36983| DCD	0xffffffdc
+|$T36985| DCD	0xffffffdc
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbusreq.cpp
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T36983|
+  00004	00000000	 DCD         |$T36985|
 
   00008		 |?BuildOptionalRequest@CSDBusRequest@@IAAHE@Z| PROC ; CSDBusRequest::BuildOptionalRequest
 
@@ -1513,7 +1513,7 @@
   00008		 |$LN24@BuildOptio|
   00008	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
   0000c	e24dd06c	 sub         sp, sp, #0x6C
-  00010		 |$M36984|
+  00010		 |$M36986|
   00010	e1a05000	 mov         r5, r0
   00014	e59f31c8	 ldr         r3, [pc, #0x1C8]
   00018	e5933000	 ldr         r3, [r3]
@@ -1714,13 +1714,13 @@
   001e4		 |$LN25@BuildOptio|
   001e4		 |$LN26@BuildOptio|
   001e4	00000000	 DCD         |__security_cookie|
-  001e8		 |$M36985|
+  001e8		 |$M36987|
 
 			 ENDP  ; |?BuildOptionalRequest@CSDBusRequest@@IAAHE@Z|, CSDBusRequest::BuildOptionalRequest
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37004| DCD	|$LN8@scalar|
+|$T37006| DCD	|$LN8@scalar|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -1729,7 +1729,7 @@
   00000		 |??_GCSDBusRequest@@UAAPAXI@Z| PROC	; CSDBusRequest::`scalar deleting destructor'
   00000		 |$LN8@scalar|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M37001|
+  00004		 |$M37003|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
   0000c	eb000000	 bl          |??1CSDBusRequest@@UAA@XZ|
@@ -1739,14 +1739,14 @@
   0001c	e1a00005	 mov         r0, r5
   00020	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00024	e12fff1e	 bx          lr
-  00028		 |$M37002|
+  00028		 |$M37004|
 
 			 ENDP  ; |??_GCSDBusRequest@@UAAPAXI@Z|, CSDBusRequest::`scalar deleting destructor'
 
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37051| DCD	|$LN58@Init|
+|$T37053| DCD	|$LN58@Init|
 	DCD	0x40008101
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbusreq.cpp
@@ -1759,7 +1759,7 @@
 
   00000		 |$LN58@Init|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M37048|
+  00004		 |$M37050|
   00004	e1a04000	 mov         r4, r0
 
 ; 112  :     BOOL fRet = TRUE;
@@ -2039,7 +2039,7 @@
   00200		 |$LN59@Init|
   00200		 |$LN60@Init|
   00200	00000000	 DCD         |?g_pSdContainer@CSDHostContainer@@0PAV1@A|
-  00204		 |$M37049|
+  00204		 |$M37051|
 
 			 ENDP  ; |?Init@CSDBusRequest@@UAAHXZ|, CSDBusRequest::Init
 

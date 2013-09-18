@@ -151,7 +151,7 @@
 ; File c:\wince600\platform\z2170p\src\kitl\kitldll\oemkitl.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46525| DCD	|$LN16@OALKitlIni|
+|$T46528| DCD	|$LN16@OALKitlIni|
 	DCD	0x40001b02
 ; Function compile flags: /Ogspy
 
@@ -164,7 +164,7 @@
   00000		 |$LN16@OALKitlIni|
   00000	e52de004	 str         lr, [sp, #-4]!
   00004	e24dd014	 sub         sp, sp, #0x14
-  00008		 |$M46522|
+  00008		 |$M46525|
 
 ; 155  :     DEVICE_LOCATION devLoc;
 ; 156  : 
@@ -174,7 +174,7 @@
   00008	e28d0000	 add         r0, sp, #0
   0000c	eb000000	 bl          OALKitlGetDevLoc
   00010	e3500000	 cmp         r0, #0
-  00014	0a000011	 beq         |$cleanUp$46442|
+  00014	0a000011	 beq         |$cleanUp$46445|
 
 ; 159  : 
 ; 160  :     // Depending on device bus
@@ -182,7 +182,7 @@
 
   00018	e59d3000	 ldr         r3, [sp]
   0001c	e3530000	 cmp         r3, #0
-  00020	1a00000e	 bne         |$cleanUp$46442|
+  00020	1a00000e	 bne         |$cleanUp$46445|
 
 ; 162  :         {
 ; 163  :         case Internal:
@@ -230,7 +230,7 @@
   00058	e3a00001	 mov         r0, #1
   0005c		 |$LN13@OALKitlIni|
   0005c	eb000000	 bl          OEMUsbDriverEnable
-  00060		 |$cleanUp$46442|
+  00060		 |$cleanUp$46445|
 
 ; 181  :                 }
 ; 182  :             break;
@@ -243,14 +243,14 @@
   00060	e28dd014	 add         sp, sp, #0x14
   00064	e49de004	 ldr         lr, [sp], #4
   00068	e12fff1e	 bx          lr
-  0006c		 |$M46523|
+  0006c		 |$M46526|
 
 			 ENDP  ; |OALKitlInitRegistry|
 
 	EXPORT	|OEMKitlEnable|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46534| DCD	|$LN6@OEMKitlEna|
+|$T46537| DCD	|$LN6@OEMKitlEna|
 	DCD	0x40000700
 ; Function compile flags: /Ogspy
 
@@ -261,7 +261,7 @@
 ; 209  : {
 
   00000		 |$LN6@OEMKitlEna|
-  00000		 |$M46531|
+  00000		 |$M46534|
 
 ; 210  :     if (s_bKitlActive == FALSE) return FALSE;
 
@@ -292,7 +292,7 @@
   00018		 |$LN7@OEMKitlEna|
   00018		 |$LN8@OEMKitlEna|
   00018	00000000	 DCD         |s_bKitlActive|
-  0001c		 |$M46532|
+  0001c		 |$M46535|
 
 			 ENDP  ; |OEMKitlEnable|
 
@@ -300,7 +300,7 @@
 	IMPORT	|OALPAtoVA|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46546| DCD	|$LN5@OALGetTick|
+|$T46549| DCD	|$LN5@OALGetTick|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -312,7 +312,7 @@
 
   00000		 |$LN5@OALGetTick|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46543|
+  00004		 |$M46546|
   00004	e3a03312	 mov         r3, #0x12, 6
 
 ; 234  :     OMAP_GPTIMER_REGS *pGPTimerRegs = OALPAtoUA(OMAP_GPTIMER1_REGS_PA);
@@ -330,7 +330,7 @@
 
   0001c	e49de004	 ldr         lr, [sp], #4
   00020	e12fff1e	 bx          lr
-  00024		 |$M46544|
+  00024		 |$M46547|
 
 			 ENDP  ; |OALGetTickCount|
 
@@ -339,7 +339,7 @@
 	IMPORT	|OALIoCtlVBridge|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46560| DCD	|$LN9@OEMKitlIoc|
+|$T46563| DCD	|$LN9@OEMKitlIoc|
 	DCD	0x40001502
 ; Function compile flags: /Ogspy
 
@@ -352,7 +352,7 @@
   00000		 |$LN9@OEMKitlIoc|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M46557|
+  00008		 |$M46560|
 
 ; 247  :     BOOL fRet = FALSE;
 ; 248  :     switch (code) {
@@ -401,7 +401,7 @@
   00050		 |$LN10@OEMKitlIoc|
   00050		 |$LN11@OEMKitlIoc|
   00050	010100b0	 DCD         0x10100b0
-  00054		 |$M46558|
+  00054		 |$M46561|
 
 			 ENDP  ; |OEMKitlIoctl|
 
@@ -422,11 +422,11 @@
 	IMPORT	|__security_check_cookie|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46591| DCD	|$LN24@OEMKitlSta|
+|$T46594| DCD	|$LN24@OEMKitlSta|
 	DCD	0xc0004f02
 
   00000			 AREA	 |.xdata|, DATA
-|$T46587| DCD	0xffffffec
+|$T46590| DCD	0xffffffec
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_0BJ@OKHENJGB@?9OALKitlStart?$CIrc?5?$DN?5?$CFd?$CJ?$AN?6?$AA@| DCB "-"
@@ -447,7 +447,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T46587|
+  00004	00000000	 DCD         |$T46590|
 
   00008		 |OEMKitlStartup| PROC
 
@@ -456,7 +456,7 @@
   00008		 |$LN24@OEMKitlSta|
   00008	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   0000c	e24dd038	 sub         sp, sp, #0x38
-  00010		 |$M46588|
+  00010		 |$M46591|
   00010	e59f3128	 ldr         r3, [pc, #0x128]
   00014	e5933000	 ldr         r3, [r3]
   00018	e58d3034	 str         r3, [sp, #0x34]
@@ -626,7 +626,7 @@
   000ec	159f3034	 ldrne       r3, [pc, #0x34]
   000f0	13a02001	 movne       r2, #1
   000f4	15832000	 strne       r2, [r3]
-  000f8		 |$cleanUp$46436|
+  000f8		 |$cleanUp$46439|
 
 ; 139  :     OEMKitlEnable(TRUE);
 ; 140  :     
@@ -668,14 +668,14 @@
   0013c	00000000	 DCD         |dpCurSettings|
   00140		 |$LN33@OEMKitlSta|
   00140	00000000	 DCD         |__security_cookie|
-  00144		 |$M46589|
+  00144		 |$M46592|
 
 			 ENDP  ; |OEMKitlStartup|
 
 	EXPORT	|OEMKitlGetSecs|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46615| DCD	|$LN7@OEMKitlGet|
+|$T46618| DCD	|$LN7@OEMKitlGet|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -687,7 +687,7 @@
 
   00000		 |$LN7@OEMKitlGet|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46612|
+  00004		 |$M46615|
   00004	e3a03312	 mov         r3, #0x12, 6
 
 ; 195  :     return OALGetTickCount()/1000;
@@ -708,7 +708,7 @@
   00030		 |$LN8@OEMKitlGet|
   00030		 |$LN9@OEMKitlGet|
   00030	10624dd3	 DCD         0x10624dd3
-  00034		 |$M46613|
+  00034		 |$M46616|
 
 			 ENDP  ; |OEMKitlGetSecs|
 

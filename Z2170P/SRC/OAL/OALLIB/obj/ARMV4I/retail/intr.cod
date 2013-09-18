@@ -83,7 +83,7 @@
 ; File c:\wince600\platform\z2170p\src\oal\oallib\intr.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47348| DCD	|$LN12@RegisterPr|
+|$T47361| DCD	|$LN12@RegisterPr|
 	DCD	0x40002d01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -129,7 +129,7 @@
 
   00000		 |$LN12@RegisterPr|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M47345|
+  00004		 |$M47358|
 
 ; 69   :     UINT32 sysIntr;
 ; 70   :     BOOL rc = FALSE;
@@ -184,13 +184,13 @@
 
   00054	e5963440	 ldr         r3, [r6, #0x440]
   00058	e3130001	 tst         r3, #1
-  0005c	0a000006	 beq         |$cleanUp$47289|
+  0005c	0a000006	 beq         |$cleanUp$47302|
   00060	e59f003c	 ldr         r0, [pc, #0x3C]
   00064	eb000000	 bl          NKDbgPrintfW
 
 ; 89   :         goto cleanUp;
 
-  00068	ea000003	 b           |$cleanUp$47289|
+  00068	ea000003	 b           |$cleanUp$47302|
   0006c		 |$LN1@RegisterPr|
 
 ; 90   :         }
@@ -222,7 +222,7 @@
 ; 111  :     rc = TRUE;
 
   00078	e3a05001	 mov         r5, #1
-  0007c		 |$cleanUp$47289|
+  0007c		 |$cleanUp$47302|
   0007c	e5963440	 ldr         r3, [r6, #0x440]
 
 ; 112  : 
@@ -253,14 +253,14 @@
   000ac	00000000	 DCD         |??_C@_1EE@HGBEDHCP@?$AA?$CL?$AAR?$AAe?$AAg?$AAi?$AAs?$AAt?$AAe?$AAr?$AAP?$AAr?$AAc?$AAm?$AAI?$AAn?$AAt?$AAe?$AAr?$AAr?$AAu?$AAp?$AAt?$AAH?$AAa?$AAn?$AAd?$AAl?$AAe?$AAr?$AA?$CI?$AA?$CJ?$AA?$AN@|
   000b0		 |$LN19@RegisterPr|
   000b0	00000000	 DCD         |dpCurSettings|
-  000b4		 |$M47346|
+  000b4		 |$M47359|
 
 			 ENDP  ; |RegisterPrcmInterruptHandler|
 
 	EXPORT	|BSPIntrInit|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47364| DCD	|$LN5@BSPIntrIni|
+|$T47377| DCD	|$LN5@BSPIntrIni|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -272,7 +272,7 @@
 
   00000		 |$LN5@BSPIntrIni|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M47361|
+  00004		 |$M47374|
 
 ; 129  :     
 ; 130  :     // Associate the External LAN Irq with a fixed sysintr.
@@ -288,7 +288,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M47362|
+  00010		 |$M47375|
 
 			 ENDP  ; |BSPIntrInit|
 
@@ -297,7 +297,7 @@
 	EXPORT	|??_C@_1GM@PDLDOEEM@?$AA?$CL?$AAB?$AAS?$AAP?$AAI?$AAn?$AAt?$AAr?$AAR?$AAe?$AAq?$AAu?$AAe?$AAs?$AAt?$AAI?$AAr?$AAq?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?9?$AA?$DO?$AA?$CF?$AAd?$AA?1?$AA?$CF?$AAd@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47379| DCD	|$LN12@BSPIntrReq|
+|$T47392| DCD	|$LN12@BSPIntrReq|
 	DCD	0x40002102
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -330,7 +330,7 @@
   00000		 |$LN12@BSPIntrReq|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M47376|
+  00008		 |$M47389|
   00008	e1a06002	 mov         r6, r2
   0000c	e1a04000	 mov         r4, r0
 
@@ -394,7 +394,7 @@
   0007c	00000000	 DCD         |??_C@_1GM@PDLDOEEM@?$AA?$CL?$AAB?$AAS?$AAP?$AAI?$AAn?$AAt?$AAr?$AAR?$AAe?$AAq?$AAu?$AAe?$AAs?$AAt?$AAI?$AAr?$AAq?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?9?$AA?$DO?$AA?$CF?$AAd?$AA?1?$AA?$CF?$AAd@|
   00080		 |$LN16@BSPIntrReq|
   00080	00000000	 DCD         |dpCurSettings|
-  00084		 |$M47377|
+  00084		 |$M47390|
 
 			 ENDP  ; |BSPIntrRequestIrqs|
 

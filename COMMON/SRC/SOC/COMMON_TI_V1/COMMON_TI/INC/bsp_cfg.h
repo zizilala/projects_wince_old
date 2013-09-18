@@ -92,7 +92,8 @@ typedef enum OMAP_LCD_DVI_RES {
 typedef enum OMAP_LCM_BACKLIGHT {
      BACKLIGHT_ON=0,
 	 BACKLIGHT_OFF,
-	 BACKLIGHT_EXIT=2
+	 BACKLIGHT_BRIGHTNESS,
+	 BACKLIGHT_EXIT=3
 }OMAP_LCM_BACKLIGHT;
 //------------------------------------------------------------------------
 //SD to Flash enum Ray 13-09-10
@@ -101,8 +102,19 @@ typedef enum OMAP_LCM_BACKLIGHT {
 typedef enum OMAP_SD_TO_FLASH{
 	READING=0,
 	WRITING,
-	FLASH_EXIT=2
+	SHOW_DATA,
+	FLASH_EXIT=3
 }OMAP_SD_TO_FLASH; 
+//------------------------------------------------------------------------
+//Backlight Brightness enum Ray 13-09-18
+//------------------------------------------------------------------------
+
+typedef enum OMAP_LCM_BACKLIGHT_BN{
+	PLUS=0,
+	MINUS,
+	BN_EXIT=2
+}OMAP_LCM_BACKLIGHT_BN;
+
 //------------------------------------------------------------------------
 //  Triton Access
 //------------------------------------------------------------------------

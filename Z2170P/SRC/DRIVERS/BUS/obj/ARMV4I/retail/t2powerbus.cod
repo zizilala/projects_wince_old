@@ -29,7 +29,7 @@
 	IMPORT	|_purecall|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39767| DCD	|$LN5@omapPowerB|
+|$T39769| DCD	|$LN5@omapPowerB|
 	DCD	0x40000500
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -41,7 +41,7 @@
 
   00000		 |??0omapPowerBus_t@@QAA@XZ| PROC	; omapPowerBus_t::omapPowerBus_t
   00000		 |$LN5@omapPowerB|
-  00000		 |$M39764|
+  00000		 |$M39766|
   00000	e1a02000	 mov         r2, r0
   00004	e59f3004	 ldr         r3, [pc, #4]
   00008	e5823000	 str         r3, [r2]
@@ -49,7 +49,7 @@
   00010		 |$LN6@omapPowerB|
   00010		 |$LN7@omapPowerB|
   00010	00000000	 DCD         |??_7omapPowerBus_t@@6B@|
-  00014		 |$M39765|
+  00014		 |$M39767|
 
 			 ENDP  ; |??0omapPowerBus_t@@QAA@XZ|, omapPowerBus_t::omapPowerBus_t
 
@@ -57,7 +57,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\bus\t2powerbus.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39778| DCD	|$LN5@Initialize|
+|$T39780| DCD	|$LN5@Initialize|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -68,7 +68,7 @@
 ; 88   : {
 
   00000		 |$LN5@Initialize|
-  00000		 |$M39775|
+  00000		 |$M39777|
 
 ; 89   :     return TRUE;
 
@@ -77,7 +77,7 @@
 ; 90   : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M39776|
+  00008		 |$M39778|
 
 			 ENDP  ; |?InitializePowerBus@T2PowerBus_t@@QAAHXZ|, T2PowerBus_t::InitializePowerBus
 
@@ -85,7 +85,7 @@
 	IMPORT	|TWLClose|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39786| DCD	|$LN6@Deinitiali|
+|$T39788| DCD	|$LN6@Deinitiali|
 	DCD	0x40000b01
 ; Function compile flags: /Ogspy
 
@@ -97,7 +97,7 @@
 
   00000		 |$LN6@Deinitiali|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M39783|
+  00004		 |$M39785|
   00004	e1a04000	 mov         r4, r0
 
 ; 98   :     if (m_hTwl != NULL)
@@ -123,14 +123,14 @@
 
   00024	e8bd4010	 ldmia       sp!, {r4, lr}
   00028	e12fff1e	 bx          lr
-  0002c		 |$M39784|
+  0002c		 |$M39786|
 
 			 ENDP  ; |?DeinitializePowerBus@T2PowerBus_t@@QAAXXZ|, T2PowerBus_t::DeinitializePowerBus
 
 	EXPORT	|?UsbFnAttach@T2PowerBus_t@@IAAHH@Z|	; T2PowerBus_t::UsbFnAttach
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39795| DCD	|$LN5@UsbFnAttac|
+|$T39797| DCD	|$LN5@UsbFnAttac|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -141,7 +141,7 @@
 ; 242  : {
 
   00000		 |$LN5@UsbFnAttac|
-  00000		 |$M39792|
+  00000		 |$M39794|
 
 ; 243  :     UNREFERENCED_PARAMETER(state);
 ; 244  :     return TRUE;
@@ -151,7 +151,7 @@
 ; 245  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M39793|
+  00008		 |$M39795|
 
 			 ENDP  ; |?UsbFnAttach@T2PowerBus_t@@IAAHH@Z|, T2PowerBus_t::UsbFnAttach
 
@@ -160,7 +160,7 @@
 	IMPORT	|TWLOpen|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39807| DCD	|$LN8@WriteTwlRe|
+|$T39809| DCD	|$LN8@WriteTwlRe|
 	DCD	0x40001603
 ; Function compile flags: /Ogspy
 
@@ -174,7 +174,7 @@
   00000	e1a0c00d	 mov         r12, sp
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5070	 stmdb       sp!, {r4 - r6, r12, lr}
-  0000c		 |$M39804|
+  0000c		 |$M39806|
   0000c	e1a06001	 mov         r6, r1
   00010	e1a05000	 mov         r5, r0
 
@@ -197,7 +197,7 @@
 
 ; 292  :         if (m_hTwl == NULL) goto cleanUp;
 
-  00030	0a000005	 beq         |$cleanUp$39624|
+  00030	0a000005	 beq         |$cleanUp$39626|
   00034		 |$LN2@WriteTwlRe|
 
 ; 293  :         }
@@ -211,7 +211,7 @@
   00040	e1a01006	 mov         r1, r6
   00044	eb000000	 bl          TWLWriteRegs
   00048	e1a04000	 mov         r4, r0
-  0004c		 |$cleanUp$39624|
+  0004c		 |$cleanUp$39626|
 
 ; 297  : 
 ; 298  : cleanUp:
@@ -221,7 +221,7 @@
   0004c	e1a00004	 mov         r0, r4
   00050	e89d6070	 ldmia       sp, {r4 - r6, sp, lr}
   00054	e12fff1e	 bx          lr
-  00058		 |$M39805|
+  00058		 |$M39807|
 
 			 ENDP  ; |?WriteTwlReg@T2PowerBus_t@@IAAHKE@Z|, T2PowerBus_t::WriteTwlReg
 
@@ -229,7 +229,7 @@
 	IMPORT	|TWLReadRegs|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39820| DCD	|$LN8@ReadTwlReg|
+|$T39822| DCD	|$LN8@ReadTwlReg|
 	DCD	0x40001501
 ; Function compile flags: /Ogspy
 
@@ -241,7 +241,7 @@
 
   00000		 |$LN8@ReadTwlReg|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M39817|
+  00004		 |$M39819|
   00004	e1a06002	 mov         r6, r2
   00008	e1a07001	 mov         r7, r1
   0000c	e1a05000	 mov         r5, r0
@@ -265,7 +265,7 @@
 
 ; 316  :         if (m_hTwl == NULL) goto cleanUp;
 
-  0002c	0a000005	 beq         |$cleanUp$39634|
+  0002c	0a000005	 beq         |$cleanUp$39636|
   00030		 |$LN2@ReadTwlReg|
 
 ; 317  :         }
@@ -279,7 +279,7 @@
   0003c	e1a01007	 mov         r1, r7
   00040	eb000000	 bl          TWLReadRegs
   00044	e1a04000	 mov         r4, r0
-  00048		 |$cleanUp$39634|
+  00048		 |$cleanUp$39636|
 
 ; 321  : 
 ; 322  : cleanUp:
@@ -289,7 +289,7 @@
   00048	e1a00004	 mov         r0, r4
   0004c	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   00050	e12fff1e	 bx          lr
-  00054		 |$M39818|
+  00054		 |$M39820|
 
 			 ENDP  ; |?ReadTwlReg@T2PowerBus_t@@IAAHKAAE@Z|, T2PowerBus_t::ReadTwlReg
 
@@ -297,7 +297,7 @@
 	IMPORT	|??3@YAXPAX@Z|				; operator delete
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39834| DCD	|$LN9@DestroyPow|
+|$T39836| DCD	|$LN9@DestroyPow|
 	DCD	0x40001401
 ; Function compile flags: /Ogspy
 
@@ -309,7 +309,7 @@
 
   00000		 |$LN9@DestroyPow|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M39831|
+  00004		 |$M39833|
 
 ; 66   :     UNREFERENCED_PARAMETER(pPowerBus);
 ; 67   :     if (_pT2PowerBus != NULL)
@@ -351,7 +351,7 @@
   0004c		 |$LN10@DestroyPow|
   0004c		 |$LN11@DestroyPow|
   0004c	00000000	 DCD         |_pT2PowerBus|
-  00050		 |$M39832|
+  00050		 |$M39834|
 
 			 ENDP  ; |?DestroyPowerBus@omapPowerBus_t@@SAXPAV1@@Z|, omapPowerBus_t::DestroyPowerBus
 
@@ -361,7 +361,7 @@
 	EXPORT	|?PostDevicePowerStateChange@T2PowerBus_t@@UAAKKW4_CEDEVICE_POWER_STATE@@0@Z| ; T2PowerBus_t::PostDevicePowerStateChange
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39849| DCD	|$LN7@T2PowerBus|
+|$T39851| DCD	|$LN7@T2PowerBus|
 	DCD	0x40000600
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -376,7 +376,7 @@
 ; 79   : {
 
   00000		 |$LN7@T2PowerBus|
-  00000		 |$M39846|
+  00000		 |$M39848|
   00000	e59f300c	 ldr         r3, [pc, #0xC]
 
 ; 80   :     m_hTwl = NULL;
@@ -391,14 +391,14 @@
   00014		 |$LN8@T2PowerBus|
   00014		 |$LN9@T2PowerBus|
   00014	00000000	 DCD         |??_7T2PowerBus_t@@6B@|
-  00018		 |$M39847|
+  00018		 |$M39849|
 
 			 ENDP  ; |??0T2PowerBus_t@@IAA@XZ|, T2PowerBus_t::T2PowerBus_t
 
 	EXPORT	|?SendSingularPBMessage@T2PowerBus_t@@IAAHEE@Z| ; T2PowerBus_t::SendSingularPBMessage
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39865| DCD	|$LN11@SendSingul|
+|$T39867| DCD	|$LN11@SendSingul|
 	DCD	0x40001f01
 ; Function compile flags: /Ogspy
 
@@ -410,7 +410,7 @@
 
   00000		 |$LN11@SendSingul|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M39862|
+  00004		 |$M39864|
   00004	e1a06002	 mov         r6, r2
   00008	e1a07001	 mov         r7, r1
   0000c	e1a05000	 mov         r5, r0
@@ -429,7 +429,7 @@
   0001c	e3a04000	 mov         r4, #0
   00020	eb000000	 bl          |?WriteTwlReg@T2PowerBus_t@@IAAHKE@Z|
   00024	e3500000	 cmp         r0, #0
-  00028	0a000010	 beq         |$cleanUp$39564|
+  00028	0a000010	 beq         |$cleanUp$39566|
 
 ; 120  :         goto cleanUp;
 ; 121  : 
@@ -453,7 +453,7 @@
   00044	e1a00005	 mov         r0, r5
   00048	eb000000	 bl          |?WriteTwlReg@T2PowerBus_t@@IAAHKE@Z|
   0004c	e3500000	 cmp         r0, #0
-  00050	0a000006	 beq         |$cleanUp$39564|
+  00050	0a000006	 beq         |$cleanUp$39566|
   00054	e3a03803	 mov         r3, #3, 16
 
 ; 128  :         goto cleanUp;
@@ -473,7 +473,7 @@
 ; 135  :     rc = TRUE;
 
   0006c	13a04001	 movne       r4, #1
-  00070		 |$cleanUp$39564|
+  00070		 |$cleanUp$39566|
 
 ; 136  : cleanUp:
 ; 137  :     return rc;
@@ -482,14 +482,14 @@
   00070	e1a00004	 mov         r0, r4
   00074	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   00078	e12fff1e	 bx          lr
-  0007c		 |$M39863|
+  0007c		 |$M39865|
 
 			 ENDP  ; |?SendSingularPBMessage@T2PowerBus_t@@IAAHEE@Z|, T2PowerBus_t::SendSingularPBMessage
 
 	EXPORT	|?UpdateUSBVBusSleepOffState@T2PowerBus_t@@IAAHE@Z| ; T2PowerBus_t::UpdateUSBVBusSleepOffState
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39876| DCD	|$LN5@UpdateUSBV|
+|$T39878| DCD	|$LN5@UpdateUSBV|
 	DCD	0x40001601
 ; Function compile flags: /Ogspy
 
@@ -501,7 +501,7 @@
 
   00000		 |$LN5@UpdateUSBV|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M39873|
+  00004		 |$M39875|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
   0000c	e3a06803	 mov         r6, #3, 16
@@ -542,7 +542,7 @@
 
   00050	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00054	e12fff1e	 bx          lr
-  00058		 |$M39874|
+  00058		 |$M39876|
 
 			 ENDP  ; |?UpdateUSBVBusSleepOffState@T2PowerBus_t@@IAAHE@Z|, T2PowerBus_t::UpdateUSBVBusSleepOffState
 
@@ -550,7 +550,7 @@
 	IMPORT	|StallExecution|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39894| DCD	|$LN15@WakeT2USBP|
+|$T39896| DCD	|$LN15@WakeT2USBP|
 	DCD	0x40004402
 ; Function compile flags: /Ogspy
 
@@ -563,7 +563,7 @@
   00000		 |$LN15@WakeT2USBP|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M39891|
+  00008		 |$M39893|
   00008	e1a04000	 mov         r4, r0
 
 ; 192  :     UCHAR sts;
@@ -708,14 +708,14 @@
   00104	e28dd004	 add         sp, sp, #4
   00108	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   0010c	e12fff1e	 bx          lr
-  00110		 |$M39892|
+  00110		 |$M39894|
 
 			 ENDP  ; |?WakeT2USBPhyDPLL@T2PowerBus_t@@IAAHXZ|, T2PowerBus_t::WakeT2USBPhyDPLL
 
 	EXPORT	|?SelectPowerResVolt@T2PowerBus_t@@IAAHKE@Z| ; T2PowerBus_t::SelectPowerResVolt
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39908| DCD	|$LN7@SelectPowe|
+|$T39910| DCD	|$LN7@SelectPowe|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 
@@ -727,7 +727,7 @@
 
   00000		 |$LN7@SelectPowe|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M39905|
+  00004		 |$M39907|
 
 ; 255  :     return WriteTwlReg(res_vsel_reg_offset, reg_data) != FALSE;
 
@@ -747,14 +747,14 @@
 
   00018	049de004	 ldreq       lr, [sp], #4
   0001c	e12fff1e	 bx          lr
-  00020		 |$M39906|
+  00020		 |$M39908|
 
 			 ENDP  ; |?SelectPowerResVolt@T2PowerBus_t@@IAAHKE@Z|, T2PowerBus_t::SelectPowerResVolt
 
 	EXPORT	|?SetVmmc1PowerOnOff@T2PowerBus_t@@IAAHE@Z| ; T2PowerBus_t::SetVmmc1PowerOnOff
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39919| DCD	|$LN5@SetVmmc1Po|
+|$T39921| DCD	|$LN5@SetVmmc1Po|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -766,7 +766,7 @@
 
   00000		 |$LN5@SetVmmc1Po|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M39916|
+  00004		 |$M39918|
   00004	e1a02001	 mov         r2, r1
 
 ; 265  :     return (SendSingularPBMessage(TWL_VMMC1_RES_ID, power_res_state));
@@ -778,14 +778,14 @@
 
   00010	e49de004	 ldr         lr, [sp], #4
   00014	e12fff1e	 bx          lr
-  00018		 |$M39917|
+  00018		 |$M39919|
 
 			 ENDP  ; |?SetVmmc1PowerOnOff@T2PowerBus_t@@IAAHE@Z|, T2PowerBus_t::SetVmmc1PowerOnOff
 
 	EXPORT	|?SetVmmc2PowerOnOff@T2PowerBus_t@@IAAHE@Z| ; T2PowerBus_t::SetVmmc2PowerOnOff
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39930| DCD	|$LN5@SetVmmc2Po|
+|$T39932| DCD	|$LN5@SetVmmc2Po|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -797,7 +797,7 @@
 
   00000		 |$LN5@SetVmmc2Po|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M39927|
+  00004		 |$M39929|
   00004	e1a02001	 mov         r2, r1
 
 ; 275  :     return (SendSingularPBMessage(TWL_VMMC2_RES_ID, power_res_state));
@@ -809,7 +809,7 @@
 
   00010	e49de004	 ldr         lr, [sp], #4
   00014	e12fff1e	 bx          lr
-  00018		 |$M39928|
+  00018		 |$M39930|
 
 			 ENDP  ; |?SetVmmc2PowerOnOff@T2PowerBus_t@@IAAHE@Z|, T2PowerBus_t::SetVmmc2PowerOnOff
 
@@ -817,7 +817,7 @@
 	IMPORT	|??2@YAPAXI@Z|				; operator new
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39956| DCD	|$LN16@CreatePowe|
+|$T39958| DCD	|$LN16@CreatePowe|
 	DCD	0x40001201
 ; Function compile flags: /Ogspy
 
@@ -829,7 +829,7 @@
 
   00000		 |$LN16@CreatePowe|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M39953|
+  00004		 |$M39955|
 
 ; 43   :     // only create new instance of t2 power bus 
 ; 44   :     // if there already isn't one
@@ -872,14 +872,14 @@
   00040	00000000	 DCD         |??_7T2PowerBus_t@@6B@|
   00044		 |$LN19@CreatePowe|
   00044	00000000	 DCD         |_pT2PowerBus|
-  00048		 |$M39954|
+  00048		 |$M39956|
 
 			 ENDP  ; |?CreatePowerBus@omapPowerBus_t@@SAPAV1@XZ|, omapPowerBus_t::CreatePowerBus
 
 	EXPORT	|?SetT2USBXvcrActive@T2PowerBus_t@@IAAHH@Z| ; T2PowerBus_t::SetT2USBXvcrActive
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39970| DCD	|$LN7@SetT2USBXv|
+|$T39972| DCD	|$LN7@SetT2USBXv|
 	DCD	0x40001401
 ; Function compile flags: /Ogspy
 
@@ -891,7 +891,7 @@
 
   00000		 |$LN7@SetT2USBXv|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M39967|
+  00004		 |$M39969|
   00004	e3510000	 cmp         r1, #0
   00008	e1a04000	 mov         r4, r0
 
@@ -954,7 +954,7 @@
 
   00048	e8bd4010	 ldmia       sp!, {r4, lr}
   0004c	e12fff1e	 bx          lr
-  00050		 |$M39968|
+  00050		 |$M39970|
 
 			 ENDP  ; |?SetT2USBXvcrActive@T2PowerBus_t@@IAAHH@Z|, T2PowerBus_t::SetT2USBXvcrActive
 
@@ -962,7 +962,7 @@
 	IMPORT	|NKDbgPrintfW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39993| DCD	|$LN28@PreDeviceP|
+|$T39995| DCD	|$LN28@PreDeviceP|
 	DCD	0x40005801
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -983,7 +983,7 @@
 
   00000		 |$LN28@PreDeviceP|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M39990|
+  00004		 |$M39992|
   00004	e1a05003	 mov         r5, r3
   00008	e1a06001	 mov         r6, r1
   0000c	e1a07000	 mov         r7, r0
@@ -1213,14 +1213,14 @@
   0015c		 |$LN29@PreDeviceP|
   0015c		 |$LN30@PreDeviceP|
   0015c	00000000	 DCD         |??_C@_1EE@KKLMMNFE@?$AA?$CL?$AAP?$AAr?$AAe?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAP?$AAo?$AAw?$AAe?$AAr?$AAS?$AAt?$AAa?$AAt?$AAe?$AAC?$AAh?$AAa?$AAn?$AAg?$AAe?$AA?5?$AA?9?$AA?5?$AA?$CF?$AAd?$AA?$AN@|
-  00160		 |$M39991|
+  00160		 |$M39993|
 
 			 ENDP  ; |?PreDevicePowerStateChange@T2PowerBus_t@@UAAKKW4_CEDEVICE_POWER_STATE@@0@Z|, T2PowerBus_t::PreDevicePowerStateChange
 
 	EXPORT	|??_C@_1EG@FOGELPDI@?$AA?$CL?$AAP?$AAo?$AAs?$AAt?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAP?$AAo?$AAw?$AAe?$AAr?$AAS?$AAt?$AAa?$AAt?$AAe?$AAC?$AAh?$AAa?$AAn?$AAg?$AAe?$AA?5?$AA?9?$AA?5?$AA?$CF?$AAd@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40018| DCD	|$LN28@PostDevice|
+|$T40020| DCD	|$LN28@PostDevice|
 	DCD	0x40005b01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1241,7 +1241,7 @@
 
   00000		 |$LN28@PostDevice|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M40015|
+  00004		 |$M40017|
   00004	e1a05003	 mov         r5, r3
   00008	e1a07001	 mov         r7, r1
   0000c	e1a06000	 mov         r6, r0
@@ -1474,7 +1474,7 @@
   00168		 |$LN29@PostDevice|
   00168		 |$LN30@PostDevice|
   00168	00000000	 DCD         |??_C@_1EG@FOGELPDI@?$AA?$CL?$AAP?$AAo?$AAs?$AAt?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAP?$AAo?$AAw?$AAe?$AAr?$AAS?$AAt?$AAa?$AAt?$AAe?$AAC?$AAh?$AAa?$AAn?$AAg?$AAe?$AA?5?$AA?9?$AA?5?$AA?$CF?$AAd@|
-  0016c		 |$M40016|
+  0016c		 |$M40018|
 
 			 ENDP  ; |?PostDevicePowerStateChange@T2PowerBus_t@@UAAKKW4_CEDEVICE_POWER_STATE@@0@Z|, T2PowerBus_t::PostDevicePowerStateChange
 

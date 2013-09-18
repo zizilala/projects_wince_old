@@ -11,7 +11,7 @@
 ; File c:\wince600\platform\z2170p\src\app\common\utils.cxx
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32504| DCD	|$LN14@IsOptionCh|
+|$T32506| DCD	|$LN14@IsOptionCh|
 	DCD	0x40001401
 ; Function compile flags: /Ogspy
 
@@ -23,7 +23,7 @@
 
   00000		 |$LN14@IsOptionCh|
   00000	e24dd004	 sub         sp, sp, #4
-  00004		 |$M32501|
+  00004		 |$M32503|
   00004	e1a01000	 mov         r1, r0
 
 ; 21   :    const char acOptionChars[] = { _T('/'), _T('-') };
@@ -70,7 +70,7 @@
 
   00048	a28dd004	 addge       sp, sp, #4
   0004c	e12fff1e	 bx          lr
-  00050		 |$M32502|
+  00050		 |$M32504|
 
 			 ENDP  ; |?IsOptionChar@@YAHG@Z|, IsOptionChar
 
@@ -78,7 +78,7 @@
 	IMPORT	|_wcsicmp|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32525| DCD	|$LN19@GetOptionF|
+|$T32527| DCD	|$LN19@GetOptionF|
 	DCD	0x40002d01
 ; Function compile flags: /Ogspy
 
@@ -90,7 +90,7 @@
 
   00000		 |$LN19@GetOptionF|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
-  00004		 |$M32522|
+  00004		 |$M32524|
   00004	e1a0a002	 mov         r10, r2
   00008	e1a07001	 mov         r7, r1
   0000c	e1a04000	 mov         r4, r0
@@ -189,7 +189,7 @@
   000a8	e1a00008	 mov         r0, r8
   000ac	e8bd47f0	 ldmia       sp!, {r4 - r10, lr}
   000b0	e12fff1e	 bx          lr
-  000b4		 |$M32523|
+  000b4		 |$M32525|
 
 			 ENDP  ; |?GetOptionFlag@@YAHPAHQAPAGPBG@Z|, GetOptionFlag
 
@@ -198,7 +198,7 @@
 	IMPORT	|wcslen|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32548| DCD	|$LN20@GetOptionS|
+|$T32550| DCD	|$LN20@GetOptionS|
 	DCD	0x40004101
 ; Function compile flags: /Ogspy
 
@@ -210,7 +210,7 @@
 
   00000		 |$LN20@GetOptionS|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
-  00004		 |$M32545|
+  00004		 |$M32547|
   00004	e1a0b002	 mov         r11, r2
   00008	e1a09001	 mov         r9, r1
   0000c	e1a04000	 mov         r4, r0
@@ -338,14 +338,14 @@
   000f8	e1a00006	 mov         r0, r6
   000fc	e8bd4ff0	 ldmia       sp!, {r4 - r11, lr}
   00100	e12fff1e	 bx          lr
-  00104		 |$M32546|
+  00104		 |$M32548|
 
 			 ENDP  ; |?GetOptionString@@YAPAGPAHQAPAGPBG@Z|, GetOptionString
 
 	EXPORT	|?GetOptionLong@@YAJPAHQAPAGJPBG@Z|	; GetOptionLong
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32567| DCD	|$LN24@GetOptionL|
+|$T32569| DCD	|$LN24@GetOptionL|
 	DCD	0x40003701
 ; Function compile flags: /Ogspy
 
@@ -357,7 +357,7 @@
 
   00000		 |$LN24@GetOptionL|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M32564|
+  00004		 |$M32566|
   00004	e1a04002	 mov         r4, r2
 
 ; 87   :    LPTSTR szValue = NULL;
@@ -376,7 +376,7 @@
 ; 93   :    if (szValue == NULL) {
 ; 94   :       nResult = lDefault;
 
-  0001c	0a00002b	 beq         |$cleanUp$32423|
+  0001c	0a00002b	 beq         |$cleanUp$32425|
 
 ; 95   :       goto cleanUp;
 ; 96   :    }
@@ -505,7 +505,7 @@
 
   000c8	e3560000	 cmp         r6, #0
   000cc	12644000	 rsbne       r4, r4, #0
-  000d0		 |$cleanUp$32423|
+  000d0		 |$cleanUp$32425|
 
 ; 136  : 
 ; 137  : cleanUp:
@@ -515,7 +515,7 @@
   000d0	e1a00004	 mov         r0, r4
   000d4	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   000d8	e12fff1e	 bx          lr
-  000dc		 |$M32565|
+  000dc		 |$M32567|
 
 			 ENDP  ; |?GetOptionLong@@YAJPAHQAPAGJPBG@Z|, GetOptionLong
 
@@ -523,7 +523,7 @@
 	IMPORT	|iswctype|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32593| DCD	|$LN31@CommandLin|
+|$T32595| DCD	|$LN31@CommandLin|
 	DCD	0x40003e01
 ; Function compile flags: /Ogspy
 
@@ -535,7 +535,7 @@
 
   00000		 |$LN31@CommandLin|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
-  00004		 |$M32590|
+  00004		 |$M32592|
   00004	e1a07002	 mov         r7, r2
   00008	e1a05001	 mov         r5, r1
   0000c	e1b04000	 movs        r4, r0
@@ -691,7 +691,7 @@
 
   000f0	e8bd47f0	 ldmia       sp!, {r4 - r10, lr}
   000f4	e12fff1e	 bx          lr
-  000f8		 |$M32591|
+  000f8		 |$M32593|
 
 			 ENDP  ; |?CommandLineToArgs@@YAXQAGPAHQAPAG@Z|, CommandLineToArgs
 

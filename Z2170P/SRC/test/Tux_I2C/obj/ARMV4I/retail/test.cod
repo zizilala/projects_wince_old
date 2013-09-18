@@ -40,7 +40,7 @@
 ; File c:\wince600\platform\z2170p\src\test\tux_i2c\test.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32651| DCD	|$LN40@WriteThrea|
+|$T32653| DCD	|$LN40@WriteThrea|
 	DCD	0x4000c002
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -153,7 +153,7 @@
   00000		 |$LN40@WriteThrea|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M32648|
+  00008		 |$M32650|
 
 ; 81   :     HANDLE hI2c = 0;
 ; 82   :     PBYTE pOutBuffer = NULL;
@@ -291,7 +291,7 @@
 
 ; 111  :         bRet = FALSE;
 
-  000fc		 |$CLOSE$32558|
+  000fc		 |$CLOSE$32560|
 
 ; 171  :     
 ; 172  : CLOSE:
@@ -539,7 +539,7 @@
 ; 111  :         bRet = FALSE;
 
   002b0	e3a07000	 mov         r7, #0
-  002b4	eaffff90	 b           |$CLOSE$32558|
+  002b4	eaffff90	 b           |$CLOSE$32560|
   002b8		 |$LN41@WriteThrea|
   002b8		 |$LN42@WriteThrea|
   002b8	00000000	 DCD         |??_C@_1EM@CJGILEGP@?$AAC?$AAo?$AAu?$AAl?$AAd?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAo?$AAp?$AAe?$AAn?$AA?5?$AAI?$AA2?$AAC?$AA?5?$AAp?$AAo?$AAr?$AAt?$AA?4?$AA?5?$AAE?$AAr?$AAr?$AAo?$AAr?$AA?5?$AA?$DN@|
@@ -577,7 +577,7 @@
   002f8	00000000	 DCD         |??_C@_1DC@FOPDDBKF@?$AAS?$AAt?$AAa?$AAr?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAI?$AA2?$AAc?$AA?5?$AAT?$AAh?$AAr?$AAe?$AAa?$AAd?$AA?5?$AA?$CF?$AAd?$AA?$AN?$AA?6?$AA?$AA@|
   002fc		 |$LN59@WriteThrea|
   002fc	00000000	 DCD         |?g_pKato@@3PAVCKato@@A|
-  00300		 |$M32649|
+  00300		 |$M32651|
 
 			 ENDP  ; |?WriteThread@@YAKPAX@Z|, WriteThread
 
@@ -593,7 +593,7 @@
 	IMPORT	|?g_Port@@3KA|				; g_Port
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32689| DCD	|$LN20@TestI2CMul|
+|$T32691| DCD	|$LN20@TestI2CMul|
 	DCD	0x40007202
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -648,7 +648,7 @@
   00000		 |$LN20@TestI2CMul|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M32686|
+  00008		 |$M32688|
 
 ; 37   :     HANDLE *ThreadHandles = NULL;
 ; 38   :     DWORD *ThreadId = NULL;
@@ -749,7 +749,7 @@
 
   00100	e3a04000	 mov         r4, #0
   00104	e3530000	 cmp         r3, #0
-  00108	0a000012	 beq         |$CLOSE$32539|
+  00108	0a000012	 beq         |$CLOSE$32541|
   0010c		 |$LL7@TestI2CMul|
 
 ; 55   :     {
@@ -769,7 +769,7 @@
   00128	e2855004	 add         r5, r5, #4
   0012c	e1540003	 cmp         r4, r3
   00130	3afffff5	 bcc         |$LL7@TestI2CMul|
-  00134	ea000007	 b           |$CLOSE$32539|
+  00134	ea000007	 b           |$CLOSE$32541|
   00138		 |$LN15@TestI2CMul|
 
 ; 59   :         {
@@ -783,7 +783,7 @@
   0014c	e3e03000	 mvn         r3, #0
   00150	e1a0e00f	 mov         lr, pc
   00154	e12fff14	 bx          r4
-  00158		 |$CLOSE$32539|
+  00158		 |$CLOSE$32541|
 
 ; 61   :             goto CLOSE;
 ; 62   :         }
@@ -851,7 +851,7 @@
   001c0	00000000	 DCD         |??_C@_1CI@DADHNEGA@?$AAS?$AAt?$AAa?$AAr?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAI?$AA2?$AAC?$AAT?$AAe?$AAs?$AAt?$AA?5?$AA?$AN?$AA?6?$AA?$AA@|
   001c4		 |$LN34@TestI2CMul|
   001c4	00000000	 DCD         |?g_pKato@@3PAVCKato@@A|
-  001c8		 |$M32687|
+  001c8		 |$M32689|
 
 			 ENDP  ; |?TestI2CMultipleInstances@@YAHIPAKPAU_FUNCTION_TABLE_ENTRY@@@Z|, TestI2CMultipleInstances
 

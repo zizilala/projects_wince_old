@@ -12,7 +12,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33681| DCD	|$LN5@SetEvent|
+|$T33693| DCD	|$LN5@SetEvent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -24,7 +24,7 @@
 
   00000		 |$LN5@SetEvent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M33678|
+  00004		 |$M33690|
 
 ; 236  : 	return EventModify(h,EVENT_SET);
 
@@ -35,14 +35,14 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M33679|
+  00014		 |$M33691|
 
 			 ENDP  ; |SetEvent|
 
 	EXPORT	|GetCurrentThread|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33690| DCD	|$LN5@GetCurrent|
+|$T33702| DCD	|$LN5@GetCurrent|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -53,7 +53,7 @@
 ; 351  : _inline HANDLE GetCurrentThread(void) {
 
   00000		 |$LN5@GetCurrent|
-  00000		 |$M33687|
+  00000		 |$M33699|
 
 ; 352  : 	return ((HANDLE)(SH_CURTHREAD+SYS_HANDLE_BASE));
 
@@ -62,7 +62,7 @@
 ; 353  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M33688|
+  00008		 |$M33700|
 
 			 ENDP  ; |GetCurrentThread|
 
@@ -70,7 +70,7 @@
 	IMPORT	|__GetUserKData|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33699| DCD	|$LN5@GetCurrent@2|
+|$T33711| DCD	|$LN5@GetCurrent@2|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -82,7 +82,7 @@
 
   00000		 |$LN5@GetCurrent@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M33696|
+  00004		 |$M33708|
 
 ; 370  :     return __GetUserKData (SYSHANDLE_OFFSET + (SH_CURTHREAD * sizeof(HANDLE)));
 
@@ -93,7 +93,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M33697|
+  00014		 |$M33709|
 
 			 ENDP  ; |GetCurrentThreadId|
 
@@ -107,41 +107,41 @@
 ; File c:\wince600\public\common\sdk\inc\celog.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33713| DCD	|$LN7@CeLogMsg|
+|$T33725| DCD	|$LN7@CeLogMsg|
 	DCD	0xc0002a04
 
   00000			 AREA	 |.xdata|, DATA
-|$T33709| DCD	0xffffffe0
+|$T33721| DCD	0xffffffe0
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T33709|
+  00004	00000000	 DCD         |$T33721|
 
   00008		 |CeLogMsg| PROC
 
-; 1015 : {
+; 1020 : {
 
   00008		 |$LN7@CeLogMsg|
   00008	e1a0c00d	 mov         r12, sp
   0000c	e92d000f	 stmdb       sp!, {r0 - r3}
   00010	e92d5010	 stmdb       sp!, {r4, r12, lr}
   00014	e24dde22	 sub         sp, sp, #0x22, 28
-  00018		 |$M33710|
+  00018		 |$M33722|
   00018	e58d022c	 str         r0, [sp, #0x22C]
   0001c	e59f3088	 ldr         r3, [pc, #0x88]
   00020	e5933000	 ldr         r3, [r3]
   00024	e58d321c	 str         r3, [sp, #0x21C]
 
-; 1016 :     va_list arglist;
-; 1017 :     WCHAR   szTemp[MAX_PATH];
-; 1018 :     size_t  cchLen;
-; 1019 :     HRESULT hr;
-; 1020 : 
-; 1021 :     // Compose a single string using the input args
-; 1022 :     va_start(arglist, szFormat);
-; 1023 :     hr = StringCchVPrintfW(szTemp, MAX_PATH, szFormat, arglist);
+; 1021 :     va_list arglist;
+; 1022 :     WCHAR   szTemp[MAX_PATH];
+; 1023 :     size_t  cchLen;
+; 1024 :     HRESULT hr;
+; 1025 : 
+; 1026 :     // Compose a single string using the input args
+; 1027 :     va_start(arglist, szFormat);
+; 1028 :     hr = StringCchVPrintfW(szTemp, MAX_PATH, szFormat, arglist);
 
   00028	e1a02000	 mov         r2, r0
   0002c	e28d0014	 add         r0, sp, #0x14
@@ -150,11 +150,11 @@
   00038	eb000000	 bl          StringCchVPrintfW
   0003c	e3500000	 cmp         r0, #0
 
-; 1024 :     if (SUCCEEDED(hr)) {
+; 1029 :     if (SUCCEEDED(hr)) {
 
   00040	4a000014	 bmi         |$LN1@CeLogMsg|
 
-; 1025 :         hr = StringCchLengthW(szTemp, MAX_PATH, &cchLen);
+; 1030 :         hr = StringCchLengthW(szTemp, MAX_PATH, &cchLen);
 
   00044	e28d2010	 add         r2, sp, #0x10
   00048	e3a01f41	 mov         r1, #0x41, 30
@@ -162,12 +162,12 @@
   00050	eb000000	 bl          StringCchLengthW
   00054	e3500000	 cmp         r0, #0
 
-; 1026 :         if (SUCCEEDED(hr)) {
+; 1031 :         if (SUCCEEDED(hr)) {
 
   00058	4a00000e	 bmi         |$LN1@CeLogMsg|
 
-; 1027 :             CeLogData(TRUE, CELID_RAW_WCHAR, szTemp, (WORD)((cchLen + 1) * sizeof(WCHAR)),
-; 1028 :                       0, CELZONE_ALWAYSON, 0, FALSE);
+; 1032 :             CeLogData(TRUE, CELID_RAW_WCHAR, szTemp, (WORD)((cchLen + 1) * sizeof(WCHAR)),
+; 1033 :                       0, CELZONE_ALWAYSON, 0, FALSE);
 
   0005c	e59d3010	 ldr         r3, [sp, #0x10]
   00060	e3a04101	 mov         r4, #1, 2
@@ -188,9 +188,9 @@
   00098	e59d021c	 ldr         r0, [sp, #0x21C]
   0009c	eb000000	 bl          __security_check_cookie
 
-; 1029 :         }
-; 1030 :     }
-; 1031 : }
+; 1034 :         }
+; 1035 :     }
+; 1036 : }
 
   000a0	e28dde22	 add         sp, sp, #0x22, 28
   000a4	e89d6010	 ldmia       sp, {r4, sp, lr}
@@ -198,7 +198,7 @@
   000ac		 |$LN8@CeLogMsg|
   000ac		 |$LN9@CeLogMsg|
   000ac	00000000	 DCD         |__security_cookie|
-  000b0		 |$M33711|
+  000b0		 |$M33723|
 
 			 ENDP  ; |CeLogMsg|
 
@@ -221,7 +221,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33751| DCD	|$LN33@ResumeThre|
+|$T33763| DCD	|$LN33@ResumeThre|
 	DCD	0x40004f02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -289,7 +289,7 @@
   00000		 |$LN33@ResumeThre|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M33748|
+  00008		 |$M33760|
   00008	e1a05000	 mov         r5, r0
 
 ; 36   :     DWORD dwStatus;
@@ -471,7 +471,7 @@
   00134	00000000	 DCD         |??_C@_1CK@KPKINJCK@?$AA?$CL?$AA?$CF?$AAs?$AA?3?$AA?5?$AAt?$AAh?$AAr?$AAe?$AAa?$AAd?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?$AN?$AA?6?$AA?$AA@|
   00138		 |$LN44@ResumeThre|
   00138	00000000	 DCD         |dpCurSettings|
-  0013c		 |$M33749|
+  0013c		 |$M33761|
 
 			 ENDP  ; |ResumeThreadProc|
 
@@ -480,7 +480,7 @@
 	IMPORT	|CeSetPowerOnEvent|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33770| DCD	|$LN8@PmPowerHan|
+|$T33782| DCD	|$LN8@PmPowerHan|
 	DCD	0x40000f01
 ; Function compile flags: /Ogspy
 
@@ -492,7 +492,7 @@
 
   00000		 |$LN8@PmPowerHan|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M33767|
+  00004		 |$M33779|
   00004	e3500000	 cmp         r0, #0
 
 ; 88   :     if(!bOff) {
@@ -527,7 +527,7 @@
   00034	00000000	 DCD         |ghevTimerResume|
   00038		 |$LN11@PmPowerHan|
   00038	00000000	 DCD         |ghevResume|
-  0003c		 |$M33768|
+  0003c		 |$M33780|
 
 			 ENDP  ; |PmPowerHandler|
 

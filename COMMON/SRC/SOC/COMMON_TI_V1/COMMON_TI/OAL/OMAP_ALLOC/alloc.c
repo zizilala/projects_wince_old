@@ -35,10 +35,10 @@ void OALLocalAllocInit(UCHAR* buffer,DWORD size)
 {
     DWORD mapSize;
 
-    DEBUGMSG(0,(TEXT("OALLocalAllocInit (0x%x,0x%x)\r\n"),buffer,size));
+    DEBUGMSG(0, (TEXT("OALLocalAllocInit (0x%x,0x%x)\r\n"), buffer,size));
     
-    nbBlock = (size+BLOCK_SIZE- 1)/ BLOCK_SIZE;	//128
-    mapSize = (nbBlock+(8*sizeof(*map))-1) / (8*sizeof(*map));//16
+    nbBlock = (size + BLOCK_SIZE - 1)/ BLOCK_SIZE;	//128
+    mapSize = (nbBlock + (8*sizeof(*map))-1) / (8*sizeof(*map));//16
     poolSize = size - (mapSize*sizeof(*map)); //496
     nbBlock = (poolSize+BLOCK_SIZE- 1)/ BLOCK_SIZE;    //124
     map = buffer;

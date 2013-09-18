@@ -82,7 +82,7 @@
 ; File c:\wince600\platform\z2170p\src\kitl\kitldll\kitl.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46567| DCD	|$LN7@OALKitlGet|
+|$T46570| DCD	|$LN7@OALKitlGet|
 	DCD	0x40000e01
 ; Function compile flags: /Ogspy
 
@@ -94,7 +94,7 @@
 
   00000		 |$LN7@OALKitlGet|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46564|
+  00004		 |$M46567|
   00004	e3500000	 cmp         r0, #0
 
 ; 68   :     if(pDevLoc)
@@ -135,14 +135,14 @@
   00034		 |$LN8@OALKitlGet|
   00034		 |$LN9@OALKitlGet|
   00034	00000000	 DCD         |g_kitlState|
-  00038		 |$M46565|
+  00038		 |$M46568|
 
 			 ENDP  ; |OALKitlGetDevLoc|
 
 	EXPORT	|OALKitlGetFlags|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46579| DCD	|$LN6@OALKitlGet@2|
+|$T46582| DCD	|$LN6@OALKitlGet@2|
 	DCD	0x40000700
 ; Function compile flags: /Ogspy
 
@@ -153,7 +153,7 @@
 ; 86   : {
 
   00000		 |$LN6@OALKitlGet@2|
-  00000		 |$M46576|
+  00000		 |$M46579|
   00000	e3500000	 cmp         r0, #0
 
 ; 87   :     if(pFlags)
@@ -175,7 +175,7 @@
   00018		 |$LN7@OALKitlGet@2|
   00018		 |$LN8@OALKitlGet@2|
   00018	00000000	 DCD         |g_kitlState|
-  0001c		 |$M46577|
+  0001c		 |$M46580|
 
 			 ENDP  ; |OALKitlGetFlags|
 
@@ -185,7 +185,7 @@
 	IMPORT	|dpCurSettings|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46591| DCD	|$LN7@KitlLogSet|
+|$T46594| DCD	|$LN7@KitlLogSet|
 	DCD	0x40000b01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -209,7 +209,7 @@
 
   00000		 |$LN7@KitlLogSet|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46588|
+  00004		 |$M46591|
   00004	e1a01000	 mov         r1, r0
 
 ; 102  :     // Update dpCurSettings mask which actually controls the zones
@@ -237,7 +237,7 @@
   00024	00000000	 DCD         |??_C@_1GM@LBPDAPNJ@?$AAI?$AAN?$AAF?$AAO?$AA?3?$AAO?$AAA?$AAL?$AAL?$AAo?$AAg?$AAS?$AAe?$AAt?$AAZ?$AAo?$AAn?$AAe?$AAs?$AA?3?$AA?5?$AAd?$AAp?$AAC?$AAu?$AAr?$AAS?$AAe?$AAt?$AAt?$AAi?$AAn@|
   00028		 |$LN10@KitlLogSet|
   00028	00000000	 DCD         |dpCurSettings|
-  0002c		 |$M46589|
+  0002c		 |$M46592|
 
 			 ENDP  ; |KitlLogSetZones|
 
@@ -268,7 +268,7 @@
 	IMPORT	|KITLOutputDebugString|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46647| DCD	|$LN48@OALKitlIni|
+|$T46650| DCD	|$LN48@OALKitlIni|
 	DCD	0x4000ae02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -359,7 +359,7 @@
   00000		 |$LN48@OALKitlIni|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M46644|
+  00008		 |$M46647|
   00008	e1a07002	 mov         r7, r2
   0000c	e1a06001	 mov         r6, r1
   00010	e1a09000	 mov         r9, r0
@@ -559,7 +559,7 @@
 ; 260  :     rc = TRUE;
 
   00198	e3a08001	 mov         r8, #1
-  0019c		 |$cleanUp$46453|
+  0019c		 |$cleanUp$46456|
 
 ; 169  :     BOOL rc = FALSE;
 ; 170  : 
@@ -615,7 +615,7 @@
 ; 236  :         ));
 
   001e0	e3130902	 tst         r3, #2, 18
-  001e4	0affffec	 beq         |$cleanUp$46453|
+  001e4	0affffec	 beq         |$cleanUp$46456|
   001e8	e596300c	 ldr         r3, [r6, #0xC]
   001ec	e5962008	 ldr         r2, [r6, #8]
   001f0	e5961004	 ldr         r1, [r6, #4]
@@ -624,7 +624,7 @@
 
 ; 237  :         goto cleanUp;
 
-  001fc	eaffffe6	 b           |$cleanUp$46453|
+  001fc	eaffffe6	 b           |$cleanUp$46456|
   00200		 |$LN2@OALKitlIni|
 
 ; 238  :     }
@@ -676,13 +676,13 @@
 ; 256  :         KITL_RETAILMSG(ZONE_ERROR, ("ERROR: OALKitlInit: KitlInit failed\r\n"));
 
   00250	e3130902	 tst         r3, #2, 18
-  00254	0affffd0	 beq         |$cleanUp$46453|
+  00254	0affffd0	 beq         |$cleanUp$46456|
   00258	e59f0004	 ldr         r0, [pc, #4]
   0025c	eb000000	 bl          KITLOutputDebugString
 
 ; 257  :         goto cleanUp;
 
-  00260	eaffffcd	 b           |$cleanUp$46453|
+  00260	eaffffcd	 b           |$cleanUp$46456|
   00264		 |$LN49@OALKitlIni|
   00264		 |$LN50@OALKitlIni|
   00264	00000000	 DCD         |??_C@_0CG@NCCHEHBN@ERROR?3?5OALKitlInit?3?5KitlInit?5fai@|
@@ -726,7 +726,7 @@
   002b0	00000000	 DCD         |??_C@_0DF@BBIFGKFF@?$CLOALKitlInit?$CI?8?$CFhs?8?0?50x?$CF08x?5?9?5?$CFd?1@|
   002b4		 |$LN70@OALKitlIni|
   002b4	00000000	 DCD         |dpCurSettings|
-  002b8		 |$M46645|
+  002b8		 |$M46648|
 
 			 ENDP  ; |OALKitlInit|
 
@@ -736,7 +736,7 @@
 	IMPORT	|OEMKitlEnable|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46682| DCD	|$LN15@OALKitlPow|
+|$T46685| DCD	|$LN15@OALKitlPow|
 	DCD	0x40002801
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -756,7 +756,7 @@
 
   00000		 |$LN15@OALKitlPow|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M46679|
+  00004		 |$M46682|
 
 ; 277  :     KITL_RETAILMSG(ZONE_KITL_OAL, ("+OALKitlPowerOff\r\n"));
 
@@ -849,7 +849,7 @@
   00098	00000000	 DCD         |??_C@_0BD@PMDBLEBO@?$CLOALKitlPowerOff?$AN?6?$AA@|
   0009c		 |$LN20@OALKitlPow|
   0009c	00000000	 DCD         |dpCurSettings|
-  000a0		 |$M46680|
+  000a0		 |$M46683|
 
 			 ENDP  ; |OALKitlPowerOff|
 
@@ -858,7 +858,7 @@
 	EXPORT	|??_C@_0BC@KGJOBBKM@?$CLOALKitlPowerOn?$AN?6?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46700| DCD	|$LN15@OALKitlPow@2|
+|$T46703| DCD	|$LN15@OALKitlPow@2|
 	DCD	0x40002501
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -878,7 +878,7 @@
 
   00000		 |$LN15@OALKitlPow@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M46697|
+  00004		 |$M46700|
 
 ; 314  :     KITL_RETAILMSG(ZONE_KITL_OAL, ("+OALKitlPowerOn\r\n"));
 
@@ -970,7 +970,7 @@
   0008c	00000000	 DCD         |??_C@_0BC@KGJOBBKM@?$CLOALKitlPowerOn?$AN?6?$AA@|
   00090		 |$LN20@OALKitlPow@2|
   00090	00000000	 DCD         |dpCurSettings|
-  00094		 |$M46698|
+  00094		 |$M46701|
 
 			 ENDP  ; |OALKitlPowerOn|
 
@@ -981,7 +981,7 @@
 	IMPORT	|OALKitlEthInit|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46722| DCD	|$LN17@OEMKitlIni|
+|$T46725| DCD	|$LN17@OEMKitlIni|
 	DCD	0x40002e01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1001,7 +1001,7 @@
 
   00000		 |$LN17@OEMKitlIni|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M46719|
+  00004		 |$M46722|
   00004	e1a04000	 mov         r4, r0
 
 ; 120  :     BOOL rc = FALSE;
@@ -1115,7 +1115,7 @@
   000b0	00000000	 DCD         |??_C@_0BH@DJPAMHLI@?$CLOEMKitlInit?$CI0x?$CF08x?$CJ?$AN?6?$AA@|
   000b4		 |$LN24@OEMKitlIni|
   000b4	00000000	 DCD         |dpCurSettings|
-  000b8		 |$M46720|
+  000b8		 |$M46723|
 
 			 ENDP  ; |OEMKitlInit|
 

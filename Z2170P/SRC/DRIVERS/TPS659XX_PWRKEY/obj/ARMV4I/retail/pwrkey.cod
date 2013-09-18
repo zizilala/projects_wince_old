@@ -176,7 +176,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46101| DCD	|$LN5@SetEvent|
+|$T46104| DCD	|$LN5@SetEvent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -188,7 +188,7 @@
 
   00000		 |$LN5@SetEvent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46098|
+  00004		 |$M46101|
 
 ; 236  : 	return EventModify(h,EVENT_SET);
 
@@ -199,7 +199,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M46099|
+  00014		 |$M46102|
 
 			 ENDP  ; |SetEvent|
 
@@ -211,7 +211,7 @@
 	IMPORT	|WaitForSingleObject|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46116| DCD	|$LN13@PKD_Deinit|
+|$T46119| DCD	|$LN13@PKD_Deinit|
 	DCD	0x40002901
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_pwrkey\pwrkey.c
@@ -224,7 +224,7 @@
 
   00000		 |$LN13@PKD_Deinit|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M46113|
+  00004		 |$M46116|
   00004	e1b04000	 movs        r4, r0
 
 ; 252  :     BOOL rc = FALSE;
@@ -238,11 +238,11 @@
 ; 257  :     // Check if we get correct context
 ; 258  :     if ((pDevice == NULL) || (pDevice->Cookie != PKD_DEVICE_COOKIE))
 
-  0000c	0a000021	 beq         |$cleanUp$45923|
+  0000c	0a000021	 beq         |$cleanUp$45926|
   00010	e5942000	 ldr         r2, [r4]
   00014	e59f3084	 ldr         r3, [pc, #0x84]
   00018	e1520003	 cmp         r2, r3
-  0001c	1a00001d	 bne         |$cleanUp$45923|
+  0001c	1a00001d	 bne         |$cleanUp$45926|
 
 ; 259  :     {
 ; 260  :         DEBUGMSG (ZONE_ERROR, (L"ERROR: PKD_Deinit: Incorrect context parameter\r\n"));
@@ -340,7 +340,7 @@
 ; 298  :     rc = TRUE;
 
   00094	e3a00001	 mov         r0, #1
-  00098		 |$cleanUp$45923|
+  00098		 |$cleanUp$45926|
 
 ; 299  : 
 ; 300  : cleanUp:
@@ -353,14 +353,14 @@
   000a0		 |$LN14@PKD_Deinit|
   000a0		 |$LN15@PKD_Deinit|
   000a0	4b504747	 DCD         0x4b504747
-  000a4		 |$M46114|
+  000a4		 |$M46117|
 
 			 ENDP  ; |PKD_Deinit|
 
 	EXPORT	|PKD_Open|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46128| DCD	|$LN5@PKD_Open|
+|$T46131| DCD	|$LN5@PKD_Open|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -371,7 +371,7 @@
 ; 317  : {
 
   00000		 |$LN5@PKD_Open|
-  00000		 |$M46125|
+  00000		 |$M46128|
 
 ; 318  :     UNREFERENCED_PARAMETER(context);
 ; 319  :     UNREFERENCED_PARAMETER(accessCode);
@@ -380,14 +380,14 @@
 ; 322  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M46126|
+  00004		 |$M46129|
 
 			 ENDP  ; |PKD_Open|
 
 	EXPORT	|PKD_Close|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46137| DCD	|$LN5@PKD_Close|
+|$T46140| DCD	|$LN5@PKD_Close|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -398,7 +398,7 @@
 ; 334  : {
 
   00000		 |$LN5@PKD_Close|
-  00000		 |$M46134|
+  00000		 |$M46137|
 
 ; 335  :     UNREFERENCED_PARAMETER(context);
 ; 336  :     return TRUE;
@@ -408,7 +408,7 @@
 ; 337  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M46135|
+  00008		 |$M46138|
 
 			 ENDP  ; |PKD_Close|
 
@@ -416,7 +416,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46149| DCD	|$LN8@PKD_PowerU|
+|$T46152| DCD	|$LN8@PKD_PowerU|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_pwrkey\pwrkey.c
@@ -429,7 +429,7 @@
 
   00000		 |$LN8@PKD_PowerU|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46146|
+  00004		 |$M46149|
 
 ; 352  :     PwrkeyDevice_t *pDevice = (PwrkeyDevice_t*)context;
 ; 353  : 
@@ -451,14 +451,14 @@
 
   00020	e49de004	 ldr         lr, [sp], #4
   00024	e12fff1e	 bx          lr
-  00028		 |$M46147|
+  00028		 |$M46150|
 
 			 ENDP  ; |PKD_PowerUp|
 
 	EXPORT	|PKD_PowerDown|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46156| DCD	|$LN5@PKD_PowerD|
+|$T46159| DCD	|$LN5@PKD_PowerD|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -469,13 +469,13 @@
 ; 369  : {
 
   00000		 |$LN5@PKD_PowerD|
-  00000		 |$M46153|
+  00000		 |$M46156|
 
 ; 370  :     UNREFERENCED_PARAMETER(context);
 ; 371  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M46154|
+  00004		 |$M46157|
 
 			 ENDP  ; |PKD_PowerDown|
 
@@ -484,7 +484,7 @@
 	IMPORT	|NKDbgPrintfW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46168| DCD	|$LN9@PKD_IOCont|
+|$T46171| DCD	|$LN9@PKD_IOCont|
 	DCD	0x40001201
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -508,7 +508,7 @@
 
   00000		 |$LN9@PKD_IOCont|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46165|
+  00004		 |$M46168|
   00004	e3500000	 cmp         r0, #0
 
 ; 390  :     BOOL rc = FALSE;
@@ -533,7 +533,7 @@
   0000c	e5902000	 ldr         r2, [r0]
   00010	e59f302c	 ldr         r3, [pc, #0x2C]
   00014	e1520003	 cmp         r2, r3
-  00018	0a000004	 beq         |$cleanUp$45979|
+  00018	0a000004	 beq         |$cleanUp$45982|
   0001c		 |$LN1@PKD_IOCont|
 
 ; 407  :     {
@@ -544,7 +544,7 @@
   00024	e3130001	 tst         r3, #1
   00028	159f000c	 ldrne       r0, [pc, #0xC]
   0002c	1b000000	 blne        NKDbgPrintfW
-  00030		 |$cleanUp$45979|
+  00030		 |$cleanUp$45982|
 
 ; 409  :         goto cleanUp;
 ; 410  :     }
@@ -566,7 +566,7 @@
   00040	00000000	 DCD         |dpCurSettings|
   00044		 |$LN13@PKD_IOCont|
   00044	4b504747	 DCD         0x4b504747
-  00048		 |$M46166|
+  00048		 |$M46169|
 
 			 ENDP  ; |PKD_IOControl|
 
@@ -586,7 +586,7 @@
 	IMPORT	|TWLReadRegs|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46194| DCD	|$LN32@PKD_IntrTh|
+|$T46197| DCD	|$LN32@PKD_IntrTh|
 	DCD	0x40007a02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -669,7 +669,7 @@
   00000		 |$LN32@PKD_IntrTh|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M46191|
+  00008		 |$M46194|
   00008	e1a04000	 mov         r4, r0
 
 ; 428  :     PwrkeyDevice_t *pDevice = (PwrkeyDevice_t*)pContext;
@@ -979,7 +979,7 @@
   001e0	00000000	 DCD         |??_C@_1FI@DIJPGJDD@?$AA?$CL?$AAP?$AAK?$AAD?$AA_?$AAI?$AAn?$AAt?$AAr?$AAT?$AAh?$AAr?$AAe?$AAa?$AAd?$AA?5?$AAW?$AAA?$AAI?$AAT?$AA_?$AAF?$AAO?$AAR?$AA_?$AAP?$AAW?$AAR?$AAK?$AAE?$AAY?$AA_@|
   001e4		 |$LN42@PKD_IntrTh|
   001e4	00000000	 DCD         |??_C@_1CE@ELOCDOAK@?$AA?$CL?$AAP?$AAK?$AAD?$AA_?$AAI?$AAn?$AAt?$AAr?$AAT?$AAh?$AAr?$AAe?$AAa?$AAd?$AA?$AN?$AA?6?$AA?$AA@|
-  001e8		 |$M46192|
+  001e8		 |$M46195|
 
 			 ENDP  ; |PKD_IntrThread|
 
@@ -988,7 +988,7 @@
 	IMPORT	|RegisterDbgZones|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46215| DCD	|$LN8@DllMain|
+|$T46218| DCD	|$LN8@DllMain|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -1000,7 +1000,7 @@
 
   00000		 |$LN8@DllMain|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M46212|
+  00004		 |$M46215|
   00004	e1a04000	 mov         r4, r0
 
 ; 535  :     UNREFERENCED_PARAMETER(pReserved);
@@ -1035,7 +1035,7 @@
   0002c		 |$LN9@DllMain|
   0002c		 |$LN10@DllMain|
   0002c	00000000	 DCD         |dpCurSettings|
-  00030		 |$M46213|
+  00030		 |$M46216|
 
 			 ENDP  ; |DllMain|
 
@@ -1054,7 +1054,7 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46232| DCD	|$LN15@PKD_Init|
+|$T46235| DCD	|$LN15@PKD_Init|
 	DCD	0x40006502
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1081,7 +1081,7 @@
   00000		 |$LN15@PKD_Init|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M46229|
+  00008		 |$M46232|
   00008	e1a02001	 mov         r2, r1
   0000c	e1a06000	 mov         r6, r0
 
@@ -1306,7 +1306,7 @@
 ; 230  :     rc = (DWORD)pDevice;
 
   00154	e1a05004	 mov         r5, r4
-  00158		 |$cleanUp$45887|
+  00158		 |$cleanUp$45890|
 
 ; 231  : 
 ; 232  : cleanUp:
@@ -1347,7 +1347,7 @@
   0018c	4b504747	 DCD         0x4b504747
   00190		 |$LN21@PKD_Init|
   00190	00000000	 DCD         |??_C@_1DA@PEDENKBK@?$AA?$CL?$AAP?$AAK?$AAD?$AA_?$AAI?$AAn?$AAi?$AAt?$AA?$CI?$AA?$CF?$AAs?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@|
-  00194		 |$M46230|
+  00194		 |$M46233|
 
 			 ENDP  ; |PKD_Init|
 

@@ -272,7 +272,7 @@
 ; File c:\wince600\platform\z2170p\src\oal\oallib\oem_latency.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47344| DCD	|$LN5@OALWakeupL|
+|$T47347| DCD	|$LN5@OALWakeupL|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -284,7 +284,7 @@
 
   00000		 |$LN5@OALWakeupL|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M47341|
+  00004		 |$M47344|
 
 ; 231  :     // check if constraint needs to be updated
 ; 232  :     EnterCriticalSection(&_csLatency);
@@ -299,14 +299,14 @@
   00014		 |$LN6@OALWakeupL|
   00014		 |$LN7@OALWakeupL|
   00014	00000000	 DCD         |_csLatency|
-  00018		 |$M47342|
+  00018		 |$M47345|
 
 			 ENDP  ; |_OALWakeupLatency_Lock|
 
 	IMPORT	|LeaveCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47353| DCD	|$LN5@OALWakeupL@2|
+|$T47356| DCD	|$LN5@OALWakeupL@2|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -318,7 +318,7 @@
 
   00000		 |$LN5@OALWakeupL@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M47350|
+  00004		 |$M47353|
 
 ; 245  :     // check if constraint needs to be updated
 ; 246  :     LeaveCriticalSection(&_csLatency);
@@ -333,7 +333,7 @@
   00014		 |$LN6@OALWakeupL@2|
   00014		 |$LN7@OALWakeupL@2|
   00014	00000000	 DCD         |_csLatency|
-  00018		 |$M47351|
+  00018		 |$M47354|
 
 			 ENDP  ; |_OALWakeupLatency_Unlock|
 
@@ -356,7 +356,7 @@
 |_rgLatencyTable| % 0x1e0
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47390| DCD	|$LN17@OALWakeupL@3|
+|$T47393| DCD	|$LN17@OALWakeupL@3|
 	DCD	0x4000be02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -396,7 +396,7 @@
   00000		 |$LN17@OALWakeupL@3|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd028	 sub         sp, sp, #0x28
-  00008		 |$M47387|
+  00008		 |$M47390|
 
 ; 260  :     int i;
 ; 261  :     DWORD voltSetup1;
@@ -751,14 +751,14 @@
   002f0	00000000	 DCD         |g_pPrcmPrm|
   002f4		 |$LN24@OALWakeupL@3|
   002f4	00000000	 DCD         |_rgLatencyTable|
-  002f8		 |$M47388|
+  002f8		 |$M47391|
 
 			 ENDP  ; |OALWakeupLatency_Initialize|
 
 	EXPORT	|OALWakeupLatency_SetOffModeConstraint|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47405| DCD	|$LN6@OALWakeupL@4|
+|$T47408| DCD	|$LN6@OALWakeupL@4|
 	DCD	0x40000900
 ; Function compile flags: /Ogspy
 
@@ -769,7 +769,7 @@
 ; 371  : {
 
   00000		 |$LN6@OALWakeupL@4|
-  00000		 |$M47402|
+  00000		 |$M47405|
 
 ; 372  :     // CORE can go OFF only after RNG Reset Complete (2 ^ 26 * L4 Clock cycles)         
 ; 373  :     s_coreOffWaitTickCount = tcrr + RNG_RESET_DELAY;
@@ -797,7 +797,7 @@
   00020		 |$LN7@OALWakeupL@4|
   00020		 |$LN8@OALWakeupL@4|
   00020	00000000	 DCD         |s_coreOffWaitTickCount|
-  00024		 |$M47403|
+  00024		 |$M47406|
 
 			 ENDP  ; |OALWakeupLatency_SetOffModeConstraint|
 
@@ -816,7 +816,7 @@
 |_powerDomainNeonState| % 0x4
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47426| DCD	|$LN24@OALWakeupL@5|
+|$T47429| DCD	|$LN24@OALWakeupL@5|
 	DCD	0x40008a02
 ; Function compile flags: /Ogspy
 
@@ -829,7 +829,7 @@
   00000		 |$LN24@OALWakeupL@5|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M47423|
+  00008		 |$M47426|
   00008	e1a08000	 mov         r8, r0
 
 ; 395  :     DWORD mpuState;
@@ -1191,7 +1191,7 @@
   00220	00000000	 DCD         |_powerDomainPerState|
   00224		 |$LN30@OALWakeupL@5|
   00224	00000000	 DCD         |g_pPrcmPrm|
-  00228		 |$M47424|
+  00228		 |$M47427|
 
 			 ENDP  ; |OALWakeupLatency_PushState|
 
@@ -1201,7 +1201,7 @@
 	IMPORT	|OALIOPadWakeupEnableStatus|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47439| DCD	|$LN7@OALWakeupL@6|
+|$T47442| DCD	|$LN7@OALWakeupL@6|
 	DCD	0x40002501
 ; Function compile flags: /Ogspy
 
@@ -1213,7 +1213,7 @@
 
   00000		 |$LN7@OALWakeupL@6|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M47436|
+  00004		 |$M47439|
 
 ; 544  :     // change states back to previous states.  This should be done
 ; 545  :     // by hitting the hardware registers directly so that the prcm library
@@ -1301,14 +1301,14 @@
   0008c	00000000	 DCD         |_powerDomainPerState|
   00090		 |$LN12@OALWakeupL@6|
   00090	00000000	 DCD         |g_pPrcmPrm|
-  00094		 |$M47437|
+  00094		 |$M47440|
 
 			 ENDP  ; |OALWakeupLatency_PopState|
 
 	EXPORT	|OALWakeupLatency_GetCurrentState|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47456| DCD	|$LN18@OALWakeupL@7|
+|$T47459| DCD	|$LN18@OALWakeupL@7|
 	DCD	0x40002f01
 ; Function compile flags: /Ogspy
 
@@ -1320,7 +1320,7 @@
 
   00000		 |$LN18@OALWakeupL@7|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M47453|
+  00004		 |$M47456|
 
 ; 580  :     DWORD rc;
 ; 581  : 
@@ -1462,14 +1462,14 @@
   000b4	00000000	 DCD         |_domainInactiveMask|
   000b8		 |$LN21@OALWakeupL@7|
   000b8	00000000	 DCD         |_vddMpu|
-  000bc		 |$M47454|
+  000bc		 |$M47457|
 
 			 ENDP  ; |OALWakeupLatency_GetCurrentState|
 
 	EXPORT	|OALWakeupLatency_GetDelayInTicks|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47469| DCD	|$LN7@OALWakeupL@8|
+|$T47472| DCD	|$LN7@OALWakeupL@8|
 	DCD	0x40001601
 ; Function compile flags: /Ogspy
 
@@ -1481,7 +1481,7 @@
 
   00000		 |$LN7@OALWakeupL@8|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M47466|
+  00004		 |$M47469|
 
 ; 626  :     if ((state >= LATENCY_STATE_COUNT) || (state == STATE_NOCPUIDLE)) return MAX_INT;
 
@@ -1522,14 +1522,14 @@
   00050	00000000	 DCD         |_rgLatencyTable|
   00054		 |$LN10@OALWakeupL@8|
   00054	00000000	 DCD         |_mapLatencyIndex|
-  00058		 |$M47467|
+  00058		 |$M47470|
 
 			 ENDP  ; |OALWakeupLatency_GetDelayInTicks|
 
 	EXPORT	|OALWakeupLatency_FindStateByMaxDelayInTicks|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47489| DCD	|$LN13@OALWakeupL@9|
+|$T47492| DCD	|$LN13@OALWakeupL@9|
 	DCD	0x40002001
 ; Function compile flags: /Ogspy
 
@@ -1541,7 +1541,7 @@
 
   00000		 |$LN13@OALWakeupL@9|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M47486|
+  00004		 |$M47489|
   00004	e1a05000	 mov         r5, r0
 
 ; 643  :     DWORD i;
@@ -1608,14 +1608,14 @@
   00078	00000000	 DCD         |_rgLatencyTable|
   0007c		 |$LN16@OALWakeupL@9|
   0007c	00000000	 DCD         |_mapLatencyTransitionTable|
-  00080		 |$M47487|
+  00080		 |$M47490|
 
 			 ENDP  ; |OALWakeupLatency_FindStateByMaxDelayInTicks|
 
 	EXPORT	|OALWakeupLatency_UpdateOpp|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47506| DCD	|$LN14@OALWakeupL@10|
+|$T47509| DCD	|$LN14@OALWakeupL@10|
 	DCD	0x40001801
 ; Function compile flags: /Ogspy
 
@@ -1627,7 +1627,7 @@
 
   00000		 |$LN14@OALWakeupL@10|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M47503|
+  00004		 |$M47506|
   00004	e3520000	 cmp         r2, #0
 
 ; 671  :     DWORD i;
@@ -1690,14 +1690,14 @@
   00058	00000000	 DCD         |_vddMpu|
   0005c		 |$LN17@OALWakeupL@10|
   0005c	00000000	 DCD         |_vddCore|
-  00060		 |$M47504|
+  00060		 |$M47507|
 
 			 ENDP  ; |OALWakeupLatency_UpdateOpp|
 
 	EXPORT	|OALWakeupLatency_UpdateDomainState|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47527| DCD	|$LN24@OALWakeupL@11|
+|$T47530| DCD	|$LN24@OALWakeupL@11|
 	DCD	0x40003400
 ; Function compile flags: /Ogspy
 
@@ -1708,7 +1708,7 @@
 ; 705  : {
 
   00000		 |$LN24@OALWakeupL@11|
-  00000		 |$M47524|
+  00000		 |$M47527|
 
 ; 706  :     // only care about MPU and CORE power domain states
 ; 707  :     switch (powerDomain)
@@ -1884,14 +1884,14 @@
   000c8	00000000	 DCD         |_domainMpu|
   000cc		 |$LN27@OALWakeupL@11|
   000cc	00000000	 DCD         |_domainInactiveMask|
-  000d0		 |$M47525|
+  000d0		 |$M47528|
 
 			 ENDP  ; |OALWakeupLatency_UpdateDomainState|
 
 	EXPORT	|OALWakeupLatency_DeviceEnabled|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47544| DCD	|$LN18@OALWakeupL@12|
+|$T47547| DCD	|$LN18@OALWakeupL@12|
 	DCD	0x40002b00
 ; Function compile flags: /Ogspy
 
@@ -1902,7 +1902,7 @@
 ; 763  : {
 
   00000		 |$LN18@OALWakeupL@12|
-  00000		 |$M47541|
+  00000		 |$M47544|
 
 ; 764  :    
 ; 765  :     switch (devId)
@@ -2097,14 +2097,14 @@
   000a8		 |$LN19@OALWakeupL@12|
   000a8		 |$LN20@OALWakeupL@12|
   000a8	00000000	 DCD         |_coreDevice|
-  000ac		 |$M47542|
+  000ac		 |$M47545|
 
 			 ENDP  ; |OALWakeupLatency_DeviceEnabled|
 
 	EXPORT	|OALWakeupLatency_IsChipOff|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47558| DCD	|$LN7@OALWakeupL@13|
+|$T47561| DCD	|$LN7@OALWakeupL@13|
 	DCD	0x40000400
 ; Function compile flags: /Ogspy
 
@@ -2115,7 +2115,7 @@
 ; 878  : {
 
   00000		 |$LN7@OALWakeupL@13|
-  00000		 |$M47555|
+  00000		 |$M47558|
   00000	e3500000	 cmp         r0, #0
 
 ; 879  :     return  (latencyState == LATENCY_STATE_CHIP_OFF);
@@ -2126,14 +2126,14 @@
 ; 880  : }
 
   0000c	e12fff1e	 bx          lr
-  00010		 |$M47556|
+  00010		 |$M47559|
 
 			 ENDP  ; |OALWakeupLatency_IsChipOff|
 
 	EXPORT	|OALWakeupLatency_GetSuspendState|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47570| DCD	|$LN9@OALWakeupL@14|
+|$T47573| DCD	|$LN9@OALWakeupL@14|
 	DCD	0x40001501
 ; Function compile flags: /Ogspy
 
@@ -2145,7 +2145,7 @@
 
   00000		 |$LN9@OALWakeupL@14|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M47567|
+  00004		 |$M47570|
 
 ; 893  :     DWORD rc = _suspendState;
 
@@ -2193,14 +2193,14 @@
   00050		 |$LN10@OALWakeupL@14|
   00050		 |$LN11@OALWakeupL@14|
   00050	00000000	 DCD         |_suspendState|
-  00054		 |$M47568|
+  00054		 |$M47571|
 
 			 ENDP  ; |OALWakeupLatency_GetSuspendState|
 
 	EXPORT	|OALWakeupLatency_SetSuspendState|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47583| DCD	|$LN6@OALWakeupL@15|
+|$T47586| DCD	|$LN6@OALWakeupL@15|
 	DCD	0x40000800
 ; Function compile flags: /Ogspy
 
@@ -2211,7 +2211,7 @@
 ; 920  : {
 
   00000		 |$LN6@OALWakeupL@15|
-  00000		 |$M47580|
+  00000		 |$M47583|
   00000	e1a02000	 mov         r2, r0
 
 ; 921  :     BOOL rc = FALSE;
@@ -2239,7 +2239,7 @@
   0001c		 |$LN7@OALWakeupL@15|
   0001c		 |$LN8@OALWakeupL@15|
   0001c	00000000	 DCD         |_suspendState|
-  00020		 |$M47581|
+  00020		 |$M47584|
 
 			 ENDP  ; |OALWakeupLatency_SetSuspendState|
 
@@ -2250,7 +2250,7 @@
 	IMPORT	|__lts|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47608| DCD	|$LN17@OALIoCtlIn|
+|$T47611| DCD	|$LN17@OALIoCtlIn|
 	DCD	0x40003201
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2283,7 +2283,7 @@
 
   00000		 |$LN17@OALIoCtlIn|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M47605|
+  00004		 |$M47608|
   00004	e1a07002	 mov         r7, r2
   00008	e1a06001	 mov         r6, r1
 
@@ -2312,9 +2312,9 @@
 ; 956  :     if (pInBuffer == NULL || inSize != sizeof(float)) goto cleanUp;
 
   00034	e3560000	 cmp         r6, #0
-  00038	0a000015	 beq         |$cleanUp$47262|
+  00038	0a000015	 beq         |$cleanUp$47265|
   0003c	e3570004	 cmp         r7, #4
-  00040	1a000013	 bne         |$cleanUp$47262|
+  00040	1a000013	 bne         |$cleanUp$47265|
 
 ; 957  : 
 ; 958  :     // check if pInBuffer is less than 0 which means to release 
@@ -2363,7 +2363,7 @@
 
   0008c	e5953440	 ldr         r3, [r5, #0x440]
   00090	e3a04001	 mov         r4, #1
-  00094		 |$cleanUp$47262|
+  00094		 |$cleanUp$47265|
 
 ; 972  :     
 ; 973  : cleanUp:    
@@ -2395,14 +2395,14 @@
   000c0	00000000	 DCD         |??_C@_1EM@HALJGOAC@?$AA?$CL?$AAO?$AAA?$AAL?$AAI?$AAo?$AAC?$AAt?$AAl?$AAI?$AAn?$AAt?$AAe?$AAr?$AAr?$AAu?$AAp?$AAt?$AAL?$AAa?$AAt?$AAe?$AAn?$AAc?$AAy?$AAC?$AAo?$AAn?$AAs?$AAt?$AAr?$AAa@|
   000c4		 |$LN23@OALIoCtlIn|
   000c4	00000000	 DCD         |dpCurSettings|
-  000c8		 |$M47606|
+  000c8		 |$M47609|
 
 			 ENDP  ; |OALIoCtlInterruptLatencyConstraint|
 
 	EXPORT	|OALWakeupLatency_SaveSnapshot|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47621| DCD	|$LN5@OALWakeupL@16|
+|$T47624| DCD	|$LN5@OALWakeupL@16|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -2413,19 +2413,19 @@
 ; 1017 :     {
 
   00000		 |$LN5@OALWakeupL@16|
-  00000		 |$M47618|
+  00000		 |$M47621|
 
 ; 1018 :     }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M47619|
+  00004		 |$M47622|
 
 			 ENDP  ; |OALWakeupLatency_SaveSnapshot|
 
 	EXPORT	|OALWakeupLatency_DumpSnapshot|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47628| DCD	|$LN5@OALWakeupL@17|
+|$T47631| DCD	|$LN5@OALWakeupL@17|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -2436,12 +2436,12 @@
 ; 1021 :     {
 
   00000		 |$LN5@OALWakeupL@17|
-  00000		 |$M47625|
+  00000		 |$M47628|
 
 ; 1022 :     }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M47626|
+  00004		 |$M47629|
 
 			 ENDP  ; |OALWakeupLatency_DumpSnapshot|
 

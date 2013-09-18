@@ -361,7 +361,7 @@
 ; File c:\wince600\platform\z2170p\src\oal\oallib\ioctl.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46606| DCD	|$LN6@BSPIoCtlHa|
+|$T46609| DCD	|$LN6@BSPIoCtlHa|
 	DCD	0x40000f02
 ; Function compile flags: /Ogspy
 
@@ -374,7 +374,7 @@
   00000		 |$LN6@BSPIoCtlHa|
   00000	e52de004	 str         lr, [sp, #-4]!
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M46603|
+  00008		 |$M46606|
 
 ; 77   :     UNREFERENCED_PARAMETER(code);
 ; 78   :     UNREFERENCED_PARAMETER(pInpBuffer);
@@ -418,7 +418,7 @@
   00038		 |$LN7@BSPIoCtlHa|
   00038		 |$LN8@BSPIoCtlHa|
   00038	01010038	 DCD         0x1010038
-  0003c		 |$M46604|
+  0003c		 |$M46607|
 
 			 ENDP  ; |BSPIoCtlHalInitRegistry|
 
@@ -429,7 +429,7 @@
 	IMPORT	|dpCurSettings|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46624| DCD	|$LN15@OALIoCtlHa|
+|$T46627| DCD	|$LN15@OALIoCtlHa|
 	DCD	0x40002201
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -459,7 +459,7 @@
 
   00000		 |$LN15@OALIoCtlHa|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M46621|
+  00004		 |$M46624|
   00004	e1a07002	 mov         r7, r2
   00008	e1a06001	 mov         r6, r1
 
@@ -489,9 +489,9 @@
 ; 120  :     if (pInpBuffer == NULL || inpSize != sizeof(DWORD))
 
   00034	e3560000	 cmp         r6, #0
-  00038	0a000007	 beq         |$cleanUp$46532|
+  00038	0a000007	 beq         |$cleanUp$46535|
   0003c	e3570004	 cmp         r7, #4
-  00040	1a000005	 bne         |$cleanUp$46532|
+  00040	1a000005	 bne         |$cleanUp$46535|
 
 ; 121  :         {
 ; 122  :         goto cleanUp;
@@ -512,10 +512,10 @@
 ; 133  : 		    rc = FALSE;
 
   0004c	13a04000	 movne       r4, #0
-  00050	1a000001	 bne         |$cleanUp$46532|
+  00050	1a000001	 bne         |$cleanUp$46535|
   00054	eb000000	 bl          DumpPrcmRegs
   00058	e5950440	 ldr         r0, [r5, #0x440]
-  0005c		 |$cleanUp$46532|
+  0005c		 |$cleanUp$46535|
 
 ; 134  : 	}
 ; 135  : 
@@ -544,7 +544,7 @@
   00080	00000000	 DCD         |??_C@_1DI@KDMFLNNO@?$AA?$CL?$AAO?$AAA?$AAL?$AAI?$AAo?$AAC?$AAt?$AAl?$AAH?$AAa?$AAl?$AAD?$AAu?$AAm?$AAp?$AAR?$AAe?$AAg?$AAi?$AAs?$AAt?$AAe?$AAr?$AAs?$AA?$AN?$AA?6?$AA?$AA@|
   00084		 |$LN19@OALIoCtlHa|
   00084	00000000	 DCD         |dpCurSettings|
-  00088		 |$M46622|
+  00088		 |$M46625|
 
 			 ENDP  ; |OALIoCtlHalDumpRegisters|
 
@@ -554,7 +554,7 @@
 	IMPORT	|NKSetLastError|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46646| DCD	|$LN14@OALIoCtlHa@2|
+|$T46649| DCD	|$LN14@OALIoCtlHa@2|
 	DCD	0x40002901
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -597,7 +597,7 @@
 
   00000		 |$LN14@OALIoCtlHa@2|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M46643|
+  00004		 |$M46646|
   00004	e1a04003	 mov         r4, r3
 
 ; 166  :     BOOL                        rc = FALSE;
@@ -668,12 +668,12 @@
 
   0005c	e5963440	 ldr         r3, [r6, #0x440]
   00060	e3130002	 tst         r3, #2
-  00064	0a000002	 beq         |$cleanUp$46567|
+  00064	0a000002	 beq         |$cleanUp$46570|
   00068	e59f0028	 ldr         r0, [pc, #0x28]
   0006c	eb000000	 bl          NKDbgPrintfW
   00070		 |$LN11@OALIoCtlHa@2|
   00070	e5963440	 ldr         r3, [r6, #0x440]
-  00074		 |$cleanUp$46567|
+  00074		 |$cleanUp$46570|
 
 ; 197  : 
 ; 198  : cleanUp:
@@ -703,7 +703,7 @@
   0009c	00000000	 DCD         |??_C@_1DI@NINGCKCM@?$AA?$CL?$AAO?$AAA?$AAL?$AAI?$AAo?$AAC?$AAt?$AAl?$AAH?$AAa?$AAl?$AAG?$AAe?$AAt?$AAB?$AAs?$AAp?$AAV?$AAe?$AAr?$AAs?$AAi?$AAo?$AAn?$AA?$AN?$AA?6?$AA?$AA@|
   000a0		 |$LN19@OALIoCtlHa@2|
   000a0	00000000	 DCD         |dpCurSettings|
-  000a4		 |$M46644|
+  000a4		 |$M46647|
 
 			 ENDP  ; |OALIoCtlHalGetBspVersion|
 

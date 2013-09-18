@@ -117,7 +117,8 @@ VOID XLDRMain()
     XLDRMSGINIT;
 
     // Print information...
-    XLDRMSG( TEXT("\r\nZEBEX Windows CE SD X-Loader for Z-2170 plus - Brian"));    
+    //XLDRMSG( TEXT("\r\nZEBEX Windows CE SD X-Loader for Z-2170 plus - Brian"));   //Ray 13-09-12
+    XLDRMSG( TEXT("\r\nZEBEX Windows CE SD X-Loader for Z-2170 plus - Ray Testing"));  
     XLDRMSG( TEXT("\r\n") TEXT("Built ") TEXT(__DATE__) TEXT(" at ") TEXT(__TIME__) TEXT(" ("));
 	XLDRMSG( (UINT16 *)ProcessorName);
 	XLDRMSG( TEXT(")\r\n"));
@@ -154,6 +155,7 @@ VOID XLDRMain()
     //g_bootCfg.ipRoute = 0;
     //g_bootCfg.deviceID = 0;
     //g_bootCfg.osPartitionSize = IMAGE_WINCE_CODE_SIZE;
+
     wcscpy(g_bootCfg.filename, L"ebootsd.nb0");
 
     XLDRMSG(TEXT("open ebootsd.nb0 file\r\n"));
@@ -205,7 +207,6 @@ UINT32 OALVAtoPA(VOID *pVA)
 {
     return (UINT32)pVA;
 }
-
 
 //------------------------------------------------------------------------------
 //

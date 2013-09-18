@@ -11,7 +11,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dmtaudioport.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38759| DCD	|$LN5@PopulateTx|
+|$T38761| DCD	|$LN5@PopulateTx|
 	DCD	0x40001202
 ; Function compile flags: /Ogspy
 
@@ -24,7 +24,7 @@
   00000		 |$LN5@PopulateTx|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M38756|
+  00008		 |$M38758|
 
 ; 38   :     DEBUGMSG(ZONE_FUNCTION,
 ; 39   :         (L"WAV::+PopulateTxBuffer(pStart=0x%08X\r\n)",
@@ -74,14 +74,14 @@
   0003c	e28dd00c	 add         sp, sp, #0xC
   00040	e8bd4010	 ldmia       sp!, {r4, lr}
   00044	e12fff1e	 bx          lr
-  00048		 |$M38757|
+  00048		 |$M38759|
 
 			 ENDP  ; |PopulateTxBuffer|
 
 	EXPORT	|PopulateRxBuffer|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38771| DCD	|$LN5@PopulateRx|
+|$T38773| DCD	|$LN5@PopulateRx|
 	DCD	0x40001202
 ; Function compile flags: /Ogspy
 
@@ -94,7 +94,7 @@
   00000		 |$LN5@PopulateRx|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M38768|
+  00008		 |$M38770|
 
 ; 77   :     DEBUGMSG(ZONE_FUNCTION,
 ; 78   :         (L"WAV::+PopulateRxBuffer(pStart=0x%08X\r\n)",
@@ -144,14 +144,14 @@
   0003c	e28dd00c	 add         sp, sp, #0xC
   00040	e8bd4010	 ldmia       sp!, {r4, lr}
   00044	e12fff1e	 bx          lr
-  00048		 |$M38769|
+  00048		 |$M38771|
 
 			 ENDP  ; |PopulateRxBuffer|
 
 	EXPORT	|TxCommand|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38783| DCD	|$LN9@TxCommand|
+|$T38785| DCD	|$LN9@TxCommand|
 	DCD	0x40001a01
 ; Function compile flags: /Ogspy
 
@@ -163,7 +163,7 @@
 
   00000		 |$LN9@TxCommand|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M38780|
+  00004		 |$M38782|
   00004	e1b03000	 movs        r3, r0
 
 ; 114  :     UNREFERENCED_PARAMETER(pPortConfigInfo);
@@ -240,14 +240,14 @@
 
   00060	e8bd4010	 ldmia       sp!, {r4, lr}
   00064	e12fff1e	 bx          lr
-  00068		 |$M38781|
+  00068		 |$M38783|
 
 			 ENDP  ; |TxCommand|
 
 	EXPORT	|RxCommand|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38795| DCD	|$LN9@RxCommand|
+|$T38797| DCD	|$LN9@RxCommand|
 	DCD	0x40001a01
 ; Function compile flags: /Ogspy
 
@@ -259,7 +259,7 @@
 
   00000		 |$LN9@RxCommand|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M38792|
+  00004		 |$M38794|
   00004	e1b03000	 movs        r3, r0
 
 ; 152  :     UNREFERENCED_PARAMETER(pPortConfigInfo);
@@ -336,7 +336,7 @@
 
   00060	e8bd4010	 ldmia       sp!, {r4, lr}
   00064	e12fff1e	 bx          lr
-  00068		 |$M38793|
+  00068		 |$M38795|
 
 			 ENDP  ; |RxCommand|
 
@@ -345,7 +345,7 @@
 	IMPORT	|EnterMutex|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38807| DCD	|$LN7@Mutex|
+|$T38809| DCD	|$LN7@Mutex|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -357,7 +357,7 @@
 
   00000		 |$LN7@Mutex|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M38804|
+  00004		 |$M38806|
   00004	e3500000	 cmp         r0, #0
 
 ; 190  :     UNREFERENCED_PARAMETER(dwTime);
@@ -389,7 +389,7 @@
 
   0001c	e49de004	 ldr         lr, [sp], #4
   00020	e12fff1e	 bx          lr
-  00024		 |$M38805|
+  00024		 |$M38807|
 
 			 ENDP  ; |Mutex|
 
@@ -399,7 +399,7 @@
 	IMPORT	|dpCurSettings|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38820| DCD	|$LN18@signal_Por|
+|$T38822| DCD	|$LN18@signal_Por|
 	DCD	0x40004e01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -424,7 +424,7 @@
 
   00000		 |$LN18@signal_Por|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M38817|
+  00004		 |$M38819|
 
 ; 215  :     UNREFERENCED_PARAMETER(dwContextData);
 ; 216  :     UNREFERENCED_PARAMETER(hStreamContext);
@@ -448,13 +448,13 @@
   00010	e59f311c	 ldr         r3, [pc, #0x11C]
   00014	e5933440	 ldr         r3, [r3, #0x440]
   00018	e3130901	 tst         r3, #1, 18
-  0001c	0a000040	 beq         |$cleanup$38634|
+  0001c	0a000040	 beq         |$cleanup$38636|
   00020	e59f0108	 ldr         r0, [pc, #0x108]
   00024	eb000000	 bl          NKDbgPrintfW
 
 ; 228  :         goto cleanup;
 
-  00028	ea00003d	 b           |$cleanup$38634|
+  00028	ea00003d	 b           |$cleanup$38636|
   0002c		 |$LN11@signal_Por|
 
 ; 229  :         }
@@ -476,7 +476,7 @@
   00054	e3510006	 cmp         r1, #6
   00058	0a000008	 beq         |$LN2@signal_Por|
   0005c	e351000f	 cmp         r1, #0xF
-  00060	1a00002f	 bne         |$cleanup$38634|
+  00060	1a00002f	 bne         |$cleanup$38636|
 
 ; 258  : 
 ; 259  :         case ASPS_PORT_RECONFIG:
@@ -491,7 +491,7 @@
 
 ; 261  :             break;
 
-  0007c	ea000028	 b           |$cleanup$38634|
+  0007c	ea000028	 b           |$cleanup$38636|
   00080		 |$LN2@signal_Por|
 
 ; 254  : 
@@ -507,7 +507,7 @@
 
 ; 257  :             break;
 
-  00098	ea000021	 b           |$cleanup$38634|
+  00098	ea000021	 b           |$cleanup$38636|
   0009c		 |$LN3@signal_Por|
 
 ; 250  : 
@@ -523,7 +523,7 @@
 
 ; 253  :             break;
 
-  000b4	ea00001a	 b           |$cleanup$38634|
+  000b4	ea00001a	 b           |$cleanup$38636|
   000b8		 |$LN4@signal_Por|
 
 ; 246  : 
@@ -539,7 +539,7 @@
 
 ; 249  :             break;
 
-  000d0	ea000013	 b           |$cleanup$38634|
+  000d0	ea000013	 b           |$cleanup$38636|
   000d4		 |$LN5@signal_Por|
 
 ; 242  : 
@@ -555,7 +555,7 @@
 
 ; 245  :             break;
 
-  000ec	ea00000c	 b           |$cleanup$38634|
+  000ec	ea00000c	 b           |$cleanup$38636|
   000f0		 |$LN6@signal_Por|
 
 ; 237  :             break;
@@ -572,7 +572,7 @@
 
 ; 241  :             break;
 
-  00108	ea000005	 b           |$cleanup$38634|
+  00108	ea000005	 b           |$cleanup$38636|
   0010c		 |$LN7@signal_Por|
 
 ; 234  :         {
@@ -585,7 +585,7 @@
   00118	e3a00001	 mov         r0, #1
   0011c	e1a0e00f	 mov         lr, pc
   00120	e12fff13	 bx          r3
-  00124		 |$cleanup$38634|
+  00124		 |$cleanup$38636|
 
 ; 262  :         }
 ; 263  : 
@@ -607,7 +607,7 @@
   00130	00000000	 DCD         |??_C@_1HG@DHCFJAHA@?$AAW?$AAA?$AAV?$AA?3?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?$CB?$AA?5?$AA?9?$AA?5?$AAa?$AAt?$AAt?$AAe?$AAm?$AAp?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAt?$AAo?$AA?5?$AAs?$AAe?$AAn?$AAd?$AA?5@|
   00134		 |$LN21@signal_Por|
   00134	00000000	 DCD         |dpCurSettings|
-  00138		 |$M38818|
+  00138		 |$M38820|
 
 			 ENDP  ; |?signal_Port@DMTAudioStreamPort@@UAAHKPAXK@Z|, DMTAudioStreamPort::signal_Port
 
@@ -615,7 +615,7 @@
 	IMPORT	|DeviceIoControl|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38834| DCD	|$LN6@RegisterDi|
+|$T38836| DCD	|$LN6@RegisterDi|
 	DCD	0x40002a02
 ; Function compile flags: /Ogspy
 
@@ -628,7 +628,7 @@
   00000		 |$LN6@RegisterDi|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd034	 sub         sp, sp, #0x34
-  00008		 |$M38831|
+  00008		 |$M38833|
   00008	e1a06000	 mov         r6, r0
 
 ; 343  :     DEBUGMSG(ZONE_FUNCTION,
@@ -731,7 +731,7 @@
   000a0	00000000	 DCD         |TxCommand|
   000a4		 |$LN12@RegisterDi|
   000a4	00000000	 DCD         |PopulateRxBuffer|
-  000a8		 |$M38832|
+  000a8		 |$M38834|
 
 			 ENDP  ; |?RegisterDirectMemoryTransferCallbacks@DMTAudioStreamPort@@IAAHXZ|, DMTAudioStreamPort::RegisterDirectMemoryTransferCallbacks
 
@@ -739,7 +739,7 @@
 	IMPORT	|CloseHandle|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38851| DCD	|$LN6@Unregister|
+|$T38853| DCD	|$LN6@Unregister|
 	DCD	0x40001d02
 ; Function compile flags: /Ogspy
 
@@ -752,7 +752,7 @@
   00000		 |$LN6@Unregister|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd010	 sub         sp, sp, #0x10
-  00008		 |$M38848|
+  00008		 |$M38850|
   00008	e1a04000	 mov         r4, r0
 
 ; 389  :     DEBUGMSG(ZONE_FUNCTION,
@@ -828,7 +828,7 @@
   00068	e28dd010	 add         sp, sp, #0x10
   0006c	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00070	e12fff1e	 bx          lr
-  00074		 |$M38849|
+  00074		 |$M38851|
 
 			 ENDP  ; |?UnregisterDirectMemoryTransferCallbacks@DMTAudioStreamPort@@IAAHXZ|, DMTAudioStreamPort::UnregisterDirectMemoryTransferCallbacks
 
@@ -839,7 +839,7 @@
 	IMPORT	|memcpy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38868| DCD	|$LN12@open_Port|
+|$T38870| DCD	|$LN12@open_Port|
 	DCD	0x40003202
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -864,7 +864,7 @@
   00000		 |$LN12@open_Port|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M38865|
+  00008		 |$M38867|
   00008	e1a05003	 mov         r5, r3
   0000c	e1b03002	 movs        r3, r2
   00010	e1a06001	 mov         r6, r1
@@ -966,7 +966,7 @@
 
 ; 324  :     if (bSuccess == FALSE)
 
-  000a0	1a000002	 bne         |$cleanup$38667|
+  000a0	1a000002	 bne         |$cleanup$38669|
 
 ; 325  :         {
 ; 326  :         ::CloseHandle(m_hDMTPort);
@@ -978,7 +978,7 @@
 ; 327  :         m_hDMTPort = NULL;
 
   000ac	e5847004	 str         r7, [r4, #4]
-  000b0		 |$cleanup$38667|
+  000b0		 |$cleanup$38669|
 
 ; 328  :         }
 ; 329  : 
@@ -999,7 +999,7 @@
   000c0	00000000	 DCD         |??_C@_1GE@BMFJDKNH@?$AAD?$AAM?$AAT?$AAA?$AAu?$AAd?$AAi?$AAo?$AAS?$AAt?$AAr?$AAe?$AAa?$AAm?$AAP?$AAo?$AAr?$AAt?$AA?3?$AA?3?$AAo?$AAp?$AAe?$AAn?$AA_?$AAP?$AAo?$AAr?$AAt?$AA?5?$AA?9?$AA?5@|
   000c4		 |$LN15@open_Port|
   000c4	00000000	 DCD         |dpCurSettings|
-  000c8		 |$M38866|
+  000c8		 |$M38868|
 
 			 ENDP  ; |?open_Port@DMTAudioStreamPort@@UAAHPBGPAX1@Z|, DMTAudioStreamPort::open_Port
 

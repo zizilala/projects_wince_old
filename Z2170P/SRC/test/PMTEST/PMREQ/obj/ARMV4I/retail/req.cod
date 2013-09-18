@@ -12,7 +12,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39232| DCD	|$LN5@SetEvent|
+|$T39235| DCD	|$LN5@SetEvent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -24,7 +24,7 @@
 
   00000		 |$LN5@SetEvent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M39229|
+  00004		 |$M39232|
 
 ; 236  : 	return EventModify(h,EVENT_SET);
 
@@ -35,7 +35,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M39230|
+  00014		 |$M39233|
 
 			 ENDP  ; |SetEvent|
 
@@ -43,7 +43,7 @@
 	IMPORT	|__GetUserKData|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39241| DCD	|$LN5@GetCurrent|
+|$T39244| DCD	|$LN5@GetCurrent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -55,7 +55,7 @@
 
   00000		 |$LN5@GetCurrent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M39238|
+  00004		 |$M39241|
 
 ; 374  :     return __GetUserKData (SYSHANDLE_OFFSET + (SH_CURPROC * sizeof(HANDLE)));
 
@@ -66,7 +66,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M39239|
+  00014		 |$M39242|
 
 			 ENDP  ; |GetCurrentProcessId|
 
@@ -83,11 +83,11 @@
 ; File c:\wince600\platform\z2170p\src\test\pmtest\pmreq\req.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39254| DCD	|$LN5@RetailPrin|
+|$T39257| DCD	|$LN5@RetailPrin|
 	DCD	0xc0002905
 
   00000			 AREA	 |.xdata|, DATA
-|$T39250| DCD	0xffffffe4
+|$T39253| DCD	0xffffffe4
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1BG@BNMMPDJD@?$AAP?$AAM?$AAG?$AAE?$AAT?$AAD?$AA?3?$AA?5?$AA?$CF?$AAs?$AA?$AA@| DCB "P"
@@ -98,7 +98,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T39250|
+  00004	00000000	 DCD         |$T39253|
 
   00008		 |RetailPrint| PROC
 
@@ -110,7 +110,7 @@
   00010	e92d5000	 stmdb       sp!, {r12, lr}
   00014	e59fc08c	 ldr         r12, [pc, #0x8C]
   00018	e08dd00c	 add         sp, sp, r12
-  0001c		 |$M39251|
+  0001c		 |$M39254|
   0001c	e28dca02	 add         r12, sp, #2, 20
   00020	e58c000c	 str         r0, [r12, #0xC]
   00024	e59f3078	 ldr         r3, [pc, #0x78]
@@ -180,7 +180,7 @@
   000a4	00000000	 DCD         |__security_cookie|
   000a8		 |$LN9@RetailPrin|
   000a8	ffffdffc	 DCD         0xffffdffc
-  000ac		 |$M39252|
+  000ac		 |$M39255|
 
 			 ENDP  ; |RetailPrint|
 
@@ -233,11 +233,11 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39294| DCD	|$LN42@WinMain|
+|$T39297| DCD	|$LN42@WinMain|
 	DCD	0xc0012303
 
   00000			 AREA	 |.xdata|, DATA
-|$T39290| DCD	0xffffffec
+|$T39293| DCD	0xffffffec
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1EE@CMPIMJDB@?$AAP?$AAM?$AAR?$AAE?$AAQ?$AA?$CB?$AAO?$AAp?$AAe?$AAn?$AAE?$AAv?$AAe?$AAn?$AAt?$AA?$CI?$AA?8?$AA?$CF?$AAs?$AA?8?$AA?$CJ?$AA?5?$AAf?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AA?$CF?$AAd?$AA?$AN@| DCB "P"
@@ -657,7 +657,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T39290|
+  00004	00000000	 DCD         |$T39293|
 
   00008		 |WinMain| PROC
 
@@ -667,7 +667,7 @@
   00008	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   0000c	e59fc47c	 ldr         r12, [pc, #0x47C]
   00010	e08dd00c	 add         sp, sp, r12
-  00014		 |$M39291|
+  00014		 |$M39294|
   00014	e1a04002	 mov         r4, r2
   00018	e59f346c	 ldr         r3, [pc, #0x46C]
   0001c	e5933000	 ldr         r3, [r3]
@@ -1284,7 +1284,7 @@
   00490		 |$LN78@WinMain|
   00490	ffffed88	 DCD         0xffffed88
   00494		 |$LN37@WinMain|
-  00494		 |$M39292|
+  00494		 |$M39295|
 
 			 ENDP  ; |WinMain|
 

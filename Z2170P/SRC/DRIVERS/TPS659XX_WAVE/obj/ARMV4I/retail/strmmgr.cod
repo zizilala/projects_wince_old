@@ -32,7 +32,7 @@
 ; File c:\wince600\public\common\sdk\inc\objbase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34872| DCD	|$LN7@IsEqualGUI|
+|$T34874| DCD	|$LN7@IsEqualGUI|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -44,7 +44,7 @@
 
   00000		 |$LN7@IsEqualGUI|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34869|
+  00004		 |$M34871|
 
 ; 494  :     return !memcmp(&rguid1, &rguid2, sizeof(GUID));
 
@@ -65,7 +65,7 @@
 
   0001c	149de004	 ldrne       lr, [sp], #4
   00020	e12fff1e	 bx          lr
-  00024		 |$M34870|
+  00024		 |$M34872|
 
 			 ENDP  ; |?IsEqualGUID@@YAHABU_GUID@@0@Z|, IsEqualGUID
 
@@ -73,7 +73,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audiomgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34882| DCD	|$LN5@get_Hardwa|
+|$T34884| DCD	|$LN5@get_Hardwa|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -84,7 +84,7 @@
 ; 172  :     {
 
   00000		 |$LN5@get_Hardwa|
-  00000		 |$M34879|
+  00000		 |$M34881|
 
 ; 173  :         return m_pHardwareBridge;
 
@@ -93,7 +93,7 @@
 ; 174  :     }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M34880|
+  00008		 |$M34882|
 
 			 ENDP  ; |?get_HardwareAudioBridge@CAudioManager@@QBAPAVCHardwareAudioBridge@@XZ|, CAudioManager::get_HardwareAudioBridge
 
@@ -102,7 +102,7 @@
 	IMPORT	|_purecall|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34892| DCD	|$LN5@CStreamCal|
+|$T34894| DCD	|$LN5@CStreamCal|
 	DCD	0x40000500
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -115,7 +115,7 @@
 
   00000		 |??0CStreamCallback@@QAA@XZ| PROC	; CStreamCallback::CStreamCallback
   00000		 |$LN5@CStreamCal|
-  00000		 |$M34889|
+  00000		 |$M34891|
   00000	e1a02000	 mov         r2, r0
   00004	e59f3004	 ldr         r3, [pc, #4]
   00008	e5823000	 str         r3, [r2]
@@ -123,7 +123,7 @@
   00010		 |$LN6@CStreamCal|
   00010		 |$LN7@CStreamCal|
   00010	00000000	 DCD         |??_7CStreamCallback@@6B@|
-  00014		 |$M34890|
+  00014		 |$M34892|
 
 			 ENDP  ; |??0CStreamCallback@@QAA@XZ|, CStreamCallback::CStreamCallback
 
@@ -132,7 +132,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmmgr.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34909| DCD	|$LN9@GetClassPr|
+|$T34911| DCD	|$LN9@GetClassPr|
 	DCD	0x40001501
 ; Function compile flags: /Ogspy
 
@@ -144,7 +144,7 @@
 
   00000		 |$LN9@GetClassPr|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M34906|
+  00004		 |$M34908|
   00004	e1a05003	 mov         r5, r3
   00008	e1b06002	 movs        r6, r2
 
@@ -207,14 +207,14 @@
   00048	e1a00004	 mov         r0, r4
   0004c	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00050	e12fff1e	 bx          lr
-  00054		 |$M34907|
+  00054		 |$M34909|
 
 			 ENDP  ; |?GetClassProperty@CStreamManager@@QAAHKPAKPAH@Z|, CStreamManager::GetClassProperty
 
 	EXPORT	|?IsBypassDeviceGain@CStreamManager@@QAAHK@Z| ; CStreamManager::IsBypassDeviceGain
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34935| DCD	|$LN14@IsBypassDe|
+|$T34937| DCD	|$LN14@IsBypassDe|
 	DCD	0x40001202
 ; Function compile flags: /Ogspy
 
@@ -227,7 +227,7 @@
   00000		 |$LN14@IsBypassDe|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M34932|
+  00008		 |$M34934|
 
 ; 103  :     BOOL fBypass;
 ; 104  : 
@@ -261,14 +261,14 @@
   0003c	e28dd004	 add         sp, sp, #4
   00040	e8bd4010	 ldmia       sp!, {r4, lr}
   00044	e12fff1e	 bx          lr
-  00048		 |$M34933|
+  00048		 |$M34935|
 
 			 ENDP  ; |?IsBypassDeviceGain@CStreamManager@@QAAHK@Z|, CStreamManager::IsBypassDeviceGain
 
 	EXPORT	|?GetClassGain@CStreamManager@@QAAKK@Z|	; CStreamManager::GetClassGain
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34948| DCD	|$LN7@GetClassGa|
+|$T34950| DCD	|$LN7@GetClassGa|
 	DCD	0x40000c02
 ; Function compile flags: /Ogspy
 
@@ -281,7 +281,7 @@
   00000		 |$LN7@GetClassGa|
   00000	e52de004	 str         lr, [sp, #-4]!
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M34945|
+  00008		 |$M34947|
 
 ; 115  :     DWORD dwClassGain;
 ; 116  : 
@@ -307,14 +307,14 @@
   00024	e28dd004	 add         sp, sp, #4
   00028	e49de004	 ldr         lr, [sp], #4
   0002c	e12fff1e	 bx          lr
-  00030		 |$M34946|
+  00030		 |$M34948|
 
 			 ENDP  ; |?GetClassGain@CStreamManager@@QAAKK@Z|, CStreamManager::GetClassGain
 
 	EXPORT	|?SetClassGain@CStreamManager@@QAAKKK@Z| ; CStreamManager::SetClassGain
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34963| DCD	|$LN10@SetClassGa|
+|$T34965| DCD	|$LN10@SetClassGa|
 	DCD	0x40001701
 ; Function compile flags: /Ogspy
 
@@ -326,7 +326,7 @@
 
   00000		 |$LN10@SetClassGa|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M34960|
+  00004		 |$M34962|
   00004	e1a05002	 mov         r5, r2
   00008	e1a04000	 mov         r4, r0
   0000c	e3a03cff	 mov         r3, #0xFF, 24
@@ -391,7 +391,7 @@
 ; 145  :     mmRet = MMSYSERR_NOERROR;
 
   00050	e3a00000	 mov         r0, #0
-  00054		 |$Exit$34432|
+  00054		 |$Exit$34434|
 
 ; 146  : 
 ; 147  : Exit:
@@ -401,14 +401,14 @@
 
   00054	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00058	e12fff1e	 bx          lr
-  0005c		 |$M34961|
+  0005c		 |$M34963|
 
 			 ENDP  ; |?SetClassGain@CStreamManager@@QAAKKK@Z|, CStreamManager::SetClassGain
 
 	EXPORT	|?IsValidClassId@CStreamManager@@QAAHK@Z| ; CStreamManager::IsValidClassId
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34976| DCD	|$LN7@IsValidCla|
+|$T34978| DCD	|$LN7@IsValidCla|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -420,7 +420,7 @@
 
   00000		 |$LN7@IsValidCla|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34973|
+  00004		 |$M34975|
 
 ; 154  :     STREAMCLASSCONFIG *pEntry = m_StreamClassTable.FindEntry(dwClassId);
 
@@ -444,7 +444,7 @@
 
   0001c	049de004	 ldreq       lr, [sp], #4
   00020	e12fff1e	 bx          lr
-  00024		 |$M34974|
+  00024		 |$M34976|
 
 			 ENDP  ; |?IsValidClassId@CStreamManager@@QAAHK@Z|, CStreamManager::IsValidClassId
 
@@ -452,7 +452,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audiomgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34990| DCD	|$LN7@get_Hardwa@2|
+|$T34992| DCD	|$LN7@get_Hardwa@2|
 	DCD	0x40000300
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmmgr.cpp
@@ -464,7 +464,7 @@
 ; 166  : {
 
   00000		 |$LN7@get_Hardwa@2|
-  00000		 |$M34987|
+  00000		 |$M34989|
 
 ; 167  :     return m_pAudioManager->get_HardwareAudioBridge();
 
@@ -474,14 +474,14 @@
 ; 168  : }
 
   00008	e12fff1e	 bx          lr
-  0000c		 |$M34988|
+  0000c		 |$M34990|
 
 			 ENDP  ; |?get_HardwareAudioBridge@CStreamManager@@UBAPAVCHardwareAudioBridge@@XZ|, CStreamManager::get_HardwareAudioBridge
 
 	EXPORT	|?IsSupportedFormat@CStreamManager@@UAAHPAUtWAVEFORMATEX@@@Z| ; CStreamManager::IsSupportedFormat
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35000| DCD	|$LN10@IsSupporte|
+|$T35002| DCD	|$LN10@IsSupporte|
 	DCD	0x40002300
 ; Function compile flags: /Ogspy
 
@@ -492,7 +492,7 @@
 ; 179  : {
 
   00000		 |$LN10@IsSupporte|
-  00000		 |$M34997|
+  00000		 |$M34999|
 
 ; 180  :     if (lpFormat->wFormatTag != WAVE_FORMAT_PCM)
 
@@ -569,14 +569,14 @@
 ; 194  : }
 
   00088	e12fff1e	 bx          lr
-  0008c		 |$M34998|
+  0008c		 |$M35000|
 
 			 ENDP  ; |?IsSupportedFormat@CStreamManager@@UAAHPAUtWAVEFORMATEX@@@Z|, CStreamManager::IsSupportedFormat
 
 	EXPORT	|?NewStream@CStreamManager@@QAAXPAVStreamContext@@@Z| ; CStreamManager::NewStream
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35011| DCD	|$LN8@NewStream|
+|$T35013| DCD	|$LN8@NewStream|
 	DCD	0x40000800
 ; Function compile flags: /Ogspy
 
@@ -587,7 +587,7 @@
 ; 207  : {
 
   00000		 |$LN8@NewStream|
-  00000		 |$M35008|
+  00000		 |$M35010|
 
 ; 208  : #pragma warning(push)
 ; 209  : #pragma warning (disable:4127)
@@ -605,14 +605,14 @@
 ; 212  : }
 
   0001c	e12fff1e	 bx          lr
-  00020		 |$M35009|
+  00020		 |$M35011|
 
 			 ENDP  ; |?NewStream@CStreamManager@@QAAXPAVStreamContext@@@Z|, CStreamManager::NewStream
 
 	EXPORT	|?DeleteStream@CStreamManager@@QAAXPAVStreamContext@@@Z| ; CStreamManager::DeleteStream
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35024| DCD	|$LN12@DeleteStre|
+|$T35026| DCD	|$LN12@DeleteStre|
 	DCD	0x40001e01
 ; Function compile flags: /Ogspy
 
@@ -624,7 +624,7 @@
 
   00000		 |$LN12@DeleteStre|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35021|
+  00004		 |$M35023|
   00004	e1a05000	 mov         r5, r0
 
 ; 225  : #pragma warning(push)
@@ -676,14 +676,14 @@
 
   00070	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00074	e12fff1e	 bx          lr
-  00078		 |$M35022|
+  00078		 |$M35024|
 
 			 ENDP  ; |?DeleteStream@CStreamManager@@QAAXPAVStreamContext@@@Z|, CStreamManager::DeleteStream
 
 	EXPORT	|?update_Streams@CStreamManager@@UAAHXZ| ; CStreamManager::update_Streams
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35039| DCD	|$LN11@update_Str|
+|$T35041| DCD	|$LN11@update_Str|
 	DCD	0x40001e02
 ; Function compile flags: /Ogspy
 
@@ -696,7 +696,7 @@
   00000		 |$LN11@update_Str|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M35036|
+  00008		 |$M35038|
   00008	e1a05000	 mov         r5, r0
 
 ; 249  :     // causes all streams to update itself with the new information
@@ -765,14 +765,14 @@
   0006c	e28dd004	 add         sp, sp, #4
   00070	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00074	e12fff1e	 bx          lr
-  00078		 |$M35037|
+  00078		 |$M35039|
 
 			 ENDP  ; |?update_Streams@CStreamManager@@UAAHXZ|, CStreamManager::update_Streams
 
 	EXPORT	|?copy_StreamData@CStreamManager@@UAAKPAX0K@Z| ; CStreamManager::copy_StreamData
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35059| DCD	|$LN13@copy_Strea|
+|$T35061| DCD	|$LN13@copy_Strea|
 	DCD	0x40001d02
 ; Function compile flags: /Ogspy
 
@@ -785,7 +785,7 @@
   00000		 |$LN13@copy_Strea|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M35056|
+  00008		 |$M35058|
   00008	e1a07003	 mov         r7, r3
   0000c	e1a06002	 mov         r6, r2
 
@@ -854,7 +854,7 @@
   00068	e28dd004	 add         sp, sp, #4
   0006c	e8bd41f0	 ldmia       sp!, {r4 - r8, lr}
   00070	e12fff1e	 bx          lr
-  00074		 |$M35057|
+  00074		 |$M35059|
 
 			 ENDP  ; |?copy_StreamData@CStreamManager@@UAAKPAX0K@Z|, CStreamManager::copy_StreamData
 
@@ -864,7 +864,7 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35079| DCD	|$LN11@TransferBu|
+|$T35081| DCD	|$LN11@TransferBu|
 	DCD	0x40003102
 ; Function compile flags: /Ogspy
 
@@ -877,7 +877,7 @@
   00000		 |$LN11@TransferBu|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M35076|
+  00008		 |$M35078|
   00008	e1a09003	 mov         r9, r3
   0000c	e1a03001	 mov         r3, r1
   00010	e58d3004	 str         r3, [sp, #4]
@@ -1004,14 +1004,14 @@
   000b8	e28dd00c	 add         sp, sp, #0xC
   000bc	e8bd4ff0	 ldmia       sp!, {r4 - r11, lr}
   000c0	e12fff1e	 bx          lr
-  000c4		 |$M35077|
+  000c4		 |$M35079|
 
 			 ENDP  ; |?TransferBuffer@CStreamManager@@QAAPAEPAE0PAK@Z|, CStreamManager::TransferBuffer
 
 	EXPORT	|?open_Stream@CStreamManager@@QAAKPAUwaveopendesc_tag@@KPAPAVStreamContext@@@Z| ; CStreamManager::open_Stream
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35099| DCD	|$LN14@open_Strea|
+|$T35101| DCD	|$LN14@open_Strea|
 	DCD	0x40003a01
 ; Function compile flags: /Ogspy
 
@@ -1023,7 +1023,7 @@
 
   00000		 |$LN14@open_Strea|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
-  00004		 |$M35096|
+  00004		 |$M35098|
   00004	e1a0a003	 mov         r10, r3
   00008	e1a08002	 mov         r8, r2
   0000c	e1a09001	 mov         r9, r1
@@ -1157,14 +1157,14 @@
 
   000e0	e8bd47f0	 ldmia       sp!, {r4 - r10, lr}
   000e4	e12fff1e	 bx          lr
-  000e8		 |$M35097|
+  000e8		 |$M35099|
 
 			 ENDP  ; |?open_Stream@CStreamManager@@QAAKPAUwaveopendesc_tag@@KPAPAVStreamContext@@@Z|, CStreamManager::open_Stream
 
 	EXPORT	|?GetProperty@CStreamManager@@UAAKPAUtag_WAVEPROPINFO@@@Z| ; CStreamManager::GetProperty
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35108| DCD	|$LN5@GetPropert|
+|$T35110| DCD	|$LN5@GetPropert|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -1175,7 +1175,7 @@
 ; 443  : {
 
   00000		 |$LN5@GetPropert|
-  00000		 |$M35105|
+  00000		 |$M35107|
 
 ; 444  :     UNREFERENCED_PARAMETER(pPropInfo);
 ; 445  :     return MMSYSERR_NOTSUPPORTED;
@@ -1185,14 +1185,14 @@
 ; 446  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M35106|
+  00008		 |$M35108|
 
 			 ENDP  ; |?GetProperty@CStreamManager@@UAAKPAUtag_WAVEPROPINFO@@@Z|, CStreamManager::GetProperty
 
 	EXPORT	|?SetProperty@CStreamManager@@UAAKPAUtag_WAVEPROPINFO@@@Z| ; CStreamManager::SetProperty
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35117| DCD	|$LN5@SetPropert|
+|$T35119| DCD	|$LN5@SetPropert|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -1203,7 +1203,7 @@
 ; 456  : {
 
   00000		 |$LN5@SetPropert|
-  00000		 |$M35114|
+  00000		 |$M35116|
 
 ; 457  :     DWORD mmRet = MMSYSERR_NOTSUPPORTED;
 ; 458  :     UNREFERENCED_PARAMETER(pPropInfo);
@@ -1277,7 +1277,7 @@
 ; 523  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M35115|
+  00008		 |$M35117|
 
 			 ENDP  ; |?SetProperty@CStreamManager@@UAAKPAUtag_WAVEPROPINFO@@@Z|, CStreamManager::SetProperty
 
@@ -1290,7 +1290,7 @@
 ; File c:\wince600\public\common\sdk\inc\objbase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35145| DCD	|$LN30@CommonGetP|
+|$T35147| DCD	|$LN30@CommonGetP|
 	DCD	0x40007801
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmmgr.cpp
@@ -1303,7 +1303,7 @@
 
   00000		 |$LN30@CommonGetP|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
-  00004		 |$M35142|
+  00004		 |$M35144|
   00004	e1a09002	 mov         r9, r2
   00008	e1a06001	 mov         r6, r1
   0000c	e1a08000	 mov         r8, r0
@@ -1325,7 +1325,7 @@
   00034	e3a07008	 mov         r7, #8
   00038	eb000000	 bl          memcmp
   0003c	e3500000	 cmp         r0, #0
-  00040	1a000062	 bne         |$Error$34589|
+  00040	1a000062	 bne         |$Error$34591|
 
 ; 538  :     {
 ; 539  :         switch (pPropInfo->ulPropId)
@@ -1340,7 +1340,7 @@
   00060	e3530001	 cmp         r3, #1
   00064	0a000034	 beq         |$LN14@CommonGetP|
   00068	e3530002	 cmp         r3, #2
-  0006c	1a000057	 bne         |$Error$34589|
+  0006c	1a000057	 bne         |$Error$34591|
 
 ; 569  : 
 ; 570  :         case MM_PROP_DEVTOPOLOGY_ENDPOINT_DESCRIPTOR:
@@ -1431,7 +1431,7 @@
 ; 599  :                 if (MMSYSERR_NOERROR == mmRet)
 
   00118	e3570000	 cmp         r7, #0
-  0011c	1a00002b	 bne         |$Error$34589|
+  0011c	1a00002b	 bne         |$Error$34591|
 
 ; 600  :                 {
 ; 601  :                     *pPropInfo->pcbReturn = sizeof(DTP_ENDPOINT_DESCRIPTOR);
@@ -1505,7 +1505,7 @@
 ; 563  :                 if (MMSYSERR_NOERROR == mmRet)
 
   0019c	e3570000	 cmp         r7, #0
-  001a0	1a00000a	 bne         |$Error$34589|
+  001a0	1a00000a	 bne         |$Error$34591|
 
 ; 564  :                 {
 ; 565  :                     *pPropInfo->pcbReturn = sizeof(DTP_DEVICE_DESCRIPTOR);
@@ -1525,14 +1525,14 @@
 ; 567  :             }
 ; 568  :             break;
 
-  001c8	ea000000	 b           |$Error$34589|
+  001c8	ea000000	 b           |$Error$34591|
   001cc		 |$LN12@CommonGetP|
 
 ; 545  :                 {
 ; 546  :                     mmRet = MMSYSERR_INVALPARAM;
 
   001cc	e3a0700b	 mov         r7, #0xB
-  001d0		 |$Error$34589|
+  001d0		 |$Error$34591|
 
 ; 602  :                 }
 ; 603  :             }
@@ -1554,7 +1554,7 @@
   001dc		 |$LN31@CommonGetP|
   001dc		 |$LN32@CommonGetP|
   001dc	00000000	 DCD         |MM_PROPSET_DEVTOPOLOGY|
-  001e0		 |$M35143|
+  001e0		 |$M35145|
 
 			 ENDP  ; |?CommonGetProperty@CStreamManager@@IAAKPAUtag_WAVEPROPINFO@@H@Z|, CStreamManager::CommonGetProperty
 
@@ -1568,7 +1568,7 @@
 ; File c:\wince600\public\common\sdk\inc\objbase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35184| DCD	|$LN41@CommonSetP|
+|$T35186| DCD	|$LN41@CommonSetP|
 	DCD	0x40007601
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmmgr.cpp
@@ -1581,7 +1581,7 @@
 
   00000		 |$LN41@CommonSetP|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
-  00004		 |$M35181|
+  00004		 |$M35183|
   00004	e1a08002	 mov         r8, r2
   00008	e1a05001	 mov         r5, r1
   0000c	e1a07000	 mov         r7, r0
@@ -1773,7 +1773,7 @@
 ; 763  : 
 ; 764  : Error:
 
-  000f4	ea00002f	 b           |$Error$34618|
+  000f4	ea00002f	 b           |$Error$34620|
   000f8		 |$LN6@CommonSetP|
 
 ; 744  :                     goto Error;
@@ -1799,12 +1799,12 @@
 
   0010c	eb000000	 bl          |?UnregisterDtpMsgQueue@DtpNotify@@QAAKPAX0@Z|
   00110	e1a04000	 mov         r4, r0
-  00114	ea000027	 b           |$Error$34618|
+  00114	ea000027	 b           |$Error$34620|
   00118		 |$LN4@CommonSetP|
   00118	e2870044	 add         r0, r7, #0x44
   0011c	eb000000	 bl          |?UnregisterDtpMsgQueue@DtpNotify@@QAAKPAX0@Z|
   00120	e1a04000	 mov         r4, r0
-  00124	ea000023	 b           |$Error$34618|
+  00124	ea000023	 b           |$Error$34620|
   00128		 |$LN8@CommonSetP|
 
 ; 731  :                 {
@@ -1888,14 +1888,14 @@
   001a4	e1a01004	 mov         r1, r4
   001a8	eb000000	 bl          |?RegisterDtpMsgQueue@DtpNotify@@QAAKPAX0@Z|
   001ac	e1a04000	 mov         r4, r0
-  001b0	ea000000	 b           |$Error$34618|
+  001b0	ea000000	 b           |$Error$34620|
   001b4		 |$LN16@CommonSetP|
 
 ; 699  :                 {
 ; 700  :                     mmRet = MMSYSERR_INVALPARAM;
 
   001b4	e3a0400b	 mov         r4, #0xB
-  001b8		 |$Error$34618|
+  001b8		 |$Error$34620|
 
 ; 765  : 
 ; 766  :     if (hClientProc != NULL)
@@ -1922,7 +1922,7 @@
   001d0	00000000	 DCD         |MM_PROPSET_DEVTOPOLOGY|
   001d4		 |$LN44@CommonSetP|
   001d4	00000000	 DCD         |MM_PROPSET_RTGCTRL|
-  001d8		 |$M35182|
+  001d8		 |$M35184|
 
 			 ENDP  ; |?CommonSetProperty@CStreamManager@@IAAKPAUtag_WAVEPROPINFO@@H@Z|, CStreamManager::CommonSetProperty
 
@@ -1935,7 +1935,7 @@
 	IMPORT	|??0StreamClassTable@@QAA@XZ|		; StreamClassTable::StreamClassTable
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35200| DCD	|$LN7@CStreamMan|
+|$T35202| DCD	|$LN7@CStreamMan|
 	DCD	0x40001e01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1961,7 +1961,7 @@
 
   00000		 |$LN7@CStreamMan|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M35197|
+  00004		 |$M35199|
   00004	e1a05000	 mov         r5, r0
   00008	e59f3064	 ldr         r3, [pc, #0x64]
   0000c	e1a04005	 mov         r4, r5
@@ -2019,14 +2019,14 @@
   00070	00000000	 DCD         |s_SampleRates|
   00074		 |$LN10@CStreamMan|
   00074	00000000	 DCD         |??_7CStreamManager@@6B@|
-  00078		 |$M35198|
+  00078		 |$M35200|
 
 			 ENDP  ; |??0CStreamManager@@QAA@XZ|, CStreamManager::CStreamManager
 
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmmgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35212| DCD	|$LN5@put_AudioS|
+|$T35214| DCD	|$LN5@put_AudioS|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -2038,7 +2038,7 @@
 
   00000		 |$LN5@put_AudioS|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35209|
+  00004		 |$M35211|
   00004	e1a02000	 mov         r2, r0
 
 ; 137  :         m_idxSampleRate = rate;
@@ -2054,14 +2054,14 @@
 
   0001c	e49de004	 ldr         lr, [sp], #4
   00020	e12fff1e	 bx          lr
-  00024		 |$M35210|
+  00024		 |$M35212|
 
 			 ENDP  ; |?put_AudioSampleRate@CStreamManager@@UAAXW4AudioSampleRate_e@CStreamCallback@@@Z|, CStreamManager::put_AudioSampleRate
 
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmmgr.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35224| DCD	|$LN5@copy_Audio|
+|$T35226| DCD	|$LN5@copy_Audio|
 	DCD	0x40000902
 ; Function compile flags: /Ogspy
 
@@ -2074,7 +2074,7 @@
   00000		 |$LN5@copy_Audio|
   00000	e52de004	 str         lr, [sp, #-4]!
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M35221|
+  00008		 |$M35223|
 
 ; 319  :     // UNDONE:
 ; 320  :     //  Need critical section
@@ -2099,7 +2099,7 @@
   00018	e28dd004	 add         sp, sp, #4
   0001c	e49de004	 ldr         lr, [sp], #4
   00020	e12fff1e	 bx          lr
-  00024		 |$M35222|
+  00024		 |$M35224|
 
 			 ENDP  ; |?copy_AudioData@CStreamManager@@UAAKPAXK@Z|, CStreamManager::copy_AudioData
 

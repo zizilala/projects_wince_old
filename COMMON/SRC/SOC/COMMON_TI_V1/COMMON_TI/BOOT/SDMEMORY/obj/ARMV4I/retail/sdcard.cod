@@ -323,7 +323,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\boot\sdmemory\sdcard.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45062| DCD	|$LN9@WaitForCom|
+|$T45069| DCD	|$LN9@WaitForCom|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 
@@ -335,7 +335,7 @@
 
   00000		 |$LN9@WaitForCom|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M45059|
+  00004		 |$M45066|
   00004	e1a04000	 mov         r4, r0
   00008		 |$LL2@WaitForCom|
 
@@ -357,7 +357,7 @@
 
   00018	e8bd4010	 ldmia       sp!, {r4, lr}
   0001c	e12fff1e	 bx          lr
-  00020		 |$M45060|
+  00020		 |$M45067|
 
 			 ENDP  ; |WaitForCommandResult|
 
@@ -365,7 +365,7 @@
 	IMPORT	|SdhcBusRequestHandler|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45114| DCD	|$LN51@INTF_MMCSe|
+|$T45121| DCD	|$LN51@INTF_MMCSe|
 	DCD	0x40006001
 ; Function compile flags: /Ogspy
 
@@ -377,7 +377,7 @@
 
   00000		 |$LN51@INTF_MMCSe|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M45111|
+  00004		 |$M45118|
   00004	e1a05000	 mov         r5, r0
 
 ; 117  :     // ignore init flag, init clocks are requested by card insert...
@@ -569,7 +569,7 @@
   00178	00000000	 DCD         |bAlternateCommandMode|
   0017c		 |$LN55@INTF_MMCSe|
   0017c	00000000	 DCD         |Request|
-  00180		 |$M45112|
+  00180		 |$M45119|
 
 			 ENDP  ; |INTF_MMCSendCommand|
 
@@ -577,7 +577,7 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45147| DCD	|$LN56@INTF_MMCRe|
+|$T45154| DCD	|$LN56@INTF_MMCRe|
 	DCD	0x4001a602
 ; Function compile flags: /Ogspy
 
@@ -590,7 +590,7 @@
   00000		 |$LN56@INTF_MMCRe|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M45144|
+  00008		 |$M45151|
   00008	e1a0b000	 mov         r11, r0
   0000c	e58db000	 str         r11, [sp]
 
@@ -1354,7 +1354,7 @@
   00690	1ff81f78	 DCD         0x1ff81f78
   00694		 |$LN62@INTF_MMCRe|
   00694	fff803c1	 DCD         0xfff803c1
-  00698		 |$M45145|
+  00698		 |$M45152|
 
 			 ENDP  ; |INTF_MMCReadResponse|
 
@@ -1364,7 +1364,7 @@
 	IMPORT	|SdhcSetClockRate|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45164| DCD	|$LN6@MMCSetTran|
+|$T45171| DCD	|$LN6@MMCSetTran|
 	DCD	0x40001502
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1388,7 +1388,7 @@
   00000		 |$LN6@MMCSetTran|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M45161|
+  00008		 |$M45168|
   00008	e1a04000	 mov         r4, r0
 
 ; 368  :     static DWORD CurrentSpeed = 0;
@@ -1433,14 +1433,14 @@
   0004c	00000000	 DCD         |??_C@_1FK@KLGDBING@?$AAS?$AAD?$AAC?$AAA?$AAR?$AAD?$AA?3?$AA?5?$AAr?$AAe?$AAq?$AAe?$AAs?$AAt?$AAe?$AAd?$AA?5?$AAs?$AAp?$AAe?$AAe?$AAd?$AA?5?$AA?$CF?$AAd?$AA?0?$AA?5?$AAa?$AAc?$AAt?$AAu?$AAa@|
   00050		 |$LN9@MMCSetTran|
   00050	00000000	 DCD         |?CurrentSpeed@?1??MMCSetTranSpeed@@9@9|
-  00054		 |$M45162|
+  00054		 |$M45169|
 
 			 ENDP  ; |MMCSetTranSpeed|
 
 	EXPORT	|UTIL_csd_get_sectorsize|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45177| DCD	|$LN7@UTIL_csd_g|
+|$T45184| DCD	|$LN7@UTIL_csd_g|
 	DCD	0x40000700
 ; Function compile flags: /Ogspy
 
@@ -1451,7 +1451,7 @@
 ; 402  : {
 
   00000		 |$LN7@UTIL_csd_g|
-  00000		 |$M45174|
+  00000		 |$M45181|
 
 ; 403  :     if (pMMCcmd->card_type == CARDTYPE_MMC)
 
@@ -1470,14 +1470,14 @@
 ; 407  : }
 
   00018	e12fff1e	 bx          lr
-  0001c		 |$M45175|
+  0001c		 |$M45182|
 
 			 ENDP  ; |UTIL_csd_get_sectorsize|
 
 	EXPORT	|UTIL_csd_get_devicesize|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45225| DCD	|$LN44@UTIL_csd_g@2|
+|$T45232| DCD	|$LN44@UTIL_csd_g@2|
 	DCD	0x40004100
 ; Function compile flags: /Ogspy
 
@@ -1488,7 +1488,7 @@
 ; 411  : {
 
   00000		 |$LN44@UTIL_csd_g@2|
-  00000		 |$M45222|
+  00000		 |$M45229|
 
 ; 412  :     if (pMMCcmd->card_type == CARDTYPE_MMC)
 
@@ -1631,14 +1631,14 @@
 ; 439  : }
 
   00100	e12fff1e	 bx          lr
-  00104		 |$M45223|
+  00104		 |$M45230|
 
 			 ENDP  ; |UTIL_csd_get_devicesize|
 
 	EXPORT	|UTIL_csd_get_tran_speed|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45260| DCD	|$LN52@UTIL_csd_g@3|
+|$T45267| DCD	|$LN52@UTIL_csd_g@3|
 	DCD	0x40004700
 ; Function compile flags: /Ogspy
 
@@ -1649,7 +1649,7 @@
 ; 442  : {
 
   00000		 |$LN52@UTIL_csd_g@3|
-  00000		 |$M45257|
+  00000		 |$M45264|
 
 ; 443  :     unsigned int temp, mant, exp;
 ; 444  : 
@@ -1940,14 +1940,14 @@
   00114	00989680	 DCD         0x989680
   00118		 |$LN56@UTIL_csd_g@3|
   00118	05f5e100	 DCD         0x5f5e100
-  0011c		 |$M45258|
+  0011c		 |$M45265|
 
 			 ENDP  ; |UTIL_csd_get_tran_speed|
 
 	EXPORT	|MMCSetMMCState|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45274| DCD	|$LN5@MMCSetMMCS|
+|$T45281| DCD	|$LN5@MMCSetMMCS|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -1958,7 +1958,7 @@
 ; 522  : {
 
   00000		 |$LN5@MMCSetMMCS|
-  00000		 |$M45271|
+  00000		 |$M45278|
 
 ; 523  :     pDisk->d_MMCState = state;
 
@@ -1967,7 +1967,7 @@
 ; 524  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M45272|
+  00008		 |$M45279|
 
 			 ENDP  ; |MMCSetMMCState|
 
@@ -1978,7 +1978,7 @@
 	IMPORT	|dpCurSettings|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45291| DCD	|$LN13@MMCCommand|
+|$T45298| DCD	|$LN13@MMCCommand|
 	DCD	0x40002b01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2031,7 +2031,7 @@
 
   00000		 |$LN13@MMCCommand|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M45288|
+  00004		 |$M45295|
   00004	e1a05000	 mov         r5, r0
 
 ; 1134 :     if ( INTF_MMCSendCommand(pMMCcmd, init) )
@@ -2131,7 +2131,7 @@
   000a4	00000000	 DCD         |bAlternateCommandMode|
   000a8		 |$LN19@MMCCommand|
   000a8	00000000	 DCD         |??_C@_1HM@GLHKNEKG@?$AAM?$AAM?$AAC?$AA?3?$AA?3?$AAM?$AAM?$AAC?$AAC?$AAo?$AAm?$AAm?$AAa?$AAn?$AAd?$AAR?$AAe?$AAs?$AAp?$AAo?$AAn?$AAs?$AAe?$AA?3?$AA?5?$AAM?$AAM?$AAC?$AAS?$AAe?$AAn?$AAd@|
-  000ac		 |$M45289|
+  000ac		 |$M45296|
 
 			 ENDP  ; |MMCCommandResponse|
 
@@ -2139,7 +2139,7 @@
 	IMPORT	|SdhcInitialize|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45307| DCD	|$LN6@MMCInitDis|
+|$T45314| DCD	|$LN6@MMCInitDis|
 	DCD	0x40001201
 ; Function compile flags: /Ogspy
 
@@ -2151,7 +2151,7 @@
 
   00000		 |$LN6@MMCInitDis|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M45304|
+  00004		 |$M45311|
   00004	e1a04000	 mov         r4, r0
 
 ; 1227 : 
@@ -2216,14 +2216,14 @@
 
   00040	e8bd4010	 ldmia       sp!, {r4, lr}
   00044	e12fff1e	 bx          lr
-  00048		 |$M45305|
+  00048		 |$M45312|
 
 			 ENDP  ; |MMCInitDisk|
 
 	EXPORT	|SDCardIdentify|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45316| DCD	|$LN5@SDCardIden|
+|$T45323| DCD	|$LN5@SDCardIden|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -2234,7 +2234,7 @@
 ; 1305 : {
 
   00000		 |$LN5@SDCardIden|
-  00000		 |$M45313|
+  00000		 |$M45320|
 
 ; 1306 :     UNREFERENCED_PARAMETER(pSector);
 ; 1307 :     UNREFERENCED_PARAMETER(pDisk);
@@ -2247,7 +2247,7 @@
 ; 1311 : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M45314|
+  00008		 |$M45321|
 
 			 ENDP  ; |SDCardIdentify|
 
@@ -2255,7 +2255,7 @@
 	IMPORT	|FileIoRead|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45327| DCD	|$LN7@BLSDCardRe|
+|$T45334| DCD	|$LN7@BLSDCardRe|
 	DCD	0x40000f01
 ; Function compile flags: /Ogspy
 
@@ -2267,7 +2267,7 @@
 
   00000		 |$LN7@BLSDCardRe|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M45324|
+  00004		 |$M45331|
   00004	e1a02001	 mov         r2, r1
   00008	e1a03000	 mov         r3, r0
 
@@ -2308,14 +2308,14 @@
   00034	00000000	 DCD         |fileio_ops|
   00038		 |$LN10@BLSDCardRe|
   00038	00000000	 DCD         |pFile|
-  0003c		 |$M45325|
+  0003c		 |$M45332|
 
 			 ENDP  ; |BLSDCardReadData|
 
 	EXPORT	|MMCSetBlockLen|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45340| DCD	|$LN6@MMCSetBloc|
+|$T45347| DCD	|$LN6@MMCSetBloc|
 	DCD	0x40001701
 ; Function compile flags: /Ogspy
 
@@ -2327,7 +2327,7 @@
 
   00000		 |$LN6@MMCSetBloc|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M45337|
+  00004		 |$M45344|
   00004	e1a0e000	 mov         lr, r0
 
 ; 382  :     MMCcmd.card_type = pDisk->d_CardType;
@@ -2385,7 +2385,7 @@
   00058		 |$LN7@MMCSetBloc|
   00058		 |$LN8@MMCSetBloc|
   00058	00000000	 DCD         |MMCcmd|
-  0005c		 |$M45338|
+  0005c		 |$M45345|
 
 			 ENDP  ; |MMCSetBlockLen|
 
@@ -2395,7 +2395,7 @@
 	IMPORT	|OALGetTickCount|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45361| DCD	|$LN19@MMCWaitFor|
+|$T45368| DCD	|$LN19@MMCWaitFor|
 	DCD	0x40003f01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2417,7 +2417,7 @@
 
   00000		 |$LN19@MMCWaitFor|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M45358|
+  00004		 |$M45365|
 
 ; 528  :     UINT32 StartTime;
 ; 529  :     int card_state;
@@ -2584,7 +2584,7 @@
   000f4	00000000	 DCD         |dpCurSettings|
   000f8		 |$LN23@MMCWaitFor|
   000f8	00000000	 DCD         |MMCcmd|
-  000fc		 |$M45359|
+  000fc		 |$M45366|
 
 			 ENDP  ; |MMCWaitForReady|
 
@@ -2595,7 +2595,7 @@
 	EXPORT	|??_C@_1FK@HAPCNFMM@?$AAM?$AAM?$AAC?$AAR?$AAe?$AAa?$AAd?$AAM?$AAu?$AAl?$AAt?$AAi?$AAS?$AAe?$AAc?$AAt?$AAo?$AAr?$AAs?$AA?3?$AA?5?$AAM?$AAM?$AAC?$AAW?$AAa?$AAi?$AAt?$AAF?$AAo?$AAr?$AAR@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45389| DCD	|$LN23@MMCReadMul|
+|$T45396| DCD	|$LN23@MMCReadMul|
 	DCD	0x40005701
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2656,7 +2656,7 @@
 
   00000		 |$LN23@MMCReadMul|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
-  00004		 |$M45386|
+  00004		 |$M45393|
   00004	e1a08003	 mov         r8, r3
   00008	e1a09002	 mov         r9, r2
   0000c	e1a07001	 mov         r7, r1
@@ -2889,7 +2889,7 @@
   00154	00000000	 DCD         |??_C@_1FK@HAPCNFMM@?$AAM?$AAM?$AAC?$AAR?$AAe?$AAa?$AAd?$AAM?$AAu?$AAl?$AAt?$AAi?$AAS?$AAe?$AAc?$AAt?$AAo?$AAr?$AAs?$AA?3?$AA?5?$AAM?$AAM?$AAC?$AAW?$AAa?$AAi?$AAt?$AAF?$AAo?$AAr?$AAR@|
   00158		 |$LN30@MMCReadMul|
   00158	00000000	 DCD         |dpCurSettings|
-  0015c		 |$M45387|
+  0015c		 |$M45394|
 
 			 ENDP  ; |MMCReadMultiSectors|
 
@@ -2898,7 +2898,7 @@
 	EXPORT	|??_C@_1HE@HOGFNIBK@?$AAM?$AAM?$AAC?$AAR?$AAe?$AAa?$AAd?$AA?3?$AA?5?$AAM?$AAM?$AAC?$AAC?$AAo?$AAm?$AAm?$AAa?$AAn?$AAd?$AAR?$AAe?$AAs?$AAp?$AAo?$AAn?$AAs?$AAe?$AA?5?$AAe?$AAr?$AAr?$AAo@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45415| DCD	|$LN18@MMCRead|
+|$T45422| DCD	|$LN18@MMCRead|
 	DCD	0x40003901
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2929,7 +2929,7 @@
 
   00000		 |$LN18@MMCRead|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M45412|
+  00004		 |$M45419|
   00004	e1a07002	 mov         r7, r2
   00008	e1a05001	 mov         r5, r1
   0000c	e1a04000	 mov         r4, r0
@@ -3097,7 +3097,7 @@
   000dc	00000000	 DCD         |MMCcmd|
   000e0		 |$LN23@MMCRead|
   000e0	00000000	 DCD         |dpCurSettings|
-  000e4		 |$M45413|
+  000e4		 |$M45420|
 
 			 ENDP  ; |MMCRead|
 
@@ -3114,11 +3114,11 @@
 	IMPORT	|__security_check_cookie|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45458| DCD	|$LN41@MMCSelectC|
+|$T45465| DCD	|$LN41@MMCSelectC|
 	DCD	0xc000a102
 
   00000			 AREA	 |.xdata|, DATA
-|$T45454| DCD	0xffffffd8
+|$T45461| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1KA@GCFNELEL@?$AAM?$AAM?$AAC?$AAS?$AAe?$AAl?$AAe?$AAc?$AAt?$AAC?$AAa?$AAr?$AAd?$AA?3?$AA?5?$AAt?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AA?5?$AAw?$AAa?$AAi?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAf@| DCB "M"
@@ -3181,7 +3181,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T45454|
+  00004	00000000	 DCD         |$T45461|
 
   00008		 |MMCSelectCard| PROC
 
@@ -3190,7 +3190,7 @@
   00008		 |$LN41@MMCSelectC|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24dd00c	 sub         sp, sp, #0xC
-  00010		 |$M45455|
+  00010		 |$M45462|
   00010	e1a05000	 mov         r5, r0
   00014	e59f326c	 ldr         r3, [pc, #0x26C]
   00018	e5933000	 ldr         r3, [r3]
@@ -3584,7 +3584,7 @@
   00284	00000000	 DCD         |MMCcmd|
   00288		 |$LN50@MMCSelectC|
   00288	00000000	 DCD         |__security_cookie|
-  0028c		 |$M45456|
+  0028c		 |$M45463|
 
 			 ENDP  ; |MMCSelectCard|
 
@@ -3594,7 +3594,7 @@
 	EXPORT	|??_C@_1FK@HAIGBMKL@?$AAM?$AAM?$AAC?$AAI?$AAs?$AAs?$AAu?$AAe?$AAI?$AAd?$AAe?$AAn?$AAt?$AAi?$AAf?$AAy?$AA?3?$AA?5?$AAM?$AAM?$AAC?$AAC?$AAo?$AAm?$AAm?$AAa?$AAn?$AAd?$AAR?$AAe?$AAs?$AAp@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45517| DCD	|$LN66@MMCIssueId|
+|$T45524| DCD	|$LN66@MMCIssueId|
 	DCD	0x40010601
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -3651,7 +3651,7 @@
 
   00000		 |$LN66@MMCIssueId|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
-  00004		 |$M45514|
+  00004		 |$M45521|
   00004	e1a05000	 mov         r5, r0
   00008	e3a0393d	 mov         r3, #0x3D, 18
 
@@ -4395,7 +4395,7 @@
   00410	00000000	 DCD         |??_C@_1FK@HAIGBMKL@?$AAM?$AAM?$AAC?$AAI?$AAs?$AAs?$AAu?$AAe?$AAI?$AAd?$AAe?$AAn?$AAt?$AAi?$AAf?$AAy?$AA?3?$AA?5?$AAM?$AAM?$AAC?$AAC?$AAo?$AAm?$AAm?$AAa?$AAn?$AAd?$AAR?$AAe?$AAs?$AAp@|
   00414		 |$LN72@MMCIssueId|
   00414	00000000	 DCD         |MMCcmd|
-  00418		 |$M45515|
+  00418		 |$M45522|
 
 			 ENDP  ; |MMCIssueIdentify|
 
@@ -4404,7 +4404,7 @@
 	IMPORT	|SdhcCardDetect|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45533| DCD	|$LN8@MMCCardDet|
+|$T45540| DCD	|$LN8@MMCCardDet|
 	DCD	0x40001201
 ; Function compile flags: /Ogspy
 
@@ -4416,7 +4416,7 @@
 
   00000		 |$LN8@MMCCardDet|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M45530|
+  00004		 |$M45537|
   00004	e1a04000	 mov         r4, r0
 
 ; 1169 : #if 1
@@ -4568,7 +4568,7 @@
 
   00040	e8bd4010	 ldmia       sp!, {r4, lr}
   00044	e12fff1e	 bx          lr
-  00048		 |$M45531|
+  00048		 |$M45538|
 
 			 ENDP  ; |MMCCardDetect|
 
@@ -4579,7 +4579,7 @@
 	EXPORT	|??_C@_1EE@PJJAIGOH@?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAI?$AAn?$AAi?$AAt?$AA?3?$AA?5?$AAM?$AAM?$AAC?$AAI?$AAn?$AAi?$AAt?$AAD?$AAi?$AAs?$AAk?$AA?5?$AAf?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?$CB?$AA?$AN@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45552| DCD	|$LN18@SDCardInit|
+|$T45559| DCD	|$LN18@SDCardInit|
 	DCD	0x40003c01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -4627,7 +4627,7 @@
 
   00000		 |$LN18@SDCardInit|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M45549|
+  00004		 |$M45556|
   00004	e1a04000	 mov         r4, r0
 
 ; 1264 :     OALMSGX(OAL_INFO, (L"SDCardInit: Init device ...\r\n"));
@@ -4773,7 +4773,7 @@
   000e8	00000000	 DCD         |??_C@_1DM@BFOJJFFG@?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAI?$AAn?$AAi?$AAt?$AA?3?$AA?5?$AAN?$AAo?$AA?5?$AAm?$AAe?$AAd?$AAi?$AAa?$AA?5?$AAf?$AAo?$AAu?$AAn?$AAd?$AA?$CB?$AA?$AN?$AA?6?$AA?$AA@|
   000ec		 |$LN24@SDCardInit|
   000ec	00000000	 DCD         |??_C@_1EE@PJJAIGOH@?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAI?$AAn?$AAi?$AAt?$AA?3?$AA?5?$AAM?$AAM?$AAC?$AAI?$AAn?$AAi?$AAt?$AAD?$AAi?$AAs?$AAk?$AA?5?$AAf?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?$CB?$AA?$AN@|
-  000f0		 |$M45550|
+  000f0		 |$M45557|
 
 			 ENDP  ; |SDCardInit|
 
@@ -4782,7 +4782,7 @@
 	EXPORT	|??_C@_1HE@MOOOFOKP@?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAR?$AAe?$AAa?$AAd?$AAS?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?3?$AA?5?$AAE?$AAr?$AAr?$AAo?$AAr?$AA?5?$AAr?$AAe?$AAa?$AAd?$AAi?$AAn?$AAg?$AA?5@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45577| DCD	|$LN18@SDCardRead|
+|$T45584| DCD	|$LN18@SDCardRead|
 	DCD	0x40002401
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -4819,7 +4819,7 @@
 
   00000		 |$LN18@SDCardRead|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M45574|
+  00004		 |$M45581|
   00004	e1a07002	 mov         r7, r2
   00008	e1a05001	 mov         r5, r1
   0000c	e1a08000	 mov         r8, r0
@@ -4909,7 +4909,7 @@
   00088	00000000	 DCD         |??_C@_1HE@MOOOFOKP@?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAR?$AAe?$AAa?$AAd?$AAS?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?3?$AA?5?$AAE?$AAr?$AAr?$AAo?$AAr?$AA?5?$AAr?$AAe?$AAa?$AAd?$AAi?$AAn?$AAg?$AA?5@|
   0008c		 |$LN22@SDCardRead|
   0008c	00000000	 DCD         |dpCurSettings|
-  00090		 |$M45575|
+  00090		 |$M45582|
 
 			 ENDP  ; |SDCardReadSector|
 
@@ -4918,7 +4918,7 @@
 	EXPORT	|??_C@_1IA@BMANGLND@?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAR?$AAe?$AAa?$AAd?$AAM?$AAu?$AAl?$AAt?$AAi?$AAS?$AAe?$AAc?$AAt?$AAo?$AAr?$AAs?$AA?3?$AA?5?$AAE?$AAr?$AAr?$AAo?$AAr?$AA?5?$AAr?$AAe@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45601| DCD	|$LN18@SDCardRead@2|
+|$T45608| DCD	|$LN18@SDCardRead@2|
 	DCD	0x40002701
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -4959,7 +4959,7 @@
 
   00000		 |$LN18@SDCardRead@2|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
-  00004		 |$M45598|
+  00004		 |$M45605|
   00004	e1a07003	 mov         r7, r3
   00008	e1a08002	 mov         r8, r2
   0000c	e1a05001	 mov         r5, r1
@@ -5052,7 +5052,7 @@
   00094	00000000	 DCD         |??_C@_1IA@BMANGLND@?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAR?$AAe?$AAa?$AAd?$AAM?$AAu?$AAl?$AAt?$AAi?$AAS?$AAe?$AAc?$AAt?$AAo?$AAr?$AAs?$AA?3?$AA?5?$AAE?$AAr?$AAr?$AAo?$AAr?$AA?5?$AAr?$AAe@|
   00098		 |$LN22@SDCardRead@2|
   00098	00000000	 DCD         |dpCurSettings|
-  0009c		 |$M45599|
+  0009c		 |$M45606|
 
 			 ENDP  ; |SDCardReadMultiSectors|
 
@@ -5064,7 +5064,7 @@
 	IMPORT	|FileIoInit|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45620| DCD	|$LN13@BLSDCardDo|
+|$T45627| DCD	|$LN13@BLSDCardDo|
 	DCD	0x40004101
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -5096,7 +5096,7 @@
 
   00000		 |$LN13@BLSDCardDo|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M45617|
+  00004		 |$M45624|
   00004	e1a07000	 mov         r7, r0
 
 ; 1388 :     // This function is called after MMC/SD image download is selected in menu or config
@@ -5252,27 +5252,39 @@
   000fc	00000000	 DCD         |File|
   00100		 |$LN26@BLSDCardDo|
   00100	00000000	 DCD         |bFileIoInit|
-  00104		 |$M45618|
+  00104		 |$M45625|
 
 			 ENDP  ; |BLSDCardDownload|
 
 	EXPORT	|BLSDCardToFlash|
-	EXPORT	|??_C@_1EK@LHFOHMNN@?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAT?$AAo?$AAF?$AAl?$AAa?$AAs?$AAh?$AA?3?$AA?5?$AA?5?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAo?$AAp?$AAe?$AAn?$AA?5?$AAf?$AAi@| [ DATA ] ; `string'
+	EXPORT	|??_C@_1FK@BIPBBPFB@?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAR?$AAe?$AAa?$AAd?$AAL?$AAo?$AAg?$AAo?$AA?3?$AA?5?$AA?5?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAr?$AAe?$AAa?$AAd?$AA?5?$AAf@| [ DATA ] ; `string'
+	EXPORT	|??_C@_1FA@EHAPGJGJ@?$AA?5?$AA?$CK?$AA?$CK?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAT?$AAo?$AAF?$AAl?$AAa?$AAs?$AAh?$AA?3?$AA?5?$AA?5?$AAC?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAo?$AAp?$AAe?$AAn@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1EO@MDFFFBD@?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAT?$AAo?$AAF?$AAl?$AAa?$AAs?$AAh?$AA?3?$AA?5?$AA?5?$AAf?$AAi?$AAl?$AAe?$AAi?$AAo?$AA?5?$AAi?$AAn?$AAi?$AAt?$AA?5?$AAf?$AAa@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45648| DCD	|$LN13@BLSDCardTo|
-	DCD	0x40004101
+|$T45659| DCD	|$LN16@BLSDCardTo|
+	DCD	0x40005001
 
   00000			 AREA	 |.rdata|, DATA, READONLY
-|??_C@_1EK@LHFOHMNN@?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAT?$AAo?$AAF?$AAl?$AAa?$AAs?$AAh?$AA?3?$AA?5?$AA?5?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAo?$AAp?$AAe?$AAn?$AA?5?$AAf?$AAi@| DCB "B"
+|??_C@_1FK@BIPBBPFB@?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAR?$AAe?$AAa?$AAd?$AAL?$AAo?$AAg?$AAo?$AA?3?$AA?5?$AA?5?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAr?$AAe?$AAa?$AAd?$AA?5?$AAf@| DCB "B"
 	DCB	0x0, "L", 0x0, "S", 0x0, "D", 0x0, "C", 0x0, "a", 0x0, "r"
-	DCB	0x0, "d", 0x0, "T", 0x0, "o", 0x0, "F", 0x0, "l", 0x0, "a"
-	DCB	0x0, "s", 0x0, "h", 0x0, ":", 0x0, " ", 0x0, " ", 0x0, "c"
-	DCB	0x0, "a", 0x0, "n", 0x0, "n", 0x0, "o", 0x0, "t", 0x0, " "
-	DCB	0x0, "o", 0x0, "p", 0x0, "e", 0x0, "n", 0x0, " ", 0x0, "f"
-	DCB	0x0, "i", 0x0, "l", 0x0, "e", 0x0, 0xd, 0x0, 0xa, 0x0, 0x0
-	DCB	0x0					; `string'
+	DCB	0x0, "d", 0x0, "R", 0x0, "e", 0x0, "a", 0x0, "d", 0x0, "L"
+	DCB	0x0, "o", 0x0, "g", 0x0, "o", 0x0, ":", 0x0, " ", 0x0, " "
+	DCB	0x0, "c", 0x0, "a", 0x0, "n", 0x0, "n", 0x0, "o", 0x0, "t"
+	DCB	0x0, " ", 0x0, "r", 0x0, "e", 0x0, "a", 0x0, "d", 0x0, " "
+	DCB	0x0, "f", 0x0, "i", 0x0, "l", 0x0, "e", 0x0, " ", 0x0, "h"
+	DCB	0x0, "e", 0x0, "a", 0x0, "d", 0x0, "e", 0x0, "r", 0x0, 0xd
+	DCB	0x0, 0xa, 0x0, 0x0, 0x0			; `string'
+
+  00000			 AREA	 |.rdata|, DATA, READONLY
+|??_C@_1FA@EHAPGJGJ@?$AA?5?$AA?$CK?$AA?$CK?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAT?$AAo?$AAF?$AAl?$AAa?$AAs?$AAh?$AA?3?$AA?5?$AA?5?$AAC?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAo?$AAp?$AAe?$AAn@| DCB " "
+	DCB	0x0, "*", 0x0, "*", 0x0, "B", 0x0, "L", 0x0, "S", 0x0, "D"
+	DCB	0x0, "C", 0x0, "a", 0x0, "r", 0x0, "d", 0x0, "T", 0x0, "o"
+	DCB	0x0, "F", 0x0, "l", 0x0, "a", 0x0, "s", 0x0, "h", 0x0, ":"
+	DCB	0x0, " ", 0x0, " ", 0x0, "C", 0x0, "a", 0x0, "n", 0x0, "n"
+	DCB	0x0, "o", 0x0, "t", 0x0, " ", 0x0, "o", 0x0, "p", 0x0, "e"
+	DCB	0x0, "n", 0x0, " ", 0x0, "f", 0x0, "i", 0x0, "l", 0x0, "e"
+	DCB	0x0, 0xd, 0x0, 0xa, 0x0, 0x0, 0x0	; `string'
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1EO@MDFFFBD@?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAT?$AAo?$AAF?$AAl?$AAa?$AAs?$AAh?$AA?3?$AA?5?$AA?5?$AAf?$AAi?$AAl?$AAe?$AAi?$AAo?$AA?5?$AAi?$AAn?$AAi?$AAt?$AA?5?$AAf?$AAa@| DCB "B"
@@ -5291,164 +5303,199 @@
 
 ; 1456 : {
 
-  00000		 |$LN13@BLSDCardTo|
-  00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M45645|
-  00004	e1a07000	 mov         r7, r0
+  00000		 |$LN16@BLSDCardTo|
+  00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
+  00004		 |$M45656|
+  00004	e1a09002	 mov         r9, r2
+  00008	e1a0a001	 mov         r10, r1
+  0000c	e1a0b000	 mov         r11, r0
 
 ; 1457 : 	// This function is called after MMC/SD image download is selected in menu or config
 ; 1458 : 	pFile = &File;
-; 1459 : 
-; 1460 : 	OALMSGX(OAL_INFO, (L"BLSDCardToFlash: Filename %s\r\n", filename));
-; 1461 : 	//?? OAL_INFo, Ray  13-09-11
-; 1462 : 
-; 1463 : 	if (!bFileIoInit)
+; 1459 :     //FILEHANDLE logoFile(pFile);
+; 1460 : 	/*WORD	   wSignature = 0;
+; 1461 : 	DWORD	   dwOffset = 0;
+; 1462 : 	BYTE*	   pTmpBuf = NULL;
+; 1463 : 	DWORD	   dwCursor = 0;*/
+; 1464 : 
+; 1465 : 	OALMSGX(OAL_INFO, (L" **BLSDCardToFlash: Filename %s\r\n", filename));
+; 1466 : 	//?? OAL_INFo, Ray  13-09-11
+; 1467 : 
+; 1468 : 	if (!bFileIoInit)
 
-  00008	e59f50f0	 ldr         r5, [pc, #0xF0]
-  0000c	e59f10e8	 ldr         r1, [pc, #0xE8]
-  00010	e59f40e0	 ldr         r4, [pc, #0xE0]
-  00014	e5953000	 ldr         r3, [r5]
-  00018	e59f60d4	 ldr         r6, [pc, #0xD4]
-  0001c	e5841000	 str         r1, [r4]
-  00020	e3530000	 cmp         r3, #0
-  00024	1a000019	 bne         |$LN3@BLSDCardTo|
+  00010	e59f8124	 ldr         r8, [pc, #0x124]
+  00014	e59f111c	 ldr         r1, [pc, #0x11C]
+  00018	e59f6114	 ldr         r6, [pc, #0x114]
+  0001c	e5983000	 ldr         r3, [r8]
+  00020	e59f7108	 ldr         r7, [pc, #0x108]
+  00024	e5861000	 str         r1, [r6]
+  00028	e3530000	 cmp         r3, #0
+  0002c	1a000018	 bne         |$LN4@BLSDCardTo|
 
-; 1464 : 	{
-; 1465 : 		// set up data structure used by file system driver
-; 1466 : 		fileio_ops.init         = &SDCardInit;
+; 1469 : 	{
+; 1470 : 		// set up data structure used by file system driver
+; 1471 : 		fileio_ops.init         = &SDCardInit;
 
-  00028	e59f30c0	 ldr         r3, [pc, #0xC0]
+  00030	e59f30f4	 ldr         r3, [pc, #0xF4]
 
-; 1467 : 		fileio_ops.identify     = &SDCardIdentify;
+; 1472 : 		fileio_ops.identify     = &SDCardIdentify;
 
-  0002c	e59f20b8	 ldr         r2, [pc, #0xB8]
+  00034	e59fe0ec	 ldr         lr, [pc, #0xEC]
 
-; 1468 :         fileio_ops.read_sector  = &SDCardReadSector;
+; 1473 :         fileio_ops.read_sector  = &SDCardReadSector;
 
-  00030	e59f10b0	 ldr         r1, [pc, #0xB0]
+  00038	e59f40e4	 ldr         r4, [pc, #0xE4]
 
-; 1469 :         fileio_ops.read_multi_sectors = &SDCardReadMultiSectors;
+; 1474 :         fileio_ops.read_multi_sectors = &SDCardReadMultiSectors;
 
-  00034	e59fe0a8	 ldr         lr, [pc, #0xA8]
-  00038	e5863000	 str         r3, [r6]
+  0003c	e59f50dc	 ldr         r5, [pc, #0xDC]
+  00040	e8874008	 stmia       r7, {r3, lr}
 
-; 1470 : 	    fileio_ops.drive_info = (PVOID)&Disk;
+; 1475 : 	    fileio_ops.drive_info   = (PVOID)&Disk;
+; 1476 : 	
+; 1477 :         // initialize file system driver
+; 1478 :         if(FileIoInit(&fileio_ops) != FILEIO_STATUS_OK)
 
-  0003c	e59f309c	 ldr         r3, [pc, #0x9C]
-  00040	e5862004	 str         r2, [r6, #4]
-  00044	e5861008	 str         r1, [r6, #8]
-  00048	e586e00c	 str         lr, [r6, #0xC]
+  00044	e1a00007	 mov         r0, r7
+  00048	e59f30cc	 ldr         r3, [pc, #0xCC]
+  0004c	e287c008	 add         r12, r7, #8
+  00050	e88c0030	 stmia       r12, {r4, r5}
+  00054	e5873010	 str         r3, [r7, #0x10]
+  00058	eb000000	 bl          FileIoInit
+  0005c	e3500000	 cmp         r0, #0
+  00060	0a000008	 beq         |$LN3@BLSDCardTo|
 
-; 1471 : 	
-; 1472 :         // initialize file system driver
-; 1473 :         if(FileIoInit(&fileio_ops) != FILEIO_STATUS_OK)
+; 1479 :         {
+; 1480 : 		    OALMSG(OAL_ERROR, (L"BLSDCardToFlash:  fileio init failed\r\n"));
 
-  0004c	e1a00006	 mov         r0, r6
-  00050	e5863010	 str         r3, [r6, #0x10]
-  00054	eb000000	 bl          FileIoInit
-  00058	e3500000	 cmp         r0, #0
-  0005c	0a000008	 beq         |$LN2@BLSDCardTo|
+  00064	e59f30a4	 ldr         r3, [pc, #0xA4]
+  00068	e5933440	 ldr         r3, [r3, #0x440]
+  0006c	e3130001	 tst         r3, #1
+  00070	0a000001	 beq         |$LN7@BLSDCardTo|
+  00074	e59f009c	 ldr         r0, [pc, #0x9C]
+  00078		 |$LN13@BLSDCardTo|
+  00078	eb000000	 bl          NKDbgPrintfW
+  0007c		 |$LN7@BLSDCardTo|
 
-; 1474 :         {
-; 1475 : 		    OALMSG(OAL_ERROR, (L"BLSDCardToFlash:  fileio init failed\r\n"));
+; 1481 :             return FALSE;
 
-  00060	e59f3070	 ldr         r3, [pc, #0x70]
-  00064	e5933440	 ldr         r3, [r3, #0x440]
-  00068	e3130001	 tst         r3, #1
-  0006c	0a000001	 beq         |$LN6@BLSDCardTo|
-  00070	e59f0064	 ldr         r0, [pc, #0x64]
-  00074		 |$LN10@BLSDCardTo|
-  00074	eb000000	 bl          NKDbgPrintfW
-  00078		 |$LN6@BLSDCardTo|
+  0007c	e3a00000	 mov         r0, #0
 
-; 1476 :             return FALSE;
+; 1507 : }
 
-  00078	e3a00000	 mov         r0, #0
+  00080	e8bd4ff0	 ldmia       sp!, {r4 - r11, lr}
+  00084	e12fff1e	 bx          lr
+  00088		 |$LN3@BLSDCardTo|
 
-; 1493 : }
+; 1482 :         }
+; 1483 :         
+; 1484 :         bFileIoInit = TRUE;
 
-  0007c	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
-  00080	e12fff1e	 bx          lr
-  00084		 |$LN2@BLSDCardTo|
+  00088	e3a03001	 mov         r3, #1
+  0008c	e5961000	 ldr         r1, [r6]
+  00090	e5883000	 str         r3, [r8]
+  00094		 |$LN4@BLSDCardTo|
 
-; 1477 :         }
-; 1478 :         bFileIoInit = TRUE;
+; 1485 : 	}
+; 1486 : 
+; 1487 :     // fill in file name (8.3 format)
+; 1488 :     FileNameToDirEntry(filename, pFile->name, pFile->extension);
 
-  00084	e3a03001	 mov         r3, #1
-  00088	e5941000	 ldr         r1, [r4]
-  0008c	e5853000	 str         r3, [r5]
-  00090		 |$LN3@BLSDCardTo|
+  00094	e2812009	 add         r2, r1, #9
+  00098	e1a0000b	 mov         r0, r11
+  0009c	eb000000	 bl          FileNameToDirEntry
 
-; 1479 : 	}
-; 1480 : 
-; 1481 :     // fill in file name (8.3 format)
-; 1482 :     FileNameToDirEntry(filename, pFile->name, pFile->extension);
+; 1489 : 
+; 1490 :     // try to open file specified by pConfig->filename, return FALSE on failure
+; 1491 :     if (FileIoOpen(&fileio_ops, pFile) != FILEIO_STATUS_OK)
 
-  00090	e2812009	 add         r2, r1, #9
-  00094	e1a00007	 mov         r0, r7
-  00098	eb000000	 bl          FileNameToDirEntry
+  000a0	e5961000	 ldr         r1, [r6]
+  000a4	e1a00007	 mov         r0, r7
+  000a8	eb000000	 bl          FileIoOpen
+  000ac	e3500000	 cmp         r0, #0
+  000b0	0a000005	 beq         |$LN2@BLSDCardTo|
 
-; 1483 : 
-; 1484 :     // try to open file specified by pConfig->filename, return FALSE on failure
-; 1485 :     if (FileIoOpen(&fileio_ops, pFile) != FILEIO_STATUS_OK)
+; 1492 :     {
+; 1493 :         OALMSG(OAL_ERROR, (L" **BLSDCardToFlash:  Cannot open file\r\n"));
 
-  0009c	e5941000	 ldr         r1, [r4]
-  000a0	e1a00006	 mov         r0, r6
-  000a4	eb000000	 bl          FileIoOpen
-  000a8	e3500000	 cmp         r0, #0
-  000ac	0a000005	 beq         |$LN1@BLSDCardTo|
+  000b4	e59f3054	 ldr         r3, [pc, #0x54]
+  000b8	e5933440	 ldr         r3, [r3, #0x440]
+  000bc	e3130001	 tst         r3, #1
+  000c0	0affffed	 beq         |$LN7@BLSDCardTo|
+  000c4	e59f0048	 ldr         r0, [pc, #0x48]
 
-; 1486 :     {
-; 1487 :         OALMSG(OAL_ERROR, (L"BLSDCardToFlash:  cannot open file\r\n"));
+; 1494 :         return FALSE;
 
-  000b0	e59f3020	 ldr         r3, [pc, #0x20]
-  000b4	e5933440	 ldr         r3, [r3, #0x440]
-  000b8	e3130001	 tst         r3, #1
-  000bc	0affffed	 beq         |$LN6@BLSDCardTo|
-  000c0	e59f000c	 ldr         r0, [pc, #0xC]
+  000c8	eaffffea	 b           |$LN13@BLSDCardTo|
+  000cc		 |$LN2@BLSDCardTo|
 
-; 1488 :         return FALSE;
+; 1495 :     }
+; 1496 : 
+; 1497 : 
+; 1498 :     //Read data, Ray 13-09-17 //XX
+; 1499 :     if (FileIoRead(&fileio_ops, pFile, (PVOID)pData, size) != FILEIO_STATUS_OK)
 
-  000c4	eaffffea	 b           |$LN10@BLSDCardTo|
-  000c8		 |$LN1@BLSDCardTo|
+  000cc	e5961000	 ldr         r1, [r6]
+  000d0	e1a03009	 mov         r3, r9
+  000d4	e1a0200a	 mov         r2, r10
+  000d8	e1a00007	 mov         r0, r7
+  000dc	eb000000	 bl          FileIoRead
+  000e0	e3500000	 cmp         r0, #0
+  000e4	0a000005	 beq         |$LN1@BLSDCardTo|
 
-; 1489 :     }
-; 1490 : 
-; 1491 :     // return TRUE, File will Reading
-; 1492 :     return TRUE;
+; 1500 : 	{
+; 1501 :         OALMSG(OAL_ERROR, (L"BLSDCardReadLogo:  cannot read file header\r\n"));
 
-  000c8	e3a00001	 mov         r0, #1
+  000e8	e59f3020	 ldr         r3, [pc, #0x20]
+  000ec	e5933440	 ldr         r3, [r3, #0x440]
+  000f0	e3130001	 tst         r3, #1
+  000f4	0affffe0	 beq         |$LN7@BLSDCardTo|
+  000f8	e59f000c	 ldr         r0, [pc, #0xC]
 
-; 1493 : }
+; 1502 :         return FALSE;
 
-  000cc	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
-  000d0	e12fff1e	 bx          lr
-  000d4		 |$LN14@BLSDCardTo|
-  000d4		 |$LN15@BLSDCardTo|
-  000d4	00000000	 DCD         |??_C@_1EK@LHFOHMNN@?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAT?$AAo?$AAF?$AAl?$AAa?$AAs?$AAh?$AA?3?$AA?5?$AA?5?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAo?$AAp?$AAe?$AAn?$AA?5?$AAf?$AAi@|
-  000d8		 |$LN16@BLSDCardTo|
-  000d8	00000000	 DCD         |dpCurSettings|
-  000dc		 |$LN17@BLSDCardTo|
-  000dc	00000000	 DCD         |??_C@_1EO@MDFFFBD@?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAT?$AAo?$AAF?$AAl?$AAa?$AAs?$AAh?$AA?3?$AA?5?$AA?5?$AAf?$AAi?$AAl?$AAe?$AAi?$AAo?$AA?5?$AAi?$AAn?$AAi?$AAt?$AA?5?$AAf?$AAa@|
-  000e0		 |$LN18@BLSDCardTo|
-  000e0	00000000	 DCD         |Disk|
-  000e4		 |$LN19@BLSDCardTo|
-  000e4	00000000	 DCD         |SDCardReadMultiSectors|
-  000e8		 |$LN20@BLSDCardTo|
-  000e8	00000000	 DCD         |SDCardReadSector|
-  000ec		 |$LN21@BLSDCardTo|
-  000ec	00000000	 DCD         |SDCardIdentify|
-  000f0		 |$LN22@BLSDCardTo|
-  000f0	00000000	 DCD         |SDCardInit|
-  000f4		 |$LN23@BLSDCardTo|
-  000f4	00000000	 DCD         |fileio_ops|
-  000f8		 |$LN24@BLSDCardTo|
-  000f8	00000000	 DCD         |pFile|
-  000fc		 |$LN25@BLSDCardTo|
-  000fc	00000000	 DCD         |File|
-  00100		 |$LN26@BLSDCardTo|
-  00100	00000000	 DCD         |bFileIoInit|
-  00104		 |$M45646|
+  000fc	eaffffdd	 b           |$LN13@BLSDCardTo|
+  00100		 |$LN1@BLSDCardTo|
+
+; 1503 : 	}
+; 1504 : 
+; 1505 :     // return TRUE, File will Reading
+; 1506 :     return TRUE;
+
+  00100	e3a00001	 mov         r0, #1
+
+; 1507 : }
+
+  00104	e8bd4ff0	 ldmia       sp!, {r4 - r11, lr}
+  00108	e12fff1e	 bx          lr
+  0010c		 |$LN17@BLSDCardTo|
+  0010c		 |$LN18@BLSDCardTo|
+  0010c	00000000	 DCD         |??_C@_1FK@BIPBBPFB@?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAR?$AAe?$AAa?$AAd?$AAL?$AAo?$AAg?$AAo?$AA?3?$AA?5?$AA?5?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAr?$AAe?$AAa?$AAd?$AA?5?$AAf@|
+  00110		 |$LN19@BLSDCardTo|
+  00110	00000000	 DCD         |dpCurSettings|
+  00114		 |$LN20@BLSDCardTo|
+  00114	00000000	 DCD         |??_C@_1FA@EHAPGJGJ@?$AA?5?$AA?$CK?$AA?$CK?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAT?$AAo?$AAF?$AAl?$AAa?$AAs?$AAh?$AA?3?$AA?5?$AA?5?$AAC?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAo?$AAp?$AAe?$AAn@|
+  00118		 |$LN21@BLSDCardTo|
+  00118	00000000	 DCD         |??_C@_1EO@MDFFFBD@?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAT?$AAo?$AAF?$AAl?$AAa?$AAs?$AAh?$AA?3?$AA?5?$AA?5?$AAf?$AAi?$AAl?$AAe?$AAi?$AAo?$AA?5?$AAi?$AAn?$AAi?$AAt?$AA?5?$AAf?$AAa@|
+  0011c		 |$LN22@BLSDCardTo|
+  0011c	00000000	 DCD         |Disk|
+  00120		 |$LN23@BLSDCardTo|
+  00120	00000000	 DCD         |SDCardReadMultiSectors|
+  00124		 |$LN24@BLSDCardTo|
+  00124	00000000	 DCD         |SDCardReadSector|
+  00128		 |$LN25@BLSDCardTo|
+  00128	00000000	 DCD         |SDCardIdentify|
+  0012c		 |$LN26@BLSDCardTo|
+  0012c	00000000	 DCD         |SDCardInit|
+  00130		 |$LN27@BLSDCardTo|
+  00130	00000000	 DCD         |fileio_ops|
+  00134		 |$LN28@BLSDCardTo|
+  00134	00000000	 DCD         |pFile|
+  00138		 |$LN29@BLSDCardTo|
+  00138	00000000	 DCD         |File|
+  0013c		 |$LN30@BLSDCardTo|
+  0013c	00000000	 DCD         |bFileIoInit|
+  00140		 |$M45657|
 
 			 ENDP  ; |BLSDCardToFlash|
 
@@ -5456,7 +5503,6 @@
 	EXPORT	|BLSDCardReadLogo|
 	EXPORT	|??_C@_1EM@GBAEOFJC@?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAR?$AAe?$AAa?$AAd?$AAL?$AAo?$AAg?$AAo?$AA?3?$AA?5?$AA?5?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAr?$AAe?$AAa?$AAd?$AA?5?$AAf@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1GG@GHEKKBGL@?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAR?$AAe?$AAa?$AAd?$AAL?$AAo?$AAg?$AAo?$AA?3?$AA?5?$AA?5?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAr?$AAe?$AAa?$AAd?$AA?5?$AAp@| [ DATA ] ; `string'
-	EXPORT	|??_C@_1FK@BIPBBPFB@?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAR?$AAe?$AAa?$AAd?$AAL?$AAo?$AAg?$AAo?$AA?3?$AA?5?$AA?5?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAr?$AAe?$AAa?$AAd?$AA?5?$AAf@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1FI@KCFLKPBN@?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAR?$AAe?$AAa?$AAd?$AAL?$AAo?$AAg?$AAo?$AA?3?$AA?5?$AA?5?$AAI?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAf?$AAi?$AAl?$AAe?$AA?5@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1GA@CPLCDHMI@?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAR?$AAe?$AAa?$AAd?$AAL?$AAo?$AAg?$AAo?$AA?3?$AA?5?$AA?5?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAr?$AAe?$AAa?$AAd?$AA?5?$AAf@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1EI@GHBAGNOC@?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAR?$AAe?$AAa?$AAd?$AAL?$AAo?$AAg?$AAo?$AA?3?$AA?5?$AA?5?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAo?$AAp?$AAe?$AAn?$AA?5?$AA?$CF@| [ DATA ] ; `string'
@@ -5465,11 +5511,11 @@
 	IMPORT	|OALLocalAlloc|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45699| DCD	|$LN32@BLSDCardRe@2|
+|$T45711| DCD	|$LN32@BLSDCardRe@2|
 	DCD	0xc000ae02
 
   00000			 AREA	 |.xdata|, DATA
-|$T45695| DCD	0xffffffdc
+|$T45707| DCD	0xffffffdc
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1EM@GBAEOFJC@?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAR?$AAe?$AAa?$AAd?$AAL?$AAo?$AAg?$AAo?$AA?3?$AA?5?$AA?5?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAr?$AAe?$AAa?$AAd?$AA?5?$AAf@| DCB "B"
@@ -5491,17 +5537,6 @@
 	DCB	0x0, "p", 0x0, "i", 0x0, "x", 0x0, "e", 0x0, "l", 0x0, " "
 	DCB	0x0, "d", 0x0, "a", 0x0, "t", 0x0, "a", 0x0, " ", 0x0, "o"
 	DCB	0x0, "f", 0x0, "f", 0x0, "s", 0x0, "e", 0x0, "t", 0x0, 0xd
-	DCB	0x0, 0xa, 0x0, 0x0, 0x0			; `string'
-
-  00000			 AREA	 |.rdata|, DATA, READONLY
-|??_C@_1FK@BIPBBPFB@?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAR?$AAe?$AAa?$AAd?$AAL?$AAo?$AAg?$AAo?$AA?3?$AA?5?$AA?5?$AAc?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAr?$AAe?$AAa?$AAd?$AA?5?$AAf@| DCB "B"
-	DCB	0x0, "L", 0x0, "S", 0x0, "D", 0x0, "C", 0x0, "a", 0x0, "r"
-	DCB	0x0, "d", 0x0, "R", 0x0, "e", 0x0, "a", 0x0, "d", 0x0, "L"
-	DCB	0x0, "o", 0x0, "g", 0x0, "o", 0x0, ":", 0x0, " ", 0x0, " "
-	DCB	0x0, "c", 0x0, "a", 0x0, "n", 0x0, "n", 0x0, "o", 0x0, "t"
-	DCB	0x0, " ", 0x0, "r", 0x0, "e", 0x0, "a", 0x0, "d", 0x0, " "
-	DCB	0x0, "f", 0x0, "i", 0x0, "l", 0x0, "e", 0x0, " ", 0x0, "h"
-	DCB	0x0, "e", 0x0, "a", 0x0, "d", 0x0, "e", 0x0, "r", 0x0, 0xd
 	DCB	0x0, 0xa, 0x0, 0x0, 0x0			; `string'
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -5549,16 +5584,16 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T45695|
+  00004	00000000	 DCD         |$T45707|
 
   00008		 |BLSDCardReadLogo| PROC
 
-; 1503 : {
+; 1517 : {
 
   00008		 |$LN32@BLSDCardRe@2|
   00008	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
   0000c	e24dde23	 sub         sp, sp, #0x23, 28
-  00010		 |$M45696|
+  00010		 |$M45708|
   00010	e1a09002	 mov         r9, r2
   00014	e1a0a001	 mov         r10, r1
   00018	e1a07000	 mov         r7, r0
@@ -5566,13 +5601,13 @@
   00020	e5933000	 ldr         r3, [r3]
   00024	e58d322c	 str         r3, [sp, #0x22C]
 
-; 1504 : 	FILEHANDLE logoFile;
-; 1505 : 	WORD	   wSignature = 0;
-; 1506 : 	DWORD	   dwOffset = 0;
-; 1507 : 	BYTE*	   pTmpBuf = NULL;
-; 1508 : 	DWORD	   dwCursor = 0;
-; 1509 : 
-; 1510 : 	if (!bFileIoInit)
+; 1518 : 	FILEHANDLE logoFile;
+; 1519 : 	WORD	   wSignature = 0;
+; 1520 : 	DWORD	   dwOffset = 0;
+; 1521 : 	BYTE*	   pTmpBuf = NULL;
+; 1522 : 	DWORD	   dwCursor = 0;
+; 1523 : 
+; 1524 : 	if (!bFileIoInit)
 
   00028	e59f8288	 ldr         r8, [pc, #0x288]
   0002c	e3a02000	 mov         r2, #0
@@ -5584,29 +5619,29 @@
   00044	e58d1004	 str         r1, [sp, #4]
   00048	1a000018	 bne         |$LN9@BLSDCardRe@2|
 
-; 1511 : 	{
-; 1512 : 		// set up data structure used by file system driver
-; 1513 : 		fileio_ops.init = &SDCardInit;
+; 1525 : 	{
+; 1526 : 		// set up data structure used by file system driver
+; 1527 : 		fileio_ops.init         = &SDCardInit;
 
   0004c	e59f325c	 ldr         r3, [pc, #0x25C]
 
-; 1514 : 		fileio_ops.identify = &SDCardIdentify;
+; 1528 : 		fileio_ops.identify     = &SDCardIdentify;
 
   00050	e59fe254	 ldr         lr, [pc, #0x254]
 
-; 1515 : 		fileio_ops.read_sector = &SDCardReadSector;
+; 1529 : 		fileio_ops.read_sector  = &SDCardReadSector;
 
   00054	e59f424c	 ldr         r4, [pc, #0x24C]
 
-; 1516 : 		fileio_ops.read_multi_sectors = &SDCardReadMultiSectors;
+; 1530 : 		fileio_ops.read_multi_sectors = &SDCardReadMultiSectors;
 
   00058	e59f5244	 ldr         r5, [pc, #0x244]
   0005c	e8864008	 stmia       r6, {r3, lr}
 
-; 1517 : 		fileio_ops.drive_info = (PVOID)&Disk;
-; 1518 : 
-; 1519 : 		// initialize file system driver
-; 1520 : 		if (FileIoInit(&fileio_ops) != FILEIO_STATUS_OK)
+; 1531 : 		fileio_ops.drive_info   = (PVOID)&Disk;
+; 1532 : 
+; 1533 : 		// initialize file system driver
+; 1534 : 		if (FileIoInit(&fileio_ops) != FILEIO_STATUS_OK)
 
   00060	e1a00006	 mov         r0, r6
   00064	e59f3234	 ldr         r3, [pc, #0x234]
@@ -5617,8 +5652,8 @@
   00078	e3500000	 cmp         r0, #0
   0007c	0a000009	 beq         |$LN8@BLSDCardRe@2|
 
-; 1521 : 		{
-; 1522 : 			OALMSG(OAL_ERROR, (L"BLSDCardReadLogo:  fileio init failed\r\n"));
+; 1535 : 		{
+; 1536 : 			OALMSG(OAL_ERROR, (L"BLSDCardReadLogo:  fileio init failed\r\n"));
 
   00080	e59f31fc	 ldr         r3, [pc, #0x1FC]
   00084	e5933440	 ldr         r3, [r3, #0x440]
@@ -5629,7 +5664,7 @@
   00094	eb000000	 bl          NKDbgPrintfW
   00098		 |$LN12@BLSDCardRe@2|
 
-; 1523 : 			return FALSE;
+; 1537 : 			return FALSE;
 
   00098	e59d022c	 ldr         r0, [sp, #0x22C]
   0009c	eb000000	 bl          __security_check_cookie
@@ -5637,27 +5672,27 @@
   000a4	ea000072	 b           |$LN10@BLSDCardRe@2|
   000a8		 |$LN8@BLSDCardRe@2|
 
-; 1524 : 		}
-; 1525 : 
-; 1526 : 		bFileIoInit = TRUE;
+; 1538 : 		}
+; 1539 : 
+; 1540 :         bFileIoInit = TRUE;
 
   000a8	e3a03001	 mov         r3, #1
   000ac	e5883000	 str         r3, [r8]
   000b0		 |$LN9@BLSDCardRe@2|
 
-; 1527 : 	}
-; 1528 : 
-; 1529 :     // fill in file name (8.3 format)
-; 1530 :     FileNameToDirEntry(filename, logoFile.name, logoFile.extension);
+; 1541 : 	}
+; 1542 : 
+; 1543 :     // fill in file name (8.3 format)
+; 1544 :     FileNameToDirEntry(filename, logoFile.name, logoFile.extension);
 
   000b0	e28d2011	 add         r2, sp, #0x11
   000b4	e28d1008	 add         r1, sp, #8
   000b8	e1a00007	 mov         r0, r7
   000bc	eb000000	 bl          FileNameToDirEntry
 
-; 1531 : 	
-; 1532 :     // try to open file specified by pConfig->filename, return BL_ERROR on failure
-; 1533 :     if (FileIoOpen(&fileio_ops, &logoFile) != FILEIO_STATUS_OK)
+; 1545 : 	
+; 1546 :     // try to open file specified by pConfig->filename, return BL_ERROR on failure
+; 1547 :     if (FileIoOpen(&fileio_ops, &logoFile) != FILEIO_STATUS_OK)
 
   000c0	e28d1008	 add         r1, sp, #8
   000c4	e1a00006	 mov         r0, r6
@@ -5665,8 +5700,8 @@
   000cc	e3500000	 cmp         r0, #0
   000d0	0a000007	 beq         |$LN7@BLSDCardRe@2|
 
-; 1534 :     {
-; 1535 :         OALMSG(OAL_ERROR, (L"BLSDCardReadLogo:  cannot open %s\r\n", filename));
+; 1548 :     {
+; 1549 :         OALMSG(OAL_ERROR, (L"BLSDCardReadLogo:  cannot open %s\r\n", filename));
 
   000d4	e59f31a8	 ldr         r3, [pc, #0x1A8]
   000d8	e5933440	 ldr         r3, [r3, #0x440]
@@ -5676,15 +5711,15 @@
   000e8	e1a01007	 mov         r1, r7
   000ec	eb000000	 bl          NKDbgPrintfW
 
-; 1536 :         return FALSE;
+; 1550 :         return FALSE;
 
   000f0	eaffffe8	 b           |$LN12@BLSDCardRe@2|
   000f4		 |$LN7@BLSDCardRe@2|
 
-; 1537 :     }
-; 1538 : 
-; 1539 : 	// Read signature
-; 1540 :     if (FileIoRead(&fileio_ops, &logoFile, (PVOID)&wSignature, sizeof(wSignature)) != FILEIO_STATUS_OK)
+; 1551 :     }
+; 1552 : 
+; 1553 : 	// Read signature
+; 1554 :     if (FileIoRead(&fileio_ops, &logoFile, (PVOID)&wSignature, sizeof(wSignature)) != FILEIO_STATUS_OK)
 
   000f4	e3a03002	 mov         r3, #2
   000f8	e28d2000	 add         r2, sp, #0
@@ -5694,8 +5729,8 @@
   00108	e3500000	 cmp         r0, #0
   0010c	0a000005	 beq         |$LN6@BLSDCardRe@2|
 
-; 1541 : 	{
-; 1542 :         OALMSG(OAL_ERROR, (L"BLSDCardReadLogo:  cannot read file signature\r\n"));
+; 1555 : 	{
+; 1556 :         OALMSG(OAL_ERROR, (L"BLSDCardReadLogo:  cannot read file signature\r\n"));
 
   00110	e59f316c	 ldr         r3, [pc, #0x16C]
   00114	e5933440	 ldr         r3, [r3, #0x440]
@@ -5703,16 +5738,16 @@
   0011c	0affffdd	 beq         |$LN12@BLSDCardRe@2|
   00120	e59f016c	 ldr         r0, [pc, #0x16C]
 
-; 1543 :         return FALSE;
+; 1557 :         return FALSE;
 
   00124	eaffffda	 b           |$LN28@BLSDCardRe@2|
   00128		 |$LN6@BLSDCardRe@2|
 
-; 1544 : 	}
-; 1545 : 
-; 1546 : 	dwCursor += sizeof(wSignature);
-; 1547 : 
-; 1548 :     if( wSignature != 0x4D42 )  
+; 1558 : 	}
+; 1559 : 
+; 1560 : 	dwCursor += sizeof(wSignature);
+; 1561 : 
+; 1562 :     if( wSignature != 0x4D42 )  
 
   00128	e1dd20b0	 ldrh        r2, [sp]
   0012c	e3a03c4d	 mov         r3, #0x4D, 24
@@ -5720,8 +5755,8 @@
   00134	e1520003	 cmp         r2, r3
   00138	0a000005	 beq         |$LN5@BLSDCardRe@2|
 
-; 1549 :     {
-; 1550 :         OALMSG(OAL_ERROR, (L"BLSDCardReadLogo:  Invalid file signature\r\n"));
+; 1563 :     {
+; 1564 :         OALMSG(OAL_ERROR, (L"BLSDCardReadLogo:  Invalid file signature\r\n"));
 
   0013c	e59f3140	 ldr         r3, [pc, #0x140]
   00140	e5933440	 ldr         r3, [r3, #0x440]
@@ -5729,22 +5764,22 @@
   00148	0affffd2	 beq         |$LN12@BLSDCardRe@2|
   0014c	e59f013c	 ldr         r0, [pc, #0x13C]
 
-; 1551 :         return FALSE;
+; 1565 :         return FALSE;
 
   00150	eaffffcf	 b           |$LN28@BLSDCardRe@2|
   00154		 |$LN5@BLSDCardRe@2|
 
-; 1552 : 	}
-; 1553 : 
-; 1554 : 	// Read dummy data
-; 1555 : 	pTmpBuf = (BYTE*)OALLocalAlloc(0, 2*sizeof(DWORD));
+; 1566 : 	}
+; 1567 : 
+; 1568 : 	// Read dummy data
+; 1569 : 	pTmpBuf = (BYTE*)OALLocalAlloc(0, 2*sizeof(DWORD));
 
   00154	e3a01008	 mov         r1, #8
   00158	e3a00000	 mov         r0, #0
   0015c	eb000000	 bl          OALLocalAlloc
   00160	e1a04000	 mov         r4, r0
 
-; 1556 :     if (FileIoRead(&fileio_ops, &logoFile, (PVOID)pTmpBuf, 2*sizeof(DWORD)) != FILEIO_STATUS_OK)
+; 1570 :     if (FileIoRead(&fileio_ops, &logoFile, (PVOID)pTmpBuf, 2*sizeof(DWORD)) != FILEIO_STATUS_OK)
 
   00164	e1a02004	 mov         r2, r4
   00168	e3a03008	 mov         r3, #8
@@ -5754,8 +5789,8 @@
   00178	e3500000	 cmp         r0, #0
   0017c	0a000008	 beq         |$LN4@BLSDCardRe@2|
 
-; 1557 : 	{
-; 1558 :         OALMSG(OAL_ERROR, (L"BLSDCardReadLogo:  cannot read file header\r\n"));
+; 1571 : 	{
+; 1572 :         OALMSG(OAL_ERROR, (L"BLSDCardReadLogo:  cannot read file header\r\n"));
 
   00180	e59f30fc	 ldr         r3, [pc, #0xFC]
   00184	e5933440	 ldr         r3, [r3, #0x440]
@@ -5766,27 +5801,27 @@
   00194	eb000000	 bl          NKDbgPrintfW
   00198		 |$LN20@BLSDCardRe@2|
 
-; 1559 : 		OALLocalFree((HLOCAL)pTmpBuf);
+; 1573 : 		OALLocalFree((HLOCAL)pTmpBuf);
 
   00198	e1a00004	 mov         r0, r4
   0019c	eb000000	 bl          OALLocalFree
 
-; 1560 :         return FALSE;
+; 1574 :         return FALSE;
 
   001a0	eaffffbc	 b           |$LN12@BLSDCardRe@2|
   001a4		 |$LN4@BLSDCardRe@2|
 
-; 1561 : 	}
-; 1562 : 
-; 1563 : 	OALLocalFree((HLOCAL)pTmpBuf);
+; 1575 : 	}
+; 1576 : 
+; 1577 : 	OALLocalFree((HLOCAL)pTmpBuf);
 
   001a4	e1a00004	 mov         r0, r4
   001a8	eb000000	 bl          OALLocalFree
 
-; 1564 : 	dwCursor += 2*sizeof(DWORD);
-; 1565 : 
-; 1566 : 	// Read pixel data offset
-; 1567 :     if (FileIoRead(&fileio_ops, &logoFile, (PVOID)&dwOffset, sizeof(dwOffset)) != FILEIO_STATUS_OK)
+; 1578 : 	dwCursor += 2*sizeof(DWORD);
+; 1579 : 
+; 1580 : 	// Read pixel data offset
+; 1581 :     if (FileIoRead(&fileio_ops, &logoFile, (PVOID)&dwOffset, sizeof(dwOffset)) != FILEIO_STATUS_OK)
 
   001ac	e3a03004	 mov         r3, #4
   001b0	e28d2004	 add         r2, sp, #4
@@ -5796,8 +5831,8 @@
   001c0	e3500000	 cmp         r0, #0
   001c4	0a000005	 beq         |$LN3@BLSDCardRe@2|
 
-; 1568 : 	{
-; 1569 :         OALMSG(OAL_ERROR, (L"BLSDCardReadLogo:  cannot read pixel data offset\r\n"));
+; 1582 : 	{
+; 1583 :         OALMSG(OAL_ERROR, (L"BLSDCardReadLogo:  cannot read pixel data offset\r\n"));
 
   001c8	e59f30b4	 ldr         r3, [pc, #0xB4]
   001cc	e5933440	 ldr         r3, [r3, #0x440]
@@ -5805,24 +5840,24 @@
   001d4	0affffaf	 beq         |$LN12@BLSDCardRe@2|
   001d8	e59f00ac	 ldr         r0, [pc, #0xAC]
 
-; 1570 :         return FALSE;
+; 1584 :         return FALSE;
 
   001dc	eaffffac	 b           |$LN28@BLSDCardRe@2|
   001e0		 |$LN3@BLSDCardRe@2|
 
-; 1571 : 	}
-; 1572 : 
-; 1573 : 	dwCursor += sizeof(dwOffset);
-; 1574 : 
-; 1575 : 	// Read dummy data before pixel data offset
-; 1576 : 	pTmpBuf = (BYTE*)OALLocalAlloc(0, dwOffset - dwCursor);
+; 1585 : 	}
+; 1586 : 
+; 1587 : 	dwCursor += sizeof(dwOffset);
+; 1588 : 
+; 1589 : 	// Read dummy data before pixel data offset
+; 1590 : 	pTmpBuf = (BYTE*)OALLocalAlloc(0, dwOffset - dwCursor);
 
   001e0	e59d3004	 ldr         r3, [sp, #4]
   001e4	e3a00000	 mov         r0, #0
   001e8	e243100e	 sub         r1, r3, #0xE
   001ec	eb000000	 bl          OALLocalAlloc
 
-; 1577 :     if (FileIoRead(&fileio_ops, &logoFile, (PVOID)pTmpBuf, dwOffset - dwCursor) != FILEIO_STATUS_OK)
+; 1591 :     if (FileIoRead(&fileio_ops, &logoFile, (PVOID)pTmpBuf, dwOffset - dwCursor) != FILEIO_STATUS_OK)
 
   001f0	e59d3004	 ldr         r3, [sp, #4]
   001f4	e1a04000	 mov         r4, r0
@@ -5834,8 +5869,8 @@
   0020c	e3500000	 cmp         r0, #0
   00210	0a000005	 beq         |$LN2@BLSDCardRe@2|
 
-; 1578 : 	{
-; 1579 :         OALMSG(OAL_ERROR, (L"BLSDCardReadLogo:  cannot read file\r\n"));
+; 1592 : 	{
+; 1593 :         OALMSG(OAL_ERROR, (L"BLSDCardReadLogo:  cannot read file\r\n"));
 
   00214	e59f3068	 ldr         r3, [pc, #0x68]
   00218	e5933440	 ldr         r3, [r3, #0x440]
@@ -5843,22 +5878,22 @@
   00220	0affffdc	 beq         |$LN20@BLSDCardRe@2|
   00224	e59f005c	 ldr         r0, [pc, #0x5C]
 
-; 1580 : 		OALLocalFree((HLOCAL)pTmpBuf);
-; 1581 :         return FALSE;
+; 1594 : 		OALLocalFree((HLOCAL)pTmpBuf);
+; 1595 :         return FALSE;
 
   00228	eaffffd9	 b           |$LN29@BLSDCardRe@2|
   0022c		 |$LN2@BLSDCardRe@2|
 
-; 1582 : 	}
-; 1583 : 
-; 1584 : 	OALLocalFree((HLOCAL)pTmpBuf);
+; 1596 : 	}
+; 1597 : 
+; 1598 : 	OALLocalFree((HLOCAL)pTmpBuf);
 
   0022c	e1a00004	 mov         r0, r4
   00230	eb000000	 bl          OALLocalFree
 
-; 1585 : 
-; 1586 : 	// Read pixel data
-; 1587 :     if (FileIoRead(&fileio_ops, &logoFile, (PVOID)pData, size) != FILEIO_STATUS_OK)
+; 1599 : 
+; 1600 : 	// Read pixel data
+; 1601 :     if (FileIoRead(&fileio_ops, &logoFile, (PVOID)pData, size) != FILEIO_STATUS_OK)
 
   00234	e1a03009	 mov         r3, r9
   00238	e1a0200a	 mov         r2, r10
@@ -5868,8 +5903,8 @@
   00248	e3500000	 cmp         r0, #0
   0024c	0a000005	 beq         |$LN1@BLSDCardRe@2|
 
-; 1588 : 	{
-; 1589 :         OALMSG(OAL_ERROR, (L"BLSDCardReadLogo:  cannot read file header\r\n"));
+; 1602 : 	{
+; 1603 :         OALMSG(OAL_ERROR, (L"BLSDCardReadLogo:  cannot read file header\r\n"));
 
   00250	e59f302c	 ldr         r3, [pc, #0x2C]
   00254	e5933440	 ldr         r3, [r3, #0x440]
@@ -5877,21 +5912,21 @@
   0025c	0affff8d	 beq         |$LN12@BLSDCardRe@2|
   00260	e59f0018	 ldr         r0, [pc, #0x18]
 
-; 1590 :         return FALSE;
+; 1604 :         return FALSE;
 
   00264	eaffff8a	 b           |$LN28@BLSDCardRe@2|
   00268		 |$LN1@BLSDCardRe@2|
 
-; 1591 : 	}
-; 1592 : 
-; 1593 : 	return TRUE;
+; 1605 : 	}
+; 1606 : 
+; 1607 : 	return TRUE;
 
   00268	e59d022c	 ldr         r0, [sp, #0x22C]
   0026c	eb000000	 bl          __security_check_cookie
   00270	e3a00001	 mov         r0, #1
   00274		 |$LN10@BLSDCardRe@2|
 
-; 1594 : }
+; 1608 : }
 
   00274	e28dde23	 add         sp, sp, #0x23, 28
   00278	e8bd47f0	 ldmia       sp!, {r4 - r10, lr}
@@ -5929,7 +5964,7 @@
   002b8	00000000	 DCD         |bFileIoInit|
   002bc		 |$LN49@BLSDCardRe@2|
   002bc	00000000	 DCD         |__security_cookie|
-  002c0		 |$M45697|
+  002c0		 |$M45709|
 
 			 ENDP  ; |BLSDCardReadLogo|
 

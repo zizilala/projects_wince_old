@@ -11,7 +11,7 @@
 ; File c:\wince600\platform\z2170p\src\test\fstest\main.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32857| DCD	|$LN5@DllMain|
+|$T32859| DCD	|$LN5@DllMain|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -22,7 +22,7 @@
 ; 44   : {
 
   00000		 |$LN5@DllMain|
-  00000		 |$M32854|
+  00000		 |$M32856|
 
 ; 45   :     // Any initialization code goes here.
 ; 46   : 	UNREFERENCED_PARAMETER(hInstance);
@@ -36,7 +36,7 @@
 ; 51   : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M32855|
+  00008		 |$M32857|
 
 			 ENDP  ; |DllMain|
 
@@ -52,11 +52,11 @@
 	IMPORT	|__security_check_cookie|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32872| DCD	|$LN5@Debug|
+|$T32874| DCD	|$LN5@Debug|
 	DCD	0xc0002305
 
   00000			 AREA	 |.xdata|, DATA
-|$T32868| DCD	0xffffffe0
+|$T32870| DCD	0xffffffe0
 
   00000			 AREA	 |.data|, DATA
 |?szHeader@?1??Debug@@YAXPBGZZ@4PAGA| DCB "C", 0x0, "E", 0x0, "T", 0x0, "K"
@@ -70,7 +70,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T32868|
+  00004	00000000	 DCD         |$T32870|
 
   00008		 |?Debug@@YAXPBGZZ| PROC		; Debug
 
@@ -82,7 +82,7 @@
   00010	e92d5010	 stmdb       sp!, {r4, r12, lr}
   00014	e59fc074	 ldr         r12, [pc, #0x74]
   00018	e08dd00c	 add         sp, sp, r12
-  0001c		 |$M32869|
+  0001c		 |$M32871|
   0001c	e1a04000	 mov         r4, r0
   00020	e58d4810	 str         r4, [sp, #0x810]
   00024	e59f3060	 ldr         r3, [pc, #0x60]
@@ -144,7 +144,7 @@
   0008c	00000000	 DCD         |__security_cookie|
   00090		 |$LN10@Debug|
   00090	fffff7fc	 DCD         0xfffff7fc
-  00094		 |$M32870|
+  00094		 |$M32872|
 
 			 ENDP  ; |?Debug@@YAXPBGZZ|, Debug
 
@@ -186,7 +186,7 @@
 	IMPORT	|__imp_?Log@CKato@@QAAHKPBGZZ|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32885| DCD	|$LN5@LogHelpInf|
+|$T32887| DCD	|$LN5@LogHelpInf|
 	DCD	0x40013b02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -606,7 +606,7 @@
   00000		 |$LN5@LogHelpInf|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M32882|
+  00008		 |$M32884|
 
 ; 523  :     g_pKato->Log(LOG_COMMENT, TEXT(""));
 
@@ -1074,7 +1074,7 @@
   004e4	00000000	 DCD         |??_C@_1CM@IPJJOHCJ@?$AAC?$AAo?$AAm?$AAm?$AAa?$AAn?$AAd?$AA?5?$AAL?$AAi?$AAn?$AAe?$AA?5?$AAO?$AAp?$AAt?$AAi?$AAo?$AAn?$AAs?$AA?3?$AA?$AA@|
   004e8		 |$LN42@LogHelpInf|
   004e8	00000000	 DCD         |?g_pKato@@3PAVCKato@@A|
-  004ec		 |$M32883|
+  004ec		 |$M32885|
 
 			 ENDP  ; |?LogHelpInfo@@YAXXZ|, LogHelpInfo
 
@@ -1129,11 +1129,11 @@
 	IMPORT	|wcslen|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32957| DCD	|$LN81@ParseComma|
+|$T32959| DCD	|$LN81@ParseComma|
 	DCD	0xc001ac02
 
   00000			 AREA	 |.xdata|, DATA
-|$T32953| DCD	0xffffffd8
+|$T32955| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1DM@JCBNLFOC@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAN?$AAo?$AA?5?$AAf?$AAi?$AAl?$AAe?$AA?5?$AAi?$AAn?$AAf?$AAo?$AA?5?$AAs?$AAp?$AAe?$AAc?$AAi?$AAf?$AAi?$AAe?$AAd?$AA?$AA@| DCB "E"
@@ -1346,7 +1346,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T32953|
+  00004	00000000	 DCD         |$T32955|
 
   00008		 |?ParseCommandLine@@YA_NPAG@Z| PROC	; ParseCommandLine
 
@@ -1355,7 +1355,7 @@
   00008		 |$LN81@ParseComma|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24dd018	 sub         sp, sp, #0x18
-  00010		 |$M32954|
+  00010		 |$M32956|
   00010	e1a04000	 mov         r4, r0
   00014	e59f3698	 ldr         r3, [pc, #0x698]
   00018	e5933000	 ldr         r3, [r3]
@@ -2323,7 +2323,7 @@
   006b0	00000000	 DCD         |??_C@_15DEJJBEOA@?$AA?5?$AA?7?$AA?$AA@|
   006b4		 |$LN129@ParseComma|
   006b4	00000000	 DCD         |__security_cookie|
-  006b8		 |$M32955|
+  006b8		 |$M32957|
 
 			 ENDP  ; |?ParseCommandLine@@YA_NPAG@Z|, ParseCommandLine
 
@@ -2355,7 +2355,7 @@
 	IMPORT	|?g_lpFTE@@3PAU_FUNCTION_TABLE_ENTRY@@A| ; g_lpFTE
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33037| DCD	|$LN40@ShellProc|
+|$T33039| DCD	|$LN40@ShellProc|
 	DCD	0x4000a602
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2535,7 +2535,7 @@
   00000		 |$LN40@ShellProc|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M33034|
+  00008		 |$M33036|
   00008	e1a04001	 mov         r4, r1
 
 ; 97   :     LPSPS_BEGIN_TEST    pBT;
@@ -3018,7 +3018,7 @@
   00290	00000000	 DCD         |??_C@_1EM@DHBFOELL@?$AAS?$AAh?$AAe?$AAl?$AAl?$AAP?$AAr?$AAo?$AAc?$AA?$CI?$AAS?$AAP?$AAM?$AA_?$AAU?$AAN?$AAL?$AAO?$AAA?$AAD?$AA_?$AAD?$AAL?$AAL?$AA?0?$AA?5?$AA?4?$AA?4?$AA?4?$AA?$CJ?$AA?5?$AAc@|
   00294		 |$LN68@ShellProc|
   00294	00000000	 DCD         |??_C@_1EI@LLGCEHFM@?$AAS?$AAh?$AAe?$AAl?$AAl?$AAP?$AAr?$AAo?$AAc?$AA?$CI?$AAS?$AAP?$AAM?$AA_?$AAL?$AAO?$AAA?$AAD?$AA_?$AAD?$AAL?$AAL?$AA?0?$AA?5?$AA?4?$AA?4?$AA?4?$AA?$CJ?$AA?5?$AAc?$AAa?$AAl@|
-  00298		 |$M33035|
+  00298		 |$M33037|
 
 			 ENDP  ; |ShellProc|
 

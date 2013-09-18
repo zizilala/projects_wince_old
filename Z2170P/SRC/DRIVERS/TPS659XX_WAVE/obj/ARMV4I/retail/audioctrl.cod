@@ -11,7 +11,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audioctrl.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32448| DCD	|$LN5@get_AudioL|
+|$T32450| DCD	|$LN5@get_AudioL|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -22,17 +22,17 @@
 ; 79   :     CAudioLineBase* get_AudioLine() const       { return m_pAudioLine; }
 
   00000		 |$LN5@get_AudioL|
-  00000		 |$M32445|
+  00000		 |$M32447|
   00000	e5900008	 ldr         r0, [r0, #8]
   00004	e12fff1e	 bx          lr
-  00008		 |$M32446|
+  00008		 |$M32448|
 
 			 ENDP  ; |?get_AudioLine@CAudioControlBase@@QBAPAVCAudioLineBase@@XZ|, CAudioControlBase::get_AudioLine
 
 	EXPORT	|?get_ControlId@CAudioControlBase@@QBAKXZ| ; CAudioControlBase::get_ControlId
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32458| DCD	|$LN5@get_Contro|
+|$T32460| DCD	|$LN5@get_Contro|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -43,10 +43,10 @@
 ; 81   :     DWORD get_ControlId() const                 { return m_ControlId; }
 
   00000		 |$LN5@get_Contro|
-  00000		 |$M32455|
+  00000		 |$M32457|
   00000	e590000c	 ldr         r0, [r0, #0xC]
   00004	e12fff1e	 bx          lr
-  00008		 |$M32456|
+  00008		 |$M32458|
 
 			 ENDP  ; |?get_ControlId@CAudioControlBase@@QBAKXZ|, CAudioControlBase::get_ControlId
 
@@ -61,7 +61,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audioctrl.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32468| DCD	|$LN5@CAudioCont|
+|$T32470| DCD	|$LN5@CAudioCont|
 	DCD	0x40000800
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -82,7 +82,7 @@
 ; 29   : {
 
   00000		 |$LN5@CAudioCont|
-  00000		 |$M32465|
+  00000		 |$M32467|
   00000	e59f3014	 ldr         r3, [pc, #0x14]
   00004	e3a02000	 mov         r2, #0
 
@@ -103,14 +103,14 @@
   0001c		 |$LN6@CAudioCont|
   0001c		 |$LN7@CAudioCont|
   0001c	00000000	 DCD         |??_7CAudioControlBase@@6B@|
-  00020		 |$M32466|
+  00020		 |$M32468|
 
 			 ENDP  ; |??0CAudioControlBase@@QAA@XZ|, CAudioControlBase::CAudioControlBase
 
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audioctrl.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32479| DCD	|$LN5@get_Multip|
+|$T32481| DCD	|$LN5@get_Multip|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -121,16 +121,16 @@
 ; 92   :     virtual DWORD get_MultipleItemCount() const { return 0; }
 
   00000		 |$LN5@get_Multip|
-  00000		 |$M32476|
+  00000		 |$M32478|
   00000	e3a00000	 mov         r0, #0
   00004	e12fff1e	 bx          lr
-  00008		 |$M32477|
+  00008		 |$M32479|
 
 			 ENDP  ; |?get_MultipleItemCount@CAudioControlBase@@UBAKXZ|, CAudioControlBase::get_MultipleItemCount
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32488| DCD	|$LN5@get_Status|
+|$T32490| DCD	|$LN5@get_Status|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -141,7 +141,7 @@
 ; 95   :     {
 
   00000		 |$LN5@get_Status|
-  00000		 |$M32485|
+  00000		 |$M32487|
 
 ; 96   :         return MIXERCONTROL_CONTROLF_UNIFORM;
 
@@ -150,14 +150,14 @@
 ; 97   :     }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M32486|
+  00008		 |$M32488|
 
 			 ENDP  ; |?get_StatusFlag@CAudioControlBase@@UBAKXZ|, CAudioControlBase::get_StatusFlag
 
 	IMPORT	|wcscpy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32502| DCD	|$LN7@copy_Contr|
+|$T32504| DCD	|$LN7@copy_Contr|
 	DCD	0x40004601
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audioctrl.cpp
@@ -170,7 +170,7 @@
 
   00000		 |$LN7@copy_Contr|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M32499|
+  00004		 |$M32501|
   00004	e1a07001	 mov         r7, r1
   00008	e1a06000	 mov         r6, r0
 
@@ -269,14 +269,14 @@
 
   00110	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   00114	e12fff1e	 bx          lr
-  00118		 |$M32500|
+  00118		 |$M32502|
 
 			 ENDP  ; |?copy_ControlInfo@CAudioControlBase@@UAAXPAUtMIXERCONTROL@@@Z|, CAudioControlBase::copy_ControlInfo
 
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audioctrl.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32518| DCD	|$LN7@put_Value|
+|$T32520| DCD	|$LN7@put_Value|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audioctrl.cpp
@@ -289,7 +289,7 @@
 
   00000		 |$LN7@put_Value|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M32515|
+  00004		 |$M32517|
   00004	e1a03002	 mov         r3, r2
   00008	e1a02001	 mov         r2, r1
 
@@ -317,14 +317,14 @@
 
   00028	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0002c	e12fff1e	 bx          lr
-  00030		 |$M32516|
+  00030		 |$M32518|
 
 			 ENDP  ; |?put_Value@CAudioControlBase@@UAAKPAUtMIXERCONTROLDETAILS@@K@Z|, CAudioControlBase::put_Value
 
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audioctrl.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32534| DCD	|$LN7@get_Value|
+|$T32536| DCD	|$LN7@get_Value|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audioctrl.cpp
@@ -337,7 +337,7 @@
 
   00000		 |$LN7@get_Value|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M32531|
+  00004		 |$M32533|
   00004	e1a03002	 mov         r3, r2
   00008	e1a02001	 mov         r2, r1
 
@@ -363,7 +363,7 @@
 
   00028	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0002c	e12fff1e	 bx          lr
-  00030		 |$M32532|
+  00030		 |$M32534|
 
 			 ENDP  ; |?get_Value@CAudioControlBase@@UAAKPAUtMIXERCONTROLDETAILS@@K@Z|, CAudioControlBase::get_Value
 

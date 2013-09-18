@@ -35,7 +35,8 @@
 
 
 // disable PREFAST warning for use of EXCEPTION_EXECUTE_HANDLER
-#pragma warning (disable: 6320)
+//#pragma error(disable: 2220)					Ray 13-09-12
+#pragma warning (disable: 6320 4013 4068)	
 
 //------------------------------------------------------------------------------
 //

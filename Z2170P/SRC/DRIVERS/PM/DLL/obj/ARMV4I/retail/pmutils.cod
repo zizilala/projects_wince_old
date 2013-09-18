@@ -12,7 +12,7 @@
 ; File c:\wince600\public\common\sdk\inc\objbase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34534| DCD	|$LN7@operator|
+|$T34546| DCD	|$LN7@operator|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -24,7 +24,7 @@
 
   00000		 |$LN7@operator|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34531|
+  00004		 |$M34543|
 
 ; 517  : #ifdef _WIN32
 ; 518  :     return !memcmp(&guidOne,&guidOther,sizeof(GUID));
@@ -53,14 +53,14 @@
 
   0001c	149de004	 ldrne       lr, [sp], #4
   00020	e12fff1e	 bx          lr
-  00024		 |$M34532|
+  00024		 |$M34544|
 
 			 ENDP  ; |??8@YAHABU_GUID@@0@Z|, operator==
 
 	EXPORT	|??9@YAHABU_GUID@@0@Z|			; operator!=
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34554| DCD	|$LN11@operator@2|
+|$T34566| DCD	|$LN11@operator@2|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -72,7 +72,7 @@
 
   00000		 |$LN11@operator@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34551|
+  00004		 |$M34563|
 
 ; 527  :     return !(guidOne == guidOther);
 
@@ -93,7 +93,7 @@
 
   0001c	049de004	 ldreq       lr, [sp], #4
   00020	e12fff1e	 bx          lr
-  00024		 |$M34552|
+  00024		 |$M34564|
 
 			 ENDP  ; |??9@YAHABU_GUID@@0@Z|, operator!=
 
@@ -107,41 +107,41 @@
 ; File c:\wince600\public\common\sdk\inc\celog.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34568| DCD	|$LN7@CeLogMsg|
+|$T34580| DCD	|$LN7@CeLogMsg|
 	DCD	0xc0002a04
 
   00000			 AREA	 |.xdata|, DATA
-|$T34564| DCD	0xffffffe0
+|$T34576| DCD	0xffffffe0
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T34564|
+  00004	00000000	 DCD         |$T34576|
 
   00008		 |CeLogMsg| PROC
 
-; 1015 : {
+; 1020 : {
 
   00008		 |$LN7@CeLogMsg|
   00008	e1a0c00d	 mov         r12, sp
   0000c	e92d000f	 stmdb       sp!, {r0 - r3}
   00010	e92d5010	 stmdb       sp!, {r4, r12, lr}
   00014	e24dde22	 sub         sp, sp, #0x22, 28
-  00018		 |$M34565|
+  00018		 |$M34577|
   00018	e58d022c	 str         r0, [sp, #0x22C]
   0001c	e59f3088	 ldr         r3, [pc, #0x88]
   00020	e5933000	 ldr         r3, [r3]
   00024	e58d321c	 str         r3, [sp, #0x21C]
 
-; 1016 :     va_list arglist;
-; 1017 :     WCHAR   szTemp[MAX_PATH];
-; 1018 :     size_t  cchLen;
-; 1019 :     HRESULT hr;
-; 1020 : 
-; 1021 :     // Compose a single string using the input args
-; 1022 :     va_start(arglist, szFormat);
-; 1023 :     hr = StringCchVPrintfW(szTemp, MAX_PATH, szFormat, arglist);
+; 1021 :     va_list arglist;
+; 1022 :     WCHAR   szTemp[MAX_PATH];
+; 1023 :     size_t  cchLen;
+; 1024 :     HRESULT hr;
+; 1025 : 
+; 1026 :     // Compose a single string using the input args
+; 1027 :     va_start(arglist, szFormat);
+; 1028 :     hr = StringCchVPrintfW(szTemp, MAX_PATH, szFormat, arglist);
 
   00028	e1a02000	 mov         r2, r0
   0002c	e28d0014	 add         r0, sp, #0x14
@@ -150,11 +150,11 @@
   00038	eb000000	 bl          StringCchVPrintfW
   0003c	e3500000	 cmp         r0, #0
 
-; 1024 :     if (SUCCEEDED(hr)) {
+; 1029 :     if (SUCCEEDED(hr)) {
 
   00040	4a000014	 bmi         |$LN1@CeLogMsg|
 
-; 1025 :         hr = StringCchLengthW(szTemp, MAX_PATH, &cchLen);
+; 1030 :         hr = StringCchLengthW(szTemp, MAX_PATH, &cchLen);
 
   00044	e28d2010	 add         r2, sp, #0x10
   00048	e3a01f41	 mov         r1, #0x41, 30
@@ -162,12 +162,12 @@
   00050	eb000000	 bl          StringCchLengthW
   00054	e3500000	 cmp         r0, #0
 
-; 1026 :         if (SUCCEEDED(hr)) {
+; 1031 :         if (SUCCEEDED(hr)) {
 
   00058	4a00000e	 bmi         |$LN1@CeLogMsg|
 
-; 1027 :             CeLogData(TRUE, CELID_RAW_WCHAR, szTemp, (WORD)((cchLen + 1) * sizeof(WCHAR)),
-; 1028 :                       0, CELZONE_ALWAYSON, 0, FALSE);
+; 1032 :             CeLogData(TRUE, CELID_RAW_WCHAR, szTemp, (WORD)((cchLen + 1) * sizeof(WCHAR)),
+; 1033 :                       0, CELZONE_ALWAYSON, 0, FALSE);
 
   0005c	e59d3010	 ldr         r3, [sp, #0x10]
   00060	e3a04101	 mov         r4, #1, 2
@@ -188,9 +188,9 @@
   00098	e59d021c	 ldr         r0, [sp, #0x21C]
   0009c	eb000000	 bl          __security_check_cookie
 
-; 1029 :         }
-; 1030 :     }
-; 1031 : }
+; 1034 :         }
+; 1035 :     }
+; 1036 : }
 
   000a0	e28dde22	 add         sp, sp, #0x22, 28
   000a4	e89d6010	 ldmia       sp, {r4, sp, lr}
@@ -198,7 +198,7 @@
   000ac		 |$LN8@CeLogMsg|
   000ac		 |$LN9@CeLogMsg|
   000ac	00000000	 DCD         |__security_cookie|
-  000b0		 |$M34566|
+  000b0		 |$M34578|
 
 			 ENDP  ; |CeLogMsg|
 
@@ -210,7 +210,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\pm\dll\pmutils.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34587| DCD	|$LN8@RegQueryTy|
+|$T34599| DCD	|$LN8@RegQueryTy|
 	DCD	0x40001e02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -238,7 +238,7 @@
   00000		 |$LN8@RegQueryTy|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M34584|
+  00008		 |$M34596|
   00008	e1a0e003	 mov         lr, r3
   0000c	e1a04002	 mov         r4, r2
   00010	e1a05001	 mov         r5, r1
@@ -298,7 +298,7 @@
   00070	00000000	 DCD         |??_C@_1CG@KHNILHMB@?$AAR?$AAe?$AAg?$AAQ?$AAu?$AAe?$AAr?$AAy?$AAT?$AAy?$AAp?$AAe?$AAd?$AAV?$AAa?$AAl?$AAu?$AAe?$AA?$AA@|
   00074		 |$LN12@RegQueryTy|
   00074	00000000	 DCD         |dpCurSettings|
-  00078		 |$M34585|
+  00078		 |$M34597|
 
 			 ENDP  ; |RegQueryTypedValue|
 
@@ -311,7 +311,7 @@
 	IMPORT	|RegOpenKeyExW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34609| DCD	|$LN12@GetPMThrea|
+|$T34621| DCD	|$LN12@GetPMThrea|
 	DCD	0x40003802
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -357,7 +357,7 @@
   00000		 |$LN12@GetPMThrea|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd010	 sub         sp, sp, #0x10
-  00008		 |$M34606|
+  00008		 |$M34618|
   00008	e1a07001	 mov         r7, r1
   0000c	e1a05000	 mov         r5, r0
 
@@ -473,7 +473,7 @@
   000d8	00000000	 DCD         |dpCurSettings|
   000dc		 |$LN18@GetPMThrea|
   000dc	00000000	 DCD         |??_C@_1EO@PFEFPDAL@?$AAS?$AAY?$AAS?$AAT?$AAE?$AAM?$AA?2?$AAC?$AAu?$AAr?$AAr?$AAe?$AAn?$AAt?$AAC?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl?$AAS?$AAe?$AAt?$AA?2?$AAC?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl@|
-  000e0		 |$M34607|
+  000e0		 |$M34619|
 
 			 ENDP  ; |GetPMThreadPriority|
 
@@ -482,7 +482,7 @@
 	IMPORT	|gcsPowerManager|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34622| DCD	|$LN5@PmLock|
+|$T34634| DCD	|$LN5@PmLock|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -494,7 +494,7 @@
 
   00000		 |$LN5@PmLock|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34619|
+  00004		 |$M34631|
 
 ; 103  :     EnterCriticalSection(&gcsPowerManager);
 
@@ -508,7 +508,7 @@
   00014		 |$LN6@PmLock|
   00014		 |$LN7@PmLock|
   00014	00000000	 DCD         |gcsPowerManager|
-  00018		 |$M34620|
+  00018		 |$M34632|
 
 			 ENDP  ; |PmLock|
 
@@ -516,7 +516,7 @@
 	IMPORT	|LeaveCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34631| DCD	|$LN5@PmUnlock|
+|$T34643| DCD	|$LN5@PmUnlock|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -528,7 +528,7 @@
 
   00000		 |$LN5@PmUnlock|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34628|
+  00004		 |$M34640|
 
 ; 110  :     LeaveCriticalSection(&gcsPowerManager);
 
@@ -542,7 +542,7 @@
   00014		 |$LN6@PmUnlock|
   00014		 |$LN7@PmUnlock|
   00014	00000000	 DCD         |gcsPowerManager|
-  00018		 |$M34629|
+  00018		 |$M34641|
 
 			 ENDP  ; |PmUnlock|
 
@@ -550,7 +550,7 @@
 	IMPORT	|gcsDeviceUpdateAPIs|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34640| DCD	|$LN5@PmEnterUpd|
+|$T34652| DCD	|$LN5@PmEnterUpd|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -562,7 +562,7 @@
 
   00000		 |$LN5@PmEnterUpd|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34637|
+  00004		 |$M34649|
 
 ; 117  :     EnterCriticalSection(&gcsDeviceUpdateAPIs);
 
@@ -576,14 +576,14 @@
   00014		 |$LN6@PmEnterUpd|
   00014		 |$LN7@PmEnterUpd|
   00014	00000000	 DCD         |gcsDeviceUpdateAPIs|
-  00018		 |$M34638|
+  00018		 |$M34650|
 
 			 ENDP  ; |PmEnterUpdate|
 
 	EXPORT	|PmLeaveUpdate|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34649| DCD	|$LN5@PmLeaveUpd|
+|$T34661| DCD	|$LN5@PmLeaveUpd|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -595,7 +595,7 @@
 
   00000		 |$LN5@PmLeaveUpd|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34646|
+  00004		 |$M34658|
 
 ; 124  :     LeaveCriticalSection(&gcsDeviceUpdateAPIs);
 
@@ -609,7 +609,7 @@
   00014		 |$LN6@PmLeaveUpd|
   00014		 |$LN7@PmLeaveUpd|
   00014	00000000	 DCD         |gcsDeviceUpdateAPIs|
-  00018		 |$M34647|
+  00018		 |$M34659|
 
 			 ENDP  ; |PmLeaveUpdate|
 
@@ -622,7 +622,7 @@
 	IMPORT	|ghPmHeap|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34667| DCD	|$LN11@PmAlloc|
+|$T34679| DCD	|$LN11@PmAlloc|
 	DCD	0x40002201
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -657,7 +657,7 @@
 
   00000		 |$LN11@PmAlloc|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M34664|
+  00004		 |$M34676|
   00004	e1a06000	 mov         r6, r0
 
 ; 142  : #ifndef SHIP_BUILD
@@ -750,7 +750,7 @@
   00080	00000000	 DCD         |dpCurSettings|
   00084		 |$LN17@PmAlloc|
   00084	00000000	 DCD         |ghPmHeap|
-  00088		 |$M34665|
+  00088		 |$M34677|
 
 			 ENDP  ; |PmAlloc|
 
@@ -761,7 +761,7 @@
 	IMPORT	|HeapFree|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34688| DCD	|$LN10@PmFree|
+|$T34700| DCD	|$LN10@PmFree|
 	DCD	0x40002101
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -793,7 +793,7 @@
 
   00000		 |$LN10@PmFree|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M34685|
+  00004		 |$M34697|
   00004	e1a04000	 mov         r4, r0
 
 ; 189  : #ifndef SHIP_BUILD
@@ -874,13 +874,13 @@
   0007c	00000000	 DCD         |??_C@_1CK@LIONPPLD@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAf?$AAr?$AAe?$AAe?$AAi?$AAn?$AAg?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?$AN?$AA?6?$AA?$AA@|
   00080		 |$LN16@PmFree|
   00080	00000000	 DCD         |dpCurSettings|
-  00084		 |$M34686|
+  00084		 |$M34698|
 
 			 ENDP  ; |PmFree|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34713| DCD	|$LN21@HexStringT|
+|$T34725| DCD	|$LN21@HexStringT|
 	DCD	0x40003301
 ; Function compile flags: /Ogspy
 
@@ -892,7 +892,7 @@
 
   00000		 |$LN21@HexStringT|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M34710|
+  00004		 |$M34722|
   00004	e1a06003	 mov         r6, r3
 
 ; 227  :     int Count;
@@ -1000,13 +1000,13 @@
 
   000c4	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   000c8	e12fff1e	 bx          lr
-  000cc		 |$M34711|
+  000cc		 |$M34723|
 
 			 ENDP  ; |?HexStringToDword@@YAHAAPBGAAKHG@Z|, HexStringToDword
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34724| DCD	|$LN17@wUUIDFromS|
+|$T34736| DCD	|$LN17@wUUIDFromS|
 	DCD	0x40006b04
 ; Function compile flags: /Ogspy
 
@@ -1021,7 +1021,7 @@
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5010	 stmdb       sp!, {r4, r12, lr}
   0000c	e24dd004	 sub         sp, sp, #4
-  00010		 |$M34721|
+  00010		 |$M34733|
   00010	e1a04001	 mov         r4, r1
 
 ; 252  :     DWORD dw;
@@ -1252,13 +1252,13 @@
   001a0	e28dd004	 add         sp, sp, #4
   001a4	e89d6010	 ldmia       sp, {r4, sp, lr}
   001a8	e12fff1e	 bx          lr
-  001ac		 |$M34722|
+  001ac		 |$M34734|
 
 			 ENDP  ; |?wUUIDFromString@@YAHPBGPAU_GUID@@@Z|, wUUIDFromString
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34736| DCD	|$LN9@GUIDFromSt|
+|$T34748| DCD	|$LN9@GUIDFromSt|
 	DCD	0x40001201
 ; Function compile flags: /Ogspy
 
@@ -1270,7 +1270,7 @@
 
   00000		 |$LN9@GUIDFromSt|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M34733|
+  00004		 |$M34745|
   00004	e1a04000	 mov         r4, r0
 
 ; 312  :     if (*lpsz++ != '{' )
@@ -1322,7 +1322,7 @@
 
   00040	e8bd4010	 ldmia       sp!, {r4, lr}
   00044	e12fff1e	 bx          lr
-  00048		 |$M34734|
+  00048		 |$M34746|
 
 			 ENDP  ; |?GUIDFromString@@YAHPBGPAU_GUID@@@Z|, GUIDFromString
 
@@ -1333,15 +1333,15 @@
 	IMPORT	|__C_specific_handler|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34775| DCD	|$LN28@ConvertStr|
+|$T34787| DCD	|$LN28@ConvertStr|
 	DCD	0xc0002804
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34777| DCD	|$LN10@ConvertStr|
+|$T34789| DCD	|$LN10@ConvertStr|
 	DCD	0x40000701
 
   00000			 AREA	 |.xdata|, DATA
-|$T34773| DCD	0x1
+|$T34785| DCD	0x1
 	DCD	|$LN14@ConvertStr|
 	DCD	|$LN15@ConvertStr|
 	DCD	|$LN10@ConvertStr|
@@ -1374,7 +1374,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T34773|
+  00004	00000000	 DCD         |$T34785|
 
   00008		 |ConvertStringToGuid| PROC
 
@@ -1495,15 +1495,15 @@
 	IMPORT	|wcslen|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34812| DCD	|$LN23@DeviceIdSi|
+|$T34824| DCD	|$LN23@DeviceIdSi|
 	DCD	0xc0002404
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34814| DCD	|$LN11@DeviceIdSi|
+|$T34826| DCD	|$LN11@DeviceIdSi|
 	DCD	0x40000601
 
   00000			 AREA	 |.xdata|, DATA
-|$T34810| DCD	0x1
+|$T34822| DCD	0x1
 	DCD	|$LN15@DeviceIdSi|
 	DCD	|$LN16@DeviceIdSi|
 	DCD	|$LN11@DeviceIdSi|
@@ -1528,7 +1528,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T34810|
+  00004	00000000	 DCD         |$T34822|
 
   00008		 |DeviceIdSize| PROC
 
@@ -1660,15 +1660,15 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34856| DCD	|$LN25@DeviceIdCl|
+|$T34868| DCD	|$LN25@DeviceIdCl|
 	DCD	0xc0004004
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34858| DCD	|$LN13@DeviceIdCl|
+|$T34870| DCD	|$LN13@DeviceIdCl|
 	DCD	0x40000701
 
   00000			 AREA	 |.xdata|, DATA
-|$T34854| DCD	0x1
+|$T34866| DCD	0x1
 	DCD	|$LN17@DeviceIdCl|
 	DCD	|$LN18@DeviceIdCl|
 	DCD	|$LN13@DeviceIdCl|
@@ -1707,7 +1707,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T34854|
+  00004	00000000	 DCD         |$T34866|
 
   00008		 |DeviceIdCloneIntoBuffer| PROC
 
@@ -1902,7 +1902,7 @@
 	EXPORT	|DeviceIdClone|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34879| DCD	|$LN9@DeviceIdCl@2|
+|$T34891| DCD	|$LN9@DeviceIdCl@2|
 	DCD	0x40001801
 ; Function compile flags: /Ogspy
 
@@ -1914,7 +1914,7 @@
 
   00000		 |$LN9@DeviceIdCl@2|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M34876|
+  00004		 |$M34888|
   00004	e1a06000	 mov         r6, r0
 
 ; 448  :     PDEVICEID pIdClone;
@@ -1994,7 +1994,7 @@
   00054	e1a00004	 mov         r0, r4
   00058	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   0005c	e12fff1e	 bx          lr
-  00060		 |$M34877|
+  00060		 |$M34889|
 
 			 ENDP  ; |DeviceIdClone|
 
@@ -2009,19 +2009,19 @@
 	IMPORT	|idGenericPMDeviceClass|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34945| DCD	|$LN63@DeviceIdPa|
+|$T34957| DCD	|$LN63@DeviceIdPa|
 	DCD	0xc0008304
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34947| DCD	|$LN28@DeviceIdPa|
+|$T34959| DCD	|$LN28@DeviceIdPa|
 	DCD	0x40000301
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34949| DCD	|$LN35@DeviceIdPa|
+|$T34961| DCD	|$LN35@DeviceIdPa|
 	DCD	0x40000a01
 
   00000			 AREA	 |.xdata|, DATA
-|$T34943| DCD	0x2
+|$T34955| DCD	0x2
 	DCD	|$LN39@DeviceIdPa|
 	DCD	|$LN40@DeviceIdPa|
 	DCD	|$LN35@DeviceIdPa|
@@ -2071,7 +2071,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck_SEH|
-  00004	00000000	 DCD         |$T34943|
+  00004	00000000	 DCD         |$T34955|
 
   00008		 |DeviceIdParseNameString| PROC
 
@@ -2430,7 +2430,7 @@
 	EXPORT	|DeviceIdDestroy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34972| DCD	|$LN6@DeviceIdDe|
+|$T34984| DCD	|$LN6@DeviceIdDe|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -2442,7 +2442,7 @@
 
   00000		 |$LN6@DeviceIdDe|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34969|
+  00004		 |$M34981|
   00004	e3500000	 cmp         r0, #0
 
 ; 576  :     if(pId) {
@@ -2455,7 +2455,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M34970|
+  00014		 |$M34982|
 
 			 ENDP  ; |DeviceIdDestroy|
 
@@ -2464,7 +2464,7 @@
 ; File c:\wince600\public\common\sdk\inc\objbase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35007| DCD	|$LN26@DeviceIdsA|
+|$T35019| DCD	|$LN26@DeviceIdsA|
 	DCD	0x40002201
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\pm\dll\pmutils.cpp
@@ -2477,7 +2477,7 @@
 
   00000		 |$LN26@DeviceIdsA|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M35004|
+  00004		 |$M35016|
   00004	e1a05001	 mov         r5, r1
   00008	e1a06000	 mov         r6, r0
 
@@ -2567,7 +2567,7 @@
   0007c	e1a00004	 mov         r0, r4
   00080	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00084	e12fff1e	 bx          lr
-  00088		 |$M35005|
+  00088		 |$M35017|
 
 			 ENDP  ; |?DeviceIdsAreEqual@@YAHPAU_DeviceId_tag@@0@Z|, DeviceIdsAreEqual
 
@@ -2578,15 +2578,15 @@
 	EXPORT	|??_C@_1FO@GHMJBDJO@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAc?$AAr?$AAe?$AAa?$AAt?$AAe?$AAd?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?5?$AA?$CI?$AAn?$AAa?$AAm?$AAe?$AA?5?$AA?8?$AA?$CF?$AAs?$AA?8?$AA?$CJ?$AA?0?$AA?5@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35044| DCD	|$LN31@DeviceStat|
+|$T35056| DCD	|$LN31@DeviceStat|
 	DCD	0xc0005a05
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35046| DCD	|$LN14@DeviceStat|
+|$T35058| DCD	|$LN14@DeviceStat|
 	DCD	0x40000a02
 
   00000			 AREA	 |.xdata|, DATA
-|$T35042| DCD	0x1
+|$T35054| DCD	0x1
 	DCD	|$LN18@DeviceStat|
 	DCD	|$LN19@DeviceStat|
 	DCD	|$LN14@DeviceStat|
@@ -2633,7 +2633,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T35042|
+  00004	00000000	 DCD         |$T35054|
 
   00008		 |DeviceStateCreate| PROC
 
@@ -2883,7 +2883,7 @@
 	EXPORT	|??_C@_1CM@IOMFAGMF@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAd?$AAe?$AAl?$AAe?$AAt?$AAi?$AAn?$AAg?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35077| DCD	|$LN20@DeviceStat@2|
+|$T35089| DCD	|$LN20@DeviceStat@2|
 	DCD	0x40001d01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2909,7 +2909,7 @@
 
   00000		 |$LN20@DeviceStat@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35074|
+  00004		 |$M35086|
   00004	e1a04000	 mov         r4, r0
 
 ; 682  :     BOOL fOk = TRUE;
@@ -2977,7 +2977,7 @@
   0006c	00000000	 DCD         |??_C@_1CG@EFCODPEH@?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAS?$AAt?$AAa?$AAt?$AAe?$AAD?$AAe?$AAs?$AAt?$AAr?$AAo?$AAy?$AA?$AA@|
   00070		 |$LN24@DeviceStat@2|
   00070	00000000	 DCD         |dpCurSettings|
-  00074		 |$M35075|
+  00074		 |$M35087|
 
 			 ENDP  ; |DeviceStateDestroy|
 
@@ -2986,7 +2986,7 @@
 	EXPORT	|??_C@_1EE@LALFIHHK@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAr?$AAe?$AAf?$AAc?$AAn?$AAt?$AA?5?$AAf?$AAo?$AAr?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?5?$AAs?$AAe?$AAt?$AA?5?$AAt?$AAo?$AA?5?$AA?$CF?$AAd?$AA?$AN@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35097| DCD	|$LN11@DeviceStat@3|
+|$T35109| DCD	|$LN11@DeviceStat@3|
 	DCD	0x40001601
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -3013,7 +3013,7 @@
 
   00000		 |$LN11@DeviceStat@3|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35094|
+  00004		 |$M35106|
   00004	e1a04000	 mov         r4, r0
 
 ; 705  : #ifndef SHIP_BUILD
@@ -3062,14 +3062,14 @@
   00050	00000000	 DCD         |??_C@_1CE@MPJLADIF@?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAS?$AAt?$AAa?$AAt?$AAe?$AAA?$AAd?$AAd?$AAR?$AAe?$AAf?$AA?$AA@|
   00054		 |$LN16@DeviceStat@3|
   00054	00000000	 DCD         |dpCurSettings|
-  00058		 |$M35095|
+  00058		 |$M35107|
 
 			 ENDP  ; |DeviceStateAddRef|
 
 	EXPORT	|??_C@_1CE@DCEBDKPO@?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAS?$AAt?$AAa?$AAt?$AAe?$AAD?$AAe?$AAc?$AAR?$AAe?$AAf?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35119| DCD	|$LN13@DeviceStat@4|
+|$T35131| DCD	|$LN13@DeviceStat@4|
 	DCD	0x40001d01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -3087,7 +3087,7 @@
 
   00000		 |$LN13@DeviceStat@4|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35116|
+  00004		 |$M35128|
   00004	e1a04000	 mov         r4, r0
 
 ; 723  :     BOOL fDestroy = FALSE;
@@ -3161,7 +3161,7 @@
   0006c	00000000	 DCD         |??_C@_1CE@DCEBDKPO@?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAS?$AAt?$AAa?$AAt?$AAe?$AAD?$AAe?$AAc?$AAR?$AAe?$AAf?$AA?$AA@|
   00070		 |$LN18@DeviceStat@4|
   00070	00000000	 DCD         |dpCurSettings|
-  00074		 |$M35117|
+  00074		 |$M35129|
 
 			 ENDP  ; |DeviceStateDecRef|
 
@@ -3170,7 +3170,7 @@
 	EXPORT	|??_C@_1FE@PFMPBNAG@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAa?$AAd?$AAd?$AAi?$AAn?$AAg?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?5?$AA?$CI?$AA?8?$AA?$CF?$AAs?$AA?8?$AA?$CJ?$AA?5?$AAt?$AAo?$AA?5?$AAl?$AAi?$AAs?$AAt@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35143| DCD	|$LN12@DeviceStat@5|
+|$T35155| DCD	|$LN12@DeviceStat@5|
 	DCD	0x40002602
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -3200,7 +3200,7 @@
   00000		 |$LN12@DeviceStat@5|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M35140|
+  00008		 |$M35152|
   00008	e1a04001	 mov         r4, r1
   0000c	e1a05000	 mov         r5, r0
 
@@ -3297,7 +3297,7 @@
   00090	00000000	 DCD         |??_C@_1CG@GHDPCNI@?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAS?$AAt?$AAa?$AAt?$AAe?$AAA?$AAd?$AAd?$AAL?$AAi?$AAs?$AAt?$AA?$AA@|
   00094		 |$LN17@DeviceStat@5|
   00094	00000000	 DCD         |dpCurSettings|
-  00098		 |$M35141|
+  00098		 |$M35153|
 
 			 ENDP  ; |DeviceStateAddList|
 
@@ -3306,7 +3306,7 @@
 	EXPORT	|??_C@_1FM@HONKCJKL@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAr?$AAe?$AAm?$AAo?$AAv?$AAi?$AAn?$AAg?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?5?$AA?$CI?$AA?8?$AA?$CF?$AAs?$AA?8?$AA?$CJ?$AA?5?$AAf?$AAr?$AAo?$AAm?$AA?5@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35166| DCD	|$LN17@DeviceStat@6|
+|$T35178| DCD	|$LN17@DeviceStat@6|
 	DCD	0x40003202
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -3337,7 +3337,7 @@
   00000		 |$LN17@DeviceStat@6|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M35163|
+  00008		 |$M35175|
   00008	e1a04000	 mov         r4, r0
 
 ; 794  :     BOOL fOk = TRUE;
@@ -3472,7 +3472,7 @@
   000c0	00000000	 DCD         |??_C@_1CG@MJDKKDFD@?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAS?$AAt?$AAa?$AAt?$AAe?$AAR?$AAe?$AAm?$AAL?$AAi?$AAs?$AAt?$AA?$AA@|
   000c4		 |$LN22@DeviceStat@6|
   000c4	00000000	 DCD         |dpCurSettings|
-  000c8		 |$M35164|
+  000c8		 |$M35176|
 
 			 ENDP  ; |DeviceStateRemList|
 
@@ -3481,15 +3481,15 @@
 	EXPORT	|??_C@_1CI@IDGLAHPA@?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAS?$AAt?$AAa?$AAt?$AAe?$AAF?$AAi?$AAn?$AAd?$AAL?$AAi?$AAs?$AAt?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35206| DCD	|$LN30@DeviceStat@7|
+|$T35218| DCD	|$LN30@DeviceStat@7|
 	DCD	0xc0002704
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35208| DCD	|$LN11@DeviceStat@7|
+|$T35220| DCD	|$LN11@DeviceStat@7|
 	DCD	0x40000701
 
   00000			 AREA	 |.xdata|, DATA
-|$T35204| DCD	0x1
+|$T35216| DCD	0x1
 	DCD	|$LN15@DeviceStat@7|
 	DCD	|$LN16@DeviceStat@7|
 	DCD	|$LN11@DeviceStat@7|
@@ -3515,7 +3515,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T35204|
+  00004	00000000	 DCD         |$T35216|
 
   00008		 |DeviceStateFindList| PROC
 
@@ -3656,15 +3656,15 @@
 	EXPORT	|??_C@_1CO@JDGHGHGI@?$AAP?$AAo?$AAw?$AAe?$AAr?$AAR?$AAe?$AAs?$AAt?$AAr?$AAi?$AAc?$AAt?$AAi?$AAo?$AAn?$AAC?$AAr?$AAe?$AAa?$AAt?$AAe?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35266| DCD	|$LN45@PowerRestr|
+|$T35278| DCD	|$LN45@PowerRestr|
 	DCD	0xc0008605
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35268| DCD	|$LN25@PowerRestr|
+|$T35280| DCD	|$LN25@PowerRestr|
 	DCD	0x40000901
 
   00000			 AREA	 |.xdata|, DATA
-|$T35264| DCD	0x1
+|$T35276| DCD	0x1
 	DCD	|$LN29@PowerRestr|
 	DCD	|$LN30@PowerRestr|
 	DCD	|$LN25@PowerRestr|
@@ -3699,7 +3699,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T35264|
+  00004	00000000	 DCD         |$T35276|
 
   00008		 |PowerRestrictionCreate| PROC
 
@@ -4060,7 +4060,7 @@
 	EXPORT	|PowerRestrictionDestroy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35289| DCD	|$LN6@PowerRestr@2|
+|$T35301| DCD	|$LN6@PowerRestr@2|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -4072,7 +4072,7 @@
 
   00000		 |$LN6@PowerRestr@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35286|
+  00004		 |$M35298|
   00004	e3500000	 cmp         r0, #0
 
 ; 980  :     BOOL fOk = TRUE;
@@ -4092,14 +4092,14 @@
 
   00010	e49de004	 ldr         lr, [sp], #4
   00014	e12fff1e	 bx          lr
-  00018		 |$M35287|
+  00018		 |$M35299|
 
 			 ENDP  ; |PowerRestrictionDestroy|
 
 	EXPORT	|PowerRestrictionAddList|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35306| DCD	|$LN10@PowerRestr@3|
+|$T35318| DCD	|$LN10@PowerRestr@3|
 	DCD	0x40001301
 ; Function compile flags: /Ogspy
 
@@ -4111,7 +4111,7 @@
 
   00000		 |$LN10@PowerRestr@3|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35303|
+  00004		 |$M35315|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -4165,14 +4165,14 @@
   00048		 |$LN11@PowerRestr@3|
   00048		 |$LN12@PowerRestr@3|
   00048	00000000	 DCD         |gcsPowerManager|
-  0004c		 |$M35304|
+  0004c		 |$M35316|
 
 			 ENDP  ; |PowerRestrictionAddList|
 
 	EXPORT	|PowerRestrictionRemList|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35325| DCD	|$LN15@PowerRestr@4|
+|$T35337| DCD	|$LN15@PowerRestr@4|
 	DCD	0x40002001
 ; Function compile flags: /Ogspy
 
@@ -4184,7 +4184,7 @@
 
   00000		 |$LN15@PowerRestr@4|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35322|
+  00004		 |$M35334|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -4283,7 +4283,7 @@
   0007c		 |$LN16@PowerRestr@4|
   0007c		 |$LN17@PowerRestr@4|
   0007c	00000000	 DCD         |gcsPowerManager|
-  00080		 |$M35323|
+  00080		 |$M35335|
 
 			 ENDP  ; |PowerRestrictionRemList|
 
@@ -4292,15 +4292,15 @@
 	EXPORT	|??_C@_1DC@DKENJKMJ@?$AAP?$AAo?$AAw?$AAe?$AAr?$AAR?$AAe?$AAs?$AAt?$AAr?$AAi?$AAc?$AAt?$AAi?$AAo?$AAn?$AAF?$AAi?$AAn?$AAd?$AAL?$AAi?$AAs?$AAt?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35363| DCD	|$LN32@PowerRestr@5|
+|$T35375| DCD	|$LN32@PowerRestr@5|
 	DCD	0xc0003504
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35365| DCD	|$LN13@PowerRestr@5|
+|$T35377| DCD	|$LN13@PowerRestr@5|
 	DCD	0x40000701
 
   00000			 AREA	 |.xdata|, DATA
-|$T35361| DCD	0x1
+|$T35373| DCD	0x1
 	DCD	|$LN17@PowerRestr@5|
 	DCD	|$LN18@PowerRestr@5|
 	DCD	|$LN13@PowerRestr@5|
@@ -4328,7 +4328,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T35361|
+  00004	00000000	 DCD         |$T35373|
 
   00008		 |PowerRestrictionFindList| PROC
 
@@ -4477,7 +4477,7 @@
 	EXPORT	|PowerRestrictionCheckList|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35396| DCD	|$LN16@PowerRestr@6|
+|$T35408| DCD	|$LN16@PowerRestr@6|
 	DCD	0x40001501
 ; Function compile flags: /Ogspy
 
@@ -4489,7 +4489,7 @@
 
   00000		 |$LN16@PowerRestr@6|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M35393|
+  00004		 |$M35405|
   00004	e1a06001	 mov         r6, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -4544,7 +4544,7 @@
   00050		 |$LN17@PowerRestr@6|
   00050		 |$LN18@PowerRestr@6|
   00050	00000000	 DCD         |gcsPowerManager|
-  00054		 |$M35394|
+  00054		 |$M35406|
 
 			 ENDP  ; |PowerRestrictionCheckList|
 
@@ -4555,7 +4555,7 @@
 	IMPORT	|OpenMsgQueue|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35415| DCD	|$LN12@PowerNotif|
+|$T35427| DCD	|$LN12@PowerNotif|
 	DCD	0x40003c02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -4598,7 +4598,7 @@
   00000		 |$LN12@PowerNotif|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd018	 sub         sp, sp, #0x18
-  00008		 |$M35412|
+  00008		 |$M35424|
   00008	e1a06001	 mov         r6, r1
   0000c	e1a07000	 mov         r7, r0
 
@@ -4723,7 +4723,7 @@
   000e8	00000000	 DCD         |??_C@_1HO@LLCKIJA@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAO?$AAp?$AAe?$AAn?$AAM?$AAs?$AAg?$AAQ?$AAu?$AAe?$AAu?$AAe?$AA?$CI?$AA?$CJ?$AA?5?$AAf?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AA?$CF?$AAd?$AA?5?$AA?$CI?$AAo?$AAw@|
   000ec		 |$LN17@PowerNotif|
   000ec	00000000	 DCD         |dpCurSettings|
-  000f0		 |$M35413|
+  000f0		 |$M35425|
 
 			 ENDP  ; |PowerNotificationCreate|
 
@@ -4731,7 +4731,7 @@
 	IMPORT	|CloseMsgQueue|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35430| DCD	|$LN7@PowerNotif@2|
+|$T35442| DCD	|$LN7@PowerNotif@2|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -4743,7 +4743,7 @@
 
   00000		 |$LN7@PowerNotif@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35427|
+  00004		 |$M35439|
   00004	e1b04000	 movs        r4, r0
 
 ; 1165 :     BOOL fOk = TRUE;
@@ -4775,14 +4775,14 @@
 
   00028	e8bd4010	 ldmia       sp!, {r4, lr}
   0002c	e12fff1e	 bx          lr
-  00030		 |$M35428|
+  00030		 |$M35440|
 
 			 ENDP  ; |PowerNotificationDestroy|
 
 	EXPORT	|PowerNotificationAddList|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35447| DCD	|$LN10@PowerNotif@3|
+|$T35459| DCD	|$LN10@PowerNotif@3|
 	DCD	0x40001301
 ; Function compile flags: /Ogspy
 
@@ -4794,7 +4794,7 @@
 
   00000		 |$LN10@PowerNotif@3|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35444|
+  00004		 |$M35456|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -4848,14 +4848,14 @@
   00048		 |$LN11@PowerNotif@3|
   00048		 |$LN12@PowerNotif@3|
   00048	00000000	 DCD         |gcsPowerManager|
-  0004c		 |$M35445|
+  0004c		 |$M35457|
 
 			 ENDP  ; |PowerNotificationAddList|
 
 	EXPORT	|PowerNotificationRemList|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35470| DCD	|$LN23@PowerNotif@4|
+|$T35482| DCD	|$LN23@PowerNotif@4|
 	DCD	0x40002f01
 ; Function compile flags: /Ogspy
 
@@ -4867,7 +4867,7 @@
 
   00000		 |$LN23@PowerNotif@4|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M35467|
+  00004		 |$M35479|
   00004	e1a04001	 mov         r4, r1
   00008	e1a06000	 mov         r6, r0
 
@@ -5014,7 +5014,7 @@
   000b8		 |$LN24@PowerNotif@4|
   000b8		 |$LN25@PowerNotif@4|
   000b8	00000000	 DCD         |gcsPowerManager|
-  000bc		 |$M35468|
+  000bc		 |$M35480|
 
 			 ENDP  ; |PowerNotificationRemList|
 
@@ -5025,7 +5025,7 @@
 	IMPORT	|CreateMsgQueue|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35493| DCD	|$LN17@DeviceList|
+|$T35505| DCD	|$LN17@DeviceList|
 	DCD	0x40006a02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -5070,7 +5070,7 @@
   00000		 |$LN17@DeviceList|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd034	 sub         sp, sp, #0x34
-  00008		 |$M35490|
+  00008		 |$M35502|
   00008	e1a0b000	 mov         r11, r0
 
 ; 1263 :     PDEVICE_LIST pdl = NULL;
@@ -5285,7 +5285,7 @@
   001a0	00000000	 DCD         |dpCurSettings|
   001a4		 |$LN23@DeviceList|
   001a4	00000000	 DCD         |??_C@_1KC@GDBFAAAO@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAc?$AAr?$AAe?$AAa?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAl?$AAi?$AAs?$AAt?$AA?5?$AAe?$AAn?$AAt?$AAr?$AAy?$AA?5?$AAf?$AAo?$AAr?$AA?5?$AAc?$AAl?$AAa?$AAs@|
-  001a8		 |$M35491|
+  001a8		 |$M35503|
 
 			 ENDP  ; |DeviceListCreate|
 
@@ -5294,7 +5294,7 @@
 	EXPORT	|??_C@_1KC@MNGCBOGM@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAd?$AAe?$AAl?$AAe?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAl?$AAi?$AAs?$AAt?$AA?5?$AAe?$AAn?$AAt?$AAr?$AAy?$AA?5?$AAf?$AAo?$AAr?$AA?5?$AAc?$AAl?$AAa?$AAs@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35509| DCD	|$LN8@DeviceList@2|
+|$T35521| DCD	|$LN8@DeviceList@2|
 	DCD	0x40002f02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -5330,7 +5330,7 @@
   00000		 |$LN8@DeviceList@2|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd024	 sub         sp, sp, #0x24
-  00008		 |$M35506|
+  00008		 |$M35518|
   00008	e1a04000	 mov         r4, r0
   0000c	e58d4020	 str         r4, [sp, #0x20]
 
@@ -5407,7 +5407,7 @@
   000b4	00000000	 DCD         |??_C@_1CE@EAPGKPBE@?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAL?$AAi?$AAs?$AAt?$AAD?$AAe?$AAs?$AAt?$AAr?$AAo?$AAy?$AA?$AA@|
   000b8		 |$LN12@DeviceList@2|
   000b8	00000000	 DCD         |dpCurSettings|
-  000bc		 |$M35507|
+  000bc		 |$M35519|
 
 			 ENDP  ; |DeviceListDestroy|
 
@@ -5418,15 +5418,15 @@
 ; File c:\wince600\public\common\sdk\inc\objbase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35550| DCD	|$LN30@GetDeviceL|
+|$T35562| DCD	|$LN30@GetDeviceL|
 	DCD	0xc0002205
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35552| DCD	|$LN11@GetDeviceL|
+|$T35564| DCD	|$LN11@GetDeviceL|
 	DCD	0x40000601
 
   00000			 AREA	 |.xdata|, DATA
-|$T35548| DCD	0x1
+|$T35560| DCD	0x1
 	DCD	|$LN15@GetDeviceL|
 	DCD	|$LN16@GetDeviceL|
 	DCD	|$LN11@GetDeviceL|
@@ -5455,7 +5455,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T35548|
+  00004	00000000	 DCD         |$T35560|
 
   00008		 |GetDeviceListFromClass| PROC
 
@@ -5583,19 +5583,19 @@
 	EXPORT	|??_C@_1CO@HBMHNCBG@?$AAS?$AAy?$AAs?$AAt?$AAe?$AAm?$AAP?$AAo?$AAw?$AAe?$AAr?$AAS?$AAt?$AAa?$AAt?$AAe?$AAC?$AAr?$AAe?$AAa?$AAt?$AAe?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35607| DCD	|$LN41@SystemPowe|
+|$T35619| DCD	|$LN41@SystemPowe|
 	DCD	0xc0005405
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35609| DCD	|$LN23@SystemPowe|
+|$T35621| DCD	|$LN23@SystemPowe|
 	DCD	0x40000301
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35611| DCD	|$LN16@SystemPowe|
+|$T35623| DCD	|$LN16@SystemPowe|
 	DCD	0x40000801
 
   00000			 AREA	 |.xdata|, DATA
-|$T35605| DCD	0x2
+|$T35617| DCD	0x2
 	DCD	|$LN27@SystemPowe|
 	DCD	|$LN28@SystemPowe|
 	DCD	|$LN23@SystemPowe|
@@ -5633,7 +5633,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T35605|
+  00004	00000000	 DCD         |$T35617|
 
   00008		 |SystemPowerStateCreate| PROC
 
@@ -5872,7 +5872,7 @@
 	EXPORT	|SystemPowerStateDestroy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35634| DCD	|$LN6@SystemPowe@2|
+|$T35646| DCD	|$LN6@SystemPowe@2|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -5884,7 +5884,7 @@
 
   00000		 |$LN6@SystemPowe@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35631|
+  00004		 |$M35643|
   00004	e3500000	 cmp         r0, #0
 
 ; 1428 :     BOOL fOk = TRUE;
@@ -5904,7 +5904,7 @@
 
   00010	e49de004	 ldr         lr, [sp], #4
   00014	e12fff1e	 bx          lr
-  00018		 |$M35632|
+  00018		 |$M35644|
 
 			 ENDP  ; |SystemPowerStateDestroy|
 
@@ -5924,11 +5924,11 @@
 	IMPORT	|_snwprintf|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35679| DCD	|$LN47@ActivityTi|
+|$T35691| DCD	|$LN47@ActivityTi|
 	DCD	0xc000d802
 
   00000			 AREA	 |.xdata|, DATA
-|$T35675| DCD	0xffffffdc
+|$T35687| DCD	0xffffffdc
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1GC@IBIDOKJC@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAA?$AAc?$AAt?$AAi?$AAv?$AAi?$AAt?$AAy?$AAT?$AAi?$AAm?$AAe?$AAr?$AAC?$AAr?$AAe?$AAa?$AAt?$AAe?$AA?$CI?$AA?8?$AA?$CF?$AAs?$AA?8?$AA?$CJ?$AA?5?$AAr?$AAe@| DCB "%"
@@ -6011,7 +6011,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T35675|
+  00004	00000000	 DCD         |$T35687|
 
   00008		 |ActivityTimerCreate| PROC
 
@@ -6020,7 +6020,7 @@
   00008		 |$LN47@ActivityTi|
   00008	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
   0000c	e24dde21	 sub         sp, sp, #0x21, 28
-  00010		 |$M35676|
+  00010		 |$M35688|
   00010	e1a09002	 mov         r9, r2
   00014	e1a08001	 mov         r8, r1
   00018	e1a06000	 mov         r6, r0
@@ -6478,14 +6478,14 @@
   00360	00000000	 DCD         |dpCurSettings|
   00364		 |$LN58@ActivityTi|
   00364	00000000	 DCD         |__security_cookie|
-  00368		 |$M35677|
+  00368		 |$M35689|
 
 			 ENDP  ; |ActivityTimerCreate|
 
 	EXPORT	|ActivityTimerDestroy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35701| DCD	|$LN9@ActivityTi@2|
+|$T35713| DCD	|$LN9@ActivityTi@2|
 	DCD	0x40001401
 ; Function compile flags: /Ogspy
 
@@ -6497,7 +6497,7 @@
 
   00000		 |$LN9@ActivityTi@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35698|
+  00004		 |$M35710|
   00004	e1b04000	 movs        r4, r0
 
 ; 1573 :     BOOL fOk = TRUE;
@@ -6544,7 +6544,7 @@
 
   00048	e8bd4010	 ldmia       sp!, {r4, lr}
   0004c	e12fff1e	 bx          lr
-  00050		 |$M35699|
+  00050		 |$M35711|
 
 			 ENDP  ; |ActivityTimerDestroy|
 
@@ -6554,7 +6554,7 @@
 	IMPORT	|gppActivityTimers|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35725| DCD	|$LN20@ActivityTi@3|
+|$T35737| DCD	|$LN20@ActivityTi@3|
 	DCD	0x40002501
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -6583,7 +6583,7 @@
 
   00000		 |$LN20@ActivityTi@3|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M35722|
+  00004		 |$M35734|
   00004	e1a06000	 mov         r6, r0
 
 ; 1591 :     PACTIVITY_TIMER pat = NULL;
@@ -6666,7 +6666,7 @@
   0008c	00000000	 DCD         |gcsPowerManager|
   00090		 |$LN26@ActivityTi@3|
   00090	00000000	 DCD         |gppActivityTimers|
-  00094		 |$M35723|
+  00094		 |$M35735|
 
 			 ENDP  ; |ActivityTimerFindByName|
 
@@ -6675,7 +6675,7 @@
 	EXPORT	|??_C@_1FI@IIFPFJAK@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAs?$AAe?$AAa?$AAr?$AAc?$AAh?$AA?5?$AAf?$AAo?$AAr?$AA?5?$AA?$CF?$AAd?$AA?5?$AA?$CI?$AA0?$AAx?$AA?$CF?$AAx?$AA?$CJ?$AA?5?$AAr?$AAe?$AAt?$AAu?$AAr?$AAn?$AAi@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35759| DCD	|$LN24@ActivityTi@4|
+|$T35771| DCD	|$LN24@ActivityTi@4|
 	DCD	0x40003102
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -6707,7 +6707,7 @@
   00000		 |$LN24@ActivityTi@4|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M35756|
+  00008		 |$M35768|
   00008	e1a06000	 mov         r6, r0
 
 ; 1621 :     PACTIVITY_TIMER pat = NULL;
@@ -6821,7 +6821,7 @@
   000bc	00000000	 DCD         |gcsPowerManager|
   000c0		 |$LN30@ActivityTi@4|
   000c0	00000000	 DCD         |gppActivityTimers|
-  000c4		 |$M35757|
+  000c4		 |$M35769|
 
 			 ENDP  ; |ActivityTimerFindByWakeSource|
 

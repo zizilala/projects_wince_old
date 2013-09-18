@@ -1086,15 +1086,16 @@ int FileIoRead(S_FILEIO_OPERATIONS_PTR pfileio_ops,
     {
         // create pointer to start of valid data in buffer
         s = pFile->buffer + (SECTOR_SIZE - pFile->bytes_in_buffer); 
+            // 512 + (512 - pFile->bytes_in_buffer)
 
         // if any bytes are in the buffer copy them to destination
         while (Count && pFile->bytes_in_buffer)
         {
             *pDest = *s;
-            pDest++;
-            s++;
-            Count--;
-            pFile->bytes_in_buffer--;
+             pDest++;
+             s++;
+             Count--;
+             pFile->bytes_in_buffer--;
         }
 
         // Note: After the above while loop, the read is sector aligned

@@ -827,11 +827,7 @@ DumpTOC(
 
 //------------------------------------------------------------------------------
 
-BOOL
-VerifyImage(
-    UCHAR *pData,
-    ROMHDR **ppTOC
-    )
+BOOL VerifyImage(UCHAR *pData, ROMHDR **ppTOC)
 {
     BOOL rc = FALSE;
     UINT32 *pInfo;
@@ -839,7 +835,8 @@ VerifyImage(
 
     // Verify that we get CE image.
     pInfo = (UINT32*)(pData + ROM_SIGNATURE_OFFSET);
-    if (*pInfo != ROM_SIGNATURE) goto cleanUp;
+    if (*pInfo != ROM_SIGNATURE) 
+        goto cleanUp;
 
     // We are on correct location....
     pTOC = (ROMHDR*)(pData + pInfo[2]);
@@ -848,7 +845,8 @@ VerifyImage(
     DumpTOC(pTOC);
 
     // Return pTOC if pointer isn't NULL
-    if (ppTOC != NULL) *ppTOC = pTOC;
+    if (ppTOC != NULL) 
+        *ppTOC = pTOC;
 
     // Done
     rc = TRUE;

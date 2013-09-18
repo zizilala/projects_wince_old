@@ -17,41 +17,41 @@
 ; File c:\wince600\public\common\sdk\inc\celog.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33667| DCD	|$LN7@CeLogMsg|
+|$T33679| DCD	|$LN7@CeLogMsg|
 	DCD	0xc0002a04
 
   00000			 AREA	 |.xdata|, DATA
-|$T33663| DCD	0xffffffe0
+|$T33675| DCD	0xffffffe0
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T33663|
+  00004	00000000	 DCD         |$T33675|
 
   00008		 |CeLogMsg| PROC
 
-; 1015 : {
+; 1020 : {
 
   00008		 |$LN7@CeLogMsg|
   00008	e1a0c00d	 mov         r12, sp
   0000c	e92d000f	 stmdb       sp!, {r0 - r3}
   00010	e92d5010	 stmdb       sp!, {r4, r12, lr}
   00014	e24dde22	 sub         sp, sp, #0x22, 28
-  00018		 |$M33664|
+  00018		 |$M33676|
   00018	e58d022c	 str         r0, [sp, #0x22C]
   0001c	e59f3088	 ldr         r3, [pc, #0x88]
   00020	e5933000	 ldr         r3, [r3]
   00024	e58d321c	 str         r3, [sp, #0x21C]
 
-; 1016 :     va_list arglist;
-; 1017 :     WCHAR   szTemp[MAX_PATH];
-; 1018 :     size_t  cchLen;
-; 1019 :     HRESULT hr;
-; 1020 : 
-; 1021 :     // Compose a single string using the input args
-; 1022 :     va_start(arglist, szFormat);
-; 1023 :     hr = StringCchVPrintfW(szTemp, MAX_PATH, szFormat, arglist);
+; 1021 :     va_list arglist;
+; 1022 :     WCHAR   szTemp[MAX_PATH];
+; 1023 :     size_t  cchLen;
+; 1024 :     HRESULT hr;
+; 1025 : 
+; 1026 :     // Compose a single string using the input args
+; 1027 :     va_start(arglist, szFormat);
+; 1028 :     hr = StringCchVPrintfW(szTemp, MAX_PATH, szFormat, arglist);
 
   00028	e1a02000	 mov         r2, r0
   0002c	e28d0014	 add         r0, sp, #0x14
@@ -60,11 +60,11 @@
   00038	eb000000	 bl          StringCchVPrintfW
   0003c	e3500000	 cmp         r0, #0
 
-; 1024 :     if (SUCCEEDED(hr)) {
+; 1029 :     if (SUCCEEDED(hr)) {
 
   00040	4a000014	 bmi         |$LN1@CeLogMsg|
 
-; 1025 :         hr = StringCchLengthW(szTemp, MAX_PATH, &cchLen);
+; 1030 :         hr = StringCchLengthW(szTemp, MAX_PATH, &cchLen);
 
   00044	e28d2010	 add         r2, sp, #0x10
   00048	e3a01f41	 mov         r1, #0x41, 30
@@ -72,12 +72,12 @@
   00050	eb000000	 bl          StringCchLengthW
   00054	e3500000	 cmp         r0, #0
 
-; 1026 :         if (SUCCEEDED(hr)) {
+; 1031 :         if (SUCCEEDED(hr)) {
 
   00058	4a00000e	 bmi         |$LN1@CeLogMsg|
 
-; 1027 :             CeLogData(TRUE, CELID_RAW_WCHAR, szTemp, (WORD)((cchLen + 1) * sizeof(WCHAR)),
-; 1028 :                       0, CELZONE_ALWAYSON, 0, FALSE);
+; 1032 :             CeLogData(TRUE, CELID_RAW_WCHAR, szTemp, (WORD)((cchLen + 1) * sizeof(WCHAR)),
+; 1033 :                       0, CELZONE_ALWAYSON, 0, FALSE);
 
   0005c	e59d3010	 ldr         r3, [sp, #0x10]
   00060	e3a04101	 mov         r4, #1, 2
@@ -98,9 +98,9 @@
   00098	e59d021c	 ldr         r0, [sp, #0x21C]
   0009c	eb000000	 bl          __security_check_cookie
 
-; 1029 :         }
-; 1030 :     }
-; 1031 : }
+; 1034 :         }
+; 1035 :     }
+; 1036 : }
 
   000a0	e28dde22	 add         sp, sp, #0x22, 28
   000a4	e89d6010	 ldmia       sp, {r4, sp, lr}
@@ -108,7 +108,7 @@
   000ac		 |$LN8@CeLogMsg|
   000ac		 |$LN9@CeLogMsg|
   000ac	00000000	 DCD         |__security_cookie|
-  000b0		 |$M33665|
+  000b0		 |$M33677|
 
 			 ENDP  ; |CeLogMsg|
 
@@ -122,7 +122,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\pm\dll\pmnotify.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33684| DCD	|$LN10@SendNotifi|
+|$T33696| DCD	|$LN10@SendNotifi|
 	DCD	0x40002902
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -165,7 +165,7 @@
   00000		 |$LN10@SendNotifi|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M33681|
+  00008		 |$M33693|
   00008	e1a06002	 mov         r6, r2
   0000c	e1a07001	 mov         r7, r1
   00010	e1a04000	 mov         r4, r0
@@ -231,7 +231,7 @@
   0009c	00000000	 DCD         |??_C@_1GI@KNKFKCIB@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAs?$AAe?$AAn?$AAd?$AAi?$AAn?$AAg?$AA?5?$AAn?$AAo?$AAt?$AAi?$AAf?$AAi?$AAc?$AAa?$AAt?$AAi?$AAo?$AAn?$AA?5?$AAt?$AAo?$AA?5?$AA0?$AAx?$AA?$CF?$AA0@|
   000a0		 |$LN15@SendNotifi|
   000a0	00000000	 DCD         |dpCurSettings|
-  000a4		 |$M33682|
+  000a4		 |$M33694|
 
 			 ENDP  ; |SendNotification|
 
@@ -244,7 +244,7 @@
 	IMPORT	|PmLock|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33706| DCD	|$LN17@GenerateNo|
+|$T33718| DCD	|$LN17@GenerateNo|
 	DCD	0x40002a01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -284,7 +284,7 @@
 
   00000		 |$LN17@GenerateNo|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M33703|
+  00004		 |$M33715|
   00004	e1a05000	 mov         r5, r0
 
 ; 45   :     PPOWER_NOTIFICATION ppn;
@@ -386,7 +386,7 @@
   000a0	00000000	 DCD         |??_C@_1FO@BFJEGKNE@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAs?$AAe?$AAn?$AAd?$AAi?$AAn?$AAg?$AA?5?$AAt?$AAy?$AAp?$AAe?$AA?5?$AA?$CF?$AAd?$AA?5?$AAn?$AAo?$AAt?$AAi?$AAf?$AAi?$AAc?$AAa?$AAt?$AAi?$AAo?$AAn@|
   000a4		 |$LN23@GenerateNo|
   000a4	00000000	 DCD         |dpCurSettings|
-  000a8		 |$M33704|
+  000a8		 |$M33716|
 
 			 ENDP  ; |GenerateNotifications|
 
@@ -396,7 +396,7 @@
 	IMPORT	|PowerNotificationRemList|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33730| DCD	|$LN20@DeleteProc|
+|$T33742| DCD	|$LN20@DeleteProc|
 	DCD	0x40002201
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -425,7 +425,7 @@
 
   00000		 |$LN20@DeleteProc|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M33727|
+  00004		 |$M33739|
   00004	e1a07000	 mov         r7, r0
 
 ; 85   :     BOOL fDone = FALSE;
@@ -520,7 +520,7 @@
   00080	00000000	 DCD         |gpPowerNotifications|
   00084		 |$LN25@DeleteProc|
   00084	00000000	 DCD         |dpCurSettings|
-  00088		 |$M33728|
+  00088		 |$M33740|
 
 			 ENDP  ; |DeleteProcessNotifications|
 
@@ -535,7 +535,7 @@
 	IMPORT	|GetCallerProcess|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33756| DCD	|$LN16@PmRequestP|
+|$T33768| DCD	|$LN16@PmRequestP|
 	DCD	0x40003f01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -576,7 +576,7 @@
 
   00000		 |$LN16@PmRequestP|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
-  00004		 |$M33753|
+  00004		 |$M33765|
   00004	e1a08001	 mov         r8, r1
   00008	e1a07000	 mov         r7, r0
 
@@ -727,7 +727,7 @@
   000f4	00000000	 DCD         |??_C@_1GG@MEFCMPGO@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAc?$AAr?$AAe?$AAa?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAn?$AAo?$AAt?$AAi?$AAf?$AAi?$AAc?$AAa?$AAt?$AAi?$AAo?$AAn?$AA?5?$AAt?$AAy?$AAp?$AAe?$AA?5?$AA0@|
   000f8		 |$LN22@PmRequestP|
   000f8	00000000	 DCD         |dpCurSettings|
-  000fc		 |$M33754|
+  000fc		 |$M33766|
 
 			 ENDP  ; |PmRequestPowerNotifications|
 
@@ -737,7 +737,7 @@
 	EXPORT	|??_C@_1CO@IGCJGAON@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAh?$AAa?$AAn?$AAd?$AAl?$AAe?$AA?5?$AAi?$AAs?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33778| DCD	|$LN13@PmStopPowe|
+|$T33790| DCD	|$LN13@PmStopPowe|
 	DCD	0x40002d01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -772,7 +772,7 @@
 
   00000		 |$LN13@PmStopPowe|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M33775|
+  00004		 |$M33787|
   00004	e1a05000	 mov         r5, r0
 
 ; 179  :     DWORD dwStatus = ERROR_INVALID_PARAMETER;
@@ -869,7 +869,7 @@
   000ac	00000000	 DCD         |??_C@_1CO@IGCJGAON@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAh?$AAa?$AAn?$AAd?$AAl?$AAe?$AA?5?$AAi?$AAs?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?$AN?$AA?6?$AA?$AA@|
   000b0		 |$LN19@PmStopPowe|
   000b0	00000000	 DCD         |dpCurSettings|
-  000b4		 |$M33776|
+  000b4		 |$M33788|
 
 			 ENDP  ; |PmStopPowerNotifications|
 

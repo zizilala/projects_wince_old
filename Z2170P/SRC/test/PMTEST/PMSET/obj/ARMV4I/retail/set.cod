@@ -20,11 +20,11 @@
 ; File c:\wince600\platform\z2170p\src\test\pmtest\pmset\set.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39158| DCD	|$LN5@RetailPrin|
+|$T39161| DCD	|$LN5@RetailPrin|
 	DCD	0xc0002905
 
   00000			 AREA	 |.xdata|, DATA
-|$T39154| DCD	0xffffffe4
+|$T39157| DCD	0xffffffe4
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1BE@NPIILPOD@?$AAP?$AAM?$AAS?$AAE?$AAT?$AA?3?$AA?5?$AA?$CF?$AAs?$AA?$AA@| DCB "P"
@@ -35,7 +35,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T39154|
+  00004	00000000	 DCD         |$T39157|
 
   00008		 |RetailPrint| PROC
 
@@ -47,7 +47,7 @@
   00010	e92d5000	 stmdb       sp!, {r12, lr}
   00014	e59fc08c	 ldr         r12, [pc, #0x8C]
   00018	e08dd00c	 add         sp, sp, r12
-  0001c		 |$M39155|
+  0001c		 |$M39158|
   0001c	e28dca02	 add         r12, sp, #2, 20
   00020	e58c000c	 str         r0, [r12, #0xC]
   00024	e59f3078	 ldr         r3, [pc, #0x78]
@@ -117,7 +117,7 @@
   000a4	00000000	 DCD         |__security_cookie|
   000a8		 |$LN9@RetailPrin|
   000a8	ffffdffc	 DCD         0xffffdffc
-  000ac		 |$M39156|
+  000ac		 |$M39159|
 
 			 ENDP  ; |RetailPrint|
 
@@ -141,11 +141,11 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39185| DCD	|$LN19@WinMain|
+|$T39188| DCD	|$LN19@WinMain|
 	DCD	0xc0006402
 
   00000			 AREA	 |.xdata|, DATA
-|$T39181| DCD	0xffffffec
+|$T39184| DCD	0xffffffec
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1FI@KIMKHAEC@?$AAP?$AAM?$AAS?$AAE?$AAT?$AA?5?$AA?$DM?$AAS?$AAt?$AAa?$AAt?$AAe?$AA?$DO?$AA?5?$AA?$DM?$AAH?$AAe?$AAx?$AAS?$AAt?$AAa?$AAt?$AAe?$AAF?$AAl?$AAa?$AAg?$AAs?$AA?$DO?$AA?5?$AA?$DM?$AAH@| DCB "P"
@@ -266,7 +266,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T39181|
+  00004	00000000	 DCD         |$T39184|
 
   00008		 |WinMain| PROC
 
@@ -275,7 +275,7 @@
   00008		 |$LN19@WinMain|
   00008	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   0000c	e24dde86	 sub         sp, sp, #0x86, 28
-  00010		 |$M39182|
+  00010		 |$M39185|
   00010	e1a04002	 mov         r4, r2
   00014	e59f3178	 ldr         r3, [pc, #0x178]
   00018	e5933000	 ldr         r3, [r3]
@@ -323,7 +323,7 @@
 ; 57   :     if (argc > 1) {
 
   0006c	e3540001	 cmp         r4, #1
-  00070	da00002e	 ble         |$_error$39097|
+  00070	da00002e	 ble         |$_error$39100|
 
 ; 58   :         if (!swscanf(argv[1], TEXT("%d"), &dwState))
 
@@ -355,7 +355,7 @@
   000a8	e28d205c	 add         r2, sp, #0x5C
   000ac	eb000000	 bl          swscanf
   000b0	e3500000	 cmp         r0, #0
-  000b4	0a00001d	 beq         |$_error$39097|
+  000b4	0a00001d	 beq         |$_error$39100|
   000b8		 |$LN7@WinMain|
 
 ; 63   :             goto _error;
@@ -372,7 +372,7 @@
   000c8	e28d2004	 add         r2, sp, #4
   000cc	eb000000	 bl          swscanf
   000d0	e3500000	 cmp         r0, #0
-  000d4	0a000015	 beq         |$_error$39097|
+  000d4	0a000015	 beq         |$_error$39100|
   000d8		 |$LN5@WinMain|
 
 ; 67   :                 goto _error;
@@ -390,7 +390,7 @@
   000e8	e28d2008	 add         r2, sp, #8
   000ec	eb000000	 bl          swscanf
   000f0	e3500000	 cmp         r0, #0
-  000f4	0a00000d	 beq         |$_error$39097|
+  000f4	0a00000d	 beq         |$_error$39100|
   000f8		 |$LN3@WinMain|
 
 ; 83   :     }
@@ -423,7 +423,7 @@
   00124	e28dde86	 add         sp, sp, #0x86, 28
   00128	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   0012c	e12fff1e	 bx          lr
-  00130		 |$_error$39097|
+  00130		 |$_error$39100|
 
 ; 72   :                 goto _error;
 ; 73   :         }
@@ -490,7 +490,7 @@
   00194	00000000	 DCD         |__security_cookie|
   00198		 |$LN20@WinMain|
   00198		 |$LN16@WinMain|
-  00198		 |$M39183|
+  00198		 |$M39186|
 
 			 ENDP  ; |WinMain|
 

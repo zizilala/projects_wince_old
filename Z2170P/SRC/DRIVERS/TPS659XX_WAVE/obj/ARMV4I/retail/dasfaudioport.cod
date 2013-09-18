@@ -25,7 +25,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40000| DCD	|$LN5@SetEvent|
+|$T40002| DCD	|$LN5@SetEvent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -37,7 +37,7 @@
 
   00000		 |$LN5@SetEvent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M39997|
+  00004		 |$M39999|
 
 ; 236  : 	return EventModify(h,EVENT_SET);
 
@@ -48,14 +48,14 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M39998|
+  00014		 |$M40000|
 
 			 ENDP  ; |SetEvent|
 
 	EXPORT	|GetCurrentThread|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40009| DCD	|$LN5@GetCurrent|
+|$T40011| DCD	|$LN5@GetCurrent|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -66,7 +66,7 @@
 ; 351  : _inline HANDLE GetCurrentThread(void) {
 
   00000		 |$LN5@GetCurrent|
-  00000		 |$M40006|
+  00000		 |$M40008|
 
 ; 352  : 	return ((HANDLE)(SH_CURTHREAD+SYS_HANDLE_BASE));
 
@@ -75,7 +75,7 @@
 ; 353  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M40007|
+  00008		 |$M40009|
 
 			 ENDP  ; |GetCurrentThread|
 
@@ -83,7 +83,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40020| DCD	|$LN7@IsDASFInit|
+|$T40022| DCD	|$LN7@IsDASFInit|
 	DCD	0x40000700
 ; Function compile flags: /Ogspy
 
@@ -94,7 +94,7 @@
 ; 44   :     static BOOL IsDASFInitialized()         { return s_hHwCodecAdapter != NULL; }
 
   00000		 |$LN7@IsDASFInit|
-  00000		 |$M40017|
+  00000		 |$M40019|
   00000	e59f3010	 ldr         r3, [pc, #0x10]
   00004	e5933000	 ldr         r3, [r3]
   00008	e3530000	 cmp         r3, #0
@@ -104,14 +104,14 @@
   00018		 |$LN8@IsDASFInit|
   00018		 |$LN9@IsDASFInit|
   00018	00000000	 DCD         |?s_hHwCodecAdapter@DASF@@1PAUHINSTANCE__@@A|
-  0001c		 |$M40018|
+  0001c		 |$M40020|
 
 			 ENDP  ; |?IsDASFInitialized@DASF@@SAHXZ|, DASF::IsDASFInitialized
 
 	EXPORT	|??0DASFStream@@IAA@XZ|			; DASFStream::DASFStream
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40032| DCD	|$LN5@DASFStream|
+|$T40034| DCD	|$LN5@DASFStream|
 	DCD	0x40000300
 ; Function compile flags: /Ogspy
 
@@ -122,18 +122,18 @@
 ; 116  :     DASFStream():m_state(kUninitialized)    {};
 
   00000		 |$LN5@DASFStream|
-  00000		 |$M40029|
+  00000		 |$M40031|
   00000	e3a03000	 mov         r3, #0
   00004	e5803020	 str         r3, [r0, #0x20]
   00008	e12fff1e	 bx          lr
-  0000c		 |$M40030|
+  0000c		 |$M40032|
 
 			 ENDP  ; |??0DASFStream@@IAA@XZ|, DASFStream::DASFStream
 
 	EXPORT	|??1DASFStream@@IAA@XZ|			; DASFStream::~DASFStream
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40039| DCD	|$LN5@DASFStream@2|
+|$T40041| DCD	|$LN5@DASFStream@2|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -144,16 +144,16 @@
 ; 117  :     ~DASFStream()                           {};
 
   00000		 |$LN5@DASFStream@2|
-  00000		 |$M40036|
+  00000		 |$M40038|
   00000	e12fff1e	 bx          lr
-  00004		 |$M40037|
+  00004		 |$M40039|
 
 			 ENDP  ; |??1DASFStream@@IAA@XZ|, DASFStream::~DASFStream
 
 	EXPORT	|?GetStreamContext@DASFStream@@QBAPAXXZ| ; DASFStream::GetStreamContext
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40049| DCD	|$LN5@GetStreamC|
+|$T40051| DCD	|$LN5@GetStreamC|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -164,17 +164,17 @@
 ; 141  :     HANDLE GetStreamContext() const         { return m_hStreamContext; }
 
   00000		 |$LN5@GetStreamC|
-  00000		 |$M40046|
+  00000		 |$M40048|
   00000	e5900010	 ldr         r0, [r0, #0x10]
   00004	e12fff1e	 bx          lr
-  00008		 |$M40047|
+  00008		 |$M40049|
 
 			 ENDP  ; |?GetStreamContext@DASFStream@@QBAPAXXZ|, DASFStream::GetStreamContext
 
 	EXPORT	|?GetDASFContext@DASFStream@@QBAPAXXZ|	; DASFStream::GetDASFContext
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40059| DCD	|$LN5@GetDASFCon|
+|$T40061| DCD	|$LN5@GetDASFCon|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -185,17 +185,17 @@
 ; 142  :     HANDLE GetDASFContext() const           { return m_hDASFContext; }
 
   00000		 |$LN5@GetDASFCon|
-  00000		 |$M40056|
+  00000		 |$M40058|
   00000	e5900018	 ldr         r0, [r0, #0x18]
   00004	e12fff1e	 bx          lr
-  00008		 |$M40057|
+  00008		 |$M40059|
 
 			 ENDP  ; |?GetDASFContext@DASFStream@@QBAPAXXZ|, DASFStream::GetDASFContext
 
 	EXPORT	|?GetDASFStreamId@DASFStream@@QBAIXZ|	; DASFStream::GetDASFStreamId
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40069| DCD	|$LN5@GetDASFStr|
+|$T40071| DCD	|$LN5@GetDASFStr|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -206,17 +206,17 @@
 ; 143  :     UINT GetDASFStreamId() const            { return m_idDASFStream; }
 
   00000		 |$LN5@GetDASFStr|
-  00000		 |$M40066|
+  00000		 |$M40068|
   00000	e5900014	 ldr         r0, [r0, #0x14]
   00004	e12fff1e	 bx          lr
-  00008		 |$M40067|
+  00008		 |$M40069|
 
 			 ENDP  ; |?GetDASFStreamId@DASFStream@@QBAIXZ|, DASFStream::GetDASFStreamId
 
 	EXPORT	|?IsOutputStream@DASFStream@@QBAHXZ|	; DASFStream::IsOutputStream
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40079| DCD	|$LN5@IsOutputSt|
+|$T40081| DCD	|$LN5@IsOutputSt|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -227,17 +227,17 @@
 ; 144  :     BOOL IsOutputStream() const             { return m_bOutput; }
 
   00000		 |$LN5@IsOutputSt|
-  00000		 |$M40076|
+  00000		 |$M40078|
   00000	e590001c	 ldr         r0, [r0, #0x1C]
   00004	e12fff1e	 bx          lr
-  00008		 |$M40077|
+  00008		 |$M40079|
 
 			 ENDP  ; |?IsOutputStream@DASFStream@@QBAHXZ|, DASFStream::IsOutputStream
 
 	EXPORT	|?IsInputStream@DASFStream@@QBAHXZ|	; DASFStream::IsInputStream
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40091| DCD	|$LN7@IsInputStr|
+|$T40093| DCD	|$LN7@IsInputStr|
 	DCD	0x40000500
 ; Function compile flags: /Ogspy
 
@@ -248,20 +248,20 @@
 ; 145  :     BOOL IsInputStream() const              { return m_bOutput == FALSE; }
 
   00000		 |$LN7@IsInputStr|
-  00000		 |$M40088|
+  00000		 |$M40090|
   00000	e590301c	 ldr         r3, [r0, #0x1C]
   00004	e3530000	 cmp         r3, #0
   00008	03a00001	 moveq       r0, #1
   0000c	13a00000	 movne       r0, #0
   00010	e12fff1e	 bx          lr
-  00014		 |$M40089|
+  00014		 |$M40091|
 
 			 ENDP  ; |?IsInputStream@DASFStream@@QBAHXZ|, DASFStream::IsInputStream
 
 	EXPORT	|?GetActiveDASFBufferCount@DASFStream@@QBAHXZ| ; DASFStream::GetActiveDASFBufferCount
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40101| DCD	|$LN5@GetActiveD|
+|$T40103| DCD	|$LN5@GetActiveD|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -272,17 +272,17 @@
 ; 146  :     BOOL GetActiveDASFBufferCount() const   { return m_nActiveDASFBufferCount; }
 
   00000		 |$LN5@GetActiveD|
-  00000		 |$M40098|
+  00000		 |$M40100|
   00000	e5900028	 ldr         r0, [r0, #0x28]
   00004	e12fff1e	 bx          lr
-  00008		 |$M40099|
+  00008		 |$M40101|
 
 			 ENDP  ; |?GetActiveDASFBufferCount@DASFStream@@QBAHXZ|, DASFStream::GetActiveDASFBufferCount
 
 	EXPORT	|?IsDASFBufferSpaceAvailable@DASFStream@@QBAHXZ| ; DASFStream::IsDASFBufferSpaceAvailable
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40113| DCD	|$LN7@IsDASFBuff|
+|$T40115| DCD	|$LN7@IsDASFBuff|
 	DCD	0x40000500
 ; Function compile flags: /Ogspy
 
@@ -293,13 +293,13 @@
 ; 147  :     BOOL IsDASFBufferSpaceAvailable() const { return m_nActiveDASFBufferCount < 2; }
 
   00000		 |$LN7@IsDASFBuff|
-  00000		 |$M40110|
+  00000		 |$M40112|
   00000	e5903028	 ldr         r3, [r0, #0x28]
   00004	e3530002	 cmp         r3, #2
   00008	b3a00001	 movlt       r0, #1
   0000c	a3a00000	 movge       r0, #0
   00010	e12fff1e	 bx          lr
-  00014		 |$M40111|
+  00014		 |$M40113|
 
 			 ENDP  ; |?IsDASFBufferSpaceAvailable@DASFStream@@QBAHXZ|, DASFStream::IsDASFBufferSpaceAvailable
 
@@ -307,7 +307,7 @@
 	IMPORT	|InterlockedIncrement|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40121| DCD	|$LN5@IncrementA|
+|$T40123| DCD	|$LN5@IncrementA|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -319,7 +319,7 @@
 
   00000		 |$LN5@IncrementA|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M40118|
+  00004		 |$M40120|
 
 ; 151  :         InterlockedIncrement(&m_nActiveDASFBufferCount);
 
@@ -330,14 +330,14 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M40119|
+  00014		 |$M40121|
 
 			 ENDP  ; |?IncrementActiveDASFBufferCount@DASFStream@@QAAXXZ|, DASFStream::IncrementActiveDASFBufferCount
 
 	EXPORT	|?GetCurrentActiveBuffer@DASFStream@@QBAPAEXZ| ; DASFStream::GetCurrentActiveBuffer
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40131| DCD	|$LN5@GetCurrent@2|
+|$T40133| DCD	|$LN5@GetCurrent@2|
 	DCD	0x40000b00
 ; Function compile flags: /Ogspy
 
@@ -348,7 +348,7 @@
 ; 160  :     {
 
   00000		 |$LN5@GetCurrent@2|
-  00000		 |$M40128|
+  00000		 |$M40130|
 
 ; 161  :         return m_rgDASFBuffers[(m_nNextDASFBuffer + 1) % MAX_DASFBUFFER_COUNT];
 
@@ -368,14 +368,14 @@
   00028		 |$LN6@GetCurrent@2|
   00028		 |$LN7@GetCurrent@2|
   00028	aaaaaaab	 DCD         0xaaaaaaab
-  0002c		 |$M40129|
+  0002c		 |$M40131|
 
 			 ENDP  ; |?GetCurrentActiveBuffer@DASFStream@@QBAPAEXZ|, DASFStream::GetCurrentActiveBuffer
 
 	EXPORT	|?GetDASFStreamState@DASFStream@@QBA?AW4DASFStreamState@1@XZ| ; DASFStream::GetDASFStreamState
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40143| DCD	|$LN5@GetDASFStr@2|
+|$T40145| DCD	|$LN5@GetDASFStr@2|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -386,10 +386,10 @@
 ; 177  :     DASFStreamState GetDASFStreamState() const { return m_state;}
 
   00000		 |$LN5@GetDASFStr@2|
-  00000		 |$M40140|
+  00000		 |$M40142|
   00000	e5900020	 ldr         r0, [r0, #0x20]
   00004	e12fff1e	 bx          lr
-  00008		 |$M40141|
+  00008		 |$M40143|
 
 			 ENDP  ; |?GetDASFStreamState@DASFStream@@QBA?AW4DASFStreamState@1@XZ|, DASFStream::GetDASFStreamState
 
@@ -397,7 +397,7 @@
 	IMPORT	|EnterMutex|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40150| DCD	|$LN5@Lock|
+|$T40152| DCD	|$LN5@Lock|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -409,11 +409,11 @@
 
   00000		 |$LN5@Lock|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M40147|
+  00004		 |$M40149|
   00004	eb000000	 bl          EnterMutex
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M40148|
+  00010		 |$M40150|
 
 			 ENDP  ; |?Lock@DASFAudioStreamPort@@IAAXXZ|, DASFAudioStreamPort::Lock
 
@@ -421,7 +421,7 @@
 	IMPORT	|ExitMutex|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40157| DCD	|$LN5@Unlock|
+|$T40159| DCD	|$LN5@Unlock|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -433,18 +433,18 @@
 
   00000		 |$LN5@Unlock|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M40154|
+  00004		 |$M40156|
   00004	eb000000	 bl          ExitMutex
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M40155|
+  00010		 |$M40157|
 
 			 ENDP  ; |?Unlock@DASFAudioStreamPort@@IAAXXZ|, DASFAudioStreamPort::Unlock
 
 	EXPORT	|?SendAudioStreamMessage@DASFAudioStreamPort@@QAAHKPAX@Z| ; DASFAudioStreamPort::SendAudioStreamMessage
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40169| DCD	|$LN5@SendAudioS|
+|$T40171| DCD	|$LN5@SendAudioS|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -456,7 +456,7 @@
 
   00000		 |$LN5@SendAudioS|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M40166|
+  00004		 |$M40168|
   00004	e1a03002	 mov         r3, r2
   00008	e1a02001	 mov         r2, r1
 
@@ -474,7 +474,7 @@
 
   00028	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0002c	e12fff1e	 bx          lr
-  00030		 |$M40167|
+  00030		 |$M40169|
 
 			 ENDP  ; |?SendAudioStreamMessage@DASFAudioStreamPort@@QAAHKPAX@Z|, DASFAudioStreamPort::SendAudioStreamMessage
 
@@ -482,7 +482,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmctxt.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40179| DCD	|$LN5@GetWaveFor|
+|$T40181| DCD	|$LN5@GetWaveFor|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -493,17 +493,17 @@
 ; 75   :     WAVEFORMATEX *GetWaveFormat() {return &m_WaveFormat;}
 
   00000		 |$LN5@GetWaveFor|
-  00000		 |$M40176|
+  00000		 |$M40178|
   00000	e2800024	 add         r0, r0, #0x24
   00004	e12fff1e	 bx          lr
-  00008		 |$M40177|
+  00008		 |$M40179|
 
 			 ENDP  ; |?GetWaveFormat@StreamContext@@QAAPAUtWAVEFORMATEX@@XZ|, StreamContext::GetWaveFormat
 
 	EXPORT	|?GetGain@StreamContext@@QAAKXZ|	; StreamContext::GetGain
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40189| DCD	|$LN5@GetGain|
+|$T40191| DCD	|$LN5@GetGain|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -514,7 +514,7 @@
 ; 110  :     {
 
   00000		 |$LN5@GetGain|
-  00000		 |$M40186|
+  00000		 |$M40188|
 
 ; 111  :         return m_dwGain;
 
@@ -523,7 +523,7 @@
 ; 112  :     }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M40187|
+  00008		 |$M40189|
 
 			 ENDP  ; |?GetGain@StreamContext@@QAAKXZ|, StreamContext::GetGain
 
@@ -531,7 +531,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40201| DCD	|$LN7@Mutex|
+|$T40203| DCD	|$LN7@Mutex|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -543,7 +543,7 @@
 
   00000		 |$LN7@Mutex|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M40198|
+  00004		 |$M40200|
   00004	e3500000	 cmp         r0, #0
 
 ; 144  :     bLock ? EnterMutex() : ExitMutex();
@@ -563,7 +563,7 @@
 
   0001c	e49de004	 ldr         lr, [sp], #4
   00020	e12fff1e	 bx          lr
-  00024		 |$M40199|
+  00024		 |$M40201|
 
 			 ENDP  ; |?Mutex@@YAHH@Z|, Mutex
 
@@ -580,7 +580,7 @@
 	IMPORT	|LoadLibraryW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40214| DCD	|$LN9@Initialize|
+|$T40216| DCD	|$LN9@Initialize|
 	DCD	0x40003a01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -640,7 +640,7 @@
 
   00000		 |$LN9@Initialize|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M40211|
+  00004		 |$M40213|
 
 ; 172  :     BOOL rc = FALSE;
 ; 173  : 
@@ -659,7 +659,7 @@
 ; 179  :         RETAILMSG(0, (L"WAV:DASF LoadLibrary failed with error %d\r\n",GetLastError()));
 ; 180  :         goto cleanUp;
 
-  00018	0a000026	 beq         |$cleanUp$39371|
+  00018	0a000026	 beq         |$cleanUp$39373|
 
 ; 181  :         }
 ; 182  : 
@@ -760,7 +760,7 @@
 ; 223  :         rc = TRUE;
 
   000b4	e3a05001	 mov         r5, #1
-  000b8		 |$cleanUp$39371|
+  000b8		 |$cleanUp$39373|
 
 ; 224  : 
 ; 225  : cleanUp:
@@ -789,7 +789,7 @@
   000e0	00000000	 DCD         |??_C@_1CE@BOEBCKCA@?$AAI?$AAn?$AAi?$AAt?$AAi?$AAa?$AAl?$AAi?$AAz?$AAe?$AAC?$AAo?$AAd?$AAe?$AAc?$AAE?$AAx?$AA?$AA@|
   000e4		 |$LN19@Initialize|
   000e4	00000000	 DCD         |_HwCodecAdapterHooks|
-  000e8		 |$M40212|
+  000e8		 |$M40214|
 
 			 ENDP  ; |?Initialize@DASF@@SAHPBG@Z|, DASF::Initialize
 
@@ -797,7 +797,7 @@
 	IMPORT	|FreeLibrary|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40231| DCD	|$LN6@Uninitiali|
+|$T40233| DCD	|$LN6@Uninitiali|
 	DCD	0x40000b01
 ; Function compile flags: /Ogspy
 
@@ -809,7 +809,7 @@
 
   00000		 |$LN6@Uninitiali|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M40228|
+  00004		 |$M40230|
 
 ; 232  :     if (s_hHwCodecAdapter != NULL)
 
@@ -837,7 +837,7 @@
   00028		 |$LN7@Uninitiali|
   00028		 |$LN8@Uninitiali|
   00028	00000000	 DCD         |?s_hHwCodecAdapter@DASF@@1PAUHINSTANCE__@@A|
-  0002c		 |$M40229|
+  0002c		 |$M40231|
 
 			 ENDP  ; |?Uninitialize@DASF@@SAXXZ|, DASF::Uninitialize
 
@@ -845,7 +845,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40248| DCD	|$LN9@Unregister|
+|$T40250| DCD	|$LN9@Unregister|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.cpp
@@ -858,7 +858,7 @@
 
   00000		 |$LN9@Unregister|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M40245|
+  00004		 |$M40247|
 
 ; 309  :     BOOL bRet = FALSE;
 ; 310  :     HRESULT hResult = S_OK;
@@ -882,7 +882,7 @@
 ; 319  :     bRet = TRUE;
 
   00020	03a04001	 moveq       r4, #1
-  00024		 |$cleanUp$39423|
+  00024		 |$cleanUp$39425|
 
 ; 320  : 
 ; 321  : cleanUp:
@@ -895,7 +895,7 @@
   00030		 |$LN10@Unregister|
   00030		 |$LN11@Unregister|
   00030	00000000	 DCD         |_HwCodecAdapterHooks|
-  00034		 |$M40246|
+  00034		 |$M40248|
 
 			 ENDP  ; |?UnregisterDASFStream@DASF@@SAHPAVDASFStream@@@Z|, DASF::UnregisterDASFStream
 
@@ -903,7 +903,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40265| DCD	|$LN9@StartDASFS|
+|$T40267| DCD	|$LN9@StartDASFS|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.cpp
@@ -916,7 +916,7 @@
 
   00000		 |$LN9@StartDASFS|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M40262|
+  00004		 |$M40264|
 
 ; 330  :     BOOL bRet = FALSE;
 ; 331  :     HRESULT hResult = S_OK;
@@ -940,7 +940,7 @@
 ; 340  :     bRet = TRUE;
 
   00020	03a04001	 moveq       r4, #1
-  00024		 |$cleanUp$39434|
+  00024		 |$cleanUp$39436|
 
 ; 341  : 
 ; 342  : cleanUp:
@@ -953,7 +953,7 @@
   00030		 |$LN10@StartDASFS|
   00030		 |$LN11@StartDASFS|
   00030	00000000	 DCD         |_HwCodecAdapterHooks|
-  00034		 |$M40263|
+  00034		 |$M40265|
 
 			 ENDP  ; |?StartDASFStream@DASF@@SAHPAVDASFStream@@@Z|, DASF::StartDASFStream
 
@@ -961,7 +961,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40282| DCD	|$LN9@StopDASFSt|
+|$T40284| DCD	|$LN9@StopDASFSt|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.cpp
@@ -974,7 +974,7 @@
 
   00000		 |$LN9@StopDASFSt|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M40279|
+  00004		 |$M40281|
 
 ; 351  :     BOOL bRet = FALSE;
 ; 352  :     HRESULT hResult = S_OK;
@@ -998,7 +998,7 @@
 ; 361  :     bRet = TRUE;
 
   00020	03a04001	 moveq       r4, #1
-  00024		 |$cleanUp$39445|
+  00024		 |$cleanUp$39447|
 
 ; 362  : 
 ; 363  : cleanUp:
@@ -1011,7 +1011,7 @@
   00030		 |$LN10@StopDASFSt|
   00030		 |$LN11@StopDASFSt|
   00030	00000000	 DCD         |_HwCodecAdapterHooks|
-  00034		 |$M40280|
+  00034		 |$M40282|
 
 			 ENDP  ; |?StopDASFStream@DASF@@SAHPAVDASFStream@@@Z|, DASF::StopDASFStream
 
@@ -1019,7 +1019,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40301| DCD	|$LN9@InsertTran|
+|$T40303| DCD	|$LN9@InsertTran|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.cpp
@@ -1032,7 +1032,7 @@
 
   00000		 |$LN9@InsertTran|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M40298|
+  00004		 |$M40300|
 
 ; 372  :     BOOL bRet = FALSE;
 ; 373  :     HRESULT hResult = S_OK;
@@ -1056,7 +1056,7 @@
 ; 382  :     bRet = TRUE;
 
   00020	03a04001	 moveq       r4, #1
-  00024		 |$cleanUp$39458|
+  00024		 |$cleanUp$39460|
 
 ; 383  : 
 ; 384  : cleanUp:
@@ -1069,7 +1069,7 @@
   00030		 |$LN10@InsertTran|
   00030		 |$LN11@InsertTran|
   00030	00000000	 DCD         |_HwCodecAdapterHooks|
-  00034		 |$M40299|
+  00034		 |$M40301|
 
 			 ENDP  ; |?InsertTransmitBuffer@DASF@@SAHPAEIPAVDASFStream@@@Z|, DASF::InsertTransmitBuffer
 
@@ -1077,7 +1077,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40320| DCD	|$LN9@InsertCapt|
+|$T40322| DCD	|$LN9@InsertCapt|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.cpp
@@ -1090,7 +1090,7 @@
 
   00000		 |$LN9@InsertCapt|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M40317|
+  00004		 |$M40319|
 
 ; 393  :     BOOL bRet = FALSE;
 ; 394  :     HRESULT hResult = S_OK;
@@ -1114,7 +1114,7 @@
 ; 403  :     bRet = TRUE;
 
   00020	03a04001	 moveq       r4, #1
-  00024		 |$cleanUp$39471|
+  00024		 |$cleanUp$39473|
 
 ; 404  : 
 ; 405  : cleanUp:
@@ -1127,7 +1127,7 @@
   00030		 |$LN10@InsertCapt|
   00030		 |$LN11@InsertCapt|
   00030	00000000	 DCD         |_HwCodecAdapterHooks|
-  00034		 |$M40318|
+  00034		 |$M40320|
 
 			 ENDP  ; |?InsertCaptureBuffer@DASF@@SAHPAEIPAVDASFStream@@@Z|, DASF::InsertCaptureBuffer
 
@@ -1135,7 +1135,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40342| DCD	|$LN11@SetGain|
+|$T40344| DCD	|$LN11@SetGain|
 	DCD	0x40001f02
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.cpp
@@ -1149,7 +1149,7 @@
   00000		 |$LN11@SetGain|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
   00004	e24dd01c	 sub         sp, sp, #0x1C
-  00008		 |$M40339|
+  00008		 |$M40341|
   00008	e1a04001	 mov         r4, r1
 
 ; 414  :     BOOL bRet = FALSE;
@@ -1206,7 +1206,7 @@
 ; 441  :     bRet = TRUE;
 
   00064	13a07001	 movne       r7, #1
-  00068		 |$cleanUp$39481|
+  00068		 |$cleanUp$39483|
 
 ; 442  : 
 ; 443  : cleanUp:
@@ -1220,14 +1220,14 @@
   00078		 |$LN12@SetGain|
   00078		 |$LN13@SetGain|
   00078	00000000	 DCD         |_HwCodecAdapterHooks|
-  0007c		 |$M40340|
+  0007c		 |$M40342|
 
 			 ENDP  ; |?SetGain@DASF@@SAHIPAVDASFStream@@@Z|, DASF::SetGain
 
 	EXPORT	|?OnDASFError@DASF@@SAXHPAX@Z|		; DASF::OnDASFError
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40351| DCD	|$LN5@OnDASFErro|
+|$T40353| DCD	|$LN5@OnDASFErro|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -1238,14 +1238,14 @@
 ; 476  : {
 
   00000		 |$LN5@OnDASFErro|
-  00000		 |$M40348|
+  00000		 |$M40350|
 
 ; 477  :     UNREFERENCED_PARAMETER(hContext);
 ; 478  :     UNREFERENCED_PARAMETER(Status);
 ; 479  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M40349|
+  00004		 |$M40351|
 
 			 ENDP  ; |?OnDASFError@DASF@@SAXHPAX@Z|, DASF::OnDASFError
 
@@ -1253,7 +1253,7 @@
 	IMPORT	|??3@YAXPAX@Z|				; operator delete
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40365| DCD	|$LN8@scalar|
+|$T40367| DCD	|$LN8@scalar|
 	DCD	0x40000701
 ; Function compile flags: /Ogspy
 
@@ -1262,14 +1262,14 @@
   00000		 |??_GDASFStream@@IAAPAXI@Z| PROC	; DASFStream::`scalar deleting destructor'
   00000		 |$LN8@scalar|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M40362|
+  00004		 |$M40364|
   00004	e1a04000	 mov         r4, r0
   00008	e3110001	 tst         r1, #1
   0000c	1b000000	 blne        |??3@YAXPAX@Z|
   00010	e1a00004	 mov         r0, r4
   00014	e8bd4010	 ldmia       sp!, {r4, lr}
   00018	e12fff1e	 bx          lr
-  0001c		 |$M40363|
+  0001c		 |$M40365|
 
 			 ENDP  ; |??_GDASFStream@@IAAPAXI@Z|, DASFStream::`scalar deleting destructor'
 
@@ -1278,7 +1278,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40382| DCD	|$LN10@CreateDASF|
+|$T40384| DCD	|$LN10@CreateDASF|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.cpp
@@ -1291,7 +1291,7 @@
 
   00000		 |$LN10@CreateDASF|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M40379|
+  00004		 |$M40381|
 
 ; 559  :     DASFStream *pDASFStream = NULL;
 ; 560  : 
@@ -1329,7 +1329,7 @@
 
   00020	049de004	 ldreq       lr, [sp], #4
   00024	e12fff1e	 bx          lr
-  00028		 |$M40380|
+  00028		 |$M40382|
 
 			 ENDP  ; |?CreateDASFStream@DASFStream@@SAPAV1@XZ|, DASFStream::CreateDASFStream
 
@@ -1337,7 +1337,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40405| DCD	|$LN19@DeleteDASF|
+|$T40407| DCD	|$LN19@DeleteDASF|
 	DCD	0x40001701
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.cpp
@@ -1350,7 +1350,7 @@
 
   00000		 |$LN19@DeleteDASF|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M40402|
+  00004		 |$M40404|
   00004	e1a04000	 mov         r4, r0
 
 ; 574  :     DASFStream *pDASFStream;
@@ -1429,7 +1429,7 @@
   00058		 |$LN20@DeleteDASF|
   00058		 |$LN21@DeleteDASF|
   00058	00000000	 DCD         |?s_hDeleteSignal@DASFStream@@1PAXA|
-  0005c		 |$M40403|
+  0005c		 |$M40405|
 
 			 ENDP  ; |?DeleteDASFStream@DASFStream@@SAXPAV1@@Z|, DASFStream::DeleteDASFStream
 
@@ -1437,7 +1437,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40426| DCD	|$LN11@GetNextBuf|
+|$T40428| DCD	|$LN11@GetNextBuf|
 	DCD	0x40000b00
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.cpp
@@ -1449,7 +1449,7 @@
 ; 667  : {
 
   00000		 |$LN11@GetNextBuf|
-  00000		 |$M40423|
+  00000		 |$M40425|
 
 ; 668  :     PBYTE pBuffer = NULL;
 ; 669  :     if (m_state == kActive && IsDASFBufferSpaceAvailable())
@@ -1476,7 +1476,7 @@
 
   00024	e1a00002	 mov         r0, r2
   00028	e12fff1e	 bx          lr
-  0002c		 |$M40424|
+  0002c		 |$M40426|
 
 			 ENDP  ; |?GetNextBuffer@DASFStream@@IAAPAEXZ|, DASFStream::GetNextBuffer
 
@@ -1484,7 +1484,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmctxt.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40439| DCD	|$LN8@GetWaveFor@2|
+|$T40441| DCD	|$LN8@GetWaveFor@2|
 	DCD	0x40000500
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.cpp
@@ -1496,7 +1496,7 @@
 ; 680  : {
 
   00000		 |$LN8@GetWaveFor@2|
-  00000		 |$M40436|
+  00000		 |$M40438|
 
 ; 681  :     if (m_hStreamContext)
 
@@ -1516,7 +1516,7 @@
 ; 686  : }
 
   00010	e12fff1e	 bx          lr
-  00014		 |$M40437|
+  00014		 |$M40439|
 
 			 ENDP  ; |?GetWaveFormat@DASFStream@@QAAPBUtWAVEFORMATEX@@XZ|, DASFStream::GetWaveFormat
 
@@ -1524,7 +1524,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40506| DCD	|$LN40@InsertBuff|
+|$T40508| DCD	|$LN40@InsertBuff|
 	DCD	0x40002701
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.cpp
@@ -1537,7 +1537,7 @@
 
   00000		 |$LN40@InsertBuff|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M40503|
+  00004		 |$M40505|
   00004	e1b0e001	 movs        lr, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -1583,12 +1583,12 @@
   00044	e593300c	 ldr         r3, [r3, #0xC]
   00048	e1a0e00f	 mov         lr, pc
   0004c	e12fff13	 bx          r3
-  00050		 |$cleanUp$40475|
+  00050		 |$cleanUp$40477|
 
 ; 705  :         }
 ; 706  :     else
 
-  00050	ea000002	 b           |$cleanUp$40489|
+  00050	ea000002	 b           |$cleanUp$40491|
   00054		 |$LN2@InsertBuff|
 
 ; 707  :         {
@@ -1598,7 +1598,7 @@
   00054	e5933010	 ldr         r3, [r3, #0x10]
   00058	e1a0e00f	 mov         lr, pc
   0005c	e12fff13	 bx          r3
-  00060		 |$cleanUp$40489|
+  00060		 |$cleanUp$40491|
 
 ; 710  :         }
 ; 711  : 
@@ -1635,7 +1635,7 @@
   00094	aaaaaaab	 DCD         0xaaaaaaab
   00098		 |$LN43@InsertBuff|
   00098	00000000	 DCD         |_HwCodecAdapterHooks|
-  0009c		 |$M40504|
+  0009c		 |$M40506|
 
 			 ENDP  ; |?InsertBuffer@DASFStream@@IAAHPAE@Z|, DASFStream::InsertBuffer
 
@@ -1643,7 +1643,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40535| DCD	|$LN17@StopStream|
+|$T40537| DCD	|$LN17@StopStream|
 	DCD	0x40001601
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.cpp
@@ -1656,7 +1656,7 @@
 
   00000		 |$LN17@StopStream|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M40532|
+  00004		 |$M40534|
   00004	e1a04000	 mov         r4, r0
 
 ; 860  :     RETAILMSG(0, (L"WAV:+StopStream()[pThis=0x%08X, dir=%d]\r\n",
@@ -1720,14 +1720,14 @@
 
   00050	e8bd4010	 ldmia       sp!, {r4, lr}
   00054	e12fff1e	 bx          lr
-  00058		 |$M40533|
+  00058		 |$M40535|
 
 			 ENDP  ; |?StopStream@DASFStream@@QAAHXZ|, DASFStream::StopStream
 
 	EXPORT	|?SetStreamGain@DASFStream@@QAAHI@Z|	; DASFStream::SetStreamGain
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40550| DCD	|$LN10@SetStreamG|
+|$T40552| DCD	|$LN10@SetStreamG|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -1739,7 +1739,7 @@
 
   00000		 |$LN10@SetStreamG|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M40547|
+  00004		 |$M40549|
   00004	e1a02001	 mov         r2, r1
 
 ; 888  :     RETAILMSG(0, (L"WAV:SetStreamGain() + \r\n"));
@@ -1767,14 +1767,14 @@
 
   00020	e49de004	 ldr         lr, [sp], #4
   00024	e12fff1e	 bx          lr
-  00028		 |$M40548|
+  00028		 |$M40550|
 
 			 ENDP  ; |?SetStreamGain@DASFStream@@QAAHI@Z|, DASFStream::SetStreamGain
 
 	EXPORT	|?SetDASFInfo@DASFStream@@QAAXPAXIPAPAEH@Z| ; DASFStream::SetDASFInfo
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40566| DCD	|$LN12@SetDASFInf|
+|$T40568| DCD	|$LN12@SetDASFInf|
 	DCD	0x40001001
 ; Function compile flags: /Ogspy
 
@@ -1786,7 +1786,7 @@
 
   00000		 |$LN12@SetDASFInf|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M40563|
+  00004		 |$M40565|
 
 ; 903  :     m_hDASFContext = hDASFContext;
 ; 904  :     m_idDASFStream = idDASFStream;
@@ -1820,7 +1820,7 @@
 
   00038	e49de004	 ldr         lr, [sp], #4
   0003c	e12fff1e	 bx          lr
-  00040		 |$M40564|
+  00040		 |$M40566|
 
 			 ENDP  ; |?SetDASFInfo@DASFStream@@QAAXPAXIPAPAEH@Z|, DASFStream::SetDASFInfo
 
@@ -1828,7 +1828,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40581| DCD	|$LN11@InsertDASF|
+|$T40583| DCD	|$LN11@InsertDASF|
 	DCD	0x40000f01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.cpp
@@ -1841,7 +1841,7 @@
 
   00000		 |$LN11@InsertDASF|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M40578|
+  00004		 |$M40580|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -1882,7 +1882,7 @@
 
   00034	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00038	e12fff1e	 bx          lr
-  0003c		 |$M40579|
+  0003c		 |$M40581|
 
 			 ENDP  ; |?InsertDASFStream@DASFAudioStreamPort@@IAAXPAVDASFStream@@@Z|, DASFAudioStreamPort::InsertDASFStream
 
@@ -1890,7 +1890,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40601| DCD	|$LN19@RemoveDASF|
+|$T40603| DCD	|$LN19@RemoveDASF|
 	DCD	0x40001c01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.cpp
@@ -1903,7 +1903,7 @@
 
   00000		 |$LN19@RemoveDASF|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M40598|
+  00004		 |$M40600|
   00004	e1a07001	 mov         r7, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -1998,7 +1998,7 @@
 
   00068	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   0006c	e12fff1e	 bx          lr
-  00070		 |$M40599|
+  00070		 |$M40601|
 
 			 ENDP  ; |?RemoveDASFStream@DASFAudioStreamPort@@IAAXPAVDASFStream@@@Z|, DASFAudioStreamPort::RemoveDASFStream
 
@@ -2006,7 +2006,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40628| DCD	|$LN19@FindDASFSt|
+|$T40630| DCD	|$LN19@FindDASFSt|
 	DCD	0x40001001
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.cpp
@@ -2019,7 +2019,7 @@
 
   00000		 |$LN19@FindDASFSt|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M40625|
+  00004		 |$M40627|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -2060,14 +2060,14 @@
   00034	e1a00004	 mov         r0, r4
   00038	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0003c	e12fff1e	 bx          lr
-  00040		 |$M40626|
+  00040		 |$M40628|
 
 			 ENDP  ; |?FindDASFStream@DASFAudioStreamPort@@IAAPAVDASFStream@@PAX@Z|, DASFAudioStreamPort::FindDASFStream
 
 	EXPORT	|?StreamStarting@DASFAudioStreamPort@@QAAHPAVDASFStream@@@Z| ; DASFAudioStreamPort::StreamStarting
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40669| DCD	|$LN27@StreamStar|
+|$T40671| DCD	|$LN27@StreamStar|
 	DCD	0x40002a01
 ; Function compile flags: /Ogspy
 
@@ -2079,7 +2079,7 @@
 
   00000		 |$LN27@StreamStar|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M40666|
+  00004		 |$M40668|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -2176,7 +2176,7 @@
 
   000a0	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   000a4	e12fff1e	 bx          lr
-  000a8		 |$M40667|
+  000a8		 |$M40669|
 
 			 ENDP  ; |?StreamStarting@DASFAudioStreamPort@@QAAHPAVDASFStream@@@Z|, DASFAudioStreamPort::StreamStarting
 
@@ -2184,7 +2184,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40700| DCD	|$LN23@StreamStop|
+|$T40702| DCD	|$LN23@StreamStop|
 	DCD	0x40002b01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.cpp
@@ -2197,7 +2197,7 @@
 
   00000		 |$LN23@StreamStop|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M40697|
+  00004		 |$M40699|
   00004	e1a06001	 mov         r6, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -2304,7 +2304,7 @@
 
   000a4	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   000a8	e12fff1e	 bx          lr
-  000ac		 |$M40698|
+  000ac		 |$M40700|
 
 			 ENDP  ; |?StreamStopped@DASFAudioStreamPort@@QAAHPAVDASFStream@@@Z|, DASFAudioStreamPort::StreamStopped
 
@@ -2313,7 +2313,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40708| DCD	|$LN6@DecrementA|
+|$T40710| DCD	|$LN6@DecrementA|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -2325,7 +2325,7 @@
 
   00000		 |$LN6@DecrementA|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M40705|
+  00004		 |$M40707|
   00004	e1a04000	 mov         r4, r0
 
 ; 156  :     if (InterlockedDecrement(&m_nActiveDASFBufferCount) == 0) StopStream();
@@ -2340,14 +2340,14 @@
 
   0001c	e8bd4010	 ldmia       sp!, {r4, lr}
   00020	e12fff1e	 bx          lr
-  00024		 |$M40706|
+  00024		 |$M40708|
 
 			 ENDP  ; |?DecrementActiveDASFBufferCount@DASFStream@@QAAXXZ|, DASFStream::DecrementActiveDASFBufferCount
 
 	EXPORT	|?Uninitialize@DASFStream@@QAAXXZ|	; DASFStream::Uninitialize
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40728| DCD	|$LN13@Uninitiali@2|
+|$T40730| DCD	|$LN13@Uninitiali@2|
 	DCD	0x40001901
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.cpp
@@ -2360,7 +2360,7 @@
 
   00000		 |$LN13@Uninitiali@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M40725|
+  00004		 |$M40727|
   00004	e1a04000	 mov         r4, r0
 
 ; 638  :     RETAILMSG(0, (L"WAV:+Uninitialize()[pThis=0x%08X, dir=%d]\r\n",
@@ -2422,7 +2422,7 @@
 
   0005c	e8bd4010	 ldmia       sp!, {r4, lr}
   00060	e12fff1e	 bx          lr
-  00064		 |$M40726|
+  00064		 |$M40728|
 
 			 ENDP  ; |?Uninitialize@DASFStream@@QAAXXZ|, DASFStream::Uninitialize
 
@@ -2430,7 +2430,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40771| DCD	|$LN26@ProcessBuf|
+|$T40773| DCD	|$LN26@ProcessBuf|
 	DCD	0x40002202
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.cpp
@@ -2444,7 +2444,7 @@
   00000		 |$LN26@ProcessBuf|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M40768|
+  00008		 |$M40770|
   00008	e1a05000	 mov         r5, r0
 
 ; 769  :     RETAILMSG(0, (L"WAV:+ProcessBuffer(pBuffer=0x%08X)[pThis=0x%08X, dir=%d]\r\n",
@@ -2529,7 +2529,7 @@
   0007c	e28dd00c	 add         sp, sp, #0xC
   00080	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00084	e12fff1e	 bx          lr
-  00088		 |$M40769|
+  00088		 |$M40771|
 
 			 ENDP  ; |?ProcessBuffer@DASFStream@@IAAHPAE@Z|, DASFStream::ProcessBuffer
 
@@ -2537,7 +2537,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40841| DCD	|$LN44@StartStrea|
+|$T40843| DCD	|$LN44@StartStrea|
 	DCD	0x40002601
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.cpp
@@ -2550,7 +2550,7 @@
 
   00000		 |$LN44@StartStrea|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M40838|
+  00004		 |$M40840|
   00004	e1a04000	 mov         r4, r0
 
 ; 810  :     RETAILMSG(0, (L"WAV:+StartStream()[pThis=0x%08X, dir=%d]\r\n",
@@ -2562,7 +2562,7 @@
 
   00008	e5943020	 ldr         r3, [r4, #0x20]
   0000c	e3530001	 cmp         r3, #1
-  00010	0a00001d	 beq         |$cleanUp$39610|
+  00010	0a00001d	 beq         |$cleanUp$39612|
 
 ; 816  :         {
 ; 817  :         goto cleanUp;
@@ -2647,7 +2647,7 @@
 ; 847  :     m_state = kActive;
 
   00088	e5846020	 str         r6, [r4, #0x20]
-  0008c		 |$cleanUp$39610|
+  0008c		 |$cleanUp$39612|
 
 ; 848  :     //ExitMutex();
 ; 849  : 
@@ -2662,7 +2662,7 @@
 
   00090	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00094	e12fff1e	 bx          lr
-  00098		 |$M40839|
+  00098		 |$M40841|
 
 			 ENDP  ; |?StartStream@DASFStream@@QAAHXZ|, DASFStream::StartStream
 
@@ -2674,7 +2674,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40875| DCD	|$LN26@ISTDASFStr|
+|$T40877| DCD	|$LN26@ISTDASFStr|
 	DCD	0x40001c01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2699,7 +2699,7 @@
 
   00000		 |$LN26@ISTDASFStr|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M40872|
+  00004		 |$M40874|
 
 ; 524  :     DASFStream *pDASFStream;
 ; 525  : 
@@ -2784,7 +2784,7 @@
   00068	00000000	 DCD         |??_C@_1GE@HJFIABNG@?$AAW?$AAA?$AAV?$AA?3?$AAI?$AAS?$AAT?$AAD?$AAA?$AAS?$AAF?$AAS?$AAt?$AAr?$AAe?$AAa?$AAm?$AAD?$AAe?$AAl?$AAe?$AAt?$AAe?$AA?$CI?$AA?$CJ?$AA?$FL?$AAp?$AAT?$AAh?$AAi?$AAs?$AA?$DN@|
   0006c		 |$LN29@ISTDASFStr|
   0006c	00000000	 DCD         |?s_hDeleteSignal@DASFStream@@1PAXA|
-  00070		 |$M40873|
+  00070		 |$M40875|
 
 			 ENDP  ; |?ISTDASFStreamDelete@DASFStream@@SAKPAX@Z|, DASFStream::ISTDASFStreamDelete
 
@@ -2793,7 +2793,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40946| DCD	|$LN41@ProcessDAS|
+|$T40948| DCD	|$LN41@ProcessDAS|
 	DCD	0x40003d01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.cpp
@@ -2806,7 +2806,7 @@
 
   00000		 |$LN41@ProcessDAS|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M40943|
+  00004		 |$M40945|
   00004	e1a05000	 mov         r5, r0
 
 ; 725  :     RETAILMSG(0, (L"WAV:+ProcessDASFCallback()[pThis=0x%08X, dir=%d]\r\n",
@@ -2939,14 +2939,14 @@
   000f0		 |$LN42@ProcessDAS|
   000f0		 |$LN43@ProcessDAS|
   000f0	aaaaaaab	 DCD         0xaaaaaaab
-  000f4		 |$M40944|
+  000f4		 |$M40946|
 
 			 ENDP  ; |?ProcessDASFCallback@DASFStream@@QAAHXZ|, DASFStream::ProcessDASFCallback
 
 	EXPORT	|?OnDASFCallback@DASF@@SAXPAEPAKPAX@Z|	; DASF::OnDASFCallback
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40956| DCD	|$LN5@OnDASFCall|
+|$T40958| DCD	|$LN5@OnDASFCall|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -2958,7 +2958,7 @@
 
   00000		 |$LN5@OnDASFCall|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M40953|
+  00004		 |$M40955|
 
 ; 451  :     DASFStream  *pDASFStream = (DASFStream*)hContext;
 ; 452  : 
@@ -2978,14 +2978,14 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M40954|
+  00014		 |$M40956|
 
 			 ENDP  ; |?OnDASFCallback@DASF@@SAXPAEPAKPAX@Z|, DASF::OnDASFCallback
 
 	EXPORT	|?OnDASFCallback2@DASF@@SAXPAEPAKPAX@Z|	; DASF::OnDASFCallback2
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40968| DCD	|$LN7@OnDASFCall@2|
+|$T40970| DCD	|$LN7@OnDASFCall@2|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -2997,7 +2997,7 @@
 
   00000		 |$LN7@OnDASFCall@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M40965|
+  00004		 |$M40967|
 
 ; 467  :     DEBUGMSG(ZONE_MDD, (TEXT("OnDASFCallback2+\r\n")));
 ; 468  : 
@@ -3012,7 +3012,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M40966|
+  00014		 |$M40968|
 
 			 ENDP  ; |?OnDASFCallback2@DASF@@SAXPAEPAKPAX@Z|, DASF::OnDASFCallback2
 
@@ -3026,7 +3026,7 @@
 	IMPORT	|InitializeCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40985| DCD	|$LN17@Initialize@2|
+|$T40987| DCD	|$LN17@Initialize@2|
 	DCD	0x40003402
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -3069,7 +3069,7 @@
   00000		 |$LN17@Initialize@2|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M40982|
+  00008		 |$M40984|
 
 ; 485  :     BOOL rc = FALSE;
 ; 486  : 
@@ -3171,7 +3171,7 @@
 ; 510  :     rc = TRUE;
 
   000a8	e3a04001	 mov         r4, #1
-  000ac		 |$cleanUp$39508|
+  000ac		 |$cleanUp$39510|
 
 ; 515  :         s_hDeleteSignal = NULL;
 
@@ -3196,14 +3196,14 @@
   000c8	00000000	 DCD         |??_C@_1JA@DNHGKGBK@?$AAD?$AAA?$AAS?$AAF?$AAS?$AAt?$AAr?$AAe?$AAa?$AAm?$AA?3?$AA?3?$AAI?$AAn?$AAi?$AAt?$AAi?$AAa?$AAl?$AAi?$AAz?$AAe?$AAD?$AAA?$AAS?$AAF?$AAS?$AAt?$AAr?$AAe?$AAa?$AAm@|
   000cc		 |$LN23@Initialize@2|
   000cc	00000000	 DCD         |?s_csDASFStream@DASFStream@@1UCRITICAL_SECTION@@A|
-  000d0		 |$M40983|
+  000d0		 |$M40985|
 
 			 ENDP  ; |?InitializeDASFStream@DASFStream@@SAHXZ|, DASFStream::InitializeDASFStream
 
 	EXPORT	|?open_Port@DASFAudioStreamPort@@UAAHPBGPAX1@Z| ; DASFAudioStreamPort::open_Port
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41003| DCD	|$LN7@open_Port|
+|$T41005| DCD	|$LN7@open_Port|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -3215,7 +3215,7 @@
 
   00000		 |$LN7@open_Port|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M41000|
+  00004		 |$M41002|
 
 ; 1190 :     UNREFERENCED_PARAMETER(hRecPortConfigInfo);
 ; 1191 :     UNREFERENCED_PARAMETER(hPlayPortConfigInfo);
@@ -3245,7 +3245,7 @@
 
   0002c	e49de004	 ldr         lr, [sp], #4
   00030	e12fff1e	 bx          lr
-  00034		 |$M41001|
+  00034		 |$M41003|
 
 			 ENDP  ; |?open_Port@DASFAudioStreamPort@@UAAHPBGPAX1@Z|, DASFAudioStreamPort::open_Port
 
@@ -3253,7 +3253,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41043| DCD	|$LN24@RegisterDA|
+|$T41045| DCD	|$LN24@RegisterDA|
 	DCD	0x40005102
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dasfaudioport.cpp
@@ -3267,7 +3267,7 @@
   00000		 |$LN24@RegisterDA|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   00004	e24dd07c	 sub         sp, sp, #0x7C
-  00008		 |$M41040|
+  00008		 |$M41042|
   00008	e1a07000	 mov         r7, r0
 
 ; 243  :     WAVEFORMATEX const*pWaveFormat = pDASFStream->GetWaveFormat();
@@ -3380,7 +3380,7 @@
 
 ; 285  :     if ( hResult != S_OK )
 
-  000ec	1a00000c	 bne         |$cleanUp$39410|
+  000ec	1a00000c	 bne         |$cleanUp$39412|
 
 ; 286  :     {
 ; 287  :         DEBUGMSG(ZONE_MDD, (TEXT("Failed to initialize hw codec adapter\r\n")));
@@ -3411,7 +3411,7 @@
 ; 298  :     bRet = TRUE;
 
   00120	e3a08001	 mov         r8, #1
-  00124		 |$cleanUp$39410|
+  00124		 |$cleanUp$39412|
 
 ; 299  : 
 ; 300  : cleanUp:
@@ -3431,14 +3431,14 @@
   0013c	00000000	 DCD         |?OnDASFCallback2@DASF@@SAXPAEPAKPAX@Z|
   00140		 |$LN29@RegisterDA|
   00140	00000000	 DCD         |?OnDASFCallback@DASF@@SAXPAEPAKPAX@Z|
-  00144		 |$M41041|
+  00144		 |$M41043|
 
 			 ENDP  ; |?RegisterDASFStream@DASF@@SAHPAVDASFStream@@@Z|, DASF::RegisterDASFStream
 
 	EXPORT	|?Initialize@DASFStream@@QAAHPAVDASFAudioStreamPort@@PAXHI@Z| ; DASFStream::Initialize
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41061| DCD	|$LN5@Initialize@3|
+|$T41063| DCD	|$LN5@Initialize@3|
 	DCD	0x40001a01
 ; Function compile flags: /Ogspy
 
@@ -3450,7 +3450,7 @@
 
   00000		 |$LN5@Initialize@3|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M41058|
+  00004		 |$M41060|
   00004	e1a04000	 mov         r4, r0
 
 ; 612  :     // initialize member variables
@@ -3509,14 +3509,14 @@
 
   00060	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00064	e12fff1e	 bx          lr
-  00068		 |$M41059|
+  00068		 |$M41061|
 
 			 ENDP  ; |?Initialize@DASFStream@@QAAHPAVDASFAudioStreamPort@@PAXHI@Z|, DASFStream::Initialize
 
 	EXPORT	|?signal_Port@DASFAudioStreamPort@@UAAHKPAXK@Z| ; DASFAudioStreamPort::signal_Port
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41162| DCD	|$LN83@signal_Por|
+|$T41164| DCD	|$LN83@signal_Por|
 	DCD	0x40007b02
 ; Function compile flags: /Ogspy
 
@@ -3529,7 +3529,7 @@
   00000		 |$LN83@signal_Por|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M41159|
+  00008		 |$M41161|
   00008	e1a05003	 mov         r5, r3
   0000c	e1a06002	 mov         r6, r2
   00010	e1a04000	 mov         r4, r0
@@ -3563,7 +3563,7 @@
 
   00028	e2412001	 sub         r2, r1, #1
   0002c	e352000d	 cmp         r2, #0xD
-  00030	8a000068	 bhi         |$cleanUp$39701|
+  00030	8a000068	 bhi         |$cleanUp$39703|
   00034	e1a03082	 mov         r3, r2, lsl #1
   00038	e083300f	 add         r3, r3, pc
   0003c	e1d330b4	 ldrh        r3, [r3, #4]
@@ -3661,7 +3661,7 @@
 ; 1179 : 
 ; 1180 : cleanUp:
 
-  000a4	ea00004b	 b           |$cleanUp$39701|
+  000a4	ea00004b	 b           |$cleanUp$39703|
   000a8		 |$LN14@signal_Por|
 
 ; 1098 :                     goto cleanUp;
@@ -3699,7 +3699,7 @@
 
 ; 1112 :             break;
 
-  000d8	ea00003e	 b           |$cleanUp$39701|
+  000d8	ea00003e	 b           |$cleanUp$39703|
   000dc		 |$LN12@signal_Por|
 
 ; 1113 : 
@@ -3719,7 +3719,7 @@
 ; 1121 :                 bIsOutput, hStreamContext));
 ; 1122 :             if (pStream != NULL)
 
-  000ec	0a000039	 beq         |$cleanUp$39701|
+  000ec	0a000039	 beq         |$cleanUp$39703|
 
 ; 1123 :                 {
 ; 1124 :                 pStream->StopStream();
@@ -3729,7 +3729,7 @@
 ; 1125 :                 }
 ; 1126 :             break;
 
-  000f4	ea000037	 b           |$cleanUp$39701|
+  000f4	ea000037	 b           |$cleanUp$39703|
   000f8		 |$LN8@signal_Por|
 
 ; 1127 : 
@@ -3758,7 +3758,7 @@
 
 ; 1140 :             break;
 
-  0011c	ea00002d	 b           |$cleanUp$39701|
+  0011c	ea00002d	 b           |$cleanUp$39703|
   00120		 |$LN7@signal_Por|
 
 ; 1141 : 
@@ -3777,7 +3777,7 @@
 
 ; 1144 :             break;
 
-  00144	ea000023	 b           |$cleanUp$39701|
+  00144	ea000023	 b           |$cleanUp$39703|
   00148		 |$LN6@signal_Por|
 
 ; 1145 : 
@@ -3786,7 +3786,7 @@
 
   00148	e5943010	 ldr         r3, [r4, #0x10]
   0014c	e3530000	 cmp         r3, #0
-  00150	1a000020	 bne         |$cleanUp$39701|
+  00150	1a000020	 bne         |$cleanUp$39703|
 
 ; 1148 :                 {
 ; 1149 :                 SendAudioStreamMessage(ASPM_STOP_TX, NULL);
@@ -3804,7 +3804,7 @@
 ; 1150 :                 }
 ; 1151 :             break;
 
-  00178	ea000016	 b           |$cleanUp$39701|
+  00178	ea000016	 b           |$cleanUp$39703|
   0017c		 |$LN4@signal_Por|
 
 ; 1152 : 
@@ -3813,7 +3813,7 @@
 
   0017c	e594300c	 ldr         r3, [r4, #0xC]
   00180	e3530000	 cmp         r3, #0
-  00184	1a000013	 bne         |$cleanUp$39701|
+  00184	1a000013	 bne         |$cleanUp$39703|
 
 ; 1155 :                 {
 ; 1156 :                 SendAudioStreamMessage(ASPM_STOP_RX, NULL);
@@ -3831,7 +3831,7 @@
 ; 1157 :                 }
 ; 1158 :             break;
 
-  001ac	ea000009	 b           |$cleanUp$39701|
+  001ac	ea000009	 b           |$cleanUp$39703|
   001b0		 |$LN2@signal_Por|
 
 ; 1159 : 
@@ -3852,7 +3852,7 @@
 ; 1168 :                 bIsOutput, hStreamContext));
 ; 1169 :             if (pStream != NULL)
 
-  001c0	0a000004	 beq         |$cleanUp$39701|
+  001c0	0a000004	 beq         |$cleanUp$39703|
 
 ; 1170 :                 {
 ; 1171 :                 pStream->SetStreamGain((UINT)dwContextData);
@@ -3862,7 +3862,7 @@
   001cc	01a01000	 moveq       r1, r0
   001d0	01a00005	 moveq       r0, r5
   001d4	0b000000	 bleq        |?SetGain@DASF@@SAHIPAVDASFStream@@@Z|
-  001d8		 |$cleanUp$39701|
+  001d8		 |$cleanUp$39703|
 
 ; 1181 :     return rc;
 ; 1182 : }
@@ -3874,7 +3874,7 @@
   001e8		 |$LN84@signal_Por|
   001e8		 |$LN85@signal_Por|
   001e8	00000000	 DCD         |?s_hHwCodecAdapter@DASF@@1PAUHINSTANCE__@@A|
-  001ec		 |$M41160|
+  001ec		 |$M41162|
 
 			 ENDP  ; |?signal_Port@DASFAudioStreamPort@@UAAHKPAXK@Z|, DASFAudioStreamPort::signal_Port
 

@@ -489,7 +489,7 @@
 ; File c:\wince600\platform\z2170p\src\oal\oallib\opp_map.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47749| DCD	|$LN6@SmartRefle|
+|$T47762| DCD	|$LN6@SmartRefle|
 	DCD	0x40000e01
 ; Function compile flags: /Ogspy
 
@@ -501,7 +501,7 @@
 
   00000		 |$LN6@SmartRefle|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M47746|
+  00004		 |$M47759|
 
 ; 248  :     if (_rgSmartReflexInfo[channel].bInitialized && INTERRUPTS_STATUS()) 
 
@@ -529,7 +529,7 @@
   00034		 |$LN7@SmartRefle|
   00034		 |$LN8@SmartRefle|
   00034	00000000	 DCD         |_rgSmartReflexInfo|
-  00038		 |$M47747|
+  00038		 |$M47760|
 
 			 ENDP  ; |SmartReflexLock|
 
@@ -537,7 +537,7 @@
 	IMPORT	|LeaveCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47759| DCD	|$LN6@SmartRefle@2|
+|$T47772| DCD	|$LN6@SmartRefle@2|
 	DCD	0x40000e01
 ; Function compile flags: /Ogspy
 
@@ -549,7 +549,7 @@
 
   00000		 |$LN6@SmartRefle@2|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M47756|
+  00004		 |$M47769|
 
 ; 259  :     if (_rgSmartReflexInfo[channel].bInitialized && INTERRUPTS_STATUS()) 
 
@@ -577,14 +577,14 @@
   00034		 |$LN7@SmartRefle@2|
   00034		 |$LN8@SmartRefle@2|
   00034	00000000	 DCD         |_rgSmartReflexInfo|
-  00038		 |$M47757|
+  00038		 |$M47770|
 
 			 ENDP  ; |SmartReflexUnlock|
 
 	EXPORT	|IsSmartReflexMonitoringEnabled|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47771| DCD	|$LN5@IsSmartRef|
+|$T47784| DCD	|$LN5@IsSmartRef|
 	DCD	0x40000600
 ; Function compile flags: /Ogspy
 
@@ -595,7 +595,7 @@
 ; 268  : {   
 
   00000		 |$LN5@IsSmartRef|
-  00000		 |$M47768|
+  00000		 |$M47781|
 
 ; 269  :     return _rgSmartReflexInfo[channel].bEnabled;
 
@@ -610,7 +610,7 @@
   00014		 |$LN6@IsSmartRef|
   00014		 |$LN7@IsSmartRef|
   00014	00000000	 DCD         |_rgSmartReflexInfo|
-  00018		 |$M47769|
+  00018		 |$M47782|
 
 			 ENDP  ; |IsSmartReflexMonitoringEnabled|
 
@@ -621,7 +621,7 @@
 	IMPORT	|NKDbgPrintfW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47787| DCD	|$LN15@SmartRefle@3|
+|$T47800| DCD	|$LN15@SmartRefle@3|
 	DCD	0x40002201
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -659,7 +659,7 @@
 
   00000		 |$LN15@SmartRefle@3|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M47784|
+  00004		 |$M47797|
   00004	e1a05000	 mov         r5, r0
 
 ; 276  : #ifndef SHIP_BUILD
@@ -732,14 +732,14 @@
   00080	00000000	 DCD         |??_C@_1FA@GPKMIFJB@?$AA?$AN?$AA?6?$AAS?$AAm?$AAa?$AAr?$AAt?$AAR?$AAe?$AAf?$AAl?$AAe?$AAx?$AA_?$AAd?$AAu?$AAm?$AAp?$AA_?$AAs?$AAe?$AAn?$AAs?$AAo?$AAr?$AA_?$AAd?$AAa?$AAt?$AAa?$AA?5?$AA?3@|
   00084		 |$LN19@SmartRefle@3|
   00084	00000000	 DCD         |??_C@_1EM@KCFGIBMD@?$AAS?$AAm?$AAa?$AAr?$AAt?$AAR?$AAe?$AAf?$AAl?$AAe?$AAx?$AA_?$AAd?$AAu?$AAm?$AAp?$AA_?$AAs?$AAe?$AAn?$AAs?$AAo?$AAr?$AA_?$AAd?$AAa?$AAt?$AAa?$AA?5?$AA?3?$AA?5?$AAV@|
-  00088		 |$M47785|
+  00088		 |$M47798|
 
 			 ENDP  ; |SmartReflex_dump_sensor_data|
 
 	IMPORT	|__rt_udiv|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47806| DCD	|$LN11@cal_recipr|
+|$T47819| DCD	|$LN11@cal_recipr|
 	DCD	0x40001201
 ; Function compile flags: /Ogspy
 
@@ -751,7 +751,7 @@
 
   00000		 |$LN11@cal_recipr|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M47803|
+  00004		 |$M47816|
   00004	e1a05002	 mov         r5, r2
   00008	e1a06001	 mov         r6, r1
   0000c	e1a07000	 mov         r7, r0
@@ -795,13 +795,13 @@
 
   00040	e8bd41f0	 ldmia       sp!, {r4 - r8, lr}
   00044	e12fff1e	 bx          lr
-  00048		 |$M47804|
+  00048		 |$M47817|
 
 			 ENDP  ; |cal_reciprocal|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47849| DCD	|$LN21@cal_test_n|
+|$T47862| DCD	|$LN21@cal_test_n|
 	DCD	0x40002602
 ; Function compile flags: /Ogspy
 
@@ -814,7 +814,7 @@
   00000		 |$LN21@cal_test_n|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M47846|
+  00008		 |$M47859|
   00008	e1a05001	 mov         r5, r1
   0000c	e1a09000	 mov         r9, r0
 
@@ -873,14 +873,14 @@
   0008c	e28dd004	 add         sp, sp, #4
   00090	e8bd47f0	 ldmia       sp!, {r4 - r10, lr}
   00094	e12fff1e	 bx          lr
-  00098		 |$M47847|
+  00098		 |$M47860|
 
 			 ENDP  ; |cal_test_nvalue|
 
 	EXPORT	|??_C@_1IA@BDMNHBLK@?$AAC?$AAo?$AAm?$AAp?$AAe?$AAn?$AAs?$AAa?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAO?$AAP?$AAP?$AA?$CF?$AAd?$AA?5?$AAf?$AAo?$AAr?$AA?5?$AA?$CF?$AAd?$AAm?$AAV?$AA?5?$AAO?$AAr?$AAi?$AAg@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47921| DCD	|$LN24@SmartRefle@4|
+|$T47934| DCD	|$LN24@SmartRefle@4|
 	DCD	0x40005002
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -907,7 +907,7 @@
   00000		 |$LN24@SmartRefle@4|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd014	 sub         sp, sp, #0x14
-  00008		 |$M47918|
+  00008		 |$M47931|
   00008	e1a08002	 mov         r8, r2
   0000c	e1b07001	 movs        r7, r1
   00010	e1a0b000	 mov         r11, r0
@@ -1039,7 +1039,7 @@
   00138	00000000	 DCD         |??_C@_1IA@BDMNHBLK@?$AAC?$AAo?$AAm?$AAp?$AAe?$AAn?$AAs?$AAa?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAO?$AAP?$AAP?$AA?$CF?$AAd?$AA?5?$AAf?$AAo?$AAr?$AA?5?$AA?$CF?$AAd?$AAm?$AAV?$AA?5?$AAO?$AAr?$AAi?$AAg@|
   0013c		 |$LN27@SmartRefle@4|
   0013c	cccccccd	 DCD         0xcccccccd
-  00140		 |$M47919|
+  00140		 |$M47932|
 
 			 ENDP  ; |SmartReflex_Adjust_EFUSE_nvalue|
 
@@ -1056,7 +1056,7 @@
 |_SR_driver_data| % 0x4
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47958| DCD	|$LN42@SmartRefle@5|
+|$T47971| DCD	|$LN42@SmartRefle@5|
 	DCD	0x40009302
 ; Function compile flags: /Ogspy
 
@@ -1069,7 +1069,7 @@
   00000		 |$LN42@SmartRefle@5|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd020	 sub         sp, sp, #0x20
-  00008		 |$M47955|
+  00008		 |$M47968|
 
 ; 378  :     SmartReflexSensorData_t *pSRInfo;
 ; 379  :     Efuse_SensorData_t      sensorData;
@@ -1441,7 +1441,7 @@
   00244	00000000	 DCD         |_sensorEnData|
   00248		 |$LN48@SmartRefle@5|
   00248	48002270	 DCD         0x48002270
-  0024c		 |$M47956|
+  0024c		 |$M47969|
 
 			 ENDP  ; |SmartReflex_Read_EFUSE|
 
@@ -1449,7 +1449,7 @@
 	IMPORT	|InitializeCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47971| DCD	|$LN5@SmartRefle@6|
+|$T47984| DCD	|$LN5@SmartRefle@6|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -1461,7 +1461,7 @@
 
   00000		 |$LN5@SmartRefle@6|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M47968|
+  00004		 |$M47981|
 
 ; 548  :     InitializeCriticalSection(&_rgSmartReflexInfo[kSmartReflex_Channel1].cs);
 
@@ -1492,7 +1492,7 @@
   00030		 |$LN6@SmartRefle@6|
   00030		 |$LN7@SmartRefle@6|
   00030	00000000	 DCD         |_rgSmartReflexInfo|
-  00034		 |$M47969|
+  00034		 |$M47982|
 
 			 ENDP  ; |SmartReflex_PostInitialize|
 
@@ -1502,7 +1502,7 @@
 |_rgOppVdd| %	0x8
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47981| DCD	|$LN8@SmartRefle@7|
+|$T47994| DCD	|$LN8@SmartRefle@7|
 	DCD	0x40005301
 ; Function compile flags: /Ogspy
 
@@ -1514,7 +1514,7 @@
 
   00000		 |$LN8@SmartRefle@7|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M47978|
+  00004		 |$M47991|
   00004	e1a08000	 mov         r8, r0
 
 ; 559  :     if (SmartReflex_funcs == NULL)
@@ -1522,7 +1522,7 @@
   00008	e59f7138	 ldr         r7, [pc, #0x138]
   0000c	e5973000	 ldr         r3, [r7]
   00010	e3530000	 cmp         r3, #0
-  00014	0a000048	 beq         |$CleanUp$47523|
+  00014	0a000048	 beq         |$CleanUp$47536|
 
 ; 560  :     {
 ; 561  :         OALMSG(OAL_LOG_ERROR, (L"\r\nInvalid Smart Reflex Functions pointer\r\n"));
@@ -1664,7 +1664,7 @@
   00130	e593301c	 ldr         r3, [r3, #0x1C]
   00134	e1a0e00f	 mov         lr, pc
   00138	e12fff13	 bx          r3
-  0013c		 |$CleanUp$47523|
+  0013c		 |$CleanUp$47536|
 
 ; 608  : CleanUp:
 ; 609  :     return;
@@ -1677,14 +1677,14 @@
   00144	00000000	 DCD         |_sensorEnData|
   00148		 |$LN11@SmartRefle@7|
   00148	00000000	 DCD         |SmartReflex_funcs|
-  0014c		 |$M47979|
+  0014c		 |$M47992|
 
 			 ENDP  ; |SmartReflex_Configure|
 
 	EXPORT	|SmartReflex_Deconfigure|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47992| DCD	|$LN6@SmartRefle@8|
+|$T48005| DCD	|$LN6@SmartRefle@8|
 	DCD	0x40001901
 ; Function compile flags: /Ogspy
 
@@ -1696,7 +1696,7 @@
 
   00000		 |$LN6@SmartRefle@8|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M47989|
+  00004		 |$M48002|
   00004	e1a05000	 mov         r5, r0
 
 ; 621  :     if (SmartReflex_funcs == NULL)
@@ -1704,7 +1704,7 @@
   00008	e59f4050	 ldr         r4, [pc, #0x50]
   0000c	e5943000	 ldr         r3, [r4]
   00010	e3530000	 cmp         r3, #0
-  00014	0a00000f	 beq         |$CleanUp$47533|
+  00014	0a00000f	 beq         |$CleanUp$47546|
 
 ; 622  :     {
 ; 623  :         OALMSG(OAL_LOG_ERROR, (L"\r\nInvalid Smart Reflex Functions pointer\r\n"));
@@ -1740,7 +1740,7 @@
   0004c	e5933020	 ldr         r3, [r3, #0x20]
   00050	e1a0e00f	 mov         lr, pc
   00054	e12fff13	 bx          r3
-  00058		 |$CleanUp$47533|
+  00058		 |$CleanUp$47546|
 
 ; 635  : 	
 ; 636  : CleanUp:
@@ -1752,7 +1752,7 @@
   00060		 |$LN7@SmartRefle@8|
   00060		 |$LN8@SmartRefle@8|
   00060	00000000	 DCD         |SmartReflex_funcs|
-  00064		 |$M47990|
+  00064		 |$M48003|
 
 			 ENDP  ; |SmartReflex_Deconfigure|
 
@@ -1765,7 +1765,7 @@
 	IMPORT	|PrcmVoltEnableVp|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48006| DCD	|$LN11@SmartRefle@9|
+|$T48019| DCD	|$LN11@SmartRefle@9|
 	DCD	0x40002001
 ; Function compile flags: /Ogspy
 
@@ -1777,7 +1777,7 @@
 
   00000		 |$LN11@SmartRefle@9|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M48003|
+  00004		 |$M48016|
   00004	e1b05000	 movs        r5, r0
 
 ; 649  :     UINT32 interruptMask;
@@ -1869,7 +1869,7 @@
 
   00078	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   0007c	e12fff1e	 bx          lr
-  00080		 |$M48004|
+  00080		 |$M48017|
 
 			 ENDP  ; |SmartReflex_VoltageFlush|
 
@@ -1879,7 +1879,7 @@
 	IMPORT	|PrcmVoltSetAutoControl|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48035| DCD	|$LN27@SmartRefle@10|
+|$T48048| DCD	|$LN27@SmartRefle@10|
 	DCD	0x4000bc02
 ; Function compile flags: /Ogspy
 
@@ -1892,7 +1892,7 @@
   00000		 |$LN27@SmartRefle@10|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M48032|
+  00008		 |$M48045|
   00008	e1a09001	 mov         r9, r1
   0000c	e1a05000	 mov         r5, r0
 
@@ -1906,7 +1906,7 @@
   00010	e59f62d0	 ldr         r6, [pc, #0x2D0]
   00014	e5963000	 ldr         r3, [r6]
   00018	e3530000	 cmp         r3, #0
-  0001c	0a0000ad	 beq         |$cleanUp$47557|
+  0001c	0a0000ad	 beq         |$cleanUp$47570|
 
 ; 705  : 
 ; 706  :     if (_rgSmartReflexInfo[channel].bEnabled == bEnable ) goto cleanUp;
@@ -1917,7 +1917,7 @@
   0002c	e59b3004	 ldr         r3, [r11, #4]
   00030	e58db004	 str         r11, [sp, #4]
   00034	e1530009	 cmp         r3, r9
-  00038	0a0000a6	 beq         |$cleanUp$47557|
+  00038	0a0000a6	 beq         |$cleanUp$47570|
 
 ; 707  :     
 ; 708  :     SmartReflexLock(channel);
@@ -2256,14 +2256,14 @@
   002b0	e59a3000	 ldr         r3, [r10]
   002b4	e58b9004	 str         r9, [r11, #4]
   002b8	e3530000	 cmp         r3, #0
-  002bc	0a000005	 beq         |$cleanUp$47557|
+  002bc	0a000005	 beq         |$cleanUp$47570|
   002c0	eb000000	 bl          INTERRUPTS_STATUS
   002c4	e3500000	 cmp         r0, #0
   002c8	12863010	 addne       r3, r6, #0x10
   002cc	12833008	 addne       r3, r3, #8
   002d0	10830107	 addne       r0, r3, r7, lsl #2
   002d4	1b000000	 blne        LeaveCriticalSection
-  002d8		 |$cleanUp$47557|
+  002d8		 |$cleanUp$47570|
 
 ; 816  : 
 ; 817  : cleanUp:
@@ -2281,7 +2281,7 @@
   002e8	00000000	 DCD         |_bSmartreflexCapable|
   002ec		 |$LN30@SmartRefle@10|
   002ec	00000000	 DCD         |SmartReflex_funcs|
-  002f0		 |$M48033|
+  002f0		 |$M48046|
 
 			 ENDP  ; |SmartReflex_EnableMonitor|
 
@@ -2292,7 +2292,7 @@
 	IMPORT	|PrcmVoltEnableTimeout|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48056| DCD	|$LN18@UpdateRete|
+|$T48069| DCD	|$LN18@UpdateRete|
 	DCD	0x40005f02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2316,7 +2316,7 @@
   00000		 |$LN18@UpdateRete|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M48053|
+  00008		 |$M48066|
   00008	e1a06000	 mov         r6, r0
 
 ; 825  :     BOOL    bEnableSmartReflex = FALSE;
@@ -2337,7 +2337,7 @@
   00020	e58d1004	 str         r1, [sp, #4]
   00024	e3530000	 cmp         r3, #0
   00028	e58d0008	 str         r0, [sp, #8]
-  0002c	0a00004c	 beq         |$cleanUp$47581|
+  0002c	0a00004c	 beq         |$cleanUp$47594|
 
 ; 834  : 
 ; 835  :     for (vp = kVoltageProcessor1 ; vp < kVoltageProcessorCount ; vp++)
@@ -2514,7 +2514,7 @@
   00158	e2866004	 add         r6, r6, #4
   0015c	e3580002	 cmp         r8, #2
   00160	3affffba	 bcc         |$LL7@UpdateRete|
-  00164		 |$cleanUp$47581|
+  00164		 |$cleanUp$47594|
 
 ; 896  :             }
 ; 897  :         }
@@ -2533,7 +2533,7 @@
   00174	00000000	 DCD         |??_C@_1FG@JEKJNIJ@?$AAU?$AAp?$AAd?$AAa?$AAt?$AAe?$AAR?$AAe?$AAt?$AAe?$AAn?$AAt?$AAi?$AAo?$AAn?$AAV?$AAo?$AAl?$AAt?$AAa?$AAg?$AAe?$AAs?$AA?3?$AA?5?$AAV?$AAD?$AAD?$AA?$CF?$AAd?$AA?5?$AA?$CF@|
   00178		 |$LN22@UpdateRete|
   00178	00000000	 DCD         |_bSmartreflexCapable|
-  0017c		 |$M48054|
+  0017c		 |$M48067|
 
 			 ENDP  ; |UpdateRetentionVoltages|
 
@@ -2543,7 +2543,7 @@
 	IMPORT	|dpCurSettings|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48078| DCD	|$LN12@SetVoltage|
+|$T48091| DCD	|$LN12@SetVoltage|
 	DCD	0x40004e01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2567,7 +2567,7 @@
 
   00000		 |$LN12@SetVoltage|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M48075|
+  00004		 |$M48088|
   00004	e1a07001	 mov         r7, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -2748,7 +2748,7 @@
   00130	00000000	 DCD         |??_C@_1BO@NNGOGLGP@?$AAV?$AAd?$AAd?$AA?$CF?$AAd?$AA?$DN?$AA0?$AAx?$AA?$CF?$AA0?$AA2?$AAX?$AA?$AN?$AA?6?$AA?$AA@|
   00134		 |$LN17@SetVoltage|
   00134	00000000	 DCD         |dpCurSettings|
-  00138		 |$M48076|
+  00138		 |$M48089|
 
 			 ENDP  ; |SetVoltageOppViaVoltageProcessor|
 
@@ -2756,7 +2756,7 @@
 	IMPORT	|PrcmClockSetDpllFrequency|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48096| DCD	|$LN10@SetFrequen|
+|$T48109| DCD	|$LN10@SetFrequen|
 	DCD	0x40001802
 ; Function compile flags: /Ogspy
 
@@ -2769,7 +2769,7 @@
   00000		 |$LN10@SetFrequen|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M48093|
+  00008		 |$M48106|
   00008	e1a04000	 mov         r4, r0
 
 ; 979  :     int i;
@@ -2821,14 +2821,14 @@
   00054	e28dd004	 add         sp, sp, #4
   00058	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   0005c	e12fff1e	 bx          lr
-  00060		 |$M48094|
+  00060		 |$M48107|
 
 			 ENDP  ; |SetFrequencyOpp|
 
 	EXPORT	|SetVoltageOpp|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48106| DCD	|$LN5@SetVoltage@2|
+|$T48119| DCD	|$LN5@SetVoltage@2|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -2840,7 +2840,7 @@
 
   00000		 |$LN5@SetVoltage@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M48103|
+  00004		 |$M48116|
 
 ; 1005 :     return SetVoltageOppViaVoltageProcessor(pVddOppSetting,_rgInitialRetentionVoltages);
 
@@ -2854,14 +2854,14 @@
   00014		 |$LN6@SetVoltage@2|
   00014		 |$LN7@SetVoltage@2|
   00014	00000000	 DCD         |_rgInitialRetentionVoltages|
-  00018		 |$M48104|
+  00018		 |$M48117|
 
 			 ENDP  ; |SetVoltageOpp|
 
 	EXPORT	|Opp_init|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48116| DCD	|$LN8@Opp_init|
+|$T48129| DCD	|$LN8@Opp_init|
 	DCD	0x40001100
 ; Function compile flags: /Ogspy
 
@@ -2872,7 +2872,7 @@
 ; 1009 : {
 
   00000		 |$LN8@Opp_init|
-  00000		 |$M48113|
+  00000		 |$M48126|
 
 ; 1010 :     if(g_dwCpuFamily == CPU_FAMILY_DM37XX)
 
@@ -2921,7 +2921,7 @@
   0003c	00000000	 DCD         |_rgOppVdd|
   00040		 |$LN12@Opp_init|
   00040	00000000	 DCD         |g_dwCpuFamily|
-  00044		 |$M48114|
+  00044		 |$M48127|
 
 			 ENDP  ; |Opp_init|
 
@@ -2933,7 +2933,7 @@
 	IMPORT	|PrcmVoltScaleVoltageABB|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48156| DCD	|$LN37@SetOpp|
+|$T48169| DCD	|$LN37@SetOpp|
 	DCD	0x40007802
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2952,7 +2952,7 @@
   00000		 |$LN37@SetOpp|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd014	 sub         sp, sp, #0x14
-  00008		 |$M48153|
+  00008		 |$M48166|
   00008	e1b03002	 movs        r3, r2
   0000c	e1a02000	 mov         r2, r0
   00010	e1a0a001	 mov         r10, r1
@@ -3272,7 +3272,7 @@
   001d8	00000000	 DCD         |??_C@_1CA@OACLPOKB@?$AAS?$AAe?$AAt?$AAO?$AAp?$AAp?$AA?5?$AAt?$AAo?$AA?5?$AA?$CF?$AAd?$AA?5?$AA?$AN?$AA?6?$AA?$AA@|
   001dc		 |$LN42@SetOpp|
   001dc	00000000	 DCD         |_SR_driver_data|
-  001e0		 |$M48154|
+  001e0		 |$M48167|
 
 			 ENDP  ; |SetOpp|
 
@@ -3281,7 +3281,7 @@
 	IMPORT	|SmartReflex_Get_functions_hander|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48170| DCD	|$LN10@SmartRefle@11|
+|$T48183| DCD	|$LN10@SmartRefle@11|
 	DCD	0x40003701
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -3307,7 +3307,7 @@
 
   00000		 |$LN10@SmartRefle@11|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M48167|
+  00004		 |$M48180|
 
 ; 512  :     if(g_dwCpuFamily == CPU_FAMILY_DM37XX)
 
@@ -3365,7 +3365,7 @@
   00050	e59f3070	 ldr         r3, [pc, #0x70]
   00054	e5933440	 ldr         r3, [r3, #0x440]
   00058	e3130001	 tst         r3, #1
-  0005c	0a000016	 beq         |$Cleanup$47513|
+  0005c	0a000016	 beq         |$Cleanup$47526|
   00060	e59f005c	 ldr         r0, [pc, #0x5C]
   00064	eb000000	 bl          NKDbgPrintfW
 
@@ -3410,7 +3410,7 @@
   000b0	e5933000	 ldr         r3, [r3]
   000b4	e1a0e00f	 mov         lr, pc
   000b8	e12fff13	 bx          r3
-  000bc		 |$Cleanup$47513|
+  000bc		 |$Cleanup$47526|
 
 ; 540  : Cleanup:
 ; 541  :     return;
@@ -3431,7 +3431,7 @@
   000d4	00000000	 DCD         |_SR_driver_data|
   000d8		 |$LN17@SmartRefle@11|
   000d8	00000000	 DCD         |g_dwCpuFamily|
-  000dc		 |$M48168|
+  000dc		 |$M48181|
 
 			 ENDP  ; |SmartReflex_Initialize|
 

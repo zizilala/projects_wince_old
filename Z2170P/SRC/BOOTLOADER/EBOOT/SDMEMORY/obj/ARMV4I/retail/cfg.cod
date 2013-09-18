@@ -73,7 +73,7 @@
 ; File c:\wince600\platform\z2170p\src\bootloader\eboot\sdmemory\cfg.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46818| DCD	|$LN5@BLReadBoot|
+|$T46826| DCD	|$LN5@BLReadBoot|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -84,7 +84,7 @@
 ; 26   : {
 
   00000		 |$LN5@BLReadBoot|
-  00000		 |$M46815|
+  00000		 |$M46823|
 
 ; 27   :     BOOL rc = FALSE;
 ; 28   : #ifndef BSP_NO_NAND_IN_SDBOOT
@@ -177,14 +177,14 @@
 ; 112  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M46816|
+  00008		 |$M46824|
 
 			 ENDP  ; |BLReadBootCfg|
 
 	EXPORT	|BLWriteBootCfg|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46827| DCD	|$LN5@BLWriteBoo|
+|$T46835| DCD	|$LN5@BLWriteBoo|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -195,7 +195,7 @@
 ; 117  : {
 
   00000		 |$LN5@BLWriteBoo|
-  00000		 |$M46824|
+  00000		 |$M46832|
 
 ; 118  :     BOOL rc = FALSE;
 ; 119  : #ifndef BSP_NO_NAND_IN_SDBOOT
@@ -337,14 +337,14 @@
 ; 252  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M46825|
+  00008		 |$M46833|
 
 			 ENDP  ; |BLWriteBootCfg|
 
 	EXPORT	|BLReserveBootBlocks|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46836| DCD	|$LN5@BLReserveB|
+|$T46844| DCD	|$LN5@BLReserveB|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -355,7 +355,7 @@
 ; 257  : {
 
   00000		 |$LN5@BLReserveB|
-  00000		 |$M46833|
+  00000		 |$M46841|
 
 ; 258  : #ifndef BSP_NO_NAND_IN_SDBOOT
 ; 259  :     BOOL rc = FALSE;
@@ -446,7 +446,7 @@
 ; 341  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M46834|
+  00008		 |$M46842|
 
 			 ENDP  ; |BLReserveBootBlocks|
 
@@ -454,7 +454,7 @@
 	IMPORT	|ShowSDLogo|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46845| DCD	|$LN5@BLShowLogo|
+|$T46853| DCD	|$LN5@BLShowLogo|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -466,7 +466,7 @@
 
   00000		 |$LN5@BLShowLogo|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46842|
+  00004		 |$M46850|
 
 ; 347  : 	//  Show the bootloader splashscreen if present on the SDCard
 ; 348  : 	//if (!ShowSDLogo())			 //Ray 13-08-30 
@@ -486,7 +486,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M46843|
+  00014		 |$M46851|
 
 			 ENDP  ; |BLShowLogo|
 

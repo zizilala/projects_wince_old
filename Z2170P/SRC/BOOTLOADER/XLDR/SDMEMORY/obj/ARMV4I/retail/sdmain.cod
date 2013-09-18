@@ -11,7 +11,7 @@
 	EXPORT	|dwOEMHighSecurity| [ DATA ]
 
   00000			 AREA	 |.data|, DATA
-	 COMMON	|g_bootCfg|, 0x80
+	 COMMON	|g_bootCfg|, 0x84
 
 	 COMMON	|gCPU_family|, 0x4
 
@@ -88,7 +88,7 @@
 ; File c:\wince600\platform\z2170p\src\bootloader\xldr\sdmemory\sdmain.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47514| DCD	|$LN5@BSPGpioIni|
+|$T47523| DCD	|$LN5@BSPGpioIni|
 	DCD	0x40001001
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -106,7 +106,7 @@
 
   00000		 |$LN5@BSPGpioIni|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M47511|
+  00004		 |$M47520|
 
 ; 78   : 	XLDRMSG( TEXT("BSPGpioInit()\r\n"));
 
@@ -138,14 +138,14 @@
   00038	00000000	 DCD         |Omap_Gpio|
   0003c		 |$LN9@BSPGpioIni|
   0003c	00000000	 DCD         |??_C@_1CA@MCLKGBIP@?$AAB?$AAS?$AAP?$AAG?$AAp?$AAi?$AAo?$AAI?$AAn?$AAi?$AAt?$AA?$CI?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@|
-  00040		 |$M47512|
+  00040		 |$M47521|
 
 			 ENDP  ; |BSPGpioInit|
 
 	EXPORT	|OALPAtoVA|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47528| DCD	|$LN5@OALPAtoVA|
+|$T47537| DCD	|$LN5@OALPAtoVA|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -153,24 +153,24 @@
 
   00000		 |OALPAtoVA| PROC
 
-; 194  : {
+; 196  : {
 
   00000		 |$LN5@OALPAtoVA|
-  00000		 |$M47525|
+  00000		 |$M47534|
 
-; 195  :     UNREFERENCED_PARAMETER(cached);
-; 196  :     return (VOID*)address;
-; 197  : }
+; 197  :     UNREFERENCED_PARAMETER(cached);
+; 198  :     return (VOID*)address;
+; 199  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M47526|
+  00004		 |$M47535|
 
 			 ENDP  ; |OALPAtoVA|
 
 	EXPORT	|OALVAtoPA|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47538| DCD	|$LN5@OALVAtoPA|
+|$T47547| DCD	|$LN5@OALVAtoPA|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -178,22 +178,22 @@
 
   00000		 |OALVAtoPA| PROC
 
-; 205  : {
+; 207  : {
 
   00000		 |$LN5@OALVAtoPA|
-  00000		 |$M47535|
+  00000		 |$M47544|
 
-; 206  :     return (UINT32)pVA;
-; 207  : }
+; 208  :     return (UINT32)pVA;
+; 209  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M47536|
+  00004		 |$M47545|
 
 			 ENDP  ; |OALVAtoPA|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47565| DCD	|$LN23@SetupCopyS|
+|$T47574| DCD	|$LN23@SetupCopyS|
 	DCD	0x40002801
 ; Function compile flags: /Ogspy
 
@@ -201,28 +201,28 @@
 
   00000		 |SetupCopySection| PROC
 
-; 219  : {
+; 220  : {
 
   00000		 |$LN23@SetupCopyS|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M47562|
+  00004		 |$M47571|
   00004	e1a01000	 mov         r1, r0
 
-; 220  :     BOOL rc = FALSE;
+; 221  :     BOOL rc = FALSE;
 
   00008	e3a00000	 mov         r0, #0
 
-; 221  :     UINT32 loop, count;
-; 222  :     COPYentry *pCopyEntry;
-; 223  :     UINT8 *pSrc, *pDst;
-; 224  : 
-; 225  :     if (pTableOfContents == (ROMHDR *const) -1) goto CleanUp;
+; 222  :     UINT32 loop, count;
+; 223  :     COPYentry *pCopyEntry;
+; 224  :     UINT8 *pSrc, *pDst;
+; 225  : 
+; 226  :     if (pTableOfContents == (ROMHDR *const) -1) goto CleanUp;
 
   0000c	e3710001	 cmn         r1, #1
-  00010	0a000020	 beq         |$CleanUp$47329|
+  00010	0a000020	 beq         |$CleanUp$47338|
 
-; 226  : 
-; 227  :     for (loop = 0; loop < pTableOfContents->ulCopyEntries; loop++)
+; 227  : 
+; 228  :     for (loop = 0; loop < pTableOfContents->ulCopyEntries; loop++)
 
   00014	e5913020	 ldr         r3, [r1, #0x20]
   00018	e3a0e000	 mov         lr, #0
@@ -234,23 +234,23 @@
   0002c	e5913024	 ldr         r3, [r1, #0x24]
   00030	e0845003	 add         r5, r4, r3
 
-; 228  :         {
-; 229  :         pCopyEntry = (COPYentry *)(pTableOfContents->ulCopyOffset + loop*sizeof(COPYentry));
-; 230  : 
-; 231  :         count = pCopyEntry->ulCopyLen;
+; 229  :         {
+; 230  :         pCopyEntry = (COPYentry *)(pTableOfContents->ulCopyOffset + loop*sizeof(COPYentry));
+; 231  : 
+; 232  :         count = pCopyEntry->ulCopyLen;
 
   00034	e5953008	 ldr         r3, [r5, #8]
 
-; 232  :         pDst = (UINT8*)pCopyEntry->ulDest;
+; 233  :         pDst = (UINT8*)pCopyEntry->ulDest;
 
   00038	e5950004	 ldr         r0, [r5, #4]
 
-; 233  :         pSrc = (UINT8*)pCopyEntry->ulSource;
+; 234  :         pSrc = (UINT8*)pCopyEntry->ulSource;
 
   0003c	e5952000	 ldr         r2, [r5]
   00040	e1b06003	 movs        r6, r3
 
-; 234  :         while (count-- > 0) *pDst++ = *pSrc++;
+; 235  :         while (count-- > 0) *pDst++ = *pSrc++;
 
   00044	0a000003	 beq         |$LN14@SetupCopyS|
   00048		 |$LL4@SetupCopyS|
@@ -260,19 +260,19 @@
   00054	1afffffb	 bne         |$LL4@SetupCopyS|
   00058		 |$LN14@SetupCopyS|
 
-; 235  :         count = pCopyEntry->ulDestLen - pCopyEntry->ulCopyLen;
+; 236  :         count = pCopyEntry->ulDestLen - pCopyEntry->ulCopyLen;
 
   00058	e595200c	 ldr         r2, [r5, #0xC]
   0005c	e5953008	 ldr         r3, [r5, #8]
   00060	e0523003	 subs        r3, r2, r3
 
-; 236  :         while (count-- > 0) *pDst++ = 0;
+; 237  :         while (count-- > 0) *pDst++ = 0;
 
   00064	0a000005	 beq         |$LN2@SetupCopyS|
   00068	e3530000	 cmp         r3, #0
   0006c	0a000003	 beq         |$LN2@SetupCopyS|
 
-; 235  :         count = pCopyEntry->ulDestLen - pCopyEntry->ulCopyLen;
+; 236  :         count = pCopyEntry->ulDestLen - pCopyEntry->ulCopyLen;
 
   00070	e0803003	 add         r3, r0, r3
   00074		 |$LN19@SetupCopyS|
@@ -281,8 +281,8 @@
   0007c	1afffffc	 bne         |$LN19@SetupCopyS|
   00080		 |$LN2@SetupCopyS|
 
-; 226  : 
-; 227  :     for (loop = 0; loop < pTableOfContents->ulCopyEntries; loop++)
+; 227  : 
+; 228  :     for (loop = 0; loop < pTableOfContents->ulCopyEntries; loop++)
 
   00080	e5913020	 ldr         r3, [r1, #0x20]
   00084	e28ee001	 add         lr, lr, #1
@@ -291,28 +291,28 @@
   00090	3affffe5	 bcc         |$LL7@SetupCopyS|
   00094		 |$LN5@SetupCopyS|
 
-; 237  :         }
-; 238  : 
-; 239  :     rc = TRUE;
+; 238  :         }
+; 239  : 
+; 240  :     rc = TRUE;
 
   00094	e3a00001	 mov         r0, #1
-  00098		 |$CleanUp$47329|
+  00098		 |$CleanUp$47338|
 
-; 240  : 
-; 241  : CleanUp:
-; 242  :     return rc;
-; 243  : }
+; 241  : 
+; 242  : CleanUp:
+; 243  :     return rc;
+; 244  : }
 
   00098	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   0009c	e12fff1e	 bx          lr
-  000a0		 |$M47563|
+  000a0		 |$M47572|
 
 			 ENDP  ; |SetupCopySection|
 
 	IMPORT	|OEMWriteDebugByte|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47575| DCD	|$LN11@OutputNumH|
+|$T47584| DCD	|$LN11@OutputNumH|
 	DCD	0x40001201
 ; Function compile flags: /Ogspy
 
@@ -320,23 +320,23 @@
 
   00000		 |OutputNumHex| PROC
 
-; 261  : {
+; 262  : {
 
   00000		 |$LN11@OutputNumH|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M47572|
+  00004		 |$M47581|
   00004	e3510000	 cmp         r1, #0
   00008	e1a04000	 mov         r4, r0
 
-; 262  :     if (depth)
-; 263  :     {
-; 264  :         depth--;
+; 263  :     if (depth)
+; 264  :     {
+; 265  :         depth--;
 
   0000c	12411001	 subne       r1, r1, #1
 
-; 265  :     }
-; 266  : 
-; 267  :     if ((n & ~0xf) || depth)
+; 266  :     }
+; 267  : 
+; 268  :     if ((n & ~0xf) || depth)
 
   00010	e3d4c00f	 bics        r12, r4, #0xF
   00014	1a000001	 bne         |$LN3@OutputNumH|
@@ -344,49 +344,49 @@
   0001c	0a000002	 beq         |$LN4@OutputNumH|
   00020		 |$LN3@OutputNumH|
 
-; 268  :     {
-; 269  :         OutputNumHex(n >> 4, depth);
+; 269  :     {
+; 270  :         OutputNumHex(n >> 4, depth);
 
   00020	e1a00224	 mov         r0, r4, lsr #4
   00024	eb000000	 bl          OutputNumHex
 
-; 270  :         n &= 0xf;
+; 271  :         n &= 0xf;
 
   00028	e204400f	 and         r4, r4, #0xF
   0002c		 |$LN4@OutputNumH|
 
-; 271  :     }
-; 272  : 
-; 273  :     if (n < 10)
+; 272  :     }
+; 273  : 
+; 274  :     if (n < 10)
 
   0002c	e354000a	 cmp         r4, #0xA
 
-; 274  :     {
-; 275  :         OEMWriteDebugByte((BYTE)(n + '0'));
+; 275  :     {
+; 276  :         OEMWriteDebugByte((BYTE)(n + '0'));
 
   00030	32843030	 addcc       r3, r4, #0x30
 
-; 276  :     }
-; 277  :     else
-; 278  :     {
-; 279  :         OEMWriteDebugByte((BYTE)(n - 10 + 'A'));
+; 277  :     }
+; 278  :     else
+; 279  :     {
+; 280  :         OEMWriteDebugByte((BYTE)(n - 10 + 'A'));
 
   00034	22843037	 addcs       r3, r4, #0x37
   00038	e20300ff	 and         r0, r3, #0xFF
   0003c	eb000000	 bl          OEMWriteDebugByte
 
-; 280  :     }
-; 281  : }
+; 281  :     }
+; 282  : }
 
   00040	e8bd4010	 ldmia       sp!, {r4, lr}
   00044	e12fff1e	 bx          lr
-  00048		 |$M47573|
+  00048		 |$M47582|
 
 			 ENDP  ; |OutputNumHex|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47583| DCD	|$LN6@OutputNumD|
+|$T47592| DCD	|$LN6@OutputNumD|
 	DCD	0x40001101
 ; Function compile flags: /Ogspy
 
@@ -394,20 +394,20 @@
 
   00000		 |OutputNumDecimal| PROC
 
-; 296  : {
+; 297  : {
 
   00000		 |$LN6@OutputNumD|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M47580|
+  00004		 |$M47589|
   00004	e1a05000	 mov         r5, r0
 
-; 297  :     if (n >= 10)
+; 298  :     if (n >= 10)
 
   00008	e355000a	 cmp         r5, #0xA
   0000c	3a000006	 bcc         |$LN1@OutputNumD|
 
-; 298  :     {
-; 299  :         OutputNumDecimal(n / 10);
+; 299  :     {
+; 300  :         OutputNumDecimal(n / 10);
 
   00010	e59f3028	 ldr         r3, [pc, #0x28]
   00014	e0832395	 umull       r2, r3, r5, r3
@@ -415,34 +415,34 @@
   0001c	e1a00004	 mov         r0, r4
   00020	eb000000	 bl          OutputNumDecimal
 
-; 300  :         n %= 10;
+; 301  :         n %= 10;
 
   00024	e0843104	 add         r3, r4, r4, lsl #2
   00028	e0455083	 sub         r5, r5, r3, lsl #1
   0002c		 |$LN1@OutputNumD|
 
-; 301  :     }
-; 302  :     OEMWriteDebugByte((BYTE)(n + '0'));
+; 302  :     }
+; 303  :     OEMWriteDebugByte((BYTE)(n + '0'));
 
   0002c	e2853030	 add         r3, r5, #0x30
   00030	e20300ff	 and         r0, r3, #0xFF
   00034	eb000000	 bl          OEMWriteDebugByte
 
-; 303  : }
+; 304  : }
 
   00038	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0003c	e12fff1e	 bx          lr
   00040		 |$LN7@OutputNumD|
   00040		 |$LN8@OutputNumD|
   00040	cccccccd	 DCD         0xcccccccd
-  00044		 |$M47581|
+  00044		 |$M47590|
 
 			 ENDP  ; |OutputNumDecimal|
 
 	EXPORT	|NKvDbgPrintfW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47663| DCD	|$LN66@NKvDbgPrin|
+|$T47672| DCD	|$LN66@NKvDbgPrin|
 	DCD	0x40006a01
 ; Function compile flags: /Ogspy
 
@@ -450,18 +450,18 @@
 
   00000		 |NKvDbgPrintfW| PROC
 
-; 312  : {
+; 313  : {
 
   00000		 |$LN66@NKvDbgPrin|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M47660|
+  00004		 |$M47669|
   00004	e1a05001	 mov         r5, r1
   00008	e1a07000	 mov         r7, r0
 
-; 313  :     // Stubbed out to shrink XLDR binary size
-; 314  :     TCHAR c;
-; 315  : 
-; 316  :     while (*pszFormat)
+; 314  :     // Stubbed out to shrink XLDR binary size
+; 315  :     TCHAR c;
+; 316  : 
+; 317  :     while (*pszFormat)
 
   0000c	e1d730b0	 ldrh        r3, [r7]
   00010	e3530000	 cmp         r3, #0
@@ -469,9 +469,9 @@
   00018	e59f8184	 ldr         r8, [pc, #0x184]
   0001c		 |$LL20@NKvDbgPrin|
 
-; 317  :     {
-; 318  :         c = *pszFormat++;
-; 319  :         switch ((BYTE)c)
+; 318  :     {
+; 319  :         c = *pszFormat++;
+; 320  :         switch ((BYTE)c)
 
   0001c	e20340ff	 and         r4, r3, #0xFF
   00020	e354000a	 cmp         r4, #0xA
@@ -480,13 +480,13 @@
   0002c	e3540025	 cmp         r4, #0x25
   00030	1a000054	 bne         |$LN1@NKvDbgPrin|
 
-; 320  :         {
-; 321  :             case '%':
-; 322  :                 c = *pszFormat++;
+; 321  :         {
+; 322  :             case '%':
+; 323  :                 c = *pszFormat++;
 
   00034	e0d730b2	 ldrh        r3, [r7], #2
 
-; 323  :                 switch (c)
+; 324  :                 switch (c)
 
   00038	e3530063	 cmp         r3, #0x63
   0003c	ca00001d	 bgt         |$LN23@NKvDbgPrin|
@@ -500,10 +500,10 @@
   0005c	e3530058	 cmp         r3, #0x58
   00060	1a00001c	 bne         |$LN3@NKvDbgPrin|
 
-; 335  :                         break;
-; 336  : 
-; 337  :                     case 'X':
-; 338  :                         OutputNumHex(va_arg(vl, unsigned long), 8);
+; 336  :                         break;
+; 337  : 
+; 338  :                     case 'X':
+; 339  :                         OutputNumHex(va_arg(vl, unsigned long), 8);
 
   00064	e3a01007	 mov         r1, #7
   00068		 |$LN63@NKvDbgPrin|
@@ -517,57 +517,57 @@
   00084	3a000040	 bcc         |$LN59@NKvDbgPrin|
   00088	e2830037	 add         r0, r3, #0x37
 
-; 339  :                         break;
+; 340  :                         break;
 
   0008c	ea00003e	 b           |$LN59@NKvDbgPrin|
   00090		 |$LN11@NKvDbgPrin|
 
-; 331  :                         break;
-; 332  : 
-; 333  :                     case 'H':
-; 334  :                         OutputNumHex(va_arg(vl, unsigned long), 4);
+; 332  :                         break;
+; 333  : 
+; 334  :                     case 'H':
+; 335  :                         OutputNumHex(va_arg(vl, unsigned long), 4);
 
   00090	e3a01003	 mov         r1, #3
   00094	eafffff3	 b           |$LN63@NKvDbgPrin|
   00098		 |$LN12@NKvDbgPrin|
 
-; 327  :                         break;
-; 328  : 
-; 329  :                     case 'B':
-; 330  :                         OutputNumHex(va_arg(vl, unsigned long), 2);
+; 328  :                         break;
+; 329  : 
+; 330  :                     case 'B':
+; 331  :                         OutputNumHex(va_arg(vl, unsigned long), 2);
 
   00098	e3a01001	 mov         r1, #1
   0009c	eafffff1	 b           |$LN63@NKvDbgPrin|
   000a0		 |$LN5@NKvDbgPrin|
 
-; 362  : 
-; 363  :                     case '%':
-; 364  :                         OEMWriteDebugByte('%');
+; 363  : 
+; 364  :                     case '%':
+; 365  :                         OEMWriteDebugByte('%');
 
   000a0	e3a00025	 mov         r0, #0x25
 
-; 365  :                         break;
+; 366  :                         break;
 
   000a4	ea000038	 b           |$LN59@NKvDbgPrin|
   000a8		 |$LN4@NKvDbgPrin|
 
-; 366  : 
-; 367  :                     case 'c':
-; 368  :                         c = va_arg(vl, TCHAR);
+; 367  : 
+; 368  :                     case 'c':
+; 369  :                         c = va_arg(vl, TCHAR);
 
   000a8	e2855004	 add         r5, r5, #4
 
-; 369  :                         OEMWriteDebugByte((BYTE)c);
+; 370  :                         OEMWriteDebugByte((BYTE)c);
 
   000ac	e15530b4	 ldrh        r3, [r5, #-4]
   000b0	e20300ff	 and         r0, r3, #0xFF
 
-; 370  :                         break;
+; 371  :                         break;
 
   000b4	ea000034	 b           |$LN59@NKvDbgPrin|
   000b8		 |$LN23@NKvDbgPrin|
 
-; 323  :                 switch (c)
+; 324  :                 switch (c)
 
   000b8	e3530064	 cmp         r3, #0x64
   000bc	0a000027	 beq         |$LN9@NKvDbgPrin|
@@ -579,20 +579,20 @@
   000d4	0a000001	 beq         |$LN13@NKvDbgPrin|
   000d8		 |$LN3@NKvDbgPrin|
 
-; 371  : 
-; 372  :                     default:
-; 373  :                         OEMWriteDebugByte(' ');
+; 372  : 
+; 373  :                     default:
+; 374  :                         OEMWriteDebugByte(' ');
 
   000d8	e3a00020	 mov         r0, #0x20
 
-; 374  :                         break;
+; 375  :                         break;
 
   000dc	ea00002a	 b           |$LN59@NKvDbgPrin|
   000e0		 |$LN13@NKvDbgPrin|
 
-; 324  :                 {
-; 325  :                     case 'x':
-; 326  :                         OutputNumHex(va_arg(vl, unsigned long), 0);
+; 325  :                 {
+; 326  :                     case 'x':
+; 327  :                         OutputNumHex(va_arg(vl, unsigned long), 0);
 
   000e0	e2855004	 add         r5, r5, #4
   000e4	e5154004	 ldr         r4, [r5, #-4]
@@ -612,13 +612,13 @@
   00118	ea00001b	 b           |$LN59@NKvDbgPrin|
   0011c		 |$LN7@NKvDbgPrin|
 
-; 350  :                         }
-; 351  :                         OutputNumDecimal((unsigned long)l);
-; 352  :                         break;
-; 353  :                     }
-; 354  : 
-; 355  :                     case 'u':
-; 356  :                         OutputNumDecimal(va_arg(vl, unsigned long));
+; 351  :                         }
+; 352  :                         OutputNumDecimal((unsigned long)l);
+; 353  :                         break;
+; 354  :                     }
+; 355  : 
+; 356  :                     case 'u':
+; 357  :                         OutputNumDecimal(va_arg(vl, unsigned long));
 
   0011c	e2855004	 add         r5, r5, #4
   00120	e5156004	 ldr         r6, [r5, #-4]
@@ -637,63 +637,63 @@
   0014c	ea00000e	 b           |$LN59@NKvDbgPrin|
   00150		 |$LN6@NKvDbgPrin|
 
-; 357  :                         break;
-; 358  : 
-; 359  :                     case 's':
-; 360  :                         OEMWriteDebugString(va_arg(vl, LPWSTR));
+; 358  :                         break;
+; 359  : 
+; 360  :                     case 's':
+; 361  :                         OEMWriteDebugString(va_arg(vl, LPWSTR));
 
   00150	e2855004	 add         r5, r5, #4
   00154	e5150004	 ldr         r0, [r5, #-4]
   00158	eb000000	 bl          OEMWriteDebugString
 
-; 361  :                         break;
+; 362  :                         break;
 
   0015c	ea00000b	 b           |$LN17@NKvDbgPrin|
   00160		 |$LN9@NKvDbgPrin|
 
-; 340  : 
-; 341  :                     case 'd':
-; 342  :                     {
-; 343  :                         long    l;
-; 344  : 
-; 345  :                         l = va_arg(vl, long);
+; 341  : 
+; 342  :                     case 'd':
+; 343  :                     {
+; 344  :                         long    l;
+; 345  : 
+; 346  :                         l = va_arg(vl, long);
 
   00160	e2855004	 add         r5, r5, #4
   00164	e5153004	 ldr         r3, [r5, #-4]
   00168	e1b06003	 movs        r6, r3
 
-; 346  :                         if (l < 0)
+; 347  :                         if (l < 0)
 
   0016c	5affffec	 bpl         |$LN8@NKvDbgPrin|
 
-; 347  :                         {
-; 348  :                             OEMWriteDebugByte('-');
+; 348  :                         {
+; 349  :                             OEMWriteDebugByte('-');
 
   00170	e3a0002d	 mov         r0, #0x2D
   00174	eb000000	 bl          OEMWriteDebugByte
 
-; 349  :                             l = - l;
+; 350  :                             l = - l;
 
   00178	e2666000	 rsb         r6, r6, #0
 
-; 375  :                 }
-; 376  :                 break;
+; 376  :                 }
+; 377  :                 break;
 
   0017c	eaffffe8	 b           |$LN8@NKvDbgPrin|
   00180		 |$LN2@NKvDbgPrin|
 
-; 377  : 
-; 378  :             case '\n':
-; 379  :                 OEMWriteDebugByte('\r');
+; 378  : 
+; 379  :             case '\n':
+; 380  :                 OEMWriteDebugByte('\r');
 
   00180	e3a0000d	 mov         r0, #0xD
   00184	eb000000	 bl          OEMWriteDebugByte
   00188		 |$LN1@NKvDbgPrin|
 
-; 380  :                 // fall through
-; 381  : 
-; 382  :             default:
-; 383  :                 OEMWriteDebugByte((BYTE)c);
+; 381  :                 // fall through
+; 382  : 
+; 383  :             default:
+; 384  :                 OEMWriteDebugByte((BYTE)c);
 
   00188	e1a00004	 mov         r0, r4
   0018c		 |$LN59@NKvDbgPrin|
@@ -704,23 +704,23 @@
   00198	1affff9f	 bne         |$LL20@NKvDbgPrin|
   0019c		 |$LN19@NKvDbgPrin|
 
-; 384  :         }
-; 385  :     }
-; 386  : }
+; 385  :         }
+; 386  :     }
+; 387  : }
 
   0019c	e8bd41f0	 ldmia       sp!, {r4 - r8, lr}
   001a0	e12fff1e	 bx          lr
   001a4		 |$LN67@NKvDbgPrin|
   001a4		 |$LN68@NKvDbgPrin|
   001a4	cccccccd	 DCD         0xcccccccd
-  001a8		 |$M47661|
+  001a8		 |$M47670|
 
 			 ENDP  ; |NKvDbgPrintfW|
 
 	EXPORT	|NKDbgPrintfW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47673| DCD	|$LN5@NKDbgPrint|
+|$T47682| DCD	|$LN5@NKDbgPrint|
 	DCD	0x40000803
 ; Function compile flags: /Ogspy
 
@@ -728,30 +728,30 @@
 
   00000		 |NKDbgPrintfW| PROC
 
-; 394  : {
+; 395  : {
 
   00000		 |$LN5@NKDbgPrint|
   00000	e1a0c00d	 mov         r12, sp
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5000	 stmdb       sp!, {r12, lr}
-  0000c		 |$M47670|
+  0000c		 |$M47679|
   0000c	e58d0008	 str         r0, [sp, #8]
 
-; 395  :     // Can be stubbed out to shrink XLDR binary size...
-; 396  :     va_list vl;
-; 397  : 
-; 398  :     va_start(vl, pszFormat);
-; 399  :     NKvDbgPrintfW(pszFormat, vl);
+; 396  :     // Can be stubbed out to shrink XLDR binary size...
+; 397  :     va_list vl;
+; 398  : 
+; 399  :     va_start(vl, pszFormat);
+; 400  :     NKvDbgPrintfW(pszFormat, vl);
 
   00010	e28d100c	 add         r1, sp, #0xC
   00014	eb000000	 bl          NKvDbgPrintfW
 
-; 400  :     va_end(vl);
-; 401  : }
+; 401  :     va_end(vl);
+; 402  : }
 
   00018	e89d6000	 ldmia       sp, {sp, lr}
   0001c	e12fff1e	 bx          lr
-  00020		 |$M47671|
+  00020		 |$M47680|
 
 			 ENDP  ; |NKDbgPrintfW|
 
@@ -760,8 +760,8 @@
 	EXPORT	|??_C@_1DG@PGACBJIG@?$AAj?$AAu?$AAm?$AAp?$AAi?$AAn?$AAg?$AA?5?$AAt?$AAo?$AA?5?$AAe?$AAb?$AAo?$AAo?$AAt?$AAs?$AAd?$AA?5?$AAi?$AAm?$AAa?$AAg?$AAe?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1DM@MLNCKNAG@?$AAS?$AAD?$AA?5?$AAb?$AAo?$AAo?$AAt?$AA?5?$AAf?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AAt?$AAo?$AA?5?$AAr?$AAe?$AAa?$AAd?$AA?5?$AAf?$AAi?$AAl?$AAe?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1DM@DAIBIGKK@?$AAS?$AAD?$AA?5?$AAb?$AAo?$AAo?$AAt?$AA?5?$AAf?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AAt?$AAo?$AA?5?$AAo?$AAp?$AAe?$AAn?$AA?5?$AAf?$AAi?$AAl?$AAe?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
-	EXPORT	|??_C@_1GO@DPJAHHOG@?$AA?$AN?$AA?6?$AAZ?$AAE?$AAB?$AAE?$AAX?$AA?5?$AAW?$AAi?$AAn?$AAd?$AAo?$AAw?$AAs?$AA?5?$AAC?$AAE?$AA?5?$AAS?$AAD?$AA?5?$AAX?$AA?9?$AAL?$AAo?$AAa?$AAd?$AAe?$AAr?$AA?5?$AAf@| [ DATA ] ; `string'
-	EXPORT	|??_C@_1EE@GGJCPIOP@?$AA?$AN?$AA?6?$AAB?$AAu?$AAi?$AAl?$AAt?$AA?5?$AAS?$AAe?$AAp?$AA?5?$AA?5?$AA2?$AA?5?$AA2?$AA0?$AA1?$AA3?$AA?5?$AAa?$AAt?$AA?5?$AA1?$AA6?$AA?3?$AA1?$AA7?$AA?3?$AA0?$AA8?$AA?5@| [ DATA ] ; `string'
+	EXPORT	|??_C@_1HK@OAGHOBGH@?$AA?$AN?$AA?6?$AAZ?$AAE?$AAB?$AAE?$AAX?$AA?5?$AAW?$AAi?$AAn?$AAd?$AAo?$AAw?$AAs?$AA?5?$AAC?$AAE?$AA?5?$AAS?$AAD?$AA?5?$AAX?$AA?9?$AAL?$AAo?$AAa?$AAd?$AAe?$AAr?$AA?5?$AAf@| [ DATA ] ; `string'
+	EXPORT	|??_C@_1EE@CALDMBKE@?$AA?$AN?$AA?6?$AAB?$AAu?$AAi?$AAl?$AAt?$AA?5?$AAS?$AAe?$AAp?$AA?5?$AA1?$AA4?$AA?5?$AA2?$AA0?$AA1?$AA3?$AA?5?$AAa?$AAt?$AA?5?$AA1?$AA4?$AA?3?$AA5?$AA8?$AA?3?$AA0?$AA5?$AA?5@| [ DATA ] ; `string'
 	EXPORT	|??_C@_17KPMHKKFB@?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1BI@NFFGLHIF@?$AAe?$AAb?$AAo?$AAo?$AAt?$AAs?$AAd?$AA?4?$AAn?$AAb?$AA0?$AA?$AA@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1DA@FBNLCKKB@?$AAo?$AAp?$AAe?$AAn?$AA?5?$AAe?$AAb?$AAo?$AAo?$AAt?$AAs?$AAd?$AA?4?$AAn?$AAb?$AA0?$AA?5?$AAf?$AAi?$AAl?$AAe?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
@@ -786,7 +786,7 @@
 |?allocationPool@?1??XLDRMain@@9@9| % 0x200		; `XLDRMain'::`2'::allocationPool
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47721| DCD	|$LN35@XLDRMain|
+|$T47730| DCD	|$LN35@XLDRMain|
 	DCD	0x40007201
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -819,7 +819,7 @@
 	DCB	0x0, "l", 0x0, "e", 0x0, 0xd, 0x0, 0xa, 0x0, 0x0, 0x0 ; `string'
 
   00000			 AREA	 |.rdata|, DATA, READONLY
-|??_C@_1GO@DPJAHHOG@?$AA?$AN?$AA?6?$AAZ?$AAE?$AAB?$AAE?$AAX?$AA?5?$AAW?$AAi?$AAn?$AAd?$AAo?$AAw?$AAs?$AA?5?$AAC?$AAE?$AA?5?$AAS?$AAD?$AA?5?$AAX?$AA?9?$AAL?$AAo?$AAa?$AAd?$AAe?$AAr?$AA?5?$AAf@| DCB 0xd
+|??_C@_1HK@OAGHOBGH@?$AA?$AN?$AA?6?$AAZ?$AAE?$AAB?$AAE?$AAX?$AA?5?$AAW?$AAi?$AAn?$AAd?$AAo?$AAw?$AAs?$AA?5?$AAC?$AAE?$AA?5?$AAS?$AAD?$AA?5?$AAX?$AA?9?$AAL?$AAo?$AAa?$AAd?$AAe?$AAr?$AA?5?$AAf@| DCB 0xd
 	DCB	0x0, 0xa, 0x0, "Z", 0x0, "E", 0x0, "B", 0x0, "E", 0x0, "X"
 	DCB	0x0, " ", 0x0, "W", 0x0, "i", 0x0, "n", 0x0, "d", 0x0, "o"
 	DCB	0x0, "w", 0x0, "s", 0x0, " ", 0x0, "C", 0x0, "E", 0x0, " "
@@ -828,16 +828,17 @@
 	DCB	0x0, "f", 0x0, "o", 0x0, "r", 0x0, " ", 0x0, "Z", 0x0, "-"
 	DCB	0x0, "2", 0x0, "1", 0x0, "7", 0x0, "0", 0x0, " ", 0x0, "p"
 	DCB	0x0, "l", 0x0, "u", 0x0, "s", 0x0, " ", 0x0, "-", 0x0, " "
-	DCB	0x0, "B", 0x0, "r", 0x0, "i", 0x0, "a", 0x0, "n", 0x0, 0x0
+	DCB	0x0, "R", 0x0, "a", 0x0, "y", 0x0, " ", 0x0, "T", 0x0, "e"
+	DCB	0x0, "s", 0x0, "t", 0x0, "i", 0x0, "n", 0x0, "g", 0x0, 0x0
 	DCB	0x0					; `string'
 
   00000			 AREA	 |.rdata|, DATA, READONLY
-|??_C@_1EE@GGJCPIOP@?$AA?$AN?$AA?6?$AAB?$AAu?$AAi?$AAl?$AAt?$AA?5?$AAS?$AAe?$AAp?$AA?5?$AA?5?$AA2?$AA?5?$AA2?$AA0?$AA1?$AA3?$AA?5?$AAa?$AAt?$AA?5?$AA1?$AA6?$AA?3?$AA1?$AA7?$AA?3?$AA0?$AA8?$AA?5@| DCB 0xd
+|??_C@_1EE@CALDMBKE@?$AA?$AN?$AA?6?$AAB?$AAu?$AAi?$AAl?$AAt?$AA?5?$AAS?$AAe?$AAp?$AA?5?$AA1?$AA4?$AA?5?$AA2?$AA0?$AA1?$AA3?$AA?5?$AAa?$AAt?$AA?5?$AA1?$AA4?$AA?3?$AA5?$AA8?$AA?3?$AA0?$AA5?$AA?5@| DCB 0xd
 	DCB	0x0, 0xa, 0x0, "B", 0x0, "u", 0x0, "i", 0x0, "l", 0x0, "t"
-	DCB	0x0, " ", 0x0, "S", 0x0, "e", 0x0, "p", 0x0, " ", 0x0, " "
-	DCB	0x0, "2", 0x0, " ", 0x0, "2", 0x0, "0", 0x0, "1", 0x0, "3"
-	DCB	0x0, " ", 0x0, "a", 0x0, "t", 0x0, " ", 0x0, "1", 0x0, "6"
-	DCB	0x0, ":", 0x0, "1", 0x0, "7", 0x0, ":", 0x0, "0", 0x0, "8"
+	DCB	0x0, " ", 0x0, "S", 0x0, "e", 0x0, "p", 0x0, " ", 0x0, "1"
+	DCB	0x0, "4", 0x0, " ", 0x0, "2", 0x0, "0", 0x0, "1", 0x0, "3"
+	DCB	0x0, " ", 0x0, "a", 0x0, "t", 0x0, " ", 0x0, "1", 0x0, "4"
+	DCB	0x0, ":", 0x0, "5", 0x0, "8", 0x0, ":", 0x0, "0", 0x0, "5"
 	DCB	0x0, " ", 0x0, "(", 0x0, 0x0, 0x0	; `string'
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -873,7 +874,7 @@
 
   00000		 |$LN35@XLDRMain|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
-  00004		 |$M47718|
+  00004		 |$M47727|
 
 ; 88   :     //OMAP_GPTIMER_REGS *pTimerRegs;
 ; 89   :     static UCHAR allocationPool[512];
@@ -886,7 +887,7 @@
   00008	e59f81b0	 ldr         r8, [pc, #0x1B0]
   0000c	e5960000	 ldr         r0, [r6]
   00010	e3700001	 cmn         r0, #1
-  00014	0a000059	 beq         |$CleanUp$47286|
+  00014	0a000059	 beq         |$CleanUp$47295|
   00018	e5903020	 ldr         r3, [r0, #0x20]
   0001c	e3a0e000	 mov         lr, #0
   00020	e3530000	 cmp         r3, #0
@@ -932,7 +933,7 @@
 
   00098	e59f011c	 ldr         r0, [pc, #0x11C]
   0009c	e3a01c02	 mov         r1, #2, 24
-  000a0		 |$CleanUp$47686|
+  000a0		 |$CleanUp$47695|
   000a0	eb000000	 bl          OALLocalAllocInit
 
 ; 97   : 
@@ -993,105 +994,107 @@
 
 ; 118  : 
 ; 119  :     // Print information...
-; 120  :     XLDRMSG( TEXT("\r\nZEBEX Windows CE SD X-Loader for Z-2170 plus - Brian"));    
+; 120  :     //XLDRMSG( TEXT("\r\nZEBEX Windows CE SD X-Loader for Z-2170 plus - Brian"));   //Ray 13-09-12
+; 121  :     XLDRMSG( TEXT("\r\nZEBEX Windows CE SD X-Loader for Z-2170 plus - Ray Testing"));  
 
   000e0	e59f00c8	 ldr         r0, [pc, #0xC8]
   000e4	eb000000	 bl          OEMWriteDebugString
 
-; 121  :     XLDRMSG( TEXT("\r\n") TEXT("Built ") TEXT(__DATE__) TEXT(" at ") TEXT(__TIME__) TEXT(" ("));
+; 122  :     XLDRMSG( TEXT("\r\n") TEXT("Built ") TEXT(__DATE__) TEXT(" at ") TEXT(__TIME__) TEXT(" ("));
 
   000e8	e59f00bc	 ldr         r0, [pc, #0xBC]
   000ec	eb000000	 bl          OEMWriteDebugString
 
-; 122  : 	XLDRMSG( (UINT16 *)ProcessorName);
+; 123  : 	XLDRMSG( (UINT16 *)ProcessorName);
 
   000f0	e1a00008	 mov         r0, r8
   000f4	eb000000	 bl          OEMWriteDebugString
 
-; 123  : 	XLDRMSG( TEXT(")\r\n"));
+; 124  : 	XLDRMSG( TEXT(")\r\n"));
 
   000f8	e59f00a8	 ldr         r0, [pc, #0xA8]
   000fc	eb000000	 bl          OEMWriteDebugString
 
-; 124  :     GPIOInit();	// \COMMON_TI_V1\COMMON_TI\GPIO\DISPATCH\OAL\gpio_dispatch.c
+; 125  :     GPIOInit();	// \COMMON_TI_V1\COMMON_TI\GPIO\DISPATCH\OAL\gpio_dispatch.c
 
   00100	eb000000	 bl          GPIOInit
 
-; 125  :     /*pTimerRegs = (OMAP_GPTIMER_REGS *)OALPAtoUA(OMAP_GPTIMER1_REGS_PA); // General-Purpose Timers
-; 126  : 
-; 127  :     // Soft reset GPTIMER1
-; 128  :     OUTREG32(&pTimerRegs->TIOCP, SYSCONFIG_SOFTRESET); 
-; 129  : 	// check GPTIMER1 reset completed ?
-; 130  :     while ((INREG32(&pTimerRegs->TISTAT) & GPTIMER_TISTAT_RESETDONE) == 0)
-; 131  : 		;
-; 132  : 
-; 133  :     // Enable posted mode
-; 134  :     OUTREG32(&pTimerRegs->TSICR, GPTIMER_TSICR_POSTED);
-; 135  :     // Start timer
-; 136  :     OUTREG32(&pTimerRegs->TCLR, GPTIMER_TCLR_AR|GPTIMER_TCLR_ST);
-; 137  :     // need to init OAL tick functions
-; 138  : */
-; 139  : 
-; 140  :     memset(&g_bootCfg, 0, sizeof(g_bootCfg));
+; 126  :     /*pTimerRegs = (OMAP_GPTIMER_REGS *)OALPAtoUA(OMAP_GPTIMER1_REGS_PA); // General-Purpose Timers
+; 127  : 
+; 128  :     // Soft reset GPTIMER1
+; 129  :     OUTREG32(&pTimerRegs->TIOCP, SYSCONFIG_SOFTRESET); 
+; 130  : 	// check GPTIMER1 reset completed ?
+; 131  :     while ((INREG32(&pTimerRegs->TISTAT) & GPTIMER_TISTAT_RESETDONE) == 0)
+; 132  : 		;
+; 133  : 
+; 134  :     // Enable posted mode
+; 135  :     OUTREG32(&pTimerRegs->TSICR, GPTIMER_TSICR_POSTED);
+; 136  :     // Start timer
+; 137  :     OUTREG32(&pTimerRegs->TCLR, GPTIMER_TCLR_AR|GPTIMER_TCLR_ST);
+; 138  :     // need to init OAL tick functions
+; 139  : */
+; 140  : 
+; 141  :     memset(&g_bootCfg, 0, sizeof(g_bootCfg));
 
   00104	e59f4098	 ldr         r4, [pc, #0x98]
-  00108	e3a02080	 mov         r2, #0x80
+  00108	e3a02084	 mov         r2, #0x84
   0010c	e3a01000	 mov         r1, #0
   00110	e1a00004	 mov         r0, r4
   00114	eb000000	 bl          memset
 
-; 141  :     //g_bootCfg.signature = BOOT_CFG_SIGNATURE;
-; 142  :     //g_bootCfg.version = BOOT_CFG_VERSION;
-; 143  :     //g_bootCfg.bootDevLoc.IfcType = Internal;
-; 144  :     //g_bootCfg.bootDevLoc.BusNumber = 0;
-; 145  :     //g_bootCfg.bootDevLoc.LogicalLoc = BSP_LAN9115_REGS_PA;
-; 146  :     //g_bootCfg.kitlDevLoc.IfcType = Internal;
-; 147  :     //g_bootCfg.kitlDevLoc.BusNumber = 0;
-; 148  :     //g_bootCfg.kitlDevLoc.LogicalLoc = BSP_LAN9115_REGS_PA;
-; 149  :     //g_bootCfg.kitlFlags |= OAL_KITL_FLAGS_DHCP;//|OAL_KITL_FLAGS_ENABLED;
-; 150  :     //g_bootCfg.kitlFlags |= OAL_KITL_FLAGS_EXTNAME;
-; 151  :     //g_bootCfg.kitlFlags |= OAL_KITL_FLAGS_VMINI;
-; 152  :     //g_bootCfg.ipAddress = 0;
-; 153  :     //g_bootCfg.ipMask = 0;
-; 154  :     //g_bootCfg.ipRoute = 0;
-; 155  :     //g_bootCfg.deviceID = 0;
-; 156  :     //g_bootCfg.osPartitionSize = IMAGE_WINCE_CODE_SIZE;
-; 157  :     wcscpy(g_bootCfg.filename, L"ebootsd.nb0");
+; 142  :     //g_bootCfg.signature = BOOT_CFG_SIGNATURE;
+; 143  :     //g_bootCfg.version = BOOT_CFG_VERSION;
+; 144  :     //g_bootCfg.bootDevLoc.IfcType = Internal;
+; 145  :     //g_bootCfg.bootDevLoc.BusNumber = 0;
+; 146  :     //g_bootCfg.bootDevLoc.LogicalLoc = BSP_LAN9115_REGS_PA;
+; 147  :     //g_bootCfg.kitlDevLoc.IfcType = Internal;
+; 148  :     //g_bootCfg.kitlDevLoc.BusNumber = 0;
+; 149  :     //g_bootCfg.kitlDevLoc.LogicalLoc = BSP_LAN9115_REGS_PA;
+; 150  :     //g_bootCfg.kitlFlags |= OAL_KITL_FLAGS_DHCP;//|OAL_KITL_FLAGS_ENABLED;
+; 151  :     //g_bootCfg.kitlFlags |= OAL_KITL_FLAGS_EXTNAME;
+; 152  :     //g_bootCfg.kitlFlags |= OAL_KITL_FLAGS_VMINI;
+; 153  :     //g_bootCfg.ipAddress = 0;
+; 154  :     //g_bootCfg.ipMask = 0;
+; 155  :     //g_bootCfg.ipRoute = 0;
+; 156  :     //g_bootCfg.deviceID = 0;
+; 157  :     //g_bootCfg.osPartitionSize = IMAGE_WINCE_CODE_SIZE;
+; 158  : 
+; 159  :     wcscpy(g_bootCfg.filename, L"ebootsd.nb0");
 
   00118	e59f1080	 ldr         r1, [pc, #0x80]
   0011c	e284004c	 add         r0, r4, #0x4C
   00120	eb000000	 bl          wcscpy
 
-; 158  : 
-; 159  :     XLDRMSG(TEXT("open ebootsd.nb0 file\r\n"));
+; 160  : 
+; 161  :     XLDRMSG(TEXT("open ebootsd.nb0 file\r\n"));
 
   00124	e59f0070	 ldr         r0, [pc, #0x70]
   00128	eb000000	 bl          OEMWriteDebugString
 
-; 160  : 
-; 161  :     if (BL_ERROR == BLSDCardDownload(g_bootCfg.filename))
+; 162  : 
+; 163  :     if (BL_ERROR == BLSDCardDownload(g_bootCfg.filename))
 
   0012c	e284004c	 add         r0, r4, #0x4C
   00130	eb000000	 bl          BLSDCardDownload
   00134	e3700001	 cmn         r0, #1
   00138	1a000002	 bne         |$LN4@XLDRMain|
 
-; 162  :     {
-; 163  :         XLDRMSG(TEXT("SD boot failed to open file\r\n"));
+; 164  :     {
+; 165  :         XLDRMSG(TEXT("SD boot failed to open file\r\n"));
 
   0013c	e59f0054	 ldr         r0, [pc, #0x54]
   00140	eb000000	 bl          OEMWriteDebugString
 
-; 164  :         goto CleanUp;
+; 166  :         goto CleanUp;
 
-  00144	ea00000d	 b           |$CleanUp$47286|
+  00144	ea00000d	 b           |$CleanUp$47295|
   00148		 |$LN4@XLDRMain|
 
-; 165  :     }
-; 166  : 
-; 167  :     //XLDRMSG(TEXT("read ebootsd.nb0 file\r\n"));
+; 167  :     }
 ; 168  : 
-; 169  :     if (BL_ERROR == BLSDCardReadData(0x000c0000, (UCHAR *) IMAGE_STARTUP_IMAGE_PA))
+; 169  :     //XLDRMSG(TEXT("read ebootsd.nb0 file\r\n"));
+; 170  : 
+; 171  :     if (BL_ERROR == BLSDCardReadData(0x000c0000, (UCHAR *) IMAGE_STARTUP_IMAGE_PA))
 
   00148	e3e04d0f	 mvn         r4, #0xF, 26
   0014c	e1a01a84	 mov         r1, r4, lsl #21
@@ -1100,45 +1103,45 @@
   00158	e3700001	 cmn         r0, #1
   0015c	1a000002	 bne         |$LN3@XLDRMain|
 
-; 170  :     {
-; 171  :         XLDRMSG(TEXT("SD boot failed to read file\r\n"));
+; 172  :     {
+; 173  :         XLDRMSG(TEXT("SD boot failed to read file\r\n"));
 
   00160	e59f002c	 ldr         r0, [pc, #0x2C]
   00164	eb000000	 bl          OEMWriteDebugString
-  00168	ea000004	 b           |$CleanUp$47286|
+  00168	ea000004	 b           |$CleanUp$47295|
   0016c		 |$LN3@XLDRMain|
 
-; 172  :         goto CleanUp;
-; 173  :     }
-; 174  : 
-; 175  :     XLDRMSG(TEXT("jumping to ebootsd image\r\n"));
+; 174  :         goto CleanUp;
+; 175  :     }
+; 176  : 
+; 177  :     XLDRMSG(TEXT("jumping to ebootsd image\r\n"));
 
   0016c	e59f001c	 ldr         r0, [pc, #0x1C]
   00170	eb000000	 bl          OEMWriteDebugString
 
-; 176  : 
-; 177  :     // Wait for serial port
-; 178  :     XLDRMSGDEINIT;
+; 178  : 
+; 179  :     // Wait for serial port
+; 180  :     XLDRMSGDEINIT;
 
   00174	eb000000	 bl          OEMDeinitDebugSerial
 
-; 179  : 
-; 180  :     // Jump to image
-; 181  :     JumpTo((VOID*)IMAGE_STARTUP_IMAGE_PA);
+; 181  : 
+; 182  :     // Jump to image
+; 183  :     JumpTo((VOID*)IMAGE_STARTUP_IMAGE_PA);
 
   00178	e1a00a84	 mov         r0, r4, lsl #21
   0017c	eb000000	 bl          JumpTo
-  00180		 |$CleanUp$47286|
+  00180		 |$CleanUp$47295|
 
-; 182  : 
-; 183  : CleanUp:
-; 184  :     XLDRMSG(L"\r\nHALT\r\n");
+; 184  : 
+; 185  : CleanUp:
+; 186  :     XLDRMSG(L"\r\nHALT\r\n");
 
   00180	e59f0004	 ldr         r0, [pc, #4]
   00184	eb000000	 bl          OEMWriteDebugString
   00188		 |$LL2@XLDRMain|
 
-; 185  :     for(;;);
+; 187  :     for(;;);
 
   00188	eafffffe	 b           |$LL2@XLDRMain|
   0018c		 |$LN36@XLDRMain|
@@ -1159,9 +1162,9 @@
   001a8		 |$LN44@XLDRMain|
   001a8	00000000	 DCD         |??_C@_17KPMHKKFB@?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@|
   001ac		 |$LN45@XLDRMain|
-  001ac	00000000	 DCD         |??_C@_1EE@GGJCPIOP@?$AA?$AN?$AA?6?$AAB?$AAu?$AAi?$AAl?$AAt?$AA?5?$AAS?$AAe?$AAp?$AA?5?$AA?5?$AA2?$AA?5?$AA2?$AA0?$AA1?$AA3?$AA?5?$AAa?$AAt?$AA?5?$AA1?$AA6?$AA?3?$AA1?$AA7?$AA?3?$AA0?$AA8?$AA?5@|
+  001ac	00000000	 DCD         |??_C@_1EE@CALDMBKE@?$AA?$AN?$AA?6?$AAB?$AAu?$AAi?$AAl?$AAt?$AA?5?$AAS?$AAe?$AAp?$AA?5?$AA1?$AA4?$AA?5?$AA2?$AA0?$AA1?$AA3?$AA?5?$AAa?$AAt?$AA?5?$AA1?$AA4?$AA?3?$AA5?$AA8?$AA?3?$AA0?$AA5?$AA?5@|
   001b0		 |$LN46@XLDRMain|
-  001b0	00000000	 DCD         |??_C@_1GO@DPJAHHOG@?$AA?$AN?$AA?6?$AAZ?$AAE?$AAB?$AAE?$AAX?$AA?5?$AAW?$AAi?$AAn?$AAd?$AAo?$AAw?$AAs?$AA?5?$AAC?$AAE?$AA?5?$AAS?$AAD?$AA?5?$AAX?$AA?9?$AAL?$AAo?$AAa?$AAd?$AAe?$AAr?$AA?5?$AAf@|
+  001b0	00000000	 DCD         |??_C@_1HK@OAGHOBGH@?$AA?$AN?$AA?6?$AAZ?$AAE?$AAB?$AAE?$AAX?$AA?5?$AAW?$AAi?$AAn?$AAd?$AAo?$AAw?$AAs?$AA?5?$AAC?$AAE?$AA?5?$AAS?$AAD?$AA?5?$AAX?$AA?9?$AAL?$AAo?$AAa?$AAd?$AAe?$AAr?$AA?5?$AAf@|
   001b4		 |$LN47@XLDRMain|
   001b4	00000000	 DCD         |??_C@_19PONNFJAB@?$AA3?$AA7?$AAX?$AAX?$AA?$AA@|
   001b8		 |$LN48@XLDRMain|
@@ -1172,7 +1175,7 @@
   001c0	00000000	 DCD         |??_C@_19CAFJHOAJ@?$AA3?$AA5?$AA3?$AA0?$AA?$AA@|
   001c4		 |$LN51@XLDRMain|
   001c4	00000000	 DCD         |pTOC|
-  001c8		 |$M47719|
+  001c8		 |$M47728|
 
 			 ENDP  ; |XLDRMain|
 

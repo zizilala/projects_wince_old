@@ -12,7 +12,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36191| DCD	|$LN5@Lock|
+|$T36193| DCD	|$LN5@Lock|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -24,7 +24,7 @@
 
   00000		 |$LN5@Lock|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M36188|
+  00004		 |$M36190|
 
 ; 46   :         EnterCriticalSection( &m_CSection );
 
@@ -34,7 +34,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M36189|
+  00010		 |$M36191|
 
 			 ENDP  ; |?Lock@CLockObject@@QAAXXZ|, CLockObject::Lock
 
@@ -42,7 +42,7 @@
 	IMPORT	|LeaveCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36199| DCD	|$LN5@Unlock|
+|$T36201| DCD	|$LN5@Unlock|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -54,7 +54,7 @@
 
   00000		 |$LN5@Unlock|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M36196|
+  00004		 |$M36198|
 
 ; 50   :         LeaveCriticalSection( &m_CSection );
 
@@ -64,7 +64,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M36197|
+  00010		 |$M36199|
 
 			 ENDP  ; |?Unlock@CLockObject@@QAAXXZ|, CLockObject::Unlock
 
@@ -73,7 +73,7 @@
 ; File c:\wince600\public\common\oak\inc\crefcon.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36209| DCD	|$LN5@AddRef|
+|$T36211| DCD	|$LN5@AddRef|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -85,7 +85,7 @@
 
   00000		 |$LN5@AddRef|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M36206|
+  00004		 |$M36208|
 
 ; 44   :         return (DWORD)InterlockedIncrement(&m_lRefCount);
 
@@ -96,7 +96,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M36207|
+  00014		 |$M36209|
 
 			 ENDP  ; |?AddRef@CRefObject@@QAAKXZ|, CRefObject::AddRef
 
@@ -104,7 +104,7 @@
 	IMPORT	|InterlockedDecrement|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36224| DCD	|$LN8@DeRef|
+|$T36226| DCD	|$LN8@DeRef|
 	DCD	0x40001101
 ; Function compile flags: /Ogspy
 
@@ -116,7 +116,7 @@
 
   00000		 |$LN8@DeRef|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M36221|
+  00004		 |$M36223|
   00004	e1a04000	 mov         r4, r0
 
 ; 48   :         LONG lReturn = InterlockedDecrement(&m_lRefCount);
@@ -148,7 +148,7 @@
   00038	e1a00005	 mov         r0, r5
   0003c	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00040	e12fff1e	 bx          lr
-  00044		 |$M36222|
+  00044		 |$M36224|
 
 			 ENDP  ; |?DeRef@CRefObject@@QAAKXZ|, CRefObject::DeRef
 
@@ -156,7 +156,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbus.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36239| DCD	|$LN7@SlotOption|
+|$T36241| DCD	|$LN7@SlotOption|
 	DCD	0x40000f02
 ; Function compile flags: /Ogspy
 
@@ -169,7 +169,7 @@
   00000		 |$LN7@SlotOption|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M36236|
+  00008		 |$M36238|
   00008	e1a05002	 mov         r5, r2
   0000c	e1b0e000	 movs        lr, r0
 
@@ -189,14 +189,14 @@
   00030	e28dd004	 add         sp, sp, #4
   00034	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00038	e12fff1e	 bx          lr
-  0003c		 |$M36237|
+  0003c		 |$M36239|
 
 			 ENDP  ; |?SlotOptionHandler@CSDHost@@QAAJKW4_SD_SLOT_OPTION_CODE@@PAXK@Z|, CSDHost::SlotOptionHandler
 
 	EXPORT	|?ChangeCardPowerHandler@CSDHost@@QAAJKH@Z| ; CSDHost::ChangeCardPowerHandler
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36253| DCD	|$LN7@ChangeCard|
+|$T36255| DCD	|$LN7@ChangeCard|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -208,7 +208,7 @@
 
   00000		 |$LN7@ChangeCard|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M36250|
+  00004		 |$M36252|
   00004	e1b03000	 movs        r3, r0
 
 ; 148  :         return pChangeCardPowerHandler((PSDCARD_HC_CONTEXT)this,dwSlot,iPower);
@@ -223,7 +223,7 @@
 
   0001c	e49de004	 ldr         lr, [sp], #4
   00020	e12fff1e	 bx          lr
-  00024		 |$M36251|
+  00024		 |$M36253|
 
 			 ENDP  ; |?ChangeCardPowerHandler@CSDHost@@QAAJKH@Z|, CSDHost::ChangeCardPowerHandler
 
@@ -231,7 +231,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36263| DCD	|$LN5@GetDeviceF|
+|$T36265| DCD	|$LN5@GetDeviceF|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -242,17 +242,17 @@
 ; 129  :     DWORD   GetDeviceFuncionIndex() { return m_FuncionIndex; };
 
   00000		 |$LN5@GetDeviceF|
-  00000		 |$M36260|
+  00000		 |$M36262|
   00000	e590043c	 ldr         r0, [r0, #0x43C]
   00004	e12fff1e	 bx          lr
-  00008		 |$M36261|
+  00008		 |$M36263|
 
 			 ENDP  ; |?GetDeviceFuncionIndex@CSDDevice@@QAAKXZ|, CSDDevice::GetDeviceFuncionIndex
 
 	EXPORT	|?GetDeviceType@CSDDevice@@QAA?AW4_SDCARD_DEVICE_TYPE@@XZ| ; CSDDevice::GetDeviceType
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36273| DCD	|$LN5@GetDeviceT|
+|$T36275| DCD	|$LN5@GetDeviceT|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -263,10 +263,10 @@
 ; 134  :     SDCARD_DEVICE_TYPE GetDeviceType() { return m_DeviceType; };
 
   00000		 |$LN5@GetDeviceT|
-  00000		 |$M36270|
+  00000		 |$M36272|
   00000	e5900494	 ldr         r0, [r0, #0x494]
   00004	e12fff1e	 bx          lr
-  00008		 |$M36271|
+  00008		 |$M36273|
 
 			 ENDP  ; |?GetDeviceType@CSDDevice@@QAA?AW4_SDCARD_DEVICE_TYPE@@XZ|, CSDDevice::GetDeviceType
 
@@ -274,7 +274,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdslot.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36283| DCD	|$LN5@GetHost|
+|$T36285| DCD	|$LN5@GetHost|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -285,17 +285,17 @@
 ; 99   :     CSDHost&    GetHost() { return m_SdHost; };
 
   00000		 |$LN5@GetHost|
-  00000		 |$M36280|
+  00000		 |$M36282|
   00000	e590007c	 ldr         r0, [r0, #0x7C]
   00004	e12fff1e	 bx          lr
-  00008		 |$M36281|
+  00008		 |$M36283|
 
 			 ENDP  ; |?GetHost@CSDSlot@@QAAAAVCSDHost@@XZ|, CSDSlot::GetHost
 
 	EXPORT	|?GetSlotIndex@CSDSlot@@QAAKXZ|		; CSDSlot::GetSlotIndex
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36293| DCD	|$LN5@GetSlotInd|
+|$T36295| DCD	|$LN5@GetSlotInd|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -306,17 +306,17 @@
 ; 106  :     DWORD   GetSlotIndex() { return m_dwSlotIndex; };
 
   00000		 |$LN5@GetSlotInd|
-  00000		 |$M36290|
+  00000		 |$M36292|
   00000	e5900080	 ldr         r0, [r0, #0x80]
   00004	e12fff1e	 bx          lr
-  00008		 |$M36291|
+  00008		 |$M36293|
 
 			 ENDP  ; |?GetSlotIndex@CSDSlot@@QAAKXZ|, CSDSlot::GetSlotIndex
 
 	EXPORT	|?GetSlotPower@CSDSlot@@QAAGXZ|		; CSDSlot::GetSlotPower
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36303| DCD	|$LN5@GetSlotPow|
+|$T36305| DCD	|$LN5@GetSlotPow|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -327,17 +327,17 @@
 ; 107  :     USHORT  GetSlotPower() { return m_AllocatedPower; };
 
   00000		 |$LN5@GetSlotPow|
-  00000		 |$M36300|
+  00000		 |$M36302|
   00000	e1d00bb0	 ldrh        r0, [r0, #0xB0]
   00004	e12fff1e	 bx          lr
-  00008		 |$M36301|
+  00008		 |$M36303|
 
 			 ENDP  ; |?GetSlotPower@CSDSlot@@QAAGXZ|, CSDSlot::GetSlotPower
 
 	EXPORT	|?SetSlotPower@CSDSlot@@QAAGG@Z|	; CSDSlot::SetSlotPower
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36314| DCD	|$LN5@SetSlotPow|
+|$T36316| DCD	|$LN5@SetSlotPow|
 	DCD	0x40000300
 ; Function compile flags: /Ogspy
 
@@ -348,11 +348,11 @@
 ; 108  :     USHORT  SetSlotPower(USHORT allocatedPower) { return m_AllocatedPower = allocatedPower; };
 
   00000		 |$LN5@SetSlotPow|
-  00000		 |$M36311|
+  00000		 |$M36313|
   00000	e1c01bb0	 strh        r1, [r0, #0xB0]
   00004	e1a00001	 mov         r0, r1
   00008	e12fff1e	 bx          lr
-  0000c		 |$M36312|
+  0000c		 |$M36314|
 
 			 ENDP  ; |?SetSlotPower@CSDSlot@@QAAGG@Z|, CSDSlot::SetSlotPower
 
@@ -360,7 +360,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36337| DCD	|$LN15@GetFunctio|
+|$T36339| DCD	|$LN15@GetFunctio|
 	DCD	0x40001401
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdslot.hpp
@@ -373,7 +373,7 @@
 
   00000		 |$LN15@GetFunctio|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M36334|
+  00004		 |$M36336|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -421,14 +421,14 @@
   00044	e1a00004	 mov         r0, r4
   00048	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0004c	e12fff1e	 bx          lr
-  00050		 |$M36335|
+  00050		 |$M36337|
 
 			 ENDP  ; |?GetFunctionDevice@CSDSlot@@QAAPAVCSDDevice@@K@Z|, CSDSlot::GetFunctionDevice
 
 	EXPORT	|?IsSlotInterruptOn@CSDSlot@@QAAHXZ|	; CSDSlot::IsSlotInterruptOn
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36349| DCD	|$LN7@IsSlotInte|
+|$T36351| DCD	|$LN7@IsSlotInte|
 	DCD	0x40000500
 ; Function compile flags: /Ogspy
 
@@ -439,13 +439,13 @@
 ; 171  :     BOOL    IsSlotInterruptOn() { return ((m_Flags & SD_SLOT_FLAG_SDIO_INTERRUPTS_ENABLED)!=0) ; };
 
   00000		 |$LN7@IsSlotInte|
-  00000		 |$M36346|
+  00000		 |$M36348|
   00000	e5903088	 ldr         r3, [r0, #0x88]
   00004	e3130001	 tst         r3, #1
   00008	13a00001	 movne       r0, #1
   0000c	03a00000	 moveq       r0, #0
   00010	e12fff1e	 bx          lr
-  00014		 |$M36347|
+  00014		 |$M36349|
 
 			 ENDP  ; |?IsSlotInterruptOn@CSDSlot@@QAAHXZ|, CSDSlot::IsSlotInterruptOn
 
@@ -454,7 +454,7 @@
 	IMPORT	|?GetFunctionPowerState@CSDDevice@@QAAJPAU_FUNCTION_POWER_STATE@@@Z| ; CSDDevice::GetFunctionPowerState
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36409| DCD	|$LN48@SDEnableDi|
+|$T36411| DCD	|$LN48@SDEnableDi|
 	DCD	0x40007302
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdiofeat.cpp
@@ -468,7 +468,7 @@
   00000		 |$LN48@SDEnableDi|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd030	 sub         sp, sp, #0x30
-  00008		 |$M36406|
+  00008		 |$M36408|
   00008	e1a07002	 mov         r7, r2
   0000c	e1a09001	 mov         r9, r1
   00010	e1a06000	 mov         r6, r0
@@ -769,7 +769,7 @@
   001c0	e3540000	 cmp         r4, #0
   001c4	4affffc5	 bmi         |$LN19@SDEnableDi|
   001c8	eaffff9e	 b           |$LN45@SDEnableDi|
-  001cc		 |$M36407|
+  001cc		 |$M36409|
 
 			 ENDP  ; |?SDEnableDisableFunction@CSDDevice@@IAAJPAU_SD_IO_FUNCTION_ENABLE_INFO@@H@Z|, CSDDevice::SDEnableDisableFunction
 
@@ -777,7 +777,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdslot.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36460| DCD	|$LN32@SDFunction|
+|$T36462| DCD	|$LN32@SDFunction|
 	DCD	0x40005b02
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdiofeat.cpp
@@ -791,7 +791,7 @@
   00000		 |$LN32@SDFunction|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   00004	e24dd030	 sub         sp, sp, #0x30
-  00008		 |$M36457|
+  00008		 |$M36459|
   00008	e1a07001	 mov         r7, r1
   0000c	e1a05000	 mov         r5, r0
 
@@ -1003,14 +1003,14 @@
   00160	e28dd030	 add         sp, sp, #0x30
   00164	e8bd43f0	 ldmia       sp!, {r4 - r9, lr}
   00168	e12fff1e	 bx          lr
-  0016c		 |$M36458|
+  0016c		 |$M36460|
 
 			 ENDP  ; |?SDFunctionSelectPower@CSDDevice@@IAAJH@Z|, CSDDevice::SDFunctionSelectPower
 
 	EXPORT	|?SDSetFunctionBlockSize@CSDDevice@@IAAJK@Z| ; CSDDevice::SDSetFunctionBlockSize
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36474| DCD	|$LN6@SDSetFunct|
+|$T36476| DCD	|$LN6@SDSetFunct|
 	DCD	0x40001f02
 ; Function compile flags: /Ogspy
 
@@ -1023,7 +1023,7 @@
   00000		 |$LN6@SDSetFunct|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M36471|
+  00008		 |$M36473|
   00008	e1a02001	 mov         r2, r1
 
 ; 261  :     USHORT bytesPerBlock = (USHORT)BlockSize; // desired block size
@@ -1086,7 +1086,7 @@
   00070	e28dd00c	 add         sp, sp, #0xC
   00074	e8bd41f0	 ldmia       sp!, {r4 - r8, lr}
   00078	e12fff1e	 bx          lr
-  0007c		 |$M36472|
+  0007c		 |$M36474|
 
 			 ENDP  ; |?SDSetFunctionBlockSize@CSDDevice@@IAAJK@Z|, CSDDevice::SDSetFunctionBlockSize
 
@@ -1097,7 +1097,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdslot.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36529| DCD	|$LN49@SetCardFea|
+|$T36531| DCD	|$LN49@SetCardFea|
 	DCD	0x40007802
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdiofeat.cpp
@@ -1111,7 +1111,7 @@
   00000		 |$LN49@SetCardFea|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd024	 sub         sp, sp, #0x24
-  00008		 |$M36526|
+  00008		 |$M36528|
   00008	e1a0b001	 mov         r11, r1
   0000c	e1a04000	 mov         r4, r0
 
@@ -1413,7 +1413,7 @@
   001d4	e28dd024	 add         sp, sp, #0x24
   001d8	e8bd4ff0	 ldmia       sp!, {r4 - r11, lr}
   001dc	e12fff1e	 bx          lr
-  001e0		 |$M36527|
+  001e0		 |$M36529|
 
 			 ENDP  ; |?SetCardFeature_Interface@CSDDevice@@IAAJAAU_SD_CARD_INTERFACE_EX@@@Z|, CSDDevice::SetCardFeature_Interface
 
@@ -1425,7 +1425,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbus.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36660| DCD	|$LN137@SDSetCardF|
+|$T36662| DCD	|$LN137@SDSetCardF|
 	DCD	0x40011202
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdiofeat.cpp
@@ -1439,7 +1439,7 @@
   00000		 |$LN137@SDSetCardF|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd024	 sub         sp, sp, #0x24
-  00008		 |$M36657|
+  00008		 |$M36659|
   00008	e1a06002	 mov         r6, r2
   0000c	e1a05000	 mov         r5, r0
 
@@ -2182,7 +2182,7 @@
   0043c	e28dd024	 add         sp, sp, #0x24
   00440	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   00444	e12fff1e	 bx          lr
-  00448		 |$M36658|
+  00448		 |$M36660|
 
 			 ENDP  ; |?SDSetCardFeature_I@CSDDevice@@QAAJW4SD_SET_FEATURE_TYPE@@PAXK@Z|, CSDDevice::SDSetCardFeature_I
 

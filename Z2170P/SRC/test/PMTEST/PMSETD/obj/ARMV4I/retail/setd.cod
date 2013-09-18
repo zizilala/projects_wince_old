@@ -20,11 +20,11 @@
 ; File c:\wince600\platform\z2170p\src\test\pmtest\pmsetd\setd.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39164| DCD	|$LN5@RetailPrin|
+|$T39167| DCD	|$LN5@RetailPrin|
 	DCD	0xc0002905
 
   00000			 AREA	 |.xdata|, DATA
-|$T39160| DCD	0xffffffe4
+|$T39163| DCD	0xffffffe4
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1BG@DIMHHIIN@?$AAP?$AAM?$AAS?$AAE?$AAT?$AAD?$AA?3?$AA?5?$AA?$CF?$AAs?$AA?$AA@| DCB "P"
@@ -35,7 +35,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T39160|
+  00004	00000000	 DCD         |$T39163|
 
   00008		 |RetailPrint| PROC
 
@@ -47,7 +47,7 @@
   00010	e92d5000	 stmdb       sp!, {r12, lr}
   00014	e59fc08c	 ldr         r12, [pc, #0x8C]
   00018	e08dd00c	 add         sp, sp, r12
-  0001c		 |$M39161|
+  0001c		 |$M39164|
   0001c	e28dca02	 add         r12, sp, #2, 20
   00020	e58c000c	 str         r0, [r12, #0xC]
   00024	e59f3078	 ldr         r3, [pc, #0x78]
@@ -117,7 +117,7 @@
   000a4	00000000	 DCD         |__security_cookie|
   000a8		 |$LN9@RetailPrin|
   000a8	ffffdffc	 DCD         0xffffdffc
-  000ac		 |$M39162|
+  000ac		 |$M39165|
 
 			 ENDP  ; |RetailPrint|
 
@@ -146,11 +146,11 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39189| DCD	|$LN17@WinMain|
+|$T39192| DCD	|$LN17@WinMain|
 	DCD	0xc0006802
 
   00000			 AREA	 |.xdata|, DATA
-|$T39185| DCD	0xfffffff4
+|$T39188| DCD	0xfffffff4
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1FC@LPGMJFDB@?$AAS?$AAe?$AAt?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAP?$AAo?$AAw?$AAe?$AAr?$AA?$CI?$AA?8?$AA?$CF?$AAs?$AA?8?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?0?$AA?5?$AA?$CF?$AAd?$AA?$CJ?$AA?5?$AAE@| DCB "S"
@@ -351,7 +351,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T39185|
+  00004	00000000	 DCD         |$T39188|
 
   00008		 |WinMain| PROC
 
@@ -360,7 +360,7 @@
   00008		 |$LN17@WinMain|
   00008	e92d4010	 stmdb       sp!, {r4, lr}
   0000c	e24dde86	 sub         sp, sp, #0x86, 28
-  00010		 |$M39186|
+  00010		 |$M39189|
   00010	e1a04002	 mov         r4, r2
   00014	e59f3188	 ldr         r3, [pc, #0x188]
   00018	e5933000	 ldr         r3, [r3]
@@ -583,7 +583,7 @@
   001a4	00000000	 DCD         |__security_cookie|
   001a8		 |$LN18@WinMain|
   001a8		 |$LN14@WinMain|
-  001a8		 |$M39187|
+  001a8		 |$M39190|
 
 			 ENDP  ; |WinMain|
 

@@ -18,7 +18,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbus.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35706| DCD	|$LN5@GetHostCon|
+|$T35708| DCD	|$LN5@GetHostCon|
 	DCD	0x40000400
 ; Function compile flags: /Ogspy
 
@@ -29,14 +29,14 @@
 ; 207  :     static CSDHostContainer * GetHostContainer () { return g_pSdContainer; };
 
   00000		 |$LN5@GetHostCon|
-  00000		 |$M35703|
+  00000		 |$M35705|
   00000	e59f3004	 ldr         r3, [pc, #4]
   00004	e5930000	 ldr         r0, [r3]
   00008	e12fff1e	 bx          lr
   0000c		 |$LN6@GetHostCon|
   0000c		 |$LN7@GetHostCon|
   0000c	00000000	 DCD         |?g_pSdContainer@CSDHostContainer@@0PAV1@A|
-  00010		 |$M35704|
+  00010		 |$M35706|
 
 			 ENDP  ; |?GetHostContainer@CSDHostContainer@@SAPAV1@XZ|, CSDHostContainer::GetHostContainer
 
@@ -45,7 +45,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdclient.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35718| DCD	|$LN5@SDC_Init|
+|$T35720| DCD	|$LN5@SDC_Init|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -57,7 +57,7 @@
 
   00000		 |$LN5@SDC_Init|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35715|
+  00004		 |$M35717|
 
 ; 48   :     LPCTSTR         pszActiveKey = (LPCTSTR) dwContext;
 ; 49   : 
@@ -74,14 +74,14 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M35716|
+  00010		 |$M35718|
 
 			 ENDP  ; |SDC_Init|
 
 	EXPORT	|SDC_PreDeinit|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35727| DCD	|$LN5@SDC_PreDei|
+|$T35729| DCD	|$LN5@SDC_PreDei|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -92,7 +92,7 @@
 ; 66   : {
 
   00000		 |$LN5@SDC_PreDei|
-  00000		 |$M35724|
+  00000		 |$M35726|
 
 ; 67   :     DEBUGMSG(SDCARD_ZONE_INIT, (TEXT("SDBusDriver: +SDC_PreDeinit\n")));
 ; 68   : 
@@ -107,7 +107,7 @@
 ; 74   : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M35725|
+  00008		 |$M35727|
 
 			 ENDP  ; |SDC_PreDeinit|
 
@@ -115,7 +115,7 @@
 	IMPORT	|?DriverDeInit@CSDHostContainer@@SAXPAX@Z| ; CSDHostContainer::DriverDeInit
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35737| DCD	|$LN5@SDC_Deinit|
+|$T35739| DCD	|$LN5@SDC_Deinit|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -127,7 +127,7 @@
 
   00000		 |$LN5@SDC_Deinit|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35734|
+  00004		 |$M35736|
 
 ; 84   :     DEBUGMSG(SDCARD_ZONE_INIT, (TEXT("SDBusDriver: +SDC_Deinit\n")));
 ; 85   :     CSDHostContainer::DriverDeInit((PVOID)hDeviceContext);
@@ -143,7 +143,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M35735|
+  00014		 |$M35737|
 
 			 ENDP  ; |SDC_Deinit|
 
@@ -151,7 +151,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbus.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35751| DCD	|$LN10@SDC_Open|
+|$T35753| DCD	|$LN10@SDC_Open|
 	DCD	0x40000d00
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdclient.cpp
@@ -163,7 +163,7 @@
 ; 106  : {
 
   00000		 |$LN10@SDC_Open|
-  00000		 |$M35748|
+  00000		 |$M35750|
 
 ; 107  :     HANDLE hRet = NULL ;
 ; 108  : 
@@ -216,14 +216,14 @@
   0002c	00000000	 DCD         |dwBusAccess|
   00030		 |$LN14@SDC_Open|
   00030	00000000	 DCD         |?g_pSdContainer@CSDHostContainer@@0PAV1@A|
-  00034		 |$M35749|
+  00034		 |$M35751|
 
 			 ENDP  ; |SDC_Open|
 
 	EXPORT	|SDC_Close|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35764| DCD	|$LN5@SDC_Close|
+|$T35766| DCD	|$LN5@SDC_Close|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -234,7 +234,7 @@
 ; 132  : {
 
   00000		 |$LN5@SDC_Close|
-  00000		 |$M35761|
+  00000		 |$M35763|
 
 ; 133  :     DEBUGMSG(SDCARD_ZONE_FUNC, (TEXT("SDBusDriver: +-SDC_Close\n")));
 ; 134  : 
@@ -245,7 +245,7 @@
 ; 136  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M35762|
+  00008		 |$M35764|
 
 			 ENDP  ; |SDC_Close|
 
@@ -254,7 +254,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbus.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35787| DCD	|$LN15@SDC_IOCont|
+|$T35789| DCD	|$LN15@SDC_IOCont|
 	DCD	0x40002802
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdclient.cpp
@@ -268,7 +268,7 @@
   00000		 |$LN15@SDC_IOCont|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M35784|
+  00008		 |$M35786|
   00008	e1a09003	 mov         r9, r3
 
 ; 159  : 
@@ -349,7 +349,7 @@
   0009c		 |$LN16@SDC_IOCont|
   0009c		 |$LN17@SDC_IOCont|
   0009c	00000000	 DCD         |?g_pSdContainer@CSDHostContainer@@0PAV1@A|
-  000a0		 |$M35785|
+  000a0		 |$M35787|
 
 			 ENDP  ; |SDC_IOControl|
 
@@ -365,7 +365,7 @@
 	IMPORT	|?SDHCDDeleteContext__X@CSDHostContainer@@SAXPAU_SDCARD_HC_CONTEXT@@@Z| ; CSDHostContainer::SDHCDDeleteContext__X
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35800| DCD	|$LN7@SDHCDGetHC|
+|$T35802| DCD	|$LN7@SDHCDGetHC|
 	DCD	0x40002301
 ; Function compile flags: /Ogspy
 
@@ -377,7 +377,7 @@
 
   00000		 |$LN7@SDHCDGetHC|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M35797|
+  00004		 |$M35799|
   00004	e3500000	 cmp         r0, #0
 
 ; 188  :     SD_API_STATUS status = SD_API_STATUS_INVALID_PARAMETER;
@@ -472,7 +472,7 @@
   00084	00000000	 DCD         |?SDHCDAllocateContext__X@CSDHostContainer@@SAJKPAPAU_SDCARD_HC_CONTEXT@@@Z|
   00088		 |$LN17@SDHCDGetHC|
   00088	00000000	 DCD         |?SDHCDDeleteContext__X@CSDHostContainer@@SAXPAU_SDCARD_HC_CONTEXT@@@Z|
-  0008c		 |$M35798|
+  0008c		 |$M35800|
 
 			 ENDP  ; |SDHCDGetHCFunctions|
 
@@ -480,7 +480,7 @@
 	IMPORT	|DisableThreadLibraryCalls|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35821| DCD	|$LN8@DllEntry|
+|$T35823| DCD	|$LN8@DllEntry|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -492,7 +492,7 @@
 
   00000		 |$LN8@DllEntry|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35818|
+  00004		 |$M35820|
 
 ; 228  :     BOOL fRet = TRUE;
 ; 229  : 
@@ -519,7 +519,7 @@
 
   00010	e49de004	 ldr         lr, [sp], #4
   00014	e12fff1e	 bx          lr
-  00018		 |$M35819|
+  00018		 |$M35821|
 
 			 ENDP  ; |DllEntry|
 

@@ -16,11 +16,13 @@
 //  This file implements OALFlashStoreXXX interface
 //
 #include "omap.h"
+//
 #pragma warning(push)
 #pragma warning(disable:4115)
 #include <fmd.h>
 #include <oal.h>
 #pragma warning(pop)
+//
 #include "oalex.h"
 
 //------------------------------------------------------------------------------
@@ -70,10 +72,7 @@ BuildLayoutInfo(
 
 //------------------------------------------------------------------------------
 
-HANDLE
-OALFlashStoreOpen(
-    DWORD address
-    )
+HANDLE OALFlashStoreOpen(DWORD address)
 {
     static OAL_FLASH_CONTEXT flashContext;
     HANDLE hFlash = NULL;
@@ -81,7 +80,6 @@ OALFlashStoreOpen(
     FlashInfo flashInfo;
     ULONG block;
     DWORD status;
-
 
     OALMSG(OAL_FLASH&&OAL_FUNC, (L"+OALFlashStoreOpen(0x%08x)\r\n", address));
 
@@ -853,10 +851,7 @@ OALFlashStoreBlockSize(
 
 //------------------------------------------------------------------------------
 
-ULONG
-OALFlashStoreSectorSize(
-    HANDLE hFlash
-    )
+ULONG OALFlashStoreSectorSize(HANDLE hFlash)
 {
     OAL_FLASH_CONTEXT *pFlash = hFlash;
     return pFlash->sectorSize;

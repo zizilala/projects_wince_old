@@ -542,8 +542,8 @@
 	EXPORT	|??_C@_1M@MMBAGLLJ@?$AAE?$AAS?$AA2?$AA?4?$AA1?$AA?$AA@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1M@HEKMAMNM@?$AAE?$AAS?$AA2?$AA?4?$AA0?$AA?$AA@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1M@PKCDALDP@?$AAE?$AAS?$AA1?$AA?4?$AA0?$AA?$AA@| [ DATA ] ; `string'
-	EXPORT	|??_C@_08JPOJCIHH@17?327?330?$AA@| [ DATA ] ; `string'
-	EXPORT	|??_C@_0M@CACDINMO@Sep?511?52013?$AA@| [ DATA ] ; `string'
+	EXPORT	|??_C@_08COEALIHN@14?326?300?$AA@| [ DATA ] ; `string'
+	EXPORT	|??_C@_0M@BBMLJHFD@Sep?512?52013?$AA@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1IO@IGLADHOM@?$AAZ?$AAE?$AAB?$AAE?$AAX?$AA?5?$AAW?$AAi?$AAn?$AAd?$AAo?$AAw?$AAs?$AA?5?$AAC?$AAE?$AA?5?$AAE?$AAB?$AAO?$AAO?$AAT?$AA?5?$AAf?$AAo?$AAr?$AA?5?$AAZ?$AA?9?$AA2?$AA1?$AA7@| [ DATA ] ; `string'
 	IMPORT	|TWLReadIDCode|
 	IMPORT	|GPIOSetBit|
@@ -655,10 +655,10 @@
 	DCB	"1", 0x0, ".", 0x0, "0", 0x0, 0x0, 0x0	; `string'
 
   00000			 AREA	 |.rdata|, DATA, READONLY
-|??_C@_08JPOJCIHH@17?327?330?$AA@| DCB "17:27:30", 0x0	; `string'
+|??_C@_08COEALIHN@14?326?300?$AA@| DCB "14:26:00", 0x0	; `string'
 
   00000			 AREA	 |.rdata|, DATA, READONLY
-|??_C@_0M@CACDINMO@Sep?511?52013?$AA@| DCB "Sep 11 2013", 0x0 ; `string'
+|??_C@_0M@BBMLJHFD@Sep?512?52013?$AA@| DCB "Sep 12 2013", 0x0 ; `string'
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1IO@IGLADHOM@?$AAZ?$AAE?$AAB?$AAE?$AAX?$AA?5?$AAW?$AAi?$AAn?$AAd?$AAo?$AAw?$AAs?$AA?5?$AAC?$AAE?$AA?5?$AAE?$AAB?$AAO?$AAO?$AAT?$AA?5?$AAf?$AAo?$AAr?$AA?5?$AAZ?$AA?9?$AA2?$AA1?$AA7@| DCB "Z"
@@ -1160,9 +1160,9 @@
   00350		 |$LN71@OEMPlatfor|
   00350	00000000	 DCD         |??_C@_1IO@IGLADHOM@?$AAZ?$AAE?$AAB?$AAE?$AAX?$AA?5?$AAW?$AAi?$AAn?$AAd?$AAo?$AAw?$AAs?$AA?5?$AAC?$AAE?$AA?5?$AAE?$AAB?$AAO?$AAO?$AAT?$AA?5?$AAf?$AAo?$AAr?$AA?5?$AAZ?$AA?9?$AA2?$AA1?$AA7@|
   00354		 |$LN72@OEMPlatfor|
-  00354	00000000	 DCD         |??_C@_0M@CACDINMO@Sep?511?52013?$AA@|
+  00354	00000000	 DCD         |??_C@_0M@BBMLJHFD@Sep?512?52013?$AA@|
   00358		 |$LN73@OEMPlatfor|
-  00358	00000000	 DCD         |??_C@_08JPOJCIHH@17?327?330?$AA@|
+  00358	00000000	 DCD         |??_C@_08COEALIHN@14?326?300?$AA@|
   0035c		 |$M48099|
 
 			 ENDP  ; |OEMPlatformInit|

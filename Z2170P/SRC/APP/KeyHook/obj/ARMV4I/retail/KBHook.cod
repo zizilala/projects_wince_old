@@ -19,7 +19,7 @@
 ; File c:\wince600\platform\z2170p\src\app\keyhook\kbhook.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T31956| DCD	|$LN5@KBHook|
+|$T31958| DCD	|$LN5@KBHook|
 	DCD	0x40000500
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -33,7 +33,7 @@
 ; 9    : {}
 
   00000		 |$LN5@KBHook|
-  00000		 |$M31953|
+  00000		 |$M31955|
   00000	e1a02000	 mov         r2, r0
   00004	e59f3004	 ldr         r3, [pc, #4]
   00008	e5823000	 str         r3, [r2]
@@ -41,14 +41,14 @@
   00010		 |$LN6@KBHook|
   00010		 |$LN7@KBHook|
   00010	00000000	 DCD         |??_7KBHook@@6B@|
-  00014		 |$M31954|
+  00014		 |$M31956|
 
 			 ENDP  ; |??0KBHook@@QAA@XZ|, KBHook::KBHook
 
 	EXPORT	|??1KBHook@@UAA@XZ|			; KBHook::~KBHook
 
   00000			 AREA	 |.pdata|, PDATA
-|$T31966| DCD	|$LN5@KBHook@2|
+|$T31968| DCD	|$LN5@KBHook@2|
 	DCD	0x40000400
 ; Function compile flags: /Ogspy
 
@@ -59,14 +59,14 @@
 ; 12   : {}
 
   00000		 |$LN5@KBHook@2|
-  00000		 |$M31963|
+  00000		 |$M31965|
   00000	e59f3004	 ldr         r3, [pc, #4]
   00004	e5803000	 str         r3, [r0]
   00008	e12fff1e	 bx          lr
   0000c		 |$LN6@KBHook@2|
   0000c		 |$LN7@KBHook@2|
   0000c	00000000	 DCD         |??_7KBHook@@6B@|
-  00010		 |$M31964|
+  00010		 |$M31966|
 
 			 ENDP  ; |??1KBHook@@UAA@XZ|, KBHook::~KBHook
 
@@ -74,7 +74,7 @@
 	IMPORT	|UnhookWindowsHookEx|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T31978| DCD	|$LN5@StopKBHook|
+|$T31980| DCD	|$LN5@StopKBHook|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -86,7 +86,7 @@
 
   00000		 |$LN5@StopKBHook|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M31975|
+  00004		 |$M31977|
 
 ; 32   :     BOOL bResult = UnhookWindowsHookEx ( m_hHook );
 
@@ -108,7 +108,7 @@
   00020		 |$LN6@StopKBHook|
   00020		 |$LN7@StopKBHook|
   00020	00000000	 DCD         |?m_hHook@KBHook@@1PAUHHOOK__@@A|
-  00024		 |$M31976|
+  00024		 |$M31978|
 
 			 ENDP  ; |?StopKBHook@KBHook@@QAAHXZ|, KBHook::StopKBHook
 
@@ -117,7 +117,7 @@
 	IMPORT	|SendMessageW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T31992| DCD	|$LN5@KBHookProc|
+|$T31994| DCD	|$LN5@KBHookProc|
 	DCD	0x40001301
 ; Function compile flags: /Ogspy
 
@@ -129,7 +129,7 @@
 
   00000		 |$LN5@KBHookProc|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M31989|
+  00004		 |$M31991|
   00004	e1a05002	 mov         r5, r2
   00008	e1a06001	 mov         r6, r1
   0000c	e1a07000	 mov         r7, r0
@@ -160,14 +160,14 @@
   00048		 |$LN6@KBHookProc|
   00048		 |$LN7@KBHookProc|
   00048	00000000	 DCD         |?m_hTargetWnd@KBHook@@1PAUHWND__@@A|
-  0004c		 |$M31990|
+  0004c		 |$M31992|
 
 			 ENDP  ; |?KBHookProc@KBHook@@SAJHIJ@Z|, KBHook::KBHookProc
 
 	IMPORT	|??3@YAXPAX@Z|				; operator delete
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32008| DCD	|$LN8@scalar|
+|$T32010| DCD	|$LN8@scalar|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -176,7 +176,7 @@
   00000		 |??_GKBHook@@UAAPAXI@Z| PROC		; KBHook::`scalar deleting destructor'
   00000		 |$LN8@scalar|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M32005|
+  00004		 |$M32007|
   00004	e1a04000	 mov         r4, r0
   00008	e59f3014	 ldr         r3, [pc, #0x14]
   0000c	e3110001	 tst         r1, #1
@@ -188,7 +188,7 @@
   00024		 |$LN9@scalar|
   00024		 |$LN10@scalar|
   00024	00000000	 DCD         |??_7KBHook@@6B@|
-  00028		 |$M32006|
+  00028		 |$M32008|
 
 			 ENDP  ; |??_GKBHook@@UAAPAXI@Z|, KBHook::`scalar deleting destructor'
 
@@ -196,7 +196,7 @@
 	IMPORT	|SetWindowsHookExW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32027| DCD	|$LN10@StartKBHoo|
+|$T32029| DCD	|$LN10@StartKBHoo|
 	DCD	0x40001801
 ; Function compile flags: /Ogspy
 
@@ -208,7 +208,7 @@
 
   00000		 |$LN10@StartKBHoo|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M32024|
+  00004		 |$M32026|
   00004	e1a05002	 mov         r5, r2
 
 ; 18   :     ASSERT ( IsWindow ( hWnd ) );
@@ -266,7 +266,7 @@
   00058	00000000	 DCD         |?KBHookProc@KBHook@@SAJHIJ@Z|
   0005c		 |$LN13@StartKBHoo|
   0005c	00000000	 DCD         |?m_hTargetWnd@KBHook@@1PAUHWND__@@A|
-  00060		 |$M32025|
+  00060		 |$M32027|
 
 			 ENDP  ; |?StartKBHook@KBHook@@QAAHPAUHWND__@@PAUHINSTANCE__@@@Z|, KBHook::StartKBHook
 

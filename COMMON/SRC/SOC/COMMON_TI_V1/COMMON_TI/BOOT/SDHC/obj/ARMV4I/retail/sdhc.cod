@@ -445,7 +445,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\boot\sdhc\sdhc.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44741| DCD	|$LN5@SystemCloc|
+|$T44748| DCD	|$LN5@SystemCloc|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -456,18 +456,18 @@
 ; 192  : {
 
   00000		 |$LN5@SystemCloc|
-  00000		 |$M44738|
+  00000		 |$M44745|
 
 ; 193  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M44739|
+  00004		 |$M44746|
 
 			 ENDP  ; |SystemClockOn|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44748| DCD	|$LN5@SystemCloc@2|
+|$T44755| DCD	|$LN5@SystemCloc@2|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -478,12 +478,12 @@
 ; 196  : {
 
   00000		 |$LN5@SystemCloc@2|
-  00000		 |$M44745|
+  00000		 |$M44752|
 
 ; 197  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M44746|
+  00004		 |$M44753|
 
 			 ENDP  ; |SystemClockOff|
 
@@ -492,7 +492,7 @@
 	IMPORT	|BSPGetSDHCCardDetect|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44758| DCD	|$LN11@SdhcCardDe|
+|$T44765| DCD	|$LN11@SdhcCardDe|
 	DCD	0x40001401
 ; Function compile flags: /Ogspy
 
@@ -504,7 +504,7 @@
 
   00000		 |$LN11@SdhcCardDe|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M44755|
+  00004		 |$M44762|
 
 ; 202  :     DWORD pinState=1;
 ; 203  : 
@@ -564,7 +564,7 @@
   00048	00000000	 DCD         |g_hGPIO|
   0004c		 |$LN14@SdhcCardDe|
   0004c	00000000	 DCD         |m_dwSlot|
-  00050		 |$M44756|
+  00050		 |$M44763|
 
 			 ENDP  ; |SdhcCardDetect|
 
@@ -573,7 +573,7 @@
 	IMPORT	|GPIOOpen|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44770| DCD	|$LN8@Initialize|
+|$T44777| DCD	|$LN8@Initialize|
 	DCD	0x40001901
 ; Function compile flags: /Ogspy
 
@@ -585,7 +585,7 @@
 
   00000		 |$LN8@Initialize|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M44767|
+  00004		 |$M44774|
 
 ; 228  :     g_hGPIO = GPIOOpen();
 
@@ -672,7 +672,7 @@
   0005c	00000000	 DCD         |g_hGPIO|
   00060		 |$LN11@Initialize|
   00060	00000000	 DCD         |m_dwSlot|
-  00064		 |$M44768|
+  00064		 |$M44775|
 
 			 ENDP  ; |InitializeT2GPIO|
 
@@ -686,7 +686,7 @@
 	IMPORT	|SOCGetSDHCDeviceBySlot|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44808| DCD	|$LN29@Initialize@2|
+|$T44815| DCD	|$LN29@Initialize@2|
 	DCD	0x40004f01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -713,7 +713,7 @@
 
   00000		 |$LN29@Initialize@2|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M44805|
+  00004		 |$M44812|
 
 ; 277  :     DWORD               dwCurrentTickCount;
 ; 278  :     DWORD               dwTimeout;
@@ -884,13 +884,13 @@
   00134	01312d00	 DCD         0x1312d00
   00138		 |$LN39@Initialize@2|
   00138	00000000	 DCD         |m_dwMaxClockRate|
-  0013c		 |$M44806|
+  0013c		 |$M44813|
 
 			 ENDP  ; |InitializeHardware|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44828| DCD	|$LN5@Read_MMC_S|
+|$T44835| DCD	|$LN5@Read_MMC_S|
 	DCD	0x40000500
 ; Function compile flags: /Ogspy
 
@@ -901,7 +901,7 @@
 ; 392  : {
 
   00000		 |$LN5@Read_MMC_S|
-  00000		 |$M44825|
+  00000		 |$M44832|
 
 ; 393  :     DWORD dwVal;
 ; 394  :     dwVal = INREG32(&m_pbRegisters->MMCHS_STAT);
@@ -917,13 +917,13 @@
   00010		 |$LN6@Read_MMC_S|
   00010		 |$LN7@Read_MMC_S|
   00010	00000000	 DCD         |m_pbRegisters|
-  00014		 |$M44826|
+  00014		 |$M44833|
 
 			 ENDP  ; |Read_MMC_STAT|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44838| DCD	|$LN5@Write_MMC_|
+|$T44845| DCD	|$LN5@Write_MMC_|
 	DCD	0x40000500
 ; Function compile flags: /Ogspy
 
@@ -934,7 +934,7 @@
 ; 399  : {
 
   00000		 |$LN5@Write_MMC_|
-  00000		 |$M44835|
+  00000		 |$M44842|
 
 ; 400  :     OUTREG32(&m_pbRegisters->MMCHS_STAT, dwVal);
 
@@ -948,13 +948,13 @@
   00010		 |$LN6@Write_MMC_|
   00010		 |$LN7@Write_MMC_|
   00010	00000000	 DCD         |m_pbRegisters|
-  00014		 |$M44836|
+  00014		 |$M44843|
 
 			 ENDP  ; |Write_MMC_STAT|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44848| DCD	|$LN5@Set_MMC_ST|
+|$T44855| DCD	|$LN5@Set_MMC_ST|
 	DCD	0x40000700
 ; Function compile flags: /Ogspy
 
@@ -965,7 +965,7 @@
 ; 404  : {
 
   00000		 |$LN5@Set_MMC_ST|
-  00000		 |$M44845|
+  00000		 |$M44852|
 
 ; 405  :     SETREG32(&m_pbRegisters->MMCHS_STAT, dwVal);
 
@@ -981,14 +981,14 @@
   00018		 |$LN6@Set_MMC_ST|
   00018		 |$LN7@Set_MMC_ST|
   00018	00000000	 DCD         |m_pbRegisters|
-  0001c		 |$M44846|
+  0001c		 |$M44853|
 
 			 ENDP  ; |Set_MMC_STAT|
 
 	EXPORT	|??_C@_1CI@EBIAGFPN@?$AAM?$AAM?$AAC?$AA?5?$AAR?$AAe?$AAs?$AAe?$AAt?$AA?5?$AAt?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44880| DCD	|$LN26@MmcReset|
+|$T44887| DCD	|$LN26@MmcReset|
 	DCD	0x40002d01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1007,7 +1007,7 @@
 
   00000		 |$LN26@MmcReset|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M44877|
+  00004		 |$M44884|
 
 ; 411  :     DWORD               dwCurrentTickCount;
 ; 412  :     DWORD               dwTimeout;
@@ -1124,13 +1124,13 @@
   000ac	00000000	 DCD         |m_dwMaxTimeout|
   000b0		 |$LN31@MmcReset|
   000b0	00000000	 DCD         |m_pbRegisters|
-  000b4		 |$M44878|
+  000b4		 |$M44885|
 
 			 ENDP  ; |MmcReset|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44892| DCD	|$LN5@EnableSDHC|
+|$T44899| DCD	|$LN5@EnableSDHC|
 	DCD	0x40000900
 ; Function compile flags: /Ogspy
 
@@ -1141,7 +1141,7 @@
 ; 470  : {
 
   00000		 |$LN5@EnableSDHC|
-  00000		 |$M44889|
+  00000		 |$M44896|
 
 ; 471  :     OUTREG32(&m_pbRegisters->MMCHS_ISE, MMC_INT_EN_MASK);
 
@@ -1162,7 +1162,7 @@
   00020		 |$LN6@EnableSDHC|
   00020		 |$LN7@EnableSDHC|
   00020	00000000	 DCD         |m_pbRegisters|
-  00024		 |$M44890|
+  00024		 |$M44897|
 
 			 ENDP  ; |EnableSDHCInterrupts|
 
@@ -1170,7 +1170,7 @@
 	IMPORT	|__rt_udiv|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44918| DCD	|$LN21@SdhcSetClo|
+|$T44925| DCD	|$LN21@SdhcSetClo|
 	DCD	0x40004901
 ; Function compile flags: /Ogspy
 
@@ -1182,7 +1182,7 @@
 
   00000		 |$LN21@SdhcSetClo|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M44915|
+  00004		 |$M44922|
   00004	e1a05000	 mov         r5, r0
 
 ; 485  :     DWORD dwTimeout = 500;
@@ -1366,14 +1366,14 @@
   0011c	05b8d7ff	 DCD         0x5b8d7ff
   00120		 |$LN26@SdhcSetClo|
   00120	00000000	 DCD         |m_dwMaxClockRate|
-  00124		 |$M44916|
+  00124		 |$M44923|
 
 			 ENDP  ; |SdhcSetClockRate|
 
 	EXPORT	|??_C@_1CI@DLLABNKH@?$AAS?$AAD?$AAH?$AAC?$AA?5?$AAb?$AAa?$AAd?$AA?5?$AAs?$AAl?$AAo?$AAt?$AA?5?$AAn?$AAu?$AAm?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44936| DCD	|$LN23@SetSDVSVol|
+|$T44943| DCD	|$LN23@SetSDVSVol|
 	DCD	0x40003101
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1392,7 +1392,7 @@
 
   00000		 |$LN23@SetSDVSVol|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M44933|
+  00004		 |$M44940|
 
 ; 540  :     UINT32 val1, val2;
 ; 541  : 
@@ -1564,13 +1564,13 @@
   000bc	00000000	 DCD         |m_pbRegisters|
   000c0		 |$LN29@SetSDVSVol|
   000c0	00000000	 DCD         |m_dwSlot|
-  000c4		 |$M44934|
+  000c4		 |$M44941|
 
 			 ENDP  ; |SetSDVSVoltage|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44952| DCD	|$LN6@UpdateSyst|
+|$T44959| DCD	|$LN6@UpdateSyst|
 	DCD	0x40000800
 ; Function compile flags: /Ogspy
 
@@ -1581,7 +1581,7 @@
 ; 619  : {
 
   00000		 |$LN6@UpdateSyst|
-  00000		 |$M44949|
+  00000		 |$M44956|
   00000	e3500000	 cmp         r0, #0
 
 ; 620  :     //OALMSGX(OAL_FUNC, (L"+UpdateSystemClock()\r\n"));
@@ -1607,13 +1607,13 @@
   0001c		 |$LN7@UpdateSyst|
   0001c		 |$LN8@UpdateSyst|
   0001c	00000000	 DCD         |m_pbRegisters|
-  00020		 |$M44950|
+  00020		 |$M44957|
 
 			 ENDP  ; |UpdateSystemClock|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44977| DCD	|$LN17@SendCmdNoR|
+|$T44984| DCD	|$LN17@SendCmdNoR|
 	DCD	0x40002801
 ; Function compile flags: /Ogspy
 
@@ -1625,7 +1625,7 @@
 
   00000		 |$LN17@SendCmdNoR|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M44974|
+  00004		 |$M44981|
 
 ; 633  :     DWORD MMC_CMD;
 ; 634  :     DWORD dwVal;
@@ -1741,13 +1741,13 @@
   00098	00000000	 DCD         |gwaCMD|
   0009c		 |$LN20@SendCmdNoR|
   0009c	00000000	 DCD         |m_pbRegisters|
-  000a0		 |$M44975|
+  000a0		 |$M44982|
 
 			 ENDP  ; |SendCmdNoResp|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45011| DCD	|$LN24@SendInitSe|
+|$T45018| DCD	|$LN24@SendInitSe|
 	DCD	0x40003301
 ; Function compile flags: /Ogspy
 
@@ -1759,7 +1759,7 @@
 
   00000		 |$LN24@SendInitSe|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M45008|
+  00004		 |$M45015|
 
 ; 670  :     DWORD dwCount;
 ; 671  : 
@@ -1842,13 +1842,13 @@
   000c8		 |$LN25@SendInitSe|
   000c8		 |$LN26@SendInitSe|
   000c8	00000000	 DCD         |m_pbRegisters|
-  000cc		 |$M45009|
+  000cc		 |$M45016|
 
 			 ENDP  ; |SendInitSequence|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45042| DCD	|$LN31@SendComman|
+|$T45049| DCD	|$LN31@SendComman|
 	DCD	0x40005001
 ; Function compile flags: /Ogspy
 
@@ -1860,7 +1860,7 @@
 
   00000		 |$LN31@SendComman|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M45039|
+  00004		 |$M45046|
 
 ; 686  :     DWORD MMC_CMD;
 ; 687  :     DWORD dwTimeout;
@@ -2106,14 +2106,14 @@
   00138	00000000	 DCD         |m_dwSDIOCard|
   0013c		 |$LN37@SendComman|
   0013c	00000000	 DCD         |m_TransferClass|
-  00140		 |$M45040|
+  00140		 |$M45047|
 
 			 ENDP  ; |SendCommand|
 
 	EXPORT	|SdhcHandleInsertion|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45096| DCD	|$LN37@SdhcHandle|
+|$T45103| DCD	|$LN37@SdhcHandle|
 	DCD	0x40005802
 ; Function compile flags: /Ogspy
 
@@ -2126,7 +2126,7 @@
   00000		 |$LN37@SdhcHandle|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M45093|
+  00008		 |$M45100|
 
 ; 786  :     DWORD dwClockRate = SD_DEFAULT_CARD_ID_CLOCK_RATE;
 ; 787  :     DWORD dwTimeout;
@@ -2300,14 +2300,14 @@
   00158	00000000	 DCD         |m_dwSDIOCard|
   0015c		 |$LN45@SdhcHandle|
   0015c	00000000	 DCD         |m_fCardPresent|
-  00160		 |$M45094|
+  00160		 |$M45101|
 
 			 ENDP  ; |SdhcHandleInsertion|
 
 	EXPORT	|SdhcBusRequestHandler|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45115| DCD	|$LN6@SdhcBusReq|
+|$T45122| DCD	|$LN6@SdhcBusReq|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -2319,7 +2319,7 @@
 
   00000		 |$LN6@SdhcBusReq|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M45112|
+  00004		 |$M45119|
 
 ; 918  :     SD_API_STATUS   status;
 ; 919  : 
@@ -2341,7 +2341,7 @@
 ; 931  :     status = SD_API_STATUS_PENDING;
 
   0000c	53a00001	 movpl       r0, #1
-  00010		 |$cleanUp$44426|
+  00010		 |$cleanUp$44433|
 
 ; 932  : 
 ; 933  : cleanUp:
@@ -2351,14 +2351,14 @@
 
   00010	e49de004	 ldr         lr, [sp], #4
   00014	e12fff1e	 bx          lr
-  00018		 |$M45113|
+  00018		 |$M45120|
 
 			 ENDP  ; |SdhcBusRequestHandler|
 
 	EXPORT	|SdhcSetSlotPowerState|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45128| DCD	|$LN11@SdhcSetSlo|
+|$T45135| DCD	|$LN11@SdhcSetSlo|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -2369,7 +2369,7 @@
 ; 1177 : {
 
   00000		 |$LN11@SdhcSetSlo|
-  00000		 |$M45125|
+  00000		 |$M45132|
 
 ; 1178 :     if (state < D3)
 ; 1179 :     {
@@ -2382,14 +2382,14 @@
 ; 1186 : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M45126|
+  00004		 |$M45133|
 
 			 ENDP  ; |SdhcSetSlotPowerState|
 
 	EXPORT	|??_C@_1GK@EBPKPBPE@?$AAG?$AAe?$AAt?$AAC?$AAo?$AAm?$AAm?$AAa?$AAn?$AAd?$AAR?$AAe?$AAs?$AAp?$AAo?$AAn?$AAs?$AAe?$AA?$CI?$AA?$CJ?$AA?5?$AA?9?$AA?5?$AAU?$AAn?$AAr?$AAe?$AAc?$AAo?$AAg?$AAn?$AAi@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45167| DCD	|$LN32@GetCommand|
+|$T45174| DCD	|$LN32@GetCommand|
 	DCD	0x40005701
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2413,7 +2413,7 @@
 
   00000		 |$LN32@GetCommand|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M45164|
+  00004		 |$M45171|
   00004	e1a0e000	 mov         lr, r0
 
 ; 1196 :     DWORD  dwRegVal;
@@ -2725,7 +2725,7 @@
   00154	00000000	 DCD         |dpCurSettings|
   00158		 |$LN36@GetCommand|
   00158	00000000	 DCD         |m_pbRegisters|
-  0015c		 |$M45165|
+  0015c		 |$M45172|
 
 			 ENDP  ; |GetCommandResponse|
 
@@ -2734,7 +2734,7 @@
 	EXPORT	|??_C@_1DM@EHCCGKPL@?$AAS?$AAD?$AAI?$AAP?$AAo?$AAl?$AAl?$AAi?$AAn?$AAg?$AAR?$AAe?$AAc?$AAe?$AAi?$AAv?$AAe?$AA?3?$AA?5?$AAT?$AAI?$AAM?$AAE?$AAO?$AAU?$AAT?$AA1?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45294| DCD	|$LN108@SDIPolling|
+|$T45301| DCD	|$LN108@SDIPolling|
 	DCD	0x4000b002
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2771,7 +2771,7 @@
   00000		 |$LN108@SDIPolling|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M45291|
+  00008		 |$M45298|
   00008	e1a06001	 mov         r6, r1
   0000c	e1a05000	 mov         r5, r0
 
@@ -2958,7 +2958,7 @@
   00128	e59f3178	 ldr         r3, [pc, #0x178]
   0012c	e5933440	 ldr         r3, [r3, #0x440]
   00130	e3130001	 tst         r3, #1
-  00134	0a000056	 beq         |$READ_ERROR$44599|
+  00134	0a000056	 beq         |$READ_ERROR$44606|
   00138	e59f0174	 ldr         r0, [pc, #0x174]
 
 ; 1430 :         {
@@ -2974,7 +2974,7 @@
 ; 1454 :     OALMSGX(OAL_IO, (TEXT("SDIPollingReceive error\r\n")));
 ; 1455 :     return FALSE;
 
-  00140	ea000053	 b           |$READ_ERROR$44599|
+  00140	ea000053	 b           |$READ_ERROR$44606|
   00144		 |$LL24@SDIPolling|
 
 ; 1364 :         {
@@ -3087,7 +3087,7 @@
   001f4	e59f30ac	 ldr         r3, [pc, #0xAC]
   001f8	e5933440	 ldr         r3, [r3, #0x440]
   001fc	e3130001	 tst         r3, #1
-  00200	0a000023	 beq         |$READ_ERROR$44599|
+  00200	0a000023	 beq         |$READ_ERROR$44606|
   00204	e59f00a0	 ldr         r0, [pc, #0xA0]
 
 ; 1430 :         {
@@ -3103,7 +3103,7 @@
 ; 1454 :     OALMSGX(OAL_IO, (TEXT("SDIPollingReceive error\r\n")));
 ; 1455 :     return FALSE;
 
-  0020c	ea000020	 b           |$READ_ERROR$44599|
+  0020c	ea000020	 b           |$READ_ERROR$44606|
   00210		 |$LN7@SDIPolling|
 
 ; 1422 :         fTimeoutOverflow = FALSE;
@@ -3173,7 +3173,7 @@
 ; 1442 :         return TRUE;
 
   00270	e5823130	 str         r3, [r2, #0x130]
-  00274	1a000006	 bne         |$READ_ERROR$44599|
+  00274	1a000006	 bne         |$READ_ERROR$44606|
   00278	e3a00001	 mov         r0, #1
   0027c	ea000005	 b           |$LN28@SDIPolling|
   00280		 |$LN86@SDIPolling|
@@ -3186,7 +3186,7 @@
   00288	e3130001	 tst         r3, #1
   0028c	159f0010	 ldrne       r0, [pc, #0x10]
   00290	1b000000	 blne        NKDbgPrintfW
-  00294		 |$READ_ERROR$44599|
+  00294		 |$READ_ERROR$44606|
 
 ; 1443 :     }
 ; 1444 :     else
@@ -3218,14 +3218,14 @@
   002b8	00000000	 DCD         |m_dwSDIOCard|
   002bc		 |$LN116@SDIPolling|
   002bc	00000000	 DCD         |m_pbRegisters|
-  002c0		 |$M45292|
+  002c0		 |$M45299|
 
 			 ENDP  ; |SDIPollingReceive|
 
 	EXPORT	|SdhcSetInterface|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45319| DCD	|$LN14@SdhcSetInt|
+|$T45326| DCD	|$LN14@SdhcSetInt|
 	DCD	0x40000d00
 ; Function compile flags: /Ogspy
 
@@ -3236,7 +3236,7 @@
 ; 449  : {
 
   00000		 |$LN14@SdhcSetInt|
-  00000		 |$M45316|
+  00000		 |$M45323|
 
 ; 450  :     UpdateSystemClock(TRUE);
 
@@ -3279,7 +3279,7 @@
   00030		 |$LN15@SdhcSetInt|
   00030		 |$LN16@SdhcSetInt|
   00030	00000000	 DCD         |m_pbRegisters|
-  00034		 |$M45317|
+  00034		 |$M45324|
 
 			 ENDP  ; |SdhcSetInterface|
 
@@ -3294,7 +3294,7 @@
 	IMPORT	|OALStall|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45400| DCD	|$LN80@CommandCom|
+|$T45407| DCD	|$LN80@CommandCom|
 	DCD	0x4000ae01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -3379,7 +3379,7 @@
 
   00000		 |$LN80@CommandCom|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
-  00004		 |$M45397|
+  00004		 |$M45404|
   00004	e1a06000	 mov         r6, r0
 
 ; 944  :     DWORD               dwCurrentTickCount;
@@ -3619,7 +3619,7 @@
 
 ; 1032 :         goto TRANSFER_DONE;
 
-  00148	ea000033	 b           |$TRANSFER_DONE$44453|
+  00148	ea000033	 b           |$TRANSFER_DONE$44460|
   0014c		 |$LN67@CommandCom|
 
 ; 991  :                 {
@@ -3693,14 +3693,14 @@
 
   001a4	e5973440	 ldr         r3, [r7, #0x440]
   001a8	e3130001	 tst         r3, #1
-  001ac	0a00001a	 beq         |$TRANSFER_DONE$44453|
+  001ac	0a00001a	 beq         |$TRANSFER_DONE$44460|
   001b0	e5d61014	 ldrb        r1, [r6, #0x14]
   001b4	e59f00d4	 ldr         r0, [pc, #0xD4]
   001b8	eb000000	 bl          NKDbgPrintfW
 
 ; 1048 :             goto TRANSFER_DONE;     
 
-  001bc	ea000016	 b           |$TRANSFER_DONE$44453|
+  001bc	ea000016	 b           |$TRANSFER_DONE$44460|
   001c0		 |$LN14@CommandCom|
 
 ; 1049 :         }
@@ -3710,7 +3710,7 @@
 
   001c0	e5963010	 ldr         r3, [r6, #0x10]
   001c4	e3530002	 cmp         r3, #2
-  001c8	0a000013	 beq         |$TRANSFER_DONE$44453|
+  001c8	0a000013	 beq         |$TRANSFER_DONE$44460|
 
 ; 1053 :     {
 ; 1054 :         DWORD cbTransfer = TRANSFER_SIZE(pRequest);
@@ -3843,7 +3843,7 @@
 ; 1143 :             status = SD_API_STATUS_SUCCESS;
 
   00218	e3a04000	 mov         r4, #0
-  0021c		 |$TRANSFER_DONE$44453|
+  0021c		 |$TRANSFER_DONE$44460|
 
 ; 1144 :     }
 ; 1145 : 
@@ -3949,7 +3949,7 @@
   002b0	00000000	 DCD         |m_dwMaxTimeout|
   002b4		 |$LN95@CommandCom|
   002b4	00000000	 DCD         |m_pbRegisters|
-  002b8		 |$M45398|
+  002b8		 |$M45405|
 
 			 ENDP  ; |CommandCompleteHandler|
 
@@ -3957,7 +3957,7 @@
 	IMPORT	|OALGetSiliconIdCode|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45447| DCD	|$LN19@SdhcContro|
+|$T45454| DCD	|$LN19@SdhcContro|
 	DCD	0x40005002
 ; Function compile flags: /Ogspy
 
@@ -3970,7 +3970,7 @@
   00000		 |$LN19@SdhcContro|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M45444|
+  00008		 |$M45451|
 
 ; 339  :     DWORD dwClockRate;
 ; 340  :     DWORD dwIDVal;
@@ -4142,14 +4142,14 @@
   00138	00000000	 DCD         |m_fCardPresent|
   0013c		 |$LN31@SdhcContro|
   0013c	00000000	 DCD         |m_fFirstTime|
-  00140		 |$M45445|
+  00140		 |$M45452|
 
 			 ENDP  ; |SdhcControllerInit|
 
 	EXPORT	|SdhcControllerIstThread|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45476| DCD	|$LN8@SdhcContro@2|
+|$T45483| DCD	|$LN8@SdhcContro@2|
 	DCD	0x40001001
 ; Function compile flags: /Ogspy
 
@@ -4161,7 +4161,7 @@
 
   00000		 |$LN8@SdhcContro@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M45473|
+  00004		 |$M45480|
   00004	e1a0e000	 mov         lr, r0
 
 ; 865  :     DWORD dwStat;
@@ -4203,14 +4203,14 @@
   0003c		 |$LN9@SdhcContro@2|
   0003c		 |$LN10@SdhcContro@2|
   0003c	00000000	 DCD         |m_pbRegisters|
-  00040		 |$M45474|
+  00040		 |$M45481|
 
 			 ENDP  ; |SdhcControllerIstThread|
 
 	EXPORT	|SdhcInitialize|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45487| DCD	|$LN5@SdhcInitia|
+|$T45494| DCD	|$LN5@SdhcInitia|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -4222,7 +4222,7 @@
 
   00000		 |$LN5@SdhcInitia|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M45484|
+  00004		 |$M45491|
 
 ; 892  :     SD_API_STATUS status = SD_API_STATUS_INSUFFICIENT_RESOURCES; // intermediate status
 ; 893  : 
@@ -4253,7 +4253,7 @@
   00020		 |$LN6@SdhcInitia|
   00020		 |$LN7@SdhcInitia|
   00020	00000000	 DCD         |m_fInitialized|
-  00024		 |$M45485|
+  00024		 |$M45492|
 
 			 ENDP  ; |SdhcInitialize|
 

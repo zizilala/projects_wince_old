@@ -18,7 +18,7 @@
 ; File c:\wince600\platform\z2170p\src\app\common\shellproc.cxx
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32699| DCD	|$LN5@ProcessEnd|
+|$T32701| DCD	|$LN5@ProcessEnd|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -30,7 +30,7 @@
 
   00000		 |$LN5@ProcessEnd|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M32696|
+  00004		 |$M32698|
 
 ; 164  :     // Clean enviroment after test suite
 ; 165  :     FinishRun();
@@ -52,7 +52,7 @@
 
   00010	e49de004	 ldr         lr, [sp], #4
   00014	e12fff1e	 bx          lr
-  00018		 |$M32697|
+  00018		 |$M32699|
 
 			 ENDP  ; |?ProcessEndScript@@YAHXZ|, ProcessEndScript
 
@@ -61,7 +61,7 @@
 	IMPORT	|__imp_?BeginLevel@CKato@@QAAHKPBGZZ|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32708| DCD	|$LN5@ProcessBeg|
+|$T32710| DCD	|$LN5@ProcessBeg|
 	DCD	0x40001201
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -80,7 +80,7 @@
 
   00000		 |$LN5@ProcessBeg|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M32705|
+  00004		 |$M32707|
 
 ; 182  : 	UNREFERENCED_PARAMETER(pFTE);
 ; 183  : 
@@ -114,7 +114,7 @@
   00040	00000000	 DCD         |__imp_?BeginLevel@CKato@@QAAHKPBGZZ|
   00044		 |$LN10@ProcessBeg|
   00044	00000000	 DCD         |g_pKato|
-  00048		 |$M32706|
+  00048		 |$M32708|
 
 			 ENDP  ; |?ProcessBeginGroup@@YAHPAU_FUNCTION_TABLE_ENTRY@@@Z|, ProcessBeginGroup
 
@@ -122,7 +122,7 @@
 	IMPORT	|__imp_?EndLevel@CKato@@QAAHPBGZZ|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32722| DCD	|$LN5@ProcessEnd@2|
+|$T32724| DCD	|$LN5@ProcessEnd@2|
 	DCD	0x40001101
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -140,7 +140,7 @@
 
   00000		 |$LN5@ProcessEnd@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M32719|
+  00004		 |$M32721|
 
 ; 197  : 	UNREFERENCED_PARAMETER(pFTE);
 ; 198  : 
@@ -173,14 +173,14 @@
   0003c	00000000	 DCD         |g_pKato|
   00040		 |$LN10@ProcessEnd@2|
   00040	00000000	 DCD         |?g_szTestGroupName@@3PBGB|
-  00044		 |$M32720|
+  00044		 |$M32722|
 
 			 ENDP  ; |?ProcessEndGroup@@YAHPAU_FUNCTION_TABLE_ENTRY@@@Z|, ProcessEndGroup
 
 	EXPORT	|??_C@_1FA@FAHFDCHG@?$AAB?$AAE?$AAG?$AAI?$AAN?$AA?5?$AAT?$AAE?$AAS?$AAT?$AA?3?$AA?5?$AA?$CC?$AA?$CF?$AAs?$AA?$CC?$AA?0?$AA?5?$AAT?$AAh?$AAr?$AAe?$AAa?$AAd?$AAs?$AA?$DN?$AA?$CF?$AAu?$AA?0?$AA?5?$AAS?$AAe@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32737| DCD	|$LN5@ProcessBeg@2|
+|$T32739| DCD	|$LN5@ProcessBeg@2|
 	DCD	0x40001702
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -203,7 +203,7 @@
   00000		 |$LN5@ProcessBeg@2|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M32734|
+  00008		 |$M32736|
 
 ; 212  :     // Start our logging level.
 ; 213  :     g_pKato->BeginLevel(
@@ -242,7 +242,7 @@
   00054	00000000	 DCD         |__imp_?BeginLevel@CKato@@QAAHKPBGZZ|
   00058		 |$LN9@ProcessBeg@2|
   00058	00000000	 DCD         |g_pKato|
-  0005c		 |$M32735|
+  0005c		 |$M32737|
 
 			 ENDP  ; |?ProcessBeginTest@@YAHPAU_SPS_BEGIN_TEST@@@Z|, ProcessBeginTest
 
@@ -253,7 +253,7 @@
 	EXPORT	|??_C@_1BA@FGBMDHOA@?$AAA?$AAB?$AAO?$AAR?$AAT?$AAE?$AAD?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32752| DCD	|$LN11@ProcessEnd@3|
+|$T32754| DCD	|$LN11@ProcessEnd@3|
 	DCD	0x40002d02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -293,7 +293,7 @@
   00000		 |$LN11@ProcessEnd@3|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M32749|
+  00008		 |$M32751|
 
 ; 229  :     LPWSTR szResult = NULL;
 ; 230  : 
@@ -392,7 +392,7 @@
   000ac	00000000	 DCD         |??_C@_1O@GLIHGOJN@?$AAF?$AAA?$AAI?$AAL?$AAE?$AAD?$AA?$AA@|
   000b0		 |$LN20@ProcessEnd@3|
   000b0	00000000	 DCD         |??_C@_1BA@FGBMDHOA@?$AAA?$AAB?$AAO?$AAR?$AAT?$AAE?$AAD?$AA?$AA@|
-  000b4		 |$M32750|
+  000b4		 |$M32752|
 
 			 ENDP  ; |?ProcessEndTest@@YAHPAU_SPS_END_TEST@@@Z|, ProcessEndTest
 
@@ -400,7 +400,7 @@
 	IMPORT	|__imp_?Log@CKato@@QAAHKPBGZZ|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32770| DCD	|$LN5@ProcessExc|
+|$T32772| DCD	|$LN5@ProcessExc|
 	DCD	0x40000f01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -420,7 +420,7 @@
 
   00000		 |$LN5@ProcessExc|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M32767|
+  00004		 |$M32769|
 
 ; 262  : 	UNREFERENCED_PARAMETER(pException);
 ; 263  : 
@@ -450,13 +450,13 @@
   00034	00000000	 DCD         |__imp_?Log@CKato@@QAAHKPBGZZ|
   00038		 |$LN9@ProcessExc|
   00038	00000000	 DCD         |g_pKato|
-  0003c		 |$M32768|
+  0003c		 |$M32770|
 
 			 ENDP  ; |?ProcessException@@YAHPAU_SPS_EXCEPTION@@@Z|, ProcessException
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32783| DCD	|$LN5@LogKato|
+|$T32785| DCD	|$LN5@LogKato|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -468,7 +468,7 @@
 
   00000		 |$LN5@LogKato|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M32780|
+  00004		 |$M32782|
   00004	e1a02001	 mov         r2, r1
   00008	e1a01000	 mov         r1, r0
 
@@ -490,14 +490,14 @@
   0002c	00000000	 DCD         |__imp_?Log@CKato@@QAAHKPBGZZ|
   00030		 |$LN8@LogKato|
   00030	00000000	 DCD         |g_pKato|
-  00034		 |$M32781|
+  00034		 |$M32783|
 
 			 ENDP  ; |?LogKato@@YAXKPBG@Z|, LogKato
 
 	EXPORT	|DllMain|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32795| DCD	|$LN5@DllMain|
+|$T32797| DCD	|$LN5@DllMain|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -508,7 +508,7 @@
 ; 288  : {
 
   00000		 |$LN5@DllMain|
-  00000		 |$M32792|
+  00000		 |$M32794|
 
 ; 289  :     UNREFERENCED_PARAMETER(hInstance);
 ; 290  : 	UNREFERENCED_PARAMETER(reason);
@@ -521,7 +521,7 @@
 ; 294  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M32793|
+  00008		 |$M32795|
 
 			 ENDP  ; |DllMain|
 
@@ -539,11 +539,11 @@
 	IMPORT	|__security_check_cookie|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32813| DCD	|$LN11@ProcessBeg@3|
+|$T32815| DCD	|$LN11@ProcessBeg@3|
 	DCD	0xc0003703
 
   00000			 AREA	 |.xdata|, DATA
-|$T32809| DCD	0xfffffff0
+|$T32811| DCD	0xfffffff0
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_13JAOPNPKD@?$AAv?$AA?$AA@| DCB "v", 0x0, 0x0, 0x0 ; `string'
@@ -552,7 +552,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T32809|
+  00004	00000000	 DCD         |$T32811|
 
   00008		 |?ProcessBeginScript@@YAHXZ| PROC	; ProcessBeginScript
 
@@ -562,7 +562,7 @@
   00008	e92d4030	 stmdb       sp!, {r4, r5, lr}
   0000c	e59fc0cc	 ldr         r12, [pc, #0xCC]
   00010	e08dd00c	 add         sp, sp, r12
-  00014		 |$M32810|
+  00014		 |$M32812|
   00014	e59f30c0	 ldr         r3, [pc, #0xC0]
   00018	e5933000	 ldr         r3, [r3]
   0001c	e58d3504	 str         r3, [sp, #0x504]
@@ -585,7 +585,7 @@
   00038	e1a00005	 mov         r0, r5
   0003c	eb000000	 bl          wcslen
   00040	e3500b01	 cmp         r0, #1, 22
-  00044	2a000018	 bcs         |$cleanUp$32589|
+  00044	2a000018	 bcs         |$cleanUp$32591|
 
 ; 132  :     lstrcpy(cmdLine, g_pShellInfo->szDllCmdLine);
 
@@ -630,7 +630,7 @@
   00090	e28d1004	 add         r1, sp, #4
   00094	eb000000	 bl          |?ParseCommands@@YAHHQAPAG@Z|
   00098	e3500000	 cmp         r0, #0
-  0009c	0a000002	 beq         |$cleanUp$32589|
+  0009c	0a000002	 beq         |$cleanUp$32591|
 
 ; 145  : 
 ; 146  :     // Prepare enviroment to run a test suite
@@ -644,7 +644,7 @@
 ; 150  :     rc = SPR_HANDLED;
 
   000a8	13a04001	 movne       r4, #1
-  000ac		 |$cleanUp$32589|
+  000ac		 |$cleanUp$32591|
 
 ; 151  : 
 ; 152  : cleanUp:
@@ -674,7 +674,7 @@
   000dc	00000000	 DCD         |__security_cookie|
   000e0		 |$LN18@ProcessBeg@3|
   000e0	fffffaf8	 DCD         0xfffffaf8
-  000e4		 |$M32811|
+  000e4		 |$M32813|
 
 			 ENDP  ; |?ProcessBeginScript@@YAHXZ|, ProcessBeginScript
 
@@ -685,7 +685,7 @@
 	IMPORT	|g_lpFTE|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32862| DCD	|$LN42@ShellProc|
+|$T32864| DCD	|$LN42@ShellProc|
 	DCD	0x40006502
 ; Function compile flags: /Ogspy
 
@@ -698,7 +698,7 @@
   00000		 |$LN42@ShellProc|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M32859|
+  00008		 |$M32861|
 
 ; 52   :     INT rc = SPR_NOT_HANDLED;
 ; 53   : 
@@ -961,7 +961,7 @@
   0018c	00000000	 DCD         |??_C@_1CI@CMHJPFN@?$AAB?$AAE?$AAG?$AAI?$AAN?$AA?5?$AAG?$AAR?$AAO?$AAU?$AAP?$AA?3?$AA?5?$AA?$CC?$AA?$CF?$AAs?$AA?$CC?$AA?$AN?$AA?6?$AA?$AA@|
   00190		 |$LN53@ShellProc|
   00190	00000000	 DCD         |g_lpFTE|
-  00194		 |$M32860|
+  00194		 |$M32862|
 
 			 ENDP  ; |ShellProc|
 

@@ -45,7 +45,7 @@
 ; File c:\wince600\platform\z2170p\src\app\bspversion\exe\main.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39192| DCD	|$LN12@WndProc|
+|$T39194| DCD	|$LN12@WndProc|
 	DCD	0x40001c01
 ; Function compile flags: /Ogspy
 
@@ -57,7 +57,7 @@
 
   00000		 |$LN12@WndProc|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M39189|
+  00004		 |$M39191|
   00004	e1a04003	 mov         r4, r3
 
 ; 55   :     switch (msg)
@@ -129,7 +129,7 @@
   0006c		 |$LN13@WndProc|
   0006c		 |$LN14@WndProc|
   0006c	00000000	 DCD         |?h_okBtn@@3PAUHWND__@@A|
-  00070		 |$M39190|
+  00070		 |$M39192|
 
 			 ENDP  ; |?WndProc@@YAJPAUHWND__@@IIJ@Z|, WndProc
 
@@ -164,11 +164,11 @@
 	IMPORT	|__security_check_cookie|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39219| DCD	|$LN12@WinMain|
+|$T39221| DCD	|$LN12@WinMain|
 	DCD	0xc000df02
 
   00000			 AREA	 |.xdata|, DATA
-|$T39215| DCD	0xffffffd8
+|$T39217| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1DC@JHCANDLA@?$AAZ?$AAE?$AAB?$AAE?$AAX?$AA_?$AAW?$AAI?$AAN?$AAC?$AAE?$AA_?$AAA?$AAR?$AAM?$AA_?$AAA?$AA8?$AA?5?$AA0?$AA?4?$AA0?$AA?4?$AA1?$AA?$AA@| DCB "Z"
@@ -224,7 +224,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T39215|
+  00004	00000000	 DCD         |$T39217|
 
   00008		 |WinMain| PROC
 
@@ -233,7 +233,7 @@
   00008		 |$LN12@WinMain|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24dd090	 sub         sp, sp, #0x90
-  00010		 |$M39216|
+  00010		 |$M39218|
   00010	e1a09003	 mov         r9, r3
   00014	e1a07000	 mov         r7, r0
   00018	e59f2360	 ldr         r2, [pc, #0x360]
@@ -612,7 +612,7 @@
   0037c	00000000	 DCD         |?WndProc@@YAJPAUHWND__@@IIJ@Z|
   00380		 |$LN28@WinMain|
   00380	00000000	 DCD         |__security_cookie|
-  00384		 |$M39217|
+  00384		 |$M39219|
 
 			 ENDP  ; |WinMain|
 

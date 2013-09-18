@@ -12,7 +12,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\wavertgctrl.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34747| DCD	|$LN5@GetOutputD|
+|$T34749| DCD	|$LN5@GetOutputD|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -24,7 +24,7 @@
 
   00000		 |$LN5@GetOutputD|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34744|
+  00004		 |$M34746|
   00004	e1a00001	 mov         r0, r1
 
 ; 167  :     memcpy(pDeviceDescriptor, &c_OutputDeviceDescriptor, sizeof(*pDeviceDescriptor));
@@ -44,14 +44,14 @@
   00020		 |$LN6@GetOutputD|
   00020		 |$LN7@GetOutputD|
   00020	00000000	 DCD         |c_OutputDeviceDescriptor|
-  00024		 |$M34745|
+  00024		 |$M34747|
 
 			 ENDP  ; |?GetOutputDeviceDescriptor@CStreamManager@@IAAKPAU_DTP_DEVICE_DESCRIPTOR@@@Z|, CStreamManager::GetOutputDeviceDescriptor
 
 	EXPORT	|?GetOutputEndpointDescriptor@CStreamManager@@IAAKKPAU_DTP_ENDPOINT_DESCRIPTOR@@@Z| ; CStreamManager::GetOutputEndpointDescriptor
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34763| DCD	|$LN15@GetOutputE|
+|$T34765| DCD	|$LN15@GetOutputE|
 	DCD	0x40002401
 ; Function compile flags: /Ogspy
 
@@ -63,7 +63,7 @@
 
   00000		 |$LN15@GetOutputE|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M34760|
+  00004		 |$M34762|
   00004	e1a04002	 mov         r4, r2
   00008	e1a05000	 mov         r5, r0
 
@@ -169,14 +169,14 @@
   0008c		 |$LN16@GetOutputE|
   0008c		 |$LN17@GetOutputE|
   0008c	00000000	 DCD         |c_rgOutputEndpointDescriptor|
-  00090		 |$M34761|
+  00090		 |$M34763|
 
 			 ENDP  ; |?GetOutputEndpointDescriptor@CStreamManager@@IAAKKPAU_DTP_ENDPOINT_DESCRIPTOR@@@Z|, CStreamManager::GetOutputEndpointDescriptor
 
 	EXPORT	|?GetInputDeviceDescriptor@CStreamManager@@IAAKPAU_DTP_DEVICE_DESCRIPTOR@@@Z| ; CStreamManager::GetInputDeviceDescriptor
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34775| DCD	|$LN5@GetInputDe|
+|$T34777| DCD	|$LN5@GetInputDe|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -188,7 +188,7 @@
 
   00000		 |$LN5@GetInputDe|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34772|
+  00004		 |$M34774|
   00004	e1a00001	 mov         r0, r1
 
 ; 217  :     memcpy(pDeviceDescriptor, &c_InputDeviceDescriptor, sizeof(*pDeviceDescriptor));
@@ -208,14 +208,14 @@
   00020		 |$LN6@GetInputDe|
   00020		 |$LN7@GetInputDe|
   00020	00000000	 DCD         |c_InputDeviceDescriptor|
-  00024		 |$M34773|
+  00024		 |$M34775|
 
 			 ENDP  ; |?GetInputDeviceDescriptor@CStreamManager@@IAAKPAU_DTP_DEVICE_DESCRIPTOR@@@Z|, CStreamManager::GetInputDeviceDescriptor
 
 	EXPORT	|?GetInputEndpointDescriptor@CStreamManager@@IAAKKPAU_DTP_ENDPOINT_DESCRIPTOR@@@Z| ; CStreamManager::GetInputEndpointDescriptor
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34791| DCD	|$LN14@GetInputEn|
+|$T34793| DCD	|$LN14@GetInputEn|
 	DCD	0x40002001
 ; Function compile flags: /Ogspy
 
@@ -227,7 +227,7 @@
 
   00000		 |$LN14@GetInputEn|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M34788|
+  00004		 |$M34790|
   00004	e1a04002	 mov         r4, r2
   00008	e1a05000	 mov         r5, r0
 
@@ -321,7 +321,7 @@
   0007c		 |$LN15@GetInputEn|
   0007c		 |$LN16@GetInputEn|
   0007c	00000000	 DCD         |c_rgInputEndpointDescriptor|
-  00080		 |$M34789|
+  00080		 |$M34791|
 
 			 ENDP  ; |?GetInputEndpointDescriptor@CStreamManager@@IAAKKPAU_DTP_ENDPOINT_DESCRIPTOR@@@Z|, CStreamManager::GetInputEndpointDescriptor
 
@@ -329,7 +329,7 @@
 	IMPORT	|?SendDtpNotifications@DtpNotify@@QAAKQAXK@Z| ; DtpNotify::SendDtpNotifications
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34805| DCD	|$LN5@SendEndpoi|
+|$T34807| DCD	|$LN5@SendEndpoi|
 	DCD	0x40001302
 ; Function compile flags: /Ogspy
 
@@ -342,7 +342,7 @@
   00000		 |$LN5@SendEndpoi|
   00000	e52de004	 str         lr, [sp, #-4]!
   00004	e24dd010	 sub         sp, sp, #0x10
-  00008		 |$M34802|
+  00008		 |$M34804|
   00008	e1a00001	 mov         r0, r1
 
 ; 271  :     // Set up device topology notification message for endpoint change.
@@ -382,14 +382,14 @@
   00040	e28dd010	 add         sp, sp, #0x10
   00044	e49de004	 ldr         lr, [sp], #4
   00048	e12fff1e	 bx          lr
-  0004c		 |$M34803|
+  0004c		 |$M34805|
 
 			 ENDP  ; |?SendEndpointChangeNotification@CStreamManager@@IAAKPAVDtpNotify@@HK@Z|, CStreamManager::SendEndpointChangeNotification
 
 	EXPORT	|?NotifyHeadsetAttached@CStreamManager@@QAAKH@Z| ; CStreamManager::NotifyHeadsetAttached
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34816| DCD	|$LN6@NotifyHead|
+|$T34818| DCD	|$LN6@NotifyHead|
 	DCD	0x40001301
 ; Function compile flags: /Ogspy
 
@@ -401,7 +401,7 @@
 
   00000		 |$LN6@NotifyHead|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M34813|
+  00004		 |$M34815|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -445,14 +445,14 @@
 
   00044	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00048	e12fff1e	 bx          lr
-  0004c		 |$M34814|
+  0004c		 |$M34816|
 
 			 ENDP  ; |?NotifyHeadsetAttached@CStreamManager@@QAAKH@Z|, CStreamManager::NotifyHeadsetAttached
 
 	EXPORT	|?NotifyHeadphonesAttached@CStreamManager@@QAAKH@Z| ; CStreamManager::NotifyHeadphonesAttached
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34827| DCD	|$LN6@NotifyHead@2|
+|$T34829| DCD	|$LN6@NotifyHead@2|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -464,7 +464,7 @@
 
   00000		 |$LN6@NotifyHead@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M34824|
+  00004		 |$M34826|
   00004	e1a04001	 mov         r4, r1
   00008	e1a0e000	 mov         lr, r0
 
@@ -497,14 +497,14 @@
 
   0002c	e8bd4010	 ldmia       sp!, {r4, lr}
   00030	e12fff1e	 bx          lr
-  00034		 |$M34825|
+  00034		 |$M34827|
 
 			 ENDP  ; |?NotifyHeadphonesAttached@CStreamManager@@QAAKH@Z|, CStreamManager::NotifyHeadphonesAttached
 
 	EXPORT	|?NotifyCarKitAttached@CStreamManager@@QAAKH@Z| ; CStreamManager::NotifyCarKitAttached
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34838| DCD	|$LN6@NotifyCarK|
+|$T34840| DCD	|$LN6@NotifyCarK|
 	DCD	0x40001301
 ; Function compile flags: /Ogspy
 
@@ -516,7 +516,7 @@
 
   00000		 |$LN6@NotifyCarK|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M34835|
+  00004		 |$M34837|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -560,14 +560,14 @@
 
   00044	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00048	e12fff1e	 bx          lr
-  0004c		 |$M34836|
+  0004c		 |$M34838|
 
 			 ENDP  ; |?NotifyCarKitAttached@CStreamManager@@QAAKH@Z|, CStreamManager::NotifyCarKitAttached
 
 	EXPORT	|?NotifyBthScoEnabled@CStreamManager@@QAAKH@Z| ; CStreamManager::NotifyBthScoEnabled
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34849| DCD	|$LN6@NotifyBthS|
+|$T34851| DCD	|$LN6@NotifyBthS|
 	DCD	0x40001301
 ; Function compile flags: /Ogspy
 
@@ -579,7 +579,7 @@
 
   00000		 |$LN6@NotifyBthS|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M34846|
+  00004		 |$M34848|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -623,7 +623,7 @@
 
   00044	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00048	e12fff1e	 bx          lr
-  0004c		 |$M34847|
+  0004c		 |$M34849|
 
 			 ENDP  ; |?NotifyBthScoEnabled@CStreamManager@@QAAKH@Z|, CStreamManager::NotifyBthScoEnabled
 
@@ -636,7 +636,7 @@
 	IMPORT	|WAVEOUT_ENDPOINT_BTH_SCO|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34856| DCD	|$LN5@dynamic|
+|$T34858| DCD	|$LN5@dynamic|
 	DCD	0x40005101
 ; Function compile flags: /Ogspy
 
@@ -648,7 +648,7 @@
 
   00000		 |$LN5@dynamic|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M34853|
+  00004		 |$M34855|
   00004	e59f2134	 ldr         r2, [pc, #0x134]
   00008	e59f612c	 ldr         r6, [pc, #0x12C]
 
@@ -798,7 +798,7 @@
   0013c	00000000	 DCD         |c_rgOutputEndpointDescriptor|
   00140		 |$LN14@dynamic|
   00140	00000000	 DCD         |WAVEOUT_ENDPOINT_DEFAULT|
-  00144		 |$M34854|
+  00144		 |$M34856|
 
 			 ENDP  ; |??__Ec_rgOutputEndpointDescriptor@@YAXXZ|, `dynamic initializer for 'c_rgOutputEndpointDescriptor''
 
@@ -809,7 +809,7 @@
 	IMPORT	|WAVEIN_ENDPOINT_BTH_SCO|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34872| DCD	|$LN5@dynamic@2|
+|$T34874| DCD	|$LN5@dynamic@2|
 	DCD	0x40003b01
 ; Function compile flags: /Ogspy
 
@@ -821,7 +821,7 @@
 
   00000		 |$LN5@dynamic@2|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M34869|
+  00004		 |$M34871|
   00004	e59f20dc	 ldr         r2, [pc, #0xDC]
   00008	e59f60d4	 ldr         r6, [pc, #0xD4]
 
@@ -929,14 +929,14 @@
   000e4	00000000	 DCD         |c_rgInputEndpointDescriptor|
   000e8		 |$LN12@dynamic@2|
   000e8	00000000	 DCD         |WAVEIN_ENDPOINT_DEFAULT|
-  000ec		 |$M34870|
+  000ec		 |$M34872|
 
 			 ENDP  ; |??__Ec_rgInputEndpointDescriptor@@YAXXZ|, `dynamic initializer for 'c_rgInputEndpointDescriptor''
 
 	IMPORT	|WAVE_DEVCLASS_SYSTEM_PRIMARY|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34886| DCD	|$LN5@dynamic@3|
+|$T34888| DCD	|$LN5@dynamic@3|
 	DCD	0x40000f01
 ; Function compile flags: /Ogspy
 
@@ -948,7 +948,7 @@
 
   00000		 |$LN5@dynamic@3|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34883|
+  00004		 |$M34885|
   00004	e59f002c	 ldr         r0, [pc, #0x2C]
   00008	e59fe024	 ldr         lr, [pc, #0x24]
   0000c	e5903000	 ldr         r3, [r0]
@@ -970,13 +970,13 @@
   00034	00000000	 DCD         |c_OutputDeviceDescriptor|
   00038		 |$LN8@dynamic@3|
   00038	00000000	 DCD         |WAVE_DEVCLASS_SYSTEM_PRIMARY|
-  0003c		 |$M34884|
+  0003c		 |$M34886|
 
 			 ENDP  ; |??__Ec_OutputDeviceDescriptor@@YAXXZ|, `dynamic initializer for 'c_OutputDeviceDescriptor''
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34896| DCD	|$LN5@dynamic@4|
+|$T34898| DCD	|$LN5@dynamic@4|
 	DCD	0x40000f01
 ; Function compile flags: /Ogspy
 
@@ -988,7 +988,7 @@
 
   00000		 |$LN5@dynamic@4|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34893|
+  00004		 |$M34895|
   00004	e59f002c	 ldr         r0, [pc, #0x2C]
   00008	e59fe024	 ldr         lr, [pc, #0x24]
   0000c	e5903000	 ldr         r3, [r0]
@@ -1010,7 +1010,7 @@
   00034	00000000	 DCD         |c_InputDeviceDescriptor|
   00038		 |$LN8@dynamic@4|
   00038	00000000	 DCD         |WAVE_DEVCLASS_SYSTEM_PRIMARY|
-  0003c		 |$M34894|
+  0003c		 |$M34896|
 
 			 ENDP  ; |??__Ec_InputDeviceDescriptor@@YAXXZ|, `dynamic initializer for 'c_InputDeviceDescriptor''
 

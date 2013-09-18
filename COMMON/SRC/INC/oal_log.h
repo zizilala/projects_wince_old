@@ -42,7 +42,6 @@ extern "C" {
 //
 //  OAL trace zone bit numbers
 //
-
 #define OAL_LOG_ERROR       (0)
 #define OAL_LOG_WARN        (1)
 #define OAL_LOG_FUNC        (2)

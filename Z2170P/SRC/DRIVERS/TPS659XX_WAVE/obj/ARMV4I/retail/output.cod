@@ -11,7 +11,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmmgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34474| DCD	|$LN5@get_Curren|
+|$T34476| DCD	|$LN5@get_Curren|
 	DCD	0x40000400
 ; Function compile flags: /Ogspy
 
@@ -22,7 +22,7 @@
 ; 126  :     {
 
   00000		 |$LN5@get_Curren|
-  00000		 |$M34471|
+  00000		 |$M34473|
 
 ; 127  :         return m_prgSampleRates[m_idxSampleRate].SampleRate;
 
@@ -33,7 +33,7 @@
 ; 128  :     }
 
   0000c	e12fff1e	 bx          lr
-  00010		 |$M34472|
+  00010		 |$M34474|
 
 			 ENDP  ; |?get_CurrentSampleRate@CStreamManager@@QBAKXZ|, CStreamManager::get_CurrentSampleRate
 
@@ -42,7 +42,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\output.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34488| DCD	|$LN6@Open|
+|$T34490| DCD	|$LN6@Open|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -54,7 +54,7 @@
 
   00000		 |$LN6@Open|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M34485|
+  00004		 |$M34487|
   00004	e1a04000	 mov         r4, r0
 
 ; 41   :     HRESULT Result;
@@ -84,7 +84,7 @@
   00024	e1a00005	 mov         r0, r5
   00028	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0002c	e12fff1e	 bx          lr
-  00030		 |$M34486|
+  00030		 |$M34488|
 
 			 ENDP  ; |?Open@OutputStreamContext@@UAAJPAVCStreamManager@@PAUwaveopendesc_tag@@K@Z|, OutputStreamContext::Open
 
@@ -92,7 +92,7 @@
 	IMPORT	|?Reset@StreamContext@@UAAKXZ|		; StreamContext::Reset
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34499| DCD	|$LN6@Reset|
+|$T34501| DCD	|$LN6@Reset|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -104,7 +104,7 @@
 
   00000		 |$LN6@Reset|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M34496|
+  00004		 |$M34498|
   00004	e1a05000	 mov         r5, r0
 
 ; 64   :     HRESULT Result;
@@ -134,14 +134,14 @@
   00024	e1a00004	 mov         r0, r4
   00028	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0002c	e12fff1e	 bx          lr
-  00030		 |$M34497|
+  00030		 |$M34499|
 
 			 ENDP  ; |?Reset@OutputStreamContext@@UAAKXZ|, OutputStreamContext::Reset
 
 	EXPORT	|?GetStreamDirection@OutputStreamContext@@UAAIXZ| ; OutputStreamContext::GetStreamDirection
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34508| DCD	|$LN5@GetStreamD|
+|$T34510| DCD	|$LN5@GetStreamD|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -152,7 +152,7 @@
 ; 79   : {
 
   00000		 |$LN5@GetStreamD|
-  00000		 |$M34505|
+  00000		 |$M34507|
 
 ; 80   :     return CHardwareAudioBridge::kOutput;
 
@@ -161,7 +161,7 @@
 ; 81   : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M34506|
+  00008		 |$M34508|
 
 			 ENDP  ; |?GetStreamDirection@OutputStreamContext@@UAAIXZ|, OutputStreamContext::GetStreamDirection
 
@@ -175,7 +175,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmmgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34532| DCD	|$LN7@SetRate|
+|$T34534| DCD	|$LN7@SetRate|
 	DCD	0x40002b01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\output.cpp
@@ -188,7 +188,7 @@
 
   00000		 |$LN7@SetRate|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M34529|
+  00004		 |$M34531|
   00004	e1a06000	 mov         r6, r0
 
 ; 96   :     float delta;
@@ -252,7 +252,7 @@
 
   000a4	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   000a8	e12fff1e	 bx          lr
-  000ac		 |$M34530|
+  000ac		 |$M34532|
 
 			 ENDP  ; |?SetRate@OutputStreamContext@@UAAKK@Z|, OutputStreamContext::SetRate
 
@@ -260,7 +260,7 @@
 	IMPORT	|?RenderRawData@WaveStreamContext@@QAAPAEPAE00@Z| ; WaveStreamContext::RenderRawData
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34564| DCD	|$LN20@Render2|
+|$T34566| DCD	|$LN20@Render2|
 	DCD	0x40004802
 ; Function compile flags: /Ogspy
 
@@ -273,7 +273,7 @@
   00000		 |$LN20@Render2|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd010	 sub         sp, sp, #0x10
-  00008		 |$M34561|
+  00008		 |$M34563|
   00008	e1a0a003	 mov         r10, r3
   0000c	e1a07002	 mov         r7, r2
   00010	e1a0e001	 mov         lr, r1
@@ -322,7 +322,7 @@
 ; 138  :     while (pBuffer < pBufferEnd)
 
   00064	e15e0007	 cmp         lr, r7
-  00068	2a00001f	 bcs         |$Exit$34072|
+  00068	2a00001f	 bcs         |$Exit$34074|
 
 ; 122  :     LONG CurrT = m_CurrT;
 ; 123  :     LONG DeltaT = m_DeltaT;
@@ -462,7 +462,7 @@
 ; 121  : {
 
   000e8	e59d000c	 ldr         r0, [sp, #0xC]
-  000ec		 |$Exit$34072|
+  000ec		 |$Exit$34074|
 
 ; 193  : #else
 ; 194  :         OutSamp0 = (OutSamp0 * fxpGain[0]) >> VOLSHIFT;
@@ -523,14 +523,14 @@
   00114	e28dd010	 add         sp, sp, #0x10
   00118	e8bd4ff0	 ldmia       sp!, {r4 - r11, lr}
   0011c	e12fff1e	 bx          lr
-  00120		 |$M34562|
+  00120		 |$M34564|
 
 			 ENDP  ; |?Render2@OutputStreamContextM8@@UAAPAEPAE00H@Z|, OutputStreamContextM8::Render2
 
 	EXPORT	|?Render2@OutputStreamContextM16@@UAAPAEPAE00H@Z| ; OutputStreamContextM16::Render2
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34596| DCD	|$LN20@Render2@2|
+|$T34598| DCD	|$LN20@Render2@2|
 	DCD	0x40004602
 ; Function compile flags: /Ogspy
 
@@ -543,7 +543,7 @@
   00000		 |$LN20@Render2@2|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd010	 sub         sp, sp, #0x10
-  00008		 |$M34593|
+  00008		 |$M34595|
   00008	e1a0a003	 mov         r10, r3
   0000c	e1a07002	 mov         r7, r2
   00010	e1a0e001	 mov         lr, r1
@@ -593,7 +593,7 @@
 ; 254  :     while (pBuffer < pBufferEnd)
 
   00064	e15e0007	 cmp         lr, r7
-  00068	2a00001d	 bcs         |$Exit$34110|
+  00068	2a00001d	 bcs         |$Exit$34112|
 
 ; 237  :     LONG CurrT = m_CurrT;
 ; 238  :     LONG DeltaT = m_DeltaT;
@@ -740,7 +740,7 @@
 ; 236  : {
 
   000e0	e59d000c	 ldr         r0, [sp, #0xC]
-  000e4		 |$Exit$34110|
+  000e4		 |$Exit$34112|
 
 ; 309  : #else
 ; 310  :         OutSamp0 = (OutSamp0 * fxpGain[0]) >> VOLSHIFT;
@@ -799,14 +799,14 @@
   0010c	e28dd010	 add         sp, sp, #0x10
   00110	e8bd4ff0	 ldmia       sp!, {r4 - r11, lr}
   00114	e12fff1e	 bx          lr
-  00118		 |$M34594|
+  00118		 |$M34596|
 
 			 ENDP  ; |?Render2@OutputStreamContextM16@@UAAPAEPAE00H@Z|, OutputStreamContextM16::Render2
 
 	EXPORT	|?Render2Stereo@OutputStreamContextS8@@AAAPAEPAE00H@Z| ; OutputStreamContextS8::Render2Stereo
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34628| DCD	|$LN19@Render2Ste|
+|$T34630| DCD	|$LN19@Render2Ste|
 	DCD	0x40005002
 ; Function compile flags: /Ogspy
 
@@ -819,7 +819,7 @@
   00000		 |$LN19@Render2Ste|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd018	 sub         sp, sp, #0x18
-  00008		 |$M34625|
+  00008		 |$M34627|
   00008	e58d3004	 str         r3, [sp, #4]
   0000c	e1a0b002	 mov         r11, r2
   00010	e1a0e001	 mov         lr, r1
@@ -865,7 +865,7 @@
 ; 400  :     while (pBuffer < pBufferEnd)
 
   00050	e15e000b	 cmp         lr, r11
-  00054	2a00002a	 bcs         |$Exit$34161|
+  00054	2a00002a	 bcs         |$Exit$34163|
 
 ; 457  : 
 ; 458  :         pBuffer += 2*sizeof(HWSAMPLE);
@@ -1006,7 +1006,7 @@
 ; 382  : {
 
   00100	e59d0014	 ldr         r0, [sp, #0x14]
-  00104		 |$Exit$34161|
+  00104		 |$Exit$34163|
 
 ; 459  : 
 ; 460  :     }
@@ -1051,14 +1051,14 @@
   00134	e28dd018	 add         sp, sp, #0x18
   00138	e8bd4ff0	 ldmia       sp!, {r4 - r11, lr}
   0013c	e12fff1e	 bx          lr
-  00140		 |$M34626|
+  00140		 |$M34628|
 
 			 ENDP  ; |?Render2Stereo@OutputStreamContextS8@@AAAPAEPAE00H@Z|, OutputStreamContextS8::Render2Stereo
 
 	EXPORT	|?Render2Mono@OutputStreamContextS8@@AAAPAEPAE00H@Z| ; OutputStreamContextS8::Render2Mono
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34659| DCD	|$LN19@Render2Mon|
+|$T34661| DCD	|$LN19@Render2Mon|
 	DCD	0x40004a02
 ; Function compile flags: /Ogspy
 
@@ -1071,7 +1071,7 @@
   00000		 |$LN19@Render2Mon|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd010	 sub         sp, sp, #0x10
-  00008		 |$M34656|
+  00008		 |$M34658|
   00008	e1a0b003	 mov         r11, r3
   0000c	e1a0a002	 mov         r10, r2
   00010	e1a07001	 mov         r7, r1
@@ -1120,7 +1120,7 @@
 ; 502  :     while (pBuffer < pBufferEnd)
 
   0005c	e157000a	 cmp         r7, r10
-  00060	2a000021	 bcs         |$Exit$34199|
+  00060	2a000021	 bcs         |$Exit$34201|
 
 ; 490  :     LONG PrevSamp0 = (m_PrevSamp[0]+m_PrevSamp[1])>>1;
 
@@ -1251,7 +1251,7 @@
 ; 486  : {
 
   000e8	e59d000c	 ldr         r0, [sp, #0xC]
-  000ec		 |$Exit$34199|
+  000ec		 |$Exit$34201|
 
 ; 558  : 
 ; 559  :     }
@@ -1296,14 +1296,14 @@
   0011c	e28dd010	 add         sp, sp, #0x10
   00120	e8bd4ff0	 ldmia       sp!, {r4 - r11, lr}
   00124	e12fff1e	 bx          lr
-  00128		 |$M34657|
+  00128		 |$M34659|
 
 			 ENDP  ; |?Render2Mono@OutputStreamContextS8@@AAAPAEPAE00H@Z|, OutputStreamContextS8::Render2Mono
 
 	EXPORT	|?Render2Stereo@OutputStreamContextS16@@AAAPAEPAE00H@Z| ; OutputStreamContextS16::Render2Stereo
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34691| DCD	|$LN19@Render2Ste@2|
+|$T34693| DCD	|$LN19@Render2Ste@2|
 	DCD	0x40004b02
 ; Function compile flags: /Ogspy
 
@@ -1316,7 +1316,7 @@
   00000		 |$LN19@Render2Ste@2|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd018	 sub         sp, sp, #0x18
-  00008		 |$M34688|
+  00008		 |$M34690|
   00008	e58d3000	 str         r3, [sp]
   0000c	e1a0b002	 mov         r11, r2
   00010	e1a0e001	 mov         lr, r1
@@ -1362,7 +1362,7 @@
 ; 630  :     while (pBuffer < pBufferEnd)
 
   00050	e15e000b	 cmp         lr, r11
-  00054	2a000025	 bcs         |$Exit$34250|
+  00054	2a000025	 bcs         |$Exit$34252|
 
 ; 684  : 
 ; 685  :         pBuffer += 2*sizeof(HWSAMPLE);
@@ -1497,7 +1497,7 @@
 ; 612  : {
 
   000ec	e59d0014	 ldr         r0, [sp, #0x14]
-  000f0		 |$Exit$34250|
+  000f0		 |$Exit$34252|
 
 ; 686  :     }
 ; 687  : 
@@ -1541,14 +1541,14 @@
   00120	e28dd018	 add         sp, sp, #0x18
   00124	e8bd4ff0	 ldmia       sp!, {r4 - r11, lr}
   00128	e12fff1e	 bx          lr
-  0012c		 |$M34689|
+  0012c		 |$M34691|
 
 			 ENDP  ; |?Render2Stereo@OutputStreamContextS16@@AAAPAEPAE00H@Z|, OutputStreamContextS16::Render2Stereo
 
 	EXPORT	|?Render2Mono@OutputStreamContextS16@@AAAPAEPAE00H@Z| ; OutputStreamContextS16::Render2Mono
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34722| DCD	|$LN19@Render2Mon@2|
+|$T34724| DCD	|$LN19@Render2Mon@2|
 	DCD	0x40004902
 ; Function compile flags: /Ogspy
 
@@ -1561,7 +1561,7 @@
   00000		 |$LN19@Render2Mon@2|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd010	 sub         sp, sp, #0x10
-  00008		 |$M34719|
+  00008		 |$M34721|
   00008	e1a0b003	 mov         r11, r3
   0000c	e1a0a002	 mov         r10, r2
   00010	e1a07001	 mov         r7, r1
@@ -1610,7 +1610,7 @@
 ; 727  :     while (pBuffer < pBufferEnd)
 
   0005c	e157000a	 cmp         r7, r10
-  00060	2a000020	 bcs         |$Exit$34288|
+  00060	2a000020	 bcs         |$Exit$34290|
 
 ; 715  :     LONG PrevSamp0 = (m_PrevSamp[0]+m_PrevSamp[1])>>1;
 
@@ -1741,7 +1741,7 @@
 ; 711  : {
 
   000e4	e59d000c	 ldr         r0, [sp, #0xC]
-  000e8		 |$Exit$34288|
+  000e8		 |$Exit$34290|
 
 ; 784  :     }
 ; 785  : 
@@ -1785,14 +1785,14 @@
   00118	e28dd010	 add         sp, sp, #0x10
   0011c	e8bd4ff0	 ldmia       sp!, {r4 - r11, lr}
   00120	e12fff1e	 bx          lr
-  00124		 |$M34720|
+  00124		 |$M34722|
 
 			 ENDP  ; |?Render2Mono@OutputStreamContextS16@@AAAPAEPAE00H@Z|, OutputStreamContextS16::Render2Mono
 
 	EXPORT	|?Render2@OutputStreamContextS8@@UAAPAEPAE00H@Z| ; OutputStreamContextS8::Render2
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34736| DCD	|$LN9@Render2@3|
+|$T34738| DCD	|$LN9@Render2@3|
 	DCD	0x40001402
 ; Function compile flags: /Ogspy
 
@@ -1805,7 +1805,7 @@
   00000		 |$LN9@Render2@3|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M34733|
+  00008		 |$M34735|
   00008	e1a0e003	 mov         lr, r3
 
 ; 357  :     if (bDSPRender == FALSE)
@@ -1852,14 +1852,14 @@
   00044	e28dd004	 add         sp, sp, #4
   00048	e8bd4010	 ldmia       sp!, {r4, lr}
   0004c	e12fff1e	 bx          lr
-  00050		 |$M34734|
+  00050		 |$M34736|
 
 			 ENDP  ; |?Render2@OutputStreamContextS8@@UAAPAEPAE00H@Z|, OutputStreamContextS8::Render2
 
 	EXPORT	|?Render2@OutputStreamContextS16@@UAAPAEPAE00H@Z| ; OutputStreamContextS16::Render2
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34750| DCD	|$LN9@Render2@4|
+|$T34752| DCD	|$LN9@Render2@4|
 	DCD	0x40001402
 ; Function compile flags: /Ogspy
 
@@ -1872,7 +1872,7 @@
   00000		 |$LN9@Render2@4|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M34747|
+  00008		 |$M34749|
   00008	e1a0e003	 mov         lr, r3
 
 ; 587  :     if (bDSPRender == FALSE)
@@ -1919,7 +1919,7 @@
   00044	e28dd004	 add         sp, sp, #4
   00048	e8bd4010	 ldmia       sp!, {r4, lr}
   0004c	e12fff1e	 bx          lr
-  00050		 |$M34748|
+  00050		 |$M34750|
 
 			 ENDP  ; |?Render2@OutputStreamContextS16@@UAAPAEPAE00H@Z|, OutputStreamContextS16::Render2
 

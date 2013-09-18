@@ -905,12 +905,7 @@ WaitForReadyStatus(
 //
 //  This function is called to initialize flash subsystem.
 //
-VOID*
-FMD_Init(
-    LPCTSTR szContext,
-    PCI_REG_INFO *pRegIn,
-    PCI_REG_INFO *pRegOut
-    )
+VOID* FMD_Init(LPCTSTR szContext, PCI_REG_INFO *pRegIn, PCI_REG_INFO *pRegOut)
 {
     HANDLE hRet = NULL;
 
@@ -1432,10 +1427,7 @@ cleanUp:
 //
 //  Function: FMD_GetBlockStatus
 //
-DWORD
-FMD_GetBlockStatus(
-    BLOCK_ID blockId
-    )
+DWORD FMD_GetBlockStatus(BLOCK_ID blockId)
 {
     DWORD rc = 0;
     SECTOR_ADDR sector;

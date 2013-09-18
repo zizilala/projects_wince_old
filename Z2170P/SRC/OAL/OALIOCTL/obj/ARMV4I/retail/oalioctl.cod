@@ -16,7 +16,7 @@
 ; File c:\wince600\platform\z2170p\src\oal\oalioctl\oalioctl.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36474| DCD	|$LN15@IOControl|
+|$T36476| DCD	|$LN15@IOControl|
 	DCD	0x40007502
 ; Function compile flags: /Ogspy
 
@@ -29,7 +29,7 @@
   00000		 |$LN15@IOControl|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M36471|
+  00008		 |$M36473|
   00008	e1a07003	 mov         r7, r3
 
 ; 93   :     BOOL fRet = FALSE;
@@ -276,7 +276,7 @@
   001cc	010100a0	 DCD         0x10100a0
   001d0		 |$LN38@IOControl|
   001d0	01011134	 DCD         0x1011134
-  001d4		 |$M36472|
+  001d4		 |$M36474|
 
 			 ENDP  ; |IOControl|
 
@@ -284,7 +284,7 @@
 	IMPORT	|DisableThreadLibraryCalls|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36509| DCD	|$LN9@DllMain|
+|$T36511| DCD	|$LN9@DllMain|
 	DCD	0x40000b01
 ; Function compile flags: /Ogspy
 
@@ -296,7 +296,7 @@
 
   00000		 |$LN9@DllMain|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M36506|
+  00004		 |$M36508|
   00004	e1a04002	 mov         r4, r2
 
 ; 165  :     switch (dwReason)
@@ -333,7 +333,7 @@
   00028		 |$LN10@DllMain|
   00028		 |$LN11@DllMain|
   00028	00000000	 DCD         |?g_pfnExtOALIoctl@@3P6AHKPAXK0KPAK@ZA|
-  0002c		 |$M36507|
+  0002c		 |$M36509|
 
 			 ENDP  ; |DllMain|
 

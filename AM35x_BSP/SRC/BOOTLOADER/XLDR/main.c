@@ -17,12 +17,13 @@
 //  This file contains X-Loader implementation for OMAP35XX
 //
 #include "bsp.h"
+//
 #pragma warning(push)
 #pragma warning(disable: 4115 4201)
 #include <blcommon.h>
 #include <fmd.h>
 #pragma warning(pop)
-
+//
 #include "oalex.h"
 #define OAL
 #include "oal_alloc.h"

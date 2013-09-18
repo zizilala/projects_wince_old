@@ -85,7 +85,7 @@
 ; File c:\wince600\platform\z2170p\src\oal\oallib\oem_intrex.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46949| DCD	|$LN8@OALSWIntrS|
+|$T46952| DCD	|$LN8@OALSWIntrS|
 	DCD	0x40001401
 ; Function compile flags: /Ogspy
 
@@ -97,7 +97,7 @@
 
   00000		 |$LN8@OALSWIntrS|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46946|
+  00004		 |$M46949|
 
 ; 75   :     DWORD dwVal;
 ; 76   : 
@@ -145,7 +145,7 @@
   0004c		 |$LN9@OALSWIntrS|
   0004c		 |$LN10@OALSWIntrS|
   0004c	00000000	 DCD         |s_maxBucketSize|
-  00050		 |$M46947|
+  00050		 |$M46950|
 
 			 ENDP  ; |OALSWIntrSetDataIrq|
 
@@ -159,7 +159,7 @@
 |s_TickLog| %	0x20
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46962| DCD	|$LN6@OALSWIntrE|
+|$T46965| DCD	|$LN6@OALSWIntrE|
 	DCD	0x40001801
 ; Function compile flags: /Ogspy
 
@@ -171,7 +171,7 @@
 
   00000		 |$LN6@OALSWIntrE|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M46959|
+  00004		 |$M46962|
   00004	e1a05000	 mov         r5, r0
 
 ; 102  :     if (irq == IRQ_SW_CPUMONITOR)
@@ -223,14 +223,14 @@
   0005c		 |$LN7@OALSWIntrE|
   0005c		 |$LN8@OALSWIntrE|
   0005c	00000000	 DCD         |s_idleSum|
-  00060		 |$M46960|
+  00060		 |$M46963|
 
 			 ENDP  ; |OALSWIntrEnableIrq|
 
 	EXPORT	|OALSWIntrDisableIrq|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46972| DCD	|$LN6@OALSWIntrD|
+|$T46975| DCD	|$LN6@OALSWIntrD|
 	DCD	0x40001701
 ; Function compile flags: /Ogspy
 
@@ -242,7 +242,7 @@
 
   00000		 |$LN6@OALSWIntrD|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M46969|
+  00004		 |$M46972|
   00004	e1a05000	 mov         r5, r0
 
 ; 125  :     if (irq == IRQ_SW_CPUMONITOR)
@@ -290,14 +290,14 @@
   00058		 |$LN7@OALSWIntrD|
   00058		 |$LN8@OALSWIntrD|
   00058	00000000	 DCD         |s_idleSum|
-  0005c		 |$M46970|
+  0005c		 |$M46973|
 
 			 ENDP  ; |OALSWIntrDisableIrq|
 
 	EXPORT	|OALSWIntrDoneIrq|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46982| DCD	|$LN5@OALSWIntrD@2|
+|$T46985| DCD	|$LN5@OALSWIntrD@2|
 	DCD	0x40000800
 ; Function compile flags: /Ogspy
 
@@ -308,7 +308,7 @@
 ; 146  : {    
 
   00000		 |$LN5@OALSWIntrD@2|
-  00000		 |$M46979|
+  00000		 |$M46982|
 
 ; 147  :     s_swInterruptMask |= (1 << (irq - IRQ_SW_RTC_QUERY));
 
@@ -325,7 +325,7 @@
   0001c		 |$LN6@OALSWIntrD@2|
   0001c		 |$LN7@OALSWIntrD@2|
   0001c	00000000	 DCD         |s_swInterruptMask|
-  00020		 |$M46980|
+  00020		 |$M46983|
 
 			 ENDP  ; |OALSWIntrDoneIrq|
 
@@ -341,7 +341,7 @@
 |s_tcrrCount| %	0x4
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47017| DCD	|$LN26@OALTickTim|
+|$T47020| DCD	|$LN26@OALTickTim|
 	DCD	0x4000a302
 ; Function compile flags: /Ogspy
 
@@ -354,7 +354,7 @@
   00000		 |$LN26@OALTickTim|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd01c	 sub         sp, sp, #0x1C
-  00008		 |$M47014|
+  00008		 |$M47017|
 
 ; 171  :     DWORD tickRemove = 0;
 
@@ -748,7 +748,7 @@
   00284	00000000	 DCD         |g_pNKGlobal|
   00288		 |$LN29@OALTickTim|
   00288	00000000	 DCD         |s_tcrrCount|
-  0028c		 |$M47015|
+  0028c		 |$M47018|
 
 			 ENDP  ; |OALTickTimerIntr|
 

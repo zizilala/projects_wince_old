@@ -1,2 +1,4 @@
 BUILD: [Thrd:Sequence:Type  ] Message
-BUILD: [01:0000000349:ERRORE] C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\XLDR\UART\.\xldrmodem.c(261) : error C2094: label 'DONE' was undefined
+BUILD: [01:0000009700:ERRORE] omap_ddgpe_dssai.lib(dssai.obj) : error LNK2019: unresolved external symbol LcdPdd_TV_GetMode referenced in function "public: int __cdecl OMAPDisplayController::RestoreRegisters(enum OMAP_DSS_DESTINATION)" (?RestoreRegisters@OMAPDisplayController@@QAAHW4OMAP_DSS_DESTINATION@@@Z)
+BUILD: [01:0000009701:ERRORE] omap_ddgpe_dssai.lib(dssai.obj) : error LNK2019: unresolved external symbol LcdPdd_TV_Initialize referenced in function "public: int __cdecl OMAPDisplayController::RestoreRegisters(enum OMAP_DSS_DESTINATION)" (?RestoreRegisters@OMAPDisplayController@@QAAHW4OMAP_DSS_DESTINATION@@@Z)
+BUILD: [01:0000009702:ERRORE] C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\omap_dss.dll : fatal error LNK1120: 2 unresolved externals

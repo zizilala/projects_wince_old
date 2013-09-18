@@ -76,7 +76,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\battery\null\null_batt_pdd.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45813| DCD	|$LN5@BatteryPDD|
+|$T45816| DCD	|$LN5@BatteryPDD|
 	DCD	0x40000a01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -103,7 +103,7 @@
 
   00000		 |$LN5@BatteryPDD|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M45810|
+  00004		 |$M45813|
 
 ; 35   :     UNREFERENCED_PARAMETER(szContext);
 ; 36   :     
@@ -130,7 +130,7 @@
   00020	00000000	 DCD         |??_C@_1DA@EEENDLOD@?$AA?9?$AAB?$AAa?$AAt?$AAt?$AAe?$AAr?$AAy?$AAP?$AAD?$AAD?$AAI?$AAn?$AAi?$AAt?$AAi?$AAa?$AAl?$AAi?$AAz?$AAe?$AA?$AN?$AA?6?$AA?$AA@|
   00024		 |$LN8@BatteryPDD|
   00024	00000000	 DCD         |??_C@_1DI@OMALHGIE@?$AA?$AN?$AA?6?$AA?$CL?$AAB?$AAa?$AAt?$AAt?$AAe?$AAr?$AAy?$AAP?$AAD?$AAD?$AAI?$AAn?$AAi?$AAt?$AAi?$AAa?$AAl?$AAi?$AAz?$AAe?$AA?$CI?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@|
-  00028		 |$M45811|
+  00028		 |$M45814|
 
 			 ENDP  ; |BatteryPDDInitialize|
 
@@ -139,7 +139,7 @@
 	EXPORT	|??_C@_1DE@FPIJCBIJ@?$AA?9?$AAB?$AAa?$AAt?$AAt?$AAe?$AAr?$AAy?$AAP?$AAD?$AAD?$AAD?$AAe?$AAi?$AAn?$AAi?$AAt?$AAi?$AAa?$AAl?$AAi?$AAz?$AAe?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45823| DCD	|$LN5@BatteryPDD@2|
+|$T45826| DCD	|$LN5@BatteryPDD@2|
 	DCD	0x40000901
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -167,7 +167,7 @@
 
   00000		 |$LN5@BatteryPDD@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M45820|
+  00004		 |$M45823|
 
 ; 50   :     RETAILMSG(1, (L"+BatteryPDDDeinitialize\r\n"));
 
@@ -188,7 +188,7 @@
   0001c	00000000	 DCD         |??_C@_1DE@FPIJCBIJ@?$AA?9?$AAB?$AAa?$AAt?$AAt?$AAe?$AAr?$AAy?$AAP?$AAD?$AAD?$AAD?$AAe?$AAi?$AAn?$AAi?$AAt?$AAi?$AAa?$AAl?$AAi?$AAz?$AAe?$AA?$AN?$AA?6?$AA?$AA@|
   00020		 |$LN8@BatteryPDD@2|
   00020	00000000	 DCD         |??_C@_1DE@PAFCCPOG@?$AA?$CL?$AAB?$AAa?$AAt?$AAt?$AAe?$AAr?$AAy?$AAP?$AAD?$AAD?$AAD?$AAe?$AAi?$AAn?$AAi?$AAt?$AAi?$AAa?$AAl?$AAi?$AAz?$AAe?$AA?$AN?$AA?6?$AA?$AA@|
-  00024		 |$M45821|
+  00024		 |$M45824|
 
 			 ENDP  ; |BatteryPDDDeinitialize|
 
@@ -197,7 +197,7 @@
 	EXPORT	|??_C@_1CI@KLFHNCOH@?$AA?9?$AAB?$AAa?$AAt?$AAt?$AAe?$AAr?$AAy?$AAP?$AAD?$AAD?$AAR?$AAe?$AAs?$AAu?$AAm?$AAe?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45833| DCD	|$LN5@BatteryPDD@3|
+|$T45836| DCD	|$LN5@BatteryPDD@3|
 	DCD	0x40000901
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -223,7 +223,7 @@
 
   00000		 |$LN5@BatteryPDD@3|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M45830|
+  00004		 |$M45833|
 
 ; 62   :     RETAILMSG(1, (L"+BatteryPDDResume\r\n"));
 
@@ -244,7 +244,7 @@
   0001c	00000000	 DCD         |??_C@_1CI@KLFHNCOH@?$AA?9?$AAB?$AAa?$AAt?$AAt?$AAe?$AAr?$AAy?$AAP?$AAD?$AAD?$AAR?$AAe?$AAs?$AAu?$AAm?$AAe?$AA?$AN?$AA?6?$AA?$AA@|
   00020		 |$LN8@BatteryPDD@3|
   00020	00000000	 DCD         |??_C@_1CI@POCOLDPH@?$AA?$CL?$AAB?$AAa?$AAt?$AAt?$AAe?$AAr?$AAy?$AAP?$AAD?$AAD?$AAR?$AAe?$AAs?$AAu?$AAm?$AAe?$AA?$AN?$AA?6?$AA?$AA@|
-  00024		 |$M45831|
+  00024		 |$M45834|
 
 			 ENDP  ; |BatteryPDDResume|
 
@@ -253,7 +253,7 @@
 	EXPORT	|??_C@_1DE@IMOPIBJ@?$AA?9?$AAB?$AAa?$AAt?$AAt?$AAe?$AAr?$AAy?$AAP?$AAD?$AAD?$AAP?$AAo?$AAw?$AAe?$AAr?$AAH?$AAa?$AAn?$AAd?$AAl?$AAe?$AAr?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45844| DCD	|$LN5@BatteryPDD@4|
+|$T45847| DCD	|$LN5@BatteryPDD@4|
 	DCD	0x40000a01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -281,7 +281,7 @@
 
   00000		 |$LN5@BatteryPDD@4|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M45841|
+  00004		 |$M45844|
   00004	e1a01000	 mov         r1, r0
 
 ; 76   :     UNREFERENCED_PARAMETER(off);
@@ -304,14 +304,14 @@
   00020	00000000	 DCD         |??_C@_1DE@IMOPIBJ@?$AA?9?$AAB?$AAa?$AAt?$AAt?$AAe?$AAr?$AAy?$AAP?$AAD?$AAD?$AAP?$AAo?$AAw?$AAe?$AAr?$AAH?$AAa?$AAn?$AAd?$AAl?$AAe?$AAr?$AA?$AN?$AA?6?$AA?$AA@|
   00024		 |$LN8@BatteryPDD@4|
   00024	00000000	 DCD         |??_C@_1DM@DCPJDLKL@?$AA?$CL?$AAB?$AAa?$AAt?$AAt?$AAe?$AAr?$AAy?$AAP?$AAD?$AAD?$AAP?$AAo?$AAw?$AAe?$AAr?$AAH?$AAa?$AAn?$AAd?$AAl?$AAe?$AAr?$AA?$CI?$AA?$CF?$AAd?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@|
-  00028		 |$M45842|
+  00028		 |$M45845|
 
 			 ENDP  ; |BatteryPDDPowerHandler|
 
 	EXPORT	|BatteryPDDGetLevels|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45856| DCD	|$LN5@BatteryPDD@5|
+|$T45859| DCD	|$LN5@BatteryPDD@5|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -322,7 +322,7 @@
 ; 94   : {
 
   00000		 |$LN5@BatteryPDD@5|
-  00000		 |$M45853|
+  00000		 |$M45856|
 
 ; 95   :     LONG lLevels = MAKELONG(
 ; 96   :         1,      // Main battery levels
@@ -335,14 +335,14 @@
 ; 100  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M45854|
+  00008		 |$M45857|
 
 			 ENDP  ; |BatteryPDDGetLevels|
 
 	EXPORT	|BatteryPDDSupportsChangeNotification|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45865| DCD	|$LN5@BatteryPDD@6|
+|$T45868| DCD	|$LN5@BatteryPDD@6|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -353,7 +353,7 @@
 ; 112  : {
 
   00000		 |$LN5@BatteryPDD@6|
-  00000		 |$M45862|
+  00000		 |$M45865|
 
 ; 113  :     return FALSE;
 
@@ -362,14 +362,14 @@
 ; 114  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M45863|
+  00008		 |$M45866|
 
 			 ENDP  ; |BatteryPDDSupportsChangeNotification|
 
 	EXPORT	|BatteryPddIOControl|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45874| DCD	|$LN8@BatteryPdd|
+|$T45877| DCD	|$LN8@BatteryPdd|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -380,7 +380,7 @@
 ; 135  : {
 
   00000		 |$LN8@BatteryPdd|
-  00000		 |$M45871|
+  00000		 |$M45874|
 
 ; 136  :     DWORD dwRet;
 ; 137  : 
@@ -404,7 +404,7 @@
 ; 152  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M45872|
+  00008		 |$M45875|
 
 			 ENDP  ; |BatteryPddIOControl|
 
@@ -414,7 +414,7 @@
 	EXPORT	|??_C@_1EA@BCAODFON@?$AA?9?$AAB?$AAa?$AAt?$AAt?$AAe?$AAr?$AAy?$AAP?$AAD?$AAD?$AAG?$AAe?$AAt?$AAS?$AAt?$AAa?$AAt?$AAu?$AAs?$AA?$CI?$AAr?$AAc?$AA?5?$AA?$DN?$AA?5?$AA?$CF?$AAd?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45885| DCD	|$LN5@BatteryPDD@7|
+|$T45888| DCD	|$LN5@BatteryPDD@7|
 	DCD	0x40002c01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -450,7 +450,7 @@
 
   00000		 |$LN5@BatteryPDD@7|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M45882|
+  00004		 |$M45885|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -542,7 +542,7 @@
   000a8	00000000	 DCD         |??_C@_1DG@MFICFDIK@?$AAB?$AAa?$AAt?$AAt?$AAe?$AAr?$AAy?$AAP?$AAD?$AAD?$AAG?$AAe?$AAt?$AAS?$AAt?$AAa?$AAt?$AAu?$AAs?$AA?3?$AA?5?$AA?4?$AA?4?$AA?4?$AA?$AN?$AA?6?$AA?$AA@|
   000ac		 |$LN9@BatteryPDD@7|
   000ac	00000000	 DCD         |??_C@_1CO@OINMEEDD@?$AA?$CL?$AAB?$AAa?$AAt?$AAt?$AAe?$AAr?$AAy?$AAP?$AAD?$AAD?$AAG?$AAe?$AAt?$AAS?$AAt?$AAa?$AAt?$AAu?$AAs?$AA?$AN?$AA?6?$AA?$AA@|
-  000b0		 |$M45883|
+  000b0		 |$M45886|
 
 			 ENDP  ; |BatteryPDDGetStatus|
 

@@ -101,14 +101,14 @@
 
 ; 36   :     DWORD mapSize;
 ; 37   : 
-; 38   :     DEBUGMSG(0,(TEXT("OALLocalAllocInit (0x%x,0x%x)\r\n"),buffer,size));
+; 38   :     DEBUGMSG(0, (TEXT("OALLocalAllocInit (0x%x,0x%x)\r\n"), buffer,size));
 ; 39   :     
-; 40   :     nbBlock = (size+BLOCK_SIZE- 1)/ BLOCK_SIZE;	//128
+; 40   :     nbBlock = (size + BLOCK_SIZE - 1)/ BLOCK_SIZE;	//128
 
   00008	e2813003	 add         r3, r1, #3
   0000c	e1a03123	 mov         r3, r3, lsr #2
 
-; 41   :     mapSize = (nbBlock+(8*sizeof(*map))-1) / (8*sizeof(*map));//16
+; 41   :     mapSize = (nbBlock + (8*sizeof(*map))-1) / (8*sizeof(*map));//16
 
   00010	e283e007	 add         lr, r3, #7
 

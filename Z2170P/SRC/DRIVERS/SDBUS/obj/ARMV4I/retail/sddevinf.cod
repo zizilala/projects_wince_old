@@ -48,7 +48,7 @@
 ; File c:\wince600\public\common\sdk\inc\safeint.hxx
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40500| DCD	|$LN5@SafeIntOnO|
+|$T40502| DCD	|$LN5@SafeIntOnO|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -60,7 +60,7 @@
 
   00000		 |$LN5@SafeIntOnO|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M40497|
+  00004		 |$M40499|
   00004	e3a03103	 mov         r3, #3, 2
 
 ; 353  : 	RaiseException((DWORD) EXCEPTION_INT_OVERFLOW,0,0,NULL);
@@ -75,7 +75,7 @@
 
   0001c	e49de004	 ldr         lr, [sp], #4
   00020	e12fff1e	 bx          lr
-  00024		 |$M40498|
+  00024		 |$M40500|
 
 			 ENDP  ; |?SafeIntOnOverflow@@YAXXZ|, SafeIntOnOverflow
 
@@ -84,7 +84,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40508| DCD	|$LN5@Lock|
+|$T40510| DCD	|$LN5@Lock|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -96,7 +96,7 @@
 
   00000		 |$LN5@Lock|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M40505|
+  00004		 |$M40507|
 
 ; 46   :         EnterCriticalSection( &m_CSection );
 
@@ -106,7 +106,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M40506|
+  00010		 |$M40508|
 
 			 ENDP  ; |?Lock@CLockObject@@QAAXXZ|, CLockObject::Lock
 
@@ -114,7 +114,7 @@
 	IMPORT	|LeaveCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40516| DCD	|$LN5@Unlock|
+|$T40518| DCD	|$LN5@Unlock|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -126,7 +126,7 @@
 
   00000		 |$LN5@Unlock|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M40513|
+  00004		 |$M40515|
 
 ; 50   :         LeaveCriticalSection( &m_CSection );
 
@@ -136,7 +136,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M40514|
+  00010		 |$M40516|
 
 			 ENDP  ; |?Unlock@CLockObject@@QAAXXZ|, CLockObject::Unlock
 
@@ -145,7 +145,7 @@
 ; File c:\wince600\public\common\oak\inc\crefcon.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40526| DCD	|$LN5@AddRef|
+|$T40528| DCD	|$LN5@AddRef|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -157,7 +157,7 @@
 
   00000		 |$LN5@AddRef|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M40523|
+  00004		 |$M40525|
 
 ; 44   :         return (DWORD)InterlockedIncrement(&m_lRefCount);
 
@@ -168,7 +168,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M40524|
+  00014		 |$M40526|
 
 			 ENDP  ; |?AddRef@CRefObject@@QAAKXZ|, CRefObject::AddRef
 
@@ -176,7 +176,7 @@
 	IMPORT	|InterlockedDecrement|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40541| DCD	|$LN8@DeRef|
+|$T40543| DCD	|$LN8@DeRef|
 	DCD	0x40001101
 ; Function compile flags: /Ogspy
 
@@ -188,7 +188,7 @@
 
   00000		 |$LN8@DeRef|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M40538|
+  00004		 |$M40540|
   00004	e1a04000	 mov         r4, r0
 
 ; 48   :         LONG lReturn = InterlockedDecrement(&m_lRefCount);
@@ -220,7 +220,7 @@
   00038	e1a00005	 mov         r0, r5
   0003c	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00040	e12fff1e	 bx          lr
-  00044		 |$M40539|
+  00044		 |$M40541|
 
 			 ENDP  ; |?DeRef@CRefObject@@QAAKXZ|, CRefObject::DeRef
 
@@ -228,7 +228,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbus.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40561| DCD	|$LN11@ConvertFro|
+|$T40563| DCD	|$LN11@ConvertFro|
 	DCD	0x40000d00
 ; Function compile flags: /Ogspy
 
@@ -239,7 +239,7 @@
 ; 91   : {
 
   00000		 |$LN11@ConvertFro|
-  00000		 |$M40558|
+  00000		 |$M40560|
 
 ; 92   : 	// default to 1 bit
 ; 93   : 	SD_INTERFACE_MODE bInterfaceMode = SD_INTERFACE_SD_MMC_1BIT;
@@ -280,14 +280,14 @@
 ; 110  : }
 
   00030	e12fff1e	 bx          lr
-  00034		 |$M40559|
+  00034		 |$M40561|
 
 			 ENDP  ; |?ConvertFromEx@@YA?AU_SD_CARD_INTERFACE@@U_SD_CARD_INTERFACE_EX@@@Z|, ConvertFromEx
 
 	EXPORT	|?SlotOptionHandler@CSDHost@@QAAJKW4_SD_SLOT_OPTION_CODE@@PAXK@Z| ; CSDHost::SlotOptionHandler
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40576| DCD	|$LN7@SlotOption|
+|$T40578| DCD	|$LN7@SlotOption|
 	DCD	0x40000f02
 ; Function compile flags: /Ogspy
 
@@ -300,7 +300,7 @@
   00000		 |$LN7@SlotOption|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M40573|
+  00008		 |$M40575|
   00008	e1a05002	 mov         r5, r2
   0000c	e1b0e000	 movs        lr, r0
 
@@ -320,7 +320,7 @@
   00030	e28dd004	 add         sp, sp, #4
   00034	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00038	e12fff1e	 bx          lr
-  0003c		 |$M40574|
+  0003c		 |$M40576|
 
 			 ENDP  ; |?SlotOptionHandler@CSDHost@@QAAJKW4_SD_SLOT_OPTION_CODE@@PAXK@Z|, CSDHost::SlotOptionHandler
 
@@ -328,7 +328,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40586| DCD	|$LN5@GetCardInf|
+|$T40588| DCD	|$LN5@GetCardInf|
 	DCD	0x40000300
 ; Function compile flags: /Ogspy
 
@@ -339,11 +339,11 @@
 ; 149  :     SDCARD_INFORMATION& GetCardInfo() { return m_SDCardInfo; };
 
   00000		 |$LN5@GetCardInf|
-  00000		 |$M40583|
+  00000		 |$M40585|
   00000	e2803b01	 add         r3, r0, #1, 22
   00004	e28300d8	 add         r0, r3, #0xD8
   00008	e12fff1e	 bx          lr
-  0000c		 |$M40584|
+  0000c		 |$M40586|
 
 			 ENDP  ; |?GetCardInfo@CSDDevice@@QAAAAU_SDCARD_INFORMATION@@XZ|, CSDDevice::GetCardInfo
 
@@ -351,7 +351,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdslot.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40596| DCD	|$LN5@GetHost|
+|$T40598| DCD	|$LN5@GetHost|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -362,17 +362,17 @@
 ; 99   :     CSDHost&    GetHost() { return m_SdHost; };
 
   00000		 |$LN5@GetHost|
-  00000		 |$M40593|
+  00000		 |$M40595|
   00000	e590007c	 ldr         r0, [r0, #0x7C]
   00004	e12fff1e	 bx          lr
-  00008		 |$M40594|
+  00008		 |$M40596|
 
 			 ENDP  ; |?GetHost@CSDSlot@@QAAAAVCSDHost@@XZ|, CSDSlot::GetHost
 
 	EXPORT	|?GetSlotIndex@CSDSlot@@QAAKXZ|		; CSDSlot::GetSlotIndex
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40606| DCD	|$LN5@GetSlotInd|
+|$T40608| DCD	|$LN5@GetSlotInd|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -383,10 +383,10 @@
 ; 106  :     DWORD   GetSlotIndex() { return m_dwSlotIndex; };
 
   00000		 |$LN5@GetSlotInd|
-  00000		 |$M40603|
+  00000		 |$M40605|
   00000	e5900080	 ldr         r0, [r0, #0x80]
   00004	e12fff1e	 bx          lr
-  00008		 |$M40604|
+  00008		 |$M40606|
 
 			 ENDP  ; |?GetSlotIndex@CSDSlot@@QAAKXZ|, CSDSlot::GetSlotIndex
 
@@ -394,7 +394,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40629| DCD	|$LN15@GetFunctio|
+|$T40631| DCD	|$LN15@GetFunctio|
 	DCD	0x40001401
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdslot.hpp
@@ -407,7 +407,7 @@
 
   00000		 |$LN15@GetFunctio|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M40626|
+  00004		 |$M40628|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -455,7 +455,7 @@
   00044	e1a00004	 mov         r0, r4
   00048	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0004c	e12fff1e	 bx          lr
-  00050		 |$M40627|
+  00050		 |$M40629|
 
 			 ENDP  ; |?GetFunctionDevice@CSDSlot@@QAAPAVCSDDevice@@K@Z|, CSDSlot::GetFunctionDevice
 
@@ -463,7 +463,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevinf.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40641| DCD	|$LN10@IsHighCapa|
+|$T40643| DCD	|$LN10@IsHighCapa|
 	DCD	0x40000d00
 ; Function compile flags: /Ogspy
 
@@ -474,7 +474,7 @@
 ; 49   : {
 
   00000		 |$LN10@IsHighCapa|
-  00000		 |$M40638|
+  00000		 |$M40640|
 
 ; 50   :     if (m_DeviceType == Device_SD_Memory || m_DeviceType == Device_MMC || m_DeviceType == Device_SD_Combo ) {
 
@@ -510,14 +510,14 @@
 ; 55   : }
 
   00030	e12fff1e	 bx          lr
-  00034		 |$M40639|
+  00034		 |$M40641|
 
 			 ENDP  ; |?IsHighCapacitySDMemory@CSDDevice@@QAAHXZ|, CSDDevice::IsHighCapacitySDMemory
 
 	EXPORT	|?SDGetTupleBytes@CSDDevice@@IAAJKPAEKH@Z| ; CSDDevice::SDGetTupleBytes
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40660| DCD	|$LN15@SDGetTuple|
+|$T40662| DCD	|$LN15@SDGetTuple|
 	DCD	0x40003902
 ; Function compile flags: /Ogspy
 
@@ -530,7 +530,7 @@
   00000		 |$LN15@SDGetTuple|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M40657|
+  00008		 |$M40659|
   00008	e1a08003	 mov         r8, r3
   0000c	e1a07002	 mov         r7, r2
   00010	e1a09001	 mov         r9, r1
@@ -667,7 +667,7 @@
   000d8	e28dd008	 add         sp, sp, #8
   000dc	e8bd43f0	 ldmia       sp!, {r4 - r9, lr}
   000e0	e12fff1e	 bx          lr
-  000e4		 |$M40658|
+  000e4		 |$M40660|
 
 			 ENDP  ; |?SDGetTupleBytes@CSDDevice@@IAAJKPAEKH@Z|, CSDDevice::SDGetTupleBytes
 
@@ -678,17 +678,17 @@
 	IMPORT	|__security_check_cookie|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40683| DCD	|$LN15@SDGetFunct|
+|$T40685| DCD	|$LN15@SDGetFunct|
 	DCD	0xc0005102
 
   00000			 AREA	 |.xdata|, DATA
-|$T40679| DCD	0xffffffe4
+|$T40681| DCD	0xffffffe4
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T40679|
+  00004	00000000	 DCD         |$T40681|
 
   00008		 |?SDGetFunctionPowerControlTuples@CSDDevice@@IAAJXZ| PROC ; CSDDevice::SDGetFunctionPowerControlTuples
 
@@ -697,7 +697,7 @@
   00008		 |$LN15@SDGetFunct|
   00008	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   0000c	e24ddf43	 sub         sp, sp, #0x43, 30
-  00010		 |$M40680|
+  00010		 |$M40682|
   00010	e1a06000	 mov         r6, r0
   00014	e59f312c	 ldr         r3, [pc, #0x12C]
   00018	e5933000	 ldr         r3, [r3]
@@ -926,7 +926,7 @@
   00148		 |$LN16@SDGetFunct|
   00148		 |$LN17@SDGetFunct|
   00148	00000000	 DCD         |__security_cookie|
-  0014c		 |$M40681|
+  0014c		 |$M40683|
 
 			 ENDP  ; |?SDGetFunctionPowerControlTuples@CSDDevice@@IAAJXZ|, CSDDevice::SDGetFunctionPowerControlTuples
 
@@ -934,7 +934,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40719| DCD	|$LN43@GetFunctio@2|
+|$T40721| DCD	|$LN43@GetFunctio@2|
 	DCD	0x40009202
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevinf.cpp
@@ -948,7 +948,7 @@
   00000		 |$LN43@GetFunctio@2|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M40716|
+  00008		 |$M40718|
   00008	e1a06001	 mov         r6, r1
   0000c	e1a07000	 mov         r7, r0
 
@@ -1310,7 +1310,7 @@
   0023c	e28dd00c	 add         sp, sp, #0xC
   00240	e8bd41f0	 ldmia       sp!, {r4 - r8, lr}
   00244	e12fff1e	 bx          lr
-  00248		 |$M40717|
+  00248		 |$M40719|
 
 			 ENDP  ; |?GetFunctionPowerState@CSDDevice@@QAAJPAU_FUNCTION_POWER_STATE@@@Z|, CSDDevice::GetFunctionPowerState
 
@@ -1318,17 +1318,17 @@
 	EXPORT	|?GetCardStatus@CSDDevice@@IAAJPAK@Z|	; CSDDevice::GetCardStatus
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40738| DCD	|$LN7@GetCardSta|
+|$T40740| DCD	|$LN7@GetCardSta|
 	DCD	0xc0003602
 
   00000			 AREA	 |.xdata|, DATA
-|$T40734| DCD	0xffffffe4
+|$T40736| DCD	0xffffffe4
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T40734|
+  00004	00000000	 DCD         |$T40736|
 
   00008		 |?GetCardStatus@CSDDevice@@IAAJPAK@Z| PROC ; CSDDevice::GetCardStatus
 
@@ -1337,7 +1337,7 @@
   00008		 |$LN7@GetCardSta|
   00008	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   0000c	e24dd03c	 sub         sp, sp, #0x3C
-  00010		 |$M40735|
+  00010		 |$M40737|
   00010	e1a08001	 mov         r8, r1
   00014	e59f30c0	 ldr         r3, [pc, #0xC0]
   00018	e5933000	 ldr         r3, [r3]
@@ -1431,7 +1431,7 @@
   000dc		 |$LN8@GetCardSta|
   000dc		 |$LN9@GetCardSta|
   000dc	00000000	 DCD         |__security_cookie|
-  000e0		 |$M40736|
+  000e0		 |$M40738|
 
 			 ENDP  ; |?GetCardStatus@CSDDevice@@IAAJPAK@Z|, CSDDevice::GetCardStatus
 
@@ -1439,7 +1439,7 @@
 	IMPORT	|memcpy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40757| DCD	|$LN8@InfoQueryC|
+|$T40759| DCD	|$LN8@InfoQueryC|
 	DCD	0x40005b01
 ; Function compile flags: /Ogspy
 
@@ -1451,7 +1451,7 @@
 
   00000		 |$LN8@InfoQueryC|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M40754|
+  00004		 |$M40756|
   00004	e1a0e001	 mov         lr, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -1690,14 +1690,14 @@
 
   00164	e8bd4010	 ldmia       sp!, {r4, lr}
   00168	e12fff1e	 bx          lr
-  0016c		 |$M40755|
+  0016c		 |$M40757|
 
 			 ENDP  ; |?InfoQueryCID@CSDDevice@@IAAJPAXK@Z|, CSDDevice::InfoQueryCID
 
 	EXPORT	|?DumpParsedCSDRegisters@@YAXPAU_SD_PARSED_REGISTER_CSD@@@Z| ; DumpParsedCSDRegisters
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40764| DCD	|$LN11@DumpParsed|
+|$T40766| DCD	|$LN11@DumpParsed|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -1708,7 +1708,7 @@
 ; 625  : {
 
   00000		 |$LN11@DumpParsed|
-  00000		 |$M40761|
+  00000		 |$M40763|
 
 ; 626  : 
 ; 627  :     DEBUGMSG(SDBUS_ZONE_REQUEST, (TEXT("\n\n\nSDCard: Dumping parsed Registers : \n")));
@@ -1756,14 +1756,14 @@
 ; 669  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M40762|
+  00004		 |$M40764|
 
 			 ENDP  ; |?DumpParsedCSDRegisters@@YAXPAU_SD_PARSED_REGISTER_CSD@@@Z|, DumpParsedCSDRegisters
 
 	EXPORT	|?InfoQueryRCA@CSDDevice@@IAAJPAXK@Z|	; CSDDevice::InfoQueryRCA
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40775| DCD	|$LN5@InfoQueryR|
+|$T40777| DCD	|$LN5@InfoQueryR|
 	DCD	0x40000700
 ; Function compile flags: /Ogspy
 
@@ -1774,7 +1774,7 @@
 ; 1055 : {
 
   00000		 |$LN5@InfoQueryR|
-  00000		 |$M40772|
+  00000		 |$M40774|
 
 ; 1056 :     PREFAST_DEBUGCHK(pCardInfo);
 ; 1057 :     DEBUGCHK(cbCardInfo == sizeof(SD_CARD_RCA));
@@ -1795,14 +1795,14 @@
 ; 1062 : }
 
   00018	e12fff1e	 bx          lr
-  0001c		 |$M40773|
+  0001c		 |$M40775|
 
 			 ENDP  ; |?InfoQueryRCA@CSDDevice@@IAAJPAXK@Z|, CSDDevice::InfoQueryRCA
 
 	EXPORT	|?InfoQueryCardInterface@CSDDevice@@IAAJPAXK@Z| ; CSDDevice::InfoQueryCardInterface
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40788| DCD	|$LN7@InfoQueryC@2|
+|$T40790| DCD	|$LN7@InfoQueryC@2|
 	DCD	0x40001201
 ; Function compile flags: /Ogspy
 
@@ -1814,7 +1814,7 @@
 
   00000		 |$LN7@InfoQueryC@2|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M40785|
+  00004		 |$M40787|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -1847,14 +1847,14 @@
 
   00040	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00044	e12fff1e	 bx          lr
-  00048		 |$M40786|
+  00048		 |$M40788|
 
 			 ENDP  ; |?InfoQueryCardInterface@CSDDevice@@IAAJPAXK@Z|, CSDDevice::InfoQueryCardInterface
 
 	EXPORT	|?InfoQueryStatus@CSDDevice@@IAAJPAXK@Z| ; CSDDevice::InfoQueryStatus
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40799| DCD	|$LN5@InfoQueryS|
+|$T40801| DCD	|$LN5@InfoQueryS|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -1866,7 +1866,7 @@
 
   00000		 |$LN5@InfoQueryS|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M40796|
+  00004		 |$M40798|
 
 ; 1080 :     DEBUGCHK(pCardInfo);
 ; 1081 :     DEBUGCHK(cbCardInfo == sizeof(SD_CARD_STATUS));
@@ -1880,7 +1880,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M40797|
+  00010		 |$M40799|
 
 			 ENDP  ; |?InfoQueryStatus@CSDDevice@@IAAJPAXK@Z|, CSDDevice::InfoQueryStatus
 
@@ -1889,15 +1889,15 @@
 	IMPORT	|__C_specific_handler|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40827| DCD	|$LN21@InfoQueryS@2|
+|$T40829| DCD	|$LN21@InfoQueryS@2|
 	DCD	0xc0002d04
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40829| DCD	|$LN9@InfoQueryS@2|
+|$T40831| DCD	|$LN9@InfoQueryS@2|
 	DCD	0x40000301
 
   00000			 AREA	 |.xdata|, DATA
-|$T40825| DCD	0x1
+|$T40827| DCD	0x1
 	DCD	|$LN13@InfoQueryS@2|
 	DCD	|$LN14@InfoQueryS@2|
 	DCD	|$LN9@InfoQueryS@2|
@@ -1907,7 +1907,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T40825|
+  00004	00000000	 DCD         |$T40827|
 
   00008		 |?InfoQuerySDIOInfo@CSDDevice@@IAAJPAXK@Z| PROC ; CSDDevice::InfoQuerySDIOInfo
 
@@ -2046,7 +2046,7 @@
 	EXPORT	|?InfoQueryHostInterface@CSDDevice@@IAAJPAXK@Z| ; CSDDevice::InfoQueryHostInterface
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40845| DCD	|$LN10@InfoQueryH|
+|$T40847| DCD	|$LN10@InfoQueryH|
 	DCD	0x40001300
 ; Function compile flags: /Ogspy
 
@@ -2057,7 +2057,7 @@
 ; 1126 : {
 
   00000		 |$LN10@InfoQueryH|
-  00000		 |$M40842|
+  00000		 |$M40844|
 
 ; 1127 :     PREFAST_DEBUGCHK(pCardInfo);
 ; 1128 :     DEBUGCHK(cbCardInfo == sizeof(SD_CARD_INTERFACE));
@@ -2115,7 +2115,7 @@
 ; 1147 : }
 
   00048	e12fff1e	 bx          lr
-  0004c		 |$M40843|
+  0004c		 |$M40845|
 
 			 ENDP  ; |?InfoQueryHostInterface@CSDDevice@@IAAJPAXK@Z|, CSDDevice::InfoQueryHostInterface
 
@@ -2123,7 +2123,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbus.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40876| DCD	|$LN14@InfoQueryB|
+|$T40878| DCD	|$LN14@InfoQueryB|
 	DCD	0x40001d02
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevinf.cpp
@@ -2137,7 +2137,7 @@
   00000		 |$LN14@InfoQueryB|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M40873|
+  00008		 |$M40875|
   00008	e1a05001	 mov         r5, r1
   0000c	e1a04000	 mov         r4, r0
 
@@ -2188,13 +2188,13 @@
   00068	e28dd00c	 add         sp, sp, #0xC
   0006c	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00070	e12fff1e	 bx          lr
-  00074		 |$M40874|
+  00074		 |$M40876|
 
 			 ENDP  ; |?InfoQueryBlockCaps@CSDDevice@@IAAJPAXK@Z|, CSDDevice::InfoQueryBlockCaps
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40895| DCD	|$LN12@ShiftBytes|
+|$T40897| DCD	|$LN12@ShiftBytes|
 	DCD	0x40001b01
 ; Function compile flags: /Ogspy
 
@@ -2206,7 +2206,7 @@
 
   00000		 |$LN12@ShiftBytes|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M40892|
+  00004		 |$M40894|
   00004	e1a04003	 mov         r4, r3
   00008	e1a07000	 mov         r7, r0
 
@@ -2281,7 +2281,7 @@
 
   00064	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   00068	e12fff1e	 bx          lr
-  0006c		 |$M40893|
+  0006c		 |$M40895|
 
 			 ENDP  ; |?ShiftBytes@@YAXPAEKK0@Z|, ShiftBytes
 
@@ -2290,17 +2290,17 @@
 	IMPORT	|memcmp|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40911| DCD	|$LN17@EmulateSec|
+|$T40913| DCD	|$LN17@EmulateSec|
 	DCD	0xc0004102
 
   00000			 AREA	 |.xdata|, DATA
-|$T40907| DCD	0xfffffff0
+|$T40909| DCD	0xfffffff0
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T40907|
+  00004	00000000	 DCD         |$T40909|
 
   00008		 |?EmulateSectorNumberByProdutID@CSDDevice@@QAAKXZ| PROC ; CSDDevice::EmulateSectorNumberByProdutID
 
@@ -2309,7 +2309,7 @@
   00008		 |$LN17@EmulateSec|
   00008	e92d4030	 stmdb       sp!, {r4, r5, lr}
   0000c	e24dd02c	 sub         sp, sp, #0x2C
-  00010		 |$M40908|
+  00010		 |$M40910|
   00010	e59f30f0	 ldr         r3, [pc, #0xF0]
   00014	e5933000	 ldr         r3, [r3]
   00018	e58d3028	 str         r3, [sp, #0x28]
@@ -2456,7 +2456,7 @@
   00104	00000000	 DCD         |cInandProductName04G|
   00108		 |$LN20@EmulateSec|
   00108	00000000	 DCD         |__security_cookie|
-  0010c		 |$M40909|
+  0010c		 |$M40911|
 
 			 ENDP  ; |?EmulateSectorNumberByProdutID@CSDDevice@@QAAKXZ|, CSDDevice::EmulateSectorNumberByProdutID
 
@@ -2464,7 +2464,7 @@
 ; File c:\wince600\public\common\sdk\inc\safeint.hxx
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40926| DCD	|$LN5@SafeInt|
+|$T40928| DCD	|$LN5@SafeInt|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -2475,7 +2475,7 @@
 ; 373  : 	SafeInt(T i)
 
   00000		 |$LN5@SafeInt|
-  00000		 |$M40923|
+  00000		 |$M40925|
 
 ; 374  : 	{
 ; 375  : 		//always safe
@@ -2486,14 +2486,14 @@
 ; 377  : 	}
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M40924|
+  00008		 |$M40926|
 
 			 ENDP  ; |??0?$SafeInt@K@@QAA@K@Z|, SafeInt<unsigned long>::SafeInt<unsigned long>
 
 	EXPORT	|??O?$SafeInt@K@@QBA_NV0@@Z|		; SafeInt<unsigned long>::operator>
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40939| DCD	|$LN7@operator|
+|$T40941| DCD	|$LN7@operator|
 	DCD	0x40000700
 ; Function compile flags: /Ogspy
 
@@ -2504,7 +2504,7 @@
 ; 896  : 	{
 
   00000		 |$LN7@operator|
-  00000		 |$M40936|
+  00000		 |$M40938|
 
 ; 897  : 		return m_int > rhs.m_int;
 
@@ -2518,14 +2518,14 @@
 ; 898  : 	}
 
   00018	e12fff1e	 bx          lr
-  0001c		 |$M40937|
+  0001c		 |$M40939|
 
 			 ENDP  ; |??O?$SafeInt@K@@QBA_NV0@@Z|, SafeInt<unsigned long>::operator>
 
 	EXPORT	|?Value@?$SafeInt@K@@QBAKXZ|		; SafeInt<unsigned long>::Value
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40949| DCD	|$LN5@Value|
+|$T40951| DCD	|$LN5@Value|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -2536,17 +2536,17 @@
 ; 564  : 	T Value() const {return m_int;}
 
   00000		 |$LN5@Value|
-  00000		 |$M40946|
+  00000		 |$M40948|
   00000	e5900000	 ldr         r0, [r0]
   00004	e12fff1e	 bx          lr
-  00008		 |$M40947|
+  00008		 |$M40949|
 
 			 ENDP  ; |?Value@?$SafeInt@K@@QBAKXZ|, SafeInt<unsigned long>::Value
 
 	EXPORT	|?IsSigned@?$SafeInt@K@@SA_NXZ|		; SafeInt<unsigned long>::IsSigned
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40958| DCD	|$LN5@IsSigned|
+|$T40960| DCD	|$LN5@IsSigned|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -2557,7 +2557,7 @@
 ; 449  : 	{
 
   00000		 |$LN5@IsSigned|
-  00000		 |$M40955|
+  00000		 |$M40957|
 
 ; 450  : 		return( (T)-1 < 0 );
 
@@ -2566,14 +2566,14 @@
 ; 451  : 	}
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M40956|
+  00008		 |$M40958|
 
 			 ENDP  ; |?IsSigned@?$SafeInt@K@@SA_NXZ|, SafeInt<unsigned long>::IsSigned
 
 	EXPORT	|?IsMixedSign@?$SafeInt@K@@CA_NKK@Z|	; SafeInt<unsigned long>::IsMixedSign
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40969| DCD	|$LN7@IsMixedSig|
+|$T40971| DCD	|$LN7@IsMixedSig|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -2584,7 +2584,7 @@
 ; 2315 : 	{
 
   00000		 |$LN7@IsMixedSig|
-  00000		 |$M40966|
+  00000		 |$M40968|
 
 ; 2316 : 		return ((lhs ^ rhs) < 0);
 
@@ -2593,14 +2593,14 @@
 ; 2317 : 	}
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M40967|
+  00008		 |$M40969|
 
 			 ENDP  ; |?IsMixedSign@?$SafeInt@K@@CA_NKK@Z|, SafeInt<unsigned long>::IsMixedSign
 
 	EXPORT	|?IsSigned@?$SafeInt@E@@SA_NXZ|		; SafeInt<unsigned char>::IsSigned
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40978| DCD	|$LN5@IsSigned@2|
+|$T40980| DCD	|$LN5@IsSigned@2|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -2611,7 +2611,7 @@
 ; 449  : 	{
 
   00000		 |$LN5@IsSigned@2|
-  00000		 |$M40975|
+  00000		 |$M40977|
 
 ; 450  : 		return( (T)-1 < 0 );
 
@@ -2620,14 +2620,14 @@
 ; 451  : 	}
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M40976|
+  00008		 |$M40978|
 
 			 ENDP  ; |?IsSigned@?$SafeInt@E@@SA_NXZ|, SafeInt<unsigned char>::IsSigned
 
 	EXPORT	|?BitCount@?$SafeInt@K@@SAEXZ|		; SafeInt<unsigned long>::BitCount
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40987| DCD	|$LN5@BitCount|
+|$T40989| DCD	|$LN5@BitCount|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -2638,17 +2638,17 @@
 ; 453  : 	static unsigned char BitCount(){return (sizeof(T)*8);}
 
   00000		 |$LN5@BitCount|
-  00000		 |$M40984|
+  00000		 |$M40986|
   00000	e3a00020	 mov         r0, #0x20
   00004	e12fff1e	 bx          lr
-  00008		 |$M40985|
+  00008		 |$M40987|
 
 			 ENDP  ; |?BitCount@?$SafeInt@K@@SAEXZ|, SafeInt<unsigned long>::BitCount
 
 	EXPORT	|??0?$SafeInt@H@@QAA@H@Z|		; SafeInt<int>::SafeInt<int>
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40998| DCD	|$LN5@SafeInt@2|
+|$T41000| DCD	|$LN5@SafeInt@2|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -2659,7 +2659,7 @@
 ; 373  : 	SafeInt(T i)
 
   00000		 |$LN5@SafeInt@2|
-  00000		 |$M40995|
+  00000		 |$M40997|
 
 ; 374  : 	{
 ; 375  : 		//always safe
@@ -2670,14 +2670,14 @@
 ; 377  : 	}
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M40996|
+  00008		 |$M40998|
 
 			 ENDP  ; |??0?$SafeInt@H@@QAA@H@Z|, SafeInt<int>::SafeInt<int>
 
 	EXPORT	|?IsSigned@?$SafeInt@H@@SA_NXZ|		; SafeInt<int>::IsSigned
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41007| DCD	|$LN5@IsSigned@3|
+|$T41009| DCD	|$LN5@IsSigned@3|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -2688,7 +2688,7 @@
 ; 449  : 	{
 
   00000		 |$LN5@IsSigned@3|
-  00000		 |$M41004|
+  00000		 |$M41006|
 
 ; 450  : 		return( (T)-1 < 0 );
 
@@ -2697,14 +2697,14 @@
 ; 451  : 	}
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M41005|
+  00008		 |$M41007|
 
 			 ENDP  ; |?IsSigned@?$SafeInt@H@@SA_NXZ|, SafeInt<int>::IsSigned
 
 	EXPORT	|?Value@?$SafeInt@H@@QBAHXZ|		; SafeInt<int>::Value
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41017| DCD	|$LN5@Value@2|
+|$T41019| DCD	|$LN5@Value@2|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -2715,17 +2715,17 @@
 ; 564  : 	T Value() const {return m_int;}
 
   00000		 |$LN5@Value@2|
-  00000		 |$M41014|
+  00000		 |$M41016|
   00000	e5900000	 ldr         r0, [r0]
   00004	e12fff1e	 bx          lr
-  00008		 |$M41015|
+  00008		 |$M41017|
 
 			 ENDP  ; |?Value@?$SafeInt@H@@QBAHXZ|, SafeInt<int>::Value
 
 	EXPORT	|?Is64Bit@?$SafeInt@K@@SA_NXZ|		; SafeInt<unsigned long>::Is64Bit
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41026| DCD	|$LN5@Is64Bit|
+|$T41028| DCD	|$LN5@Is64Bit|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -2736,17 +2736,17 @@
 ; 456  : 	static bool Is64Bit(){return sizeof(T) == 8;}
 
   00000		 |$LN5@Is64Bit|
-  00000		 |$M41023|
+  00000		 |$M41025|
   00000	e3a00000	 mov         r0, #0
   00004	e12fff1e	 bx          lr
-  00008		 |$M41024|
+  00008		 |$M41026|
 
 			 ENDP  ; |?Is64Bit@?$SafeInt@K@@SA_NXZ|, SafeInt<unsigned long>::Is64Bit
 
 	EXPORT	|?Is32Bit@?$SafeInt@K@@SA_NXZ|		; SafeInt<unsigned long>::Is32Bit
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41035| DCD	|$LN5@Is32Bit|
+|$T41037| DCD	|$LN5@Is32Bit|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -2757,17 +2757,17 @@
 ; 457  : 	static bool Is32Bit(){return sizeof(T) == 4;}
 
   00000		 |$LN5@Is32Bit|
-  00000		 |$M41032|
+  00000		 |$M41034|
   00000	e3a00001	 mov         r0, #1
   00004	e12fff1e	 bx          lr
-  00008		 |$M41033|
+  00008		 |$M41035|
 
 			 ENDP  ; |?Is32Bit@?$SafeInt@K@@SA_NXZ|, SafeInt<unsigned long>::Is32Bit
 
 	EXPORT	|?Is16Bit@?$SafeInt@K@@SA_NXZ|		; SafeInt<unsigned long>::Is16Bit
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41044| DCD	|$LN5@Is16Bit|
+|$T41046| DCD	|$LN5@Is16Bit|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -2778,17 +2778,17 @@
 ; 458  : 	static bool Is16Bit(){return sizeof(T) == 2;}
 
   00000		 |$LN5@Is16Bit|
-  00000		 |$M41041|
+  00000		 |$M41043|
   00000	e3a00000	 mov         r0, #0
   00004	e12fff1e	 bx          lr
-  00008		 |$M41042|
+  00008		 |$M41044|
 
 			 ENDP  ; |?Is16Bit@?$SafeInt@K@@SA_NXZ|, SafeInt<unsigned long>::Is16Bit
 
 	EXPORT	|??4?$SafeInt@H@@QAAAAV0@V0@@Z|		; SafeInt<int>::operator=
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41055| DCD	|$LN5@operator@2|
+|$T41057| DCD	|$LN5@operator@2|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -2799,7 +2799,7 @@
 ; 515  : 	{
 
   00000		 |$LN5@operator@2|
-  00000		 |$M41052|
+  00000		 |$M41054|
 
 ; 516  : 		m_int = rhs.m_int;
 
@@ -2809,14 +2809,14 @@
 ; 518  : 	}
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M41053|
+  00008		 |$M41055|
 
 			 ENDP  ; |??4?$SafeInt@H@@QAAAAV0@V0@@Z|, SafeInt<int>::operator=
 
 	EXPORT	|?IsSigned@?$SafeInt@_J@@SA_NXZ|	; SafeInt<__int64>::IsSigned
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41064| DCD	|$LN5@IsSigned@4|
+|$T41066| DCD	|$LN5@IsSigned@4|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -2827,7 +2827,7 @@
 ; 449  : 	{
 
   00000		 |$LN5@IsSigned@4|
-  00000		 |$M41061|
+  00000		 |$M41063|
 
 ; 450  : 		return( (T)-1 < 0 );
 
@@ -2836,14 +2836,14 @@
 ; 451  : 	}
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M41062|
+  00008		 |$M41064|
 
 			 ENDP  ; |?IsSigned@?$SafeInt@_J@@SA_NXZ|, SafeInt<__int64>::IsSigned
 
 	EXPORT	|?IsSigned@?$SafeInt@I@@SA_NXZ|		; SafeInt<unsigned int>::IsSigned
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41073| DCD	|$LN5@IsSigned@5|
+|$T41075| DCD	|$LN5@IsSigned@5|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -2854,7 +2854,7 @@
 ; 449  : 	{
 
   00000		 |$LN5@IsSigned@5|
-  00000		 |$M41070|
+  00000		 |$M41072|
 
 ; 450  : 		return( (T)-1 < 0 );
 
@@ -2863,14 +2863,14 @@
 ; 451  : 	}
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M41071|
+  00008		 |$M41073|
 
 			 ENDP  ; |?IsSigned@?$SafeInt@I@@SA_NXZ|, SafeInt<unsigned int>::IsSigned
 
 	EXPORT	|?IsSigned@?$SafeInt@_K@@SA_NXZ|	; SafeInt<unsigned __int64>::IsSigned
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41082| DCD	|$LN5@IsSigned@6|
+|$T41084| DCD	|$LN5@IsSigned@6|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -2881,7 +2881,7 @@
 ; 449  : 	{
 
   00000		 |$LN5@IsSigned@6|
-  00000		 |$M41079|
+  00000		 |$M41081|
 
 ; 450  : 		return( (T)-1 < 0 );
 
@@ -2890,14 +2890,14 @@
 ; 451  : 	}
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M41080|
+  00008		 |$M41082|
 
 			 ENDP  ; |?IsSigned@?$SafeInt@_K@@SA_NXZ|, SafeInt<unsigned __int64>::IsSigned
 
 	EXPORT	|?BitCount@?$SafeInt@H@@SAEXZ|		; SafeInt<int>::BitCount
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41091| DCD	|$LN5@BitCount@2|
+|$T41093| DCD	|$LN5@BitCount@2|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -2908,17 +2908,17 @@
 ; 453  : 	static unsigned char BitCount(){return (sizeof(T)*8);}
 
   00000		 |$LN5@BitCount@2|
-  00000		 |$M41088|
+  00000		 |$M41090|
   00000	e3a00020	 mov         r0, #0x20
   00004	e12fff1e	 bx          lr
-  00008		 |$M41089|
+  00008		 |$M41091|
 
 			 ENDP  ; |?BitCount@?$SafeInt@H@@SAEXZ|, SafeInt<int>::BitCount
 
 	EXPORT	|?Is64Bit@?$SafeInt@H@@SA_NXZ|		; SafeInt<int>::Is64Bit
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41100| DCD	|$LN5@Is64Bit@2|
+|$T41102| DCD	|$LN5@Is64Bit@2|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -2929,17 +2929,17 @@
 ; 456  : 	static bool Is64Bit(){return sizeof(T) == 8;}
 
   00000		 |$LN5@Is64Bit@2|
-  00000		 |$M41097|
+  00000		 |$M41099|
   00000	e3a00000	 mov         r0, #0
   00004	e12fff1e	 bx          lr
-  00008		 |$M41098|
+  00008		 |$M41100|
 
 			 ENDP  ; |?Is64Bit@?$SafeInt@H@@SA_NXZ|, SafeInt<int>::Is64Bit
 
 	EXPORT	|?Is32Bit@?$SafeInt@H@@SA_NXZ|		; SafeInt<int>::Is32Bit
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41109| DCD	|$LN5@Is32Bit@2|
+|$T41111| DCD	|$LN5@Is32Bit@2|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -2950,17 +2950,17 @@
 ; 457  : 	static bool Is32Bit(){return sizeof(T) == 4;}
 
   00000		 |$LN5@Is32Bit@2|
-  00000		 |$M41106|
+  00000		 |$M41108|
   00000	e3a00001	 mov         r0, #1
   00004	e12fff1e	 bx          lr
-  00008		 |$M41107|
+  00008		 |$M41109|
 
 			 ENDP  ; |?Is32Bit@?$SafeInt@H@@SA_NXZ|, SafeInt<int>::Is32Bit
 
 	EXPORT	|?Is16Bit@?$SafeInt@H@@SA_NXZ|		; SafeInt<int>::Is16Bit
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41118| DCD	|$LN5@Is16Bit@2|
+|$T41120| DCD	|$LN5@Is16Bit@2|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -2971,17 +2971,17 @@
 ; 458  : 	static bool Is16Bit(){return sizeof(T) == 2;}
 
   00000		 |$LN5@Is16Bit@2|
-  00000		 |$M41115|
+  00000		 |$M41117|
   00000	e3a00000	 mov         r0, #0
   00004	e12fff1e	 bx          lr
-  00008		 |$M41116|
+  00008		 |$M41118|
 
 			 ENDP  ; |?Is16Bit@?$SafeInt@H@@SA_NXZ|, SafeInt<int>::Is16Bit
 
 	EXPORT	|?IsMixedSign@?$SafeInt@H@@CA_NHH@Z|	; SafeInt<int>::IsMixedSign
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41131| DCD	|$LN7@IsMixedSig@2|
+|$T41133| DCD	|$LN7@IsMixedSig@2|
 	DCD	0x40000600
 ; Function compile flags: /Ogspy
 
@@ -2992,7 +2992,7 @@
 ; 2315 : 	{
 
   00000		 |$LN7@IsMixedSig@2|
-  00000		 |$M41128|
+  00000		 |$M41130|
 
 ; 2316 : 		return ((lhs ^ rhs) < 0);
 
@@ -3005,14 +3005,14 @@
 ; 2317 : 	}
 
   00014	e12fff1e	 bx          lr
-  00018		 |$M41129|
+  00018		 |$M41131|
 
 			 ENDP  ; |?IsMixedSign@?$SafeInt@H@@CA_NHH@Z|, SafeInt<int>::IsMixedSign
 
 	EXPORT	|??4?$SafeInt@K@@QAAAAV0@V0@@Z|		; SafeInt<unsigned long>::operator=
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41142| DCD	|$LN5@operator@3|
+|$T41144| DCD	|$LN5@operator@3|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -3023,7 +3023,7 @@
 ; 515  : 	{
 
   00000		 |$LN5@operator@3|
-  00000		 |$M41139|
+  00000		 |$M41141|
 
 ; 516  : 		m_int = rhs.m_int;
 
@@ -3033,7 +3033,7 @@
 ; 518  : 	}
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M41140|
+  00008		 |$M41142|
 
 			 ENDP  ; |??4?$SafeInt@K@@QAAAAV0@V0@@Z|, SafeInt<unsigned long>::operator=
 
@@ -3041,7 +3041,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevinf.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41170| DCD	|$LN28@SDGetTuple@2|
+|$T41172| DCD	|$LN28@SDGetTuple@2|
 	DCD	0x40004102
 ; Function compile flags: /Ogspy
 
@@ -3054,7 +3054,7 @@
   00000		 |$LN28@SDGetTuple@2|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M41167|
+  00008		 |$M41169|
   00008	e1b04003	 movs        r4, r3
   0000c	e1a05002	 mov         r5, r2
   00010	e1a09001	 mov         r9, r1
@@ -3261,7 +3261,7 @@
   000f8	e28dd008	 add         sp, sp, #8
   000fc	e8bd43f0	 ldmia       sp!, {r4 - r9, lr}
   00100	e12fff1e	 bx          lr
-  00104		 |$M41168|
+  00104		 |$M41170|
 
 			 ENDP  ; |?SDGetTuple_I@CSDDevice@@UAAJEPAEPAKH@Z|, CSDDevice::SDGetTuple_I
 
@@ -3269,7 +3269,7 @@
 ; File c:\wince600\public\common\sdk\inc\safeint.hxx
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41213| DCD	|$LN32@addition|
+|$T41215| DCD	|$LN32@addition|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -3281,7 +3281,7 @@
 
   00000		 |$LN32@addition|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M41210|
+  00004		 |$M41212|
 
 ; 1444 : 		T tmp = rhs + lhs;
 
@@ -3335,14 +3335,14 @@
   0002c	e49de004	 ldr         lr, [sp], #4
   00030	e12fff1e	 bx          lr
   00034		 |$LN29@addition|
-  00034		 |$M41211|
+  00034		 |$M41213|
 
 			 ENDP  ; |?addition@?$SafeInt@K@@CAKKK@Z|, SafeInt<unsigned long>::addition
 
 	EXPORT	|?MaxInt@?$SafeInt@K@@SAKXZ|		; SafeInt<unsigned long>::MaxInt
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41229| DCD	|$LN10@MaxInt|
+|$T41231| DCD	|$LN10@MaxInt|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -3353,7 +3353,7 @@
 ; 468  : 	{
 
   00000		 |$LN10@MaxInt|
-  00000		 |$M41226|
+  00000		 |$M41228|
 
 ; 469  : 		if(IsSigned())
 ; 470  : 		{
@@ -3367,14 +3367,14 @@
 ; 475  : 	}
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M41227|
+  00008		 |$M41229|
 
 			 ENDP  ; |?MaxInt@?$SafeInt@K@@SAKXZ|, SafeInt<unsigned long>::MaxInt
 
 	EXPORT	|?MinInt@?$SafeInt@K@@SAKXZ|		; SafeInt<unsigned long>::MinInt
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41244| DCD	|$LN11@MinInt|
+|$T41246| DCD	|$LN11@MinInt|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -3385,7 +3385,7 @@
 ; 478  : 	{
 
   00000		 |$LN11@MinInt|
-  00000		 |$M41241|
+  00000		 |$M41243|
 
 ; 479  : 		if(IsSigned())
 ; 480  : 		{
@@ -3401,14 +3401,14 @@
 ; 487  : 	}
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M41242|
+  00008		 |$M41244|
 
 			 ENDP  ; |?MinInt@?$SafeInt@K@@SAKXZ|, SafeInt<unsigned long>::MinInt
 
 	EXPORT	|?multiply@?$SafeInt@K@@CAKKK@Z|	; SafeInt<unsigned long>::multiply
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41432| DCD	|$LN140@multiply|
+|$T41434| DCD	|$LN140@multiply|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -3420,7 +3420,7 @@
 
   00000		 |$LN140@multiply|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M41429|
+  00004		 |$M41431|
 
 ; 1267 : 		if(Is64Bit())
 ; 1268 : 		{
@@ -3618,14 +3618,14 @@
   0002c	e49de004	 ldr         lr, [sp], #4
   00030	e12fff1e	 bx          lr
   00034		 |$LN137@multiply|
-  00034		 |$M41430|
+  00034		 |$M41432|
 
 			 ENDP  ; |?multiply@?$SafeInt@K@@CAKKK@Z|, SafeInt<unsigned long>::multiply
 
 	EXPORT	|??$?0H@?$SafeInt@K@@QAA@H@Z|		; SafeInt<unsigned long>::SafeInt<unsigned long><int>
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41513| DCD	|$LN55@SafeInt@3|
+|$T41515| DCD	|$LN55@SafeInt@3|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -3637,7 +3637,7 @@
 
   00000		 |$LN55@SafeInt@3|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M41510|
+  00004		 |$M41512|
   00004	e3510000	 cmp         r1, #0
 
 ; 391  : 	{
@@ -3699,14 +3699,14 @@
   00028	e49de004	 ldr         lr, [sp], #4
   0002c	e12fff1e	 bx          lr
   00030		 |$LN52@SafeInt@3|
-  00030		 |$M41511|
+  00030		 |$M41513|
 
 			 ENDP  ; |??$?0H@?$SafeInt@K@@QAA@H@Z|, SafeInt<unsigned long>::SafeInt<unsigned long><int>
 
 	EXPORT	|??$?0_J@?$SafeInt@K@@QAA@_J@Z|		; SafeInt<unsigned long>::SafeInt<unsigned long><__int64>
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41597| DCD	|$LN57@SafeInt@4|
+|$T41599| DCD	|$LN57@SafeInt@4|
 	DCD	0x40001502
 ; Function compile flags: /Ogspy
 
@@ -3719,7 +3719,7 @@
   00000		 |$LN57@SafeInt@4|
   00000	e52de004	 str         lr, [sp, #-4]!
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M41594|
+  00008		 |$M41596|
 
 ; 391  : 	{
 ; 392  : 		//use signed-unsigned test on U
@@ -3789,14 +3789,14 @@
   00050	eb000000	 bl          RaiseException
   00054		 |$LN58@SafeInt@4|
   00054		 |$LN54@SafeInt@4|
-  00054		 |$M41595|
+  00054		 |$M41597|
 
 			 ENDP  ; |??$?0_J@?$SafeInt@K@@QAA@_J@Z|, SafeInt<unsigned long>::SafeInt<unsigned long><__int64>
 
 	EXPORT	|??$?0I@?$SafeInt@K@@QAA@I@Z|		; SafeInt<unsigned long>::SafeInt<unsigned long><unsigned int>
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41676| DCD	|$LN53@SafeInt@5|
+|$T41678| DCD	|$LN53@SafeInt@5|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -3807,7 +3807,7 @@
 ; 390  : 	template <typename U> SafeInt(U i)
 
   00000		 |$LN53@SafeInt@5|
-  00000		 |$M41673|
+  00000		 |$M41675|
 
 ; 391  : 	{
 ; 392  : 		//use signed-unsigned test on U
@@ -3853,14 +3853,14 @@
 ; 429  : 	}
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M41674|
+  00008		 |$M41676|
 
 			 ENDP  ; |??$?0I@?$SafeInt@K@@QAA@I@Z|, SafeInt<unsigned long>::SafeInt<unsigned long><unsigned int>
 
 	EXPORT	|??$?0_K@?$SafeInt@K@@QAA@_K@Z|		; SafeInt<unsigned long>::SafeInt<unsigned long><unsigned __int64>
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41758| DCD	|$LN56@SafeInt@6|
+|$T41760| DCD	|$LN56@SafeInt@6|
 	DCD	0x40001002
 ; Function compile flags: /Ogspy
 
@@ -3873,7 +3873,7 @@
   00000		 |$LN56@SafeInt@6|
   00000	e52de004	 str         lr, [sp, #-4]!
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M41755|
+  00008		 |$M41757|
 
 ; 391  : 	{
 ; 392  : 		//use signed-unsigned test on U
@@ -3936,14 +3936,14 @@
   0003c	eb000000	 bl          RaiseException
   00040		 |$LN57@SafeInt@6|
   00040		 |$LN53@SafeInt@6|
-  00040		 |$M41756|
+  00040		 |$M41758|
 
 			 ENDP  ; |??$?0_K@?$SafeInt@K@@QAA@_K@Z|, SafeInt<unsigned long>::SafeInt<unsigned long><unsigned __int64>
 
 	EXPORT	|?MaxInt@?$SafeInt@H@@SAHXZ|		; SafeInt<int>::MaxInt
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41774| DCD	|$LN10@MaxInt@2|
+|$T41776| DCD	|$LN10@MaxInt@2|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -3954,7 +3954,7 @@
 ; 468  : 	{
 
   00000		 |$LN10@MaxInt@2|
-  00000		 |$M41771|
+  00000		 |$M41773|
 
 ; 469  : 		if(IsSigned())
 ; 470  : 		{
@@ -3968,14 +3968,14 @@
 ; 475  : 	}
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M41772|
+  00008		 |$M41774|
 
 			 ENDP  ; |?MaxInt@?$SafeInt@H@@SAHXZ|, SafeInt<int>::MaxInt
 
 	EXPORT	|?MinInt@?$SafeInt@H@@SAHXZ|		; SafeInt<int>::MinInt
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41789| DCD	|$LN11@MinInt@2|
+|$T41791| DCD	|$LN11@MinInt@2|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -3986,7 +3986,7 @@
 ; 478  : 	{
 
   00000		 |$LN11@MinInt@2|
-  00000		 |$M41786|
+  00000		 |$M41788|
 
 ; 479  : 		if(IsSigned())
 ; 480  : 		{
@@ -4002,14 +4002,14 @@
 ; 487  : 	}
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M41787|
+  00008		 |$M41789|
 
 			 ENDP  ; |?MinInt@?$SafeInt@H@@SAHXZ|, SafeInt<int>::MinInt
 
 	EXPORT	|?multiply@?$SafeInt@H@@CAHHH@Z|	; SafeInt<int>::multiply
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41978| DCD	|$LN141@multiply@2|
+|$T41980| DCD	|$LN141@multiply@2|
 	DCD	0x40001201
 ; Function compile flags: /Ogspy
 
@@ -4021,7 +4021,7 @@
 
   00000		 |$LN141@multiply@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M41975|
+  00004		 |$M41977|
 
 ; 1267 : 		if(Is64Bit())
 ; 1268 : 		{
@@ -4225,14 +4225,14 @@
   00040	e49de004	 ldr         lr, [sp], #4
   00044	e12fff1e	 bx          lr
   00048		 |$LN138@multiply@2|
-  00048		 |$M41976|
+  00048		 |$M41978|
 
 			 ENDP  ; |?multiply@?$SafeInt@H@@CAHHH@Z|, SafeInt<int>::multiply
 
 	EXPORT	|??$?0K@?$SafeInt@H@@QAA@K@Z|		; SafeInt<int>::SafeInt<int><unsigned long>
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42059| DCD	|$LN55@SafeInt@7|
+|$T42061| DCD	|$LN55@SafeInt@7|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -4244,7 +4244,7 @@
 
   00000		 |$LN55@SafeInt@7|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M42056|
+  00004		 |$M42058|
 
 ; 391  : 	{
 ; 392  : 		//use signed-unsigned test on U
@@ -4306,14 +4306,14 @@
   00028	e49de004	 ldr         lr, [sp], #4
   0002c	e12fff1e	 bx          lr
   00030		 |$LN52@SafeInt@7|
-  00030		 |$M42057|
+  00030		 |$M42059|
 
 			 ENDP  ; |??$?0K@?$SafeInt@H@@QAA@K@Z|, SafeInt<int>::SafeInt<int><unsigned long>
 
 	EXPORT	|??$?0_J@?$SafeInt@H@@QAA@_J@Z|		; SafeInt<int>::SafeInt<int><__int64>
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42143| DCD	|$LN57@SafeInt@8|
+|$T42145| DCD	|$LN57@SafeInt@8|
 	DCD	0x40001401
 ; Function compile flags: /Ogspy
 
@@ -4325,7 +4325,7 @@
 
   00000		 |$LN57@SafeInt@8|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M42140|
+  00004		 |$M42142|
 
 ; 391  : 	{
 ; 392  : 		//use signed-unsigned test on U
@@ -4395,14 +4395,14 @@
   0004c	eb000000	 bl          RaiseException
   00050		 |$LN58@SafeInt@8|
   00050		 |$LN54@SafeInt@8|
-  00050		 |$M42141|
+  00050		 |$M42143|
 
 			 ENDP  ; |??$?0_J@?$SafeInt@H@@QAA@_J@Z|, SafeInt<int>::SafeInt<int><__int64>
 
 	EXPORT	|??$?0I@?$SafeInt@H@@QAA@I@Z|		; SafeInt<int>::SafeInt<int><unsigned int>
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42224| DCD	|$LN55@SafeInt@9|
+|$T42226| DCD	|$LN55@SafeInt@9|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -4414,7 +4414,7 @@
 
   00000		 |$LN55@SafeInt@9|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M42221|
+  00004		 |$M42223|
 
 ; 391  : 	{
 ; 392  : 		//use signed-unsigned test on U
@@ -4476,14 +4476,14 @@
   00028	e49de004	 ldr         lr, [sp], #4
   0002c	e12fff1e	 bx          lr
   00030		 |$LN52@SafeInt@9|
-  00030		 |$M42222|
+  00030		 |$M42224|
 
 			 ENDP  ; |??$?0I@?$SafeInt@H@@QAA@I@Z|, SafeInt<int>::SafeInt<int><unsigned int>
 
 	EXPORT	|??$?0_K@?$SafeInt@H@@QAA@_K@Z|		; SafeInt<int>::SafeInt<int><unsigned __int64>
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42307| DCD	|$LN56@SafeInt@10|
+|$T42309| DCD	|$LN56@SafeInt@10|
 	DCD	0x40001002
 ; Function compile flags: /Ogspy
 
@@ -4496,7 +4496,7 @@
   00000		 |$LN56@SafeInt@10|
   00000	e52de004	 str         lr, [sp, #-4]!
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M42304|
+  00008		 |$M42306|
 
 ; 391  : 	{
 ; 392  : 		//use signed-unsigned test on U
@@ -4559,14 +4559,14 @@
   0003c	eb000000	 bl          RaiseException
   00040		 |$LN57@SafeInt@10|
   00040		 |$LN53@SafeInt@10|
-  00040		 |$M42305|
+  00040		 |$M42307|
 
 			 ENDP  ; |??$?0_K@?$SafeInt@H@@QAA@_K@Z|, SafeInt<int>::SafeInt<int><unsigned __int64>
 
 	EXPORT	|??H?$SafeInt@K@@QBA?AV0@V0@@Z|		; SafeInt<unsigned long>::operator+
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42393| DCD	|$LN39@operator@4|
+|$T42395| DCD	|$LN39@operator@4|
 	DCD	0x40000f01
 ; Function compile flags: /Ogspy
 
@@ -4578,7 +4578,7 @@
 
   00000		 |$LN39@operator@4|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M42390|
+  00004		 |$M42392|
 
 ; 800  : 		return SafeInt<T>(addition(m_int, rhs.Value()));
 
@@ -4602,14 +4602,14 @@
   00034	e49de004	 ldr         lr, [sp], #4
   00038	e12fff1e	 bx          lr
   0003c		 |$LN36@operator@4|
-  0003c		 |$M42391|
+  0003c		 |$M42393|
 
 			 ENDP  ; |??H?$SafeInt@K@@QBA?AV0@V0@@Z|, SafeInt<unsigned long>::operator+
 
 	EXPORT	|??$?0E@?$SafeInt@K@@QAA@E@Z|		; SafeInt<unsigned long>::SafeInt<unsigned long><unsigned char>
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42472| DCD	|$LN53@SafeInt@11|
+|$T42474| DCD	|$LN53@SafeInt@11|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -4620,7 +4620,7 @@
 ; 390  : 	template <typename U> SafeInt(U i)
 
   00000		 |$LN53@SafeInt@11|
-  00000		 |$M42469|
+  00000		 |$M42471|
 
 ; 391  : 	{
 ; 392  : 		//use signed-unsigned test on U
@@ -4666,14 +4666,14 @@
 ; 429  : 	}
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M42470|
+  00008		 |$M42472|
 
 			 ENDP  ; |??$?0E@?$SafeInt@K@@QAA@E@Z|, SafeInt<unsigned long>::SafeInt<unsigned long><unsigned char>
 
 	EXPORT	|??$MixedSizeMultiply@K@?$SafeInt@H@@CA?AV0@V0@K@Z| ; SafeInt<int>::MixedSizeMultiply<unsigned long>
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43022| DCD	|$LN273@MixedSizeM|
+|$T43024| DCD	|$LN273@MixedSizeM|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -4685,7 +4685,7 @@
 
   00000		 |$LN273@MixedSizeM|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M43019|
+  00004		 |$M43021|
   00004	e1a03001	 mov         r3, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -4839,14 +4839,14 @@
   0001c	e1a00004	 mov         r0, r4
   00020	e8bd4010	 ldmia       sp!, {r4, lr}
   00024	e12fff1e	 bx          lr
-  00028		 |$M43020|
+  00028		 |$M43022|
 
 			 ENDP  ; |??$MixedSizeMultiply@K@?$SafeInt@H@@CA?AV0@V0@K@Z|, SafeInt<int>::MixedSizeMultiply<unsigned long>
 
 	EXPORT	|??$?XK@?$SafeInt@H@@QAAAAV0@K@Z|	; SafeInt<int>::operator*=<unsigned long>
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43852| DCD	|$LN278@operator@5|
+|$T43854| DCD	|$LN278@operator@5|
 	DCD	0x40001002
 ; Function compile flags: /Ogspy
 
@@ -4859,7 +4859,7 @@
   00000		 |$LN278@operator@5|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M43849|
+  00008		 |$M43851|
   00008	e1a0e001	 mov         lr, r1
   0000c	e1a04000	 mov         r4, r0
 
@@ -4882,14 +4882,14 @@
   00034	e28dd004	 add         sp, sp, #4
   00038	e8bd4010	 ldmia       sp!, {r4, lr}
   0003c	e12fff1e	 bx          lr
-  00040		 |$M43850|
+  00040		 |$M43852|
 
 			 ENDP  ; |??$?XK@?$SafeInt@H@@QAAAAV0@K@Z|, SafeInt<int>::operator*=<unsigned long>
 
 	EXPORT	|??$MixedSizeMultiply@H@?$SafeInt@K@@CA?AV0@V0@H@Z| ; SafeInt<unsigned long>::MixedSizeMultiply<int>
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45995| DCD	|$LN951@MixedSizeM@2|
+|$T45997| DCD	|$LN951@MixedSizeM@2|
 	DCD	0x40001501
 ; Function compile flags: /Ogspy
 
@@ -4901,7 +4901,7 @@
 
   00000		 |$LN951@MixedSizeM@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M45992|
+  00004		 |$M45994|
   00004	e3520000	 cmp         r2, #0
 
 ; 1994 : 	{
@@ -5075,14 +5075,14 @@
   0004c	e49de004	 ldr         lr, [sp], #4
   00050	e12fff1e	 bx          lr
   00054		 |$LN948@MixedSizeM@2|
-  00054		 |$M45993|
+  00054		 |$M45995|
 
 			 ENDP  ; |??$MixedSizeMultiply@H@?$SafeInt@K@@CA?AV0@V0@H@Z|, SafeInt<unsigned long>::MixedSizeMultiply<int>
 
 	EXPORT	|??$?XH@?$SafeInt@K@@QAAAAV0@H@Z|	; SafeInt<unsigned long>::operator*=<int>
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46013| DCD	|$LN7@operator@6|
+|$T46015| DCD	|$LN7@operator@6|
 	DCD	0x40000d02
 ; Function compile flags: /Ogspy
 
@@ -5095,7 +5095,7 @@
   00000		 |$LN7@operator@6|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M46010|
+  00008		 |$M46012|
   00008	e1a02001	 mov         r2, r1
   0000c	e1a04000	 mov         r4, r0
 
@@ -5115,14 +5115,14 @@
   00028	e28dd004	 add         sp, sp, #4
   0002c	e8bd4010	 ldmia       sp!, {r4, lr}
   00030	e12fff1e	 bx          lr
-  00034		 |$M46011|
+  00034		 |$M46013|
 
 			 ENDP  ; |??$?XH@?$SafeInt@K@@QAAAAV0@H@Z|, SafeInt<unsigned long>::operator*=<int>
 
 	EXPORT	|??$?DH@?$SafeInt@K@@QBA?AV0@H@Z|	; SafeInt<unsigned long>::operator*<int>
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46025| DCD	|$LN5@operator@7|
+|$T46027| DCD	|$LN5@operator@7|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 
@@ -5134,7 +5134,7 @@
 
   00000		 |$LN5@operator@7|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M46022|
+  00004		 |$M46024|
   00004	e1a04001	 mov         r4, r1
 
 ; 734  : 	{
@@ -5149,7 +5149,7 @@
   00014	e1a00004	 mov         r0, r4
   00018	e8bd4010	 ldmia       sp!, {r4, lr}
   0001c	e12fff1e	 bx          lr
-  00020		 |$M46023|
+  00020		 |$M46025|
 
 			 ENDP  ; |??$?DH@?$SafeInt@K@@QBA?AV0@H@Z|, SafeInt<unsigned long>::operator*<int>
 
@@ -5158,7 +5158,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevinf.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T50394| DCD	|$LN1064@GetBitSlic|
+|$T50396| DCD	|$LN1064@GetBitSlic|
 	DCD	0x40005c02
 ; Function compile flags: /Ogspy
 
@@ -5171,7 +5171,7 @@
   00000		 |$LN1064@GetBitSlic|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M50391|
+  00008		 |$M50393|
   00008	e1a0e003	 mov         lr, r3
   0000c	e1a05002	 mov         r5, r2
   00010	e1a08001	 mov         r8, r1
@@ -5347,7 +5347,7 @@
   00168	e8bd41f0	 ldmia       sp!, {r4 - r8, lr}
   0016c	e12fff1e	 bx          lr
   00170		 |$LN1060@GetBitSlic|
-  00170		 |$M50392|
+  00170		 |$M50394|
 
 			 ENDP  ; |?GetBitSlice@CSDDevice@@IAAKPAEKKE@Z|, CSDDevice::GetBitSlice
 
@@ -5355,7 +5355,7 @@
 	IMPORT	|__muld|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T50532| DCD	|$LN223@InfoQueryC@3|
+|$T50534| DCD	|$LN223@InfoQueryC@3|
 	DCD	0x40028d02
 ; Function compile flags: /Ogspy
 
@@ -5368,7 +5368,7 @@
   00000		 |$LN223@InfoQueryC@3|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M50529|
+  00008		 |$M50531|
   00008	e1a05001	 mov         r5, r1
   0000c	e1a06000	 mov         r6, r0
 
@@ -6919,7 +6919,7 @@
   00a2c	3ff33333	 DCD         0x3ff33333
   00a30		 |$LN228@InfoQueryC@3|
   00a30	33333333	 DCD         0x33333333
-  00a34		 |$M50530|
+  00a34		 |$M50532|
 
 			 ENDP  ; |?InfoQueryCSD@CSDDevice@@IAAJPAXK@Z|, CSDDevice::InfoQueryCSD
 
@@ -6927,15 +6927,15 @@
 	IMPORT	|?SwitchFunction@CSDDevice@@IAAJPAU_SD_CARD_SWITCH_FUNCTION@@H@Z| ; CSDDevice::SwitchFunction
 
   00000			 AREA	 |.pdata|, PDATA
-|$T50601| DCD	|$LN59@SDCardInfo|
+|$T50603| DCD	|$LN59@SDCardInfo|
 	DCD	0xc0009504
 
   00000			 AREA	 |.pdata|, PDATA
-|$T50603| DCD	|$LN33@SDCardInfo|
+|$T50605| DCD	|$LN33@SDCardInfo|
 	DCD	0x40000301
 
   00000			 AREA	 |.xdata|, DATA
-|$T50599| DCD	0x1
+|$T50601| DCD	0x1
 	DCD	|$LN37@SDCardInfo|
 	DCD	|$LN38@SDCardInfo|
 	DCD	|$LN33@SDCardInfo|
@@ -6945,7 +6945,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T50599|
+  00004	00000000	 DCD         |$T50601|
 
   00008		 |?SDCardInfoQuery_I@CSDDevice@@UAAJW4SD_INFO_TYPE@@PAXK@Z| PROC ; CSDDevice::SDCardInfoQuery_I
 

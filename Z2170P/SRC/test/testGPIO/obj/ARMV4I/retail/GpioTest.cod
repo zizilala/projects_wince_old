@@ -19,7 +19,7 @@
 ; File c:\wince600\platform\z2170p\src\test\testgpio\gpiotest.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35927| DCD	|$LN9@wmain|
+|$T35929| DCD	|$LN9@wmain|
 	DCD	0x40001a01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -37,7 +37,7 @@
 
   00000		 |$LN9@wmain|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35924|
+  00004		 |$M35926|
 
 ; 11   :     DWORD id = 168;
 
@@ -119,7 +119,7 @@
   00064		 |$LN10@wmain|
   00064		 |$LN11@wmain|
   00064	00000000	 DCD         |??_C@_1BM@EIJJDCKO@?$AAH?$AAe?$AAl?$AAl?$AAo?$AA?5?$AAW?$AAo?$AAr?$AAl?$AAd?$AA?$CB?$AA?6?$AA?$AA@|
-  00068		 |$M35925|
+  00068		 |$M35927|
 
 			 ENDP  ; |wmain|
 

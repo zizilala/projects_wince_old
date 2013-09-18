@@ -15,7 +15,7 @@
 ; File c:\wince600\platform\z2170p\src\app\shell\profile.cxx
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38858| DCD	|$LN5@ProfileInt|
+|$T38860| DCD	|$LN5@ProfileInt|
 	DCD	0x40001904
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -33,7 +33,7 @@
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5000	 stmdb       sp!, {r12, lr}
   0000c	e24dd014	 sub         sp, sp, #0x14
-  00010		 |$M38855|
+  00010		 |$M38857|
 
 ; 40   :     // get option parameters
 ; 41   :     int nTargetSamples = GetOptionLong((int*)&argc, args, 100, L"s");
@@ -82,7 +82,7 @@
   00060		 |$LN6@ProfileInt|
   00060		 |$LN7@ProfileInt|
   00060	00000000	 DCD         |??_C@_13KHDBCPJB@?$AAs?$AA?$AA@|
-  00064		 |$M38856|
+  00064		 |$M38858|
 
 			 ENDP  ; |?ProfileInterruptLatency@@YAHKQAPAGP6AXPAGZZ@Z|, ProfileInterruptLatency
 
@@ -95,7 +95,7 @@
 	IMPORT	|?GetOptionFlag@@YAHPAHQAPAGPBG@Z|	; GetOptionFlag
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38876| DCD	|$LN18@ProfileDvf|
+|$T38878| DCD	|$LN18@ProfileDvf|
 	DCD	0x40004c04
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -125,7 +125,7 @@
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5030	 stmdb       sp!, {r4, r5, r12, lr}
   0000c	e24dd028	 sub         sp, sp, #0x28
-  00010		 |$M38873|
+  00010		 |$M38875|
   00010	e1a04001	 mov         r4, r1
 
 ; 66   :     BOOL rc = FALSE;
@@ -146,7 +146,7 @@
 
 ; 73   :     if (stressParam._period == NULL) goto cleanUp;
 
-  00030	0a000035	 beq         |$cleanUp$38783|
+  00030	0a000035	 beq         |$cleanUp$38785|
 
 ; 74   : 
 ; 75   :     // get duration of stress test
@@ -162,7 +162,7 @@
 
 ; 77   :     if (stressParam._duration == NULL) goto cleanUp;
 
-  00050	0a00002d	 beq         |$cleanUp$38783|
+  00050	0a00002d	 beq         |$cleanUp$38785|
 
 ; 78   : 
 ; 79   :     // get test mode (random or between two operating points)
@@ -196,7 +196,7 @@
   00090	e2403001	 sub         r3, r0, #1
   00094	e3530004	 cmp         r3, #4
   00098	e58d001c	 str         r0, [sp, #0x1C]
-  0009c	8a00001a	 bhi         |$cleanUp$38783|
+  0009c	8a00001a	 bhi         |$cleanUp$38785|
 
 ; 87   :     
 ; 88   :         stressParam._lowopm = GetOptionLong((int*)&argc, args, 0, L"l");
@@ -212,14 +212,14 @@
 ; 90   :             stressParam._lowopm >= stressParam._hiopm) 
 
   000b8	e3500004	 cmp         r0, #4
-  000bc	8a000012	 bhi         |$cleanUp$38783|
+  000bc	8a000012	 bhi         |$cleanUp$38785|
   000c0	e59d301c	 ldr         r3, [sp, #0x1C]
   000c4	e1500003	 cmp         r0, r3
 
 ; 111  : 
 ; 112  : cleanUp:
 
-  000c8	2a00000f	 bcs         |$cleanUp$38783|
+  000c8	2a00000f	 bcs         |$cleanUp$38785|
   000cc		 |$LN3@ProfileDvf|
 
 ; 91   :             {
@@ -261,7 +261,7 @@
   00100	e58de000	 str         lr, [sp]
   00104	eb000000	 bl          DeviceIoControl
   00108	e1a05000	 mov         r5, r0
-  0010c		 |$cleanUp$38783|
+  0010c		 |$cleanUp$38785|
 
 ; 113  :     
 ; 114  :     return rc;
@@ -282,14 +282,14 @@
   00128	00000000	 DCD         |??_C@_13GKPPEALH@?$AAd?$AA?$AA@|
   0012c		 |$LN24@ProfileDvf|
   0012c	00000000	 DCD         |??_C@_13DKOGBHCI@?$AAt?$AA?$AA@|
-  00130		 |$M38874|
+  00130		 |$M38876|
 
 			 ENDP  ; |?ProfileDvfs@@YAHKQAPAGP6AXPAGZZ@Z|, ProfileDvfs
 
 	EXPORT	|?ProfileSdrcStall@@YAHKQAPAGP6AXPAGZZ@Z| ; ProfileSdrcStall
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38892| DCD	|$LN5@ProfileSdr|
+|$T38894| DCD	|$LN5@ProfileSdr|
 	DCD	0x40001904
 ; Function compile flags: /Ogspy
 
@@ -304,7 +304,7 @@
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5000	 stmdb       sp!, {r12, lr}
   0000c	e24dd014	 sub         sp, sp, #0x14
-  00010		 |$M38889|
+  00010		 |$M38891|
 
 ; 125  :     // get option parameters
 ; 126  :     int nTargetSamples = GetOptionLong((int*)&argc, args, 100, L"s");
@@ -354,14 +354,14 @@
   00060		 |$LN6@ProfileSdr|
   00060		 |$LN7@ProfileSdr|
   00060	00000000	 DCD         |??_C@_13KHDBCPJB@?$AAs?$AA?$AA@|
-  00064		 |$M38890|
+  00064		 |$M38892|
 
 			 ENDP  ; |?ProfileSdrcStall@@YAHKQAPAGP6AXPAGZZ@Z|, ProfileSdrcStall
 
 	EXPORT	|?ProfileWakeupAccuracy@@YAHKQAPAGP6AXPAGZZ@Z| ; ProfileWakeupAccuracy
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38904| DCD	|$LN5@ProfileWak|
+|$T38906| DCD	|$LN5@ProfileWak|
 	DCD	0x40002204
 ; Function compile flags: /Ogspy
 
@@ -376,7 +376,7 @@
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5010	 stmdb       sp!, {r4, r12, lr}
   0000c	e24dd018	 sub         sp, sp, #0x18
-  00010		 |$M38901|
+  00010		 |$M38903|
   00010	e1a04001	 mov         r4, r1
 
 ; 152  :     WAKEUPACCURACY_TEST_PARAMETERS    testParam;
@@ -441,7 +441,7 @@
   00080	00000000	 DCD         |??_C@_13KHDBCPJB@?$AAs?$AA?$AA@|
   00084		 |$LN8@ProfileWak|
   00084	00000000	 DCD         |??_C@_13DKOGBHCI@?$AAt?$AA?$AA@|
-  00088		 |$M38902|
+  00088		 |$M38904|
 
 			 ENDP  ; |?ProfileWakeupAccuracy@@YAHKQAPAGP6AXPAGZZ@Z|, ProfileWakeupAccuracy
 

@@ -12,7 +12,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35949| DCD	|$LN5@SetEvent|
+|$T35951| DCD	|$LN5@SetEvent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -24,7 +24,7 @@
 
   00000		 |$LN5@SetEvent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35946|
+  00004		 |$M35948|
 
 ; 236  : 	return EventModify(h,EVENT_SET);
 
@@ -35,7 +35,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M35947|
+  00014		 |$M35949|
 
 			 ENDP  ; |SetEvent|
 
@@ -44,7 +44,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35959| DCD	|$LN5@CLockObjec|
+|$T35961| DCD	|$LN5@CLockObjec|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -56,7 +56,7 @@
 
   00000		 |$LN5@CLockObjec|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35956|
+  00004		 |$M35958|
   00004	e1a04000	 mov         r4, r0
 
 ; 37   :     {
@@ -69,7 +69,7 @@
   0000c	e1a00004	 mov         r0, r4
   00010	e8bd4010	 ldmia       sp!, {r4, lr}
   00014	e12fff1e	 bx          lr
-  00018		 |$M35957|
+  00018		 |$M35959|
 
 			 ENDP  ; |??0CLockObject@@QAA@XZ|, CLockObject::CLockObject
 
@@ -77,7 +77,7 @@
 	IMPORT	|DeleteCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35967| DCD	|$LN5@CLockObjec@2|
+|$T35969| DCD	|$LN5@CLockObjec@2|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -89,7 +89,7 @@
 
   00000		 |$LN5@CLockObjec@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35964|
+  00004		 |$M35966|
 
 ; 42   :         DeleteCriticalSection( &m_CSection );
 
@@ -99,7 +99,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M35965|
+  00010		 |$M35967|
 
 			 ENDP  ; |??1CLockObject@@QAA@XZ|, CLockObject::~CLockObject
 
@@ -107,7 +107,7 @@
 	IMPORT	|EnterCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35975| DCD	|$LN5@Lock|
+|$T35977| DCD	|$LN5@Lock|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -119,7 +119,7 @@
 
   00000		 |$LN5@Lock|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35972|
+  00004		 |$M35974|
 
 ; 46   :         EnterCriticalSection( &m_CSection );
 
@@ -129,7 +129,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M35973|
+  00010		 |$M35975|
 
 			 ENDP  ; |?Lock@CLockObject@@QAAXXZ|, CLockObject::Lock
 
@@ -137,7 +137,7 @@
 	IMPORT	|LeaveCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35983| DCD	|$LN5@Unlock|
+|$T35985| DCD	|$LN5@Unlock|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -149,7 +149,7 @@
 
   00000		 |$LN5@Unlock|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35980|
+  00004		 |$M35982|
 
 ; 50   :         LeaveCriticalSection( &m_CSection );
 
@@ -159,7 +159,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M35981|
+  00010		 |$M35983|
 
 			 ENDP  ; |?Unlock@CLockObject@@QAAXXZ|, CLockObject::Unlock
 
@@ -168,7 +168,7 @@
 ; File c:\wince600\public\common\oak\inc\cmthread.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35993| DCD	|$LN7@ThreadStar|
+|$T35995| DCD	|$LN7@ThreadStar|
 	DCD	0x40001001
 ; Function compile flags: /Ogspy
 
@@ -180,7 +180,7 @@
 
   00000		 |$LN7@ThreadStar|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35990|
+  00004		 |$M35992|
   00004	e1a04000	 mov         r4, r0
 
 ; 50   :         if( m_bSuspendFlag )
@@ -223,7 +223,7 @@
 
   00038	e8bd4010	 ldmia       sp!, {r4, lr}
   0003c	e12fff1e	 bx          lr
-  00040		 |$M35991|
+  00040		 |$M35993|
 
 			 ENDP  ; |?ThreadStart@CMiniThread@@QAAHXZ|, CMiniThread::ThreadStart
 
@@ -231,7 +231,7 @@
 	IMPORT	|CeSetThreadPriority|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36004| DCD	|$LN6@CeSetPrior|
+|$T36006| DCD	|$LN6@CeSetPrior|
 	DCD	0x40000b01
 ; Function compile flags: /Ogspy
 
@@ -243,7 +243,7 @@
 
   00000		 |$LN6@CeSetPrior|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M36001|
+  00004		 |$M36003|
 
 ; 78   :         if( m_hThreadHandle )
 
@@ -272,7 +272,7 @@
 
   00024	e49de004	 ldr         lr, [sp], #4
   00028	e12fff1e	 bx          lr
-  0002c		 |$M36002|
+  0002c		 |$M36004|
 
 			 ENDP  ; |?CeSetPriority@CMiniThread@@QAAHH@Z|, CMiniThread::CeSetPriority
 
@@ -281,7 +281,7 @@
 	IMPORT	|WaitForSingleObject|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36015| DCD	|$LN8@WaitThread|
+|$T36017| DCD	|$LN8@WaitThread|
 	DCD	0x40001801
 ; Function compile flags: /Ogspy
 
@@ -293,7 +293,7 @@
 
   00000		 |$LN8@WaitThread|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M36012|
+  00004		 |$M36014|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -357,7 +357,7 @@
 
   00058	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0005c	e12fff1e	 bx          lr
-  00060		 |$M36013|
+  00060		 |$M36015|
 
 			 ENDP  ; |?WaitThreadComplete@CMiniThread@@QAAHK@Z|, CMiniThread::WaitThreadComplete
 
@@ -365,7 +365,7 @@
 	IMPORT	|TerminateThread|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36026| DCD	|$LN6@ForceTermi|
+|$T36028| DCD	|$LN6@ForceTermi|
 	DCD	0x40001401
 ; Function compile flags: /Ogspy
 
@@ -377,7 +377,7 @@
 
   00000		 |$LN6@ForceTermi|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M36023|
+  00004		 |$M36025|
   00004	e1a05000	 mov         r5, r0
 
 ; 114  :         if( m_hThreadHandle )
@@ -424,7 +424,7 @@
   00044	e1a00004	 mov         r0, r4
   00048	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   0004c	e12fff1e	 bx          lr
-  00050		 |$M36024|
+  00050		 |$M36026|
 
 			 ENDP  ; |?ForceTerminated@CMiniThread@@QAAHXZ|, CMiniThread::ForceTerminated
 
@@ -432,7 +432,7 @@
 	IMPORT	|ExitThread|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36036| DCD	|$LN5@ThreadProc|
+|$T36038| DCD	|$LN5@ThreadProc|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -444,7 +444,7 @@
 
   00000		 |$LN5@ThreadProc|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M36033|
+  00004		 |$M36035|
   00004	e1a04000	 mov         r4, r0
 
 ; 155  :         CMiniThread* pThreadPtr = ( CMiniThread* ) dParam;
@@ -469,7 +469,7 @@
 
   00028	e8bd4010	 ldmia       sp!, {r4, lr}
   0002c	e12fff1e	 bx          lr
-  00030		 |$M36034|
+  00030		 |$M36036|
 
 			 ENDP  ; |?ThreadProc@CMiniThread@@CAKPAX@Z|, CMiniThread::ThreadProc
 
@@ -477,7 +477,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdworki.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36049| DCD	|$LN7@IncIndex|
+|$T36051| DCD	|$LN7@IncIndex|
 	DCD	0x40000600
 ; Function compile flags: /Ogspy
 
@@ -488,7 +488,7 @@
 ; 53   :     inline DWORD    IncIndex(DWORD dwIndex) {
 
   00000		 |$LN7@IncIndex|
-  00000		 |$M36046|
+  00000		 |$M36048|
 
 ; 54   :         return (dwIndex < m_dwMaxOfSlotEvent-1? dwIndex+1: 0 );
 
@@ -501,14 +501,14 @@
 ; 55   :     }
 
   00014	e12fff1e	 bx          lr
-  00018		 |$M36047|
+  00018		 |$M36049|
 
 			 ENDP  ; |?IncIndex@CSDWorkItem@@QAAKK@Z|, CSDWorkItem::IncIndex
 
 	EXPORT	|?IsEmpty@CSDWorkItem@@QAAHXZ|		; CSDWorkItem::IsEmpty
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36061| DCD	|$LN7@IsEmpty|
+|$T36063| DCD	|$LN7@IsEmpty|
 	DCD	0x40000600
 ; Function compile flags: /Ogspy
 
@@ -519,7 +519,7 @@
 ; 56   :     inline BOOL     IsEmpty() {
 
   00000		 |$LN7@IsEmpty|
-  00000		 |$M36058|
+  00000		 |$M36060|
 
 ; 57   :         return (m_dwReadIndex== m_dwWriteIndex);
 
@@ -532,14 +532,14 @@
 ; 58   :     }
 
   00014	e12fff1e	 bx          lr
-  00018		 |$M36059|
+  00018		 |$M36061|
 
 			 ENDP  ; |?IsEmpty@CSDWorkItem@@QAAHXZ|, CSDWorkItem::IsEmpty
 
 	EXPORT	|?IsFull@CSDWorkItem@@QAAHXZ|		; CSDWorkItem::IsFull
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36082| DCD	|$LN11@IsFull|
+|$T36084| DCD	|$LN11@IsFull|
 	DCD	0x40000b00
 ; Function compile flags: /Ogspy
 
@@ -550,7 +550,7 @@
 ; 59   :     inline BOOL     IsFull() {
 
   00000		 |$LN11@IsFull|
-  00000		 |$M36079|
+  00000		 |$M36081|
 
 ; 60   :         return (IncIndex(m_dwWriteIndex) == m_dwReadIndex);
 
@@ -568,7 +568,7 @@
 ; 61   :     };
 
   00028	e12fff1e	 bx          lr
-  0002c		 |$M36080|
+  0002c		 |$M36082|
 
 			 ENDP  ; |?IsFull@CSDWorkItem@@QAAHXZ|, CSDWorkItem::IsFull
 
@@ -576,7 +576,7 @@
 ; File c:\wince600\public\common\oak\inc\cmthread.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36097| DCD	|$LN9@Init|
+|$T36099| DCD	|$LN9@Init|
 	DCD	0x40001701
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdworki.cpp
@@ -589,7 +589,7 @@
 
   00000		 |$LN9@Init|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M36094|
+  00004		 |$M36096|
   00004	e1a04000	 mov         r4, r0
 
 ; 79   :     if (m_psdSlotEvent!=NULL && m_hWakeupEvent!=NULL && m_hEmptySlotSem!=NULL) {
@@ -638,7 +638,7 @@
 
   00054	e8bd4010	 ldmia       sp!, {r4, lr}
   00058	e12fff1e	 bx          lr
-  0005c		 |$M36095|
+  0005c		 |$M36097|
 
 			 ENDP  ; |?Init@CSDWorkItem@@QAAHK@Z|, CSDWorkItem::Init
 
@@ -646,7 +646,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36149| DCD	|$LN26@PostEvent|
+|$T36151| DCD	|$LN26@PostEvent|
 	DCD	0x40002601
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdworki.cpp
@@ -659,7 +659,7 @@
 
   00000		 |$LN26@PostEvent|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M36146|
+  00004		 |$M36148|
   00004	e1a06001	 mov         r6, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -731,7 +731,7 @@
   0008c	e1a00005	 mov         r0, r5
   00090	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00094	e12fff1e	 bx          lr
-  00098		 |$M36147|
+  00098		 |$M36149|
 
 			 ENDP  ; |?PostEvent@CSDWorkItem@@QAAHW4_SD_SLOT_EVENT@@K@Z|, CSDWorkItem::PostEvent
 
@@ -740,7 +740,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdworki.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36178| DCD	|$LN19@ThreadRun|
+|$T36180| DCD	|$LN19@ThreadRun|
 	DCD	0x40002301
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdworki.cpp
@@ -753,7 +753,7 @@
 
   00000		 |$LN19@ThreadRun|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M36175|
+  00004		 |$M36177|
   00004	e1a04000	 mov         r4, r0
 
 ; 117  :     while (!m_bTerminated) {
@@ -824,7 +824,7 @@
 
   00084	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00088	e12fff1e	 bx          lr
-  0008c		 |$M36176|
+  0008c		 |$M36178|
 
 			 ENDP  ; |?ThreadRun@CSDWorkItem@@EAAKXZ|, CSDWorkItem::ThreadRun
 
@@ -835,7 +835,7 @@
 ; File c:\wince600\public\common\oak\inc\cmthread.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36192| DCD	|$LN7@CMiniThrea|
+|$T36194| DCD	|$LN7@CMiniThrea|
 	DCD	0x40001b02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -851,7 +851,7 @@
   00000		 |$LN7@CMiniThrea|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M36189|
+  00008		 |$M36191|
   00008	e1b06002	 movs        r6, r2
   0000c	e1a05000	 mov         r5, r0
   00010	e59f3050	 ldr         r3, [pc, #0x50]
@@ -899,14 +899,14 @@
   00064	00000000	 DCD         |?ThreadProc@CMiniThread@@CAKPAX@Z|
   00068		 |$LN10@CMiniThrea|
   00068	00000000	 DCD         |??_7CMiniThread@@6B@|
-  0006c		 |$M36190|
+  0006c		 |$M36192|
 
 			 ENDP  ; |??0CMiniThread@@QAA@KH@Z|, CMiniThread::CMiniThread
 
 	EXPORT	|??1CMiniThread@@QAA@XZ|		; CMiniThread::~CMiniThread
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36203| DCD	|$LN5@CMiniThrea@2|
+|$T36205| DCD	|$LN5@CMiniThrea@2|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 
@@ -918,7 +918,7 @@
 
   00000		 |$LN5@CMiniThrea@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M36200|
+  00004		 |$M36202|
   00004	e1a02000	 mov         r2, r0
   00008	e59f300c	 ldr         r3, [pc, #0xC]
 
@@ -934,7 +934,7 @@
   0001c		 |$LN6@CMiniThrea@2|
   0001c		 |$LN7@CMiniThrea@2|
   0001c	00000000	 DCD         |??_7CMiniThread@@6B@|
-  00020		 |$M36201|
+  00020		 |$M36203|
 
 			 ENDP  ; |??1CMiniThread@@QAA@XZ|, CMiniThread::~CMiniThread
 
@@ -946,7 +946,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36225| DCD	|$LN11@CSDWorkIte|
+|$T36227| DCD	|$LN11@CSDWorkIte|
 	DCD	0x40002901
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -963,7 +963,7 @@
 
   00000		 |$LN11@CSDWorkIte|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M36222|
+  00004		 |$M36224|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
   0000c	e2850018	 add         r0, r5, #0x18
@@ -1021,7 +1021,7 @@
   000a0		 |$LN12@CSDWorkIte|
   000a0		 |$LN13@CSDWorkIte|
   000a0	00000000	 DCD         |??_7CSDWorkItem@@6B@|
-  000a4		 |$M36223|
+  000a4		 |$M36225|
 
 			 ENDP  ; |??0CSDWorkItem@@QAA@K@Z|, CSDWorkItem::CSDWorkItem
 
@@ -1030,7 +1030,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36250| DCD	|$LN16@CSDWorkIte@2|
+|$T36252| DCD	|$LN16@CSDWorkIte@2|
 	DCD	0x40002401
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdworki.cpp
@@ -1043,7 +1043,7 @@
 
   00000		 |$LN16@CSDWorkIte@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M36247|
+  00004		 |$M36249|
   00004	e1a04000	 mov         r4, r0
   00008	e59f307c	 ldr         r3, [pc, #0x7C]
 
@@ -1117,7 +1117,7 @@
   00088	00000000	 DCD         |??_7CMiniThread@@6B@|
   0008c		 |$LN19@CSDWorkIte@2|
   0008c	00000000	 DCD         |??_7CSDWorkItem@@6B@|
-  00090		 |$M36248|
+  00090		 |$M36250|
 
 			 ENDP  ; |??1CSDWorkItem@@QAA@XZ|, CSDWorkItem::~CSDWorkItem
 

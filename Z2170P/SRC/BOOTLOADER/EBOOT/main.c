@@ -92,13 +92,12 @@ VOID HotKey(BOOL);
 //------------------------------------------------------------------------------
 //  Local Functions
 
-
 void BSPGpioInit()
 {
-   BSPInsertGpioDevice(0,&Omap_Gpio,NULL);
-   BSPInsertGpioDevice(TRITON_GPIO_PINID_START,&Tps659xx_Gpio,NULL);
-
+   BSPInsertGpioDevice(0, &Omap_Gpio, NULL);
+   BSPInsertGpioDevice(TRITON_GPIO_PINID_START, &Tps659xx_Gpio, NULL);
 }
+
 void main()
 {
 	UINT32 CpuRevision;
@@ -126,6 +125,7 @@ BOOL OEMPlatformInit()
     UINT32 CpuRevision, version;
     HANDLE hTwl,hGPIO;
     static UCHAR allocationPool[512];
+    
     /*static const PAD_INFO ebootPinMux[] = {
             DSS_PADS
             GPIO_PADS
@@ -139,7 +139,7 @@ BOOL OEMPlatformInit()
             END_OF_PAD_ARRAY
     };
     
-    OALLocalAllocInit(allocationPool,sizeof(allocationPool));
+    OALLocalAllocInit(allocationPool, sizeof(allocationPool));
 
     // Get processor and companion chip versions
 	g_CPUFamily = CPU_FAMILY_OMAP35XX;
@@ -606,13 +606,12 @@ retryBootMenu:
 //  This function is the last one called by the boot framework and it is
 //  responsible for to launching the image.
 //
-VOID
-OEMLaunch(
-   ULONG start, 
-   ULONG size, 
-   ULONG launch, 
-   const ROMHDR *pRomHeader
-    )
+VOID OEMLaunch( 
+                ULONG start, 
+                ULONG size, 
+                ULONG launch, 
+                const ROMHDR *pRomHeader
+               )
 {
     BSP_ARGS *pArgs = OALCAtoUA(IMAGE_SHARE_ARGS_CA);
 
@@ -905,11 +904,7 @@ cleanUp:
 //  EBOOT mapping depends on download type. Download type is
 //  set in OMEMultiBinNotify.
 //
-UINT8* 
-OEMMapMemAddr(
-    DWORD image,
-    DWORD address
-    )
+UINT8* OEMMapMemAddr(DWORD image, DWORD address)
 {
     UINT8 *pAddress = NULL;
 
@@ -917,7 +912,6 @@ OEMMapMemAddr(
     
     switch (g_eboot.type) {
 
-        
     case DOWNLOAD_TYPE_XLDR:
     case DOWNLOAD_TYPE_EBOOT:   
 	case DOWNLOAD_TYPE_LOGO:

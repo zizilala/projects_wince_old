@@ -4467,7 +4467,7 @@
 ; File c:\wince600\public\directx\sdk\inc\wxutil.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55506| DCD	|$LN5@CCritSec|
+|$T55518| DCD	|$LN5@CCritSec|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -4479,7 +4479,7 @@
 
   00000		 |$LN5@CCritSec|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M55503|
+  00004		 |$M55515|
   00004	e1a04000	 mov         r4, r0
 
 ; 53   : 	InitializeCriticalSection(&m_CritSec);
@@ -4491,7 +4491,7 @@
   0000c	e1a00004	 mov         r0, r4
   00010	e8bd4010	 ldmia       sp!, {r4, lr}
   00014	e12fff1e	 bx          lr
-  00018		 |$M55504|
+  00018		 |$M55516|
 
 			 ENDP  ; |??0CCritSec@@QAA@XZ|, CCritSec::CCritSec
 
@@ -4499,7 +4499,7 @@
 	IMPORT	|DeleteCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55514| DCD	|$LN5@CCritSec@2|
+|$T55526| DCD	|$LN5@CCritSec@2|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -4511,7 +4511,7 @@
 
   00000		 |$LN5@CCritSec@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M55511|
+  00004		 |$M55523|
 
 ; 57   : 	DeleteCriticalSection(&m_CritSec);
 
@@ -4521,7 +4521,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M55512|
+  00010		 |$M55524|
 
 			 ENDP  ; |??1CCritSec@@QAA@XZ|, CCritSec::~CCritSec
 
@@ -4532,7 +4532,7 @@
 ; File c:\wince600\platform\z2170p\src\app\nullsink\nullsink.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55526| DCD	|$LN7@DllRegiste|
+|$T55538| DCD	|$LN7@DllRegiste|
 	DCD	0x40000f01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -4553,7 +4553,7 @@
 
   00000		 |$LN7@DllRegiste|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M55523|
+  00004		 |$M55535|
 
 ; 71   : 	HRESULT hr = AMovieDllRegisterServer2( TRUE );
 
@@ -4581,7 +4581,7 @@
   00034	00000000	 DCD         |??_C@_1EI@MPLJLCGA@?$AAI?$AAn?$AA?5?$AAD?$AAl?$AAl?$AAR?$AAe?$AAg?$AAi?$AAs?$AAt?$AAe?$AAr?$AAS?$AAe?$AAr?$AAv?$AAe?$AAr?$AA?5?$AA?5?$AAh?$AAr?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8@|
   00038		 |$LN10@DllRegiste|
   00038	00000000	 DCD         |?dpCurSettings@@3U_DBGPARAM@@A|
-  0003c		 |$M55524|
+  0003c		 |$M55536|
 
 			 ENDP  ; |DllRegisterServer|
 
@@ -4589,7 +4589,7 @@
 	EXPORT	|??_C@_1DC@IOHHMDAM@?$AAI?$AAn?$AA?5?$AAD?$AAl?$AAl?$AAU?$AAn?$AAr?$AAe?$AAg?$AAi?$AAs?$AAt?$AAe?$AAr?$AAS?$AAe?$AAr?$AAv?$AAe?$AAr?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55540| DCD	|$LN7@DllUnregis|
+|$T55552| DCD	|$LN7@DllUnregis|
 	DCD	0x40000c01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -4609,7 +4609,7 @@
 
   00000		 |$LN7@DllUnregis|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M55537|
+  00004		 |$M55549|
 
 ; 78   :     RETAILMSG(DBGZONE_INFO, (TEXT("In DllUnregisterServer\r\n")));
 
@@ -4633,7 +4633,7 @@
   00028	00000000	 DCD         |??_C@_1DC@IOHHMDAM@?$AAI?$AAn?$AA?5?$AAD?$AAl?$AAl?$AAU?$AAn?$AAr?$AAe?$AAg?$AAi?$AAs?$AAt?$AAe?$AAr?$AAS?$AAe?$AAr?$AAv?$AAe?$AAr?$AA?$AN?$AA?6?$AA?$AA@|
   0002c		 |$LN10@DllUnregis|
   0002c	00000000	 DCD         |?dpCurSettings@@3U_DBGPARAM@@A|
-  00030		 |$M55538|
+  00030		 |$M55550|
 
 			 ENDP  ; |DllUnregisterServer|
 
@@ -4642,7 +4642,7 @@
 	IMPORT	|RegisterDbgZones|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55555| DCD	|$LN6@DllMain|
+|$T55567| DCD	|$LN6@DllMain|
 	DCD	0x40000e01
 ; Function compile flags: /Ogspy
 
@@ -4654,7 +4654,7 @@
 
   00000		 |$LN6@DllMain|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M55552|
+  00004		 |$M55564|
   00004	e1a06002	 mov         r6, r2
   00008	e1a05001	 mov         r5, r1
   0000c	e1a04000	 mov         r4, r0
@@ -4689,7 +4689,7 @@
   00034		 |$LN7@DllMain|
   00034		 |$LN8@DllMain|
   00034	00000000	 DCD         |?dpCurSettings@@3U_DBGPARAM@@A|
-  00038		 |$M55553|
+  00038		 |$M55565|
 
 			 ENDP  ; |DllMain|
 
@@ -4732,7 +4732,7 @@
 ; File c:\wince600\public\directx\sdk\inc\wxutil.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55575| DCD	|$LN12@CNullSink|
+|$T55587| DCD	|$LN12@CNullSink|
 	DCD	0x40002401
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -4793,7 +4793,7 @@
 
   00000		 |$LN12@CNullSink|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M55572|
+  00004		 |$M55584|
   00004	e1a04000	 mov         r4, r0
   00008	e59f307c	 ldr         r3, [pc, #0x7C]
   0000c	e59f2074	 ldr         r2, [pc, #0x74]
@@ -4854,7 +4854,7 @@
   00088	00000000	 DCD         |??_7CNullSink@MyNullSink@@6BIBaseFilter@@@|
   0008c		 |$LN19@CNullSink|
   0008c	00000000	 DCD         |??_7CNullSink@MyNullSink@@6BCUnknown@@@|
-  00090		 |$M55573|
+  00090		 |$M55585|
 
 			 ENDP  ; |??1CNullSink@MyNullSink@@UAA@XZ|, MyNullSink::CNullSink::~CNullSink
 
@@ -4862,7 +4862,7 @@
 ; File c:\wince600\public\directx\sdk\inc\combase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55592| DCD	|$LN5@GetOwner|
+|$T55604| DCD	|$LN5@GetOwner|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -4873,7 +4873,7 @@
 ; 233  :     LPUNKNOWN GetOwner() const {
 
   00000		 |$LN5@GetOwner|
-  00000		 |$M55589|
+  00000		 |$M55601|
 
 ; 234  :         return m_pUnknown;
 
@@ -4882,13 +4882,13 @@
 ; 235  :     };
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M55590|
+  00008		 |$M55602|
 
 			 ENDP  ; |?GetOwner@CUnknown@@QBAPAUIUnknown@@XZ|, CUnknown::GetOwner
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55608| DCD	|$LN7@QueryInter|
+|$T55620| DCD	|$LN7@QueryInter|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\app\nullsink\nullsink.h
@@ -4901,7 +4901,7 @@
 
   00000		 |$LN7@QueryInter|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M55605|
+  00004		 |$M55617|
   00004	e5100008	 ldr         r0, [r0, #-8]
   00008	e5903000	 ldr         r3, [r0]
   0000c	e5933000	 ldr         r3, [r3]
@@ -4909,14 +4909,14 @@
   00014	e12fff13	 bx          r3
   00018	e49de004	 ldr         lr, [sp], #4
   0001c	e12fff1e	 bx          lr
-  00020		 |$M55606|
+  00020		 |$M55618|
 
 			 ENDP  ; |?QueryInterface@CNullSink@MyNullSink@@UAAJABU_GUID@@PAPAX@Z|, MyNullSink::CNullSink::QueryInterface
 
 ; File c:\wince600\public\directx\sdk\inc\combase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55622| DCD	|$LN7@AddRef|
+|$T55634| DCD	|$LN7@AddRef|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\app\nullsink\nullsink.h
@@ -4929,7 +4929,7 @@
 
   00000		 |$LN7@AddRef|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M55619|
+  00004		 |$M55631|
   00004	e5100008	 ldr         r0, [r0, #-8]
   00008	e5903000	 ldr         r3, [r0]
   0000c	e5933004	 ldr         r3, [r3, #4]
@@ -4937,14 +4937,14 @@
   00014	e12fff13	 bx          r3
   00018	e49de004	 ldr         lr, [sp], #4
   0001c	e12fff1e	 bx          lr
-  00020		 |$M55620|
+  00020		 |$M55632|
 
 			 ENDP  ; |?AddRef@CNullSink@MyNullSink@@UAAKXZ|, MyNullSink::CNullSink::AddRef
 
 ; File c:\wince600\public\directx\sdk\inc\combase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55636| DCD	|$LN7@Release|
+|$T55648| DCD	|$LN7@Release|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\app\nullsink\nullsink.h
@@ -4957,7 +4957,7 @@
 
   00000		 |$LN7@Release|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M55633|
+  00004		 |$M55645|
   00004	e5100008	 ldr         r0, [r0, #-8]
   00008	e5903000	 ldr         r3, [r0]
   0000c	e5933008	 ldr         r3, [r3, #8]
@@ -4965,14 +4965,14 @@
   00014	e12fff13	 bx          r3
   00018	e49de004	 ldr         lr, [sp], #4
   0001c	e12fff1e	 bx          lr
-  00020		 |$M55634|
+  00020		 |$M55646|
 
 			 ENDP  ; |?Release@CNullSink@MyNullSink@@UAAKXZ|, MyNullSink::CNullSink::Release
 
 ; File c:\wince600\platform\z2170p\src\app\nullsink\nullsink.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55647| DCD	|$LN8@GetPin|
+|$T55659| DCD	|$LN8@GetPin|
 	DCD	0x40000400
 ; Function compile flags: /Ogspy
 
@@ -4983,7 +4983,7 @@
 ; 153  : {
 
   00000		 |$LN8@GetPin|
-  00000		 |$M55644|
+  00000		 |$M55656|
   00000	e3510000	 cmp         r1, #0
 
 ; 158  :         break;
@@ -5003,13 +5003,13 @@
 ; 162  : }
 
   0000c	e12fff1e	 bx          lr
-  00010		 |$M55645|
+  00010		 |$M55657|
 
 			 ENDP  ; |?GetPin@CNullSink@MyNullSink@@UAAPAVCBasePin@@H@Z|, MyNullSink::CNullSink::GetPin
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55656| DCD	|$LN5@GetPinCoun|
+|$T55668| DCD	|$LN5@GetPinCoun|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -5020,7 +5020,7 @@
 ; 165  : {
 
   00000		 |$LN5@GetPinCoun|
-  00000		 |$M55653|
+  00000		 |$M55665|
 
 ; 166  :     return NUMELMS(sudpPins);
 
@@ -5029,13 +5029,13 @@
 ; 167  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M55654|
+  00008		 |$M55666|
 
 			 ENDP  ; |?GetPinCount@CNullSink@MyNullSink@@UAAHXZ|, MyNullSink::CNullSink::GetPinCount
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55665| DCD	|$LN5@GetSetupDa|
+|$T55677| DCD	|$LN5@GetSetupDa|
 	DCD	0x40000300
 ; Function compile flags: /Ogspy
 
@@ -5046,7 +5046,7 @@
 ; 171  : {
 
   00000		 |$LN5@GetSetupDa|
-  00000		 |$M55662|
+  00000		 |$M55674|
 
 ; 172  :     return (LPAMOVIESETUP_FILTER) &sudNullSink;
 
@@ -5058,7 +5058,7 @@
   00008		 |$LN6@GetSetupDa|
   00008		 |$LN7@GetSetupDa|
   00008	00000000	 DCD         |sudNullSink|
-  0000c		 |$M55663|
+  0000c		 |$M55675|
 
 			 ENDP  ; |?GetSetupData@CNullSink@MyNullSink@@UAAPAU_AMOVIESETUP_FILTER@@XZ|, MyNullSink::CNullSink::GetSetupData
 
@@ -5117,7 +5117,7 @@
 	IMPORT	|?CheckStreaming@CBaseInputPin@@UAAJXZ|	; CBaseInputPin::CheckStreaming
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55680| DCD	|$LN5@CNullInput|
+|$T55692| DCD	|$LN5@CNullInput|
 	DCD	0x40001802
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -5185,7 +5185,7 @@
   00000		 |$LN5@CNullInput|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M55677|
+  00008		 |$M55689|
   00008	e1a05000	 mov         r5, r0
   0000c	e59de018	 ldr         lr, [sp, #0x18]
   00010	e59d4014	 ldr         r4, [sp, #0x14]
@@ -5216,14 +5216,14 @@
   00058	00000000	 DCD         |??_7CNullInputPin@MyNullSink@@6BCUnknown@@@|
   0005c		 |$LN10@CNullInput|
   0005c	00000000	 DCD         |??_7CNullInputPin@MyNullSink@@6B@|
-  00060		 |$M55678|
+  00060		 |$M55690|
 
 			 ENDP  ; |??0CNullInputPin@MyNullSink@@QAA@PAGPAVCNullSink@1@PAVCCritSec@@PAJ0@Z|, MyNullSink::CNullInputPin::CNullInputPin
 
 ; File c:\wince600\public\directx\sdk\inc\amfilter.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55694| DCD	|$LN5@QueryInter@2|
+|$T55706| DCD	|$LN5@QueryInter@2|
 	DCD	0x40000300
 ; Function compile flags: /Ogspy
 
@@ -5234,18 +5234,18 @@
 ; 458  :         ) { return E_NOTIMPL; }
 
   00000		 |$LN5@QueryInter@2|
-  00000		 |$M55691|
+  00000		 |$M55703|
   00000	e3a03106	 mov         r3, #6, 2
   00004	e3830901	 orr         r0, r3, #1, 18
   00008	e12fff1e	 bx          lr
-  0000c		 |$M55692|
+  0000c		 |$M55704|
 
 			 ENDP  ; |?QueryInternalConnections@CBasePin@@UAAJPAPAUIPin@@PAK@Z|, CBasePin::QueryInternalConnections
 
 ; File c:\wince600\public\directx\sdk\inc\combase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55710| DCD	|$LN7@QueryInter@3|
+|$T55722| DCD	|$LN7@QueryInter@3|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 ; File c:\wince600\public\directx\sdk\inc\amfilter.h
@@ -5258,7 +5258,7 @@
 
   00000		 |$LN7@QueryInter@3|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M55707|
+  00004		 |$M55719|
   00004	e5100008	 ldr         r0, [r0, #-8]
   00008	e5903000	 ldr         r3, [r0]
   0000c	e5933000	 ldr         r3, [r3]
@@ -5266,14 +5266,14 @@
   00014	e12fff13	 bx          r3
   00018	e49de004	 ldr         lr, [sp], #4
   0001c	e12fff1e	 bx          lr
-  00020		 |$M55708|
+  00020		 |$M55720|
 
 			 ENDP  ; |?QueryInterface@CBaseInputPin@@UAAJABU_GUID@@PAPAX@Z|, CBaseInputPin::QueryInterface
 
 ; File c:\wince600\public\directx\sdk\inc\combase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55724| DCD	|$LN7@AddRef@2|
+|$T55736| DCD	|$LN7@AddRef@2|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 ; File c:\wince600\public\directx\sdk\inc\amfilter.h
@@ -5286,7 +5286,7 @@
 
   00000		 |$LN7@AddRef@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M55721|
+  00004		 |$M55733|
   00004	e5100008	 ldr         r0, [r0, #-8]
   00008	e5903000	 ldr         r3, [r0]
   0000c	e5933004	 ldr         r3, [r3, #4]
@@ -5294,14 +5294,14 @@
   00014	e12fff13	 bx          r3
   00018	e49de004	 ldr         lr, [sp], #4
   0001c	e12fff1e	 bx          lr
-  00020		 |$M55722|
+  00020		 |$M55734|
 
 			 ENDP  ; |?AddRef@CBaseInputPin@@UAAKXZ|, CBaseInputPin::AddRef
 
 ; File c:\wince600\public\directx\sdk\inc\combase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55738| DCD	|$LN7@Release@2|
+|$T55750| DCD	|$LN7@Release@2|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 ; File c:\wince600\public\directx\sdk\inc\amfilter.h
@@ -5314,7 +5314,7 @@
 
   00000		 |$LN7@Release@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M55735|
+  00004		 |$M55747|
   00004	e5100008	 ldr         r0, [r0, #-8]
   00008	e5903000	 ldr         r3, [r0]
   0000c	e5933008	 ldr         r3, [r3, #8]
@@ -5322,7 +5322,7 @@
   00014	e12fff13	 bx          r3
   00018	e49de004	 ldr         lr, [sp], #4
   0001c	e12fff1e	 bx          lr
-  00020		 |$M55736|
+  00020		 |$M55748|
 
 			 ENDP  ; |?Release@CBaseInputPin@@UAAKXZ|, CBaseInputPin::Release
 
@@ -5331,7 +5331,7 @@
 ; File c:\wince600\platform\z2170p\src\app\nullsink\nullsink.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55746| DCD	|$LN5@CNullInput@2|
+|$T55758| DCD	|$LN5@CNullInput@2|
 	DCD	0x40001001
 ; Function compile flags: /Ogspy
 
@@ -5343,7 +5343,7 @@
 
   00000		 |$LN5@CNullInput@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M55743|
+  00004		 |$M55755|
   00004	e59f3030	 ldr         r3, [pc, #0x30]
   00008	e59f2028	 ldr         r2, [pc, #0x28]
   0000c	e59f1020	 ldr         r1, [pc, #0x20]
@@ -5367,13 +5367,13 @@
   00038	00000000	 DCD         |??_7CNullInputPin@MyNullSink@@6BIPin@@@|
   0003c		 |$LN10@CNullInput@2|
   0003c	00000000	 DCD         |??_7CNullInputPin@MyNullSink@@6BCUnknown@@@|
-  00040		 |$M55744|
+  00040		 |$M55756|
 
 			 ENDP  ; |??1CNullInputPin@MyNullSink@@UAA@XZ|, MyNullSink::CNullInputPin::~CNullInputPin
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55761| DCD	|$LN6@CheckMedia|
+|$T55773| DCD	|$LN6@CheckMedia|
 	DCD	0x40000500
 ; Function compile flags: /Ogspy
 
@@ -5384,7 +5384,7 @@
 ; 195  : CNullInputPin::CheckMediaType( const CMediaType* pMediaType ) {
 
   00000		 |$LN6@CheckMedia|
-  00000		 |$M55758|
+  00000		 |$M55770|
   00000	e3510000	 cmp         r1, #0
 
 ; 196  :     if (!pMediaType)
@@ -5407,7 +5407,7 @@
 ; 204  : }
 
   00010	e12fff1e	 bx          lr
-  00014		 |$M55759|
+  00014		 |$M55771|
 
 			 ENDP  ; |?CheckMediaType@CNullInputPin@MyNullSink@@UAAJPBVCMediaType@@@Z|, MyNullSink::CNullInputPin::CheckMediaType
 
@@ -5416,7 +5416,7 @@
 	IMPORT	|?InitMediaType@CMediaType@@QAAXXZ|	; CMediaType::InitMediaType
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55772| DCD	|$LN8@GetMediaTy|
+|$T55784| DCD	|$LN8@GetMediaTy|
 	DCD	0x40001d01
 ; Function compile flags: /Ogspy
 
@@ -5428,7 +5428,7 @@
 
   00000		 |$LN8@GetMediaTy|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M55769|
+  00004		 |$M55781|
   00004	e1b06002	 movs        r6, r2
   00008	e1a05001	 mov         r5, r1
 
@@ -5500,13 +5500,13 @@
   0006c	00040103	 DCD         0x40103
   00070		 |$LN11@GetMediaTy|
   00070	00000000	 DCD         |sudPinTypes|
-  00074		 |$M55770|
+  00074		 |$M55782|
 
 			 ENDP  ; |?GetMediaType@CNullInputPin@MyNullSink@@UAAJHPAVCMediaType@@@Z|, MyNullSink::CNullInputPin::GetMediaType
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55784| DCD	|$LN5@Receive|
+|$T55796| DCD	|$LN5@Receive|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -5517,7 +5517,7 @@
 ; 228  : CNullInputPin::Receive(IMediaSample* pSample) {
 
   00000		 |$LN5@Receive|
-  00000		 |$M55781|
+  00000		 |$M55793|
 
 ; 229  : 
 ; 230  :     // discard the sample
@@ -5528,7 +5528,7 @@
 ; 232  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M55782|
+  00008		 |$M55794|
 
 			 ENDP  ; |?Receive@CNullInputPin@MyNullSink@@UAAJPAUIMediaSample@@@Z|, MyNullSink::CNullInputPin::Receive
 
@@ -5541,6 +5541,16 @@
   00004	ea000000	 b           |?QueryInterface@CNullSink@MyNullSink@@UAAJABU_GUID@@PAPAX@Z|
 
 			 ENDP  ; |?QueryInterface@CNullSink@MyNullSink@@W3AAJABU_GUID@@PAPAX@Z|, [thunk]:MyNullSink::CNullSink::QueryInterface`adjustor{4}'
+
+; Function compile flags: /Odspy
+
+  00000			 AREA	 |.text|, CODE, ARM
+
+  00000		 |?Release@CBaseInputPin@@W3AAKXZ| PROC	; [thunk]:CBaseInputPin::Release`adjustor{4}'
+  00000	e2400004	 sub         r0, r0, #4
+  00004	ea000000	 b           |?Release@CBaseInputPin@@UAAKXZ|
+
+			 ENDP  ; |?Release@CBaseInputPin@@W3AAKXZ|, [thunk]:CBaseInputPin::Release`adjustor{4}'
 
 ; Function compile flags: /Odspy
 
@@ -5612,16 +5622,6 @@
 
 			 ENDP  ; |?QueryInterface@CBaseInputPin@@W3AAJABU_GUID@@PAPAX@Z|, [thunk]:CBaseInputPin::QueryInterface`adjustor{4}'
 
-; Function compile flags: /Odspy
-
-  00000			 AREA	 |.text|, CODE, ARM
-
-  00000		 |?Release@CBaseInputPin@@W3AAKXZ| PROC	; [thunk]:CBaseInputPin::Release`adjustor{4}'
-  00000	e2400004	 sub         r0, r0, #4
-  00004	ea000000	 b           |?Release@CBaseInputPin@@UAAKXZ|
-
-			 ENDP  ; |?Release@CBaseInputPin@@W3AAKXZ|, [thunk]:CBaseInputPin::Release`adjustor{4}'
-
 	EXPORT	|??0CNullSink@MyNullSink@@QAA@PAGPAUIUnknown@@PAJ@Z| ; MyNullSink::CNullSink::CNullSink
 	EXPORT	|??_C@_1BM@PJANEIKB@?$AAC?$AAN?$AAu?$AAl?$AAl?$AAI?$AAn?$AAp?$AAu?$AAt?$AAP?$AAi?$AAn?$AA?$AA@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1DK@NGKIIBDH@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAC?$AAN?$AAu?$AAl?$AAl?$AAS?$AAi?$AAn?$AAk?$AA?5?$AAc?$AAo?$AAn?$AAs?$AAt?$AAr?$AAu?$AAc?$AAt?$AAo?$AAr?$AA?5?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
@@ -5630,7 +5630,7 @@
 ; File c:\wince600\public\directx\sdk\inc\wxutil.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55830| DCD	|$LN16@CNullSink@2|
+|$T55842| DCD	|$LN16@CNullSink@2|
 	DCD	0x40004202
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -5658,7 +5658,7 @@
   00000		 |$LN16@CNullSink@2|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M55827|
+  00008		 |$M55839|
   00008	e1a05003	 mov         r5, r3
   0000c	e1a04000	 mov         r4, r0
   00010	e59fe0ec	 ldr         lr, [pc, #0xEC]
@@ -5777,14 +5777,14 @@
   00100	00000000	 DCD         |??_7CNullSink@MyNullSink@@6BIAMovieSetup@@@|
   00104		 |$LN26@CNullSink@2|
   00104	00000000	 DCD         |CLSID_NullSink|
-  00108		 |$M55828|
+  00108		 |$M55840|
 
 			 ENDP  ; |??0CNullSink@MyNullSink@@QAA@PAGPAUIUnknown@@PAJ@Z|, MyNullSink::CNullSink::CNullSink
 
 	IMPORT	|??3@YAXPAX@Z|				; operator delete
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55851| DCD	|$LN6@scalar|
+|$T55863| DCD	|$LN6@scalar|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -5793,7 +5793,7 @@
   00000		 |??_GCNullSink@MyNullSink@@UAAPAXI@Z| PROC ; MyNullSink::CNullSink::`scalar deleting destructor'
   00000		 |$LN6@scalar|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M55848|
+  00004		 |$M55860|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
   0000c	eb000000	 bl          |??1CNullSink@MyNullSink@@UAA@XZ|
@@ -5803,13 +5803,13 @@
   0001c	e1a00005	 mov         r0, r5
   00020	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00024	e12fff1e	 bx          lr
-  00028		 |$M55849|
+  00028		 |$M55861|
 
 			 ENDP  ; |??_GCNullSink@MyNullSink@@UAAPAXI@Z|, MyNullSink::CNullSink::`scalar deleting destructor'
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55862| DCD	|$LN6@scalar@2|
+|$T55874| DCD	|$LN6@scalar@2|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -5818,7 +5818,7 @@
   00000		 |??_GCNullInputPin@MyNullSink@@UAAPAXI@Z| PROC ; MyNullSink::CNullInputPin::`scalar deleting destructor'
   00000		 |$LN6@scalar@2|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M55859|
+  00004		 |$M55871|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
   0000c	eb000000	 bl          |??1CNullInputPin@MyNullSink@@UAA@XZ|
@@ -5828,7 +5828,7 @@
   0001c	e1a00005	 mov         r0, r5
   00020	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00024	e12fff1e	 bx          lr
-  00028		 |$M55860|
+  00028		 |$M55872|
 
 			 ENDP  ; |??_GCNullInputPin@MyNullSink@@UAAPAXI@Z|, MyNullSink::CNullInputPin::`scalar deleting destructor'
 
@@ -5840,7 +5840,7 @@
 |?hr@?1??CreateInstance@CNullSink@MyNullSink@@SAPAVCUnknown@@PAUIUnknown@@PAJ@Z@4JA| % 0x4 ; `MyNullSink::CNullSink::CreateInstance'::`2'::hr
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55882| DCD	|$LN13@CreateInst|
+|$T55894| DCD	|$LN13@CreateInst|
 	DCD	0x40002c01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -5881,7 +5881,7 @@
 
   00000		 |$LN13@CreateInst|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M55879|
+  00004		 |$M55891|
   00004	e1b05001	 movs        r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -5962,7 +5962,7 @@
   000a8	00000000	 DCD         |??_C@_1BC@FGFFJLCK@?$AAN?$AAu?$AAl?$AAl?$AAS?$AAi?$AAn?$AAk?$AA?$AA@|
   000ac		 |$LN20@CreateInst|
   000ac	00000000	 DCD         |?hr@?1??CreateInstance@CNullSink@MyNullSink@@SAPAVCUnknown@@PAUIUnknown@@PAJ@Z@4JA|
-  000b0		 |$M55880|
+  000b0		 |$M55892|
 
 			 ENDP  ; |?CreateInstance@CNullSink@MyNullSink@@SAPAVCUnknown@@PAUIUnknown@@PAJ@Z|, MyNullSink::CNullSink::CreateInstance
 

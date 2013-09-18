@@ -85,7 +85,7 @@
 ; File c:\wince600\platform\z2170p\src\oal\oallib\oem_prof.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46955| DCD	|$LN13@OmapProfil|
+|$T46958| DCD	|$LN13@OmapProfil|
 	DCD	0x40001700
 ; Function compile flags: /Ogspy
 
@@ -96,7 +96,7 @@
 ; 43   : {
 
   00000		 |$LN13@OmapProfil|
-  00000		 |$M46952|
+  00000		 |$M46955|
 
 ; 44   :     // validate index
 ; 45   :     if (id >= PROFILE_COUNT) return;
@@ -187,7 +187,7 @@
   00058		 |$LN14@OmapProfil|
   00058		 |$LN15@OmapProfil|
   00058	00000000	 DCD         |_rgMarkers|
-  0005c		 |$M46953|
+  0005c		 |$M46956|
 
 			 ENDP  ; |OmapProfilerMark|
 
@@ -198,7 +198,7 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46969| DCD	|$LN23@OmapProfil@2|
+|$T46972| DCD	|$LN23@OmapProfil@2|
 	DCD	0x40006101
 ; Function compile flags: /Ogspy
 
@@ -210,7 +210,7 @@
 
   00000		 |$LN23@OmapProfil@2|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M46966|
+  00004		 |$M46969|
 
 ; 85   :     // initialize gptimer
 ; 86   :     OMAP_PRCM_CLOCK_CONTROL_PRM_REGS *pPrcmClkPRM;
@@ -494,14 +494,14 @@
   0017c	00000000	 DCD         |_rgMarkers|
   00180		 |$LN29@OmapProfil@2|
   00180	48306d00	 DCD         0x48306d00
-  00184		 |$M46967|
+  00184		 |$M46970|
 
 			 ENDP  ; |OmapProfilerStart|
 
 	EXPORT	|OmapProfilerStop|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46983| DCD	|$LN8@OmapProfil@3|
+|$T46986| DCD	|$LN8@OmapProfil@3|
 	DCD	0x40001101
 ; Function compile flags: /Ogspy
 
@@ -513,7 +513,7 @@
 
   00000		 |$LN8@OmapProfil@3|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46980|
+  00004		 |$M46983|
 
 ; 190  :     CLRREG32(&_pProfTimer->TCLR, GPTIMER_TCLR_ST);
 
@@ -549,14 +549,14 @@
   00040		 |$LN9@OmapProfil@3|
   00040		 |$LN10@OmapProfil@3|
   00040	00000000	 DCD         |_profilerEnabled|
-  00044		 |$M46981|
+  00044		 |$M46984|
 
 			 ENDP  ; |OmapProfilerStop|
 
 	EXPORT	|OmapProfilerQuery|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46997| DCD	|$LN10@OmapProfil@4|
+|$T47000| DCD	|$LN10@OmapProfil@4|
 	DCD	0x40001001
 ; Function compile flags: /Ogspy
 
@@ -568,7 +568,7 @@
 
   00000		 |$LN10@OmapProfil@4|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M46994|
+  00004		 |$M46997|
   00004	e3500000	 cmp         r0, #0
 
 ; 210  :     DWORD i;
@@ -604,7 +604,7 @@
   0003c		 |$LN11@OmapProfil@4|
   0003c		 |$LN12@OmapProfil@4|
   0003c	00000000	 DCD         |_rgMarkers|
-  00040		 |$M46995|
+  00040		 |$M46998|
 
 			 ENDP  ; |OmapProfilerQuery|
 
@@ -615,7 +615,7 @@
 	IMPORT	|dpCurSettings|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47016| DCD	|$LN18@OALIoCtlHA|
+|$T47019| DCD	|$LN18@OALIoCtlHA|
 	DCD	0x40002e01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -643,7 +643,7 @@
 
   00000		 |$LN18@OALIoCtlHA|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M47013|
+  00004		 |$M47016|
   00004	e1a07002	 mov         r7, r2
   00008	e1a05001	 mov         r5, r1
 
@@ -675,7 +675,7 @@
 ; 249  :     if (pInBuffer == NULL)
 
   00028	e3550000	 cmp         r5, #0
-  0002c	0a000015	 beq         |$cleanUp$46907|
+  0002c	0a000015	 beq         |$cleanUp$46910|
 
 ; 250  :         {
 ; 251  :         goto cleanUp;
@@ -687,7 +687,7 @@
   00030	e5953010	 ldr         r3, [r5, #0x10]
   00034	e2833014	 add         r3, r3, #0x14
   00038	e1570003	 cmp         r7, r3
-  0003c	1a000011	 bne         |$cleanUp$46907|
+  0003c	1a000011	 bne         |$cleanUp$46910|
 
 ; 256  :         {
 ; 257  :         goto cleanUp;
@@ -730,13 +730,13 @@
 ; 271  :     else if (pProfilerControl->dwOptions & (PROFILE_OEMDEFINED))
 
   00064	e3130080	 tst         r3, #0x80
-  00068	0a000006	 beq         |$cleanUp$46907|
+  00068	0a000006	 beq         |$cleanUp$46910|
 
 ; 272  :         {
 ; 273  :         if (inSize != sizeof(ProfilerControlEx)) goto cleanUp;
 
   0006c	e3570098	 cmp         r7, #0x98
-  00070	1a000004	 bne         |$cleanUp$46907|
+  00070	1a000004	 bne         |$cleanUp$46910|
 
 ; 274  : 
 ; 275  :         // get data
@@ -756,7 +756,7 @@
 ; 282  :         rc = TRUE;
 
   00084	e3a04001	 mov         r4, #1
-  00088		 |$cleanUp$46907|
+  00088		 |$cleanUp$46910|
   00088	e5963440	 ldr         r3, [r6, #0x440]
 
 ; 283  :         }
@@ -783,7 +783,7 @@
   000b0	00000000	 DCD         |??_C@_1CO@JAMDPBAN@?$AA?$CL?$AAO?$AAA?$AAL?$AAI?$AAo?$AAC?$AAt?$AAl?$AAH?$AAA?$AAL?$AAP?$AAr?$AAo?$AAf?$AAi?$AAl?$AAe?$AAr?$AA?$AN?$AA?6?$AA?$AA@|
   000b4		 |$LN22@OALIoCtlHA|
   000b4	00000000	 DCD         |dpCurSettings|
-  000b8		 |$M47014|
+  000b8		 |$M47017|
 
 			 ENDP  ; |OALIoCtlHALProfiler|
 

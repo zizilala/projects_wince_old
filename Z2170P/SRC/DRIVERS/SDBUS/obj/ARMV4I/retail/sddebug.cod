@@ -17,17 +17,17 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddebug.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34367| DCD	|$LN6@SDCardDebu|
+|$T34369| DCD	|$LN6@SDCardDebu|
 	DCD	0xc0001a04
 
   00000			 AREA	 |.xdata|, DATA
-|$T34363| DCD	0xffffffe4
+|$T34365| DCD	0xffffffe4
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T34363|
+  00004	00000000	 DCD         |$T34365|
 
   00008		 |SDCardDebugOutput| PROC
 
@@ -38,7 +38,7 @@
   0000c	e92d000f	 stmdb       sp!, {r0 - r3}
   00010	e92d5000	 stmdb       sp!, {r12, lr}
   00014	e24ddfc1	 sub         sp, sp, #0xC1, 30
-  00018		 |$M34364|
+  00018		 |$M34366|
   00018	e58d030c	 str         r0, [sp, #0x30C]
   0001c	e59f3048	 ldr         r3, [pc, #0x48]
   00020	e5933000	 ldr         r3, [r3]
@@ -88,7 +88,7 @@
   0006c		 |$LN7@SDCardDebu|
   0006c		 |$LN8@SDCardDebu|
   0006c	00000000	 DCD         |__security_cookie|
-  00070		 |$M34365|
+  00070		 |$M34367|
 
 			 ENDP  ; |SDCardDebugOutput|
 
@@ -123,7 +123,7 @@
 	IMPORT	|NKDbgPrintfW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34453| DCD	|$LN109@SDProcessE|
+|$T34455| DCD	|$LN109@SDProcessE|
 	DCD	0x40009501
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -453,7 +453,7 @@
 
   00000		 |$LN109@SDProcessE|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M34450|
+  00004		 |$M34452|
 
 ; 87   : 
 ; 88   :     EXCEPTION_RECORD *pExceptionRecord;
@@ -912,7 +912,7 @@
   0024c	00000000	 DCD         |??_C@_1GA@IMOMELNN@?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAE?$AAX?$AAC?$AAE?$AAP?$AAT?$AAI?$AAO?$AAN?$AA_?$AAA?$AAC?$AAC@|
   00250		 |$LN137@SDProcessE|
   00250	00000000	 DCD         |??_C@_1LA@GNONOPLI@?$AAS?$AAD?$AAB?$AAu?$AAs?$AAD?$AAr?$AAi?$AAv?$AAe?$AAr?$AA?3?$AA?5?$AAE?$AAx?$AAc?$AAe?$AAp?$AAt?$AAi?$AAo?$AAn?$AA?5?$AAc?$AAa?$AAu?$AAg?$AAh?$AAt?$AA?5?$AAE?$AAx@|
-  00254		 |$M34451|
+  00254		 |$M34453|
 
 			 ENDP  ; |SDProcessException|
 
@@ -922,15 +922,15 @@
 	IMPORT	|memcpy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34515| DCD	|$LN21@SDPerformS|
+|$T34517| DCD	|$LN21@SDPerformS|
 	DCD	0xc0002b05
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34517| DCD	|$LN9@SDPerformS|
+|$T34519| DCD	|$LN9@SDPerformS|
 	DCD	0x40000401
 
   00000			 AREA	 |.xdata|, DATA
-|$T34513| DCD	0x1
+|$T34515| DCD	0x1
 	DCD	|$LN13@SDPerformS|
 	DCD	|$LN14@SDPerformS|
 	DCD	|$LN9@SDPerformS|
@@ -956,7 +956,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T34513|
+  00004	00000000	 DCD         |$T34515|
 
   00008		 |SDPerformSafeCopy| PROC
 
@@ -1082,15 +1082,15 @@
 	IMPORT	|wcscpy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34567| DCD	|$LN39@SDOutputBu|
+|$T34569| DCD	|$LN39@SDOutputBu|
 	DCD	0xc0005705
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34569| DCD	|$LN26@SDOutputBu|
+|$T34571| DCD	|$LN26@SDOutputBu|
 	DCD	0x40000a01
 
   00000			 AREA	 |.xdata|, DATA
-|$T34565| DCD	0x1
+|$T34567| DCD	0x1
 	DCD	|$LN30@SDOutputBu|
 	DCD	|$LN31@SDOutputBu|
 	DCD	|$LN26@SDOutputBu|
@@ -1146,7 +1146,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck_SEH|
-  00004	00000000	 DCD         |$T34565|
+  00004	00000000	 DCD         |$T34567|
 
   00008		 |SDOutputBuffer| PROC
 

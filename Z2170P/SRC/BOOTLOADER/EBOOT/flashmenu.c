@@ -40,6 +40,10 @@ static VOID DumpFlash(OAL_BLMENU_ITEM *pMenu);
 static VOID FormatFlash(OAL_BLMENU_ITEM *pMenu);
 static VOID EnableFlashNK(OAL_BLMENU_ITEM *pMenu);
 static VOID SetECCType(OAL_BLMENU_ITEM *pMenu);
+//static VOID DumpFlashBBuffer(OAL_BLMENU_ITEM *pMenu);     //Ray 13-09-17
+//VOID DumpFlashBuffer(OAL_BLMENU_ITEM *pMenu);
+
+
 
 //------------------------------------------------------------------------------
 
@@ -83,8 +87,7 @@ OAL_BLMENU_ITEM g_menuFlash[] = {
 
 //------------------------------------------------------------------------------
 
-VOID 
-ShowFlashGeometry(OAL_BLMENU_ITEM *pMenu)
+VOID ShowFlashGeometry(OAL_BLMENU_ITEM *pMenu)
 {
     HANDLE hFMD;
     PCI_REG_INFO regInfo;
@@ -95,7 +98,7 @@ ShowFlashGeometry(OAL_BLMENU_ITEM *pMenu)
     UINT32 listmode=0;
 
     UNREFERENCED_PARAMETER(pMenu);
-
+    
     regInfo.MemBase.Reg[0] = g_ulFlashBase;
     hFMD = FMD_Init(NULL, &regInfo, NULL);
     if (hFMD == NULL) 
@@ -123,11 +126,11 @@ ShowFlashGeometry(OAL_BLMENU_ITEM *pMenu)
         }
 
     OALLog(L"\r\n");
-    OALLog(L" Flash Type:    %s\r\n", pszType);
-    OALLog(L" Blocks:        %d\r\n", flashInfo.dwNumBlocks);
-    OALLog(L" Bytes/block:   %d\r\n", flashInfo.dwBytesPerBlock);
-    OALLog(L" Sectors/block: %d\r\n", flashInfo.wSectorsPerBlock);
-    OALLog(L" Bytes/sector:  %d\r\n", flashInfo.wDataBytesPerSector);
+    OALLog(L" Flash Type:    %s\r\n", pszType);              //Ray 13-09-16           
+    OALLog(L" Blocks:        %d\r\n", flashInfo.dwNumBlocks);//Number of physical blocks in flash       
+    OALLog(L" Bytes/block:   %d\r\n", flashInfo.dwBytesPerBlock);//Number of bytes per block.
+    OALLog(L" Sectors/block: %d\r\n", flashInfo.wSectorsPerBlock);//Number of sectors per block.
+    OALLog(L" Bytes/sector:  %d\r\n", flashInfo.wDataBytesPerSector);//Number of data bytes per sector.
 	
     switch (g_bootCfg.ECCtype) 
         {
@@ -174,18 +177,17 @@ ShowFlashGeometry(OAL_BLMENU_ITEM *pMenu)
 
         // reserved block
         if ((status & BLOCK_STATUS_RESERVED) != 0) 
-            {
+        {
             if (listmode!=2)
-                {
+            {
                 OALLog(L"\r\n[reserved]");
                 listmode=2;
-                }
-
+            }
             OALLog(L" %d", block);
 
             block++;
             continue;
-            }
+         }
 
         block++;
     }
@@ -531,9 +533,9 @@ VOID DumpFlash(OAL_BLMENU_ITEM *pMenu)
 {
     HANDLE hFMD = NULL;
     PCI_REG_INFO regInfo;
-    FlashInfo flashInfo;
-    SectorInfo sectorInfo;
-    SECTOR_ADDR sector;
+    FlashInfo    flashInfo;
+    SectorInfo   sectorInfo;
+    SECTOR_ADDR  sector;
     WCHAR szInputLine[16];
     UINT8 buffer[2048], pOob[64];
     UINT32 i, j;
@@ -647,6 +649,138 @@ cleanUp:
 
     return;
 }
+
+//------------------------------------------------------------------------------
+//Ray 13-09-16
+//
+/*VOID DumpFlashBBuffer(OAL_BLMENU_ITEM *pMenu)
+{
+    HANDLE hFMD = NULL;
+    PCI_REG_INFO regInfo;
+    FlashInfo    flashInfo;
+    SectorInfo   sectorInfo;
+    SECTOR_ADDR  sector;
+    WCHAR szInputLine[16];
+    UINT8 buffer[2048], pOob[64];
+    UINT32 i, j;
+
+    UNREFERENCED_PARAMETER(pMenu);
+
+
+    // Open FMD
+    regInfo.MemBase.Reg[0] = g_ulFlashBase;
+    hFMD = FMD_Init(NULL, &regInfo, NULL);
+    if (hFMD == NULL) 
+        {
+        OALLog(L" Oops, can't open FMD driver\r\n");
+        goto cleanUp;
+        }
+
+    if (!FMD_GetInfo(&flashInfo)) 
+        {
+        OALLog(L" Oops, can't get flash geometry info\r\n");
+        goto cleanUp;
+        }
+
+    if (flashInfo.wDataBytesPerSector > sizeof(buffer)) 
+        {
+        OALLog(L" Oops, sector size larger than my buffer\r\n");
+        goto cleanUp;
+        }
+
+        for(;;)
+        {
+
+        OALLog(L"\r\n Sector Number: ");
+
+        if (OALBLMenuReadLine(szInputLine, dimof(szInputLine)) == 0) 
+            {
+            break;
+            }
+
+        // Get sector number
+        sector = OALStringToUINT32(szInputLine);
+
+        // Check sector number
+        if (sector > flashInfo.dwNumBlocks * flashInfo.wSectorsPerBlock) 
+            {
+            OALLog(L" Oops, too big sector number\r\n");
+            continue;
+            }
+
+        if (!FMD_ReadSector(sector, buffer, &sectorInfo, 1)) 
+            {
+            OALLog(L" Oops, sector read failed\r\n");
+            continue;
+            }
+
+        OALLog(
+            L"\r\nSector %d (sector %d in block %d)\r\n", sector,
+            sector%flashInfo.wSectorsPerBlock, sector/flashInfo.wSectorsPerBlock
+        );
+        OALLog(
+            L"Reserved1: %08x OEMReserved: %02x Bad: %02x Reserved2: %04x\r\n",
+            sectorInfo.dwReserved1, sectorInfo.bOEMReserved,
+            sectorInfo.bBadBlock, sectorInfo.wReserved2
+        );
+
+        for (i = 0; i < flashInfo.wDataBytesPerSector; i += 16) 
+            {
+            OALLog(L"%04x ", i);
+            for (j = i; j < i + 16 && j < flashInfo.wDataBytesPerSector; j++) 
+                {
+                OALLog(L" %02x", buffer[j]);
+                }
+            OALLog(L"  ");
+            for (j = i; j < i + 16 && j < flashInfo.wDataBytesPerSector; j++) 
+                {
+                if (buffer[j] >= ' ' && buffer[j] < 127) 
+                    {
+                    OALLog(L"%c", buffer[j]);
+                    } 
+                else 
+                    {
+                    OALLog(L".");
+                    }
+                }
+            OALLog(L"\r\n");
+            }
+	//dump OOB data
+        if (!FMD_ReadSectorOOB(sector, pOob)) 
+            {
+            OALLog(L" Oops, sector read failed\r\n");
+            continue;
+            }
+        for (i = 0; i < 64; i += 16) 
+            {
+            OALLog(L"%04x ", i);
+            for (j = i; j < i + 16 && j < 64; j++) 
+                {
+                OALLog(L" %02x", pOob[j]);
+                }
+                
+            OALLog(L"\r\n");
+            }
+
+        }
+
+cleanUp:
+
+    if (hFMD != NULL) 
+        {
+        FMD_Deinit(hFMD);
+        }
+
+    return;
+}*/
+
+//------------------------------------------------------------------------------
+/*VOID DumpFlashBuffer(OAL_BLMENU_ITEM *pMenu)
+{
+    DumpFlashBBuffer(pMenu);
+    OALLog(L"XXXXXXXXXXXX\n");
+    
+}*/
 
 //------------------------------------------------------------------------------
 

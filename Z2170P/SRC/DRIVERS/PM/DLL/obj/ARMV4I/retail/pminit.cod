@@ -132,7 +132,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34526| DCD	|$LN5@SetEvent|
+|$T34538| DCD	|$LN5@SetEvent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -144,7 +144,7 @@
 
   00000		 |$LN5@SetEvent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34523|
+  00004		 |$M34535|
 
 ; 236  : 	return EventModify(h,EVENT_SET);
 
@@ -155,14 +155,14 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M34524|
+  00014		 |$M34536|
 
 			 ENDP  ; |SetEvent|
 
 	EXPORT	|GetCurrentProcess|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34535| DCD	|$LN5@GetCurrent|
+|$T34547| DCD	|$LN5@GetCurrent|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -173,7 +173,7 @@
 ; 361  : _inline HANDLE GetCurrentProcess(void) {
 
   00000		 |$LN5@GetCurrent|
-  00000		 |$M34532|
+  00000		 |$M34544|
 
 ; 362  : 	return ((HANDLE)(SH_CURPROC+SYS_HANDLE_BASE));
 
@@ -182,7 +182,7 @@
 ; 363  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M34533|
+  00008		 |$M34545|
 
 			 ENDP  ; |GetCurrentProcess|
 
@@ -190,7 +190,7 @@
 	IMPORT	|__GetUserKData|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34544| DCD	|$LN5@GetCurrent@2|
+|$T34556| DCD	|$LN5@GetCurrent@2|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -202,7 +202,7 @@
 
   00000		 |$LN5@GetCurrent@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34541|
+  00004		 |$M34553|
 
 ; 374  :     return __GetUserKData (SYSHANDLE_OFFSET + (SH_CURPROC * sizeof(HANDLE)));
 
@@ -213,7 +213,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M34542|
+  00014		 |$M34554|
 
 			 ENDP  ; |GetCurrentProcessId|
 
@@ -222,7 +222,7 @@
 ; File c:\wince600\public\common\sdk\inc\objbase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34558| DCD	|$LN7@operator|
+|$T34570| DCD	|$LN7@operator|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -234,7 +234,7 @@
 
   00000		 |$LN7@operator|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34555|
+  00004		 |$M34567|
 
 ; 517  : #ifdef _WIN32
 ; 518  :     return !memcmp(&guidOne,&guidOther,sizeof(GUID));
@@ -263,7 +263,7 @@
 
   0001c	149de004	 ldrne       lr, [sp], #4
   00020	e12fff1e	 bx          lr
-  00024		 |$M34556|
+  00024		 |$M34568|
 
 			 ENDP  ; |??8@YAHABU_GUID@@0@Z|, operator==
 
@@ -293,11 +293,11 @@
 	IMPORT	|__security_check_cookie|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34612| DCD	|$LN59@DeviceList|
+|$T34624| DCD	|$LN59@DeviceList|
 	DCD	0xc0008e02
 
   00000			 AREA	 |.xdata|, DATA
-|$T34608| DCD	0xffffffdc
+|$T34620| DCD	0xffffffdc
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1EO@FIGOIHNC@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAe?$AAr?$AAr?$AAo?$AAr?$AA?5?$AAd?$AAu?$AAr?$AAi?$AAn?$AAg?$AA?5?$AAl?$AAi?$AAs?$AAt?$AA?5?$AAi?$AAn?$AAi?$AAt?$AAi?$AAa?$AAl?$AAi?$AAz?$AAa@| DCB "%"
@@ -398,7 +398,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T34608|
+  00004	00000000	 DCD         |$T34620|
 
   00008		 |?DeviceListsInit@@YAHXZ| PROC		; DeviceListsInit
 
@@ -407,7 +407,7 @@
   00008		 |$LN59@DeviceList|
   00008	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
   0000c	e24ddf8e	 sub         sp, sp, #0x8E, 30
-  00010		 |$M34609|
+  00010		 |$M34621|
   00010	e59f3224	 ldr         r3, [pc, #0x224]
   00014	e5933000	 ldr         r3, [r3]
   00018	e58d3234	 str         r3, [sp, #0x234]
@@ -772,7 +772,7 @@
   00238	00000000	 DCD         |??_C@_1EO@PFEFPDAL@?$AAS?$AAY?$AAS?$AAT?$AAE?$AAM?$AA?2?$AAC?$AAu?$AAr?$AAr?$AAe?$AAn?$AAt?$AAC?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl?$AAS?$AAe?$AAt?$AA?2?$AAC?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl@|
   0023c		 |$LN73@DeviceList|
   0023c	00000000	 DCD         |__security_cookie|
-  00240		 |$M34610|
+  00240		 |$M34622|
 
 			 ENDP  ; |?DeviceListsInit@@YAHXZ|, DeviceListsInit
 
@@ -828,15 +828,15 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34726| DCD	|$LN127@PmInit|
+|$T34738| DCD	|$LN127@PmInit|
 	DCD	0xc001fd04
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34728| DCD	|$LN97@PmInit|
+|$T34740| DCD	|$LN97@PmInit|
 	DCD	0x40002702
 
   00000			 AREA	 |.xdata|, DATA
-|$T34724| DCD	0x1
+|$T34736| DCD	0x1
 	DCD	|$LN101@PmInit|
 	DCD	|$LN102@PmInit|
 	DCD	|$LN97@PmInit|
@@ -1082,7 +1082,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck_SEH|
-  00004	00000000	 DCD         |$T34724|
+  00004	00000000	 DCD         |$T34736|
 
   00008		 |PmInit| PROC
 
@@ -2271,7 +2271,7 @@
 	IMPORT	|DeleteProcessRequirements|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34780| DCD	|$LN13@PmNotify|
+|$T34792| DCD	|$LN13@PmNotify|
 	DCD	0x40001401
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2301,7 +2301,7 @@
 
   00000		 |$LN13@PmNotify|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M34777|
+  00004		 |$M34789|
   00004	e1a04001	 mov         r4, r1
   00008	e3500000	 cmp         r0, #0
 
@@ -2356,7 +2356,7 @@
   00048	00000000	 DCD         |??_C@_1M@FKDMEONL@?$AA?9?$AA?$CF?$AAs?$AA?$AN?$AA?6?$AA?$AA@|
   0004c		 |$LN17@PmNotify|
   0004c	00000000	 DCD         |??_C@_1DO@CKDJKBAK@?$AA?$CL?$AA?$CF?$AAs?$AA?3?$AA?5?$AAh?$AAP?$AAr?$AAo?$AAc?$AAe?$AAs?$AAs?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?5?$AAe?$AAx?$AAi?$AAt?$AAi?$AAn?$AAg?$AA?$AN?$AA?6?$AA?$AA@|
-  00050		 |$M34778|
+  00050		 |$M34790|
 
 			 ENDP  ; |PmNotify|
 
@@ -2369,7 +2369,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34815| DCD	|$LN25@DllEntry|
+|$T34827| DCD	|$LN25@DllEntry|
 	DCD	0x40002d01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2418,7 +2418,7 @@
 
   00000		 |$LN25@DllEntry|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M34812|
+  00004		 |$M34824|
   00004	e3510000	 cmp         r1, #0
   00008	e1a04000	 mov         r4, r0
 
@@ -2527,7 +2527,7 @@
   000ac	00000000	 DCD         |??_C@_1IG@DMCGIFIH@?$AA?$CK?$AA?$CK?$AA?$CK?$AA?5?$AA?$CF?$AAs?$AA?3?$AA?5?$AAD?$AAL?$AAL?$AA_?$AAP?$AAR?$AAO?$AAC?$AAE?$AAS?$AAS?$AA_?$AAA?$AAT?$AAT?$AAA?$AAC?$AAH?$AA?5?$AA?9?$AA?5?$AAC?$AAu?$AAr@|
   000b0		 |$LN31@DllEntry|
   000b0	00000000	 DCD         |dpCurSettings|
-  000b4		 |$M34813|
+  000b4		 |$M34825|
 
 			 ENDP  ; |DllEntry|
 

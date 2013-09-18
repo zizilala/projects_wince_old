@@ -1452,12 +1452,17 @@ BOOL BLSDCardReadData(ULONG size, UCHAR *pData)
 //
 //  This function initialize SDCard the file and prepare burning to flash memory
 //  
-BOOL BLSDCardToFlash(WCHAR *filename)
+BOOL BLSDCardToFlash(WCHAR *filename, UCHAR *pData, DWORD size)
 {
 	// This function is called after MMC/SD image download is selected in menu or config
 	pFile = &File;
+    //FILEHANDLE logoFile(pFile);
+	/*WORD	   wSignature = 0;
+	DWORD	   dwOffset = 0;
+	BYTE*	   pTmpBuf = NULL;
+	DWORD	   dwCursor = 0;*/
 
-	OALMSGX(OAL_INFO, (L"BLSDCardToFlash: Filename %s\r\n", filename));
+	OALMSGX(OAL_INFO, (L" **BLSDCardToFlash: Filename %s\r\n", filename));
 	//?? OAL_INFo, Ray  13-09-11
 
 	if (!bFileIoInit)
@@ -1467,7 +1472,7 @@ BOOL BLSDCardToFlash(WCHAR *filename)
 		fileio_ops.identify     = &SDCardIdentify;
         fileio_ops.read_sector  = &SDCardReadSector;
         fileio_ops.read_multi_sectors = &SDCardReadMultiSectors;
-	    fileio_ops.drive_info = (PVOID)&Disk;
+	    fileio_ops.drive_info   = (PVOID)&Disk;
 	
         // initialize file system driver
         if(FileIoInit(&fileio_ops) != FILEIO_STATUS_OK)
@@ -1475,6 +1480,7 @@ BOOL BLSDCardToFlash(WCHAR *filename)
 		    OALMSG(OAL_ERROR, (L"BLSDCardToFlash:  fileio init failed\r\n"));
             return FALSE;
         }
+        
         bFileIoInit = TRUE;
 	}
 
@@ -1484,9 +1490,17 @@ BOOL BLSDCardToFlash(WCHAR *filename)
     // try to open file specified by pConfig->filename, return FALSE on failure
     if (FileIoOpen(&fileio_ops, pFile) != FILEIO_STATUS_OK)
     {
-        OALMSG(OAL_ERROR, (L"BLSDCardToFlash:  cannot open file\r\n"));
+        OALMSG(OAL_ERROR, (L" **BLSDCardToFlash:  Cannot open file\r\n"));
         return FALSE;
     }
+
+
+    //Read data, Ray 13-09-17 //XX
+    if (FileIoRead(&fileio_ops, pFile, (PVOID)pData, size) != FILEIO_STATUS_OK)
+	{
+        OALMSG(OAL_ERROR, (L"BLSDCardReadLogo:  cannot read file header\r\n"));
+        return FALSE;
+	}
 
     // return TRUE, File will Reading
     return TRUE;
@@ -1510,11 +1524,11 @@ BOOL BLSDCardReadLogo(WCHAR *filename, UCHAR *pData, DWORD size)
 	if (!bFileIoInit)
 	{
 		// set up data structure used by file system driver
-		fileio_ops.init = &SDCardInit;
-		fileio_ops.identify = &SDCardIdentify;
-		fileio_ops.read_sector = &SDCardReadSector;
+		fileio_ops.init         = &SDCardInit;
+		fileio_ops.identify     = &SDCardIdentify;
+		fileio_ops.read_sector  = &SDCardReadSector;
 		fileio_ops.read_multi_sectors = &SDCardReadMultiSectors;
-		fileio_ops.drive_info = (PVOID)&Disk;
+		fileio_ops.drive_info   = (PVOID)&Disk;
 
 		// initialize file system driver
 		if (FileIoInit(&fileio_ops) != FILEIO_STATUS_OK)
@@ -1523,7 +1537,7 @@ BOOL BLSDCardReadLogo(WCHAR *filename, UCHAR *pData, DWORD size)
 			return FALSE;
 		}
 
-		bFileIoInit = TRUE;
+        bFileIoInit = TRUE;
 	}
 
     // fill in file name (8.3 format)

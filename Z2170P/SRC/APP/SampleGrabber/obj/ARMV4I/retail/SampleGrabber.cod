@@ -129,7 +129,7 @@
 ; File c:\wince600\public\common\sdk\inc\objbase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55832| DCD	|$LN7@operator|
+|$T55844| DCD	|$LN7@operator|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -141,7 +141,7 @@
 
   00000		 |$LN7@operator|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M55829|
+  00004		 |$M55841|
 
 ; 517  : #ifdef _WIN32
 ; 518  :     return !memcmp(&guidOne,&guidOther,sizeof(GUID));
@@ -170,14 +170,14 @@
 
   0001c	149de004	 ldrne       lr, [sp], #4
   00020	e12fff1e	 bx          lr
-  00024		 |$M55830|
+  00024		 |$M55842|
 
 			 ENDP  ; |??8@YAHABU_GUID@@0@Z|, operator==
 
 	EXPORT	|??9@YAHABU_GUID@@0@Z|			; operator!=
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55852| DCD	|$LN11@operator@2|
+|$T55864| DCD	|$LN11@operator@2|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -189,7 +189,7 @@
 
   00000		 |$LN11@operator@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M55849|
+  00004		 |$M55861|
 
 ; 527  :     return !(guidOne == guidOther);
 
@@ -210,7 +210,7 @@
 
   0001c	049de004	 ldreq       lr, [sp], #4
   00020	e12fff1e	 bx          lr
-  00024		 |$M55850|
+  00024		 |$M55862|
 
 			 ENDP  ; |??9@YAHABU_GUID@@0@Z|, operator!=
 
@@ -218,7 +218,7 @@
 ; File c:\wince600\public\directx\sdk\inc\amfilter.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55864| DCD	|$LN7@IsConnecte|
+|$T55876| DCD	|$LN7@IsConnecte|
 	DCD	0x40000500
 ; Function compile flags: /Ogspy
 
@@ -229,13 +229,13 @@
 ; 485  :     BOOL IsConnected(void) {return (m_Connected != NULL); };
 
   00000		 |$LN7@IsConnecte|
-  00000		 |$M55861|
+  00000		 |$M55873|
   00000	e5903018	 ldr         r3, [r0, #0x18]
   00004	e3530000	 cmp         r3, #0
   00008	13a00001	 movne       r0, #1
   0000c	03a00000	 moveq       r0, #0
   00010	e12fff1e	 bx          lr
-  00014		 |$M55862|
+  00014		 |$M55874|
 
 			 ENDP  ; |?IsConnected@CBasePin@@QAAHXZ|, CBasePin::IsConnected
 
@@ -243,7 +243,7 @@
 ; File c:\wince600\public\directx\sdk\inc\transfrm.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55874| DCD	|$LN5@CurrentMed|
+|$T55886| DCD	|$LN5@CurrentMed|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -254,17 +254,17 @@
 ; 106  :     CMediaType& CurrentMediaType() { return m_mt; };
 
   00000		 |$LN5@CurrentMed|
-  00000		 |$M55871|
+  00000		 |$M55883|
   00000	e280001c	 add         r0, r0, #0x1C
   00004	e12fff1e	 bx          lr
-  00008		 |$M55872|
+  00008		 |$M55884|
 
 			 ENDP  ; |?CurrentMediaType@CTransformInputPin@@QAAAAVCMediaType@@XZ|, CTransformInputPin::CurrentMediaType
 
 	EXPORT	|??0IUnknown@@QAA@XZ|			; IUnknown::IUnknown
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55884| DCD	|$LN5@IUnknown|
+|$T55896| DCD	|$LN5@IUnknown|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -272,9 +272,9 @@
 
   00000		 |??0IUnknown@@QAA@XZ| PROC		; IUnknown::IUnknown
   00000		 |$LN5@IUnknown|
-  00000		 |$M55881|
+  00000		 |$M55893|
   00000	e12fff1e	 bx          lr
-  00004		 |$M55882|
+  00004		 |$M55894|
 
 			 ENDP  ; |??0IUnknown@@QAA@XZ|, IUnknown::IUnknown
 
@@ -285,7 +285,7 @@
 ; File c:\wince600\platform\z2170p\src\app\samplegrabber\samplegrabber.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55896| DCD	|$LN7@DllRegiste|
+|$T55908| DCD	|$LN7@DllRegiste|
 	DCD	0x40000f01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -306,7 +306,7 @@
 
   00000		 |$LN7@DllRegiste|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M55893|
+  00004		 |$M55905|
 
 ; 80   : 	HRESULT hr = AMovieDllRegisterServer2( TRUE );
 
@@ -334,7 +334,7 @@
   00034	00000000	 DCD         |??_C@_1EI@MPLJLCGA@?$AAI?$AAn?$AA?5?$AAD?$AAl?$AAl?$AAR?$AAe?$AAg?$AAi?$AAs?$AAt?$AAe?$AAr?$AAS?$AAe?$AAr?$AAv?$AAe?$AAr?$AA?5?$AA?5?$AAh?$AAr?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8@|
   00038		 |$LN10@DllRegiste|
   00038	00000000	 DCD         |?dpCurSettings@@3U_DBGPARAM@@A|
-  0003c		 |$M55894|
+  0003c		 |$M55906|
 
 			 ENDP  ; |DllRegisterServer|
 
@@ -342,7 +342,7 @@
 	EXPORT	|??_C@_1DC@IOHHMDAM@?$AAI?$AAn?$AA?5?$AAD?$AAl?$AAl?$AAU?$AAn?$AAr?$AAe?$AAg?$AAi?$AAs?$AAt?$AAe?$AAr?$AAS?$AAe?$AAr?$AAv?$AAe?$AAr?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55910| DCD	|$LN7@DllUnregis|
+|$T55922| DCD	|$LN7@DllUnregis|
 	DCD	0x40000c01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -362,7 +362,7 @@
 
   00000		 |$LN7@DllUnregis|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M55907|
+  00004		 |$M55919|
 
 ; 87   :     RETAILMSG(DBGZONE_INFO, (TEXT("In DllUnregisterServer\r\n")));
 
@@ -386,7 +386,7 @@
   00028	00000000	 DCD         |??_C@_1DC@IOHHMDAM@?$AAI?$AAn?$AA?5?$AAD?$AAl?$AAl?$AAU?$AAn?$AAr?$AAe?$AAg?$AAi?$AAs?$AAt?$AAe?$AAr?$AAS?$AAe?$AAr?$AAv?$AAe?$AAr?$AA?$AN?$AA?6?$AA?$AA@|
   0002c		 |$LN10@DllUnregis|
   0002c	00000000	 DCD         |?dpCurSettings@@3U_DBGPARAM@@A|
-  00030		 |$M55908|
+  00030		 |$M55920|
 
 			 ENDP  ; |DllUnregisterServer|
 
@@ -397,7 +397,7 @@
 	IMPORT	|RegisterDbgZones|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55928| DCD	|$LN8@DllMain|
+|$T55940| DCD	|$LN8@DllMain|
 	DCD	0x40001901
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -427,7 +427,7 @@
 
   00000		 |$LN8@DllMain|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M55925|
+  00004		 |$M55937|
   00004	e1a07002	 mov         r7, r2
   00008	e1a06001	 mov         r6, r1
   0000c	e1a04000	 mov         r4, r0
@@ -478,7 +478,7 @@
   0005c	00000000	 DCD         |??_C@_1BO@LGJFMGDC@?$AAS?$AAa?$AAm?$AAp?$AAl?$AAe?$AA?5?$AAG?$AAr?$AAa?$AAb?$AAb?$AAe?$AAr?$AA?$AA@|
   00060		 |$LN12@DllMain|
   00060	00000000	 DCD         |?dpCurSettings@@3U_DBGPARAM@@A|
-  00064		 |$M55926|
+  00064		 |$M55938|
 
 			 ENDP  ; |DllMain|
 
@@ -486,7 +486,7 @@
 	IMPORT	|??1CTransformFilter@@UAA@XZ|		; CTransformFilter::~CTransformFilter
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55940| DCD	|$LN5@CTransInPl|
+|$T55952| DCD	|$LN5@CTransInPl|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -495,11 +495,11 @@
   00000		 |??1CTransInPlaceFilter@@UAA@XZ| PROC	; CTransInPlaceFilter::~CTransInPlaceFilter
   00000		 |$LN5@CTransInPl|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M55937|
+  00004		 |$M55949|
   00004	eb000000	 bl          |??1CTransformFilter@@UAA@XZ|
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M55938|
+  00010		 |$M55950|
 
 			 ENDP  ; |??1CTransInPlaceFilter@@UAA@XZ|, CTransInPlaceFilter::~CTransInPlaceFilter
 
@@ -508,7 +508,7 @@
 	IMPORT	|_purecall|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55953| DCD	|$LN7@ISampleGra|
+|$T55965| DCD	|$LN7@ISampleGra|
 	DCD	0x40000500
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -522,7 +522,7 @@
 
   00000		 |??0ISampleGrabber@@QAA@XZ| PROC	; ISampleGrabber::ISampleGrabber
   00000		 |$LN7@ISampleGra|
-  00000		 |$M55950|
+  00000		 |$M55962|
   00000	e1a02000	 mov         r2, r0
   00004	e59f3004	 ldr         r3, [pc, #4]
   00008	e5823000	 str         r3, [r2]
@@ -530,7 +530,7 @@
   00010		 |$LN8@ISampleGra|
   00010		 |$LN9@ISampleGra|
   00010	00000000	 DCD         |??_7ISampleGrabber@@6B@|
-  00014		 |$M55951|
+  00014		 |$M55963|
 
 			 ENDP  ; |??0ISampleGrabber@@QAA@XZ|, ISampleGrabber::ISampleGrabber
 
@@ -593,7 +593,7 @@
 	IMPORT	|?NewSegment@CTransformFilter@@UAAJ_J0N@Z| ; CTransformFilter::NewSegment
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55968| DCD	|$LN9@CSampleGra|
+|$T55980| DCD	|$LN9@CSampleGra|
 	DCD	0x40001d01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -673,7 +673,7 @@
 
   00000		 |$LN9@CSampleGra|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M55965|
+  00004		 |$M55977|
   00004	e1a05000	 mov         r5, r0
   00008	e59f3060	 ldr         r3, [pc, #0x60]
   0000c	e59f2058	 ldr         r2, [pc, #0x58]
@@ -719,7 +719,7 @@
   0006c	00000000	 DCD         |??_7CSampleGrabber@@6BIBaseFilter@@@|
   00070		 |$LN17@CSampleGra|
   00070	00000000	 DCD         |??_7CSampleGrabber@@6BCUnknown@@@|
-  00074		 |$M55966|
+  00074		 |$M55978|
 
 			 ENDP  ; |??1CSampleGrabber@@UAA@XZ|, CSampleGrabber::~CSampleGrabber
 
@@ -727,7 +727,7 @@
 ; File c:\wince600\public\directx\sdk\inc\combase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T55986| DCD	|$LN5@GetOwner|
+|$T55998| DCD	|$LN5@GetOwner|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -738,7 +738,7 @@
 ; 233  :     LPUNKNOWN GetOwner() const {
 
   00000		 |$LN5@GetOwner|
-  00000		 |$M55983|
+  00000		 |$M55995|
 
 ; 234  :         return m_pUnknown;
 
@@ -747,13 +747,13 @@
 ; 235  :     };
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M55984|
+  00008		 |$M55996|
 
 			 ENDP  ; |?GetOwner@CUnknown@@QBAPAUIUnknown@@XZ|, CUnknown::GetOwner
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56002| DCD	|$LN7@QueryInter|
+|$T56014| DCD	|$LN7@QueryInter|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\app\samplegrabber\samplegrabber.h
@@ -766,7 +766,7 @@
 
   00000		 |$LN7@QueryInter|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M55999|
+  00004		 |$M56011|
   00004	e5100008	 ldr         r0, [r0, #-8]
   00008	e5903000	 ldr         r3, [r0]
   0000c	e5933000	 ldr         r3, [r3]
@@ -774,14 +774,14 @@
   00014	e12fff13	 bx          r3
   00018	e49de004	 ldr         lr, [sp], #4
   0001c	e12fff1e	 bx          lr
-  00020		 |$M56000|
+  00020		 |$M56012|
 
 			 ENDP  ; |?QueryInterface@CSampleGrabber@@UAAJABU_GUID@@PAPAX@Z|, CSampleGrabber::QueryInterface
 
 ; File c:\wince600\public\directx\sdk\inc\combase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56016| DCD	|$LN7@AddRef|
+|$T56028| DCD	|$LN7@AddRef|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\app\samplegrabber\samplegrabber.h
@@ -794,7 +794,7 @@
 
   00000		 |$LN7@AddRef|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M56013|
+  00004		 |$M56025|
   00004	e5100008	 ldr         r0, [r0, #-8]
   00008	e5903000	 ldr         r3, [r0]
   0000c	e5933004	 ldr         r3, [r3, #4]
@@ -802,14 +802,14 @@
   00014	e12fff13	 bx          r3
   00018	e49de004	 ldr         lr, [sp], #4
   0001c	e12fff1e	 bx          lr
-  00020		 |$M56014|
+  00020		 |$M56026|
 
 			 ENDP  ; |?AddRef@CSampleGrabber@@UAAKXZ|, CSampleGrabber::AddRef
 
 ; File c:\wince600\public\directx\sdk\inc\combase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56030| DCD	|$LN7@Release|
+|$T56042| DCD	|$LN7@Release|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\app\samplegrabber\samplegrabber.h
@@ -822,7 +822,7 @@
 
   00000		 |$LN7@Release|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M56027|
+  00004		 |$M56039|
   00004	e5100008	 ldr         r0, [r0, #-8]
   00008	e5903000	 ldr         r3, [r0]
   0000c	e5933008	 ldr         r3, [r3, #8]
@@ -830,13 +830,13 @@
   00014	e12fff13	 bx          r3
   00018	e49de004	 ldr         lr, [sp], #4
   0001c	e12fff1e	 bx          lr
-  00020		 |$M56028|
+  00020		 |$M56040|
 
 			 ENDP  ; |?Release@CSampleGrabber@@UAAKXZ|, CSampleGrabber::Release
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56039| DCD	|$LN5@CheckTrans|
+|$T56051| DCD	|$LN5@CheckTrans|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -847,13 +847,13 @@
 ; 107  :     HRESULT CheckTransform(const CMediaType *mtIn, const CMediaType *mtOut) {
 
   00000		 |$LN5@CheckTrans|
-  00000		 |$M56036|
+  00000		 |$M56048|
 
 ; 108  :             return NOERROR; }
 
   00000	e3a00000	 mov         r0, #0
   00004	e12fff1e	 bx          lr
-  00008		 |$M56037|
+  00008		 |$M56049|
 
 			 ENDP  ; |?CheckTransform@CSampleGrabber@@UAAJPBVCMediaType@@0@Z|, CSampleGrabber::CheckTransform
 
@@ -862,7 +862,7 @@
 ; File c:\wince600\public\common\sdk\inc\objbase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56061| DCD	|$LN14@NonDelegat|
+|$T56073| DCD	|$LN14@NonDelegat|
 	DCD	0x40001801
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\app\samplegrabber\samplegrabber.cpp
@@ -875,7 +875,7 @@
 
   00000		 |$LN14@NonDelegat|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M56058|
+  00004		 |$M56070|
   00004	e1a05002	 mov         r5, r2
   00008	e1a06001	 mov         r6, r1
   0000c	e1a04000	 mov         r4, r0
@@ -919,13 +919,13 @@
   0005c		 |$LN15@NonDelegat|
   0005c		 |$LN16@NonDelegat|
   0005c	00000000	 DCD         |IID_ISampleGrabber|
-  00060		 |$M56059|
+  00060		 |$M56071|
 
 			 ENDP  ; |?NonDelegatingQueryInterface@CSampleGrabber@@UAAJABU_GUID@@PAPAX@Z|, CSampleGrabber::NonDelegatingQueryInterface
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56072| DCD	|$LN5@GetSetupDa|
+|$T56084| DCD	|$LN5@GetSetupDa|
 	DCD	0x40000300
 ; Function compile flags: /Ogspy
 
@@ -936,7 +936,7 @@
 ; 150  : {
 
   00000		 |$LN5@GetSetupDa|
-  00000		 |$M56069|
+  00000		 |$M56081|
 
 ; 151  :     return (LPAMOVIESETUP_FILTER) &sudSampleGrabber;
 
@@ -948,14 +948,14 @@
   00008		 |$LN6@GetSetupDa|
   00008		 |$LN7@GetSetupDa|
   00008	00000000	 DCD         |sudSampleGrabber|
-  0000c		 |$M56070|
+  0000c		 |$M56082|
 
 			 ENDP  ; |?GetSetupData@CSampleGrabber@@UAAPAU_AMOVIESETUP_FILTER@@XZ|, CSampleGrabber::GetSetupData
 
 ; File c:\wince600\public\common\sdk\inc\objbase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56092| DCD	|$LN12@CheckInput|
+|$T56104| DCD	|$LN12@CheckInput|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\app\samplegrabber\samplegrabber.cpp
@@ -968,7 +968,7 @@
 
   00000		 |$LN12@CheckInput|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M56089|
+  00004		 |$M56101|
   00004	e1a00001	 mov         r0, r1
 
 ; 212  :     if (pmt->majortype == MEDIATYPE_Video) {
@@ -1005,7 +1005,7 @@
   00030		 |$LN13@CheckInput|
   00030		 |$LN14@CheckInput|
   00030	00000000	 DCD         |MEDIATYPE_Video|
-  00034		 |$M56090|
+  00034		 |$M56102|
 
 			 ENDP  ; |?CheckInputType@CSampleGrabber@@UAAJPBVCMediaType@@@Z|, CSampleGrabber::CheckInputType
 
@@ -1013,7 +1013,7 @@
 ; File c:\wince600\public\common\sdk\inc\objbase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56126| DCD	|$LN17@SetMediaTy|
+|$T56138| DCD	|$LN17@SetMediaTy|
 	DCD	0x40001701
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1034,7 +1034,7 @@
 
   00000		 |$LN17@SetMediaTy|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M56123|
+  00004		 |$M56135|
   00004	e1a00002	 mov         r0, r2
 
 ; 223  :     HRESULT hr = S_OK;
@@ -1081,13 +1081,13 @@
   00054	00000000	 DCD         |?dpCurSettings@@3U_DBGPARAM@@A|
   00058		 |$LN22@SetMediaTy|
   00058	00000000	 DCD         |MEDIATYPE_Video|
-  0005c		 |$M56124|
+  0005c		 |$M56136|
 
 			 ENDP  ; |?SetMediaType@CSampleGrabber@@UAAJW4_PinDirection@@PBVCMediaType@@@Z|, CSampleGrabber::SetMediaType
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56142| DCD	|$LN7@Transform|
+|$T56154| DCD	|$LN7@Transform|
 	DCD	0x40000e01
 ; Function compile flags: /Ogspy
 
@@ -1099,7 +1099,7 @@
 
   00000		 |$LN7@Transform|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M56139|
+  00004		 |$M56151|
   00004	e3510000	 cmp         r1, #0
 
 ; 237  : 
@@ -1138,7 +1138,7 @@
 
   00030	e49de004	 ldr         lr, [sp], #4
   00034	e12fff1e	 bx          lr
-  00038		 |$M56140|
+  00038		 |$M56152|
 
 			 ENDP  ; |?Transform@CSampleGrabber@@UAAJPAUIMediaSample@@@Z|, CSampleGrabber::Transform
 
@@ -1150,7 +1150,7 @@
 ; File c:\wince600\public\directx\sdk\inc\transfrm.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56175| DCD	|$LN25@DecideBuff|
+|$T56187| DCD	|$LN25@DecideBuff|
 	DCD	0x40004e02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1204,7 +1204,7 @@
   00000		 |$LN25@DecideBuff|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd010	 sub         sp, sp, #0x10
-  00008		 |$M56172|
+  00008		 |$M56184|
   00008	e1a06002	 mov         r6, r2
   0000c	e1a07001	 mov         r7, r1
   00010	e1a04000	 mov         r4, r0
@@ -1361,7 +1361,7 @@
   00130	00000000	 DCD         |??_C@_1DA@EHAILAEM@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAD?$AAe?$AAc?$AAi?$AAd?$AAe?$AAB?$AAu?$AAf?$AAf?$AAe?$AAr?$AAS?$AAi?$AAz?$AAe?$AA?5?$AA?$AN?$AA?6?$AA?$AA@|
   00134		 |$LN32@DecideBuff|
   00134	00000000	 DCD         |?dpCurSettings@@3U_DBGPARAM@@A|
-  00138		 |$M56173|
+  00138		 |$M56185|
 
 			 ENDP  ; |?DecideBufferSize@CSampleGrabber@@UAAJPAUIMemAllocator@@PAU_AllocatorProperties@@@Z|, CSampleGrabber::DecideBufferSize
 
@@ -1374,7 +1374,7 @@
 ; File c:\wince600\public\directx\sdk\inc\transfrm.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56215| DCD	|$LN25@GetMediaTy|
+|$T56227| DCD	|$LN25@GetMediaTy|
 	DCD	0x40003d01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1434,7 +1434,7 @@
 
   00000		 |$LN25@GetMediaTy|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M56212|
+  00004		 |$M56224|
   00004	e1a07002	 mov         r7, r2
   00008	e1a04001	 mov         r4, r1
   0000c	e1a06000	 mov         r6, r0
@@ -1571,13 +1571,13 @@
   000ec	00000000	 DCD         |??_C@_1CG@LKNDFBP@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAG?$AAe?$AAt?$AAM?$AAe?$AAd?$AAi?$AAa?$AAT?$AAy?$AAp?$AAe?$AA?5?$AA?6?$AA?$AA@|
   000f0		 |$LN35@GetMediaTy|
   000f0	00000000	 DCD         |?dpCurSettings@@3U_DBGPARAM@@A|
-  000f4		 |$M56213|
+  000f4		 |$M56225|
 
 			 ENDP  ; |?GetMediaType@CSampleGrabber@@UAAJHPAVCMediaType@@@Z|, CSampleGrabber::GetMediaType
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56236| DCD	|$LN5@RegisterCa|
+|$T56248| DCD	|$LN5@RegisterCa|
 	DCD	0x40000300
 ; Function compile flags: /Ogspy
 
@@ -1588,7 +1588,7 @@
 ; 320  : {
 
   00000		 |$LN5@RegisterCa|
-  00000		 |$M56233|
+  00000		 |$M56245|
 
 ; 321  :     // Set pointer to managed delegate
 ; 322  :     callback = mdelegate;
@@ -1602,7 +1602,7 @@
 ; 324  : }
 
   00008	e12fff1e	 bx          lr
-  0000c		 |$M56234|
+  0000c		 |$M56246|
 
 			 ENDP  ; |?RegisterCallback@CSampleGrabber@@UAAJP6AXPAUIMediaSample@@@Z@Z|, CSampleGrabber::RegisterCallback
 
@@ -1610,7 +1610,7 @@
 	IMPORT	|??1CBaseInputPin@@UAA@XZ|		; CBaseInputPin::~CBaseInputPin
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56244| DCD	|$LN5@CTransform|
+|$T56256| DCD	|$LN5@CTransform|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -1619,11 +1619,11 @@
   00000		 |??1CTransformInputPin@@UAA@XZ| PROC	; CTransformInputPin::~CTransformInputPin
   00000		 |$LN5@CTransform|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M56241|
+  00004		 |$M56253|
   00004	eb000000	 bl          |??1CBaseInputPin@@UAA@XZ|
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M56242|
+  00010		 |$M56254|
 
 			 ENDP  ; |??1CTransformInputPin@@UAA@XZ|, CTransformInputPin::~CTransformInputPin
 
@@ -1633,7 +1633,7 @@
 ; File c:\wince600\public\directx\sdk\inc\amfilter.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56262| DCD	|$LN10@EnumMediaT|
+|$T56274| DCD	|$LN10@EnumMediaT|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\app\samplegrabber\samplegrabber.cpp
@@ -1646,7 +1646,7 @@
 
   00000		 |$LN10@EnumMediaT|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M56259|
+  00004		 |$M56271|
 
 ; 351  :     // Can only pass through if connected
 ; 352  :     if(!m_pGrabberFilter->m_pOutput->IsConnected())
@@ -1678,7 +1678,7 @@
 
   00028	e49de004	 ldr         lr, [sp], #4
   0002c	e12fff1e	 bx          lr
-  00030		 |$M56260|
+  00030		 |$M56272|
 
 			 ENDP  ; |?EnumMediaTypes@CSampleGrabberInputPin@@UAAJPAPAUIEnumMediaTypes@@@Z|, CSampleGrabberInputPin::EnumMediaTypes
 
@@ -1704,11 +1704,11 @@
 	IMPORT	|__security_check_cookie|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56288| DCD	|$LN17@GetMediaTy@2|
+|$T56300| DCD	|$LN17@GetMediaTy@2|
 	DCD	0xc0007b02
 
   00000			 AREA	 |.xdata|, DATA
-|$T56284| DCD	0xffffffec
+|$T56296| DCD	0xffffffec
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1KE@PCALAGNG@?$AAC?$AAS?$AAa?$AAm?$AAp?$AAl?$AAe?$AAG?$AAr?$AAa?$AAb?$AAb?$AAe?$AAr?$AAI?$AAn?$AAp?$AAu?$AAt?$AAP?$AAi?$AAn?$AA?3?$AA?3?$AAG?$AAe?$AAt?$AAM?$AAe?$AAd?$AAi?$AAa@| DCB "C"
@@ -1744,7 +1744,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T56284|
+  00004	00000000	 DCD         |$T56296|
 
   00008		 |?GetMediaType@CSampleGrabberInputPin@@UAAJHPAVCMediaType@@@Z| PROC ; CSampleGrabberInputPin::GetMediaType
 
@@ -1753,7 +1753,7 @@
   00008		 |$LN17@GetMediaTy@2|
   00008	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   0000c	e24dd024	 sub         sp, sp, #0x24
-  00010		 |$M56285|
+  00010		 |$M56297|
   00010	e1a05002	 mov         r5, r2
   00014	e1a06001	 mov         r6, r1
   00018	e59f31d0	 ldr         r3, [pc, #0x1D0]
@@ -2028,7 +2028,7 @@
   001ec	00000000	 DCD         |?dpCurSettings@@3U_DBGPARAM@@A|
   001f0		 |$LN28@GetMediaTy@2|
   001f0	00000000	 DCD         |__security_cookie|
-  001f4		 |$M56286|
+  001f4		 |$M56298|
 
 			 ENDP  ; |?GetMediaType@CSampleGrabberInputPin@@UAAJHPAVCMediaType@@@Z|, CSampleGrabberInputPin::GetMediaType
 
@@ -2036,7 +2036,7 @@
 	IMPORT	|??1CTransformOutputPin@@UAA@XZ|	; CTransformOutputPin::~CTransformOutputPin
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56308| DCD	|$LN5@CTransInPl@2|
+|$T56320| DCD	|$LN5@CTransInPl@2|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -2045,11 +2045,11 @@
   00000		 |??1CTransInPlaceOutputPin@@UAA@XZ| PROC ; CTransInPlaceOutputPin::~CTransInPlaceOutputPin
   00000		 |$LN5@CTransInPl@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M56305|
+  00004		 |$M56317|
   00004	eb000000	 bl          |??1CTransformOutputPin@@UAA@XZ|
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M56306|
+  00010		 |$M56318|
 
 			 ENDP  ; |??1CTransInPlaceOutputPin@@UAA@XZ|, CTransInPlaceOutputPin::~CTransInPlaceOutputPin
 
@@ -2058,7 +2058,7 @@
 ; File c:\wince600\public\directx\sdk\inc\amfilter.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56326| DCD	|$LN10@EnumMediaT@2|
+|$T56338| DCD	|$LN10@EnumMediaT@2|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\app\samplegrabber\samplegrabber.cpp
@@ -2071,7 +2071,7 @@
 
   00000		 |$LN10@EnumMediaT@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M56323|
+  00004		 |$M56335|
 
 ; 453  :     // Can only pass through if connected
 ; 454  :     if(!m_pGrabberFilter->m_pInput->IsConnected())
@@ -2103,7 +2103,7 @@
 
   00028	e49de004	 ldr         lr, [sp], #4
   0002c	e12fff1e	 bx          lr
-  00030		 |$M56324|
+  00030		 |$M56336|
 
 			 ENDP  ; |?EnumMediaTypes@CSampleGrabberOutputPin@@UAAJPAPAUIEnumMediaTypes@@@Z|, CSampleGrabberOutputPin::EnumMediaTypes
 
@@ -2113,11 +2113,11 @@
 	EXPORT	|??_C@_1HA@PHGDKDO@?$AAC?$AAS?$AAa?$AAm?$AAp?$AAl?$AAe?$AAG?$AAr?$AAa?$AAb?$AAb?$AAe?$AAr?$AAO?$AAu?$AAt?$AAp?$AAu?$AAt?$AAP?$AAi?$AAn?$AA?3?$AA?3?$AAG?$AAe?$AAt?$AAM?$AAe?$AAd?$AAi@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56349| DCD	|$LN17@GetMediaTy@3|
+|$T56361| DCD	|$LN17@GetMediaTy@3|
 	DCD	0xc0007b02
 
   00000			 AREA	 |.xdata|, DATA
-|$T56345| DCD	0xffffffec
+|$T56357| DCD	0xffffffec
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1KG@DPLCBGPB@?$AAC?$AAS?$AAa?$AAm?$AAp?$AAl?$AAe?$AAG?$AAr?$AAa?$AAb?$AAb?$AAe?$AAr?$AAO?$AAu?$AAt?$AAp?$AAu?$AAt?$AAP?$AAi?$AAn?$AA?3?$AA?3?$AAG?$AAe?$AAt?$AAM?$AAe?$AAd?$AAi@| DCB "C"
@@ -2153,7 +2153,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T56345|
+  00004	00000000	 DCD         |$T56357|
 
   00008		 |?GetMediaType@CSampleGrabberOutputPin@@UAAJHPAVCMediaType@@@Z| PROC ; CSampleGrabberOutputPin::GetMediaType
 
@@ -2162,7 +2162,7 @@
   00008		 |$LN17@GetMediaTy@3|
   00008	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   0000c	e24dd024	 sub         sp, sp, #0x24
-  00010		 |$M56346|
+  00010		 |$M56358|
   00010	e1a05002	 mov         r5, r2
   00014	e1a06001	 mov         r6, r1
   00018	e59f31d0	 ldr         r3, [pc, #0x1D0]
@@ -2437,7 +2437,7 @@
   001ec	00000000	 DCD         |?dpCurSettings@@3U_DBGPARAM@@A|
   001f0		 |$LN28@GetMediaTy@3|
   001f0	00000000	 DCD         |__security_cookie|
-  001f4		 |$M56347|
+  001f4		 |$M56359|
 
 			 ENDP  ; |?GetMediaType@CSampleGrabberOutputPin@@UAAJHPAVCMediaType@@@Z|, CSampleGrabberOutputPin::GetMediaType
 
@@ -2507,7 +2507,7 @@
 ; File c:\wince600\public\directx\sdk\inc\videoctl.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56396| DCD	|$LN11@CSampleGra@2|
+|$T56408| DCD	|$LN11@CSampleGra@2|
 	DCD	0x40002902
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2530,7 +2530,7 @@
   00000		 |$LN11@CSampleGra@2|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M56393|
+  00008		 |$M56405|
   00008	e1a0e002	 mov         lr, r2
   0000c	e1a02001	 mov         r2, r1
   00010	e1a06000	 mov         r6, r0
@@ -2591,14 +2591,14 @@
   0009c	00000000	 DCD         |??_C@_1BM@OEMAOINM@?$AAS?$AAa?$AAm?$AAp?$AAl?$AAe?$AAG?$AAr?$AAa?$AAb?$AAb?$AAe?$AAr?$AA?$AA@|
   000a0		 |$LN22@CSampleGra@2|
   000a0	00000000	 DCD         |CLSID_SampleGrabber|
-  000a4		 |$M56394|
+  000a4		 |$M56406|
 
 			 ENDP  ; |??0CSampleGrabber@@QAA@PAUIUnknown@@PAJH@Z|, CSampleGrabber::CSampleGrabber
 
 	IMPORT	|??3@YAXPAX@Z|				; operator delete
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56418| DCD	|$LN6@scalar|
+|$T56430| DCD	|$LN6@scalar|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -2607,7 +2607,7 @@
   00000		 |??_GCSampleGrabber@@UAAPAXI@Z| PROC	; CSampleGrabber::`scalar deleting destructor'
   00000		 |$LN6@scalar|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M56415|
+  00004		 |$M56427|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
   0000c	eb000000	 bl          |??1CSampleGrabber@@UAA@XZ|
@@ -2617,14 +2617,14 @@
   0001c	e1a00005	 mov         r0, r5
   00020	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00024	e12fff1e	 bx          lr
-  00028		 |$M56416|
+  00028		 |$M56428|
 
 			 ENDP  ; |??_GCSampleGrabber@@UAAPAXI@Z|, CSampleGrabber::`scalar deleting destructor'
 
 	EXPORT	|??1CTransInPlaceInputPin@@UAA@XZ|	; CTransInPlaceInputPin::~CTransInPlaceInputPin
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56429| DCD	|$LN7@CTransInPl@3|
+|$T56441| DCD	|$LN7@CTransInPl@3|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -2633,11 +2633,11 @@
   00000		 |??1CTransInPlaceInputPin@@UAA@XZ| PROC ; CTransInPlaceInputPin::~CTransInPlaceInputPin
   00000		 |$LN7@CTransInPl@3|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M56426|
+  00004		 |$M56438|
   00004	eb000000	 bl          |??1CBaseInputPin@@UAA@XZ|
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M56427|
+  00010		 |$M56439|
 
 			 ENDP  ; |??1CTransInPlaceInputPin@@UAA@XZ|, CTransInPlaceInputPin::~CTransInPlaceInputPin
 
@@ -2692,7 +2692,7 @@
 	IMPORT	|?DeliverNewSegment@CBaseOutputPin@@UAAJ_J0N@Z| ; CBaseOutputPin::DeliverNewSegment
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56442| DCD	|$LN5@CSampleGra@3|
+|$T56454| DCD	|$LN5@CSampleGra@3|
 	DCD	0x40001502
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2757,7 +2757,7 @@
   00000		 |$LN5@CSampleGra@3|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M56439|
+  00008		 |$M56451|
   00008	e1a05002	 mov         r5, r2
   0000c	e1a04000	 mov         r4, r0
   00010	e59de010	 ldr         lr, [sp, #0x10]
@@ -2786,14 +2786,14 @@
   0004c	00000000	 DCD         |??_7CSampleGrabberOutputPin@@6BCUnknown@@@|
   00050		 |$LN9@CSampleGra@3|
   00050	00000000	 DCD         |??_7CSampleGrabberOutputPin@@6BIQualityControl@@@|
-  00054		 |$M56440|
+  00054		 |$M56452|
 
 			 ENDP  ; |??0CSampleGrabberOutputPin@@QAA@PAGPAVCSampleGrabber@@PAJPBG@Z|, CSampleGrabberOutputPin::CSampleGrabberOutputPin
 
 ; File c:\wince600\public\directx\sdk\inc\combase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56462| DCD	|$LN7@QueryInter@2|
+|$T56474| DCD	|$LN7@QueryInter@2|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 ; File c:\wince600\public\directx\sdk\inc\amfilter.h
@@ -2806,7 +2806,7 @@
 
   00000		 |$LN7@QueryInter@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M56459|
+  00004		 |$M56471|
   00004	e5100008	 ldr         r0, [r0, #-8]
   00008	e5903000	 ldr         r3, [r0]
   0000c	e5933000	 ldr         r3, [r3]
@@ -2814,14 +2814,14 @@
   00014	e12fff13	 bx          r3
   00018	e49de004	 ldr         lr, [sp], #4
   0001c	e12fff1e	 bx          lr
-  00020		 |$M56460|
+  00020		 |$M56472|
 
 			 ENDP  ; |?QueryInterface@CBasePin@@UAAJABU_GUID@@PAPAX@Z|, CBasePin::QueryInterface
 
 ; File c:\wince600\public\directx\sdk\inc\combase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56476| DCD	|$LN7@AddRef@2|
+|$T56488| DCD	|$LN7@AddRef@2|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 ; File c:\wince600\public\directx\sdk\inc\amfilter.h
@@ -2834,7 +2834,7 @@
 
   00000		 |$LN7@AddRef@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M56473|
+  00004		 |$M56485|
   00004	e5100008	 ldr         r0, [r0, #-8]
   00008	e5903000	 ldr         r3, [r0]
   0000c	e5933004	 ldr         r3, [r3, #4]
@@ -2842,14 +2842,14 @@
   00014	e12fff13	 bx          r3
   00018	e49de004	 ldr         lr, [sp], #4
   0001c	e12fff1e	 bx          lr
-  00020		 |$M56474|
+  00020		 |$M56486|
 
 			 ENDP  ; |?AddRef@CBasePin@@UAAKXZ|, CBasePin::AddRef
 
 ; File c:\wince600\public\directx\sdk\inc\combase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56490| DCD	|$LN7@Release@2|
+|$T56502| DCD	|$LN7@Release@2|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 ; File c:\wince600\public\directx\sdk\inc\amfilter.h
@@ -2862,7 +2862,7 @@
 
   00000		 |$LN7@Release@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M56487|
+  00004		 |$M56499|
   00004	e5100008	 ldr         r0, [r0, #-8]
   00008	e5903000	 ldr         r3, [r0]
   0000c	e5933008	 ldr         r3, [r3, #8]
@@ -2870,13 +2870,13 @@
   00014	e12fff13	 bx          r3
   00018	e49de004	 ldr         lr, [sp], #4
   0001c	e12fff1e	 bx          lr
-  00020		 |$M56488|
+  00020		 |$M56500|
 
 			 ENDP  ; |?Release@CBasePin@@UAAKXZ|, CBasePin::Release
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56499| DCD	|$LN5@QueryInter@3|
+|$T56511| DCD	|$LN5@QueryInter@3|
 	DCD	0x40000300
 ; Function compile flags: /Ogspy
 
@@ -2887,11 +2887,11 @@
 ; 458  :         ) { return E_NOTIMPL; }
 
   00000		 |$LN5@QueryInter@3|
-  00000		 |$M56496|
+  00000		 |$M56508|
   00000	e3a03106	 mov         r3, #6, 2
   00004	e3830901	 orr         r0, r3, #1, 18
   00008	e12fff1e	 bx          lr
-  0000c		 |$M56497|
+  0000c		 |$M56509|
 
 			 ENDP  ; |?QueryInternalConnections@CBasePin@@UAAJPAPAUIPin@@PAK@Z|, CBasePin::QueryInternalConnections
 
@@ -2900,7 +2900,7 @@
 ; File c:\wince600\public\directx\sdk\inc\transfrm.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56509| DCD	|$LN5@QueryId|
+|$T56521| DCD	|$LN5@QueryId|
 	DCD	0x40000601
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2916,7 +2916,7 @@
 
   00000		 |$LN5@QueryId|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M56506|
+  00004		 |$M56518|
 
 ; 141  :         return AMGetWideString(L"Out", Id);
 
@@ -2930,14 +2930,14 @@
   00014		 |$LN6@QueryId|
   00014		 |$LN7@QueryId|
   00014	00000000	 DCD         |??_C@_17NFNCFLGO@?$AAO?$AAu?$AAt?$AA?$AA@|
-  00018		 |$M56507|
+  00018		 |$M56519|
 
 			 ENDP  ; |?QueryId@CTransformOutputPin@@UAAJPAPAG@Z|, CTransformOutputPin::QueryId
 
 	EXPORT	|??1CSampleGrabberOutputPin@@UAA@XZ|	; CSampleGrabberOutputPin::~CSampleGrabberOutputPin
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56522| DCD	|$LN7@CSampleGra@4|
+|$T56534| DCD	|$LN7@CSampleGra@4|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -2946,13 +2946,23 @@
   00000		 |??1CSampleGrabberOutputPin@@UAA@XZ| PROC ; CSampleGrabberOutputPin::~CSampleGrabberOutputPin
   00000		 |$LN7@CSampleGra@4|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M56519|
+  00004		 |$M56531|
   00004	eb000000	 bl          |??1CTransformOutputPin@@UAA@XZ|
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M56520|
+  00010		 |$M56532|
 
 			 ENDP  ; |??1CSampleGrabberOutputPin@@UAA@XZ|, CSampleGrabberOutputPin::~CSampleGrabberOutputPin
+
+; Function compile flags: /Odspy
+
+  00000			 AREA	 |.text|, CODE, ARM
+
+  00000		 |?QueryInterface@CBasePin@@W3AAJABU_GUID@@PAPAX@Z| PROC ; [thunk]:CBasePin::QueryInterface`adjustor{4}'
+  00000	e2400004	 sub         r0, r0, #4
+  00004	ea000000	 b           |?QueryInterface@CBasePin@@UAAJABU_GUID@@PAPAX@Z|
+
+			 ENDP  ; |?QueryInterface@CBasePin@@W3AAJABU_GUID@@PAPAX@Z|, [thunk]:CBasePin::QueryInterface`adjustor{4}'
 
 ; Function compile flags: /Odspy
 
@@ -2974,19 +2984,9 @@
 
 			 ENDP  ; |?AddRef@CBasePin@@W3AAKXZ|, [thunk]:CBasePin::AddRef`adjustor{4}'
 
-; Function compile flags: /Odspy
-
-  00000			 AREA	 |.text|, CODE, ARM
-
-  00000		 |?QueryInterface@CBasePin@@W3AAJABU_GUID@@PAPAX@Z| PROC ; [thunk]:CBasePin::QueryInterface`adjustor{4}'
-  00000	e2400004	 sub         r0, r0, #4
-  00004	ea000000	 b           |?QueryInterface@CBasePin@@UAAJABU_GUID@@PAPAX@Z|
-
-			 ENDP  ; |?QueryInterface@CBasePin@@W3AAJABU_GUID@@PAPAX@Z|, [thunk]:CBasePin::QueryInterface`adjustor{4}'
-
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56547| DCD	|$LN10@scalar@2|
+|$T56559| DCD	|$LN10@scalar@2|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -2995,7 +2995,7 @@
   00000		 |??_GCSampleGrabberOutputPin@@UAAPAXI@Z| PROC ; CSampleGrabberOutputPin::`scalar deleting destructor'
   00000		 |$LN10@scalar@2|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M56544|
+  00004		 |$M56556|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
   0000c	eb000000	 bl          |??1CTransformOutputPin@@UAA@XZ|
@@ -3005,7 +3005,7 @@
   0001c	e1a00005	 mov         r0, r5
   00020	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00024	e12fff1e	 bx          lr
-  00028		 |$M56545|
+  00028		 |$M56557|
 
 			 ENDP  ; |??_GCSampleGrabberOutputPin@@UAAPAXI@Z|, CSampleGrabberOutputPin::`scalar deleting destructor'
 
@@ -3017,7 +3017,7 @@
 |?hr@?1??CreateInstance@CSampleGrabber@@SAPAVCUnknown@@PAUIUnknown@@PAJ@Z@4JA| % 0x4 ; `CSampleGrabber::CreateInstance'::`2'::hr
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56565| DCD	|$LN11@CreateInst|
+|$T56577| DCD	|$LN11@CreateInst|
 	DCD	0x40002201
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -3042,7 +3042,7 @@
 
   00000		 |$LN11@CreateInst|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M56562|
+  00004		 |$M56574|
   00004	e1b05001	 movs        r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -3106,7 +3106,7 @@
   00080	00000000	 DCD         |?dpCurSettings@@3U_DBGPARAM@@A|
   00084		 |$LN16@CreateInst|
   00084	00000000	 DCD         |?hr@?1??CreateInstance@CSampleGrabber@@SAPAVCUnknown@@PAUIUnknown@@PAJ@Z@4JA|
-  00088		 |$M56563|
+  00088		 |$M56575|
 
 			 ENDP  ; |?CreateInstance@CSampleGrabber@@SAPAVCUnknown@@PAUIUnknown@@PAJ@Z|, CSampleGrabber::CreateInstance
 
@@ -3150,7 +3150,7 @@
 	IMPORT	|?CheckStreaming@CTransformInputPin@@UAAJXZ| ; CTransformInputPin::CheckStreaming
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56584| DCD	|$LN5@CSampleGra@5|
+|$T56596| DCD	|$LN5@CSampleGra@5|
 	DCD	0x40001802
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -3218,7 +3218,7 @@
   00000		 |$LN5@CSampleGra@5|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M56581|
+  00008		 |$M56593|
   00008	e1a06002	 mov         r6, r2
   0000c	e1a05000	 mov         r5, r0
   00010	e59de014	 ldr         lr, [sp, #0x14]
@@ -3251,14 +3251,14 @@
   00058	00000000	 DCD         |??_7CSampleGrabberInputPin@@6BCUnknown@@@|
   0005c		 |$LN10@CSampleGra@5|
   0005c	00000000	 DCD         |??_7CSampleGrabberInputPin@@6BIQualityControl@@@|
-  00060		 |$M56582|
+  00060		 |$M56594|
 
 			 ENDP  ; |??0CSampleGrabberInputPin@@QAA@PAGPAVCSampleGrabber@@PAJPBG@Z|, CSampleGrabberInputPin::CSampleGrabberInputPin
 
 ; File c:\wince600\public\directx\sdk\inc\combase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56605| DCD	|$LN7@QueryInter@4|
+|$T56617| DCD	|$LN7@QueryInter@4|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 ; File c:\wince600\public\directx\sdk\inc\amfilter.h
@@ -3271,7 +3271,7 @@
 
   00000		 |$LN7@QueryInter@4|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M56602|
+  00004		 |$M56614|
   00004	e5100008	 ldr         r0, [r0, #-8]
   00008	e5903000	 ldr         r3, [r0]
   0000c	e5933000	 ldr         r3, [r3]
@@ -3279,14 +3279,14 @@
   00014	e12fff13	 bx          r3
   00018	e49de004	 ldr         lr, [sp], #4
   0001c	e12fff1e	 bx          lr
-  00020		 |$M56603|
+  00020		 |$M56615|
 
 			 ENDP  ; |?QueryInterface@CBaseInputPin@@UAAJABU_GUID@@PAPAX@Z|, CBaseInputPin::QueryInterface
 
 ; File c:\wince600\public\directx\sdk\inc\combase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56619| DCD	|$LN7@AddRef@3|
+|$T56631| DCD	|$LN7@AddRef@3|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 ; File c:\wince600\public\directx\sdk\inc\amfilter.h
@@ -3299,7 +3299,7 @@
 
   00000		 |$LN7@AddRef@3|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M56616|
+  00004		 |$M56628|
   00004	e5100008	 ldr         r0, [r0, #-8]
   00008	e5903000	 ldr         r3, [r0]
   0000c	e5933004	 ldr         r3, [r3, #4]
@@ -3307,14 +3307,14 @@
   00014	e12fff13	 bx          r3
   00018	e49de004	 ldr         lr, [sp], #4
   0001c	e12fff1e	 bx          lr
-  00020		 |$M56617|
+  00020		 |$M56629|
 
 			 ENDP  ; |?AddRef@CBaseInputPin@@UAAKXZ|, CBaseInputPin::AddRef
 
 ; File c:\wince600\public\directx\sdk\inc\combase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56633| DCD	|$LN7@Release@3|
+|$T56645| DCD	|$LN7@Release@3|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 ; File c:\wince600\public\directx\sdk\inc\amfilter.h
@@ -3327,7 +3327,7 @@
 
   00000		 |$LN7@Release@3|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M56630|
+  00004		 |$M56642|
   00004	e5100008	 ldr         r0, [r0, #-8]
   00008	e5903000	 ldr         r3, [r0]
   0000c	e5933008	 ldr         r3, [r3, #8]
@@ -3335,7 +3335,7 @@
   00014	e12fff13	 bx          r3
   00018	e49de004	 ldr         lr, [sp], #4
   0001c	e12fff1e	 bx          lr
-  00020		 |$M56631|
+  00020		 |$M56643|
 
 			 ENDP  ; |?Release@CBaseInputPin@@UAAKXZ|, CBaseInputPin::Release
 
@@ -3343,7 +3343,7 @@
 ; File c:\wince600\public\directx\sdk\inc\transfrm.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56643| DCD	|$LN5@QueryId@2|
+|$T56655| DCD	|$LN5@QueryId@2|
 	DCD	0x40000601
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -3358,7 +3358,7 @@
 
   00000		 |$LN5@QueryId@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M56640|
+  00004		 |$M56652|
 
 ; 64   :         return AMGetWideString(L"In", Id);
 
@@ -3372,7 +3372,7 @@
   00014		 |$LN6@QueryId@2|
   00014		 |$LN7@QueryId@2|
   00014	00000000	 DCD         |??_C@_15LNJDIFMI@?$AAI?$AAn?$AA?$AA@|
-  00018		 |$M56641|
+  00018		 |$M56653|
 
 			 ENDP  ; |?QueryId@CTransformInputPin@@UAAJPAPAG@Z|, CTransformInputPin::QueryId
 
@@ -3439,7 +3439,7 @@
 	EXPORT	|??1CSampleGrabberInputPin@@UAA@XZ|	; CSampleGrabberInputPin::~CSampleGrabberInputPin
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56673| DCD	|$LN9@CSampleGra@6|
+|$T56685| DCD	|$LN9@CSampleGra@6|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -3448,17 +3448,17 @@
   00000		 |??1CSampleGrabberInputPin@@UAA@XZ| PROC ; CSampleGrabberInputPin::~CSampleGrabberInputPin
   00000		 |$LN9@CSampleGra@6|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M56670|
+  00004		 |$M56682|
   00004	eb000000	 bl          |??1CBaseInputPin@@UAA@XZ|
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M56671|
+  00010		 |$M56683|
 
 			 ENDP  ; |??1CSampleGrabberInputPin@@UAA@XZ|, CSampleGrabberInputPin::~CSampleGrabberInputPin
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56699| DCD	|$LN12@scalar@3|
+|$T56711| DCD	|$LN12@scalar@3|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -3467,7 +3467,7 @@
   00000		 |??_GCSampleGrabberInputPin@@UAAPAXI@Z| PROC ; CSampleGrabberInputPin::`scalar deleting destructor'
   00000		 |$LN12@scalar@3|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M56696|
+  00004		 |$M56708|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
   0000c	eb000000	 bl          |??1CBaseInputPin@@UAA@XZ|
@@ -3477,7 +3477,7 @@
   0001c	e1a00005	 mov         r0, r5
   00020	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00024	e12fff1e	 bx          lr
-  00028		 |$M56697|
+  00028		 |$M56709|
 
 			 ENDP  ; |??_GCSampleGrabberInputPin@@UAAPAXI@Z|, CSampleGrabberInputPin::`scalar deleting destructor'
 
@@ -3486,7 +3486,7 @@
 ; File c:\wince600\platform\z2170p\src\app\samplegrabber\samplegrabber.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T56724| DCD	|$LN19@GetPin|
+|$T56736| DCD	|$LN19@GetPin|
 	DCD	0x40003e02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -3507,7 +3507,7 @@
   00000		 |$LN19@GetPin|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M56721|
+  00008		 |$M56733|
   00008	e1a05001	 mov         r5, r1
   0000c	e1a04000	 mov         r4, r0
 
@@ -3651,7 +3651,7 @@
   000f0	00000000	 DCD         |??_C@_1O@GJMACMBA@?$AAO?$AAu?$AAt?$AAp?$AAu?$AAt?$AA?$AA@|
   000f4		 |$LN22@GetPin|
   000f4	00000000	 DCD         |??_C@_1M@PFCMLKBL@?$AAI?$AAn?$AAp?$AAu?$AAt?$AA?$AA@|
-  000f8		 |$M56722|
+  000f8		 |$M56734|
 
 			 ENDP  ; |?GetPin@CSampleGrabber@@UAAPAVCBasePin@@H@Z|, CSampleGrabber::GetPin
 

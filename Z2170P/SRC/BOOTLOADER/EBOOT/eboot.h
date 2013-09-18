@@ -60,7 +60,7 @@ typedef struct {
 #define DOWNLOAD_TYPE_RAM           1
 #define DOWNLOAD_TYPE_BINDIO        2
 #define DOWNLOAD_TYPE_XLDR          3
-#define DOWNLOAD_TYPE_EBOOT         4
+#define DOWNLOAD_TYPE_EBOOT         4           
 #define DOWNLOAD_TYPE_IPL           5
 #define DOWNLOAD_TYPE_FLASHNAND     6
 #define DOWNLOAD_TYPE_FLASHNOR      7

@@ -16,7 +16,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\wavemain.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34835| DCD	|$LN5@EnterMutex|
+|$T34837| DCD	|$LN5@EnterMutex|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -28,7 +28,7 @@
 
   00000		 |$LN5@EnterMutex|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34832|
+  00004		 |$M34834|
 
 ; 136  :     DEBUGMSG(ZONE_FUNCTION, (L"WAV:+EnterMutex\r\n"));
 ; 137  : 
@@ -46,7 +46,7 @@
   00014		 |$LN6@EnterMutex|
   00014		 |$LN7@EnterMutex|
   00014	00000000	 DCD         |s_cs|
-  00018		 |$M34833|
+  00018		 |$M34835|
 
 			 ENDP  ; |EnterMutex|
 
@@ -54,7 +54,7 @@
 	IMPORT	|LeaveCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34844| DCD	|$LN5@ExitMutex|
+|$T34846| DCD	|$LN5@ExitMutex|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -66,7 +66,7 @@
 
   00000		 |$LN5@ExitMutex|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34841|
+  00004		 |$M34843|
 
 ; 156  :     DEBUGMSG(ZONE_FUNCTION, (L"WAV:+ExitMutex\r\n"));
 ; 157  : 
@@ -84,7 +84,7 @@
   00014		 |$LN6@ExitMutex|
   00014		 |$LN7@ExitMutex|
   00014	00000000	 DCD         |s_cs|
-  00018		 |$M34842|
+  00018		 |$M34844|
 
 			 ENDP  ; |ExitMutex|
 
@@ -95,7 +95,7 @@
 	IMPORT	|UninitializeHardware|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34857| DCD	|$LN9@WAV_Deinit|
+|$T34859| DCD	|$LN9@WAV_Deinit|
 	DCD	0x40001801
 ; Function compile flags: /Ogspy
 
@@ -107,7 +107,7 @@
 
   00000		 |$LN9@WAV_Deinit|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M34854|
+  00004		 |$M34856|
   00004	e1a05000	 mov         r5, r0
 
 ; 180  :     DEBUGMSG(ZONE_FUNCTION, (L"WAV:+WAV_Deinit(%d)\r\n", dwData));
@@ -138,7 +138,7 @@
 ; 192  :             bSuccess = FALSE;
 
   00024	13a04000	 movne       r4, #0
-  00028	1a000007	 bne         |$cleanUp$34568|
+  00028	1a000007	 bne         |$cleanUp$34570|
 
 ; 193  :             goto cleanUp;
 ; 194  :             }
@@ -168,7 +168,7 @@
 
   00044	e59f000c	 ldr         r0, [pc, #0xC]
   00048	eb000000	 bl          DeleteCriticalSection
-  0004c		 |$cleanUp$34568|
+  0004c		 |$cleanUp$34570|
 
 ; 205  : 
 ; 206  : cleanUp:
@@ -185,7 +185,7 @@
   00058	00000000	 DCD         |s_cs|
   0005c		 |$LN12@WAV_Deinit|
   0005c	77617644	 DCD         0x77617644
-  00060		 |$M34855|
+  00060		 |$M34857|
 
 			 ENDP  ; |WAV_Deinit|
 
@@ -202,7 +202,7 @@
 	IMPORT	|InitializeCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34882| DCD	|$LN24@WAV_Init|
+|$T34884| DCD	|$LN24@WAV_Init|
 	DCD	0x40004501
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -265,7 +265,7 @@
 
   00000		 |$LN24@WAV_Init|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M34879|
+  00004		 |$M34881|
   00004	e1a05001	 mov         r5, r1
   00008	e1a06000	 mov         r6, r0
 
@@ -445,7 +445,7 @@
   0010c	00000000	 DCD         |??_C@_1IA@CBFCJFHM@?$AAW?$AAA?$AAV?$AA?3?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAW?$AAA?$AAV?$AA_?$AAI?$AAn?$AAi?$AAt?$AA?3?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AAa?$AAl?$AAl?$AAo@|
   00110		 |$LN32@WAV_Init|
   00110	00000000	 DCD         |s_cs|
-  00114		 |$M34880|
+  00114		 |$M34882|
 
 			 ENDP  ; |WAV_Init|
 
@@ -454,7 +454,7 @@
 	EXPORT	|??_C@_1EK@MGIHFCHL@?$AAW?$AAA?$AAV?$AA?3?$AA?$CB?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?9?$AAi?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAw?$AAa?$AAv?$AA?5?$AAd?$AAe?$AAv?$AAi?$AAc?$AAe?$AA?5?$AAc?$AAo@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34906| DCD	|$LN14@WAV_Open|
+|$T34908| DCD	|$LN14@WAV_Open|
 	DCD	0x40002401
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -487,7 +487,7 @@
 
   00000		 |$LN14@WAV_Open|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M34903|
+  00004		 |$M34905|
   00004	e1a05000	 mov         r5, r0
 
 ; 315  :     UNREFERENCED_PARAMETER(dwAccess);
@@ -511,7 +511,7 @@
   0001c	e59f3060	 ldr         r3, [pc, #0x60]
   00020	e5933440	 ldr         r3, [r3, #0x440]
   00024	e3130902	 tst         r3, #2, 18
-  00028	0a000010	 beq         |$cleanUp$34610|
+  00028	0a000010	 beq         |$cleanUp$34612|
   0002c	e59f0054	 ldr         r0, [pc, #0x54]
 
 ; 330  :         {
@@ -524,7 +524,7 @@
 ; 339  : 
 ; 340  : cleanUp:
 
-  00034	ea00000d	 b           |$cleanUp$34610|
+  00034	ea00000d	 b           |$cleanUp$34612|
   00038		 |$LN4@WAV_Open|
 
 ; 325  :         goto cleanUp;
@@ -549,14 +549,14 @@
   0004c	e59f3030	 ldr         r3, [pc, #0x30]
   00050	e5933440	 ldr         r3, [r3, #0x440]
   00054	e3130902	 tst         r3, #2, 18
-  00058	0a000004	 beq         |$cleanUp$34610|
+  00058	0a000004	 beq         |$cleanUp$34612|
   0005c	e59f001c	 ldr         r0, [pc, #0x1C]
   00060	eb000000	 bl          NKDbgPrintfW
 
 ; 339  : 
 ; 340  : cleanUp:
 
-  00064	ea000001	 b           |$cleanUp$34610|
+  00064	ea000001	 b           |$cleanUp$34612|
   00068		 |$LN2@WAV_Open|
 
 ; 334  :         goto cleanUp;
@@ -569,7 +569,7 @@
 ; 338  :     pInstance->pDevice = pDevice;
 
   0006c	e8840028	 stmia       r4, {r3, r5}
-  00070		 |$cleanUp$34610|
+  00070		 |$cleanUp$34612|
 
 ; 341  : 
 ; 342  :     DEBUGMSG(ZONE_FUNCTION, (L"WAV:-WAV_Open\r\n"));
@@ -591,14 +591,14 @@
   00088	00000000	 DCD         |??_C@_1EK@MGIHFCHL@?$AAW?$AAA?$AAV?$AA?3?$AA?$CB?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?9?$AAi?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAw?$AAa?$AAv?$AA?5?$AAd?$AAe?$AAv?$AAi?$AAc?$AAe?$AA?5?$AAc?$AAo@|
   0008c		 |$LN20@WAV_Open|
   0008c	77617644	 DCD         0x77617644
-  00090		 |$M34904|
+  00090		 |$M34906|
 
 			 ENDP  ; |WAV_Open|
 
 	EXPORT	|WAV_Close|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34923| DCD	|$LN8@WAV_Close|
+|$T34925| DCD	|$LN8@WAV_Close|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -610,7 +610,7 @@
 
   00000		 |$LN8@WAV_Close|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M34920|
+  00004		 |$M34922|
   00004	e3500000	 cmp         r0, #0
 
 ; 361  :     DEBUGMSG(ZONE_FUNCTION, (L"WAV:+Close\r\n"));
@@ -621,7 +621,7 @@
 
 ; 364  :     if (pdwData)
 
-  0000c	0a000004	 beq         |$cleanUp$34628|
+  0000c	0a000004	 beq         |$cleanUp$34630|
 
 ; 365  :         {
 ; 366  :         WAVInstance_t *pInstance = (WAVInstance_t*)pdwData;
@@ -642,7 +642,7 @@
 ; 373  :         LocalFree(pInstance);
 
   00020	0b000000	 bleq        LocalFree
-  00024		 |$cleanUp$34628|
+  00024		 |$cleanUp$34630|
 
 ; 374  :         }
 ; 375  : 
@@ -657,7 +657,7 @@
   00030		 |$LN9@WAV_Close|
   00030		 |$LN10@WAV_Close|
   00030	77617649	 DCD         0x77617649
-  00034		 |$M34921|
+  00034		 |$M34923|
 
 			 ENDP  ; |WAV_Close|
 
@@ -666,7 +666,7 @@
 	IMPORT	|RegisterDbgZones|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34936| DCD	|$LN8@DllMain|
+|$T34938| DCD	|$LN8@DllMain|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -678,7 +678,7 @@
 
   00000		 |$LN8@DllMain|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M34933|
+  00004		 |$M34935|
   00004	e1a04000	 mov         r4, r0
 
 ; 478  :     UNREFERENCED_PARAMETER(pReserved);
@@ -713,14 +713,14 @@
   0002c		 |$LN9@DllMain|
   0002c		 |$LN10@DllMain|
   0002c	00000000	 DCD         |dpCurSettings|
-  00030		 |$M34934|
+  00030		 |$M34936|
 
 			 ENDP  ; |DllMain|
 
 	EXPORT	|?Lock@CAudioManager@@QAAXXZ|		; CAudioManager::Lock
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34948| DCD	|$LN7@Lock|
+|$T34950| DCD	|$LN7@Lock|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audiomgr.h
@@ -733,7 +733,7 @@
 
   00000		 |$LN7@Lock|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34945|
+  00004		 |$M34947|
   00004	e59f0008	 ldr         r0, [pc, #8]
   00008	eb000000	 bl          EnterCriticalSection
   0000c	e49de004	 ldr         lr, [sp], #4
@@ -741,7 +741,7 @@
   00014		 |$LN8@Lock|
   00014		 |$LN9@Lock|
   00014	00000000	 DCD         |s_cs|
-  00018		 |$M34946|
+  00018		 |$M34948|
 
 			 ENDP  ; |?Lock@CAudioManager@@QAAXXZ|, CAudioManager::Lock
 
@@ -749,7 +749,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\wavemain.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34960| DCD	|$LN7@Unlock|
+|$T34962| DCD	|$LN7@Unlock|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audiomgr.h
@@ -762,7 +762,7 @@
 
   00000		 |$LN7@Unlock|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34957|
+  00004		 |$M34959|
   00004	e59f0008	 ldr         r0, [pc, #8]
   00008	eb000000	 bl          LeaveCriticalSection
   0000c	e49de004	 ldr         lr, [sp], #4
@@ -770,7 +770,7 @@
   00014		 |$LN8@Unlock|
   00014		 |$LN9@Unlock|
   00014	00000000	 DCD         |s_cs|
-  00018		 |$M34958|
+  00018		 |$M34960|
 
 			 ENDP  ; |?Unlock@CAudioManager@@QAAXXZ|, CAudioManager::Unlock
 
@@ -783,15 +783,15 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\wavemain.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35020| DCD	|$LN37@WAV_IOCont|
+|$T35022| DCD	|$LN37@WAV_IOCont|
 	DCD	0xc0003c04
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35022| DCD	|$LN13@WAV_IOCont|
+|$T35024| DCD	|$LN13@WAV_IOCont|
 	DCD	0x40000e02
 
   00000			 AREA	 |.xdata|, DATA
-|$T35018| DCD	0x1
+|$T35020| DCD	0x1
 	DCD	|$LN17@WAV_IOCont|
 	DCD	|$LN18@WAV_IOCont|
 	DCD	|$LN13@WAV_IOCont|
@@ -824,7 +824,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T35018|
+  00004	00000000	 DCD         |$T35020|
 
   00008		 |WAV_IOControl| PROC
 
@@ -949,7 +949,7 @@
 
   000d8	e59f003c	 ldr         r0, [pc, #0x3C]
   000dc	eb000000	 bl          LeaveCriticalSection
-  000e0		 |$cleanUp$34646|
+  000e0		 |$cleanUp$34648|
 
 ; 457  : 
 ; 458  : cleanUp:

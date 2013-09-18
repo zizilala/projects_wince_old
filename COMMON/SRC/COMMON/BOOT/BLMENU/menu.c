@@ -77,11 +77,12 @@ VOID OALBLMenuHeader(LPCWSTR format, ...)
 VOID OALBLMenuShow(OAL_BLMENU_ITEM *pMenu)
 {
     LPCWSTR title = pMenu->pParam1;
-    OAL_BLMENU_ITEM *aMenu = pMenu->pParam2, *pItem;
+    OAL_BLMENU_ITEM *aMenu = pMenu->pParam2, 
+                    *pItem;
     WCHAR key;
 
-    while (TRUE) {
-        
+    while (TRUE) 
+    {
         OALBLMenuHeader(L"%s", title);
 
         // Print menu items
@@ -90,7 +91,8 @@ VOID OALBLMenuShow(OAL_BLMENU_ITEM *pMenu)
         }
         OALLog(L"\r\n Selection: ");
 
-        while (TRUE) {
+        while (TRUE)
+        {
             // Get key
             key = OALBLMenuReadKey(TRUE);
             // Look for key in menu
@@ -109,7 +111,6 @@ VOID OALBLMenuShow(OAL_BLMENU_ITEM *pMenu)
         
         // Else call menu action
         pItem->pfnAction(pItem);
-
     } 
 
 }

@@ -65,7 +65,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39533| DCD	|$LN5@GetCurrent|
+|$T39535| DCD	|$LN5@GetCurrent|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -76,7 +76,7 @@
 ; 361  : _inline HANDLE GetCurrentProcess(void) {
 
   00000		 |$LN5@GetCurrent|
-  00000		 |$M39530|
+  00000		 |$M39532|
 
 ; 362  : 	return ((HANDLE)(SH_CURPROC+SYS_HANDLE_BASE));
 
@@ -85,7 +85,7 @@
 ; 363  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M39531|
+  00008		 |$M39533|
 
 			 ENDP  ; |GetCurrentProcess|
 
@@ -100,7 +100,7 @@
 ; File c:\wince600\platform\z2170p\src\app\proxydriver\proxydriver.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39550| DCD	|$LN17@PXY_Deinit|
+|$T39552| DCD	|$LN17@PXY_Deinit|
 	DCD	0x40002d01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -139,7 +139,7 @@
 
   00000		 |$LN17@PXY_Deinit|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M39547|
+  00004		 |$M39549|
   00004	e1a04000	 mov         r4, r0
 
 ; 183  :     BOOL rc = FALSE;
@@ -172,7 +172,7 @@
 
 ; 194  :         goto cleanUp;
 
-  00034	ea000012	 b           |$cleanUp$39346|
+  00034	ea000012	 b           |$cleanUp$39348|
   00038		 |$LN6@PXY_Deinit|
 
 ; 195  :         }
@@ -242,7 +242,7 @@
 ; 223  :     rc = TRUE;
 
   00080	e3a05001	 mov         r5, #1
-  00084		 |$cleanUp$39346|
+  00084		 |$cleanUp$39348|
 
 ; 224  : 
 ; 225  : cleanUp:
@@ -269,7 +269,7 @@
   000ac	00000000	 DCD         |??_C@_1CM@PAGLALCK@?$AA?$CL?$AAP?$AAX?$AAY?$AA_?$AAD?$AAe?$AAi?$AAn?$AAi?$AAt?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@|
   000b0		 |$LN22@PXY_Deinit|
   000b0	00000000	 DCD         |dpCurSettings|
-  000b4		 |$M39548|
+  000b4		 |$M39550|
 
 			 ENDP  ; |?PXY_Deinit@@YAHK@Z|, PXY_Deinit
 
@@ -283,7 +283,7 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39579| DCD	|$LN18@PXY_Open|
+|$T39581| DCD	|$LN18@PXY_Open|
 	DCD	0x40003d02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -340,7 +340,7 @@
   00000		 |$LN18@PXY_Open|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M39576|
+  00008		 |$M39578|
   00008	e1a06002	 mov         r6, r2
   0000c	e1a07001	 mov         r7, r1
   00010	e1a04000	 mov         r4, r0
@@ -389,7 +389,7 @@
 ; 289  : 
 ; 290  : cleanUp:
 
-  00048	ea000017	 b           |$cleanUp$39365|
+  00048	ea000017	 b           |$cleanUp$39367|
   0004c		 |$LN4@PXY_Open|
 
 ; 259  :         goto cleanUp;
@@ -419,7 +419,7 @@
 ; 289  : 
 ; 290  : cleanUp:
 
-  00068	ea00000f	 b           |$cleanUp$39365|
+  00068	ea00000f	 b           |$cleanUp$39367|
   0006c		 |$LN2@PXY_Open|
 
 ; 270  : 
@@ -468,7 +468,7 @@
   000a0	e5883024	 str         r3, [r8, #0x24]
   000a4	e5943008	 ldr         r3, [r4, #8]
   000a8	e5883020	 str         r3, [r8, #0x20]
-  000ac		 |$cleanUp$39365|
+  000ac		 |$cleanUp$39367|
 
 ; 291  :     RETAILMSG(ZONE_FUNCTION, (L"-PXY_Open(0x%08x, 0x%08x, 0x%08x) == %d\r\n", 
 ; 292  :         context, accessCode, shareMode, dw
@@ -504,7 +504,7 @@
   000ec	00000000	 DCD         |??_C@_1EI@FMCHMKPL@?$AA?$CL?$AAP?$AAX?$AAY?$AA_?$AAO?$AAp?$AAe?$AAn?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx@|
   000f0		 |$LN25@PXY_Open|
   000f0	00000000	 DCD         |dpCurSettings|
-  000f4		 |$M39577|
+  000f4		 |$M39579|
 
 			 ENDP  ; |?PXY_Open@@YAKKKK@Z|, PXY_Open
 
@@ -515,7 +515,7 @@
 	IMPORT	|DeleteCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39603| DCD	|$LN13@PXY_Close|
+|$T39605| DCD	|$LN13@PXY_Close|
 	DCD	0x40001f01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -554,7 +554,7 @@
 
   00000		 |$LN13@PXY_Close|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M39600|
+  00004		 |$M39602|
   00004	e1a04000	 mov         r4, r0
 
 ; 309  :     BOOL rc = FALSE;
@@ -589,7 +589,7 @@
 
 ; 322  :         goto cleanUp;
 
-  00034	ea000004	 b           |$cleanUp$39384|
+  00034	ea000004	 b           |$cleanUp$39386|
   00038		 |$LN2@PXY_Close|
 
 ; 323  :         }
@@ -623,7 +623,7 @@
 ; 343  :     rc = TRUE;
 
   00048	e3a05001	 mov         r5, #1
-  0004c		 |$cleanUp$39384|
+  0004c		 |$cleanUp$39386|
 
 ; 344  : 
 ; 345  : cleanUp:
@@ -653,7 +653,7 @@
   00074	00000000	 DCD         |??_C@_1CK@EMKHOHPD@?$AA?$CL?$AAP?$AAX?$AAY?$AA_?$AAC?$AAl?$AAo?$AAs?$AAe?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@|
   00078		 |$LN18@PXY_Close|
   00078	00000000	 DCD         |dpCurSettings|
-  0007c		 |$M39601|
+  0007c		 |$M39603|
 
 			 ENDP  ; |?PXY_Close@@YAHK@Z|, PXY_Close
 
@@ -678,7 +678,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39650| DCD	|$LN50@PXY_IOCont|
+|$T39652| DCD	|$LN50@PXY_IOCont|
 	DCD	0x40010702
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -735,7 +735,7 @@
   00000		 |$LN50@PXY_IOCont|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd020	 sub         sp, sp, #0x20
-  00008		 |$M39647|
+  00008		 |$M39649|
   00008	e1a08003	 mov         r8, r3
   0000c	e1a07002	 mov         r7, r2
   00010	e1a04001	 mov         r4, r1
@@ -788,7 +788,7 @@
 
 ; 385  :         goto cleanUp;
 
-  0006c	ea0000c9	 b           |$cleanUp$39405|
+  0006c	ea0000c9	 b           |$cleanUp$39407|
   00070		 |$LN27@PXY_IOCont|
 
 ; 386  :         }
@@ -827,7 +827,7 @@
   000e4	e3a0381e	 mov         r3, #0x1E, 16
   000e8	e3833f6b	 orr         r3, r3, #0x6B, 30
   000ec	e1540003	 cmp         r4, r3
-  000f0	1a0000a8	 bne         |$cleanUp$39405|
+  000f0	1a0000a8	 bne         |$cleanUp$39407|
 
 ; 523  : 
 ; 524  :         case IOCTL_PROFILE_DVFS:
@@ -878,7 +878,7 @@
 
 ; 542  :             break;
 
-  00138	ea000096	 b           |$cleanUp$39405|
+  00138	ea000096	 b           |$cleanUp$39407|
   0013c		 |$LN8@PXY_IOCont|
   0013c	e3e03cff	 mvn         r3, #0xFF, 24
 
@@ -922,7 +922,7 @@
 
 ; 517  :                     break;
 
-  00178	ea000086	 b           |$cleanUp$39405|
+  00178	ea000086	 b           |$cleanUp$39407|
   0017c		 |$LN7@PXY_IOCont|
 
 ; 518  :                 }
@@ -941,7 +941,7 @@
 ; 521  :             }
 ; 522  :             break;
 
-  00190	ea000080	 b           |$cleanUp$39405|
+  00190	ea000080	 b           |$cleanUp$39407|
   00194		 |$LN17@PXY_IOCont|
 
 ; 447  : 
@@ -977,7 +977,7 @@
 ; 459  : 
 ; 460  :                 if (pInstance->hDomainConstraint != NULL) rc = TRUE;
 
-  001c8	0a000072	 beq         |$cleanUp$39405|
+  001c8	0a000072	 beq         |$cleanUp$39407|
 
 ; 498  :             rc = TRUE;
 
@@ -985,7 +985,7 @@
 
 ; 499  :             break;
 
-  001d0	ea000070	 b           |$cleanUp$39405|
+  001d0	ea000070	 b           |$cleanUp$39407|
   001d4		 |$LN16@PXY_IOCont|
 
 ; 461  :                 }
@@ -1030,7 +1030,7 @@
 
 ; 499  :             break;
 
-  001ec	ea000069	 b           |$cleanUp$39405|
+  001ec	ea000069	 b           |$cleanUp$39407|
   001f0		 |$LN19@PXY_IOCont|
 
 ; 428  : 
@@ -1125,7 +1125,7 @@
 
 ; 427  :             break;
 
-  0026c	ea000049	 b           |$cleanUp$39405|
+  0026c	ea000049	 b           |$cleanUp$39407|
   00270		 |$LN23@PXY_IOCont|
 
 ; 389  :         {
@@ -1149,7 +1149,7 @@
 
 ; 398  :             if (pvLocal != NULL)
 
-  00288	0a000042	 beq         |$cleanUp$39405|
+  00288	0a000042	 beq         |$cleanUp$39407|
 
 ; 399  :                 {
 ; 400  :                 HANDLE hDstProc = OpenProcess(0, FALSE, pData->idDestProc);
@@ -1189,7 +1189,7 @@
 ; 407  :             }
 ; 408  :         break;
 
-  002d8	ea00002e	 b           |$cleanUp$39405|
+  002d8	ea00002e	 b           |$cleanUp$39407|
   002dc		 |$LN3@PXY_IOCont|
   002dc	e3e03cff	 mvn         r3, #0xFF, 24
 
@@ -1268,7 +1268,7 @@
   00368	0a000014	 beq         |$LN13@PXY_IOCont|
   0036c	e59f3080	 ldr         r3, [pc, #0x80]
   00370	e1540003	 cmp         r4, r3
-  00374	1a000007	 bne         |$cleanUp$39405|
+  00374	1a000007	 bne         |$cleanUp$39407|
   00378		 |$LN1@PXY_IOCont|
 
 ; 568  :         
@@ -1289,7 +1289,7 @@
   00390	eb000000	 bl          KernelIoControl
   00394		 |$LN40@PXY_IOCont|
   00394	e1a06000	 mov         r6, r0
-  00398		 |$cleanUp$39405|
+  00398		 |$cleanUp$39407|
   00398	e59f3050	 ldr         r3, [pc, #0x50]
   0039c	e5933440	 ldr         r3, [r3, #0x440]
 
@@ -1370,7 +1370,7 @@
   00414	00000000	 DCD         |??_C@_1GI@PIOENDEP@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAP?$AAX?$AAY?$AA_?$AAI?$AAO?$AAC?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl?$AA?3?$AA?5?$AAI?$AAn?$AAc?$AAo?$AAr?$AAr?$AAe?$AAc?$AAt?$AA?5@|
   00418		 |$LN64@PXY_IOCont|
   00418	00000000	 DCD         |??_C@_1IC@DEJPLEME@?$AA?$CL?$AAP?$AAX?$AAY?$AA_?$AAI?$AAO?$AAC?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?0?$AA?5?$AA0@|
-  0041c		 |$M39648|
+  0041c		 |$M39650|
 
 			 ENDP  ; |?PXY_IOControl@@YAHKKPAEK0KPAK@Z|, PXY_IOControl
 
@@ -1379,7 +1379,7 @@
 	IMPORT	|RegisterDbgZones|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39675| DCD	|$LN8@DllMain|
+|$T39677| DCD	|$LN8@DllMain|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -1391,7 +1391,7 @@
 
   00000		 |$LN8@DllMain|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M39672|
+  00004		 |$M39674|
   00004	e1a04000	 mov         r4, r0
 
 ; 593  : 	UNREFERENCED_PARAMETER(Reserved);
@@ -1427,7 +1427,7 @@
   0002c		 |$LN9@DllMain|
   0002c		 |$LN10@DllMain|
   0002c	00000000	 DCD         |dpCurSettings|
-  00030		 |$M39673|
+  00030		 |$M39675|
 
 			 ENDP  ; |DllMain|
 
@@ -1439,7 +1439,7 @@
 	IMPORT	|CreateFileW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39695| DCD	|$LN17@PXY_Init|
+|$T39697| DCD	|$LN17@PXY_Init|
 	DCD	0x40005102
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1488,7 +1488,7 @@
   00000		 |$LN17@PXY_Init|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd01c	 sub         sp, sp, #0x1C
-  00008		 |$M39692|
+  00008		 |$M39694|
 
 ; 102  :     DWORD rc = (DWORD)NULL;
 ; 103  :     Device_t *pDevice;
@@ -1647,7 +1647,7 @@
 ; 163  :     rc = (DWORD)pDevice;
 
   000fc	e1a04005	 mov         r4, r5
-  00100		 |$cleanUp$39316|
+  00100		 |$cleanUp$39318|
 
 ; 164  : 
 ; 165  : cleanUp:
@@ -1687,7 +1687,7 @@
   0013c	00000000	 DCD         |??_C@_1GM@CINPBAPO@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAP?$AAX?$AAY?$AA_?$AAI?$AAn?$AAi?$AAt?$AA?3?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AAo?$AAp?$AAe?$AAn?$AA?5?$AAp?$AAa?$AAr@|
   00140		 |$LN25@PXY_Init|
   00140	00000000	 DCD         |??_C@_1HE@PBGGBJAP@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAP?$AAX?$AAY?$AA_?$AAI?$AAn?$AAi?$AAt?$AA?3?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AAa?$AAl?$AAl?$AAo?$AAc?$AAa?$AAt?$AAe@|
-  00144		 |$M39693|
+  00144		 |$M39695|
 
 			 ENDP  ; |?PXY_Init@@YAKPBGPBX@Z|, PXY_Init
 

@@ -67,7 +67,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\pm\pmxproxy\pmxproxy.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36843| DCD	|$LN6@MarshalDat|
+|$T36845| DCD	|$LN6@MarshalDat|
 	DCD	0x40000f02
 ; Function compile flags: /Ogspy
 
@@ -80,7 +80,7 @@
   00000		 |$LN6@MarshalDat|
   00000	e52de004	 str         lr, [sp, #-4]!
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M36840|
+  00008		 |$M36842|
   00008	e1a03002	 mov         r3, r2
   0000c	e1a02001	 mov         r2, r1
   00010	e1a01000	 mov         r1, r0
@@ -111,14 +111,14 @@
   00030	e28dd008	 add         sp, sp, #8
   00034	e49de004	 ldr         lr, [sp], #4
   00038	e12fff1e	 bx          lr
-  0003c		 |$M36841|
+  0003c		 |$M36843|
 
 			 ENDP  ; |?MarshalDataPointerHelper@@YAPAXPAXKK@Z|, MarshalDataPointerHelper
 
 	EXPORT	|?PMX_Init@@YAKPBGPBX@Z|		; PMX_Init
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36852| DCD	|$LN5@PMX_Init|
+|$T36854| DCD	|$LN5@PMX_Init|
 	DCD	0x40000300
 ; Function compile flags: /Ogspy
 
@@ -129,7 +129,7 @@
 ; 130  : {
 
   00000		 |$LN5@PMX_Init|
-  00000		 |$M36849|
+  00000		 |$M36851|
 
 ; 131  :     UNREFERENCED_PARAMETER(szContext);
 ; 132  :     UNREFERENCED_PARAMETER(pBusContext);
@@ -143,14 +143,14 @@
   00008		 |$LN6@PMX_Init|
   00008		 |$LN7@PMX_Init|
   00008	706d7879	 DCD         0x706d7879
-  0000c		 |$M36850|
+  0000c		 |$M36852|
 
 			 ENDP  ; |?PMX_Init@@YAKPBGPBX@Z|, PMX_Init
 
 	EXPORT	|?PMX_Deinit@@YAHK@Z|			; PMX_Deinit
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36866| DCD	|$LN7@PMX_Deinit|
+|$T36868| DCD	|$LN7@PMX_Deinit|
 	DCD	0x40000600
 ; Function compile flags: /Ogspy
 
@@ -161,7 +161,7 @@
 ; 146  : {
 
   00000		 |$LN7@PMX_Deinit|
-  00000		 |$M36863|
+  00000		 |$M36865|
 
 ; 147  :     return PMX_DEVICE_COOKIE == context;
 
@@ -176,7 +176,7 @@
   00014		 |$LN8@PMX_Deinit|
   00014		 |$LN9@PMX_Deinit|
   00014	706d7879	 DCD         0x706d7879
-  00018		 |$M36864|
+  00018		 |$M36866|
 
 			 ENDP  ; |?PMX_Deinit@@YAHK@Z|, PMX_Deinit
 
@@ -188,7 +188,7 @@
 	IMPORT	|NKDbgPrintfW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36888| DCD	|$LN13@PMX_Open|
+|$T36890| DCD	|$LN13@PMX_Open|
 	DCD	0x40002e02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -233,7 +233,7 @@
   00000		 |$LN13@PMX_Open|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M36885|
+  00008		 |$M36887|
   00008	e1a05002	 mov         r5, r2
   0000c	e1a06001	 mov         r6, r1
   00010	e1a07000	 mov         r7, r0
@@ -283,7 +283,7 @@
 ; 181  : 
 ; 182  :         goto cleanUp;
 
-  00054	ea000006	 b           |$cleanUp$36683|
+  00054	ea000006	 b           |$cleanUp$36685|
   00058		 |$LN2@PMX_Open|
 
 ; 183  :         }
@@ -305,7 +305,7 @@
 ; 191  :     dw = (DWORD)pInstance;
 
   00070	e1a04000	 mov         r4, r0
-  00074		 |$cleanUp$36683|
+  00074		 |$cleanUp$36685|
 
 ; 192  : 
 ; 193  : cleanUp:
@@ -341,7 +341,7 @@
   000b0	00000000	 DCD         |??_C@_1EI@NKBIAEGK@?$AA?$CL?$AAP?$AAM?$AAX?$AA_?$AAO?$AAp?$AAe?$AAn?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx@|
   000b4		 |$LN19@PMX_Open|
   000b4	00000000	 DCD         |dpCurSettings|
-  000b8		 |$M36886|
+  000b8		 |$M36888|
 
 			 ENDP  ; |?PMX_Open@@YAKKKK@Z|, PMX_Open
 
@@ -354,7 +354,7 @@
 	IMPORT	|PmxReleaseConstraint|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36911| DCD	|$LN15@PMX_Close|
+|$T36913| DCD	|$LN15@PMX_Close|
 	DCD	0x40002501
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -393,7 +393,7 @@
 
   00000		 |$LN15@PMX_Close|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M36908|
+  00004		 |$M36910|
   00004	e1a04000	 mov         r4, r0
 
 ; 212  :     BOOL rc = FALSE;
@@ -427,7 +427,7 @@
 
 ; 224  :         goto cleanUp;
 
-  00034	ea00000a	 b           |$cleanUp$36697|
+  00034	ea00000a	 b           |$cleanUp$36699|
   00038		 |$LN4@PMX_Close|
 
 ; 225  :         }
@@ -470,7 +470,7 @@
 ; 242  :     rc = TRUE;
 
   00060	e3a05001	 mov         r5, #1
-  00064		 |$cleanUp$36697|
+  00064		 |$cleanUp$36699|
 
 ; 243  : 
 ; 244  : cleanUp:
@@ -500,7 +500,7 @@
   0008c	00000000	 DCD         |??_C@_1CK@LKFNMAKC@?$AA?$CL?$AAP?$AAM?$AAX?$AA_?$AAC?$AAl?$AAo?$AAs?$AAe?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@|
   00090		 |$LN20@PMX_Close|
   00090	00000000	 DCD         |dpCurSettings|
-  00094		 |$M36909|
+  00094		 |$M36911|
 
 			 ENDP  ; |?PMX_Close@@YAHK@Z|, PMX_Close
 
@@ -517,7 +517,7 @@
 	IMPORT	|PmxNotifyPolicy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36998| DCD	|$LN63@PMX_IOCont|
+|$T37000| DCD	|$LN63@PMX_IOCont|
 	DCD	0x4000d902
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -564,7 +564,7 @@
   00000		 |$LN63@PMX_IOCont|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd018	 sub         sp, sp, #0x18
-  00008		 |$M36995|
+  00008		 |$M36997|
   00008	e1a0a003	 mov         r10, r3
   0000c	e1a07002	 mov         r7, r2
   00010	e1a09001	 mov         r9, r1
@@ -621,7 +621,7 @@
 
 ; 287  :         goto cleanUp;
 
-  0006c	ea0000ac	 b           |$cleanUp$36719|
+  0006c	ea0000ac	 b           |$cleanUp$36721|
   00070		 |$LN26@PMX_IOCont|
 
 ; 288  :         }
@@ -648,7 +648,7 @@
   000b4	e3a0381e	 mov         r3, #0x1E, 16
   000b8	e3833e1a	 orr         r3, r3, #0x1A, 28
   000bc	e1590003	 cmp         r9, r3
-  000c0	1a000097	 bne         |$cleanUp$36719|
+  000c0	1a000097	 bne         |$cleanUp$36721|
 
 ; 310  : 
 ; 311  :         case IOCTL_PMX_NOTIFYPOLICY:
@@ -707,7 +707,7 @@
 
 ; 330  :             break;
 
-  0012c	ea00007c	 b           |$cleanUp$36719|
+  0012c	ea00007c	 b           |$cleanUp$36721|
   00130		 |$LN16@PMX_IOCont|
 
 ; 303  : 
@@ -735,7 +735,7 @@
 
 ; 309  :             break;
 
-  00150	ea000073	 b           |$cleanUp$36719|
+  00150	ea000073	 b           |$cleanUp$36721|
   00154		 |$LN19@PMX_IOCont|
 
 ; 297  : 
@@ -821,7 +821,7 @@
   001e4	e3a0381e	 mov         r3, #0x1E, 16
   001e8	e3833e1b	 orr         r3, r3, #0x1B, 28
   001ec	e1590003	 cmp         r9, r3
-  001f0	1a00004b	 bne         |$cleanUp$36719|
+  001f0	1a00004b	 bne         |$cleanUp$36721|
 
 ; 337  : 
 ; 338  :         case IOCTL_PMX_RELEASECONSTRAINT:
@@ -841,7 +841,7 @@
   00208	e3a03000	 mov         r3, #0
   0020c	e5883004	 str         r3, [r8, #4]
   00210	e3a06001	 mov         r6, #1
-  00214	ea000042	 b           |$cleanUp$36719|
+  00214	ea000042	 b           |$cleanUp$36721|
   00218		 |$LN3@PMX_IOCont|
 
 ; 376  :             break;
@@ -989,7 +989,7 @@
   0031c		 |$LN57@PMX_IOCont|
   0031c	1affff8a	 bne         |$LN59@PMX_IOCont|
   00320	e3a06000	 mov         r6, #0
-  00324		 |$cleanUp$36719|
+  00324		 |$cleanUp$36721|
 
 ; 266  :     BOOL rc = FALSE;
 ; 267  :     Instance_t *pInstance = (Instance_t*)context;
@@ -1049,7 +1049,7 @@
   0035c	00000000	 DCD         |??_C@_1IC@JKHIBKFA@?$AA?$CL?$AAP?$AAM?$AAX?$AA_?$AAI?$AAO?$AAC?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?0?$AA?5?$AA0@|
   00360		 |$LN68@PMX_IOCont|
   00360	00000000	 DCD         |dpCurSettings|
-  00364		 |$M36996|
+  00364		 |$M36998|
 
 			 ENDP  ; |?PMX_IOControl@@YAHKKPAXK0KPAK@Z|, PMX_IOControl
 
@@ -1058,7 +1058,7 @@
 	IMPORT	|RegisterDbgZones|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T37014| DCD	|$LN8@DllMain|
+|$T37016| DCD	|$LN8@DllMain|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -1070,7 +1070,7 @@
 
   00000		 |$LN8@DllMain|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M37011|
+  00004		 |$M37013|
   00004	e1a04000	 mov         r4, r0
 
 ; 413  :     UNREFERENCED_PARAMETER(Reserved);
@@ -1106,7 +1106,7 @@
   0002c		 |$LN9@DllMain|
   0002c		 |$LN10@DllMain|
   0002c	00000000	 DCD         |dpCurSettings|
-  00030		 |$M37012|
+  00030		 |$M37014|
 
 			 ENDP  ; |DllMain|
 

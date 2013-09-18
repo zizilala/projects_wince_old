@@ -12,7 +12,7 @@
 ; File c:\wince600\public\common\sdk\inc\objbase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34920| DCD	|$LN7@operator|
+|$T34922| DCD	|$LN7@operator|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -24,7 +24,7 @@
 
   00000		 |$LN7@operator|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34917|
+  00004		 |$M34919|
 
 ; 517  : #ifdef _WIN32
 ; 518  :     return !memcmp(&guidOne,&guidOther,sizeof(GUID));
@@ -53,14 +53,14 @@
 
   0001c	149de004	 ldrne       lr, [sp], #4
   00020	e12fff1e	 bx          lr
-  00024		 |$M34918|
+  00024		 |$M34920|
 
 			 ENDP  ; |??8@YAHABU_GUID@@0@Z|, operator==
 
 	EXPORT	|??0IUnknown@@QAA@XZ|			; IUnknown::IUnknown
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34930| DCD	|$LN5@IUnknown|
+|$T34932| DCD	|$LN5@IUnknown|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -68,9 +68,9 @@
 
   00000		 |??0IUnknown@@QAA@XZ| PROC		; IUnknown::IUnknown
   00000		 |$LN5@IUnknown|
-  00000		 |$M34927|
+  00000		 |$M34929|
   00000	e12fff1e	 bx          lr
-  00004		 |$M34928|
+  00004		 |$M34930|
 
 			 ENDP  ; |??0IUnknown@@QAA@XZ|, IUnknown::IUnknown
 
@@ -87,7 +87,7 @@
 ; File c:\wince600\platform\z2170p\src\app\capturetest\propertybag.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34943| DCD	|$LN9@CPropertyB|
+|$T34945| DCD	|$LN9@CPropertyB|
 	DCD	0x40001201
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -106,7 +106,7 @@
 
   00000		 |$LN9@CPropertyB|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M34940|
+  00004		 |$M34942|
   00004	e59f3038	 ldr         r3, [pc, #0x38]
 
 ; 32   :     VAR_LIST *pTemp = pVar;    
@@ -152,7 +152,7 @@
   00044		 |$LN10@CPropertyB|
   00044		 |$LN11@CPropertyB|
   00044	00000000	 DCD         |??_7CPropertyBag@@6B@|
-  00048		 |$M34941|
+  00048		 |$M34943|
 
 			 ENDP  ; |??1CPropertyBag@@QAA@XZ|, CPropertyBag::~CPropertyBag
 
@@ -160,7 +160,7 @@
 	IMPORT	|wcscmp|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34964| DCD	|$LN12@Read|
+|$T34966| DCD	|$LN12@Read|
 	DCD	0x40001601
 ; Function compile flags: /Ogspy
 
@@ -172,7 +172,7 @@
 
   00000		 |$LN12@Read|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M34961|
+  00004		 |$M34963|
   00004	e1a06002	 mov         r6, r2
   00008	e1a07001	 mov         r7, r1
 
@@ -232,7 +232,7 @@
   0004c	e1a00005	 mov         r0, r5
   00050	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   00054	e12fff1e	 bx          lr
-  00058		 |$M34962|
+  00058		 |$M34964|
 
 			 ENDP  ; |?Read@CPropertyBag@@UAAJPBGPAUtagVARIANT@@PAUIErrorLog@@@Z|, CPropertyBag::Read
 
@@ -242,7 +242,7 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34983| DCD	|$LN10@Write|
+|$T34985| DCD	|$LN10@Write|
 	DCD	0x40002701
 ; Function compile flags: /Ogspy
 
@@ -254,7 +254,7 @@
 
   00000		 |$LN10@Write|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M34980|
+  00004		 |$M34982|
   00004	e1a05002	 mov         r5, r2
   00008	e1b07001	 movs        r7, r1
   0000c	e1a06000	 mov         r6, r0
@@ -344,14 +344,14 @@
 
   00094	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   00098	e12fff1e	 bx          lr
-  0009c		 |$M34981|
+  0009c		 |$M34983|
 
 			 ENDP  ; |?Write@CPropertyBag@@UAAJPBGPAUtagVARIANT@@@Z|, CPropertyBag::Write
 
 	IMPORT	|InterlockedIncrement|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34993| DCD	|$LN5@AddRef|
+|$T34995| DCD	|$LN5@AddRef|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -363,7 +363,7 @@
 
   00000		 |$LN5@AddRef|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34990|
+  00004		 |$M34992|
 
 ; 94   :     return InterlockedIncrement((LONG *)&_refCount);
 
@@ -374,14 +374,14 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M34991|
+  00014		 |$M34993|
 
 			 ENDP  ; |?AddRef@CPropertyBag@@UAAKXZ|, CPropertyBag::AddRef
 
 	EXPORT	|??_GCPropertyBag@@QAAPAXI@Z|		; CPropertyBag::`scalar deleting destructor'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35004| DCD	|$LN6@scalar|
+|$T35006| DCD	|$LN6@scalar|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -390,7 +390,7 @@
   00000		 |??_GCPropertyBag@@QAAPAXI@Z| PROC	; CPropertyBag::`scalar deleting destructor'
   00000		 |$LN6@scalar|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35001|
+  00004		 |$M35003|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
   0000c	eb000000	 bl          |??1CPropertyBag@@QAA@XZ|
@@ -400,7 +400,7 @@
   0001c	e1a00005	 mov         r0, r5
   00020	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00024	e12fff1e	 bx          lr
-  00028		 |$M35002|
+  00028		 |$M35004|
 
 			 ENDP  ; |??_GCPropertyBag@@QAAPAXI@Z|, CPropertyBag::`scalar deleting destructor'
 
@@ -408,7 +408,7 @@
 ; File c:\wince600\public\common\sdk\inc\objbase.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35024| DCD	|$LN13@QueryInter|
+|$T35026| DCD	|$LN13@QueryInter|
 	DCD	0x40001e01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\app\capturetest\propertybag.cpp
@@ -421,7 +421,7 @@
 
   00000		 |$LN13@QueryInter|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35021|
+  00004		 |$M35023|
   00004	e1b04002	 movs        r4, r2
   00008	e1a03001	 mov         r3, r1
   0000c	e1a05000	 mov         r5, r0
@@ -483,7 +483,7 @@
   00074		 |$LN14@QueryInter|
   00074		 |$LN15@QueryInter|
   00074	00000000	 DCD         |IID_IPropertyBag|
-  00078		 |$M35022|
+  00078		 |$M35024|
 
 			 ENDP  ; |?QueryInterface@CPropertyBag@@UAAJABU_GUID@@PAPAX@Z|, CPropertyBag::QueryInterface
 
@@ -492,7 +492,7 @@
 	IMPORT	|_purecall|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35039| DCD	|$LN7@IPropertyB|
+|$T35041| DCD	|$LN7@IPropertyB|
 	DCD	0x40000500
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -507,7 +507,7 @@
 
   00000		 |??0IPropertyBag@@QAA@XZ| PROC		; IPropertyBag::IPropertyBag
   00000		 |$LN7@IPropertyB|
-  00000		 |$M35036|
+  00000		 |$M35038|
   00000	e1a02000	 mov         r2, r0
   00004	e59f3004	 ldr         r3, [pc, #4]
   00008	e5823000	 str         r3, [r2]
@@ -515,14 +515,14 @@
   00010		 |$LN8@IPropertyB|
   00010		 |$LN9@IPropertyB|
   00010	00000000	 DCD         |??_7IPropertyBag@@6B@|
-  00014		 |$M35037|
+  00014		 |$M35039|
 
 			 ENDP  ; |??0IPropertyBag@@QAA@XZ|, IPropertyBag::IPropertyBag
 
 	IMPORT	|InterlockedDecrement|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35060| DCD	|$LN11@Release|
+|$T35062| DCD	|$LN11@Release|
 	DCD	0x40000f01
 ; Function compile flags: /Ogspy
 
@@ -534,7 +534,7 @@
 
   00000		 |$LN11@Release|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35057|
+  00004		 |$M35059|
   00004	e1a04000	 mov         r4, r0
 
 ; 100  :     ASSERT(_refCount != 0xFFFFFFFF);
@@ -564,14 +564,14 @@
   00030	e1a00005	 mov         r0, r5
   00034	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00038	e12fff1e	 bx          lr
-  0003c		 |$M35058|
+  0003c		 |$M35060|
 
 			 ENDP  ; |?Release@CPropertyBag@@UAAKXZ|, CPropertyBag::Release
 
 	EXPORT	|??0CPropertyBag@@QAA@XZ|		; CPropertyBag::CPropertyBag
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35078| DCD	|$LN9@CPropertyB@2|
+|$T35080| DCD	|$LN9@CPropertyB@2|
 	DCD	0x40000800
 ; Function compile flags: /Ogspy
 
@@ -582,7 +582,7 @@
 ; 27   : {       
 
   00000		 |$LN9@CPropertyB@2|
-  00000		 |$M35075|
+  00000		 |$M35077|
   00000	e59f3014	 ldr         r3, [pc, #0x14]
   00004	e3a02001	 mov         r2, #1
   00008	e3a01000	 mov         r1, #0
@@ -596,7 +596,7 @@
   0001c		 |$LN10@CPropertyB@2|
   0001c		 |$LN11@CPropertyB@2|
   0001c	00000000	 DCD         |??_7CPropertyBag@@6B@|
-  00020		 |$M35076|
+  00020		 |$M35078|
 
 			 ENDP  ; |??0CPropertyBag@@QAA@XZ|, CPropertyBag::CPropertyBag
 

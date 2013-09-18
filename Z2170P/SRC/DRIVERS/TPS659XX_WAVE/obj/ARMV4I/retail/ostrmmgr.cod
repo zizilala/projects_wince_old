@@ -11,7 +11,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmmgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35563| DCD	|$LN5@get_Gain|
+|$T35565| DCD	|$LN5@get_Gain|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -22,7 +22,7 @@
 ; 51   :     {
 
   00000		 |$LN5@get_Gain|
-  00000		 |$M35560|
+  00000		 |$M35562|
 
 ; 52   :         return m_dwGain;
 
@@ -31,14 +31,14 @@
 ; 53   :     }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M35561|
+  00008		 |$M35563|
 
 			 ENDP  ; |?get_Gain@CStreamManager@@QBAKXZ|, CStreamManager::get_Gain
 
 	EXPORT	|?put_Gain@CStreamManager@@QAAKK@Z|	; CStreamManager::put_Gain
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35574| DCD	|$LN5@put_Gain|
+|$T35576| DCD	|$LN5@put_Gain|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -50,7 +50,7 @@
 
   00000		 |$LN5@put_Gain|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35571|
+  00004		 |$M35573|
   00004	e1a02000	 mov         r2, r0
 
 ; 57   :         m_dwGain = dwGain;
@@ -70,14 +70,14 @@
 
   00020	e49de004	 ldr         lr, [sp], #4
   00024	e12fff1e	 bx          lr
-  00028		 |$M35572|
+  00028		 |$M35574|
 
 			 ENDP  ; |?put_Gain@CStreamManager@@QAAKK@Z|, CStreamManager::put_Gain
 
 	EXPORT	|?get_Mute@CStreamManager@@QBAKXZ|	; CStreamManager::get_Mute
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35584| DCD	|$LN5@get_Mute|
+|$T35586| DCD	|$LN5@get_Mute|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -88,7 +88,7 @@
 ; 63   :     {
 
   00000		 |$LN5@get_Mute|
-  00000		 |$M35581|
+  00000		 |$M35583|
 
 ; 64   :         return m_bMute;
 
@@ -97,14 +97,14 @@
 ; 65   :     }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M35582|
+  00008		 |$M35584|
 
 			 ENDP  ; |?get_Mute@CStreamManager@@QBAKXZ|, CStreamManager::get_Mute
 
 	EXPORT	|?put_Mute@CStreamManager@@QAAKH@Z|	; CStreamManager::put_Mute
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35595| DCD	|$LN5@put_Mute|
+|$T35597| DCD	|$LN5@put_Mute|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -116,7 +116,7 @@
 
   00000		 |$LN5@put_Mute|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35592|
+  00004		 |$M35594|
   00004	e1a02000	 mov         r2, r0
 
 ; 69   :         m_bMute = Mute;
@@ -136,7 +136,7 @@
 
   00020	e49de004	 ldr         lr, [sp], #4
   00024	e12fff1e	 bx          lr
-  00028		 |$M35593|
+  00028		 |$M35595|
 
 			 ENDP  ; |?put_Mute@CStreamManager@@QAAKH@Z|, CStreamManager::put_Mute
 
@@ -145,7 +145,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\ostrmmgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35606| DCD	|$LN5@GetOutputP|
+|$T35608| DCD	|$LN5@GetOutputP|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -157,7 +157,7 @@
 
   00000		 |$LN5@GetOutputP|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35603|
+  00004		 |$M35605|
 
 ; 112  :         return CommonGetProperty(pPropInfo, FALSE);
 
@@ -168,7 +168,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M35604|
+  00014		 |$M35606|
 
 			 ENDP  ; |?GetOutputProperty@COutputStreamManager@@QAAKPAUtag_WAVEPROPINFO@@@Z|, COutputStreamManager::GetOutputProperty
 
@@ -176,7 +176,7 @@
 	IMPORT	|?CommonSetProperty@CStreamManager@@IAAKPAUtag_WAVEPROPINFO@@H@Z| ; CStreamManager::CommonSetProperty
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35617| DCD	|$LN5@SetOutputP|
+|$T35619| DCD	|$LN5@SetOutputP|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -188,7 +188,7 @@
 
   00000		 |$LN5@SetOutputP|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35614|
+  00004		 |$M35616|
 
 ; 117  :         return CommonSetProperty(pPropInfo, FALSE);
 
@@ -199,7 +199,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M35615|
+  00014		 |$M35617|
 
 			 ENDP  ; |?SetOutputProperty@COutputStreamManager@@QAAKPAUtag_WAVEPROPINFO@@@Z|, COutputStreamManager::SetOutputProperty
 
@@ -224,7 +224,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmctxt.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35627| DCD	|$LN5@StreamCont|
+|$T35629| DCD	|$LN5@StreamCont|
 	DCD	0x40000500
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -254,7 +254,7 @@
 ; 56   :     StreamContext() {};
 
   00000		 |$LN5@StreamCont|
-  00000		 |$M35624|
+  00000		 |$M35626|
   00000	e1a02000	 mov         r2, r0
   00004	e59f3004	 ldr         r3, [pc, #4]
   00008	e5823000	 str         r3, [r2]
@@ -262,14 +262,14 @@
   00010		 |$LN6@StreamCont|
   00010		 |$LN7@StreamCont|
   00010	00000000	 DCD         |??_7StreamContext@@6B@|
-  00014		 |$M35625|
+  00014		 |$M35627|
 
 			 ENDP  ; |??0StreamContext@@QAA@XZ|, StreamContext::StreamContext
 
 	EXPORT	|??1StreamContext@@UAA@XZ|		; StreamContext::~StreamContext
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35637| DCD	|$LN5@StreamCont@2|
+|$T35639| DCD	|$LN5@StreamCont@2|
 	DCD	0x40000400
 ; Function compile flags: /Ogspy
 
@@ -280,21 +280,21 @@
 ; 57   :     virtual ~StreamContext() {};
 
   00000		 |$LN5@StreamCont@2|
-  00000		 |$M35634|
+  00000		 |$M35636|
   00000	e59f3004	 ldr         r3, [pc, #4]
   00004	e5803000	 str         r3, [r0]
   00008	e12fff1e	 bx          lr
   0000c		 |$LN6@StreamCont@2|
   0000c		 |$LN7@StreamCont@2|
   0000c	00000000	 DCD         |??_7StreamContext@@6B@|
-  00010		 |$M35635|
+  00010		 |$M35637|
 
 			 ENDP  ; |??1StreamContext@@UAA@XZ|, StreamContext::~StreamContext
 
 	EXPORT	|?DoDriverCallback@StreamContext@@QAAXIKK@Z| ; StreamContext::DoDriverCallback
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35650| DCD	|$LN5@DoDriverCa|
+|$T35652| DCD	|$LN5@DoDriverCa|
 	DCD	0x40000e02
 ; Function compile flags: /Ogspy
 
@@ -307,7 +307,7 @@
   00000		 |$LN5@DoDriverCa|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M35647|
+  00008		 |$M35649|
   00008	e1a05003	 mov         r5, r3
   0000c	e1a03002	 mov         r3, r2
   00010	e1a0e000	 mov         lr, r0
@@ -326,13 +326,13 @@
   0002c	e28dd004	 add         sp, sp, #4
   00030	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00034	e12fff1e	 bx          lr
-  00038		 |$M35648|
+  00038		 |$M35650|
 
 			 ENDP  ; |?DoDriverCallback@StreamContext@@QAAXIKK@Z|, StreamContext::DoDriverCallback
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35662| DCD	|$LN7@DoCallback|
+|$T35664| DCD	|$LN7@DoCallback|
 	DCD	0x40001002
 ; Function compile flags: /Ogspy
 
@@ -345,7 +345,7 @@
   00000		 |$LN7@DoCallback|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M35659|
+  00008		 |$M35661|
   00008	e1a03001	 mov         r3, r1
   0000c	e1a01000	 mov         r1, r0
 
@@ -366,13 +366,13 @@
   00034	e28dd004	 add         sp, sp, #4
   00038	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0003c	e12fff1e	 bx          lr
-  00040		 |$M35660|
+  00040		 |$M35662|
 
 			 ENDP  ; |?DoCallbackReturnBuffer@StreamContext@@UAAHPAUwavehdr_tag@@@Z|, StreamContext::DoCallbackReturnBuffer
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35673| DCD	|$LN7@DoCallback@2|
+|$T35675| DCD	|$LN7@DoCallback@2|
 	DCD	0x40001002
 ; Function compile flags: /Ogspy
 
@@ -385,7 +385,7 @@
   00000		 |$LN7@DoCallback@2|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M35670|
+  00008		 |$M35672|
   00008	e1a03000	 mov         r3, r0
 
 ; 88   :         DEBUGMSG(ZONE_WODM && ZONE_VERBOSE,(TEXT("WODM: DoCallbackStreamOpened\r\n")));
@@ -407,13 +407,13 @@
   00034	e28dd004	 add         sp, sp, #4
   00038	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0003c	e12fff1e	 bx          lr
-  00040		 |$M35671|
+  00040		 |$M35673|
 
 			 ENDP  ; |?DoCallbackStreamOpened@StreamContext@@UAAHXZ|, StreamContext::DoCallbackStreamOpened
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35684| DCD	|$LN7@DoCallback@3|
+|$T35686| DCD	|$LN7@DoCallback@3|
 	DCD	0x40000f02
 ; Function compile flags: /Ogspy
 
@@ -426,7 +426,7 @@
   00000		 |$LN7@DoCallback@3|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M35681|
+  00008		 |$M35683|
   00008	e1a03000	 mov         r3, r0
 
 ; 93   :         DEBUGMSG(ZONE_WODM && ZONE_VERBOSE,(TEXT("WODM: DoCallbackStreamClosed\r\n")));
@@ -447,13 +447,13 @@
   00030	e28dd004	 add         sp, sp, #4
   00034	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00038	e12fff1e	 bx          lr
-  0003c		 |$M35682|
+  0003c		 |$M35684|
 
 			 ENDP  ; |?DoCallbackStreamClosed@StreamContext@@UAAHXZ|, StreamContext::DoCallbackStreamClosed
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35693| DCD	|$LN5@GetRate|
+|$T35695| DCD	|$LN5@GetRate|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -464,7 +464,7 @@
 ; 122  :     {
 
   00000		 |$LN5@GetRate|
-  00000		 |$M35690|
+  00000		 |$M35692|
 
 ; 123  :         UNREFERENCED_PARAMETER(pdwMultiplier);
 ; 124  :         return MMSYSERR_NOTSUPPORTED;
@@ -474,13 +474,13 @@
 ; 125  :     }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M35691|
+  00008		 |$M35693|
 
 			 ENDP  ; |?GetRate@StreamContext@@UBAKPAK@Z|, StreamContext::GetRate
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35702| DCD	|$LN5@SetRate|
+|$T35704| DCD	|$LN5@SetRate|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -491,7 +491,7 @@
 ; 128  :     {
 
   00000		 |$LN5@SetRate|
-  00000		 |$M35699|
+  00000		 |$M35701|
 
 ; 129  :         UNREFERENCED_PARAMETER(dwMultiplier);
 ; 130  :         return MMSYSERR_NOTSUPPORTED;
@@ -501,14 +501,14 @@
 ; 131  :     }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M35700|
+  00008		 |$M35702|
 
 			 ENDP  ; |?SetRate@StreamContext@@UAAKK@Z|, StreamContext::SetRate
 
 	IMPORT	|??3@YAXPAX@Z|				; operator delete
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35716| DCD	|$LN8@scalar|
+|$T35718| DCD	|$LN8@scalar|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -517,7 +517,7 @@
   00000		 |??_GStreamContext@@UAAPAXI@Z| PROC	; StreamContext::`scalar deleting destructor'
   00000		 |$LN8@scalar|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35713|
+  00004		 |$M35715|
   00004	e1a04000	 mov         r4, r0
   00008	e59f3014	 ldr         r3, [pc, #0x14]
   0000c	e3110001	 tst         r1, #1
@@ -529,7 +529,7 @@
   00024		 |$LN9@scalar|
   00024		 |$LN10@scalar|
   00024	00000000	 DCD         |??_7StreamContext@@6B@|
-  00028		 |$M35714|
+  00028		 |$M35716|
 
 			 ENDP  ; |??_GStreamContext@@UAAPAXI@Z|, StreamContext::`scalar deleting destructor'
 
@@ -539,7 +539,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\ostrmmgr.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35729| DCD	|$LN5@initialize|
+|$T35731| DCD	|$LN5@initialize|
 	DCD	0x40001301
 ; Function compile flags: /Ogspy
 
@@ -551,7 +551,7 @@
 
   00000		 |$LN5@initialize|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35726|
+  00004		 |$M35728|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -603,7 +603,7 @@
 
   00044	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00048	e12fff1e	 bx          lr
-  0004c		 |$M35727|
+  0004c		 |$M35729|
 
 			 ENDP  ; |?initialize_AudioLine@COutputStreamManager@@UAAHPAVCAudioMixerManager@@@Z|, COutputStreamManager::initialize_AudioLine
 
@@ -611,7 +611,7 @@
 	IMPORT	|memcpy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35741| DCD	|$LN6@get_DevCap|
+|$T35743| DCD	|$LN6@get_DevCap|
 	DCD	0x40000a01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -636,7 +636,7 @@
 
   00000		 |$LN6@get_DevCap|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35738|
+  00004		 |$M35740|
   00004	e1a00001	 mov         r0, r1
 
 ; 76   :     DEBUGMSG(ZONE_FUNCTION,
@@ -690,14 +690,14 @@
   00024		 |$LN7@get_DevCap|
   00024		 |$LN8@get_DevCap|
   00024	00000000	 DCD         |?wc@?1??get_DevCaps@COutputStreamManager@@UAAKPAXK@Z@4UtagWAVEOUTCAPS@@B|
-  00028		 |$M35739|
+  00028		 |$M35741|
 
 			 ENDP  ; |?get_DevCaps@COutputStreamManager@@UAAKPAXK@Z|, COutputStreamManager::get_DevCaps
 
 	EXPORT	|?get_ExtDevCaps@COutputStreamManager@@UAAKPAXK@Z| ; COutputStreamManager::get_ExtDevCaps
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35754| DCD	|$LN6@get_ExtDev|
+|$T35756| DCD	|$LN6@get_ExtDev|
 	DCD	0x40000a01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -718,7 +718,7 @@
 
   00000		 |$LN6@get_ExtDev|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35751|
+  00004		 |$M35753|
   00004	e1a00001	 mov         r0, r1
 
 ; 125  : 
@@ -775,7 +775,7 @@
   00024		 |$LN7@get_ExtDev|
   00024		 |$LN8@get_ExtDev|
   00024	00000000	 DCD         |?wec@?1??get_ExtDevCaps@COutputStreamManager@@UAAKPAXK@Z@4Utag_WAVEOUTEXTCAPS@@B|
-  00028		 |$M35752|
+  00028		 |$M35754|
 
 			 ENDP  ; |?get_ExtDevCaps@COutputStreamManager@@UAAKPAXK@Z|, COutputStreamManager::get_ExtDevCaps
 
@@ -787,7 +787,7 @@
 	IMPORT	|?GetRate@WaveStreamContext@@UBAKPAK@Z|	; WaveStreamContext::GetRate
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35769| DCD	|$LN7@WaveStream|
+|$T35771| DCD	|$LN7@WaveStream|
 	DCD	0x40000500
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -815,7 +815,7 @@
 
   00000		 |??0WaveStreamContext@@QAA@XZ| PROC	; WaveStreamContext::WaveStreamContext
   00000		 |$LN7@WaveStream|
-  00000		 |$M35766|
+  00000		 |$M35768|
   00000	e1a02000	 mov         r2, r0
   00004	e59f3004	 ldr         r3, [pc, #4]
   00008	e5823000	 str         r3, [r2]
@@ -823,14 +823,14 @@
   00010		 |$LN8@WaveStream|
   00010		 |$LN9@WaveStream|
   00010	00000000	 DCD         |??_7WaveStreamContext@@6B@|
-  00014		 |$M35767|
+  00014		 |$M35769|
 
 			 ENDP  ; |??0WaveStreamContext@@QAA@XZ|, WaveStreamContext::WaveStreamContext
 
 	EXPORT	|??1WaveStreamContext@@UAA@XZ|		; WaveStreamContext::~WaveStreamContext
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35782| DCD	|$LN7@WaveStream@2|
+|$T35784| DCD	|$LN7@WaveStream@2|
 	DCD	0x40000400
 ; Function compile flags: /Ogspy
 
@@ -838,20 +838,20 @@
 
   00000		 |??1WaveStreamContext@@UAA@XZ| PROC	; WaveStreamContext::~WaveStreamContext
   00000		 |$LN7@WaveStream@2|
-  00000		 |$M35779|
+  00000		 |$M35781|
   00000	e59f3004	 ldr         r3, [pc, #4]
   00004	e5803000	 str         r3, [r0]
   00008	e12fff1e	 bx          lr
   0000c		 |$LN8@WaveStream@2|
   0000c		 |$LN9@WaveStream@2|
   0000c	00000000	 DCD         |??_7StreamContext@@6B@|
-  00010		 |$M35780|
+  00010		 |$M35782|
 
 			 ENDP  ; |??1WaveStreamContext@@UAA@XZ|, WaveStreamContext::~WaveStreamContext
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35803| DCD	|$LN10@scalar@2|
+|$T35805| DCD	|$LN10@scalar@2|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -860,7 +860,7 @@
   00000		 |??_GWaveStreamContext@@UAAPAXI@Z| PROC ; WaveStreamContext::`scalar deleting destructor'
   00000		 |$LN10@scalar@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35800|
+  00004		 |$M35802|
   00004	e1a04000	 mov         r4, r0
   00008	e59f3014	 ldr         r3, [pc, #0x14]
   0000c	e3110001	 tst         r1, #1
@@ -872,7 +872,7 @@
   00024		 |$LN11@scalar@2|
   00024		 |$LN12@scalar@2|
   00024	00000000	 DCD         |??_7StreamContext@@6B@|
-  00028		 |$M35801|
+  00028		 |$M35803|
 
 			 ENDP  ; |??_GWaveStreamContext@@UAAPAXI@Z|, WaveStreamContext::`scalar deleting destructor'
 
@@ -881,7 +881,7 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35818| DCD	|$LN5@copy_Audio@2|
+|$T35820| DCD	|$LN5@copy_Audio@2|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -893,7 +893,7 @@
 
   00000		 |$LN5@copy_Audio@2|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M35815|
+  00004		 |$M35817|
   00004	e1a04002	 mov         r4, r2
   00008	e1a05001	 mov         r5, r1
   0000c	e1a06000	 mov         r6, r0
@@ -925,14 +925,14 @@
 
   0002c	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00030	e12fff1e	 bx          lr
-  00034		 |$M35816|
+  00034		 |$M35818|
 
 			 ENDP  ; |?copy_AudioData@COutputStreamManager@@UAAKPAXK@Z|, COutputStreamManager::copy_AudioData
 
 	EXPORT	|?StreamReadyToRender@COutputStreamManager@@UAAXPAVStreamContext@@@Z| ; COutputStreamManager::StreamReadyToRender
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35827| DCD	|$LN5@StreamRead|
+|$T35829| DCD	|$LN5@StreamRead|
 	DCD	0x40001901
 ; Function compile flags: /Ogspy
 
@@ -944,7 +944,7 @@
 
   00000		 |$LN5@StreamRead|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35824|
+  00004		 |$M35826|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -985,7 +985,7 @@
 
   0005c	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00060	e12fff1e	 bx          lr
-  00064		 |$M35825|
+  00064		 |$M35827|
 
 			 ENDP  ; |?StreamReadyToRender@COutputStreamManager@@UAAXPAVStreamContext@@@Z|, COutputStreamManager::StreamReadyToRender
 
@@ -993,7 +993,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmmgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35852| DCD	|$LN20@get_AudioV|
+|$T35854| DCD	|$LN20@get_AudioV|
 	DCD	0x40005501
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\ostrmmgr.cpp
@@ -1006,7 +1006,7 @@
 
   00000		 |$LN20@get_AudioV|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M35849|
+  00004		 |$M35851|
   00004	e1a04002	 mov         r4, r2
   00008	e1a06000	 mov         r6, r0
 
@@ -1042,7 +1042,7 @@
 ; 322  :         mmRet = MMSYSERR_NOTSUPPORTED;
 
   00040	13a08008	 movne       r8, #8
-  00044	1a00003f	 bne         |$Error$35157|
+  00044	1a00003f	 bne         |$Error$35159|
   00048	e5d41008	 ldrb        r1, [r4, #8]
   0004c	e5d43009	 ldrb        r3, [r4, #9]
   00050	e5d4200a	 ldrb        r2, [r4, #0xA]
@@ -1066,7 +1066,7 @@
   00098	0a000011	 beq         |$LN5@get_AudioV|
   0009c	e3510002	 cmp         r1, #2
   000a0	13a0800b	 movne       r8, #0xB
-  000a4	1a000027	 bne         |$Error$35157|
+  000a4	1a000027	 bne         |$Error$35159|
   000a8	e1a03427	 mov         r3, r7, lsr #8
   000ac	e1a02827	 mov         r2, r7, lsr #16
   000b0	e1a01c27	 mov         r1, r7, lsr #24
@@ -1081,7 +1081,7 @@
   000d4	e5c54007	 strb        r4, [r5, #7]
   000d8	e5c57000	 strb        r7, [r5]
   000dc	e5c56004	 strb        r6, [r5, #4]
-  000e0	ea000018	 b           |$Error$35157|
+  000e0	ea000018	 b           |$Error$35159|
   000e4		 |$LN5@get_AudioV|
 
 ; 273  :     {
@@ -1135,7 +1135,7 @@
 ; 310  :         }
 ; 311  :         break;
 
-  00108	ea00000e	 b           |$Error$35157|
+  00108	ea00000e	 b           |$Error$35159|
   0010c		 |$LN2@get_AudioV|
 
 ; 312  : 
@@ -1160,7 +1160,7 @@
   0013c	e5ce4000	 strb        r4, [lr]
   00140	e5ce2002	 strb        r2, [lr, #2]
   00144	e5ce1003	 strb        r1, [lr, #3]
-  00148		 |$Error$35157|
+  00148		 |$Error$35159|
 
 ; 323  :         break;
 ; 324  :     }
@@ -1176,7 +1176,7 @@
   00148	e1a00008	 mov         r0, r8
   0014c	e8bd41f0	 ldmia       sp!, {r4 - r8, lr}
   00150	e12fff1e	 bx          lr
-  00154		 |$M35850|
+  00154		 |$M35852|
 
 			 ENDP  ; |?get_AudioValue@COutputStreamManager@@UBAKPAVCAudioControlBase@@PAUtMIXERCONTROLDETAILS@@K@Z|, COutputStreamManager::get_AudioValue
 
@@ -1184,7 +1184,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmmgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35880| DCD	|$LN24@put_AudioV|
+|$T35882| DCD	|$LN24@put_AudioV|
 	DCD	0x40005d01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\ostrmmgr.cpp
@@ -1197,7 +1197,7 @@
 
   00000		 |$LN24@put_AudioV|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M35877|
+  00004		 |$M35879|
   00004	e1a04002	 mov         r4, r2
   00008	e1a07000	 mov         r7, r0
 
@@ -1407,7 +1407,7 @@
   00164	e12fff11	 bx          r1
   00168		 |$LN21@put_AudioV|
   00168	e3a00000	 mov         r0, #0
-  0016c		 |$Error$35189|
+  0016c		 |$Error$35191|
 
 ; 413  :         break;
 ; 414  :     }
@@ -1422,7 +1422,7 @@
 
   0016c	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   00170	e12fff1e	 bx          lr
-  00174		 |$M35878|
+  00174		 |$M35880|
 
 			 ENDP  ; |?put_AudioValue@COutputStreamManager@@UAAKPAVCAudioControlBase@@PAUtMIXERCONTROLDETAILS@@K@Z|, COutputStreamManager::put_AudioValue
 
@@ -1430,7 +1430,7 @@
 	IMPORT	|?IsSupportedFormat@CStreamManager@@UAAHPAUtWAVEFORMATEX@@@Z| ; CStreamManager::IsSupportedFormat
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35891| DCD	|$LN5@IsSupporte|
+|$T35893| DCD	|$LN5@IsSupporte|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -1442,7 +1442,7 @@
 
   00000		 |$LN5@IsSupporte|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35888|
+  00004		 |$M35890|
 
 ; 434  :     DEBUGMSG(ZONE_FUNCTION,
 ; 435  :         (L"WAV:-COutputStreamManager::IsSupportedFormat()\r\n"));
@@ -1455,7 +1455,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M35889|
+  00010		 |$M35891|
 
 			 ENDP  ; |?IsSupportedFormat@COutputStreamManager@@UAAHPAUtWAVEFORMATEX@@@Z|, COutputStreamManager::IsSupportedFormat
 
@@ -1464,7 +1464,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\ostrmmgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35906| DCD	|$LN8@GetPropert|
+|$T35908| DCD	|$LN8@GetPropert|
 	DCD	0x40000b01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\ostrmmgr.cpp
@@ -1477,7 +1477,7 @@
 
   00000		 |$LN8@GetPropert|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35903|
+  00004		 |$M35905|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -1507,7 +1507,7 @@
 
   00024	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00028	e12fff1e	 bx          lr
-  0002c		 |$M35904|
+  0002c		 |$M35906|
 
 			 ENDP  ; |?GetProperty@COutputStreamManager@@UAAKPAUtag_WAVEPROPINFO@@@Z|, COutputStreamManager::GetProperty
 
@@ -1516,7 +1516,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\ostrmmgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35921| DCD	|$LN8@SetPropert|
+|$T35923| DCD	|$LN8@SetPropert|
 	DCD	0x40000b01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\ostrmmgr.cpp
@@ -1529,7 +1529,7 @@
 
   00000		 |$LN8@SetPropert|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35918|
+  00004		 |$M35920|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -1559,7 +1559,7 @@
 
   00024	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00028	e12fff1e	 bx          lr
-  0002c		 |$M35919|
+  0002c		 |$M35921|
 
 			 ENDP  ; |?SetProperty@COutputStreamManager@@UAAKPAUtag_WAVEPROPINFO@@@Z|, COutputStreamManager::SetProperty
 
@@ -1572,7 +1572,7 @@
 	IMPORT	|?SetRate@OutputStreamContext@@UAAKK@Z|	; OutputStreamContext::SetRate
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35939| DCD	|$LN9@OutputStre|
+|$T35941| DCD	|$LN9@OutputStre|
 	DCD	0x40000500
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1600,7 +1600,7 @@
 
   00000		 |??0OutputStreamContext@@QAA@XZ| PROC	; OutputStreamContext::OutputStreamContext
   00000		 |$LN9@OutputStre|
-  00000		 |$M35936|
+  00000		 |$M35938|
   00000	e1a02000	 mov         r2, r0
   00004	e59f3004	 ldr         r3, [pc, #4]
   00008	e5823000	 str         r3, [r2]
@@ -1608,14 +1608,14 @@
   00010		 |$LN10@OutputStre|
   00010		 |$LN11@OutputStre|
   00010	00000000	 DCD         |??_7OutputStreamContext@@6B@|
-  00014		 |$M35937|
+  00014		 |$M35939|
 
 			 ENDP  ; |??0OutputStreamContext@@QAA@XZ|, OutputStreamContext::OutputStreamContext
 
 	EXPORT	|??1OutputStreamContext@@UAA@XZ|	; OutputStreamContext::~OutputStreamContext
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35957| DCD	|$LN9@OutputStre@2|
+|$T35959| DCD	|$LN9@OutputStre@2|
 	DCD	0x40000400
 ; Function compile flags: /Ogspy
 
@@ -1623,20 +1623,20 @@
 
   00000		 |??1OutputStreamContext@@UAA@XZ| PROC	; OutputStreamContext::~OutputStreamContext
   00000		 |$LN9@OutputStre@2|
-  00000		 |$M35954|
+  00000		 |$M35956|
   00000	e59f3004	 ldr         r3, [pc, #4]
   00004	e5803000	 str         r3, [r0]
   00008	e12fff1e	 bx          lr
   0000c		 |$LN10@OutputStre@2|
   0000c		 |$LN11@OutputStre@2|
   0000c	00000000	 DCD         |??_7StreamContext@@6B@|
-  00010		 |$M35955|
+  00010		 |$M35957|
 
 			 ENDP  ; |??1OutputStreamContext@@UAA@XZ|, OutputStreamContext::~OutputStreamContext
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35985| DCD	|$LN12@scalar@3|
+|$T35987| DCD	|$LN12@scalar@3|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -1645,7 +1645,7 @@
   00000		 |??_GOutputStreamContext@@UAAPAXI@Z| PROC ; OutputStreamContext::`scalar deleting destructor'
   00000		 |$LN12@scalar@3|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35982|
+  00004		 |$M35984|
   00004	e1a04000	 mov         r4, r0
   00008	e59f3014	 ldr         r3, [pc, #0x14]
   0000c	e3110001	 tst         r1, #1
@@ -1657,7 +1657,7 @@
   00024		 |$LN13@scalar@3|
   00024		 |$LN14@scalar@3|
   00024	00000000	 DCD         |??_7StreamContext@@6B@|
-  00028		 |$M35983|
+  00028		 |$M35985|
 
 			 ENDP  ; |??_GOutputStreamContext@@UAAPAXI@Z|, OutputStreamContext::`scalar deleting destructor'
 
@@ -1667,7 +1667,7 @@
 	IMPORT	|?Render2@OutputStreamContextM8@@UAAPAEPAE00H@Z| ; OutputStreamContextM8::Render2
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36012| DCD	|$LN11@OutputStre@3|
+|$T36014| DCD	|$LN11@OutputStre@3|
 	DCD	0x40000500
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1695,7 +1695,7 @@
 
   00000		 |??0OutputStreamContextM8@@QAA@XZ| PROC ; OutputStreamContextM8::OutputStreamContextM8
   00000		 |$LN11@OutputStre@3|
-  00000		 |$M36009|
+  00000		 |$M36011|
   00000	e1a02000	 mov         r2, r0
   00004	e59f3004	 ldr         r3, [pc, #4]
   00008	e5823000	 str         r3, [r2]
@@ -1703,14 +1703,14 @@
   00010		 |$LN12@OutputStre@3|
   00010		 |$LN13@OutputStre@3|
   00010	00000000	 DCD         |??_7OutputStreamContextM8@@6B@|
-  00014		 |$M36010|
+  00014		 |$M36012|
 
 			 ENDP  ; |??0OutputStreamContextM8@@QAA@XZ|, OutputStreamContextM8::OutputStreamContextM8
 
 	EXPORT	|??1OutputStreamContextM8@@UAA@XZ|	; OutputStreamContextM8::~OutputStreamContextM8
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36037| DCD	|$LN11@OutputStre@4|
+|$T36039| DCD	|$LN11@OutputStre@4|
 	DCD	0x40000400
 ; Function compile flags: /Ogspy
 
@@ -1718,14 +1718,14 @@
 
   00000		 |??1OutputStreamContextM8@@UAA@XZ| PROC ; OutputStreamContextM8::~OutputStreamContextM8
   00000		 |$LN11@OutputStre@4|
-  00000		 |$M36034|
+  00000		 |$M36036|
   00000	e59f3004	 ldr         r3, [pc, #4]
   00004	e5803000	 str         r3, [r0]
   00008	e12fff1e	 bx          lr
   0000c		 |$LN12@OutputStre@4|
   0000c		 |$LN13@OutputStre@4|
   0000c	00000000	 DCD         |??_7StreamContext@@6B@|
-  00010		 |$M36035|
+  00010		 |$M36037|
 
 			 ENDP  ; |??1OutputStreamContextM8@@UAA@XZ|, OutputStreamContextM8::~OutputStreamContextM8
 
@@ -1735,7 +1735,7 @@
 	IMPORT	|?Render2@OutputStreamContextM16@@UAAPAEPAE00H@Z| ; OutputStreamContextM16::Render2
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36064| DCD	|$LN11@OutputStre@5|
+|$T36066| DCD	|$LN11@OutputStre@5|
 	DCD	0x40000500
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1763,7 +1763,7 @@
 
   00000		 |??0OutputStreamContextM16@@QAA@XZ| PROC ; OutputStreamContextM16::OutputStreamContextM16
   00000		 |$LN11@OutputStre@5|
-  00000		 |$M36061|
+  00000		 |$M36063|
   00000	e1a02000	 mov         r2, r0
   00004	e59f3004	 ldr         r3, [pc, #4]
   00008	e5823000	 str         r3, [r2]
@@ -1771,14 +1771,14 @@
   00010		 |$LN12@OutputStre@5|
   00010		 |$LN13@OutputStre@5|
   00010	00000000	 DCD         |??_7OutputStreamContextM16@@6B@|
-  00014		 |$M36062|
+  00014		 |$M36064|
 
 			 ENDP  ; |??0OutputStreamContextM16@@QAA@XZ|, OutputStreamContextM16::OutputStreamContextM16
 
 	EXPORT	|??1OutputStreamContextM16@@UAA@XZ|	; OutputStreamContextM16::~OutputStreamContextM16
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36089| DCD	|$LN11@OutputStre@6|
+|$T36091| DCD	|$LN11@OutputStre@6|
 	DCD	0x40000400
 ; Function compile flags: /Ogspy
 
@@ -1786,14 +1786,14 @@
 
   00000		 |??1OutputStreamContextM16@@UAA@XZ| PROC ; OutputStreamContextM16::~OutputStreamContextM16
   00000		 |$LN11@OutputStre@6|
-  00000		 |$M36086|
+  00000		 |$M36088|
   00000	e59f3004	 ldr         r3, [pc, #4]
   00004	e5803000	 str         r3, [r0]
   00008	e12fff1e	 bx          lr
   0000c		 |$LN12@OutputStre@6|
   0000c		 |$LN13@OutputStre@6|
   0000c	00000000	 DCD         |??_7StreamContext@@6B@|
-  00010		 |$M36087|
+  00010		 |$M36089|
 
 			 ENDP  ; |??1OutputStreamContextM16@@UAA@XZ|, OutputStreamContextM16::~OutputStreamContextM16
 
@@ -1803,7 +1803,7 @@
 	IMPORT	|?Render2@OutputStreamContextS8@@UAAPAEPAE00H@Z| ; OutputStreamContextS8::Render2
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36116| DCD	|$LN11@OutputStre@7|
+|$T36118| DCD	|$LN11@OutputStre@7|
 	DCD	0x40000500
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1831,7 +1831,7 @@
 
   00000		 |??0OutputStreamContextS8@@QAA@XZ| PROC ; OutputStreamContextS8::OutputStreamContextS8
   00000		 |$LN11@OutputStre@7|
-  00000		 |$M36113|
+  00000		 |$M36115|
   00000	e1a02000	 mov         r2, r0
   00004	e59f3004	 ldr         r3, [pc, #4]
   00008	e5823000	 str         r3, [r2]
@@ -1839,14 +1839,14 @@
   00010		 |$LN12@OutputStre@7|
   00010		 |$LN13@OutputStre@7|
   00010	00000000	 DCD         |??_7OutputStreamContextS8@@6B@|
-  00014		 |$M36114|
+  00014		 |$M36116|
 
 			 ENDP  ; |??0OutputStreamContextS8@@QAA@XZ|, OutputStreamContextS8::OutputStreamContextS8
 
 	EXPORT	|??1OutputStreamContextS8@@UAA@XZ|	; OutputStreamContextS8::~OutputStreamContextS8
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36141| DCD	|$LN11@OutputStre@8|
+|$T36143| DCD	|$LN11@OutputStre@8|
 	DCD	0x40000400
 ; Function compile flags: /Ogspy
 
@@ -1854,14 +1854,14 @@
 
   00000		 |??1OutputStreamContextS8@@UAA@XZ| PROC ; OutputStreamContextS8::~OutputStreamContextS8
   00000		 |$LN11@OutputStre@8|
-  00000		 |$M36138|
+  00000		 |$M36140|
   00000	e59f3004	 ldr         r3, [pc, #4]
   00004	e5803000	 str         r3, [r0]
   00008	e12fff1e	 bx          lr
   0000c		 |$LN12@OutputStre@8|
   0000c		 |$LN13@OutputStre@8|
   0000c	00000000	 DCD         |??_7StreamContext@@6B@|
-  00010		 |$M36139|
+  00010		 |$M36141|
 
 			 ENDP  ; |??1OutputStreamContextS8@@UAA@XZ|, OutputStreamContextS8::~OutputStreamContextS8
 
@@ -1871,7 +1871,7 @@
 	IMPORT	|?Render2@OutputStreamContextS16@@UAAPAEPAE00H@Z| ; OutputStreamContextS16::Render2
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36168| DCD	|$LN11@OutputStre@9|
+|$T36170| DCD	|$LN11@OutputStre@9|
 	DCD	0x40000500
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1899,7 +1899,7 @@
 
   00000		 |??0OutputStreamContextS16@@QAA@XZ| PROC ; OutputStreamContextS16::OutputStreamContextS16
   00000		 |$LN11@OutputStre@9|
-  00000		 |$M36165|
+  00000		 |$M36167|
   00000	e1a02000	 mov         r2, r0
   00004	e59f3004	 ldr         r3, [pc, #4]
   00008	e5823000	 str         r3, [r2]
@@ -1907,14 +1907,14 @@
   00010		 |$LN12@OutputStre@9|
   00010		 |$LN13@OutputStre@9|
   00010	00000000	 DCD         |??_7OutputStreamContextS16@@6B@|
-  00014		 |$M36166|
+  00014		 |$M36168|
 
 			 ENDP  ; |??0OutputStreamContextS16@@QAA@XZ|, OutputStreamContextS16::OutputStreamContextS16
 
 	EXPORT	|??1OutputStreamContextS16@@UAA@XZ|	; OutputStreamContextS16::~OutputStreamContextS16
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36193| DCD	|$LN11@OutputStre@10|
+|$T36195| DCD	|$LN11@OutputStre@10|
 	DCD	0x40000400
 ; Function compile flags: /Ogspy
 
@@ -1922,20 +1922,20 @@
 
   00000		 |??1OutputStreamContextS16@@UAA@XZ| PROC ; OutputStreamContextS16::~OutputStreamContextS16
   00000		 |$LN11@OutputStre@10|
-  00000		 |$M36190|
+  00000		 |$M36192|
   00000	e59f3004	 ldr         r3, [pc, #4]
   00004	e5803000	 str         r3, [r0]
   00008	e12fff1e	 bx          lr
   0000c		 |$LN12@OutputStre@10|
   0000c		 |$LN13@OutputStre@10|
   0000c	00000000	 DCD         |??_7StreamContext@@6B@|
-  00010		 |$M36191|
+  00010		 |$M36193|
 
 			 ENDP  ; |??1OutputStreamContextS16@@UAA@XZ|, OutputStreamContextS16::~OutputStreamContextS16
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36230| DCD	|$LN14@scalar@4|
+|$T36232| DCD	|$LN14@scalar@4|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -1944,7 +1944,7 @@
   00000		 |??_GOutputStreamContextM8@@UAAPAXI@Z| PROC ; OutputStreamContextM8::`scalar deleting destructor'
   00000		 |$LN14@scalar@4|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M36227|
+  00004		 |$M36229|
   00004	e1a04000	 mov         r4, r0
   00008	e59f3014	 ldr         r3, [pc, #0x14]
   0000c	e3110001	 tst         r1, #1
@@ -1956,13 +1956,13 @@
   00024		 |$LN15@scalar@4|
   00024		 |$LN16@scalar@4|
   00024	00000000	 DCD         |??_7StreamContext@@6B@|
-  00028		 |$M36228|
+  00028		 |$M36230|
 
 			 ENDP  ; |??_GOutputStreamContextM8@@UAAPAXI@Z|, OutputStreamContextM8::`scalar deleting destructor'
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36267| DCD	|$LN14@scalar@5|
+|$T36269| DCD	|$LN14@scalar@5|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -1971,7 +1971,7 @@
   00000		 |??_GOutputStreamContextM16@@UAAPAXI@Z| PROC ; OutputStreamContextM16::`scalar deleting destructor'
   00000		 |$LN14@scalar@5|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M36264|
+  00004		 |$M36266|
   00004	e1a04000	 mov         r4, r0
   00008	e59f3014	 ldr         r3, [pc, #0x14]
   0000c	e3110001	 tst         r1, #1
@@ -1983,13 +1983,13 @@
   00024		 |$LN15@scalar@5|
   00024		 |$LN16@scalar@5|
   00024	00000000	 DCD         |??_7StreamContext@@6B@|
-  00028		 |$M36265|
+  00028		 |$M36267|
 
 			 ENDP  ; |??_GOutputStreamContextM16@@UAAPAXI@Z|, OutputStreamContextM16::`scalar deleting destructor'
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36304| DCD	|$LN14@scalar@6|
+|$T36306| DCD	|$LN14@scalar@6|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -1998,7 +1998,7 @@
   00000		 |??_GOutputStreamContextS8@@UAAPAXI@Z| PROC ; OutputStreamContextS8::`scalar deleting destructor'
   00000		 |$LN14@scalar@6|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M36301|
+  00004		 |$M36303|
   00004	e1a04000	 mov         r4, r0
   00008	e59f3014	 ldr         r3, [pc, #0x14]
   0000c	e3110001	 tst         r1, #1
@@ -2010,13 +2010,13 @@
   00024		 |$LN15@scalar@6|
   00024		 |$LN16@scalar@6|
   00024	00000000	 DCD         |??_7StreamContext@@6B@|
-  00028		 |$M36302|
+  00028		 |$M36304|
 
 			 ENDP  ; |??_GOutputStreamContextS8@@UAAPAXI@Z|, OutputStreamContextS8::`scalar deleting destructor'
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36341| DCD	|$LN14@scalar@7|
+|$T36343| DCD	|$LN14@scalar@7|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -2025,7 +2025,7 @@
   00000		 |??_GOutputStreamContextS16@@UAAPAXI@Z| PROC ; OutputStreamContextS16::`scalar deleting destructor'
   00000		 |$LN14@scalar@7|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M36338|
+  00004		 |$M36340|
   00004	e1a04000	 mov         r4, r0
   00008	e59f3014	 ldr         r3, [pc, #0x14]
   0000c	e3110001	 tst         r1, #1
@@ -2037,7 +2037,7 @@
   00024		 |$LN15@scalar@7|
   00024		 |$LN16@scalar@7|
   00024	00000000	 DCD         |??_7StreamContext@@6B@|
-  00028		 |$M36339|
+  00028		 |$M36341|
 
 			 ENDP  ; |??_GOutputStreamContextS16@@UAAPAXI@Z|, OutputStreamContextS16::`scalar deleting destructor'
 
@@ -2046,7 +2046,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmctxt.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36468| DCD	|$LN52@create_Str|
+|$T36470| DCD	|$LN52@create_Str|
 	DCD	0x40003701
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\ostrmmgr.cpp
@@ -2059,7 +2059,7 @@
 
   00000		 |$LN52@create_Str|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M36465|
+  00004		 |$M36467|
 
 ; 173  :     StreamContext *s;
 ; 174  : 
@@ -2239,7 +2239,7 @@
   000d4	00000000	 DCD         |??_7OutputStreamContextM16@@6B@|
   000d8		 |$LN57@create_Str|
   000d8	00000000	 DCD         |??_7OutputStreamContextM8@@6B@|
-  000dc		 |$M36466|
+  000dc		 |$M36468|
 
 			 ENDP  ; |?create_Stream@COutputStreamManager@@UAAPAVStreamContext@@PAUwaveopendesc_tag@@@Z|, COutputStreamManager::create_Stream
 

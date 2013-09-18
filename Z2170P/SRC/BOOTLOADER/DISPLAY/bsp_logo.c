@@ -733,7 +733,7 @@ BOOL ShowSDLogo()
 	
     // Get the LCD width and height
     LcdPdd_LCD_GetMode( NULL, &dwLcdWidth, &dwLcdHeight, NULL );
-		OALMSG(OAL_INFO, (L"ShowSDLogo: dwLcdWidth = %d, dwLcdHeight = %d\r\n",dwLcdWidth,dwLcdHeight));
+	OALMSG(OAL_INFO, (L"ShowSDLogo: dwLcdWidth = %d, dwLcdHeight = %d\r\n",dwLcdWidth,dwLcdHeight));
 	
 	// Get the frame buffer
 	LcdPdd_GetMemory( NULL, &framebufferPA );
@@ -780,7 +780,9 @@ BOOL ShowSDLogo()
 //  Function:   BLSDtoFlash
 BOOL BLSDtoFlash()
 {
-	if(BLSDCardToFlash(L"OUT_DATA.txt")){
+	//if(BLSDCardToFlash(L"OUT_DATA.txt")){
+	if(BLSDCardToFlash(L"EBOOTSD.nb0")){
+        OALLog(L"------------\n");
         return	TRUE;
     }else{
         return	FALSE;

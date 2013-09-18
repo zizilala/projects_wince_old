@@ -36,7 +36,7 @@ BUILD: [01:0000000033:INFO  ] Directory: C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOA
 BUILD: [01:0000000034:INFO  ] TARGETNAME: bsp_display
 BUILD: [01:0000000035:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORM
 BUILD: [01:0000000036:PROGC ] Linking C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_display.lib
-BUILD: [01:0000000037:INFO  ] 	link -lib -out:C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_display.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm419.tmp
+BUILD: [01:0000000037:INFO  ] 	link -lib -out:C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_display.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm15F.tmp
 BUILD: [00:0000000038:PROGC ] Saving C:\WINCE600\PLATFORM\Z2170P\Build.dat.
 BUILD: [00:0000000039:INFO  ] Done.
 BUILD: [00:0000000040:PROGC ] Done.
@@ -62,5 +62,5 @@ BUILD: [00:0000000059:PROGC ]
 BUILD: [00:0000000060:PROGC ] Total                      2         0       0
 BUILD: [00:0000000061:PROGC ] 
 BUILD: [00:0000000062:PROGC ] 0 Warnings,  0 Errors
-BUILD: [00:0000000063:PROGC ] GetSystemTimes (seconds): Idle: 1     Kernel: 2     User: 0    
-BUILD: [00:0000000064:PROGC ] Elapsed  time  (seconds): 1    
+BUILD: [00:0000000063:PROGC ] GetSystemTimes (seconds): Idle: 3     Kernel: 5     User: 1    
+BUILD: [00:0000000064:PROGC ] Elapsed  time  (seconds): 3    

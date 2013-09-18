@@ -21,10 +21,12 @@
 #include "boot_args.h"
 #include "eboot.h"
 #include "nand.h"
+// 
 #pragma warning(push)
 #pragma warning(disable: 4201 4115)
 #include <blcommon.h>
 #pragma warning(pop)
+// 
 #include "oalex.h"
 //------------------------------------------------------------------------------
 //  Global variables
@@ -47,58 +49,27 @@ UINT32 g_ulBPartLengthBytes = sizeof(g_bpartBuffer);
 //------------------------------------------------------------------------------
 //  Local Functions
 
-static
-UINT32
-ReadFlashNK(
-    );
+static UINT32 ReadFlashNK();
 
-static
-BOOL
-WriteFlashXLDR(
-    UINT32 address,
-    UINT32 size
-    );
+static BOOL WriteFlashXLDR(UINT32 address, UINT32 size);
 
-static
-BOOL
-WriteFlashEBOOT(
-    UINT32 address,
-    UINT32 size
-    );
+static BOOL WriteFlashEBOOT(UINT32 address, UINT32 size);
 
-BOOL
-WriteFlashNK(
-    UINT32 address,
-    UINT32 size
-    );
+static BOOL WriteFlashFromEBOOT(UINT32 address, UINT32 size); 
 
-static
-BOOL
-WriteFlashLogo(
-    UINT32 address,
-    UINT32 size
-    );
+BOOL WriteFlashFromEEBOOT(UINT32 address, UINT32 size);    //Ray 13-09-16
 
-static
-VOID
-DumpTOC(
-    ROMHDR *pTOC
-    );
+BOOL WriteFlashNK(UINT32 address, UINT32 size);
 
-static
-BOOL
-VerifyImage(
-    UCHAR *pData,
-    ROMHDR **ppTOC
-    );
+static BOOL WriteFlashLogo(UINT32 address, UINT32 size);
+
+static VOID DumpTOC(ROMHDR *pTOC);
+
+static BOOL VerifyImage(UCHAR *pData, ROMHDR **ppTOC);
 
 #ifdef IMGMULTIXIP
-static
-BOOL
-WriteFlashEXT(
-    UINT32 address,
-    UINT32 size
-    );
+
+static BOOL WriteFlashEXT(UINT32 address, UINT32 size);
 #endif
 #endif
 //------------------------------------------------------------------------------
@@ -117,11 +88,7 @@ struct {
 //
 //  This function download image from flash memory to RAM.
 //
-UINT32
-BLFlashDownload(
-    BOOT_CFG *pConfig,
-    OAL_KITL_DEVICE *pBootDevices
-    )
+UINT32 BLFlashDownload(BOOT_CFG *pConfig,OAL_KITL_DEVICE *pBootDevices)
 {
     UINT32 rc = (UINT32) BL_ERROR;
 
@@ -134,7 +101,7 @@ BLFlashDownload(
             switch (pConfig->bootDevLoc.LogicalLoc)
                 {
                 case BSP_NAND_REGS_PA + 0x20:
-                rc = ReadFlashNK();
+                    rc = ReadFlashNK();
                 break;
                 }
             break;
@@ -152,11 +119,7 @@ BLFlashDownload(
 //  This function is called by the bootloader to initiate the flash memory
 //  erasing process.
 //
-BOOL
-OEMStartEraseFlash(
-    ULONG address,
-    ULONG size
-    )
+BOOL OEMStartEraseFlash(ULONG address,ULONG size)
 {
     BOOL rc;
     
@@ -166,12 +129,10 @@ OEMStartEraseFlash(
 #ifndef BSP_NO_NAND_IN_SDBOOT
     rc = TRUE;
 
-    OALMSG(OAL_FUNC, (
-        L"+OEMStartEraseFlash(0x%08x, 0x%08x)\r\n", address, size
-        ));
+    OALMSG(OAL_FUNC, (L"+OEMStartEraseFlash(0x%08x, 0x%08x)\r\n", 
+                        address, size));
     
     OALMSG(OAL_FUNC, (L"-OEMStartEraseFlash(rc = %d)\r\n", rc));   
-    
 #else   
     rc = FALSE;    
 #endif	
@@ -187,9 +148,7 @@ OEMStartEraseFlash(
 //  This function is called by the bootloader to during download to provide
 //  ability to continue the flash block erasing operation.
 //
-VOID
-OEMContinueEraseFlash(
-    )
+VOID OEMContinueEraseFlash()
 {
 }
 
@@ -201,9 +160,7 @@ OEMContinueEraseFlash(
 //  This function is called by the bootloader to finish flash erase before
 //  it will call OEMWriteFlash.
 //
-BOOL
-OEMFinishEraseFlash(
-    )
+BOOL OEMFinishEraseFlash()
 {
     BOOL rc = TRUE;
 
@@ -218,21 +175,18 @@ OEMFinishEraseFlash(
 //  be stored in a RAM file cache area to flash memory. This function is
 //  called once per each downloaded region.
 //
-BOOL
-OEMWriteFlash(
-    ULONG address,
-    ULONG size
-    )
+BOOL OEMWriteFlash(ULONG address, ULONG size)
 {
 #ifndef BSP_NO_NAND_IN_SDBOOT
-    BOOL rc;
 
+    BOOL rc;
+            
     switch (g_eboot.type)
         {
         case DOWNLOAD_TYPE_XLDR:
             rc = WriteFlashXLDR(address, size);
             break;
-        case DOWNLOAD_TYPE_EBOOT:
+        case DOWNLOAD_TYPE_EBOOT:     //DOWNLOAD TYPE, it is define 4, Ray 13-09-13   
             rc = WriteFlashEBOOT(address, size);
             break;
 		case DOWNLOAD_TYPE_LOGO:
@@ -250,6 +204,7 @@ OEMWriteFlash(
             rc = FALSE;
             break;
         }
+    //rc = WriteFlashFromEBOOT(address, size);
     return rc;
 	
 #else
@@ -261,11 +216,7 @@ OEMWriteFlash(
 
 //------------------------------------------------------------------------------
 
-BOOL
-WriteFlashNK(
-    UINT32 address,
-    UINT32 size
-    )
+BOOL WriteFlashNK(UINT32 address, UINT32 size)
 {
 #ifndef BSP_NO_NAND_IN_SDBOOT
     BOOL rc = FALSE;
@@ -439,10 +390,7 @@ cleanUp:
 #ifndef BSP_NO_NAND_IN_SDBOOT
 //------------------------------------------------------------------------------
 
-static
-UINT32
-ReadFlashNK(
-    )
+static UINT32 ReadFlashNK()
 {
     UINT32 rc = (UINT32) BL_ERROR;
     HANDLE hPartition;
@@ -457,7 +405,6 @@ ReadFlashNK(
     regInfo.MemLen.Num     = 1;
     regInfo.MemBase.Reg[0] = g_ulFlashBase;
     regInfo.MemLen.Reg[0]  = g_ulFlashLengthBytes;
-
 
     // Check if there is a valid image
     OALMSG(OAL_INFO, (L"\r\nLoad NK image from flash memory\r\n"));
@@ -545,11 +492,7 @@ cleanUp:
 
 //------------------------------------------------------------------------------
 
-BOOL
-WriteFlashXLDR(
-    UINT32 address,
-    UINT32 size
-    )
+BOOL WriteFlashXLDR(UINT32 address,UINT32 size)
 {
     BOOL rc = FALSE;
     HANDLE hFlash = NULL;
@@ -566,8 +509,8 @@ WriteFlashXLDR(
     if (hFlash == NULL)
         {
         OALMSG(OAL_ERROR, (L"ERROR: OEMWriteFlash: "
-            L"OALFlashStoreOpen call failed!\r\n"
-            ));
+                           L"OALFlashStoreOpen call failed!\r\n"
+               ));
         goto cleanUp;
         }
 
@@ -578,8 +521,8 @@ WriteFlashXLDR(
     if (!VerifyImage(pData, &pTOC))
         {
         OALMSG(OAL_ERROR, (L"ERROR: OEMWriteFlash: "
-            L"XLDR image signature not found\r\n"
-            ));
+                           L"XLDR image signature not found\r\n"
+               ));
         }
 
     // Verify that this is XLDR image
@@ -649,11 +592,7 @@ cleanUp:
 
 //------------------------------------------------------------------------------
 
-BOOL
-WriteFlashEBOOT(
-    UINT32 address,
-    UINT32 size
-    )
+BOOL WriteFlashEBOOT(UINT32 address, UINT32 size)
 {
     BOOL rc = FALSE;
     HANDLE hFlash = NULL;
@@ -665,23 +604,23 @@ WriteFlashEBOOT(
 
     // Open flash storage
     hFlash = OALFlashStoreOpen(g_ulFlashBase);
+    
     if (hFlash == NULL)
-        {
-        OALMSG(OAL_ERROR, (L"ERROR: OEMWriteFlash: "
-            L"OALFlashStoreOpen call failed!\r\n"
-            ));
+    {
+        OALMSG(OAL_ERROR, 
+              (L"ERROR: OEMWriteFlash: "L"OALFlashStoreOpen call failed!\r\n"));
         goto cleanUp;
-        }
+    }
 
     // Check if image fit (last sector used for configuration)
     if (size > (IMAGE_EBOOT_CODE_SIZE - OALFlashStoreSectorSize(hFlash)))
-        {
+    {
         OALMSG(OAL_ERROR, (L"ERROR: OEMWriteFlash: "
             L"EBOOT image too big (size 0x%08x, maximum size 0x%08x)\r\n",
             size, IMAGE_EBOOT_CODE_SIZE - OALFlashStoreBlockSize(hFlash)
             ));
         goto cleanUp;
-        }
+    }
 
     // Get data location
     pData = OEMMapMemAddr(address, address);
@@ -718,17 +657,103 @@ WriteFlashEBOOT(
     rc = TRUE;
 
 cleanUp:
-    if (hFlash != NULL) OALFlashStoreClose(hFlash);
+    if (hFlash != NULL) 
+        OALFlashStoreClose(hFlash);
+
     return rc;
 }
 
 //------------------------------------------------------------------------------
+//Ray 13-09-14
+//
+static BOOL WriteFlashFromEBOOT(UINT32 address, UINT32 size)
+{
+    BOOL rc = FALSE;
+    HANDLE hFlash = NULL;
+    UINT8 *pData;
+    UINT32 offset;
 
-BOOL
-WriteFlashLogo(
-    UINT32 address,
-    UINT32 size
-    )
+
+    OALMSG(OAL_INFO, (L"\r\nWriting EBOOT image to flash memory\r\n"));
+
+    // Open flash storage
+    hFlash = OALFlashStoreOpen(g_ulFlashBase);
+    
+    if (hFlash == NULL)
+    {
+        OALMSG(OAL_ERROR, 
+              (L"ERROR: OEMWriteFlash: "L"OALFlashStoreOpen call failed!\r\n"));
+        goto cleanUp;
+    }
+
+    // Check if image fit (last sector used for configuration)
+    if (size > (IMAGE_EBOOT_CODE_SIZE - OALFlashStoreSectorSize(hFlash)))
+    {
+        OALMSG(OAL_ERROR, (L"ERROR: OEMWriteFlash: "
+            L"EBOOT image too big (size 0x%08x, maximum size 0x%08x)\r\n",
+            size, IMAGE_EBOOT_CODE_SIZE - OALFlashStoreBlockSize(hFlash)
+            ));
+        goto cleanUp;
+    }
+
+    // Get data location
+    pData = OEMMapMemAddr(address, address);
+
+    // Verify that we get CE image
+    if (!VerifyImage(pData, NULL))
+        {
+        OALMSG(OAL_ERROR, (L"ERROR: OEMWriteFlash: "
+            L"EBOOT image signature not found\r\n"
+            ));
+        goto cleanUp;
+        }
+
+    // Fill unused space with 0xFF
+    if (size < IMAGE_EBOOT_CODE_SIZE)
+        {
+        memset(pData + size, 0xFF, IMAGE_EBOOT_CODE_SIZE - size);
+        }
+
+    offset = IMAGE_XLDR_BOOTSEC_NAND_SIZE;
+    if (!OALFlashStoreWrite(
+            hFlash, offset, pData, IMAGE_EBOOT_CODE_SIZE, FALSE, FALSE
+            ))
+        {
+        OALMSG(OAL_ERROR, (L"ERROR: OEMWriteFlash: "
+            L"OALFlashStoreWrite at relative address 0x%08x failed\r\n", offset
+            ));
+        goto cleanUp;
+        }
+
+    OALMSG(OAL_INFO, (L"EBOOT image written\r\n"));
+
+    // Done
+    rc = TRUE;
+
+cleanUp:
+    if (hFlash != NULL) 
+        OALFlashStoreClose(hFlash);
+
+    return rc;
+}
+
+//------------------------------------------------------------------------------
+//Ray 13-09-16
+//
+#ifndef BSP_NO_NAND_IN_SDBOOT
+BOOL WriteFlashFromEEBOOT(UINT32 address, UINT32 size)
+{
+    if(WriteFlashFromEBOOT(address,size)){
+        return TRUE;
+    }else{
+        return FALSE;
+    }
+}
+#endif
+
+//------------------------------------------------------------------------------
+
+BOOL WriteFlashLogo(UINT32 address, UINT32 size)
 {
     BOOL rc = FALSE;
     HANDLE hFlash = NULL;
@@ -789,10 +814,7 @@ cleanUp:
 
 //------------------------------------------------------------------------------
 
-VOID
-DumpTOC(
-    ROMHDR *pTOC
-    )
+VOID DumpTOC(ROMHDR *pTOC)
 {
 	UNREFERENCED_PARAMETER(pTOC);
 
@@ -827,11 +849,7 @@ DumpTOC(
 
 //------------------------------------------------------------------------------
 
-BOOL
-VerifyImage(
-    UCHAR *pData,
-    ROMHDR **ppTOC
-    )
+BOOL VerifyImage(UCHAR *pData, ROMHDR **ppTOC)
 {
     BOOL rc = FALSE;
     UINT32 *pInfo;
@@ -839,10 +857,12 @@ VerifyImage(
 
     // Verify that we get CE image.
     pInfo = (UINT32*)(pData + ROM_SIGNATURE_OFFSET);
-    if (*pInfo != ROM_SIGNATURE) goto cleanUp;
+    if (*pInfo != ROM_SIGNATURE)
+        goto cleanUp;
 
     // We are on correct location....
     pTOC = (ROMHDR*)(pData + pInfo[2]);
+ 
 
     // Let see
     DumpTOC(pTOC);

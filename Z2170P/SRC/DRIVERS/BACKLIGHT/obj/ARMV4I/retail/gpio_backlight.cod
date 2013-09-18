@@ -40,7 +40,7 @@
 	EXPORT	|?BacklightGetSupportedStates@CBacklightRoot@@UAAEXZ| ; CBacklightRoot::BacklightGetSupportedStates
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38903| DCD	|$LN5@CBacklight|
+|$T38905| DCD	|$LN5@CBacklight|
 	DCD	0x40000500
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -54,7 +54,7 @@
 
   00000		 |??0CBacklightRoot@@QAA@XZ| PROC	; CBacklightRoot::CBacklightRoot
   00000		 |$LN5@CBacklight|
-  00000		 |$M38900|
+  00000		 |$M38902|
   00000	e1a02000	 mov         r2, r0
   00004	e59f3004	 ldr         r3, [pc, #4]
   00008	e5823000	 str         r3, [r2]
@@ -62,14 +62,14 @@
   00010		 |$LN6@CBacklight|
   00010		 |$LN7@CBacklight|
   00010	00000000	 DCD         |??_7CBacklightRoot@@6B@|
-  00014		 |$M38901|
+  00014		 |$M38903|
 
 			 ENDP  ; |??0CBacklightRoot@@QAA@XZ|, CBacklightRoot::CBacklightRoot
 
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\inc\backlight_class.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38914| DCD	|$LN5@Initialize|
+|$T38916| DCD	|$LN5@Initialize|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -80,16 +80,16 @@
 ; 44   :     virtual BOOL Initialize(LPCTSTR szContext)              {UNREFERENCED_PARAMETER(szContext); return TRUE;}
 
   00000		 |$LN5@Initialize|
-  00000		 |$M38911|
+  00000		 |$M38913|
   00000	e3a00001	 mov         r0, #1
   00004	e12fff1e	 bx          lr
-  00008		 |$M38912|
+  00008		 |$M38914|
 
 			 ENDP  ; |?Initialize@CBacklightRoot@@UAAHPBG@Z|, CBacklightRoot::Initialize
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38923| DCD	|$LN5@Uninitiali|
+|$T38925| DCD	|$LN5@Uninitiali|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -100,16 +100,16 @@
 ; 45   :     virtual BOOL Uninitialize()                             {return TRUE;}
 
   00000		 |$LN5@Uninitiali|
-  00000		 |$M38920|
+  00000		 |$M38922|
   00000	e3a00001	 mov         r0, #1
   00004	e12fff1e	 bx          lr
-  00008		 |$M38921|
+  00008		 |$M38923|
 
 			 ENDP  ; |?Uninitialize@CBacklightRoot@@UAAHXZ|, CBacklightRoot::Uninitialize
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38932| DCD	|$LN5@SetPowerSt|
+|$T38934| DCD	|$LN5@SetPowerSt|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -120,16 +120,16 @@
 ; 46   :     virtual BOOL SetPowerState(CEDEVICE_POWER_STATE power)  {UNREFERENCED_PARAMETER(power); return TRUE;}
 
   00000		 |$LN5@SetPowerSt|
-  00000		 |$M38929|
+  00000		 |$M38931|
   00000	e3a00001	 mov         r0, #1
   00004	e12fff1e	 bx          lr
-  00008		 |$M38930|
+  00008		 |$M38932|
 
 			 ENDP  ; |?SetPowerState@CBacklightRoot@@UAAHW4_CEDEVICE_POWER_STATE@@@Z|, CBacklightRoot::SetPowerState
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38941| DCD	|$LN5@BacklightG|
+|$T38943| DCD	|$LN5@BacklightG|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -140,10 +140,10 @@
 ; 47   :     virtual UCHAR BacklightGetSupportedStates( )            { return 0;}
 
   00000		 |$LN5@BacklightG|
-  00000		 |$M38938|
+  00000		 |$M38940|
   00000	e3a00000	 mov         r0, #0
   00004	e12fff1e	 bx          lr
-  00008		 |$M38939|
+  00008		 |$M38941|
 
 			 ENDP  ; |?BacklightGetSupportedStates@CBacklightRoot@@UAAEXZ|, CBacklightRoot::BacklightGetSupportedStates
 
@@ -159,7 +159,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\backlight\gpio_backlight.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38960| DCD	|$LN20@Initialize@2|
+|$T38962| DCD	|$LN20@Initialize@2|
 	DCD	0x40002a01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -199,7 +199,7 @@
 
   00000		 |$LN20@Initialize@2|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M38957|
+  00004		 |$M38959|
   00004	e1a06001	 mov         r6, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -218,7 +218,7 @@
   0001c	e3a04000	 mov         r4, #0
   00020	eb000000	 bl          |?Initialize@TLED_Backlight@@UAAHPBG@Z|
   00024	e3500000	 cmp         r0, #0
-  00028	0a000014	 beq         |$cleanUp$38792|
+  00028	0a000014	 beq         |$cleanUp$38794|
 
 ; 52   : 	{
 ; 53   :         DEBUGMSG(ZONE_ERROR, (L"ERROR: GPIO_Backlight::Initialize: "
@@ -236,7 +236,7 @@
   00038	e1a00006	 mov         r0, r6
   0003c	eb000000	 bl          GetDeviceRegistryParams
   00040	e3500000	 cmp         r0, #0
-  00044	1a00000d	 bne         |$cleanUp$38792|
+  00044	1a00000d	 bne         |$cleanUp$38794|
 
 ; 61   : 	{
 ; 62   :         DEBUGMSG(ZONE_ERROR, (L"ERROR: GPIO_Backlight::Initialize: "
@@ -261,7 +261,7 @@
   00060	eb000000	 bl          GPIOOpen
   00064	e3500000	 cmp         r0, #0
   00068	e5850020	 str         r0, [r5, #0x20]
-  0006c	0a000003	 beq         |$cleanUp$38792|
+  0006c	0a000003	 beq         |$cleanUp$38794|
   00070	e5951024	 ldr         r1, [r5, #0x24]
   00074	e3a02000	 mov         r2, #0
   00078	eb000000	 bl          GPIOSetMode
@@ -288,7 +288,7 @@
 ; 87   :     rc = TRUE;
 
   0007c	e3a04001	 mov         r4, #1
-  00080		 |$cleanUp$38792|
+  00080		 |$cleanUp$38794|
 
 ; 89   :     RETAILMSG(1, (L"-GPIO_Backlight::Initialize == %d\r\n", rc));
 
@@ -312,7 +312,7 @@
   000a0	00000000	 DCD         |s_deviceRegParams|
   000a4		 |$LN25@Initialize@2|
   000a4	00000000	 DCD         |??_C@_1EE@CCLNBPAA@?$AA?$CL?$AAG?$AAP?$AAI?$AAO?$AA_?$AAB?$AAa?$AAc?$AAk?$AAl?$AAi?$AAg?$AAh?$AAt?$AA?3?$AA?3?$AAI?$AAn?$AAi?$AAt?$AAi?$AAa?$AAl?$AAi?$AAz?$AAe?$AA?$CI?$AA?$CF?$AAs?$AA?$CJ?$AA?$AN@|
-  000a8		 |$M38958|
+  000a8		 |$M38960|
 
 			 ENDP  ; |?Initialize@GPIO_Backlight@@UAAHPBG@Z|, GPIO_Backlight::Initialize
 
@@ -321,7 +321,7 @@
 	IMPORT	|?Uninitialize@TLED_Backlight@@UAAHXZ|	; TLED_Backlight::Uninitialize
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38975| DCD	|$LN6@Uninitiali@2|
+|$T38977| DCD	|$LN6@Uninitiali@2|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -333,7 +333,7 @@
 
   00000		 |$LN6@Uninitiali@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M38972|
+  00004		 |$M38974|
   00004	e1a04000	 mov         r4, r0
 
 ; 104  :     DEBUGMSG(ZONE_FUNCTION, (L"+GPIO_Backlight::Uninitialize()\r\n"));
@@ -374,7 +374,7 @@
 
   0002c	e8bd4010	 ldmia       sp!, {r4, lr}
   00030	e12fff1e	 bx          lr
-  00034		 |$M38973|
+  00034		 |$M38975|
 
 			 ENDP  ; |?Uninitialize@GPIO_Backlight@@UAAHXZ|, GPIO_Backlight::Uninitialize
 
@@ -386,7 +386,7 @@
 	IMPORT	|?SetPowerState@TLED_Backlight@@UAAHW4_CEDEVICE_POWER_STATE@@@Z| ; TLED_Backlight::SetPowerState
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38990| DCD	|$LN16@SetPowerSt@2|
+|$T38992| DCD	|$LN16@SetPowerSt@2|
 	DCD	0x40002f01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -418,7 +418,7 @@
 
   00000		 |$LN16@SetPowerSt@2|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M38987|
+  00004		 |$M38989|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -439,20 +439,20 @@
 
   00020	e5951024	 ldr         r1, [r5, #0x24]
   00024	e3710001	 cmn         r1, #1
-  00028	0a00001b	 beq         |$cleanUp$38817|
+  00028	0a00001b	 beq         |$cleanUp$38819|
 
 ; 134  :         goto cleanUp;
 ; 135  :     
 ; 136  :     switch (power)
 
   0002c	e3540000	 cmp         r4, #0
-  00030	4a000019	 bmi         |$cleanUp$38817|
+  00030	4a000019	 bmi         |$cleanUp$38819|
   00034	e3540001	 cmp         r4, #1
   00038	da000015	 ble         |$LN3@SetPowerSt@2|
   0003c	e3540002	 cmp         r4, #2
-  00040	da000015	 ble         |$cleanUp$38817|
+  00040	da000015	 ble         |$cleanUp$38819|
   00044	e3540004	 cmp         r4, #4
-  00048	ca000013	 bgt         |$cleanUp$38817|
+  00048	ca000013	 bgt         |$cleanUp$38819|
 
 ; 141  :             break;
 ; 142  :             
@@ -500,7 +500,7 @@
 ; 155  :             
 ; 156  :             break;
 
-  00090	ea000001	 b           |$cleanUp$38817|
+  00090	ea000001	 b           |$cleanUp$38819|
   00094		 |$LN3@SetPowerSt@2|
 
 ; 137  : 	{
@@ -510,7 +510,7 @@
 
   00094	e5950020	 ldr         r0, [r5, #0x20]
   00098	eb000000	 bl          GPIOSetBit
-  0009c		 |$cleanUp$38817|
+  0009c		 |$cleanUp$38819|
 
 ; 157  : 	}    
 ; 158  : 
@@ -535,14 +535,14 @@
   000b4	00000000	 DCD         |??_C@_1FC@CLEIMDEB@?$AA?9?$AAG?$AAP?$AAI?$AAO?$AA_?$AAB?$AAa?$AAc?$AAk?$AAl?$AAi?$AAg?$AAh?$AAt?$AA?3?$AA?3?$AAS?$AAe?$AAt?$AAP?$AAo?$AAw?$AAe?$AAr?$AAS?$AAt?$AAa?$AAt?$AAe?$AA?$CI?$AA0@|
   000b8		 |$LN19@SetPowerSt@2|
   000b8	00000000	 DCD         |??_C@_1FC@PBJPIOBM@?$AA?$CL?$AAG?$AAP?$AAI?$AAO?$AA_?$AAB?$AAa?$AAc?$AAk?$AAl?$AAi?$AAg?$AAh?$AAt?$AA?3?$AA?3?$AAS?$AAe?$AAt?$AAP?$AAo?$AAw?$AAe?$AAr?$AAS?$AAt?$AAa?$AAt?$AAe?$AA?$CI?$AA0@|
-  000bc		 |$M38988|
+  000bc		 |$M38990|
 
 			 ENDP  ; |?SetPowerState@GPIO_Backlight@@UAAHW4_CEDEVICE_POWER_STATE@@@Z|, GPIO_Backlight::SetPowerState
 
 	EXPORT	|?BacklightGetSupportedStates@GPIO_Backlight@@UAAEXZ| ; GPIO_Backlight::BacklightGetSupportedStates
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39003| DCD	|$LN5@BacklightG@2|
+|$T39005| DCD	|$LN5@BacklightG@2|
 	DCD	0x40000300
 ; Function compile flags: /Ogspy
 
@@ -553,7 +553,7 @@
 ; 171  : {
 
   00000		 |$LN5@BacklightG@2|
-  00000		 |$M39000|
+  00000		 |$M39002|
 
 ; 172  :     DEBUGMSG( ZONE_INFO, (L"Backlight supported states bitmap: 0x%x\r\n",m_powerMask));
 ; 173  : 
@@ -565,7 +565,7 @@
 ; 175  : }
 
   00008	e12fff1e	 bx          lr
-  0000c		 |$M39001|
+  0000c		 |$M39003|
 
 			 ENDP  ; |?BacklightGetSupportedStates@GPIO_Backlight@@UAAEXZ|, GPIO_Backlight::BacklightGetSupportedStates
 
@@ -574,7 +574,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\backlight\bsp_backlight_class.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39016| DCD	|$LN7@TLED_Backl|
+|$T39018| DCD	|$LN7@TLED_Backl|
 	DCD	0x40000800
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -591,7 +591,7 @@
 ; 43   :     TLED_Backlight() : m_hTled(NULL), m_channel((DWORD) -1)     {};
 
   00000		 |$LN7@TLED_Backl|
-  00000		 |$M39013|
+  00000		 |$M39015|
   00000	e59f3014	 ldr         r3, [pc, #0x14]
   00004	e3a02000	 mov         r2, #0
   00008	e3e01000	 mvn         r1, #0
@@ -602,7 +602,7 @@
   0001c		 |$LN8@TLED_Backl|
   0001c		 |$LN9@TLED_Backl|
   0001c	00000000	 DCD         |??_7TLED_Backlight@@6B@|
-  00020		 |$M39014|
+  00020		 |$M39016|
 
 			 ENDP  ; |??0TLED_Backlight@@QAA@XZ|, TLED_Backlight::TLED_Backlight
 
@@ -610,7 +610,7 @@
 	EXPORT	|??_7GPIO_Backlight@@6B@| [ DATA ]	; GPIO_Backlight::`vftable'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39036| DCD	|$LN9@GPIO_Backl|
+|$T39038| DCD	|$LN9@GPIO_Backl|
 	DCD	0x40000a00
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -627,7 +627,7 @@
 ; 79   :     GPIO_Backlight() : m_hGpio(NULL), m_gpioId((DWORD) -1)      {};
 
   00000		 |$LN9@GPIO_Backl|
-  00000		 |$M39033|
+  00000		 |$M39035|
   00000	e59f301c	 ldr         r3, [pc, #0x1C]
   00004	e3a02000	 mov         r2, #0
   00008	e3e01000	 mvn         r1, #0
@@ -640,7 +640,7 @@
   00024		 |$LN10@GPIO_Backl|
   00024		 |$LN11@GPIO_Backl|
   00024	00000000	 DCD         |??_7GPIO_Backlight@@6B@|
-  00028		 |$M39034|
+  00028		 |$M39036|
 
 			 ENDP  ; |??0GPIO_Backlight@@QAA@XZ|, GPIO_Backlight::GPIO_Backlight
 
@@ -648,7 +648,7 @@
 	IMPORT	|??2@YAPAXI@Z|				; operator new
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39066| DCD	|$LN13@GetBacklig|
+|$T39068| DCD	|$LN13@GetBacklig|
 	DCD	0x40001301
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\backlight\gpio_backlight.cpp
@@ -661,7 +661,7 @@
 
   00000		 |$LN13@GetBacklig|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M39063|
+  00004		 |$M39065|
 
 ; 180  :     return new GPIO_Backlight();
 
@@ -695,7 +695,7 @@
   00048		 |$LN14@GetBacklig|
   00048		 |$LN15@GetBacklig|
   00048	00000000	 DCD         |??_7GPIO_Backlight@@6B@|
-  0004c		 |$M39064|
+  0004c		 |$M39066|
 
 			 ENDP  ; |?GetBacklightObject@@YAPAVCBacklightRoot@@XZ|, GetBacklightObject
 

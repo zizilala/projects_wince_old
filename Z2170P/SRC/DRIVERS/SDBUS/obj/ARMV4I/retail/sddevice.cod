@@ -16,7 +16,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41128| DCD	|$LN5@ResetEvent|
+|$T41130| DCD	|$LN5@ResetEvent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -28,7 +28,7 @@
 
   00000		 |$LN5@ResetEvent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M41125|
+  00004		 |$M41127|
 
 ; 224  : 	return EventModify(h,EVENT_RESET);
 
@@ -39,14 +39,14 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M41126|
+  00014		 |$M41128|
 
 			 ENDP  ; |ResetEvent|
 
 	EXPORT	|SetEvent|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41138| DCD	|$LN5@SetEvent|
+|$T41140| DCD	|$LN5@SetEvent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -58,7 +58,7 @@
 
   00000		 |$LN5@SetEvent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M41135|
+  00004		 |$M41137|
 
 ; 236  : 	return EventModify(h,EVENT_SET);
 
@@ -69,7 +69,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M41136|
+  00014		 |$M41138|
 
 			 ENDP  ; |SetEvent|
 
@@ -77,7 +77,7 @@
 	IMPORT	|__GetUserKData|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41147| DCD	|$LN5@GetCurrent|
+|$T41149| DCD	|$LN5@GetCurrent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -89,7 +89,7 @@
 
   00000		 |$LN5@GetCurrent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M41144|
+  00004		 |$M41146|
 
 ; 374  :     return __GetUserKData (SYSHANDLE_OFFSET + (SH_CURPROC * sizeof(HANDLE)));
 
@@ -100,7 +100,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M41145|
+  00014		 |$M41147|
 
 			 ENDP  ; |GetCurrentProcessId|
 
@@ -108,7 +108,7 @@
 ; File c:\wince600\public\common\sdk\inc\creg.hxx
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41155| DCD	|$LN5@ZeroEntrie|
+|$T41157| DCD	|$LN5@ZeroEntrie|
 	DCD	0x40000600
 ; Function compile flags: /Ogspy
 
@@ -119,7 +119,7 @@
 ; 35   : 	void ZeroEntries() {
 
   00000		 |$LN5@ZeroEntrie|
-  00000		 |$M41152|
+  00000		 |$M41154|
 
 ; 36   : 		m_hKey      = NULL;
 
@@ -141,7 +141,7 @@
 ; 40   : 	}
 
   00014	e12fff1e	 bx          lr
-  00018		 |$M41153|
+  00018		 |$M41155|
 
 			 ENDP  ; |?ZeroEntries@CReg@@AAAXXZ|, CReg::ZeroEntries
 
@@ -150,7 +150,7 @@
 	IMPORT	|RegCloseKey|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41163| DCD	|$LN7@CReg|
+|$T41165| DCD	|$LN7@CReg|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -162,7 +162,7 @@
 
   00000		 |$LN7@CReg|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M41160|
+  00004		 |$M41162|
   00004	e1a04000	 mov         r4, r0
 
 ; 68   : 		if(m_hKey) RegCloseKey(m_hKey); 
@@ -188,14 +188,14 @@
 
   00028	e8bd4010	 ldmia       sp!, {r4, lr}
   0002c	e12fff1e	 bx          lr
-  00030		 |$M41161|
+  00030		 |$M41163|
 
 			 ENDP  ; |??1CReg@@QAA@XZ|, CReg::~CReg
 
 	EXPORT	|?Reset@CReg@@QAAXXZ|			; CReg::Reset
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41171| DCD	|$LN6@Reset|
+|$T41173| DCD	|$LN6@Reset|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -207,7 +207,7 @@
 
   00000		 |$LN6@Reset|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M41168|
+  00004		 |$M41170|
   00004	e1a04000	 mov         r4, r0
 
 ; 76   : 		if(m_hKey) {
@@ -236,14 +236,14 @@
 
   00028	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0002c	e12fff1e	 bx          lr
-  00030		 |$M41169|
+  00030		 |$M41171|
 
 			 ENDP  ; |?Reset@CReg@@QAAXXZ|, CReg::Reset
 
 	EXPORT	|?IsOK@CReg@@QAAHXZ|			; CReg::IsOK
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41183| DCD	|$LN7@IsOK|
+|$T41185| DCD	|$LN7@IsOK|
 	DCD	0x40000500
 ; Function compile flags: /Ogspy
 
@@ -254,13 +254,13 @@
 ; 85   : 	BOOL IsOK(void) { return m_hKey!=NULL; }
 
   00000		 |$LN7@IsOK|
-  00000		 |$M41180|
+  00000		 |$M41182|
   00000	e5903000	 ldr         r3, [r0]
   00004	e3530000	 cmp         r3, #0
   00008	13a00001	 movne       r0, #1
   0000c	03a00000	 moveq       r0, #0
   00010	e12fff1e	 bx          lr
-  00014		 |$M41181|
+  00014		 |$M41183|
 
 			 ENDP  ; |?IsOK@CReg@@QAAHXZ|, CReg::IsOK
 
@@ -268,7 +268,7 @@
 	IMPORT	|RegQueryValueExW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41196| DCD	|$LN6@ValueDW|
+|$T41198| DCD	|$LN6@ValueDW|
 	DCD	0x40001402
 ; Function compile flags: /Ogspy
 
@@ -281,7 +281,7 @@
   00000		 |$LN6@ValueDW|
   00000	e52de004	 str         lr, [sp, #-4]!
   00004	e24dd010	 sub         sp, sp, #0x10
-  00008		 |$M41193|
+  00008		 |$M41195|
 
 ; 198  : 		DWORD dwValue = dwDefault;
 ; 199  : 		if(m_hKey) 
@@ -315,7 +315,7 @@
   00044	e28dd010	 add         sp, sp, #0x10
   00048	e49de004	 ldr         lr, [sp], #4
   0004c	e12fff1e	 bx          lr
-  00050		 |$M41194|
+  00050		 |$M41196|
 
 			 ENDP  ; |?ValueDW@CReg@@QAAKPBGK@Z|, CReg::ValueDW
 
@@ -324,7 +324,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41206| DCD	|$LN5@CLockObjec|
+|$T41208| DCD	|$LN5@CLockObjec|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -336,7 +336,7 @@
 
   00000		 |$LN5@CLockObjec|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M41203|
+  00004		 |$M41205|
   00004	e1a04000	 mov         r4, r0
 
 ; 37   :     {
@@ -349,7 +349,7 @@
   0000c	e1a00004	 mov         r0, r4
   00010	e8bd4010	 ldmia       sp!, {r4, lr}
   00014	e12fff1e	 bx          lr
-  00018		 |$M41204|
+  00018		 |$M41206|
 
 			 ENDP  ; |??0CLockObject@@QAA@XZ|, CLockObject::CLockObject
 
@@ -357,7 +357,7 @@
 	IMPORT	|DeleteCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41214| DCD	|$LN5@CLockObjec@2|
+|$T41216| DCD	|$LN5@CLockObjec@2|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -369,7 +369,7 @@
 
   00000		 |$LN5@CLockObjec@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M41211|
+  00004		 |$M41213|
 
 ; 42   :         DeleteCriticalSection( &m_CSection );
 
@@ -379,7 +379,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M41212|
+  00010		 |$M41214|
 
 			 ENDP  ; |??1CLockObject@@QAA@XZ|, CLockObject::~CLockObject
 
@@ -387,7 +387,7 @@
 	IMPORT	|EnterCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41222| DCD	|$LN5@Lock|
+|$T41224| DCD	|$LN5@Lock|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -399,7 +399,7 @@
 
   00000		 |$LN5@Lock|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M41219|
+  00004		 |$M41221|
 
 ; 46   :         EnterCriticalSection( &m_CSection );
 
@@ -409,7 +409,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M41220|
+  00010		 |$M41222|
 
 			 ENDP  ; |?Lock@CLockObject@@QAAXXZ|, CLockObject::Lock
 
@@ -417,7 +417,7 @@
 	IMPORT	|LeaveCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41230| DCD	|$LN5@Unlock|
+|$T41232| DCD	|$LN5@Unlock|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -429,7 +429,7 @@
 
   00000		 |$LN5@Unlock|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M41227|
+  00004		 |$M41229|
 
 ; 50   :         LeaveCriticalSection( &m_CSection );
 
@@ -439,7 +439,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M41228|
+  00010		 |$M41230|
 
 			 ENDP  ; |?Unlock@CLockObject@@QAAXXZ|, CLockObject::Unlock
 
@@ -449,7 +449,7 @@
 ; File c:\wince600\public\common\oak\inc\crefcon.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41240| DCD	|$LN5@CRefObject|
+|$T41242| DCD	|$LN5@CRefObject|
 	DCD	0x40000600
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -463,7 +463,7 @@
 ; 35   :     CRefObject()
 
   00000		 |$LN5@CRefObject|
-  00000		 |$M41237|
+  00000		 |$M41239|
   00000	e59f300c	 ldr         r3, [pc, #0xC]
 
 ; 36   :     {
@@ -479,14 +479,14 @@
   00014		 |$LN6@CRefObject|
   00014		 |$LN7@CRefObject|
   00014	00000000	 DCD         |??_7CRefObject@@6B@|
-  00018		 |$M41238|
+  00018		 |$M41240|
 
 			 ENDP  ; |??0CRefObject@@QAA@XZ|, CRefObject::CRefObject
 
 	EXPORT	|??1CRefObject@@UAA@XZ|			; CRefObject::~CRefObject
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41250| DCD	|$LN5@CRefObject@2|
+|$T41252| DCD	|$LN5@CRefObject@2|
 	DCD	0x40000400
 ; Function compile flags: /Ogspy
 
@@ -497,7 +497,7 @@
 ; 40   :     {
 
   00000		 |$LN5@CRefObject@2|
-  00000		 |$M41247|
+  00000		 |$M41249|
   00000	e59f3004	 ldr         r3, [pc, #4]
   00004	e5803000	 str         r3, [r0]
 
@@ -507,7 +507,7 @@
   0000c		 |$LN6@CRefObject@2|
   0000c		 |$LN7@CRefObject@2|
   0000c	00000000	 DCD         |??_7CRefObject@@6B@|
-  00010		 |$M41248|
+  00010		 |$M41250|
 
 			 ENDP  ; |??1CRefObject@@UAA@XZ|, CRefObject::~CRefObject
 
@@ -515,7 +515,7 @@
 	IMPORT	|InterlockedIncrement|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41262| DCD	|$LN5@AddRef|
+|$T41264| DCD	|$LN5@AddRef|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -527,7 +527,7 @@
 
   00000		 |$LN5@AddRef|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M41259|
+  00004		 |$M41261|
 
 ; 44   :         return (DWORD)InterlockedIncrement(&m_lRefCount);
 
@@ -538,7 +538,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M41260|
+  00014		 |$M41262|
 
 			 ENDP  ; |?AddRef@CRefObject@@QAAKXZ|, CRefObject::AddRef
 
@@ -546,7 +546,7 @@
 	IMPORT	|InterlockedDecrement|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41277| DCD	|$LN8@DeRef|
+|$T41279| DCD	|$LN8@DeRef|
 	DCD	0x40001101
 ; Function compile flags: /Ogspy
 
@@ -558,7 +558,7 @@
 
   00000		 |$LN8@DeRef|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M41274|
+  00004		 |$M41276|
   00004	e1a04000	 mov         r4, r0
 
 ; 48   :         LONG lReturn = InterlockedDecrement(&m_lRefCount);
@@ -590,14 +590,14 @@
   00038	e1a00005	 mov         r0, r5
   0003c	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00040	e12fff1e	 bx          lr
-  00044		 |$M41275|
+  00044		 |$M41277|
 
 			 ENDP  ; |?DeRef@CRefObject@@QAAKXZ|, CRefObject::DeRef
 
 	IMPORT	|??3@YAXPAX@Z|				; operator delete
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41291| DCD	|$LN8@scalar|
+|$T41293| DCD	|$LN8@scalar|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -606,7 +606,7 @@
   00000		 |??_GCRefObject@@UAAPAXI@Z| PROC	; CRefObject::`scalar deleting destructor'
   00000		 |$LN8@scalar|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M41288|
+  00004		 |$M41290|
   00004	e1a04000	 mov         r4, r0
   00008	e59f3014	 ldr         r3, [pc, #0x14]
   0000c	e3110001	 tst         r1, #1
@@ -618,7 +618,7 @@
   00024		 |$LN9@scalar|
   00024		 |$LN10@scalar|
   00024	00000000	 DCD         |??_7CRefObject@@6B@|
-  00028		 |$M41289|
+  00028		 |$M41291|
 
 			 ENDP  ; |??_GCRefObject@@UAAPAXI@Z|, CRefObject::`scalar deleting destructor'
 
@@ -626,7 +626,7 @@
 ; File c:\wince600\public\common\oak\inc\cregedit.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41307| DCD	|$LN7@GetRegValu|
+|$T41309| DCD	|$LN7@GetRegValu|
 	DCD	0x40001404
 ; Function compile flags: /Ogspy
 
@@ -641,7 +641,7 @@
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5030	 stmdb       sp!, {r4, r5, r12, lr}
   0000c	e24dd00c	 sub         sp, sp, #0xC
-  00010		 |$M41304|
+  00010		 |$M41306|
   00010	e1a04002	 mov         r4, r2
 
 ; 131  :         DWORD dwType = 0;
@@ -673,7 +673,7 @@
   00044	e28dd00c	 add         sp, sp, #0xC
   00048	e89d6030	 ldmia       sp, {r4, r5, sp, lr}
   0004c	e12fff1e	 bx          lr
-  00050		 |$M41305|
+  00050		 |$M41307|
 
 			 ENDP  ; |?GetRegValue@CRegistryEdit@@QAAHPBGPAEK@Z|, CRegistryEdit::GetRegValue
 
@@ -681,7 +681,7 @@
 ; File c:\wince600\public\common\oak\inc\defbus.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41317| DCD	|$LN5@IsDriverLo|
+|$T41319| DCD	|$LN5@IsDriverLo|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -692,17 +692,17 @@
 ; 85   :     BOOL    IsDriverLoaded() { return m_fDriverLoaded; };
 
   00000		 |$LN5@IsDriverLo|
-  00000		 |$M41314|
+  00000		 |$M41316|
   00000	e5900028	 ldr         r0, [r0, #0x28]
   00004	e12fff1e	 bx          lr
-  00008		 |$M41315|
+  00008		 |$M41317|
 
 			 ENDP  ; |?IsDriverLoaded@DeviceFolder@@QAAHXZ|, DeviceFolder::IsDriverLoaded
 
 	EXPORT	|?GetDeviceHandle@DefaultBusDriver@@QAAPAXXZ| ; DefaultBusDriver::GetDeviceHandle
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41327| DCD	|$LN5@GetDeviceH|
+|$T41329| DCD	|$LN5@GetDeviceH|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -713,10 +713,10 @@
 ; 167  :     HANDLE GetDeviceHandle() { return m_hDevice; };
 
   00000		 |$LN5@GetDeviceH|
-  00000		 |$M41324|
+  00000		 |$M41326|
   00000	e5900020	 ldr         r0, [r0, #0x20]
   00004	e12fff1e	 bx          lr
-  00008		 |$M41325|
+  00008		 |$M41327|
 
 			 ENDP  ; |?GetDeviceHandle@DefaultBusDriver@@QAAPAXXZ|, DefaultBusDriver::GetDeviceHandle
 
@@ -724,7 +724,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbus.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41337| DCD	|$LN5@GetIndex|
+|$T41339| DCD	|$LN5@GetIndex|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -735,17 +735,17 @@
 ; 131  :     DWORD   GetIndex() {    return m_dwSdHostIndex;  };
 
   00000		 |$LN5@GetIndex|
-  00000		 |$M41334|
+  00000		 |$M41336|
   00000	e590005c	 ldr         r0, [r0, #0x5C]
   00004	e12fff1e	 bx          lr
-  00008		 |$M41335|
+  00008		 |$M41337|
 
 			 ENDP  ; |?GetIndex@CSDHost@@QAAKXZ|, CSDHost::GetIndex
 
 	EXPORT	|?SlotOptionHandler@CSDHost@@QAAJKW4_SD_SLOT_OPTION_CODE@@PAXK@Z| ; CSDHost::SlotOptionHandler
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41352| DCD	|$LN7@SlotOption|
+|$T41354| DCD	|$LN7@SlotOption|
 	DCD	0x40000f02
 ; Function compile flags: /Ogspy
 
@@ -758,7 +758,7 @@
   00000		 |$LN7@SlotOption|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M41349|
+  00008		 |$M41351|
   00008	e1a05002	 mov         r5, r2
   0000c	e1b0e000	 movs        lr, r0
 
@@ -778,7 +778,7 @@
   00030	e28dd004	 add         sp, sp, #4
   00034	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00038	e12fff1e	 bx          lr
-  0003c		 |$M41350|
+  0003c		 |$M41352|
 
 			 ENDP  ; |?SlotOptionHandler@CSDHost@@QAAJKW4_SD_SLOT_OPTION_CODE@@PAXK@Z|, CSDHost::SlotOptionHandler
 
@@ -786,7 +786,7 @@
 	IMPORT	|?g_pSdContainer@CSDHostContainer@@0PAV1@A| ; CSDHostContainer::g_pSdContainer
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41363| DCD	|$LN7@GetRetryCo|
+|$T41365| DCD	|$LN7@GetRetryCo|
 	DCD	0x40000700
 ; Function compile flags: /Ogspy
 
@@ -797,7 +797,7 @@
 ; 184  :     static DWORD    GetRetryCount()  { return g_pSdContainer!=NULL? g_pSdContainer->m_BusRequestRetryCount: 0; };
 
   00000		 |$LN7@GetRetryCo|
-  00000		 |$M41360|
+  00000		 |$M41362|
   00000	e59f3010	 ldr         r3, [pc, #0x10]
   00004	e5933000	 ldr         r3, [r3]
   00008	e3530000	 cmp         r3, #0
@@ -807,14 +807,14 @@
   00018		 |$LN8@GetRetryCo|
   00018		 |$LN9@GetRetryCo|
   00018	00000000	 DCD         |?g_pSdContainer@CSDHostContainer@@0PAV1@A|
-  0001c		 |$M41361|
+  0001c		 |$M41363|
 
 			 ENDP  ; |?GetRetryCount@CSDHostContainer@@SAKXZ|, CSDHostContainer::GetRetryCount
 
 	EXPORT	|?GetHostContainer@CSDHostContainer@@SAPAV1@XZ| ; CSDHostContainer::GetHostContainer
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41374| DCD	|$LN5@GetHostCon|
+|$T41376| DCD	|$LN5@GetHostCon|
 	DCD	0x40000400
 ; Function compile flags: /Ogspy
 
@@ -825,14 +825,14 @@
 ; 207  :     static CSDHostContainer * GetHostContainer () { return g_pSdContainer; };
 
   00000		 |$LN5@GetHostCon|
-  00000		 |$M41371|
+  00000		 |$M41373|
   00000	e59f3004	 ldr         r3, [pc, #4]
   00004	e5930000	 ldr         r0, [r3]
   00008	e12fff1e	 bx          lr
   0000c		 |$LN6@GetHostCon|
   0000c		 |$LN7@GetHostCon|
   0000c	00000000	 DCD         |?g_pSdContainer@CSDHostContainer@@0PAV1@A|
-  00010		 |$M41372|
+  00010		 |$M41374|
 
 			 ENDP  ; |?GetHostContainer@CSDHostContainer@@SAPAV1@XZ|, CSDHostContainer::GetHostContainer
 
@@ -840,7 +840,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41387| DCD	|$LN5@SetDeviceT|
+|$T41389| DCD	|$LN5@SetDeviceT|
 	DCD	0x40000300
 ; Function compile flags: /Ogspy
 
@@ -851,18 +851,18 @@
 ; 133  :     SDCARD_DEVICE_TYPE SetDeviceType(SDCARD_DEVICE_TYPE deviceType) { return m_DeviceType = deviceType; };
 
   00000		 |$LN5@SetDeviceT|
-  00000		 |$M41384|
+  00000		 |$M41386|
   00000	e5801494	 str         r1, [r0, #0x494]
   00004	e1a00001	 mov         r0, r1
   00008	e12fff1e	 bx          lr
-  0000c		 |$M41385|
+  0000c		 |$M41387|
 
 			 ENDP  ; |?SetDeviceType@CSDDevice@@QAA?AW4_SDCARD_DEVICE_TYPE@@W42@@Z|, CSDDevice::SetDeviceType
 
 	EXPORT	|?SendSDAppCommand@CSDDevice@@IAAJEKW4_SD_RESPONSE_TYPE@@PAU_SD_COMMAND_RESPONSE@@@Z| ; CSDDevice::SendSDAppCommand
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41400| DCD	|$LN5@SendSDAppC|
+|$T41402| DCD	|$LN5@SendSDAppC|
 	DCD	0x40001202
 ; Function compile flags: /Ogspy
 
@@ -875,7 +875,7 @@
   00000		 |$LN5@SendSDAppC|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd014	 sub         sp, sp, #0x14
-  00008		 |$M41397|
+  00008		 |$M41399|
   00008	e1a06003	 mov         r6, r3
 
 ; 222  :         return SendSDAppCmd( AppCommand, Argument, SD_COMMAND, ResponseType,pResponse,0,0,0);
@@ -898,14 +898,14 @@
   0003c	e28dd014	 add         sp, sp, #0x14
   00040	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   00044	e12fff1e	 bx          lr
-  00048		 |$M41398|
+  00048		 |$M41400|
 
 			 ENDP  ; |?SendSDAppCommand@CSDDevice@@IAAJEKW4_SD_RESPONSE_TYPE@@PAU_SD_COMMAND_RESPONSE@@@Z|, CSDDevice::SendSDAppCommand
 
 	EXPORT	|?SendSDCommand@CSDDevice@@IAAJEKW4_SD_RESPONSE_TYPE@@PAU_SD_COMMAND_RESPONSE@@@Z| ; CSDDevice::SendSDCommand
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41413| DCD	|$LN5@SendSDComm|
+|$T41415| DCD	|$LN5@SendSDComm|
 	DCD	0x40001602
 ; Function compile flags: /Ogspy
 
@@ -918,7 +918,7 @@
   00000		 |$LN5@SendSDComm|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd020	 sub         sp, sp, #0x20
-  00008		 |$M41410|
+  00008		 |$M41412|
   00008	e1a06003	 mov         r6, r3
 
 ; 225  :         return SDSynchronousBusRequest_I(Command,Argument,SD_COMMAND,ResponseType,pResponse,0,0,NULL,(DWORD)SD_SLOTRESET_REQUEST);
@@ -945,14 +945,14 @@
   0004c	e28dd020	 add         sp, sp, #0x20
   00050	e8bd41f0	 ldmia       sp!, {r4 - r8, lr}
   00054	e12fff1e	 bx          lr
-  00058		 |$M41411|
+  00058		 |$M41413|
 
 			 ENDP  ; |?SendSDCommand@CSDDevice@@IAAJEKW4_SD_RESPONSE_TYPE@@PAU_SD_COMMAND_RESPONSE@@@Z|, CSDDevice::SendSDCommand
 
 	EXPORT	|?GetRelativeAddress@CSDDevice@@IAAGXZ|	; CSDDevice::GetRelativeAddress
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41423| DCD	|$LN5@GetRelativ|
+|$T41425| DCD	|$LN5@GetRelativ|
 	DCD	0x40000300
 ; Function compile flags: /Ogspy
 
@@ -963,11 +963,11 @@
 ; 228  :     SD_CARD_RCA GetRelativeAddress() { return m_RelativeAddress; };
 
   00000		 |$LN5@GetRelativ|
-  00000		 |$M41420|
+  00000		 |$M41422|
   00000	e2803e4a	 add         r3, r0, #0x4A, 28
   00004	e1d300b0	 ldrh        r0, [r3]
   00008	e12fff1e	 bx          lr
-  0000c		 |$M41421|
+  0000c		 |$M41423|
 
 			 ENDP  ; |?GetRelativeAddress@CSDDevice@@IAAGXZ|, CSDDevice::GetRelativeAddress
 
@@ -975,7 +975,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41434| DCD	|$LN7@SDSyncRequ|
+|$T41436| DCD	|$LN7@SDSyncRequ|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.hpp
@@ -988,7 +988,7 @@
 
   00000		 |$LN7@SDSyncRequ|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M41431|
+  00004		 |$M41433|
 
 ; 240  :         BOOL fResult = SetEvent((HANDLE)BusRequestParam);
 
@@ -1001,7 +1001,7 @@
 
   00010	e49de004	 ldr         lr, [sp], #4
   00014	e12fff1e	 bx          lr
-  00018		 |$M41432|
+  00018		 |$M41434|
 
 			 ENDP  ; |?SDSyncRequestCallback@CSDDevice@@KAXPAXPAU_SD_BUS_REQUEST@@0K@Z|, CSDDevice::SDSyncRequestCallback
 
@@ -1009,7 +1009,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdslot.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41444| DCD	|$LN5@GetHost|
+|$T41446| DCD	|$LN5@GetHost|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -1020,17 +1020,17 @@
 ; 99   :     CSDHost&    GetHost() { return m_SdHost; };
 
   00000		 |$LN5@GetHost|
-  00000		 |$M41441|
+  00000		 |$M41443|
   00000	e590007c	 ldr         r0, [r0, #0x7C]
   00004	e12fff1e	 bx          lr
-  00008		 |$M41442|
+  00008		 |$M41444|
 
 			 ENDP  ; |?GetHost@CSDSlot@@QAAAAVCSDHost@@XZ|, CSDSlot::GetHost
 
 	EXPORT	|?GetSlotIndex@CSDSlot@@QAAKXZ|		; CSDSlot::GetSlotIndex
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41454| DCD	|$LN5@GetSlotInd|
+|$T41456| DCD	|$LN5@GetSlotInd|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -1041,17 +1041,17 @@
 ; 106  :     DWORD   GetSlotIndex() { return m_dwSlotIndex; };
 
   00000		 |$LN5@GetSlotInd|
-  00000		 |$M41451|
+  00000		 |$M41453|
   00000	e5900080	 ldr         r0, [r0, #0x80]
   00004	e12fff1e	 bx          lr
-  00008		 |$M41452|
+  00008		 |$M41454|
 
 			 ENDP  ; |?GetSlotIndex@CSDSlot@@QAAKXZ|, CSDSlot::GetSlotIndex
 
 	EXPORT	|?GetSlotState@CSDSlot@@QAA?AW4__SD_SLOT_STATE@@XZ| ; CSDSlot::GetSlotState
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41464| DCD	|$LN5@GetSlotSta|
+|$T41466| DCD	|$LN5@GetSlotSta|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -1062,10 +1062,10 @@
 ; 109  :     SD_SLOT_STATE   GetSlotState() { return m_SlotState; };
 
   00000		 |$LN5@GetSlotSta|
-  00000		 |$M41461|
+  00000		 |$M41463|
   00000	e5900084	 ldr         r0, [r0, #0x84]
   00004	e12fff1e	 bx          lr
-  00008		 |$M41462|
+  00008		 |$M41464|
 
 			 ENDP  ; |?GetSlotState@CSDSlot@@QAA?AW4__SD_SLOT_STATE@@XZ|, CSDSlot::GetSlotState
 
@@ -1073,7 +1073,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41487| DCD	|$LN15@GetFunctio|
+|$T41489| DCD	|$LN15@GetFunctio|
 	DCD	0x40001401
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdslot.hpp
@@ -1086,7 +1086,7 @@
 
   00000		 |$LN15@GetFunctio|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M41484|
+  00004		 |$M41486|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -1134,14 +1134,14 @@
   00044	e1a00004	 mov         r0, r4
   00048	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0004c	e12fff1e	 bx          lr
-  00050		 |$M41485|
+  00050		 |$M41487|
 
 			 ENDP  ; |?GetFunctionDevice@CSDSlot@@QAAPAVCSDDevice@@K@Z|, CSDSlot::GetFunctionDevice
 
 	EXPORT	|?GetSlotPowerControl@CSDSlot@@QAAHXZ|	; CSDSlot::GetSlotPowerControl
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41497| DCD	|$LN5@GetSlotPow|
+|$T41499| DCD	|$LN5@GetSlotPow|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -1152,10 +1152,10 @@
 ; 168  :     BOOL    GetSlotPowerControl() { return m_fEnablePowerControl; };
 
   00000		 |$LN5@GetSlotPow|
-  00000		 |$M41494|
+  00000		 |$M41496|
   00000	e59000ac	 ldr         r0, [r0, #0xAC]
   00004	e12fff1e	 bx          lr
-  00008		 |$M41495|
+  00008		 |$M41497|
 
 			 ENDP  ; |?GetSlotPowerControl@CSDSlot@@QAAHXZ|, CSDSlot::GetSlotPowerControl
 
@@ -1163,7 +1163,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbus.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41518| DCD	|$LN9@SDSetSlotP|
+|$T41520| DCD	|$LN9@SDSetSlotP|
 	DCD	0x40001304
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdslot.hpp
@@ -1179,7 +1179,7 @@
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5030	 stmdb       sp!, {r4, r5, r12, lr}
   0000c	e24dd004	 sub         sp, sp, #4
-  00010		 |$M41515|
+  00010		 |$M41517|
 
 ; 184  :         return m_SdHost.SlotOptionHandler(m_dwSlotIndex,SDHCDSetSlotPower,&(Setting),sizeof(Setting));
 
@@ -1201,7 +1201,7 @@
   00040	e28dd004	 add         sp, sp, #4
   00044	e89d6030	 ldmia       sp, {r4, r5, sp, lr}
   00048	e12fff1e	 bx          lr
-  0004c		 |$M41516|
+  0004c		 |$M41518|
 
 			 ENDP  ; |?SDSetSlotPower@CSDSlot@@IAAJK@Z|, CSDSlot::SDSetSlotPower
 
@@ -1209,7 +1209,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbusreq.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41530| DCD	|$LN9@IsComplete|
+|$T41532| DCD	|$LN9@IsComplete|
 	DCD	0x40001301
 ; Function compile flags: /Ogspy
 
@@ -1221,7 +1221,7 @@
 
   00000		 |$LN9@IsComplete|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M41527|
+  00004		 |$M41529|
 
 ; 100  :         if (m_pChildListNext) 
 
@@ -1264,14 +1264,14 @@
 
   00044	e49de004	 ldr         lr, [sp], #4
   00048	e12fff1e	 bx          lr
-  0004c		 |$M41528|
+  0004c		 |$M41530|
 
 			 ENDP  ; |?IsComplete@CSDBusRequest@@QAAHXZ|, CSDBusRequest::IsComplete
 
 	EXPORT	|?AddRef@CSDBusRequest@@QAAKXZ|		; CSDBusRequest::AddRef
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41540| DCD	|$LN5@AddRef@2|
+|$T41542| DCD	|$LN5@AddRef@2|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -1283,7 +1283,7 @@
 
   00000		 |$LN5@AddRef@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M41537|
+  00004		 |$M41539|
 
 ; 108  :         return (DWORD)InterlockedIncrement(&m_lRefCount);
 
@@ -1294,14 +1294,14 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M41538|
+  00014		 |$M41540|
 
 			 ENDP  ; |?AddRef@CSDBusRequest@@QAAKXZ|, CSDBusRequest::AddRef
 
 	EXPORT	|?DeRef@CSDBusRequest@@QAAKXZ|		; CSDBusRequest::DeRef
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41555| DCD	|$LN8@DeRef@2|
+|$T41557| DCD	|$LN8@DeRef@2|
 	DCD	0x40001101
 ; Function compile flags: /Ogspy
 
@@ -1313,7 +1313,7 @@
 
   00000		 |$LN8@DeRef@2|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M41552|
+  00004		 |$M41554|
   00004	e1a04000	 mov         r4, r0
 
 ; 111  :         LONG lReturn = InterlockedDecrement(&m_lRefCount);
@@ -1346,14 +1346,14 @@
   00038	e1a00005	 mov         r0, r5
   0003c	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00040	e12fff1e	 bx          lr
-  00044		 |$M41553|
+  00044		 |$M41555|
 
 			 ENDP  ; |?DeRef@CSDBusRequest@@QAAKXZ|, CSDBusRequest::DeRef
 
 	EXPORT	|?GetChildListNext@CSDBusRequest@@QAAPAV1@XZ| ; CSDBusRequest::GetChildListNext
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41565| DCD	|$LN5@GetChildLi|
+|$T41567| DCD	|$LN5@GetChildLi|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -1364,17 +1364,17 @@
 ; 139  :     CSDBusRequest * GetChildListNext() { return m_pChildListNext; };
 
   00000		 |$LN5@GetChildLi|
-  00000		 |$M41562|
+  00000		 |$M41564|
   00000	e5900070	 ldr         r0, [r0, #0x70]
   00004	e12fff1e	 bx          lr
-  00008		 |$M41563|
+  00008		 |$M41565|
 
 			 ENDP  ; |?GetChildListNext@CSDBusRequest@@QAAPAV1@XZ|, CSDBusRequest::GetChildListNext
 
 	EXPORT	|?GetRequestRandomIndex@CSDBusRequest@@QAAKXZ| ; CSDBusRequest::GetRequestRandomIndex
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41575| DCD	|$LN5@GetRequest|
+|$T41577| DCD	|$LN5@GetRequest|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -1385,10 +1385,10 @@
 ; 140  :     DWORD   GetRequestRandomIndex() { return m_dwRequestIndex; };
 
   00000		 |$LN5@GetRequest|
-  00000		 |$M41572|
+  00000		 |$M41574|
   00000	e5900078	 ldr         r0, [r0, #0x78]
   00004	e12fff1e	 bx          lr
-  00008		 |$M41573|
+  00008		 |$M41575|
 
 			 ENDP  ; |?GetRequestRandomIndex@CSDBusRequest@@QAAKXZ|, CSDBusRequest::GetRequestRandomIndex
 
@@ -1396,7 +1396,7 @@
 	IMPORT	|?CheckForCompletion@CSDBusRequest@@IAAHXZ| ; CSDBusRequest::CheckForCompletion
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41588| DCD	|$LN7@CompleteBu|
+|$T41590| DCD	|$LN7@CompleteBu|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -1408,7 +1408,7 @@
 
   00000		 |$LN7@CompleteBu|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M41585|
+  00004		 |$M41587|
 
 ; 147  :         // Note the response should be updaed by SDHC.
 ; 148  :         Status  = SdStatus;
@@ -1427,14 +1427,14 @@
 
   00020	e49de004	 ldr         lr, [sp], #4
   00024	e12fff1e	 bx          lr
-  00028		 |$M41586|
+  00028		 |$M41588|
 
 			 ENDP  ; |?CompleteBusRequest@CSDBusRequest@@QAAHJ@Z|, CSDBusRequest::CompleteBusRequest
 
 	EXPORT	|?GetFirstFailedStatus@CSDBusRequest@@QAAJXZ| ; CSDBusRequest::GetFirstFailedStatus
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41603| DCD	|$LN12@GetFirstFa|
+|$T41605| DCD	|$LN12@GetFirstFa|
 	DCD	0x40000b00
 ; Function compile flags: /Ogspy
 
@@ -1445,7 +1445,7 @@
 ; 158  :     SD_API_STATUS GetFirstFailedStatus() {
 
   00000		 |$LN12@GetFirstFa|
-  00000		 |$M41600|
+  00000		 |$M41602|
 
 ; 159  :         if (SD_API_SUCCESS(Status) && m_pChildListNext!=NULL )
 
@@ -1473,7 +1473,7 @@
 ; 163  :     }
 
   00028	e12fff1e	 bx          lr
-  0002c		 |$M41601|
+  0002c		 |$M41603|
 
 			 ENDP  ; |?GetFirstFailedStatus@CSDBusRequest@@QAAJXZ|, CSDBusRequest::GetFirstFailedStatus
 
@@ -1481,7 +1481,7 @@
 	IMPORT	|InterlockedExchange|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41615| DCD	|$LN7@TerminateL|
+|$T41617| DCD	|$LN7@TerminateL|
 	DCD	0x40000f01
 ; Function compile flags: /Ogspy
 
@@ -1493,7 +1493,7 @@
 
   00000		 |$LN7@TerminateL|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M41612|
+  00004		 |$M41614|
   00004	e1a04000	 mov         r4, r0
 
 ; 165  :         CSDBusRequest * pCur = (CSDBusRequest *)InterlockedExchange((LONG *)&m_pChildListNext,(LONG)NULL);
@@ -1530,14 +1530,14 @@
 
   00034	e8bd4010	 ldmia       sp!, {r4, lr}
   00038	e12fff1e	 bx          lr
-  0003c		 |$M41613|
+  0003c		 |$M41615|
 
 			 ENDP  ; |?TerminateLink@CSDBusRequest@@QAAHXZ|, CSDBusRequest::TerminateLink
 
 	EXPORT	|?SetExternalHandle@CSDBusRequest@@QAAPAXPAX@Z| ; CSDBusRequest::SetExternalHandle
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41626| DCD	|$LN5@SetExterna|
+|$T41628| DCD	|$LN5@SetExterna|
 	DCD	0x40000300
 ; Function compile flags: /Ogspy
 
@@ -1548,11 +1548,11 @@
 ; 175  :     HANDLE SetExternalHandle(HANDLE hHandle) { return (m_ExternalHandle=hHandle); };
 
   00000		 |$LN5@SetExterna|
-  00000		 |$M41623|
+  00000		 |$M41625|
   00000	e5801074	 str         r1, [r0, #0x74]
   00004	e1a00001	 mov         r0, r1
   00008	e12fff1e	 bx          lr
-  0000c		 |$M41624|
+  0000c		 |$M41626|
 
 			 ENDP  ; |?SetExternalHandle@CSDBusRequest@@QAAPAXPAX@Z|, CSDBusRequest::SetExternalHandle
 
@@ -1561,7 +1561,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41637| DCD	|$LN6@Init|
+|$T41639| DCD	|$LN6@Init|
 	DCD	0x40001101
 ; Function compile flags: /Ogspy
 
@@ -1573,7 +1573,7 @@
 
   00000		 |$LN6@Init|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M41634|
+  00004		 |$M41636|
   00004	e1a04000	 mov         r4, r0
 
 ; 92   :     if (!m_hSyncEvent)
@@ -1611,14 +1611,14 @@
 
   0003c	e8bd4010	 ldmia       sp!, {r4, lr}
   00040	e12fff1e	 bx          lr
-  00044		 |$M41635|
+  00044		 |$M41637|
 
 			 ENDP  ; |?Init@CSDDevice@@UAAHXZ|, CSDDevice::Init
 
 	EXPORT	|?Attach@CSDDevice@@UAAHXZ|		; CSDDevice::Attach
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41647| DCD	|$LN5@Attach|
+|$T41649| DCD	|$LN5@Attach|
 	DCD	0x40000400
 ; Function compile flags: /Ogspy
 
@@ -1629,7 +1629,7 @@
 ; 99   : {
 
   00000		 |$LN5@Attach|
-  00000		 |$M41644|
+  00000		 |$M41646|
 
 ; 100  :     m_fAttached = TRUE;
 
@@ -1643,7 +1643,7 @@
 ; 102  : }
 
   0000c	e12fff1e	 bx          lr
-  00010		 |$M41645|
+  00010		 |$M41647|
 
 			 ENDP  ; |?Attach@CSDDevice@@UAAHXZ|, CSDDevice::Attach
 
@@ -1651,7 +1651,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdslot.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41672| DCD	|$LN14@GetDeviceH@2|
+|$T41674| DCD	|$LN14@GetDeviceH@2|
 	DCD	0x40001f01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.cpp
@@ -1664,7 +1664,7 @@
 
   00000		 |$LN14@GetDeviceH@2|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M41669|
+  00004		 |$M41671|
 
 ; 132  :     SDBUS_DEVICE_HANDLE retHandle ;
 ; 133  :     if (m_fAttached) {
@@ -1725,7 +1725,7 @@
   00070	e1a00001	 mov         r0, r1
   00074	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00078	e12fff1e	 bx          lr
-  0007c		 |$M41670|
+  0007c		 |$M41672|
 
 			 ENDP  ; |?GetDeviceHandle@CSDDevice@@QAA?AT__SDBUS_DEVICE_HANDLE@@XZ|, CSDDevice::GetDeviceHandle
 
@@ -1736,17 +1736,17 @@
 	IMPORT	|__security_check_cookie|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41693| DCD	|$LN12@IsValid20C|
+|$T41695| DCD	|$LN12@IsValid20C|
 	DCD	0xc0002602
 
   00000			 AREA	 |.xdata|, DATA
-|$T41689| DCD	0xfffffff0
+|$T41691| DCD	0xfffffff0
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T41689|
+  00004	00000000	 DCD         |$T41691|
 
   00008		 |?IsValid20Card@CSDDevice@@IAAHXZ| PROC ; CSDDevice::IsValid20Card
 
@@ -1755,7 +1755,7 @@
   00008		 |$LN12@IsValid20C|
   00008	e92d4030	 stmdb       sp!, {r4, r5, lr}
   0000c	e24dd020	 sub         sp, sp, #0x20
-  00010		 |$M41690|
+  00010		 |$M41692|
   00010	e59f3084	 ldr         r3, [pc, #0x84]
   00014	e5933000	 ldr         r3, [r3]
   00018	e58d301c	 str         r3, [sp, #0x1C]
@@ -1838,7 +1838,7 @@
   0009c		 |$LN13@IsValid20C|
   0009c		 |$LN14@IsValid20C|
   0009c	00000000	 DCD         |__security_cookie|
-  000a0		 |$M41691|
+  000a0		 |$M41693|
 
 			 ENDP  ; |?IsValid20Card@CSDDevice@@IAAHXZ|, CSDDevice::IsValid20Card
 
@@ -1846,7 +1846,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41721| DCD	|$LN23@InsertRequ|
+|$T41723| DCD	|$LN23@InsertRequ|
 	DCD	0x40002d01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.cpp
@@ -1859,7 +1859,7 @@
 
   00000		 |$LN23@InsertRequ|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M41718|
+  00004		 |$M41720|
   00004	e1b06002	 movs        r6, r2
   00008	e1a07001	 mov         r7, r1
   0000c	e1a04000	 mov         r4, r0
@@ -1966,7 +1966,7 @@
   000a8	e1a00005	 mov         r0, r5
   000ac	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   000b0	e12fff1e	 bx          lr
-  000b4		 |$M41719|
+  000b4		 |$M41721|
 
 			 ENDP  ; |?InsertRequestAtEmpty@CSDDevice@@IAAPAVCSDBusRequest@@PAKPAV2@@Z|, CSDDevice::InsertRequestAtEmpty
 
@@ -1975,18 +1975,18 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41743| DCD	|$LN20@Deactivate|
+|$T41745| DCD	|$LN20@Deactivate|
 	DCD	0xc0005202
 
   00000			 AREA	 |.xdata|, DATA
-|$T41739| DCD	0xffffffe0
+|$T41741| DCD	0xffffffe0
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.cpp
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T41739|
+  00004	00000000	 DCD         |$T41741|
 
   00008		 |?DeactivateCardDetect@CSDDevice@@QAAJXZ| PROC ; CSDDevice::DeactivateCardDetect
 
@@ -1995,7 +1995,7 @@
   00008		 |$LN20@Deactivate|
   00008	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   0000c	e24dd034	 sub         sp, sp, #0x34
-  00010		 |$M41740|
+  00010		 |$M41742|
   00010	e1a07000	 mov         r7, r0
   00014	e59f3130	 ldr         r3, [pc, #0x130]
   00018	e5933000	 ldr         r3, [r3]
@@ -2192,7 +2192,7 @@
   0014c		 |$LN21@Deactivate|
   0014c		 |$LN22@Deactivate|
   0014c	00000000	 DCD         |__security_cookie|
-  00150		 |$M41741|
+  00150		 |$M41743|
 
 			 ENDP  ; |?DeactivateCardDetect@CSDDevice@@QAAJXZ|, CSDDevice::DeactivateCardDetect
 
@@ -2200,7 +2200,7 @@
 	IMPORT	|memcpy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41759| DCD	|$LN15@UpdateCach|
+|$T41761| DCD	|$LN15@UpdateCach|
 	DCD	0x40002901
 ; Function compile flags: /Ogspy
 
@@ -2212,7 +2212,7 @@
 
   00000		 |$LN15@UpdateCach|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M41756|
+  00004		 |$M41758|
   00004	e1a0e002	 mov         lr, r2
   00008	e3510000	 cmp         r1, #0
 
@@ -2328,7 +2328,7 @@
 
   0009c	e49de004	 ldr         lr, [sp], #4
   000a0	e12fff1e	 bx          lr
-  000a4		 |$M41757|
+  000a4		 |$M41759|
 
 			 ENDP  ; |?UpdateCachedRegisterFromResponse@CSDDevice@@IAAXW4SD_INFO_TYPE@@PAU_SD_COMMAND_RESPONSE@@@Z|, CSDDevice::UpdateCachedRegisterFromResponse
 
@@ -2342,11 +2342,11 @@
 	IMPORT	|__rt_udiv|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41823| DCD	|$LN60@SetCardPow|
+|$T41825| DCD	|$LN60@SetCardPow|
 	DCD	0xc0008502
 
   00000			 AREA	 |.xdata|, DATA
-|$T41819| DCD	0xffffffd8
+|$T41821| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1CG@DOEKGKEL@?$AAP?$AAo?$AAw?$AAe?$AAr?$AAU?$AAp?$AAP?$AAo?$AAl?$AAl?$AAi?$AAn?$AAg?$AAT?$AAi?$AAm?$AAe?$AA?$AA@| DCB "P"
@@ -2366,7 +2366,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T41819|
+  00004	00000000	 DCD         |$T41821|
 
   00008		 |?SetCardPower@CSDDevice@@IAAJW4_SDCARD_DEVICE_TYPE@@KH@Z| PROC ; CSDDevice::SetCardPower
 
@@ -2375,7 +2375,7 @@
   00008		 |$LN60@SetCardPow|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24dd038	 sub         sp, sp, #0x38
-  00010		 |$M41820|
+  00010		 |$M41822|
   00010	e1a06001	 mov         r6, r1
   00014	e58d6018	 str         r6, [sp, #0x18]
   00018	e1a08002	 mov         r8, r2
@@ -2735,7 +2735,7 @@
   00214	00000000	 DCD         |??_C@_1CG@DOEKGKEL@?$AAP?$AAo?$AAw?$AAe?$AAr?$AAU?$AAp?$AAP?$AAo?$AAl?$AAl?$AAi?$AAn?$AAg?$AAT?$AAi?$AAm?$AAe?$AA?$AA@|
   00218		 |$LN64@SetCardPow|
   00218	00000000	 DCD         |__security_cookie|
-  0021c		 |$M41821|
+  0021c		 |$M41823|
 
 			 ENDP  ; |?SetCardPower@CSDDevice@@IAAJW4_SDCARD_DEVICE_TYPE@@KH@Z|, CSDDevice::SetCardPower
 
@@ -2750,11 +2750,11 @@
 	IMPORT	|StringCchPrintfW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41862| DCD	|$LN34@GetCustomR|
+|$T41864| DCD	|$LN34@GetCustomR|
 	DCD	0xc000ac02
 
   00000			 AREA	 |.xdata|, DATA
-|$T41858| DCD	0xffffffd8
+|$T41860| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1DE@IKOGLCHN@?$AA?$CF?$AAs?$AA?2?$AAC?$AAI?$AAD?$AA?9?$AA?$CF?$AAd?$AA?9?$AA?$CF?$AAs?$AA?$CF?$AAs?$AA?9?$AA?$CF?$AAs?$AA?$CF?$AAs?$AA?$CF?$AAs?$AA?$CF?$AAs?$AA?$CF?$AAs?$AA?$AA@| DCB "%"
@@ -2802,7 +2802,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T41858|
+  00004	00000000	 DCD         |$T41860|
 
   00008		 |?GetCustomRegPath@CSDDevice@@IAAJPAGKH@Z| PROC ; CSDDevice::GetCustomRegPath
 
@@ -2811,7 +2811,7 @@
   00008		 |$LN34@GetCustomR|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24dd088	 sub         sp, sp, #0x88
-  00010		 |$M41859|
+  00010		 |$M41861|
   00010	e1a04001	 mov         r4, r1
   00014	e58d4020	 str         r4, [sp, #0x20]
   00018	e1a0b002	 mov         r11, r2
@@ -3175,7 +3175,7 @@
   002b0	00000000	 DCD         |??_C@_1DC@IGHBEOGB@?$AA?$CF?$AAs?$AA?2?$AAM?$AAA?$AAN?$AAF?$AA?9?$AA?$CF?$AA0?$AA4?$AAX?$AA?9?$AAC?$AAA?$AAR?$AAD?$AAI?$AAD?$AA?9?$AA?$CF?$AA0?$AA4?$AAX?$AA?$AA@|
   002b4		 |$LN42@GetCustomR|
   002b4	00000000	 DCD         |__security_cookie|
-  002b8		 |$M41860|
+  002b8		 |$M41862|
 
 			 ENDP  ; |?GetCustomRegPath@CSDDevice@@IAAJPAGKH@Z|, CSDDevice::GetCustomRegPath
 
@@ -3199,11 +3199,11 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41956| DCD	|$LN66@SDLoadDevi|
+|$T41958| DCD	|$LN66@SDLoadDevi|
 	DCD	0xc000e302
 
   00000			 AREA	 |.xdata|, DATA
-|$T41952| DCD	0xffffffd8
+|$T41954| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1CK@NJIGGLHH@?$AAW?$AAa?$AAk?$AAe?$AAO?$AAn?$AAS?$AAD?$AAI?$AAO?$AAI?$AAn?$AAt?$AAe?$AAr?$AAr?$AAu?$AAp?$AAt?$AAs?$AA?$AA@| DCB "W"
@@ -3266,7 +3266,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T41952|
+  00004	00000000	 DCD         |$T41954|
 
   00008		 |?SDLoadDevice@CSDDevice@@QAAJXZ| PROC	; CSDDevice::SDLoadDevice
 
@@ -3275,7 +3275,7 @@
   00008		 |$LN66@SDLoadDevi|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24ddf8f	 sub         sp, sp, #0x8F, 30
-  00010		 |$M41953|
+  00010		 |$M41955|
   00010	e1a07000	 mov         r7, r0
   00014	e59f3374	 ldr         r3, [pc, #0x374]
   00018	e5933000	 ldr         r3, [r3]
@@ -3773,7 +3773,7 @@
   0038c	00000000	 DCD         |??_C@_1FM@FFGGNHKA@?$AA?2?$AAD?$AAr?$AAi?$AAv?$AAe?$AAr?$AAs?$AA?2?$AAS?$AAD?$AAC?$AAA?$AAR?$AAD?$AA?2?$AAC?$AAl?$AAi?$AAe?$AAn?$AAt?$AAD?$AAr?$AAi?$AAv?$AAe?$AAr?$AAs?$AA?2?$AAC?$AAl@|
   00390		 |$LN76@SDLoadDevi|
   00390	00000000	 DCD         |__security_cookie|
-  00394		 |$M41954|
+  00394		 |$M41956|
 
 			 ENDP  ; |?SDLoadDevice@CSDDevice@@QAAJXZ|, CSDDevice::SDLoadDevice
 
@@ -3785,15 +3785,15 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42000| DCD	|$LN28@RegisterCl|
+|$T42002| DCD	|$LN28@RegisterCl|
 	DCD	0xc0003904
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42002| DCD	|$LN13@RegisterCl|
+|$T42004| DCD	|$LN13@RegisterCl|
 	DCD	0x40000301
 
   00000			 AREA	 |.xdata|, DATA
-|$T41998| DCD	0x1
+|$T42000| DCD	0x1
 	DCD	|$LN17@RegisterCl|
 	DCD	|$LN18@RegisterCl|
 	DCD	|$LN13@RegisterCl|
@@ -3804,7 +3804,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T41998|
+  00004	00000000	 DCD         |$T42000|
 
   00008		 |?RegisterClient@CSDDevice@@QAAJPAX0PAU_SDCARD_CLIENT_REGISTRATION_INFO@@@Z| PROC ; CSDDevice::RegisterClient
 
@@ -3982,17 +3982,17 @@
 	EXPORT	|?SetupWakeupSupport@CSDDevice@@QAAXXZ|	; CSDDevice::SetupWakeupSupport
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42019| DCD	|$LN8@SetupWakeu|
+|$T42021| DCD	|$LN8@SetupWakeu|
 	DCD	0xc0002d02
 
   00000			 AREA	 |.xdata|, DATA
-|$T42015| DCD	0xffffffe8
+|$T42017| DCD	0xffffffe8
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T42015|
+  00004	00000000	 DCD         |$T42017|
 
   00008		 |?SetupWakeupSupport@CSDDevice@@QAAXXZ| PROC ; CSDDevice::SetupWakeupSupport
 
@@ -4001,7 +4001,7 @@
   00008		 |$LN8@SetupWakeu|
   00008	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   0000c	e24ddf43	 sub         sp, sp, #0x43, 30
-  00010		 |$M42016|
+  00010		 |$M42018|
   00010	e1a06000	 mov         r6, r0
   00014	e59f309c	 ldr         r3, [pc, #0x9C]
   00018	e5933000	 ldr         r3, [r3]
@@ -4079,7 +4079,7 @@
   000b8		 |$LN9@SetupWakeu|
   000b8		 |$LN10@SetupWakeu|
   000b8	00000000	 DCD         |__security_cookie|
-  000bc		 |$M42017|
+  000bc		 |$M42019|
 
 			 ENDP  ; |?SetupWakeupSupport@CSDDevice@@QAAXXZ|, CSDDevice::SetupWakeupSupport
 
@@ -4087,7 +4087,7 @@
 	IMPORT	|strlen|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42035| DCD	|$LN12@FormatProd|
+|$T42037| DCD	|$LN12@FormatProd|
 	DCD	0x40002001
 ; Function compile flags: /Ogspy
 
@@ -4099,7 +4099,7 @@
 
   00000		 |$LN12@FormatProd|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M42032|
+  00004		 |$M42034|
   00004	e1a06002	 mov         r6, r2
   00008	e1a07001	 mov         r7, r1
 
@@ -4168,7 +4168,7 @@
 
   00078	e8bd41f0	 ldmia       sp!, {r4 - r8, lr}
   0007c	e12fff1e	 bx          lr
-  00080		 |$M42033|
+  00080		 |$M42035|
 
 			 ENDP  ; |?FormatProductString@CSDDevice@@IBAXPADPAG@Z|, CSDDevice::FormatProductString
 
@@ -4176,7 +4176,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42078| DCD	|$LN27@SendSDAppC@2|
+|$T42080| DCD	|$LN27@SendSDAppC@2|
 	DCD	0x40007b02
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.cpp
@@ -4190,7 +4190,7 @@
   00000		 |$LN27@SendSDAppC@2|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd030	 sub         sp, sp, #0x30
-  00008		 |$M42075|
+  00008		 |$M42077|
   00008	e1a07003	 mov         r7, r3
   0000c	e1a08002	 mov         r8, r2
   00010	e58d7024	 str         r7, [sp, #0x24]
@@ -4434,14 +4434,14 @@
   001e8		 |$LN28@SendSDAppC@2|
   001e8		 |$LN29@SendSDAppC@2|
   001e8	00000000	 DCD         |?g_pSdContainer@CSDHostContainer@@0PAV1@A|
-  001ec		 |$M42076|
+  001ec		 |$M42078|
 
 			 ENDP  ; |?SendSDAppCmd@CSDDevice@@MAAJEKW4SD_TRANSFER_CLASS@@W4_SD_RESPONSE_TYPE@@PAU_SD_COMMAND_RESPONSE@@KKPAE@Z|, CSDDevice::SendSDAppCmd
 
 	EXPORT	|?CopyContentFromParent@CSDDevice@@QAAXAAV1@@Z| ; CSDDevice::CopyContentFromParent
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42089| DCD	|$LN5@CopyConten|
+|$T42091| DCD	|$LN5@CopyConten|
 	DCD	0x40001001
 ; Function compile flags: /Ogspy
 
@@ -4453,7 +4453,7 @@
 
   00000		 |$LN5@CopyConten|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M42086|
+  00004		 |$M42088|
   00004	e1a04000	 mov         r4, r0
 
 ; 2154 :     m_RelativeAddress = psdDevice0.m_RelativeAddress;
@@ -4480,7 +4480,7 @@
 
   00038	e8bd4010	 ldmia       sp!, {r4, lr}
   0003c	e12fff1e	 bx          lr
-  00040		 |$M42087|
+  00040		 |$M42089|
 
 			 ENDP  ; |?CopyContentFromParent@CSDDevice@@QAAXAAV1@@Z|, CSDDevice::CopyContentFromParent
 
@@ -4489,15 +4489,15 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42119| DCD	|$LN28@NotifyClie|
+|$T42121| DCD	|$LN28@NotifyClie|
 	DCD	0xc0003e05
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42121| DCD	|$LN13@NotifyClie|
+|$T42123| DCD	|$LN13@NotifyClie|
 	DCD	0x40000602
 
   00000			 AREA	 |.xdata|, DATA
-|$T42117| DCD	0x1
+|$T42119| DCD	0x1
 	DCD	|$LN17@NotifyClie|
 	DCD	|$LN18@NotifyClie|
 	DCD	|$LN13@NotifyClie|
@@ -4508,7 +4508,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T42117|
+  00004	00000000	 DCD         |$T42119|
 
   00008		 |?NotifyClient@CSDDevice@@QAAXW4_SD_SLOT_EVENT_TYPE@@@Z| PROC ; CSDDevice::NotifyClient
 
@@ -4679,15 +4679,15 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42230| DCD	|$LN76@SDReadWrit|
+|$T42232| DCD	|$LN76@SDReadWrit|
 	DCD	0xc000ed05
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42232| DCD	|$LN35@SDReadWrit|
+|$T42234| DCD	|$LN35@SDReadWrit|
 	DCD	0x40000702
 
   00000			 AREA	 |.xdata|, DATA
-|$T42228| DCD	0x1
+|$T42230| DCD	0x1
 	DCD	|$LN39@SDReadWrit|
 	DCD	|$LN40@SDReadWrit|
 	DCD	|$LN35@SDReadWrit|
@@ -4699,7 +4699,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck_SEH|
-  00004	00000000	 DCD         |$T42228|
+  00004	00000000	 DCD         |$T42230|
 
   00008		 |?SDReadWriteRegistersDirect_I@CSDDevice@@UAAJW4SD_IO_TRANSFER_TYPE@@KEPAEK@Z| PROC ; CSDDevice::SDReadWriteRegistersDirect_I
 
@@ -5192,18 +5192,18 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbus.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42299| DCD	|$LN42@TestCardBu|
+|$T42301| DCD	|$LN42@TestCardBu|
 	DCD	0xc0007f02
 
   00000			 AREA	 |.xdata|, DATA
-|$T42295| DCD	0xffffffd8
+|$T42297| DCD	0xffffffd8
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.cpp
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T42295|
+  00004	00000000	 DCD         |$T42297|
 
   00008		 |?TestCardBusWidth@CSDDevice@@IAAJPAU_SD_CARD_INTERFACE@@PAE@Z| PROC ; CSDDevice::TestCardBusWidth
 
@@ -5212,7 +5212,7 @@
   00008		 |$LN42@TestCardBu|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24ddf8f	 sub         sp, sp, #0x8F, 30
-  00010		 |$M42296|
+  00010		 |$M42298|
   00010	e1a09002	 mov         r9, r2
   00014	e1a08001	 mov         r8, r1
   00018	e1a07000	 mov         r7, r0
@@ -5259,7 +5259,7 @@
 ; 2366 : 
 ; 2367 : cleanup:
 
-  00060	ea00004a	 b           |$cleanup$39714|
+  00060	ea00004a	 b           |$cleanup$39716|
   00064		 |$LN17@TestCardBu|
   00064	e3a037ee	 mov         r3, #0xEE, 14
   00068	e2432cfe	 sub         r2, r3, #0xFE, 24
@@ -5318,7 +5318,7 @@
 
 ; 2329 : 		if (!SD_API_SUCCESS(status)) {
 
-  000cc	4a00002f	 bmi         |$cleanup$39714|
+  000cc	4a00002f	 bmi         |$cleanup$39716|
 
 ; 2337 : 		goto cleanup;
 ; 2338 : 		break;
@@ -5343,7 +5343,7 @@
 
 ; 2343 :     if (!SD_API_SUCCESS(status)) {
 
-  00104	4a000021	 bmi         |$cleanup$39714|
+  00104	4a000021	 bmi         |$cleanup$39716|
 
 ; 2344 :         DEBUGMSG(SDCARD_ZONE_ERROR, (_T("TestCardBusWidth: error updating card interface\r\n")));
 ; 2345 : 		goto cleanup;
@@ -5410,10 +5410,10 @@
 
 ; 2364 : 	else
 
-  00188	ea000000	 b           |$cleanup$39714|
+  00188	ea000000	 b           |$cleanup$39716|
   0018c		 |$LN38@TestCardBu|
   0018c	e3a0600c	 mov         r6, #0xC
-  00190		 |$cleanup$39714|
+  00190		 |$cleanup$39716|
 
 ; 2368 : 	SendSDCommand( SD_CMD_SWITCH_FUNCTION,EMMC_SWITCH2_1BITSBUS_ARGUMENT, ResponseR1b, &response);
 
@@ -5461,7 +5461,7 @@
   00200		 |$LN43@TestCardBu|
   00200		 |$LN44@TestCardBu|
   00200	00000000	 DCD         |__security_cookie|
-  00204		 |$M42297|
+  00204		 |$M42299|
 
 			 ENDP  ; |?TestCardBusWidth@CSDDevice@@IAAJPAU_SD_CARD_INTERFACE@@PAE@Z|, CSDDevice::TestCardBusWidth
 
@@ -5471,11 +5471,11 @@
 	IMPORT	|NKDbgPrintfW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42328| DCD	|$LN16@GetCardBus|
+|$T42330| DCD	|$LN16@GetCardBus|
 	DCD	0xc0004802
 
   00000			 AREA	 |.xdata|, DATA
-|$T42324| DCD	0xffffffd8
+|$T42326| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1IE@DBGDJCBF@?$AAG?$AAe?$AAt?$AAC?$AAa?$AAr?$AAd?$AAB?$AAu?$AAs?$AAW?$AAi?$AAd?$AAt?$AAh?$AAC?$AAa?$AAp?$AAa?$AAb?$AAi?$AAl?$AAi?$AAt?$AAy?$AA?3?$AA?5?$AAc?$AAo?$AAu?$AAl?$AAd@| DCB "G"
@@ -5495,7 +5495,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T42324|
+  00004	00000000	 DCD         |$T42326|
 
   00008		 |?GetCardBusWidthCapability@CSDDevice@@IAAJPAK@Z| PROC ; CSDDevice::GetCardBusWidthCapability
 
@@ -5504,7 +5504,7 @@
   00008		 |$LN16@GetCardBus|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24ddf92	 sub         sp, sp, #0x92, 30
-  00010		 |$M42325|
+  00010		 |$M42327|
   00010	e1a08001	 mov         r8, r1
   00014	e1a09000	 mov         r9, r0
   00018	e59f3104	 ldr         r3, [pc, #0x104]
@@ -5667,7 +5667,7 @@
   00120	00000000	 DCD         |??_C@_1IE@DBGDJCBF@?$AAG?$AAe?$AAt?$AAC?$AAa?$AAr?$AAd?$AAB?$AAu?$AAs?$AAW?$AAi?$AAd?$AAt?$AAh?$AAC?$AAa?$AAp?$AAa?$AAb?$AAi?$AAl?$AAi?$AAt?$AAy?$AA?3?$AA?5?$AAc?$AAo?$AAu?$AAl?$AAd@|
   00124		 |$LN19@GetCardBus|
   00124	00000000	 DCD         |__security_cookie|
-  00128		 |$M42326|
+  00128		 |$M42328|
 
 			 ENDP  ; |?GetCardBusWidthCapability@CSDDevice@@IAAJPAK@Z|, CSDDevice::GetCardBusWidthCapability
 
@@ -5677,15 +5677,15 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42426| DCD	|$LN60@SDSynchron|
+|$T42428| DCD	|$LN60@SDSynchron|
 	DCD	0xc000b604
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42428| DCD	|$LN26@SDSynchron|
+|$T42430| DCD	|$LN26@SDSynchron|
 	DCD	0x40000702
 
   00000			 AREA	 |.xdata|, DATA
-|$T42424| DCD	0x1
+|$T42426| DCD	0x1
 	DCD	|$LN30@SDSynchron|
 	DCD	|$LN31@SDSynchron|
 	DCD	|$LN26@SDSynchron|
@@ -5697,7 +5697,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck_SEH|
-  00004	00000000	 DCD         |$T42424|
+  00004	00000000	 DCD         |$T42426|
 
   00008		 |?SDSynchronousBusRequest_I@CSDDevice@@UAAJEKW4SD_TRANSFER_CLASS@@W4_SD_RESPONSE_TYPE@@PAU_SD_COMMAND_RESPONSE@@KKPAEKKPAU__PHYS_BUFF_LIST@@@Z| PROC ; CSDDevice::SDSynchronousBusRequest_I
 
@@ -6084,15 +6084,15 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42541| DCD	|$LN64@SDBusReque|
+|$T42543| DCD	|$LN64@SDBusReque|
 	DCD	0xc000b604
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42543| DCD	|$LN22@SDBusReque|
+|$T42545| DCD	|$LN22@SDBusReque|
 	DCD	0x40000602
 
   00000			 AREA	 |.xdata|, DATA
-|$T42539| DCD	0x1
+|$T42541| DCD	0x1
 	DCD	|$LN26@SDBusReque|
 	DCD	|$LN27@SDBusReque|
 	DCD	|$LN22@SDBusReque|
@@ -6104,7 +6104,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck_SEH|
-  00004	00000000	 DCD         |$T42539|
+  00004	00000000	 DCD         |$T42541|
 
   00008		 |?SDBusRequest_I@CSDDevice@@UAAJEKW4SD_TRANSFER_CLASS@@W4_SD_RESPONSE_TYPE@@KKPAEP6AXPAXPAU_SD_BUS_REQUEST@@3K@ZKPAPAXKKPAU__PHYS_BUFF_LIST@@@Z| PROC ; CSDDevice::SDBusRequest_I
 
@@ -6505,15 +6505,15 @@
 	EXPORT	|?HandleDeviceInterrupt@CSDDevice@@UAAXXZ| ; CSDDevice::HandleDeviceInterrupt
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42572| DCD	|$LN20@HandleDevi|
+|$T42574| DCD	|$LN20@HandleDevi|
 	DCD	0xc0002704
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42574| DCD	|$LN9@HandleDevi|
+|$T42576| DCD	|$LN9@HandleDevi|
 	DCD	0x40000602
 
   00000			 AREA	 |.xdata|, DATA
-|$T42570| DCD	0x1
+|$T42572| DCD	0x1
 	DCD	|$LN13@HandleDevi|
 	DCD	|$LN14@HandleDevi|
 	DCD	|$LN9@HandleDevi|
@@ -6523,7 +6523,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T42570|
+  00004	00000000	 DCD         |$T42572|
 
   00008		 |?HandleDeviceInterrupt@CSDDevice@@UAAXXZ| PROC ; CSDDevice::HandleDeviceInterrupt
 
@@ -6655,7 +6655,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42604| DCD	|$LN25@SDIOConnec|
+|$T42606| DCD	|$LN25@SDIOConnec|
 	DCD	0x40004c02
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.cpp
@@ -6669,7 +6669,7 @@
   00000		 |$LN25@SDIOConnec|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M42601|
+  00008		 |$M42603|
   00008	e1a04002	 mov         r4, r2
   0000c	e1a05001	 mov         r5, r1
   00010	e1a06000	 mov         r6, r0
@@ -6888,14 +6888,14 @@
   00124	e28dd00c	 add         sp, sp, #0xC
   00128	e8bd43f0	 ldmia       sp!, {r4 - r9, lr}
   0012c	e12fff1e	 bx          lr
-  00130		 |$M42602|
+  00130		 |$M42604|
 
 			 ENDP  ; |?SDIOConnectDisconnectInterrupt@CSDDevice@@UAAJP6AJPAX0@ZH@Z|, CSDDevice::SDIOConnectDisconnectInterrupt
 
 	EXPORT	|?SwapByte@CSDDevice@@IAAXPAEK@Z|	; CSDDevice::SwapByte
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42618| DCD	|$LN10@SwapByte|
+|$T42620| DCD	|$LN10@SwapByte|
 	DCD	0x40001401
 ; Function compile flags: /Ogspy
 
@@ -6907,7 +6907,7 @@
 
   00000		 |$LN10@SwapByte|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M42615|
+  00004		 |$M42617|
   00004	e3510000	 cmp         r1, #0
 
 ; 2907 :     ASSERT(pPtr!=NULL);
@@ -6961,7 +6961,7 @@
 
   00048	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0004c	e12fff1e	 bx          lr
-  00050		 |$M42616|
+  00050		 |$M42618|
 
 			 ENDP  ; |?SwapByte@CSDDevice@@IAAXPAEK@Z|, CSDDevice::SwapByte
 
@@ -6969,7 +6969,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42634| DCD	|$LN12@CStaticCon|
+|$T42636| DCD	|$LN12@CStaticCon|
 	DCD	0x40001101
 ; Function compile flags: /Ogspy
 ; File c:\wince600\public\common\oak\inc\crefcon.h
@@ -6982,7 +6982,7 @@
 
   00000		 |$LN12@CStaticCon|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M42631|
+  00004		 |$M42633|
   00004	e1a04000	 mov         r4, r0
   00008	eb000000	 bl          InitializeCriticalSection
 
@@ -7015,7 +7015,7 @@
   00038	e1a00004	 mov         r0, r4
   0003c	e8bd4010	 ldmia       sp!, {r4, lr}
   00040	e12fff1e	 bx          lr
-  00044		 |$M42632|
+  00044		 |$M42634|
 
 			 ENDP  ; |??0?$CStaticContainer@VCSDBusRequest@@$0BAA@@@QAA@XZ|, CStaticContainer<CSDBusRequest,256>::CStaticContainer<CSDBusRequest,256>
 
@@ -7023,7 +7023,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42659| DCD	|$LN19@CStaticCon@2|
+|$T42661| DCD	|$LN19@CStaticCon@2|
 	DCD	0x40001a01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\public\common\oak\inc\crefcon.h
@@ -7036,7 +7036,7 @@
 
   00000		 |$LN19@CStaticCon@2|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M42656|
+  00004		 |$M42658|
   00004	e1a04000	 mov         r4, r0
 
 ; 74   :         Lock();
@@ -7089,7 +7089,7 @@
   0005c	eb000000	 bl          DeleteCriticalSection
   00060	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00064	e12fff1e	 bx          lr
-  00068		 |$M42657|
+  00068		 |$M42659|
 
 			 ENDP  ; |??1?$CStaticContainer@VCSDBusRequest@@$0BAA@@@QAA@XZ|, CStaticContainer<CSDBusRequest,256>::~CStaticContainer<CSDBusRequest,256>
 
@@ -7097,7 +7097,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42682| DCD	|$LN14@ObjectInde|
+|$T42684| DCD	|$LN14@ObjectInde|
 	DCD	0x40001101
 ; Function compile flags: /Ogspy
 ; File c:\wince600\public\common\oak\inc\crefcon.h
@@ -7110,7 +7110,7 @@
 
   00000		 |$LN14@ObjectInde|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M42679|
+  00004		 |$M42681|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -7151,7 +7151,7 @@
   00038	e1a00004	 mov         r0, r4
   0003c	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00040	e12fff1e	 bx          lr
-  00044		 |$M42680|
+  00044		 |$M42682|
 
 			 ENDP  ; |?ObjectIndex@?$CStaticContainer@VCSDBusRequest@@$0BAA@@@QAAPAVCSDBusRequest@@K@Z|, CStaticContainer<CSDBusRequest,256>::ObjectIndex
 
@@ -7159,7 +7159,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42700| DCD	|$LN11@RemoveObje|
+|$T42702| DCD	|$LN11@RemoveObje|
 	DCD	0x40001301
 ; Function compile flags: /Ogspy
 ; File c:\wince600\public\common\oak\inc\crefcon.h
@@ -7172,7 +7172,7 @@
 
   00000		 |$LN11@RemoveObje|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M42697|
+  00004		 |$M42699|
   00004	e1a06001	 mov         r6, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -7217,14 +7217,14 @@
   00040	e1a00004	 mov         r0, r4
   00044	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00048	e12fff1e	 bx          lr
-  0004c		 |$M42698|
+  0004c		 |$M42700|
 
 			 ENDP  ; |?RemoveObjectBy@?$CStaticContainer@VCSDBusRequest@@$0BAA@@@QAAPAVCSDBusRequest@@K@Z|, CStaticContainer<CSDBusRequest,256>::RemoveObjectBy
 
 	EXPORT	|?RawObjectIndex@?$CStaticContainer@VCSDBusRequest@@$0BAA@@@QAAPAVCSDBusRequest@@K@Z| ; CStaticContainer<CSDBusRequest,256>::RawObjectIndex
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42713| DCD	|$LN7@RawObjectI|
+|$T42715| DCD	|$LN7@RawObjectI|
 	DCD	0x40000600
 ; Function compile flags: /Ogspy
 
@@ -7235,7 +7235,7 @@
 ; 199  :     {
 
   00000		 |$LN7@RawObjectI|
-  00000		 |$M42710|
+  00000		 |$M42712|
 
 ; 200  :         // This is only should be usded during suspend & resume.
 ; 201  :         return ( dwIndex < m_dwArraySize ? m_rgObjectArray[dwIndex] : NULL );
@@ -7249,7 +7249,7 @@
 ; 202  :     }
 
   00014	e12fff1e	 bx          lr
-  00018		 |$M42711|
+  00018		 |$M42713|
 
 			 ENDP  ; |?RawObjectIndex@?$CStaticContainer@VCSDBusRequest@@$0BAA@@@QAAPAVCSDBusRequest@@K@Z|, CStaticContainer<CSDBusRequest,256>::RawObjectIndex
 
@@ -7257,7 +7257,7 @@
 ; File c:\wince600\public\common\sdk\inc\creg.hxx
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42732| DCD	|$LN10@Open|
+|$T42734| DCD	|$LN10@Open|
 	DCD	0x40001a02
 ; Function compile flags: /Ogspy
 
@@ -7270,7 +7270,7 @@
   00000		 |$LN10@Open|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M42729|
+  00008		 |$M42731|
   00008	e1a05003	 mov         r5, r3
   0000c	e1a06002	 mov         r6, r2
   00010	e1a07001	 mov         r7, r1
@@ -7305,14 +7305,14 @@
   0005c	e28dd004	 add         sp, sp, #4
   00060	e8bd41f0	 ldmia       sp!, {r4 - r8, lr}
   00064	e12fff1e	 bx          lr
-  00068		 |$M42730|
+  00068		 |$M42732|
 
 			 ENDP  ; |?Open@CReg@@QAAHPAUHKEY__@@PBGK@Z|, CReg::Open
 
 	EXPORT	|??0CReg@@QAA@PAUHKEY__@@PBG@Z|		; CReg::CReg
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42747| DCD	|$LN7@CReg@2|
+|$T42749| DCD	|$LN7@CReg@2|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -7324,7 +7324,7 @@
 
   00000		 |$LN7@CReg@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M42744|
+  00004		 |$M42746|
   00004	e1a04000	 mov         r4, r0
   00008	e3a03802	 mov         r3, #2, 16
 
@@ -7344,7 +7344,7 @@
   00028	e1a00004	 mov         r0, r4
   0002c	e8bd4010	 ldmia       sp!, {r4, lr}
   00030	e12fff1e	 bx          lr
-  00034		 |$M42745|
+  00034		 |$M42747|
 
 			 ENDP  ; |??0CReg@@QAA@PAUHKEY__@@PBG@Z|, CReg::CReg
 
@@ -7361,7 +7361,7 @@
 ; File c:\wince600\public\common\oak\inc\crefcon.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42762| DCD	|$LN7@CSDDevice|
+|$T42764| DCD	|$LN7@CSDDevice|
 	DCD	0x40003a01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -7391,7 +7391,7 @@
 
   00000		 |$LN7@CSDDevice|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M42759|
+  00004		 |$M42761|
   00004	e1a04002	 mov         r4, r2
   00008	e1a06001	 mov         r6, r1
   0000c	e1a07000	 mov         r7, r0
@@ -7494,7 +7494,7 @@
   000e0	00000000	 DCD         |??_7CSDDevice@@6B@|
   000e4		 |$LN11@CSDDevice|
   000e4	00000000	 DCD         |??_7CRefObject@@6B@|
-  000e8		 |$M42760|
+  000e8		 |$M42762|
 
 			 ENDP  ; |??0CSDDevice@@QAA@KAAVCSDSlot@@@Z|, CSDDevice::CSDDevice
 
@@ -7503,17 +7503,17 @@
 	IMPORT	|?GetBitSlice@CSDDevice@@IAAKPAEKKE@Z|	; CSDDevice::GetBitSlice
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42827| DCD	|$LN61@GetCardReg|
+|$T42829| DCD	|$LN61@GetCardReg|
 	DCD	0xc000bf02
 
   00000			 AREA	 |.xdata|, DATA
-|$T42823| DCD	0xffffffe0
+|$T42825| DCD	0xffffffe0
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T42823|
+  00004	00000000	 DCD         |$T42825|
 
   00008		 |?GetCardRegisters@CSDDevice@@QAAJXZ| PROC ; CSDDevice::GetCardRegisters
 
@@ -7522,7 +7522,7 @@
   00008		 |$LN61@GetCardReg|
   00008	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   0000c	e24dd038	 sub         sp, sp, #0x38
-  00010		 |$M42824|
+  00010		 |$M42826|
   00010	e1a07000	 mov         r7, r0
   00014	e59f32e4	 ldr         r3, [pc, #0x2E4]
   00018	e5933000	 ldr         r3, [r3]
@@ -7951,7 +7951,7 @@
   00300		 |$LN62@GetCardReg|
   00300		 |$LN63@GetCardReg|
   00300	00000000	 DCD         |__security_cookie|
-  00304		 |$M42825|
+  00304		 |$M42827|
 
 			 ENDP  ; |?GetCardRegisters@CSDDevice@@QAAJXZ|, CSDDevice::GetCardRegisters
 
@@ -7959,17 +7959,17 @@
 	EXPORT	|?HandleDeviceSelectDeselect@CSDDevice@@QAAJW4_SD_SLOT_EVENT@@H@Z| ; CSDDevice::HandleDeviceSelectDeselect
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42861| DCD	|$LN43@HandleDevi@2|
+|$T42863| DCD	|$LN43@HandleDevi@2|
 	DCD	0xc000d702
 
   00000			 AREA	 |.xdata|, DATA
-|$T42857| DCD	0xffffffd8
+|$T42859| DCD	0xffffffd8
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T42857|
+  00004	00000000	 DCD         |$T42859|
 
   00008		 |?HandleDeviceSelectDeselect@CSDDevice@@QAAJW4_SD_SLOT_EVENT@@H@Z| PROC ; CSDDevice::HandleDeviceSelectDeselect
 
@@ -7978,7 +7978,7 @@
   00008		 |$LN43@HandleDevi@2|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24dd040	 sub         sp, sp, #0x40
-  00010		 |$M42858|
+  00010		 |$M42860|
   00010	e1a07000	 mov         r7, r0
   00014	e59f3344	 ldr         r3, [pc, #0x344]
   00018	e5933000	 ldr         r3, [r3]
@@ -8411,7 +8411,7 @@
   00360		 |$LN44@HandleDevi@2|
   00360		 |$LN45@HandleDevi@2|
   00360	00000000	 DCD         |__security_cookie|
-  00364		 |$M42859|
+  00364		 |$M42861|
 
 			 ENDP  ; |?HandleDeviceSelectDeselect@CSDDevice@@QAAJW4_SD_SLOT_EVENT@@H@Z|, CSDDevice::HandleDeviceSelectDeselect
 
@@ -8419,7 +8419,7 @@
 	IMPORT	|?SDGetOperationalVoltageRange@CSDSlot@@IAAKK@Z| ; CSDSlot::SDGetOperationalVoltageRange
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42879| DCD	|$LN14@SetOperati|
+|$T42881| DCD	|$LN14@SetOperati|
 	DCD	0x40002502
 ; Function compile flags: /Ogspy
 
@@ -8432,7 +8432,7 @@
   00000		 |$LN14@SetOperati|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M42876|
+  00008		 |$M42878|
   00008	e1b06002	 movs        r6, r2
   0000c	e1a07001	 mov         r7, r1
   00010	e1a04000	 mov         r4, r0
@@ -8517,7 +8517,7 @@
   00088	e28dd004	 add         sp, sp, #4
   0008c	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   00090	e12fff1e	 bx          lr
-  00094		 |$M42877|
+  00094		 |$M42879|
 
 			 ENDP  ; |?SetOperationVoltage@CSDDevice@@QAAJW4_SDCARD_DEVICE_TYPE@@H@Z|, CSDDevice::SetOperationVoltage
 
@@ -8528,11 +8528,11 @@
 ; File c:\wince600\public\common\sdk\inc\creg.hxx
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42917| DCD	|$LN26@GetInterfa@3|
+|$T42919| DCD	|$LN26@GetInterfa@3|
 	DCD	0xc0004002
 
   00000			 AREA	 |.xdata|, DATA
-|$T42913| DCD	0xffffffe8
+|$T42915| DCD	0xffffffe8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1CI@MGGPKLHN@?$AAS?$AAD?$AAI?$AAn?$AAt?$AAe?$AAr?$AAf?$AAa?$AAc?$AAe?$AAO?$AAv?$AAe?$AAr?$AAr?$AAi?$AAd?$AAe?$AA?$AA@| DCB "S"
@@ -8553,7 +8553,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T42913|
+  00004	00000000	 DCD         |$T42915|
 
   00008		 |?GetInterfaceOverrides@CSDDevice@@IAAXXZ| PROC ; CSDDevice::GetInterfaceOverrides
 
@@ -8562,7 +8562,7 @@
   00008		 |$LN26@GetInterfa@3|
   00008	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   0000c	e24ddf85	 sub         sp, sp, #0x85, 30
-  00010		 |$M42914|
+  00010		 |$M42916|
   00010	e1a04000	 mov         r4, r0
   00014	e59f30e8	 ldr         r3, [pc, #0xE8]
   00018	e5933000	 ldr         r3, [r3]
@@ -8687,7 +8687,7 @@
   00100	00000000	 DCD         |??_C@_1CI@GEDDMCFF@?$AAS?$AAD?$AAC?$AAl?$AAo?$AAc?$AAk?$AAR?$AAa?$AAt?$AAe?$AAO?$AAv?$AAe?$AAr?$AAr?$AAi?$AAd?$AAe?$AA?$AA@|
   00104		 |$LN30@GetInterfa@3|
   00104	00000000	 DCD         |__security_cookie|
-  00108		 |$M42915|
+  00108		 |$M42917|
 
 			 ENDP  ; |?GetInterfaceOverrides@CSDDevice@@IAAXXZ|, CSDDevice::GetInterfaceOverrides
 
@@ -8695,7 +8695,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42943| DCD	|$LN13@SDUnloadDe|
+|$T42945| DCD	|$LN13@SDUnloadDe|
 	DCD	0x40001c01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.cpp
@@ -8708,7 +8708,7 @@
 
   00000		 |$LN13@SDUnloadDe|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M42940|
+  00004		 |$M42942|
   00004	e1a04000	 mov         r4, r0
 
 ; 1606 :     // notify the client
@@ -8774,7 +8774,7 @@
   0006c		 |$LN14@SDUnloadDe|
   0006c		 |$LN15@SDUnloadDe|
   0006c	00000000	 DCD         |?g_pSdContainer@CSDHostContainer@@0PAV1@A|
-  00070		 |$M42941|
+  00070		 |$M42943|
 
 			 ENDP  ; |?SDUnloadDevice@CSDDevice@@QAAHXZ|, CSDDevice::SDUnloadDevice
 
@@ -8787,11 +8787,11 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdslot.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42991| DCD	|$LN39@SDGetSDIOP|
+|$T42993| DCD	|$LN39@SDGetSDIOP|
 	DCD	0xc0015f02
 
   00000			 AREA	 |.xdata|, DATA
-|$T42987| DCD	0xffffffe0
+|$T42989| DCD	0xffffffe0
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1DC@GIMPIHDB@?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AA?5?$AAo?$AAf?$AA?5?$AAC?$AAl?$AAa?$AAs?$AAs?$AA?5?$AAT?$AAy?$AAp?$AAe?$AA?3?$AA?5?$AA?$CF?$AAd?$AA?$AA@| DCB "D"
@@ -8816,7 +8816,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T42987|
+  00004	00000000	 DCD         |$T42989|
 
   00008		 |?SDGetSDIOPnpInformation@CSDDevice@@QAAJAAV1@@Z| PROC ; CSDDevice::SDGetSDIOPnpInformation
 
@@ -8825,7 +8825,7 @@
   00008		 |$LN39@SDGetSDIOP|
   00008	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   0000c	e24dd020	 sub         sp, sp, #0x20
-  00010		 |$M42988|
+  00010		 |$M42990|
   00010	e1a06001	 mov         r6, r1
   00014	e1a07000	 mov         r7, r0
   00018	e59f3560	 ldr         r3, [pc, #0x560]
@@ -9636,7 +9636,7 @@
   0057c	00000000	 DCD         |??_C@_1EO@GLAKDDC@?$AAM?$AAa?$AAn?$AAu?$AAf?$AAa?$AAc?$AAt?$AAu?$AAr?$AAe?$AAr?$AA?5?$AAI?$AAD?$AA?3?$AA0?$AAx?$AA?$CF?$AA0?$AA4?$AAX?$AA?0?$AA?5?$AAC?$AAa?$AAr?$AAd?$AA?5?$AAI?$AAD?$AA?3@|
   00580		 |$LN43@SDGetSDIOP|
   00580	00000000	 DCD         |__security_cookie|
-  00584		 |$M42989|
+  00584		 |$M42991|
 
 			 ENDP  ; |?SDGetSDIOPnpInformation@CSDDevice@@QAAJAAV1@@Z|, CSDDevice::SDGetSDIOPnpInformation
 
@@ -9644,7 +9644,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbusreq.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43017| DCD	|$LN19@SDFreeBusR|
+|$T43019| DCD	|$LN19@SDFreeBusR|
 	DCD	0x40002401
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.cpp
@@ -9657,7 +9657,7 @@
 
   00000		 |$LN19@SDFreeBusR|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M43014|
+  00004		 |$M43016|
   00004	e1b04001	 movs        r4, r1
   00008	e1a06000	 mov         r6, r0
 
@@ -9749,22 +9749,22 @@
 
   00088	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   0008c	e12fff1e	 bx          lr
-  00090		 |$M43015|
+  00090		 |$M43017|
 
 			 ENDP  ; |?SDFreeBusRequest_I@CSDDevice@@UAAXPAX@Z|, CSDDevice::SDFreeBusRequest_I
 
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbusreq.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43047| DCD	|$LN22@SDBusReque@2|
+|$T43049| DCD	|$LN22@SDBusReque@2|
 	DCD	0xc0002a04
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43049| DCD	|$LN8@SDBusReque@2|
+|$T43051| DCD	|$LN8@SDBusReque@2|
 	DCD	0x40000301
 
   00000			 AREA	 |.xdata|, DATA
-|$T43045| DCD	0x1
+|$T43047| DCD	0x1
 	DCD	|$LN12@SDBusReque@2|
 	DCD	|$LN13@SDBusReque@2|
 	DCD	|$LN8@SDBusReque@2|
@@ -9775,7 +9775,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T43045|
+  00004	00000000	 DCD         |$T43047|
 
   00008		 |?SDBusRequestResponse_I@CSDDevice@@UAAJPAXPAU_SD_COMMAND_RESPONSE@@@Z| PROC ; CSDDevice::SDBusRequestResponse_I
 
@@ -9891,7 +9891,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbusreq.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43077| DCD	|$LN17@SDCancelBu|
+|$T43079| DCD	|$LN17@SDCancelBu|
 	DCD	0x40002201
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.cpp
@@ -9904,7 +9904,7 @@
 
   00000		 |$LN17@SDCancelBu|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M43074|
+  00004		 |$M43076|
   00004	e1b06001	 movs        r6, r1
   00008	e1a07000	 mov         r7, r0
 
@@ -9988,7 +9988,7 @@
   0007c	e1a00004	 mov         r0, r4
   00080	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   00084	e12fff1e	 bx          lr
-  00088		 |$M43075|
+  00088		 |$M43077|
 
 			 ENDP  ; |?SDCancelBusRequest_I@CSDDevice@@UAAHPAX@Z|, CSDDevice::SDCancelBusRequest_I
 
@@ -9999,18 +9999,18 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43120| DCD	|$LN43@SwitchFunc|
+|$T43122| DCD	|$LN43@SwitchFunc|
 	DCD	0xc0012e02
 
   00000			 AREA	 |.xdata|, DATA
-|$T43116| DCD	0xffffffd8
+|$T43118| DCD	0xffffffd8
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.cpp
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T43116|
+  00004	00000000	 DCD         |$T43118|
 
   00008		 |?SwitchFunction@CSDDevice@@IAAJPAU_SD_CARD_SWITCH_FUNCTION@@H@Z| PROC ; CSDDevice::SwitchFunction
 
@@ -10019,7 +10019,7 @@
   00008		 |$LN43@SwitchFunc|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24dd084	 sub         sp, sp, #0x84
-  00010		 |$M43117|
+  00010		 |$M43119|
   00010	e1a06002	 mov         r6, r2
   00014	e1a08001	 mov         r8, r1
   00018	e1a07000	 mov         r7, r0
@@ -10546,14 +10546,14 @@
   004bc		 |$LN44@SwitchFunc|
   004bc		 |$LN45@SwitchFunc|
   004bc	00000000	 DCD         |__security_cookie|
-  004c0		 |$M43118|
+  004c0		 |$M43120|
 
 			 ENDP  ; |?SwitchFunction@CSDDevice@@IAAJPAU_SD_CARD_SWITCH_FUNCTION@@H@Z|, CSDDevice::SwitchFunction
 
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43174| DCD	|$LN28@Detach|
+|$T43176| DCD	|$LN28@Detach|
 	DCD	0x40004702
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.cpp
@@ -10567,7 +10567,7 @@
   00000		 |$LN28@Detach|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M43171|
+  00008		 |$M43173|
   00008	e1a04000	 mov         r4, r0
 
 ; 106  :     Lock();
@@ -10689,7 +10689,7 @@
   00110	e28dd004	 add         sp, sp, #4
   00114	e8bd43f0	 ldmia       sp!, {r4 - r9, lr}
   00118	e12fff1e	 bx          lr
-  0011c		 |$M43172|
+  0011c		 |$M43174|
 
 			 ENDP  ; |?Detach@CSDDevice@@UAAHXZ|, CSDDevice::Detach
 
@@ -10698,18 +10698,18 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43260| DCD	|$LN82@DetectSDCa|
+|$T43262| DCD	|$LN82@DetectSDCa|
 	DCD	0xc000ac02
 
   00000			 AREA	 |.xdata|, DATA
-|$T43256| DCD	0xffffffe0
+|$T43258| DCD	0xffffffe0
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.cpp
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T43256|
+  00004	00000000	 DCD         |$T43258|
 
   00008		 |?DetectSDCard@CSDDevice@@QAAJAAK@Z| PROC ; CSDDevice::DetectSDCard
 
@@ -10718,7 +10718,7 @@
   00008		 |$LN82@DetectSDCa|
   00008	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   0000c	e24dd030	 sub         sp, sp, #0x30
-  00010		 |$M43257|
+  00010		 |$M43259|
   00010	e1a05001	 mov         r5, r1
   00014	e1a06000	 mov         r6, r0
   00018	e59f3294	 ldr         r3, [pc, #0x294]
@@ -11075,7 +11075,7 @@
   002b4		 |$LN83@DetectSDCa|
   002b4		 |$LN84@DetectSDCa|
   002b4	00000000	 DCD         |__security_cookie|
-  002b8		 |$M43258|
+  002b8		 |$M43260|
 
 			 ENDP  ; |?DetectSDCard@CSDDevice@@QAAJAAK@Z|, CSDDevice::DetectSDCard
 
@@ -11085,11 +11085,11 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43294| DCD	|$LN53@SetCardInt|
+|$T43296| DCD	|$LN53@SetCardInt|
 	DCD	0xc0011002
 
   00000			 AREA	 |.xdata|, DATA
-|$T43290| DCD	0xffffffe0
+|$T43292| DCD	0xffffffe0
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1IE@PMFOLIBK@?$AA8?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK@| DCB "8"
@@ -11110,7 +11110,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T43290|
+  00004	00000000	 DCD         |$T43292|
 
   00008		 |?SetCardInterface@CSDDevice@@QAAJPAU_SD_CARD_INTERFACE_EX@@@Z| PROC ; CSDDevice::SetCardInterface
 
@@ -11119,7 +11119,7 @@
   00008		 |$LN53@SetCardInt|
   00008	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   0000c	e24dd080	 sub         sp, sp, #0x80
-  00010		 |$M43291|
+  00010		 |$M43293|
   00010	e1b07001	 movs        r7, r1
   00014	e1a06000	 mov         r6, r0
   00018	e59f3424	 ldr         r3, [pc, #0x424]
@@ -11770,7 +11770,7 @@
   00440	00000000	 DCD         |??_C@_1IE@PMFOLIBK@?$AA8?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$CK@|
   00444		 |$LN57@SetCardInt|
   00444	00000000	 DCD         |__security_cookie|
-  00448		 |$M43292|
+  00448		 |$M43294|
 
 			 ENDP  ; |?SetCardInterface@CSDDevice@@QAAJPAU_SD_CARD_INTERFACE_EX@@@Z|, CSDDevice::SetCardInterface
 
@@ -11779,18 +11779,18 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sdbus.hpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43344| DCD	|$LN50@SelectCard|
+|$T43346| DCD	|$LN50@SelectCard|
 	DCD	0xc000c002
 
   00000			 AREA	 |.xdata|, DATA
-|$T43340| DCD	0xffffffec
+|$T43342| DCD	0xffffffec
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.cpp
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T43340|
+  00004	00000000	 DCD         |$T43342|
 
   00008		 |?SelectCardInterface@CSDDevice@@QAAJXZ| PROC ; CSDDevice::SelectCardInterface
 
@@ -11799,7 +11799,7 @@
   00008		 |$LN50@SelectCard|
   00008	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   0000c	e24dd068	 sub         sp, sp, #0x68
-  00010		 |$M43341|
+  00010		 |$M43343|
   00010	e1a05000	 mov         r5, r0
   00014	e59f32e8	 ldr         r3, [pc, #0x2E8]
   00018	e5933000	 ldr         r3, [r3]
@@ -12265,7 +12265,7 @@
   00300	01312d00	 DCD         0x1312d00
   00304		 |$LN55@SelectCard|
   00304	00000000	 DCD         |__security_cookie|
-  00308		 |$M43342|
+  00308		 |$M43344|
 
 			 ENDP  ; |?SelectCardInterface@CSDDevice@@QAAJXZ|, CSDDevice::SelectCardInterface
 
@@ -12274,7 +12274,7 @@
 ; File c:\wince600\public\common\oak\inc\crefcon.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43365| DCD	|$LN12@CSDDevice@2|
+|$T43367| DCD	|$LN12@CSDDevice@2|
 	DCD	0x40001a01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\sdbus\sddevice.cpp
@@ -12287,7 +12287,7 @@
 
   00000		 |$LN12@CSDDevice@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M43362|
+  00004		 |$M43364|
   00004	e1a04000	 mov         r4, r0
   00008	e59f3054	 ldr         r3, [pc, #0x54]
 
@@ -12343,13 +12343,13 @@
   00060	00000000	 DCD         |??_7CRefObject@@6B@|
   00064		 |$LN15@CSDDevice@2|
   00064	00000000	 DCD         |??_7CSDDevice@@6B@|
-  00068		 |$M43363|
+  00068		 |$M43365|
 
 			 ENDP  ; |??1CSDDevice@@UAA@XZ|, CSDDevice::~CSDDevice
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43379| DCD	|$LN6@scalar@2|
+|$T43381| DCD	|$LN6@scalar@2|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -12358,7 +12358,7 @@
   00000		 |??_GCSDDevice@@UAAPAXI@Z| PROC	; CSDDevice::`scalar deleting destructor'
   00000		 |$LN6@scalar@2|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M43376|
+  00004		 |$M43378|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
   0000c	eb000000	 bl          |??1CSDDevice@@UAA@XZ|
@@ -12368,7 +12368,7 @@
   0001c	e1a00005	 mov         r0, r5
   00020	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00024	e12fff1e	 bx          lr
-  00028		 |$M43377|
+  00028		 |$M43379|
 
 			 ENDP  ; |??_GCSDDevice@@UAAPAXI@Z|, CSDDevice::`scalar deleting destructor'
 

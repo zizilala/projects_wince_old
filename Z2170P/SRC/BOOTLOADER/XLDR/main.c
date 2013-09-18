@@ -17,12 +17,13 @@
 //  This file contains X-Loader implementation for OMAP35XX
 //
 #include "bsp.h"
+//
 #pragma warning(push)
 #pragma warning(disable: 4115 4201)
 #include <blcommon.h>
 #include <fmd.h>
 #pragma warning(pop)
-
+//
 #include "sdk_gpio.h"
 #include "oalex.h"
 #define OAL
@@ -84,7 +85,7 @@ extern DEVICE_IFC_GPIO Omap_Gpio;
 //  Global variables
 ROMHDR * volatile const pTOC = (ROMHDR *)-1;
 
-const volatile DWORD dwOEMHighSecurity      = OEM_HIGH_SECURITY_GP;
+const volatile DWORD dwOEMHighSecurity = OEM_HIGH_SECURITY_GP;
 unsigned int  gCPU_family;
 const volatile DWORD dwEbootECCtype = (DWORD)-1;
 UCHAR g_ecctype = 0;
@@ -294,28 +295,28 @@ VOID XLDRMain()
     FlashInfo flashInfo;
     UINT32 size;  
 #endif
-
+//
 #ifdef MEMORY_BOOT
     UINT32 count;
     SECTOR_ADDR ix;
 #endif
-
+//
 #ifdef UART_BOOT
     UINT32 dnld_size, offset;
 
     INT image_block_cnt, nand_blocks_to_write;
     INT xret;
 
-    INT xblock_cnt = 0;
-    INT xack_cnt = 0;
-    INT xnak_cnt = 0;
-    INT xcan_cnt = 0;
+    INT xblock_cnt  = 0;
+    INT xack_cnt    = 0;
+    INT xnak_cnt    = 0;
+    INT xcan_cnt    = 0;
     INT xothers_cnt = 0;
 
     INT checksum_error_cnt = 0;
     INT dup_pkt_cnt = 0;
 #endif
-
+//
     SECTOR_ADDR sector;
     BLOCK_ID block;
     UINT8 *pImage;
@@ -368,7 +369,8 @@ VOID XLDRMain()
         );
 #endif
 #endif
-#ifdef FMD_NAND
+
+#ifdef FMD_NAND        //When doesnot insert SD card, bootstrap from NAND, Ray 13-09-14
 #ifdef MEMORY_BOOT
     XLDRMSG( TEXT("\r\nTexas Instruments Windows CE NAND X-Loader for EVM "));
     XLDRMSG( (UINT16 *)ProcessorName);
@@ -378,6 +380,7 @@ VOID XLDRMain()
         );
 #endif
 #endif
+//
     XLDRMSG(
         TEXT("Version ") BSP_VERSION_STRING TEXT("\r\n")
         );
@@ -412,7 +415,7 @@ VOID XLDRMain()
     }
 
     //  Set NAND XLDR bootsector size
-    size = IMAGE_XLDR_BOOTSEC_NAND_SIZE;
+    size = IMAGE_XLDR_BOOTSEC_NAND_SIZE;        //2^19 = 512K, Ray 13-09-14  
 #endif
 
     // Get flash info
@@ -500,7 +503,8 @@ VOID XLDRMain()
 
     // Jump to image
     JumpTo((VOID*)IMAGE_STARTUP_IMAGE_PA);
-#endif  /* MEMORY_BOOT */
+#endif  /* MEMORY_BOOT */ //The end X-Loader, Ray 13-09-14
+
 #ifdef UART_BOOT
 
 #if defined(UART_DNLD_EBOOT_TO_RAM) || defined(UART_DNLD_RAW_TO_NAND)
@@ -515,7 +519,7 @@ VOID XLDRMain()
 
     // Set address where to place download image
     pImage = (UINT8*)IMAGE_STARTUP_IMAGE_PA;
-
+    //?Ray
 	xret = XReceive(pImage, IMAGE_XLDR_BOOTSEC_NAND_SIZE+IMAGE_EBOOT_CODE_SIZE+IMAGE_BOOTLOADER_BITMAP_SIZE+8, &dnld_size);
 	if(xret < 0)
 	{

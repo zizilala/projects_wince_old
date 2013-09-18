@@ -30,11 +30,11 @@
 ; File c:\wince600\platform\z2170p\src\test\testserial\testserial.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32075| DCD	|$LN14@wmain|
+|$T32077| DCD	|$LN14@wmain|
 	DCD	0xc0006302
 
   00000			 AREA	 |.xdata|, DATA
-|$T32071| DCD	0xffffffe8
+|$T32073| DCD	0xffffffe8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1EE@HLMNFNHG@?$AA?$CI?$AAn?$AAb?$AAW?$AAr?$AAi?$AAt?$AAt?$AAe?$AAn?$AA?5?$AA?$CI?$AA?$CF?$AAd?$AA?$CJ?$AA?5?$AA?$CB?$AA?$DN?$AA?5?$AAn?$AAb?$AAR?$AAe?$AAa?$AAd?$AA?5?$AA?$CI?$AA?$CF?$AAd?$AA?$CJ?$AA?$CJ?$AA?$AN@| DCB "("
@@ -76,7 +76,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T32071|
+  00004	00000000	 DCD         |$T32073|
 
   00008		 |wmain| PROC
 
@@ -85,7 +85,7 @@
   00008		 |$LN14@wmain|
   00008	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   0000c	e24ddf92	 sub         sp, sp, #0x92, 30
-  00010		 |$M32072|
+  00010		 |$M32074|
   00010	e1a05001	 mov         r5, r1
   00014	e1a04000	 mov         r4, r0
   00018	e59f3170	 ldr         r3, [pc, #0x170]
@@ -291,7 +291,7 @@
   0018c	00000000	 DCD         |??_C@_1DC@NBECIGLP@?$AAS?$AAi?$AAm?$AAp?$AAl?$AAe?$AA?5?$AAE?$AAc?$AAh?$AAo?$AA?5?$AAa?$AAp?$AAp?$AAl?$AAi?$AAc?$AAa?$AAt?$AAi?$AAo?$AAn?$AA?6?$AA?$AA@|
   00190		 |$LN20@wmain|
   00190	00000000	 DCD         |__security_cookie|
-  00194		 |$M32073|
+  00194		 |$M32075|
 
 			 ENDP  ; |wmain|
 

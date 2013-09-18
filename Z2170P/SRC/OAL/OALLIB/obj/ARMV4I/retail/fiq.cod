@@ -73,7 +73,7 @@
 ; File c:\wince600\platform\z2170p\src\oal\oallib\fiq.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45390| DCD	|$LN5@OEMInterru|
+|$T45393| DCD	|$LN5@OEMInterru|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -84,12 +84,12 @@
 ; 27   : {
 
   00000		 |$LN5@OEMInterru|
-  00000		 |$M45387|
+  00000		 |$M45390|
 
 ; 28   : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M45388|
+  00004		 |$M45391|
 
 			 ENDP  ; |OEMInterruptHandlerFIQ|
 

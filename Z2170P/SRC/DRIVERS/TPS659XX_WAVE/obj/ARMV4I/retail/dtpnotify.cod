@@ -12,7 +12,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dtpnotify.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32205| DCD	|$LN5@LockList|
+|$T32207| DCD	|$LN5@LockList|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -24,12 +24,12 @@
 
   00000		 |$LN5@LockList|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M32202|
+  00004		 |$M32204|
   00004	e280000c	 add         r0, r0, #0xC
   00008	eb000000	 bl          EnterCriticalSection
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M32203|
+  00014		 |$M32205|
 
 			 ENDP  ; |?LockList@DtpNotify@@AAAXXZ|, DtpNotify::LockList
 
@@ -37,7 +37,7 @@
 	IMPORT	|LeaveCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32213| DCD	|$LN5@UnlockList|
+|$T32215| DCD	|$LN5@UnlockList|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -49,12 +49,12 @@
 
   00000		 |$LN5@UnlockList|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M32210|
+  00004		 |$M32212|
   00004	e280000c	 add         r0, r0, #0xC
   00008	eb000000	 bl          LeaveCriticalSection
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M32211|
+  00014		 |$M32213|
 
 			 ENDP  ; |?UnlockList@DtpNotify@@AAAXXZ|, DtpNotify::UnlockList
 
@@ -65,7 +65,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dtpnotify.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32223| DCD	|$LN5@DtpNotify|
+|$T32225| DCD	|$LN5@DtpNotify|
 	DCD	0x40000c01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -80,7 +80,7 @@
 
   00000		 |$LN5@DtpNotify|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M32220|
+  00004		 |$M32222|
   00004	e1a04000	 mov         r4, r0
   00008	e59f301c	 ldr         r3, [pc, #0x1C]
 
@@ -103,7 +103,7 @@
   0002c		 |$LN6@DtpNotify|
   0002c		 |$LN7@DtpNotify|
   0002c	00000000	 DCD         |??_7DtpNotify@@6B@|
-  00030		 |$M32221|
+  00030		 |$M32223|
 
 			 ENDP  ; |??0DtpNotify@@QAA@XZ|, DtpNotify::DtpNotify
 
@@ -114,7 +114,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dtpnotify.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32250| DCD	|$LN19@RegisterDt|
+|$T32252| DCD	|$LN19@RegisterDt|
 	DCD	0x40003102
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dtpnotify.cpp
@@ -128,7 +128,7 @@
   00000		 |$LN19@RegisterDt|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   00004	e24dd014	 sub         sp, sp, #0x14
-  00008		 |$M32247|
+  00008		 |$M32249|
   00008	e1a06002	 mov         r6, r2
   0000c	e1b08001	 movs        r8, r1
   00010	e1a07000	 mov         r7, r0
@@ -177,7 +177,7 @@
 ; 66   :         mmRet = MMSYSERR_ERROR;
 
   00058	03a04001	 moveq       r4, #1
-  0005c	0a000014	 beq         |$Error$32092|
+  0005c	0a000014	 beq         |$Error$32094|
 
 ; 67   :         goto Error;
 ; 68   :     }
@@ -195,7 +195,7 @@
 ; 75   :         mmRet = MMSYSERR_NOMEM;
 
   0006c	03a04007	 moveq       r4, #7
-  00070	0a00000f	 beq         |$Error$32092|
+  00070	0a00000f	 beq         |$Error$32094|
 
 ; 76   :         goto Error;
 ; 77   :     }
@@ -229,14 +229,14 @@
   000a0	e287000c	 add         r0, r7, #0xC
   000a4	e5812004	 str         r2, [r1, #4]
   000a8	eb000000	 bl          LeaveCriticalSection
-  000ac	ea000000	 b           |$Error$32092|
+  000ac	ea000000	 b           |$Error$32094|
   000b0		 |$LN9@RegisterDt|
 
 ; 53   :     {
 ; 54   :         mmRet = MMSYSERR_INVALPARAM;
 
   000b0	e3a0400b	 mov         r4, #0xB
-  000b4		 |$Error$32092|
+  000b4		 |$Error$32094|
 
 ; 89   : 
 ; 90   : Error:
@@ -248,7 +248,7 @@
   000b8	e28dd014	 add         sp, sp, #0x14
   000bc	e8bd43f0	 ldmia       sp!, {r4 - r9, lr}
   000c0	e12fff1e	 bx          lr
-  000c4		 |$M32248|
+  000c4		 |$M32250|
 
 			 ENDP  ; |?RegisterDtpMsgQueue@DtpNotify@@QAAKPAX0@Z|, DtpNotify::RegisterDtpMsgQueue
 
@@ -258,7 +258,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dtpnotify.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32279| DCD	|$LN24@Unregister|
+|$T32281| DCD	|$LN24@Unregister|
 	DCD	0x40002c01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dtpnotify.cpp
@@ -271,7 +271,7 @@
 
   00000		 |$LN24@Unregister|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
-  00004		 |$M32276|
+  00004		 |$M32278|
   00004	e1a07002	 mov         r7, r2
   00008	e1b0a001	 movs        r10, r1
   0000c	e1a06000	 mov         r6, r0
@@ -405,7 +405,7 @@
   000a4	e1a00004	 mov         r0, r4
   000a8	e8bd47f0	 ldmia       sp!, {r4 - r10, lr}
   000ac	e12fff1e	 bx          lr
-  000b0		 |$M32277|
+  000b0		 |$M32279|
 
 			 ENDP  ; |?UnregisterDtpMsgQueue@DtpNotify@@QAAKPAX0@Z|, DtpNotify::UnregisterDtpMsgQueue
 
@@ -414,7 +414,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dtpnotify.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32300| DCD	|$LN14@SendDtpNot|
+|$T32302| DCD	|$LN14@SendDtpNot|
 	DCD	0x40001b02
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dtpnotify.cpp
@@ -428,7 +428,7 @@
   00000		 |$LN14@SendDtpNot|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M32297|
+  00008		 |$M32299|
   00008	e1a07002	 mov         r7, r2
   0000c	e1a08001	 mov         r8, r1
   00010	e1a05000	 mov         r5, r0
@@ -487,7 +487,7 @@
   00060	e28dd004	 add         sp, sp, #4
   00064	e8bd43f0	 ldmia       sp!, {r4 - r9, lr}
   00068	e12fff1e	 bx          lr
-  0006c		 |$M32298|
+  0006c		 |$M32300|
 
 			 ENDP  ; |?SendDtpNotifications@DtpNotify@@QAAKQAXK@Z|, DtpNotify::SendDtpNotifications
 
@@ -495,7 +495,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dtpnotify.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32322| DCD	|$LN15@DeleteNoti|
+|$T32324| DCD	|$LN15@DeleteNoti|
 	DCD	0x40001501
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\dtpnotify.cpp
@@ -508,7 +508,7 @@
 
   00000		 |$LN15@DeleteNoti|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M32319|
+  00004		 |$M32321|
   00004	e1a04000	 mov         r4, r0
 
 ; 177  :     LockList();
@@ -565,7 +565,7 @@
 
   0004c	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00050	e12fff1e	 bx          lr
-  00054		 |$M32320|
+  00054		 |$M32322|
 
 			 ENDP  ; |?DeleteNotifyList@DtpNotify@@AAAXXZ|, DtpNotify::DeleteNotifyList
 
@@ -573,7 +573,7 @@
 	IMPORT	|DeleteCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32330| DCD	|$LN5@DtpNotify@2|
+|$T32332| DCD	|$LN5@DtpNotify@2|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -585,7 +585,7 @@
 
   00000		 |$LN5@DtpNotify@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M32327|
+  00004		 |$M32329|
   00004	e1a04000	 mov         r4, r0
   00008	e59f3014	 ldr         r3, [pc, #0x14]
 
@@ -606,13 +606,13 @@
   00024		 |$LN6@DtpNotify@2|
   00024		 |$LN7@DtpNotify@2|
   00024	00000000	 DCD         |??_7DtpNotify@@6B@|
-  00028		 |$M32328|
+  00028		 |$M32330|
 
 			 ENDP  ; |??1DtpNotify@@UAA@XZ|, DtpNotify::~DtpNotify
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32346| DCD	|$LN8@scalar|
+|$T32348| DCD	|$LN8@scalar|
 	DCD	0x40000f01
 ; Function compile flags: /Ogspy
 
@@ -621,7 +621,7 @@
   00000		 |??_GDtpNotify@@UAAPAXI@Z| PROC	; DtpNotify::`scalar deleting destructor'
   00000		 |$LN8@scalar|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M32343|
+  00004		 |$M32345|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
   0000c	e59f3024	 ldr         r3, [pc, #0x24]
@@ -638,7 +638,7 @@
   00038		 |$LN9@scalar|
   00038		 |$LN10@scalar|
   00038	00000000	 DCD         |??_7DtpNotify@@6B@|
-  0003c		 |$M32344|
+  0003c		 |$M32346|
 
 			 ENDP  ; |??_GDtpNotify@@UAAPAXI@Z|, DtpNotify::`scalar deleting destructor'
 

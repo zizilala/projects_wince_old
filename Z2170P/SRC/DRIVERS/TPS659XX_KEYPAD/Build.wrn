@@ -1,2 +1,3 @@
 BUILD: [Thrd:Sequence:Type  ] Message
-BUILD: [00:0000000053:WARNN ] C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\TPS659XX_KEYPAD\: Missing source file: C:\WINCE600\public\common\sdk\lib\ARMV4I\retail\coredll.lib.
+BUILD: [00:0000000050:WARNN ] C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\TPS659XX_KEYPAD\: Missing source file: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\ceddk.lib.
+BUILD: [00:0000000051:WARNN ] C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\TPS659XX_KEYPAD\: Missing source file: C:\WINCE600\public\common\sdk\lib\ARMV4I\retail\coredll.lib.

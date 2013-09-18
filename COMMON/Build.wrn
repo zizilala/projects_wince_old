@@ -1,8 +1,4 @@
 BUILD: [Thrd:Sequence:Type  ] Message
 BUILD: [00:0000000053:WARNS ] Directory: C:\WINCE600\public\ossvcs\oak\inc\ does not exist.
 BUILD: [00:0000000110:WARNS ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\eboot\ does not exist.
-BUILD: [00:0000000112:WARNN ] File: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\SDMEMORY\Build.err does not exist (2).
-BUILD: [00:0000000114:WARNS ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\eboot\ does not exist.
-BUILD: [01:0000004568:WARNN ] haldebug.obj : warning LNK4221: no public symbols found; archive member will be inaccessible
-BUILD: [01:0000005458:WARNN ] oal_cache.lib(ioctl.obj) : warning LNK4006: OALIoCtlHalGetCacheInfo already defined in oal_cache_arm920t.lib(ioctl.obj); second definition ignored
-BUILD: [01:0000005459:WARNN ] oal_cache.lib(ioctl.obj) : warning LNK4221: no public symbols found; archive member will be inaccessible
+BUILD: [00:0000000113:WARNS ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\eboot\ does not exist.

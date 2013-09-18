@@ -13,7 +13,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\streamclass.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32205| DCD	|$LN5@StreamClas|
+|$T32207| DCD	|$LN5@StreamClas|
 	DCD	0x40000700
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -27,7 +27,7 @@
 ; 31   : {
 
   00000		 |$LN5@StreamClas|
-  00000		 |$M32202|
+  00000		 |$M32204|
   00000	e59f3010	 ldr         r3, [pc, #0x10]
   00004	e3a02000	 mov         r2, #0
   00008	e5802004	 str         r2, [r0, #4]
@@ -41,7 +41,7 @@
   00018		 |$LN6@StreamClas|
   00018		 |$LN7@StreamClas|
   00018	00000000	 DCD         |??_7StreamClassTable@@6B@|
-  0001c		 |$M32203|
+  0001c		 |$M32205|
 
 			 ENDP  ; |??0StreamClassTable@@QAA@XZ|, StreamClassTable::StreamClassTable
 
@@ -49,7 +49,7 @@
 	IMPORT	|??3@YAXPAX@Z|				; operator delete
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32216| DCD	|$LN6@StreamClas@2|
+|$T32218| DCD	|$LN6@StreamClas@2|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -61,7 +61,7 @@
 
   00000		 |$LN6@StreamClas@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M32213|
+  00004		 |$M32215|
 
 ; 37   :     if (m_pTable)
 
@@ -84,7 +84,7 @@
   00024		 |$LN7@StreamClas@2|
   00024		 |$LN8@StreamClas@2|
   00024	00000000	 DCD         |??_7StreamClassTable@@6B@|
-  00028		 |$M32214|
+  00028		 |$M32216|
 
 			 ENDP  ; |??1StreamClassTable@@UAA@XZ|, StreamClassTable::~StreamClassTable
 
@@ -92,7 +92,7 @@
 	IMPORT	|??2@YAPAXI@Z|				; operator new
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32231| DCD	|$LN8@Initialize|
+|$T32233| DCD	|$LN8@Initialize|
 	DCD	0x40001901
 ; Function compile flags: /Ogspy
 
@@ -104,7 +104,7 @@
 
   00000		 |$LN8@Initialize|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M32228|
+  00004		 |$M32230|
   00004	e1a04000	 mov         r4, r0
 
 ; 47   :     DEBUGCHK((NULL == m_pTable) && (0 == m_cEntries));
@@ -169,7 +169,7 @@
 
   0005c	e8bd4010	 ldmia       sp!, {r4, lr}
   00060	e12fff1e	 bx          lr
-  00064		 |$M32229|
+  00064		 |$M32231|
 
 			 ENDP  ; |?Initialize@StreamClassTable@@QAAHXZ|, StreamClassTable::Initialize
 
@@ -177,7 +177,7 @@
 	IMPORT	|memcpy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32250| DCD	|$LN11@Reinitiali|
+|$T32252| DCD	|$LN11@Reinitiali|
 	DCD	0x40002201
 ; Function compile flags: /Ogspy
 
@@ -189,7 +189,7 @@
 
   00000		 |$LN11@Reinitiali|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M32247|
+  00004		 |$M32249|
   00004	e1a04002	 mov         r4, r2
   00008	e1b08001	 movs        r8, r1
   0000c	e1a06000	 mov         r6, r0
@@ -280,14 +280,14 @@
   00084		 |$LN12@Reinitiali|
   00084		 |$LN13@Reinitiali|
   00084	15555555	 DCD         0x15555555
-  00088		 |$M32248|
+  00088		 |$M32250|
 
 			 ENDP  ; |?Reinitialize@StreamClassTable@@QAAHPAU_STREAMCLASSCONFIG@@K@Z|, StreamClassTable::Reinitialize
 
 	EXPORT	|?FindEntry@StreamClassTable@@QAAPAU_STREAMCLASSCONFIG@@K@Z| ; StreamClassTable::FindEntry
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32268| DCD	|$LN14@FindEntry|
+|$T32270| DCD	|$LN14@FindEntry|
 	DCD	0x40001c01
 ; Function compile flags: /Ogspy
 
@@ -299,7 +299,7 @@
 
   00000		 |$LN14@FindEntry|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M32265|
+  00004		 |$M32267|
 
 ; 107  :     if ((NULL == m_pTable) || (0 == m_cEntries))
 
@@ -384,13 +384,13 @@
 
   00068	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0006c	e12fff1e	 bx          lr
-  00070		 |$M32266|
+  00070		 |$M32268|
 
 			 ENDP  ; |?FindEntry@StreamClassTable@@QAAPAU_STREAMCLASSCONFIG@@K@Z|, StreamClassTable::FindEntry
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32285| DCD	|$LN9@scalar|
+|$T32287| DCD	|$LN9@scalar|
 	DCD	0x40001001
 ; Function compile flags: /Ogspy
 
@@ -399,7 +399,7 @@
   00000		 |??_GStreamClassTable@@UAAPAXI@Z| PROC	; StreamClassTable::`scalar deleting destructor'
   00000		 |$LN9@scalar|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M32282|
+  00004		 |$M32284|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
   0000c	e5942004	 ldr         r2, [r4, #4]
@@ -417,7 +417,7 @@
   0003c		 |$LN10@scalar|
   0003c		 |$LN11@scalar|
   0003c	00000000	 DCD         |??_7StreamClassTable@@6B@|
-  00040		 |$M32283|
+  00040		 |$M32285|
 
 			 ENDP  ; |??_GStreamClassTable@@UAAPAXI@Z|, StreamClassTable::`scalar deleting destructor'
 

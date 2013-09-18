@@ -85,7 +85,7 @@
 ; File c:\wince600\platform\z2170p\src\app\i2cproxy\i2cproxy.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39800| DCD	|$LN15@I2C_Deinit|
+|$T39801| DCD	|$LN15@I2C_Deinit|
 	DCD	0x40002801
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -124,7 +124,7 @@
 
   00000		 |$LN15@I2C_Deinit|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M39797|
+  00004		 |$M39798|
   00004	e1a04000	 mov         r4, r0
 
 ; 180  :     BOOL rc = FALSE;
@@ -186,7 +186,7 @@
 ; 207  :     rc = TRUE;
 
   0005c	e3a05001	 mov         r5, #1
-  00060	ea000001	 b           |$cleanUp$39598|
+  00060	ea000001	 b           |$cleanUp$39599|
   00064		 |$LN3@I2C_Deinit|
 
 ; 187  :         {
@@ -196,7 +196,7 @@
 
   00064	e59f0024	 ldr         r0, [pc, #0x24]
   00068	eb000000	 bl          NKDbgPrintfW
-  0006c		 |$cleanUp$39598|
+  0006c		 |$cleanUp$39599|
 
 ; 208  : 
 ; 209  : cleanUp:
@@ -225,7 +225,7 @@
   00098	00000000	 DCD         |??_C@_1CM@CBAGIHJE@?$AA?$CL?$AAI?$AA2?$AAC?$AA_?$AAD?$AAe?$AAi?$AAn?$AAi?$AAt?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@|
   0009c		 |$LN21@I2C_Deinit|
   0009c	00000000	 DCD         |dpCurSettings|
-  000a0		 |$M39798|
+  000a0		 |$M39799|
 
 			 ENDP  ; |?I2C_Deinit@@YAHK@Z|, I2C_Deinit
 
@@ -237,7 +237,7 @@
 	IMPORT	|LocalAlloc|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39826| DCD	|$LN16@I2C_Open|
+|$T39827| DCD	|$LN16@I2C_Open|
 	DCD	0x40003a02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -281,7 +281,7 @@
   00000		 |$LN16@I2C_Open|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M39823|
+  00008		 |$M39824|
   00008	e1a07002	 mov         r7, r2
   0000c	e1a08001	 mov         r8, r1
   00010	e1a04000	 mov         r4, r0
@@ -330,7 +330,7 @@
 
 ; 248  :     if (pInstance == NULL)
 
-  00060	0a00000e	 beq         |$cleanUp$39615|
+  00060	0a00000e	 beq         |$cleanUp$39616|
 
 ; 249  :         {
 ; 250  :         DEBUGMSG(ZONE_ERROR, (L"ERROR: I2C_Open: "
@@ -367,7 +367,7 @@
 ; 262  :     dw = (DWORD)pInstance;
 
   00090	e1a05006	 mov         r5, r6
-  00094	ea000001	 b           |$cleanUp$39615|
+  00094	ea000001	 b           |$cleanUp$39616|
   00098		 |$LN4@I2C_Open|
 
 ; 239  :         {
@@ -377,7 +377,7 @@
 
   00098	e59f0034	 ldr         r0, [pc, #0x34]
   0009c	eb000000	 bl          NKDbgPrintfW
-  000a0		 |$cleanUp$39615|
+  000a0		 |$cleanUp$39616|
 
 ; 263  : 
 ; 264  : cleanUp:
@@ -415,7 +415,7 @@
   000e0	00000000	 DCD         |??_C@_1EI@KGOLOKEE@?$AA?$CL?$AAI?$AA2?$AAC?$AA_?$AAO?$AAp?$AAe?$AAn?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx@|
   000e4		 |$LN23@I2C_Open|
   000e4	00000000	 DCD         |dpCurSettings|
-  000e8		 |$M39824|
+  000e8		 |$M39825|
 
 			 ENDP  ; |?I2C_Open@@YAKKKK@Z|, I2C_Open
 
@@ -426,7 +426,7 @@
 	IMPORT	|I2CClose|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39850| DCD	|$LN14@I2C_Close|
+|$T39851| DCD	|$LN14@I2C_Close|
 	DCD	0x40002501
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -465,7 +465,7 @@
 
   00000		 |$LN14@I2C_Close|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M39847|
+  00004		 |$M39848|
   00004	e1a04000	 mov         r4, r0
 
 ; 283  :     RETAILMSG(ZONE_FUNCTION, (L"+I2C_Close(0x%08x)\r\n", 
@@ -510,7 +510,7 @@
 ; 299  :     rc = TRUE;
 
   0004c	e3a05001	 mov         r5, #1
-  00050	ea000001	 b           |$cleanUp$39635|
+  00050	ea000001	 b           |$cleanUp$39636|
   00054		 |$LN2@I2C_Close|
 
 ; 290  :         {
@@ -520,7 +520,7 @@
 
   00054	e59f0028	 ldr         r0, [pc, #0x28]
   00058	eb000000	 bl          NKDbgPrintfW
-  0005c		 |$cleanUp$39635|
+  0005c		 |$cleanUp$39636|
 
 ; 300  : 
 ; 301  : cleanUp:
@@ -553,7 +553,7 @@
   0008c	00000000	 DCD         |??_C@_1CK@HBELKLFD@?$AA?$CL?$AAI?$AA2?$AAC?$AA_?$AAC?$AAl?$AAo?$AAs?$AAe?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@|
   00090		 |$LN20@I2C_Close|
   00090	00000000	 DCD         |dpCurSettings|
-  00094		 |$M39848|
+  00094		 |$M39849|
 
 			 ENDP  ; |?I2C_Close@@YAHK@Z|, I2C_Close
 
@@ -563,7 +563,7 @@
 	IMPORT	|I2CRead|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39875| DCD	|$LN14@I2C_Read|
+|$T39876| DCD	|$LN14@I2C_Read|
 	DCD	0x40002a01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -591,7 +591,7 @@
 
   00000		 |$LN14@I2C_Read|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M39872|
+  00004		 |$M39873|
   00004	e1a06002	 mov         r6, r2
   00008	e1a07001	 mov         r7, r1
   0000c	e1a04000	 mov         r4, r0
@@ -635,7 +635,7 @@
   00058	e1a02007	 mov         r2, r7
   0005c	eb000000	 bl          I2CRead
   00060	e1a05000	 mov         r5, r0
-  00064	ea000001	 b           |$cleanUp$39650|
+  00064	ea000001	 b           |$cleanUp$39651|
   00068		 |$LN2@I2C_Read|
 
 ; 329  :         {
@@ -645,7 +645,7 @@
 
   00068	e59f0028	 ldr         r0, [pc, #0x28]
   0006c	eb000000	 bl          NKDbgPrintfW
-  00070		 |$cleanUp$39650|
+  00070		 |$cleanUp$39651|
 
 ; 337  :     
 ; 338  : cleanUp:
@@ -678,7 +678,7 @@
   000a0	00000000	 DCD         |??_C@_1EA@CNELEJHA@?$AA?$CL?$AAI?$AA2?$AAC?$AA_?$AAR?$AAe?$AAa?$AAd?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAX?$AA?0?$AA?5?$AA?$CF?$AAd?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@|
   000a4		 |$LN20@I2C_Read|
   000a4	00000000	 DCD         |dpCurSettings|
-  000a8		 |$M39873|
+  000a8		 |$M39874|
 
 			 ENDP  ; |?I2C_Read@@YAKKPAXK@Z|, I2C_Read
 
@@ -688,7 +688,7 @@
 	IMPORT	|I2CWrite|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39900| DCD	|$LN14@I2C_Write|
+|$T39901| DCD	|$LN14@I2C_Write|
 	DCD	0x40002a01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -716,7 +716,7 @@
 
   00000		 |$LN14@I2C_Write|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M39897|
+  00004		 |$M39898|
   00004	e1a06002	 mov         r6, r2
   00008	e1a07001	 mov         r7, r1
   0000c	e1a04000	 mov         r4, r0
@@ -760,7 +760,7 @@
   00058	e1a02007	 mov         r2, r7
   0005c	eb000000	 bl          I2CWrite
   00060	e1a05000	 mov         r5, r0
-  00064	ea000001	 b           |$cleanUp$39665|
+  00064	ea000001	 b           |$cleanUp$39666|
   00068		 |$LN2@I2C_Write|
 
 ; 366  :         {
@@ -770,7 +770,7 @@
 
   00068	e59f0028	 ldr         r0, [pc, #0x28]
   0006c	eb000000	 bl          NKDbgPrintfW
-  00070		 |$cleanUp$39665|
+  00070		 |$cleanUp$39666|
 
 ; 374  : 
 ; 375  : cleanUp:
@@ -803,7 +803,7 @@
   000a0	00000000	 DCD         |??_C@_1EC@KACFNGNF@?$AA?$CL?$AAI?$AA2?$AAC?$AA_?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAX?$AA?0?$AA?5?$AA?$CF?$AAd?$AA?$CJ?$AA?$AN?$AA?6@|
   000a4		 |$LN20@I2C_Write|
   000a4	00000000	 DCD         |dpCurSettings|
-  000a8		 |$M39898|
+  000a8		 |$M39899|
 
 			 ENDP  ; |?I2C_Write@@YAKKPBXK@Z|, I2C_Write
 
@@ -812,7 +812,7 @@
 	EXPORT	|??_C@_1DI@FEBNDHOG@?$AA?$CL?$AAI?$AA2?$AAC?$AA_?$AAS?$AAe?$AAe?$AAk?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?0?$AA?5?$AA?$CF?$AAd?$AA?0?$AA?5?$AA?$CF?$AAd?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39924| DCD	|$LN14@I2C_Seek|
+|$T39925| DCD	|$LN14@I2C_Seek|
 	DCD	0x40002101
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -839,7 +839,7 @@
 
   00000		 |$LN14@I2C_Seek|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M39921|
+  00004		 |$M39922|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -874,7 +874,7 @@
 ; 411  :     pInstance->subAddress = (DWORD)amount;
 
   00040	0584500c	 streq       r5, [r4, #0xC]
-  00044	0a000001	 beq         |$cleanUp$39678|
+  00044	0a000001	 beq         |$cleanUp$39679|
   00048		 |$LN2@I2C_Seek|
 
 ; 404  :         {
@@ -884,7 +884,7 @@
 
   00048	e59f0024	 ldr         r0, [pc, #0x24]
   0004c	eb000000	 bl          NKDbgPrintfW
-  00050		 |$cleanUp$39678|
+  00050		 |$cleanUp$39679|
 
 ; 412  : 
 ; 413  : cleanUp:
@@ -918,7 +918,7 @@
   0007c	00000000	 DCD         |??_C@_1DI@FEBNDHOG@?$AA?$CL?$AAI?$AA2?$AAC?$AA_?$AAS?$AAe?$AAe?$AAk?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?0?$AA?5?$AA?$CF?$AAd?$AA?0?$AA?5?$AA?$CF?$AAd?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@|
   00080		 |$LN20@I2C_Seek|
   00080	00000000	 DCD         |dpCurSettings|
-  00084		 |$M39922|
+  00084		 |$M39923|
 
 			 ENDP  ; |?I2C_Seek@@YAHKJG@Z|, I2C_Seek
 
@@ -931,7 +931,7 @@
 	IMPORT	|I2CSetBaudIndex|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39951| DCD	|$LN20@I2C_IOCont|
+|$T39952| DCD	|$LN20@I2C_IOCont|
 	DCD	0x40004802
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -978,7 +978,7 @@
   00000		 |$LN20@I2C_IOCont|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
   00004	e24dd010	 sub         sp, sp, #0x10
-  00008		 |$M39948|
+  00008		 |$M39949|
   00008	e1a0a003	 mov         r10, r3
   0000c	e1a07002	 mov         r7, r2
   00010	e1a08001	 mov         r8, r1
@@ -1043,7 +1043,7 @@
   0008c	0a000007	 beq         |$LN2@I2C_IOCont|
   00090	e59f3074	 ldr         r3, [pc, #0x74]
   00094	e1580003	 cmp         r8, r3
-  00098	1a000010	 bne         |$cleanUp$39698|
+  00098	1a000010	 bne         |$cleanUp$39699|
 
 ; 469  :             rc = TRUE;
 ; 470  :             break;
@@ -1062,7 +1062,7 @@
 ; 477  : 
 ; 478  : cleanUp:
 
-  000ac	ea00000b	 b           |$cleanUp$39698|
+  000ac	ea00000b	 b           |$cleanUp$39699|
   000b0		 |$LN2@I2C_IOCont|
 
 ; 465  :             break;
@@ -1081,7 +1081,7 @@
 ; 477  : 
 ; 478  : cleanUp:
 
-  000c0	ea000006	 b           |$cleanUp$39698|
+  000c0	ea000006	 b           |$cleanUp$39699|
   000c4		 |$LN3@I2C_IOCont|
 
 ; 461  :         {
@@ -1102,7 +1102,7 @@
 ; 477  : 
 ; 478  : cleanUp:
 
-  000d4	ea000001	 b           |$cleanUp$39698|
+  000d4	ea000001	 b           |$cleanUp$39699|
   000d8		 |$LN7@I2C_IOCont|
 
 ; 453  :         {
@@ -1112,7 +1112,7 @@
 
   000d8	e59f0028	 ldr         r0, [pc, #0x28]
   000dc	eb000000	 bl          NKDbgPrintfW
-  000e0		 |$cleanUp$39698|
+  000e0		 |$cleanUp$39699|
   000e0	e5993440	 ldr         r3, [r9, #0x440]
 
 ; 479  : 
@@ -1145,7 +1145,7 @@
   00118	00000000	 DCD         |??_C@_1IC@CBOLJLFH@?$AA?$CL?$AAI?$AA2?$AAC?$AA_?$AAI?$AAO?$AAC?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?0?$AA?5?$AA0@|
   0011c		 |$LN28@I2C_IOCont|
   0011c	00000000	 DCD         |dpCurSettings|
-  00120		 |$M39949|
+  00120		 |$M39950|
 
 			 ENDP  ; |?I2C_IOControl@@YAHKKPAEK0KPAK@Z|, I2C_IOControl
 
@@ -1154,7 +1154,7 @@
 	IMPORT	|RegisterDbgZones|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39970| DCD	|$LN8@DllMain|
+|$T39971| DCD	|$LN8@DllMain|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -1166,7 +1166,7 @@
 
   00000		 |$LN8@DllMain|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M39967|
+  00004		 |$M39968|
   00004	e1a04000	 mov         r4, r0
 
 ; 492  : 	UNREFERENCED_PARAMETER(Reserved);
@@ -1202,7 +1202,7 @@
   0002c		 |$LN9@DllMain|
   0002c		 |$LN10@DllMain|
   0002c	00000000	 DCD         |dpCurSettings|
-  00030		 |$M39968|
+  00030		 |$M39969|
 
 			 ENDP  ; |DllMain|
 
@@ -1218,7 +1218,7 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39992| DCD	|$LN19@I2C_Init|
+|$T39993| DCD	|$LN19@I2C_Init|
 	DCD	0x40004302
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1267,7 +1267,7 @@
   00000		 |$LN19@I2C_Init|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M39989|
+  00008		 |$M39990|
   00008	e1a06000	 mov         r6, r0
 
 ; 109  :     DWORD rc = (DWORD)NULL;
@@ -1422,7 +1422,7 @@
 ; 160  :     rc = (DWORD)pDevice;
 
   000e8	e1a05004	 mov         r5, r4
-  000ec		 |$cleanUp$39573|
+  000ec		 |$cleanUp$39574|
 
 ; 163  :     if (rc == 0) I2C_Deinit((DWORD)pDevice);
 
@@ -1442,7 +1442,7 @@
   00104	00000000	 DCD         |dpCurSettings|
   00108		 |$LN27@I2C_Init|
   00108	00000000	 DCD         |??_C@_1HE@CDNEMKPL@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAI?$AA2?$AAC?$AA_?$AAI?$AAn?$AAi?$AAt?$AA?3?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AAa?$AAl?$AAl?$AAo?$AAc?$AAa?$AAt?$AAe@|
-  0010c		 |$M39990|
+  0010c		 |$M39991|
 
 			 ENDP  ; |?I2C_Init@@YAKPBGPBX@Z|, I2C_Init
 

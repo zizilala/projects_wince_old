@@ -37,7 +37,7 @@ BUILD: [01:0000000034:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000000035:INFO  ] TARGETNAME: common_ti_boot_sdmemory
 BUILD: [01:0000000036:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000000037:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdmemory.lib
-BUILD: [01:0000000038:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdmemory.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm416.tmp
+BUILD: [01:0000000038:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdmemory.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm318.tmp
 BUILD: [00:0000000039:PROGC ] Saving C:\WINCE600\PLATFORM\COMMON\Build.dat.
 BUILD: [00:0000000040:INFO  ] Done.
 BUILD: [00:0000000041:PROGC ] Done.
@@ -63,5 +63,5 @@ BUILD: [00:0000000060:PROGC ]
 BUILD: [00:0000000061:PROGC ] Total                      2         1       0
 BUILD: [00:0000000062:PROGC ] 
 BUILD: [00:0000000063:PROGC ] 1 Warnings,  0 Errors
-BUILD: [00:0000000064:PROGC ] GetSystemTimes (seconds): Idle: 0     Kernel: 1     User: 0    
-BUILD: [00:0000000065:PROGC ] Elapsed  time  (seconds): 1    
+BUILD: [00:0000000064:PROGC ] GetSystemTimes (seconds): Idle: 3     Kernel: 6     User: 0    
+BUILD: [00:0000000065:PROGC ] Elapsed  time  (seconds): 3    

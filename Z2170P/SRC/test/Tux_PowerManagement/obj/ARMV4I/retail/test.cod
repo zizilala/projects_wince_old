@@ -76,7 +76,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33330| DCD	|$LN5@SetEvent|
+|$T33332| DCD	|$LN5@SetEvent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -88,7 +88,7 @@
 
   00000		 |$LN5@SetEvent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M33327|
+  00004		 |$M33329|
 
 ; 236  : 	return EventModify(h,EVENT_SET);
 
@@ -99,7 +99,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M33328|
+  00014		 |$M33330|
 
 			 ENDP  ; |SetEvent|
 
@@ -124,11 +124,11 @@
 ; File c:\wince600\platform\z2170p\src\test\tux_powermanagement\test.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33365| DCD	|$LN32@file_threa|
+|$T33367| DCD	|$LN32@file_threa|
 	DCD	0xc0008902
 
   00000			 AREA	 |.xdata|, DATA
-|$T33361| DCD	0xffffffd8
+|$T33363| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1FG@INLINDEP@?$AAC?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAr?$AAe?$AAa?$AAd?$AA?5?$AAa?$AAl?$AAl?$AA?5?$AAe?$AAx?$AAp?$AAe?$AAc?$AAt?$AAe?$AAd?$AA?5?$AAb?$AAy?$AAt?$AAe?$AAs?$AA?5?$AAf@| DCB "C"
@@ -183,7 +183,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T33361|
+  00004	00000000	 DCD         |$T33363|
 
   00008		 |?file_thread@@YAKPAX@Z| PROC		; file_thread
 
@@ -192,7 +192,7 @@
   00008		 |$LN32@file_threa|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24ddf82	 sub         sp, sp, #0x82, 30
-  00010		 |$M33362|
+  00010		 |$M33364|
   00010	e1a09000	 mov         r9, r0
   00014	e59f320c	 ldr         r3, [pc, #0x20C]
   00018	e5933000	 ldr         r3, [r3]
@@ -478,7 +478,7 @@
   00224	00000000	 DCD         |?g_pKato@@3PAVCKato@@A|
   00228		 |$LN44@file_threa|
   00228	00000000	 DCD         |__security_cookie|
-  0022c		 |$M33363|
+  0022c		 |$M33365|
 
 			 ENDP  ; |?file_thread@@YAKPAX@Z|, file_thread
 
@@ -506,7 +506,7 @@
 	IMPORT	|?g_NbLoop@@3KA|			; g_NbLoop
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33401| DCD	|$LN18@TestSuspen|
+|$T33403| DCD	|$LN18@TestSuspen|
 	DCD	0x40007a02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -563,7 +563,7 @@
   00000		 |$LN18@TestSuspen|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd034	 sub         sp, sp, #0x34
-  00008		 |$M33398|
+  00008		 |$M33400|
 
 ; 449  : 	DWORD dwRet;
 ; 450  : 	struct test_args_t test_args;
@@ -827,7 +827,7 @@
   001e0	00000000	 DCD         |?g_TimeToSleep@@3KA|
   001e4		 |$LN34@TestSuspen|
   001e4	00000000	 DCD         |?g_NbLoop@@3KA|
-  001e8		 |$M33399|
+  001e8		 |$M33401|
 
 			 ENDP  ; |?TestSuspendResume@@YAHIPAKPAU_FUNCTION_TABLE_ENTRY@@@Z|, TestSuspendResume
 
@@ -844,7 +844,7 @@
 	IMPORT	|wcsncmp|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33434| DCD	|$LN22@PMNotifica|
+|$T33436| DCD	|$LN22@PMNotifica|
 	DCD	0x40008c02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -887,7 +887,7 @@
   00000		 |$LN22@PMNotifica|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd024	 sub         sp, sp, #0x24
-  00008		 |$M33431|
+  00008		 |$M33433|
 
 ; 542  : 	DWORD cbPowerMsgSize = sizeof(POWER_BROADCAST) + (MAX_PATH * sizeof TCHAR);
 ; 543  : 	DWORD dwWaitStatus = WAIT_OBJECT_0;
@@ -1167,7 +1167,7 @@
   00228	00000000	 DCD         |??_C@_1DC@JICMBMDM@?$AAC?$AAr?$AAe?$AAa?$AAt?$AAe?$AAM?$AAs?$AAg?$AAQ?$AAu?$AAe?$AAu?$AAe?$AA?5?$AAf?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AA?$AN?$AA?6?$AA?$AA@|
   0022c		 |$LN33@PMNotifica|
   0022c	00000000	 DCD         |?g_bTestStatus@@3KA|
-  00230		 |$M33432|
+  00230		 |$M33434|
 
 			 ENDP  ; |?PMNotificationThread2@@YAKXZ|, PMNotificationThread2
 
@@ -1188,7 +1188,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33462| DCD	|$LN15@RestoreSta|
+|$T33464| DCD	|$LN15@RestoreSta|
 	DCD	0x40006202
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1277,7 +1277,7 @@
   00000		 |$LN15@RestoreSta|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M33459|
+  00008		 |$M33461|
 
 ; 719  : 	HKEY    hRegKey             = NULL;
 ; 720  : 	DWORD   dwNumSubKeys        = 0;
@@ -1469,7 +1469,7 @@
   00180	00000000	 DCD         |?g_dwSaveACUserIdle@@3KA|
   00184		 |$LN27@RestoreSta|
   00184	00000000	 DCD         |??_C@_1GA@BFBHIFBH@?$AAS?$AAy?$AAs?$AAt?$AAe?$AAm?$AA?2?$AAC?$AAu?$AAr?$AAr?$AAe?$AAn?$AAt?$AAC?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl?$AAS?$AAe?$AAt?$AA?2?$AAC?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl@|
-  00188		 |$M33460|
+  00188		 |$M33462|
 
 			 ENDP  ; |?RestoreStateTimeouts@@YAHXZ|, RestoreStateTimeouts
 
@@ -1478,7 +1478,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33492| DCD	|$LN18@DisableSta|
+|$T33494| DCD	|$LN18@DisableSta|
 	DCD	0x4000bf02
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\test\tux_powermanagement\test.cpp
@@ -1492,7 +1492,7 @@
   00000		 |$LN18@DisableSta|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd04c	 sub         sp, sp, #0x4C
-  00008		 |$M33489|
+  00008		 |$M33491|
 
 ; 766  : 	HKEY    hRegKey             = NULL;
 ; 767  : 	DWORD   dwNumSubKeys        = 0;
@@ -1828,7 +1828,7 @@
   002f4	00000000	 DCD         |?g_dwSaveACUserIdle@@3KA|
   002f8		 |$LN30@DisableSta|
   002f8	00000000	 DCD         |??_C@_1GA@BFBHIFBH@?$AAS?$AAy?$AAs?$AAt?$AAe?$AAm?$AA?2?$AAC?$AAu?$AAr?$AAr?$AAe?$AAn?$AAt?$AAC?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl?$AAS?$AAe?$AAt?$AA?2?$AAC?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl@|
-  002fc		 |$M33490|
+  002fc		 |$M33492|
 
 			 ENDP  ; |?DisableStateTimeouts@@YAHXZ|, DisableStateTimeouts
 
@@ -1838,11 +1838,11 @@
 	IMPORT	|wcsncpy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33527| DCD	|$LN25@Initialize|
+|$T33529| DCD	|$LN25@Initialize|
 	DCD	0xc000c902
 
   00000			 AREA	 |.xdata|, DATA
-|$T33523| DCD	0xffffffd8
+|$T33525| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1BA@KNMKEODK@?$AAP?$AAo?$AAw?$AAe?$AAr?$AAO?$AAn?$AA?$AA@| DCB "P", 0x0
@@ -1853,7 +1853,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T33523|
+  00004	00000000	 DCD         |$T33525|
 
   00008		 |?InitializeStateMachine@@YAHXZ| PROC	; InitializeStateMachine
 
@@ -1862,7 +1862,7 @@
   00008		 |$LN25@Initialize|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24ddf9b	 sub         sp, sp, #0x9B, 30
-  00010		 |$M33524|
+  00010		 |$M33526|
   00010	e59f3310	 ldr         r3, [pc, #0x310]
   00014	e5933000	 ldr         r3, [r3]
   00018	e58d3268	 str         r3, [sp, #0x268]
@@ -2267,13 +2267,13 @@
   00324	00000000	 DCD         |?dwStateId_on@@3KA|
   00328		 |$LN44@Initialize|
   00328	00000000	 DCD         |__security_cookie|
-  0032c		 |$M33525|
+  0032c		 |$M33527|
 
 			 ENDP  ; |?InitializeStateMachine@@YAHXZ|, InitializeStateMachine
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33558| DCD	|$LN10@IsLastStat|
+|$T33560| DCD	|$LN10@IsLastStat|
 	DCD	0x40001100
 ; Function compile flags: /Ogspy
 
@@ -2284,7 +2284,7 @@
 ; 1062 : {
 
   00000		 |$LN10@IsLastStat|
-  00000		 |$M33555|
+  00000		 |$M33557|
 
 ; 1063 : 	DWORD dwNextStateId = dwStateId + 1;
 ; 1064 : 
@@ -2338,7 +2338,7 @@
   0003c	00000000	 DCD         |?g_StateInfoTable@@3PAUStateInfo@@A|
   00040		 |$LN13@IsLastStat|
   00040	00000000	 DCD         |?dwStateId_suspend@@3KA|
-  00044		 |$M33556|
+  00044		 |$M33558|
 
 			 ENDP  ; |?IsLastState@@YAHK@Z|, IsLastState
 
@@ -2348,7 +2348,7 @@
 	EXPORT	|??_C@_1CO@FEHGJCJM@?$AAT?$AAr?$AAa?$AAn?$AAs?$AAi?$AAt?$AAi?$AAo?$AAn?$AA?3?$AA?5?$AAO?$AAN?$AA?5?$AAs?$AAt?$AAa?$AAt?$AAe?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33574| DCD	|$LN14@UpdateTest|
+|$T33576| DCD	|$LN14@UpdateTest|
 	DCD	0x40005b02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2409,7 +2409,7 @@
   00000		 |$LN14@UpdateTest|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M33571|
+  00008		 |$M33573|
   00008	e1a05001	 mov         r5, r1
 
 ; 1081 : 	DWORD dwElapsedTime;
@@ -2588,14 +2588,14 @@
   00164	00000000	 DCD         |?dwStateId_on@@3KA|
   00168		 |$LN26@UpdateTest|
   00168	00000000	 DCD         |?g_TestStartTime@@3KA|
-  0016c		 |$M33572|
+  0016c		 |$M33574|
 
 			 ENDP  ; |?UpdateTestTicker@@YAHKK@Z|, UpdateTestTicker
 
 	EXPORT	|??_C@_1FA@EOEDFPAC@?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AAt?$AAo?$AA?5?$AAc?$AAr?$AAe?$AAa?$AAt?$AAe?$AA?5?$AAP?$AAM?$AAN?$AAo?$AAt?$AAi?$AAf?$AAi?$AAc?$AAa?$AAt?$AAi?$AAo?$AAn?$AAT@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33597| DCD	|$LN8@StartPMNot|
+|$T33599| DCD	|$LN8@StartPMNot|
 	DCD	0x40001902
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2618,7 +2618,7 @@
   00000		 |$LN8@StartPMNot|
   00000	e52de004	 str         lr, [sp, #-4]!
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M33594|
+  00008		 |$M33596|
 
 ; 516  : 	g_hPMThread2 = CreateThread(NULL,0,(LPTHREAD_START_ROUTINE)PMNotificationThread2,NULL,0,NULL);
 
@@ -2669,7 +2669,7 @@
   0005c	00000000	 DCD         |?g_hPMThread2@@3PAXA|
   00060		 |$LN12@StartPMNot|
   00060	00000000	 DCD         |?PMNotificationThread2@@YAKXZ|
-  00064		 |$M33595|
+  00064		 |$M33597|
 
 			 ENDP  ; |?StartPMNotifications@@YAHXZ|, StartPMNotifications
 
@@ -2684,7 +2684,7 @@
 	EXPORT	|??_C@_1FG@BJDAAOMM@?$AAT?$AAe?$AAs?$AAt?$AA?5?$AAF?$AAi?$AAn?$AAi?$AAs?$AAh?$AAe?$AAd?$AA?5?$AAS?$AAu?$AAc?$AAc?$AAe?$AAs?$AAs?$AAf?$AAu?$AAl?$AAl?$AAy?$AA?5?$AAo?$AAn?$AA?5?$AA?$CC?$AAO@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33616| DCD	|$LN30@CheckState|
+|$T33618| DCD	|$LN30@CheckState|
 	DCD	0x4000d101
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2795,7 +2795,7 @@
 
   00000		 |$LN30@CheckState|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M33613|
+  00004		 |$M33615|
   00004	e1a06001	 mov         r6, r1
   00008	e1b04000	 movs        r4, r0
 
@@ -3246,7 +3246,7 @@
   0033c	00000000	 DCD         |??_C@_1FG@BJDAAOMM@?$AAT?$AAe?$AAs?$AAt?$AA?5?$AAF?$AAi?$AAn?$AAi?$AAs?$AAh?$AAe?$AAd?$AA?5?$AAS?$AAu?$AAc?$AAc?$AAe?$AAs?$AAs?$AAf?$AAu?$AAl?$AAl?$AAy?$AA?5?$AAo?$AAn?$AA?5?$AA?$CC?$AAO@|
   00340		 |$LN48@CheckState|
   00340	00000000	 DCD         |??_C@_15GMGGGDOD@?$AAo?$AAn?$AA?$AA@|
-  00344		 |$M33614|
+  00344		 |$M33616|
 
 			 ENDP  ; |?CheckStateMachine@@YAKPAU_POWER_BROADCAST@@PAU_FILETIME@@@Z|, CheckStateMachine
 
@@ -3272,7 +3272,7 @@
 	IMPORT	|?g_StressCount@@3KA|			; g_StressCount
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33662| DCD	|$LN38@TestPowerS|
+|$T33664| DCD	|$LN38@TestPowerS|
 	DCD	0x4000e602
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -3424,7 +3424,7 @@
   00000		 |$LN38@TestPowerS|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M33659|
+  00008		 |$M33661|
 
 ; 136  : 	DWORD dwExitCode;
 ; 137  : 	DWORD dwRet;
@@ -3465,7 +3465,7 @@
 ; 149  : 		dwRet = TPR_ABORT;
 
   00044	03a04005	 moveq       r4, #5
-  00048	0a000086	 beq         |$end$32782|
+  00048	0a000086	 beq         |$end$32784|
 
 ; 150  : 		goto end;
 ; 151  : 	}
@@ -3725,7 +3725,7 @@
 ; 230  : 	dwRet =  TPR_PASS;
 
   00264	e3a04003	 mov         r4, #3
-  00268		 |$end$32782|
+  00268		 |$end$32784|
 
 ; 231  : 
 ; 232  : end:
@@ -3811,7 +3811,7 @@
 ; 229  : 
 ; 230  : 	dwRet =  TPR_PASS;
 
-  002e4	eaffffdf	 b           |$end$32782|
+  002e4	eaffffdf	 b           |$end$32784|
   002e8		 |$LN32@TestPowerS|
 
 ; 203  : 		{
@@ -3831,7 +3831,7 @@
 ; 229  : 
 ; 230  : 	dwRet =  TPR_PASS;
 
-  002f8	eaffffda	 b           |$end$32782|
+  002f8	eaffffda	 b           |$end$32784|
   002fc		 |$LN31@TestPowerS|
 
 ; 188  : 		{
@@ -3853,7 +3853,7 @@
 ; 229  : 
 ; 230  : 	dwRet =  TPR_PASS;
 
-  00314	eaffffd3	 b           |$end$32782|
+  00314	eaffffd3	 b           |$end$32784|
   00318		 |$LN30@TestPowerS|
 
 ; 173  : 		{
@@ -3873,7 +3873,7 @@
 ; 229  : 
 ; 230  : 	dwRet =  TPR_PASS;
 
-  00328	eaffffce	 b           |$end$32782|
+  00328	eaffffce	 b           |$end$32784|
   0032c		 |$LN39@TestPowerS|
   0032c		 |$LN40@TestPowerS|
   0032c	00000000	 DCD         |??_C@_1EE@MJBHFAGK@?$AAO?$AAN?$AA?5?$AAs?$AAt?$AAa?$AAt?$AAe?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAs?$AAe?$AAe?$AAn?$AA?0?$AA?5?$AAt?$AAe?$AAs?$AAt?$AA?5?$AAf?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?$CB?$AA?$AN@|
@@ -3929,7 +3929,7 @@
   00390	00000000	 DCD         |??_C@_1FK@NNJALGKB@?$AAS?$AAa?$AAv?$AAi?$AAn?$AAg?$AA?5?$AAa?$AAn?$AAd?$AA?5?$AAD?$AAi?$AAs?$AAa?$AAb?$AAl?$AAi?$AAn?$AAg?$AA?5?$AAS?$AAy?$AAs?$AAt?$AAe?$AAm?$AA?5?$AAS?$AAt?$AAa?$AAt@|
   00394		 |$LN66@TestPowerS|
   00394	00000000	 DCD         |?g_pKato@@3PAVCKato@@A|
-  00398		 |$M33660|
+  00398		 |$M33662|
 
 			 ENDP  ; |?TestPowerStates@@YAHIPAKPAU_FUNCTION_TABLE_ENTRY@@@Z|, TestPowerStates
 
@@ -3938,7 +3938,7 @@
 	IMPORT	|GetSystemTimeAsFileTime|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33713| DCD	|$LN35@PMNotifica@2|
+|$T33715| DCD	|$LN35@PMNotifica@2|
 	DCD	0x4000a902
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -3970,7 +3970,7 @@
   00000		 |$LN35@PMNotifica@2|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd02c	 sub         sp, sp, #0x2C
-  00008		 |$M33710|
+  00008		 |$M33712|
 
 ; 613  : 	DWORD cbPowerMsgSize = sizeof(POWER_BROADCAST) + (MAX_PATH * sizeof TCHAR);
 ; 614  : 	DWORD dwWaitStatus = WAIT_OBJECT_0;
@@ -4361,13 +4361,13 @@
   0029c	00000000	 DCD         |??_C@_1DC@JICMBMDM@?$AAC?$AAr?$AAe?$AAa?$AAt?$AAe?$AAM?$AAs?$AAg?$AAQ?$AAu?$AAe?$AAu?$AAe?$AA?5?$AAf?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AA?$AN?$AA?6?$AA?$AA@|
   002a0		 |$LN47@PMNotifica@2|
   002a0	00000000	 DCD         |?g_bTestStatus@@3KA|
-  002a4		 |$M33711|
+  002a4		 |$M33713|
 
 			 ENDP  ; |?PMNotificationThread@@YAKXZ|, PMNotificationThread
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33734| DCD	|$LN6@Initialize@2|
+|$T33736| DCD	|$LN6@Initialize@2|
 	DCD	0x40001402
 ; Function compile flags: /Ogspy
 
@@ -4380,7 +4380,7 @@
   00000		 |$LN6@Initialize@2|
   00000	e52de004	 str         lr, [sp, #-4]!
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M33731|
+  00008		 |$M33733|
 
 ; 529  : 	g_hPMThread1 = CreateThread(NULL,0,(LPTHREAD_START_ROUTINE)PMNotificationThread,NULL,0,NULL);
 
@@ -4419,7 +4419,7 @@
   00048	00000000	 DCD         |?g_hPMThread1@@3PAXA|
   0004c		 |$LN9@Initialize@2|
   0004c	00000000	 DCD         |?PMNotificationThread@@YAKXZ|
-  00050		 |$M33732|
+  00050		 |$M33734|
 
 			 ENDP  ; |?InitializePMNotifications@@YAHXZ|, InitializePMNotifications
 
@@ -4431,7 +4431,7 @@
 	IMPORT	|keybd_event|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33763| DCD	|$LN39@TestSystem|
+|$T33765| DCD	|$LN39@TestSystem|
 	DCD	0x40008102
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -4468,7 +4468,7 @@
   00000		 |$LN39@TestSystem|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M33760|
+  00008		 |$M33762|
 
 ; 266  : 	DWORD dwExitCode;
 ; 267  : 	DWORD dwRet;
@@ -4703,7 +4703,7 @@
 ; 343  : 		//return TEST_FAIL;
 ; 344  : 		break;
 
-  0019c	ea000002	 b           |$cleanup$32833|
+  0019c	ea000002	 b           |$cleanup$32835|
   001a0		 |$LN4@TestSystem|
 
 ; 336  : 	{
@@ -4715,14 +4715,14 @@
 ; 339  : 		//return TPR_PASS;
 ; 340  : 		break;
 
-  001a4	ea000000	 b           |$cleanup$32833|
+  001a4	ea000000	 b           |$cleanup$32835|
   001a8		 |$LN2@TestSystem|
 
 ; 345  : 	case TEST_ERROR:
 ; 346  : 		dwRet = TPR_ABORT;
 
   001a8	e3a04005	 mov         r4, #5
-  001ac		 |$cleanup$32833|
+  001ac		 |$cleanup$32835|
 
 ; 276  : 	{
 ; 277  : 		dwRet = TPR_ABORT;
@@ -4777,7 +4777,7 @@
   001fc	00000000	 DCD         |?PMNotificationThread@@YAKXZ|
   00200		 |$LN52@TestSystem|
   00200	00000000	 DCD         |?g_CurrentSystemTime@@3U_FILETIME@@A|
-  00204		 |$M33761|
+  00204		 |$M33763|
 
 			 ENDP  ; |?TestSystemStateMachine@@YAHIPAKPAU_FUNCTION_TABLE_ENTRY@@@Z|, TestSystemStateMachine
 

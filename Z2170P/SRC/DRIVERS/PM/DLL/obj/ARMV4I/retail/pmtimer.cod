@@ -12,7 +12,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33852| DCD	|$LN5@ResetEvent|
+|$T33864| DCD	|$LN5@ResetEvent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -24,7 +24,7 @@
 
   00000		 |$LN5@ResetEvent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M33849|
+  00004		 |$M33861|
 
 ; 224  : 	return EventModify(h,EVENT_RESET);
 
@@ -35,14 +35,14 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M33850|
+  00014		 |$M33862|
 
 			 ENDP  ; |ResetEvent|
 
 	EXPORT	|SetEvent|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33862| DCD	|$LN5@SetEvent|
+|$T33874| DCD	|$LN5@SetEvent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -54,7 +54,7 @@
 
   00000		 |$LN5@SetEvent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M33859|
+  00004		 |$M33871|
 
 ; 236  : 	return EventModify(h,EVENT_SET);
 
@@ -65,14 +65,14 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M33860|
+  00014		 |$M33872|
 
 			 ENDP  ; |SetEvent|
 
 	EXPORT	|GetCurrentThread|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33871| DCD	|$LN5@GetCurrent|
+|$T33883| DCD	|$LN5@GetCurrent|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -83,7 +83,7 @@
 ; 351  : _inline HANDLE GetCurrentThread(void) {
 
   00000		 |$LN5@GetCurrent|
-  00000		 |$M33868|
+  00000		 |$M33880|
 
 ; 352  : 	return ((HANDLE)(SH_CURTHREAD+SYS_HANDLE_BASE));
 
@@ -92,7 +92,7 @@
 ; 353  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M33869|
+  00008		 |$M33881|
 
 			 ENDP  ; |GetCurrentThread|
 
@@ -100,7 +100,7 @@
 	IMPORT	|__GetUserKData|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33880| DCD	|$LN5@GetCurrent@2|
+|$T33892| DCD	|$LN5@GetCurrent@2|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -112,7 +112,7 @@
 
   00000		 |$LN5@GetCurrent@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M33877|
+  00004		 |$M33889|
 
 ; 370  :     return __GetUserKData (SYSHANDLE_OFFSET + (SH_CURTHREAD * sizeof(HANDLE)));
 
@@ -123,7 +123,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M33878|
+  00014		 |$M33890|
 
 			 ENDP  ; |GetCurrentThreadId|
 
@@ -137,41 +137,41 @@
 ; File c:\wince600\public\common\sdk\inc\celog.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33894| DCD	|$LN7@CeLogMsg|
+|$T33906| DCD	|$LN7@CeLogMsg|
 	DCD	0xc0002a04
 
   00000			 AREA	 |.xdata|, DATA
-|$T33890| DCD	0xffffffe0
+|$T33902| DCD	0xffffffe0
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T33890|
+  00004	00000000	 DCD         |$T33902|
 
   00008		 |CeLogMsg| PROC
 
-; 1015 : {
+; 1020 : {
 
   00008		 |$LN7@CeLogMsg|
   00008	e1a0c00d	 mov         r12, sp
   0000c	e92d000f	 stmdb       sp!, {r0 - r3}
   00010	e92d5010	 stmdb       sp!, {r4, r12, lr}
   00014	e24dde22	 sub         sp, sp, #0x22, 28
-  00018		 |$M33891|
+  00018		 |$M33903|
   00018	e58d022c	 str         r0, [sp, #0x22C]
   0001c	e59f3088	 ldr         r3, [pc, #0x88]
   00020	e5933000	 ldr         r3, [r3]
   00024	e58d321c	 str         r3, [sp, #0x21C]
 
-; 1016 :     va_list arglist;
-; 1017 :     WCHAR   szTemp[MAX_PATH];
-; 1018 :     size_t  cchLen;
-; 1019 :     HRESULT hr;
-; 1020 : 
-; 1021 :     // Compose a single string using the input args
-; 1022 :     va_start(arglist, szFormat);
-; 1023 :     hr = StringCchVPrintfW(szTemp, MAX_PATH, szFormat, arglist);
+; 1021 :     va_list arglist;
+; 1022 :     WCHAR   szTemp[MAX_PATH];
+; 1023 :     size_t  cchLen;
+; 1024 :     HRESULT hr;
+; 1025 : 
+; 1026 :     // Compose a single string using the input args
+; 1027 :     va_start(arglist, szFormat);
+; 1028 :     hr = StringCchVPrintfW(szTemp, MAX_PATH, szFormat, arglist);
 
   00028	e1a02000	 mov         r2, r0
   0002c	e28d0014	 add         r0, sp, #0x14
@@ -180,11 +180,11 @@
   00038	eb000000	 bl          StringCchVPrintfW
   0003c	e3500000	 cmp         r0, #0
 
-; 1024 :     if (SUCCEEDED(hr)) {
+; 1029 :     if (SUCCEEDED(hr)) {
 
   00040	4a000014	 bmi         |$LN1@CeLogMsg|
 
-; 1025 :         hr = StringCchLengthW(szTemp, MAX_PATH, &cchLen);
+; 1030 :         hr = StringCchLengthW(szTemp, MAX_PATH, &cchLen);
 
   00044	e28d2010	 add         r2, sp, #0x10
   00048	e3a01f41	 mov         r1, #0x41, 30
@@ -192,12 +192,12 @@
   00050	eb000000	 bl          StringCchLengthW
   00054	e3500000	 cmp         r0, #0
 
-; 1026 :         if (SUCCEEDED(hr)) {
+; 1031 :         if (SUCCEEDED(hr)) {
 
   00058	4a00000e	 bmi         |$LN1@CeLogMsg|
 
-; 1027 :             CeLogData(TRUE, CELID_RAW_WCHAR, szTemp, (WORD)((cchLen + 1) * sizeof(WCHAR)),
-; 1028 :                       0, CELZONE_ALWAYSON, 0, FALSE);
+; 1032 :             CeLogData(TRUE, CELID_RAW_WCHAR, szTemp, (WORD)((cchLen + 1) * sizeof(WCHAR)),
+; 1033 :                       0, CELZONE_ALWAYSON, 0, FALSE);
 
   0005c	e59d3010	 ldr         r3, [sp, #0x10]
   00060	e3a04101	 mov         r4, #1, 2
@@ -218,9 +218,9 @@
   00098	e59d021c	 ldr         r0, [sp, #0x21C]
   0009c	eb000000	 bl          __security_check_cookie
 
-; 1029 :         }
-; 1030 :     }
-; 1031 : }
+; 1034 :         }
+; 1035 :     }
+; 1036 : }
 
   000a0	e28dde22	 add         sp, sp, #0x22, 28
   000a4	e89d6010	 ldmia       sp, {r4, sp, lr}
@@ -228,7 +228,7 @@
   000ac		 |$LN8@CeLogMsg|
   000ac		 |$LN9@CeLogMsg|
   000ac	00000000	 DCD         |__security_cookie|
-  000b0		 |$M33892|
+  000b0		 |$M33904|
 
 			 ENDP  ; |CeLogMsg|
 
@@ -263,11 +263,11 @@
 ; File c:\wince600\platform\z2170p\src\drivers\pm\dll\pmtimer.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33941| DCD	|$LN58@ActivityTi|
+|$T33953| DCD	|$LN58@ActivityTi|
 	DCD	0xc0012203
 
   00000			 AREA	 |.xdata|, DATA
-|$T33937| DCD	0xffffffd8
+|$T33949| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1CG@EPNLEKEF@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAr?$AAe?$AAt?$AAu?$AAr?$AAn?$AAi?$AAn?$AAg?$AA?5?$AA?$CF?$AAd?$AA?$AN?$AA?6?$AA?$AA@| DCB "%"
@@ -372,7 +372,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T33937|
+  00004	00000000	 DCD         |$T33949|
 
   00008		 |?ActivityTimerInitList@@YAKXZ| PROC	; ActivityTimerInitList
 
@@ -382,7 +382,7 @@
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e59fc478	 ldr         r12, [pc, #0x478]
   00010	e08dd00c	 add         sp, sp, r12
-  00014		 |$M33938|
+  00014		 |$M33950|
   00014	e59f346c	 ldr         r3, [pc, #0x46C]
   00018	e5933000	 ldr         r3, [r3]
   0001c	e58d3a40	 str         r3, [sp, #0xA40]
@@ -995,14 +995,14 @@
   00488	00000000	 DCD         |__security_cookie|
   0048c		 |$LN75@ActivityTi|
   0048c	fffff5bc	 DCD         0xfffff5bc
-  00490		 |$M33939|
+  00490		 |$M33951|
 
 			 ENDP  ; |?ActivityTimerInitList@@YAKXZ|, ActivityTimerInitList
 
 	EXPORT	|?GetNextInactivityTimeout@@YAKK@Z|	; GetNextInactivityTimeout
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33975| DCD	|$LN15@GetNextIna|
+|$T33987| DCD	|$LN15@GetNextIna|
 	DCD	0x40002001
 ; Function compile flags: /Ogspy
 
@@ -1014,7 +1014,7 @@
 
   00000		 |$LN15@GetNextIna|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M33972|
+  00004		 |$M33984|
   00004	e1a05000	 mov         r5, r0
 
 ; 192  :     DWORD dwTimeout = INFINITE;
@@ -1110,7 +1110,7 @@
   0007c		 |$LN16@GetNextIna|
   0007c		 |$LN17@GetNextIna|
   0007c	00000000	 DCD         |gppActivityTimers|
-  00080		 |$M33973|
+  00080		 |$M33985|
 
 			 ENDP  ; |?GetNextInactivityTimeout@@YAKK@Z|, GetNextInactivityTimeout
 
@@ -1144,7 +1144,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34072| DCD	|$LN104@ActivityTi@2|
+|$T34084| DCD	|$LN104@ActivityTi@2|
 	DCD	0x40014102
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1291,7 +1291,7 @@
   00000		 |$LN104@ActivityTi@2|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24ddf45	 sub         sp, sp, #0x45, 30
-  00008		 |$M34069|
+  00008		 |$M34081|
   00008	e1a05000	 mov         r5, r0
 
 ; 224  :     DWORD dwStatus, dwNumEvents, dwWaitInterval;
@@ -1385,7 +1385,7 @@
 
   000a4	e5943440	 ldr         r3, [r4, #0x440]
   000a8	e3130002	 tst         r3, #2
-  000ac	0a0000e0	 beq         |$done$33713|
+  000ac	0a0000e0	 beq         |$done$33725|
   000b0	e59f0438	 ldr         r0, [pc, #0x438]
 
 ; 386  :             fDone = TRUE;
@@ -1511,7 +1511,7 @@
 ; 389  : 
 ; 390  : done:
 
-  00174	ea0000ae	 b           |$done$33713|
+  00174	ea0000ae	 b           |$done$33725|
   00178		 |$LN28@ActivityTi@2|
 
 ; 283  :         goto done;
@@ -1874,26 +1874,26 @@
 
   003f4	e5943440	 ldr         r3, [r4, #0x440]
   003f8	e3130002	 tst         r3, #2
-  003fc	0a00000c	 beq         |$done$33713|
+  003fc	0a00000c	 beq         |$done$33725|
   00400	eb000000	 bl          GetLastError
   00404	e59f10ac	 ldr         r1, [pc, #0xAC]
   00408	e1a03000	 mov         r3, r0
   0040c	e59f00b0	 ldr         r0, [pc, #0xB0]
   00410	e1a02005	 mov         r2, r5
   00414	eb000000	 bl          CeLogMsg
-  00418	ea000005	 b           |$done$33713|
+  00418	ea000005	 b           |$done$33725|
   0041c		 |$LN96@ActivityTi@2|
 
 ; 302  :             PMLOGMSG(ZONE_WARN, (_T("%s: shutdown event set\r\n"), pszFname));
 
   0041c	e5943440	 ldr         r3, [r4, #0x440]
   00420	e3130002	 tst         r3, #2
-  00424	0a000002	 beq         |$done$33713|
+  00424	0a000002	 beq         |$done$33725|
   00428	e59f0090	 ldr         r0, [pc, #0x90]
   0042c		 |$LN100@ActivityTi@2|
   0042c	e59f1084	 ldr         r1, [pc, #0x84]
   00430	eb000000	 bl          CeLogMsg
-  00434		 |$done$33713|
+  00434		 |$done$33725|
 
 ; 391  :     // release resources
 ; 392  :     if(hevDummy != NULL) CloseHandle(hevDummy);
@@ -2011,7 +2011,7 @@
   004fc	00000000	 DCD         |??_C@_1CC@CNEGHLPH@?$AAT?$AAi?$AAm?$AAe?$AAr?$AAP?$AAr?$AAi?$AAo?$AAr?$AAi?$AAt?$AAy?$AA2?$AA5?$AA6?$AA?$AA@|
   00500		 |$LN124@ActivityTi@2|
   00500	00000000	 DCD         |??_C@_1CK@KPKINJCK@?$AA?$CL?$AA?$CF?$AAs?$AA?3?$AA?5?$AAt?$AAh?$AAr?$AAe?$AAa?$AAd?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?$AN?$AA?6?$AA?$AA@|
-  00504		 |$M34070|
+  00504		 |$M34082|
 
 			 ENDP  ; |ActivityTimersThreadProc|
 

@@ -11,7 +11,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audiomgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41521| DCD	|$LN5@get_AudioM|
+|$T41523| DCD	|$LN5@get_AudioM|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -22,7 +22,7 @@
 ; 140  :     {
 
   00000		 |$LN5@get_AudioM|
-  00000		 |$M41518|
+  00000		 |$M41520|
 
 ; 141  :         return m_pAudioMixerManager;
 
@@ -31,14 +31,14 @@
 ; 142  :     }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M41519|
+  00008		 |$M41521|
 
 			 ENDP  ; |?get_AudioMixerManager@CAudioManager@@QBAPAVCAudioMixerManager@@XZ|, CAudioManager::get_AudioMixerManager
 
 	EXPORT	|?get_InputStreamManager@CAudioManager@@QBAPAVCStreamManager@@I@Z| ; CAudioManager::get_InputStreamManager
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41531| DCD	|$LN5@get_InputS|
+|$T41533| DCD	|$LN5@get_InputS|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -49,7 +49,7 @@
 ; 155  :     {
 
   00000		 |$LN5@get_InputS|
-  00000		 |$M41528|
+  00000		 |$M41530|
 
 ; 156  :         UNREFERENCED_PARAMETER(DeviceId);
 ; 157  :         return m_pInputStreamManager;
@@ -59,14 +59,14 @@
 ; 158  :     }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M41529|
+  00008		 |$M41531|
 
 			 ENDP  ; |?get_InputStreamManager@CAudioManager@@QBAPAVCStreamManager@@I@Z|, CAudioManager::get_InputStreamManager
 
 	EXPORT	|?get_OutputStreamManager@CAudioManager@@QBAPAVCStreamManager@@I@Z| ; CAudioManager::get_OutputStreamManager
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41541| DCD	|$LN5@get_Output|
+|$T41543| DCD	|$LN5@get_Output|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -77,7 +77,7 @@
 ; 161  :     {
 
   00000		 |$LN5@get_Output|
-  00000		 |$M41538|
+  00000		 |$M41540|
 
 ; 162  :         UNREFERENCED_PARAMETER(DeviceId);
 ; 163  :         return m_pOutputStreamManager;
@@ -87,14 +87,14 @@
 ; 164  :     }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M41539|
+  00008		 |$M41541|
 
 			 ENDP  ; |?get_OutputStreamManager@CAudioManager@@QBAPAVCStreamManager@@I@Z|, CAudioManager::get_OutputStreamManager
 
 	EXPORT	|?get_HardwareAudioBridge@CAudioManager@@QBAPAVCHardwareAudioBridge@@XZ| ; CAudioManager::get_HardwareAudioBridge
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41551| DCD	|$LN5@get_Hardwa|
+|$T41553| DCD	|$LN5@get_Hardwa|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -105,7 +105,7 @@
 ; 172  :     {
 
   00000		 |$LN5@get_Hardwa|
-  00000		 |$M41548|
+  00000		 |$M41550|
 
 ; 173  :         return m_pHardwareBridge;
 
@@ -114,14 +114,14 @@
 ; 174  :     }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M41549|
+  00008		 |$M41551|
 
 			 ENDP  ; |?get_HardwareAudioBridge@CAudioManager@@QBAPAVCHardwareAudioBridge@@XZ|, CAudioManager::get_HardwareAudioBridge
 
 	EXPORT	|?get_OutStreamManager@CAudioManager@@QAAPAVCStreamManager@@XZ| ; CAudioManager::get_OutStreamManager
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41561| DCD	|$LN5@get_OutStr|
+|$T41563| DCD	|$LN5@get_OutStr|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -132,7 +132,7 @@
 ; 177  :         {
 
   00000		 |$LN5@get_OutStr|
-  00000		 |$M41558|
+  00000		 |$M41560|
 
 ; 178  :         return m_pOutputStreamManager;
 
@@ -141,7 +141,7 @@
 ; 179  :         }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M41559|
+  00008		 |$M41561|
 
 			 ENDP  ; |?get_OutStreamManager@CAudioManager@@QAAPAVCStreamManager@@XZ|, CAudioManager::get_OutStreamManager
 
@@ -149,7 +149,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmctxt.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41571| DCD	|$LN5@GetStreamM|
+|$T41573| DCD	|$LN5@GetStreamM|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -160,17 +160,17 @@
 ; 76   :     CStreamManager *GetStreamManager() { return m_pStreamManager; }
 
   00000		 |$LN5@GetStreamM|
-  00000		 |$M41568|
+  00000		 |$M41570|
   00000	e5900050	 ldr         r0, [r0, #0x50]
   00004	e12fff1e	 bx          lr
-  00008		 |$M41569|
+  00008		 |$M41571|
 
 			 ENDP  ; |?GetStreamManager@StreamContext@@QAAPAVCStreamManager@@XZ|, StreamContext::GetStreamManager
 
 	EXPORT	|?GetGain@StreamContext@@QAAKXZ|	; StreamContext::GetGain
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41581| DCD	|$LN5@GetGain|
+|$T41583| DCD	|$LN5@GetGain|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -181,7 +181,7 @@
 ; 110  :     {
 
   00000		 |$LN5@GetGain|
-  00000		 |$M41578|
+  00000		 |$M41580|
 
 ; 111  :         return m_dwGain;
 
@@ -190,14 +190,14 @@
 ; 112  :     }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M41579|
+  00008		 |$M41581|
 
 			 ENDP  ; |?GetGain@StreamContext@@QAAKXZ|, StreamContext::GetGain
 
 	EXPORT	|?SetGain@StreamContext@@QAAKK@Z|	; StreamContext::SetGain
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41592| DCD	|$LN5@SetGain|
+|$T41594| DCD	|$LN5@SetGain|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -209,7 +209,7 @@
 
   00000		 |$LN5@SetGain|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M41589|
+  00004		 |$M41591|
   00004	e1a02000	 mov         r2, r0
 
 ; 116  :         m_dwGain = dwGain;
@@ -229,7 +229,7 @@
 
   00020	e49de004	 ldr         lr, [sp], #4
   00024	e12fff1e	 bx          lr
-  00028		 |$M41590|
+  00028		 |$M41592|
 
 			 ENDP  ; |?SetGain@StreamContext@@QAAKK@Z|, StreamContext::SetGain
 
@@ -260,7 +260,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audiomgr.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41606| DCD	|$LN7@CAudioMana|
+|$T41608| DCD	|$LN7@CAudioMana|
 	DCD	0x40001701
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -294,7 +294,7 @@
 
   00000		 |$LN7@CAudioMana|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M41603|
+  00004		 |$M41605|
   00004	e1a04000	 mov         r4, r0
   00008	e59f3048	 ldr         r3, [pc, #0x48]
   0000c	e3a02000	 mov         r2, #0
@@ -330,7 +330,7 @@
   00058		 |$LN8@CAudioMana|
   00058		 |$LN9@CAudioMana|
   00058	00000000	 DCD         |??_7CAudioManager@@6B@|
-  0005c		 |$M41604|
+  0005c		 |$M41606|
 
 			 ENDP  ; |??0CAudioManager@@QAA@XZ|, CAudioManager::CAudioManager
 
@@ -338,7 +338,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audioctrl.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41618| DCD	|$LN5@get_AudioL|
+|$T41620| DCD	|$LN5@get_AudioL|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -349,17 +349,17 @@
 ; 79   :     CAudioLineBase* get_AudioLine() const       { return m_pAudioLine; }
 
   00000		 |$LN5@get_AudioL|
-  00000		 |$M41615|
+  00000		 |$M41617|
   00000	e5900008	 ldr         r0, [r0, #8]
   00004	e12fff1e	 bx          lr
-  00008		 |$M41616|
+  00008		 |$M41618|
 
 			 ENDP  ; |?get_AudioLine@CAudioControlBase@@QBAPAVCAudioLineBase@@XZ|, CAudioControlBase::get_AudioLine
 
 	EXPORT	|?get_ControlId@CAudioControlBase@@QBAKXZ| ; CAudioControlBase::get_ControlId
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41628| DCD	|$LN5@get_Contro|
+|$T41630| DCD	|$LN5@get_Contro|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -370,10 +370,10 @@
 ; 81   :     DWORD get_ControlId() const                 { return m_ControlId; }
 
   00000		 |$LN5@get_Contro|
-  00000		 |$M41625|
+  00000		 |$M41627|
   00000	e590000c	 ldr         r0, [r0, #0xC]
   00004	e12fff1e	 bx          lr
-  00008		 |$M41626|
+  00008		 |$M41628|
 
 			 ENDP  ; |?get_ControlId@CAudioControlBase@@QBAKXZ|, CAudioControlBase::get_ControlId
 
@@ -381,7 +381,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audiolin.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41638| DCD	|$LN5@get_Channe|
+|$T41640| DCD	|$LN5@get_Channe|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -392,10 +392,10 @@
 ; 102  :     DWORD get_ChannelCount() const          { return m_countChannels; }
 
   00000		 |$LN5@get_Channe|
-  00000		 |$M41635|
+  00000		 |$M41637|
   00000	e5900020	 ldr         r0, [r0, #0x20]
   00004	e12fff1e	 bx          lr
-  00008		 |$M41636|
+  00008		 |$M41638|
 
 			 ENDP  ; |?get_ChannelCount@CAudioLineBase@@QBAKXZ|, CAudioLineBase::get_ChannelCount
 
@@ -405,7 +405,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audioctrl.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41673| DCD	|$LN21@put_AudioV|
+|$T41675| DCD	|$LN21@put_AudioV|
 	DCD	0x40003802
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\mixermgr.h
@@ -419,7 +419,7 @@
   00000		 |$LN21@put_AudioV|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd020	 sub         sp, sp, #0x20
-  00008		 |$M41670|
+  00008		 |$M41672|
   00008	e1a05002	 mov         r5, r2
   0000c	e1a04001	 mov         r4, r1
   00010	e1a07000	 mov         r7, r0
@@ -488,7 +488,7 @@
 ; 141  :             mmRet = MMSYSERR_INVALPARAM;
 
   0007c	13a0400b	 movne       r4, #0xB
-  00080	1a000012	 bne         |$Error$39028|
+  00080	1a000012	 bne         |$Error$39030|
 
 ; 130  :         {
 ; 131  :         case 2:
@@ -539,7 +539,7 @@
   000c4	0593200c	 ldreq       r2, [r3, #0xC]
   000c8	01a00007	 moveq       r0, r7
   000cc	0b000000	 bleq        |?notify_AudioMixerCallbacks@CAudioMixerManager@@QBAXKK@Z|
-  000d0		 |$Error$39028|
+  000d0		 |$Error$39030|
 
 ; 152  :         }
 ; 153  : 
@@ -552,7 +552,7 @@
   000d4	e28dd020	 add         sp, sp, #0x20
   000d8	e8bd41f0	 ldmia       sp!, {r4 - r8, lr}
   000dc	e12fff1e	 bx          lr
-  000e0		 |$M41671|
+  000e0		 |$M41673|
 
 			 ENDP  ; |?put_AudioVolume@CAudioMixerManager@@QBAKW4AudioMixerControl@1@K@Z|, CAudioMixerManager::put_AudioVolume
 
@@ -560,7 +560,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audioctrl.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41702| DCD	|$LN18@get_AudioV|
+|$T41704| DCD	|$LN18@get_AudioV|
 	DCD	0x40003202
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\mixermgr.h
@@ -574,7 +574,7 @@
   00000		 |$LN18@get_AudioV|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd020	 sub         sp, sp, #0x20
-  00008		 |$M41699|
+  00008		 |$M41701|
   00008	e1a06002	 mov         r6, r2
   0000c	e1a05001	 mov         r5, r1
   00010	e1a04000	 mov         r4, r0
@@ -635,7 +635,7 @@
 
 ; 174  :         if (mmRet == MMSYSERR_NOERROR)
 
-  0008c	1a00000a	 bne         |$Error$39050|
+  0008c	1a00000a	 bne         |$Error$39052|
 
 ; 175  :         {
 ; 176  :             DWORD dwGainL, dwGainR;
@@ -652,7 +652,7 @@
 ; 191  :                 mmRet = MMSYSERR_INVALPARAM;
 
   000a0	13a0000b	 movne       r0, #0xB
-  000a4	1a000004	 bne         |$Error$39050|
+  000a4	1a000004	 bne         |$Error$39052|
 
 ; 179  :             {
 ; 180  :             case 2:
@@ -683,7 +683,7 @@
 
   000b4	e1823803	 orr         r3, r2, r3, lsl #16
   000b8	e5863000	 str         r3, [r6]
-  000bc		 |$Error$39050|
+  000bc		 |$Error$39052|
 
 ; 197  :         }
 ; 198  : 
@@ -695,7 +695,7 @@
   000bc	e28dd020	 add         sp, sp, #0x20
   000c0	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   000c4	e12fff1e	 bx          lr
-  000c8		 |$M41700|
+  000c8		 |$M41702|
 
 			 ENDP  ; |?get_AudioVolume@CAudioMixerManager@@QBAKW4AudioMixerControl@1@PAK@Z|, CAudioMixerManager::get_AudioVolume
 
@@ -703,7 +703,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audioctrl.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41719| DCD	|$LN8@put_AudioM|
+|$T41721| DCD	|$LN8@put_AudioM|
 	DCD	0x40001d02
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\mixermgr.h
@@ -717,7 +717,7 @@
   00000		 |$LN8@put_AudioM|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd01c	 sub         sp, sp, #0x1C
-  00008		 |$M41716|
+  00008		 |$M41718|
   00008	e1a05000	 mov         r5, r0
 
 ; 206  :         ASSERT(m_prgAudioMixerControls[id]);
@@ -770,14 +770,14 @@
   00068	e28dd01c	 add         sp, sp, #0x1C
   0006c	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00070	e12fff1e	 bx          lr
-  00074		 |$M41717|
+  00074		 |$M41719|
 
 			 ENDP  ; |?put_AudioMute@CAudioMixerManager@@QBAKW4AudioMixerControl@1@H@Z|, CAudioMixerManager::put_AudioMute
 
 	EXPORT	|?get_AudioMute@CAudioMixerManager@@QBAKW4AudioMixerControl@1@PAH@Z| ; CAudioMixerManager::get_AudioMute
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41732| DCD	|$LN6@get_AudioM@2|
+|$T41734| DCD	|$LN6@get_AudioM@2|
 	DCD	0x40001702
 ; Function compile flags: /Ogspy
 
@@ -790,7 +790,7 @@
   00000		 |$LN6@get_AudioM@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
   00004	e24dd01c	 sub         sp, sp, #0x1C
-  00008		 |$M41729|
+  00008		 |$M41731|
   00008	e1a04002	 mov         r4, r2
 
 ; 228  :         ASSERT(m_prgAudioMixerControls[id]);
@@ -838,14 +838,14 @@
   00050	e28dd01c	 add         sp, sp, #0x1C
   00054	e8bd4010	 ldmia       sp!, {r4, lr}
   00058	e12fff1e	 bx          lr
-  0005c		 |$M41730|
+  0005c		 |$M41732|
 
 			 ENDP  ; |?get_AudioMute@CAudioMixerManager@@QBAKW4AudioMixerControl@1@PAH@Z|, CAudioMixerManager::get_AudioMute
 
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audiomgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41741| DCD	|$LN5@get_InputD|
+|$T41743| DCD	|$LN5@get_InputD|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -856,16 +856,16 @@
 ; 191  :     virtual DWORD get_InputDeviceCount()        {return 1;}
 
   00000		 |$LN5@get_InputD|
-  00000		 |$M41738|
+  00000		 |$M41740|
   00000	e3a00001	 mov         r0, #1
   00004	e12fff1e	 bx          lr
-  00008		 |$M41739|
+  00008		 |$M41741|
 
 			 ENDP  ; |?get_InputDeviceCount@CAudioManager@@UAAKXZ|, CAudioManager::get_InputDeviceCount
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41750| DCD	|$LN5@get_Output@2|
+|$T41752| DCD	|$LN5@get_Output@2|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -876,16 +876,16 @@
 ; 192  :     virtual DWORD get_OutputDeviceCount()       {return 1;}
 
   00000		 |$LN5@get_Output@2|
-  00000		 |$M41747|
+  00000		 |$M41749|
   00000	e3a00001	 mov         r0, #1
   00004	e12fff1e	 bx          lr
-  00008		 |$M41748|
+  00008		 |$M41750|
 
 			 ENDP  ; |?get_OutputDeviceCount@CAudioManager@@UAAKXZ|, CAudioManager::get_OutputDeviceCount
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41759| DCD	|$LN5@OutputStre|
+|$T41761| DCD	|$LN5@OutputStre|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -896,16 +896,16 @@
 ; 194  :     virtual BOOL OutputStreamOpened()           { return TRUE;}
 
   00000		 |$LN5@OutputStre|
-  00000		 |$M41756|
+  00000		 |$M41758|
   00000	e3a00001	 mov         r0, #1
   00004	e12fff1e	 bx          lr
-  00008		 |$M41757|
+  00008		 |$M41759|
 
 			 ENDP  ; |?OutputStreamOpened@CAudioManager@@UAAHXZ|, CAudioManager::OutputStreamOpened
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41768| DCD	|$LN5@OutputStre@2|
+|$T41770| DCD	|$LN5@OutputStre@2|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -916,16 +916,16 @@
 ; 195  :     virtual BOOL OutputStreamClosed()           { return TRUE;}
 
   00000		 |$LN5@OutputStre@2|
-  00000		 |$M41765|
+  00000		 |$M41767|
   00000	e3a00001	 mov         r0, #1
   00004	e12fff1e	 bx          lr
-  00008		 |$M41766|
+  00008		 |$M41768|
 
 			 ENDP  ; |?OutputStreamClosed@CAudioManager@@UAAHXZ|, CAudioManager::OutputStreamClosed
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41777| DCD	|$LN5@InputStrea|
+|$T41779| DCD	|$LN5@InputStrea|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -936,16 +936,16 @@
 ; 196  :     virtual BOOL InputStreamOpened()            { return TRUE;}
 
   00000		 |$LN5@InputStrea|
-  00000		 |$M41774|
+  00000		 |$M41776|
   00000	e3a00001	 mov         r0, #1
   00004	e12fff1e	 bx          lr
-  00008		 |$M41775|
+  00008		 |$M41777|
 
 			 ENDP  ; |?InputStreamOpened@CAudioManager@@UAAHXZ|, CAudioManager::InputStreamOpened
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41786| DCD	|$LN5@InputStrea@2|
+|$T41788| DCD	|$LN5@InputStrea@2|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -956,16 +956,16 @@
 ; 197  :     virtual BOOL InputStreamClosed()            { return TRUE;}
 
   00000		 |$LN5@InputStrea@2|
-  00000		 |$M41783|
+  00000		 |$M41785|
   00000	e3a00001	 mov         r0, #1
   00004	e12fff1e	 bx          lr
-  00008		 |$M41784|
+  00008		 |$M41786|
 
 			 ENDP  ; |?InputStreamClosed@CAudioManager@@UAAHXZ|, CAudioManager::InputStreamClosed
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41801| DCD	|$LN7@put_Output|
+|$T41803| DCD	|$LN7@put_Output|
 	DCD	0x40000701
 ; Function compile flags: /Ogspy
 
@@ -977,7 +977,7 @@
 
   00000		 |$LN7@put_Output|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M41798|
+  00004		 |$M41800|
   00004	e1a02001	 mov         r2, r1
 
 ; 203  :         return get_AudioMixerManager()->put_AudioVolume(
@@ -991,13 +991,13 @@
 
   00014	e49de004	 ldr         lr, [sp], #4
   00018	e12fff1e	 bx          lr
-  0001c		 |$M41799|
+  0001c		 |$M41801|
 
 			 ENDP  ; |?put_OutputGain@CAudioManager@@UAAKK@Z|, CAudioManager::put_OutputGain
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41815| DCD	|$LN7@get_Output@3|
+|$T41817| DCD	|$LN7@get_Output@3|
 	DCD	0x40000a02
 ; Function compile flags: /Ogspy
 
@@ -1010,7 +1010,7 @@
   00000		 |$LN7@get_Output@3|
   00000	e52de004	 str         lr, [sp, #-4]!
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M41812|
+  00008		 |$M41814|
 
 ; 209  :         DWORD dwGain;
 ; 210  :         get_AudioMixerManager()->get_AudioVolume(
@@ -1030,13 +1030,13 @@
   0001c	e28dd004	 add         sp, sp, #4
   00020	e49de004	 ldr         lr, [sp], #4
   00024	e12fff1e	 bx          lr
-  00028		 |$M41813|
+  00028		 |$M41815|
 
 			 ENDP  ; |?get_OutputGain@CAudioManager@@UAAKXZ|, CAudioManager::get_OutputGain
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41830| DCD	|$LN7@put_InputG|
+|$T41832| DCD	|$LN7@put_InputG|
 	DCD	0x40000701
 ; Function compile flags: /Ogspy
 
@@ -1048,7 +1048,7 @@
 
   00000		 |$LN7@put_InputG|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M41827|
+  00004		 |$M41829|
   00004	e1a02001	 mov         r2, r1
 
 ; 217  :         return get_AudioMixerManager()->put_AudioVolume(
@@ -1062,13 +1062,13 @@
 
   00014	e49de004	 ldr         lr, [sp], #4
   00018	e12fff1e	 bx          lr
-  0001c		 |$M41828|
+  0001c		 |$M41830|
 
 			 ENDP  ; |?put_InputGain@CAudioManager@@UAAKK@Z|, CAudioManager::put_InputGain
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41844| DCD	|$LN7@get_InputG|
+|$T41846| DCD	|$LN7@get_InputG|
 	DCD	0x40000a02
 ; Function compile flags: /Ogspy
 
@@ -1081,7 +1081,7 @@
   00000		 |$LN7@get_InputG|
   00000	e52de004	 str         lr, [sp, #-4]!
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M41841|
+  00008		 |$M41843|
 
 ; 223  :         DWORD dwGain;
 ; 224  :         get_AudioMixerManager()->get_AudioVolume(
@@ -1101,13 +1101,13 @@
   0001c	e28dd004	 add         sp, sp, #4
   00020	e49de004	 ldr         lr, [sp], #4
   00024	e12fff1e	 bx          lr
-  00028		 |$M41842|
+  00028		 |$M41844|
 
 			 ENDP  ; |?get_InputGain@CAudioManager@@UAAKXZ|, CAudioManager::get_InputGain
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41859| DCD	|$LN7@put_Output@2|
+|$T41861| DCD	|$LN7@put_Output@2|
 	DCD	0x40000701
 ; Function compile flags: /Ogspy
 
@@ -1119,7 +1119,7 @@
 
   00000		 |$LN7@put_Output@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M41856|
+  00004		 |$M41858|
   00004	e1a02001	 mov         r2, r1
 
 ; 231  :         return get_AudioMixerManager()->put_AudioMute(
@@ -1133,13 +1133,13 @@
 
   00014	e49de004	 ldr         lr, [sp], #4
   00018	e12fff1e	 bx          lr
-  0001c		 |$M41857|
+  0001c		 |$M41859|
 
 			 ENDP  ; |?put_OutputMute@CAudioManager@@UAAKH@Z|, CAudioManager::put_OutputMute
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41873| DCD	|$LN7@get_Output@4|
+|$T41875| DCD	|$LN7@get_Output@4|
 	DCD	0x40000a02
 ; Function compile flags: /Ogspy
 
@@ -1152,7 +1152,7 @@
   00000		 |$LN7@get_Output@4|
   00000	e52de004	 str         lr, [sp, #-4]!
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M41870|
+  00008		 |$M41872|
 
 ; 237  :         BOOL bMute;
 ; 238  :         get_AudioMixerManager()->get_AudioMute(
@@ -1172,13 +1172,13 @@
   0001c	e28dd004	 add         sp, sp, #4
   00020	e49de004	 ldr         lr, [sp], #4
   00024	e12fff1e	 bx          lr
-  00028		 |$M41871|
+  00028		 |$M41873|
 
 			 ENDP  ; |?get_OutputMute@CAudioManager@@UAAKXZ|, CAudioManager::get_OutputMute
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41888| DCD	|$LN7@put_InputM|
+|$T41890| DCD	|$LN7@put_InputM|
 	DCD	0x40000701
 ; Function compile flags: /Ogspy
 
@@ -1190,7 +1190,7 @@
 
   00000		 |$LN7@put_InputM|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M41885|
+  00004		 |$M41887|
   00004	e1a02001	 mov         r2, r1
 
 ; 245  :         return get_AudioMixerManager()->put_AudioMute(
@@ -1204,13 +1204,13 @@
 
   00014	e49de004	 ldr         lr, [sp], #4
   00018	e12fff1e	 bx          lr
-  0001c		 |$M41886|
+  0001c		 |$M41888|
 
 			 ENDP  ; |?put_InputMute@CAudioManager@@UAAKH@Z|, CAudioManager::put_InputMute
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41902| DCD	|$LN7@get_InputM|
+|$T41904| DCD	|$LN7@get_InputM|
 	DCD	0x40000a02
 ; Function compile flags: /Ogspy
 
@@ -1223,7 +1223,7 @@
   00000		 |$LN7@get_InputM|
   00000	e52de004	 str         lr, [sp, #-4]!
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M41899|
+  00008		 |$M41901|
 
 ; 251  :         BOOL bMute;
 ; 252  :         get_AudioMixerManager()->get_AudioMute(
@@ -1243,7 +1243,7 @@
   0001c	e28dd004	 add         sp, sp, #4
   00020	e49de004	 ldr         lr, [sp], #4
   00024	e12fff1e	 bx          lr
-  00028		 |$M41900|
+  00028		 |$M41902|
 
 			 ENDP  ; |?get_InputMute@CAudioManager@@UAAKXZ|, CAudioManager::get_InputMute
 
@@ -1253,7 +1253,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audiomgr.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41910| DCD	|$LN7@InternalCl|
+|$T41912| DCD	|$LN7@InternalCl|
 	DCD	0x40001201
 ; Function compile flags: /Ogspy
 
@@ -1265,7 +1265,7 @@
 
   00000		 |$LN7@InternalCl|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M41907|
+  00004		 |$M41909|
   00004	e1a04000	 mov         r4, r0
 
 ; 86   :     DEBUGMSG(ZONE_FUNCTION, (L"WAV:+InternalCleanUp()\r\n"));
@@ -1314,7 +1314,7 @@
 
   00040	e8bd4010	 ldmia       sp!, {r4, lr}
   00044	e12fff1e	 bx          lr
-  00048		 |$M41908|
+  00048		 |$M41910|
 
 			 ENDP  ; |?InternalCleanUp@CAudioManager@@IAAXXZ|, CAudioManager::InternalCleanUp
 
@@ -1322,7 +1322,7 @@
 	IMPORT	|CreateBusAccessHandle|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41921| DCD	|$LN5@initialize|
+|$T41923| DCD	|$LN5@initialize|
 	DCD	0x40001901
 ; Function compile flags: /Ogspy
 
@@ -1334,7 +1334,7 @@
 
   00000		 |$LN5@initialize|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M41918|
+  00004		 |$M41920|
   00004	e1a04000	 mov         r4, r0
 
 ; 114  :     UNREFERENCED_PARAMETER(pBusContext);
@@ -1396,13 +1396,13 @@
 
   0005c	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00060	e12fff1e	 bx          lr
-  00064		 |$M41919|
+  00064		 |$M41921|
 
 			 ENDP  ; |?initialize@CAudioManager@@UAAHPBGPBX@Z|, CAudioManager::initialize
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41931| DCD	|$LN6@deinitiali|
+|$T41933| DCD	|$LN6@deinitiali|
 	DCD	0x40001001
 ; Function compile flags: /Ogspy
 
@@ -1414,7 +1414,7 @@
 
   00000		 |$LN6@deinitiali|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M41928|
+  00004		 |$M41930|
   00004	e1a04000	 mov         r4, r0
 
 ; 150  :     DEBUGMSG(ZONE_FUNCTION, (L"WAV:+deinitialize()\r\n"));
@@ -1456,7 +1456,7 @@
 
   00038	e8bd4010	 ldmia       sp!, {r4, lr}
   0003c	e12fff1e	 bx          lr
-  00040		 |$M41929|
+  00040		 |$M41931|
 
 			 ENDP  ; |?deinitialize@CAudioManager@@UAAHXZ|, CAudioManager::deinitialize
 
@@ -1465,7 +1465,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audiomgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T41965| DCD	|$LN26@process_IO|
+|$T41967| DCD	|$LN26@process_IO|
 	DCD	0x40006f02
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audiomgr.cpp
@@ -1479,7 +1479,7 @@
   00000		 |$LN26@process_IO|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M41962|
+  00008		 |$M41964|
   00008	e1a0a003	 mov         r10, r3
   0000c	e1a09002	 mov         r9, r2
   00010	e1a08000	 mov         r8, r0
@@ -1711,7 +1711,7 @@
   001b4	00321008	 DCD         0x321008
   001b8		 |$LN30@process_IO|
   001b8	00321004	 DCD         0x321004
-  001bc		 |$M41963|
+  001bc		 |$M41965|
 
 			 ENDP  ; |?process_IOControlMsg@CAudioManager@@QAAHKPAEK0KPAK@Z|, CAudioManager::process_IOControlMsg
 
@@ -1726,7 +1726,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audiomgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42008| DCD	|$LN45@process_Po|
+|$T42010| DCD	|$LN45@process_Po|
 	DCD	0x40009c02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1778,7 +1778,7 @@
   00000		 |$LN45@process_Po|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd034	 sub         sp, sp, #0x34
-  00008		 |$M42005|
+  00008		 |$M42007|
   00008	e1a04000	 mov         r4, r0
   0000c	e3a03832	 mov         r3, #0x32, 16
 
@@ -2198,7 +2198,7 @@
   00268	00321008	 DCD         0x321008
   0026c		 |$LN54@process_Po|
   0026c	00321004	 DCD         0x321004
-  00270		 |$M42006|
+  00270		 |$M42008|
 
 			 ENDP  ; |?process_PowerManagementMessage@CAudioManager@@UAAHKPAEK0KPAK@Z|, CAudioManager::process_PowerManagementMessage
 
@@ -2206,7 +2206,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audiomgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42045| DCD	|$LN19@process_Mi|
+|$T42047| DCD	|$LN19@process_Mi|
 	DCD	0x40002c01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audiomgr.cpp
@@ -2219,7 +2219,7 @@
 
   00000		 |$LN19@process_Mi|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M42042|
+  00004		 |$M42044|
   00004	e3a037da	 mov         r3, #0xDA, 14
 
 ; 431  : 
@@ -2321,7 +2321,7 @@
 
   000a8	e49de004	 ldr         lr, [sp], #4
   000ac	e12fff1e	 bx          lr
-  000b0		 |$M42043|
+  000b0		 |$M42045|
 
 			 ENDP  ; |?process_MiscellaneousMessage@CAudioManager@@UAAHKPAEK0KPAK@Z|, CAudioManager::process_MiscellaneousMessage
 
@@ -2334,7 +2334,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audiomgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42211| DCD	|$LN156@process_Au|
+|$T42213| DCD	|$LN156@process_Au|
 	DCD	0x40010201
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audiomgr.cpp
@@ -2347,7 +2347,7 @@
 
   00000		 |$LN156@process_Au|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M42208|
+  00004		 |$M42210|
   00004	e1a07002	 mov         r7, r2
   00008	e1a04001	 mov         r4, r1
   0000c	e1a05000	 mov         r5, r0
@@ -3183,7 +3183,7 @@
 
   00400	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   00404	e12fff1e	 bx          lr
-  00408		 |$M42209|
+  00408		 |$M42211|
 
 			 ENDP  ; |?process_AudioStreamMessage@CAudioManager@@UAAHPAUMMDRV_MESSAGE_PARAMS@@PAK@Z|, CAudioManager::process_AudioStreamMessage
 
@@ -3191,7 +3191,7 @@
 	IMPORT	|??3@YAXPAX@Z|				; operator delete
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42220| DCD	|$LN5@CAudioMana@2|
+|$T42222| DCD	|$LN5@CAudioMana@2|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -3203,7 +3203,7 @@
 
   00000		 |$LN5@CAudioMana@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M42217|
+  00004		 |$M42219|
   00004	e1a04000	 mov         r4, r0
   00008	e59f3014	 ldr         r3, [pc, #0x14]
 
@@ -3229,13 +3229,13 @@
   00024		 |$LN6@CAudioMana@2|
   00024		 |$LN7@CAudioMana@2|
   00024	00000000	 DCD         |??_7CAudioManager@@6B@|
-  00028		 |$M42218|
+  00028		 |$M42220|
 
 			 ENDP  ; |??1CAudioManager@@UAA@XZ|, CAudioManager::~CAudioManager
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42238| DCD	|$LN8@scalar|
+|$T42240| DCD	|$LN8@scalar|
 	DCD	0x40000f01
 ; Function compile flags: /Ogspy
 
@@ -3244,7 +3244,7 @@
   00000		 |??_GCAudioManager@@UAAPAXI@Z| PROC	; CAudioManager::`scalar deleting destructor'
   00000		 |$LN8@scalar|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M42235|
+  00004		 |$M42237|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
   0000c	e59f3024	 ldr         r3, [pc, #0x24]
@@ -3261,7 +3261,7 @@
   00038		 |$LN9@scalar|
   00038		 |$LN10@scalar|
   00038	00000000	 DCD         |??_7CAudioManager@@6B@|
-  0003c		 |$M42236|
+  0003c		 |$M42238|
 
 			 ENDP  ; |??_GCAudioManager@@UAAPAXI@Z|, CAudioManager::`scalar deleting destructor'
 

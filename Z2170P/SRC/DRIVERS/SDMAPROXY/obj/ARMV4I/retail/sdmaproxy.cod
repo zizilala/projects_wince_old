@@ -53,7 +53,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdmaproxy\sdmaproxy.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39178| DCD	|$LN7@DllEntry|
+|$T39180| DCD	|$LN7@DllEntry|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -65,7 +65,7 @@
 
   00000		 |$LN7@DllEntry|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M39175|
+  00004		 |$M39177|
   00004	e1a04000	 mov         r4, r0
 
 ; 112  : 	UNREFERENCED_PARAMETER(Reserved);
@@ -106,7 +106,7 @@
   0002c		 |$LN8@DllEntry|
   0002c		 |$LN9@DllEntry|
   0002c	00000000	 DCD         |dpCurSettings|
-  00030		 |$M39176|
+  00030		 |$M39178|
 
 			 ENDP  ; |?DllEntry@@YAHPAUHINSTANCE__@@KPAX@Z|, DllEntry
 
@@ -118,7 +118,7 @@
 	IMPORT	|LocalAlloc|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39195| DCD	|$LN11@DMP_Init|
+|$T39197| DCD	|$LN11@DMP_Init|
 	DCD	0x40002001
 ; Function compile flags: /Ogspy
 
@@ -130,7 +130,7 @@
 
   00000		 |$LN11@DMP_Init|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M39192|
+  00004		 |$M39194|
 
 ; 134  : 	UNREFERENCED_PARAMETER(szContext);
 ; 135  : 	UNREFERENCED_PARAMETER(pBusContext);
@@ -222,7 +222,7 @@
   00078	00000000	 DCD         |?csLock@@3UCRITICAL_SECTION@@A|
   0007c		 |$LN14@DMP_Init|
   0007c	73707879	 DCD         0x73707879
-  00080		 |$M39193|
+  00080		 |$M39195|
 
 			 ENDP  ; |?DMP_Init@@YAKPBGPBX@Z|, DMP_Init
 
@@ -232,7 +232,7 @@
 	IMPORT	|?CleanUp@SdmaPx@@QAAHXZ|		; SdmaPx::CleanUp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39214| DCD	|$LN13@DMP_Deinit|
+|$T39216| DCD	|$LN13@DMP_Deinit|
 	DCD	0x40001f01
 ; Function compile flags: /Ogspy
 
@@ -244,7 +244,7 @@
 
   00000		 |$LN13@DMP_Deinit|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M39211|
+  00004		 |$M39213|
   00004	e1b04000	 movs        r4, r0
 
 ; 175  :     DEBUGMSG (DMP_ZONE_FUNCTION, (TEXT("+DMP_Deinit\n")));
@@ -258,11 +258,11 @@
 ; 180  :     
 ; 181  :     if ((pDevice == NULL) || (pDevice->cookie != DMP_DEVICE_COOKIE))
 
-  0000c	0a000015	 beq         |$cleanUp$38977|
+  0000c	0a000015	 beq         |$cleanUp$38979|
   00010	e5942000	 ldr         r2, [r4]
   00014	e59f305c	 ldr         r3, [pc, #0x5C]
   00018	e1520003	 cmp         r2, r3
-  0001c	1a000011	 bne         |$cleanUp$38977|
+  0001c	1a000011	 bne         |$cleanUp$38979|
 
 ; 182  :     {
 ; 183  :         DEBUGMSG (ZONE_ERROR, (L"ERROR: DMP_Deinit: "
@@ -287,7 +287,7 @@
   0002c	e1a00006	 mov         r0, r6
   00030	eb000000	 bl          |?CleanUp@SdmaPx@@QAAHXZ|
   00034	e3500000	 cmp         r0, #0
-  00038	0a00000a	 beq         |$cleanUp$38977|
+  00038	0a00000a	 beq         |$cleanUp$38979|
 
 ; 194  :         {
 ; 195  :             DEBUGMSG (ZONE_ERROR, (L"ERROR: DMP_Deinit: "
@@ -326,7 +326,7 @@
 ; 211  :     rc = TRUE;
 
   00064	e3a05001	 mov         r5, #1
-  00068		 |$cleanUp$38977|
+  00068		 |$cleanUp$38979|
 
 ; 212  :     //
 ; 213  : cleanUp: 
@@ -342,7 +342,7 @@
   00074	00000000	 DCD         |?csLock@@3UCRITICAL_SECTION@@A|
   00078		 |$LN16@DMP_Deinit|
   00078	73707879	 DCD         0x73707879
-  0007c		 |$M39212|
+  0007c		 |$M39214|
 
 			 ENDP  ; |?DMP_Deinit@@YAHK@Z|, DMP_Deinit
 
@@ -351,7 +351,7 @@
 	IMPORT	|GetCallerVMProcessId|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39229| DCD	|$LN11@DMP_Open|
+|$T39231| DCD	|$LN11@DMP_Open|
 	DCD	0x40001601
 ; Function compile flags: /Ogspy
 
@@ -363,7 +363,7 @@
 
   00000		 |$LN11@DMP_Open|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M39226|
+  00004		 |$M39228|
   00004	e1b04000	 movs        r4, r0
 
 ; 226  : 	UNREFERENCED_PARAMETER(ShareMode);
@@ -379,11 +379,11 @@
 ; 233  :     
 ; 234  :     if ((pDevice == NULL) || (pDevice->cookie != DMP_DEVICE_COOKIE))
 
-  0000c	0a00000d	 beq         |$cleanUp$39001|
+  0000c	0a00000d	 beq         |$cleanUp$39003|
   00010	e5942000	 ldr         r2, [r4]
   00014	e59f3038	 ldr         r3, [pc, #0x38]
   00018	e1520003	 cmp         r2, r3
-  0001c	1a000009	 bne         |$cleanUp$39001|
+  0001c	1a000009	 bne         |$cleanUp$39003|
 
 ; 235  :     {
 ; 236  :         DEBUGMSG (ZONE_ERROR, (L"ERROR: DMP_Open: "
@@ -406,7 +406,7 @@
   00034	e1a00006	 mov         r0, r6
   00038	eb000000	 bl          |?AddSdmaPxClient@SdmaPx@@QAAHK@Z|
   0003c	e3500000	 cmp         r0, #0
-  00040	0a000000	 beq         |$cleanUp$39001|
+  00040	0a000000	 beq         |$cleanUp$39003|
   00044		 |$LN2@DMP_Open|
 
 ; 245  :         {
@@ -429,7 +429,7 @@
 ; 262  :     rc = hDeviceContext;
 
   00044	e1a05004	 mov         r5, r4
-  00048		 |$cleanUp$39001|
+  00048		 |$cleanUp$39003|
 
 ; 263  :     //
 ; 264  : cleanUp:    
@@ -443,7 +443,7 @@
   00054		 |$LN12@DMP_Open|
   00054		 |$LN13@DMP_Open|
   00054	73707879	 DCD         0x73707879
-  00058		 |$M39227|
+  00058		 |$M39229|
 
 			 ENDP  ; |?DMP_Open@@YAKKKK@Z|, DMP_Open
 
@@ -451,7 +451,7 @@
 	IMPORT	|?RemoveSdmaPxClient@SdmaPx@@QAAHK@Z|	; SdmaPx::RemoveSdmaPxClient
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39243| DCD	|$LN11@DMP_Close|
+|$T39245| DCD	|$LN11@DMP_Close|
 	DCD	0x40001601
 ; Function compile flags: /Ogspy
 
@@ -463,7 +463,7 @@
 
   00000		 |$LN11@DMP_Close|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M39240|
+  00004		 |$M39242|
   00004	e3500000	 cmp         r0, #0
 
 ; 274  :     DEBUGMSG (DMP_ZONE_FUNCTION, (TEXT("+DMP_Close (device context=0x%x)\n"), hOpenContext));
@@ -477,11 +477,11 @@
 ; 279  :     
 ; 280  :     if ((pDevice == NULL) || (pDevice->cookie != DMP_DEVICE_COOKIE))
 
-  0000c	0a00000d	 beq         |$cleanUp$39019|
+  0000c	0a00000d	 beq         |$cleanUp$39021|
   00010	e5902000	 ldr         r2, [r0]
   00014	e59f3038	 ldr         r3, [pc, #0x38]
   00018	e1520003	 cmp         r2, r3
-  0001c	1a000009	 bne         |$cleanUp$39019|
+  0001c	1a000009	 bne         |$cleanUp$39021|
 
 ; 281  :     {
 ; 282  :         DEBUGMSG (ZONE_ERROR, (L"ERROR: DMP_Close: "
@@ -512,7 +512,7 @@
   00034	e1a00005	 mov         r0, r5
   00038	eb000000	 bl          |?RemoveSdmaPxClient@SdmaPx@@QAAHK@Z|
   0003c	e3500000	 cmp         r0, #0
-  00040	0a000000	 beq         |$cleanUp$39019|
+  00040	0a000000	 beq         |$cleanUp$39021|
   00044		 |$LN2@DMP_Close|
 
 ; 299  :         {
@@ -526,7 +526,7 @@
 ; 307  :     rc = TRUE;
 
   00044	e3a04001	 mov         r4, #1
-  00048		 |$cleanUp$39019|
+  00048		 |$cleanUp$39021|
 
 ; 308  :     //
 ; 309  : cleanUp:    
@@ -540,14 +540,14 @@
   00054		 |$LN12@DMP_Close|
   00054		 |$LN13@DMP_Close|
   00054	73707879	 DCD         0x73707879
-  00058		 |$M39241|
+  00058		 |$M39243|
 
 			 ENDP  ; |?DMP_Close@@YAHK@Z|, DMP_Close
 
 	EXPORT	|?DMP_Read@@YAKKPAXK@Z|			; DMP_Read
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39254| DCD	|$LN5@DMP_Read|
+|$T39256| DCD	|$LN5@DMP_Read|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -558,7 +558,7 @@
 ; 321  : {
 
   00000		 |$LN5@DMP_Read|
-  00000		 |$M39251|
+  00000		 |$M39253|
 
 ; 322  : 	UNREFERENCED_PARAMETER(Count);
 ; 323  : 	UNREFERENCED_PARAMETER(pBuffer);
@@ -573,14 +573,14 @@
 ; 329  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M39252|
+  00008		 |$M39254|
 
 			 ENDP  ; |?DMP_Read@@YAKKPAXK@Z|, DMP_Read
 
 	EXPORT	|?DMP_Write@@YAKKPBXK@Z|		; DMP_Write
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39263| DCD	|$LN5@DMP_Write|
+|$T39265| DCD	|$LN5@DMP_Write|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -591,7 +591,7 @@
 ; 338  : {
 
   00000		 |$LN5@DMP_Write|
-  00000		 |$M39260|
+  00000		 |$M39262|
 
 ; 339  : 	UNREFERENCED_PARAMETER(NumberOfBytes);
 ; 340  : 	UNREFERENCED_PARAMETER(pSourceBytes);
@@ -606,14 +606,14 @@
 ; 346  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M39261|
+  00008		 |$M39263|
 
 			 ENDP  ; |?DMP_Write@@YAKKPBXK@Z|, DMP_Write
 
 	EXPORT	|?DMP_Seek@@YAKKJK@Z|			; DMP_Seek
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39272| DCD	|$LN5@DMP_Seek|
+|$T39274| DCD	|$LN5@DMP_Seek|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -624,7 +624,7 @@
 ; 355  : {
 
   00000		 |$LN5@DMP_Seek|
-  00000		 |$M39269|
+  00000		 |$M39271|
 
 ; 356  : 	UNREFERENCED_PARAMETER(Type);
 ; 357  : 	UNREFERENCED_PARAMETER(Amount);
@@ -639,7 +639,7 @@
 ; 363  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M39270|
+  00008		 |$M39272|
 
 			 ENDP  ; |?DMP_Seek@@YAKKJK@Z|, DMP_Seek
 
@@ -651,7 +651,7 @@
 	IMPORT	|EnterCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39291| DCD	|$LN25@DMP_IOCont|
+|$T39293| DCD	|$LN25@DMP_IOCont|
 	DCD	0x40003d01
 ; Function compile flags: /Ogspy
 
@@ -663,7 +663,7 @@
 
   00000		 |$LN25@DMP_IOCont|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M39288|
+  00004		 |$M39290|
   00004	e1a07003	 mov         r7, r3
   00008	e1a05002	 mov         r5, r2
   0000c	e1a06001	 mov         r6, r1
@@ -819,7 +819,7 @@
 ; 467  : 
 ; 468  : cleanUp:
 
-  000a4	ea00000a	 b           |$cleanUp$39064|
+  000a4	ea00000a	 b           |$cleanUp$39066|
   000a8		 |$LN5@DMP_IOCont|
 
 ; 444  :             break;
@@ -858,7 +858,7 @@
 ; 467  : 
 ; 468  : cleanUp:
 
-  000cc	ea000000	 b           |$cleanUp$39064|
+  000cc	ea000000	 b           |$cleanUp$39066|
   000d0		 |$LN3@DMP_IOCont|
 
 ; 452  :             {
@@ -866,7 +866,7 @@
 ; 454  :                 RetVal = FALSE;
 
   000d0	e3a04000	 mov         r4, #0
-  000d4		 |$cleanUp$39064|
+  000d4		 |$cleanUp$39066|
 
 ; 469  :     LeaveCriticalSection(&csLock); // release mutex
 
@@ -887,14 +887,14 @@
   000ec	02308124	 DCD         0x2308124
   000f0		 |$LN29@DMP_IOCont|
   000f0	02308120	 DCD         0x2308120
-  000f4		 |$M39289|
+  000f4		 |$M39291|
 
 			 ENDP  ; |?DMP_IOControl@@YAHKKPAEK0KPAK@Z|, DMP_IOControl
 
 	EXPORT	|?DMP_PowerUp@@YAXK@Z|			; DMP_PowerUp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39302| DCD	|$LN5@DMP_PowerU|
+|$T39304| DCD	|$LN5@DMP_PowerU|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -905,7 +905,7 @@
 ; 478  : {
 
   00000		 |$LN5@DMP_PowerU|
-  00000		 |$M39299|
+  00000		 |$M39301|
 
 ; 479  : 	UNREFERENCED_PARAMETER(hDeviceContext);
 ; 480  :     DEBUGMSG (DMP_ZONE_FUNCTION, (TEXT("+DMP_PowerUp\n")));
@@ -913,14 +913,14 @@
 ; 482  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M39300|
+  00004		 |$M39302|
 
 			 ENDP  ; |?DMP_PowerUp@@YAXK@Z|, DMP_PowerUp
 
 	EXPORT	|?DMP_PowerDown@@YAXK@Z|		; DMP_PowerDown
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39309| DCD	|$LN5@DMP_PowerD|
+|$T39311| DCD	|$LN5@DMP_PowerD|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -931,7 +931,7 @@
 ; 488  : {
 
   00000		 |$LN5@DMP_PowerD|
-  00000		 |$M39306|
+  00000		 |$M39308|
 
 ; 489  : 	UNREFERENCED_PARAMETER(hDeviceContext);
 ; 490  :     DEBUGMSG (DMP_ZONE_FUNCTION, (TEXT("+DMP_PowerDown\n")));
@@ -939,7 +939,7 @@
 ; 492  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M39307|
+  00004		 |$M39309|
 
 			 ENDP  ; |?DMP_PowerDown@@YAXK@Z|, DMP_PowerDown
 

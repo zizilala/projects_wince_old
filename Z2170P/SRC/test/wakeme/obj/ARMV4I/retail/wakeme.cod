@@ -40,7 +40,7 @@
 ; File c:\wince600\platform\z2170p\src\test\wakeme\wakeme.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32326| DCD	|$LN45@wmain|
+|$T32328| DCD	|$LN45@wmain|
 	DCD	0x40007202
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -194,7 +194,7 @@
   00000		 |$LN45@wmain|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd018	 sub         sp, sp, #0x18
-  00008		 |$M32323|
+  00008		 |$M32325|
   00008	e1a06001	 mov         r6, r1
   0000c	e1a05000	 mov         r5, r0
 
@@ -290,7 +290,7 @@
 ; 81   : 
 ; 82   : 	EXIT:
 
-  000ac	ea000031	 b           |$EXIT$32242|
+  000ac	ea000031	 b           |$EXIT$32244|
   000b0		 |$LN40@wmain|
 
 ; 30   : 	}
@@ -343,7 +343,7 @@
 ; 81   : 
 ; 82   : 	EXIT:
 
-  000fc	ea00001d	 b           |$EXIT$32242|
+  000fc	ea00001d	 b           |$EXIT$32244|
   00100		 |$LN4@wmain|
 
 ; 63   : 		goto EXIT;
@@ -422,7 +422,7 @@
   00170	e59f0010	 ldr         r0, [pc, #0x10]
   00174		 |$LN41@wmain|
   00174	eb000000	 bl          NKDbgPrintfW
-  00178		 |$EXIT$32242|
+  00178		 |$EXIT$32244|
 
 ; 83   :     return 0;
 
@@ -466,7 +466,7 @@
   001c0	00000000	 DCD         |??_C@_1GA@DIPMNCCC@?$AAN?$AAo?$AA?5?$AAR?$AAT?$AAC?$AA?5?$AAT?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AA?5?$AAS?$AAp?$AAe?$AAc?$AAi?$AAf?$AAi?$AAe?$AAd?$AA?4?$AA?5?$AAU?$AAs?$AAi?$AAn?$AAg?$AA?5@|
   001c4		 |$LN62@wmain|
   001c4	00000000	 DCD         |??_C@_1DO@IFFLCICO@?$AAW?$AAa?$AAk?$AAe?$AAm?$AAe?$AA?3?$AA?5?$AAA?$AAp?$AAp?$AAl?$AAi?$AAc?$AAa?$AAt?$AAi?$AAo?$AAn?$AA?5?$AAS?$AAt?$AAa?$AAr?$AAt?$AAe?$AAd?$AA?4?$AA?$AN?$AA?6?$AA?$AA@|
-  001c8		 |$M32324|
+  001c8		 |$M32326|
 
 			 ENDP  ; |wmain|
 

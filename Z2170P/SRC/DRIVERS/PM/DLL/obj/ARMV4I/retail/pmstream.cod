@@ -24,41 +24,41 @@
 ; File c:\wince600\public\common\sdk\inc\celog.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33637| DCD	|$LN7@CeLogMsg|
+|$T33649| DCD	|$LN7@CeLogMsg|
 	DCD	0xc0002a04
 
   00000			 AREA	 |.xdata|, DATA
-|$T33633| DCD	0xffffffe0
+|$T33645| DCD	0xffffffe0
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T33633|
+  00004	00000000	 DCD         |$T33645|
 
   00008		 |CeLogMsg| PROC
 
-; 1015 : {
+; 1020 : {
 
   00008		 |$LN7@CeLogMsg|
   00008	e1a0c00d	 mov         r12, sp
   0000c	e92d000f	 stmdb       sp!, {r0 - r3}
   00010	e92d5010	 stmdb       sp!, {r4, r12, lr}
   00014	e24dde22	 sub         sp, sp, #0x22, 28
-  00018		 |$M33634|
+  00018		 |$M33646|
   00018	e58d022c	 str         r0, [sp, #0x22C]
   0001c	e59f3088	 ldr         r3, [pc, #0x88]
   00020	e5933000	 ldr         r3, [r3]
   00024	e58d321c	 str         r3, [sp, #0x21C]
 
-; 1016 :     va_list arglist;
-; 1017 :     WCHAR   szTemp[MAX_PATH];
-; 1018 :     size_t  cchLen;
-; 1019 :     HRESULT hr;
-; 1020 : 
-; 1021 :     // Compose a single string using the input args
-; 1022 :     va_start(arglist, szFormat);
-; 1023 :     hr = StringCchVPrintfW(szTemp, MAX_PATH, szFormat, arglist);
+; 1021 :     va_list arglist;
+; 1022 :     WCHAR   szTemp[MAX_PATH];
+; 1023 :     size_t  cchLen;
+; 1024 :     HRESULT hr;
+; 1025 : 
+; 1026 :     // Compose a single string using the input args
+; 1027 :     va_start(arglist, szFormat);
+; 1028 :     hr = StringCchVPrintfW(szTemp, MAX_PATH, szFormat, arglist);
 
   00028	e1a02000	 mov         r2, r0
   0002c	e28d0014	 add         r0, sp, #0x14
@@ -67,11 +67,11 @@
   00038	eb000000	 bl          StringCchVPrintfW
   0003c	e3500000	 cmp         r0, #0
 
-; 1024 :     if (SUCCEEDED(hr)) {
+; 1029 :     if (SUCCEEDED(hr)) {
 
   00040	4a000014	 bmi         |$LN1@CeLogMsg|
 
-; 1025 :         hr = StringCchLengthW(szTemp, MAX_PATH, &cchLen);
+; 1030 :         hr = StringCchLengthW(szTemp, MAX_PATH, &cchLen);
 
   00044	e28d2010	 add         r2, sp, #0x10
   00048	e3a01f41	 mov         r1, #0x41, 30
@@ -79,12 +79,12 @@
   00050	eb000000	 bl          StringCchLengthW
   00054	e3500000	 cmp         r0, #0
 
-; 1026 :         if (SUCCEEDED(hr)) {
+; 1031 :         if (SUCCEEDED(hr)) {
 
   00058	4a00000e	 bmi         |$LN1@CeLogMsg|
 
-; 1027 :             CeLogData(TRUE, CELID_RAW_WCHAR, szTemp, (WORD)((cchLen + 1) * sizeof(WCHAR)),
-; 1028 :                       0, CELZONE_ALWAYSON, 0, FALSE);
+; 1032 :             CeLogData(TRUE, CELID_RAW_WCHAR, szTemp, (WORD)((cchLen + 1) * sizeof(WCHAR)),
+; 1033 :                       0, CELZONE_ALWAYSON, 0, FALSE);
 
   0005c	e59d3010	 ldr         r3, [sp, #0x10]
   00060	e3a04101	 mov         r4, #1, 2
@@ -105,9 +105,9 @@
   00098	e59d021c	 ldr         r0, [sp, #0x21C]
   0009c	eb000000	 bl          __security_check_cookie
 
-; 1029 :         }
-; 1030 :     }
-; 1031 : }
+; 1034 :         }
+; 1035 :     }
+; 1036 : }
 
   000a0	e28dde22	 add         sp, sp, #0x22, 28
   000a4	e89d6010	 ldmia       sp, {r4, sp, lr}
@@ -115,14 +115,14 @@
   000ac		 |$LN8@CeLogMsg|
   000ac		 |$LN9@CeLogMsg|
   000ac	00000000	 DCD         |__security_cookie|
-  000b0		 |$M33635|
+  000b0		 |$M33647|
 
 			 ENDP  ; |CeLogMsg|
 
 ; File c:\wince600\platform\z2170p\src\drivers\pm\dll\pmstream.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33649| DCD	|$LN5@InitStream|
+|$T33661| DCD	|$LN5@InitStream|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -133,7 +133,7 @@
 ; 33   : {
 
   00000		 |$LN5@InitStream|
-  00000		 |$M33646|
+  00000		 |$M33658|
 
 ; 34   :     // nothing special to do for stream devices
 ; 35   :     return TRUE;
@@ -143,7 +143,7 @@
 ; 36   : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M33647|
+  00008		 |$M33659|
 
 			 ENDP  ; |?InitStreamDeviceInterface@@YAHXZ|, InitStreamDeviceInterface
 
@@ -155,7 +155,7 @@
 	IMPORT	|CreateFileW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33666| DCD	|$LN12@OpenStream|
+|$T33678| DCD	|$LN12@OpenStream|
 	DCD	0x40003602
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -196,7 +196,7 @@
   00000		 |$LN12@OpenStream|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M33663|
+  00008		 |$M33675|
   00008	e1a06000	 mov         r6, r0
 
 ; 44   :     PDEVICE_STATE pdsReal = pds;
@@ -293,7 +293,7 @@
   000d0	00000000	 DCD         |??_C@_1FA@ELCLCFMF@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAO?$AAp?$AAe?$AAn?$AAF?$AAi?$AAl?$AAe?$AA?$CI?$AA?8?$AA?$CF?$AAs?$AA?8?$AA?$CJ?$AA?5?$AAf?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AA?$CF?$AAd?$AA?5?$AA?$CI?$AA0?$AAx@|
   000d4		 |$LN17@OpenStream|
   000d4	00000000	 DCD         |dpCurSettings|
-  000d8		 |$M33664|
+  000d8		 |$M33676|
 
 			 ENDP  ; |?OpenStreamDevice@@YAPAXPAU_DeviceState_tag@@@Z|, OpenStreamDevice
 
@@ -303,7 +303,7 @@
 	IMPORT	|CloseHandle|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33687| DCD	|$LN10@CloseStrea|
+|$T33699| DCD	|$LN10@CloseStrea|
 	DCD	0x40002702
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -340,7 +340,7 @@
   00000		 |$LN10@CloseStrea|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M33684|
+  00008		 |$M33696|
   00008	e1a05000	 mov         r5, r0
 
 ; 73   : #ifndef SHIP_BUILD
@@ -405,7 +405,7 @@
   00094	00000000	 DCD         |??_C@_1CK@OHDAKAFA@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAc?$AAl?$AAo?$AAs?$AAi?$AAn?$AAg?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?$AN?$AA?6?$AA?$AA@|
   00098		 |$LN15@CloseStrea|
   00098	00000000	 DCD         |dpCurSettings|
-  0009c		 |$M33685|
+  0009c		 |$M33697|
 
 			 ENDP  ; |?CloseStreamDevice@@YAHPAX@Z|, CloseStreamDevice
 
@@ -423,15 +423,15 @@
 	IMPORT	|__C_specific_handler|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33738| DCD	|$LN36@RequestStr|
+|$T33750| DCD	|$LN36@RequestStr|
 	DCD	0xc0006105
 
   00000			 AREA	 |.pdata|, PDATA
-|$T33740| DCD	|$LN22@RequestStr|
+|$T33752| DCD	|$LN22@RequestStr|
 	DCD	0x40001402
 
   00000			 AREA	 |.xdata|, DATA
-|$T33736| DCD	0x1
+|$T33748| DCD	0x1
 	DCD	|$LN26@RequestStr|
 	DCD	|$LN27@RequestStr|
 	DCD	|$LN22@RequestStr|
@@ -524,7 +524,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T33736|
+  00004	00000000	 DCD         |$T33748|
 
   00008		 |?RequestStreamDevice@@YAHPAXK0K0KPAK@Z| PROC ; RequestStreamDevice
 

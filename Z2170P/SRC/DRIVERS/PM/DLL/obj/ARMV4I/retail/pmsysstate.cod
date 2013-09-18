@@ -17,41 +17,41 @@
 ; File c:\wince600\public\common\sdk\inc\celog.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34479| DCD	|$LN7@CeLogMsg|
+|$T34491| DCD	|$LN7@CeLogMsg|
 	DCD	0xc0002a04
 
   00000			 AREA	 |.xdata|, DATA
-|$T34475| DCD	0xffffffe0
+|$T34487| DCD	0xffffffe0
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T34475|
+  00004	00000000	 DCD         |$T34487|
 
   00008		 |CeLogMsg| PROC
 
-; 1015 : {
+; 1020 : {
 
   00008		 |$LN7@CeLogMsg|
   00008	e1a0c00d	 mov         r12, sp
   0000c	e92d000f	 stmdb       sp!, {r0 - r3}
   00010	e92d5010	 stmdb       sp!, {r4, r12, lr}
   00014	e24dde22	 sub         sp, sp, #0x22, 28
-  00018		 |$M34476|
+  00018		 |$M34488|
   00018	e58d022c	 str         r0, [sp, #0x22C]
   0001c	e59f3088	 ldr         r3, [pc, #0x88]
   00020	e5933000	 ldr         r3, [r3]
   00024	e58d321c	 str         r3, [sp, #0x21C]
 
-; 1016 :     va_list arglist;
-; 1017 :     WCHAR   szTemp[MAX_PATH];
-; 1018 :     size_t  cchLen;
-; 1019 :     HRESULT hr;
-; 1020 : 
-; 1021 :     // Compose a single string using the input args
-; 1022 :     va_start(arglist, szFormat);
-; 1023 :     hr = StringCchVPrintfW(szTemp, MAX_PATH, szFormat, arglist);
+; 1021 :     va_list arglist;
+; 1022 :     WCHAR   szTemp[MAX_PATH];
+; 1023 :     size_t  cchLen;
+; 1024 :     HRESULT hr;
+; 1025 : 
+; 1026 :     // Compose a single string using the input args
+; 1027 :     va_start(arglist, szFormat);
+; 1028 :     hr = StringCchVPrintfW(szTemp, MAX_PATH, szFormat, arglist);
 
   00028	e1a02000	 mov         r2, r0
   0002c	e28d0014	 add         r0, sp, #0x14
@@ -60,11 +60,11 @@
   00038	eb000000	 bl          StringCchVPrintfW
   0003c	e3500000	 cmp         r0, #0
 
-; 1024 :     if (SUCCEEDED(hr)) {
+; 1029 :     if (SUCCEEDED(hr)) {
 
   00040	4a000014	 bmi         |$LN1@CeLogMsg|
 
-; 1025 :         hr = StringCchLengthW(szTemp, MAX_PATH, &cchLen);
+; 1030 :         hr = StringCchLengthW(szTemp, MAX_PATH, &cchLen);
 
   00044	e28d2010	 add         r2, sp, #0x10
   00048	e3a01f41	 mov         r1, #0x41, 30
@@ -72,12 +72,12 @@
   00050	eb000000	 bl          StringCchLengthW
   00054	e3500000	 cmp         r0, #0
 
-; 1026 :         if (SUCCEEDED(hr)) {
+; 1031 :         if (SUCCEEDED(hr)) {
 
   00058	4a00000e	 bmi         |$LN1@CeLogMsg|
 
-; 1027 :             CeLogData(TRUE, CELID_RAW_WCHAR, szTemp, (WORD)((cchLen + 1) * sizeof(WCHAR)),
-; 1028 :                       0, CELZONE_ALWAYSON, 0, FALSE);
+; 1032 :             CeLogData(TRUE, CELID_RAW_WCHAR, szTemp, (WORD)((cchLen + 1) * sizeof(WCHAR)),
+; 1033 :                       0, CELZONE_ALWAYSON, 0, FALSE);
 
   0005c	e59d3010	 ldr         r3, [sp, #0x10]
   00060	e3a04101	 mov         r4, #1, 2
@@ -98,9 +98,9 @@
   00098	e59d021c	 ldr         r0, [sp, #0x21C]
   0009c	eb000000	 bl          __security_check_cookie
 
-; 1029 :         }
-; 1030 :     }
-; 1031 : }
+; 1034 :         }
+; 1035 :     }
+; 1036 : }
 
   000a0	e28dde22	 add         sp, sp, #0x22, 28
   000a4	e89d6010	 ldmia       sp, {r4, sp, lr}
@@ -108,7 +108,7 @@
   000ac		 |$LN8@CeLogMsg|
   000ac		 |$LN9@CeLogMsg|
   000ac	00000000	 DCD         |__security_cookie|
-  000b0		 |$M34477|
+  000b0		 |$M34489|
 
 			 ENDP  ; |CeLogMsg|
 
@@ -117,7 +117,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34492| DCD	|$LN5@CLockObjec|
+|$T34504| DCD	|$LN5@CLockObjec|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -129,7 +129,7 @@
 
   00000		 |$LN5@CLockObjec|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M34489|
+  00004		 |$M34501|
   00004	e1a04000	 mov         r4, r0
 
 ; 37   :     {
@@ -142,7 +142,7 @@
   0000c	e1a00004	 mov         r0, r4
   00010	e8bd4010	 ldmia       sp!, {r4, lr}
   00014	e12fff1e	 bx          lr
-  00018		 |$M34490|
+  00018		 |$M34502|
 
 			 ENDP  ; |??0CLockObject@@QAA@XZ|, CLockObject::CLockObject
 
@@ -150,7 +150,7 @@
 	IMPORT	|DeleteCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34500| DCD	|$LN5@CLockObjec@2|
+|$T34512| DCD	|$LN5@CLockObjec@2|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -162,7 +162,7 @@
 
   00000		 |$LN5@CLockObjec@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34497|
+  00004		 |$M34509|
 
 ; 42   :         DeleteCriticalSection( &m_CSection );
 
@@ -172,7 +172,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M34498|
+  00010		 |$M34510|
 
 			 ENDP  ; |??1CLockObject@@QAA@XZ|, CLockObject::~CLockObject
 
@@ -180,7 +180,7 @@
 	IMPORT	|EnterCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34508| DCD	|$LN5@Lock|
+|$T34520| DCD	|$LN5@Lock|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -192,7 +192,7 @@
 
   00000		 |$LN5@Lock|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34505|
+  00004		 |$M34517|
 
 ; 46   :         EnterCriticalSection( &m_CSection );
 
@@ -202,7 +202,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M34506|
+  00010		 |$M34518|
 
 			 ENDP  ; |?Lock@CLockObject@@QAAXXZ|, CLockObject::Lock
 
@@ -210,7 +210,7 @@
 	IMPORT	|LeaveCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34516| DCD	|$LN5@Unlock|
+|$T34528| DCD	|$LN5@Unlock|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -222,7 +222,7 @@
 
   00000		 |$LN5@Unlock|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34513|
+  00004		 |$M34525|
 
 ; 50   :         LeaveCriticalSection( &m_CSection );
 
@@ -232,7 +232,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M34514|
+  00010		 |$M34526|
 
 			 ENDP  ; |?Unlock@CLockObject@@QAAXXZ|, CLockObject::Unlock
 
@@ -242,7 +242,7 @@
 ; File c:\wince600\public\common\oak\inc\cmthread.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34527| DCD	|$LN6@ForceTermi|
+|$T34539| DCD	|$LN6@ForceTermi|
 	DCD	0x40001401
 ; Function compile flags: /Ogspy
 
@@ -254,7 +254,7 @@
 
   00000		 |$LN6@ForceTermi|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M34524|
+  00004		 |$M34536|
   00004	e1a05000	 mov         r5, r0
 
 ; 114  :         if( m_hThreadHandle )
@@ -301,7 +301,7 @@
   00044	e1a00004	 mov         r0, r4
   00048	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   0004c	e12fff1e	 bx          lr
-  00050		 |$M34525|
+  00050		 |$M34537|
 
 			 ENDP  ; |?ForceTerminated@CMiniThread@@QAAHXZ|, CMiniThread::ForceTerminated
 
@@ -309,7 +309,7 @@
 	IMPORT	|ExitThread|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34537| DCD	|$LN5@ThreadProc|
+|$T34549| DCD	|$LN5@ThreadProc|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -321,7 +321,7 @@
 
   00000		 |$LN5@ThreadProc|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M34534|
+  00004		 |$M34546|
   00004	e1a04000	 mov         r4, r0
 
 ; 155  :         CMiniThread* pThreadPtr = ( CMiniThread* ) dParam;
@@ -346,7 +346,7 @@
 
   00028	e8bd4010	 ldmia       sp!, {r4, lr}
   0002c	e12fff1e	 bx          lr
-  00030		 |$M34535|
+  00030		 |$M34547|
 
 			 ENDP  ; |?ThreadProc@CMiniThread@@CAKPAX@Z|, CMiniThread::ThreadProc
 
@@ -360,7 +360,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\pm\dll\pmsysreg.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34555| DCD	|$LN10@RegKeyOrVa|
+|$T34567| DCD	|$LN10@RegKeyOrVa|
 	DCD	0x40001c01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -376,7 +376,7 @@
 
   00000		 |$LN10@RegKeyOrVa|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M34552|
+  00004		 |$M34564|
   00004	e1b05002	 movs        r5, r2
   00008	e1a04000	 mov         r4, r0
   0000c	e59fe058	 ldr         lr, [pc, #0x58]
@@ -434,13 +434,13 @@
   0006c		 |$LN11@RegKeyOrVa|
   0006c		 |$LN12@RegKeyOrVa|
   0006c	00000000	 DCD         |??_7RegKeyOrValue@@6B@|
-  00070		 |$M34553|
+  00070		 |$M34565|
 
 			 ENDP  ; |??0RegKeyOrValue@@QAA@PAUHKEY__@@PBGPAV0@@Z|, RegKeyOrValue::RegKeyOrValue
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34569| DCD	|$LN7@Init|
+|$T34581| DCD	|$LN7@Init|
 	DCD	0x40000500
 ; Function compile flags: /Ogspy
 
@@ -451,13 +451,13 @@
 ; 41   :     virtual BOOL Init() { return m_lpRegName!=NULL; };
 
   00000		 |$LN7@Init|
-  00000		 |$M34566|
+  00000		 |$M34578|
   00000	e5903004	 ldr         r3, [r0, #4]
   00004	e3530000	 cmp         r3, #0
   00008	13a00001	 movne       r0, #1
   0000c	03a00000	 moveq       r0, #0
   00010	e12fff1e	 bx          lr
-  00014		 |$M34567|
+  00014		 |$M34579|
 
 			 ENDP  ; |?Init@RegKeyOrValue@@UAAHXZ|, RegKeyOrValue::Init
 
@@ -465,7 +465,7 @@
 	IMPORT	|??3@YAXPAX@Z|				; operator delete
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34578| DCD	|$LN6@RegKeyOrVa@2|
+|$T34590| DCD	|$LN6@RegKeyOrVa@2|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -477,7 +477,7 @@
 
   00000		 |$LN6@RegKeyOrVa@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34575|
+  00004		 |$M34587|
 
 ; 43   :         if (m_lpRegName!=NULL)
 
@@ -498,14 +498,14 @@
   00024		 |$LN7@RegKeyOrVa@2|
   00024		 |$LN8@RegKeyOrVa@2|
   00024	00000000	 DCD         |??_7RegKeyOrValue@@6B@|
-  00028		 |$M34576|
+  00028		 |$M34588|
 
 			 ENDP  ; |??1RegKeyOrValue@@UAA@XZ|, RegKeyOrValue::~RegKeyOrValue
 
 	EXPORT	|?GetName@RegKeyOrValue@@QAAPAGXZ|	; RegKeyOrValue::GetName
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34590| DCD	|$LN5@GetName|
+|$T34602| DCD	|$LN5@GetName|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -516,17 +516,17 @@
 ; 46   :     LPTSTR  GetName() { return m_lpRegName; };
 
   00000		 |$LN5@GetName|
-  00000		 |$M34587|
+  00000		 |$M34599|
   00000	e5900004	 ldr         r0, [r0, #4]
   00004	e12fff1e	 bx          lr
-  00008		 |$M34588|
+  00008		 |$M34600|
 
 			 ENDP  ; |?GetName@RegKeyOrValue@@QAAPAGXZ|, RegKeyOrValue::GetName
 
 	EXPORT	|?GetNextRegKeyOrValuePtr@RegKeyOrValue@@QAAPAV1@XZ| ; RegKeyOrValue::GetNextRegKeyOrValuePtr
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34600| DCD	|$LN5@GetNextReg|
+|$T34612| DCD	|$LN5@GetNextReg|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -537,16 +537,16 @@
 ; 52   :     RegKeyOrValue * GetNextRegKeyOrValuePtr() { return m_pNextRegKeyOrValue; };
 
   00000		 |$LN5@GetNextReg|
-  00000		 |$M34597|
+  00000		 |$M34609|
   00000	e590000c	 ldr         r0, [r0, #0xC]
   00004	e12fff1e	 bx          lr
-  00008		 |$M34598|
+  00008		 |$M34610|
 
 			 ENDP  ; |?GetNextRegKeyOrValuePtr@RegKeyOrValue@@QAAPAV1@XZ|, RegKeyOrValue::GetNextRegKeyOrValuePtr
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34617| DCD	|$LN9@scalar|
+|$T34629| DCD	|$LN9@scalar|
 	DCD	0x40001001
 ; Function compile flags: /Ogspy
 
@@ -555,7 +555,7 @@
   00000		 |??_GRegKeyOrValue@@UAAPAXI@Z| PROC	; RegKeyOrValue::`scalar deleting destructor'
   00000		 |$LN9@scalar|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M34614|
+  00004		 |$M34626|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
   0000c	e5942004	 ldr         r2, [r4, #4]
@@ -573,7 +573,7 @@
   0003c		 |$LN10@scalar|
   0003c		 |$LN11@scalar|
   0003c	00000000	 DCD         |??_7RegKeyOrValue@@6B@|
-  00040		 |$M34615|
+  00040		 |$M34627|
 
 			 ENDP  ; |??_GRegKeyOrValue@@UAAPAXI@Z|, RegKeyOrValue::`scalar deleting destructor'
 
@@ -581,7 +581,7 @@
 	IMPORT	|RegQueryValueExW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34632| DCD	|$LN12@UpdateRegV|
+|$T34644| DCD	|$LN12@UpdateRegV|
 	DCD	0x40002d02
 ; Function compile flags: /Ogspy
 
@@ -594,7 +594,7 @@
   00000		 |$LN12@UpdateRegV|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M34629|
+  00008		 |$M34641|
   00008	e1a04000	 mov         r4, r0
 
 ; 85   :         if (m_lpRegName) {
@@ -682,7 +682,7 @@
   000a8	e28dd00c	 add         sp, sp, #0xC
   000ac	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   000b0	e12fff1e	 bx          lr
-  000b4		 |$M34630|
+  000b4		 |$M34642|
 
 			 ENDP  ; |?UpdateRegValue@RegValue@@MAAHXZ|, RegValue::UpdateRegValue
 
@@ -692,7 +692,7 @@
 	IMPORT	|??_ERegKey@@UAAPAXI@Z|, WEAK |??_GRegKey@@UAAPAXI@Z| ; RegKey::`vector deleting destructor', RegKey::`scalar deleting destructor'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34644| DCD	|$LN5@RegKey|
+|$T34656| DCD	|$LN5@RegKey|
 	DCD	0x40000e01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -708,7 +708,7 @@
 
   00000		 |$LN5@RegKey|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M34641|
+  00004		 |$M34653|
   00004	e1a04000	 mov         r4, r0
   00008	e59d3008	 ldr         r3, [sp, #8]
   0000c	eb000000	 bl          |??0RegKeyOrValue@@QAA@PAUHKEY__@@PBGPAV0@@Z|
@@ -738,7 +738,7 @@
   00034		 |$LN6@RegKey|
   00034		 |$LN7@RegKey|
   00034	00000000	 DCD         |??_7RegKey@@6B@|
-  00038		 |$M34642|
+  00038		 |$M34654|
 
 			 ENDP  ; |??0RegKey@@QAA@PAUHKEY__@@PBGKPAV0@@Z|, RegKey::RegKey
 
@@ -746,7 +746,7 @@
 	IMPORT	|_wcsicmp|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34669| DCD	|$LN16@RegFindKey|
+|$T34681| DCD	|$LN16@RegFindKey|
 	DCD	0x40001001
 ; Function compile flags: /Ogspy
 
@@ -758,7 +758,7 @@
 
   00000		 |$LN16@RegFindKey|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M34666|
+  00004		 |$M34678|
   00004	e1a05001	 mov         r5, r1
 
 ; 167  :         RegKey * pReturnKey =  m_pRegKeyList;
@@ -796,14 +796,14 @@
   00034	e1a00004	 mov         r0, r4
   00038	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0003c	e12fff1e	 bx          lr
-  00040		 |$M34667|
+  00040		 |$M34679|
 
 			 ENDP  ; |?RegFindKey@RegKey@@QAAPAV1@PBG@Z|, RegKey::RegFindKey
 
 	EXPORT	|?RegFindValue@RegKey@@QAAJPBGPAXPAK2@Z| ; RegKey::RegFindValue
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34696| DCD	|$LN18@RegFindVal|
+|$T34708| DCD	|$LN18@RegFindVal|
 	DCD	0x40002001
 ; Function compile flags: /Ogspy
 
@@ -815,7 +815,7 @@
 
   00000		 |$LN18@RegFindVal|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M34693|
+  00004		 |$M34705|
   00004	e1a06003	 mov         r6, r3
   00008	e1a07002	 mov         r7, r2
   0000c	e1a04001	 mov         r4, r1
@@ -887,7 +887,7 @@
 
   00078	08bd40f0	 ldmeqia     sp!, {r4 - r7, lr}
   0007c	e12fff1e	 bx          lr
-  00080		 |$M34694|
+  00080		 |$M34706|
 
 			 ENDP  ; |?RegFindValue@RegKey@@QAAJPBGPAXPAK2@Z|, RegKey::RegFindValue
 
@@ -895,7 +895,7 @@
 	IMPORT	|wcsncpy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34734| DCD	|$LN25@RegEnum|
+|$T34746| DCD	|$LN25@RegEnum|
 	DCD	0x40002901
 ; Function compile flags: /Ogspy
 
@@ -907,7 +907,7 @@
 
   00000		 |$LN25@RegEnum|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M34731|
+  00004		 |$M34743|
   00004	e1a08003	 mov         r8, r3
   00008	e3510000	 cmp         r1, #0
 
@@ -999,14 +999,14 @@
   00098	e1a00004	 mov         r0, r4
   0009c	e8bd41f0	 ldmia       sp!, {r4 - r8, lr}
   000a0	e12fff1e	 bx          lr
-  000a4		 |$M34732|
+  000a4		 |$M34744|
 
 			 ENDP  ; |?RegEnum@RegKey@@QAAJPAVRegKeyOrValue@@KPAGPAK@Z|, RegKey::RegEnum
 
 	EXPORT	|?RegEnumKeyExW@RegKey@@QAAJKPAGPAK@Z|	; RegKey::RegEnumKeyExW
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34747| DCD	|$LN5@RegEnumKey|
+|$T34759| DCD	|$LN5@RegEnumKey|
 	DCD	0x40000b02
 ; Function compile flags: /Ogspy
 
@@ -1019,7 +1019,7 @@
   00000		 |$LN5@RegEnumKey|
   00000	e52de004	 str         lr, [sp, #-4]!
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M34744|
+  00008		 |$M34756|
   00008	e1a0e003	 mov         lr, r3
   0000c	e1a03002	 mov         r3, r2
   00010	e1a02001	 mov         r2, r1
@@ -1035,14 +1035,14 @@
   00020	e28dd004	 add         sp, sp, #4
   00024	e49de004	 ldr         lr, [sp], #4
   00028	e12fff1e	 bx          lr
-  0002c		 |$M34745|
+  0002c		 |$M34757|
 
 			 ENDP  ; |?RegEnumKeyExW@RegKey@@QAAJKPAGPAK@Z|, RegKey::RegEnumKeyExW
 
 	EXPORT	|?RegEnumValueW@RegKey@@QAAJKPAGPAK@Z|	; RegKey::RegEnumValueW
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34760| DCD	|$LN5@RegEnumVal|
+|$T34772| DCD	|$LN5@RegEnumVal|
 	DCD	0x40000b02
 ; Function compile flags: /Ogspy
 
@@ -1055,7 +1055,7 @@
   00000		 |$LN5@RegEnumVal|
   00000	e52de004	 str         lr, [sp, #-4]!
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M34757|
+  00008		 |$M34769|
   00008	e1a0e003	 mov         lr, r3
   0000c	e1a03002	 mov         r3, r2
   00010	e1a02001	 mov         r2, r1
@@ -1071,14 +1071,14 @@
   00020	e28dd004	 add         sp, sp, #4
   00024	e49de004	 ldr         lr, [sp], #4
   00028	e12fff1e	 bx          lr
-  0002c		 |$M34758|
+  0002c		 |$M34770|
 
 			 ENDP  ; |?RegEnumValueW@RegKey@@QAAJKPAGPAK@Z|, RegKey::RegEnumValueW
 
 	EXPORT	|?DeleteAll@RegKey@@IAAXXZ|		; RegKey::DeleteAll
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34796| DCD	|$LN25@DeleteAll|
+|$T34808| DCD	|$LN25@DeleteAll|
 	DCD	0x40001e01
 ; Function compile flags: /Ogspy
 
@@ -1090,7 +1090,7 @@
 
   00000		 |$LN25@DeleteAll|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M34793|
+  00004		 |$M34805|
   00004	e1a04000	 mov         r4, r0
 
 ; 227  :         while (m_pRegValueList) {
@@ -1153,7 +1153,7 @@
 
   00070	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00074	e12fff1e	 bx          lr
-  00078		 |$M34794|
+  00078		 |$M34806|
 
 			 ENDP  ; |?DeleteAll@RegKey@@IAAXXZ|, RegKey::DeleteAll
 
@@ -1162,17 +1162,17 @@
 	IMPORT	|RegEnumKeyExW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34829| DCD	|$LN23@EnumerateA|
+|$T34841| DCD	|$LN23@EnumerateA|
 	DCD	0xc0004b02
 
   00000			 AREA	 |.xdata|, DATA
-|$T34825| DCD	0xffffffd8
+|$T34837| DCD	0xffffffd8
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T34825|
+  00004	00000000	 DCD         |$T34837|
 
   00008		 |?EnumerateAllKey@RegKey@@IAAHXZ| PROC	; RegKey::EnumerateAllKey
 
@@ -1181,7 +1181,7 @@
   00008		 |$LN23@EnumerateA|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24dde22	 sub         sp, sp, #0x22, 28
-  00010		 |$M34826|
+  00010		 |$M34838|
   00010	e1a06000	 mov         r6, r0
   00014	e59f3114	 ldr         r3, [pc, #0x114]
   00018	e5933000	 ldr         r3, [r3]
@@ -1310,7 +1310,7 @@
   0012c	00000000	 DCD         |??_7RegKey@@6B@|
   00130		 |$LN26@EnumerateA|
   00130	00000000	 DCD         |__security_cookie|
-  00134		 |$M34827|
+  00134		 |$M34839|
 
 			 ENDP  ; |?EnumerateAllKey@RegKey@@IAAHXZ|, RegKey::EnumerateAllKey
 
@@ -1318,7 +1318,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34844| DCD	|$LN7@LeaveLock|
+|$T34856| DCD	|$LN7@LeaveLock|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\pm\dll\pmsysreg.h
@@ -1331,12 +1331,12 @@
 
   00000		 |$LN7@LeaveLock|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M34841|
+  00004		 |$M34853|
   00004	e2800034	 add         r0, r0, #0x34
   00008	eb000000	 bl          LeaveCriticalSection
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M34842|
+  00014		 |$M34854|
 
 			 ENDP  ; |?LeaveLock@SystemNotifyRegKey@@QAAXXZ|, SystemNotifyRegKey::LeaveLock
 
@@ -1355,11 +1355,11 @@
 	IMPORT	|dpCurSettings|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34887| DCD	|$LN43@RegReadCla|
+|$T34899| DCD	|$LN43@RegReadCla|
 	DCD	0xc000a602
 
   00000			 AREA	 |.xdata|, DATA
-|$T34883| DCD	0xffffffd8
+|$T34895| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1EI@NKMAIPDH@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAi?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAd?$AAe?$AAv?$AAi?$AAc?$AAe?$AA?5?$AAs?$AAt?$AAa?$AAt?$AAe?$AA?5?$AAv?$AAa?$AAl?$AAu?$AAe?$AA?5?$AA?$CF@| DCB "%"
@@ -1444,7 +1444,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T34883|
+  00004	00000000	 DCD         |$T34895|
 
   00008		 |?RegReadClassDeviceRestrictions@@YAPAU_DevicePowerRestriction_tag@@PAVRegKey@@PBU_GUID@@PAU1@@Z| PROC ; RegReadClassDeviceRestrictions
 
@@ -1453,7 +1453,7 @@
   00008		 |$LN43@RegReadCla|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24ddf93	 sub         sp, sp, #0x93, 30
-  00010		 |$M34884|
+  00010		 |$M34896|
   00010	e1a06002	 mov         r6, r2
   00014	e1a02001	 mov         r2, r1
   00018	e1a04000	 mov         r4, r0
@@ -1764,7 +1764,7 @@
   00298	00000000	 DCD         |??_C@_1KG@LONBFMIG@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAr?$AAe?$AAa?$AAd?$AAi?$AAn?$AAg?$AA?5?$AAi?$AAn?$AAf?$AAo?$AAr?$AAm?$AAa?$AAt?$AAi?$AAo?$AAn?$AA?5?$AAf?$AAo?$AAr?$AA?5?$AAc?$AAl?$AAa?$AAs@|
   0029c		 |$LN55@RegReadCla|
   0029c	00000000	 DCD         |__security_cookie|
-  002a0		 |$M34885|
+  002a0		 |$M34897|
 
 			 ENDP  ; |?RegReadClassDeviceRestrictions@@YAPAU_DevicePowerRestriction_tag@@PAVRegKey@@PBU_GUID@@PAU1@@Z|, RegReadClassDeviceRestrictions
 
@@ -1778,11 +1778,11 @@
 ; File c:\wince600\platform\z2170p\src\drivers\pm\dll\pmsysreg.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34928| DCD	|$LN25@RegReadDev|
+|$T34940| DCD	|$LN25@RegReadDev|
 	DCD	0xc0004d02
 
   00000			 AREA	 |.xdata|, DATA
-|$T34924| DCD	0xffffffd8
+|$T34936| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1EG@MIFCJAJI@?$AA?$CF?$AAs?$AA?3?$AA?5?$AAR?$AAe?$AAg?$AAO?$AAp?$AAe?$AAn?$AAK?$AAe?$AAy?$AAE?$AAx?$AA?$CI?$AA?8?$AA?$CF?$AAs?$AA?8?$AA?$CJ?$AA?5?$AAf?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AA?$CF?$AAd@| DCB "%"
@@ -1815,7 +1815,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T34924|
+  00004	00000000	 DCD         |$T34936|
 
   00008		 |?RegReadDeviceRestrictions@@YAPAU_DevicePowerRestriction_tag@@PAVRegKey@@@Z| PROC ; RegReadDeviceRestrictions
 
@@ -1824,7 +1824,7 @@
   00008		 |$LN25@RegReadDev|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24ddf89	 sub         sp, sp, #0x89, 30
-  00010		 |$M34925|
+  00010		 |$M34937|
   00010	e1a05000	 mov         r5, r0
   00014	e59f311c	 ldr         r3, [pc, #0x11C]
   00018	e5933000	 ldr         r3, [r3]
@@ -1994,7 +1994,7 @@
   00134	00000000	 DCD         |dpCurSettings|
   00138		 |$LN32@RegReadDev|
   00138	00000000	 DCD         |__security_cookie|
-  0013c		 |$M34926|
+  0013c		 |$M34938|
 
 			 ENDP  ; |?RegReadDeviceRestrictions@@YAPAU_DevicePowerRestriction_tag@@PAVRegKey@@@Z|, RegReadDeviceRestrictions
 
@@ -2009,15 +2009,15 @@
 	IMPORT	|__C_specific_handler|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34968| DCD	|$LN25@PmGetSyste|
+|$T34980| DCD	|$LN25@PmGetSyste|
 	DCD	0xc0003504
 
   00000			 AREA	 |.pdata|, PDATA
-|$T34970| DCD	|$LN11@PmGetSyste|
+|$T34982| DCD	|$LN11@PmGetSyste|
 	DCD	0x40000a02
 
   00000			 AREA	 |.xdata|, DATA
-|$T34966| DCD	0x1
+|$T34978| DCD	0x1
 	DCD	|$LN15@PmGetSyste|
 	DCD	|$LN16@PmGetSyste|
 	DCD	|$LN11@PmGetSyste|
@@ -2051,7 +2051,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T34966|
+  00004	00000000	 DCD         |$T34978|
 
   00008		 |PmGetSystemPowerState| PROC
 
@@ -2222,15 +2222,15 @@
 	IMPORT	|__GSHandlerCheck_SEH|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35021| DCD	|$LN32@PmSetSyste|
+|$T35033| DCD	|$LN32@PmSetSyste|
 	DCD	0xc0004e05
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35023| DCD	|$LN18@PmSetSyste|
+|$T35035| DCD	|$LN18@PmSetSyste|
 	DCD	0x40000c02
 
   00000			 AREA	 |.xdata|, DATA
-|$T35019| DCD	0x1
+|$T35031| DCD	0x1
 	DCD	|$LN22@PmSetSyste|
 	DCD	|$LN23@PmSetSyste|
 	DCD	|$LN18@PmSetSyste|
@@ -2282,7 +2282,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck_SEH|
-  00004	00000000	 DCD         |$T35019|
+  00004	00000000	 DCD         |$T35031|
 
   00008		 |PmSetSystemPowerState_I| PROC
 
@@ -2509,15 +2509,15 @@
 	IMPORT	|towlower|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35078| DCD	|$LN35@PmSetSyste@2|
+|$T35090| DCD	|$LN35@PmSetSyste@2|
 	DCD	0xc0006805
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35080| DCD	|$LN21@PmSetSyste@2|
+|$T35092| DCD	|$LN21@PmSetSyste@2|
 	DCD	0x40000d02
 
   00000			 AREA	 |.xdata|, DATA
-|$T35076| DCD	0x1
+|$T35088| DCD	0x1
 	DCD	|$LN25@PmSetSyste@2|
 	DCD	|$LN26@PmSetSyste@2|
 	DCD	|$LN21@PmSetSyste@2|
@@ -2559,7 +2559,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck_SEH|
-  00004	00000000	 DCD         |$T35076|
+  00004	00000000	 DCD         |$T35088|
 
   00008		 |PmSetSystemPowerState| PROC
 
@@ -2813,7 +2813,7 @@
 ; File c:\wince600\public\common\oak\inc\cmthread.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35107| DCD	|$LN7@CMiniThrea|
+|$T35119| DCD	|$LN7@CMiniThrea|
 	DCD	0x40001b02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2829,7 +2829,7 @@
   00000		 |$LN7@CMiniThrea|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M35104|
+  00008		 |$M35116|
   00008	e1b06002	 movs        r6, r2
   0000c	e1a05000	 mov         r5, r0
   00010	e59f3050	 ldr         r3, [pc, #0x50]
@@ -2877,14 +2877,14 @@
   00064	00000000	 DCD         |?ThreadProc@CMiniThread@@CAKPAX@Z|
   00068		 |$LN10@CMiniThrea|
   00068	00000000	 DCD         |??_7CMiniThread@@6B@|
-  0006c		 |$M35105|
+  0006c		 |$M35117|
 
 			 ENDP  ; |??0CMiniThread@@QAA@KH@Z|, CMiniThread::CMiniThread
 
 	EXPORT	|??1CMiniThread@@QAA@XZ|		; CMiniThread::~CMiniThread
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35118| DCD	|$LN5@CMiniThrea@2|
+|$T35130| DCD	|$LN5@CMiniThrea@2|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 
@@ -2896,7 +2896,7 @@
 
   00000		 |$LN5@CMiniThrea@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35115|
+  00004		 |$M35127|
   00004	e1a02000	 mov         r2, r0
   00008	e59f300c	 ldr         r3, [pc, #0xC]
 
@@ -2912,7 +2912,7 @@
   0001c		 |$LN6@CMiniThrea@2|
   0001c		 |$LN7@CMiniThrea@2|
   0001c	00000000	 DCD         |??_7CMiniThread@@6B@|
-  00020		 |$M35116|
+  00020		 |$M35128|
 
 			 ENDP  ; |??1CMiniThread@@QAA@XZ|, CMiniThread::~CMiniThread
 
@@ -2924,7 +2924,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\pm\dll\pmsysreg.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35133| DCD	|$LN5@RegValue|
+|$T35145| DCD	|$LN5@RegValue|
 	DCD	0x40000e01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2942,7 +2942,7 @@
 
   00000		 |$LN5@RegValue|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35130|
+  00004		 |$M35142|
   00004	e1a04000	 mov         r4, r0
   00008	eb000000	 bl          |??0RegKeyOrValue@@QAA@PAUHKEY__@@PBGPAV0@@Z|
   0000c	e59f3020	 ldr         r3, [pc, #0x20]
@@ -2968,14 +2968,14 @@
   00034		 |$LN6@RegValue|
   00034		 |$LN7@RegValue|
   00034	00000000	 DCD         |??_7RegValue@@6B@|
-  00038		 |$M35131|
+  00038		 |$M35143|
 
 			 ENDP  ; |??0RegValue@@QAA@PAUHKEY__@@PBGPAV0@@Z|, RegValue::RegValue
 
 	EXPORT	|??1RegValue@@UAA@XZ|			; RegValue::~RegValue
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35150| DCD	|$LN9@RegValue@2|
+|$T35162| DCD	|$LN9@RegValue@2|
 	DCD	0x40001201
 ; Function compile flags: /Ogspy
 
@@ -2987,7 +2987,7 @@
 
   00000		 |$LN9@RegValue@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35147|
+  00004		 |$M35159|
   00004	e1a04000	 mov         r4, r0
 
 ; 67   :         if ( m_lpByteValue)
@@ -3017,13 +3017,13 @@
   00040	00000000	 DCD         |??_7RegKeyOrValue@@6B@|
   00044		 |$LN12@RegValue@2|
   00044	00000000	 DCD         |??_7RegValue@@6B@|
-  00048		 |$M35148|
+  00048		 |$M35160|
 
 			 ENDP  ; |??1RegValue@@UAA@XZ|, RegValue::~RegValue
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35165| DCD	|$LN7@Init@2|
+|$T35177| DCD	|$LN7@Init@2|
 	DCD	0x40000700
 ; Function compile flags: /Ogspy
 
@@ -3034,7 +3034,7 @@
 ; 70   :     virtual BOOL Init() { return (m_dwValueSize!=NULL && m_lpByteValue!=NULL); };
 
   00000		 |$LN7@Init@2|
-  00000		 |$M35162|
+  00000		 |$M35174|
   00000	e5903014	 ldr         r3, [r0, #0x14]
   00004	e3530000	 cmp         r3, #0
   00008	15903018	 ldrne       r3, [r0, #0x18]
@@ -3042,14 +3042,14 @@
   00010	13a00001	 movne       r0, #1
   00014	03a00000	 moveq       r0, #0
   00018	e12fff1e	 bx          lr
-  0001c		 |$M35163|
+  0001c		 |$M35175|
 
 			 ENDP  ; |?Init@RegValue@@UAAHXZ|, RegValue::Init
 
 	IMPORT	|memcpy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35181| DCD	|$LN11@GetRegValu|
+|$T35193| DCD	|$LN11@GetRegValu|
 	DCD	0x40001e01
 ; Function compile flags: /Ogspy
 
@@ -3061,7 +3061,7 @@
 
   00000		 |$LN11@GetRegValu|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M35178|
+  00004		 |$M35190|
   00004	e1a06003	 mov         r6, r3
   00008	e1a03001	 mov         r3, r1
   0000c	e1a05002	 mov         r5, r2
@@ -3123,13 +3123,13 @@
 
   00070	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00074	e12fff1e	 bx          lr
-  00078		 |$M35179|
+  00078		 |$M35191|
 
 			 ENDP  ; |?GetRegValue@RegValue@@UAAHPAXPAK1@Z|, RegValue::GetRegValue
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35192| DCD	|$LN6@scalar@2|
+|$T35204| DCD	|$LN6@scalar@2|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -3138,7 +3138,7 @@
   00000		 |??_GRegValue@@UAAPAXI@Z| PROC		; RegValue::`scalar deleting destructor'
   00000		 |$LN6@scalar@2|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35189|
+  00004		 |$M35201|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
   0000c	eb000000	 bl          |??1RegValue@@UAA@XZ|
@@ -3148,7 +3148,7 @@
   0001c	e1a00005	 mov         r0, r5
   00020	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00024	e12fff1e	 bx          lr
-  00028		 |$M35190|
+  00028		 |$M35202|
 
 			 ENDP  ; |??_GRegValue@@UAAPAXI@Z|, RegValue::`scalar deleting destructor'
 
@@ -3156,7 +3156,7 @@
 	IMPORT	|RegCloseKey|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35206| DCD	|$LN9@RegKey@2|
+|$T35218| DCD	|$LN9@RegKey@2|
 	DCD	0x40001301
 ; Function compile flags: /Ogspy
 
@@ -3168,7 +3168,7 @@
 
   00000		 |$LN9@RegKey@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35203|
+  00004		 |$M35215|
   00004	e1a04000	 mov         r4, r0
   00008	e59f3038	 ldr         r3, [pc, #0x38]
 
@@ -3203,7 +3203,7 @@
   00044	00000000	 DCD         |??_7RegKeyOrValue@@6B@|
   00048		 |$LN12@RegKey@2|
   00048	00000000	 DCD         |??_7RegKey@@6B@|
-  0004c		 |$M35204|
+  0004c		 |$M35216|
 
 			 ENDP  ; |??1RegKey@@UAA@XZ|, RegKey::~RegKey
 
@@ -3212,17 +3212,17 @@
 	IMPORT	|RegEnumValueW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35242| DCD	|$LN23@EnumerateA@2|
+|$T35254| DCD	|$LN23@EnumerateA@2|
 	DCD	0xc0004c02
 
   00000			 AREA	 |.xdata|, DATA
-|$T35238| DCD	0xffffffd8
+|$T35250| DCD	0xffffffd8
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T35238|
+  00004	00000000	 DCD         |$T35250|
 
   00008		 |?EnumerateAllValue@RegKey@@IAAHXZ| PROC ; RegKey::EnumerateAllValue
 
@@ -3231,7 +3231,7 @@
   00008		 |$LN23@EnumerateA@2|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24dde22	 sub         sp, sp, #0x22, 28
-  00010		 |$M35239|
+  00010		 |$M35251|
   00010	e1a06000	 mov         r6, r0
   00014	e59f3118	 ldr         r3, [pc, #0x118]
   00018	e5933000	 ldr         r3, [r3]
@@ -3361,13 +3361,13 @@
   00130	00000000	 DCD         |??_7RegValue@@6B@|
   00134		 |$LN26@EnumerateA@2|
   00134	00000000	 DCD         |__security_cookie|
-  00138		 |$M35240|
+  00138		 |$M35252|
 
 			 ENDP  ; |?EnumerateAllValue@RegKey@@IAAHXZ|, RegKey::EnumerateAllValue
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35257| DCD	|$LN6@scalar@3|
+|$T35269| DCD	|$LN6@scalar@3|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -3376,7 +3376,7 @@
   00000		 |??_GRegKey@@UAAPAXI@Z| PROC		; RegKey::`scalar deleting destructor'
   00000		 |$LN6@scalar@3|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35254|
+  00004		 |$M35266|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
   0000c	eb000000	 bl          |??1RegKey@@UAA@XZ|
@@ -3386,7 +3386,7 @@
   0001c	e1a00005	 mov         r0, r5
   00020	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00024	e12fff1e	 bx          lr
-  00028		 |$M35255|
+  00028		 |$M35267|
 
 			 ENDP  ; |??_GRegKey@@UAAPAXI@Z|, RegKey::`scalar deleting destructor'
 
@@ -3402,7 +3402,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35277| DCD	|$LN12@SystemNoti|
+|$T35289| DCD	|$LN12@SystemNoti|
 	DCD	0x40003802
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -3423,7 +3423,7 @@
   00000		 |$LN12@SystemNoti|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M35274|
+  00008		 |$M35286|
   00008	e1a04000	 mov         r4, r0
   0000c	e3a03000	 mov         r3, #0
   00010	eb000000	 bl          |??0RegKeyOrValue@@QAA@PAUHKEY__@@PBGPAV0@@Z|
@@ -3507,7 +3507,7 @@
   000d8	00000000	 DCD         |??_7SystemNotifyRegKey@@6BRegKey@@@|
   000dc		 |$LN16@SystemNoti|
   000dc	00000000	 DCD         |??_7RegKey@@6B@|
-  000e0		 |$M35275|
+  000e0		 |$M35287|
 
 			 ENDP  ; |??0SystemNotifyRegKey@@QAA@PAUHKEY__@@PBG@Z|, SystemNotifyRegKey::SystemNotifyRegKey
 
@@ -3516,7 +3516,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35291| DCD	|$LN5@SetEvent|
+|$T35303| DCD	|$LN5@SetEvent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -3528,7 +3528,7 @@
 
   00000		 |$LN5@SetEvent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35288|
+  00004		 |$M35300|
 
 ; 236  : 	return EventModify(h,EVENT_SET);
 
@@ -3539,7 +3539,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M35289|
+  00014		 |$M35301|
 
 			 ENDP  ; |SetEvent|
 
@@ -3548,7 +3548,7 @@
 ; File c:\wince600\public\common\oak\inc\cmthread.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35301| DCD	|$LN7@ThreadStar|
+|$T35313| DCD	|$LN7@ThreadStar|
 	DCD	0x40001001
 ; Function compile flags: /Ogspy
 
@@ -3560,7 +3560,7 @@
 
   00000		 |$LN7@ThreadStar|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35298|
+  00004		 |$M35310|
   00004	e1a04000	 mov         r4, r0
 
 ; 50   :         if( m_bSuspendFlag )
@@ -3603,7 +3603,7 @@
 
   00038	e8bd4010	 ldmia       sp!, {r4, lr}
   0003c	e12fff1e	 bx          lr
-  00040		 |$M35299|
+  00040		 |$M35311|
 
 			 ENDP  ; |?ThreadStart@CMiniThread@@QAAHXZ|, CMiniThread::ThreadStart
 
@@ -3611,7 +3611,7 @@
 	IMPORT	|WaitForSingleObject|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35312| DCD	|$LN8@WaitThread|
+|$T35324| DCD	|$LN8@WaitThread|
 	DCD	0x40001801
 ; Function compile flags: /Ogspy
 
@@ -3623,7 +3623,7 @@
 
   00000		 |$LN8@WaitThread|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35309|
+  00004		 |$M35321|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -3687,14 +3687,14 @@
 
   00058	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0005c	e12fff1e	 bx          lr
-  00060		 |$M35310|
+  00060		 |$M35322|
 
 			 ENDP  ; |?WaitThreadComplete@CMiniThread@@QAAHK@Z|, CMiniThread::WaitThreadComplete
 
 	EXPORT	|?IsTerminated@CMiniThread@@QAAHXZ|	; CMiniThread::IsTerminated
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35322| DCD	|$LN5@IsTerminat|
+|$T35334| DCD	|$LN5@IsTerminat|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -3705,7 +3705,7 @@
 ; 131  :     {
 
   00000		 |$LN5@IsTerminat|
-  00000		 |$M35319|
+  00000		 |$M35331|
 
 ; 132  :         return m_bTerminated;
 
@@ -3714,7 +3714,7 @@
 ; 133  :     };
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M35320|
+  00008		 |$M35332|
 
 			 ENDP  ; |?IsTerminated@CMiniThread@@QAAHXZ|, CMiniThread::IsTerminated
 
@@ -3723,7 +3723,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35348| DCD	|$LN18@SystemNoti@2|
+|$T35360| DCD	|$LN18@SystemNoti@2|
 	DCD	0x40002901
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\pm\dll\pmsysreg.h
@@ -3736,7 +3736,7 @@
 
   00000		 |$LN18@SystemNoti@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35345|
+  00004		 |$M35357|
   00004	e1a04000	 mov         r4, r0
   00008	e59f3090	 ldr         r3, [pc, #0x90]
   0000c	e59f2088	 ldr         r2, [pc, #0x88]
@@ -3814,13 +3814,13 @@
   0009c	00000000	 DCD         |??_7SystemNotifyRegKey@@6BCMiniThread@@@|
   000a0		 |$LN22@SystemNoti@2|
   000a0	00000000	 DCD         |??_7SystemNotifyRegKey@@6BRegKey@@@|
-  000a4		 |$M35346|
+  000a4		 |$M35358|
 
 			 ENDP  ; |??1SystemNotifyRegKey@@UAA@XZ|, SystemNotifyRegKey::~SystemNotifyRegKey
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35363| DCD	|$LN6@scalar@4|
+|$T35375| DCD	|$LN6@scalar@4|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -3829,7 +3829,7 @@
   00000		 |??_GSystemNotifyRegKey@@UAAPAXI@Z| PROC ; SystemNotifyRegKey::`scalar deleting destructor'
   00000		 |$LN6@scalar@4|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35360|
+  00004		 |$M35372|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
   0000c	eb000000	 bl          |??1SystemNotifyRegKey@@UAA@XZ|
@@ -3839,14 +3839,14 @@
   0001c	e1a00005	 mov         r0, r5
   00020	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00024	e12fff1e	 bx          lr
-  00028		 |$M35361|
+  00028		 |$M35373|
 
 			 ENDP  ; |??_GSystemNotifyRegKey@@UAAPAXI@Z|, SystemNotifyRegKey::`scalar deleting destructor'
 
 	EXPORT	|?RefreshAll@RegKey@@QAAHH@Z|		; RegKey::RefreshAll
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35402| DCD	|$LN29@RefreshAll|
+|$T35414| DCD	|$LN29@RefreshAll|
 	DCD	0x40004402
 ; Function compile flags: /Ogspy
 
@@ -3859,7 +3859,7 @@
   00000		 |$LN29@RefreshAll|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M35399|
+  00008		 |$M35411|
   00008	e1a07001	 mov         r7, r1
   0000c	e1a04000	 mov         r4, r0
 
@@ -4008,7 +4008,7 @@
 ; 153  :             else { // Fails, We need recover old key
 
   0010c	eaffffe1	 b           |$LN2@RefreshAll|
-  00110		 |$M35400|
+  00110		 |$M35412|
 
 			 ENDP  ; |?RefreshAll@RegKey@@QAAHH@Z|, RegKey::RefreshAll
 
@@ -4017,7 +4017,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35418| DCD	|$LN12@UpdateAllV|
+|$T35430| DCD	|$LN12@UpdateAllV|
 	DCD	0x40001901
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\pm\dll\pmsysreg.h
@@ -4030,7 +4030,7 @@
 
   00000		 |$LN12@UpdateAllV|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35415|
+  00004		 |$M35427|
   00004	e1a04000	 mov         r4, r0
 
 ; 335  :         if (m_hNotifyEvent!=INVALID_HANDLE_VALUE) {
@@ -4090,14 +4090,14 @@
 
   0005c	e8bd4010	 ldmia       sp!, {r4, lr}
   00060	e12fff1e	 bx          lr
-  00064		 |$M35416|
+  00064		 |$M35428|
 
 			 ENDP  ; |?UpdateAllValue@SystemNotifyRegKey@@QAAHXZ|, SystemNotifyRegKey::UpdateAllValue
 
 	EXPORT	|?UpdateRegistryChange@SystemNotifyRegKey@@QAAHXZ| ; SystemNotifyRegKey::UpdateRegistryChange
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35428| DCD	|$LN7@UpdateRegi|
+|$T35440| DCD	|$LN7@UpdateRegi|
 	DCD	0x40001001
 ; Function compile flags: /Ogspy
 
@@ -4109,7 +4109,7 @@
 
   00000		 |$LN7@UpdateRegi|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35425|
+  00004		 |$M35437|
   00004	e1a04000	 mov         r4, r0
 
 ; 347  :         if (m_hNotifyEvent!=INVALID_HANDLE_VALUE && 
@@ -4144,7 +4144,7 @@
 
   00038	e8bd4010	 ldmia       sp!, {r4, lr}
   0003c	e12fff1e	 bx          lr
-  00040		 |$M35426|
+  00040		 |$M35438|
 
 			 ENDP  ; |?UpdateRegistryChange@SystemNotifyRegKey@@QAAHXZ|, SystemNotifyRegKey::UpdateRegistryChange
 
@@ -4152,7 +4152,7 @@
 ; File c:\wince600\public\common\oak\inc\cmthread.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35449| DCD	|$LN15@ThreadRun|
+|$T35461| DCD	|$LN15@ThreadRun|
 	DCD	0x40001d02
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\pm\dll\pmsysreg.h
@@ -4166,7 +4166,7 @@
   00000		 |$LN15@ThreadRun|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M35446|
+  00008		 |$M35458|
   00008	e1a04000	 mov         r4, r0
 
 ; 359  :         while ( !IsTerminated() && m_hNotifyEvent!=INVALID_HANDLE_VALUE && m_hTerminated!=NULL ) {
@@ -4215,7 +4215,7 @@
   00068	e28dd008	 add         sp, sp, #8
   0006c	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00070	e12fff1e	 bx          lr
-  00074		 |$M35447|
+  00074		 |$M35459|
 
 			 ENDP  ; |?ThreadRun@SystemNotifyRegKey@@EAAKXZ|, SystemNotifyRegKey::ThreadRun
 
@@ -4224,7 +4224,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\pm\dll\pmsysstate.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35460| DCD	|$LN7@PmUpdateSy|
+|$T35472| DCD	|$LN7@PmUpdateSy|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -4236,7 +4236,7 @@
 
   00000		 |$LN7@PmUpdateSy|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35457|
+  00004		 |$M35469|
 
 ; 170  :     return (g_pSysRegistryAccess!=NULL?g_pSysRegistryAccess->UpdateRegistryChange():FALSE);
 
@@ -4263,14 +4263,14 @@
   0002c		 |$LN8@PmUpdateSy|
   0002c		 |$LN9@PmUpdateSy|
   0002c	00000000	 DCD         |?g_pSysRegistryAccess@@3PAVSystemNotifyRegKey@@A|
-  00030		 |$M35458|
+  00030		 |$M35470|
 
 			 ENDP  ; |PmUpdateSystemPowerStatesIfChanged|
 
 ; File c:\wince600\platform\z2170p\src\drivers\pm\dll\pmsysreg.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35472| DCD	|$LN5@Init@3|
+|$T35484| DCD	|$LN5@Init@3|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -4282,7 +4282,7 @@
 
   00000		 |$LN5@Init@3|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35469|
+  00004		 |$M35481|
 
 ; 119  :         RefreshAll();
 
@@ -4297,13 +4297,13 @@
 
   00010	e49de004	 ldr         lr, [sp], #4
   00014	e12fff1e	 bx          lr
-  00018		 |$M35470|
+  00018		 |$M35482|
 
 			 ENDP  ; |?Init@RegKey@@UAAHXZ|, RegKey::Init
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35482| DCD	|$LN7@Init@4|
+|$T35494| DCD	|$LN7@Init@4|
 	DCD	0x40001501
 ; Function compile flags: /Ogspy
 
@@ -4315,7 +4315,7 @@
 
   00000		 |$LN7@Init@4|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35479|
+  00004		 |$M35491|
   00004	e1a04000	 mov         r4, r0
 
 ; 308  :         if (m_RegKey!=NULL && m_hTerminated!=NULL && UpdateAllValue()) {
@@ -4359,7 +4359,7 @@
 
   0004c	e8bd4010	 ldmia       sp!, {r4, lr}
   00050	e12fff1e	 bx          lr
-  00054		 |$M35480|
+  00054		 |$M35492|
 
 			 ENDP  ; |?Init@SystemNotifyRegKey@@UAAHXZ|, SystemNotifyRegKey::Init
 
@@ -4367,7 +4367,7 @@
 ; File c:\wince600\public\common\oak\inc\csync.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35493| DCD	|$LN8@EnterLock|
+|$T35505| DCD	|$LN8@EnterLock|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\pm\dll\pmsysreg.h
@@ -4380,7 +4380,7 @@
 
   00000		 |$LN8@EnterLock|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35490|
+  00004		 |$M35502|
   00004	e1a04000	 mov         r4, r0
 
 ; 329  :         Lock(); 
@@ -4402,7 +4402,7 @@
 
   00020	e8bd4010	 ldmia       sp!, {r4, lr}
   00024	e12fff1e	 bx          lr
-  00028		 |$M35491|
+  00028		 |$M35503|
 
 			 ENDP  ; |?EnterLock@SystemNotifyRegKey@@QAAXXZ|, SystemNotifyRegKey::EnterLock
 
@@ -4431,15 +4431,15 @@
 |?fBootPhase2Reopen@?1??RegReadSystemPowerState@@9@4HA| % 0x4 ; `RegReadSystemPowerState'::`2'::fBootPhase2Reopen
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35589| DCD	|$LN76@RegReadSys|
+|$T35601| DCD	|$LN76@RegReadSys|
 	DCD	0xc000fd04
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35591| DCD	|$LN42@RegReadSys|
+|$T35603| DCD	|$LN42@RegReadSys|
 	DCD	0x40001602
 
   00000			 AREA	 |.xdata|, DATA
-|$T35587| DCD	0x1
+|$T35599| DCD	0x1
 	DCD	|$LN46@RegReadSys|
 	DCD	|$LN47@RegReadSys|
 	DCD	|$LN42@RegReadSys|
@@ -4540,7 +4540,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck_SEH|
-  00004	00000000	 DCD         |$T35587|
+  00004	00000000	 DCD         |$T35599|
 
   00008		 |RegReadSystemPowerState| PROC
 

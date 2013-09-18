@@ -14,7 +14,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40272| DCD	|$LN5@GetCurrent|
+|$T40275| DCD	|$LN5@GetCurrent|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -25,7 +25,7 @@
 ; 361  : _inline HANDLE GetCurrentProcess(void) {
 
   00000		 |$LN5@GetCurrent|
-  00000		 |$M40269|
+  00000		 |$M40272|
 
 ; 362  : 	return ((HANDLE)(SH_CURPROC+SYS_HANDLE_BASE));
 
@@ -34,7 +34,7 @@
 ; 363  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M40270|
+  00008		 |$M40273|
 
 			 ENDP  ; |GetCurrentProcess|
 
@@ -43,7 +43,7 @@
 ; File c:\wince600\platform\z2170p\src\app\simple\dll\simpledll.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40283| DCD	|$LN11@DllMain|
+|$T40286| DCD	|$LN11@DllMain|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -55,7 +55,7 @@
 
   00000		 |$LN11@DllMain|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M40280|
+  00004		 |$M40283|
 
 ; 51   :     switch (fdwReason)
 
@@ -86,14 +86,14 @@
 
   00010	e49de004	 ldr         lr, [sp], #4
   00014	e12fff1e	 bx          lr
-  00018		 |$M40281|
+  00018		 |$M40284|
 
 			 ENDP  ; |DllMain|
 
 	EXPORT	|SID_Init|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40292| DCD	|$LN5@SID_Init|
+|$T40295| DCD	|$LN5@SID_Init|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -104,7 +104,7 @@
 ; 76   : {
 
   00000		 |$LN5@SID_Init|
-  00000		 |$M40289|
+  00000		 |$M40292|
 
 ; 77   :     return 1;
 
@@ -113,14 +113,14 @@
 ; 78   : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M40290|
+  00008		 |$M40293|
 
 			 ENDP  ; |SID_Init|
 
 	EXPORT	|SID_Open|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40301| DCD	|$LN5@SID_Open|
+|$T40304| DCD	|$LN5@SID_Open|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -131,7 +131,7 @@
 ; 81   : {
 
   00000		 |$LN5@SID_Open|
-  00000		 |$M40298|
+  00000		 |$M40301|
 
 ; 82   :     return 1;
 
@@ -140,14 +140,14 @@
 ; 83   : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M40299|
+  00008		 |$M40302|
 
 			 ENDP  ; |SID_Open|
 
 	EXPORT	|SID_Close|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40310| DCD	|$LN5@SID_Close|
+|$T40313| DCD	|$LN5@SID_Close|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -158,7 +158,7 @@
 ; 86   : {
 
   00000		 |$LN5@SID_Close|
-  00000		 |$M40307|
+  00000		 |$M40310|
 
 ; 87   :     return TRUE;
 
@@ -167,14 +167,14 @@
 ; 88   : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M40308|
+  00008		 |$M40311|
 
 			 ENDP  ; |SID_Close|
 
 	EXPORT	|SID_Deinit|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40319| DCD	|$LN5@SID_Deinit|
+|$T40322| DCD	|$LN5@SID_Deinit|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -185,7 +185,7 @@
 ; 91   : {
 
   00000		 |$LN5@SID_Deinit|
-  00000		 |$M40316|
+  00000		 |$M40319|
 
 ; 92   :     return TRUE;
 
@@ -194,7 +194,7 @@
 ; 93   : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M40317|
+  00008		 |$M40320|
 
 			 ENDP  ; |SID_Deinit|
 
@@ -206,7 +206,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40337| DCD	|$LN15@SID_IOCont|
+|$T40340| DCD	|$LN15@SID_IOCont|
 	DCD	0x40002b02
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\app\simple\dll\simpledll.c
@@ -220,7 +220,7 @@
   00000		 |$LN15@SID_IOCont|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M40334|
+  00008		 |$M40337|
   00008	e3510000	 cmp         r1, #0
 
 ; 97   :     static LPVOID pVirtualMemoryAddress = NULL;
@@ -323,14 +323,14 @@
   000a8		 |$LN16@SID_IOCont|
   000a8		 |$LN17@SID_IOCont|
   000a8	00000000	 DCD         |?pVirtualMemoryAddress@?1??SID_IOControl@@9@9|
-  000ac		 |$M40335|
+  000ac		 |$M40338|
 
 			 ENDP  ; |SID_IOControl|
 
 	EXPORT	|SID_PowerDown|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40346| DCD	|$LN5@SID_PowerD|
+|$T40349| DCD	|$LN5@SID_PowerD|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -341,19 +341,19 @@
 ; 129  : {
 
   00000		 |$LN5@SID_PowerD|
-  00000		 |$M40343|
+  00000		 |$M40346|
 
 ; 130  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M40344|
+  00004		 |$M40347|
 
 			 ENDP  ; |SID_PowerDown|
 
 	EXPORT	|SID_PowerUp|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40353| DCD	|$LN5@SID_PowerU|
+|$T40356| DCD	|$LN5@SID_PowerU|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -364,19 +364,19 @@
 ; 133  : {
 
   00000		 |$LN5@SID_PowerU|
-  00000		 |$M40350|
+  00000		 |$M40353|
 
 ; 134  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M40351|
+  00004		 |$M40354|
 
 			 ENDP  ; |SID_PowerUp|
 
 	EXPORT	|SID_Read|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40362| DCD	|$LN5@SID_Read|
+|$T40365| DCD	|$LN5@SID_Read|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -387,7 +387,7 @@
 ; 137  : {
 
   00000		 |$LN5@SID_Read|
-  00000		 |$M40359|
+  00000		 |$M40362|
 
 ; 138  :     return 0;
 
@@ -396,14 +396,14 @@
 ; 139  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M40360|
+  00008		 |$M40363|
 
 			 ENDP  ; |SID_Read|
 
 	EXPORT	|SID_Write|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40371| DCD	|$LN5@SID_Write|
+|$T40374| DCD	|$LN5@SID_Write|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -414,7 +414,7 @@
 ; 142  : {
 
   00000		 |$LN5@SID_Write|
-  00000		 |$M40368|
+  00000		 |$M40371|
 
 ; 143  :     return -1;
 
@@ -423,14 +423,14 @@
 ; 144  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M40369|
+  00008		 |$M40372|
 
 			 ENDP  ; |SID_Write|
 
 	EXPORT	|SID_Seek|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40380| DCD	|$LN5@SID_Seek|
+|$T40383| DCD	|$LN5@SID_Seek|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -441,7 +441,7 @@
 ; 147  : {
 
   00000		 |$LN5@SID_Seek|
-  00000		 |$M40377|
+  00000		 |$M40380|
 
 ; 148  :     return -1;
 
@@ -450,7 +450,7 @@
 ; 149  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M40378|
+  00008		 |$M40381|
 
 			 ENDP  ; |SID_Seek|
 

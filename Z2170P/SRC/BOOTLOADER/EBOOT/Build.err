@@ -1,2 +1,0 @@
-BUILD: [Thrd:Sequence:Type  ] Message
-BUILD: [01:0000000108:ERRORE] C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\..\hotkey.c(728) : error C2220: warning treated as error - no 'object' file generated

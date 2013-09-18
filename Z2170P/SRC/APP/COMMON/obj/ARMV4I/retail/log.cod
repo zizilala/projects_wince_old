@@ -93,7 +93,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32566| DCD	|$LN5@GetCurrent|
+|$T32568| DCD	|$LN5@GetCurrent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -105,7 +105,7 @@
 
   00000		 |$LN5@GetCurrent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M32563|
+  00004		 |$M32565|
 
 ; 370  :     return __GetUserKData (SYSHANDLE_OFFSET + (SH_CURTHREAD * sizeof(HANDLE)));
 
@@ -116,7 +116,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M32564|
+  00014		 |$M32566|
 
 			 ENDP  ; |GetCurrentThreadId|
 
@@ -133,7 +133,7 @@
 ; File c:\wince600\platform\z2170p\src\app\common\log.cxx
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32580| DCD	|$LN5@LogStartup|
+|$T32582| DCD	|$LN5@LogStartup|
 	DCD	0x40002e01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -153,7 +153,7 @@
 
   00000		 |$LN5@LogStartup|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M32577|
+  00004		 |$M32579|
   00004	e1a05002	 mov         r5, r2
   00008	e1a04001	 mov         r4, r1
   0000c	e1a06000	 mov         r6, r0
@@ -254,7 +254,7 @@
   000b0	00000000	 DCD         |??_C@_1BG@FJGLOEHI@?$AA0?$AA0?$AA0?$AA0?$AA0?$AA0?$AA0?$AA0?$AA?3?$AA?5?$AA?$AA@|
   000b4		 |$LN9@LogStartup|
   000b4	00000000	 DCD         |g_LogInfo|
-  000b8		 |$M32578|
+  000b8		 |$M32580|
 
 			 ENDP  ; |LogStartup|
 
@@ -266,7 +266,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32598| DCD	|$LN14@LogV|
+|$T32600| DCD	|$LN14@LogV|
 	DCD	0x40004201
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -283,7 +283,7 @@
 
   00000		 |$LN14@LogV|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
-  00004		 |$M32595|
+  00004		 |$M32597|
   00004	e1a09002	 mov         r9, r2
   00008	e1a0a001	 mov         r10, r1
   0000c	e1a08000	 mov         r8, r0
@@ -306,7 +306,7 @@
 
   00020	e5973008	 ldr         r3, [r7, #8]
   00024	e1580003	 cmp         r8, r3
-  00028	8a00002e	 bhi         |$cleanUp$32408|
+  00028	8a00002e	 bhi         |$cleanUp$32410|
 
 ; 137  : 
 ; 138  :    if (dwLevel <= LOG_FAIL) g_LogInfo.m_nErrorCount++;
@@ -380,7 +380,7 @@
 
 ; 150  :    } else {
 
-  000cc	ea000005	 b           |$cleanUp$32408|
+  000cc	ea000005	 b           |$cleanUp$32410|
   000d0		 |$LN2@LogV|
 
 ; 151  :       g_LogInfo.m_pLogFce(dwLevel, g_LogInfo.m_szBuffer);
@@ -391,7 +391,7 @@
   000dc	e1a00008	 mov         r0, r8
   000e0	e1a0e00f	 mov         lr, pc
   000e4	e12fff13	 bx          r3
-  000e8		 |$cleanUp$32408|
+  000e8		 |$cleanUp$32410|
 
 ; 152  :    }
 ; 153  : 
@@ -414,14 +414,14 @@
   00100	00000000	 DCD         |??_C@_19HGGOABND@?$AA?$CF?$AA0?$AA8?$AAx?$AA?$AA@|
   00104		 |$LN18@LogV|
   00104	00000000	 DCD         |g_LogInfo|
-  00108		 |$M32596|
+  00108		 |$M32598|
 
 			 ENDP  ; |?LogV@@YAXKPBGPAD@Z|, LogV
 
 	EXPORT	|Log|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32611| DCD	|$LN5@Log|
+|$T32613| DCD	|$LN5@Log|
 	DCD	0x40000803
 ; Function compile flags: /Ogspy
 
@@ -435,7 +435,7 @@
   00000	e1a0c00d	 mov         r12, sp
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5000	 stmdb       sp!, {r12, lr}
-  0000c		 |$M32608|
+  0000c		 |$M32610|
   0000c	e58d100c	 str         r1, [sp, #0xC]
 
 ; 163  :    va_list pArgs;
@@ -451,14 +451,14 @@
 
   00018	e89d6000	 ldmia       sp, {sp, lr}
   0001c	e12fff1e	 bx          lr
-  00020		 |$M32609|
+  00020		 |$M32611|
 
 			 ENDP  ; |Log|
 
 	EXPORT	|LogErr|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32619| DCD	|$LN5@LogErr|
+|$T32621| DCD	|$LN5@LogErr|
 	DCD	0x40000a03
 ; Function compile flags: /Ogspy
 
@@ -472,7 +472,7 @@
   00000	e1a0c00d	 mov         r12, sp
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5000	 stmdb       sp!, {r12, lr}
-  0000c		 |$M32616|
+  0000c		 |$M32618|
   0000c	e58d0008	 str         r0, [sp, #8]
 
 ; 174  :    va_list pArgs;
@@ -490,14 +490,14 @@
 
   00020	e89d6000	 ldmia       sp, {sp, lr}
   00024	e12fff1e	 bx          lr
-  00028		 |$M32617|
+  00028		 |$M32619|
 
 			 ENDP  ; |LogErr|
 
 	EXPORT	|LogWrn|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32627| DCD	|$LN5@LogWrn|
+|$T32629| DCD	|$LN5@LogWrn|
 	DCD	0x40000a03
 ; Function compile flags: /Ogspy
 
@@ -511,7 +511,7 @@
   00000	e1a0c00d	 mov         r12, sp
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5000	 stmdb       sp!, {r12, lr}
-  0000c		 |$M32624|
+  0000c		 |$M32626|
   0000c	e58d0008	 str         r0, [sp, #8]
 
 ; 185  :    va_list pArgs;
@@ -529,14 +529,14 @@
 
   00020	e89d6000	 ldmia       sp, {sp, lr}
   00024	e12fff1e	 bx          lr
-  00028		 |$M32625|
+  00028		 |$M32627|
 
 			 ENDP  ; |LogWrn|
 
 	EXPORT	|LogMsg|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32635| DCD	|$LN5@LogMsg|
+|$T32637| DCD	|$LN5@LogMsg|
 	DCD	0x40000a03
 ; Function compile flags: /Ogspy
 
@@ -550,7 +550,7 @@
   00000	e1a0c00d	 mov         r12, sp
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5000	 stmdb       sp!, {r12, lr}
-  0000c		 |$M32632|
+  0000c		 |$M32634|
   0000c	e58d0008	 str         r0, [sp, #8]
 
 ; 196  :    va_list pArgs;
@@ -568,14 +568,14 @@
 
   00020	e89d6000	 ldmia       sp, {sp, lr}
   00024	e12fff1e	 bx          lr
-  00028		 |$M32633|
+  00028		 |$M32635|
 
 			 ENDP  ; |LogMsg|
 
 	EXPORT	|LogDbg|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32643| DCD	|$LN5@LogDbg|
+|$T32645| DCD	|$LN5@LogDbg|
 	DCD	0x40000a03
 ; Function compile flags: /Ogspy
 
@@ -589,7 +589,7 @@
   00000	e1a0c00d	 mov         r12, sp
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5000	 stmdb       sp!, {r12, lr}
-  0000c		 |$M32640|
+  0000c		 |$M32642|
   0000c	e58d0008	 str         r0, [sp, #8]
 
 ; 207  :    va_list pArgs;
@@ -607,14 +607,14 @@
 
   00020	e89d6000	 ldmia       sp, {sp, lr}
   00024	e12fff1e	 bx          lr
-  00028		 |$M32641|
+  00028		 |$M32643|
 
 			 ENDP  ; |LogDbg|
 
 	EXPORT	|LogVbs|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32651| DCD	|$LN5@LogVbs|
+|$T32653| DCD	|$LN5@LogVbs|
 	DCD	0x40000a03
 ; Function compile flags: /Ogspy
 
@@ -628,7 +628,7 @@
   00000	e1a0c00d	 mov         r12, sp
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5000	 stmdb       sp!, {r12, lr}
-  0000c		 |$M32648|
+  0000c		 |$M32650|
   0000c	e58d0008	 str         r0, [sp, #8]
 
 ; 218  :    va_list pArgs;
@@ -646,14 +646,14 @@
 
   00020	e89d6000	 ldmia       sp, {sp, lr}
   00024	e12fff1e	 bx          lr
-  00028		 |$M32649|
+  00028		 |$M32651|
 
 			 ENDP  ; |LogVbs|
 
 	EXPORT	|LogGetErrorCount|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32660| DCD	|$LN5@LogGetErro|
+|$T32662| DCD	|$LN5@LogGetErro|
 	DCD	0x40000500
 ; Function compile flags: /Ogspy
 
@@ -664,7 +664,7 @@
 ; 228  : {
 
   00000		 |$LN5@LogGetErro|
-  00000		 |$M32657|
+  00000		 |$M32659|
 
 ; 229  :    return g_LogInfo.m_nErrorCount;
 
@@ -678,14 +678,14 @@
   00010		 |$LN6@LogGetErro|
   00010		 |$LN7@LogGetErro|
   00010	00000000	 DCD         |g_LogInfo|
-  00014		 |$M32658|
+  00014		 |$M32660|
 
 			 ENDP  ; |LogGetErrorCount|
 
 	EXPORT	|LogGetWarningCount|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32671| DCD	|$LN5@LogGetWarn|
+|$T32673| DCD	|$LN5@LogGetWarn|
 	DCD	0x40000500
 ; Function compile flags: /Ogspy
 
@@ -696,7 +696,7 @@
 ; 235  : {
 
   00000		 |$LN5@LogGetWarn|
-  00000		 |$M32668|
+  00000		 |$M32670|
 
 ; 236  :    return g_LogInfo.m_nWarningCount;
 
@@ -710,14 +710,14 @@
   00010		 |$LN6@LogGetWarn|
   00010		 |$LN7@LogGetWarn|
   00010	00000000	 DCD         |g_LogInfo|
-  00014		 |$M32669|
+  00014		 |$M32671|
 
 			 ENDP  ; |LogGetWarningCount|
 
 	EXPORT	|LogSetWATTOutput|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32681| DCD	|$LN5@LogSetWATT|
+|$T32683| DCD	|$LN5@LogSetWATT|
 	DCD	0x40000400
 ; Function compile flags: /Ogspy
 
@@ -728,7 +728,7 @@
 ; 242  : {
 
   00000		 |$LN5@LogSetWATT|
-  00000		 |$M32678|
+  00000		 |$M32680|
 
 ; 243  :    g_LogInfo.m_bWATTOutput = bWATTOutput;
 
@@ -741,14 +741,14 @@
   0000c		 |$LN6@LogSetWATT|
   0000c		 |$LN7@LogSetWATT|
   0000c	00000000	 DCD         |g_LogInfo|
-  00010		 |$M32679|
+  00010		 |$M32681|
 
 			 ENDP  ; |LogSetWATTOutput|
 
 	EXPORT	|LogSetLevel|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32691| DCD	|$LN5@LogSetLeve|
+|$T32693| DCD	|$LN5@LogSetLeve|
 	DCD	0x40000400
 ; Function compile flags: /Ogspy
 
@@ -759,7 +759,7 @@
 ; 249  : {
 
   00000		 |$LN5@LogSetLeve|
-  00000		 |$M32688|
+  00000		 |$M32690|
 
 ; 250  :    g_LogInfo.m_dwLogLevel = dwLogLevel;
 
@@ -772,14 +772,14 @@
   0000c		 |$LN6@LogSetLeve|
   0000c		 |$LN7@LogSetLeve|
   0000c	00000000	 DCD         |g_LogInfo|
-  00010		 |$M32689|
+  00010		 |$M32691|
 
 			 ENDP  ; |LogSetLevel|
 
 	EXPORT	|LogGetLevel|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32702| DCD	|$LN5@LogGetLeve|
+|$T32704| DCD	|$LN5@LogGetLeve|
 	DCD	0x40000400
 ; Function compile flags: /Ogspy
 
@@ -790,7 +790,7 @@
 ; 256  : {
 
   00000		 |$LN5@LogGetLeve|
-  00000		 |$M32699|
+  00000		 |$M32701|
 
 ; 257  :    return g_LogInfo.m_dwLogLevel;
 
@@ -803,7 +803,7 @@
   0000c		 |$LN6@LogGetLeve|
   0000c		 |$LN7@LogGetLeve|
   0000c	00000000	 DCD         |g_LogInfo|
-  00010		 |$M32700|
+  00010		 |$M32702|
 
 			 ENDP  ; |LogGetLevel|
 
@@ -811,7 +811,7 @@
 	EXPORT	|??_C@_1CO@PHJPOGIH@?$AAC?$AAS?$AAS?$AAD?$AA?5?$AAT?$AAe?$AAs?$AAt?$AA?3?$AA?5?$AA?$CF?$AAs?$AA?0?$AA?5?$AA?$CF?$AAs?$AA?0?$AA?0?$AA?5?$AA?$CF?$AAs?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32713| DCD	|$LN5@LogCSSDTes|
+|$T32715| DCD	|$LN5@LogCSSDTes|
 	DCD	0x40000c01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -830,7 +830,7 @@
 
   00000		 |$LN5@LogCSSDTes|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M32710|
+  00004		 |$M32712|
   00004	e1a0e001	 mov         lr, r1
 
 ; 264  :     //  Log the CSSD test result
@@ -859,7 +859,7 @@
   00028	00000000	 DCD         |??_C@_1CO@PHJPOGIH@?$AAC?$AAS?$AAS?$AAD?$AA?5?$AAT?$AAe?$AAs?$AAt?$AA?3?$AA?5?$AA?$CF?$AAs?$AA?0?$AA?5?$AA?$CF?$AAs?$AA?0?$AA?0?$AA?5?$AA?$CF?$AAs?$AA?$AA@|
   0002c		 |$LN8@LogCSSDTes|
   0002c	00000000	 DCD         |g_CSSDTestResults|
-  00030		 |$M32711|
+  00030		 |$M32713|
 
 			 ENDP  ; |LogCSSDTestResult|
 
@@ -876,11 +876,11 @@
 	IMPORT	|__security_check_cookie|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32747| DCD	|$LN16@LogCleanup|
+|$T32749| DCD	|$LN16@LogCleanup|
 	DCD	0xc0005202
 
   00000			 AREA	 |.xdata|, DATA
-|$T32743| DCD	0xffffffdc
+|$T32745| DCD	0xffffffdc
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1BG@GDLPJODK@?$AA?$EA?$AA?$EA?$AA?$EA?$AA?$EA?$AA?$EA?$AA?$EA?$AA?$CF?$AAd?$AA?$AN?$AA?6?$AA?$AA@| DCB "@"
@@ -902,7 +902,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T32743|
+  00004	00000000	 DCD         |$T32745|
 
   00008		 |LogCleanup| PROC
 
@@ -911,7 +911,7 @@
   00008		 |$LN16@LogCleanup|
   00008	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
   0000c	e24dd060	 sub         sp, sp, #0x60
-  00010		 |$M32744|
+  00010		 |$M32746|
   00010	e59f3134	 ldr         r3, [pc, #0x134]
   00014	e5933000	 ldr         r3, [r3]
   00018	e58d305c	 str         r3, [sp, #0x5C]
@@ -1060,7 +1060,7 @@
   00148	00000000	 DCD         |g_LogInfo|
   0014c		 |$LN26@LogCleanup|
   0014c	00000000	 DCD         |__security_cookie|
-  00150		 |$M32745|
+  00150		 |$M32747|
 
 			 ENDP  ; |LogCleanup|
 

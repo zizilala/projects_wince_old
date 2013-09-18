@@ -250,7 +250,7 @@
 ; File c:\wince600\platform\evm_omap3530\src\bsp_common\display\lcd_vga.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46270| DCD	|$LN18@LcdPdd_LCD|
+|$T46280| DCD	|$LN18@LcdPdd_LCD|
 	DCD	0x40004b01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -310,7 +310,7 @@
 
   00000		 |$LN18@LcdPdd_LCD|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M46267|
+  00004		 |$M46277|
 
 ; 289  :     if (g_dwSelectedDSSResolution == OMAP_RES_INVALID)
 
@@ -473,14 +473,14 @@
   00124	00000000	 DCD         |bDVIEnabled|
   00128		 |$LN27@LcdPdd_LCD|
   00128	00000000	 DCD         |lcd_res_params|
-  0012c		 |$M46268|
+  0012c		 |$M46278|
 
 			 ENDP  ; |LcdPdd_LCD_InitResolution|
 
 	EXPORT	|LcdPdd_TV_Initialize|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46290| DCD	|$LN5@LcdPdd_TV_|
+|$T46300| DCD	|$LN5@LcdPdd_TV_|
 	DCD	0x40001601
 ; Function compile flags: /Ogspy
 
@@ -492,7 +492,7 @@
 
   00000		 |$LN5@LcdPdd_TV_|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46287|
+  00004		 |$M46297|
 
 ; 441  : 	UNREFERENCED_PARAMETER(pVencRegs);
 ; 442  : 	UNREFERENCED_PARAMETER(pRfbiRegs);
@@ -582,7 +582,7 @@
   00050	00f002cf	 DCD         0xf002cf
   00054		 |$LN8@LcdPdd_TV_|
   00054	00000000	 DCD         |lcd_res_params|
-  00058		 |$M46288|
+  00058		 |$M46298|
 
 			 ENDP  ; |LcdPdd_TV_Initialize|
 
@@ -590,7 +590,7 @@
 	IMPORT	|ConvertCAtoPA|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46304| DCD	|$LN7@LcdPdd_Get|
+|$T46314| DCD	|$LN7@LcdPdd_Get|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -602,7 +602,7 @@
 
   00000		 |$LN7@LcdPdd_Get|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M46301|
+  00004		 |$M46311|
   00004	e1a04001	 mov         r4, r1
   00008	e3500000	 cmp         r0, #0
 
@@ -638,7 +638,7 @@
 
   0002c	e8bd4010	 ldmia       sp!, {r4, lr}
   00030	e12fff1e	 bx          lr
-  00034		 |$M46302|
+  00034		 |$M46312|
 
 			 ENDP  ; |LcdPdd_GetMemory|
 
@@ -646,7 +646,7 @@
 	IMPORT	|__rt_udiv|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46318| DCD	|$LN9@LcdPdd_LCD@2|
+|$T46328| DCD	|$LN9@LcdPdd_LCD@2|
 	DCD	0x40002901
 ; Function compile flags: /Ogspy
 
@@ -658,7 +658,7 @@
 
   00000		 |$LN9@LcdPdd_LCD@2|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M46315|
+  00004		 |$M46325|
   00004	e1a08003	 mov         r8, r3
   00008	e1a05002	 mov         r5, r2
   0000c	e1a06001	 mov         r6, r1
@@ -742,14 +742,14 @@
   000a0		 |$LN10@LcdPdd_LCD@2|
   000a0		 |$LN11@LcdPdd_LCD@2|
   000a0	00000000	 DCD         |lcd_res_params|
-  000a4		 |$M46316|
+  000a4		 |$M46326|
 
 			 ENDP  ; |LcdPdd_LCD_GetMode|
 
 	EXPORT	|LcdPdd_TV_GetMode|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46332| DCD	|$LN8@LcdPdd_TV_@2|
+|$T46342| DCD	|$LN8@LcdPdd_TV_@2|
 	DCD	0x40000b00
 ; Function compile flags: /Ogspy
 
@@ -760,7 +760,7 @@
 ; 553  : {
 
   00000		 |$LN8@LcdPdd_TV_@2|
-  00000		 |$M46329|
+  00000		 |$M46339|
   00000	e3500000	 cmp         r0, #0
 
 ; 554  :     //  Return default TV parameters
@@ -812,7 +812,7 @@
 ; 579  : }
 
   00028	e12fff1e	 bx          lr
-  0002c		 |$M46330|
+  0002c		 |$M46340|
 
 			 ENDP  ; |LcdPdd_TV_GetMode|
 
@@ -829,7 +829,7 @@
 |g_pDispRegs| %	0x4
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46344| DCD	|$LN18@LcdPdd_Set|
+|$T46354| DCD	|$LN18@LcdPdd_Set|
 	DCD	0x40004701
 ; Function compile flags: /Ogspy
 
@@ -841,7 +841,7 @@
 
   00000		 |$LN18@LcdPdd_Set|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M46341|
+  00004		 |$M46351|
   00004	e1a04000	 mov         r4, r0
 
 ; 588  :     // Do nothing if LCD has not yet been initialized
@@ -1066,14 +1066,14 @@
   00118		 |$LN19@LcdPdd_Set|
   00118		 |$LN20@LcdPdd_Set|
   00118	00000000	 DCD         |g_pDispRegs|
-  0011c		 |$M46342|
+  0011c		 |$M46352|
 
 			 ENDP  ; |LcdPdd_SetPowerLevel|
 
 	EXPORT	|LcdPdd_DVI_Select|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46356| DCD	|$LN5@LcdPdd_DVI|
+|$T46366| DCD	|$LN5@LcdPdd_DVI|
 	DCD	0x40000600
 ; Function compile flags: /Ogspy
 
@@ -1084,7 +1084,7 @@
 ; 686  : {
 
   00000		 |$LN5@LcdPdd_DVI|
-  00000		 |$M46353|
+  00000		 |$M46363|
   00000	e1a02000	 mov         r2, r0
 
 ; 687  : 
@@ -1104,14 +1104,14 @@
   00014		 |$LN6@LcdPdd_DVI|
   00014		 |$LN7@LcdPdd_DVI|
   00014	00000000	 DCD         |bDVIEnabled|
-  00018		 |$M46354|
+  00018		 |$M46364|
 
 			 ENDP  ; |LcdPdd_DVI_Select|
 
 	EXPORT	|LcdPdd_DVI_Enabled|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46367| DCD	|$LN5@LcdPdd_DVI@2|
+|$T46377| DCD	|$LN5@LcdPdd_DVI@2|
 	DCD	0x40000701
 ; Function compile flags: /Ogspy
 
@@ -1123,7 +1123,7 @@
 
   00000		 |$LN5@LcdPdd_DVI@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46364|
+  00004		 |$M46374|
 
 ; 697  :     LcdPdd_LCD_InitResolution();
 
@@ -1141,14 +1141,14 @@
   00018		 |$LN6@LcdPdd_DVI@2|
   00018		 |$LN7@LcdPdd_DVI@2|
   00018	00000000	 DCD         |bDVIEnabled|
-  0001c		 |$M46365|
+  0001c		 |$M46375|
 
 			 ENDP  ; |LcdPdd_DVI_Enabled|
 
 	EXPORT	|LcdPdd_Get_PixClkDiv|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46378| DCD	|$LN5@LcdPdd_Get@2|
+|$T46388| DCD	|$LN5@LcdPdd_Get@2|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -1160,7 +1160,7 @@
 
   00000		 |$LN5@LcdPdd_Get@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46375|
+  00004		 |$M46385|
 
 ; 705  :     LcdPdd_LCD_InitResolution();
 
@@ -1181,7 +1181,7 @@
   00024		 |$LN6@LcdPdd_Get@2|
   00024		 |$LN7@LcdPdd_Get@2|
   00024	00000000	 DCD         |lcd_res_params|
-  00028		 |$M46376|
+  00028		 |$M46386|
 
 			 ENDP  ; |LcdPdd_Get_PixClkDiv|
 
@@ -1191,7 +1191,7 @@
 	IMPORT	|MmMapIoSpace|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46394| DCD	|$LN9@LcdPdd_LCD@3|
+|$T46404| DCD	|$LN9@LcdPdd_LCD@3|
 	DCD	0x40006501
 ; Function compile flags: /Ogspy
 
@@ -1203,7 +1203,7 @@
 
   00000		 |$LN9@LcdPdd_LCD@3|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M46391|
+  00004		 |$M46401|
   00004	e1a06001	 mov         r6, r1
 
 ; 330  :     PHYSICAL_ADDRESS pa;
@@ -1451,7 +1451,7 @@
   0018c	00000000	 DCD         |lcd_res_params|
   00190		 |$LN12@LcdPdd_LCD@3|
   00190	00000000	 DCD         |g_pDispRegs|
-  00194		 |$M46392|
+  00194		 |$M46402|
 
 			 ENDP  ; |LcdPdd_LCD_Initialize|
 

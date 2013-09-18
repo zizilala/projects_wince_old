@@ -26,7 +26,7 @@
 |?HookState@?1??KeyHookDlgProc@@YAHPAUHWND__@@IIJ@Z@4HA| % 0x4 ; `KeyHookDlgProc'::`2'::HookState
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32011| DCD	|$LN20@KeyHookDlg|
+|$T32013| DCD	|$LN20@KeyHookDlg|
 	DCD	0x40006202
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -55,7 +55,7 @@
   00000		 |$LN20@KeyHookDlg|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M32008|
+  00008		 |$M32010|
   00008	e1a05003	 mov         r5, r3
   0000c	e1a06002	 mov         r6, r2
   00010	e1a04001	 mov         r4, r1
@@ -261,14 +261,14 @@
   00180	00000000	 DCD         |??_C@_1BG@KBNMNJAO@?$AAF?$AAu?$AAn?$AAK?$AAe?$AAy?$AAH?$AAo?$AAo?$AAk?$AA?$AA@|
   00184		 |$LN24@KeyHookDlg|
   00184	00000000	 DCD         |??_C@_1FI@KHNHLMMH@?$AAO?$AAn?$AAK?$AAB?$AAH?$AAo?$AAo?$AAk?$AA?5?$AA?$CI?$AAv?$AAk?$AAC?$AAo?$AAd?$AAe?$AA?3?$AA?$CF?$AAx?$AA?5?$AAs?$AAc?$AAa?$AAn?$AAC?$AAo?$AAd?$AAe?$AA?3?$AA?$CF?$AAx?$AA?5@|
-  00188		 |$M32009|
+  00188		 |$M32011|
 
 			 ENDP  ; |?KeyHookDlgProc@@YAHPAUHWND__@@IIJ@Z|, KeyHookDlgProc
 
 	EXPORT	|?FuncKeyHandle@@YAXKK@Z|		; FuncKeyHandle
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32023| DCD	|$LN5@FuncKeyHan|
+|$T32025| DCD	|$LN5@FuncKeyHan|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -279,7 +279,7 @@
 ; 90   : {
 
   00000		 |$LN5@FuncKeyHan|
-  00000		 |$M32020|
+  00000		 |$M32022|
 
 ; 91   : 	UNREFERENCED_PARAMETER(VKCode);
 ; 92   : 	UNREFERENCED_PARAMETER(KEY_MESSAGE);
@@ -288,7 +288,7 @@
 ; 95   : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M32021|
+  00004		 |$M32023|
 
 			 ENDP  ; |?FuncKeyHandle@@YAXKK@Z|, FuncKeyHandle
 
@@ -303,7 +303,7 @@
 	IMPORT	|FindWindowW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32039| DCD	|$LN14@WinMain|
+|$T32041| DCD	|$LN14@WinMain|
 	DCD	0x40002a02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -324,7 +324,7 @@
   00000		 |$LN14@WinMain|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
   00004	e24dd020	 sub         sp, sp, #0x20
-  00008		 |$M32036|
+  00008		 |$M32038|
   00008	e1a04000	 mov         r4, r0
 
 ; 14   : 	HWND hwnd;
@@ -414,7 +414,7 @@
   000a0	00000000	 DCD         |??_C@_1DC@OLKPMOAM@?$AA?$CK?$AA?$CK?$AA?$CK?$AA?5?$AAS?$AAt?$AAa?$AAr?$AAt?$AA?5?$AAK?$AAe?$AAy?$AA?5?$AAH?$AAo?$AAo?$AAk?$AA?5?$AA?$CK?$AA?$CK?$AA?$CK?$AA?$AN?$AA?6?$AA?$AA@|
   000a4		 |$LN18@WinMain|
   000a4	00000000	 DCD         |??_C@_1BG@KBNMNJAO@?$AAF?$AAu?$AAn?$AAK?$AAe?$AAy?$AAH?$AAo?$AAo?$AAk?$AA?$AA@|
-  000a8		 |$M32037|
+  000a8		 |$M32039|
 
 			 ENDP  ; |WinMain|
 

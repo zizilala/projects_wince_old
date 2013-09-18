@@ -20,11 +20,11 @@
 ; File c:\wince600\platform\z2170p\src\test\pmtest\pmgetd\getd.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39162| DCD	|$LN5@RetailPrin|
+|$T39165| DCD	|$LN5@RetailPrin|
 	DCD	0xc0002905
 
   00000			 AREA	 |.xdata|, DATA
-|$T39158| DCD	0xffffffe4
+|$T39161| DCD	0xffffffe4
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1BG@BNMMPDJD@?$AAP?$AAM?$AAG?$AAE?$AAT?$AAD?$AA?3?$AA?5?$AA?$CF?$AAs?$AA?$AA@| DCB "P"
@@ -35,7 +35,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T39158|
+  00004	00000000	 DCD         |$T39161|
 
   00008		 |RetailPrint| PROC
 
@@ -47,7 +47,7 @@
   00010	e92d5000	 stmdb       sp!, {r12, lr}
   00014	e59fc08c	 ldr         r12, [pc, #0x8C]
   00018	e08dd00c	 add         sp, sp, r12
-  0001c		 |$M39159|
+  0001c		 |$M39162|
   0001c	e28dca02	 add         r12, sp, #2, 20
   00020	e58c000c	 str         r0, [r12, #0xC]
   00024	e59f3078	 ldr         r3, [pc, #0x78]
@@ -117,7 +117,7 @@
   000a4	00000000	 DCD         |__security_cookie|
   000a8		 |$LN9@RetailPrin|
   000a8	ffffdffc	 DCD         0xffffdffc
-  000ac		 |$M39160|
+  000ac		 |$M39163|
 
 			 ENDP  ; |RetailPrint|
 
@@ -145,11 +145,11 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39188| DCD	|$LN18@WinMain|
+|$T39191| DCD	|$LN18@WinMain|
 	DCD	0xc0006103
 
   00000			 AREA	 |.xdata|, DATA
-|$T39184| DCD	0xfffffff4
+|$T39187| DCD	0xfffffff4
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1HE@PINGDJPA@?$AAG?$AAe?$AAt?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AAP?$AAo?$AAw?$AAe?$AAr?$AA?$CI?$AA?8?$AA?$CF?$AAs?$AA?8?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$CJ?$AA?5?$AAs?$AAu?$AAc?$AAc?$AAe@| DCB "G"
@@ -333,7 +333,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T39184|
+  00004	00000000	 DCD         |$T39187|
 
   00008		 |WinMain| PROC
 
@@ -343,7 +343,7 @@
   00008	e92d4010	 stmdb       sp!, {r4, lr}
   0000c	e59fc174	 ldr         r12, [pc, #0x174]
   00010	e08dd00c	 add         sp, sp, r12
-  00014		 |$M39185|
+  00014		 |$M39188|
   00014	e1a04002	 mov         r4, r2
   00018	e59f3164	 ldr         r3, [pc, #0x164]
   0001c	e5933000	 ldr         r3, [r3]
@@ -554,7 +554,7 @@
   00188	fffff7a4	 DCD         0xfffff7a4
   0018c		 |$LN19@WinMain|
   0018c		 |$LN14@WinMain|
-  0018c		 |$M39186|
+  0018c		 |$M39189|
 
 			 ENDP  ; |WinMain|
 

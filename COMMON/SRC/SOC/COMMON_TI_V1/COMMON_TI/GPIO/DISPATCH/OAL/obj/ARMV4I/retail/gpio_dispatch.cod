@@ -72,7 +72,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\gpio\dispatch\oal\gpio_dispatch.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43597| DCD	|$LN11@GetGroupBy|
+|$T43604| DCD	|$LN11@GetGroupBy|
 	DCD	0x40001301
 ; Function compile flags: /Ogspy
 
@@ -84,7 +84,7 @@
 
   00000		 |$LN11@GetGroupBy|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M43594|
+  00004		 |$M43601|
 
 ; 12   :     int i=0;
 ; 13   :     while (pDevice->rgRanges[i] <= id)
@@ -129,7 +129,7 @@
 
   00044	e8bd4010	 ldmia       sp!, {r4, lr}
   00048	e12fff1e	 bx          lr
-  0004c		 |$M43595|
+  0004c		 |$M43602|
 
 			 ENDP  ; |GetGroupByID|
 
@@ -137,7 +137,7 @@
 	IMPORT	|BSPGetGpioDevicesTable|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43612| DCD	|$LN14@GPIOPostIn|
+|$T43619| DCD	|$LN14@GPIOPostIn|
 	DCD	0x40001c01
 ; Function compile flags: /Ogspy
 
@@ -149,7 +149,7 @@
 
   00000		 |$LN14@GPIOPostIn|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M43609|
+  00004		 |$M43616|
 
 ; 26   :     int i;
 ; 27   :     GpioDevice_t* pDevice;
@@ -216,7 +216,7 @@
 
   00068	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0006c	e12fff1e	 bx          lr
-  00070		 |$M43610|
+  00070		 |$M43617|
 
 			 ENDP  ; |GPIOPostInit|
 
@@ -227,7 +227,7 @@
 	IMPORT	|BSPGpioInit|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43626| DCD	|$LN12@GPIOInit|
+|$T43633| DCD	|$LN12@GPIOInit|
 	DCD	0x40002602
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -258,7 +258,7 @@
   00000		 |$LN12@GPIOInit|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M43623|
+  00008		 |$M43630|
 
 ; 44   :     int i;
 ; 45   :     UINT size;
@@ -339,21 +339,21 @@
 ; 67   :     return FALSE;
 
   00088	e3a00000	 mov         r0, #0
-  0008c		 |$cleanUp$43427|
+  0008c		 |$cleanUp$43434|
   0008c	eafffff7	 b           |$LN5@GPIOInit|
   00090		 |$LN13@GPIOInit|
   00090		 |$LN14@GPIOInit|
   00090	00000000	 DCD         |??_C@_1HK@FIHOCGBD@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAG?$AAI?$AAO?$AA_?$AAI?$AAn?$AAi?$AAt?$AA?3?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AAt?$AAo?$AA?5?$AAi?$AAn?$AAi?$AAt?$AAi@|
   00094		 |$LN15@GPIOInit|
   00094	00000000	 DCD         |??_C@_19NNFDHLJH@?$AAb?$AAo?$AAo?$AAt?$AA?$AA@|
-  00098		 |$M43624|
+  00098		 |$M43631|
 
 			 ENDP  ; |GPIOInit|
 
 	EXPORT	|GPIOOpen|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43638| DCD	|$LN5@GPIOOpen|
+|$T43645| DCD	|$LN5@GPIOOpen|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -365,7 +365,7 @@
 
   00000		 |$LN5@GPIOOpen|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M43635|
+  00004		 |$M43642|
 
 ; 72   :    return BSPGetGpioDevicesTable();
 
@@ -375,14 +375,14 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M43636|
+  00010		 |$M43643|
 
 			 ENDP  ; |GPIOOpen|
 
 	EXPORT	|GPIOClose|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43645| DCD	|$LN5@GPIOClose|
+|$T43652| DCD	|$LN5@GPIOClose|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -393,20 +393,20 @@
 ; 76   : {
 
   00000		 |$LN5@GPIOClose|
-  00000		 |$M43642|
+  00000		 |$M43649|
 
 ; 77   :     UNREFERENCED_PARAMETER(hContext);
 ; 78   : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M43643|
+  00004		 |$M43650|
 
 			 ENDP  ; |GPIOClose|
 
 	EXPORT	|GPIOSetBit|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43655| DCD	|$LN6@GPIOSetBit|
+|$T43662| DCD	|$LN6@GPIOSetBit|
 	DCD	0x40001602
 ; Function compile flags: /Ogspy
 
@@ -419,7 +419,7 @@
   00000		 |$LN6@GPIOSetBit|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M43652|
+  00008		 |$M43659|
   00008	e1a06001	 mov         r6, r1
   0000c	e1a05000	 mov         r5, r0
 
@@ -454,14 +454,14 @@
   0004c	e28dd004	 add         sp, sp, #4
   00050	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00054	e12fff1e	 bx          lr
-  00058		 |$M43653|
+  00058		 |$M43660|
 
 			 ENDP  ; |GPIOSetBit|
 
 	EXPORT	|GPIOClrBit|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43665| DCD	|$LN6@GPIOClrBit|
+|$T43672| DCD	|$LN6@GPIOClrBit|
 	DCD	0x40001602
 ; Function compile flags: /Ogspy
 
@@ -474,7 +474,7 @@
   00000		 |$LN6@GPIOClrBit|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M43662|
+  00008		 |$M43669|
   00008	e1a06001	 mov         r6, r1
   0000c	e1a05000	 mov         r5, r0
 
@@ -509,14 +509,14 @@
   0004c	e28dd004	 add         sp, sp, #4
   00050	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00054	e12fff1e	 bx          lr
-  00058		 |$M43663|
+  00058		 |$M43670|
 
 			 ENDP  ; |GPIOClrBit|
 
 	EXPORT	|GPIOGetBit|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43677| DCD	|$LN6@GPIOGetBit|
+|$T43684| DCD	|$LN6@GPIOGetBit|
 	DCD	0x40001802
 ; Function compile flags: /Ogspy
 
@@ -529,7 +529,7 @@
   00000		 |$LN6@GPIOGetBit|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M43674|
+  00008		 |$M43681|
   00008	e1a06001	 mov         r6, r1
   0000c	e1a05000	 mov         r5, r0
 
@@ -570,14 +570,14 @@
   00054	e28dd004	 add         sp, sp, #4
   00058	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   0005c	e12fff1e	 bx          lr
-  00060		 |$M43675|
+  00060		 |$M43682|
 
 			 ENDP  ; |GPIOGetBit|
 
 	EXPORT	|GPIOSetMode|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43688| DCD	|$LN6@GPIOSetMod|
+|$T43695| DCD	|$LN6@GPIOSetMod|
 	DCD	0x40001802
 ; Function compile flags: /Ogspy
 
@@ -590,7 +590,7 @@
   00000		 |$LN6@GPIOSetMod|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M43685|
+  00008		 |$M43692|
   00008	e1a07002	 mov         r7, r2
   0000c	e1a06001	 mov         r6, r1
   00010	e1a05000	 mov         r5, r0
@@ -627,14 +627,14 @@
   00054	e28dd004	 add         sp, sp, #4
   00058	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   0005c	e12fff1e	 bx          lr
-  00060		 |$M43686|
+  00060		 |$M43693|
 
 			 ENDP  ; |GPIOSetMode|
 
 	EXPORT	|GPIOGetMode|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43700| DCD	|$LN6@GPIOGetMod|
+|$T43707| DCD	|$LN6@GPIOGetMod|
 	DCD	0x40001802
 ; Function compile flags: /Ogspy
 
@@ -647,7 +647,7 @@
   00000		 |$LN6@GPIOGetMod|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M43697|
+  00008		 |$M43704|
   00008	e1a06001	 mov         r6, r1
   0000c	e1a05000	 mov         r5, r0
 
@@ -688,14 +688,14 @@
   00054	e28dd004	 add         sp, sp, #4
   00058	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   0005c	e12fff1e	 bx          lr
-  00060		 |$M43698|
+  00060		 |$M43705|
 
 			 ENDP  ; |GPIOGetMode|
 
 	EXPORT	|GPIOPullup|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43713| DCD	|$LN6@GPIOPullup|
+|$T43720| DCD	|$LN6@GPIOPullup|
 	DCD	0x40001902
 ; Function compile flags: /Ogspy
 
@@ -708,7 +708,7 @@
   00000		 |$LN6@GPIOPullup|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M43710|
+  00008		 |$M43717|
   00008	e1a07002	 mov         r7, r2
   0000c	e1a06001	 mov         r6, r1
   00010	e1a05000	 mov         r5, r0
@@ -749,14 +749,14 @@
   00058	e28dd004	 add         sp, sp, #4
   0005c	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   00060	e12fff1e	 bx          lr
-  00064		 |$M43711|
+  00064		 |$M43718|
 
 			 ENDP  ; |GPIOPullup|
 
 	EXPORT	|GPIOPulldown|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43726| DCD	|$LN6@GPIOPulldo|
+|$T43733| DCD	|$LN6@GPIOPulldo|
 	DCD	0x40001902
 ; Function compile flags: /Ogspy
 
@@ -769,7 +769,7 @@
   00000		 |$LN6@GPIOPulldo|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M43723|
+  00008		 |$M43730|
   00008	e1a07002	 mov         r7, r2
   0000c	e1a06001	 mov         r6, r1
   00010	e1a05000	 mov         r5, r0
@@ -810,14 +810,14 @@
   00058	e28dd004	 add         sp, sp, #4
   0005c	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   00060	e12fff1e	 bx          lr
-  00064		 |$M43724|
+  00064		 |$M43731|
 
 			 ENDP  ; |GPIOPulldown|
 
 	EXPORT	|GPIOIoControl|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43741| DCD	|$LN6@GPIOIoCont|
+|$T43748| DCD	|$LN6@GPIOIoCont|
 	DCD	0x40002002
 ; Function compile flags: /Ogspy
 
@@ -830,7 +830,7 @@
   00000		 |$LN6@GPIOIoCont|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   00004	e24dd010	 sub         sp, sp, #0x10
-  00008		 |$M43738|
+  00008		 |$M43745|
   00008	e1a08003	 mov         r8, r3
   0000c	e1a09002	 mov         r9, r2
   00010	e1a05000	 mov         r5, r0
@@ -880,7 +880,7 @@
   00074	e28dd010	 add         sp, sp, #0x10
   00078	e8bd43f0	 ldmia       sp!, {r4 - r9, lr}
   0007c	e12fff1e	 bx          lr
-  00080		 |$M43739|
+  00080		 |$M43746|
 
 			 ENDP  ; |GPIOIoControl|
 

@@ -14,7 +14,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sysctrl\startup.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32100| DCD	|$LN5@LaunchProg|
+|$T32102| DCD	|$LN5@LaunchProg|
 	DCD	0x40001a02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -31,7 +31,7 @@
   00000		 |$LN5@LaunchProg|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd03c	 sub         sp, sp, #0x3C
-  00008		 |$M32097|
+  00008		 |$M32099|
   00008	e1a05001	 mov         r5, r1
   0000c	e1a04000	 mov         r4, r0
 
@@ -84,7 +84,7 @@
   00064		 |$LN6@LaunchProg|
   00064		 |$LN7@LaunchProg|
   00064	00000000	 DCD         |??_C@_19BDAJEHDN@?$AAo?$AAp?$AAe?$AAn?$AA?$AA@|
-  00068		 |$M32098|
+  00068		 |$M32100|
 
 			 ENDP  ; |?LaunchProgram@@YAXPBG0@Z|, LaunchProgram
 
@@ -96,7 +96,7 @@
 	IMPORT	|CreateEventW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32112| DCD	|$LN5@StartupThr|
+|$T32114| DCD	|$LN5@StartupThr|
 	DCD	0x40001301
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -120,7 +120,7 @@
 
   00000		 |$LN5@StartupThr|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M32109|
+  00004		 |$M32111|
 
 ; 191  : 	UNREFERENCED_PARAMETER(pvarg);
 ; 192  : //	BYTE EngType;
@@ -305,7 +305,7 @@
   00044	00000000	 DCD         |??_C@_1BI@HFDPHINN@?$AAK?$AAe?$AAy?$AAH?$AAo?$AAo?$AAk?$AA?4?$AAe?$AAx?$AAe?$AA?$AA@|
   00048		 |$LN8@StartupThr|
   00048	00000000	 DCD         |??_C@_1CK@MGOEHGKG@?$AAS?$AAY?$AAS?$AAT?$AAE?$AAM?$AA?1?$AAS?$AAh?$AAe?$AAl?$AAl?$AAA?$AAP?$AAI?$AAR?$AAe?$AAa?$AAd?$AAy?$AA?$AA@|
-  0004c		 |$M32110|
+  0004c		 |$M32112|
 
 			 ENDP  ; |?StartupThread@@YAKPAX@Z|, StartupThread
 

@@ -16,7 +16,7 @@
 ; File c:\wince600\platform\z2170p\src\app\common\driverreg.cxx
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32331| DCD	|$LN8@RegisterDr|
+|$T32333| DCD	|$LN8@RegisterDr|
 	DCD	0x40001601
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -34,7 +34,7 @@
 
   00000		 |$LN8@RegisterDr|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M32328|
+  00004		 |$M32330|
 
 ; 27   :     DWORD dwRet;
 ; 28   :     pDllRegisterDriver fnDllRegisterDriver;
@@ -53,7 +53,7 @@
 
   00014	eb000000	 bl          GetLastError
   00018	e1a04000	 mov         r4, r0
-  0001c	ea000009	 b           |$cleanUp$32302|
+  0001c	ea000009	 b           |$cleanUp$32304|
   00020		 |$LN3@RegisterDr|
 
 ; 33   :         goto cleanUp;
@@ -84,7 +84,7 @@
 
   00040	e1a00005	 mov         r0, r5
   00044	eb000000	 bl          FreeLibrary
-  00048		 |$cleanUp$32302|
+  00048		 |$cleanUp$32304|
 
 ; 44   : 
 ; 45   : cleanUp:
@@ -97,7 +97,7 @@
   00054		 |$LN9@RegisterDr|
   00054		 |$LN10@RegisterDr|
   00054	00000000	 DCD         |??_C@_1CE@OBOJKJOP@?$AAD?$AAl?$AAl?$AAR?$AAe?$AAg?$AAi?$AAs?$AAt?$AAe?$AAr?$AAD?$AAr?$AAi?$AAv?$AAe?$AAr?$AA?$AA@|
-  00058		 |$M32329|
+  00058		 |$M32331|
 
 			 ENDP  ; |?RegisterDriver@@YAKPAG@Z|, RegisterDriver
 

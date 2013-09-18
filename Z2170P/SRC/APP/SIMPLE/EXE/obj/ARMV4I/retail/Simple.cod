@@ -24,7 +24,7 @@
 ; File c:\wince600\platform\z2170p\src\app\simple\exe\simple.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40372| DCD	|$LN5@InitTimeSt|
+|$T40375| DCD	|$LN5@InitTimeSt|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -36,7 +36,7 @@
 
   00000		 |$LN5@InitTimeSt|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M40369|
+  00004		 |$M40372|
 
 ; 61   :     QueryPerformanceFrequency(&PerformanceFrequency);
 
@@ -50,7 +50,7 @@
   00014		 |$LN6@InitTimeSt|
   00014		 |$LN7@InitTimeSt|
   00014	00000000	 DCD         |PerformanceFrequency|
-  00018		 |$M40370|
+  00018		 |$M40373|
 
 			 ENDP  ; |InitTimeStamp|
 
@@ -58,7 +58,7 @@
 	IMPORT	|QueryPerformanceCounter|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40382| DCD	|$LN5@GetTimeSta|
+|$T40385| DCD	|$LN5@GetTimeSta|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -70,7 +70,7 @@
 
   00000		 |$LN5@GetTimeSta|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M40379|
+  00004		 |$M40382|
 
 ; 66   :     QueryPerformanceCounter(pTimeStamp);
 
@@ -80,7 +80,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M40380|
+  00010		 |$M40383|
 
 			 ENDP  ; |GetTimeStamp|
 
@@ -88,7 +88,7 @@
 	IMPORT	|__rt_sdiv64by64|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40396| DCD	|$LN7@GetTimeDel|
+|$T40399| DCD	|$LN7@GetTimeDel|
 	DCD	0x40001702
 ; Function compile flags: /Ogspy
 
@@ -101,7 +101,7 @@
   00000		 |$LN7@GetTimeDel|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M40393|
+  00008		 |$M40396|
   00008	e1a04000	 mov         r4, r0
 
 ; 71   :     LARGE_INTEGER NewTimeStamp;
@@ -142,7 +142,7 @@
   00058		 |$LN8@GetTimeDel|
   00058		 |$LN9@GetTimeDel|
   00058	00000000	 DCD         |PerformanceFrequency|
-  0005c		 |$M40394|
+  0005c		 |$M40397|
 
 			 ENDP  ; |GetTimeDeltaUs|
 
@@ -151,7 +151,7 @@
 	IMPORT	|__divd|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40414| DCD	|$LN5@ComputeRat|
+|$T40417| DCD	|$LN5@ComputeRat|
 	DCD	0x40000701
 ; Function compile flags: /Ogspy
 
@@ -163,7 +163,7 @@
 
   00000		 |$LN5@ComputeRat|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M40411|
+  00004		 |$M40414|
 
 ; 85   :     double Rate = EventsPerIteration * Iterations;
 
@@ -182,7 +182,7 @@
 
   00014	e49de004	 ldr         lr, [sp], #4
   00018	e12fff1e	 bx          lr
-  0001c		 |$M40412|
+  0001c		 |$M40415|
 
 			 ENDP  ; |ComputeRate|
 
@@ -226,7 +226,7 @@
 	IMPORT	|__utod|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T40499| DCD	|$LN57@WinMain|
+|$T40502| DCD	|$LN57@WinMain|
 	DCD	0x40018002
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -413,7 +413,7 @@
   00000		 |$LN57@WinMain|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd048	 sub         sp, sp, #0x48
-  00008		 |$M40496|
+  00008		 |$M40499|
 
 ; 108  :     //BOOL bKMode;
 ; 109  :     LARGE_INTEGER TimeStampStart;
@@ -1179,7 +1179,7 @@
   005f8	00000000	 DCD         |FinalResultString|
   005fc		 |$LN85@WinMain|
   005fc	00000000	 DCD         |ResultString|
-  00600		 |$M40497|
+  00600		 |$M40500|
 
 			 ENDP  ; |WinMain|
 

@@ -11,7 +11,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmmgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35543| DCD	|$LN5@get_Gain|
+|$T35545| DCD	|$LN5@get_Gain|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -22,7 +22,7 @@
 ; 51   :     {
 
   00000		 |$LN5@get_Gain|
-  00000		 |$M35540|
+  00000		 |$M35542|
 
 ; 52   :         return m_dwGain;
 
@@ -31,14 +31,14 @@
 ; 53   :     }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M35541|
+  00008		 |$M35543|
 
 			 ENDP  ; |?get_Gain@CStreamManager@@QBAKXZ|, CStreamManager::get_Gain
 
 	EXPORT	|?put_Gain@CStreamManager@@QAAKK@Z|	; CStreamManager::put_Gain
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35554| DCD	|$LN5@put_Gain|
+|$T35556| DCD	|$LN5@put_Gain|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -50,7 +50,7 @@
 
   00000		 |$LN5@put_Gain|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35551|
+  00004		 |$M35553|
   00004	e1a02000	 mov         r2, r0
 
 ; 57   :         m_dwGain = dwGain;
@@ -70,14 +70,14 @@
 
   00020	e49de004	 ldr         lr, [sp], #4
   00024	e12fff1e	 bx          lr
-  00028		 |$M35552|
+  00028		 |$M35554|
 
 			 ENDP  ; |?put_Gain@CStreamManager@@QAAKK@Z|, CStreamManager::put_Gain
 
 	EXPORT	|?get_Mute@CStreamManager@@QBAKXZ|	; CStreamManager::get_Mute
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35564| DCD	|$LN5@get_Mute|
+|$T35566| DCD	|$LN5@get_Mute|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -88,7 +88,7 @@
 ; 63   :     {
 
   00000		 |$LN5@get_Mute|
-  00000		 |$M35561|
+  00000		 |$M35563|
 
 ; 64   :         return m_bMute;
 
@@ -97,14 +97,14 @@
 ; 65   :     }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M35562|
+  00008		 |$M35564|
 
 			 ENDP  ; |?get_Mute@CStreamManager@@QBAKXZ|, CStreamManager::get_Mute
 
 	EXPORT	|?put_Mute@CStreamManager@@QAAKH@Z|	; CStreamManager::put_Mute
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35575| DCD	|$LN5@put_Mute|
+|$T35577| DCD	|$LN5@put_Mute|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -116,7 +116,7 @@
 
   00000		 |$LN5@put_Mute|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35572|
+  00004		 |$M35574|
   00004	e1a02000	 mov         r2, r0
 
 ; 69   :         m_bMute = Mute;
@@ -136,7 +136,7 @@
 
   00020	e49de004	 ldr         lr, [sp], #4
   00024	e12fff1e	 bx          lr
-  00028		 |$M35573|
+  00028		 |$M35575|
 
 			 ENDP  ; |?put_Mute@CStreamManager@@QAAKH@Z|, CStreamManager::put_Mute
 
@@ -145,7 +145,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\istrmmgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35586| DCD	|$LN5@GetInputPr|
+|$T35588| DCD	|$LN5@GetInputPr|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -157,7 +157,7 @@
 
   00000		 |$LN5@GetInputPr|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35583|
+  00004		 |$M35585|
 
 ; 110  :         return CommonGetProperty(pPropInfo, TRUE);
 
@@ -168,7 +168,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M35584|
+  00014		 |$M35586|
 
 			 ENDP  ; |?GetInputProperty@CInputStreamManager@@QAAKPAUtag_WAVEPROPINFO@@@Z|, CInputStreamManager::GetInputProperty
 
@@ -176,7 +176,7 @@
 	IMPORT	|?CommonSetProperty@CStreamManager@@IAAKPAUtag_WAVEPROPINFO@@H@Z| ; CStreamManager::CommonSetProperty
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35597| DCD	|$LN5@SetInputPr|
+|$T35599| DCD	|$LN5@SetInputPr|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -188,7 +188,7 @@
 
   00000		 |$LN5@SetInputPr|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35594|
+  00004		 |$M35596|
 
 ; 115  :         return CommonSetProperty(pPropInfo, TRUE);
 
@@ -199,7 +199,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M35595|
+  00014		 |$M35597|
 
 			 ENDP  ; |?SetInputProperty@CInputStreamManager@@QAAKPAUtag_WAVEPROPINFO@@@Z|, CInputStreamManager::SetInputProperty
 
@@ -215,7 +215,7 @@
 	IMPORT	|_purecall|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35607| DCD	|$LN5@CAudioCont|
+|$T35609| DCD	|$LN5@CAudioCont|
 	DCD	0x40000901
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -234,7 +234,7 @@
   00000		 |??0?$CAudioControlType@$0CAABAAAA@@@QAA@XZ| PROC ; CAudioControlType<536936448>::CAudioControlType<536936448>
   00000		 |$LN5@CAudioCont|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35604|
+  00004		 |$M35606|
   00004	e1a04000	 mov         r4, r0
   00008	eb000000	 bl          |??0CAudioControlBase@@QAA@XZ|
   0000c	e59f300c	 ldr         r3, [pc, #0xC]
@@ -245,14 +245,14 @@
   00020		 |$LN6@CAudioCont|
   00020		 |$LN7@CAudioCont|
   00020	00000000	 DCD         |??_7?$CAudioControlType@$0CAABAAAA@@@6B@|
-  00024		 |$M35605|
+  00024		 |$M35607|
 
 			 ENDP  ; |??0?$CAudioControlType@$0CAABAAAA@@@QAA@XZ|, CAudioControlType<536936448>::CAudioControlType<536936448>
 
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audioctrl.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35618| DCD	|$LN5@get_Multip|
+|$T35620| DCD	|$LN5@get_Multip|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -263,16 +263,16 @@
 ; 92   :     virtual DWORD get_MultipleItemCount() const { return 0; }
 
   00000		 |$LN5@get_Multip|
-  00000		 |$M35615|
+  00000		 |$M35617|
   00000	e3a00000	 mov         r0, #0
   00004	e12fff1e	 bx          lr
-  00008		 |$M35616|
+  00008		 |$M35618|
 
 			 ENDP  ; |?get_MultipleItemCount@CAudioControlBase@@UBAKXZ|, CAudioControlBase::get_MultipleItemCount
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35627| DCD	|$LN5@get_Status|
+|$T35629| DCD	|$LN5@get_Status|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -283,7 +283,7 @@
 ; 95   :     {
 
   00000		 |$LN5@get_Status|
-  00000		 |$M35624|
+  00000		 |$M35626|
 
 ; 96   :         return MIXERCONTROL_CONTROLF_UNIFORM;
 
@@ -292,7 +292,7 @@
 ; 97   :     }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M35625|
+  00008		 |$M35627|
 
 			 ENDP  ; |?get_StatusFlag@CAudioControlBase@@UBAKXZ|, CAudioControlBase::get_StatusFlag
 
@@ -316,7 +316,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmctxt.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35637| DCD	|$LN5@StreamCont|
+|$T35639| DCD	|$LN5@StreamCont|
 	DCD	0x40000500
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -346,7 +346,7 @@
 ; 56   :     StreamContext() {};
 
   00000		 |$LN5@StreamCont|
-  00000		 |$M35634|
+  00000		 |$M35636|
   00000	e1a02000	 mov         r2, r0
   00004	e59f3004	 ldr         r3, [pc, #4]
   00008	e5823000	 str         r3, [r2]
@@ -354,14 +354,14 @@
   00010		 |$LN6@StreamCont|
   00010		 |$LN7@StreamCont|
   00010	00000000	 DCD         |??_7StreamContext@@6B@|
-  00014		 |$M35635|
+  00014		 |$M35637|
 
 			 ENDP  ; |??0StreamContext@@QAA@XZ|, StreamContext::StreamContext
 
 	EXPORT	|??1StreamContext@@UAA@XZ|		; StreamContext::~StreamContext
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35647| DCD	|$LN5@StreamCont@2|
+|$T35649| DCD	|$LN5@StreamCont@2|
 	DCD	0x40000400
 ; Function compile flags: /Ogspy
 
@@ -372,21 +372,21 @@
 ; 57   :     virtual ~StreamContext() {};
 
   00000		 |$LN5@StreamCont@2|
-  00000		 |$M35644|
+  00000		 |$M35646|
   00000	e59f3004	 ldr         r3, [pc, #4]
   00004	e5803000	 str         r3, [r0]
   00008	e12fff1e	 bx          lr
   0000c		 |$LN6@StreamCont@2|
   0000c		 |$LN7@StreamCont@2|
   0000c	00000000	 DCD         |??_7StreamContext@@6B@|
-  00010		 |$M35645|
+  00010		 |$M35647|
 
 			 ENDP  ; |??1StreamContext@@UAA@XZ|, StreamContext::~StreamContext
 
 	EXPORT	|?DoDriverCallback@StreamContext@@QAAXIKK@Z| ; StreamContext::DoDriverCallback
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35660| DCD	|$LN5@DoDriverCa|
+|$T35662| DCD	|$LN5@DoDriverCa|
 	DCD	0x40000e02
 ; Function compile flags: /Ogspy
 
@@ -399,7 +399,7 @@
   00000		 |$LN5@DoDriverCa|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M35657|
+  00008		 |$M35659|
   00008	e1a05003	 mov         r5, r3
   0000c	e1a03002	 mov         r3, r2
   00010	e1a0e000	 mov         lr, r0
@@ -418,13 +418,13 @@
   0002c	e28dd004	 add         sp, sp, #4
   00030	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00034	e12fff1e	 bx          lr
-  00038		 |$M35658|
+  00038		 |$M35660|
 
 			 ENDP  ; |?DoDriverCallback@StreamContext@@QAAXIKK@Z|, StreamContext::DoDriverCallback
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35672| DCD	|$LN7@DoCallback|
+|$T35674| DCD	|$LN7@DoCallback|
 	DCD	0x40001002
 ; Function compile flags: /Ogspy
 
@@ -437,7 +437,7 @@
   00000		 |$LN7@DoCallback|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M35669|
+  00008		 |$M35671|
   00008	e1a03001	 mov         r3, r1
   0000c	e1a01000	 mov         r1, r0
 
@@ -458,13 +458,13 @@
   00034	e28dd004	 add         sp, sp, #4
   00038	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0003c	e12fff1e	 bx          lr
-  00040		 |$M35670|
+  00040		 |$M35672|
 
 			 ENDP  ; |?DoCallbackReturnBuffer@StreamContext@@UAAHPAUwavehdr_tag@@@Z|, StreamContext::DoCallbackReturnBuffer
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35683| DCD	|$LN7@DoCallback@2|
+|$T35685| DCD	|$LN7@DoCallback@2|
 	DCD	0x40001002
 ; Function compile flags: /Ogspy
 
@@ -477,7 +477,7 @@
   00000		 |$LN7@DoCallback@2|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M35680|
+  00008		 |$M35682|
   00008	e1a03000	 mov         r3, r0
 
 ; 88   :         DEBUGMSG(ZONE_WODM && ZONE_VERBOSE,(TEXT("WODM: DoCallbackStreamOpened\r\n")));
@@ -499,13 +499,13 @@
   00034	e28dd004	 add         sp, sp, #4
   00038	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0003c	e12fff1e	 bx          lr
-  00040		 |$M35681|
+  00040		 |$M35683|
 
 			 ENDP  ; |?DoCallbackStreamOpened@StreamContext@@UAAHXZ|, StreamContext::DoCallbackStreamOpened
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35694| DCD	|$LN7@DoCallback@3|
+|$T35696| DCD	|$LN7@DoCallback@3|
 	DCD	0x40000f02
 ; Function compile flags: /Ogspy
 
@@ -518,7 +518,7 @@
   00000		 |$LN7@DoCallback@3|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M35691|
+  00008		 |$M35693|
   00008	e1a03000	 mov         r3, r0
 
 ; 93   :         DEBUGMSG(ZONE_WODM && ZONE_VERBOSE,(TEXT("WODM: DoCallbackStreamClosed\r\n")));
@@ -539,13 +539,13 @@
   00030	e28dd004	 add         sp, sp, #4
   00034	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00038	e12fff1e	 bx          lr
-  0003c		 |$M35692|
+  0003c		 |$M35694|
 
 			 ENDP  ; |?DoCallbackStreamClosed@StreamContext@@UAAHXZ|, StreamContext::DoCallbackStreamClosed
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35703| DCD	|$LN5@GetRate|
+|$T35705| DCD	|$LN5@GetRate|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -556,7 +556,7 @@
 ; 122  :     {
 
   00000		 |$LN5@GetRate|
-  00000		 |$M35700|
+  00000		 |$M35702|
 
 ; 123  :         UNREFERENCED_PARAMETER(pdwMultiplier);
 ; 124  :         return MMSYSERR_NOTSUPPORTED;
@@ -566,13 +566,13 @@
 ; 125  :     }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M35701|
+  00008		 |$M35703|
 
 			 ENDP  ; |?GetRate@StreamContext@@UBAKPAK@Z|, StreamContext::GetRate
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35712| DCD	|$LN5@SetRate|
+|$T35714| DCD	|$LN5@SetRate|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -583,7 +583,7 @@
 ; 128  :     {
 
   00000		 |$LN5@SetRate|
-  00000		 |$M35709|
+  00000		 |$M35711|
 
 ; 129  :         UNREFERENCED_PARAMETER(dwMultiplier);
 ; 130  :         return MMSYSERR_NOTSUPPORTED;
@@ -593,14 +593,14 @@
 ; 131  :     }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M35710|
+  00008		 |$M35712|
 
 			 ENDP  ; |?SetRate@StreamContext@@UAAKK@Z|, StreamContext::SetRate
 
 	IMPORT	|??3@YAXPAX@Z|				; operator delete
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35726| DCD	|$LN8@scalar|
+|$T35728| DCD	|$LN8@scalar|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -609,7 +609,7 @@
   00000		 |??_GStreamContext@@UAAPAXI@Z| PROC	; StreamContext::`scalar deleting destructor'
   00000		 |$LN8@scalar|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35723|
+  00004		 |$M35725|
   00004	e1a04000	 mov         r4, r0
   00008	e59f3014	 ldr         r3, [pc, #0x14]
   0000c	e3110001	 tst         r1, #1
@@ -621,7 +621,7 @@
   00024		 |$LN9@scalar|
   00024		 |$LN10@scalar|
   00024	00000000	 DCD         |??_7StreamContext@@6B@|
-  00028		 |$M35724|
+  00028		 |$M35726|
 
 			 ENDP  ; |??_GStreamContext@@UAAPAXI@Z|, StreamContext::`scalar deleting destructor'
 
@@ -632,7 +632,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\istrmmgr.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35741| DCD	|$LN7@initialize|
+|$T35743| DCD	|$LN7@initialize|
 	DCD	0x40001501
 ; Function compile flags: /Ogspy
 
@@ -644,7 +644,7 @@
 
   00000		 |$LN7@initialize|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35738|
+  00004		 |$M35740|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -704,7 +704,7 @@
   00050		 |$LN8@initialize|
   00050		 |$LN9@initialize|
   00050	00000000	 DCD         |s_MicrophoneInputLine|
-  00054		 |$M35739|
+  00054		 |$M35741|
 
 			 ENDP  ; |?initialize_AudioLine@CInputStreamManager@@UAAHPAVCAudioMixerManager@@@Z|, CInputStreamManager::initialize_AudioLine
 
@@ -712,7 +712,7 @@
 	IMPORT	|memcpy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35755| DCD	|$LN6@get_DevCap|
+|$T35757| DCD	|$LN6@get_DevCap|
 	DCD	0x40000a01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -735,7 +735,7 @@
 
   00000		 |$LN6@get_DevCap|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M35752|
+  00004		 |$M35754|
   00004	e1a00001	 mov         r0, r1
 
 ; 81   :     static const WAVEINCAPS wc =
@@ -774,14 +774,14 @@
   00024		 |$LN7@get_DevCap|
   00024		 |$LN8@get_DevCap|
   00024	00000000	 DCD         |?wc@?1??get_DevCaps@CInputStreamManager@@UAAKPAXK@Z@4UtagWAVEINCAPS@@B|
-  00028		 |$M35753|
+  00028		 |$M35755|
 
 			 ENDP  ; |?get_DevCaps@CInputStreamManager@@UAAKPAXK@Z|, CInputStreamManager::get_DevCaps
 
 	EXPORT	|?get_ExtDevCaps@CInputStreamManager@@UAAKPAXK@Z| ; CInputStreamManager::get_ExtDevCaps
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35766| DCD	|$LN5@get_ExtDev|
+|$T35768| DCD	|$LN5@get_ExtDev|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -792,7 +792,7 @@
 ; 114  : {
 
   00000		 |$LN5@get_ExtDev|
-  00000		 |$M35763|
+  00000		 |$M35765|
 
 ; 115  :     UNREFERENCED_PARAMETER(pCaps);
 ; 116  :     UNREFERENCED_PARAMETER(dwSize);
@@ -803,7 +803,7 @@
 ; 118  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M35764|
+  00008		 |$M35766|
 
 			 ENDP  ; |?get_ExtDevCaps@CInputStreamManager@@UAAKPAXK@Z|, CInputStreamManager::get_ExtDevCaps
 
@@ -815,7 +815,7 @@
 	IMPORT	|?GetRate@WaveStreamContext@@UBAKPAK@Z|	; WaveStreamContext::GetRate
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35779| DCD	|$LN7@WaveStream|
+|$T35781| DCD	|$LN7@WaveStream|
 	DCD	0x40000500
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -843,7 +843,7 @@
 
   00000		 |??0WaveStreamContext@@QAA@XZ| PROC	; WaveStreamContext::WaveStreamContext
   00000		 |$LN7@WaveStream|
-  00000		 |$M35776|
+  00000		 |$M35778|
   00000	e1a02000	 mov         r2, r0
   00004	e59f3004	 ldr         r3, [pc, #4]
   00008	e5823000	 str         r3, [r2]
@@ -851,14 +851,14 @@
   00010		 |$LN8@WaveStream|
   00010		 |$LN9@WaveStream|
   00010	00000000	 DCD         |??_7WaveStreamContext@@6B@|
-  00014		 |$M35777|
+  00014		 |$M35779|
 
 			 ENDP  ; |??0WaveStreamContext@@QAA@XZ|, WaveStreamContext::WaveStreamContext
 
 	EXPORT	|??1WaveStreamContext@@UAA@XZ|		; WaveStreamContext::~WaveStreamContext
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35792| DCD	|$LN7@WaveStream@2|
+|$T35794| DCD	|$LN7@WaveStream@2|
 	DCD	0x40000400
 ; Function compile flags: /Ogspy
 
@@ -866,20 +866,20 @@
 
   00000		 |??1WaveStreamContext@@UAA@XZ| PROC	; WaveStreamContext::~WaveStreamContext
   00000		 |$LN7@WaveStream@2|
-  00000		 |$M35789|
+  00000		 |$M35791|
   00000	e59f3004	 ldr         r3, [pc, #4]
   00004	e5803000	 str         r3, [r0]
   00008	e12fff1e	 bx          lr
   0000c		 |$LN8@WaveStream@2|
   0000c		 |$LN9@WaveStream@2|
   0000c	00000000	 DCD         |??_7StreamContext@@6B@|
-  00010		 |$M35790|
+  00010		 |$M35792|
 
 			 ENDP  ; |??1WaveStreamContext@@UAA@XZ|, WaveStreamContext::~WaveStreamContext
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35813| DCD	|$LN10@scalar@2|
+|$T35815| DCD	|$LN10@scalar@2|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -888,7 +888,7 @@
   00000		 |??_GWaveStreamContext@@UAAPAXI@Z| PROC ; WaveStreamContext::`scalar deleting destructor'
   00000		 |$LN10@scalar@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35810|
+  00004		 |$M35812|
   00004	e1a04000	 mov         r4, r0
   00008	e59f3014	 ldr         r3, [pc, #0x14]
   0000c	e3110001	 tst         r1, #1
@@ -900,7 +900,7 @@
   00024		 |$LN11@scalar@2|
   00024		 |$LN12@scalar@2|
   00024	00000000	 DCD         |??_7StreamContext@@6B@|
-  00028		 |$M35811|
+  00028		 |$M35813|
 
 			 ENDP  ; |??_GWaveStreamContext@@UAAPAXI@Z|, WaveStreamContext::`scalar deleting destructor'
 
@@ -908,7 +908,7 @@
 	IMPORT	|?copy_AudioData@CStreamManager@@UAAKPAXK@Z| ; CStreamManager::copy_AudioData
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35828| DCD	|$LN6@copy_Audio@2|
+|$T35830| DCD	|$LN6@copy_Audio@2|
 	DCD	0x40001301
 ; Function compile flags: /Ogspy
 
@@ -920,7 +920,7 @@
 
   00000		 |$LN6@copy_Audio@2|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35825|
+  00004		 |$M35827|
   00004	e1a05000	 mov         r5, r0
 
 ; 143  :     DEBUGMSG(ZONE_FUNCTION,
@@ -962,14 +962,14 @@
   00040	e1a00004	 mov         r0, r4
   00044	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00048	e12fff1e	 bx          lr
-  0004c		 |$M35826|
+  0004c		 |$M35828|
 
 			 ENDP  ; |?copy_AudioData@CInputStreamManager@@UAAKPAXK@Z|, CInputStreamManager::copy_AudioData
 
 	EXPORT	|?StreamReadyToRender@CInputStreamManager@@UAAXPAVStreamContext@@@Z| ; CInputStreamManager::StreamReadyToRender
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35837| DCD	|$LN5@StreamRead|
+|$T35839| DCD	|$LN5@StreamRead|
 	DCD	0x40001901
 ; Function compile flags: /Ogspy
 
@@ -981,7 +981,7 @@
 
   00000		 |$LN5@StreamRead|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35834|
+  00004		 |$M35836|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -1022,7 +1022,7 @@
 
   0005c	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00060	e12fff1e	 bx          lr
-  00064		 |$M35835|
+  00064		 |$M35837|
 
 			 ENDP  ; |?StreamReadyToRender@CInputStreamManager@@UAAXPAVStreamContext@@@Z|, CInputStreamManager::StreamReadyToRender
 
@@ -1030,7 +1030,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmmgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35854| DCD	|$LN9@get_AudioV|
+|$T35856| DCD	|$LN9@get_AudioV|
 	DCD	0x40002501
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\istrmmgr.cpp
@@ -1043,7 +1043,7 @@
 
   00000		 |$LN9@get_AudioV|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35851|
+  00004		 |$M35853|
   00004	e1a05002	 mov         r5, r2
   00008	e1a02000	 mov         r2, r0
 
@@ -1136,7 +1136,7 @@
   00080	e5c31002	 strb        r1, [r3, #2]
   00084	e5c3e003	 strb        lr, [r3, #3]
   00088	e5c34000	 strb        r4, [r3]
-  0008c		 |$Error$35141|
+  0008c		 |$Error$35143|
 
 ; 227  : 
 ; 228  :     DEBUGMSG(ZONE_FUNCTION,
@@ -1149,7 +1149,7 @@
 
   0008c	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00090	e12fff1e	 bx          lr
-  00094		 |$M35852|
+  00094		 |$M35854|
 
 			 ENDP  ; |?get_AudioValue@CInputStreamManager@@UBAKPAVCAudioControlBase@@PAUtMIXERCONTROLDETAILS@@K@Z|, CInputStreamManager::get_AudioValue
 
@@ -1157,7 +1157,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmmgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35873| DCD	|$LN12@put_AudioV|
+|$T35875| DCD	|$LN12@put_AudioV|
 	DCD	0x40002c01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\istrmmgr.cpp
@@ -1170,7 +1170,7 @@
 
   00000		 |$LN12@put_AudioV|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M35870|
+  00004		 |$M35872|
   00004	e1a05002	 mov         r5, r2
   00008	e1a06000	 mov         r6, r0
 
@@ -1271,7 +1271,7 @@
   0009c	e1a0e00f	 mov         lr, pc
   000a0	e12fff13	 bx          r3
   000a4	e3a00000	 mov         r0, #0
-  000a8		 |$Error$35160|
+  000a8		 |$Error$35162|
 
 ; 281  : 
 ; 282  : Error:
@@ -1285,7 +1285,7 @@
 
   000a8	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   000ac	e12fff1e	 bx          lr
-  000b0		 |$M35871|
+  000b0		 |$M35873|
 
 			 ENDP  ; |?put_AudioValue@CInputStreamManager@@UAAKPAVCAudioControlBase@@PAUtMIXERCONTROLDETAILS@@K@Z|, CInputStreamManager::put_AudioValue
 
@@ -1294,7 +1294,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\istrmmgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35888| DCD	|$LN8@GetPropert|
+|$T35890| DCD	|$LN8@GetPropert|
 	DCD	0x40000b01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\istrmmgr.cpp
@@ -1307,7 +1307,7 @@
 
   00000		 |$LN8@GetPropert|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35885|
+  00004		 |$M35887|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -1337,7 +1337,7 @@
 
   00024	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00028	e12fff1e	 bx          lr
-  0002c		 |$M35886|
+  0002c		 |$M35888|
 
 			 ENDP  ; |?GetProperty@CInputStreamManager@@UAAKPAUtag_WAVEPROPINFO@@@Z|, CInputStreamManager::GetProperty
 
@@ -1346,7 +1346,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\istrmmgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35903| DCD	|$LN8@SetPropert|
+|$T35905| DCD	|$LN8@SetPropert|
 	DCD	0x40000b01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\istrmmgr.cpp
@@ -1359,7 +1359,7 @@
 
   00000		 |$LN8@SetPropert|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35900|
+  00004		 |$M35902|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -1389,14 +1389,14 @@
 
   00024	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00028	e12fff1e	 bx          lr
-  0002c		 |$M35901|
+  0002c		 |$M35903|
 
 			 ENDP  ; |?SetProperty@CInputStreamManager@@UAAKPAUtag_WAVEPROPINFO@@@Z|, CInputStreamManager::SetProperty
 
 	EXPORT	|?initialize_AudioLine@CMicrophoneInputSource@@UAAHPAVCAudioMixerManager@@@Z| ; CMicrophoneInputSource::initialize_AudioLine
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35914| DCD	|$LN5@initialize@2|
+|$T35916| DCD	|$LN5@initialize@2|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -1408,7 +1408,7 @@
 
   00000		 |$LN5@initialize@2|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M35911|
+  00004		 |$M35913|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -1445,7 +1445,7 @@
 
   00028	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0002c	e12fff1e	 bx          lr
-  00030		 |$M35912|
+  00030		 |$M35914|
 
 			 ENDP  ; |?initialize_AudioLine@CMicrophoneInputSource@@UAAHPAVCAudioMixerManager@@@Z|, CMicrophoneInputSource::initialize_AudioLine
 
@@ -1453,7 +1453,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmmgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35929| DCD	|$LN7@get_AudioV@2|
+|$T35931| DCD	|$LN7@get_AudioV@2|
 	DCD	0x40001401
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\istrmmgr.cpp
@@ -1466,7 +1466,7 @@
 
   00000		 |$LN7@get_AudioV@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35926|
+  00004		 |$M35928|
 
 ; 363  :     DEBUGMSG(ZONE_FUNCTION,
 ; 364  :         (L"WAV:+CMicrophoneInputSource::get_AudioValue()\r\n"));
@@ -1512,7 +1512,7 @@
 
   00048	e8bd4010	 ldmia       sp!, {r4, lr}
   0004c	e12fff1e	 bx          lr
-  00050		 |$M35927|
+  00050		 |$M35929|
 
 			 ENDP  ; |?get_AudioValue@CMicrophoneInputSource@@UBAKPAVCAudioControlBase@@PAUtMIXERCONTROLDETAILS@@K@Z|, CMicrophoneInputSource::get_AudioValue
 
@@ -1520,7 +1520,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmmgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35946| DCD	|$LN7@put_AudioV@2|
+|$T35948| DCD	|$LN7@put_AudioV@2|
 	DCD	0x40001801
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\istrmmgr.cpp
@@ -1533,7 +1533,7 @@
 
   00000		 |$LN7@put_AudioV@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35943|
+  00004		 |$M35945|
 
 ; 394  :     DEBUGMSG(ZONE_FUNCTION,
 ; 395  :         (L"WAV:+CMicrophoneInputSource::put_AudioValue()\r\n"));
@@ -1579,14 +1579,14 @@
 
   00058	e8bd4010	 ldmia       sp!, {r4, lr}
   0005c	e12fff1e	 bx          lr
-  00060		 |$M35944|
+  00060		 |$M35946|
 
 			 ENDP  ; |?put_AudioValue@CMicrophoneInputSource@@UAAKPAVCAudioControlBase@@PAUtMIXERCONTROLDETAILS@@K@Z|, CMicrophoneInputSource::put_AudioValue
 
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audioctrl.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35955| DCD	|$LN5@get_Contro|
+|$T35957| DCD	|$LN5@get_Contro|
 	DCD	0x40000300
 ; Function compile flags: /Ogspy
 
@@ -1597,11 +1597,11 @@
 ; 126  :     virtual DWORD get_ControlType() const   { return ControlType; }
 
   00000		 |$LN5@get_Contro|
-  00000		 |$M35952|
+  00000		 |$M35954|
   00000	e3a03202	 mov         r3, #2, 4
   00004	e3830801	 orr         r0, r3, #1, 16
   00008	e12fff1e	 bx          lr
-  0000c		 |$M35953|
+  0000c		 |$M35955|
 
 			 ENDP  ; |?get_ControlType@?$CAudioControlType@$0CAABAAAA@@@UBAKXZ|, CAudioControlType<536936448>::get_ControlType
 
@@ -1612,7 +1612,7 @@
 	EXPORT	|?get_ShortName@CAudioControl_MicMute@@UBAPBGXZ| ; CAudioControl_MicMute::get_ShortName
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35968| DCD	|$LN7@CAudioCont@2|
+|$T35970| DCD	|$LN7@CAudioCont@2|
 	DCD	0x40000901
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1631,7 +1631,7 @@
   00000		 |??0CAudioControl_MicMute@@QAA@XZ| PROC ; CAudioControl_MicMute::CAudioControl_MicMute
   00000		 |$LN7@CAudioCont@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35965|
+  00004		 |$M35967|
   00004	e1a04000	 mov         r4, r0
   00008	eb000000	 bl          |??0CAudioControlBase@@QAA@XZ|
   0000c	e59f300c	 ldr         r3, [pc, #0xC]
@@ -1642,7 +1642,7 @@
   00020		 |$LN8@CAudioCont@2|
   00020		 |$LN9@CAudioCont@2|
   00020	00000000	 DCD         |??_7CAudioControl_MicMute@@6B@|
-  00024		 |$M35966|
+  00024		 |$M35968|
 
 			 ENDP  ; |??0CAudioControl_MicMute@@QAA@XZ|, CAudioControl_MicMute::CAudioControl_MicMute
 
@@ -1650,7 +1650,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\istrmmgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35979| DCD	|$LN5@get_Name|
+|$T35981| DCD	|$LN5@get_Name|
 	DCD	0x40000300
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1666,20 +1666,20 @@
 ; 57   :     virtual WCHAR const* get_Name() const { return L"Mic Mute"; }
 
   00000		 |$LN5@get_Name|
-  00000		 |$M35976|
+  00000		 |$M35978|
   00000	e59f0000	 ldr         r0, [pc]
   00004	e12fff1e	 bx          lr
   00008		 |$LN6@get_Name|
   00008		 |$LN7@get_Name|
   00008	00000000	 DCD         |??_C@_1BC@MOMKCGGI@?$AAM?$AAi?$AAc?$AA?5?$AAM?$AAu?$AAt?$AAe?$AA?$AA@|
-  0000c		 |$M35977|
+  0000c		 |$M35979|
 
 			 ENDP  ; |?get_Name@CAudioControl_MicMute@@UBAPBGXZ|, CAudioControl_MicMute::get_Name
 
 	EXPORT	|??_C@_19PMKMMIL@?$AAM?$AAu?$AAt?$AAe?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T35990| DCD	|$LN5@get_ShortN|
+|$T35992| DCD	|$LN5@get_ShortN|
 	DCD	0x40000300
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1694,19 +1694,19 @@
 ; 58   :     virtual WCHAR const* get_ShortName() const { return L"Mute"; }
 
   00000		 |$LN5@get_ShortN|
-  00000		 |$M35987|
+  00000		 |$M35989|
   00000	e59f0000	 ldr         r0, [pc]
   00004	e12fff1e	 bx          lr
   00008		 |$LN6@get_ShortN|
   00008		 |$LN7@get_ShortN|
   00008	00000000	 DCD         |??_C@_19PMKMMIL@?$AAM?$AAu?$AAt?$AAe?$AA?$AA@|
-  0000c		 |$M35988|
+  0000c		 |$M35990|
 
 			 ENDP  ; |?get_ShortName@CAudioControl_MicMute@@UBAPBGXZ|, CAudioControl_MicMute::get_ShortName
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36001| DCD	|$LN5@copy_Contr|
+|$T36003| DCD	|$LN5@copy_Contr|
 	DCD	0x40001301
 ; Function compile flags: /Ogspy
 
@@ -1718,7 +1718,7 @@
 
   00000		 |$LN5@copy_Contr|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M35998|
+  00004		 |$M36000|
   00004	e1a04001	 mov         r4, r1
 
 ; 63   :         CAudioControlType<MIXERCONTROL_CONTROLTYPE_BOOLEAN>::
@@ -1752,7 +1752,7 @@
 
   00044	e8bd4010	 ldmia       sp!, {r4, lr}
   00048	e12fff1e	 bx          lr
-  0004c		 |$M35999|
+  0004c		 |$M36001|
 
 			 ENDP  ; |?copy_ControlInfo@CAudioControl_MicMute@@UAAXPAUtMIXERCONTROL@@@Z|, CAudioControl_MicMute::copy_ControlInfo
 
@@ -1770,7 +1770,7 @@
 	IMPORT	|?Render2@InputStreamContext@@UAAPAEPAE00H@Z| ; InputStreamContext::Render2
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36019| DCD	|$LN9@InputStrea|
+|$T36021| DCD	|$LN9@InputStrea|
 	DCD	0x40000500
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1798,7 +1798,7 @@
 
   00000		 |??0InputStreamContext@@QAA@XZ| PROC	; InputStreamContext::InputStreamContext
   00000		 |$LN9@InputStrea|
-  00000		 |$M36016|
+  00000		 |$M36018|
   00000	e1a02000	 mov         r2, r0
   00004	e59f3004	 ldr         r3, [pc, #4]
   00008	e5823000	 str         r3, [r2]
@@ -1806,14 +1806,14 @@
   00010		 |$LN10@InputStrea|
   00010		 |$LN11@InputStrea|
   00010	00000000	 DCD         |??_7InputStreamContext@@6B@|
-  00014		 |$M36017|
+  00014		 |$M36019|
 
 			 ENDP  ; |??0InputStreamContext@@QAA@XZ|, InputStreamContext::InputStreamContext
 
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmctxt.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36033| DCD	|$LN7@DoCallback@4|
+|$T36035| DCD	|$LN7@DoCallback@4|
 	DCD	0x40000f02
 ; Function compile flags: /Ogspy
 
@@ -1826,7 +1826,7 @@
   00000		 |$LN7@DoCallback@4|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M36030|
+  00008		 |$M36032|
   00008	e1a03001	 mov         r3, r1
   0000c	e1a01000	 mov         r1, r0
 
@@ -1847,13 +1847,13 @@
   00030	e28dd004	 add         sp, sp, #4
   00034	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00038	e12fff1e	 bx          lr
-  0003c		 |$M36031|
+  0003c		 |$M36033|
 
 			 ENDP  ; |?DoCallbackReturnBuffer@InputStreamContext@@UAAHPAUwavehdr_tag@@@Z|, InputStreamContext::DoCallbackReturnBuffer
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36044| DCD	|$LN7@DoCallback@5|
+|$T36046| DCD	|$LN7@DoCallback@5|
 	DCD	0x40001002
 ; Function compile flags: /Ogspy
 
@@ -1866,7 +1866,7 @@
   00000		 |$LN7@DoCallback@5|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M36041|
+  00008		 |$M36043|
   00008	e1a03000	 mov         r3, r0
 
 ; 214  :         DEBUGMSG(ZONE_WIDM && ZONE_VERBOSE,(TEXT("WIDM: DoCallbackStreamOpened\r\n")));
@@ -1888,13 +1888,13 @@
   00034	e28dd004	 add         sp, sp, #4
   00038	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0003c	e12fff1e	 bx          lr
-  00040		 |$M36042|
+  00040		 |$M36044|
 
 			 ENDP  ; |?DoCallbackStreamOpened@InputStreamContext@@UAAHXZ|, InputStreamContext::DoCallbackStreamOpened
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36055| DCD	|$LN7@DoCallback@6|
+|$T36057| DCD	|$LN7@DoCallback@6|
 	DCD	0x40001002
 ; Function compile flags: /Ogspy
 
@@ -1907,7 +1907,7 @@
   00000		 |$LN7@DoCallback@6|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M36052|
+  00008		 |$M36054|
   00008	e1a03000	 mov         r3, r0
 
 ; 219  :         DEBUGMSG(ZONE_WIDM && ZONE_VERBOSE,(TEXT("WIDM: DoCallbackStreamOpened\r\n")));
@@ -1929,14 +1929,14 @@
   00034	e28dd004	 add         sp, sp, #4
   00038	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0003c	e12fff1e	 bx          lr
-  00040		 |$M36053|
+  00040		 |$M36055|
 
 			 ENDP  ; |?DoCallbackStreamClosed@InputStreamContext@@UAAHXZ|, InputStreamContext::DoCallbackStreamClosed
 
 	EXPORT	|??1InputStreamContext@@UAA@XZ|		; InputStreamContext::~InputStreamContext
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36071| DCD	|$LN9@InputStrea@2|
+|$T36073| DCD	|$LN9@InputStrea@2|
 	DCD	0x40000400
 ; Function compile flags: /Ogspy
 
@@ -1944,20 +1944,20 @@
 
   00000		 |??1InputStreamContext@@UAA@XZ| PROC	; InputStreamContext::~InputStreamContext
   00000		 |$LN9@InputStrea@2|
-  00000		 |$M36068|
+  00000		 |$M36070|
   00000	e59f3004	 ldr         r3, [pc, #4]
   00004	e5803000	 str         r3, [r0]
   00008	e12fff1e	 bx          lr
   0000c		 |$LN10@InputStrea@2|
   0000c		 |$LN11@InputStrea@2|
   0000c	00000000	 DCD         |??_7StreamContext@@6B@|
-  00010		 |$M36069|
+  00010		 |$M36071|
 
 			 ENDP  ; |??1InputStreamContext@@UAA@XZ|, InputStreamContext::~InputStreamContext
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36099| DCD	|$LN12@scalar@3|
+|$T36101| DCD	|$LN12@scalar@3|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -1966,7 +1966,7 @@
   00000		 |??_GInputStreamContext@@UAAPAXI@Z| PROC ; InputStreamContext::`scalar deleting destructor'
   00000		 |$LN12@scalar@3|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M36096|
+  00004		 |$M36098|
   00004	e1a04000	 mov         r4, r0
   00008	e59f3014	 ldr         r3, [pc, #0x14]
   0000c	e3110001	 tst         r1, #1
@@ -1978,7 +1978,7 @@
   00024		 |$LN13@scalar@3|
   00024		 |$LN14@scalar@3|
   00024	00000000	 DCD         |??_7StreamContext@@6B@|
-  00028		 |$M36097|
+  00028		 |$M36099|
 
 			 ENDP  ; |??_GInputStreamContext@@UAAPAXI@Z|, InputStreamContext::`scalar deleting destructor'
 
@@ -1992,7 +1992,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\istrmmgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36121| DCD	|$LN9@CMicrophon|
+|$T36123| DCD	|$LN9@CMicrophon|
 	DCD	0x40001801
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2013,7 +2013,7 @@
 
   00000		 |$LN9@CMicrophon|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M36118|
+  00004		 |$M36120|
   00004	e1a05000	 mov         r5, r0
   00008	eb000000	 bl          |??0CAudioLineBase@@IAA@XZ|
   0000c	e59f3048	 ldr         r3, [pc, #0x48]
@@ -2049,14 +2049,14 @@
   00058	00000000	 DCD         |??_7CAudioControl_MicMute@@6B@|
   0005c		 |$LN12@CMicrophon|
   0005c	00000000	 DCD         |??_7CMicrophoneInputSource@@6B@|
-  00060		 |$M36119|
+  00060		 |$M36121|
 
 			 ENDP  ; |??0CMicrophoneInputSource@@QAA@XZ|, CMicrophoneInputSource::CMicrophoneInputSource
 
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\audiolin.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36133| DCD	|$LN5@get_Produc|
+|$T36135| DCD	|$LN5@get_Produc|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -2067,10 +2067,10 @@
 ; 124  :     virtual WCHAR const* get_ProductName() const               { return NULL; }
 
   00000		 |$LN5@get_Produc|
-  00000		 |$M36130|
+  00000		 |$M36132|
   00000	e3a00000	 mov         r0, #0
   00004	e12fff1e	 bx          lr
-  00008		 |$M36131|
+  00008		 |$M36133|
 
 			 ENDP  ; |?get_ProductName@CAudioLineBase@@UBAPBGXZ|, CAudioLineBase::get_ProductName
 
@@ -2078,7 +2078,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\istrmmgr.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36142| DCD	|$LN5@get_Name@2|
+|$T36144| DCD	|$LN5@get_Name@2|
 	DCD	0x40000300
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2094,19 +2094,19 @@
 ; 180  :     virtual WCHAR const* get_Name() const        { return L"Microphone"; }
 
   00000		 |$LN5@get_Name@2|
-  00000		 |$M36139|
+  00000		 |$M36141|
   00000	e59f0000	 ldr         r0, [pc]
   00004	e12fff1e	 bx          lr
   00008		 |$LN6@get_Name@2|
   00008		 |$LN7@get_Name@2|
   00008	00000000	 DCD         |??_C@_1BG@OGJPAHBK@?$AAM?$AAi?$AAc?$AAr?$AAo?$AAp?$AAh?$AAo?$AAn?$AAe?$AA?$AA@|
-  0000c		 |$M36140|
+  0000c		 |$M36142|
 
 			 ENDP  ; |?get_Name@CMicrophoneInputSource@@UBAPBGXZ|, CMicrophoneInputSource::get_Name
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36153| DCD	|$LN5@get_ShortN@2|
+|$T36155| DCD	|$LN5@get_ShortN@2|
 	DCD	0x40000300
 ; Function compile flags: /Ogspy
 
@@ -2117,13 +2117,13 @@
 ; 181  :     virtual WCHAR const* get_ShortName() const   { return L"Microphone"; }
 
   00000		 |$LN5@get_ShortN@2|
-  00000		 |$M36150|
+  00000		 |$M36152|
   00000	e59f0000	 ldr         r0, [pc]
   00004	e12fff1e	 bx          lr
   00008		 |$LN6@get_ShortN@2|
   00008		 |$LN7@get_ShortN@2|
   00008	00000000	 DCD         |??_C@_1BG@OGJPAHBK@?$AAM?$AAi?$AAc?$AAr?$AAo?$AAp?$AAh?$AAo?$AAn?$AAe?$AA?$AA@|
-  0000c		 |$M36151|
+  0000c		 |$M36153|
 
 			 ENDP  ; |?get_ShortName@CMicrophoneInputSource@@UBAPBGXZ|, CMicrophoneInputSource::get_ShortName
 
@@ -2132,7 +2132,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\strmctxt.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36183| DCD	|$LN13@create_Str|
+|$T36185| DCD	|$LN13@create_Str|
 	DCD	0x40000b01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\z2170p\src\drivers\tps659xx_wave\istrmmgr.cpp
@@ -2145,7 +2145,7 @@
 
   00000		 |$LN13@create_Str|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M36180|
+  00004		 |$M36182|
 
 ; 128  :     UNREFERENCED_PARAMETER(lpWOD);
 ; 129  :     return new InputStreamContext;
@@ -2172,13 +2172,13 @@
   00028		 |$LN14@create_Str|
   00028		 |$LN15@create_Str|
   00028	00000000	 DCD         |??_7InputStreamContext@@6B@|
-  0002c		 |$M36181|
+  0002c		 |$M36183|
 
 			 ENDP  ; |?create_Stream@CInputStreamManager@@UAAPAVStreamContext@@PAUwaveopendesc_tag@@@Z|, CInputStreamManager::create_Stream
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T36192| DCD	|$LN5@dynamic|
+|$T36194| DCD	|$LN5@dynamic|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -2190,7 +2190,7 @@
 
   00000		 |$LN5@dynamic|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M36189|
+  00004		 |$M36191|
   00004	e59f0008	 ldr         r0, [pc, #8]
   00008	eb000000	 bl          |??0CMicrophoneInputSource@@QAA@XZ|
   0000c	e49de004	 ldr         lr, [sp], #4
@@ -2198,7 +2198,7 @@
   00014		 |$LN6@dynamic|
   00014		 |$LN7@dynamic|
   00014	00000000	 DCD         |s_MicrophoneInputLine|
-  00018		 |$M36190|
+  00018		 |$M36192|
 
 			 ENDP  ; |??__Es_MicrophoneInputLine@@YAXXZ|, `dynamic initializer for 's_MicrophoneInputLine''
 

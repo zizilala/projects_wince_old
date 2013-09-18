@@ -351,8 +351,8 @@ void Core_dpll_init(void)
     
     // configure m:n clock ratios as well as frequency selection for core dpll
     OUTREG32(&pPrcmClkCM->CM_CLKSEL1_PLL, BSP_CM_CLKSEL1_PLL);
-
 }
+
 //------------------------------------------------------------------------------
 //
 //  Function:  Per_dpll_init

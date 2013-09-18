@@ -15,7 +15,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sysctrl\sysctrl.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32132| DCD	|$LN11@DllMain|
+|$T32134| DCD	|$LN11@DllMain|
 	DCD	0x40000600
 ; Function compile flags: /Ogspy
 
@@ -26,7 +26,7 @@
 ; 49   : {
 
   00000		 |$LN11@DllMain|
-  00000		 |$M32129|
+  00000		 |$M32131|
 
 ; 50   : 	UNREFERENCED_PARAMETER(lpvReserved);
 ; 51   : 	
@@ -67,7 +67,7 @@
   00014		 |$LN12@DllMain|
   00014		 |$LN13@DllMain|
   00014	00000000	 DCD         |?ghInstance@@3PAUHINSTANCE__@@A|
-  00018		 |$M32130|
+  00018		 |$M32132|
 
 			 ENDP  ; |DllMain|
 
@@ -77,7 +77,7 @@
 	IMPORT	|?StartupThread@@YAKPAX@Z|		; StartupThread
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32144| DCD	|$LN5@SYS_Init|
+|$T32146| DCD	|$LN5@SYS_Init|
 	DCD	0x40001002
 ; Function compile flags: /Ogspy
 
@@ -90,7 +90,7 @@
   00000		 |$LN5@SYS_Init|
   00000	e52de004	 str         lr, [sp, #-4]!
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M32141|
+  00008		 |$M32143|
 
 ; 77   : 	UNREFERENCED_PARAMETER(dwData);
 ; 78   : 	//Init_LED();
@@ -138,14 +138,14 @@
   0003c		 |$LN6@SYS_Init|
   0003c		 |$LN7@SYS_Init|
   0003c	00000000	 DCD         |?StartupThread@@YAKPAX@Z|
-  00040		 |$M32142|
+  00040		 |$M32144|
 
 			 ENDP  ; |?SYS_Init@@YAKK@Z|, SYS_Init
 
 	EXPORT	|?SYS_Deinit@@YAHK@Z|			; SYS_Deinit
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32155| DCD	|$LN5@SYS_Deinit|
+|$T32157| DCD	|$LN5@SYS_Deinit|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -156,7 +156,7 @@
 ; 103  : {
 
   00000		 |$LN5@SYS_Deinit|
-  00000		 |$M32152|
+  00000		 |$M32154|
 
 ; 104  : 	UNREFERENCED_PARAMETER(dwData);
 ; 105  :     return TRUE;
@@ -166,14 +166,14 @@
 ; 106  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M32153|
+  00008		 |$M32155|
 
 			 ENDP  ; |?SYS_Deinit@@YAHK@Z|, SYS_Deinit
 
 	EXPORT	|?SYS_Open@@YAHKKK@Z|			; SYS_Open
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32164| DCD	|$LN5@SYS_Open|
+|$T32166| DCD	|$LN5@SYS_Open|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -184,7 +184,7 @@
 ; 115  : {
 
   00000		 |$LN5@SYS_Open|
-  00000		 |$M32161|
+  00000		 |$M32163|
 
 ; 116  : 	UNREFERENCED_PARAMETER(dwData);
 ; 117  : 	UNREFERENCED_PARAMETER(dwAccess);
@@ -196,14 +196,14 @@
 ; 120  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M32162|
+  00008		 |$M32164|
 
 			 ENDP  ; |?SYS_Open@@YAHKKK@Z|, SYS_Open
 
 	EXPORT	|?SYS_Close@@YAHK@Z|			; SYS_Close
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32173| DCD	|$LN5@SYS_Close|
+|$T32175| DCD	|$LN5@SYS_Close|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -214,7 +214,7 @@
 ; 125  : {
 
   00000		 |$LN5@SYS_Close|
-  00000		 |$M32170|
+  00000		 |$M32172|
 
 ; 126  : 	UNREFERENCED_PARAMETER(dwData);
 ; 127  :     return TRUE;
@@ -224,14 +224,14 @@
 ; 128  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M32171|
+  00008		 |$M32173|
 
 			 ENDP  ; |?SYS_Close@@YAHK@Z|, SYS_Close
 
 	EXPORT	|?SYS_Read@@YAKKPAIK@Z|			; SYS_Read
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32182| DCD	|$LN5@SYS_Read|
+|$T32184| DCD	|$LN5@SYS_Read|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -242,7 +242,7 @@
 ; 137  : {
 
   00000		 |$LN5@SYS_Read|
-  00000		 |$M32179|
+  00000		 |$M32181|
 
 ; 138  : 	UNREFERENCED_PARAMETER(dwData);
 ; 139  : 	UNREFERENCED_PARAMETER(pBuffer);
@@ -254,14 +254,14 @@
 ; 142  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M32180|
+  00008		 |$M32182|
 
 			 ENDP  ; |?SYS_Read@@YAKKPAIK@Z|, SYS_Read
 
 	EXPORT	|?SYS_Write@@YAKKPAIK@Z|		; SYS_Write
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32191| DCD	|$LN5@SYS_Write|
+|$T32193| DCD	|$LN5@SYS_Write|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -272,7 +272,7 @@
 ; 150  : {
 
   00000		 |$LN5@SYS_Write|
-  00000		 |$M32188|
+  00000		 |$M32190|
 
 ; 151  : 	UNREFERENCED_PARAMETER(dwData);
 ; 152  : 	UNREFERENCED_PARAMETER(pBuffer);
@@ -284,14 +284,14 @@
 ; 155  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M32189|
+  00008		 |$M32191|
 
 			 ENDP  ; |?SYS_Write@@YAKKPAIK@Z|, SYS_Write
 
 	EXPORT	|?SYS_Seek@@YAKKJK@Z|			; SYS_Seek
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32200| DCD	|$LN5@SYS_Seek|
+|$T32202| DCD	|$LN5@SYS_Seek|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -302,7 +302,7 @@
 ; 163  : {
 
   00000		 |$LN5@SYS_Seek|
-  00000		 |$M32197|
+  00000		 |$M32199|
 
 ; 164  : 	UNREFERENCED_PARAMETER(dwData);
 ; 165  : 	UNREFERENCED_PARAMETER(pos);
@@ -314,14 +314,14 @@
 ; 168  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M32198|
+  00008		 |$M32200|
 
 			 ENDP  ; |?SYS_Seek@@YAKKJK@Z|, SYS_Seek
 
 	EXPORT	|?SYS_PowerUp@@YAHXZ|			; SYS_PowerUp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32209| DCD	|$LN5@SYS_PowerU|
+|$T32211| DCD	|$LN5@SYS_PowerU|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -332,7 +332,7 @@
 ; 173  : {
 
   00000		 |$LN5@SYS_PowerU|
-  00000		 |$M32206|
+  00000		 |$M32208|
 
 ; 174  :     return TRUE;
 
@@ -341,14 +341,14 @@
 ; 175  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M32207|
+  00008		 |$M32209|
 
 			 ENDP  ; |?SYS_PowerUp@@YAHXZ|, SYS_PowerUp
 
 	EXPORT	|?SYS_PowerDown@@YAHXZ|			; SYS_PowerDown
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32218| DCD	|$LN5@SYS_PowerD|
+|$T32220| DCD	|$LN5@SYS_PowerD|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -359,7 +359,7 @@
 ; 179  : {
 
   00000		 |$LN5@SYS_PowerD|
-  00000		 |$M32215|
+  00000		 |$M32217|
 
 ; 180  :     return TRUE;
 
@@ -368,14 +368,14 @@
 ; 181  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M32216|
+  00008		 |$M32218|
 
 			 ENDP  ; |?SYS_PowerDown@@YAHXZ|, SYS_PowerDown
 
 	EXPORT	|?SYS_IOControl@@YAHKKPAXK0KPAK@Z|	; SYS_IOControl
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32227| DCD	|$LN5@SYS_IOCont|
+|$T32229| DCD	|$LN5@SYS_IOCont|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -386,7 +386,7 @@
 ; 192  : {
 
   00000		 |$LN5@SYS_IOCont|
-  00000		 |$M32224|
+  00000		 |$M32226|
 
 ; 193  :     //BOOL dwState = FALSE;
 ; 194  : 	//uNandFLASH *lpFPro=NULL;
@@ -539,7 +539,7 @@
 ; 338  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M32225|
+  00008		 |$M32227|
 
 			 ENDP  ; |?SYS_IOControl@@YAHKKPAXK0KPAK@Z|, SYS_IOControl
 

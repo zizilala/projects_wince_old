@@ -131,7 +131,7 @@
 ; File c:\wince600\platform\z2170p\src\test\testkeypad\testkeypad.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32189| DCD	|$LN6@InitInstan|
+|$T32191| DCD	|$LN6@InitInstan|
 	DCD	0x40002202
 ; Function compile flags: /Ogspy
 
@@ -144,7 +144,7 @@
   00000		 |$LN6@InitInstan|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd020	 sub         sp, sp, #0x20
-  00008		 |$M32186|
+  00008		 |$M32188|
   00008	e1a05001	 mov         r5, r1
   0000c	e1a04000	 mov         r4, r0
 
@@ -211,7 +211,7 @@
   00084		 |$LN7@InitInstan|
   00084		 |$LN8@InitInstan|
   00084	00000000	 DCD         |?szWindowClass@@3PAGA|
-  00088		 |$M32187|
+  00088		 |$M32189|
 
 			 ENDP  ; |?InitInstance@@YAHPAUHINSTANCE__@@H@Z|, InitInstance
 
@@ -219,7 +219,7 @@
 	EXPORT	|??_C@_17FJFCONIE@?$AAk?$AAe?$AAy?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32205| DCD	|$LN12@GetKeyStri|
+|$T32207| DCD	|$LN12@GetKeyStri|
 	DCD	0x40001401
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -235,7 +235,7 @@
 
   00000		 |$LN12@GetKeyStri|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M32202|
+  00004		 |$M32204|
 
 ; 143  :     for (int i=0;i<sizeof(table)/sizeof(table[0]);i++)
 
@@ -282,7 +282,7 @@
   00048	00000000	 DCD         |??_C@_17FJFCONIE@?$AAk?$AAe?$AAy?$AA?$AA@|
   0004c		 |$LN15@GetKeyStri|
   0004c	00000000	 DCD         |?table@@3PAUT_VKEY_AND_NAME@@A|
-  00050		 |$M32203|
+  00050		 |$M32205|
 
 			 ENDP  ; |?GetKeyString@@YAPAGI@Z|, GetKeyString
 
@@ -308,11 +308,11 @@
 |counters| %	0x400
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32231| DCD	|$LN14@WndProc|
+|$T32233| DCD	|$LN14@WndProc|
 	DCD	0xc0006502
 
   00000			 AREA	 |.xdata|, DATA
-|$T32227| DCD	0xffffffe8
+|$T32229| DCD	0xffffffe8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1DK@IACCBMLJ@?$AA?$CF?$AAs?$AA?5?$AA?$CI?$AA0?$AAx?$AA?$CF?$AAx?$AA?$CJ?$AA?5?$AAp?$AAr?$AAe?$AAs?$AAs?$AAe?$AAd?$AA?5?$AA?$CF?$AAd?$AA?5?$AAt?$AAi?$AAm?$AAe?$AA?$CI?$AAs?$AA?$CJ?$AA?$AA@| DCB "%"
@@ -333,7 +333,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T32227|
+  00004	00000000	 DCD         |$T32229|
 
   00008		 |?WndProc@@YAJPAUHWND__@@IIJ@Z| PROC	; WndProc
 
@@ -342,7 +342,7 @@
   00008		 |$LN14@WndProc|
   00008	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   0000c	e24dd058	 sub         sp, sp, #0x58
-  00010		 |$M32228|
+  00010		 |$M32230|
   00010	e1a07003	 mov         r7, r3
   00014	e1a05002	 mov         r5, r2
   00018	e1a04001	 mov         r4, r1
@@ -538,7 +538,7 @@
   00194	00000000	 DCD         |??_C@_1CG@ICJDHDLD@?$AA?$CF?$AAs?$AA?5?$AA?$CI?$AA0?$AAx?$AA?$CF?$AAx?$AA?$CJ?$AA?5?$AAr?$AAe?$AAl?$AAe?$AAa?$AAs?$AAe?$AAd?$AA?$AA@|
   00198		 |$LN20@WndProc|
   00198	00000000	 DCD         |__security_cookie|
-  0019c		 |$M32229|
+  0019c		 |$M32231|
 
 			 ENDP  ; |?WndProc@@YAJPAUHWND__@@IIJ@Z|, WndProc
 
@@ -547,7 +547,7 @@
 	IMPORT	|GetStockObject|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32248| DCD	|$LN5@MyRegister|
+|$T32250| DCD	|$LN5@MyRegister|
 	DCD	0x40002102
 ; Function compile flags: /Ogspy
 
@@ -560,7 +560,7 @@
   00000		 |$LN5@MyRegister|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd028	 sub         sp, sp, #0x28
-  00008		 |$M32245|
+  00008		 |$M32247|
   00008	e1a02000	 mov         r2, r0
 
 ; 75   :     WNDCLASS wc;
@@ -628,7 +628,7 @@
   0007c	00000000	 DCD         |?szWindowClass@@3PAGA|
   00080		 |$LN8@MyRegister|
   00080	00000000	 DCD         |?WndProc@@YAJPAUHWND__@@IIJ@Z|
-  00084		 |$M32246|
+  00084		 |$M32248|
 
 			 ENDP  ; |?MyRegisterClass@@YAGPAUHINSTANCE__@@@Z|, MyRegisterClass
 
@@ -642,7 +642,7 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T32266| DCD	|$LN11@WinMain|
+|$T32268| DCD	|$LN11@WinMain|
 	DCD	0x40003702
 ; Function compile flags: /Ogspy
 
@@ -655,7 +655,7 @@
   00000		 |$LN11@WinMain|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd01c	 sub         sp, sp, #0x1C
-  00008		 |$M32263|
+  00008		 |$M32265|
   00008	e1a05003	 mov         r5, r3
   0000c	e1a06000	 mov         r6, r0
 
@@ -770,7 +770,7 @@
   000d4	00000000	 DCD         |?szTitle@@3PAGA|
   000d8		 |$LN14@WinMain|
   000d8	00000000	 DCD         |counters|
-  000dc		 |$M32264|
+  000dc		 |$M32266|
 
 			 ENDP  ; |WinMain|
 

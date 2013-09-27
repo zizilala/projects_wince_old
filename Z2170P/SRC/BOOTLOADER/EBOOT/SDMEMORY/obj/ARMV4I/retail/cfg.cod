@@ -73,7 +73,7 @@
 ; File c:\wince600\platform\z2170p\src\bootloader\eboot\sdmemory\cfg.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46826| DCD	|$LN5@BLReadBoot|
+|$T46835| DCD	|$LN5@BLReadBoot|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -81,110 +81,110 @@
 
   00000		 |BLReadBootCfg| PROC
 
-; 26   : {
+; 29   : {
 
   00000		 |$LN5@BLReadBoot|
-  00000		 |$M46823|
+  00000		 |$M46832|
 
-; 27   :     BOOL rc = FALSE;
-; 28   : #ifndef BSP_NO_NAND_IN_SDBOOT
-; 29   :     HANDLE hFMD;
-; 30   :     PCI_REG_INFO regInfo;
-; 31   :     FlashInfo flashInfo;
-; 32   :     SectorInfo sectorInfo;
-; 33   :     SECTOR_ADDR sector;
-; 34   :     BLOCK_ID block;
-; 35   :     UINT32 count, offset;
-; 36   :     UINT8 buffer[2048];
-; 37   :     
-; 38   : 
-; 39   :     // EBOOT configuration is placed in last sector of EBOOT image
-; 40   :     regInfo.MemBase.Reg[0] = g_ulFlashBase;
-; 41   :     hFMD = FMD_Init(NULL, &regInfo, NULL);
-; 42   :     if (hFMD == NULL)
-; 43   :         {
-; 44   :         OALMSG(OAL_ERROR, (L"ERROR: FMD_Init call failed!\r\n"));
-; 45   :         goto cleanUp;
-; 46   :         }
-; 47   : 
-; 48   :     // Get flash info
-; 49   :     if (!FMD_GetInfo(&flashInfo))
-; 50   :         {
-; 51   :         OALMSG(OAL_ERROR, (L"ERROR: FMD_GetInfo call failed!\r\n"));
-; 52   :         goto cleanUp;
-; 53   :         }
-; 54   : 
-; 55   :     // We can support only flash with sector size < 2048 bytes
-; 56   :     if (flashInfo.wDataBytesPerSector > sizeof(buffer))
-; 57   :         {
-; 58   :         OALMSG(OAL_ERROR, (L"ERROR: "
-; 59   :             L"Flash sector size %d bytes bigger than supported %d bytes\r\n",
-; 60   :             flashInfo.wDataBytesPerSector, sizeof(buffer)    
-; 61   :             ));
-; 62   :         goto cleanUp;
-; 63   :         }
-; 64   : 
-; 65   :     // Configuration is located in last sector of EBOOT image
-; 66   :     offset = IMAGE_XLDR_BOOTSEC_NAND_SIZE + IMAGE_EBOOT_BOOTSEC_NAND_SIZE;
-; 67   :     
-; 68   :     // Start from beginning
-; 69   :     block  = 0;
-; 70   :     sector = 0;
-; 71   : 
-; 72   :     // Skip X-Loader & EBOOT code & bad blocks
-; 73   :     // Note that we also check the last eboot block in order to ensure it is good
-; 74   :     count = 0;
-; 75   :     while ((count < offset) && (block < flashInfo.dwNumBlocks))
-; 76   :         {
-; 77   :         if ((FMD_GetBlockStatus(block) & BLOCK_STATUS_BAD) == 0)
-; 78   :             {
-; 79   :             count += flashInfo.dwBytesPerBlock;
-; 80   :             }
-; 81   :         block++;
-; 82   :         }
-; 83   : 
-; 84   :     // We've incremented past the last eboot block in order to check it too
-; 85   :     // Back up now, the previous block is the last one containing eboot and is good
-; 86   :     block--;
-; 87   : 
-; 88   :     //  Compute sector within the block where config lies
-; 89   :     sector = block * flashInfo.wSectorsPerBlock;
-; 90   :     sector += flashInfo.wSectorsPerBlock - 1;
-; 91   : 
-; 92   :     // Read sector to buffer
-; 93   :     if (!FMD_ReadSector(sector, buffer, &sectorInfo, 1)) {
-; 94   :         OALMSG(OAL_ERROR, (L"ERROR: EBOOT!BLReadBootCfg: "
-; 95   :             L"Flash sector %d read failed\r\n", sector
-; 96   :         ));
-; 97   :             goto cleanUp;
-; 98   :     }
-; 99   : 
-; 100  :     // Copy data to BOOT_CFG structure
-; 101  :     memcpy(pBootCfg, buffer, sizeof(BOOT_CFG));        
+; 30   :     BOOL rc = FALSE;
+; 31   : #ifndef BSP_NO_NAND_IN_SDBOOT
+; 32   :     HANDLE hFMD;
+; 33   :     PCI_REG_INFO regInfo;
+; 34   :     FlashInfo flashInfo;
+; 35   :     SectorInfo sectorInfo;
+; 36   :     SECTOR_ADDR sector;
+; 37   :     BLOCK_ID block;
+; 38   :     UINT32 count, offset;
+; 39   :     UINT8 buffer[2048];
+; 40   :     
+; 41   : 
+; 42   :     // EBOOT configuration is placed in last sector of EBOOT image
+; 43   :     regInfo.MemBase.Reg[0] = g_ulFlashBase;
+; 44   :     hFMD = FMD_Init(NULL, &regInfo, NULL);
+; 45   :     if (hFMD == NULL)
+; 46   :         {
+; 47   :         OALMSG(OAL_ERROR, (L"ERROR: FMD_Init call failed!\r\n"));
+; 48   :         goto cleanUp;
+; 49   :         }
+; 50   : 
+; 51   :     // Get flash info
+; 52   :     if (!FMD_GetInfo(&flashInfo))
+; 53   :         {
+; 54   :         OALMSG(OAL_ERROR, (L"ERROR: FMD_GetInfo call failed!\r\n"));
+; 55   :         goto cleanUp;
+; 56   :         }
+; 57   : 
+; 58   :     // We can support only flash with sector size < 2048 bytes
+; 59   :     if (flashInfo.wDataBytesPerSector > sizeof(buffer))
+; 60   :         {
+; 61   :         OALMSG(OAL_ERROR, (L"ERROR: "
+; 62   :             L"Flash sector size %d bytes bigger than supported %d bytes\r\n",
+; 63   :             flashInfo.wDataBytesPerSector, sizeof(buffer)    
+; 64   :             ));
+; 65   :         goto cleanUp;
+; 66   :         }
+; 67   : 
+; 68   :     // Configuration is located in last sector of EBOOT image
+; 69   :     offset = IMAGE_XLDR_BOOTSEC_NAND_SIZE + IMAGE_EBOOT_BOOTSEC_NAND_SIZE;
+; 70   :     
+; 71   :     // Start from beginning
+; 72   :     block  = 0;
+; 73   :     sector = 0;
+; 74   : 
+; 75   :     // Skip X-Loader & EBOOT code & bad blocks
+; 76   :     // Note that we also check the last eboot block in order to ensure it is good
+; 77   :     count = 0;
+; 78   :     while ((count < offset) && (block < flashInfo.dwNumBlocks))
+; 79   :         {
+; 80   :         if ((FMD_GetBlockStatus(block) & BLOCK_STATUS_BAD) == 0)
+; 81   :             {
+; 82   :             count += flashInfo.dwBytesPerBlock;
+; 83   :             }
+; 84   :         block++;
+; 85   :         }
+; 86   : 
+; 87   :     // We've incremented past the last eboot block in order to check it too
+; 88   :     // Back up now, the previous block is the last one containing eboot and is good
+; 89   :     block--;
+; 90   : 
+; 91   :     //  Compute sector within the block where config lies
+; 92   :     sector = block * flashInfo.wSectorsPerBlock;
+; 93   :     sector += flashInfo.wSectorsPerBlock - 1;
+; 94   : 
+; 95   :     // Read sector to buffer
+; 96   :     if (!FMD_ReadSector(sector, buffer, &sectorInfo, 1)) {
+; 97   :         OALMSG(OAL_ERROR, (L"ERROR: EBOOT!BLReadBootCfg: "
+; 98   :             L"Flash sector %d read failed\r\n", sector
+; 99   :         ));
+; 100  :             goto cleanUp;
+; 101  :     }
 ; 102  : 
-; 103  :     // Done    
-; 104  :     rc = TRUE;
+; 103  :     // Copy data to BOOT_CFG structure
+; 104  :     memcpy(pBootCfg, buffer, sizeof(BOOT_CFG));        
 ; 105  : 
-; 106  : cleanUp:
-; 107  :     if (hFMD != NULL) FMD_Deinit(hFMD);
-; 108  : #else
-; 109  :     UNREFERENCED_PARAMETER(pBootCfg);
-; 110  : #endif
-; 111  :     return rc;
+; 106  :     // Done    
+; 107  :     rc = TRUE;
+; 108  : 
+; 109  : cleanUp:
+; 110  :     if (hFMD != NULL) FMD_Deinit(hFMD);
+; 111  : #else
+; 112  :     UNREFERENCED_PARAMETER(pBootCfg);
+; 113  : #endif
+; 114  :     return rc;
 
   00000	e3a00000	 mov         r0, #0
 
-; 112  : }
+; 115  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M46824|
+  00008		 |$M46833|
 
 			 ENDP  ; |BLReadBootCfg|
 
 	EXPORT	|BLWriteBootCfg|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46835| DCD	|$LN5@BLWriteBoo|
+|$T46844| DCD	|$LN5@BLWriteBoo|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -192,159 +192,159 @@
 
   00000		 |BLWriteBootCfg| PROC
 
-; 117  : {
+; 120  : {
 
   00000		 |$LN5@BLWriteBoo|
-  00000		 |$M46832|
+  00000		 |$M46841|
 
-; 118  :     BOOL rc = FALSE;
-; 119  : #ifndef BSP_NO_NAND_IN_SDBOOT
-; 120  :     HANDLE hFMD;
-; 121  :     PCI_REG_INFO regInfo;
-; 122  :     FlashInfo flashInfo;
-; 123  :     SectorInfo sectorInfo;
-; 124  :     SECTOR_ADDR sector;
-; 125  :     BLOCK_ID block;
-; 126  :     UINT32 count, offset, length;
-; 127  :     UINT8 buffer[2048];
-; 128  :     UINT8 *pEBOOT;
-; 129  :     
-; 130  : 
-; 131  :     // EBOOT configuration is placed in last sector of image
-; 132  :     regInfo.MemBase.Reg[0] = g_ulFlashBase;
-; 133  :     hFMD = FMD_Init(NULL, &regInfo, NULL);
-; 134  :     if (hFMD == NULL)
-; 135  :         {
-; 136  :         OALMSG(OAL_ERROR, (L"ERROR: FMD_Init call failed!\r\n"));
-; 137  :         goto cleanUp;
-; 138  :         }
-; 139  : 
-; 140  :     // Get flash info
-; 141  :     if (!FMD_GetInfo(&flashInfo))
-; 142  :         {
-; 143  :         OALMSG(OAL_ERROR, (L"ERROR: FMD_GetInfo call failed!\r\n"));
-; 144  :         goto cleanUp;
-; 145  :         }
-; 146  : 
-; 147  :     // We can support only flash with sector size which fit to our buffer
-; 148  :     if (flashInfo.wDataBytesPerSector > sizeof(buffer))
-; 149  :         {
-; 150  :         OALMSG(OAL_ERROR, (L"ERROR: "
-; 151  :             L"Flash sector size %d bytes bigger that supported %d bytes\r\n",
-; 152  :             flashInfo.wDataBytesPerSector, sizeof(buffer)    
-; 153  :             ));
-; 154  :         goto cleanUp;
-; 155  :         }
-; 156  : 
-; 157  :     // Configuration is located in last sector of last EBOOT block
-; 158  :     offset = IMAGE_XLDR_BOOTSEC_NAND_SIZE + IMAGE_EBOOT_BOOTSEC_NAND_SIZE;
-; 159  :     
-; 160  :     // Skip X-Loader & EBOOT code & bad blocks
-; 161  :     // Note that we also check the last eboot block in order to ensure it is good
-; 162  :     block  = 0;
-; 163  :     count = 0;
-; 164  :     while ((count < offset) && (block < flashInfo.dwNumBlocks))
-; 165  :         {
-; 166  :         if ((FMD_GetBlockStatus(block) & BLOCK_STATUS_BAD) == 0)
-; 167  :             {
-; 168  :             count += flashInfo.dwBytesPerBlock;
-; 169  :             }
-; 170  :         block++;
-; 171  :         }
-; 172  : 
-; 173  :     // We've incremented past the last eboot block in order to check it too
-; 174  :     // Back up now, the previous block is the last one containing eboot and is good
-; 175  :     block--;
-; 176  : 
-; 177  :     // Need to copy off the block contents to RAM (minus the config sector)
-; 178  :     pEBOOT = (UINT8*)IMAGE_WINCE_CODE_CA;
-; 179  :     length = flashInfo.dwBytesPerBlock - flashInfo.wDataBytesPerSector;
-; 180  : 
-; 181  :     memset((VOID*)pEBOOT, 0xFF, flashInfo.dwBytesPerBlock);
-; 182  :     sector = block * flashInfo.wSectorsPerBlock;
-; 183  :     offset = 0;
-; 184  : 
-; 185  :     while (offset < length) 
-; 186  :     {
-; 187  :         // When block read fail, there isn't what we can do more
-; 188  :         if (!FMD_ReadSector(sector, pEBOOT + offset, &sectorInfo, 1)) {
-; 189  :                 OALMSG(OAL_ERROR, (L"\r\nERROR: EBOOT!BLWriteBootCfg: "
-; 190  :                     L"Failed read sector %d from flash\r\n", sector
-; 191  :                 ));
-; 192  :             goto cleanUp;
-; 193  :             }
-; 194  : 
-; 195  :         // Move to next sector
-; 196  :         sector++;
-; 197  :         offset += flashInfo.wDataBytesPerSector;
-; 198  :     }
-; 199  : 
-; 200  : 
-; 201  :     //  Copy the config info into last sector of saved block in RAM
-; 202  :     memcpy(pEBOOT + offset, pBootCfg, sizeof(BOOT_CFG)); 
+; 121  :     BOOL rc = FALSE;
+; 122  : #ifndef BSP_NO_NAND_IN_SDBOOT
+; 123  :     HANDLE hFMD;
+; 124  :     PCI_REG_INFO regInfo;
+; 125  :     FlashInfo flashInfo;
+; 126  :     SectorInfo sectorInfo;
+; 127  :     SECTOR_ADDR sector;
+; 128  :     BLOCK_ID block;
+; 129  :     UINT32 count, offset, length;
+; 130  :     UINT8 buffer[2048];
+; 131  :     UINT8 *pEBOOT;
+; 132  :     
+; 133  : 
+; 134  :     // EBOOT configuration is placed in last sector of image
+; 135  :     regInfo.MemBase.Reg[0] = g_ulFlashBase;
+; 136  :     hFMD = FMD_Init(NULL, &regInfo, NULL);
+; 137  :     if (hFMD == NULL)
+; 138  :         {
+; 139  :         OALMSG(OAL_ERROR, (L"ERROR: FMD_Init call failed!\r\n"));
+; 140  :         goto cleanUp;
+; 141  :         }
+; 142  : 
+; 143  :     // Get flash info
+; 144  :     if (!FMD_GetInfo(&flashInfo))
+; 145  :         {
+; 146  :         OALMSG(OAL_ERROR, (L"ERROR: FMD_GetInfo call failed!\r\n"));
+; 147  :         goto cleanUp;
+; 148  :         }
+; 149  : 
+; 150  :     // We can support only flash with sector size which fit to our buffer
+; 151  :     if (flashInfo.wDataBytesPerSector > sizeof(buffer))
+; 152  :         {
+; 153  :         OALMSG(OAL_ERROR, (L"ERROR: "
+; 154  :             L"Flash sector size %d bytes bigger that supported %d bytes\r\n",
+; 155  :             flashInfo.wDataBytesPerSector, sizeof(buffer)    
+; 156  :             ));
+; 157  :         goto cleanUp;
+; 158  :         }
+; 159  : 
+; 160  :     // Configuration is located in last sector of last EBOOT block
+; 161  :     offset = IMAGE_XLDR_BOOTSEC_NAND_SIZE + IMAGE_EBOOT_BOOTSEC_NAND_SIZE;
+; 162  :     
+; 163  :     // Skip X-Loader & EBOOT code & bad blocks
+; 164  :     // Note that we also check the last eboot block in order to ensure it is good
+; 165  :     block  = 0;
+; 166  :     count = 0;
+; 167  :     while ((count < offset) && (block < flashInfo.dwNumBlocks))
+; 168  :         {
+; 169  :         if ((FMD_GetBlockStatus(block) & BLOCK_STATUS_BAD) == 0)
+; 170  :             {
+; 171  :             count += flashInfo.dwBytesPerBlock;
+; 172  :             }
+; 173  :         block++;
+; 174  :         }
+; 175  : 
+; 176  :     // We've incremented past the last eboot block in order to check it too
+; 177  :     // Back up now, the previous block is the last one containing eboot and is good
+; 178  :     block--;
+; 179  : 
+; 180  :     // Need to copy off the block contents to RAM (minus the config sector)
+; 181  :     pEBOOT = (UINT8*)IMAGE_WINCE_CODE_CA;
+; 182  :     length = flashInfo.dwBytesPerBlock - flashInfo.wDataBytesPerSector;
+; 183  : 
+; 184  :     memset((VOID*)pEBOOT, 0xFF, flashInfo.dwBytesPerBlock);
+; 185  :     sector = block * flashInfo.wSectorsPerBlock;
+; 186  :     offset = 0;
+; 187  : 
+; 188  :     while (offset < length) 
+; 189  :     {
+; 190  :         // When block read fail, there isn't what we can do more
+; 191  :         if (!FMD_ReadSector(sector, pEBOOT + offset, &sectorInfo, 1)) {
+; 192  :                 OALMSG(OAL_ERROR, (L"\r\nERROR: EBOOT!BLWriteBootCfg: "
+; 193  :                     L"Failed read sector %d from flash\r\n", sector
+; 194  :                 ));
+; 195  :             goto cleanUp;
+; 196  :             }
+; 197  : 
+; 198  :         // Move to next sector
+; 199  :         sector++;
+; 200  :         offset += flashInfo.wDataBytesPerSector;
+; 201  :     }
+; 202  : 
 ; 203  : 
-; 204  : 
-; 205  :     // Erase block
-; 206  :     if (!FMD_EraseBlock(block))
-; 207  :         {
-; 208  :         OALMSG(OAL_ERROR, (L"ERROR: EBOOT!BLWriteBootCfg: "
-; 209  :             L"Flash block %d erase failed\r\n", block
-; 210  :             ));
-; 211  :         goto cleanUp;
-; 212  :         }
-; 213  : 
-; 214  : 
-; 215  :     // Write contents of the save block + config sector back to flash
-; 216  :     pEBOOT = (UINT8*)IMAGE_WINCE_CODE_CA;
-; 217  :     length = flashInfo.dwBytesPerBlock;
-; 218  : 
-; 219  :     sector = block * flashInfo.wSectorsPerBlock;
-; 220  :     offset = 0;
-; 221  :     while (offset < length)
-; 222  :     {
-; 223  :         // Prepare sector info
-; 224  :         memset(&sectorInfo, 0xFF, sizeof(sectorInfo));
-; 225  :         sectorInfo.bOEMReserved &= ~(OEM_BLOCK_READONLY|OEM_BLOCK_RESERVED);
-; 226  :         sectorInfo.dwReserved1 = 0;
-; 227  :         sectorInfo.wReserved2 = 0;
-; 228  : 
-; 229  :         // Write sector        
-; 230  :         if (!FMD_WriteSector(sector, pEBOOT + offset, &sectorInfo, 1))
-; 231  :             {
-; 232  :             OALMSG(OAL_ERROR, (L"ERROR: EBOOT!BLWriteBootCfg: "
-; 233  :                 L"Flash sector %d write failed\r\n", sector
-; 234  :                 ));
-; 235  :             goto cleanUp;
-; 236  :             }
-; 237  : 
-; 238  :         // Move to next sector
-; 239  :         sector++;
-; 240  :         offset += flashInfo.wDataBytesPerSector;
-; 241  :     }
-; 242  : 
-; 243  :     // Done    
-; 244  :     rc = TRUE;
+; 204  :     //  Copy the config info into last sector of saved block in RAM
+; 205  :     memcpy(pEBOOT + offset, pBootCfg, sizeof(BOOT_CFG)); 
+; 206  : 
+; 207  : 
+; 208  :     // Erase block
+; 209  :     if (!FMD_EraseBlock(block))
+; 210  :         {
+; 211  :         OALMSG(OAL_ERROR, (L"ERROR: EBOOT!BLWriteBootCfg: "
+; 212  :             L"Flash block %d erase failed\r\n", block
+; 213  :             ));
+; 214  :         goto cleanUp;
+; 215  :         }
+; 216  : 
+; 217  : 
+; 218  :     // Write contents of the save block + config sector back to flash
+; 219  :     pEBOOT = (UINT8*)IMAGE_WINCE_CODE_CA;
+; 220  :     length = flashInfo.dwBytesPerBlock;
+; 221  : 
+; 222  :     sector = block * flashInfo.wSectorsPerBlock;
+; 223  :     offset = 0;
+; 224  :     while (offset < length)
+; 225  :     {
+; 226  :         // Prepare sector info
+; 227  :         memset(&sectorInfo, 0xFF, sizeof(sectorInfo));
+; 228  :         sectorInfo.bOEMReserved &= ~(OEM_BLOCK_READONLY|OEM_BLOCK_RESERVED);
+; 229  :         sectorInfo.dwReserved1 = 0;
+; 230  :         sectorInfo.wReserved2 = 0;
+; 231  : 
+; 232  :         // Write sector        
+; 233  :         if (!FMD_WriteSector(sector, pEBOOT + offset, &sectorInfo, 1))
+; 234  :             {
+; 235  :             OALMSG(OAL_ERROR, (L"ERROR: EBOOT!BLWriteBootCfg: "
+; 236  :                 L"Flash sector %d write failed\r\n", sector
+; 237  :                 ));
+; 238  :             goto cleanUp;
+; 239  :             }
+; 240  : 
+; 241  :         // Move to next sector
+; 242  :         sector++;
+; 243  :         offset += flashInfo.wDataBytesPerSector;
+; 244  :     }
 ; 245  : 
-; 246  : cleanUp:
-; 247  :     if (hFMD != NULL) FMD_Deinit(hFMD);
-; 248  : #else
-; 249  :     UNREFERENCED_PARAMETER(pBootCfg);
-; 250  : #endif
-; 251  :     return rc;
+; 246  :     // Done    
+; 247  :     rc = TRUE;
+; 248  : 
+; 249  : cleanUp:
+; 250  :     if (hFMD != NULL) FMD_Deinit(hFMD);
+; 251  : #else
+; 252  :     UNREFERENCED_PARAMETER(pBootCfg);
+; 253  : #endif
+; 254  :     return rc;
 
   00000	e3a00000	 mov         r0, #0
 
-; 252  : }
+; 255  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M46833|
+  00008		 |$M46842|
 
 			 ENDP  ; |BLWriteBootCfg|
 
 	EXPORT	|BLReserveBootBlocks|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46844| DCD	|$LN5@BLReserveB|
+|$T46853| DCD	|$LN5@BLReserveB|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -352,101 +352,101 @@
 
   00000		 |BLReserveBootBlocks| PROC
 
-; 257  : {
+; 260  : {
 
   00000		 |$LN5@BLReserveB|
-  00000		 |$M46841|
+  00000		 |$M46850|
 
-; 258  : #ifndef BSP_NO_NAND_IN_SDBOOT
-; 259  :     BOOL rc = FALSE;
-; 260  :     HANDLE hFMD;
-; 261  :     PCI_REG_INFO regInfo;
-; 262  :     FlashInfo flashInfo;
-; 263  :     UINT32 size;
-; 264  :     BLOCK_ID firstblock, lastblock;
-; 265  :     //UINT32 status;
-; 266  :     
-; 267  :     UNREFERENCED_PARAMETER(pBootCfg);
-; 268  : 
-; 269  :     // Automatically mark the bootloader blocks as read-only/reserved
-; 270  :     regInfo.MemBase.Reg[0] = g_ulFlashBase;
-; 271  :     hFMD = FMD_Init(NULL, &regInfo, NULL);
-; 272  :     if (hFMD == NULL)
-; 273  : 	{
-; 274  :         OALMSG(OAL_ERROR, (L"ERROR: FMD_Init call failed!\r\n"));
-; 275  :         goto cleanUp;
-; 276  : 	}
-; 277  : 
-; 278  :     // Get flash info
-; 279  :     if (!FMD_GetInfo(&flashInfo))
-; 280  : 	{
-; 281  :         OALMSG(OAL_ERROR, (L"ERROR: FMD_GetInfo call failed!\r\n"));
-; 282  :         goto cleanUp;
-; 283  : 	}
-; 284  : 
-; 285  :     //  Loop thru the bootloader blocks to ensure they are marked reserved
-; 286  :     firstblock = 0;
-; 287  :     size = IMAGE_BOOTLOADER_NAND_SIZE;
-; 288  :     lastblock = ((size -1) / flashInfo.dwBytesPerBlock) + 1;
-; 289  : 	OALLog(L"IMAGE_BOOTLOADER_NAND_SIZE = 0x%x\r\n", IMAGE_BOOTLOADER_NAND_SIZE);
-; 290  : 	OALLog(L"dwBytesPerBlock = 0x%x\r\n", flashInfo.dwBytesPerBlock);
-; 291  :     OALLog(L"Checking bootloader blocks are marked as reserved (Num = %d)\r\n", lastblock-firstblock);
-; 292  : 
-; 293  :     while (firstblock < lastblock)
-; 294  : 	{
+; 261  : #ifndef BSP_NO_NAND_IN_SDBOOT
+; 262  :     BOOL rc = FALSE;
+; 263  :     HANDLE hFMD;
+; 264  :     PCI_REG_INFO regInfo;
+; 265  :     FlashInfo flashInfo;
+; 266  :     UINT32 size;
+; 267  :     BLOCK_ID firstblock, lastblock;
+; 268  :     //UINT32 status;
+; 269  :     
+; 270  :     UNREFERENCED_PARAMETER(pBootCfg);
+; 271  : 
+; 272  :     // Automatically mark the bootloader blocks as read-only/reserved
+; 273  :     regInfo.MemBase.Reg[0] = g_ulFlashBase;
+; 274  :     hFMD = FMD_Init(NULL, &regInfo, NULL);
+; 275  :     if (hFMD == NULL)
+; 276  : 	{
+; 277  :         OALMSG(OAL_ERROR, (L"ERROR: FMD_Init call failed!\r\n"));
+; 278  :         goto cleanUp;
+; 279  : 	}
+; 280  : 
+; 281  :     // Get flash info
+; 282  :     if (!FMD_GetInfo(&flashInfo))
+; 283  : 	{
+; 284  :         OALMSG(OAL_ERROR, (L"ERROR: FMD_GetInfo call failed!\r\n"));
+; 285  :         goto cleanUp;
+; 286  : 	}
+; 287  : 
+; 288  :     //  Loop thru the bootloader blocks to ensure they are marked reserved
+; 289  :     firstblock = 0;
+; 290  :     size = IMAGE_BOOTLOADER_NAND_SIZE;
+; 291  :     lastblock = ((size -1) / flashInfo.dwBytesPerBlock) + 1;
+; 292  : 	OALLog(L"IMAGE_BOOTLOADER_NAND_SIZE = 0x%x\r\n", IMAGE_BOOTLOADER_NAND_SIZE);
+; 293  : 	OALLog(L"dwBytesPerBlock = 0x%x\r\n", flashInfo.dwBytesPerBlock);
+; 294  :     OALLog(L"Checking bootloader blocks are marked as reserved (Num = %d)\r\n", lastblock-firstblock);
 ; 295  : 
-; 296  :         // If block is bad, we have to offset it
-; 297  :         status = FMD_GetBlockStatus(firstblock);
+; 296  :     while (firstblock < lastblock)
+; 297  : 	{
 ; 298  : 
-; 299  :         // Skip bad blocks
-; 300  :         if ((status & BLOCK_STATUS_BAD) != 0) 
-; 301  :             {
-; 302  :             OALLog(L" Skip bad block %d\r\n", firstblock);
-; 303  :             // blocks marked bad would not have been written either, so don't include this 
-; 304  :             // in the count of blocks that are reserved.
-; 305  :             firstblock++;
-; 306  :             lastblock++;
-; 307  :             continue;
-; 308  :             }
-; 309  : 
-; 310  :         // Skip already reserved blocks
-; 311  :         if ((status & BLOCK_STATUS_RESERVED) != 0) 
-; 312  :             {
-; 313  :             firstblock++;
-; 314  :             continue;
-; 315  :             }
-; 316  : 
-; 317  :         // Mark block as read-only & reserved
-; 318  :         if (!FMD_SetBlockStatus(firstblock, BLOCK_STATUS_READONLY|BLOCK_STATUS_RESERVED)) 
-; 319  :             {
-; 320  :             OALLog(L" Oops, can't mark block %d - as reserved\r\n", firstblock);
-; 321  :             }
-; 322  : 
-; 323  :         firstblock++;
-; 324  :         OALLog(L".");
-; 325  : 	}
-; 326  : 
-; 327  :     // Done    
-; 328  :     rc = TRUE;
+; 299  :         // If block is bad, we have to offset it
+; 300  :         status = FMD_GetBlockStatus(firstblock);
+; 301  : 
+; 302  :         // Skip bad blocks
+; 303  :         if ((status & BLOCK_STATUS_BAD) != 0) 
+; 304  :             {
+; 305  :             OALLog(L" Skip bad block %d\r\n", firstblock);
+; 306  :             // blocks marked bad would not have been written either, so don't include this 
+; 307  :             // in the count of blocks that are reserved.
+; 308  :             firstblock++;
+; 309  :             lastblock++;
+; 310  :             continue;
+; 311  :             }
+; 312  : 
+; 313  :         // Skip already reserved blocks
+; 314  :         if ((status & BLOCK_STATUS_RESERVED) != 0) 
+; 315  :             {
+; 316  :             firstblock++;
+; 317  :             continue;
+; 318  :             }
+; 319  : 
+; 320  :         // Mark block as read-only & reserved
+; 321  :         if (!FMD_SetBlockStatus(firstblock, BLOCK_STATUS_READONLY|BLOCK_STATUS_RESERVED)) 
+; 322  :             {
+; 323  :             OALLog(L" Oops, can't mark block %d - as reserved\r\n", firstblock);
+; 324  :             }
+; 325  : 
+; 326  :         firstblock++;
+; 327  :         OALLog(L".");
+; 328  : 	}
 ; 329  : 
-; 330  :     OALLog(L"\r\n");
-; 331  : 
-; 332  : cleanUp:
-; 333  :     if (hFMD != NULL) FMD_Deinit(hFMD);
-; 334  :     return rc;
-; 335  : #else
-; 336  :     UNREFERENCED_PARAMETER(pBootCfg);
-; 337  :     // Nothing to do...
-; 338  :     return TRUE;
+; 330  :     // Done    
+; 331  :     rc = TRUE;
+; 332  : 
+; 333  :     OALLog(L"\r\n");
+; 334  : 
+; 335  : cleanUp:
+; 336  :     if (hFMD != NULL) FMD_Deinit(hFMD);
+; 337  :     return rc;
+; 338  : #else
+; 339  :     UNREFERENCED_PARAMETER(pBootCfg);
+; 340  :     // Nothing to do...
+; 341  :     return TRUE;
 
   00000	e3a00001	 mov         r0, #1
 
-; 339  : 
-; 340  : #endif
-; 341  : }
+; 342  : 
+; 343  : #endif
+; 344  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M46842|
+  00008		 |$M46851|
 
 			 ENDP  ; |BLReserveBootBlocks|
 
@@ -454,7 +454,7 @@
 	IMPORT	|ShowSDLogo|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46853| DCD	|$LN5@BLShowLogo|
+|$T46862| DCD	|$LN5@BLShowLogo|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -462,31 +462,32 @@
 
   00000		 |BLShowLogo| PROC
 
-; 346  : {
+; 349  : {
 
   00000		 |$LN5@BLShowLogo|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46850|
+  00004		 |$M46859|
 
-; 347  : 	//  Show the bootloader splashscreen if present on the SDCard
-; 348  : 	//if (!ShowSDLogo())			 //Ray 13-08-30 
-; 349  : 	//{
-; 350  : 		ShowSDLogo();
+; 350  : 	//  Show the bootloader splashscreen if present on the SDCard
+; 351  : 	//if (!ShowSDLogo())			 //Ray 13-08-30 
+; 352  : 	//{
+; 353  : 		ShowSDLogo();
 
   00004	eb000000	 bl          ShowSDLogo
 
-; 351  : 		//ShowLogo((UINT32)-1, 0);
-; 352  :     //}  
-; 353  : 	
-; 354  : 	return TRUE;
+; 354  : 		//DrawingScreen((UINT32)-1, 0);
+; 355  : 		//ShowLogo((UINT32)-1, 0);
+; 356  :     //}  
+; 357  : 	
+; 358  : 	return TRUE;
 
   00008	e3a00001	 mov         r0, #1
 
-; 355  : }
+; 359  : }
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M46851|
+  00014		 |$M46860|
 
 			 ENDP  ; |BLShowLogo|
 

@@ -11,7 +11,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\ceddk\dll\temp.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39637| DCD	|$LN5@BusClockRe|
+|$T39647| DCD	|$LN5@BusClockRe|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -22,7 +22,7 @@
 ; 16   : {
 
   00000		 |$LN5@BusClockRe|
-  00000		 |$M39634|
+  00000		 |$M39644|
 
 ; 17   :     UNREFERENCED_PARAMETER(hBus);
 ; 18   :     UNREFERENCED_PARAMETER(id);
@@ -33,14 +33,14 @@
 ; 20   : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M39635|
+  00008		 |$M39645|
 
 			 ENDP  ; |BusClockRequest|
 
 	EXPORT	|BusClockRelease|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39646| DCD	|$LN5@BusClockRe@2|
+|$T39656| DCD	|$LN5@BusClockRe@2|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -51,7 +51,7 @@
 ; 31   : {
 
   00000		 |$LN5@BusClockRe@2|
-  00000		 |$M39643|
+  00000		 |$M39653|
 
 ; 32   :     UNREFERENCED_PARAMETER(hBus);
 ; 33   :     UNREFERENCED_PARAMETER(id);
@@ -62,14 +62,14 @@
 ; 35   : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M39644|
+  00008		 |$M39654|
 
 			 ENDP  ; |BusClockRelease|
 
 	EXPORT	|BusSourceClocks|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39655| DCD	|$LN5@BusSourceC|
+|$T39665| DCD	|$LN5@BusSourceC|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -80,7 +80,7 @@
 ; 48   : {
 
   00000		 |$LN5@BusSourceC|
-  00000		 |$M39652|
+  00000		 |$M39662|
 
 ; 49   :     UNREFERENCED_PARAMETER(hBus);
 ; 50   :     UNREFERENCED_PARAMETER(id);
@@ -93,7 +93,7 @@
 ; 54   : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M39653|
+  00008		 |$M39663|
 
 			 ENDP  ; |BusSourceClocks|
 
@@ -103,7 +103,7 @@
 	IMPORT	|KernelIoControl|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39665| DCD	|$LN8@GetDisplay|
+|$T39675| DCD	|$LN8@GetDisplay|
 	DCD	0x40001502
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -125,7 +125,7 @@
   00000		 |$LN8@GetDisplay|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M39662|
+  00008		 |$M39672|
   00008	e1a03000	 mov         r3, r0
 
 ; 61   :     DWORD   dwKernelRet = 0;
@@ -162,14 +162,14 @@
   0004c	00000000	 DCD         |??_C@_1EI@NDGNIHKN@?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AAt?$AAo?$AA?5?$AAr?$AAe?$AAa?$AAd?$AA?5?$AAD?$AAi?$AAs?$AAp?$AAl?$AAa?$AAy?$AA?5?$AAr?$AAe?$AAs?$AAo?$AAl?$AAu?$AAt?$AAi?$AAo@|
   00050		 |$LN11@GetDisplay|
   00050	01011130	 DCD         0x1011130
-  00054		 |$M39663|
+  00054		 |$M39673|
 
 			 ENDP  ; |GetDisplayResolutionFromBootArgs|
 
 	EXPORT	|IsDVIMode|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39677| DCD	|$LN7@IsDVIMode|
+|$T39687| DCD	|$LN7@IsDVIMode|
 	DCD	0x40000b02
 ; Function compile flags: /Ogspy
 
@@ -182,7 +182,7 @@
   00000		 |$LN7@IsDVIMode|
   00000	e52de004	 str         lr, [sp, #-4]!
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M39674|
+  00008		 |$M39684|
 
 ; 73   :     DWORD dispRes;    
 ; 74   :     GetDisplayResolutionFromBootArgs(&dispRes);
@@ -209,7 +209,7 @@
   00020	e28dd004	 add         sp, sp, #4
   00024	e49de004	 ldr         lr, [sp], #4
   00028	e12fff1e	 bx          lr
-  0002c		 |$M39675|
+  0002c		 |$M39685|
 
 			 ENDP  ; |IsDVIMode|
 
@@ -217,7 +217,7 @@
 	EXPORT	|??_C@_1DK@LGDNMNLJ@?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AAt?$AAo?$AA?5?$AAc?$AAo?$AAn?$AAv?$AAe?$AAr?$AAt?$AA?5?$AAC?$AAA?$AA?5?$AAt?$AAo?$AA?5?$AAP?$AAA?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T39689| DCD	|$LN9@ConvertCAt|
+|$T39699| DCD	|$LN9@ConvertCAt|
 	DCD	0x40001b02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -238,7 +238,7 @@
   00000		 |$LN9@ConvertCAt|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd010	 sub         sp, sp, #0x10
-  00008		 |$M39686|
+  00008		 |$M39696|
   00008	e1a01000	 mov         r1, r0
 
 ; 84   :     DWORD   dwKernelRet = 0;
@@ -292,7 +292,7 @@
   00064	00000000	 DCD         |??_C@_1DK@LGDNMNLJ@?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AAt?$AAo?$AA?5?$AAc?$AAo?$AAn?$AAv?$AAe?$AAr?$AAt?$AA?5?$AAC?$AAA?$AA?5?$AAt?$AAo?$AA?5?$AAP?$AAA?$AA?$AN?$AA?6?$AA?$AA@|
   00068		 |$LN12@ConvertCAt|
   00068	01011134	 DCD         0x1011134
-  0006c		 |$M39687|
+  0006c		 |$M39697|
 
 			 ENDP  ; |ConvertCAtoPA|
 

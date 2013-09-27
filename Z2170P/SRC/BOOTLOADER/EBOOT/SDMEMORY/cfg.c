@@ -19,6 +19,9 @@
 #include <eboot.h>
 #include <bsp_logo.h>
 #include "lcd.h"
+//
+void DrawingScreen(UINT32, UINT32);
+
 
 //------------------------------------------------------------------------------
 
@@ -348,6 +351,7 @@ BOOL BLShowLogo()
 	//if (!ShowSDLogo())			 //Ray 13-08-30 
 	//{
 		ShowSDLogo();
+		//DrawingScreen((UINT32)-1, 0);
 		//ShowLogo((UINT32)-1, 0);
     //}  
 	

@@ -89,7 +89,7 @@
 ; File c:\wince600\platform\z2170p\src\bootloader\xldr\main.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47684| DCD	|$LN5@BSPGpioIni|
+|$T47696| DCD	|$LN5@BSPGpioIni|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 
@@ -97,34 +97,34 @@
 
   00000		 |BSPGpioInit| PROC
 
-; 281  : {
+; 282  : {
 
   00000		 |$LN5@BSPGpioIni|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M47681|
+  00004		 |$M47693|
 
-; 282  :    BSPInsertGpioDevice(0,&Omap_Gpio,NULL);
+; 283  :    BSPInsertGpioDevice(0,&Omap_Gpio,NULL);
 
   00004	e59f1010	 ldr         r1, [pc, #0x10]
   00008	e3a02000	 mov         r2, #0
   0000c	e3a00000	 mov         r0, #0
   00010	eb000000	 bl          BSPInsertGpioDevice
 
-; 283  : }
+; 284  : }
 
   00014	e49de004	 ldr         lr, [sp], #4
   00018	e12fff1e	 bx          lr
   0001c		 |$LN6@BSPGpioIni|
   0001c		 |$LN7@BSPGpioIni|
   0001c	00000000	 DCD         |Omap_Gpio|
-  00020		 |$M47682|
+  00020		 |$M47694|
 
 			 ENDP  ; |BSPGpioInit|
 
 	EXPORT	|OALPAtoVA|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47696| DCD	|$LN5@OALPAtoVA|
+|$T47708| DCD	|$LN5@OALPAtoVA|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -132,24 +132,24 @@
 
   00000		 |OALPAtoVA| PROC
 
-; 730  : {
+; 734  : {
 
   00000		 |$LN5@OALPAtoVA|
-  00000		 |$M47693|
+  00000		 |$M47705|
 
-; 731  :     UNREFERENCED_PARAMETER(cached);
-; 732  :     return (VOID*)address;
-; 733  : }
+; 735  :     UNREFERENCED_PARAMETER(cached);
+; 736  :     return (VOID*)address;
+; 737  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M47694|
+  00004		 |$M47706|
 
 			 ENDP  ; |OALPAtoVA|
 
 	EXPORT	|OALVAtoPA|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47706| DCD	|$LN5@OALVAtoPA|
+|$T47718| DCD	|$LN5@OALVAtoPA|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -157,22 +157,22 @@
 
   00000		 |OALVAtoPA| PROC
 
-; 741  : {
+; 745  : {
 
   00000		 |$LN5@OALVAtoPA|
-  00000		 |$M47703|
+  00000		 |$M47715|
 
-; 742  :     return (UINT32)pVA;
-; 743  : }
+; 746  :     return (UINT32)pVA;
+; 747  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M47704|
+  00004		 |$M47716|
 
 			 ENDP  ; |OALVAtoPA|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47733| DCD	|$LN23@SetupCopyS|
+|$T47745| DCD	|$LN23@SetupCopyS|
 	DCD	0x40002801
 ; Function compile flags: /Ogspy
 
@@ -180,28 +180,28 @@
 
   00000		 |SetupCopySection| PROC
 
-; 756  : {
+; 760  : {
 
   00000		 |$LN23@SetupCopyS|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M47730|
+  00004		 |$M47742|
   00004	e1a01000	 mov         r1, r0
 
-; 757  :     BOOL rc = FALSE;
+; 761  :     BOOL rc = FALSE;
 
   00008	e3a00000	 mov         r0, #0
 
-; 758  :     UINT32 loop, count;
-; 759  :     COPYentry *pCopyEntry;
-; 760  :     UINT8 *pSrc, *pDst;
-; 761  : 
-; 762  :     if (pTableOfContents == (ROMHDR *const) -1) goto cleanUp;
+; 762  :     UINT32 loop, count;
+; 763  :     COPYentry *pCopyEntry;
+; 764  :     UINT8 *pSrc, *pDst;
+; 765  : 
+; 766  :     if (pTableOfContents == (ROMHDR *const) -1) goto cleanUp;
 
   0000c	e3710001	 cmn         r1, #1
-  00010	0a000020	 beq         |$cleanUp$47615|
+  00010	0a000020	 beq         |$cleanUp$47627|
 
-; 763  : 
-; 764  :     for (loop = 0; loop < pTableOfContents->ulCopyEntries; loop++)
+; 767  : 
+; 768  :     for (loop = 0; loop < pTableOfContents->ulCopyEntries; loop++)
 
   00014	e5913020	 ldr         r3, [r1, #0x20]
   00018	e3a0e000	 mov         lr, #0
@@ -213,28 +213,28 @@
   0002c	e5913024	 ldr         r3, [r1, #0x24]
   00030	e0845003	 add         r5, r4, r3
 
-; 765  :         {
-; 766  :         pCopyEntry = (COPYentry *)(pTableOfContents->ulCopyOffset + loop*sizeof(COPYentry));
-; 767  : 
-; 768  :         count = pCopyEntry->ulCopyLen;
+; 769  :         {
+; 770  :         pCopyEntry = (COPYentry *)(pTableOfContents->ulCopyOffset + loop*sizeof(COPYentry));
+; 771  : 
+; 772  :         count = pCopyEntry->ulCopyLen;
 
   00034	e5953008	 ldr         r3, [r5, #8]
 
-; 769  :         pDst = (UINT8*)pCopyEntry->ulDest;
+; 773  :         pDst = (UINT8*)pCopyEntry->ulDest;
 
   00038	e5950004	 ldr         r0, [r5, #4]
 
-; 770  :         pSrc = (UINT8*)pCopyEntry->ulSource;
+; 774  :         pSrc = (UINT8*)pCopyEntry->ulSource;
 
   0003c	e5952000	 ldr         r2, [r5]
   00040	e1b06003	 movs        r6, r3
 
-; 771  :         while (count-- > 0)
+; 775  :         while (count-- > 0)
 
   00044	0a000003	 beq         |$LN14@SetupCopyS|
   00048		 |$LL4@SetupCopyS|
 
-; 772  :             *pDst++ = *pSrc++;
+; 776  :             *pDst++ = *pSrc++;
 
   00048	e4d23001	 ldrb        r3, [r2], #1
   0004c	e2566001	 subs        r6, r6, #1
@@ -242,19 +242,19 @@
   00054	1afffffb	 bne         |$LL4@SetupCopyS|
   00058		 |$LN14@SetupCopyS|
 
-; 773  :         count = pCopyEntry->ulDestLen - pCopyEntry->ulCopyLen;
+; 777  :         count = pCopyEntry->ulDestLen - pCopyEntry->ulCopyLen;
 
   00058	e595200c	 ldr         r2, [r5, #0xC]
   0005c	e5953008	 ldr         r3, [r5, #8]
   00060	e0523003	 subs        r3, r2, r3
 
-; 774  :         while (count-- > 0)
+; 778  :         while (count-- > 0)
 
   00064	0a000005	 beq         |$LN2@SetupCopyS|
   00068	e3530000	 cmp         r3, #0
   0006c	0a000003	 beq         |$LN2@SetupCopyS|
 
-; 773  :         count = pCopyEntry->ulDestLen - pCopyEntry->ulCopyLen;
+; 777  :         count = pCopyEntry->ulDestLen - pCopyEntry->ulCopyLen;
 
   00070	e0803003	 add         r3, r0, r3
   00074		 |$LN19@SetupCopyS|
@@ -263,8 +263,8 @@
   0007c	1afffffc	 bne         |$LN19@SetupCopyS|
   00080		 |$LN2@SetupCopyS|
 
-; 763  : 
-; 764  :     for (loop = 0; loop < pTableOfContents->ulCopyEntries; loop++)
+; 767  : 
+; 768  :     for (loop = 0; loop < pTableOfContents->ulCopyEntries; loop++)
 
   00080	e5913020	 ldr         r3, [r1, #0x20]
   00084	e28ee001	 add         lr, lr, #1
@@ -273,29 +273,29 @@
   00090	3affffe5	 bcc         |$LL7@SetupCopyS|
   00094		 |$LN5@SetupCopyS|
 
-; 775  :             *pDst++ = 0;
-; 776  :         }
-; 777  : 
-; 778  :     rc = TRUE;
+; 779  :             *pDst++ = 0;
+; 780  :         }
+; 781  : 
+; 782  :     rc = TRUE;
 
   00094	e3a00001	 mov         r0, #1
-  00098		 |$cleanUp$47615|
+  00098		 |$cleanUp$47627|
 
-; 779  : 
-; 780  : cleanUp:
-; 781  :     return rc;
-; 782  : }
+; 783  : 
+; 784  : cleanUp:
+; 785  :     return rc;
+; 786  : }
 
   00098	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   0009c	e12fff1e	 bx          lr
-  000a0		 |$M47731|
+  000a0		 |$M47743|
 
 			 ENDP  ; |SetupCopySection|
 
 	EXPORT	|NKDbgPrintfW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47740| DCD	|$LN5@NKDbgPrint|
+|$T47752| DCD	|$LN5@NKDbgPrint|
 	DCD	0x40000503
 ; Function compile flags: /Ogspy
 
@@ -303,28 +303,28 @@
 
   00000		 |NKDbgPrintfW| PROC
 
-; 790  : {
+; 794  : {
 
   00000		 |$LN5@NKDbgPrint|
   00000	e1a0c00d	 mov         r12, sp
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5000	 stmdb       sp!, {r12, lr}
-  0000c		 |$M47737|
+  0000c		 |$M47749|
 
-; 791  :     //  Stubbed out to shrink XLDR binary size
-; 792  :     UNREFERENCED_PARAMETER(pszFormat);
-; 793  : }
+; 795  :     //  Stubbed out to shrink XLDR binary size
+; 796  :     UNREFERENCED_PARAMETER(pszFormat);
+; 797  : }
 
   0000c	e89d6000	 ldmia       sp, {sp, lr}
   00010	e12fff1e	 bx          lr
-  00014		 |$M47738|
+  00014		 |$M47750|
 
 			 ENDP  ; |NKDbgPrintfW|
 
 	EXPORT	|NKvDbgPrintfW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47747| DCD	|$LN5@NKvDbgPrin|
+|$T47759| DCD	|$LN5@NKvDbgPrin|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -332,19 +332,19 @@
 
   00000		 |NKvDbgPrintfW| PROC
 
-; 801  : {
+; 805  : {
 
   00000		 |$LN5@NKvDbgPrin|
-  00000		 |$M47744|
+  00000		 |$M47756|
 
-; 802  :     //  Stubbed out to shrink XLDR binary size
-; 803  :     UNREFERENCED_PARAMETER(pszFormat);
-; 804  :     UNREFERENCED_PARAMETER(pArgList);
-; 805  : 
-; 806  : }
+; 806  :     //  Stubbed out to shrink XLDR binary size
+; 807  :     UNREFERENCED_PARAMETER(pszFormat);
+; 808  :     UNREFERENCED_PARAMETER(pArgList);
+; 809  : 
+; 810  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M47745|
+  00004		 |$M47757|
 
 			 ENDP  ; |NKvDbgPrintfW|
 
@@ -357,7 +357,7 @@
 	EXPORT	|??_C@_1CO@MAFCCJBC@?$AA?$AN?$AA?6?$AAF?$AAM?$AAD?$AA_?$AAG?$AAe?$AAt?$AAI?$AAn?$AAf?$AAo?$AA?5?$AAf?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1CI@HOAHMIF@?$AA?$AN?$AA?6?$AAF?$AAM?$AAD?$AA_?$AAI?$AAn?$AAi?$AAt?$AA?5?$AAf?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1GM@DIKPCKDC@?$AA?$AN?$AA?6?$AAT?$AAe?$AAx?$AAa?$AAs?$AA?5?$AAI?$AAn?$AAs?$AAt?$AAr?$AAu?$AAm?$AAe?$AAn?$AAt?$AAs?$AA?5?$AAW?$AAi?$AAn?$AAd?$AAo?$AAw?$AAs?$AA?5?$AAC?$AAE?$AA?5?$AAN@| [ DATA ] ; `string'
-	EXPORT	|??_C@_1EE@BAMNGDDK@?$AA?$AN?$AA?6?$AAB?$AAu?$AAi?$AAl?$AAt?$AA?5?$AAS?$AAe?$AAp?$AA?5?$AA1?$AA2?$AA?5?$AA2?$AA0?$AA1?$AA3?$AA?5?$AAa?$AAt?$AA?5?$AA1?$AA3?$AA?3?$AA5?$AA7?$AA?3?$AA2?$AA7?$AA?$AN@| [ DATA ] ; `string'
+	EXPORT	|??_C@_1EE@OAKDKCHO@?$AA?$AN?$AA?6?$AAB?$AAu?$AAi?$AAl?$AAt?$AA?5?$AAS?$AAe?$AAp?$AA?5?$AA2?$AA7?$AA?5?$AA2?$AA0?$AA1?$AA3?$AA?5?$AAa?$AAt?$AA?5?$AA1?$AA7?$AA?3?$AA0?$AA4?$AA?3?$AA2?$AA4?$AA?$AN@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1EG@EDBNOKCM@?$AAV?$AAe?$AAr?$AAs?$AAi?$AAo?$AAn?$AA?5?$AAZ?$AAE?$AAB?$AAE?$AAX?$AA_?$AAW?$AAI?$AAN?$AAC?$AAE?$AA_?$AAA?$AAR?$AAM?$AA_?$AAA?$AA8?$AA?5?$AA0?$AA?4?$AA0?$AA?4?$AA1@| [ DATA ] ; `string'
 	EXPORT	|??_C@_19GCHMHJHE@?$AA3?$AA7?$AA3?$AA0?$AA?$AA@| [ DATA ] ; `string'
 	EXPORT	|??_C@_19CAFJHOAJ@?$AA3?$AA5?$AA3?$AA0?$AA?$AA@| [ DATA ] ; `string'
@@ -386,7 +386,7 @@
 |?allocationPool@?1??XLDRMain@@9@9| % 0x200		; `XLDRMain'::`2'::allocationPool
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47811| DCD	|$LN51@XLDRMain|
+|$T47823| DCD	|$LN51@XLDRMain|
 	DCD	0x4000b202
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -438,12 +438,12 @@
 	DCB	0x0, "E", 0x0, "V", 0x0, "M", 0x0, " ", 0x0, 0x0, 0x0 ; `string'
 
   00000			 AREA	 |.rdata|, DATA, READONLY
-|??_C@_1EE@BAMNGDDK@?$AA?$AN?$AA?6?$AAB?$AAu?$AAi?$AAl?$AAt?$AA?5?$AAS?$AAe?$AAp?$AA?5?$AA1?$AA2?$AA?5?$AA2?$AA0?$AA1?$AA3?$AA?5?$AAa?$AAt?$AA?5?$AA1?$AA3?$AA?3?$AA5?$AA7?$AA?3?$AA2?$AA7?$AA?$AN@| DCB 0xd
+|??_C@_1EE@OAKDKCHO@?$AA?$AN?$AA?6?$AAB?$AAu?$AAi?$AAl?$AAt?$AA?5?$AAS?$AAe?$AAp?$AA?5?$AA2?$AA7?$AA?5?$AA2?$AA0?$AA1?$AA3?$AA?5?$AAa?$AAt?$AA?5?$AA1?$AA7?$AA?3?$AA0?$AA4?$AA?3?$AA2?$AA4?$AA?$AN@| DCB 0xd
 	DCB	0x0, 0xa, 0x0, "B", 0x0, "u", 0x0, "i", 0x0, "l", 0x0, "t"
-	DCB	0x0, " ", 0x0, "S", 0x0, "e", 0x0, "p", 0x0, " ", 0x0, "1"
-	DCB	0x0, "2", 0x0, " ", 0x0, "2", 0x0, "0", 0x0, "1", 0x0, "3"
-	DCB	0x0, " ", 0x0, "a", 0x0, "t", 0x0, " ", 0x0, "1", 0x0, "3"
-	DCB	0x0, ":", 0x0, "5", 0x0, "7", 0x0, ":", 0x0, "2", 0x0, "7"
+	DCB	0x0, " ", 0x0, "S", 0x0, "e", 0x0, "p", 0x0, " ", 0x0, "2"
+	DCB	0x0, "7", 0x0, " ", 0x0, "2", 0x0, "0", 0x0, "1", 0x0, "3"
+	DCB	0x0, " ", 0x0, "a", 0x0, "t", 0x0, " ", 0x0, "1", 0x0, "7"
+	DCB	0x0, ":", 0x0, "0", 0x0, "4", 0x0, ":", 0x0, "2", 0x0, "4"
 	DCB	0x0, 0xd, 0x0, 0xa, 0x0, 0x0, 0x0	; `string'
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -468,58 +468,58 @@
 
   00000		 |XLDRMain| PROC
 
-; 290  : {
+; 291  : {
 
   00000		 |$LN51@XLDRMain|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   00004	e24ddfe6	 sub         sp, sp, #0xE6, 30
-  00008		 |$M47808|
+  00008		 |$M47820|
 
-; 291  : #ifdef FMD_NAND
-; 292  :     HANDLE hFMD;
-; 293  :     PCI_REG_INFO regInfo;
-; 294  :     FlashInfo flashInfo;
-; 295  :     UINT32 size;  
-; 296  : #endif
-; 297  : 
-; 298  : #ifdef MEMORY_BOOT
-; 299  :     UINT32 count;
-; 300  :     SECTOR_ADDR ix;
-; 301  : #endif
-; 302  : 
-; 303  : #ifdef UART_BOOT
-; 304  :     UINT32 dnld_size, offset;
-; 305  : 
-; 306  :     INT image_block_cnt, nand_blocks_to_write;
-; 307  :     INT xret;
-; 308  : 
-; 309  :     INT xblock_cnt = 0;
-; 310  :     INT xack_cnt = 0;
-; 311  :     INT xnak_cnt = 0;
-; 312  :     INT xcan_cnt = 0;
-; 313  :     INT xothers_cnt = 0;
-; 314  : 
-; 315  :     INT checksum_error_cnt = 0;
-; 316  :     INT dup_pkt_cnt = 0;
-; 317  : #endif
-; 318  : 
-; 319  :     SECTOR_ADDR sector;
-; 320  :     BLOCK_ID block;
-; 321  :     UINT8 *pImage;
-; 322  :     SectorInfo sectorInfo;
-; 323  : 
-; 324  :     HANDLE hGpio;
-; 325  :     static UCHAR allocationPool[512];
-; 326  :     LPCWSTR ProcessorName   = L"3530";
-; 327  : 
-; 328  :     // Setup global variables
-; 329  :     if (!SetupCopySection(pTOC))
+; 292  : #ifdef FMD_NAND
+; 293  :     HANDLE hFMD;
+; 294  :     PCI_REG_INFO regInfo;
+; 295  :     FlashInfo flashInfo;
+; 296  :     UINT32 size;  
+; 297  : #endif
+; 298  : //
+; 299  : #ifdef MEMORY_BOOT
+; 300  :     UINT32 count;
+; 301  :     SECTOR_ADDR ix;
+; 302  : #endif
+; 303  : //
+; 304  : #ifdef UART_BOOT
+; 305  :     UINT32 dnld_size, offset;
+; 306  : 
+; 307  :     INT image_block_cnt, nand_blocks_to_write;
+; 308  :     INT xret;
+; 309  : 
+; 310  :     INT xblock_cnt  = 0;
+; 311  :     INT xack_cnt    = 0;
+; 312  :     INT xnak_cnt    = 0;
+; 313  :     INT xcan_cnt    = 0;
+; 314  :     INT xothers_cnt = 0;
+; 315  : 
+; 316  :     INT checksum_error_cnt = 0;
+; 317  :     INT dup_pkt_cnt = 0;
+; 318  : #endif
+; 319  : //
+; 320  :     SECTOR_ADDR sector;
+; 321  :     BLOCK_ID block;
+; 322  :     UINT8 *pImage;
+; 323  :     SectorInfo sectorInfo;
+; 324  : 
+; 325  :     HANDLE hGpio;
+; 326  :     static UCHAR allocationPool[512];
+; 327  :     LPCWSTR ProcessorName   = L"3530";
+; 328  : 
+; 329  :     // Setup global variables
+; 330  :     if (!SetupCopySection(pTOC))
 
   00008	e59f92b4	 ldr         r9, [pc, #0x2B4]
   0000c	e59f72ac	 ldr         r7, [pc, #0x2AC]
   00010	e5990000	 ldr         r0, [r9]
   00014	e3700001	 cmn         r0, #1
-  00018	0a000098	 beq         |$cleanUp$47555|
+  00018	0a000098	 beq         |$cleanUp$47567|
   0001c	e5903020	 ldr         r3, [r0, #0x20]
   00020	e3a04000	 mov         r4, #0
   00024	e3530000	 cmp         r3, #0
@@ -559,60 +559,60 @@
   00098	3affffe5	 bcc         |$LL24@XLDRMain|
   0009c		 |$LN22@XLDRMain|
 
-; 330  :         goto cleanUp;
-; 331  : 
-; 332  :     OALLocalAllocInit(allocationPool,sizeof(allocationPool));
+; 331  :         goto cleanUp;
+; 332  : 
+; 333  :     OALLocalAllocInit(allocationPool,sizeof(allocationPool));
 
   0009c	e59f8218	 ldr         r8, [pc, #0x218]
   000a0	e3a01c02	 mov         r1, #2, 24
-  000a4		 |$cleanUp$47760|
+  000a4		 |$cleanUp$47772|
   000a4	e1a00008	 mov         r0, r8
   000a8	eb000000	 bl          OALLocalAllocInit
 
-; 333  : 
-; 334  : /*
-; 335  :     //  Enable cache based on device type
-; 336  :     if( dwOEMHighSecurity == OEM_HIGH_SECURITY_HS )
-; 337  :     {
-; 338  :         EnableCache_HS();
-; 339  :     }
-; 340  :     else
-; 341  :     {
-; 342  :         EnableCache_GP();
-; 343  :     }
-; 344  : */
-; 345  :     EnableCache_GP();
+; 334  : 
+; 335  : /*
+; 336  :     //  Enable cache based on device type
+; 337  :     if( dwOEMHighSecurity == OEM_HIGH_SECURITY_HS )
+; 338  :     {
+; 339  :         EnableCache_HS();
+; 340  :     }
+; 341  :     else
+; 342  :     {
+; 343  :         EnableCache_GP();
+; 344  :     }
+; 345  : */
+; 346  :     EnableCache_GP();
 
   000ac	eb000000	 bl          EnableCache_GP
 
-; 346  : 
-; 347  :     gCPU_family = CPU_FAMILY(Get_CPUVersion());
+; 347  : 
+; 348  :     gCPU_family = CPU_FAMILY(Get_CPUVersion());
 
   000b0	eb000000	 bl          Get_CPUVersion
   000b4	e1a03800	 mov         r3, r0, lsl #16
   000b8	e59f21f8	 ldr         r2, [pc, #0x1F8]
   000bc	e1a03c23	 mov         r3, r3, lsr #24
 
-; 348  : 	
-; 349  :     if( gCPU_family == CPU_FAMILY_DM37XX)
+; 349  : 	
+; 350  :     if( gCPU_family == CPU_FAMILY_DM37XX)
 
   000c0	e3530001	 cmp         r3, #1
 
-; 350  :     {
-; 351  :         ProcessorName = L"3730";
+; 351  :     {
+; 352  :         ProcessorName = L"3730";
 
   000c4	059f71e8	 ldreq       r7, [pc, #0x1E8]
   000c8	e5823000	 str         r3, [r2]
 
-; 352  :     }
-; 353  :     
-; 354  :     PlatformSetup();
+; 353  :     }
+; 354  :     
+; 355  :     PlatformSetup();
 
   000cc	eb000000	 bl          PlatformSetup
 
-; 355  : 
-; 356  :     // Initialize debug serial output
-; 357  :     XLDRMSGINIT;
+; 356  : 
+; 357  :     // Initialize debug serial output
+; 358  :     XLDRMSGINIT;
 
   000d0	eb000000	 bl          BSPGetDebugUARTConfig
   000d4	e5900000	 ldr         r0, [r0]
@@ -620,92 +620,94 @@
   000dc	eb000000	 bl          EnableDeviceClocks
   000e0	eb000000	 bl          OEMInitDebugSerial
 
-; 358  : 
-; 359  :     // Print information...
-; 360  : #ifdef FMD_ONENAND
-; 361  : #ifdef MEMORY_BOOT
-; 362  :     XLDRMSG(
-; 363  :         TEXT("\r\nTexas Instruments Windows CE OneNAND X-Loader for EVM "));
-; 364  :     XLDRMSG( (UINT16 *)ProcessorName);
-; 365  :     XLDRMSG( 
-; 366  :         TEXT("\r\n")
-; 367  :         TEXT("Built ") TEXT(__DATE__) TEXT(" at ") TEXT(__TIME__) TEXT("\r\n")
-; 368  :         );
-; 369  : #endif
+; 359  : 
+; 360  :     // Print information...
+; 361  : #ifdef FMD_ONENAND
+; 362  : #ifdef MEMORY_BOOT
+; 363  :     XLDRMSG(
+; 364  :         TEXT("\r\nTexas Instruments Windows CE OneNAND X-Loader for EVM "));
+; 365  :     XLDRMSG( (UINT16 *)ProcessorName);
+; 366  :     XLDRMSG( 
+; 367  :         TEXT("\r\n")
+; 368  :         TEXT("Built ") TEXT(__DATE__) TEXT(" at ") TEXT(__TIME__) TEXT("\r\n")
+; 369  :         );
 ; 370  : #endif
-; 371  : #ifdef FMD_NAND
-; 372  : #ifdef MEMORY_BOOT
-; 373  :     XLDRMSG( TEXT("\r\nTexas Instruments Windows CE NAND X-Loader for EVM "));
+; 371  : #endif
+; 372  : 
+; 373  : #ifdef FMD_NAND        //When doesnot insert SD card, bootstrap from NAND, Ray 13-09-14
+; 374  : #ifdef MEMORY_BOOT
+; 375  :     XLDRMSG( TEXT("\r\nTexas Instruments Windows CE NAND X-Loader for EVM "));
 
   000e4	e59f01c4	 ldr         r0, [pc, #0x1C4]
   000e8	eb000000	 bl          OEMWriteDebugString
 
-; 374  :     XLDRMSG( (UINT16 *)ProcessorName);
+; 376  :     XLDRMSG( (UINT16 *)ProcessorName);
 
   000ec	e1a00007	 mov         r0, r7
   000f0	eb000000	 bl          OEMWriteDebugString
 
-; 375  :     XLDRMSG( 
-; 376  :         TEXT("\r\n")
-; 377  :         TEXT("Built ") TEXT(__DATE__) TEXT(" at ") TEXT(__TIME__) TEXT("\r\n")
-; 378  :         );
+; 377  :     XLDRMSG( 
+; 378  :         TEXT("\r\n")
+; 379  :         TEXT("Built ") TEXT(__DATE__) TEXT(" at ") TEXT(__TIME__) TEXT("\r\n")
+; 380  :         );
 
   000f4	e59f01b0	 ldr         r0, [pc, #0x1B0]
   000f8	eb000000	 bl          OEMWriteDebugString
 
-; 379  : #endif
-; 380  : #endif
-; 381  :     XLDRMSG(
-; 382  :         TEXT("Version ") BSP_VERSION_STRING TEXT("\r\n")
-; 383  :         );
+; 381  : #endif
+; 382  : #endif
+; 383  : //
+; 384  :     XLDRMSG(
+; 385  :         TEXT("Version ") BSP_VERSION_STRING TEXT("\r\n")
+; 386  :         );
 
   000fc	e59f01a4	 ldr         r0, [pc, #0x1A4]
   00100	eb000000	 bl          OEMWriteDebugString
 
-; 384  : 
-; 385  :     GPIOInit();
+; 387  : 
+; 388  :     GPIOInit();
 
   00104	eb000000	 bl          GPIOInit
 
-; 386  :     hGpio = GPIOOpen();
+; 389  :     hGpio = GPIOOpen();
 
   00108	eb000000	 bl          GPIOOpen
 
-; 387  :     GPIOSetBit(hGpio,BSP_LCD_POWER_GPIO);
+; 390  :     GPIOSetBit(hGpio,BSP_LCD_POWER_GPIO);
 
   0010c	e3a0109a	 mov         r1, #0x9A
   00110	e1a04000	 mov         r4, r0
   00114	eb000000	 bl          GPIOSetBit
 
-; 388  :     GPIOSetMode(hGpio,BSP_LCD_POWER_GPIO,GPIO_DIR_OUTPUT);
+; 391  :     GPIOSetMode(hGpio,BSP_LCD_POWER_GPIO,GPIO_DIR_OUTPUT);
 
   00118	e3a02000	 mov         r2, #0
   0011c	e3a0109a	 mov         r1, #0x9A
   00120	e1a00004	 mov         r0, r4
   00124	eb000000	 bl          GPIOSetMode
 
-; 389  :   
-; 390  :     
-; 391  : #ifdef FMD_ONENAND
-; 392  :     // Open FMD to access ONENAND
-; 393  :     regInfo.MemBase.Reg[0] = BSP_ONENAND_REGS_PA;
-; 394  :     hFMD = FMD_Init(NULL, &regInfo, NULL);
-; 395  :     if (hFMD == NULL)
-; 396  :     {
-; 397  :         XLDRMSG(L"\r\nFMD_Init failed\r\n");
-; 398  :         goto cleanUp;
-; 399  :     }
-; 400  : 
-; 401  :     //  Set ONENAND XLDR bootsector size
-; 402  :     size = IMAGE_XLDR_BOOTSEC_ONENAND_SIZE;
-; 403  : #endif
-; 404  : #ifdef FMD_NAND
-; 405  :     // Open FMD to access NAND
-; 406  :     regInfo.MemBase.Reg[0] = BSP_NAND_REGS_PA;
+; 392  :   
+; 393  :     
+; 394  : #ifdef FMD_ONENAND
+; 395  :     // Open FMD to access ONENAND
+; 396  :     regInfo.MemBase.Reg[0] = BSP_ONENAND_REGS_PA;
+; 397  :     hFMD = FMD_Init(NULL, &regInfo, NULL);
+; 398  :     if (hFMD == NULL)
+; 399  :     {
+; 400  :         XLDRMSG(L"\r\nFMD_Init failed\r\n");
+; 401  :         goto cleanUp;
+; 402  :     }
+; 403  : 
+; 404  :     //  Set ONENAND XLDR bootsector size
+; 405  :     size = IMAGE_XLDR_BOOTSEC_ONENAND_SIZE;
+; 406  : #endif
+; 407  : #ifdef FMD_NAND
+; 408  :     // Open FMD to access NAND
+; 409  :     regInfo.MemBase.Reg[0] = BSP_NAND_REGS_PA;
 
   00128	e3a03302	 mov         r3, #2, 6
 
-; 407  :     hFMD = FMD_Init(NULL, &regInfo, NULL);
+; 410  :     hFMD = FMD_Init(NULL, &regInfo, NULL);
 
   0012c	e3a02000	 mov         r2, #0
   00130	e28d1018	 add         r1, sp, #0x18
@@ -714,89 +716,89 @@
   0013c	eb000000	 bl          FMD_Init
   00140	e1b07000	 movs        r7, r0
 
-; 408  :     if (hFMD == NULL)
+; 411  :     if (hFMD == NULL)
 
   00144	1a000002	 bne         |$LN13@XLDRMain|
 
-; 409  :     {
-; 410  :         XLDRMSG(L"\r\nFMD_Init failed\r\n");
+; 412  :     {
+; 413  :         XLDRMSG(L"\r\nFMD_Init failed\r\n");
 
   00148	e59f0154	 ldr         r0, [pc, #0x154]
   0014c	eb000000	 bl          OEMWriteDebugString
 
-; 411  :         goto cleanUp;
+; 414  :         goto cleanUp;
 
-  00150	ea00004a	 b           |$cleanUp$47555|
+  00150	ea00004a	 b           |$cleanUp$47567|
   00154		 |$LN13@XLDRMain|
 
-; 412  :     }
-; 413  : 
-; 414  :     //  Set NAND XLDR bootsector size
-; 415  :     size = IMAGE_XLDR_BOOTSEC_NAND_SIZE;
-; 416  : #endif
-; 417  : 
-; 418  :     // Get flash info
-; 419  :     if (!FMD_GetInfo(&flashInfo))
+; 415  :     }
+; 416  : 
+; 417  :     //  Set NAND XLDR bootsector size
+; 418  :     size = IMAGE_XLDR_BOOTSEC_NAND_SIZE;        //2^19 = 512K, Ray 13-09-14  
+; 419  : #endif
+; 420  : 
+; 421  :     // Get flash info
+; 422  :     if (!FMD_GetInfo(&flashInfo))
 
   00154	e28d0000	 add         r0, sp, #0
   00158	eb000000	 bl          FMD_GetInfo
   0015c	e3500000	 cmp         r0, #0
   00160	1a000002	 bne         |$LN12@XLDRMain|
 
-; 420  :     {
-; 421  :         XLDRMSG(L"\r\nFMD_GetInfo failed\r\n");
+; 423  :     {
+; 424  :         XLDRMSG(L"\r\nFMD_GetInfo failed\r\n");
 
   00164	e59f0134	 ldr         r0, [pc, #0x134]
   00168	eb000000	 bl          OEMWriteDebugString
-  0016c	ea000043	 b           |$cleanUp$47555|
+  0016c	ea000043	 b           |$cleanUp$47567|
   00170		 |$LN12@XLDRMain|
 
-; 422  :         goto cleanUp;
-; 423  :     }
-; 424  : 
-; 425  : #ifdef MEMORY_BOOT
-; 426  :     // Start from NAND start
-; 427  :     block  = 0;
+; 425  :         goto cleanUp;
+; 426  :     }
+; 427  : 
+; 428  : #ifdef MEMORY_BOOT
+; 429  :     // Start from NAND start
+; 430  :     block  = 0;
 
   00170	e3a04000	 mov         r4, #0
 
-; 428  :     sector = 0;
+; 431  :     sector = 0;
 
   00174	e3a05000	 mov         r5, #0
 
-; 429  : 
-; 430  :     // First skip XLDR boot region.
-; 431  : 
-; 432  :     // NOTE - The bootrom will load the xldr from the first good block starting
-; 433  :     // at zero.  If an uncorrectable ECC error is encountered it will try the next
-; 434  :     // good block.  The last block attempted is the fourth physical block.  The first
-; 435  :     // block is guaranteed good when shipped from the factory, for the first 1000
-; 436  :     // erase/program cycles.
-; 437  : 
-; 438  :     // Our programming algorithm will place four copies of the xldr into the first
-; 439  :     // four *good* blocks.  If one or more of the first four physical blocks is marked
-; 440  :     // bad, the XLDR boot region will include the fifth physical block or beyond.  This
-; 441  :     // would result in a wasted block containing a copy of the XLDR that will never be
-; 442  :     // loaded by the bootrom, but it simplifies the flash management algorithms.
-; 443  :     count = 0;
+; 432  : 
+; 433  :     // First skip XLDR boot region.
+; 434  : 
+; 435  :     // NOTE - The bootrom will load the xldr from the first good block starting
+; 436  :     // at zero.  If an uncorrectable ECC error is encountered it will try the next
+; 437  :     // good block.  The last block attempted is the fourth physical block.  The first
+; 438  :     // block is guaranteed good when shipped from the factory, for the first 1000
+; 439  :     // erase/program cycles.
+; 440  : 
+; 441  :     // Our programming algorithm will place four copies of the xldr into the first
+; 442  :     // four *good* blocks.  If one or more of the first four physical blocks is marked
+; 443  :     // bad, the XLDR boot region will include the fifth physical block or beyond.  This
+; 444  :     // would result in a wasted block containing a copy of the XLDR that will never be
+; 445  :     // loaded by the bootrom, but it simplifies the flash management algorithms.
+; 446  :     count = 0;
 
   00178	e3a06000	 mov         r6, #0
   0017c		 |$LL11@XLDRMain|
 
-; 444  :     while (count < size)
-; 445  :         {
-; 446  :         if ((FMD_GetBlockStatus(block) & BLOCK_STATUS_BAD) == 0)
+; 447  :     while (count < size)
+; 448  :         {
+; 449  :         if ((FMD_GetBlockStatus(block) & BLOCK_STATUS_BAD) == 0)
 
   0017c	e1a00004	 mov         r0, r4
   00180	eb000000	 bl          FMD_GetBlockStatus
   00184	e3100002	 tst         r0, #2
 
-; 447  :             count += flashInfo.dwBytesPerBlock;
+; 450  :             count += flashInfo.dwBytesPerBlock;
 
   00188	059d3008	 ldreq       r3, [sp, #8]
 
-; 448  :         block++;
-; 449  :         sector += flashInfo.wSectorsPerBlock;
+; 451  :         block++;
+; 452  :         sector += flashInfo.wSectorsPerBlock;
 
   0018c	e2844001	 add         r4, r4, #1
   00190	00866003	 addeq       r6, r6, r3
@@ -805,79 +807,79 @@
   0019c	e0855003	 add         r5, r5, r3
   001a0	3afffff5	 bcc         |$LL11@XLDRMain|
 
-; 450  :         }
-; 451  :     // get ECC type for EBOOT from FIXUP value
-; 452  :     g_ecctype = (UCHAR)dwEbootECCtype;
+; 453  :         }
+; 454  :     // get ECC type for EBOOT from FIXUP value
+; 455  :     g_ecctype = (UCHAR)dwEbootECCtype;
 
   001a4	e5993008	 ldr         r3, [r9, #8]
 
-; 453  : 	
-; 454  :     FMD_Deinit(hFMD); 
+; 456  : 	
+; 457  :     FMD_Deinit(hFMD); 
 
   001a8	e1a00007	 mov         r0, r7
   001ac	e5c83200	 strb        r3, [r8, #0x200]
   001b0	eb000000	 bl          FMD_Deinit
 
-; 455  :     hFMD = FMD_Init(NULL, &regInfo, NULL);
+; 458  :     hFMD = FMD_Init(NULL, &regInfo, NULL);
 
   001b4	e3a02000	 mov         r2, #0
   001b8	e28d1018	 add         r1, sp, #0x18
   001bc	e3a00000	 mov         r0, #0
   001c0	eb000000	 bl          FMD_Init
 
-; 456  : 
-; 457  :     // Set address where to place image
-; 458  :     pImage = (UINT8*)IMAGE_STARTUP_IMAGE_PA;
+; 459  : 
+; 460  :     // Set address where to place image
+; 461  :     pImage = (UINT8*)IMAGE_STARTUP_IMAGE_PA;
 
   001c4	e3e09d0f	 mvn         r9, #0xF, 26
   001c8	e1a08a89	 mov         r8, r9, lsl #21
 
-; 459  : 
-; 460  :     // Read image to memory
-; 461  :     count = 0;
+; 462  : 
+; 463  :     // Read image to memory
+; 464  :     count = 0;
 
   001cc	e3a07000	 mov         r7, #0
   001d0		 |$LL8@XLDRMain|
 
-; 462  :     while ((count < IMAGE_STARTUP_IMAGE_SIZE) && (block < flashInfo.dwNumBlocks))
+; 465  :     while ((count < IMAGE_STARTUP_IMAGE_SIZE) && (block < flashInfo.dwNumBlocks))
 
   001d0	e59d3004	 ldr         r3, [sp, #4]
   001d4	e1540003	 cmp         r4, r3
   001d8	2a000023	 bcs         |$LN7@XLDRMain|
 
-; 463  :         {
-; 464  :         // Skip bad blocks
-; 465  :         if ((FMD_GetBlockStatus(block) & BLOCK_STATUS_BAD) != 0)
+; 466  :         {
+; 467  :         // Skip bad blocks
+; 468  :         if ((FMD_GetBlockStatus(block) & BLOCK_STATUS_BAD) != 0)
 
   001dc	e1a00004	 mov         r0, r4
   001e0	eb000000	 bl          FMD_GetBlockStatus
 
-; 466  :             {
-; 467  :             block++;
-; 468  :             sector += flashInfo.wSectorsPerBlock;
+; 469  :             {
+; 470  :             block++;
+; 471  :             sector += flashInfo.wSectorsPerBlock;
 
   001e4	e1dd30bc	 ldrh        r3, [sp, #0xC]
   001e8	e3100002	 tst         r0, #2
   001ec	0a000004	 beq         |$LN6@XLDRMain|
 
-; 469  :             XLDRMSG(L"#");
+; 472  :             XLDRMSG(L"#");
 
   001f0	e59f00a4	 ldr         r0, [pc, #0xA4]
   001f4	e2844001	 add         r4, r4, #1
   001f8	e0855003	 add         r5, r5, r3
   001fc	eb000000	 bl          OEMWriteDebugString
 
-; 470  :             continue;
+; 473  :             continue;
 
   00200	ea000017	 b           |$LN44@XLDRMain|
   00204		 |$LN6@XLDRMain|
 
-; 471  :             }
-; 472  : 
-; 473  :         // Read sectors in block
-; 474  :         ix = 0;
-; 475  :         while ((ix++ < flashInfo.wSectorsPerBlock) &&
-; 476  :                 (count < IMAGE_STARTUP_IMAGE_SIZE))
+; 474  :             }
+; 475  : 
+; 476  :         // Read sectors in block
+; 477  :         ix = 0;
+; 478  :         while ((ix++ < flashInfo.wSectorsPerBlock) &&
+; 479  :                 (count < IMAGE_STARTUP_IMAGE_SIZE))
 
   00204	e3a06000	 mov         r6, #0
   00208	e3530000	 cmp         r3, #0
@@ -887,9 +889,9 @@
   00214	e3570701	 cmp         r7, #1, 14
   00218	2a00000e	 bcs         |$LN47@XLDRMain|
 
-; 477  :             {
-; 478  :             // If a read fails, there is nothing we can do about it
-; 479  :             if (!FMD_ReadSector(sector, pImage, &sectorInfo, 1))
+; 480  :             {
+; 481  :             // If a read fails, there is nothing we can do about it
+; 482  :             if (!FMD_ReadSector(sector, pImage, &sectorInfo, 1))
 
   0021c	e3a03001	 mov         r3, #1
   00220	e28d2010	 add         r2, sp, #0x10
@@ -898,295 +900,296 @@
   0022c	eb000000	 bl          FMD_ReadSector
   00230	e3500000	 cmp         r0, #0
 
-; 480  :                 {
-; 481  :                 XLDRMSG(L"$");
+; 483  :                 {
+; 484  :                 XLDRMSG(L"$");
 
   00234	059f005c	 ldreq       r0, [pc, #0x5C]
   00238	0b000000	 bleq        OEMWriteDebugString
   0023c	e1dd30bc	 ldrh        r3, [sp, #0xC]
 
-; 482  :                 }
-; 483  : 
-; 484  :             // Move to next sector
-; 485  :             sector++;
-; 486  :             pImage += flashInfo.wDataBytesPerSector;
+; 485  :                 }
+; 486  : 
+; 487  :             // Move to next sector
+; 488  :             sector++;
+; 489  :             pImage += flashInfo.wDataBytesPerSector;
 
   00240	e1dd20be	 ldrh        r2, [sp, #0xE]
   00244	e2855001	 add         r5, r5, #1
   00248	e1560003	 cmp         r6, r3
   0024c	e0888002	 add         r8, r8, r2
 
-; 487  :             count += flashInfo.wDataBytesPerSector;
+; 490  :             count += flashInfo.wDataBytesPerSector;
 
   00250	e0877002	 add         r7, r7, r2
   00254	3affffed	 bcc         |$LL5@XLDRMain|
   00258		 |$LN47@XLDRMain|
 
-; 488  :             }
-; 489  : 
-; 490  :         XLDRMSG(L".");
+; 491  :             }
+; 492  : 
+; 493  :         XLDRMSG(L".");
 
   00258	e59f0034	 ldr         r0, [pc, #0x34]
   0025c	eb000000	 bl          OEMWriteDebugString
 
-; 491  : 
-; 492  :         // Move to next block
-; 493  :         block++;
+; 494  : 
+; 495  :         // Move to next block
+; 496  :         block++;
 
   00260	e2844001	 add         r4, r4, #1
   00264		 |$LN44@XLDRMain|
 
-; 462  :     while ((count < IMAGE_STARTUP_IMAGE_SIZE) && (block < flashInfo.dwNumBlocks))
+; 465  :     while ((count < IMAGE_STARTUP_IMAGE_SIZE) && (block < flashInfo.dwNumBlocks))
 
   00264	e3570701	 cmp         r7, #1, 14
   00268	3affffd8	 bcc         |$LL8@XLDRMain|
   0026c		 |$LN7@XLDRMain|
 
-; 494  :         }
-; 495  : 
-; 496  :     XLDRMSG(L"\r\nJumping to bootloader\r\n");
+; 497  :         }
+; 498  : 
+; 499  :     XLDRMSG(L"\r\nJumping to bootloader\r\n");
 
   0026c	e59f001c	 ldr         r0, [pc, #0x1C]
   00270	eb000000	 bl          OEMWriteDebugString
 
-; 497  : 
-; 498  :     // Wait for serial port
-; 499  :     XLDRMSGDEINIT;
+; 500  : 
+; 501  :     // Wait for serial port
+; 502  :     XLDRMSGDEINIT;
 
   00274	eb000000	 bl          OEMDeinitDebugSerial
 
-; 500  : 
-; 501  :     // Jump to image
-; 502  :     JumpTo((VOID*)IMAGE_STARTUP_IMAGE_PA);
+; 503  : 
+; 504  :     // Jump to image
+; 505  :     JumpTo((VOID*)IMAGE_STARTUP_IMAGE_PA);
 
   00278	e1a00a89	 mov         r0, r9, lsl #21
   0027c	eb000000	 bl          JumpTo
-  00280		 |$cleanUp$47555|
+  00280		 |$cleanUp$47567|
 
-; 503  : #endif  /* MEMORY_BOOT */
-; 504  : #ifdef UART_BOOT
-; 505  : 
-; 506  : #if defined(UART_DNLD_EBOOT_TO_RAM) || defined(UART_DNLD_RAW_TO_NAND)
+; 506  : #endif  /* MEMORY_BOOT */ //The end X-Loader, Ray 13-09-14
 ; 507  : 
-; 508  : #ifdef UART_DNLD_EBOOT_TO_RAM
-; 509  :     XLDRMSG(L"\r\nDNLD EBOOTND.nb0 Image\r\n");
-; 510  : #endif
+; 508  : #ifdef UART_BOOT
+; 509  : 
+; 510  : #if defined(UART_DNLD_EBOOT_TO_RAM) || defined(UART_DNLD_RAW_TO_NAND)
 ; 511  : 
-; 512  : #ifdef UART_DNLD_RAW_TO_NAND
-; 513  :     XLDRMSG(L"\r\nDNLD TIEVM3530-nand.raw Image\r\n");
+; 512  : #ifdef UART_DNLD_EBOOT_TO_RAM
+; 513  :     XLDRMSG(L"\r\nDNLD EBOOTND.nb0 Image\r\n");
 ; 514  : #endif
 ; 515  : 
-; 516  :     // Set address where to place download image
-; 517  :     pImage = (UINT8*)IMAGE_STARTUP_IMAGE_PA;
-; 518  : 
-; 519  : 	xret = XReceive(pImage, IMAGE_XLDR_BOOTSEC_NAND_SIZE+IMAGE_EBOOT_CODE_SIZE+IMAGE_BOOTLOADER_BITMAP_SIZE+8, &dnld_size);
-; 520  : 	if(xret < 0)
-; 521  : 	{
-; 522  : 		goto cleanUp;
-; 523  : 	}
-; 524  : 
-; 525  : #ifdef UART_DNLD_EBOOT_TO_RAM
-; 526  :     XLDRMSG(L"\r\nJumping to bootloader EBOOT\r\n");
-; 527  : 
-; 528  : 	// Wait for serial port
-; 529  :     XLDRMSGDEINIT;
-; 530  : 
-; 531  : 	// Jump to image
-; 532  : 	JumpTo((VOID*)IMAGE_STARTUP_IMAGE_PA);
-; 533  : #endif  /* UART_DNLD_EBOOT_TO_RAM */
+; 516  : #ifdef UART_DNLD_RAW_TO_NAND
+; 517  :     XLDRMSG(L"\r\nDNLD TIEVM3530-nand.raw Image\r\n");
+; 518  : #endif
+; 519  : 
+; 520  :     // Set address where to place download image
+; 521  :     pImage = (UINT8*)IMAGE_STARTUP_IMAGE_PA;
+; 522  :     //?Ray
+; 523  : 	xret = XReceive(pImage, IMAGE_XLDR_BOOTSEC_NAND_SIZE+IMAGE_EBOOT_CODE_SIZE+IMAGE_BOOTLOADER_BITMAP_SIZE+8, &dnld_size);
+; 524  : 	if(xret < 0)
+; 525  : 	{
+; 526  : 		goto cleanUp;
+; 527  : 	}
+; 528  : 
+; 529  : #ifdef UART_DNLD_EBOOT_TO_RAM
+; 530  :     XLDRMSG(L"\r\nJumping to bootloader EBOOT\r\n");
+; 531  : 
+; 532  : 	// Wait for serial port
+; 533  :     XLDRMSGDEINIT;
 ; 534  : 
-; 535  : #ifdef UART_DNLD_RAW_TO_NAND
-; 536  : 	// How many nand blocks to write
-; 537  : 	if (dnld_size < flashInfo.dwBytesPerBlock)
-; 538  : 	{
-; 539  : 		nand_blocks_to_write=0;
-; 540  : 	}
-; 541  : 	else
+; 535  : 	// Jump to image
+; 536  : 	JumpTo((VOID*)IMAGE_STARTUP_IMAGE_PA);
+; 537  : #endif  /* UART_DNLD_EBOOT_TO_RAM */
+; 538  : 
+; 539  : #ifdef UART_DNLD_RAW_TO_NAND
+; 540  : 	// How many nand blocks to write
+; 541  : 	if (dnld_size < flashInfo.dwBytesPerBlock)
 ; 542  : 	{
-; 543  : 		for(nand_blocks_to_write=0; nand_blocks_to_write <= NAND_MAX_BLOCKS_TO_WRITE; nand_blocks_to_write++)
-; 544  : 		{
-; 545  : 			if ((nand_blocks_to_write * flashInfo.dwBytesPerBlock) >= dnld_size)
-; 546  : 			{
-; 547  : 				break;
-; 548  : 			}
-; 549  : 		}
-; 550  : 	}
-; 551  : 
-; 552  : 	if ((nand_blocks_to_write == 0) || (nand_blocks_to_write > NAND_MAX_BLOCKS_TO_WRITE))
-; 553  : 	{
-; 554  : 		goto cleanUp;
-; 555  : 	}
-; 556  : 
-; 557  :     // Set address to where to copy from
-; 558  :     pImage = (UINT8*)IMAGE_STARTUP_IMAGE_PA;
-; 559  : 
-; 560  : 	// Write dnld image, starting from first good block (4 xldr block and 2 eboot block)
-; 561  : 	block = 0;
-; 562  :     image_block_cnt = 0;
+; 543  : 		nand_blocks_to_write=0;
+; 544  : 	}
+; 545  : 	else
+; 546  : 	{
+; 547  : 		for(nand_blocks_to_write=0; nand_blocks_to_write <= NAND_MAX_BLOCKS_TO_WRITE; nand_blocks_to_write++)
+; 548  : 		{
+; 549  : 			if ((nand_blocks_to_write * flashInfo.dwBytesPerBlock) >= dnld_size)
+; 550  : 			{
+; 551  : 				break;
+; 552  : 			}
+; 553  : 		}
+; 554  : 	}
+; 555  : 
+; 556  : 	if ((nand_blocks_to_write == 0) || (nand_blocks_to_write > NAND_MAX_BLOCKS_TO_WRITE))
+; 557  : 	{
+; 558  : 		goto cleanUp;
+; 559  : 	}
+; 560  : 
+; 561  :     // Set address to where to copy from
+; 562  :     pImage = (UINT8*)IMAGE_STARTUP_IMAGE_PA;
 ; 563  : 
-; 564  : 	while (image_block_cnt < nand_blocks_to_write)
-; 565  : 	{
-; 566  : 
-; 567  :             /* writing Eboot: need to change ECC mode*/ 
-; 568  :             if(image_block_cnt == 4)
-; 569  :             {
-; 570  :                  // get EBOOT ECC type from FIXUP value
-; 571  :                  g_ecctype = (UCHAR)dwEbootECCtype;
-; 572  :                  
-; 573  :                  FMD_Deinit(hFMD); 
-; 574  :                  hFMD = FMD_Init(NULL, &regInfo, NULL);
-; 575  :             }
-; 576  : 		// Skip to a good block
-; 577  :         while (block < flashInfo.dwNumBlocks)
-; 578  :         {
-; 579  :             if ((FMD_GetBlockStatus(block) & BLOCK_STATUS_BAD) == 0)
-; 580  :     		{
-; 581  :     			// A good block
-; 582  :     			break;
-; 583  :     		}
-; 584  :             block++;
-; 585  :         }
-; 586  :     
-; 587  :     	if (block >= flashInfo.dwNumBlocks)
-; 588  :     	{
-; 589  :     		// No good block found!!
-; 590  :     		goto cleanUp;
-; 591  :     	}
-; 592  : 
-; 593  : 		// Erase block first
-; 594  : 		if (!FMD_EraseBlock(block))
-; 595  : 		{
-; 596  : 			for(;;) XLDRMSG(L"Erase FAILED\r\n");
-; 597  : 		}
-; 598  : 
-; 599  : 		// Calculate starting sector id of the good block
-; 600  :     	sector = block * flashInfo.wSectorsPerBlock;
-; 601  : 		offset = 0;
+; 564  : 	// Write dnld image, starting from first good block (4 xldr block and 2 eboot block)
+; 565  : 	block = 0;
+; 566  :     image_block_cnt = 0;
+; 567  : 
+; 568  : 	while (image_block_cnt < nand_blocks_to_write)
+; 569  : 	{
+; 570  : 
+; 571  :             /* writing Eboot: need to change ECC mode*/ 
+; 572  :             if(image_block_cnt == 4)
+; 573  :             {
+; 574  :                  // get EBOOT ECC type from FIXUP value
+; 575  :                  g_ecctype = (UCHAR)dwEbootECCtype;
+; 576  :                  
+; 577  :                  FMD_Deinit(hFMD); 
+; 578  :                  hFMD = FMD_Init(NULL, &regInfo, NULL);
+; 579  :             }
+; 580  : 		// Skip to a good block
+; 581  :         while (block < flashInfo.dwNumBlocks)
+; 582  :         {
+; 583  :             if ((FMD_GetBlockStatus(block) & BLOCK_STATUS_BAD) == 0)
+; 584  :     		{
+; 585  :     			// A good block
+; 586  :     			break;
+; 587  :     		}
+; 588  :             block++;
+; 589  :         }
+; 590  :     
+; 591  :     	if (block >= flashInfo.dwNumBlocks)
+; 592  :     	{
+; 593  :     		// No good block found!!
+; 594  :     		goto cleanUp;
+; 595  :     	}
+; 596  : 
+; 597  : 		// Erase block first
+; 598  : 		if (!FMD_EraseBlock(block))
+; 599  : 		{
+; 600  : 			for(;;) XLDRMSG(L"Erase FAILED\r\n");
+; 601  : 		}
 ; 602  : 
-; 603  : 		// Copy sectors in block
-; 604  : 		while (offset < flashInfo.dwBytesPerBlock)
-; 605  : 		{
-; 606  :         	memset(&sectorInfo, 0xFF, sizeof(sectorInfo));
-; 607  : 	        sectorInfo.bOEMReserved &= ~(OEM_BLOCK_READONLY|OEM_BLOCK_RESERVED);
-; 608  : 			sectorInfo.dwReserved1 = 0;
-; 609  : 			sectorInfo.wReserved2 = 0;
-; 610  :     
-; 611  :     		// Write 1 sector
-; 612  :     		if (!FMD_WriteSector(sector, pImage + offset, &sectorInfo, 1))
-; 613  : 			{
-; 614  : 				for(;;) XLDRMSG(L"Write FAILED\r\n");
-; 615  : 				goto cleanUp;
-; 616  : 			}
-; 617  : 
-; 618  : 			// Next sector
-; 619  : 			sector++;
-; 620  : 			offset += flashInfo.wDataBytesPerSector;
-; 621  : 		}
-; 622  :     
-; 623  : 		// Written 1 block
-; 624  : 		++image_block_cnt;
-; 625  : 
-; 626  : 		// Start from next block id and next block of data
-; 627  : 		++block;
-; 628  : 		pImage += offset;
-; 629  : 	}
-; 630  : 
-; 631  : 	XGetStats ( &xblock_cnt, &xack_cnt, &xnak_cnt,
-; 632  : 		        &xcan_cnt, &xothers_cnt, &checksum_error_cnt, 
-; 633  : 				&dup_pkt_cnt);
+; 603  : 		// Calculate starting sector id of the good block
+; 604  :     	sector = block * flashInfo.wSectorsPerBlock;
+; 605  : 		offset = 0;
+; 606  : 
+; 607  : 		// Copy sectors in block
+; 608  : 		while (offset < flashInfo.dwBytesPerBlock)
+; 609  : 		{
+; 610  :         	memset(&sectorInfo, 0xFF, sizeof(sectorInfo));
+; 611  : 	        sectorInfo.bOEMReserved &= ~(OEM_BLOCK_READONLY|OEM_BLOCK_RESERVED);
+; 612  : 			sectorInfo.dwReserved1 = 0;
+; 613  : 			sectorInfo.wReserved2 = 0;
+; 614  :     
+; 615  :     		// Write 1 sector
+; 616  :     		if (!FMD_WriteSector(sector, pImage + offset, &sectorInfo, 1))
+; 617  : 			{
+; 618  : 				for(;;) XLDRMSG(L"Write FAILED\r\n");
+; 619  : 				goto cleanUp;
+; 620  : 			}
+; 621  : 
+; 622  : 			// Next sector
+; 623  : 			sector++;
+; 624  : 			offset += flashInfo.wDataBytesPerSector;
+; 625  : 		}
+; 626  :     
+; 627  : 		// Written 1 block
+; 628  : 		++image_block_cnt;
+; 629  : 
+; 630  : 		// Start from next block id and next block of data
+; 631  : 		++block;
+; 632  : 		pImage += offset;
+; 633  : 	}
 ; 634  : 
-; 635  : 	XLDRMSG(L"\r\nReceive return code "); XLDRPrintUint8((UINT8)xret, 1, 1);
-; 636  : 	XLDRMSG(L"blocks written ");          XLDRPrintUint8((UINT8)image_block_cnt, 1, 1);
-; 637  : 	XLDRMSG(L"bytes rx ");                XLDRPrintUlong((UINT32)dnld_size, 1, 1);
-; 638  : 	XLDRMSG(L"pkts rx ");                 XLDRPrintUlong((UINT32)xblock_cnt, 1, 1);
-; 639  : 	XLDRMSG(L"acks sent ");               XLDRPrintUlong((UINT32)xack_cnt, 1, 1);
-; 640  : 	XLDRMSG(L"naks sent ");               XLDRPrintUlong((UINT32)xnak_cnt, 1, 1);
-; 641  : 	XLDRMSG(L"can sent ");                XLDRPrintUlong((UINT32)xcan_cnt, 1, 1);
-; 642  : 	XLDRMSG(L"others sent ");             XLDRPrintUlong((UINT32)xothers_cnt, 1, 1);
-; 643  : 	XLDRMSG(L"chksum errs ");             XLDRPrintUlong((UINT32)checksum_error_cnt, 1, 1);
-; 644  : 	XLDRMSG(L"dup pkts ");                XLDRPrintUlong((UINT32)dup_pkt_cnt, 1, 1);
-; 645  : 
-; 646  : 	// Wait for serial port
-; 647  :     XLDRMSGDEINIT;
-; 648  : 
-; 649  : 	// Done.
-; 650  : 	return;
-; 651  : #endif  /* UART_DNLD_RAW_TO_NAND */
-; 652  : #endif  /* UART_DNLD_EBOOT_TO_RAM || UART_DNLD_RAW_TO_NAND */
-; 653  : 
-; 654  : #ifdef UART_BOOT_READ_SECTOR
-; 655  :     // Set address where to place data read
-; 656  :     pImage = (UINT8*)IMAGE_STARTUP_IMAGE_PA;
+; 635  : 	XGetStats ( &xblock_cnt, &xack_cnt, &xnak_cnt,
+; 636  : 		        &xcan_cnt, &xothers_cnt, &checksum_error_cnt, 
+; 637  : 				&dup_pkt_cnt);
+; 638  : 
+; 639  : 	XLDRMSG(L"\r\nReceive return code "); XLDRPrintUint8((UINT8)xret, 1, 1);
+; 640  : 	XLDRMSG(L"blocks written ");          XLDRPrintUint8((UINT8)image_block_cnt, 1, 1);
+; 641  : 	XLDRMSG(L"bytes rx ");                XLDRPrintUlong((UINT32)dnld_size, 1, 1);
+; 642  : 	XLDRMSG(L"pkts rx ");                 XLDRPrintUlong((UINT32)xblock_cnt, 1, 1);
+; 643  : 	XLDRMSG(L"acks sent ");               XLDRPrintUlong((UINT32)xack_cnt, 1, 1);
+; 644  : 	XLDRMSG(L"naks sent ");               XLDRPrintUlong((UINT32)xnak_cnt, 1, 1);
+; 645  : 	XLDRMSG(L"can sent ");                XLDRPrintUlong((UINT32)xcan_cnt, 1, 1);
+; 646  : 	XLDRMSG(L"others sent ");             XLDRPrintUlong((UINT32)xothers_cnt, 1, 1);
+; 647  : 	XLDRMSG(L"chksum errs ");             XLDRPrintUlong((UINT32)checksum_error_cnt, 1, 1);
+; 648  : 	XLDRMSG(L"dup pkts ");                XLDRPrintUlong((UINT32)dup_pkt_cnt, 1, 1);
+; 649  : 
+; 650  : 	// Wait for serial port
+; 651  :     XLDRMSGDEINIT;
+; 652  : 
+; 653  : 	// Done.
+; 654  : 	return;
+; 655  : #endif  /* UART_DNLD_RAW_TO_NAND */
+; 656  : #endif  /* UART_DNLD_EBOOT_TO_RAM || UART_DNLD_RAW_TO_NAND */
 ; 657  : 
-; 658  : 	sector = 0;
-; 659  :     if (!FMD_ReadSector(sector, pImage, &sectorInfo, 1))
-; 660  :     {
-; 661  :         for(;;) XLDRMSG(L"read failed\r\n");
-; 662  :     }            
-; 663  : 
-; 664  :     //print the first 16 bytes to debug port 
-; 665  :     pImage = (UINT8*)IMAGE_STARTUP_IMAGE_PA;
-; 666  : 
-; 667  : 	for(;;)
-; 668  : 	{
-; 669  : 	    XLDRPrintUint8(sectorInfo.bOEMReserved, 1, 0);
-; 670  : 	    XLDRPrintUint8(sectorInfo.bBadBlock, 1, 0);
-; 671  : 
-; 672  : 		for (ix = 0; ix<16; ix++)
-; 673  : 		{
-; 674  : 		    XLDRPrintUint8(*(pImage+ix), 1, 0);
-; 675  : 		}
-; 676  :    	    XLDRMSG(L"\r\n");
-; 677  : 	}
-; 678  : #endif /* UART_BOOT_READ_SECTOR */
-; 679  : 
-; 680  : #ifdef UART_BOOT_WRITE_SECTOR
-; 681  : 
-; 682  : 	if (!FMD_EraseBlock(0))
-; 683  : 	{
-; 684  : 		while(1) XLDRMSG(L"Erase FAILED\r\n");
-; 685  : 	}
-; 686  : 
-; 687  : 	// Set address where to place image
-; 688  :     pImage = (UINT8*)IMAGE_STARTUP_IMAGE_PA;
-; 689  : 
-; 690  : 	for (uc = 0; uc<16; uc++)
-; 691  : 		*(pImage+uc) = uc+'A';
-; 692  : 
-; 693  : 	sector = 0;
-; 694  : 
-; 695  :    	memset(&sectorInfo, 0xFF, sizeof(sectorInfo));
-; 696  :     sectorInfo.bOEMReserved &= ~(OEM_BLOCK_READONLY|OEM_BLOCK_RESERVED);
-; 697  : 	sectorInfo.dwReserved1 = 0;
-; 698  : 	sectorInfo.wReserved2 = 0;
-; 699  :     
-; 700  :     // Write 1 sector
-; 701  :     if (!FMD_WriteSector(sector, pImage, &sectorInfo, 1))
-; 702  : 	{
-; 703  : 		while(1) XLDRMSG(L"Write FAILED\r\n");
-; 704  : 		goto cleanUp;
-; 705  : 	}
-; 706  : 
-; 707  : 	XLDRPrintUint8('z', 10000, 1);
-; 708  : 	XLDRMSG(L"That many times printed\r\n");
-; 709  : 
-; 710  : 	// Wait for serial port
-; 711  :     XLDRMSGDEINIT;
-; 712  : 
-; 713  : 	// Done.
-; 714  : 	return;
-; 715  : #endif /* UART_BOOT_WRITE_SECTOR */
+; 658  : #ifdef UART_BOOT_READ_SECTOR
+; 659  :     // Set address where to place data read
+; 660  :     pImage = (UINT8*)IMAGE_STARTUP_IMAGE_PA;
+; 661  : 
+; 662  : 	sector = 0;
+; 663  :     if (!FMD_ReadSector(sector, pImage, &sectorInfo, 1))
+; 664  :     {
+; 665  :         for(;;) XLDRMSG(L"read failed\r\n");
+; 666  :     }            
+; 667  : 
+; 668  :     //print the first 16 bytes to debug port 
+; 669  :     pImage = (UINT8*)IMAGE_STARTUP_IMAGE_PA;
+; 670  : 
+; 671  : 	for(;;)
+; 672  : 	{
+; 673  : 	    XLDRPrintUint8(sectorInfo.bOEMReserved, 1, 0);
+; 674  : 	    XLDRPrintUint8(sectorInfo.bBadBlock, 1, 0);
+; 675  : 
+; 676  : 		for (ix = 0; ix<16; ix++)
+; 677  : 		{
+; 678  : 		    XLDRPrintUint8(*(pImage+ix), 1, 0);
+; 679  : 		}
+; 680  :    	    XLDRMSG(L"\r\n");
+; 681  : 	}
+; 682  : #endif /* UART_BOOT_READ_SECTOR */
+; 683  : 
+; 684  : #ifdef UART_BOOT_WRITE_SECTOR
+; 685  : 
+; 686  : 	if (!FMD_EraseBlock(0))
+; 687  : 	{
+; 688  : 		while(1) XLDRMSG(L"Erase FAILED\r\n");
+; 689  : 	}
+; 690  : 
+; 691  : 	// Set address where to place image
+; 692  :     pImage = (UINT8*)IMAGE_STARTUP_IMAGE_PA;
+; 693  : 
+; 694  : 	for (uc = 0; uc<16; uc++)
+; 695  : 		*(pImage+uc) = uc+'A';
+; 696  : 
+; 697  : 	sector = 0;
+; 698  : 
+; 699  :    	memset(&sectorInfo, 0xFF, sizeof(sectorInfo));
+; 700  :     sectorInfo.bOEMReserved &= ~(OEM_BLOCK_READONLY|OEM_BLOCK_RESERVED);
+; 701  : 	sectorInfo.dwReserved1 = 0;
+; 702  : 	sectorInfo.wReserved2 = 0;
+; 703  :     
+; 704  :     // Write 1 sector
+; 705  :     if (!FMD_WriteSector(sector, pImage, &sectorInfo, 1))
+; 706  : 	{
+; 707  : 		while(1) XLDRMSG(L"Write FAILED\r\n");
+; 708  : 		goto cleanUp;
+; 709  : 	}
+; 710  : 
+; 711  : 	XLDRPrintUint8('z', 10000, 1);
+; 712  : 	XLDRMSG(L"That many times printed\r\n");
+; 713  : 
+; 714  : 	// Wait for serial port
+; 715  :     XLDRMSGDEINIT;
 ; 716  : 
-; 717  : #endif  /* UART_BOOT */
-; 718  :     
-; 719  : cleanUp:
-; 720  :     XLDRMSG(L"\r\nHALT\r\n");
+; 717  : 	// Done.
+; 718  : 	return;
+; 719  : #endif /* UART_BOOT_WRITE_SECTOR */
+; 720  : 
+; 721  : #endif  /* UART_BOOT */
+; 722  :     
+; 723  : cleanUp:
+; 724  :     XLDRMSG(L"\r\nHALT\r\n");
 
   00280	e59f0004	 ldr         r0, [pc, #4]
   00284	eb000000	 bl          OEMWriteDebugString
   00288		 |$LL2@XLDRMain|
 
-; 721  :     for(;;);
+; 725  :     for(;;);
 
   00288	eafffffe	 b           |$LL2@XLDRMain|
   0028c		 |$LN52@XLDRMain|
@@ -1207,7 +1210,7 @@
   002a8		 |$LN60@XLDRMain|
   002a8	00000000	 DCD         |??_C@_1EG@EDBNOKCM@?$AAV?$AAe?$AAr?$AAs?$AAi?$AAo?$AAn?$AA?5?$AAZ?$AAE?$AAB?$AAE?$AAX?$AA_?$AAW?$AAI?$AAN?$AAC?$AAE?$AA_?$AAA?$AAR?$AAM?$AA_?$AAA?$AA8?$AA?5?$AA0?$AA?4?$AA0?$AA?4?$AA1@|
   002ac		 |$LN61@XLDRMain|
-  002ac	00000000	 DCD         |??_C@_1EE@BAMNGDDK@?$AA?$AN?$AA?6?$AAB?$AAu?$AAi?$AAl?$AAt?$AA?5?$AAS?$AAe?$AAp?$AA?5?$AA1?$AA2?$AA?5?$AA2?$AA0?$AA1?$AA3?$AA?5?$AAa?$AAt?$AA?5?$AA1?$AA3?$AA?3?$AA5?$AA7?$AA?3?$AA2?$AA7?$AA?$AN@|
+  002ac	00000000	 DCD         |??_C@_1EE@OAKDKCHO@?$AA?$AN?$AA?6?$AAB?$AAu?$AAi?$AAl?$AAt?$AA?5?$AAS?$AAe?$AAp?$AA?5?$AA2?$AA7?$AA?5?$AA2?$AA0?$AA1?$AA3?$AA?5?$AAa?$AAt?$AA?5?$AA1?$AA7?$AA?3?$AA0?$AA4?$AA?3?$AA2?$AA4?$AA?$AN@|
   002b0		 |$LN62@XLDRMain|
   002b0	00000000	 DCD         |??_C@_1GM@DIKPCKDC@?$AA?$AN?$AA?6?$AAT?$AAe?$AAx?$AAa?$AAs?$AA?5?$AAI?$AAn?$AAs?$AAt?$AAr?$AAu?$AAm?$AAe?$AAn?$AAt?$AAs?$AA?5?$AAW?$AAi?$AAn?$AAd?$AAo?$AAw?$AAs?$AA?5?$AAC?$AAE?$AA?5?$AAN@|
   002b4		 |$LN63@XLDRMain|
@@ -1220,7 +1223,7 @@
   002c0	00000000	 DCD         |??_C@_19CAFJHOAJ@?$AA3?$AA5?$AA3?$AA0?$AA?$AA@|
   002c4		 |$LN67@XLDRMain|
   002c4	00000000	 DCD         |pTOC|
-  002c8		 |$M47809|
+  002c8		 |$M47821|
 
 			 ENDP  ; |XLDRMain|
 

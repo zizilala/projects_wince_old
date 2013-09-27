@@ -1,0 +1,2 @@
+BUILD: [Thrd:Sequence:Type  ] Message
+BUILD: [01:0000000203:ERRORE] C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm4CA.tmp : fatal error C1083: Cannot open compiler generated file: 'C:\WINCE600\PLATFORM\Z2170P\SRC\test\testKeypad\obj\ARMV4I\retail\StdAfx.obj': Permission denied

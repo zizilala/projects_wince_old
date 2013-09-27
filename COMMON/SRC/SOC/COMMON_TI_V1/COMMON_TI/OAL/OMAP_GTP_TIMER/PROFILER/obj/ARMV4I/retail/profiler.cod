@@ -92,7 +92,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\oal\omap_gtp_timer\profiler\profiler.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45775| DCD	|$LN5@OALTimerQu|
+|$T45780| DCD	|$LN5@OALTimerQu|
 	DCD	0x40000900
 ; Function compile flags: /Ogspy
 
@@ -103,7 +103,7 @@
 ; 135  : {    
 
   00000		 |$LN5@OALTimerQu|
-  00000		 |$M45772|
+  00000		 |$M45777|
   00000	e1a02000	 mov         r2, r0
 
 ; 136  :     pFrequency->QuadPart = s_Frequency;    
@@ -124,7 +124,7 @@
   00020		 |$LN6@OALTimerQu|
   00020		 |$LN7@OALTimerQu|
   00020	00000000	 DCD         |s_Frequency|
-  00024		 |$M45773|
+  00024		 |$M45778|
 
 			 ENDP  ; |OALTimerQueryPerformanceFrequency|
 
@@ -132,7 +132,7 @@
 	IMPORT	|INTERRUPTS_ENABLE|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45790| DCD	|$LN7@OALTimerQu@2|
+|$T45795| DCD	|$LN7@OALTimerQu@2|
 	DCD	0x40001301
 ; Function compile flags: /Ogspy
 
@@ -144,7 +144,7 @@
 
   00000		 |$LN7@OALTimerQu@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M45787|
+  00004		 |$M45792|
   00004	e1a04000	 mov         r4, r0
 
 ; 150  :     static LARGE_INTEGER PreviousValue = {0, 0};
@@ -198,7 +198,7 @@
   00048		 |$LN8@OALTimerQu@2|
   00048		 |$LN9@OALTimerQu@2|
   00048	00000000	 DCD         |g_pPerfTimer|
-  0004c		 |$M45788|
+  0004c		 |$M45793|
 
 			 ENDP  ; |OALTimerQueryPerformanceCounter|
 
@@ -207,7 +207,7 @@
 	IMPORT	|__rt_udiv64by64|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45804| DCD	|$LN8@OEMProfile|
+|$T45809| DCD	|$LN8@OEMProfile|
 	DCD	0x40002501
 ; Function compile flags: /Ogspy
 
@@ -219,7 +219,7 @@
 
   00000		 |$LN8@OEMProfile|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M45801|
+  00004		 |$M45806|
 
 ; 175  :     DWORD tcrr;
 ; 176  :     UINT64 val;
@@ -312,7 +312,7 @@
   0008c	00000000	 DCD         |g_oalProfilerIncrement|
   00090		 |$LN12@OEMProfile|
   00090	00000000	 DCD         |s_Frequency|
-  00094		 |$M45802|
+  00094		 |$M45807|
 
 			 ENDP  ; |OEMProfileTimerEnable|
 
@@ -320,7 +320,7 @@
 	IMPORT	|OALIntrDisableIrqs|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45816| DCD	|$LN6@OEMProfile@2|
+|$T45821| DCD	|$LN6@OEMProfile@2|
 	DCD	0x40001701
 ; Function compile flags: /Ogspy
 
@@ -332,7 +332,7 @@
 
   00000		 |$LN6@OEMProfile@2|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M45813|
+  00004		 |$M45818|
 
 ; 209  :     BOOL enabled;
 ; 210  :     
@@ -388,7 +388,7 @@
   00054	00000000	 DCD         |g_oalPerfTimerIrq|
   00058		 |$LN9@OEMProfile@2|
   00058	00000000	 DCD         |g_oalProfilerEnabled|
-  0005c		 |$M45814|
+  0005c		 |$M45819|
 
 			 ENDP  ; |OEMProfileTimerDisable|
 
@@ -397,7 +397,7 @@
 	IMPORT	|ProfilerHit|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45828| DCD	|$LN5@OALProfile|
+|$T45833| DCD	|$LN5@OALProfile|
 	DCD	0x40001401
 ; Function compile flags: /Ogspy
 
@@ -409,7 +409,7 @@
 
   00000		 |$LN5@OALProfile|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M45825|
+  00004		 |$M45830|
 
 ; 234  :     UINT32  tcrr;
 ; 235  : 
@@ -462,7 +462,7 @@
   00048	00000000	 DCD         |g_oalProfilerIncrement|
   0004c		 |$LN9@OALProfile|
   0004c	00000000	 DCD         |g_pPerfTimer|
-  00050		 |$M45826|
+  00050		 |$M45831|
 
 			 ENDP  ; |OALProfileTimerHit|
 
@@ -479,7 +479,7 @@
 	IMPORT	|BSPGetGPTPerfDevice|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45842| DCD	|$LN12@OALPerform|
+|$T45847| DCD	|$LN12@OALPerform|
 	DCD	0x40005b01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -510,7 +510,7 @@
 
   00000		 |$LN12@OALPerform|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M45839|
+  00004		 |$M45844|
 
 ; 50   :     UINT srcClock;
 ; 51   :     DWORD tclr = 0;	
@@ -735,7 +735,7 @@
   00164	00000000	 DCD         |g_oalPerfTimerIrq|
   00168		 |$LN22@OALPerform|
   00168	00000000	 DCD         |s_Frequency|
-  0016c		 |$M45840|
+  0016c		 |$M45845|
 
 			 ENDP  ; |OALPerformanceTimerInit|
 

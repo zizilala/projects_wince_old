@@ -88,7 +88,7 @@
 ; File c:\wince600\platform\z2170p\src\bootloader\eboot\sdmemory\flash.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47789| DCD	|$LN5@BLFlashDow|
+|$T47795| DCD	|$LN5@BLFlashDow|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -99,7 +99,7 @@
 ; 92   : {
 
   00000		 |$LN5@BLFlashDow|
-  00000		 |$M47786|
+  00000		 |$M47792|
 
 ; 93   :     UINT32 rc = (UINT32) BL_ERROR;
 ; 94   : 
@@ -127,14 +127,14 @@
 ; 113  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M47787|
+  00008		 |$M47793|
 
 			 ENDP  ; |BLFlashDownload|
 
 	EXPORT	|OEMStartEraseFlash|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47798| DCD	|$LN5@OEMStartEr|
+|$T47804| DCD	|$LN5@OEMStartEr|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -145,7 +145,7 @@
 ; 123  : {
 
   00000		 |$LN5@OEMStartEr|
-  00000		 |$M47795|
+  00000		 |$M47801|
 
 ; 124  :     BOOL rc;
 ; 125  :     
@@ -170,14 +170,14 @@
 ; 141  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M47796|
+  00008		 |$M47802|
 
 			 ENDP  ; |OEMStartEraseFlash|
 
 	EXPORT	|OEMContinueEraseFlash|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47805| DCD	|$LN5@OEMContinu|
+|$T47811| DCD	|$LN5@OEMContinu|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -188,19 +188,19 @@
 ; 152  : {
 
   00000		 |$LN5@OEMContinu|
-  00000		 |$M47802|
+  00000		 |$M47808|
 
 ; 153  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M47803|
+  00004		 |$M47809|
 
 			 ENDP  ; |OEMContinueEraseFlash|
 
 	EXPORT	|OEMFinishEraseFlash|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47814| DCD	|$LN5@OEMFinishE|
+|$T47820| DCD	|$LN5@OEMFinishE|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -211,7 +211,7 @@
 ; 164  : {
 
   00000		 |$LN5@OEMFinishE|
-  00000		 |$M47811|
+  00000		 |$M47817|
 
 ; 165  :     BOOL rc = TRUE;
 ; 166  : 
@@ -222,14 +222,14 @@
 ; 168  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M47812|
+  00008		 |$M47818|
 
 			 ENDP  ; |OEMFinishEraseFlash|
 
 	EXPORT	|OEMWriteFlash|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47823| DCD	|$LN5@OEMWriteFl|
+|$T47829| DCD	|$LN5@OEMWriteFl|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -240,7 +240,7 @@
 ; 179  : {
 
   00000		 |$LN5@OEMWriteFl|
-  00000		 |$M47820|
+  00000		 |$M47826|
 
 ; 180  : #ifndef BSP_NO_NAND_IN_SDBOOT
 ; 181  : 
@@ -283,14 +283,14 @@
 ; 215  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M47821|
+  00008		 |$M47827|
 
 			 ENDP  ; |OEMWriteFlash|
 
 	EXPORT	|WriteFlashNK|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47832| DCD	|$LN5@WriteFlash|
+|$T47838| DCD	|$LN5@WriteFlash|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -301,7 +301,7 @@
 ; 220  : {
 
   00000		 |$LN5@WriteFlash|
-  00000		 |$M47829|
+  00000		 |$M47835|
 
 ; 221  : #ifndef BSP_NO_NAND_IN_SDBOOT
 ; 222  :     BOOL rc = FALSE;
@@ -394,14 +394,14 @@
 ; 306  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M47830|
+  00008		 |$M47836|
 
 			 ENDP  ; |WriteFlashNK|
 
 	EXPORT	|BLConfigureFlashPartitions|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47841| DCD	|$LN5@BLConfigur|
+|$T47847| DCD	|$LN5@BLConfigur|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -412,7 +412,7 @@
 ; 885  : {
 
   00000		 |$LN5@BLConfigur|
-  00000		 |$M47838|
+  00000		 |$M47844|
 
 ; 886  :     BOOL rc = FALSE;
 ; 887  : 	
@@ -540,7 +540,7 @@
 ; 1006 : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M47839|
+  00008		 |$M47845|
 
 			 ENDP  ; |BLConfigureFlashPartitions|
 

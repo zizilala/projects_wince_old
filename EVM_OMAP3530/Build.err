@@ -1,0 +1,3 @@
+BUILD: [Thrd:Sequence:Type  ] Message
+BUILD: [01:0000000265:ERRORE] C:\WINCE600\PLATFORM\EVM_OMAP3530\SRC\BSP_COMMON\DISPLAY\.\lcd_support.c(24) : error C2065: 'BSP_LCD_INI_GPIO' : undeclared identifier
+BUILD: [01:0000000266:ERRORE] C:\WINCE600\PLATFORM\EVM_OMAP3530\SRC\BSP_COMMON\DISPLAY\.\lcd_support.c(26) : error C2065: 'BSP_LCD_LCD_QVGA_nVGA' : undeclared identifier

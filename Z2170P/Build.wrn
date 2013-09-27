@@ -37,61 +37,61 @@ BUILD: [00:0000002105:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\SMSC
 BUILD: [00:0000002175:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\SDMEMORY\obj\ARMV4I\retail\sdmemmain.obj does not exist (2).
 BUILD: [00:0000002176:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\SDMEMORY\obj\ARMV4I\retail\SDMemDiskIO.obj does not exist (2).
 BUILD: [00:0000002177:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\SDMEMORY\obj\ARMV4I\retail\SDMemCardIO.obj does not exist (2).
-BUILD: [00:0000002229:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap_nand.lib does not exist (2).
-BUILD: [00:0000002230:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap35xx_ddgpe_neon.lib does not exist (2).
-BUILD: [00:0000002231:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\smsc9118.lib does not exist (2).
-BUILD: [00:0000002232:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap_SDMemory.lib does not exist (2).
-BUILD: [00:0000002451:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap_nand.lib does not exist (2).
-BUILD: [00:0000002452:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap35xx_ddgpe_neon.lib does not exist (2).
-BUILD: [00:0000002453:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\smsc9118.lib does not exist (2).
-BUILD: [00:0000002454:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap_SDMemory.lib does not exist (2).
-BUILD: [00:0000002514:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\CAMERA\MDD\obj\ARMV4I\retail\CameraDevice.obj does not exist (2).
-BUILD: [00:0000002515:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\CAMERA\MDD\obj\ARMV4I\retail\cameradriver.obj does not exist (2).
-BUILD: [00:0000002516:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\CAMERA\MDD\obj\ARMV4I\retail\pindevice.obj does not exist (2).
-BUILD: [00:0000002517:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\CAMERA\MDD\obj\ARMV4I\retail\pindriver.obj does not exist (2).
-BUILD: [00:0000002533:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\CAMERA\PDD\obj\ARMV4I\retail\PDD_Intf.obj does not exist (2).
-BUILD: [00:0000002534:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\CAMERA\PDD\obj\ARMV4I\retail\CameraDrvPdd.obj does not exist (2).
-BUILD: [00:0000002535:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\CAMERA\PDD\obj\ARMV4I\retail\IspCtrl.obj does not exist (2).
-BUILD: [00:0000002536:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\CAMERA\PDD\obj\ARMV4I\retail\TvpCtrl.obj does not exist (2).
-BUILD: [00:0000002537:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\CAMERA\PDD\obj\ARMV4I\retail\util.obj does not exist (2).
-BUILD: [00:0000002554:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap_nand.lib does not exist (2).
-BUILD: [00:0000002555:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap35xx_ddgpe_neon.lib does not exist (2).
-BUILD: [00:0000002556:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\smsc9118.lib does not exist (2).
-BUILD: [00:0000002557:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap_SDMemory.lib does not exist (2).
-BUILD: [00:0000002558:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\CAMMDD.lib does not exist (2).
-BUILD: [00:0000002559:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\CAMPDD.lib does not exist (2).
-BUILD: [00:0000002560:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\CAMERA\DLL\obj\ARMV4I\retail\main.obj does not exist (2).
-BUILD: [00:0000002794:WARNN ] C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\MUSB\MUSBFN\: Missing source file: C:\WINCE600\public\common\oak\lib\ARMV4I\retail\ufnmdd.lib.
-BUILD: [00:0000002911:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\NLED\obj\ARMV4I\retail\nled.obj does not exist (2).
-BUILD: [00:0000003429:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap_nand.lib does not exist (2).
-BUILD: [00:0000003430:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap35xx_ddgpe_neon.lib does not exist (2).
-BUILD: [00:0000003431:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\smsc9118.lib does not exist (2).
-BUILD: [00:0000003432:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap_SDMemory.lib does not exist (2).
-BUILD: [00:0000003433:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\CAMMDD.lib does not exist (2).
-BUILD: [00:0000003434:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\CAMPDD.lib does not exist (2).
-BUILD: [00:0000003435:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap_camera.lib does not exist (2).
-BUILD: [00:0000003436:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap_nled.lib does not exist (2).
-BUILD: [00:0000003437:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap_hdq.lib does not exist (2).
-BUILD: [00:0000003438:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\NAND\BootImage does not exist (2).
-BUILD: [01:0000004469:WARNN ] fulllibc.lib(atox.obj) : warning LNK4099: PDB 'ccrtconv.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtconv.pdb'; linking object as if no debug info
-BUILD: [01:0000004471:WARNN ] fulllibc.lib(toupper.obj) : warning LNK4099: PDB 'ccrtconv.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtconv.pdb'; linking object as if no debug info
-BUILD: [01:0000004473:WARNN ] fulllibc.lib(xtoa.obj) : warning LNK4099: PDB 'ccrtconv.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtconv.pdb'; linking object as if no debug info
-BUILD: [01:0000004478:WARNN ] fulllibc.lib(diverr.obj) : warning LNK4099: PDB 'ccrthelp.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrthelp.pdb'; linking object as if no debug info
-BUILD: [01:0000004490:WARNN ] fulllibc.lib(wcscpy.obj) : warning LNK4099: PDB 'ccrtstrg.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtstrg.pdb'; linking object as if no debug info
-BUILD: [01:0000004492:WARNN ] fulllibc.lib(wcscmp.obj) : warning LNK4099: PDB 'ccrtstrg.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtstrg.pdb'; linking object as if no debug info
-BUILD: [00:0000004570:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\BootImage does not exist (2).
-BUILD: [01:0000005566:WARNN ] fulllibc.lib(atox.obj) : warning LNK4099: PDB 'ccrtconv.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtconv.pdb'; linking object as if no debug info
-BUILD: [01:0000005568:WARNN ] fulllibc.lib(toupper.obj) : warning LNK4099: PDB 'ccrtconv.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtconv.pdb'; linking object as if no debug info
-BUILD: [01:0000005570:WARNN ] fulllibc.lib(xtoa.obj) : warning LNK4099: PDB 'ccrtconv.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtconv.pdb'; linking object as if no debug info
-BUILD: [01:0000005575:WARNN ] fulllibc.lib(diverr.obj) : warning LNK4099: PDB 'ccrthelp.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrthelp.pdb'; linking object as if no debug info
-BUILD: [01:0000005586:WARNN ] fulllibc.lib(wcscpy.obj) : warning LNK4099: PDB 'ccrtstrg.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtstrg.pdb'; linking object as if no debug info
-BUILD: [01:0000005588:WARNN ] fulllibc.lib(wcscmp.obj) : warning LNK4099: PDB 'ccrtstrg.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtstrg.pdb'; linking object as if no debug info
-BUILD: [01:0000006067:WARNN ] fulllibc.lib(wcscmp.obj) : warning LNK4099: PDB 'ccrtstrg.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtstrg.pdb'; linking object as if no debug info
-BUILD: [00:0000006175:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\XLDR\UART\xldr_romimage_raw does not exist (2).
-BUILD: [01:0000006580:WARNN ] fulllibc.lib(wcscmp.obj) : warning LNK4099: PDB 'ccrtstrg.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtstrg.pdb'; linking object as if no debug info
-BUILD: [00:0000006661:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\XLDR\SDMEMORY\xldr_sd_mlo does not exist (2).
-BUILD: [01:0000007154:WARNN ] fulllibc.lib(toupper.obj) : warning LNK4099: PDB 'ccrtconv.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtconv.pdb'; linking object as if no debug info
-BUILD: [01:0000007158:WARNN ] fulllibc.lib(diverr.obj) : warning LNK4099: PDB 'ccrthelp.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrthelp.pdb'; linking object as if no debug info
-BUILD: [01:0000007162:WARNN ] fulllibc.lib(wcscpy.obj) : warning LNK4099: PDB 'ccrtstrg.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtstrg.pdb'; linking object as if no debug info
-BUILD: [01:0000007164:WARNN ] fulllibc.lib(wcscmp.obj) : warning LNK4099: PDB 'ccrtstrg.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtstrg.pdb'; linking object as if no debug info
-BUILD: [00:0000008017:WARNN ] C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\BLOCK\NAND\: Missing source file: C:\WINCE600\public\common\sdk\lib\ARMV4I\retail\coredll.lib.
+BUILD: [00:0000002217:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap_nand.lib does not exist (2).
+BUILD: [00:0000002218:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap35xx_ddgpe_neon.lib does not exist (2).
+BUILD: [00:0000002219:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\smsc9118.lib does not exist (2).
+BUILD: [00:0000002220:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap_SDMemory.lib does not exist (2).
+BUILD: [00:0000002439:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap_nand.lib does not exist (2).
+BUILD: [00:0000002440:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap35xx_ddgpe_neon.lib does not exist (2).
+BUILD: [00:0000002441:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\smsc9118.lib does not exist (2).
+BUILD: [00:0000002442:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap_SDMemory.lib does not exist (2).
+BUILD: [00:0000002496:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\CAMERA\MDD\obj\ARMV4I\retail\CameraDevice.obj does not exist (2).
+BUILD: [00:0000002497:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\CAMERA\MDD\obj\ARMV4I\retail\cameradriver.obj does not exist (2).
+BUILD: [00:0000002498:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\CAMERA\MDD\obj\ARMV4I\retail\pindevice.obj does not exist (2).
+BUILD: [00:0000002499:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\CAMERA\MDD\obj\ARMV4I\retail\pindriver.obj does not exist (2).
+BUILD: [00:0000002515:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\CAMERA\PDD\obj\ARMV4I\retail\PDD_Intf.obj does not exist (2).
+BUILD: [00:0000002516:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\CAMERA\PDD\obj\ARMV4I\retail\CameraDrvPdd.obj does not exist (2).
+BUILD: [00:0000002517:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\CAMERA\PDD\obj\ARMV4I\retail\IspCtrl.obj does not exist (2).
+BUILD: [00:0000002518:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\CAMERA\PDD\obj\ARMV4I\retail\TvpCtrl.obj does not exist (2).
+BUILD: [00:0000002519:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\CAMERA\PDD\obj\ARMV4I\retail\util.obj does not exist (2).
+BUILD: [00:0000002536:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap_nand.lib does not exist (2).
+BUILD: [00:0000002537:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap35xx_ddgpe_neon.lib does not exist (2).
+BUILD: [00:0000002538:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\smsc9118.lib does not exist (2).
+BUILD: [00:0000002539:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap_SDMemory.lib does not exist (2).
+BUILD: [00:0000002540:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\CAMMDD.lib does not exist (2).
+BUILD: [00:0000002541:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\CAMPDD.lib does not exist (2).
+BUILD: [00:0000002542:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\CAMERA\DLL\obj\ARMV4I\retail\main.obj does not exist (2).
+BUILD: [00:0000002776:WARNN ] C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\MUSB\MUSBFN\: Missing source file: C:\WINCE600\public\common\oak\lib\ARMV4I\retail\ufnmdd.lib.
+BUILD: [00:0000002893:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\NLED\obj\ARMV4I\retail\nled.obj does not exist (2).
+BUILD: [00:0000003411:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap_nand.lib does not exist (2).
+BUILD: [00:0000003412:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap35xx_ddgpe_neon.lib does not exist (2).
+BUILD: [00:0000003413:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\smsc9118.lib does not exist (2).
+BUILD: [00:0000003414:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap_SDMemory.lib does not exist (2).
+BUILD: [00:0000003415:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\CAMMDD.lib does not exist (2).
+BUILD: [00:0000003416:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\CAMPDD.lib does not exist (2).
+BUILD: [00:0000003417:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap_camera.lib does not exist (2).
+BUILD: [00:0000003418:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap_nled.lib does not exist (2).
+BUILD: [00:0000003419:WARNN ] File: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\omap_hdq.lib does not exist (2).
+BUILD: [00:0000003420:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\NAND\BootImage does not exist (2).
+BUILD: [01:0000004465:WARNN ] fulllibc.lib(atox.obj) : warning LNK4099: PDB 'ccrtconv.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtconv.pdb'; linking object as if no debug info
+BUILD: [01:0000004467:WARNN ] fulllibc.lib(toupper.obj) : warning LNK4099: PDB 'ccrtconv.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtconv.pdb'; linking object as if no debug info
+BUILD: [01:0000004469:WARNN ] fulllibc.lib(xtoa.obj) : warning LNK4099: PDB 'ccrtconv.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtconv.pdb'; linking object as if no debug info
+BUILD: [01:0000004474:WARNN ] fulllibc.lib(diverr.obj) : warning LNK4099: PDB 'ccrthelp.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrthelp.pdb'; linking object as if no debug info
+BUILD: [01:0000004486:WARNN ] fulllibc.lib(wcscpy.obj) : warning LNK4099: PDB 'ccrtstrg.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtstrg.pdb'; linking object as if no debug info
+BUILD: [01:0000004488:WARNN ] fulllibc.lib(wcscmp.obj) : warning LNK4099: PDB 'ccrtstrg.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtstrg.pdb'; linking object as if no debug info
+BUILD: [00:0000004566:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\EBOOT\SDMEMORY\BootImage does not exist (2).
+BUILD: [01:0000005579:WARNN ] fulllibc.lib(atox.obj) : warning LNK4099: PDB 'ccrtconv.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtconv.pdb'; linking object as if no debug info
+BUILD: [01:0000005581:WARNN ] fulllibc.lib(toupper.obj) : warning LNK4099: PDB 'ccrtconv.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtconv.pdb'; linking object as if no debug info
+BUILD: [01:0000005583:WARNN ] fulllibc.lib(xtoa.obj) : warning LNK4099: PDB 'ccrtconv.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtconv.pdb'; linking object as if no debug info
+BUILD: [01:0000005588:WARNN ] fulllibc.lib(diverr.obj) : warning LNK4099: PDB 'ccrthelp.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrthelp.pdb'; linking object as if no debug info
+BUILD: [01:0000005599:WARNN ] fulllibc.lib(wcscpy.obj) : warning LNK4099: PDB 'ccrtstrg.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtstrg.pdb'; linking object as if no debug info
+BUILD: [01:0000005601:WARNN ] fulllibc.lib(wcscmp.obj) : warning LNK4099: PDB 'ccrtstrg.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtstrg.pdb'; linking object as if no debug info
+BUILD: [01:0000006080:WARNN ] fulllibc.lib(wcscmp.obj) : warning LNK4099: PDB 'ccrtstrg.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtstrg.pdb'; linking object as if no debug info
+BUILD: [00:0000006188:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\XLDR\UART\xldr_romimage_raw does not exist (2).
+BUILD: [01:0000006593:WARNN ] fulllibc.lib(wcscmp.obj) : warning LNK4099: PDB 'ccrtstrg.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtstrg.pdb'; linking object as if no debug info
+BUILD: [00:0000006674:WARNN ] File: C:\WINCE600\PLATFORM\Z2170P\SRC\BOOTLOADER\XLDR\SDMEMORY\xldr_sd_mlo does not exist (2).
+BUILD: [01:0000007167:WARNN ] fulllibc.lib(toupper.obj) : warning LNK4099: PDB 'ccrtconv.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtconv.pdb'; linking object as if no debug info
+BUILD: [01:0000007171:WARNN ] fulllibc.lib(diverr.obj) : warning LNK4099: PDB 'ccrthelp.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrthelp.pdb'; linking object as if no debug info
+BUILD: [01:0000007175:WARNN ] fulllibc.lib(wcscpy.obj) : warning LNK4099: PDB 'ccrtstrg.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtstrg.pdb'; linking object as if no debug info
+BUILD: [01:0000007177:WARNN ] fulllibc.lib(wcscmp.obj) : warning LNK4099: PDB 'ccrtstrg.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtstrg.pdb'; linking object as if no debug info
+BUILD: [00:0000008030:WARNN ] C:\WINCE600\PLATFORM\Z2170P\SRC\DRIVERS\BLOCK\NAND\: Missing source file: C:\WINCE600\public\common\sdk\lib\ARMV4I\retail\coredll.lib.

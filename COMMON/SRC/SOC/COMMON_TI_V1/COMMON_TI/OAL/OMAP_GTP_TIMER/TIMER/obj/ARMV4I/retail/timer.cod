@@ -115,7 +115,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\oal\omap_gtp_timer\timer\timer.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46029| DCD	|$LN13@OALTimerGe|
+|$T46034| DCD	|$LN13@OALTimerGe|
 	DCD	0x40001e01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -136,7 +136,7 @@
 
   00000		 |$LN13@OALTimerGe|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M46026|
+  00004		 |$M46031|
   00004	e1a04000	 mov         r4, r0
 
 ; 155  :     UINT32 i=0;
@@ -200,7 +200,7 @@
   00070	00000000	 DCD         |g_pTimerRegs|
   00074		 |$LN18@OALTimerGe|
   00074	00000000	 DCD         |g_oalTimerContext|
-  00078		 |$M46027|
+  00078		 |$M46032|
 
 			 ENDP  ; |OALTimerGetReg|
 
@@ -208,7 +208,7 @@
 	EXPORT	|??_C@_1EA@OPCPFCAE@?$AA?$AN?$AA?6?$AA?5?$AAO?$AAA?$AAL?$AAT?$AAi?$AAm?$AAe?$AAr?$AAS?$AAe?$AAt?$AAR?$AAe?$AAg?$AA?3?$AA?5?$AAw?$AAa?$AAi?$AAt?$AA?5?$AAt?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46048| DCD	|$LN13@OALTimerSe|
+|$T46053| DCD	|$LN13@OALTimerSe|
 	DCD	0x40001f01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -229,7 +229,7 @@
 
   00000		 |$LN13@OALTimerSe|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M46045|
+  00004		 |$M46050|
   00004	e1a06001	 mov         r6, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -292,14 +292,14 @@
   00074	00000000	 DCD         |g_pTimerRegs|
   00078		 |$LN18@OALTimerSe|
   00078	00000000	 DCD         |g_oalTimerContext|
-  0007c		 |$M46046|
+  0007c		 |$M46051|
 
 			 ENDP  ; |OALTimerSetReg|
 
 	EXPORT	|OALTimerStart|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46064| DCD	|$LN13@OALTimerSt|
+|$T46069| DCD	|$LN13@OALTimerSt|
 	DCD	0x40001c01
 ; Function compile flags: /Ogspy
 
@@ -311,7 +311,7 @@
 
   00000		 |$LN13@OALTimerSt|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M46061|
+  00004		 |$M46066|
 
 ; 198  :     UINT32 i;
 ; 199  :     UINT tcrrExit = 0;
@@ -371,14 +371,14 @@
   0006c		 |$LN14@OALTimerSt|
   0006c		 |$LN15@OALTimerSt|
   0006c	00000000	 DCD         |g_pTimerRegs|
-  00070		 |$M46062|
+  00070		 |$M46067|
 
 			 ENDP  ; |OALTimerStart|
 
 	EXPORT	|OALTimerStop|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46073| DCD	|$LN5@OALTimerSt@2|
+|$T46078| DCD	|$LN5@OALTimerSt@2|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -390,7 +390,7 @@
 
   00000		 |$LN5@OALTimerSt@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M46070|
+  00004		 |$M46075|
 
 ; 223  :     // stop GPTIMER1
 ; 224  :     OALTimerSetReg(&g_pTimerRegs->TCLR, OALTimerGetReg(&g_pTimerRegs->TCLR) & ~(GPTIMER_TCLR_ST));
@@ -412,7 +412,7 @@
   00030		 |$LN6@OALTimerSt@2|
   00030		 |$LN7@OALTimerSt@2|
   00030	00000000	 DCD         |g_pTimerRegs|
-  00034		 |$M46071|
+  00034		 |$M46076|
 
 			 ENDP  ; |OALTimerStop|
 
@@ -420,7 +420,7 @@
 	EXPORT	|OALTimerSetCompare|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46090| DCD	|$LN15@OALTimerSe@2|
+|$T46095| DCD	|$LN15@OALTimerSe@2|
 	DCD	0x40001001
 ; Function compile flags: /Ogspy
 
@@ -432,7 +432,7 @@
 
   00000		 |$LN15@OALTimerSe@2|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M46087|
+  00004		 |$M46092|
   00004	e1a05000	 mov         r5, r0
 
 ; 233  : 
@@ -471,7 +471,7 @@
   0003c		 |$LN16@OALTimerSe@2|
   0003c		 |$LN17@OALTimerSe@2|
   0003c	00000000	 DCD         |g_pTimerRegs|
-  00040		 |$M46088|
+  00040		 |$M46093|
 
 			 ENDP  ; |OALTimerSetCompare|
 
@@ -493,7 +493,7 @@
 	IMPORT	|fnOALCPUIdle|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46112| DCD	|$LN19@OEMIdle|
+|$T46117| DCD	|$LN19@OEMIdle|
 	DCD	0x40006101
 ; Function compile flags: /Ogspy
 
@@ -505,7 +505,7 @@
 
   00000		 |$LN19@OEMIdle|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
-  00004		 |$M46109|
+  00004		 |$M46114|
 
 ; 312  :     static UINT _max = 0;
 ; 313  :     static UINT _count = 0;
@@ -550,7 +550,7 @@
   0002c	e5982004	 ldr         r2, [r8, #4]
   00030	e0434009	 sub         r4, r3, r9
   00034	e1540002	 cmp         r4, r2
-  00038	ba000046	 blt         |$cleanUp$45886|
+  00038	ba000046	 blt         |$cleanUp$45891|
 
 ; 333  : 
 ; 334  :     // get latency time...
@@ -593,7 +593,7 @@
 ; 347  :     if (maxDelay >= wakeupDelay)
 
   00074	e1540006	 cmp         r4, r6
-  00078	ba000036	 blt         |$cleanUp$45886|
+  00078	ba000036	 blt         |$cleanUp$45891|
   0007c		 |$LN16@OEMIdle|
 
 ; 348  :     {
@@ -617,7 +617,7 @@
 
   00098	eb000000	 bl          OALContextSave
   0009c	e3500000	 cmp         r0, #0
-  000a0	0a00002c	 beq         |$cleanUp$45886|
+  000a0	0a00002c	 beq         |$cleanUp$45891|
   000a4		 |$LN6@OEMIdle|
 
 ; 355  :             {
@@ -743,7 +743,7 @@
 ; 398  :     curridlelow = newIdleLow;
 
   00154	e58010d0	 str         r1, [r0, #0xD0]
-  00158		 |$cleanUp$45886|
+  00158		 |$cleanUp$45891|
 
 ; 399  : 
 ; 400  : cleanUp:
@@ -771,14 +771,14 @@
   0017c	00000000	 DCD         |g_oalTimerContext|
   00180		 |$LN26@OEMIdle|
   00180	00000000	 DCD         |g_pTimerRegs|
-  00184		 |$M46110|
+  00184		 |$M46115|
 
 			 ENDP  ; |OEMIdle|
 
 	EXPORT	|OALTimerGetCount|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46128| DCD	|$LN5@OALTimerGe@2|
+|$T46133| DCD	|$LN5@OALTimerGe@2|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 
@@ -790,7 +790,7 @@
 
   00000		 |$LN5@OALTimerGe@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46125|
+  00004		 |$M46130|
 
 ; 661  :     //  Return the timer value
 ; 662  :     return OALTimerGetReg(&g_pTimerRegs->TCRR);
@@ -807,14 +807,14 @@
   0001c		 |$LN6@OALTimerGe@2|
   0001c		 |$LN7@OALTimerGe@2|
   0001c	00000000	 DCD         |g_pTimerRegs|
-  00020		 |$M46126|
+  00020		 |$M46131|
 
 			 ENDP  ; |OALTimerGetCount|
 
 	EXPORT	|OALTimerCountsSinceSysTick|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46139| DCD	|$LN5@OALTimerCo|
+|$T46144| DCD	|$LN5@OALTimerCo|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -826,7 +826,7 @@
 
   00000		 |$LN5@OALTimerCo|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46136|
+  00004		 |$M46141|
 
 ; 671  :     // Return timer ticks since last interrupt
 ; 672  :     return (INT32)(OALTimerGetReg(&g_pTimerRegs->TCRR) - g_oalTimerContext.base);
@@ -848,14 +848,14 @@
   00028	00000000	 DCD         |g_oalTimerContext|
   0002c		 |$LN8@OALTimerCo|
   0002c	00000000	 DCD         |g_pTimerRegs|
-  00030		 |$M46137|
+  00030		 |$M46142|
 
 			 ENDP  ; |OALTimerCountsSinceSysTick|
 
 	EXPORT	|OALGetTickCount|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46151| DCD	|$LN5@OALGetTick|
+|$T46156| DCD	|$LN5@OALGetTick|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -867,7 +867,7 @@
 
   00000		 |$LN5@OALGetTick|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46148|
+  00004		 |$M46153|
 
 ; 689  :     UINT64 tickCount = OALTimerGetReg(&g_pTimerRegs->TCRR);
 
@@ -891,14 +891,14 @@
   0002c		 |$LN6@OALGetTick|
   0002c		 |$LN7@OALGetTick|
   0002c	00000000	 DCD         |g_pTimerRegs|
-  00030		 |$M46149|
+  00030		 |$M46154|
 
 			 ENDP  ; |OALGetTickCount|
 
 	EXPORT	|OEMGetTickCount|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46169| DCD	|$LN11@OEMGetTick|
+|$T46174| DCD	|$LN11@OEMGetTick|
 	DCD	0x40002401
 ; Function compile flags: /Ogspy
 
@@ -910,7 +910,7 @@
 
   00000		 |$LN11@OEMGetTick|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M46166|
+  00004		 |$M46171|
   00004	e59f5080	 ldr         r5, [pc, #0x80]
   00008	e59f4078	 ldr         r4, [pc, #0x78]
   0000c		 |$LL3@OEMGetTick|
@@ -984,14 +984,14 @@
   00088	00000000	 DCD         |g_oalTimerContext|
   0008c		 |$LN15@OEMGetTick|
   0008c	00000000	 DCD         |g_pTimerRegs|
-  00090		 |$M46167|
+  00090		 |$M46172|
 
 			 ENDP  ; |OEMGetTickCount|
 
 	IMPORT	|__rt_udiv64by64|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46192| DCD	|$LN10@UpdatePeri|
+|$T46197| DCD	|$LN10@UpdatePeri|
 	DCD	0x40002601
 ; Function compile flags: /Ogspy
 
@@ -1003,7 +1003,7 @@
 
   00000		 |$LN10@UpdatePeri|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M46189|
+  00004		 |$M46194|
   00004	e1a04000	 mov         r4, r0
 
 ; 259  :     UINT32 period, match;
@@ -1087,14 +1087,14 @@
   00090	00000000	 DCD         |g_oalTimerContext|
   00094		 |$LN13@UpdatePeri|
   00094	00000000	 DCD         |g_pTimerRegs|
-  00098		 |$M46190|
+  00098		 |$M46195|
 
 			 ENDP  ; |UpdatePeriod|
 
 	EXPORT	|OALTimerUpdateRescheduleTime|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46210| DCD	|$LN14@OALTimerUp|
+|$T46215| DCD	|$LN14@OALTimerUp|
 	DCD	0x40002101
 ; Function compile flags: /Ogspy
 
@@ -1106,7 +1106,7 @@
 
   00000		 |$LN14@OALTimerUp|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M46207|
+  00004		 |$M46212|
   00004	e1a05000	 mov         r5, r0
 
 ; 533  :     UINT32 baseMSec, periodMSec;
@@ -1146,9 +1146,9 @@
   00034	e5963000	 ldr         r3, [r6]
   00038	e59330c8	 ldr         r3, [r3, #0xC8]
   0003c	e1570003	 cmp         r7, r3
-  00040	1a00000a	 bne         |$cleanUp$45927|
+  00040	1a00000a	 bne         |$cleanUp$45932|
   00044	e3520021	 cmp         r2, #0x21
-  00048	ba000008	 blt         |$cleanUp$45927|
+  00048	ba000008	 blt         |$cleanUp$45932|
 
 ; 551  : 
 ; 552  :     // Calculate the distance between the new time and the last timer interrupt
@@ -1192,7 +1192,7 @@
 ; 569  :     UpdatePeriod(periodMSec);
 
   0006c	eb000000	 bl          UpdatePeriod
-  00070		 |$cleanUp$45927|
+  00070		 |$cleanUp$45932|
 
 ; 570  : 
 ; 571  : cleanUp:
@@ -1208,7 +1208,7 @@
   0007c	00000000	 DCD         |g_pNKGlobal|
   00080		 |$LN18@OALTimerUp|
   00080	00000000	 DCD         |g_pTimerRegs|
-  00084		 |$M46208|
+  00084		 |$M46213|
 
 			 ENDP  ; |OALTimerUpdateRescheduleTime|
 
@@ -1217,7 +1217,7 @@
 	IMPORT	|OALTickTimerIntr|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46231| DCD	|$LN13@OALTimerIn|
+|$T46236| DCD	|$LN13@OALTimerIn|
 	DCD	0x40004a01
 ; Function compile flags: /Ogspy
 
@@ -1229,7 +1229,7 @@
 
   00000		 |$LN13@OALTimerIn|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
-  00004		 |$M46228|
+  00004		 |$M46233|
 
 ; 586  :     UINT32 count;
 ; 587  :     INT32 period, delta;
@@ -1281,7 +1281,7 @@
 ; 608  :         delta = 0;
 
   00040	43a00000	 movmi       r0, #0
-  00044	4a000024	 bmi         |$cleanUp$45941|
+  00044	4a000024	 bmi         |$cleanUp$45946|
 
 ; 609  :         goto cleanUp;
 ; 610  :     }
@@ -1357,7 +1357,7 @@
 
   000d4	d5980000	 ldrle       r0, [r8]
   000d8	d3a07001	 movle       r7, #1
-  000dc		 |$cleanUp$45941|
+  000dc		 |$cleanUp$45946|
 
 ; 635  :         }
 ; 636  : 
@@ -1413,7 +1413,7 @@
   00120	00000000	 DCD         |g_oalTimerContext|
   00124		 |$LN18@OALTimerIn|
   00124	00000000	 DCD         |g_pTimerRegs|
-  00128		 |$M46229|
+  00128		 |$M46234|
 
 			 ENDP  ; |OALTimerIntrHandler|
 
@@ -1435,7 +1435,7 @@
 	IMPORT	|g_oalTimerIrq|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46258| DCD	|$LN16@OALTimerIn@2|
+|$T46263| DCD	|$LN16@OALTimerIn@2|
 	DCD	0x40008601
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1477,7 +1477,7 @@
 
   00000		 |$LN16@OALTimerIn@2|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
-  00004		 |$M46255|
+  00004		 |$M46260|
   00004	e1a0e000	 mov         lr, r0
 
 ; 419  :     BOOL rc = FALSE;
@@ -1716,7 +1716,7 @@
 
   001a0	e5943440	 ldr         r3, [r4, #0x440]
   001a4	e3130001	 tst         r3, #1
-  001a8	0a000006	 beq         |$cleanUp$45916|
+  001a8	0a000006	 beq         |$cleanUp$45921|
   001ac	e59f0038	 ldr         r0, [pc, #0x38]
   001b0	eb000000	 bl          NKDbgPrintfW
 
@@ -1740,7 +1740,7 @@
   001c0	e3a05001	 mov         r5, #1
   001c4		 |$LN13@OALTimerIn@2|
   001c4	e5943440	 ldr         r3, [r4, #0x440]
-  001c8		 |$cleanUp$45916|
+  001c8		 |$cleanUp$45921|
 
 ; 515  : 
 ; 516  : cleanUp:
@@ -1783,7 +1783,7 @@
   00210	00000000	 DCD         |??_C@_1DI@BBHLNDEO@?$AA?$CL?$AAO?$AAA?$AAL?$AAT?$AAi?$AAm?$AAe?$AAr?$AAI?$AAn?$AAi?$AAt?$AA?$CI?$AA?$CF?$AAd?$AA?0?$AA?5?$AA?$CF?$AAd?$AA?0?$AA?5?$AA?$CF?$AAd?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@|
   00214		 |$LN29@OALTimerIn@2|
   00214	00000000	 DCD         |dpCurSettings|
-  00218		 |$M46256|
+  00218		 |$M46261|
 
 			 ENDP  ; |OALTimerInit|
 

@@ -114,6 +114,14 @@ typedef enum OMAP_LCM_BACKLIGHT_BN{
 	MINUS,
 	BN_EXIT=2
 }OMAP_LCM_BACKLIGHT_BN;
+//------------------------------------------------------------------------
+//LCM Initial Ray 13-09-24
+//------------------------------------------------------------------------
+typedef enum OMAP_LCM_Initial{
+	LCM_HIGH=0,
+	LCM_LOW,
+	LCM_EXIT=2
+}OMAP_LCM_Initial;
 
 //------------------------------------------------------------------------
 //  Triton Access

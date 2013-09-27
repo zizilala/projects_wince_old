@@ -79,7 +79,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\sdhc\base\sdhcmain.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42211| DCD	|$LN12@DllEntry|
+|$T42215| DCD	|$LN12@DllEntry|
 	DCD	0x40001b01
 ; Function compile flags: /Ogspy
 
@@ -91,7 +91,7 @@
 
   00000		 |$LN12@DllEntry|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M42208|
+  00004		 |$M42212|
   00004	e1a04000	 mov         r4, r0
 
 ; 52   : 	UNREFERENCED_PARAMETER(pReserved);
@@ -176,7 +176,7 @@
   00068		 |$LN13@DllEntry|
   00068		 |$LN14@DllEntry|
   00068	00000000	 DCD         |dpCurSettings|
-  0006c		 |$M42209|
+  0006c		 |$M42213|
 
 			 ENDP  ; |DllEntry|
 
@@ -184,7 +184,7 @@
 	IMPORT	|?FreeHostContext@CSDIOControllerBase@@QAAXHH@Z| ; CSDIOControllerBase::FreeHostContext
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42223| DCD	|$LN5@SHC_Deinit|
+|$T42227| DCD	|$LN5@SHC_Deinit|
 	DCD	0x40000701
 ; Function compile flags: /Ogspy
 
@@ -196,7 +196,7 @@
 
   00000		 |$LN5@SHC_Deinit|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M42220|
+  00004		 |$M42224|
 
 ; 130  :     DEBUGMSG(SDCARD_ZONE_INIT, (TEXT("SDHC +Deinit\n")));
 ; 131  :     
@@ -218,14 +218,14 @@
 
   00014	e49de004	 ldr         lr, [sp], #4
   00018	e12fff1e	 bx          lr
-  0001c		 |$M42221|
+  0001c		 |$M42225|
 
 			 ENDP  ; |SHC_Deinit|
 
 	EXPORT	|SHC_Open|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42233| DCD	|$LN5@SHC_Open|
+|$T42237| DCD	|$LN5@SHC_Open|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -236,21 +236,21 @@
 ; 154  : {
 
   00000		 |$LN5@SHC_Open|
-  00000		 |$M42230|
+  00000		 |$M42234|
 
 ; 155  :     CSDIOControllerBase * pController = (CSDIOControllerBase*) hDeviceContext;
 ; 156  :     return (DWORD) pController;
 ; 157  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M42231|
+  00004		 |$M42235|
 
 			 ENDP  ; |SHC_Open|
 
 	EXPORT	|SHC_Close|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42242| DCD	|$LN5@SHC_Close|
+|$T42246| DCD	|$LN5@SHC_Close|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -261,7 +261,7 @@
 ; 171  : {
 
   00000		 |$LN5@SHC_Close|
-  00000		 |$M42239|
+  00000		 |$M42243|
 
 ; 172  :     CSDIOControllerBase * pController = (CSDIOControllerBase *) hOpenContext;
 ; 173  : 	UNREFERENCED_PARAMETER(pController);
@@ -272,7 +272,7 @@
 ; 175  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M42240|
+  00008		 |$M42244|
 
 			 ENDP  ; |SHC_Close|
 
@@ -280,7 +280,7 @@
 	IMPORT	|?PowerDown@CSDIOControllerBase@@QAAXXZ| ; CSDIOControllerBase::PowerDown
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42250| DCD	|$LN5@SHC_PowerD|
+|$T42254| DCD	|$LN5@SHC_PowerD|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -292,7 +292,7 @@
 
   00000		 |$LN5@SHC_PowerD|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M42247|
+  00004		 |$M42251|
 
 ; 189  :     CSDIOControllerBase * pController = (CSDIOControllerBase*) hDeviceContext;
 ; 190  :     ASSERT( pController != NULL );
@@ -304,7 +304,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M42248|
+  00010		 |$M42252|
 
 			 ENDP  ; |SHC_PowerDown|
 
@@ -312,7 +312,7 @@
 	IMPORT	|?PowerUp@CSDIOControllerBase@@QAAXXZ|	; CSDIOControllerBase::PowerUp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42258| DCD	|$LN5@SHC_PowerU|
+|$T42262| DCD	|$LN5@SHC_PowerU|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -324,7 +324,7 @@
 
   00000		 |$LN5@SHC_PowerU|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M42255|
+  00004		 |$M42259|
 
 ; 206  :     CSDIOControllerBase * pController = (CSDIOControllerBase*) hDeviceContext;
 ; 207  :     ASSERT( pController != NULL );
@@ -336,7 +336,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M42256|
+  00010		 |$M42260|
 
 			 ENDP  ; |SHC_PowerUp|
 
@@ -347,23 +347,23 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42307| DCD	|$LN55@SHC_IOCont|
+|$T42311| DCD	|$LN55@SHC_IOCont|
 	DCD	0xc0005804
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42309| DCD	|$LN24@SHC_IOCont|
+|$T42313| DCD	|$LN24@SHC_IOCont|
 	DCD	0x40000301
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42311| DCD	|$LN38@SHC_IOCont|
+|$T42315| DCD	|$LN38@SHC_IOCont|
 	DCD	0x40000301
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42313| DCD	|$LN31@SHC_IOCont|
+|$T42317| DCD	|$LN31@SHC_IOCont|
 	DCD	0x40000601
 
   00000			 AREA	 |.xdata|, DATA
-|$T42305| DCD	0x3
+|$T42309| DCD	0x3
 	DCD	|$LN28@SHC_IOCont|
 	DCD	|$LN29@SHC_IOCont|
 	DCD	|$LN24@SHC_IOCont|
@@ -381,7 +381,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T42305|
+  00004	00000000	 DCD         |$T42309|
 
   00008		 |SHC_IOControl| PROC
 
@@ -412,7 +412,7 @@
 ; 239  :     // Check if we get correct context
 ; 240  :     if (pController == NULL)
 
-  00024	0a00004c	 beq         |$cleanUp$41442|
+  00024	0a00004c	 beq         |$cleanUp$41446|
   00028	e3a03832	 mov         r3, #0x32, 16
 
 ; 241  :     {
@@ -435,7 +435,7 @@
   0004c	0a000006	 beq         |$LN13@SHC_IOCont|
   00050	e59f3134	 ldr         r3, [pc, #0x134]
   00054	e1510003	 cmp         r1, r3
-  00058	1a00003f	 bne         |$cleanUp$41442|
+  00058	1a00003f	 bne         |$cleanUp$41446|
 
 ; 323  :                 {
 ; 324  :                     DEBUGMSG(SDCARD_ZONE_ERROR, (L"Exception in ioctl\r\n"));
@@ -463,7 +463,7 @@
 
 ; 340  :             break;
 
-  00068	ea00003b	 b           |$cleanUp$41442|
+  00068	ea00003b	 b           |$cleanUp$41446|
   0006c		 |$LN13@SHC_IOCont|
 
 ; 267  :                     {
@@ -479,10 +479,10 @@
 
   0006c	e59b1000	 ldr         r1, [r11]
   00070	e3510000	 cmp         r1, #0
-  00074	0a000038	 beq         |$cleanUp$41442|
+  00074	0a000038	 beq         |$cleanUp$41446|
   00078	e59b3004	 ldr         r3, [r11, #4]
   0007c	e3530004	 cmp         r3, #4
-  00080	3a000035	 bcc         |$cleanUp$41442|
+  00080	3a000035	 bcc         |$cleanUp$41446|
   00084		 |$LN35@SHC_IOCont|
 
 ; 277  :             {
@@ -541,13 +541,13 @@
 
 ; 298  :                 }
 
-  000c0	ea000025	 b           |$cleanUp$41442|
+  000c0	ea000025	 b           |$cleanUp$41446|
   000c4		 |$LN32@SHC_IOCont|
 
 ; 299  :                 __except(EXCEPTION_EXECUTE_HANDLER) 
 
   000c4	e51b001c	 ldr         r0, [r11, #-0x1C]
-  000c8	ea000023	 b           |$cleanUp$41442|
+  000c8	ea000023	 b           |$cleanUp$41446|
   000cc		 |$LN6@SHC_IOCont|
 
 ; 300  :                 {
@@ -563,10 +563,10 @@
 
   000cc	e59b1000	 ldr         r1, [r11]
   000d0	e3510000	 cmp         r1, #0
-  000d4	0a000020	 beq         |$cleanUp$41442|
+  000d4	0a000020	 beq         |$cleanUp$41446|
   000d8	e59b3004	 ldr         r3, [r11, #4]
   000dc	e3530004	 cmp         r3, #4
-  000e0	3a00001d	 bcc         |$cleanUp$41442|
+  000e0	3a00001d	 bcc         |$cleanUp$41446|
   000e4		 |$LN42@SHC_IOCont|
 
 ; 310  :             {
@@ -591,13 +591,13 @@
 ; 320  :                             ));
 ; 321  :                 }
 
-  000f4	ea000018	 b           |$cleanUp$41442|
+  000f4	ea000018	 b           |$cleanUp$41446|
   000f8		 |$LN39@SHC_IOCont|
 
 ; 322  :                 __except(EXCEPTION_EXECUTE_HANDLER) 
 
   000f8	e51b001c	 ldr         r0, [r11, #-0x1C]
-  000fc	ea000016	 b           |$cleanUp$41442|
+  000fc	ea000016	 b           |$cleanUp$41446|
   00100		 |$LN16@SHC_IOCont|
 
 ; 249  :     {
@@ -608,13 +608,13 @@
 
   00100	e59b4000	 ldr         r4, [r11]
   00104	e3540000	 cmp         r4, #0
-  00108	0a000013	 beq         |$cleanUp$41442|
+  00108	0a000013	 beq         |$cleanUp$41446|
   0010c	e59b3004	 ldr         r3, [r11, #4]
   00110	e3530030	 cmp         r3, #0x30
-  00114	3a000010	 bcc         |$cleanUp$41442|
+  00114	3a000010	 bcc         |$cleanUp$41446|
   00118	e59b5008	 ldr         r5, [r11, #8]
   0011c	e3550000	 cmp         r5, #0
-  00120	0a00000d	 beq         |$cleanUp$41442|
+  00120	0a00000d	 beq         |$cleanUp$41446|
   00124		 |$LN28@SHC_IOCont|
 
 ; 254  :             {
@@ -649,13 +649,13 @@
 
 ; 265  :                     }
 
-  0014c	ea000002	 b           |$cleanUp$41442|
+  0014c	ea000002	 b           |$cleanUp$41446|
   00150		 |$LN25@SHC_IOCont|
 
 ; 266  :                     __except(EXCEPTION_EXECUTE_HANDLER) 
 
   00150	e51b001c	 ldr         r0, [r11, #-0x1C]
-  00154	ea000000	 b           |$cleanUp$41442|
+  00154	ea000000	 b           |$cleanUp$41446|
   00158		 |$LN51@SHC_IOCont|
 
 ; 341  : 
@@ -666,7 +666,7 @@
 ; 346  :     return rc;
 
   00158	e51b0018	 ldr         r0, [r11, #-0x18]
-  0015c		 |$cleanUp$41442|
+  0015c		 |$cleanUp$41446|
 
 ; 347  : }
 
@@ -725,7 +725,7 @@
 	IMPORT	|?CreateSDIOController@@YAPAVCSDIOControllerBase@@XZ| ; CreateSDIOController
 
   00000			 AREA	 |.pdata|, PDATA
-|$T42344| DCD	|$LN13@SHC_Init|
+|$T42348| DCD	|$LN13@SHC_Init|
 	DCD	0x40001201
 ; Function compile flags: /Ogspy
 
@@ -737,7 +737,7 @@
 
   00000		 |$LN13@SHC_Init|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M42341|
+  00004		 |$M42345|
   00004	e1a06000	 mov         r6, r0
 
 ; 90   :     LPCTSTR pszActiveKey = (LPCTSTR) dwContext;
@@ -783,7 +783,7 @@
   0002c	03a01001	 moveq       r1, #1
   00030	01a00005	 moveq       r0, r5
   00034	11a04005	 movne       r4, r5
-  00038		 |$EXIT$41387|
+  00038		 |$EXIT$41391|
   00038	0b000000	 bleq        |?FreeHostContext@CSDIOControllerBase@@QAAXHH@Z|
   0003c		 |$LN8@SHC_Init|
 
@@ -797,7 +797,7 @@
   0003c	e1a00004	 mov         r0, r4
   00040	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00044	e12fff1e	 bx          lr
-  00048		 |$M42342|
+  00048		 |$M42346|
 
 			 ENDP  ; |SHC_Init|
 

@@ -90,11 +90,11 @@
 ; File c:\wince600\platform\z2170p\src\bootloader\eboot\nand\cfg.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46913| DCD	|$LN23@BLReadBoot|
+|$T46927| DCD	|$LN23@BLReadBoot|
 	DCD	0xc0006303
 
   00000			 AREA	 |.xdata|, DATA
-|$T46909| DCD	0xffffffe4
+|$T46923| DCD	0xffffffe4
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1HE@BDJAOKHO@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAE?$AAB?$AAO?$AAO?$AAT?$AA?$CB?$AAB?$AAL?$AAR?$AAe?$AAa?$AAd?$AAB?$AAo?$AAo?$AAt?$AAC?$AAf?$AAg?$AA?3?$AA?5?$AAF?$AAl?$AAa?$AAs@| DCB "E"
@@ -146,7 +146,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T46909|
+  00004	00000000	 DCD         |$T46923|
 
   00008		 |BLReadBootCfg| PROC
 
@@ -156,7 +156,7 @@
   00008	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   0000c	e59fc17c	 ldr         r12, [pc, #0x17C]
   00010	e08dd00c	 add         sp, sp, r12
-  00014		 |$M46910|
+  00014		 |$M46924|
   00014	e1a07000	 mov         r7, r0
   00018	e59f316c	 ldr         r3, [pc, #0x16C]
   0001c	e5933000	 ldr         r3, [r3]
@@ -224,13 +224,13 @@
   00078	e59f30f8	 ldr         r3, [pc, #0xF8]
   0007c	e5933440	 ldr         r3, [r3, #0x440]
   00080	e3130001	 tst         r3, #1
-  00084	0a000030	 beq         |$cleanUp$46747|
+  00084	0a000030	 beq         |$cleanUp$46761|
   00088	e59f00f0	 ldr         r0, [pc, #0xF0]
   0008c	eb000000	 bl          NKDbgPrintfW
 
 ; 52   :         goto cleanUp;
 
-  00090	ea00002d	 b           |$cleanUp$46747|
+  00090	ea00002d	 b           |$cleanUp$46761|
   00094		 |$LN7@BLReadBoot|
 
 ; 53   :         }
@@ -251,14 +251,14 @@
   000a0	e59f30d0	 ldr         r3, [pc, #0xD0]
   000a4	e5933440	 ldr         r3, [r3, #0x440]
   000a8	e3130001	 tst         r3, #1
-  000ac	0a000026	 beq         |$cleanUp$46747|
+  000ac	0a000026	 beq         |$cleanUp$46761|
   000b0	e59f00c4	 ldr         r0, [pc, #0xC4]
   000b4	e3a02b02	 mov         r2, #2, 22
   000b8	eb000000	 bl          NKDbgPrintfW
 
 ; 62   :         goto cleanUp;
 
-  000bc	ea000022	 b           |$cleanUp$46747|
+  000bc	ea000022	 b           |$cleanUp$46761|
   000c0		 |$LN6@BLReadBoot|
 
 ; 63   :         }
@@ -337,14 +337,14 @@
   00118	e59f3058	 ldr         r3, [pc, #0x58]
   0011c	e5933440	 ldr         r3, [r3, #0x440]
   00120	e3130001	 tst         r3, #1
-  00124	0a000008	 beq         |$cleanUp$46747|
+  00124	0a000008	 beq         |$cleanUp$46761|
   00128	e59f0044	 ldr         r0, [pc, #0x44]
   0012c	e2441001	 sub         r1, r4, #1
   00130	eb000000	 bl          NKDbgPrintfW
 
 ; 97   :             goto cleanUp;
 
-  00134	ea000004	 b           |$cleanUp$46747|
+  00134	ea000004	 b           |$cleanUp$46761|
   00138		 |$LN2@BLReadBoot|
 
 ; 98   :     }
@@ -353,7 +353,7 @@
 ; 101  :     memcpy(pBootCfg, buffer, sizeof(BOOT_CFG));        
 
   00138	e28d1fe6	 add         r1, sp, #0xE6, 30
-  0013c	e3a02084	 mov         r2, #0x84
+  0013c	e3a0208c	 mov         r2, #0x8C
   00140	e1a00007	 mov         r0, r7
   00144	eb000000	 bl          memcpy
 
@@ -362,7 +362,7 @@
 ; 104  :     rc = TRUE;
 
   00148	e3a06001	 mov         r6, #1
-  0014c		 |$cleanUp$46747|
+  0014c		 |$cleanUp$46761|
 
 ; 105  : 
 ; 106  : cleanUp:
@@ -402,7 +402,7 @@
   0018c	00000000	 DCD         |__security_cookie|
   00190		 |$LN32@BLReadBoot|
   00190	fffff464	 DCD         0xfffff464
-  00194		 |$M46911|
+  00194		 |$M46925|
 
 			 ENDP  ; |BLReadBootCfg|
 
@@ -417,11 +417,11 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46971| DCD	|$LN40@BLWriteBoo|
+|$T46985| DCD	|$LN40@BLWriteBoo|
 	DCD	0xc000a502
 
   00000			 AREA	 |.xdata|, DATA
-|$T46967| DCD	0xffffffd8
+|$T46981| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1HI@NMGONLPH@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAE?$AAB?$AAO?$AAO?$AAT?$AA?$CB?$AAB?$AAL?$AAW?$AAr?$AAi?$AAt?$AAe?$AAB?$AAo?$AAo?$AAt?$AAC?$AAf?$AAg?$AA?3?$AA?5?$AAF?$AAl?$AAa@| DCB "E"
@@ -482,7 +482,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T46967|
+  00004	00000000	 DCD         |$T46981|
 
   00008		 |BLWriteBootCfg| PROC
 
@@ -491,7 +491,7 @@
   00008		 |$LN40@BLWriteBoo|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24ddfe7	 sub         sp, sp, #0xE7, 30
-  00010		 |$M46968|
+  00010		 |$M46982|
   00010	e1a0a000	 mov         r10, r0
   00014	e59f327c	 ldr         r3, [pc, #0x27C]
   00018	e5933000	 ldr         r3, [r3]
@@ -560,13 +560,13 @@
   00074	e59f3200	 ldr         r3, [pc, #0x200]
   00078	e5933440	 ldr         r3, [r3, #0x440]
   0007c	e3130001	 tst         r3, #1
-  00080	0a00006c	 beq         |$cleanUp$46784|
+  00080	0a00006c	 beq         |$cleanUp$46798|
   00084	e59f0200	 ldr         r0, [pc, #0x200]
   00088	eb000000	 bl          NKDbgPrintfW
 
 ; 140  :         goto cleanUp;
 
-  0008c	ea000069	 b           |$cleanUp$46784|
+  0008c	ea000069	 b           |$cleanUp$46798|
   00090		 |$LN13@BLWriteBoo|
 
 ; 141  :         }
@@ -587,14 +587,14 @@
   0009c	e59f31d8	 ldr         r3, [pc, #0x1D8]
   000a0	e5933440	 ldr         r3, [r3, #0x440]
   000a4	e3130001	 tst         r3, #1
-  000a8	0a000062	 beq         |$cleanUp$46784|
+  000a8	0a000062	 beq         |$cleanUp$46798|
   000ac	e59f01d4	 ldr         r0, [pc, #0x1D4]
   000b0	e3a02b02	 mov         r2, #2, 22
   000b4	eb000000	 bl          NKDbgPrintfW
 
 ; 150  :         goto cleanUp;
 
-  000b8	ea00005e	 b           |$cleanUp$46784|
+  000b8	ea00005e	 b           |$cleanUp$46798|
   000bc		 |$LN12@BLWriteBoo|
 
 ; 151  :         }
@@ -708,7 +708,7 @@
 ; 198  :     memcpy(pEBOOT + offset, pBootCfg, sizeof(BOOT_CFG)); 
 
   00160	e0440009	 sub         r0, r4, r9
-  00164	e3a02084	 mov         r2, #0x84
+  00164	e3a0208c	 mov         r2, #0x8C
   00168	e1a0100a	 mov         r1, r10
   0016c	eb000000	 bl          memcpy
 
@@ -730,11 +730,11 @@
   00180	e59f30f4	 ldr         r3, [pc, #0xF4]
   00184	e5933440	 ldr         r3, [r3, #0x440]
   00188	e3130001	 tst         r3, #1
-  0018c	0a000029	 beq         |$cleanUp$46784|
+  0018c	0a000029	 beq         |$cleanUp$46798|
   00190	e59f00ec	 ldr         r0, [pc, #0xEC]
   00194	e1a01006	 mov         r1, r6
   00198	eb000000	 bl          NKDbgPrintfW
-  0019c	ea000025	 b           |$cleanUp$46784|
+  0019c	ea000025	 b           |$cleanUp$46798|
   001a0		 |$LN32@BLWriteBoo|
 
 ; 185  :                 OALMSG(OAL_ERROR, (L"\r\nERROR: EBOOT!BLWriteBootCfg: "
@@ -744,14 +744,14 @@
   001a0	e59f30d4	 ldr         r3, [pc, #0xD4]
   001a4	e5933440	 ldr         r3, [r3, #0x440]
   001a8	e3130001	 tst         r3, #1
-  001ac	0a000021	 beq         |$cleanUp$46784|
+  001ac	0a000021	 beq         |$cleanUp$46798|
   001b0	e59f00c8	 ldr         r0, [pc, #0xC8]
   001b4	e1a01005	 mov         r1, r5
   001b8	eb000000	 bl          NKDbgPrintfW
 
 ; 188  :             goto cleanUp;
 
-  001bc	ea00001d	 b           |$cleanUp$46784|
+  001bc	ea00001d	 b           |$cleanUp$46798|
   001c0		 |$LN5@BLWriteBoo|
 
 ; 207  :         goto cleanUp;
@@ -831,7 +831,7 @@
 ; 240  :     rc = TRUE;
 
   00234	e3a08001	 mov         r8, #1
-  00238		 |$cleanUp$46784|
+  00238		 |$cleanUp$46798|
 
 ; 241  : 
 ; 242  : cleanUp:
@@ -862,11 +862,11 @@
   00258	e59f301c	 ldr         r3, [pc, #0x1C]
   0025c	e5933440	 ldr         r3, [r3, #0x440]
   00260	e3130001	 tst         r3, #1
-  00264	0afffff3	 beq         |$cleanUp$46784|
+  00264	0afffff3	 beq         |$cleanUp$46798|
   00268	e59f0008	 ldr         r0, [pc, #8]
   0026c	e1a01004	 mov         r1, r4
   00270	eb000000	 bl          NKDbgPrintfW
-  00274	eaffffef	 b           |$cleanUp$46784|
+  00274	eaffffef	 b           |$cleanUp$46798|
   00278		 |$LN41@BLWriteBoo|
   00278		 |$LN42@BLWriteBoo|
   00278	00000000	 DCD         |??_C@_1HI@NMGONLPH@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAE?$AAB?$AAO?$AAO?$AAT?$AA?$CB?$AAB?$AAL?$AAW?$AAr?$AAi?$AAt?$AAe?$AAB?$AAo?$AAo?$AAt?$AAC?$AAf?$AAg?$AA?3?$AA?5?$AAF?$AAl?$AAa@|
@@ -886,7 +886,7 @@
   00294	00000000	 DCD         |g_ulFlashBase|
   00298		 |$LN50@BLWriteBoo|
   00298	00000000	 DCD         |__security_cookie|
-  0029c		 |$M46969|
+  0029c		 |$M46983|
 
 			 ENDP  ; |BLWriteBootCfg|
 
@@ -901,11 +901,11 @@
 	IMPORT	|__rt_udiv|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47008| DCD	|$LN22@BLReserveB|
+|$T47022| DCD	|$LN22@BLReserveB|
 	DCD	0xc0005902
 
   00000			 AREA	 |.xdata|, DATA
-|$T47004| DCD	0xffffffec
+|$T47018| DCD	0xffffffec
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_15JNBOKNOG@?$AA?$AN?$AA?6?$AA?$AA@| DCB 0xd, 0x0, 0xa, 0x0, 0x0, 0x0 ; `string'
@@ -949,7 +949,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T47004|
+  00004	00000000	 DCD         |$T47018|
 
   00008		 |BLReserveBootBlocks| PROC
 
@@ -958,7 +958,7 @@
   00008		 |$LN22@BLReserveB|
   00008	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   0000c	e24ddfe5	 sub         sp, sp, #0xE5, 30
-  00010		 |$M47005|
+  00010		 |$M47019|
   00010	e59f3150	 ldr         r3, [pc, #0x150]
   00014	e5933000	 ldr         r3, [r3]
   00018	e58d3390	 str         r3, [sp, #0x390]
@@ -1024,7 +1024,7 @@
   00070	e59f30e4	 ldr         r3, [pc, #0xE4]
   00074	e5933440	 ldr         r3, [r3, #0x440]
   00078	e3130001	 tst         r3, #1
-  0007c	0a000028	 beq         |$cleanUp$46831|
+  0007c	0a000028	 beq         |$cleanUp$46845|
   00080	e59f00d0	 ldr         r0, [pc, #0xD0]
 
 ; 274  :         goto cleanUp;
@@ -1157,7 +1157,7 @@
   0011c	e3a04001	 mov         r4, #1
   00120		 |$LN19@BLReserveB|
   00120	eb000000	 bl          NKDbgPrintfW
-  00124		 |$cleanUp$46831|
+  00124		 |$cleanUp$46845|
 
 ; 323  : 
 ; 324  : cleanUp:
@@ -1199,7 +1199,7 @@
   00164	00000000	 DCD         |g_ulFlashBase|
   00168		 |$LN33@BLReserveB|
   00168	00000000	 DCD         |__security_cookie|
-  0016c		 |$M47006|
+  0016c		 |$M47020|
 
 			 ENDP  ; |BLReserveBootBlocks|
 
@@ -1207,7 +1207,7 @@
 	IMPORT	|ShowLogo|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47029| DCD	|$LN5@BLShowLogo|
+|$T47043| DCD	|$LN5@BLShowLogo|
 	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
@@ -1219,7 +1219,7 @@
 
   00000		 |$LN5@BLShowLogo|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M47026|
+  00004		 |$M47040|
 
 ; 335  :     //  Show the bootloader splashscreen
 ; 336  :     ShowLogo(g_ulFlashBase, IMAGE_XLDR_BOOTSEC_NAND_SIZE + IMAGE_EBOOT_BOOTSEC_NAND_SIZE);
@@ -1241,7 +1241,7 @@
   00020		 |$LN6@BLShowLogo|
   00020		 |$LN7@BLShowLogo|
   00020	00000000	 DCD         |g_ulFlashBase|
-  00024		 |$M47027|
+  00024		 |$M47041|
 
 			 ENDP  ; |BLShowLogo|
 

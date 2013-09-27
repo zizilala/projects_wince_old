@@ -60,9 +60,16 @@ BOOL BLSDtoFlash(void);					            //Initial SD Card, Ray 13-09-10
 static VOID BacklightON(OAL_BLMENU_ITEM *pMenu);   //Below instance Backlight function,Ray 13-09-18  
 static VOID BacklightOFF(OAL_BLMENU_ITEM *pMenu);
 static VOID BacklightBrightness(OAL_BLMENU_ITEM *pMenu);
-
 //VOID KeypadState();									//keypad testing, Ray 13-08-14
+VOID LCMInitial(OAL_BLMENU_ITEM *pMenu);                //Testing LCM , Ray 13-09-24
+void LCD_SPI_Init(void);                                 //LCM SPI_Init, Ray 13-09-24                             
+void spi_Low(void);                                     //LCM SPI_low, Ray 13-09-24                              
+void LcdStall(DWORD);
 
+
+
+
+//------------------------------------------------------------------------------
 #if BUILDING_EBOOT_SD
 static VOID ShowSDCardSettings(OAL_BLMENU_ITEM *pMenu);
 static VOID EnterSDCardFilename(OAL_BLMENU_ITEM *pMenu);
@@ -180,6 +187,9 @@ static OAL_BLMENU_ITEM g_menuMain[] = {
 		L'd', L"File Transfer from SD Card to Flash", SDtoFlash,		//Ray 13-09-03 
         NULL, NULL, NULL
 	}, {
+		L'e', L"LCM Initial", LCMInitial,		                        //Ray 13-09-24 
+        NULL, NULL, NULL
+	}, {
         L'0', L"Exit and Continue", NULL,
         NULL, NULL, NULL
     }, {
@@ -224,6 +234,9 @@ static OAL_BLMENU_ITEM g_menuMain[] = {
         NULL, NULL, NULL
 	}, {
 		L'c', L"File Transfer from SD Card to Flash", SDtoFlash,		//Ray 13-09-03 
+        NULL, NULL, NULL
+	}, {
+		L'e', L"LCM Initial", LCMInitial,		                        //Ray 13-09-24 
         NULL, NULL, NULL
 	}, {
         L'0', L"Exit and Continue", NULL,
@@ -319,6 +332,17 @@ OMAP_LCM_BACKLIGHT_BN_MENU backlightBN[] ={
 	{BN_EXIT,   L"EXIT"},
 };
 
+//Ray 13-09-24
+typedef struct _OMAP_LCM_Initial_MENU{
+		DWORD	 	lcmIniActive;
+		LPCWSTR		lcmIniName;
+}OMAP_LCM_Initial_MENU;
+
+OMAP_LCM_Initial_MENU LCMInitiaArray[] ={
+	{LCM_HIGH, 		L"High"},
+	{LCM_LOW,	 	L"Low"},
+	{LCM_EXIT,   L"EXIT"},
+};
 
 //------------------------------------------------------------------------------
 //Ray 13-08-13
@@ -335,26 +359,29 @@ VOID BLMenu(BOOL bForced)
 	GPIOGetBit(hGPIO, 114);	//key SD1
 	GPIOGetBit(hGPIO, 115); //key SD3
     
-    // First let user break to menu
-    //while (!bForced && (delay > 0 && key != L' ')) 
-    while (!bForced && (delay > 0 && key != GPIOGetBit(hGPIO, 114) 
-									&& key != GPIOGetBit(hGPIO, 115) )) 
+    // First let user break to menu 
+    // Break to menu & count, Ray 13-09-26 
+    while (!bForced && (delay > 0 && key != L' ')) 
+    //while (!bForced && (delay > 0 && key != GPIOGetBit(hGPIO, 114) 
+	//								&& key != GPIOGetBit(hGPIO, 115) )) 
 	{
 		//OALLog(L"Hit space to enter configuration menu %d...\r\n", delay);
 		OALLog(L"Sync-press side key to enter configuration menu %d...\r\n", delay);
 		time = OALGetTickCount();
 		while ((OALGetTickCount() - time) < 1000) 
 		{
-			//if ((key = OALBLMenuReadKey(FALSE)) == L' ') 
-			if ( (key = OALBLMenuReadKey(FALSE)) == GPIOGetBit(hGPIO, 114) 
-					&& (key = OALBLMenuReadKey(FALSE)) == GPIOGetBit(hGPIO, 115) ) 
+			if ((key = OALBLMenuReadKey(FALSE)) == L' ') 
+			/*if ( (key = OALBLMenuReadKey(FALSE)) == GPIOGetBit(hGPIO, 114) 
+					&& (key = OALBLMenuReadKey(FALSE)) == GPIOGetBit(hGPIO, 115) )*/ 
 				break;
 		}
 		delay--;
 	}
+	
     //entry = FALSE;
-	//if ((bForced == TRUE) || (key == L' ')) 
-	if ((bForced == TRUE) || (key ==  GPIOGetBit(hGPIO, 114)) && (key ==  GPIOGetBit(hGPIO, 115))) 
+    if ((bForced == TRUE) || (key == L' '))
+    //if ((!bForced == TRUE))
+	//if ((bForced == TRUE) || (key ==  GPIOGetBit(hGPIO, 114)) && (key ==  GPIOGetBit(hGPIO, 115))) 
 	{									//Combo SIDE KEY 
         BLShowLogo();					//function is TRUE,so Forever go , Ray 13-07-31 
 		OALBLMenuShow(&g_menuRoot);
@@ -753,13 +780,13 @@ VOID BacklightOFF(OAL_BLMENU_ITEM *pMenu)
 VOID BacklightBrightness(OAL_BLMENU_ITEM *pMenu)
 {
     
-    UINT32 AAT3123_Code[CODE_SIZE] = { 1, 4 , 7, 10, 13, 16, 19, 22, 25, 28, 31};
+//    UINT32 AAT3123_Code[CODE_SIZE] = { 1, 4 , 7, 10, 13, 16, 19, 22, 25, 28, 31};
                                     /*{ 1, 2, 3, 4, 5, 6, 7, 8, 9,10,
                                        11,12,13,14,15,16,17,18,19,20,
                                        21,22,23,24,25,26,27,28,29,30,
                                        31,32};*/
     WCHAR key;
-    UINT32 i = 6;
+//    UINT32 i = 6;
     int k;
     //HANDLE hGPIO = NULL;
     hGPIO = GPIOOpen();
@@ -771,11 +798,14 @@ VOID BacklightBrightness(OAL_BLMENU_ITEM *pMenu)
                                 backlightBN[k].bnName);
 	}
     OALLog(L" [0] Exit and Continue\r\n");
+    
     GPIOClrBit( hGPIO, BACKLIGHT_EN_GPIO);
     OALStall(1000);
 
     GPIOSetBit( hGPIO, BACKLIGHT_EN_GPIO);
     OALStall(1);
+
+
     
     key = OALBLMenuReadKey(TRUE);
     // Show +/- selection
@@ -783,13 +813,14 @@ VOID BacklightBrightness(OAL_BLMENU_ITEM *pMenu)
             OALLog(L"\r\n Selection : ");
         
         
-            if(key == L'1'){
-                OALLog(L"%s\r\n", backlightBN[g_bootCfg.backlighbn].bnName);
-            }else if(key == L'2'){
-                OALLog(L"\r %s ", backlightBN[g_bootCfg.backlighbn+1].bnName);
-            }
+       if(key == L'1'){
+          OALLog(L"%s\r\n", backlightBN[g_bootCfg.backlighbn].bnName );
+       }else{
+          OALLog(L"%s\r\n ", (backlightBN[(g_bootCfg.backlighbn) +1 ].bnName));
+       }
+
         
-            switch(key)
+           /*switch(key)
             {
             case L'1':
                 
@@ -821,10 +852,10 @@ VOID BacklightBrightness(OAL_BLMENU_ITEM *pMenu)
                 }
                 break;
             case L'0':
-                goto stop;
-            }
-        }
-     }else if(key == L'0'){
+               // goto stop;
+               break;
+            }*/
+     }else{ /*(key == L'0'){*/
         OALLog(L"\r\n Selection : ");
         OALLog(L"%c\r\n", key);
      }
@@ -883,18 +914,17 @@ VOID BacklightBrightness(OAL_BLMENU_ITEM *pMenu)
 
    //OALLog(L"%c\r\n", key);
    UNREFERENCED_PARAMETER(pMenu);
-stop:
+//stop:
    if (key == L'0') return;
    g_bootCfg.backlighbn = (key - L'0' - 1);
 }
 
 //------------------------------------------------------------------------------
-//Ray 13-07-26 
+//Ray 13-09-18 
 VOID SetBacklight(OAL_BLMENU_ITEM *pMenu)
 {
     //OALBLMenuShow(&g_menuBrightness);
     OAL_BLMENU_ITEM *pBnItem;
-    
     WCHAR key;
     //UINT32 i;
     const int running = 1;
@@ -904,11 +934,11 @@ VOID SetBacklight(OAL_BLMENU_ITEM *pMenu)
     {
         OALBLMenuHeader(L"Select Backlight ON/OFF");
 
-        // Print menu items
-         for (pBnItem = g_menuBrightness; pBnItem->key != L'0'; pBnItem++) {
+        // Print menu items [1]~[3], Ray 13-09-23 
+        for (pBnItem = g_menuBrightness; pBnItem->key != L'0'; pBnItem++) {
             OALLog(L" [%c] %s\r\n", pBnItem->key, pBnItem->text);
         }
-        OALLog(L" [0] Exit and Continue\r\n");
+        OALLog(L" [0] Exit and Continue\r\n"); 
         OALLog(L"\r\n Selection : ");
 
         while(running)
@@ -917,10 +947,12 @@ VOID SetBacklight(OAL_BLMENU_ITEM *pMenu)
             key = OALBLMenuReadKey(TRUE);
             // Look for key in menu
             for (pBnItem = g_menuBrightness; pBnItem->key != 0; pBnItem++) {
-                if (pBnItem->key == key) break;
+                if (pBnItem->key == key)  
+                    break;
             }
             //If we find it, break loop
-            if (pBnItem->key != 0) break;
+            if (pBnItem->key != 0) 
+                break;
         }
 
         // Show ON/OFF selection
@@ -929,7 +961,7 @@ VOID SetBacklight(OAL_BLMENU_ITEM *pMenu)
 	    // When action is NULL return back to parent menu
         if (pBnItem->pfnAction == NULL) break;
         
-        // Else call menu action
+        // Else call menu action(function pointer)
         pBnItem->pfnAction(pBnItem);
    }	
    
@@ -984,11 +1016,12 @@ VOID SetBacklight(OAL_BLMENU_ITEM *pMenu)
 
 //------------------------------------------------------------------------------
 //Ray 13-09-03
+//
 VOID SDtoFlash(OAL_BLMENU_ITEM *pMenu)
 {
 	WCHAR key;
 	UINT32 i;
-	BOOL read;
+//	BOOL read;
 //  BOOL write;
 	BOOL check = TRUE;
 //  char size[500];
@@ -999,7 +1032,7 @@ VOID SDtoFlash(OAL_BLMENU_ITEM *pMenu)
 	//pRead =
 	//BLSDtoFlash();
 	//check = BLSDCardToFlash(L"OUT_DATA.txt");
-	read = BLSDtoFlash();
+	//read = BLSDtoFlash();
     //OEMWriteFlash(IMAGE_STARTUP_IMAGE_PA,
     //? Ray 13-09-16 
     /*write = WriteFlashFromEEBOOT(IMAGE_STARTUP_IMAGE_PA,
@@ -1040,7 +1073,7 @@ VOID SDtoFlash(OAL_BLMENU_ITEM *pMenu)
 		case L'1':
             OALLog(L" Reading : ");
             
-			if(read == check){
+			if(/*read==*/check){
 				OALLog(L"File Read ok!!\n");
             }else{
 				OALLog(L"File Read failure!!\n");
@@ -1094,6 +1127,54 @@ VOID SDtoFlash(OAL_BLMENU_ITEM *pMenu)
 
 	//Call ShowSettings() , show current settings status
 	g_bootCfg.sdtoflash = (key - L'0' - 1);
+}
+
+//------------------------------------------------------------------------------
+//Ray 13-09-24
+//
+VOID LCMInitial(OAL_BLMENU_ITEM *pMenu)
+{
+    WCHAR key;
+    UINT32 i;
+    DWORD dTime = 5000000;
+
+    UNREFERENCED_PARAMETER(pMenu);
+    
+    OALBLMenuHeader(L"LCM Initial and Check");
+    
+    for (i=0; i<LCM_EXIT; i++)
+    {
+        OALLog(L" [%d] %s\r\n", i+1 , LCMInitiaArray[i].lcmIniName);
+    }
+    OALLog(L" [0] Exit and Continue\r\n");
+
+    OALLog(L"\r\n Selection : ");
+    // Get key
+    do {
+        key = OALBLMenuReadKey(TRUE);
+    } while (key < L'0' || key > L'0'+ i);
+    
+    OALLog(L"%c\r\n", key);
+
+
+    switch(key)
+	{
+		case L'1':
+            LCD_SPI_Init();
+            LcdStall(dTime);
+			break;
+		case L'2':
+            spi_Low();
+            break;
+		default:
+			break;
+	}
+    
+    // If user select exit don't change device
+    if (key == L'0') return;
+
+    g_bootCfg.lcmInitial = (key - L'0' - 1);
+
 }
 
 //------------------------------------------------------------------------------

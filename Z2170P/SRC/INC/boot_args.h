@@ -65,6 +65,8 @@ typedef struct {
 
 	OMAP_LCM_BACKLIGHT_BN backlighbn;
 
+	OMAP_LCM_Initial    lcmInitial; //  Ray 13-09-24
+
     UINT32 flashNKFlags;
     UCHAR ECCtype;
     UINT32 opp_mode;

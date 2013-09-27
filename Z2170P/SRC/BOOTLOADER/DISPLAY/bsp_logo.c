@@ -76,8 +76,12 @@ void GL_SetCursor(int, int);
 //
 #define LOGO_WIDTH                  320	//480    // Logo bitmap image is RGB24 VGA Portrait bitmap
 #define LOGO_HEIGHT                 240	//640
-
 #define BYTES_PER_PIXEL             3
+
+//Definition 2.4" TFT-LCD size, Ray 13-09-25 
+#define LOGO_WIDTH_ETD024FM         240
+#define LOGO_HEIGHT_ETD024FM        320
+
 #define DELAY_COUNT                 100 
 #define LOGO_GFX_ATTRIBUTES         (DISPC_GFX_ATTR_GFXENABLE | DISPC_GFX_ATTR_GFXFORMAT(DISPC_PIXELFORMAT_RGB24))           // RGB24 packed, enabled
 
@@ -595,8 +599,8 @@ VOID ShowLogo(UINT32 flashAddr, UINT32 offset)//-1, 0
     DWORD  framebuffer;		
     DWORD  framebufferPA;	
     PUCHAR  pChar;
-    //ULONG   y;
-	//ULONG   x;
+    ULONG   y;
+	ULONG   x;
 
     WORD    wSignature = 0;
     DWORD   dwOffset = 0;
@@ -604,12 +608,9 @@ VOID ShowLogo(UINT32 flashAddr, UINT32 offset)//-1, 0
             dwLcdHeight;
     DWORD   dwLength;
 	
-	
 	//  Get the LCD width and height 	//-(Non-value, 320, 240,Non-value)
     LcdPdd_LCD_GetMode( NULL, &dwLcdWidth, &dwLcdHeight, NULL ); 
-	
-							
-    dwLength = BYTES_PER_PIXEL * LOGO_WIDTH * LOGO_HEIGHT; //-3*320*240
+	dwLength = BYTES_PER_PIXEL * LOGO_WIDTH * LOGO_HEIGHT; // 3*320*240
 
     //  Get the video memory
     LcdPdd_GetMemory( NULL, &framebufferPA );	//00//-*pVideoMemAddr = ConvertCAtoPA
@@ -662,7 +663,7 @@ VOID ShowLogo(UINT32 flashAddr, UINT32 offset)//-1, 0
 
 		//SetupDisplaySize(&dwLcdHeight, &dwLcdWidth); 
 	
-		/*for (y = 0; y < dwLcdHeight; y++)		//240		//13-08-20
+		for (y = 0; y < dwLcdHeight; y++)		//240		//13-08-20
 		{
 			//for( x = 0; x < dwLcdWidth; x++ )	{
 			for( x = 0; x < dwLcdWidth; x++ )	//320
@@ -704,11 +705,12 @@ VOID ShowLogo(UINT32 flashAddr, UINT32 offset)//-1, 0
               		}
                 }
 			}
-		}*/
+		}
 	}
   
 	//  Fire up the LCD
     lcd_config(framebufferPA); 
+    
 	
 	//	Fire up the LCM, Ray 13-08-06.
 	//lcm_config();
@@ -733,14 +735,15 @@ BOOL ShowSDLogo()
 	
     // Get the LCD width and height
     LcdPdd_LCD_GetMode( NULL, &dwLcdWidth, &dwLcdHeight, NULL );
-	OALMSG(OAL_INFO, (L"ShowSDLogo: dwLcdWidth = %d, dwLcdHeight = %d\r\n",dwLcdWidth,dwLcdHeight));
-	
+
+    OALMSG(OAL_INFO, (L"ShowSDLogo: dwLcdWidth = %d, dwLcdHeight = %d\r\n",dwLcdWidth,dwLcdHeight));
 	// Get the frame buffer
 	LcdPdd_GetMemory( NULL, &framebufferPA );
 	OALMSG(OAL_INFO, (L"ShowSDLogo: framebuffer = 0x%x\r\n",framebuffer));
     framebuffer = (DWORD) OALPAtoUA(framebufferPA);
 	OALMSG(OAL_INFO, (L"ShowSDLogo: framebuffer OALPAtoUA = 0x%x\r\n",framebuffer));
 	pChar = (PUCHAR)framebuffer;
+	
 	// Compute the size
 	dwLength = BYTES_PER_PIXEL * LOGO_WIDTH * LOGO_HEIGHT;
 	OALMSG(OAL_INFO, (L"ShowSDLogo: BYTES_PER_PIXEL = %d\r\n",BYTES_PER_PIXEL));
@@ -763,10 +766,12 @@ BOOL ShowSDLogo()
 	OALMSG(OAL_INFO, (L"ShowSDLogo: g_dwLogoWidth = %d,g_dwLogoHeight = %d\r\n",g_dwLogoWidth,g_dwLogoHeight));
     
 	//As BMP are stored upside down, we need to flip the frame buffer's content
-    //FlipFrameBuffer((PUCHAR)framebuffer, LOGO_HEIGHT, LOGO_WIDTH*BYTES_PER_PIXEL,(PUCHAR)framebuffer + dwLength);
+    FlipFrameBuffer((PUCHAR)framebuffer, LOGO_HEIGHT, LOGO_WIDTH*BYTES_PER_PIXEL,(PUCHAR)framebuffer + dwLength);
+
+
 	//(framebuffer, 240, 320*3, framebuffer + dwLength(3*240*320) )
 	//initial graphics engine & Call function draw ASCII, Ray 13-08-30
-	InitGraphicsEngine(dwLcdWidth, dwLcdHeight, pChar, framebuffer);
+	//InitGraphicsEngine(dwLcdWidth, dwLcdHeight, pChar, framebuffer);
 	 
 	//  Fire up the LCD
     lcd_config(framebufferPA);
@@ -776,8 +781,9 @@ BOOL ShowSDLogo()
 }
 
 //------------------------------------------------------------------------------
-//  this fuction are used calling next function direction. Ray, 
+//  this fuction are used calling next function directive, Ray, 
 //  Function:   BLSDtoFlash
+//
 BOOL BLSDtoFlash()
 {
 	//if(BLSDCardToFlash(L"OUT_DATA.txt")){
@@ -787,6 +793,122 @@ BOOL BLSDtoFlash()
     }else{
         return	FALSE;
     }
+}
+
+//------------------------------------------------------------------------------
+//  This function are drawing screen(the same above ShowLogo()), Ray 13-09-25 
+//  Function:   DrawLogo
+//
+void DrawingScreen(UINT32 flashAddr, UINT32 offset)
+{
+    HANDLE hFlash = NULL;
+    DWORD frameBuffer,
+          frameBufferPA;
+    PUCHAR pChar;
+    DWORD dwOffset = 0;
+    DWORD dwLcdWidth,
+          dwLcdHeight,
+          dwLcdFrameArea;
+    WORD wSignature = 0;
+	ULONG   y;
+	ULONG   x;
+
+    //Get the LCD width and height 	//original 320(RGB)*240, modify 240(RGB)*320 
+    LcdPdd_LCD_GetMode( NULL, &dwLcdWidth, &dwLcdHeight, NULL );
+    dwLcdFrameArea = BYTES_PER_PIXEL * LOGO_WIDTH_ETD024FM * LOGO_HEIGHT_ETD024FM;
+
+    //Get the video memory
+    LcdPdd_GetMemory( NULL, &frameBufferPA);
+    frameBuffer = (DWORD)OALPAtoUA(frameBufferPA); 
+    pChar = (PUCHAR)frameBuffer;
+    
+    if (flashAddr != -1)		
+    {
+        // Open flash storage
+        hFlash = OALFlashStoreOpen(flashAddr);
+        
+        if( hFlash != NULL )
+        {
+            // The LOGO reserved NAND flash region contains the BMP file
+            OALFlashStoreBufferedRead( hFlash, offset, (UCHAR*) &wSignature, sizeof(wSignature), FALSE );
+
+            //  Check for 'BM' signature
+            if( wSignature == 0x4D42 )  
+            {
+                //  Read the offset to the pixel data
+                OALFlashStoreBufferedRead( hFlash, offset + 10, (UCHAR*) &dwOffset, sizeof(dwOffset), FALSE );
+
+                //  Read the pixel data with the given offset
+                OALFlashStoreBufferedRead( hFlash, offset + dwOffset, pChar, 
+                                           dwLcdFrameArea, FALSE );
+            }
+           
+            // Close store
+            OALFlashStoreClose(hFlash);
+        
+            // Compute position and size of logo image 
+            g_dwLogoPosX   = (dwLcdWidth - LOGO_WIDTH_ETD024FM)/2;
+            g_dwLogoPosY   = (dwLcdHeight - LOGO_HEIGHT_ETD024FM)/2;
+            g_dwLogoWidth  = LOGO_WIDTH_ETD024FM;
+            g_dwLogoHeight = LOGO_HEIGHT_ETD024FM;
+            
+            //As BMP are stored upside down, we need to flip the frame buffer's content
+            FlipFrameBuffer((PUCHAR)frameBuffer, LOGO_HEIGHT_ETD024FM, LOGO_WIDTH_ETD024FM * BYTES_PER_PIXEL,
+                            (PUCHAR)frameBuffer + dwLcdFrameArea);
+        }
+    }
+    
+	//  If bitmap signature is valid, display the logo, otherwise fill screen with pattern
+    //if(wSignature != 0X4D42)
+    {
+        //  Adjust color bars to LCD size
+        g_dwLogoPosX   = 0;
+        g_dwLogoPosY   = 0;
+
+		g_dwLogoWidth  = dwLcdWidth;	//240
+        g_dwLogoHeight = dwLcdHeight;	//320	
+    
+		for (y = 0; y < dwLcdHeight; y++)
+        {
+            for( x = 0; x < dwLcdWidth; x++ )
+            {
+                if( y < dwLcdHeight/2 )
+                {
+                    if( x < dwLcdWidth/2 )
+                    {
+                        *pChar++ = 0xFF;    //  Blue
+                        *pChar++ = 0xFF;    //  Green
+                        *pChar++ = 0xFF;    //  Red
+                    }
+                    else
+                    {
+                        *pChar++ = 0x00;    //  Blue
+                        *pChar++ = 0xFF;    //  Green
+                        *pChar++ = 0x00;    //  Red
+                    }
+                }
+                else
+                {
+                    if( x < dwLcdWidth/2 )
+                    {
+                        *pChar++ = 0xFF;    //  Blue
+                        *pChar++ = 0x00;    //  Green
+                        *pChar++ = 0x00;    //  Red
+                    }
+                    else
+                    {
+                        *pChar++ = 0xFF;    //  Blue
+                        *pChar++ = 0x00;    //  Green
+                        *pChar++ = 0xFF;    //  Red
+                    }
+                }
+            }
+        }
+		
+	}
+    //FlipFrameBuffer((PUCHAR)frameBuffer, LOGO_HEIGHT, LOGO_WIDTH*BYTES_PER_PIXEL,(PUCHAR)frameBuffer + dwLcdFrameArea);
+	//  Fire up the LCD
+    lcd_config(frameBufferPA); 
 }
 
 //------------------------------------------------------------------------------

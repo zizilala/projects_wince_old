@@ -26,13 +26,31 @@
 #include "boot_cfg.h"
 #include "oal_alloc.h"
 #include "ceddkex.h"
-
+//
 #include "bsp_cfg.h"
 #include "bsp_padcfg.h"
 #include "tps659xx.h"
 #include "omap_cpuver.h"
 
+//Set up the "MC serial port interface (SPI1)" buses,   
+#define SPI_CS0_PIN     174         //mcspi1_cs0
+#define SPI_CLK_PIN     171         //mcspi1_clk
+#define SPI_DOUT_PIN    172         //mcspi1_simo
+#define SPI_DIN_PIN     173         //mcspi1_somi does not use.  
+//and declare SPI finction action,  Ray 13-09-23 
+void spi_SendData(short);
+void spiWrBitHigh(void);
+void spiWrBitLow(void);
+void WMLCDCOMD(short);
+void WMLCDDATA(short);
+void spi_Open(void);
+void LcdStall(DWORD);
+void LcdSleep(DWORD);
+//and declare SPI finction action,  Ray 13-09-23 
 
+BOOL BLShowLogo(void); //initialization 2.4" TFT-LCD, Ray 13-09-25 
+    
+//------------------------------------------------------------------------------
 UINT16 DefaultMacAddress[] = DEFAULT_MAC_ADDRESS;
 
 //------------------------------------------------------------------------------
@@ -63,7 +81,6 @@ UCHAR g_ecctype;
 //
 EBOOT_CONTEXT g_eboot;
 
-
 //------------------------------------------------------------------------------
 // External Variables
 extern DEVICE_IFC_GPIO Omap_Gpio;
@@ -85,7 +102,7 @@ VOID OEMDeinitDebugSerial();
 extern BOOL EnableDeviceClocks(UINT devId, BOOL bEnable);
 extern BOOL WriteFlashNK(UINT32 address, UINT32 size);
 //Add call function hotkey.c, Ray 13-08-13 
-VOID HotKey(BOOL);
+//VOID HotKey(BOOL);
 
 
 
@@ -132,10 +149,12 @@ BOOL OEMPlatformInit()
 			USBOTG_PADS
             END_OF_PAD_ARRAY
     };*/
-    static const PAD_INFO ebootPinMux_37XX[] = {
+    static const PAD_INFO ebootPinMux_37XX[] = 
+    {
             DSS_PADS_37XX
             GPIO_PADS_37XX
 	     	USBOTG_PADS
+	     	MCSPI1_PADS                     //Addition to MCSPI1 functional, Ray 13-09-24
             END_OF_PAD_ARRAY
     };
     
@@ -211,9 +230,15 @@ BOOL OEMPlatformInit()
 	GPIOSetMode(hGPIO, 61,GPIO_DIR_OUTPUT);
 
 	// Side key GPIO initial
-	GPIOSetMode(hGPIO, 114,GPIO_DIR_INPUT);// SIDE_KEY1(KEY_2_4), Ray 13-08-12
-	GPIOSetMode(hGPIO, 115,GPIO_DIR_INPUT);// SIDE_KEY3(KEY_1_4), Ray 13-08-12
+	GPIOSetMode(hGPIO, 114,GPIO_DIR_INPUT);     // SIDE_KEY1(KEY_2_4), Ray 13-08-12
+	GPIOSetMode(hGPIO, 115,GPIO_DIR_INPUT);     // SIDE_KEY3(KEY_1_4), Ray 13-08-12
 
+	//Set up the "MC serial port interface (SPI1)" buses, Ray 13-09-24
+    GPIOSetMode(hGPIO, SPI_CS0_PIN, GPIO_DIR_OUTPUT);
+    GPIOSetMode(hGPIO, SPI_CLK_PIN, GPIO_DIR_OUTPUT);
+    GPIOSetMode(hGPIO, SPI_DOUT_PIN, GPIO_DIR_OUTPUT);
+    GPIOSetMode(hGPIO, SPI_DIN_PIN, GPIO_DIR_INPUT);
+   
 	//SPI LCM setup
 	/*XX
 	GPIOSetBit(hGPIO,184); // PCM_EN serial clock 
@@ -265,6 +290,305 @@ BOOL OEMPlatformInit()
 
     // Done
     return TRUE;
+}
+//------------------------------------------------------------------------------
+//
+//  Set up the "MCSPI1" function active, Ray 13-09-23
+//
+void spiWrBitHigh(void)
+{
+    DWORD delay = 10;
+    HANDLE hGPIO;
+    hGPIO = GPIOOpen(); 
+
+    GPIOSetBit(hGPIO, SPI_DOUT_PIN);
+
+    GPIOClrBit(hGPIO, SPI_CLK_PIN);
+    LcdStall(delay);
+    GPIOSetBit(hGPIO, SPI_CLK_PIN);
+    LcdStall(delay);
+    GPIOClrBit(hGPIO, SPI_CLK_PIN);
+}
+//
+void spiWrBitLow(void)
+{
+    int delay = 10;
+    HANDLE hGPIO;
+    hGPIO = GPIOOpen(); 
+    
+    GPIOClrBit(hGPIO, SPI_DOUT_PIN);
+
+    GPIOClrBit(hGPIO, SPI_CLK_PIN);
+    LcdStall(delay);
+    //LcdStall(10);
+    GPIOSetBit(hGPIO, SPI_CLK_PIN);
+    LcdStall(delay);
+    //LcdStall(10);
+    GPIOClrBit(hGPIO, SPI_CLK_PIN);
+}
+//
+void spi_SendData(short iSendData)
+{
+    HANDLE hGPIO;
+    short iCount = 0;
+	
+	hGPIO = GPIOOpen();
+	GPIOClrBit(hGPIO, SPI_CS0_PIN);
+    for(iCount=8; iCount>=0; iCount--)
+    {
+		if(iSendData & (1<<iCount)) 
+			spiWrBitHigh();
+		else 
+			spiWrBitLow();
+	}
+	GPIOSetBit(hGPIO, SPI_CS0_PIN);
+}
+//
+void WMLCDCOMD(short cmd)
+{
+    //spi_SendData(&cmd);
+    spi_SendData(cmd);
+}
+//
+void WMLCDDATA(short dat)
+{
+	dat |= 0x0100;
+	//spi_SendData(&dat);
+	spi_SendData(dat);
+}
+//
+void spi_Low(void)
+{
+    DWORD dTime = 5000000;
+
+    HANDLE hGPIO;
+    hGPIO = GPIOOpen(); 
+    //Set the initialize status of each SPI interface, Ray 13-09-23
+    GPIOClrBit(hGPIO, SPI_CS0_PIN);
+    GPIOClrBit(hGPIO, SPI_CLK_PIN);
+    GPIOClrBit(hGPIO, SPI_DOUT_PIN);
+
+    LcdStall(dTime);
+}
+//
+void spi_Open(void)
+{
+    HANDLE hGPIO;
+    hGPIO = GPIOOpen(); 
+    //Set the initialize status of each SPI interface, Ray 13-09-23
+    GPIOSetBit(hGPIO, SPI_CS0_PIN);
+    GPIOSetBit(hGPIO, SPI_CLK_PIN);
+    GPIOSetBit(hGPIO, SPI_DOUT_PIN);
+}
+//
+void LCD_SPI_Init(void)
+{
+    spi_Open();     //SPI status initialize, Ray 13-09-24 
+ 
+	WMLCDCOMD(0xB0); // Manufacturer Command Access Protect -ok
+    WMLCDDATA(0x3F);
+	WMLCDDATA(0x3F);
+    //Sleep(5);
+	LcdSleep(5);
+	
+	WMLCDCOMD(0xFE);   //??
+	WMLCDDATA(0x00);
+	WMLCDDATA(0x00);
+	WMLCDDATA(0x00);
+	WMLCDDATA(0x21);
+	WMLCDDATA(0xB4);
+	
+	WMLCDCOMD(0xB3); // Frame Memory Access and Interface Setting
+	WMLCDDATA(0x00);
+	WMLCDDATA(0x10);
+	
+	WMLCDCOMD(0xE0); // NVM Access Control
+	WMLCDDATA(0x00); // NVAE: NVM access enable register. NVM access is enabled when NVAE=1
+	WMLCDDATA(0x40); // FTT: NVM control bit.
+	//Sleep(10);
+	LcdSleep(10);
+	WMLCDCOMD(0xB3); // Frame Memory Access and Interface Setting
+	WMLCDDATA(0x00);
+	WMLCDDATA(0x00);
+	
+	WMLCDCOMD(0xFE); // MAGIC - TODO
+	WMLCDDATA(0x00);
+	WMLCDDATA(0x00);
+	WMLCDDATA(0x00);
+	WMLCDDATA(0x21);
+	WMLCDDATA(0x30);
+	
+	WMLCDCOMD(0xB0); // Manufacturer Command Access Protect
+	WMLCDDATA(0x3F);
+	WMLCDDATA(0x3F);    //??
+	
+	WMLCDCOMD(0xB3); // Frame Memory Access and Interface Setting -ok
+	WMLCDDATA(0x02);
+	WMLCDDATA(0x00);
+	WMLCDDATA(0x00);
+	WMLCDDATA(0x00);
+	        	   	
+	WMLCDCOMD(0xB4); //SET interface -ok
+	WMLCDDATA(0x10);
+	
+	WMLCDCOMD(0xC0); //Panel Driving Setting -ok
+	WMLCDDATA(0x03); //GIP REV  SM GS BGR SS
+	WMLCDDATA(0x4F);
+	WMLCDDATA(0x00);
+	WMLCDDATA(0x10);
+	WMLCDDATA(0xA2); //BLV=0 LINE
+	WMLCDDATA(0x00);
+	WMLCDDATA(0x01);
+	WMLCDDATA(0x00);
+	
+	WMLCDCOMD(0xC1); //Display Timing Setting for Normal/Partial Mode
+	WMLCDDATA(0x01);
+	WMLCDDATA(0x02);
+	WMLCDDATA(0x19);
+	WMLCDDATA(0x08);
+	WMLCDDATA(0x08);
+	//Sleep(25);
+    LcdSleep(25);
+	WMLCDCOMD(0xC3); //PRTIAL MODE  -ok
+	WMLCDDATA(0x01);
+	WMLCDDATA(0x00);
+	WMLCDDATA(0x28);
+	WMLCDDATA(0x08);
+	WMLCDDATA(0x08);
+	//Sleep(25);
+	LcdSleep(25);
+	WMLCDCOMD(0xC4);    //-ok
+	WMLCDDATA(0x11);
+	WMLCDDATA(0x01);
+	WMLCDDATA(0x43);
+	WMLCDDATA(0x04);
+	
+	WMLCDCOMD(0xC8); //set gamma
+	WMLCDDATA(0x0C);
+	WMLCDDATA(0x0C);
+	WMLCDDATA(0x0D);
+	WMLCDDATA(0x14);
+	WMLCDDATA(0x18);
+	WMLCDDATA(0x0E);
+	WMLCDDATA(0x09);
+	WMLCDDATA(0x09);
+	WMLCDDATA(0x03);
+	WMLCDDATA(0x05);
+	WMLCDDATA(0x00);
+	WMLCDDATA(0x03);
+	WMLCDDATA(0x08);
+	WMLCDDATA(0x07);
+	WMLCDDATA(0x0E);
+	WMLCDDATA(0x15);
+	WMLCDDATA(0x12);
+	WMLCDDATA(0x0A);
+	WMLCDDATA(0x0E);
+	WMLCDDATA(0x0A);
+	WMLCDDATA(0x0A);
+	WMLCDDATA(0x00);
+	
+	WMLCDCOMD(0xC9); //set gamma
+	WMLCDDATA(0x0C);
+	WMLCDDATA(0x0C);
+	WMLCDDATA(0x0D);
+	WMLCDDATA(0x14);
+	WMLCDDATA(0x18);
+	WMLCDDATA(0x0E);
+	WMLCDDATA(0x09);
+	WMLCDDATA(0x09);
+	WMLCDDATA(0x03);
+	WMLCDDATA(0x05);
+	WMLCDDATA(0x00);
+	WMLCDDATA(0x03);
+	WMLCDDATA(0x08);
+	WMLCDDATA(0x07);
+	WMLCDDATA(0x0E);
+	WMLCDDATA(0x15);
+	WMLCDDATA(0x12);
+	WMLCDDATA(0x0A);
+	WMLCDDATA(0x0E);
+	WMLCDDATA(0x0A);
+	WMLCDDATA(0x0A);
+	WMLCDDATA(0x00);
+	
+	WMLCDCOMD(0xCA); //set gamma
+	WMLCDDATA(0x0C);
+	WMLCDDATA(0x0C);
+	WMLCDDATA(0x0D);
+	WMLCDDATA(0x14);
+	WMLCDDATA(0x18);
+	WMLCDDATA(0x0E);
+	WMLCDDATA(0x09);
+	WMLCDDATA(0x09);
+	WMLCDDATA(0x03);
+	WMLCDDATA(0x05);
+	WMLCDDATA(0x00);
+	WMLCDDATA(0x03);
+	WMLCDDATA(0x08);
+	WMLCDDATA(0x07);
+	WMLCDDATA(0x0E);
+	WMLCDDATA(0x15);
+	WMLCDDATA(0x12);
+	WMLCDDATA(0x0A);
+	WMLCDDATA(0x0E);
+	WMLCDDATA(0x0A);
+	WMLCDDATA(0x0A);
+	WMLCDDATA(0x00);    // -ok
+	
+	WMLCDCOMD(0xD0); //Power Setting    -ok
+	WMLCDDATA(0x63); //BT[2:0]=110  VCI+VCI2¡Á2  :5   -(VCI2¡Á2): //??
+	WMLCDDATA(0x53);
+	WMLCDDATA(0x82); //VC2[2:0]=010,VCI2=5V
+	WMLCDDATA(0x3F); //VREG=5.0V        //??
+	
+	WMLCDCOMD(0xD1); //set vcom //-ok
+	WMLCDDATA(0x6A); //VCOMH
+	WMLCDDATA(0x64); //VDV
+	
+	WMLCDCOMD(0xD2); //Power Setting (Note 1) for Normal/Partial Mode
+	WMLCDDATA(0x03);
+	WMLCDDATA(0x24);
+	
+	WMLCDCOMD(0xD4); //Power Setting (Note 1) for Idle Mode
+	WMLCDDATA(0x03);
+	WMLCDDATA(0x24);
+	
+	WMLCDCOMD(0xE2); //NVM Load Control
+	WMLCDDATA(0x3F);
+
+	WMLCDCOMD(0x35); //set_tear_on
+	WMLCDDATA(0x00);
+	
+	WMLCDCOMD(0x36);
+	WMLCDDATA(0x00);
+	
+	WMLCDCOMD(0x3A); //set_pixel_format
+	WMLCDDATA(0x55); // 66 18-bits
+	
+	WMLCDCOMD(0x2A); //set_column_address
+	WMLCDDATA(0x00);
+	WMLCDDATA(0x00);
+	WMLCDDATA(0x00);
+	WMLCDDATA(0xEF);
+	
+	WMLCDCOMD(0x2B); //set_page_address:
+	WMLCDDATA(0x00);
+	WMLCDDATA(0x00);
+	WMLCDDATA(0x01);
+	WMLCDDATA(0x3F);
+	
+	WMLCDCOMD(0x11); //exit_sleep_mode
+	//Sleep(120);
+	LcdSleep(120);
+	WMLCDCOMD(0x29); //set_display_on
+	//Sleep(30);
+	LcdSleep(30);
+	//WMLCDCOMD(0xFF); //send DDRAM set
+	WMLCDCOMD(0x2C);
+
+    //BLShowLogo();   //13-09-27
+    
+	//SPIClose(hSPI);
 }
 
 //------------------------------------------------------------------------------

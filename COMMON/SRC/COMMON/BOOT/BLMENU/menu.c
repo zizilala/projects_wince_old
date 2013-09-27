@@ -64,12 +64,16 @@ VOID OALBLMenuHeader(LPCWSTR format, ...)
     va_start(pArgList, format);
 
     OALLog(L"\r\n");
-    for (i = 0; i < 80; i++) OALLog(L"-");
-    OALLog(L"\r\n ");
+    for (i = 0; i < 80; i++) 
+        OALLog(L"-");
+        OALLog(L"\r\n ");
+
     OALLogV(format, pArgList);
+
     OALLog(L"\r\n");
-    for (i = 0; i < 80; i++) OALLog(L"-");
-    OALLog(L"\r\n");
+    for (i = 0; i < 80; i++)
+        OALLog(L"-");
+        OALLog(L"\r\n");
 }
 
 //------------------------------------------------------------------------------

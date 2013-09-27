@@ -92,7 +92,7 @@
 ; File c:\wince600\platform\z2170p\src\bootloader\eboot\nand\flash.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48213| DCD	|$LN9@OEMStartEr|
+|$T48227| DCD	|$LN9@OEMStartEr|
 	DCD	0x40001501
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -123,7 +123,7 @@
 
   00000		 |$LN9@OEMStartEr|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M48210|
+  00004		 |$M48224|
   00004	e1a0e000	 mov         lr, r0
 
 ; 260  :     BOOL rc = TRUE;
@@ -169,14 +169,14 @@
   0004c	00000000	 DCD         |??_C@_1EM@JLOIOPDF@?$AA?$CL?$AAO?$AAE?$AAM?$AAS?$AAt?$AAa?$AAr?$AAt?$AAE?$AAr?$AAa?$AAs?$AAe?$AAF?$AAl?$AAa?$AAs?$AAh?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AA0@|
   00050		 |$LN13@OEMStartEr|
   00050	00000000	 DCD         |dpCurSettings|
-  00054		 |$M48211|
+  00054		 |$M48225|
 
 			 ENDP  ; |OEMStartEraseFlash|
 
 	EXPORT	|OEMContinueEraseFlash|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48224| DCD	|$LN5@OEMContinu|
+|$T48238| DCD	|$LN5@OEMContinu|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -187,19 +187,19 @@
 ; 284  : {
 
   00000		 |$LN5@OEMContinu|
-  00000		 |$M48221|
+  00000		 |$M48235|
 
 ; 285  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M48222|
+  00004		 |$M48236|
 
 			 ENDP  ; |OEMContinueEraseFlash|
 
 	EXPORT	|OEMFinishEraseFlash|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48233| DCD	|$LN5@OEMFinishE|
+|$T48247| DCD	|$LN5@OEMFinishE|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -210,7 +210,7 @@
 ; 298  : {
 
   00000		 |$LN5@OEMFinishE|
-  00000		 |$M48230|
+  00000		 |$M48244|
 
 ; 299  :     BOOL rc = TRUE;
 ; 300  : 
@@ -221,7 +221,7 @@
 ; 302  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M48231|
+  00008		 |$M48245|
 
 			 ENDP  ; |OEMFinishEraseFlash|
 
@@ -239,7 +239,7 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48258| DCD	|$LN20@WriteFlash|
+|$T48272| DCD	|$LN20@WriteFlash|
 	DCD	0x40005002
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -316,7 +316,7 @@
   00000		 |$LN20@WriteFlash|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M48255|
+  00008		 |$M48269|
   00008	e1a05001	 mov         r5, r1
   0000c	e1a08000	 mov         r8, r0
 
@@ -382,7 +382,7 @@
 
   00068	e5943440	 ldr         r3, [r4, #0x440]
   0006c	e3130001	 tst         r3, #1
-  00070	0a000025	 beq         |$cleanUp$47963|
+  00070	0a000025	 beq         |$cleanUp$47977|
   00074	e1a00006	 mov         r0, r6
   00078	eb000000	 bl          OALFlashStoreBlockSize
   0007c	e1a03000	 mov         r3, r0
@@ -393,7 +393,7 @@
 
 ; 731  :         goto cleanUp;
 
-  00090	ea00001d	 b           |$cleanUp$47963|
+  00090	ea00001d	 b           |$cleanUp$47977|
   00094		 |$LN4@WriteFlash|
 
 ; 732  :         }
@@ -445,14 +445,14 @@
   000dc	e3500000	 cmp         r0, #0
   000e0	1a000005	 bne         |$LN2@WriteFlash|
   000e4	e3130001	 tst         r3, #1
-  000e8	0a000007	 beq         |$cleanUp$47963|
+  000e8	0a000007	 beq         |$cleanUp$47977|
   000ec	e59f0034	 ldr         r0, [pc, #0x34]
   000f0	e3a01703	 mov         r1, #3, 14
   000f4	eb000000	 bl          NKDbgPrintfW
 
 ; 751  :         goto cleanUp;
 
-  000f8	ea000003	 b           |$cleanUp$47963|
+  000f8	ea000003	 b           |$cleanUp$47977|
   000fc		 |$LN2@WriteFlash|
 
 ; 752  :         }
@@ -468,7 +468,7 @@
 ; 757  :     rc = TRUE;
 
   00108	e3a07001	 mov         r7, #1
-  0010c		 |$cleanUp$47963|
+  0010c		 |$cleanUp$47977|
 
 ; 758  : 
 ; 759  : cleanUp:
@@ -500,7 +500,7 @@
   00138	00000000	 DCD         |??_C@_1FM@GPKMPIMP@?$AA?$AN?$AA?6?$AAW?$AAr?$AAi?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAS?$AAp?$AAl?$AAa?$AAs?$AAh?$AAc?$AAr?$AAe?$AAe?$AAn?$AA?5?$AAi?$AAm?$AAa?$AAg?$AAe?$AA?5?$AAt?$AAo?$AA?5?$AAf@|
   0013c		 |$LN28@WriteFlash|
   0013c	00000000	 DCD         |dpCurSettings|
-  00140		 |$M48256|
+  00140		 |$M48270|
 
 			 ENDP  ; |WriteFlashLogo|
 
@@ -531,7 +531,7 @@
 	EXPORT	|??_C@_15JNBOKNOG@?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48326| DCD	|$LN57@DumpTOC|
+|$T48340| DCD	|$LN57@DumpTOC|
 	DCD	0x4000b701
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -769,7 +769,7 @@
 
   00000		 |$LN57@DumpTOC|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M48323|
+  00004		 |$M48337|
   00004	e1a05000	 mov         r5, r0
 
 ; 771  : 	UNREFERENCED_PARAMETER(pTOC);
@@ -1088,13 +1088,13 @@
   002d4	00000000	 DCD         |??_C@_1FO@LHJKOBMN@?$AAR?$AAO?$AAM?$AAH?$AAD?$AAR?$AA?5?$AA?$CI?$AAp?$AAT?$AAO?$AAC?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?$CJ?$AA?5?$AA?9?$AA?9?$AA?9?$AA?9?$AA?9?$AA?9?$AA?9?$AA?9?$AA?9@|
   002d8		 |$LN84@DumpTOC|
   002d8	00000000	 DCD         |dpCurSettings|
-  002dc		 |$M48324|
+  002dc		 |$M48338|
 
 			 ENDP  ; |DumpTOC|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48367| DCD	|$LN7@VerifyImag|
+|$T48381| DCD	|$LN7@VerifyImag|
 	DCD	0x40001301
 ; Function compile flags: /Ogspy
 
@@ -1106,7 +1106,7 @@
 
   00000		 |$LN7@VerifyImag|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M48364|
+  00004		 |$M48378|
   00004	e1a05001	 mov         r5, r1
   00008	e1a0e000	 mov         lr, r0
 
@@ -1125,7 +1125,7 @@
   00014	e59f302c	 ldr         r3, [pc, #0x2C]
   00018	e3a00000	 mov         r0, #0
   0001c	e1520003	 cmp         r2, r3
-  00020	1a000006	 bne         |$cleanUp$48038|
+  00020	1a000006	 bne         |$cleanUp$48052|
 
 ; 817  : 
 ; 818  :     // We are on correct location....
@@ -1153,7 +1153,7 @@
 ; 828  :     rc = TRUE;
 
   0003c	e3a00001	 mov         r0, #1
-  00040		 |$cleanUp$48038|
+  00040		 |$cleanUp$48052|
 
 ; 829  : 
 ; 830  : cleanUp:
@@ -1165,7 +1165,7 @@
   00048		 |$LN8@VerifyImag|
   00048		 |$LN9@VerifyImag|
   00048	43454345	 DCD         0x43454345
-  0004c		 |$M48365|
+  0004c		 |$M48379|
 
 			 ENDP  ; |VerifyImage|
 
@@ -1193,11 +1193,11 @@
 	IMPORT	|__security_check_cookie|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48392| DCD	|$LN16@BLConfigur|
+|$T48406| DCD	|$LN16@BLConfigur|
 	DCD	0xc0008602
 
   00000			 AREA	 |.xdata|, DATA
-|$T48388| DCD	0xffffffe4
+|$T48402| DCD	0xffffffe4
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1DC@CJMIMBMC@?$AAF?$AAl?$AAa?$AAs?$AAh?$AA?5?$AAf?$AAo?$AAr?$AAm?$AAa?$AAt?$AA?5?$AAc?$AAo?$AAm?$AAp?$AAl?$AAe?$AAt?$AAe?$AA?$CB?$AA?$AN?$AA?6?$AA?$AA@| DCB "F"
@@ -1285,7 +1285,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T48388|
+  00004	00000000	 DCD         |$T48402|
 
   00008		 |BLConfigureFlashPartitions| PROC
 
@@ -1294,7 +1294,7 @@
   00008		 |$LN16@BLConfigur|
   00008	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   0000c	e24ddfe6	 sub         sp, sp, #0xE6, 30
-  00010		 |$M48389|
+  00010		 |$M48403|
   00010	e1a07000	 mov         r7, r0
   00014	e59f3200	 ldr         r3, [pc, #0x200]
   00018	e5933000	 ldr         r3, [r3]
@@ -1345,7 +1345,7 @@
 
 ; 858  :     if (hFMD == NULL)
 
-  00064	0a00005c	 beq         |$cleanUp$48057|
+  00064	0a00005c	 beq         |$cleanUp$48071|
 
 ; 859  :         goto cleanUp;
 ; 860  : 
@@ -1354,7 +1354,7 @@
   00068	e28d0004	 add         r0, sp, #4
   0006c	eb000000	 bl          FMD_GetInfo
   00070	e3500000	 cmp         r0, #0
-  00074	0a000058	 beq         |$cleanUp$48057|
+  00074	0a000058	 beq         |$cleanUp$48071|
 
 ; 862  :         goto cleanUp;
 ; 863  :     
@@ -1385,7 +1385,7 @@
 
 ; 870  :         goto cleanUp;
 
-  000ac	ea00004a	 b           |$cleanUp$48057|
+  000ac	ea00004a	 b           |$cleanUp$48071|
   000b0		 |$LN8@BLConfigur|
 
 ; 871  :     }
@@ -1526,7 +1526,7 @@
 
   00190	e59f0068	 ldr         r0, [pc, #0x68]
   00194	eb000000	 bl          NKDbgPrintfW
-  00198	ea00000f	 b           |$cleanUp$48057|
+  00198	ea00000f	 b           |$cleanUp$48071|
   0019c		 |$LN2@BLConfigur|
 
 ; 919  :             goto cleanUp;
@@ -1569,7 +1569,7 @@
 
   001c4	e59f002c	 ldr         r0, [pc, #0x2C]
   001c8	eb000000	 bl          NKDbgPrintfW
-  001cc	ea000002	 b           |$cleanUp$48057|
+  001cc	ea000002	 b           |$cleanUp$48071|
   001d0		 |$LN1@BLConfigur|
 
 ; 940  :             goto cleanUp;
@@ -1586,7 +1586,7 @@
 ; 946  :     rc = TRUE;
 
   001d8	e3a05001	 mov         r5, #1
-  001dc		 |$cleanUp$48057|
+  001dc		 |$cleanUp$48071|
 
 ; 947  : 
 ; 948  : cleanUp:
@@ -1624,7 +1624,7 @@
   00218	00000000	 DCD         |g_ulFlashBase|
   0021c		 |$LN28@BLConfigur|
   0021c	00000000	 DCD         |__security_cookie|
-  00220		 |$M48390|
+  00220		 |$M48404|
 
 			 ENDP  ; |BLConfigureFlashPartitions|
 
@@ -1643,11 +1643,11 @@
 	IMPORT	|BP_SetDataPointer|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48441| DCD	|$LN30@ReadFlashN|
+|$T48455| DCD	|$LN30@ReadFlashN|
 	DCD	0xc0009502
 
   00000			 AREA	 |.xdata|, DATA
-|$T48437| DCD	0xffffffe4
+|$T48451| DCD	0xffffffe4
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1CE@KBCKFLJM@?$AAN?$AAK?$AA?5?$AAI?$AAm?$AAa?$AAg?$AAe?$AA?5?$AAL?$AAo?$AAa?$AAd?$AAe?$AAd?$AA?$AN?$AA?6?$AA?$AA@| DCB "N"
@@ -1728,7 +1728,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T48437|
+  00004	00000000	 DCD         |$T48451|
 
   00008		 |ReadFlashNK| PROC
 
@@ -1737,7 +1737,7 @@
   00008		 |$LN30@ReadFlashN|
   00008	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   0000c	e24ddfe3	 sub         sp, sp, #0xE3, 30
-  00010		 |$M48438|
+  00010		 |$M48452|
   00010	e59f3240	 ldr         r3, [pc, #0x240]
   00014	e5933000	 ldr         r3, [r3]
   00018	e58d3388	 str         r3, [sp, #0x388]
@@ -1804,7 +1804,7 @@
 
 ; 170  :         goto cleanUp;
 
-  00094	ea00005d	 b           |$cleanUp$47777|
+  00094	ea00005d	 b           |$cleanUp$47791|
   00098		 |$LN7@ReadFlashN|
 
 ; 171  :     }
@@ -1831,10 +1831,10 @@
 
   000c0	e5943440	 ldr         r3, [r4, #0x440]
   000c4	e3130001	 tst         r3, #1
-  000c8	0a000050	 beq         |$cleanUp$47777|
+  000c8	0a000050	 beq         |$cleanUp$47791|
   000cc	e59f0170	 ldr         r0, [pc, #0x170]
   000d0	eb000000	 bl          NKDbgPrintfW
-  000d4	ea00004d	 b           |$cleanUp$47777|
+  000d4	ea00004d	 b           |$cleanUp$47791|
   000d8		 |$LN6@ReadFlashN|
 
 ; 178  :         goto cleanUp;
@@ -1869,10 +1869,10 @@
 
   00100	e5943440	 ldr         r3, [r4, #0x440]
   00104	e3130001	 tst         r3, #1
-  00108	0a000040	 beq         |$cleanUp$47777|
+  00108	0a000040	 beq         |$cleanUp$47791|
   0010c	e59f012c	 ldr         r0, [pc, #0x12C]
   00110	eb000000	 bl          NKDbgPrintfW
-  00114	ea00003d	 b           |$cleanUp$47777|
+  00114	ea00003d	 b           |$cleanUp$47791|
   00118		 |$LN5@ReadFlashN|
 
 ; 193  :         goto cleanUp;
@@ -1900,10 +1900,10 @@
 
   00130	e5943440	 ldr         r3, [r4, #0x440]
   00134	e3130001	 tst         r3, #1
-  00138	0a000034	 beq         |$cleanUp$47777|
+  00138	0a000034	 beq         |$cleanUp$47791|
   0013c	e59f00f4	 ldr         r0, [pc, #0xF4]
   00140	eb000000	 bl          NKDbgPrintfW
-  00144	ea000031	 b           |$cleanUp$47777|
+  00144	ea000031	 b           |$cleanUp$47791|
   00148		 |$LN4@ReadFlashN|
 
 ; 203  :         goto cleanUp;
@@ -1936,10 +1936,10 @@
   00174	e5943440	 ldr         r3, [r4, #0x440]
   00178		 |$LN27@ReadFlashN|
   00178	e3130001	 tst         r3, #1
-  0017c	0a000023	 beq         |$cleanUp$47777|
+  0017c	0a000023	 beq         |$cleanUp$47791|
   00180	e59f00ac	 ldr         r0, [pc, #0xAC]
   00184	eb000000	 bl          NKDbgPrintfW
-  00188	ea000020	 b           |$cleanUp$47777|
+  00188	ea000020	 b           |$cleanUp$47791|
   0018c		 |$LN3@ReadFlashN|
 
 ; 214  :         goto cleanUp;
@@ -1961,10 +1961,10 @@
 
   001a0	e5943440	 ldr         r3, [r4, #0x440]
   001a4	e3130001	 tst         r3, #1
-  001a8	0a000018	 beq         |$cleanUp$47777|
+  001a8	0a000018	 beq         |$cleanUp$47791|
   001ac	e59f007c	 ldr         r0, [pc, #0x7C]
   001b0	eb000000	 bl          NKDbgPrintfW
-  001b4	ea000015	 b           |$cleanUp$47777|
+  001b4	ea000015	 b           |$cleanUp$47791|
   001b8		 |$LN2@ReadFlashN|
 
 ; 223  :         goto cleanUp;
@@ -2021,7 +2021,7 @@
 
   00208	e3a05001	 mov         r5, #1
   0020c	e583000c	 str         r0, [r3, #0xC]
-  00210		 |$cleanUp$47777|
+  00210		 |$cleanUp$47791|
 
 ; 242  : 
 ; 243  : cleanUp:
@@ -2063,7 +2063,7 @@
   00254	00000000	 DCD         |dpCurSettings|
   00258		 |$LN44@ReadFlashN|
   00258	00000000	 DCD         |__security_cookie|
-  0025c		 |$M48439|
+  0025c		 |$M48453|
 
 			 ENDP  ; |ReadFlashNK|
 
@@ -2076,7 +2076,7 @@
 	IMPORT	|memmove|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48495| DCD	|$LN37@WriteFlash@2|
+|$T48509| DCD	|$LN37@WriteFlash@2|
 	DCD	0x40007a02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2169,7 +2169,7 @@
   00000		 |$LN37@WriteFlash@2|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M48492|
+  00008		 |$M48506|
   00008	e1a09001	 mov         r9, r1
   0000c	e1a05000	 mov         r5, r0
 
@@ -2287,7 +2287,7 @@
 ; 477  :             ));
 
   000c4	e3120001	 tst         r2, #1
-  000c8	0a000036	 beq         |$cleanUp$47852|
+  000c8	0a000036	 beq         |$cleanUp$47866|
   000cc	e59f00fc	 ldr         r0, [pc, #0xFC]
   000d0	e1a02007	 mov         r2, r7
   000d4	e1a01009	 mov         r1, r9
@@ -2295,7 +2295,7 @@
 
 ; 478  :         goto cleanUp;
 
-  000dc	ea000031	 b           |$cleanUp$47852|
+  000dc	ea000031	 b           |$cleanUp$47866|
   000e0		 |$LN7@WriteFlash@2|
 
 ; 479  :         }
@@ -2319,12 +2319,12 @@
 
   000f4	e5943440	 ldr         r3, [r4, #0x440]
   000f8	e3130001	 tst         r3, #1
-  000fc	0a000029	 beq         |$cleanUp$47852|
+  000fc	0a000029	 beq         |$cleanUp$47866|
   00100	e59f00c4	 ldr         r0, [pc, #0xC4]
   00104	e1a02005	 mov         r2, r5
   00108	e3a01903	 mov         r1, #3, 18
   0010c	eb000000	 bl          NKDbgPrintfW
-  00110	ea000024	 b           |$cleanUp$47852|
+  00110	ea000024	 b           |$cleanUp$47866|
   00114		 |$LN6@WriteFlash@2|
 
 ; 488  :         goto cleanUp;
@@ -2410,7 +2410,7 @@
 ; 520  :     rc = TRUE;
 
   00194	e3a06001	 mov         r6, #1
-  00198	ea000002	 b           |$cleanUp$47852|
+  00198	ea000002	 b           |$cleanUp$47866|
   0019c		 |$LN8@WriteFlash@2|
 
 ; 464  :         {
@@ -2421,7 +2421,7 @@
   0019c	e3120001	 tst         r2, #1
   001a0	159f0018	 ldrne       r0, [pc, #0x18]
   001a4	1b000000	 blne        NKDbgPrintfW
-  001a8		 |$cleanUp$47852|
+  001a8		 |$cleanUp$47866|
 
 ; 521  : 
 ; 522  : cleanUp:
@@ -2459,7 +2459,7 @@
   001e0	00000000	 DCD         |??_C@_1EO@MFAPGNDN@?$AA?$AN?$AA?6?$AAW?$AAr?$AAi?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAX?$AAL?$AAD?$AAR?$AA?5?$AAi?$AAm?$AAa?$AAg?$AAe?$AA?5?$AAt?$AAo?$AA?5?$AAf?$AAl?$AAa?$AAs?$AAh?$AA?5?$AAm?$AAe@|
   001e4		 |$LN48@WriteFlash@2|
   001e4	00000000	 DCD         |dpCurSettings|
-  001e8		 |$M48493|
+  001e8		 |$M48507|
 
 			 ENDP  ; |WriteFlashXLDR|
 
@@ -2469,7 +2469,7 @@
 	EXPORT	|??_C@_1FA@LGNLEKHJ@?$AA?$AN?$AA?6?$AAW?$AAr?$AAi?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAE?$AAB?$AAO?$AAO?$AAT?$AA?5?$AAi?$AAm?$AAa?$AAg?$AAe?$AA?5?$AAt?$AAo?$AA?5?$AAf?$AAl?$AAa?$AAs?$AAh?$AA?5?$AAm@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48543| DCD	|$LN28@WriteFlash@3|
+|$T48557| DCD	|$LN28@WriteFlash@3|
 	DCD	0x40005f02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2529,7 +2529,7 @@
   00000		 |$LN28@WriteFlash@3|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M48540|
+  00008		 |$M48554|
   00008	e1a05001	 mov         r5, r1
   0000c	e1a08000	 mov         r8, r0
 
@@ -2596,7 +2596,7 @@
 
   00068	e5943440	 ldr         r3, [r4, #0x440]
   0006c	e3130001	 tst         r3, #1
-  00070	0a000032	 beq         |$cleanUp$47897|
+  00070	0a000032	 beq         |$cleanUp$47911|
   00074	e1a00006	 mov         r0, r6
   00078	eb000000	 bl          OALFlashStoreBlockSize
   0007c	e1a03000	 mov         r3, r0
@@ -2607,7 +2607,7 @@
 
 ; 560  :         goto cleanUp;
 
-  00090	ea00002a	 b           |$cleanUp$47897|
+  00090	ea00002a	 b           |$cleanUp$47911|
   00094		 |$LN5@WriteFlash@3|
 
 ; 561  :         }
@@ -2647,7 +2647,7 @@
   000c8	32652701	 rsbcc       r2, r5, #1, 14
   000cc	33a010ff	 movcc       r1, #0xFF
   000d0	30880005	 addcc       r0, r8, r5
-  000d4		 |$cleanUp$48529|
+  000d4		 |$cleanUp$48543|
   000d4	3b000000	 blcc        memset
 
 ; 579  :         }
@@ -2675,14 +2675,14 @@
   000fc	e3500000	 cmp         r0, #0
   00100	1a000005	 bne         |$LN2@WriteFlash@3|
   00104	e3130001	 tst         r3, #1
-  00108	0a00000c	 beq         |$cleanUp$47897|
+  00108	0a00000c	 beq         |$cleanUp$47911|
   0010c	e59f004c	 ldr         r0, [pc, #0x4C]
   00110	e3a01702	 mov         r1, #2, 14
   00114	eb000000	 bl          NKDbgPrintfW
 
 ; 589  :         goto cleanUp;
 
-  00118	ea000008	 b           |$cleanUp$47897|
+  00118	ea000008	 b           |$cleanUp$47911|
   0011c		 |$LN2@WriteFlash@3|
 
 ; 590  :         }
@@ -2698,7 +2698,7 @@
 ; 595  :     rc = TRUE;
 
   00128	e3a07001	 mov         r7, #1
-  0012c	ea000003	 b           |$cleanUp$47897|
+  0012c	ea000003	 b           |$cleanUp$47911|
   00130		 |$LN25@WriteFlash@3|
 
 ; 568  :         {
@@ -2710,7 +2710,7 @@
   00134	e3130001	 tst         r3, #1
   00138	159f0018	 ldrne       r0, [pc, #0x18]
   0013c	1b000000	 blne        NKDbgPrintfW
-  00140		 |$cleanUp$47897|
+  00140		 |$cleanUp$47911|
 
 ; 596  : 
 ; 597  : cleanUp:
@@ -2746,7 +2746,7 @@
   00174	00000000	 DCD         |??_C@_1FA@LGNLEKHJ@?$AA?$AN?$AA?6?$AAW?$AAr?$AAi?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAE?$AAB?$AAO?$AAO?$AAT?$AA?5?$AAi?$AAm?$AAa?$AAg?$AAe?$AA?5?$AAt?$AAo?$AA?5?$AAf?$AAl?$AAa?$AAs?$AAh?$AA?5?$AAm@|
   00178		 |$LN38@WriteFlash@3|
   00178	00000000	 DCD         |dpCurSettings|
-  0017c		 |$M48541|
+  0017c		 |$M48555|
 
 			 ENDP  ; |WriteFlashEBOOT|
 
@@ -2761,11 +2761,11 @@
 	IMPORT	|BP_WriteData|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48591| DCD	|$LN27@WriteFlash@4|
+|$T48605| DCD	|$LN27@WriteFlash@4|
 	DCD	0xc0008002
 
   00000			 AREA	 |.xdata|, DATA
-|$T48587| DCD	0xffffffe4
+|$T48601| DCD	0xffffffe4
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1FC@DLJHBOIG@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AAw?$AAr?$AAi?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAt?$AAo?$AA?5?$AAO?$AAS?$AA?5?$AAp?$AAa?$AAr?$AAt@| DCB "E"
@@ -2836,7 +2836,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T48587|
+  00004	00000000	 DCD         |$T48601|
 
   00008		 |WriteFlashNK| PROC
 
@@ -2845,7 +2845,7 @@
   00008		 |$LN27@WriteFlash@4|
   00008	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   0000c	e24ddfe2	 sub         sp, sp, #0xE2, 30
-  00010		 |$M48588|
+  00010		 |$M48602|
   00010	e1a06001	 mov         r6, r1
   00014	e1a04000	 mov         r4, r0
   00018	e59f31e4	 ldr         r3, [pc, #0x1E4]
@@ -2939,7 +2939,7 @@
   000a8	e28d3004	 add         r3, sp, #4
   000ac	e3a02000	 mov         r2, #0
   000b0	e58de000	 str         lr, [sp]
-  000b4		 |$cleanUp$48574|
+  000b4		 |$cleanUp$48588|
   000b4	eb000000	 bl          BP_Init
   000b8	e3500000	 cmp         r0, #0
   000bc	1a000002	 bne         |$LN11@WriteFlash@4|
@@ -2952,7 +2952,7 @@
 
 ; 655  :         goto cleanUp;
 
-  000c8	ea00003c	 b           |$cleanUp$47928|
+  000c8	ea00003c	 b           |$cleanUp$47942|
   000cc		 |$LN11@WriteFlash@4|
 
 ; 656  :     }
@@ -2981,10 +2981,10 @@
   000f4	e59f30e0	 ldr         r3, [pc, #0xE0]
   000f8	e5933440	 ldr         r3, [r3, #0x440]
   000fc	e3130001	 tst         r3, #1
-  00100	0a00002e	 beq         |$cleanUp$47928|
+  00100	0a00002e	 beq         |$cleanUp$47942|
   00104	e59f00e4	 ldr         r0, [pc, #0xE4]
   00108	eb000000	 bl          NKDbgPrintfW
-  0010c	ea00002b	 b           |$cleanUp$47928|
+  0010c	ea00002b	 b           |$cleanUp$47942|
   00110		 |$LN4@WriteFlash@4|
 
 ; 664  :         goto cleanUp;
@@ -3014,10 +3014,10 @@
   00130	e59f30a4	 ldr         r3, [pc, #0xA4]
   00134	e5933440	 ldr         r3, [r3, #0x440]
   00138	e3130001	 tst         r3, #1
-  0013c	0a00001f	 beq         |$cleanUp$47928|
+  0013c	0a00001f	 beq         |$cleanUp$47942|
   00140	e59f00a0	 ldr         r0, [pc, #0xA0]
   00144	eb000000	 bl          NKDbgPrintfW
-  00148	ea00001c	 b           |$cleanUp$47928|
+  00148	ea00001c	 b           |$cleanUp$47942|
   0014c		 |$LN2@WriteFlash@4|
 
 ; 675  :         goto cleanUp;
@@ -3045,10 +3045,10 @@
   00170	e59f3064	 ldr         r3, [pc, #0x64]
   00174	e5933440	 ldr         r3, [r3, #0x440]
   00178	e3130001	 tst         r3, #1
-  0017c	0a00000f	 beq         |$cleanUp$47928|
+  0017c	0a00000f	 beq         |$cleanUp$47942|
   00180	e59f005c	 ldr         r0, [pc, #0x5C]
   00184	eb000000	 bl          NKDbgPrintfW
-  00188	ea00000c	 b           |$cleanUp$47928|
+  00188	ea00000c	 b           |$cleanUp$47942|
   0018c		 |$LN1@WriteFlash@4|
 
 ; 683  :         goto cleanUp;
@@ -3096,7 +3096,7 @@
 ; 692  :     // Done
 ; 693  :     rc = TRUE;
 
-  001c0		 |$cleanUp$47928|
+  001c0		 |$cleanUp$47942|
 
 ; 694  : 
 ; 695  : cleanUp:
@@ -3136,14 +3136,14 @@
   00200	00000000	 DCD         |g_ulFlashBase|
   00204		 |$LN40@WriteFlash@4|
   00204	00000000	 DCD         |__security_cookie|
-  00208		 |$M48589|
+  00208		 |$M48603|
 
 			 ENDP  ; |WriteFlashNK|
 
 	EXPORT	|BLFlashDownload|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48616| DCD	|$LN11@BLFlashDow|
+|$T48630| DCD	|$LN11@BLFlashDow|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -3155,7 +3155,7 @@
 
   00000		 |$LN11@BLFlashDow|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M48613|
+  00004		 |$M48627|
   00004	e1a02000	 mov         r2, r0
 
 ; 121  :     UINT32 rc = (UINT32) BL_ERROR;
@@ -3194,14 +3194,14 @@
 
   00028	e49de004	 ldr         lr, [sp], #4
   0002c	e12fff1e	 bx          lr
-  00030		 |$M48614|
+  00030		 |$M48628|
 
 			 ENDP  ; |BLFlashDownload|
 
 	EXPORT	|OEMWriteFlash|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48628| DCD	|$LN12@OEMWriteFl|
+|$T48642| DCD	|$LN12@OEMWriteFl|
 	DCD	0x40001a01
 ; Function compile flags: /Ogspy
 
@@ -3213,7 +3213,7 @@
 
   00000		 |$LN12@OEMWriteFl|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M48625|
+  00004		 |$M48639|
 
 ; 318  :     BOOL rc;
 ; 319  : 
@@ -3314,7 +3314,7 @@
   00064		 |$LN13@OEMWriteFl|
   00064		 |$LN14@OEMWriteFl|
   00064	00000000	 DCD         |g_eboot|
-  00068		 |$M48626|
+  00068		 |$M48640|
 
 			 ENDP  ; |OEMWriteFlash|
 

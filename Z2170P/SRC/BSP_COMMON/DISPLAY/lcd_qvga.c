@@ -13,8 +13,7 @@
 */
 #pragma warning(push)
 #pragma warning(disable : 6385)
-
-
+//
 #include "bsp.h"
 #include "bsp_cfg.h"
 #include "ceddkex.h"
@@ -53,6 +52,9 @@ OMAP_LCD_DVI_RES_PARAMS lcd_res_params[OMAP_RES_INVALID+1] =
         DISPC_PIXELFORMAT_RGB16,            //pixelFmt;
         320,                                //width;	320
         240,                                //height;	240
+        //Definition 2.4" TFT-LCD size, Ray 13-09-25 
+        //240,                                //width;	240
+        //320,                                //height;	320
         0,                                  //hsw;		0
         17,                                 //hfp;		17
         68,                                 //hbp;		68
@@ -428,11 +430,8 @@ BOOL LcdPdd_GetMemory(
 }
 
 //------------------------------------------------------------------------------
-BOOL LcdPdd_LCD_GetMode(
-    	DWORD   *pPixelFormat,
-   	 	DWORD   *pWidth,
-    	DWORD   *pHeight,
-    	DWORD   *pPixelClock)
+BOOL LcdPdd_LCD_GetMode( DWORD *pPixelFormat, DWORD *pWidth,
+    	                 DWORD *pHeight, DWORD *pPixelClock )
 {
 	RETAILMSG(1,(L"\n\r*** LcdPdd_LCD_GetMode ***\n\r"));
     LcdPdd_LCD_InitResolution();        

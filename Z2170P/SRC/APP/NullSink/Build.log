@@ -1,0 +1,1315 @@
+BUILD: [Thrd:Sequence:Type  ] Message
+BUILD: [00:0000000000:PROGC ] Build started with parameters: -c
+BUILD: [00:0000000001:PROGC ] Build started in directory: C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink
+BUILD: [00:0000000002:PROGC ] Checking for C:\WINCE600\sdk\bin\i386\srccheck.exe.
+BUILD: [00:0000000003:PROGC ] Running passes WCEFILES0, MIDL, MC, ASN, THUNK, PRECOMPHEADER, COMPILE, LIB, LINK, MANAGEDRESX, MANAGEDMOD, MANAGEDDLL, MANAGEDEXE, MANAGEDWIN for ARM.
+BUILD: [00:0000000004:PROGC ] Ignoring build database (-c specified).
+BUILD: [00:0000000005:PROGC ] Computing include file dependencies:
+BUILD: [00:0000000006:PROGC ] Checking for SDK include directory: C:\WINCE600\sdk\CE\inc.
+BUILD: [00:0000000007:PROGC ] Scan C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\
+BUILD: [00:0000000008:PROGC ] Saving C:\WINCE600\PLATFORM\Z2170P\Build.dat.
+BUILD: [00:0000000009:INFO  ] Done.
+BUILD: [00:0000000010:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\StdAfx.h because target: obj\ARMV4I\retail\StdAfx.pch is missing.
+BUILD: [00:0000000011:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\ because target: obj\ARMV4I\retail\StdAfx.pch is missing.
+BUILD: [00:0000000012:PROGC ] Building PRECOMPHEADER Pass in C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\ directory.
+BUILD: [00:0000000013:PROG  ] 'NMAKE.EXE TargetPCHPass  -i -c BUILDMSG=Stop.  BUILDROOT=C:\WINCE600\PLATFORM\Z2170P CLEANBUILD=1 NOLINK=1 PASS0ONLY=1 PASSPCH=1'
+BUILD: [01:0000000014:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\Sources.default
+BUILD: [01:0000000015:INFO  ] makefile.def: BUILDROOT is C:\WINCE600\PLATFORM\Z2170P
+BUILD: [01:0000000016:INFO  ] makefile.def: Including C:\WINCE600\PLATFORM\Z2170P\sources.cmn
+BUILD: [01:0000000017:INFO  ] makefile.def: Including C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\sources
+BUILD: [01:0000000018:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\Sources.CE
+BUILD: [01:0000000019:INFO  ] Directory: C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink
+BUILD: [01:0000000020:INFO  ] TARGETNAME: NullSink
+BUILD: [01:0000000021:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORM
+BUILD: [01:0000000022:PROGC ] Create precompiled header StdAfx.h obj\ARMV4I\retail\StdAfx.obj C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\obj\ARMV4I\retail\StdAfx.pch
+BUILD: [01:0000000023:INFO  ] cl -nologo  /Tp  /Gy -c -IARM\ -I. -IC:\WINCE600\platform\COMMON\src\inc -IC:\WINCE600\platform\Z2170P\src\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TRITON\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659xx\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\OMAP3530\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\DSS\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659XX\keypad -IC:\WINCE600\PUBLIC\DIRECTX\SDK\SAMPLES\DSHOW\BASECLASSES -IC:\WINCE600\PUBLIC\DIRECTX\SDK\INC -IC:\WINCE600\public\common\sdk\inc -IC:\WINCE600\public\common\oak\inc -IC:\WINCE600\public\common\ddk\inc -IC:\WINCE600\sdk\CE\inc -I.\Resource\0409 -Ox -Os -GF -Zi -FdC:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.pdb -D_CRT_SECURE_NO_DEPRECATE -D_USE_32BIT_TIME_T -DUNICODE -D_UNICODE -DUNDER_CE=600 -D_WIN32_WCE=0x600 -DWINCEOEM -DWINCEINTERNAL -DWIN32 -DSTRICT -DARM -DARMV4I -D_ARM_ -DNDEBUG=1  -D_SOC_MODEL=OMAP3530 -D_TRITON_MODEL=TPS659xx -DCEDDK_USEDDKMACRO -D_WINCEOSVER=600 -DBSP_EVM2 -DBSP_OPM_SELECT_37XX=4 -DBSP_OPM_SELECT_35XX=5 -DBSP_RTC_WAKES_CPU -DBSP_SDRAM_BANK1_ENABLE -DNullSink_EXPORTS -DINTERNATIONAL -DINTLMSG_CODEPAGE=1252 -FAsc -FaC:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\obj\ARMV4I\retail\StdAfx.cod -WX -QRimplicit-import- -Zi -c -IARM\ -I. -IC:\WINCE600\platform\COMMON\src\inc -IC:\WINCE600\platform\Z2170P\src\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TRITON\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659xx\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\OMAP3530\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\DSS\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659XX\keypad -IC:\WINCE600\PUBLIC\DIRECTX\SDK\SAMPLES\DSHOW\BASECLASSES -IC:\WINCE600\PUBLIC\DIRECTX\SDK\INC -IC:\WINCE600\public\common\sdk\inc -IC:\WINCE600\public\common\oak\inc -IC:\WINCE600\public\common\ddk\inc -IC:\WINCE600\sdk\CE\inc -I.\Resource\0409 -Ox -Os -GF -Zi -FdC:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.pdb -D_CRT_SECURE_NO_DEPRECATE -D_USE_32BIT_TIME_T -DUNICODE -D_UNICODE -DUNDER_CE=600 -D_WIN32_WCE=0x600 -DWINCEOEM -DWINCEINTERNAL -DWIN32 -DSTRICT -DARM -DARMV4I -D_ARM_ -DNDEBUG=1  -D_SOC_MODEL=OMAP3530 -D_TRITON_MODEL=TPS659xx -DCEDDK_USEDDKMACRO -D_WINCEOSVER=600 -DBSP_EVM2 -DBSP_OPM_SELECT_37XX=4 -DBSP_OPM_SELECT_35XX=5 -DBSP_RTC_WAKES_CPU -DBSP_SDRAM_BANK1_ENABLE -DNullSink_EXPORTS -DINTERNATIONAL -DINTLMSG_CODEPAGE=1252 -FAsc -FaC:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\obj\ARMV4I\retail\StdAfx.cod -WX -QRimplicit-import- -Zi  -Zc:wchar_t- -Zc:forScope- -wd4867 -wd4430 -MT -U_MT -W4 /analyze   /GR- -QRarch4T -DTHUMBSUPPORT -QRinterwork-return  /GS /YlNullSink /YcStdAfx.h /FpC:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\obj\ARMV4I\retail\StdAfx.pch /FoC:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\obj\ARMV4I\retail\StdAfx.obj
+BUILD: [01:0000000024:INFO  ] nm2F4.tmp
+BUILD: [00:0000000025:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\NullSink.cpp because target: obj\ARMV4I\retail\NullSink.obj is missing.
+BUILD: [00:0000000026:PROGC ] Building COMPILE Pass in C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\ directory.
+BUILD: [00:0000000027:PROG  ] 'NMAKE.EXE TargetCompilePass  -i -c BUILDMSG=Stop.  BUILDROOT=C:\WINCE600\PLATFORM\Z2170P CLEANBUILD=1 NOLINK=1 NOPASS0=1'
+BUILD: [01:0000000028:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\Sources.default
+BUILD: [01:0000000029:INFO  ] makefile.def: BUILDROOT is C:\WINCE600\PLATFORM\Z2170P
+BUILD: [01:0000000030:INFO  ] makefile.def: Including C:\WINCE600\PLATFORM\Z2170P\sources.cmn
+BUILD: [01:0000000031:INFO  ] makefile.def: Including C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\sources
+BUILD: [01:0000000032:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\Sources.CE
+BUILD: [01:0000000033:INFO  ] Directory: C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink
+BUILD: [01:0000000034:INFO  ] TARGETNAME: NullSink
+BUILD: [01:0000000035:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORM
+BUILD: [01:0000000036:PROGC ] Compiling .\NullSink.cpp
+BUILD: [01:0000000037:INFO  ] cl -nologo  /YuStdAfx.h /FpC:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\obj\ARMV4I\retail\StdAfx.pch  /Gy -Foobj\ARMV4I\retail\NullSink.obj -c -IARM\ -I. -IC:\WINCE600\platform\COMMON\src\inc -IC:\WINCE600\platform\Z2170P\src\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TRITON\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659xx\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\OMAP3530\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\COMMON_TI\DSS\inc -IC:\WINCE600\platform\COMMON\src\soc\COMMON_TI_V1\TPS659XX\keypad -IC:\WINCE600\PUBLIC\DIRECTX\SDK\SAMPLES\DSHOW\BASECLASSES -IC:\WINCE600\PUBLIC\DIRECTX\SDK\INC -IC:\WINCE600\public\common\sdk\inc -IC:\WINCE600\public\common\oak\inc -IC:\WINCE600\public\common\ddk\inc -IC:\WINCE600\sdk\CE\inc -I.\Resource\0409 -Ox -Os -GF -Zi -FdC:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.pdb -D_CRT_SECURE_NO_DEPRECATE -D_USE_32BIT_TIME_T -DUNICODE -D_UNICODE -DUNDER_CE=600 -D_WIN32_WCE=0x600 -DWINCEOEM -DWINCEINTERNAL -DWIN32 -DSTRICT -DARM -DARMV4I -D_ARM_ -DNDEBUG=1  -D_SOC_MODEL=OMAP3530 -D_TRITON_MODEL=TPS659xx -DCEDDK_USEDDKMACRO -D_WINCEOSVER=600 -DBSP_EVM2 -DBSP_OPM_SELECT_37XX=4 -DBSP_OPM_SELECT_35XX=5 -DBSP_RTC_WAKES_CPU -DBSP_SDRAM_BANK1_ENABLE -DNullSink_EXPORTS -DINTERNATIONAL -DINTLMSG_CODEPAGE=1252 -FAsc -Faobj\ARMV4I\retail\NullSink.cod -WX -QRimplicit-import- -Zi  -Zc:wchar_t- -Zc:forScope- -wd4867 -wd4430 -MT -U_MT -W4 /analyze   /GR- -QRarch4T -DTHUMBSUPPORT -QRinterwork-return  /GS C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\.\NullSink.cpp
+BUILD: [01:0000000038:INFO  ] NullSink.cpp
+BUILD: [00:0000000039:INFO  ] Will Build C:\WINCE600\PUBLIC\DIRECTX\SDK\LIB\ARMV4I\retail\strmbase.lib because target: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\NullSink.lib is missing.
+BUILD: [00:0000000040:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\obj\ARMV4I\retail\NullSink.obj because target: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\NullSink.lib is missing.
+BUILD: [00:0000000041:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\ because target: C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\NullSink.lib is missing.
+BUILD: [00:0000000042:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\ directory.
+BUILD: [00:0000000043:PROG  ] 'NMAKE.EXE TargetLibFiles  -i -c BUILDMSG=Stop.  BUILDROOT=C:\WINCE600\PLATFORM\Z2170P CLEANBUILD=1 LINKONLY=1 NOPASS0=1'
+BUILD: [01:0000000044:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\Sources.default
+BUILD: [01:0000000045:INFO  ] makefile.def: BUILDROOT is C:\WINCE600\PLATFORM\Z2170P
+BUILD: [01:0000000046:INFO  ] makefile.def: Including C:\WINCE600\PLATFORM\Z2170P\sources.cmn
+BUILD: [01:0000000047:INFO  ] makefile.def: Including C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\sources
+BUILD: [01:0000000048:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\Sources.CE
+BUILD: [01:0000000049:INFO  ] Directory: C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink
+BUILD: [01:0000000050:INFO  ] TARGETNAME: NullSink
+BUILD: [01:0000000051:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORM
+BUILD: [01:0000000052:PROGC ] Linking C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\NullSink.lib
+BUILD: [01:0000000053:INFO  ] 	link -lib -out:C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\NullSink.lib -def:NullSink.def -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm2F7.tmp
+BUILD: [01:0000000054:INFO  ] Microsoft (R) Library Manager Version 8.00.50727.42
+BUILD: [01:0000000055:INFO  ] Copyright (C) Microsoft Corporation.  All rights reserved.
+BUILD: [01:0000000056:INFO  ] 
+BUILD: [01:0000000057:INFO  ] -nodefaultlib 
+BUILD: [01:0000000058:INFO  ] -ignore:4001 
+BUILD: [01:0000000059:INFO  ] /subsystem:windowsce,6.00 
+BUILD: [01:0000000060:INFO  ] obj\ARMV4I\retail\NullSink.obj obj\ARMV4I\retail\StdAfx.obj 
+BUILD: [01:0000000061:INFO  ] C:\WINCE600\PUBLIC\DIRECTX\SDK\LIB\ARMV4I\retail\strmbase.lib 
+BUILD: [01:0000000062:INFO  ]    Creating library C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\NullSink.lib and object C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\NullSink.exp
+BUILD: [00:0000000063:INFO  ] Will Build C:\WINCE600\PUBLIC\DIRECTX\SDK\LIB\ARMV4I\retail\strmbase.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.dll is missing.
+BUILD: [00:0000000064:INFO  ] Will Build C:\WINCE600\PUBLIC\DIRECTX\SDK\LIB\ARMV4I\retail\strmiids.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.dll is missing.
+BUILD: [00:0000000065:INFO  ] Will Build C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\uuid.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.dll is missing.
+BUILD: [00:0000000066:INFO  ] Will Build C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\ole32.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.dll is missing.
+BUILD: [00:0000000067:INFO  ] Will Build C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\oleaut32.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.dll is missing.
+BUILD: [00:0000000068:INFO  ] Will Build C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\commctrl.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.dll is missing.
+BUILD: [00:0000000069:INFO  ] Will Build C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\commdlg.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.dll is missing.
+BUILD: [00:0000000070:INFO  ] Will Build C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\coredll.lib because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.dll is missing.
+BUILD: [00:0000000071:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\obj\ARMV4I\retail\NullSink.obj because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.dll is missing.
+BUILD: [00:0000000072:INFO  ] Will Build C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\ because target: C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.dll is missing.
+BUILD: [00:0000000073:PROGC ] Building LINK Pass in C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\ directory.
+BUILD: [00:0000000074:PROG  ] 'NMAKE.EXE TargetExeFiles  -i -c BUILDMSG=Stop.  BUILDROOT=C:\WINCE600\PLATFORM\Z2170P CLEANBUILD=1 LINKONLY=1 NOPASS0=1MAKEDLL=1'
+BUILD: [01:0000000075:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\Sources.default
+BUILD: [01:0000000076:INFO  ] makefile.def: BUILDROOT is C:\WINCE600\PLATFORM\Z2170P
+BUILD: [01:0000000077:INFO  ] makefile.def: Including C:\WINCE600\PLATFORM\Z2170P\sources.cmn
+BUILD: [01:0000000078:INFO  ] makefile.def: Including C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink\sources
+BUILD: [01:0000000079:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\Sources.CE
+BUILD: [01:0000000080:INFO  ] Directory: C:\WINCE600\PLATFORM\Z2170P\SRC\APP\NullSink
+BUILD: [01:0000000081:INFO  ] TARGETNAME: NullSink
+BUILD: [01:0000000082:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORM
+BUILD: [01:0000000083:INFO  ] 	set LIB=C:\WINCE600\sdk\CE\lib
+BUILD: [01:0000000084:PROGC ] Linking C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.dll
+BUILD: [01:0000000085:INFO  ] 	link /LARGEADDRESSAWARE -out:C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.dll -dll -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm2F8.tmp
+BUILD: [01:0000000086:INFO  ] Microsoft (R) Incremental Linker Version 8.00.50727.42
+BUILD: [01:0000000087:INFO  ] Copyright (C) Microsoft Corporation.  All rights reserved.
+BUILD: [01:0000000088:INFO  ] 
+BUILD: [01:0000000089:INFO  ] -nodefaultlib 
+BUILD: [01:0000000090:INFO  ] -include:DllMain -entry:_DllMainCRTStartup 
+BUILD: [01:0000000091:INFO  ] -pdb:C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.pdb 
+BUILD: [01:0000000092:INFO  ] -pdbaltpath:NullSink.pdb 
+BUILD: [01:0000000093:INFO  ] /opt:ref /verbose 
+BUILD: [01:0000000094:INFO  ] -debug -debugtype:cv -incremental:no 
+BUILD: [01:0000000095:INFO  ] -map:C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.map 
+BUILD: [01:0000000096:INFO  ] -savebaserelocations:C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.rel 
+BUILD: [01:0000000097:INFO  ] -MERGE:.rdata=.text -merge:.astart=.text -align:4096 -ignore:4001,4070,4078,4086,4089,4096,4099,4108,4229 /STACK:65536,4096 -debugtype:cv,fixup -incremental:no 
+BUILD: [01:0000000098:INFO  ] /subsystem:windowsce,6.00 
+BUILD: [01:0000000099:INFO  ] /base:0x10000000 
+BUILD: [01:0000000100:INFO  ] obj\ARMV4I\retail\NullSink.obj obj\ARMV4I\retail\StdAfx.obj 
+BUILD: [01:0000000101:INFO  ] C:\WINCE600\PUBLIC\DIRECTX\SDK\LIB\ARMV4I\retail\strmbase.lib 
+BUILD: [01:0000000102:INFO  ] C:\WINCE600\PUBLIC\DIRECTX\SDK\LIB\ARMV4I\retail\strmiids.lib C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\uuid.lib C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\Ole32.lib C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\oleaut32.lib C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\commctrl.lib C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\commdlg.lib C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\coredll.lib C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\corelib0.lib C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\corelib1.lib 
+BUILD: [01:0000000103:INFO  ] C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\NullSink.exp 
+BUILD: [01:0000000104:INFO  ] 
+BUILD: [01:0000000105:INFO  ] Starting pass 1
+BUILD: [01:0000000106:INFO  ] 
+BUILD: [01:0000000107:INFO  ] Searching libraries
+BUILD: [01:0000000108:INFO  ]     Searching C:\WINCE600\PUBLIC\DIRECTX\SDK\LIB\ARMV4I\retail\strmbase.lib:
+BUILD: [01:0000000109:INFO  ]       Found AMovieDllRegisterServer2
+BUILD: [01:0000000110:INFO  ]         Referenced in NullSink.obj
+BUILD: [01:0000000111:INFO  ]         Loaded strmbase.lib(dllsetup.obj)
+BUILD: [01:0000000112:INFO  ]       Found DllEntryPoint
+BUILD: [01:0000000113:INFO  ]         Referenced in NullSink.obj
+BUILD: [01:0000000114:INFO  ]         Loaded strmbase.lib(dllentry.obj)
+BUILD: [01:0000000115:INFO  ]       Found "public: virtual __cdecl CBaseFilter::~CBaseFilter(void)" (??1CBaseFilter@@UAA@XZ)
+BUILD: [01:0000000116:INFO  ]         Referenced in NullSink.obj
+BUILD: [01:0000000117:INFO  ]         Loaded strmbase.lib(amfilter.obj)
+BUILD: [01:0000000118:INFO  ]       Found "public: virtual unsigned long __cdecl CUnknown::NonDelegatingAddRef(void)" (?NonDelegatingAddRef@CUnknown@@UAAKXZ)
+BUILD: [01:0000000119:INFO  ]         Referenced in NullSink.obj
+BUILD: [01:0000000120:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000121:INFO  ]         Loaded strmbase.lib(combase.obj)
+BUILD: [01:0000000122:INFO  ]       Found "public: void __cdecl CMediaType::SetSubtype(struct _GUID const *)" (?SetSubtype@CMediaType@@QAAXPBU_GUID@@@Z)
+BUILD: [01:0000000123:INFO  ]         Referenced in NullSink.obj
+BUILD: [01:0000000124:INFO  ]         Loaded strmbase.lib(mtype.obj)
+BUILD: [01:0000000125:INFO  ]       Found __@@_PchSym_@00@UbaprjuvUkfyorxUwrivxgcUhwpUhznkovhUwhsldUyzhvxozhhvhUsvzwvwUlyqUzineErUivgzroUhgivznhOlyq@strmbase
+BUILD: [01:0000000126:INFO  ]         Referenced in strmbase.lib(mtype.obj)
+BUILD: [01:0000000127:INFO  ]         Referenced in strmbase.lib(dllsetup.obj)
+BUILD: [01:0000000128:INFO  ]         Referenced in strmbase.lib(dllentry.obj)
+BUILD: [01:0000000129:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000130:INFO  ]         Referenced in strmbase.lib(combase.obj)
+BUILD: [01:0000000131:INFO  ]         Loaded strmbase.lib(streams.obj)
+BUILD: [01:0000000132:INFO  ]       Found "unsigned short * __cdecl lstrcpynWInternal(unsigned short *,unsigned short const *,int)" (?lstrcpynWInternal@@YAPAGPAGPBGH@Z)
+BUILD: [01:0000000133:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000134:INFO  ]         Loaded strmbase.lib(wxutil.obj)
+BUILD: [01:0000000135:INFO  ]       Found "public: __cdecl CBaseList::~CBaseList(void)" (??1CBaseList@@QAA@XZ)
+BUILD: [01:0000000136:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000137:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000138:INFO  ]         Loaded strmbase.lib(wxlist.obj)
+BUILD: [01:0000000139:INFO  ]       Found "unsigned long const * const bits555" (?bits555@@3QBKB)
+BUILD: [01:0000000140:INFO  ]         Referenced in strmbase.lib(mtype.obj)
+BUILD: [01:0000000141:INFO  ]         Loaded strmbase.lib(amvideo.obj)
+BUILD: [01:0000000142:INFO  ]     Searching C:\WINCE600\PUBLIC\DIRECTX\SDK\LIB\ARMV4I\retail\strmiids.lib:
+BUILD: [01:0000000143:INFO  ]       Found IID_IAMovieSetup
+BUILD: [01:0000000144:INFO  ]         Referenced in strmbase.lib(dllsetup.obj)
+BUILD: [01:0000000145:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000146:INFO  ]         Loaded strmiids.lib(strmif_i.obj)
+BUILD: [01:0000000147:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\uuid.lib:
+BUILD: [01:0000000148:INFO  ]       Found GUID_NULL
+BUILD: [01:0000000149:INFO  ]         Referenced in NullSink.obj
+BUILD: [01:0000000150:INFO  ]         Referenced in strmbase.lib(mtype.obj)
+BUILD: [01:0000000151:INFO  ]         Referenced in strmbase.lib(amvideo.obj)
+BUILD: [01:0000000152:INFO  ]         Loaded uuid.lib(cguid_i_guid0.obj)
+BUILD: [01:0000000153:INFO  ]       Found IID_IClassFactory
+BUILD: [01:0000000154:INFO  ]         Referenced in strmbase.lib(dllentry.obj)
+BUILD: [01:0000000155:INFO  ]         Loaded uuid.lib(unknwn_i_guid1.obj)
+BUILD: [01:0000000156:INFO  ]       Found IID_IUnknown
+BUILD: [01:0000000157:INFO  ]         Referenced in strmbase.lib(dllentry.obj)
+BUILD: [01:0000000158:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000159:INFO  ]         Referenced in strmbase.lib(combase.obj)
+BUILD: [01:0000000160:INFO  ]         Loaded uuid.lib(unknwn_i_guid0.obj)
+BUILD: [01:0000000161:INFO  ]       Found IID_IPersist
+BUILD: [01:0000000162:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000163:INFO  ]         Loaded uuid.lib(objidl_i_guid11.obj)
+BUILD: [01:0000000164:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\Ole32.lib:
+BUILD: [01:0000000165:INFO  ]       Found StringFromGUID2
+BUILD: [01:0000000166:INFO  ]         Referenced in strmbase.lib(dllsetup.obj)
+BUILD: [01:0000000167:INFO  ]         Loaded Ole32.lib(ole32.dll)
+BUILD: [01:0000000168:INFO  ]       Found CoUninitialize
+BUILD: [01:0000000169:INFO  ]         Referenced in strmbase.lib(dllsetup.obj)
+BUILD: [01:0000000170:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000171:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000172:INFO  ]         Loaded Ole32.lib(ole32.dll)
+BUILD: [01:0000000173:INFO  ]       Found CoFreeUnusedLibraries
+BUILD: [01:0000000174:INFO  ]         Referenced in strmbase.lib(dllsetup.obj)
+BUILD: [01:0000000175:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000176:INFO  ]         Loaded Ole32.lib(ole32.dll)
+BUILD: [01:0000000177:INFO  ]       Found CoCreateInstance
+BUILD: [01:0000000178:INFO  ]         Referenced in strmbase.lib(dllsetup.obj)
+BUILD: [01:0000000179:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000180:INFO  ]         Loaded Ole32.lib(ole32.dll)
+BUILD: [01:0000000181:INFO  ]       Found CoInitializeEx
+BUILD: [01:0000000182:INFO  ]         Referenced in strmbase.lib(dllsetup.obj)
+BUILD: [01:0000000183:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000184:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000185:INFO  ]         Loaded Ole32.lib(ole32.dll)
+BUILD: [01:0000000186:INFO  ]       Found CoTaskMemAlloc
+BUILD: [01:0000000187:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000188:INFO  ]         Referenced in strmbase.lib(mtype.obj)
+BUILD: [01:0000000189:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000190:INFO  ]         Loaded Ole32.lib(ole32.dll)
+BUILD: [01:0000000191:INFO  ]       Found CoTaskMemFree
+BUILD: [01:0000000192:INFO  ]         Referenced in strmbase.lib(mtype.obj)
+BUILD: [01:0000000193:INFO  ]         Loaded Ole32.lib(ole32.dll)
+BUILD: [01:0000000194:INFO  ]       Found __IMPORT_DESCRIPTOR_ole32
+BUILD: [01:0000000195:INFO  ]         Referenced in Ole32.lib(ole32.dll)
+BUILD: [01:0000000196:INFO  ]         Referenced in Ole32.lib(ole32.dll)
+BUILD: [01:0000000197:INFO  ]         Referenced in Ole32.lib(ole32.dll)
+BUILD: [01:0000000198:INFO  ]         Referenced in Ole32.lib(ole32.dll)
+BUILD: [01:0000000199:INFO  ]         Referenced in Ole32.lib(ole32.dll)
+BUILD: [01:0000000200:INFO  ]         Referenced in Ole32.lib(ole32.dll)
+BUILD: [01:0000000201:INFO  ]         Referenced in Ole32.lib(ole32.dll)
+BUILD: [01:0000000202:INFO  ]         Loaded Ole32.lib(ole32.dll)
+BUILD: [01:0000000203:INFO  ]       Found __NULL_IMPORT_DESCRIPTOR
+BUILD: [01:0000000204:INFO  ]         Referenced in Ole32.lib(ole32.dll)
+BUILD: [01:0000000205:INFO  ]         Loaded Ole32.lib(ole32.dll)
+BUILD: [01:0000000206:INFO  ]       Found ole32_NULL_THUNK_DATA
+BUILD: [01:0000000207:INFO  ]         Referenced in Ole32.lib(ole32.dll)
+BUILD: [01:0000000208:INFO  ]         Loaded Ole32.lib(ole32.dll)
+BUILD: [01:0000000209:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\oleaut32.lib:
+BUILD: [01:0000000210:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\commctrl.lib:
+BUILD: [01:0000000211:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\commdlg.lib:
+BUILD: [01:0000000212:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\coredll.lib:
+BUILD: [01:0000000213:INFO  ]       Found InitializeCriticalSection
+BUILD: [01:0000000214:INFO  ]         Referenced in NullSink.obj
+BUILD: [01:0000000215:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000216:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000217:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000218:INFO  ]       Found DeleteCriticalSection
+BUILD: [01:0000000219:INFO  ]         Referenced in NullSink.obj
+BUILD: [01:0000000220:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000221:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000222:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000223:INFO  ]       Found NKDbgPrintfW
+BUILD: [01:0000000224:INFO  ]         Referenced in NullSink.obj
+BUILD: [01:0000000225:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000226:INFO  ]       Found RegisterDbgZones
+BUILD: [01:0000000227:INFO  ]         Referenced in NullSink.obj
+BUILD: [01:0000000228:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000229:INFO  ]       Found RegDeleteKeyW
+BUILD: [01:0000000230:INFO  ]         Referenced in strmbase.lib(dllsetup.obj)
+BUILD: [01:0000000231:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000232:INFO  ]       Found RegCloseKey
+BUILD: [01:0000000233:INFO  ]         Referenced in strmbase.lib(dllsetup.obj)
+BUILD: [01:0000000234:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000235:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000236:INFO  ]       Found RegEnumKeyExW
+BUILD: [01:0000000237:INFO  ]         Referenced in strmbase.lib(dllsetup.obj)
+BUILD: [01:0000000238:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000239:INFO  ]       Found RegOpenKeyExW
+BUILD: [01:0000000240:INFO  ]         Referenced in strmbase.lib(dllsetup.obj)
+BUILD: [01:0000000241:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000242:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000243:INFO  ]       Found RegSetValueExW
+BUILD: [01:0000000244:INFO  ]         Referenced in strmbase.lib(dllsetup.obj)
+BUILD: [01:0000000245:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000246:INFO  ]       Found RegCreateKeyExW
+BUILD: [01:0000000247:INFO  ]         Referenced in strmbase.lib(dllsetup.obj)
+BUILD: [01:0000000248:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000249:INFO  ]       Found wsprintfW
+BUILD: [01:0000000250:INFO  ]         Referenced in strmbase.lib(dllsetup.obj)
+BUILD: [01:0000000251:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000252:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000253:INFO  ]       Found GetLastError
+BUILD: [01:0000000254:INFO  ]         Referenced in strmbase.lib(dllsetup.obj)
+BUILD: [01:0000000255:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000256:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000257:INFO  ]       Found GetModuleFileNameW
+BUILD: [01:0000000258:INFO  ]         Referenced in strmbase.lib(dllsetup.obj)
+BUILD: [01:0000000259:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000260:INFO  ]       Found GetVersionExW
+BUILD: [01:0000000261:INFO  ]         Referenced in strmbase.lib(dllentry.obj)
+BUILD: [01:0000000262:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000263:INFO  ]       Found DisableThreadLibraryCalls
+BUILD: [01:0000000264:INFO  ]         Referenced in strmbase.lib(dllentry.obj)
+BUILD: [01:0000000265:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000266:INFO  ]       Found InterlockedIncrement
+BUILD: [01:0000000267:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000268:INFO  ]         Referenced in strmbase.lib(combase.obj)
+BUILD: [01:0000000269:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000270:INFO  ]       Found EnterCriticalSection
+BUILD: [01:0000000271:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000272:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000273:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000274:INFO  ]       Found LeaveCriticalSection
+BUILD: [01:0000000275:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000276:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000277:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000278:INFO  ]       Found InterlockedDecrement
+BUILD: [01:0000000279:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000280:INFO  ]         Referenced in strmbase.lib(combase.obj)
+BUILD: [01:0000000281:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000282:INFO  ]       Found CloseHandle
+BUILD: [01:0000000283:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000284:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000285:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000286:INFO  ]       Found WaitForSingleObject
+BUILD: [01:0000000287:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000288:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000289:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000290:INFO  ]       Found ReleaseSemaphore
+BUILD: [01:0000000291:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000292:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000293:INFO  ]       Found GetSystemInfo
+BUILD: [01:0000000294:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000295:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000296:INFO  ]       Found VirtualFree
+BUILD: [01:0000000297:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000298:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000299:INFO  ]       Found lstrcmpW
+BUILD: [01:0000000300:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000301:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000302:INFO  ]       Found CreateSemaphoreW
+BUILD: [01:0000000303:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000304:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000305:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000306:INFO  ]       Found VirtualAlloc
+BUILD: [01:0000000307:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000308:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000309:INFO  ]       Found FreeLibrary
+BUILD: [01:0000000310:INFO  ]         Referenced in strmbase.lib(combase.obj)
+BUILD: [01:0000000311:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000312:INFO  ]       Found LoadLibraryW
+BUILD: [01:0000000313:INFO  ]         Referenced in strmbase.lib(combase.obj)
+BUILD: [01:0000000314:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000315:INFO  ]       Found RegQueryValueExW
+BUILD: [01:0000000316:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000317:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000318:INFO  ]       Found CeGetThreadPriority
+BUILD: [01:0000000319:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000320:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000321:INFO  ]       Found CeSetThreadPriority
+BUILD: [01:0000000322:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000323:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000324:INFO  ]       Found CreateEventW
+BUILD: [01:0000000325:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000326:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000327:INFO  ]       Found PeekMessageW
+BUILD: [01:0000000328:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000329:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000330:INFO  ]       Found MsgWaitForMultipleObjectsEx
+BUILD: [01:0000000331:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000332:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000333:INFO  ]       Found GetTickCount
+BUILD: [01:0000000334:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000335:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000336:INFO  ]       Found EventModify
+BUILD: [01:0000000337:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000338:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000339:INFO  ]       Found GetProcAddressW
+BUILD: [01:0000000340:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000341:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000342:INFO  ]       Found GetModuleHandleW
+BUILD: [01:0000000343:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000344:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000345:INFO  ]       Found InterlockedExchange
+BUILD: [01:0000000346:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000347:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000348:INFO  ]       Found DispatchMessageW
+BUILD: [01:0000000349:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000350:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000351:INFO  ]       Found CreateThread
+BUILD: [01:0000000352:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000353:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000354:INFO  ]       Found __IMPORT_DESCRIPTOR_COREDLL
+BUILD: [01:0000000355:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000356:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000357:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000358:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000359:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000360:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000361:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000362:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000363:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000364:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000365:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000366:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000367:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000368:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000369:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000370:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000371:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000372:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000373:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000374:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000375:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000376:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000377:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000378:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000379:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000380:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000381:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000382:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000383:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000384:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000385:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000386:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000387:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000388:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000389:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000390:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000391:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000392:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000393:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000394:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000395:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000396:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000397:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000398:INFO  ]       Found COREDLL_NULL_THUNK_DATA
+BUILD: [01:0000000399:INFO  ]         Referenced in coredll.lib(COREDLL.dll)
+BUILD: [01:0000000400:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000401:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\corelib0.lib:
+BUILD: [01:0000000402:INFO  ]       Found _DllMainCRTStartup
+BUILD: [01:0000000403:INFO  ]         Loaded corelib0.lib(pegdmain.obj)
+BUILD: [01:0000000404:INFO  ]       Found __GSHandlerCheck
+BUILD: [01:0000000405:INFO  ]         Referenced in strmbase.lib(dllsetup.obj)
+BUILD: [01:0000000406:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000407:INFO  ]         Referenced in strmbase.lib(amvideo.obj)
+BUILD: [01:0000000408:INFO  ]         Loaded corelib0.lib(gshandler.obj)
+BUILD: [01:0000000409:INFO  ]       Found __security_cookie
+BUILD: [01:0000000410:INFO  ]         Referenced in strmbase.lib(dllsetup.obj)
+BUILD: [01:0000000411:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000412:INFO  ]         Referenced in strmbase.lib(amvideo.obj)
+BUILD: [01:0000000413:INFO  ]         Loaded corelib0.lib(seccinit.obj)
+BUILD: [01:0000000414:INFO  ]       Found __security_check_cookie
+BUILD: [01:0000000415:INFO  ]         Referenced in strmbase.lib(dllsetup.obj)
+BUILD: [01:0000000416:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000417:INFO  ]         Referenced in strmbase.lib(amvideo.obj)
+BUILD: [01:0000000418:INFO  ]         Referenced in corelib0.lib(gshandler.obj)
+BUILD: [01:0000000419:INFO  ]         Loaded corelib0.lib(armsecgs.obj)
+BUILD: [01:0000000420:INFO  ]       Found _cexit
+BUILD: [01:0000000421:INFO  ]         Referenced in corelib0.lib(pegdmain.obj)
+BUILD: [01:0000000422:INFO  ]         Loaded corelib0.lib(cexit.obj)
+BUILD: [01:0000000423:INFO  ]       Found _cinit
+BUILD: [01:0000000424:INFO  ]         Referenced in corelib0.lib(pegdmain.obj)
+BUILD: [01:0000000425:INFO  ]         Loaded corelib0.lib(crt0dat.obj)
+BUILD: [01:0000000426:INFO  ]       Found __onexitend
+BUILD: [01:0000000427:INFO  ]         Referenced in corelib0.lib(cexit.obj)
+BUILD: [01:0000000428:INFO  ]         Loaded corelib0.lib(onexit.obj)
+BUILD: [01:0000000429:INFO  ]       Found __xt_z
+BUILD: [01:0000000430:INFO  ]         Referenced in corelib0.lib(cexit.obj)
+BUILD: [01:0000000431:INFO  ]         Loaded corelib0.lib(crt0init.obj)
+BUILD: [01:0000000432:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\corelib1.lib:
+BUILD: [01:0000000433:INFO  ]       Found "void * __cdecl operator new(unsigned int)" (??2@YAPAXI@Z)
+BUILD: [01:0000000434:INFO  ]         Referenced in NullSink.obj
+BUILD: [01:0000000435:INFO  ]         Referenced in strmbase.lib(dllentry.obj)
+BUILD: [01:0000000436:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000437:INFO  ]         Referenced in strmbase.lib(wxlist.obj)
+BUILD: [01:0000000438:INFO  ]         Loaded corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000439:INFO  ]       Found "void __cdecl operator delete(void *)" (??3@YAXPAX@Z)
+BUILD: [01:0000000440:INFO  ]         Referenced in strmbase.lib(wxlist.obj)
+BUILD: [01:0000000441:INFO  ]         Referenced in NullSink.obj
+BUILD: [01:0000000442:INFO  ]         Referenced in strmbase.lib(dllentry.obj)
+BUILD: [01:0000000443:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000444:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000445:INFO  ]         Loaded corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000446:INFO  ]       Found wcslen
+BUILD: [01:0000000447:INFO  ]         Referenced in strmbase.lib(dllsetup.obj)
+BUILD: [01:0000000448:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000449:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000450:INFO  ]         Loaded corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000451:INFO  ]       Found memcmp
+BUILD: [01:0000000452:INFO  ]         Referenced in strmbase.lib(amvideo.obj)
+BUILD: [01:0000000453:INFO  ]         Referenced in strmbase.lib(dllentry.obj)
+BUILD: [01:0000000454:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000455:INFO  ]         Referenced in strmbase.lib(combase.obj)
+BUILD: [01:0000000456:INFO  ]         Referenced in strmbase.lib(mtype.obj)
+BUILD: [01:0000000457:INFO  ]         Loaded corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000458:INFO  ]       Found memcpy
+BUILD: [01:0000000459:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000460:INFO  ]         Referenced in strmbase.lib(mtype.obj)
+BUILD: [01:0000000461:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000462:INFO  ]         Loaded corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000463:INFO  ]       Found __imp___rt_sdiv
+BUILD: [01:0000000464:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000465:INFO  ]         Loaded corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000466:INFO  ]       Found memset
+BUILD: [01:0000000467:INFO  ]         Referenced in strmbase.lib(amfilter.obj)
+BUILD: [01:0000000468:INFO  ]         Referenced in strmbase.lib(mtype.obj)
+BUILD: [01:0000000469:INFO  ]         Loaded corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000470:INFO  ]       Found _purecall
+BUILD: [01:0000000471:INFO  ]         Referenced in strmbase.lib(combase.obj)
+BUILD: [01:0000000472:INFO  ]         Loaded corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000473:INFO  ]       Found __imp___rt_udiv64by64
+BUILD: [01:0000000474:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000475:INFO  ]         Loaded corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000476:INFO  ]       Found __imp___rt_urem64by64
+BUILD: [01:0000000477:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000478:INFO  ]         Loaded corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000479:INFO  ]       Found memmove
+BUILD: [01:0000000480:INFO  ]         Referenced in strmbase.lib(wxutil.obj)
+BUILD: [01:0000000481:INFO  ]         Loaded corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000482:INFO  ]       Found _XcptFilter
+BUILD: [01:0000000483:INFO  ]         Referenced in corelib0.lib(pegdmain.obj)
+BUILD: [01:0000000484:INFO  ]         Loaded corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000485:INFO  ]       Found __C_specific_handler
+BUILD: [01:0000000486:INFO  ]         Referenced in corelib0.lib(pegdmain.obj)
+BUILD: [01:0000000487:INFO  ]         Referenced in corelib0.lib(onexit.obj)
+BUILD: [01:0000000488:INFO  ]         Loaded corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000489:INFO  ]       Found __security_gen_cookie2
+BUILD: [01:0000000490:INFO  ]         Referenced in corelib0.lib(seccinit.obj)
+BUILD: [01:0000000491:INFO  ]         Loaded corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000492:INFO  ]       Found __report_gsfailure
+BUILD: [01:0000000493:INFO  ]         Referenced in corelib0.lib(armsecgs.obj)
+BUILD: [01:0000000494:INFO  ]         Loaded corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000495:INFO  ]       Found free
+BUILD: [01:0000000496:INFO  ]         Referenced in corelib0.lib(cexit.obj)
+BUILD: [01:0000000497:INFO  ]         Referenced in corelib0.lib(onexit.obj)
+BUILD: [01:0000000498:INFO  ]         Loaded corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000499:INFO  ]       Found malloc
+BUILD: [01:0000000500:INFO  ]         Referenced in corelib0.lib(onexit.obj)
+BUILD: [01:0000000501:INFO  ]         Loaded corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000502:INFO  ]       Found realloc
+BUILD: [01:0000000503:INFO  ]         Referenced in corelib0.lib(onexit.obj)
+BUILD: [01:0000000504:INFO  ]         Loaded corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000505:INFO  ]       Found _msize
+BUILD: [01:0000000506:INFO  ]         Referenced in corelib0.lib(onexit.obj)
+BUILD: [01:0000000507:INFO  ]         Loaded corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000508:INFO  ]     Searching C:\WINCE600\PUBLIC\DIRECTX\SDK\LIB\ARMV4I\retail\strmbase.lib:
+BUILD: [01:0000000509:INFO  ]     Searching C:\WINCE600\PUBLIC\DIRECTX\SDK\LIB\ARMV4I\retail\strmiids.lib:
+BUILD: [01:0000000510:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\uuid.lib:
+BUILD: [01:0000000511:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\Ole32.lib:
+BUILD: [01:0000000512:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\oleaut32.lib:
+BUILD: [01:0000000513:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\commctrl.lib:
+BUILD: [01:0000000514:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\commdlg.lib:
+BUILD: [01:0000000515:INFO  ]     Searching C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\sdk\lib\ARMV4I\retail\coredll.lib:
+BUILD: [01:0000000516:INFO  ]       Found TerminateProcess
+BUILD: [01:0000000517:INFO  ]         Referenced in corelib0.lib(cexit.obj)
+BUILD: [01:0000000518:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000519:INFO  ]       Found InterlockedCompareExchange
+BUILD: [01:0000000520:INFO  ]         Referenced in corelib0.lib(onexit.obj)
+BUILD: [01:0000000521:INFO  ]         Loaded coredll.lib(COREDLL.dll)
+BUILD: [01:0000000522:INFO  ] 
+BUILD: [01:0000000523:INFO  ] Finished searching libraries
+BUILD: [01:0000000524:INFO  ] 
+BUILD: [01:0000000525:INFO  ] Finished pass 1
+BUILD: [01:0000000526:INFO  ] 
+BUILD: [01:0000000527:INFO  ]     Discarded __imp_LoadLibraryW from coredll.lib(COREDLL.dll)
+BUILD: [01:0000000528:INFO  ]     Discarded __imp__msize from corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000529:INFO  ]     Discarded __imp_realloc from corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000530:INFO  ]     Discarded __imp_malloc from corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000531:INFO  ]     Discarded __imp_CloseHandle from coredll.lib(COREDLL.dll)
+BUILD: [01:0000000532:INFO  ]     Discarded __imp_WaitForSingleObject from coredll.lib(COREDLL.dll)
+BUILD: [01:0000000533:INFO  ]     Discarded __imp_ReleaseSemaphore from coredll.lib(COREDLL.dll)
+BUILD: [01:0000000534:INFO  ]     Discarded __imp_GetSystemInfo from coredll.lib(COREDLL.dll)
+BUILD: [01:0000000535:INFO  ]     Discarded __imp_VirtualFree from coredll.lib(COREDLL.dll)
+BUILD: [01:0000000536:INFO  ]     Discarded __imp_CreateSemaphoreW from coredll.lib(COREDLL.dll)
+BUILD: [01:0000000537:INFO  ]     Discarded __imp_VirtualAlloc from coredll.lib(COREDLL.dll)
+BUILD: [01:0000000538:INFO  ]     Discarded __imp_InterlockedCompareExchange from coredll.lib(COREDLL.dll)
+BUILD: [01:0000000539:INFO  ]     Discarded __imp_RegQueryValueExW from coredll.lib(COREDLL.dll)
+BUILD: [01:0000000540:INFO  ]     Discarded __imp_CeGetThreadPriority from coredll.lib(COREDLL.dll)
+BUILD: [01:0000000541:INFO  ]     Discarded __imp_CeSetThreadPriority from coredll.lib(COREDLL.dll)
+BUILD: [01:0000000542:INFO  ]     Discarded __imp_CreateEventW from coredll.lib(COREDLL.dll)
+BUILD: [01:0000000543:INFO  ]     Discarded __imp_PeekMessageW from coredll.lib(COREDLL.dll)
+BUILD: [01:0000000544:INFO  ]     Discarded __imp_MsgWaitForMultipleObjectsEx from coredll.lib(COREDLL.dll)
+BUILD: [01:0000000545:INFO  ]     Discarded __imp_GetTickCount from coredll.lib(COREDLL.dll)
+BUILD: [01:0000000546:INFO  ]     Discarded __imp_EventModify from coredll.lib(COREDLL.dll)
+BUILD: [01:0000000547:INFO  ]     Discarded __imp_GetProcAddressW from coredll.lib(COREDLL.dll)
+BUILD: [01:0000000548:INFO  ]     Discarded __imp_GetModuleHandleW from coredll.lib(COREDLL.dll)
+BUILD: [01:0000000549:INFO  ]     Discarded __imp_DispatchMessageW from coredll.lib(COREDLL.dll)
+BUILD: [01:0000000550:INFO  ]     Discarded __imp_CreateThread from coredll.lib(COREDLL.dll)
+BUILD: [01:0000000551:INFO  ]     Discarded __imp___rt_sdiv from corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000552:INFO  ]     Discarded __imp___rt_udiv64by64 from corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000553:INFO  ]     Discarded __imp___rt_urem64by64 from corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000554:INFO  ]     Discarded __imp_memmove from corelib1.lib(COREDLL.dll)
+BUILD: [01:0000000555:INFO  ]     Discarded "unsigned long * `unsigned long const * __cdecl GetBitMasks(class CMediaType const *)'::`2'::FailMasks" (?FailMasks@?1??GetBitMasks@@YAPBKPBVCMediaType@@@Z@4PAKA) from strmbase.lib(mtype.obj)
+BUILD: [01:0000000556:INFO  ]     Discarded '.pdata' from NullSink.obj
+BUILD: [01:0000000557:INFO  ]     Discarded '.pdata' from NullSink.obj
+BUILD: [01:0000000558:INFO  ]     Discarded '.pdata' from NullSink.obj
+BUILD: [01:0000000559:INFO  ]     Discarded '.pdata' from strmbase.lib(dllentry.obj)
+BUILD: [01:0000000560:INFO  ]     Discarded '.pdata' from strmbase.lib(dllentry.obj)
+BUILD: [01:0000000561:INFO  ]     Discarded '.pdata' from strmbase.lib(dllentry.obj)
+BUILD: [01:0000000562:INFO  ]     Discarded '.pdata' from strmbase.lib(dllentry.obj)
+BUILD: [01:0000000563:INFO  ]     Discarded '.pdata' from strmbase.lib(dllentry.obj)
+BUILD: [01:0000000564:INFO  ]     Discarded '.pdata' from strmbase.lib(dllentry.obj)
+BUILD: [01:0000000565:INFO  ]     Discarded '.pdata' from strmbase.lib(dllentry.obj)
+BUILD: [01:0000000566:INFO  ]     Discarded '.pdata' from strmbase.lib(dllentry.obj)
+BUILD: [01:0000000567:INFO  ]     Discarded '.pdata' from strmbase.lib(dllentry.obj)
+BUILD: [01:0000000568:INFO  ]     Discarded '.pdata' from strmbase.lib(dllentry.obj)
+BUILD: [01:0000000569:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000570:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000571:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000572:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000573:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000574:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000575:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000576:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000577:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000578:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000579:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000580:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000581:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000582:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000583:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000584:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000585:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000586:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000587:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000588:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000589:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000590:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000591:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000592:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000593:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000594:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000595:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000596:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000597:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000598:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000599:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000600:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000601:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000602:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000603:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000604:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000605:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000606:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000607:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000608:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000609:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000610:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000611:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000612:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000613:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000614:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000615:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000616:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000617:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000618:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000619:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000620:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000621:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000622:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000623:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000624:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000625:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000626:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000627:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000628:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000629:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000630:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000631:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000632:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000633:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000634:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000635:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000636:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000637:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000638:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000639:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000640:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000641:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000642:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000643:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000644:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000645:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000646:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000647:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000648:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000649:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000650:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000651:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000652:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000653:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000654:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000655:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000656:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000657:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000658:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000659:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000660:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000661:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000662:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000663:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000664:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000665:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000666:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000667:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000668:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000669:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000670:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000671:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000672:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000673:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000674:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000675:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000676:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000677:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000678:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000679:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000680:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000681:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000682:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000683:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000684:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000685:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000686:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000687:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000688:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000689:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000690:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000691:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000692:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000693:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000694:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000695:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000696:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000697:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000698:INFO  ]     Discarded '.pdata' from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000699:INFO  ]     Discarded '.pdata' from strmbase.lib(combase.obj)
+BUILD: [01:0000000700:INFO  ]     Discarded '.pdata' from strmbase.lib(combase.obj)
+BUILD: [01:0000000701:INFO  ]     Discarded '.pdata' from strmbase.lib(combase.obj)
+BUILD: [01:0000000702:INFO  ]     Discarded '.pdata' from strmbase.lib(combase.obj)
+BUILD: [01:0000000703:INFO  ]     Discarded '.pdata' from strmbase.lib(combase.obj)
+BUILD: [01:0000000704:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000705:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000706:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000707:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000708:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000709:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000710:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000711:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000712:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000713:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000714:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000715:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000716:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000717:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000718:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000719:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000720:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000721:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000722:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000723:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000724:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000725:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000726:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000727:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000728:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000729:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000730:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000731:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000732:INFO  ]     Discarded '.pdata' from strmbase.lib(mtype.obj)
+BUILD: [01:0000000733:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000734:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000735:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000736:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000737:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000738:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000739:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000740:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000741:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000742:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000743:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000744:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000745:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000746:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000747:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000748:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000749:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000750:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000751:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000752:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000753:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000754:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000755:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000756:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000757:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000758:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000759:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000760:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000761:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000762:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000763:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000764:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000765:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000766:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000767:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000768:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000769:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000770:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000771:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000772:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000773:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000774:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000775:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000776:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000777:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000778:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000779:INFO  ]     Discarded '.pdata' from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000780:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000781:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000782:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000783:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000784:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000785:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000786:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000787:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000788:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000789:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000790:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000791:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000792:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000793:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000794:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000795:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000796:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000797:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000798:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000799:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000800:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000801:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000802:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000803:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000804:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000805:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000806:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000807:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000808:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000809:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000810:INFO  ]     Discarded '.pdata' from strmbase.lib(wxlist.obj)
+BUILD: [01:0000000811:INFO  ]     Discarded '.pdata' from strmbase.lib(amvideo.obj)
+BUILD: [01:0000000812:INFO  ]     Discarded '.pdata' from strmbase.lib(amvideo.obj)
+BUILD: [01:0000000813:INFO  ]     Discarded '.pdata' from strmbase.lib(amvideo.obj)
+BUILD: [01:0000000814:INFO  ]     Discarded '.pdata' from strmbase.lib(amvideo.obj)
+BUILD: [01:0000000815:INFO  ]     Discarded '.pdata' from strmbase.lib(amvideo.obj)
+BUILD: [01:0000000816:INFO  ]     Discarded '.pdata' from strmbase.lib(amvideo.obj)
+BUILD: [01:0000000817:INFO  ]     Discarded '.pdata' from strmbase.lib(amvideo.obj)
+BUILD: [01:0000000818:INFO  ]     Discarded '.pdata' from strmbase.lib(amvideo.obj)
+BUILD: [01:0000000819:INFO  ]     Discarded '.pdata' from corelib0.lib(cexit.obj)
+BUILD: [01:0000000820:INFO  ]     Discarded '.pdata' from corelib0.lib(cexit.obj)
+BUILD: [01:0000000821:INFO  ]     Discarded '.pdata' from corelib0.lib(cexit.obj)
+BUILD: [01:0000000822:INFO  ]     Discarded '.pdata' from corelib0.lib(cexit.obj)
+BUILD: [01:0000000823:INFO  ]     Discarded '.pdata' from corelib0.lib(onexit.obj)
+BUILD: [01:0000000824:INFO  ]     Discarded '.pdata' from corelib0.lib(onexit.obj)
+BUILD: [01:0000000825:INFO  ]     Discarded '.pdata' from corelib0.lib(onexit.obj)
+BUILD: [01:0000000826:INFO  ]     Discarded '.pdata' from corelib0.lib(onexit.obj)
+BUILD: [01:0000000827:INFO  ]     Discarded '.pdata' from corelib0.lib(onexit.obj)
+BUILD: [01:0000000828:INFO  ]     Discarded '.pdata' from corelib0.lib(onexit.obj)
+BUILD: [01:0000000829:INFO  ]     Discarded "const CMediaSample::`vftable'" (??_7CMediaSample@@6B@) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000830:INFO  ]     Discarded "const CMemAllocator::`vftable'{for `CUnknown'}" (??_7CMemAllocator@@6BCUnknown@@@) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000831:INFO  ]     Discarded "const CMemAllocator::`vftable'{for `IMemAllocator2'}" (??_7CMemAllocator@@6BIMemAllocator2@@@) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000832:INFO  ]     Discarded "`string'" (??_C@_19FJLFNNLC@?$AAI?$AAd?$AAl?$AAe?$AA?$AA@) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000833:INFO  ]     Discarded "`string'" (??_C@_1BE@BCJNBPJM@?$AAA?$AAb?$AAo?$AAv?$AAe?$AAI?$AAd?$AAl?$AAe?$AA?$AA@) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000834:INFO  ]     Discarded "`string'" (??_C@_1O@PKLLGLAH@?$AAL?$AAo?$AAw?$AAe?$AAs?$AAt?$AA?$AA@) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000835:INFO  ]     Discarded "`string'" (??_C@_1BC@FECANNIO@?$AAC?$AAr?$AAi?$AAt?$AAi?$AAc?$AAa?$AAl?$AA?$AA@) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000836:INFO  ]     Discarded "`string'" (??_C@_1BI@LOHGIKIA@?$AAB?$AAe?$AAl?$AAo?$AAw?$AAN?$AAo?$AAr?$AAm?$AAa?$AAl?$AA?$AA@) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000837:INFO  ]     Discarded "`string'" (??_C@_1O@PFKKKDLL@?$AAN?$AAo?$AAr?$AAm?$AAa?$AAl?$AA?$AA@) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000838:INFO  ]     Discarded "`string'" (??_C@_1BI@JLDPAPCK@?$AAA?$AAb?$AAo?$AAv?$AAe?$AAN?$AAo?$AAr?$AAm?$AAa?$AAl?$AA?$AA@) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000839:INFO  ]     Discarded "`string'" (??_C@_1BA@DLIIKAO@?$AAH?$AAi?$AAg?$AAh?$AAe?$AAs?$AAt?$AA?$AA@) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000840:INFO  ]     Discarded "`string'" (??_C@_1FK@HIMLFALB@?$AAS?$AAO?$AAF?$AAT?$AAW?$AAA?$AAR?$AAE?$AA?2?$AAM?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt?$AA?2?$AAD?$AAi?$AAr?$AAe?$AAc?$AAt?$AAS?$AAh?$AAo?$AAw?$AA?2?$AAT?$AAh@) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000841:INFO  ]     Discarded "`string'" (??_C@_1BO@EDPAAENI@?$AAC?$AAo?$AAI?$AAn?$AAi?$AAt?$AAi?$AAa?$AAl?$AAi?$AAz?$AAe?$AAE?$AAx?$AA?$AA@) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000842:INFO  ]     Discarded "`string'" (??_C@_1BE@DPMNNGMJ@?$AAo?$AAl?$AAe?$AA3?$AA2?$AA?4?$AAd?$AAl?$AAl?$AA?$AA@) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000843:INFO  ]     Discarded "`string'" (??_C@_15KNBIKKIN@?$AA?$CF?$AAd?$AA?$AA@) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000844:INFO  ]     Discarded "`string'" (??_C@_1BO@KEAMHHIL@?$AAS?$AAy?$AAs?$AAA?$AAl?$AAl?$AAo?$AAc?$AAS?$AAt?$AAr?$AAi?$AAn?$AAg?$AA?$AA@) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000845:INFO  ]     Discarded "`string'" (??_C@_1BM@IPMMHKAH@?$AAS?$AAy?$AAs?$AAF?$AAr?$AAe?$AAe?$AAS?$AAt?$AAr?$AAi?$AAn?$AAg?$AA?$AA@) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000000846:INFO  ]     Discarded "public: __cdecl CCritSec::CCritSec(void)" (??0CCritSec@@QAA@XZ) from NullSink.obj
+BUILD: [01:0000000847:INFO  ]     Discarded "public: __cdecl CCritSec::~CCritSec(void)" (??1CCritSec@@QAA@XZ) from NullSink.obj
+BUILD: [01:0000000848:INFO  ]     Discarded "public: struct IUnknown * __cdecl CUnknown::GetOwner(void)const " (?GetOwner@CUnknown@@QBAPAUIUnknown@@XZ) from NullSink.obj
+BUILD: [01:0000000849:INFO  ]     Discarded "public: static int __cdecl CClassFactory::IsLocked(void)" (?IsLocked@CClassFactory@@SAHXZ) from strmbase.lib(dllentry.obj)
+BUILD: [01:0000000850:INFO  ]     Discarded "public: __cdecl CClassFactory::~CClassFactory(void)" (??1CClassFactory@@QAA@XZ) from strmbase.lib(dllentry.obj)
+BUILD: [01:0000000851:INFO  ]     Discarded "int __cdecl IsEqualGUID(struct _GUID const &,struct _GUID const &)" (?IsEqualGUID@@YAHABU_GUID@@0@Z) from strmbase.lib(dllentry.obj)
+BUILD: [01:0000000852:INFO  ]     Discarded "int __cdecl operator==(struct _GUID const &,struct _GUID const &)" (??8@YAHABU_GUID@@0@Z) from strmbase.lib(dllentry.obj)
+BUILD: [01:0000000853:INFO  ]     Discarded "public: static long __cdecl CBaseObject::ObjectsActive(void)" (?ObjectsActive@CBaseObject@@SAJXZ) from strmbase.lib(dllentry.obj)
+BUILD: [01:0000000854:INFO  ]     Discarded "public: int __cdecl CFactoryTemplate::IsClassID(struct _GUID const &)const " (?IsClassID@CFactoryTemplate@@QBAHABU_GUID@@@Z) from strmbase.lib(dllentry.obj)
+BUILD: [01:0000000855:INFO  ]     Discarded "public: class CUnknown * __cdecl CFactoryTemplate::CreateInstance(struct IUnknown *,long *)const " (?CreateInstance@CFactoryTemplate@@QBAPAVCUnknown@@PAUIUnknown@@PAJ@Z) from strmbase.lib(dllentry.obj)
+BUILD: [01:0000000856:INFO  ]     Discarded "public: __cdecl IUnknown::IUnknown(void)" (??0IUnknown@@QAA@XZ) from strmbase.lib(dllentry.obj)
+BUILD: [01:0000000857:INFO  ]     Discarded "public: __cdecl IClassFactory::IClassFactory(void)" (??0IClassFactory@@QAA@XZ) from strmbase.lib(dllentry.obj)
+BUILD: [01:0000000858:INFO  ]     Discarded "public: void * __cdecl CClassFactory::`scalar deleting destructor'(unsigned int)" (??_GCClassFactory@@QAAPAXI@Z) from strmbase.lib(dllentry.obj)
+BUILD: [01:0000000859:INFO  ]     Discarded CreatePosPassThru from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000860:INFO  ]     Discarded "public: virtual long __cdecl CBaseMediaFilter::GetClassID(struct _GUID *)" (?GetClassID@CBaseMediaFilter@@UAAJPAU_GUID@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000861:INFO  ]     Discarded "public: virtual long __cdecl CBaseMediaFilter::GetState(unsigned long,enum _FilterState *)" (?GetState@CBaseMediaFilter@@UAAJKPAW4_FilterState@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000862:INFO  ]     Discarded "public: __cdecl CRefTime::CRefTime(void)" (??0CRefTime@@QAA@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000863:INFO  ]     Discarded "public: __cdecl CRefTime::CRefTime(__int64)" (??0CRefTime@@QAA@_J@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000864:INFO  ]     Discarded "public: __cdecl CRefTime::operator __int64(void)const " (??BCRefTime@@QBA_JXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000865:INFO  ]     Discarded "public: class CRefTime & __cdecl CRefTime::operator=(__int64)" (??4CRefTime@@QAAAAV0@_J@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000866:INFO  ]     Discarded "public: class CRefTime & __cdecl CRefTime::operator-=(class CRefTime const &)" (??ZCRefTime@@QAAAAV0@ABV0@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000867:INFO  ]     Discarded "public: long __cdecl CBaseFilter::NotifyEvent(long,long,long)" (?NotifyEvent@CBaseFilter@@QAAJJJJ@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000868:INFO  ]     Discarded "public: long __cdecl CBaseFilter::ReconnectPin(struct IPin *,struct _AMMediaType const *)" (?ReconnectPin@CBaseFilter@@QAAJPAUIPin@@PBU_AMMediaType@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000869:INFO  ]     Discarded "public: void __cdecl CBaseFilter::IncrementPinVersion(void)" (?IncrementPinVersion@CBaseFilter@@QAAXXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000870:INFO  ]     Discarded "public: void __cdecl CCritSec::Lock(void)" (?Lock@CCritSec@@QAAXXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000871:INFO  ]     Discarded "public: void __cdecl CCritSec::Unlock(void)" (?Unlock@CCritSec@@QAAXXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000872:INFO  ]     Discarded "public: __cdecl CAutoLock::CAutoLock(class CCritSec *)" (??0CAutoLock@@QAA@PAVCCritSec@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000873:INFO  ]     Discarded "public: __cdecl CAutoLock::~CAutoLock(void)" (??1CAutoLock@@QAA@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000874:INFO  ]     Discarded "public: __cdecl CGenericList<class CBasePin>::~CGenericList<class CBasePin>(void)" (??1?$CGenericList@VCBasePin@@@@QAA@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000875:INFO  ]     Discarded "public: virtual __cdecl CUnknown::~CUnknown(void)" (??1CUnknown@@UAA@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000876:INFO  ]     Discarded "public: virtual long __cdecl CBasePin::GetMediaType(int,class CMediaType *)" (?GetMediaType@CBasePin@@UAAJHPAVCMediaType@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000877:INFO  ]     Discarded "public: void __cdecl CBasePin::IncrementTypeVersion(void)" (?IncrementTypeVersion@CBasePin@@QAAXXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000878:INFO  ]     Discarded "public: virtual long __cdecl CBasePin::Inactive(void)" (?Inactive@CBasePin@@UAAJXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000879:INFO  ]     Discarded "public: virtual long __cdecl CBasePin::Notify(struct IBaseFilter *,struct tagQuality)" (?Notify@CBasePin@@UAAJPAUIBaseFilter@@UtagQuality@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000880:INFO  ]     Discarded "public: virtual long __cdecl CBaseOutputPin::CompleteConnect(struct IPin *)" (?CompleteConnect@CBaseOutputPin@@UAAJPAUIPin@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000881:INFO  ]     Discarded "public: virtual long __cdecl CBaseOutputPin::CheckConnect(struct IPin *)" (?CheckConnect@CBaseOutputPin@@UAAJPAUIPin@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000882:INFO  ]     Discarded "public: virtual long __cdecl CBaseOutputPin::BreakConnect(void)" (?BreakConnect@CBaseOutputPin@@UAAJXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000883:INFO  ]     Discarded "public: virtual long __cdecl CBaseOutputPin::InitAllocator(struct IMemAllocator * *)" (?InitAllocator@CBaseOutputPin@@UAAJPAPAUIMemAllocator@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000884:INFO  ]     Discarded "public: virtual long __cdecl CBaseOutputPin::DecideAllocator(struct IMemInputPin *,struct IMemAllocator * *)" (?DecideAllocator@CBaseOutputPin@@UAAJPAUIMemInputPin@@PAPAUIMemAllocator@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000885:INFO  ]     Discarded "protected: void __cdecl CBasePin::DisplayPinInfo(struct IPin *)" (?DisplayPinInfo@CBasePin@@IAAXPAUIPin@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000886:INFO  ]     Discarded "protected: void __cdecl CBasePin::DisplayTypeInfo(struct IPin *,class CMediaType const *)" (?DisplayTypeInfo@CBasePin@@IAAXPAUIPin@@PBVCMediaType@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000887:INFO  ]     Discarded "public: virtual long __cdecl CBaseOutputPin::GetDeliveryBuffer(struct IMediaSample * *,__int64 *,__int64 *,unsigned long)" (?GetDeliveryBuffer@CBaseOutputPin@@UAAJPAPAUIMediaSample@@PA_J1K@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000888:INFO  ]     Discarded "public: virtual long __cdecl CBaseOutputPin::Deliver(struct IMediaSample *)" (?Deliver@CBaseOutputPin@@UAAJPAUIMediaSample@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000889:INFO  ]     Discarded "public: int __cdecl CBasePin::IsConnected(void)" (?IsConnected@CBasePin@@QAAHXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000890:INFO  ]     Discarded "public: virtual long __cdecl CBaseOutputPin::DeliverEndOfStream(void)" (?DeliverEndOfStream@CBaseOutputPin@@UAAJXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000891:INFO  ]     Discarded "public: int __cdecl CBasePin::IsStopped(void)" (?IsStopped@CBasePin@@QAAHXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000892:INFO  ]     Discarded "public: virtual long __cdecl CBaseOutputPin::Active(void)" (?Active@CBaseOutputPin@@UAAJXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000893:INFO  ]     Discarded "public: virtual long __cdecl CBaseOutputPin::Inactive(void)" (?Inactive@CBaseOutputPin@@UAAJXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000894:INFO  ]     Discarded "public: virtual long __cdecl CBaseOutputPin::EndOfStream(void)" (?EndOfStream@CBaseOutputPin@@UAAJXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000895:INFO  ]     Discarded "public: virtual long __cdecl CBaseOutputPin::BeginFlush(void)" (?BeginFlush@CBaseOutputPin@@UAAJXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000896:INFO  ]     Discarded "public: unsigned short * __cdecl CBasePin::Name(void)" (?Name@CBasePin@@QAAPAGXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000897:INFO  ]     Discarded "public: virtual long __cdecl CBaseOutputPin::EndFlush(void)" (?EndFlush@CBaseOutputPin@@UAAJXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000898:INFO  ]     Discarded "private: int __cdecl CEnumPins::AreWeOutOfSync(void)" (?AreWeOutOfSync@CEnumPins@@AAAHXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000899:INFO  ]     Discarded "public: virtual long __cdecl CBaseOutputPin::DeliverBeginFlush(void)" (?DeliverBeginFlush@CBaseOutputPin@@UAAJXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000900:INFO  ]     Discarded "private: int __cdecl CEnumMediaTypes::AreWeOutOfSync(void)" (?AreWeOutOfSync@CEnumMediaTypes@@AAAHXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000901:INFO  ]     Discarded "public: virtual long __cdecl CBaseOutputPin::DeliverEndFlush(void)" (?DeliverEndFlush@CBaseOutputPin@@UAAJXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000902:INFO  ]     Discarded "public: virtual long __cdecl CBaseOutputPin::DeliverNewSegment(__int64,__int64,double)" (?DeliverNewSegment@CBaseOutputPin@@UAAJ_J0N@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000903:INFO  ]     Discarded "private: static class CMediaSample * & __cdecl CBaseAllocator::NextSample(class CMediaSample *)" (?NextSample@CBaseAllocator@@CAAAPAVCMediaSample@@PAV2@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000904:INFO  ]     Discarded "public: __cdecl CBaseAllocator::CSampleList::CSampleList(void)" (??0CSampleList@CBaseAllocator@@QAA@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000905:INFO  ]     Discarded "public: int __cdecl CBaseAllocator::CSampleList::GetCount(void)const " (?GetCount@CSampleList@CBaseAllocator@@QBAHXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000906:INFO  ]     Discarded "public: void __cdecl CBaseAllocator::CSampleList::Add(class CMediaSample *)" (?Add@CSampleList@CBaseAllocator@@QAAXPAVCMediaSample@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000907:INFO  ]     Discarded "public: class CMediaSample * __cdecl CBaseAllocator::CSampleList::RemoveHead(void)" (?RemoveHead@CSampleList@CBaseAllocator@@QAAPAVCMediaSample@@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000908:INFO  ]     Discarded "public: void __cdecl CBaseAllocator::SetWaiting(void)" (?SetWaiting@CBaseAllocator@@QAAXXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000909:INFO  ]     Discarded "public: virtual long __cdecl CBaseInputPin::Receive(struct IMediaSample *)" (?Receive@CBaseInputPin@@UAAJPAUIMediaSample@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000910:INFO  ]     Discarded "public: long __cdecl CBaseInputPin::PassNotify(struct tagQuality &)" (?PassNotify@CBaseInputPin@@QAAJAAUtagQuality@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000911:INFO  ]     Discarded "public: virtual __cdecl CMediaSample::~CMediaSample(void)" (??1CMediaSample@@UAA@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000912:INFO  ]     Discarded "public: virtual long __cdecl CMediaSample::QueryInterface(struct _GUID const &,void * *)" (?QueryInterface@CMediaSample@@UAAJABU_GUID@@PAPAX@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000913:INFO  ]     Discarded "public: virtual unsigned long __cdecl CMediaSample::AddRef(void)" (?AddRef@CMediaSample@@UAAKXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000914:INFO  ]     Discarded "public: virtual unsigned long __cdecl CMediaSample::Release(void)" (?Release@CMediaSample@@UAAKXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000915:INFO  ]     Discarded "public: long __cdecl CMediaSample::SetPointer(unsigned char *,long)" (?SetPointer@CMediaSample@@QAAJPAEJ@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000916:INFO  ]     Discarded "public: virtual long __cdecl CMediaSample::GetPointer(unsigned char * *)" (?GetPointer@CMediaSample@@UAAJPAPAE@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000917:INFO  ]     Discarded "public: virtual long __cdecl CMediaSample::GetSize(void)" (?GetSize@CMediaSample@@UAAJXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000918:INFO  ]     Discarded "public: virtual long __cdecl CMediaSample::GetTime(__int64 *,__int64 *)" (?GetTime@CMediaSample@@UAAJPA_J0@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000919:INFO  ]     Discarded "public: virtual long __cdecl CMediaSample::SetTime(__int64 *,__int64 *)" (?SetTime@CMediaSample@@UAAJPA_J0@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000920:INFO  ]     Discarded "public: virtual long __cdecl CMediaSample::GetMediaTime(__int64 *,__int64 *)" (?GetMediaTime@CMediaSample@@UAAJPA_J0@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000921:INFO  ]     Discarded "public: virtual long __cdecl CMediaSample::SetMediaTime(__int64 *,__int64 *)" (?SetMediaTime@CMediaSample@@UAAJPA_J0@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000922:INFO  ]     Discarded "public: virtual long __cdecl CMediaSample::IsSyncPoint(void)" (?IsSyncPoint@CMediaSample@@UAAJXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000923:INFO  ]     Discarded "public: virtual long __cdecl CMediaSample::SetSyncPoint(int)" (?SetSyncPoint@CMediaSample@@UAAJH@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000924:INFO  ]     Discarded "public: virtual long __cdecl CMediaSample::IsDiscontinuity(void)" (?IsDiscontinuity@CMediaSample@@UAAJXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000925:INFO  ]     Discarded "public: virtual long __cdecl CMediaSample::SetDiscontinuity(int)" (?SetDiscontinuity@CMediaSample@@UAAJH@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000926:INFO  ]     Discarded "public: virtual long __cdecl CMediaSample::IsPreroll(void)" (?IsPreroll@CMediaSample@@UAAJXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000927:INFO  ]     Discarded "public: virtual long __cdecl CMediaSample::SetPreroll(int)" (?SetPreroll@CMediaSample@@UAAJH@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000928:INFO  ]     Discarded "public: virtual long __cdecl CMediaSample::GetActualDataLength(void)" (?GetActualDataLength@CMediaSample@@UAAJXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000929:INFO  ]     Discarded "public: virtual long __cdecl CMediaSample::SetActualDataLength(long)" (?SetActualDataLength@CMediaSample@@UAAJJ@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000930:INFO  ]     Discarded "public: virtual long __cdecl CMediaSample::GetMediaType(struct _AMMediaType * *)" (?GetMediaType@CMediaSample@@UAAJPAPAU_AMMediaType@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000931:INFO  ]     Discarded "public: virtual long __cdecl CMediaSample::SetMediaType(struct _AMMediaType *)" (?SetMediaType@CMediaSample@@UAAJPAU_AMMediaType@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000932:INFO  ]     Discarded "public: virtual long __cdecl CMediaSample::GetProperties(unsigned long,unsigned char *)" (?GetProperties@CMediaSample@@UAAJKPAE@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000933:INFO  ]     Discarded "public: virtual long __cdecl CMediaSample::SetProperties(unsigned long,unsigned char const *)" (?SetProperties@CMediaSample@@UAAJKPBE@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000934:INFO  ]     Discarded "public: virtual __cdecl CBaseAllocator::~CBaseAllocator(void)" (??1CBaseAllocator@@UAA@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000935:INFO  ]     Discarded "public: virtual long __cdecl CBaseAllocator::NonDelegatingQueryInterface(struct _GUID const &,void * *)" (?NonDelegatingQueryInterface@CBaseAllocator@@UAAJABU_GUID@@PAPAX@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000936:INFO  ]     Discarded "public: virtual long __cdecl CBaseAllocator::SetProperties(struct _AllocatorProperties *,struct _AllocatorProperties *)" (?SetProperties@CBaseAllocator@@UAAJPAU_AllocatorProperties@@0@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000937:INFO  ]     Discarded "public: virtual long __cdecl CBaseAllocator::GetProperties(struct _AllocatorProperties *)" (?GetProperties@CBaseAllocator@@UAAJPAU_AllocatorProperties@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000938:INFO  ]     Discarded "public: virtual long __cdecl CBaseAllocator::GetBuffer(struct IMediaSample * *,__int64 *,__int64 *,unsigned long)" (?GetBuffer@CBaseAllocator@@UAAJPAPAUIMediaSample@@PA_J1K@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000939:INFO  ]     Discarded "public: virtual long __cdecl CBaseAllocator::GetBusyCount(unsigned long *)" (?GetBusyCount@CBaseAllocator@@UAAJPAK@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000940:INFO  ]     Discarded "public: virtual long __cdecl CBaseAllocator::GetFreeCount(unsigned long *)" (?GetFreeCount@CBaseAllocator@@UAAJPAK@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000941:INFO  ]     Discarded "public: void __cdecl CBaseAllocator::NotifySample(void)" (?NotifySample@CBaseAllocator@@QAAXXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000942:INFO  ]     Discarded "public: virtual long __cdecl CBaseAllocator::Commit(void)" (?Commit@CBaseAllocator@@UAAJXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000943:INFO  ]     Discarded "public: virtual long __cdecl CBaseAllocator::Decommit(void)" (?Decommit@CBaseAllocator@@UAAJXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000944:INFO  ]     Discarded "protected: virtual long __cdecl CBaseAllocator::Alloc(void)" (?Alloc@CBaseAllocator@@MAAJXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000945:INFO  ]     Discarded "public: void __cdecl CBaseAllocator::CSampleList::Remove(class CMediaSample *)" (?Remove@CSampleList@CBaseAllocator@@QAAXPAVCMediaSample@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000946:INFO  ]     Discarded "public: virtual long __cdecl CMemAllocator::SetProperties(struct _AllocatorProperties *,struct _AllocatorProperties *)" (?SetProperties@CMemAllocator@@UAAJPAU_AllocatorProperties@@0@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000947:INFO  ]     Discarded "protected: virtual void __cdecl CMemAllocator::Free(void)" (?Free@CMemAllocator@@MAAXXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000948:INFO  ]     Discarded "protected: void __cdecl CMemAllocator::ReallyFree(void)" (?ReallyFree@CMemAllocator@@IAAXXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000949:INFO  ]     Discarded "public: virtual __cdecl CMemAllocator::~CMemAllocator(void)" (??1CMemAllocator@@UAA@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000950:INFO  ]     Discarded "public: virtual long __cdecl CBaseAllocator::QueryInterface(struct _GUID const &,void * *)" (?QueryInterface@CBaseAllocator@@UAAJABU_GUID@@PAPAX@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000951:INFO  ]     Discarded "public: virtual unsigned long __cdecl CBaseAllocator::AddRef(void)" (?AddRef@CBaseAllocator@@UAAKXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000952:INFO  ]     Discarded "public: virtual unsigned long __cdecl CBaseAllocator::Release(void)" (?Release@CBaseAllocator@@UAAKXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000953:INFO  ]     Discarded "public: __cdecl CGenericList<class CBasePin>::CGenericList<class CBasePin>(unsigned short *)" (??0?$CGenericList@VCBasePin@@@@QAA@PAG@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000954:INFO  ]     Discarded "public: struct __POSITION * __cdecl CGenericList<class CBasePin>::AddTail(class CBasePin *)" (?AddTail@?$CGenericList@VCBasePin@@@@QAAPAU__POSITION@@PAVCBasePin@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000955:INFO  ]     Discarded "public: int __cdecl CGenericList<class CBasePin>::AddTail(class CGenericList<class CBasePin> *)" (?AddTail@?$CGenericList@VCBasePin@@@@QAAHPAV1@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000956:INFO  ]     Discarded "public: struct __POSITION * __cdecl CGenericList<class CBasePin>::Find(class CBasePin *)const " (?Find@?$CGenericList@VCBasePin@@@@QBAPAU__POSITION@@PAVCBasePin@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000957:INFO  ]     Discarded "public: __cdecl IPersist::IPersist(void)" (??0IPersist@@QAA@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000958:INFO  ]     Discarded "public: virtual __cdecl CBaseMediaFilter::~CBaseMediaFilter(void)" (??1CBaseMediaFilter@@UAA@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000959:INFO  ]     Discarded "public: virtual long __cdecl CBaseMediaFilter::NonDelegatingQueryInterface(struct _GUID const &,void * *)" (?NonDelegatingQueryInterface@CBaseMediaFilter@@UAAJABU_GUID@@PAPAX@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000960:INFO  ]     Discarded "public: virtual long __cdecl CBaseMediaFilter::SetSyncSource(struct IReferenceClock *)" (?SetSyncSource@CBaseMediaFilter@@UAAJPAUIReferenceClock@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000961:INFO  ]     Discarded "public: virtual long __cdecl CBaseMediaFilter::GetSyncSource(struct IReferenceClock * *)" (?GetSyncSource@CBaseMediaFilter@@UAAJPAPAUIReferenceClock@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000962:INFO  ]     Discarded "public: virtual long __cdecl CBaseMediaFilter::Stop(void)" (?Stop@CBaseMediaFilter@@UAAJXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000963:INFO  ]     Discarded "public: virtual long __cdecl CBaseMediaFilter::Pause(void)" (?Pause@CBaseMediaFilter@@UAAJXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000964:INFO  ]     Discarded "public: virtual long __cdecl CBaseMediaFilter::Run(__int64)" (?Run@CBaseMediaFilter@@UAAJ_J@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000965:INFO  ]     Discarded "public: virtual long __cdecl CBaseMediaFilter::StreamTime(class CRefTime &)" (?StreamTime@CBaseMediaFilter@@UAAJAAVCRefTime@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000966:INFO  ]     Discarded "public: __cdecl IAMovieSetup::IAMovieSetup(void)" (??0IAMovieSetup@@QAA@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000967:INFO  ]     Discarded "public: __cdecl IEnumPins::IEnumPins(void)" (??0IEnumPins@@QAA@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000968:INFO  ]     Discarded "public: __cdecl IEnumMediaTypes::IEnumMediaTypes(void)" (??0IEnumMediaTypes@@QAA@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000969:INFO  ]     Discarded "public: __cdecl IPin::IPin(void)" (??0IPin@@QAA@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000970:INFO  ]     Discarded "public: __cdecl IQualityControl::IQualityControl(void)" (??0IQualityControl@@QAA@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000971:INFO  ]     Discarded "public: __cdecl IMemInputPin::IMemInputPin(void)" (??0IMemInputPin@@QAA@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000972:INFO  ]     Discarded "public: virtual void * __cdecl CMediaSample::`scalar deleting destructor'(unsigned int)" (??_GCMediaSample@@UAAPAXI@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000973:INFO  ]     Discarded "public: __cdecl IMediaSample::IMediaSample(void)" (??0IMediaSample@@QAA@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000974:INFO  ]     Discarded "public: __cdecl IMemAllocator::IMemAllocator(void)" (??0IMemAllocator@@QAA@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000975:INFO  ]     Discarded "public: virtual long __cdecl CBaseAllocator::ReleaseBuffer(struct IMediaSample *)" (?ReleaseBuffer@CBaseAllocator@@UAAJPAUIMediaSample@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000976:INFO  ]     Discarded "public: virtual void * __cdecl CMemAllocator::`scalar deleting destructor'(unsigned int)" (??_GCMemAllocator@@UAAPAXI@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000977:INFO  ]     Discarded "public: __cdecl IMediaFilter::IMediaFilter(void)" (??0IMediaFilter@@QAA@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000978:INFO  ]     Discarded "public: __cdecl IBaseFilter::IBaseFilter(void)" (??0IBaseFilter@@QAA@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000979:INFO  ]     Discarded "public: __cdecl CBaseFilter::CBaseFilter(unsigned short *,struct IUnknown *,class CCritSec *,struct _GUID const &,long *)" (??0CBaseFilter@@QAA@PAGPAUIUnknown@@PAVCCritSec@@ABU_GUID@@PAJ@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000980:INFO  ]     Discarded "public: __cdecl CBaseOutputPin::CBaseOutputPin(unsigned short *,class CBaseFilter *,class CCritSec *,long *,unsigned short const *)" (??0CBaseOutputPin@@QAA@PAGPAVCBaseFilter@@PAVCCritSec@@PAJPBG@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000981:INFO  ]     Discarded "public: __cdecl IMediaSample2::IMediaSample2(void)" (??0IMediaSample2@@QAA@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000982:INFO  ]     Discarded "public: __cdecl IMemAllocator2::IMemAllocator2(void)" (??0IMemAllocator2@@QAA@XZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000983:INFO  ]     Discarded "public: __cdecl CBaseMediaFilter::CBaseMediaFilter(unsigned short const *,struct IUnknown *,class CCritSec *,struct _GUID const &)" (??0CBaseMediaFilter@@QAA@PBGPAUIUnknown@@PAVCCritSec@@ABU_GUID@@@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000984:INFO  ]     Discarded "public: __cdecl CMediaSample::CMediaSample(unsigned short *,class CBaseAllocator *,long *,unsigned char *,long)" (??0CMediaSample@@QAA@PAGPAVCBaseAllocator@@PAJPAEJ@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000985:INFO  ]     Discarded "public: __cdecl CBaseAllocator::CBaseAllocator(unsigned short *,struct IUnknown *,long *,int)" (??0CBaseAllocator@@QAA@PAGPAUIUnknown@@PAJH@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000986:INFO  ]     Discarded "public: __cdecl CMemAllocator::CMemAllocator(unsigned short *,struct IUnknown *,long *)" (??0CMemAllocator@@QAA@PAGPAUIUnknown@@PAJ@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000987:INFO  ]     Discarded "protected: virtual long __cdecl CMemAllocator::Alloc(void)" (?Alloc@CMemAllocator@@MAAJXZ) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000988:INFO  ]     Discarded "public: static class CUnknown * __cdecl CMemAllocator::CreateInstance(struct IUnknown *,long *)" (?CreateInstance@CMemAllocator@@SAPAVCUnknown@@PAUIUnknown@@PAJ@Z) from strmbase.lib(amfilter.obj)
+BUILD: [01:0000000989:INFO  ]     Discarded "struct HINSTANCE__ * __cdecl LoadOLEAut32(void)" (?LoadOLEAut32@@YAPAUHINSTANCE__@@XZ) from strmbase.lib(combase.obj)
+BUILD: [01:0000000990:INFO  ]     Discarded "public: __cdecl INonDelegatingUnknown::INonDelegatingUnknown(void)" (??0INonDelegatingUnknown@@QAA@XZ) from strmbase.lib(combase.obj)
+BUILD: [01:0000000991:INFO  ]     Discarded "public: __cdecl CUnknown::CUnknown(unsigned short *,struct IUnknown *,long *)" (??0CUnknown@@QAA@PAGPAUIUnknown@@PAJ@Z) from strmbase.lib(combase.obj)
+BUILD: [01:0000000992:INFO  ]     Discarded "int __cdecl IsEqualObject(struct IUnknown *,struct IUnknown *)" (?IsEqualObject@@YAHPAUIUnknown@@0@Z) from strmbase.lib(combase.obj)
+BUILD: [01:0000000993:INFO  ]     Discarded "unsigned long __cdecl max<unsigned long>(unsigned long const &,unsigned long const &)" (??$max@K@@YAKABK0@Z) from strmbase.lib(combase.obj)
+BUILD: [01:0000000994:INFO  ]     Discarded "public: void __cdecl CMediaType::SetVariableSize(void)" (?SetVariableSize@CMediaType@@QAAXXZ) from strmbase.lib(mtype.obj)
+BUILD: [01:0000000995:INFO  ]     Discarded "public: void __cdecl CMediaType::SetTemporalCompression(int)" (?SetTemporalCompression@CMediaType@@QAAXH@Z) from strmbase.lib(mtype.obj)
+BUILD: [01:0000000996:INFO  ]     Discarded "public: void __cdecl CMediaType::SetFormatType(struct _GUID const *)" (?SetFormatType@CMediaType@@QAAXPBU_GUID@@@Z) from strmbase.lib(mtype.obj)
+BUILD: [01:0000000997:INFO  ]     Discarded "public: void __cdecl CMediaType::ResetFormatBuffer(void)" (?ResetFormatBuffer@CMediaType@@QAAXXZ) from strmbase.lib(mtype.obj)
+BUILD: [01:0000000998:INFO  ]     Discarded "public: unsigned char * __cdecl CMediaType::AllocFormatBuffer(unsigned long)" (?AllocFormatBuffer@CMediaType@@QAAPAEK@Z) from strmbase.lib(mtype.obj)
+BUILD: [01:0000000999:INFO  ]     Discarded "public: unsigned char * __cdecl CMediaType::ReallocFormatBuffer(unsigned long)" (?ReallocFormatBuffer@CMediaType@@QAAPAEK@Z) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001000:INFO  ]     Discarded "int __cdecl operator!=(struct _GUID const &,struct _GUID const &)" (??9@YAHABU_GUID@@0@Z) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001001:INFO  ]     Discarded "public: int __cdecl CMediaType::IsFixedSize(void)const " (?IsFixedSize@CMediaType@@QBAHXZ) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001002:INFO  ]     Discarded "public: unsigned char * __cdecl CMediaType::Format(void)const " (?Format@CMediaType@@QBAPAEXZ) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001003:INFO  ]     Discarded "private: void __cdecl FOURCCMap::InitGUID(void)" (?InitGUID@FOURCCMap@@AAAXXZ) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001004:INFO  ]     Discarded "public: void __cdecl FOURCCMap::SetFOURCC(unsigned long)" (?SetFOURCC@FOURCCMap@@QAAXK@Z) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001005:INFO  ]     Discarded "public: __cdecl CMediaType::CMediaType(struct _GUID const *)" (??0CMediaType@@QAA@PBU_GUID@@@Z) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001006:INFO  ]     Discarded "public: __cdecl CMediaType::CMediaType(struct _AMMediaType const &)" (??0CMediaType@@QAA@ABU_AMMediaType@@@Z) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001007:INFO  ]     Discarded "public: __cdecl CMediaType::CMediaType(class CMediaType const &)" (??0CMediaType@@QAA@ABV0@@Z) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001008:INFO  ]     Discarded "public: class CMediaType & __cdecl CMediaType::operator=(struct _AMMediaType const &)" (??4CMediaType@@QAAAAV0@ABU_AMMediaType@@@Z) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001009:INFO  ]     Discarded "public: int __cdecl CMediaType::operator==(class CMediaType const &)const " (??8CMediaType@@QBAHABV0@@Z) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001010:INFO  ]     Discarded "public: int __cdecl CMediaType::operator!=(class CMediaType const &)const " (??9CMediaType@@QBAHABV0@@Z) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001011:INFO  ]     Discarded "public: int __cdecl CMediaType::IsValid(void)const " (?IsValid@CMediaType@@QBAHXZ) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001012:INFO  ]     Discarded "public: unsigned long __cdecl CMediaType::GetSampleSize(void)const " (?GetSampleSize@CMediaType@@QBAKXZ) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001013:INFO  ]     Discarded "public: void __cdecl CMediaType::SetSampleSize(unsigned long)" (?SetSampleSize@CMediaType@@QAAXK@Z) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001014:INFO  ]     Discarded "public: int __cdecl CMediaType::SetFormat(unsigned char *,unsigned long)" (?SetFormat@CMediaType@@QAAHPAEK@Z) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001015:INFO  ]     Discarded "struct _AMMediaType * __cdecl CreateMediaType(struct _AMMediaType const *)" (?CreateMediaType@@YAPAU_AMMediaType@@PBU1@@Z) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001016:INFO  ]     Discarded "struct tagBITMAPINFOHEADER * __cdecl GetBitmapInfoHeader(class CMediaType const *)" (?GetBitmapInfoHeader@@YAPAUtagBITMAPINFOHEADER@@PBVCMediaType@@@Z) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001017:INFO  ]     Discarded "struct tagRGBQUAD * __cdecl GetBmiColors(class CMediaType const *)" (?GetBmiColors@@YAPAUtagRGBQUAD@@PBVCMediaType@@@Z) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001018:INFO  ]     Discarded "unsigned long const * __cdecl GetBitMasks(class CMediaType const *)" (?GetBitMasks@@YAPBKPBVCMediaType@@@Z) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001019:INFO  ]     Discarded "struct tagVIDEOINFOHEADER * __cdecl GetVideoInfoHeader(class CMediaType const *)" (?GetVideoInfoHeader@@YAPAUtagVIDEOINFOHEADER@@PBVCMediaType@@@Z) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001020:INFO  ]     Discarded "struct tagVIDEOINFOHEADER2 * __cdecl GetVideoInfoHeader2(class CMediaType const *)" (?GetVideoInfoHeader2@@YAPAUtagVIDEOINFOHEADER2@@PBVCMediaType@@@Z) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001021:INFO  ]     Discarded "public: __cdecl FOURCCMap::FOURCCMap(unsigned long)" (??0FOURCCMap@@QAA@K@Z) from strmbase.lib(mtype.obj)
+BUILD: [01:0000001022:INFO  ]     Discarded CreateAudioMediaType from strmbase.lib(mtype.obj)
+BUILD: [01:0000001023:INFO  ]     Discarded "void __cdecl EnsureThreadPriorityLevels(void)" (?EnsureThreadPriorityLevels@@YAXXZ) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001024:INFO  ]     Discarded "int __cdecl _internal_GetThreadPriorityEx(void *)" (?_internal_GetThreadPriorityEx@@YAHPAX@Z) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001025:INFO  ]     Discarded "int __cdecl _internal_SetThreadPriorityEx(void *,int)" (?_internal_SetThreadPriorityEx@@YAHPAXH@Z) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001026:INFO  ]     Discarded "int __cdecl _internal_GetThreadPriority(void *)" (?_internal_GetThreadPriority@@YAHPAX@Z) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001027:INFO  ]     Discarded "int __cdecl _internal_SetThreadPriority(void *,int)" (?_internal_SetThreadPriority@@YAHPAXH@Z) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001028:INFO  ]     Discarded "unsigned long __cdecl EnlargedUnsignedDivide(union _ULARGE_INTEGER,unsigned long,unsigned long *)" (?EnlargedUnsignedDivide@@YAKT_ULARGE_INTEGER@@KPAK@Z) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001029:INFO  ]     Discarded "public: __cdecl CAMEvent::CAMEvent(int)" (??0CAMEvent@@QAA@H@Z) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001030:INFO  ]     Discarded "public: __cdecl CAMEvent::~CAMEvent(void)" (??1CAMEvent@@QAA@XZ) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001031:INFO  ]     Discarded "public: int __cdecl CAMMsgEvent::WaitMsg(unsigned long)" (?WaitMsg@CAMMsgEvent@@QAAHK@Z) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001032:INFO  ]     Discarded "public: static unsigned long __cdecl CAMThread::InitialThreadProc(void *)" (?InitialThreadProc@CAMThread@@SAKPAX@Z) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001033:INFO  ]     Discarded ResetEvent from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001034:INFO  ]     Discarded SetEvent from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001035:INFO  ]     Discarded GetCurrentThread from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001036:INFO  ]     Discarded "public: static long __cdecl CAMThread::CoInitializeHelper(void)" (?CoInitializeHelper@CAMThread@@SAJXZ) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001037:INFO  ]     Discarded "public: int __cdecl CMsgThread::GetThreadPriority(void)" (?GetThreadPriority@CMsgThread@@QAAHXZ) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001038:INFO  ]     Discarded "public: int __cdecl CMsgThread::SetThreadPriority(int)" (?SetThreadPriority@CMsgThread@@QAAHH@Z) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001039:INFO  ]     Discarded "void __cdecl IntToWstr(int,unsigned short *)" (?IntToWstr@@YAXHPAG@Z) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001040:INFO  ]     Discarded memmoveInternal from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001041:INFO  ]     Discarded "__int64 __cdecl llMulDiv(__int64,__int64,__int64,__int64)" (?llMulDiv@@YA_J_J000@Z) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001042:INFO  ]     Discarded "__int64 __cdecl Int64x32Div32(__int64,long,long,long)" (?Int64x32Div32@@YA_J_JJJJ@Z) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001043:INFO  ]     Discarded LoadOleAut32 from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001044:INFO  ]     Discarded "public: void __cdecl CAMEvent::Set(void)" (?Set@CAMEvent@@QAAXXZ) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001045:INFO  ]     Discarded WriteBSTR from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001046:INFO  ]     Discarded "public: int __cdecl CAMEvent::Wait(unsigned long)" (?Wait@CAMEvent@@QAAHK@Z) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001047:INFO  ]     Discarded "public: void __cdecl CAMEvent::Reset(void)" (?Reset@CAMEvent@@QAAXXZ) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001048:INFO  ]     Discarded FreeBSTR from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001049:INFO  ]     Discarded "public: int __cdecl CAMEvent::Check(void)" (?Check@CAMEvent@@QAAHXZ) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001050:INFO  ]     Discarded "public: void __cdecl CAMThread::Close(void)" (?Close@CAMThread@@QAAXXZ) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001051:INFO  ]     Discarded "public: int __cdecl CAMThread::ThreadExists(void)const " (?ThreadExists@CAMThread@@QBAHXZ) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001052:INFO  ]     Discarded "unsigned long __cdecl WaitDispatchingMessages(void *,unsigned long,struct HWND__ *,unsigned int)" (?WaitDispatchingMessages@@YAKPAXKPAUHWND__@@I@Z) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001053:INFO  ]     Discarded "public: struct __POSITION * __cdecl CGenericList<class CMsg>::GetHeadPosition(void)const " (?GetHeadPosition@?$CGenericList@VCMsg@@@@QBAPAU__POSITION@@XZ) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001054:INFO  ]     Discarded "public: class CMsg * __cdecl CGenericList<class CMsg>::GetNext(struct __POSITION * &)const " (?GetNext@?$CGenericList@VCMsg@@@@QBAPAVCMsg@@AAPAU__POSITION@@@Z) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001055:INFO  ]     Discarded "public: class CMsg * __cdecl CGenericList<class CMsg>::RemoveHead(void)" (?RemoveHead@?$CGenericList@VCMsg@@@@QAAPAVCMsg@@XZ) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001056:INFO  ]     Discarded "public: __cdecl CMsg::CMsg(void)" (??0CMsg@@QAA@XZ) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001057:INFO  ]     Discarded "public: __cdecl CGenericList<class CMsg>::~CGenericList<class CMsg>(void)" (??1?$CGenericList@VCMsg@@@@QAA@XZ) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001058:INFO  ]     Discarded "void * __cdecl _internal_CreateThread(struct _SECURITY_ATTRIBUTES *,unsigned long,unsigned long (__cdecl*)(void *),void *,unsigned long,unsigned long *)" (?_internal_CreateThread@@YAPAXPAU_SECURITY_ATTRIBUTES@@KP6AKPAX@Z1KPAK@Z) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001059:INFO  ]     Discarded "public: __cdecl CAMThread::CAMThread(void)" (??0CAMThread@@QAA@XZ) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001060:INFO  ]     Discarded "public: __cdecl CAMThread::~CAMThread(void)" (??1CAMThread@@QAA@XZ) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001061:INFO  ]     Discarded "public: int __cdecl CAMThread::Create(void)" (?Create@CAMThread@@QAAHXZ) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001062:INFO  ]     Discarded "public: unsigned long __cdecl CAMThread::CallWorker(unsigned long)" (?CallWorker@CAMThread@@QAAKK@Z) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001063:INFO  ]     Discarded "public: unsigned long __cdecl CAMThread::GetRequest(void)" (?GetRequest@CAMThread@@QAAKXZ) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001064:INFO  ]     Discarded "public: int __cdecl CAMThread::CheckRequest(unsigned long *)" (?CheckRequest@CAMThread@@QAAHPAK@Z) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001065:INFO  ]     Discarded "public: void __cdecl CAMThread::Reply(unsigned long)" (?Reply@CAMThread@@QAAXK@Z) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001066:INFO  ]     Discarded "public: __cdecl CMsgThread::~CMsgThread(void)" (??1CMsgThread@@QAA@XZ) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001067:INFO  ]     Discarded "private: static unsigned long __cdecl CMsgThread::DefaultThreadProc(void *)" (?DefaultThreadProc@CMsgThread@@CAKPAX@Z) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001068:INFO  ]     Discarded "public: virtual void __cdecl CMsgThread::GetThreadMsg(class CMsg *)" (?GetThreadMsg@CMsgThread@@UAAXPAVCMsg@@@Z) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001069:INFO  ]     Discarded "public: int __cdecl CMsgThread::CreateThread(void)" (?CreateThread@CMsgThread@@QAAHXZ) from strmbase.lib(wxutil.obj)
+BUILD: [01:0000001070:INFO  ]     Discarded "public: struct __POSITION * __cdecl CBaseList::GetHeadPositionI(void)const " (?GetHeadPositionI@CBaseList@@QBAPAU__POSITION@@XZ) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001071:INFO  ]     Discarded "public: struct __POSITION * __cdecl CBaseList::GetTailPositionI(void)const " (?GetTailPositionI@CBaseList@@QBAPAU__POSITION@@XZ) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001072:INFO  ]     Discarded "public: int __cdecl CBaseList::GetCountI(void)const " (?GetCountI@CBaseList@@QBAHXZ) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001073:INFO  ]     Discarded "public: __cdecl CBaseList::CNode::CNode(void)" (??0CNode@CBaseList@@QAA@XZ) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001074:INFO  ]     Discarded "public: class CBaseList::CNode * __cdecl CBaseList::CNode::Prev(void)const " (?Prev@CNode@CBaseList@@QBAPAV12@XZ) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001075:INFO  ]     Discarded "public: class CBaseList::CNode * __cdecl CBaseList::CNode::Next(void)const " (?Next@CNode@CBaseList@@QBAPAV12@XZ) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001076:INFO  ]     Discarded "public: void __cdecl CBaseList::CNode::SetPrev(class CBaseList::CNode *)" (?SetPrev@CNode@CBaseList@@QAAXPAV12@@Z) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001077:INFO  ]     Discarded "public: void __cdecl CBaseList::CNode::SetNext(class CBaseList::CNode *)" (?SetNext@CNode@CBaseList@@QAAXPAV12@@Z) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001078:INFO  ]     Discarded "public: void * __cdecl CBaseList::CNode::GetData(void)const " (?GetData@CNode@CBaseList@@QBAPAXXZ) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001079:INFO  ]     Discarded "public: void __cdecl CBaseList::CNode::SetData(void *)" (?SetData@CNode@CBaseList@@QAAXPAX@Z) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001080:INFO  ]     Discarded "public: __cdecl CBaseList::CNodeCache::CNodeCache(int)" (??0CNodeCache@CBaseList@@QAA@H@Z) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001081:INFO  ]     Discarded "public: __cdecl CBaseList::CNodeCache::~CNodeCache(void)" (??1CNodeCache@CBaseList@@QAA@XZ) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001082:INFO  ]     Discarded "public: void __cdecl CBaseList::CNodeCache::AddToCache(class CBaseList::CNode *)" (?AddToCache@CNodeCache@CBaseList@@QAAXPAVCNode@2@@Z) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001083:INFO  ]     Discarded "public: class CBaseList::CNode * __cdecl CBaseList::CNodeCache::RemoveFromCache(void)" (?RemoveFromCache@CNodeCache@CBaseList@@QAAPAVCNode@2@XZ) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001084:INFO  ]     Discarded "public: struct __POSITION * __cdecl CBaseList::Next(struct __POSITION *)const " (?Next@CBaseList@@QBAPAU__POSITION@@PAU2@@Z) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001085:INFO  ]     Discarded "public: struct __POSITION * __cdecl CBaseList::Prev(struct __POSITION *)const " (?Prev@CBaseList@@QBAPAU__POSITION@@PAU2@@Z) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001086:INFO  ]     Discarded "public: __cdecl CBaseList::CBaseList(unsigned short *,int)" (??0CBaseList@@QAA@PAGH@Z) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001087:INFO  ]     Discarded "protected: void * __cdecl CBaseList::GetNextI(struct __POSITION * &)const " (?GetNextI@CBaseList@@IBAPAXAAPAU__POSITION@@@Z) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001088:INFO  ]     Discarded "protected: void * __cdecl CBaseList::GetI(struct __POSITION *)const " (?GetI@CBaseList@@IBAPAXPAU__POSITION@@@Z) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001089:INFO  ]     Discarded "protected: void * __cdecl CBaseList::RemoveI(struct __POSITION *)" (?RemoveI@CBaseList@@IAAPAXPAU__POSITION@@@Z) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001090:INFO  ]     Discarded "protected: struct __POSITION * __cdecl CBaseList::AddHeadI(void *)" (?AddHeadI@CBaseList@@IAAPAU__POSITION@@PAX@Z) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001091:INFO  ]     Discarded "public: int __cdecl CBaseList::AddHead(class CBaseList *)" (?AddHead@CBaseList@@QAAHPAV1@@Z) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001092:INFO  ]     Discarded "protected: struct __POSITION * __cdecl CBaseList::AddAfterI(struct __POSITION *,void *)" (?AddAfterI@CBaseList@@IAAPAU__POSITION@@PAU2@PAX@Z) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001093:INFO  ]     Discarded "public: int __cdecl CBaseList::AddAfter(struct __POSITION *,class CBaseList *)" (?AddAfter@CBaseList@@QAAHPAU__POSITION@@PAV1@@Z) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001094:INFO  ]     Discarded "protected: struct __POSITION * __cdecl CBaseList::AddBeforeI(struct __POSITION *,void *)" (?AddBeforeI@CBaseList@@IAAPAU__POSITION@@PAU2@PAX@Z) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001095:INFO  ]     Discarded "public: int __cdecl CBaseList::AddBefore(struct __POSITION *,class CBaseList *)" (?AddBefore@CBaseList@@QAAHPAU__POSITION@@PAV1@@Z) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001096:INFO  ]     Discarded "public: int __cdecl CBaseList::MoveToTail(struct __POSITION *,class CBaseList *)" (?MoveToTail@CBaseList@@QAAHPAU__POSITION@@PAV1@@Z) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001097:INFO  ]     Discarded "public: int __cdecl CBaseList::MoveToHead(struct __POSITION *,class CBaseList *)" (?MoveToHead@CBaseList@@QAAHPAU__POSITION@@PAV1@@Z) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001098:INFO  ]     Discarded "public: void __cdecl CBaseList::Reverse(void)" (?Reverse@CBaseList@@QAAXXZ) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001099:INFO  ]     Discarded "protected: void * __cdecl CBaseList::RemoveHeadI(void)" (?RemoveHeadI@CBaseList@@IAAPAXXZ) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001100:INFO  ]     Discarded "protected: void * __cdecl CBaseList::RemoveTailI(void)" (?RemoveTailI@CBaseList@@IAAPAXXZ) from strmbase.lib(wxlist.obj)
+BUILD: [01:0000001101:INFO  ]     Discarded GetBitmapSize from strmbase.lib(amvideo.obj)
+BUILD: [01:0000001102:INFO  ]     Discarded GetTrueColorType from strmbase.lib(amvideo.obj)
+BUILD: [01:0000001103:INFO  ]     Discarded GetBitmapFormatSize from strmbase.lib(amvideo.obj)
+BUILD: [01:0000001104:INFO  ]     Discarded ContainsPalette from strmbase.lib(amvideo.obj)
+BUILD: [01:0000001105:INFO  ]     Discarded GetBitmapPalette from strmbase.lib(amvideo.obj)
+BUILD: [01:0000001106:INFO  ]     Discarded GetBitCount from strmbase.lib(amvideo.obj)
+BUILD: [01:0000001107:INFO  ]     Discarded GetSubtypeName from strmbase.lib(amvideo.obj)
+BUILD: [01:0000001108:INFO  ]     Discarded GetBitmapSubtype from strmbase.lib(amvideo.obj)
+BUILD: [01:0000001109:INFO  ]     Discarded CloseHandle from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001110:INFO  ]     Discarded WaitForSingleObject from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001111:INFO  ]     Discarded ReleaseSemaphore from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001112:INFO  ]     Discarded GetSystemInfo from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001113:INFO  ]     Discarded VirtualFree from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001114:INFO  ]     Discarded CreateSemaphoreW from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001115:INFO  ]     Discarded VirtualAlloc from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001116:INFO  ]     Discarded LoadLibraryW from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001117:INFO  ]     Discarded RegQueryValueExW from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001118:INFO  ]     Discarded CeGetThreadPriority from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001119:INFO  ]     Discarded CeSetThreadPriority from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001120:INFO  ]     Discarded CreateEventW from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001121:INFO  ]     Discarded PeekMessageW from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001122:INFO  ]     Discarded MsgWaitForMultipleObjectsEx from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001123:INFO  ]     Discarded GetTickCount from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001124:INFO  ]     Discarded EventModify from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001125:INFO  ]     Discarded GetProcAddressW from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001126:INFO  ]     Discarded GetModuleHandleW from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001127:INFO  ]     Discarded DispatchMessageW from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001128:INFO  ]     Discarded CreateThread from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001129:INFO  ]     Discarded GetCurrentProcess from corelib0.lib(cexit.obj)
+BUILD: [01:0000001130:INFO  ]     Discarded exit from corelib0.lib(cexit.obj)
+BUILD: [01:0000001131:INFO  ]     Discarded _exit from corelib0.lib(cexit.obj)
+BUILD: [01:0000001132:INFO  ]     Discarded _c_exit from corelib0.lib(cexit.obj)
+BUILD: [01:0000001133:INFO  ]     Discarded lockexit from corelib0.lib(onexit.obj)
+BUILD: [01:0000001134:INFO  ]     Discarded unlockexit from corelib0.lib(onexit.obj)
+BUILD: [01:0000001135:INFO  ]     Discarded _onexit_nolock from corelib0.lib(onexit.obj)
+BUILD: [01:0000001136:INFO  ]     Discarded _onexit from corelib0.lib(onexit.obj)
+BUILD: [01:0000001137:INFO  ]     Discarded atexit from corelib0.lib(onexit.obj)
+BUILD: [01:0000001138:INFO  ]     Discarded __rt_sdiv from corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001139:INFO  ]     Discarded __rt_udiv64by64 from corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001140:INFO  ]     Discarded __rt_urem64by64 from corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001141:INFO  ]     Discarded memmove from corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001142:INFO  ]     Discarded malloc from corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001143:INFO  ]     Discarded realloc from corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001144:INFO  ]     Discarded _msize from corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001145:INFO  ]     Discarded InterlockedCompareExchange from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001146:INFO  ]     Discarded '.xdata' from strmbase.lib(amvideo.obj)
+BUILD: [01:0000001147:INFO  ]     Discarded '.xdata' from corelib0.lib(onexit.obj)
+BUILD: [01:0000001148:INFO  ]     Discarded '.idata$4' from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001149:INFO  ]     Discarded '.idata$4' from corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001150:INFO  ]     Discarded '.idata$4' from corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001151:INFO  ]     Discarded '.idata$4' from corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001152:INFO  ]     Discarded '.idata$4' from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001153:INFO  ]     Discarded '.idata$4' from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001154:INFO  ]     Discarded '.idata$4' from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001155:INFO  ]     Discarded '.idata$4' from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001156:INFO  ]     Discarded '.idata$4' from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001157:INFO  ]     Discarded '.idata$4' from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001158:INFO  ]     Discarded '.idata$4' from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001159:INFO  ]     Discarded '.idata$4' from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001160:INFO  ]     Discarded '.idata$4' from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001161:INFO  ]     Discarded '.idata$4' from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001162:INFO  ]     Discarded '.idata$4' from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001163:INFO  ]     Discarded '.idata$4' from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001164:INFO  ]     Discarded '.idata$4' from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001165:INFO  ]     Discarded '.idata$4' from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001166:INFO  ]     Discarded '.idata$4' from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001167:INFO  ]     Discarded '.idata$4' from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001168:INFO  ]     Discarded '.idata$4' from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001169:INFO  ]     Discarded '.idata$4' from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001170:INFO  ]     Discarded '.idata$4' from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001171:INFO  ]     Discarded '.idata$4' from coredll.lib(COREDLL.dll)
+BUILD: [01:0000001172:INFO  ]     Discarded '.idata$4' from corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001173:INFO  ]     Discarded '.idata$4' from corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001174:INFO  ]     Discarded '.idata$4' from corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001175:INFO  ]     Discarded '.idata$4' from corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001176:INFO  ] Starting pass 2
+BUILD: [01:0000001177:INFO  ]      NullSink.exp
+BUILD: [01:0000001178:INFO  ]      StdAfx.obj
+BUILD: [01:0000001179:INFO  ]      NullSink.obj
+BUILD: [01:0000001180:INFO  ]      strmbase.lib(amvideo.obj)
+BUILD: [01:0000001181:INFO  ]      strmbase.lib(combase.obj)
+BUILD: [01:0000001182:INFO  ]      strmbase.lib(dllentry.obj)
+BUILD: [01:0000001183:INFO  ]      strmbase.lib(amfilter.obj)
+BUILD: [01:0000001184:INFO  ]      strmbase.lib(mtype.obj)
+BUILD: [01:0000001185:INFO  ]      strmbase.lib(wxlist.obj)
+BUILD: [01:0000001186:INFO  ]      strmbase.lib(wxutil.obj)
+BUILD: [01:0000001187:INFO  ]      strmbase.lib(dllsetup.obj)
+BUILD: [01:0000001188:INFO  ]      strmbase.lib(streams.obj)
+BUILD: [01:0000001189:INFO  ]      strmiids.lib(strmif_i.obj)
+BUILD: [01:0000001190:INFO  ]      uuid.lib(unknwn_i_guid1.obj)
+BUILD: [01:0000001191:INFO  ]      uuid.lib(unknwn_i_guid0.obj)
+BUILD: [01:0000001192:INFO  ]      uuid.lib(objidl_i_guid11.obj)
+BUILD: [01:0000001193:INFO  ]      uuid.lib(cguid_i_guid0.obj)
+BUILD: [01:0000001194:INFO  ]      Ole32.lib(ole32.dll)
+BUILD: [01:0000001195:INFO  ]      Ole32.lib(ole32.dll)
+BUILD: [01:0000001196:INFO  ]      Ole32.lib(ole32.dll)
+BUILD: [01:0000001197:INFO  ]      Ole32.lib(ole32.dll)
+BUILD: [01:0000001198:INFO  ]      Ole32.lib(ole32.dll)
+BUILD: [01:0000001199:INFO  ]      Ole32.lib(ole32.dll)
+BUILD: [01:0000001200:INFO  ]      Ole32.lib(ole32.dll)
+BUILD: [01:0000001201:INFO  ]      Ole32.lib(ole32.dll)
+BUILD: [01:0000001202:INFO  ]      Ole32.lib(ole32.dll)
+BUILD: [01:0000001203:INFO  ]      Ole32.lib(ole32.dll)
+BUILD: [01:0000001204:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001205:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001206:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001207:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001208:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001209:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001210:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001211:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001212:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001213:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001214:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001215:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001216:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001217:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001218:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001219:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001220:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001221:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001222:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001223:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001224:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001225:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001226:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001227:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001228:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001229:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001230:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001231:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001232:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001233:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001234:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001235:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001236:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001237:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001238:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001239:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001240:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001241:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001242:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001243:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001244:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001245:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001246:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001247:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001248:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001249:INFO  ]      coredll.lib(COREDLL.dll)
+BUILD: [01:0000001250:INFO  ]      corelib0.lib(seccinit.obj)
+BUILD: [01:0000001251:INFO  ]      corelib0.lib(pegdmain.obj)
+BUILD: [01:0000001252:INFO  ]      corelib0.lib(onexit.obj)
+BUILD: [01:0000001253:INFO  ]      corelib0.lib(crt0init.obj)
+BUILD: [01:0000001254:INFO  ]      corelib0.lib(crt0dat.obj)
+BUILD: [01:0000001255:INFO  ]      corelib0.lib(cexit.obj)
+BUILD: [01:0000001256:INFO  ]      corelib0.lib(gshandler.obj)
+BUILD: [01:0000001257:INFO  ]      corelib0.lib(armsecgs.obj)
+BUILD: [01:0000001258:INFO  ]      corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001259:INFO  ]      corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001260:INFO  ]      corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001261:INFO  ]      corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001262:INFO  ]      corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001263:INFO  ]      corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001264:INFO  ]      corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001265:INFO  ]      corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001266:INFO  ]      corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001267:INFO  ]      corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001268:INFO  ]      corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001269:INFO  ]      corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001270:INFO  ]      corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001271:INFO  ]      corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001272:INFO  ]      corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001273:INFO  ]      corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001274:INFO  ]      corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001275:INFO  ]      corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001276:INFO  ]      corelib1.lib(COREDLL.dll)
+BUILD: [01:0000001277:INFO  ] Finished pass 2
+BUILD: [01:0000001278:INFO  ] 	editbin /nxcompat C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.dll
+BUILD: [01:0000001279:INFO  ] Microsoft (R) COFF/PE Editor Version 8.00.50727.42
+BUILD: [01:0000001280:INFO  ] Copyright (C) Microsoft Corporation.  All rights reserved.
+BUILD: [01:0000001281:INFO  ] 
+BUILD: [01:0000001282:INFO  ] 
+BUILD: [01:0000001283:INFO  ] 	copylink /S:a /D:f /E:a /R:n C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.map C:\WINCE600\OSDesigns\Z2170P\Z2170P\RelDir\Z2170P_ARMV4I_Release\NullSink.map
+BUILD: [01:0000001284:INFO  ] 	if exist C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.pdb copylink /S:a /D:f /E:a /R:n C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.pdb C:\WINCE600\OSDesigns\Z2170P\Z2170P\RelDir\Z2170P_ARMV4I_Release
+BUILD: [01:0000001285:INFO  ] 	if exist C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.rel copylink /S:a /D:f /E:a /R:n C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.rel C:\WINCE600\OSDesigns\Z2170P\Z2170P\RelDir\Z2170P_ARMV4I_Release\NullSink.rel
+BUILD: [01:0000001286:INFO  ] 	copylink /S:a /D:f /E:a /R:n C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\NullSink.dll C:\WINCE600\OSDesigns\Z2170P\Z2170P\RelDir\Z2170P_ARMV4I_Release\NullSink.dll
+BUILD: [00:0000001287:PROGC ] Saving C:\WINCE600\PLATFORM\Z2170P\Build.dat.
+BUILD: [00:0000001288:INFO  ] Done.
+BUILD: [00:0000001289:PROGC ] Done.
+BUILD: [00:0000001290:PROGC ]                        Files  Warnings  Errors
+BUILD: [00:0000001291:PROGC ] Midl                       0         0       0
+BUILD: [00:0000001292:PROGC ] Message                    0         0       0
+BUILD: [00:0000001293:PROGC ] Precomp Header             1         0       0
+BUILD: [00:0000001294:PROGC ] Resource                   0         0       0
+BUILD: [00:0000001295:PROGC ] MASM                       0         0       0
+BUILD: [00:0000001296:PROGC ] SHASM                      0         0       0
+BUILD: [00:0000001297:PROGC ] ARMASM                     0         0       0
+BUILD: [00:0000001298:PROGC ] MIPSASM                    0         0       0
+BUILD: [00:0000001299:PROGC ] C++                        1         0       0
+BUILD: [00:0000001300:PROGC ] C                          0         0       0
+BUILD: [00:0000001301:PROGC ] Static Libraries           0         0       0
+BUILD: [00:0000001302:PROGC ] Exe's                      0         0       0
+BUILD: [00:0000001303:PROGC ] Dll's                      2         0       0
+BUILD: [00:0000001304:PROGC ] Preprocess deffile         0         0       0
+BUILD: [00:0000001305:PROGC ] Resx                       0         0       0
+BUILD: [00:0000001306:PROGC ] CSharp Compile             0         0       0
+BUILD: [00:0000001307:PROGC ] Other                      0         0       0
+BUILD: [00:0000001308:PROGC ] 
+BUILD: [00:0000001309:PROGC ] Total                      4         0       0
+BUILD: [00:0000001310:PROGC ] 
+BUILD: [00:0000001311:PROGC ] 0 Warnings,  0 Errors
+BUILD: [00:0000001312:PROGC ] GetSystemTimes (seconds): Idle: 12    Kernel: 19    User: 2    
+BUILD: [00:0000001313:PROGC ] Elapsed  time  (seconds): 11   

@@ -41,7 +41,8 @@ VOID OALStall(UINT32 microSec)
 {
     UINT32 base, counts;
 
-    while (microSec > 0) {
+    while (microSec > 0) 
+    {
         if (microSec > 1000) {
             counts = g_oalTimer.countsPerMSec;
             microSec -= 1000;

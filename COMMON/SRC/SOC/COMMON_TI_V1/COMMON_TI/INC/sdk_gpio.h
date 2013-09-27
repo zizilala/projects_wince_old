@@ -33,8 +33,8 @@ extern "C" {
 //
 //  Define:  GPIO_DIR_xxx/GPIO_INT_xxx
 //
-#define GPIO_DIR_OUTPUT         (0 << 0)
-#define GPIO_DIR_INPUT          (1 << 0)
+#define GPIO_DIR_OUTPUT         (0 << 0)    
+#define GPIO_DIR_INPUT          (1 << 0)    
 #define GPIO_INT_LOW_HIGH       (1 << 1)
 #define GPIO_INT_HIGH_LOW       (1 << 2)
 #define GPIO_INT_LOW            (1 << 3)

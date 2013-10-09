@@ -31,8 +31,8 @@
 #include "bsp_padcfg.h"
 #include "tps659xx.h"
 #include "omap_cpuver.h"
-
-//Set up the "MC serial port interface (SPI1)" buses,   
+//
+//Initialization the "MC serial port interface (SPI1)" buses,
 #define SPI_CS0_PIN     174         //mcspi1_cs0
 #define SPI_CLK_PIN     171         //mcspi1_clk
 #define SPI_DOUT_PIN    172         //mcspi1_simo
@@ -46,7 +46,9 @@ void WMLCDDATA(short);
 void spi_Open(void);
 void LcdStall(DWORD);
 void LcdSleep(DWORD);
-//and declare SPI finction action,  Ray 13-09-23 
+//
+#define I2C3_SCL_GPIO    184             //i2c3_scl
+#define I2C3_SDA_GPIO    185             //i2c3_sda
 
 BOOL BLShowLogo(void); //initialization 2.4" TFT-LCD, Ray 13-09-25 
     
@@ -155,6 +157,7 @@ BOOL OEMPlatformInit()
             GPIO_PADS_37XX
 	     	USBOTG_PADS
 	     	MCSPI1_PADS                     //Addition to MCSPI1 functional, Ray 13-09-24
+            I2C3_PADS                       //Addition to MCSPI1 functional, Ray 13-10-07
             END_OF_PAD_ARRAY
     };
     
@@ -221,23 +224,27 @@ BOOL OEMPlatformInit()
     //GPIOSetMode(hGPIO, LAN9115_RESET_GPIO,GPIO_DIR_OUTPUT);
 	// test GPIO 
 	GPIOClrBit(hGPIO, 136); 	// VIBRATOR
-	GPIOSetMode(hGPIO, 136,GPIO_DIR_OUTPUT);
+	GPIOSetMode(hGPIO, 136, GPIO_DIR_OUTPUT);
     GPIOClrBit(hGPIO, 16); 		// WLAN_EN
-	GPIOSetMode(hGPIO, 16,GPIO_DIR_OUTPUT);
+	GPIOSetMode(hGPIO, 16, GPIO_DIR_OUTPUT);
 	GPIOClrBit(hGPIO, 15); 		// BT_EN
-	GPIOSetMode(hGPIO, 15,GPIO_DIR_OUTPUT);
+	GPIOSetMode(hGPIO, 15, GPIO_DIR_OUTPUT);
 	GPIOSetBit(hGPIO, 61); 		// BACKLIGHT_EN, Ray
-	GPIOSetMode(hGPIO, 61,GPIO_DIR_OUTPUT);
+	GPIOSetMode(hGPIO, 61, GPIO_DIR_OUTPUT);
 
-	// Side key GPIO initial
-	GPIOSetMode(hGPIO, 114,GPIO_DIR_INPUT);     // SIDE_KEY1(KEY_2_4), Ray 13-08-12
-	GPIOSetMode(hGPIO, 115,GPIO_DIR_INPUT);     // SIDE_KEY3(KEY_1_4), Ray 13-08-12
+	//Initialization Side key GPIO, Ray 13-08-12
+	GPIOSetMode(hGPIO, 114, GPIO_DIR_INPUT);     // SIDE_KEY1(KEY_2_4)
+	GPIOSetMode(hGPIO, 115, GPIO_DIR_INPUT);     // SIDE_KEY3(KEY_1_4)
 
-	//Set up the "MC serial port interface (SPI1)" buses, Ray 13-09-24
+	//Initialization the "MC serial port interface (SPI1)" buses, Ray 13-09-24
     GPIOSetMode(hGPIO, SPI_CS0_PIN, GPIO_DIR_OUTPUT);
     GPIOSetMode(hGPIO, SPI_CLK_PIN, GPIO_DIR_OUTPUT);
     GPIOSetMode(hGPIO, SPI_DOUT_PIN, GPIO_DIR_OUTPUT);
     GPIOSetMode(hGPIO, SPI_DIN_PIN, GPIO_DIR_INPUT);
+
+    //Initialization the "I-suqare-c (i2c3)" buses, Ray 13-10-07
+    GPIOSetMode(hGPIO, I2C3_SCL_GPIO, GPIO_DIR_OUTPUT);
+    GPIOSetMode(hGPIO, I2C3_SDA_GPIO, GPIO_DIR_OUTPUT);
    
 	//SPI LCM setup
 	/*XX
@@ -359,7 +366,7 @@ void WMLCDDATA(short dat)
 //
 void spi_Low(void)
 {
-    DWORD dTime = 5000000;
+    //DWORD dTime = 5000000;
 
     HANDLE hGPIO;
     hGPIO = GPIOOpen(); 
@@ -368,7 +375,7 @@ void spi_Low(void)
     GPIOClrBit(hGPIO, SPI_CLK_PIN);
     GPIOClrBit(hGPIO, SPI_DOUT_PIN);
 
-    LcdStall(dTime);
+    //LcdStall(dTime);
 }
 //
 void spi_Open(void)
@@ -563,7 +570,7 @@ void LCD_SPI_Init(void)
 	WMLCDDATA(0x00);
 	
 	WMLCDCOMD(0x3A); //set_pixel_format
-	WMLCDDATA(0x55); // 66 18-bits
+	WMLCDDATA(0x66); // 66 18-bits
 	
 	WMLCDCOMD(0x2A); //set_column_address
 	WMLCDDATA(0x00);
@@ -586,7 +593,7 @@ void LCD_SPI_Init(void)
 	//WMLCDCOMD(0xFF); //send DDRAM set
 	WMLCDCOMD(0x2C);
 
-    //BLShowLogo();   //13-09-27
+    //ShowLogo();   //13-09-27
     
 	//SPIClose(hSPI);
 }

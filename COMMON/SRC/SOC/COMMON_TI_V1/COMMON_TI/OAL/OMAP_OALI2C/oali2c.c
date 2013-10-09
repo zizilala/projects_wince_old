@@ -227,10 +227,7 @@ I2CGetPacketSize(
 }
 
 //-----------------------------------------------------------------------------
-BOOL
-OALI2CInit(
-           UINT            devId
-           )
+BOOL OALI2CInit(UINT devId)
 {
     
     OMAP_I2C_REGS  *pI2CRegs = OALPAtoUA(GetAddressByDevice(devId));

@@ -67,6 +67,8 @@ typedef struct {
 
 	OMAP_LCM_Initial    lcmInitial; //  Ray 13-09-24
 
+	OMAP_FuelGaugeWithBattery    BatteryStatus; //  Ray 13-10-07
+
     UINT32 flashNKFlags;
     UCHAR ECCtype;
     UINT32 opp_mode;

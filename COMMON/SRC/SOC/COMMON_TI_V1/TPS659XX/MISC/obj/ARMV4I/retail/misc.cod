@@ -74,7 +74,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\tps659xx\misc\misc.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43874| DCD	|$LN7@TWLReadIDC|
+|$T43891| DCD	|$LN7@TWLReadIDC|
 	DCD	0x40000d02
 ; Function compile flags: /Ogspy
 
@@ -87,7 +87,7 @@
   00000		 |$LN7@TWLReadIDC|
   00000	e52de004	 str         lr, [sp, #-4]!
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M43871|
+  00008		 |$M43888|
   00008	e3a03801	 mov         r3, #1, 16
 
 ; 30   :     UINT8 version;
@@ -117,7 +117,7 @@
   00028	e28dd004	 add         sp, sp, #4
   0002c	e49de004	 ldr         lr, [sp], #4
   00030	e12fff1e	 bx          lr
-  00034		 |$M43872|
+  00034		 |$M43889|
 
 			 ENDP  ; |TWLReadIDCode|
 

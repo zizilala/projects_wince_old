@@ -87,7 +87,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\gpio\dispatch\device\gpio_dispatch.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44120| DCD	|$LN11@GetGroupBy|
+|$T44125| DCD	|$LN11@GetGroupBy|
 	DCD	0x40001301
 ; Function compile flags: /Ogspy
 
@@ -99,7 +99,7 @@
 
   00000		 |$LN11@GetGroupBy|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M44117|
+  00004		 |$M44122|
 
 ; 18   :     int i=0;
 ; 19   :     while (pDevice->rgRanges[i] <= id)
@@ -144,7 +144,7 @@
 
   00044	e8bd4010	 ldmia       sp!, {r4, lr}
   00048	e12fff1e	 bx          lr
-  0004c		 |$M44118|
+  0004c		 |$M44123|
 
 			 ENDP  ; |GetGroupByID|
 
@@ -157,7 +157,7 @@
 	IMPORT	|memcpy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44136| DCD	|$LN17@GPIOInit|
+|$T44141| DCD	|$LN17@GPIOInit|
 	DCD	0x40004602
 ; Function compile flags: /Ogspy
 
@@ -170,7 +170,7 @@
   00000		 |$LN17@GPIOInit|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd05c	 sub         sp, sp, #0x5C
-  00008		 |$M44133|
+  00008		 |$M44138|
 
 ; 33   :     int i;
 ; 34   :     GpioDevice_t* pDevice;
@@ -262,7 +262,7 @@
   000bc	e5953010	 ldr         r3, [r5, #0x10]
   000c0	e7933104	 ldr         r3, [r3, +r4, lsl #2]
   000c4	e3530000	 cmp         r3, #0
-  000c8	0a00000f	 beq         |$cleanUp$43816|
+  000c8	0a00000f	 beq         |$cleanUp$43821|
 
 ; 57   :                 {
 ; 58   :                     goto cleanUp;
@@ -309,7 +309,7 @@
   00100	e28dd05c	 add         sp, sp, #0x5C
   00104	e8bd4ff0	 ldmia       sp!, {r4 - r11, lr}
   00108	e12fff1e	 bx          lr
-  0010c		 |$cleanUp$43816|
+  0010c		 |$cleanUp$43821|
 
 ; 72   : 
 ; 73   : cleanUp:
@@ -320,14 +320,14 @@
   00114		 |$LN18@GPIOInit|
   00114		 |$LN19@GPIOInit|
   00114	00000000	 DCD         |DEVICE_IFC_GPIO_GUID|
-  00118		 |$M44134|
+  00118		 |$M44139|
 
 			 ENDP  ; |GPIOInit|
 
 	EXPORT	|GPIOOpen|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44147| DCD	|$LN7@GPIOOpen|
+|$T44152| DCD	|$LN7@GPIOOpen|
 	DCD	0x40000f01
 ; Function compile flags: /Ogspy
 
@@ -339,7 +339,7 @@
 
   00000		 |$LN7@GPIOOpen|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M44144|
+  00004		 |$M44149|
 
 ; 79   :     if (s_DispatcherInitialized == FALSE)
 
@@ -380,14 +380,14 @@
   00038		 |$LN8@GPIOOpen|
   00038		 |$LN9@GPIOOpen|
   00038	00000000	 DCD         |s_DispatcherInitialized|
-  0003c		 |$M44145|
+  0003c		 |$M44150|
 
 			 ENDP  ; |GPIOOpen|
 
 	EXPORT	|GPIOClose|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44156| DCD	|$LN5@GPIOClose|
+|$T44161| DCD	|$LN5@GPIOClose|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -398,20 +398,20 @@
 ; 91   : {
 
   00000		 |$LN5@GPIOClose|
-  00000		 |$M44153|
+  00000		 |$M44158|
 
 ; 92   :     UNREFERENCED_PARAMETER(hContext);
 ; 93   : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M44154|
+  00004		 |$M44159|
 
 			 ENDP  ; |GPIOClose|
 
 	EXPORT	|GPIOSetBit|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44166| DCD	|$LN8@GPIOSetBit|
+|$T44171| DCD	|$LN8@GPIOSetBit|
 	DCD	0x40002904
 ; Function compile flags: /Ogspy
 
@@ -426,7 +426,7 @@
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5030	 stmdb       sp!, {r4, r5, r12, lr}
   0000c	e24dd014	 sub         sp, sp, #0x14
-  00010		 |$M44163|
+  00010		 |$M44168|
   00010	e1a05001	 mov         r5, r1
   00014	e58d5028	 str         r5, [sp, #0x28]
   00018	e1a04000	 mov         r4, r0
@@ -494,14 +494,14 @@
   00098	e28dd014	 add         sp, sp, #0x14
   0009c	e89d6030	 ldmia       sp, {r4, r5, sp, lr}
   000a0	e12fff1e	 bx          lr
-  000a4		 |$M44164|
+  000a4		 |$M44169|
 
 			 ENDP  ; |GPIOSetBit|
 
 	EXPORT	|GPIOClrBit|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44176| DCD	|$LN8@GPIOClrBit|
+|$T44181| DCD	|$LN8@GPIOClrBit|
 	DCD	0x40002904
 ; Function compile flags: /Ogspy
 
@@ -516,7 +516,7 @@
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5030	 stmdb       sp!, {r4, r5, r12, lr}
   0000c	e24dd014	 sub         sp, sp, #0x14
-  00010		 |$M44173|
+  00010		 |$M44178|
   00010	e1a05001	 mov         r5, r1
   00014	e58d5028	 str         r5, [sp, #0x28]
   00018	e1a04000	 mov         r4, r0
@@ -588,14 +588,14 @@
   000a0		 |$LN9@GPIOClrBit|
   000a0		 |$LN10@GPIOClrBit|
   000a0	00220c04	 DCD         0x220c04
-  000a4		 |$M44174|
+  000a4		 |$M44179|
 
 			 ENDP  ; |GPIOClrBit|
 
 	EXPORT	|GPIOGetBit|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44190| DCD	|$LN9@GPIOGetBit|
+|$T44195| DCD	|$LN9@GPIOGetBit|
 	DCD	0x40002f04
 ; Function compile flags: /Ogspy
 
@@ -610,7 +610,7 @@
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5030	 stmdb       sp!, {r4, r5, r12, lr}
   0000c	e24dd014	 sub         sp, sp, #0x14
-  00010		 |$M44187|
+  00010		 |$M44192|
   00010	e1a04001	 mov         r4, r1
   00014	e58d4028	 str         r4, [sp, #0x28]
   00018	e1a05000	 mov         r5, r0
@@ -696,14 +696,14 @@
   000b8		 |$LN10@GPIOGetBit|
   000b8		 |$LN11@GPIOGetBit|
   000b8	00220c0c	 DCD         0x220c0c
-  000bc		 |$M44188|
+  000bc		 |$M44193|
 
 			 ENDP  ; |GPIOGetBit|
 
 	EXPORT	|GPIOSetMode|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44203| DCD	|$LN8@GPIOSetMod|
+|$T44208| DCD	|$LN8@GPIOSetMod|
 	DCD	0x40002a02
 ; Function compile flags: /Ogspy
 
@@ -716,7 +716,7 @@
   00000		 |$LN8@GPIOSetMod|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd018	 sub         sp, sp, #0x18
-  00008		 |$M44200|
+  00008		 |$M44205|
   00008	e1a06002	 mov         r6, r2
   0000c	e1a05001	 mov         r5, r1
   00010	e1a04000	 mov         r4, r0
@@ -757,18 +757,16 @@
   00058	e1a0e00f	 mov         lr, pc
   0005c	e12fff13	 bx          r3
 
-; 166  :         }
-; 167  :         else
+; 166  :         }else{
 
   00060	ea00000d	 b           |$LN1@GPIOSetMod|
   00064		 |$LN2@GPIOSetMod|
 
-; 168  :         {
-; 169  :             DWORD config[2];
-; 170  :             config[0] = id;
-; 171  :             config[1] = mode;
-; 172  : 
-; 173  :             DeviceIoControl(pDevice->rgHandles[grp],IOCTL_GPIO_SETMODE,config,sizeof(config),NULL,0,NULL,NULL);
+; 167  :             DWORD config[2];
+; 168  :             config[0] = id;
+; 169  :             config[1] = mode;
+; 170  : 
+; 171  :             DeviceIoControl(pDevice->rgHandles[grp],IOCTL_GPIO_SETMODE,config,sizeof(config),NULL,0,NULL,NULL);
 
   00064	e594300c	 ldr         r3, [r4, #0xC]
   00068	e58d1010	 str         r1, [sp, #0x10]
@@ -786,22 +784,21 @@
   00098	eb000000	 bl          DeviceIoControl
   0009c		 |$LN1@GPIOSetMod|
 
-; 174  : 
-; 175  :         }
-; 176  :     }
-; 177  : }
+; 172  :         }
+; 173  :     }
+; 174  : }
 
   0009c	e28dd018	 add         sp, sp, #0x18
   000a0	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   000a4	e12fff1e	 bx          lr
-  000a8		 |$M44201|
+  000a8		 |$M44206|
 
 			 ENDP  ; |GPIOSetMode|
 
 	EXPORT	|GPIOGetMode|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44215| DCD	|$LN9@GPIOGetMod|
+|$T44220| DCD	|$LN9@GPIOGetMod|
 	DCD	0x40002f04
 ; Function compile flags: /Ogspy
 
@@ -809,35 +806,35 @@
 
   00000		 |GPIOGetMode| PROC
 
-; 180  : {
+; 177  : {
 
   00000		 |$LN9@GPIOGetMod|
   00000	e1a0c00d	 mov         r12, sp
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5030	 stmdb       sp!, {r4, r5, r12, lr}
   0000c	e24dd014	 sub         sp, sp, #0x14
-  00010		 |$M44212|
+  00010		 |$M44217|
   00010	e1a04001	 mov         r4, r1
   00014	e58d4028	 str         r4, [sp, #0x28]
   00018	e1a05000	 mov         r5, r0
 
-; 181  :     GpioDevice_t *pDevice = (GpioDevice_t*)hContext;
-; 182  :     int grp;
-; 183  :     if (GetGroupByID(pDevice,id,&grp))
+; 178  :     GpioDevice_t *pDevice = (GpioDevice_t*)hContext;
+; 179  :     int grp;
+; 180  :     if (GetGroupByID(pDevice,id,&grp))
 
   0001c	e28d2010	 add         r2, sp, #0x10
   00020	eb000000	 bl          GetGroupByID
   00024	e3500000	 cmp         r0, #0
   00028	0a00001e	 beq         |$LN1@GPIOGetMod|
 
-; 184  :     {
-; 185  :         id -= pDevice->rgRanges[grp];
+; 181  :     {
+; 182  :         id -= pDevice->rgRanges[grp];
 
   0002c	e59d0010	 ldr         r0, [sp, #0x10]
   00030	e5953008	 ldr         r3, [r5, #8]
 
-; 186  : 
-; 187  :         if (pDevice->rgGpioTbls[grp])
+; 183  : 
+; 184  :         if (pDevice->rgGpioTbls[grp])
 
   00034	e5952010	 ldr         r2, [r5, #0x10]
   00038	e7933100	 ldr         r3, [r3, +r0, lsl #2]
@@ -847,8 +844,8 @@
   00048	e3530000	 cmp         r3, #0
   0004c	0a000005	 beq         |$LN3@GPIOGetMod|
 
-; 188  :         {
-; 189  :             return pDevice->rgGpioTbls[grp]->pfnGetMode(pDevice->rgGpioTbls[grp]->context, id);
+; 185  :         {
+; 186  :             return pDevice->rgGpioTbls[grp]->pfnGetMode(pDevice->rgGpioTbls[grp]->context, id);
 
   00050	e5923000	 ldr         r3, [r2]
   00054	e5930000	 ldr         r0, [r3]
@@ -858,11 +855,11 @@
   00064	ea000010	 b           |$LN5@GPIOGetMod|
   00068		 |$LN3@GPIOGetMod|
 
-; 190  :         }
-; 191  :         else
-; 192  :         {
-; 193  :             DWORD mode;
-; 194  :             if (DeviceIoControl(pDevice->rgHandles[grp],IOCTL_GPIO_GETMODE,&id,sizeof(id),&mode,sizeof(mode),NULL,NULL))
+; 187  :         }
+; 188  :         else
+; 189  :         {
+; 190  :             DWORD mode;
+; 191  :             if (DeviceIoControl(pDevice->rgHandles[grp],IOCTL_GPIO_GETMODE,&id,sizeof(id),&mode,sizeof(mode),NULL,NULL))
 
   00068	e595300c	 ldr         r3, [r5, #0xC]
   0006c	e59f1044	 ldr         r1, [pc, #0x44]
@@ -879,22 +876,22 @@
   00098	eb000000	 bl          DeviceIoControl
   0009c	e3500000	 cmp         r0, #0
 
-; 195  :             {
-; 196  :                 return mode;
+; 192  :             {
+; 193  :                 return mode;
 
   000a0	159d0010	 ldrne       r0, [sp, #0x10]
   000a4	1a000000	 bne         |$LN5@GPIOGetMod|
   000a8		 |$LN1@GPIOGetMod|
 
-; 197  :             }
-; 198  :         }
-; 199  :     }
-; 200  :     return (DWORD) -1;
+; 194  :             }
+; 195  :         }
+; 196  :     }
+; 197  :     return (DWORD) -1;
 
   000a8	e3e00000	 mvn         r0, #0
   000ac		 |$LN5@GPIOGetMod|
 
-; 201  : }
+; 198  : }
 
   000ac	e28dd014	 add         sp, sp, #0x14
   000b0	e89d6030	 ldmia       sp, {r4, r5, sp, lr}
@@ -902,14 +899,14 @@
   000b8		 |$LN10@GPIOGetMod|
   000b8		 |$LN11@GPIOGetMod|
   000b8	00220c14	 DCD         0x220c14
-  000bc		 |$M44213|
+  000bc		 |$M44218|
 
 			 ENDP  ; |GPIOGetMode|
 
 	EXPORT	|GPIOPullup|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44230| DCD	|$LN7@GPIOPullup|
+|$T44235| DCD	|$LN7@GPIOPullup|
 	DCD	0x40001d02
 ; Function compile flags: /Ogspy
 
@@ -917,33 +914,33 @@
 
   00000		 |GPIOPullup| PROC
 
-; 204  : {
+; 201  : {
 
   00000		 |$LN7@GPIOPullup|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M44227|
+  00008		 |$M44232|
   00008	e1a07002	 mov         r7, r2
   0000c	e1a06001	 mov         r6, r1
   00010	e1a04000	 mov         r4, r0
 
-; 205  :     GpioDevice_t *pDevice = (GpioDevice_t*)hContext;
-; 206  :     int grp;
-; 207  :     if (GetGroupByID(pDevice,id,&grp))
+; 202  :     GpioDevice_t *pDevice = (GpioDevice_t*)hContext;
+; 203  :     int grp;
+; 204  :     if (GetGroupByID(pDevice,id,&grp))
 
   00014	e28d2000	 add         r2, sp, #0
   00018	eb000000	 bl          GetGroupByID
   0001c	e3500000	 cmp         r0, #0
   00020	0a00000f	 beq         |$LN1@GPIOPullup|
 
-; 208  :     {
-; 209  :         id -= pDevice->rgRanges[grp];
+; 205  :     {
+; 206  :         id -= pDevice->rgRanges[grp];
 
   00024	e59d0000	 ldr         r0, [sp]
   00028	e5943008	 ldr         r3, [r4, #8]
 
-; 210  : 
-; 211  :         if (pDevice->rgGpioTbls[grp])
+; 207  : 
+; 208  :         if (pDevice->rgGpioTbls[grp])
 
   0002c	e594e010	 ldr         lr, [r4, #0x10]
   00030	e7935100	 ldr         r5, [r3, +r0, lsl #2]
@@ -951,8 +948,8 @@
   00038	e3530000	 cmp         r3, #0
   0003c	0a000008	 beq         |$LN1@GPIOPullup|
 
-; 212  :         {
-; 213  :             return pDevice->rgGpioTbls[grp]->pfnPullup((HANDLE) pDevice->rgGpioTbls[grp]->context, id, enable);
+; 209  :         {
+; 210  :             return pDevice->rgGpioTbls[grp]->pfnPullup((HANDLE) pDevice->rgGpioTbls[grp]->context, id, enable);
 
   00040	e1a0300e	 mov         r3, lr
   00044	e7933100	 ldr         r3, [r3, +r0, lsl #2]
@@ -965,26 +962,26 @@
   00060	ea000000	 b           |$LN3@GPIOPullup|
   00064		 |$LN1@GPIOPullup|
 
-; 214  :         }
-; 215  :     }
-; 216  :     return (DWORD) FALSE;
+; 211  :         }
+; 212  :     }
+; 213  :     return (DWORD) FALSE;
 
   00064	e3a00000	 mov         r0, #0
   00068		 |$LN3@GPIOPullup|
 
-; 217  : }
+; 214  : }
 
   00068	e28dd004	 add         sp, sp, #4
   0006c	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   00070	e12fff1e	 bx          lr
-  00074		 |$M44228|
+  00074		 |$M44233|
 
 			 ENDP  ; |GPIOPullup|
 
 	EXPORT	|GPIOPulldown|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44243| DCD	|$LN7@GPIOPulldo|
+|$T44248| DCD	|$LN7@GPIOPulldo|
 	DCD	0x40001d02
 ; Function compile flags: /Ogspy
 
@@ -992,33 +989,33 @@
 
   00000		 |GPIOPulldown| PROC
 
-; 220  : {
+; 217  : {
 
   00000		 |$LN7@GPIOPulldo|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M44240|
+  00008		 |$M44245|
   00008	e1a07002	 mov         r7, r2
   0000c	e1a06001	 mov         r6, r1
   00010	e1a04000	 mov         r4, r0
 
-; 221  :     GpioDevice_t *pDevice = (GpioDevice_t*)hContext;
-; 222  :     int grp;
-; 223  :     if (GetGroupByID(pDevice,id,&grp))
+; 218  :     GpioDevice_t *pDevice = (GpioDevice_t*)hContext;
+; 219  :     int grp;
+; 220  :     if (GetGroupByID(pDevice,id,&grp))
 
   00014	e28d2000	 add         r2, sp, #0
   00018	eb000000	 bl          GetGroupByID
   0001c	e3500000	 cmp         r0, #0
   00020	0a00000f	 beq         |$LN1@GPIOPulldo|
 
-; 224  :     {
-; 225  :         id -= pDevice->rgRanges[grp];
+; 221  :     {
+; 222  :         id -= pDevice->rgRanges[grp];
 
   00024	e59d0000	 ldr         r0, [sp]
   00028	e5943008	 ldr         r3, [r4, #8]
 
-; 226  : 
-; 227  :         if (pDevice->rgGpioTbls[grp])
+; 223  : 
+; 224  :         if (pDevice->rgGpioTbls[grp])
 
   0002c	e594e010	 ldr         lr, [r4, #0x10]
   00030	e7935100	 ldr         r5, [r3, +r0, lsl #2]
@@ -1026,8 +1023,8 @@
   00038	e3530000	 cmp         r3, #0
   0003c	0a000008	 beq         |$LN1@GPIOPulldo|
 
-; 228  :         {
-; 229  :             return pDevice->rgGpioTbls[grp]->pfnPulldown((HANDLE) pDevice->rgGpioTbls[grp]->context, id, enable);            
+; 225  :         {
+; 226  :             return pDevice->rgGpioTbls[grp]->pfnPulldown((HANDLE) pDevice->rgGpioTbls[grp]->context, id, enable);            
 
   00040	e1a0300e	 mov         r3, lr
   00044	e7933100	 ldr         r3, [r3, +r0, lsl #2]
@@ -1040,26 +1037,26 @@
   00060	ea000000	 b           |$LN3@GPIOPulldo|
   00064		 |$LN1@GPIOPulldo|
 
-; 230  :         }
-; 231  :     }
-; 232  :     return (DWORD) FALSE;
+; 227  :         }
+; 228  :     }
+; 229  :     return (DWORD) FALSE;
 
   00064	e3a00000	 mov         r0, #0
   00068		 |$LN3@GPIOPulldo|
 
-; 233  : }
+; 230  : }
 
   00068	e28dd004	 add         sp, sp, #4
   0006c	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   00070	e12fff1e	 bx          lr
-  00074		 |$M44241|
+  00074		 |$M44246|
 
 			 ENDP  ; |GPIOPulldown|
 
 	EXPORT	|GPIOInterruptInitialize|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44257| DCD	|$LN7@GPIOInterr|
+|$T44262| DCD	|$LN7@GPIOInterr|
 	DCD	0x40001f02
 ; Function compile flags: /Ogspy
 
@@ -1067,34 +1064,34 @@
 
   00000		 |GPIOInterruptInitialize| PROC
 
-; 236  : {
+; 233  : {
 
   00000		 |$LN7@GPIOInterr|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M44254|
+  00008		 |$M44259|
   00008	e1a09003	 mov         r9, r3
   0000c	e1a0a002	 mov         r10, r2
   00010	e1a08001	 mov         r8, r1
   00014	e1a05000	 mov         r5, r0
 
-; 237  :     GpioDevice_t *pDevice = (GpioDevice_t*)hContext;
-; 238  :     int grp;
-; 239  :     if (GetGroupByID(pDevice,id,&grp))
+; 234  :     GpioDevice_t *pDevice = (GpioDevice_t*)hContext;
+; 235  :     int grp;
+; 236  :     if (GetGroupByID(pDevice,id,&grp))
 
   00018	e28d2000	 add         r2, sp, #0
   0001c	eb000000	 bl          GetGroupByID
   00020	e3500000	 cmp         r0, #0
   00024	0a000010	 beq         |$LN1@GPIOInterr|
 
-; 240  :     {        
-; 241  :         id -= pDevice->rgRanges[grp];
+; 237  :     {        
+; 238  :         id -= pDevice->rgRanges[grp];
 
   00028	e59d6000	 ldr         r6, [sp]
   0002c	e595e008	 ldr         lr, [r5, #8]
 
-; 242  : 
-; 243  :         if (pDevice->rgGpioTbls[grp])
+; 239  : 
+; 240  :         if (pDevice->rgGpioTbls[grp])
 
   00030	e5954010	 ldr         r4, [r5, #0x10]
   00034	e79e7106	 ldr         r7, [lr, +r6, lsl #2]
@@ -1102,8 +1099,8 @@
   0003c	e35e0000	 cmp         lr, #0
   00040	0a000009	 beq         |$LN1@GPIOInterr|
 
-; 244  :         {
-; 245  :             return pDevice->rgGpioTbls[grp]->pfnInterruptInitialize((HANDLE) pDevice->rgGpioTbls[grp]->context, id, sysintr, hEvent);            
+; 241  :         {
+; 242  :             return pDevice->rgGpioTbls[grp]->pfnInterruptInitialize((HANDLE) pDevice->rgGpioTbls[grp]->context, id, sysintr, hEvent);            
 
   00044	e1a00004	 mov         r0, r4
   00048	e7904106	 ldr         r4, [r0, +r6, lsl #2]
@@ -1117,26 +1114,26 @@
   00068	ea000000	 b           |$LN3@GPIOInterr|
   0006c		 |$LN1@GPIOInterr|
 
-; 246  :         }
-; 247  :     }
-; 248  :     return FALSE;
+; 243  :         }
+; 244  :     }
+; 245  :     return FALSE;
 
   0006c	e3a00000	 mov         r0, #0
   00070		 |$LN3@GPIOInterr|
 
-; 249  : }
+; 246  : }
 
   00070	e28dd004	 add         sp, sp, #4
   00074	e8bd47f0	 ldmia       sp!, {r4 - r10, lr}
   00078	e12fff1e	 bx          lr
-  0007c		 |$M44255|
+  0007c		 |$M44260|
 
 			 ENDP  ; |GPIOInterruptInitialize|
 
 	EXPORT	|GPIOInterruptMask|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44268| DCD	|$LN7@GPIOInterr@2|
+|$T44273| DCD	|$LN7@GPIOInterr@2|
 	DCD	0x40001d02
 ; Function compile flags: /Ogspy
 
@@ -1144,30 +1141,30 @@
 
   00000		 |GPIOInterruptMask| PROC
 
-; 252  : {
+; 249  : {
 
   00000		 |$LN7@GPIOInterr@2|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M44265|
+  00008		 |$M44270|
   00008	e1a07003	 mov         r7, r3
   0000c	e1a08002	 mov         r8, r2
   00010	e1a06001	 mov         r6, r1
   00014	e1a05000	 mov         r5, r0
 
-; 253  :     GpioDevice_t *pDevice = (GpioDevice_t*)hContext;
-; 254  :     int grp;
-; 255  :     if (GetGroupByID(pDevice,id,&grp))
+; 250  :     GpioDevice_t *pDevice = (GpioDevice_t*)hContext;
+; 251  :     int grp;
+; 252  :     if (GetGroupByID(pDevice,id,&grp))
 
   00018	e28d2000	 add         r2, sp, #0
   0001c	eb000000	 bl          GetGroupByID
   00020	e3500000	 cmp         r0, #0
   00024	0a00000f	 beq         |$LN1@GPIOInterr@2|
 
-; 256  :     {
-; 257  :         id -= pDevice->rgRanges[grp];
-; 258  : 
-; 259  :         if (pDevice->rgGpioTbls[grp])
+; 253  :     {
+; 254  :         id -= pDevice->rgRanges[grp];
+; 255  : 
+; 256  :         if (pDevice->rgGpioTbls[grp])
 
   00028	e59d4000	 ldr         r4, [sp]
   0002c	e595e010	 ldr         lr, [r5, #0x10]
@@ -1175,8 +1172,8 @@
   00034	e35e0000	 cmp         lr, #0
   00038	0a00000a	 beq         |$LN1@GPIOInterr@2|
 
-; 260  :         {
-; 261  :             pDevice->rgGpioTbls[grp]->pfnInterruptMask((HANDLE) pDevice->rgGpioTbls[grp]->context, id, dwSysintr, fDisable);
+; 257  :         {
+; 258  :             pDevice->rgGpioTbls[grp]->pfnInterruptMask((HANDLE) pDevice->rgGpioTbls[grp]->context, id, dwSysintr, fDisable);
 
   0003c	e595e010	 ldr         lr, [r5, #0x10]
   00040	e5950008	 ldr         r0, [r5, #8]
@@ -1191,21 +1188,21 @@
   00064	e12fff14	 bx          r4
   00068		 |$LN1@GPIOInterr@2|
 
-; 262  :         }
-; 263  :     }
-; 264  : }
+; 259  :         }
+; 260  :     }
+; 261  : }
 
   00068	e28dd004	 add         sp, sp, #4
   0006c	e8bd41f0	 ldmia       sp!, {r4 - r8, lr}
   00070	e12fff1e	 bx          lr
-  00074		 |$M44266|
+  00074		 |$M44271|
 
 			 ENDP  ; |GPIOInterruptMask|
 
 	EXPORT	|GPIOInterruptDisable|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44278| DCD	|$LN7@GPIOInterr@3|
+|$T44283| DCD	|$LN7@GPIOInterr@3|
 	DCD	0x40001b02
 ; Function compile flags: /Ogspy
 
@@ -1213,29 +1210,29 @@
 
   00000		 |GPIOInterruptDisable| PROC
 
-; 267  : {
+; 264  : {
 
   00000		 |$LN7@GPIOInterr@3|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M44275|
+  00008		 |$M44280|
   00008	e1a06002	 mov         r6, r2
   0000c	e1a05001	 mov         r5, r1
   00010	e1a04000	 mov         r4, r0
 
-; 268  :     GpioDevice_t *pDevice = (GpioDevice_t*)hContext;
-; 269  :     int grp;
-; 270  :     if (GetGroupByID(pDevice,id,&grp))
+; 265  :     GpioDevice_t *pDevice = (GpioDevice_t*)hContext;
+; 266  :     int grp;
+; 267  :     if (GetGroupByID(pDevice,id,&grp))
 
   00014	e28d2000	 add         r2, sp, #0
   00018	eb000000	 bl          GetGroupByID
   0001c	e3500000	 cmp         r0, #0
   00020	0a00000e	 beq         |$LN1@GPIOInterr@3|
 
-; 271  :     {
-; 272  :         id -= pDevice->rgRanges[grp];
-; 273  : 
-; 274  :         if (pDevice->rgGpioTbls[grp])
+; 268  :     {
+; 269  :         id -= pDevice->rgRanges[grp];
+; 270  : 
+; 271  :         if (pDevice->rgGpioTbls[grp])
 
   00024	e59de000	 ldr         lr, [sp]
   00028	e5943010	 ldr         r3, [r4, #0x10]
@@ -1243,8 +1240,8 @@
   00030	e3530000	 cmp         r3, #0
   00034	0a000009	 beq         |$LN1@GPIOInterr@3|
 
-; 275  :         {
-; 276  :             pDevice->rgGpioTbls[grp]->pfnInterruptDisable((HANDLE) pDevice->rgGpioTbls[grp]->context, id, dwSysintr);            
+; 272  :         {
+; 273  :             pDevice->rgGpioTbls[grp]->pfnInterruptDisable((HANDLE) pDevice->rgGpioTbls[grp]->context, id, dwSysintr);            
 
   00038	e5943010	 ldr         r3, [r4, #0x10]
   0003c	e5940008	 ldr         r0, [r4, #8]
@@ -1258,21 +1255,21 @@
   0005c	e12fff13	 bx          r3
   00060		 |$LN1@GPIOInterr@3|
 
-; 277  :         }
-; 278  :     }
-; 279  : }
+; 274  :         }
+; 275  :     }
+; 276  : }
 
   00060	e28dd004	 add         sp, sp, #4
   00064	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00068	e12fff1e	 bx          lr
-  0006c		 |$M44276|
+  0006c		 |$M44281|
 
 			 ENDP  ; |GPIOInterruptDisable|
 
 	EXPORT	|GPIOInterruptDone|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44288| DCD	|$LN7@GPIOInterr@4|
+|$T44293| DCD	|$LN7@GPIOInterr@4|
 	DCD	0x40001b02
 ; Function compile flags: /Ogspy
 
@@ -1280,29 +1277,29 @@
 
   00000		 |GPIOInterruptDone| PROC
 
-; 282  : {
+; 279  : {
 
   00000		 |$LN7@GPIOInterr@4|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M44285|
+  00008		 |$M44290|
   00008	e1a06002	 mov         r6, r2
   0000c	e1a05001	 mov         r5, r1
   00010	e1a04000	 mov         r4, r0
 
-; 283  :     GpioDevice_t *pDevice = (GpioDevice_t*)hContext;
-; 284  :     int grp;
-; 285  :     if (GetGroupByID(pDevice,id,&grp))
+; 280  :     GpioDevice_t *pDevice = (GpioDevice_t*)hContext;
+; 281  :     int grp;
+; 282  :     if (GetGroupByID(pDevice,id,&grp))
 
   00014	e28d2000	 add         r2, sp, #0
   00018	eb000000	 bl          GetGroupByID
   0001c	e3500000	 cmp         r0, #0
   00020	0a00000e	 beq         |$LN1@GPIOInterr@4|
 
-; 286  :     {
-; 287  :         id -= pDevice->rgRanges[grp];
-; 288  : 
-; 289  :         if (pDevice->rgGpioTbls[grp])
+; 283  :     {
+; 284  :         id -= pDevice->rgRanges[grp];
+; 285  : 
+; 286  :         if (pDevice->rgGpioTbls[grp])
 
   00024	e59de000	 ldr         lr, [sp]
   00028	e5943010	 ldr         r3, [r4, #0x10]
@@ -1310,8 +1307,8 @@
   00030	e3530000	 cmp         r3, #0
   00034	0a000009	 beq         |$LN1@GPIOInterr@4|
 
-; 290  :         {
-; 291  :             pDevice->rgGpioTbls[grp]->pfnInterruptDone((HANDLE) pDevice->rgGpioTbls[grp]->context, id, dwSysintr);            
+; 287  :         {
+; 288  :             pDevice->rgGpioTbls[grp]->pfnInterruptDone((HANDLE) pDevice->rgGpioTbls[grp]->context, id, dwSysintr);            
 
   00038	e5943010	 ldr         r3, [r4, #0x10]
   0003c	e5940008	 ldr         r0, [r4, #8]
@@ -1325,21 +1322,21 @@
   0005c	e12fff13	 bx          r3
   00060		 |$LN1@GPIOInterr@4|
 
-; 292  :         }
-; 293  :     }
-; 294  : }
+; 289  :         }
+; 290  :     }
+; 291  : }
 
   00060	e28dd004	 add         sp, sp, #4
   00064	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00068	e12fff1e	 bx          lr
-  0006c		 |$M44286|
+  0006c		 |$M44291|
 
 			 ENDP  ; |GPIOInterruptDone|
 
 	EXPORT	|GPIOGetSystemIrq|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44300| DCD	|$LN7@GPIOGetSys|
+|$T44305| DCD	|$LN7@GPIOGetSys|
 	DCD	0x40001b02
 ; Function compile flags: /Ogspy
 
@@ -1347,32 +1344,32 @@
 
   00000		 |GPIOGetSystemIrq| PROC
 
-; 297  : {
+; 294  : {
 
   00000		 |$LN7@GPIOGetSys|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M44297|
+  00008		 |$M44302|
   00008	e1a05001	 mov         r5, r1
   0000c	e1a04000	 mov         r4, r0
 
-; 298  :     GpioDevice_t *pDevice = (GpioDevice_t*)hContext;
-; 299  :     int grp;
-; 300  :     if (GetGroupByID(pDevice,id,&grp))
+; 295  :     GpioDevice_t *pDevice = (GpioDevice_t*)hContext;
+; 296  :     int grp;
+; 297  :     if (GetGroupByID(pDevice,id,&grp))
 
   00010	e28d2000	 add         r2, sp, #0
   00014	eb000000	 bl          GetGroupByID
   00018	e3500000	 cmp         r0, #0
   0001c	0a00000e	 beq         |$LN1@GPIOGetSys|
 
-; 301  :     {
-; 302  :         id -= pDevice->rgRanges[grp];
+; 298  :     {
+; 299  :         id -= pDevice->rgRanges[grp];
 
   00020	e59d0000	 ldr         r0, [sp]
   00024	e5943008	 ldr         r3, [r4, #8]
 
-; 303  : 
-; 304  :         if (pDevice->rgGpioTbls[grp])
+; 300  : 
+; 301  :         if (pDevice->rgGpioTbls[grp])
 
   00028	e5942010	 ldr         r2, [r4, #0x10]
   0002c	e7931100	 ldr         r1, [r3, +r0, lsl #2]
@@ -1380,8 +1377,8 @@
   00034	e3530000	 cmp         r3, #0
   00038	0a000007	 beq         |$LN1@GPIOGetSys|
 
-; 305  :         {
-; 306  :             return pDevice->rgGpioTbls[grp]->pfnGetSystemIrq((HANDLE) pDevice->rgGpioTbls[grp]->context, id);            
+; 302  :         {
+; 303  :             return pDevice->rgGpioTbls[grp]->pfnGetSystemIrq((HANDLE) pDevice->rgGpioTbls[grp]->context, id);            
 
   0003c	e1a03002	 mov         r3, r2
   00040	e7933100	 ldr         r3, [r3, +r0, lsl #2]
@@ -1393,26 +1390,26 @@
   00058	ea000000	 b           |$LN3@GPIOGetSys|
   0005c		 |$LN1@GPIOGetSys|
 
-; 307  :         }
-; 308  :     }
-; 309  : 	return (DWORD)SYSINTR_UNDEFINED;
+; 304  :         }
+; 305  :     }
+; 306  : 	return (DWORD)SYSINTR_UNDEFINED;
 
   0005c	e3e00000	 mvn         r0, #0
   00060		 |$LN3@GPIOGetSys|
 
-; 310  : }
+; 307  : }
 
   00060	e28dd004	 add         sp, sp, #4
   00064	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00068	e12fff1e	 bx          lr
-  0006c		 |$M44298|
+  0006c		 |$M44303|
 
 			 ENDP  ; |GPIOGetSystemIrq|
 
 	EXPORT	|GPIOInterruptWakeUp|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44314| DCD	|$LN7@GPIOInterr@5|
+|$T44319| DCD	|$LN7@GPIOInterr@5|
 	DCD	0x40001f02
 ; Function compile flags: /Ogspy
 
@@ -1420,35 +1417,35 @@
 
   00000		 |GPIOInterruptWakeUp| PROC
 
-; 313  : {
+; 310  : {
 
   00000		 |$LN7@GPIOInterr@5|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M44311|
+  00008		 |$M44316|
   00008	e1a09003	 mov         r9, r3
   0000c	e1a0a002	 mov         r10, r2
   00010	e1a08001	 mov         r8, r1
   00014	e1a05000	 mov         r5, r0
 
-; 314  :     BOOL rc = FALSE;
-; 315  :     GpioDevice_t *pDevice = (GpioDevice_t*)hContext;
-; 316  :     int grp;
-; 317  :     if (GetGroupByID(pDevice,id,&grp))
+; 311  :     BOOL rc = FALSE;
+; 312  :     GpioDevice_t *pDevice = (GpioDevice_t*)hContext;
+; 313  :     int grp;
+; 314  :     if (GetGroupByID(pDevice,id,&grp))
 
   00018	e28d2000	 add         r2, sp, #0
   0001c	eb000000	 bl          GetGroupByID
   00020	e3500000	 cmp         r0, #0
   00024	0a000010	 beq         |$LN1@GPIOInterr@5|
 
-; 318  :     {
-; 319  :         id -= pDevice->rgRanges[grp];
+; 315  :     {
+; 316  :         id -= pDevice->rgRanges[grp];
 
   00028	e59d6000	 ldr         r6, [sp]
   0002c	e595e008	 ldr         lr, [r5, #8]
 
-; 320  : 
-; 321  :         if (pDevice->rgGpioTbls[grp])
+; 317  : 
+; 318  :         if (pDevice->rgGpioTbls[grp])
 
   00030	e5954010	 ldr         r4, [r5, #0x10]
   00034	e79e7106	 ldr         r7, [lr, +r6, lsl #2]
@@ -1456,8 +1453,8 @@
   0003c	e35e0000	 cmp         lr, #0
   00040	0a000009	 beq         |$LN1@GPIOInterr@5|
 
-; 322  :         {
-; 323  :             return pDevice->rgGpioTbls[grp]->pfnInterruptWakeUp((HANDLE) pDevice->rgGpioTbls[grp]->context, id, sysintr, fEnabled);
+; 319  :         {
+; 320  :             return pDevice->rgGpioTbls[grp]->pfnInterruptWakeUp((HANDLE) pDevice->rgGpioTbls[grp]->context, id, sysintr, fEnabled);
 
   00044	e1a00004	 mov         r0, r4
   00048	e7904106	 ldr         r4, [r0, +r6, lsl #2]
@@ -1471,26 +1468,26 @@
   00068	ea000000	 b           |$LN3@GPIOInterr@5|
   0006c		 |$LN1@GPIOInterr@5|
 
-; 324  :         }
-; 325  :     }
-; 326  : 	return rc;
+; 321  :         }
+; 322  :     }
+; 323  : 	return rc;
 
   0006c	e3a00000	 mov         r0, #0
   00070		 |$LN3@GPIOInterr@5|
 
-; 327  : }
+; 324  : }
 
   00070	e28dd004	 add         sp, sp, #4
   00074	e8bd47f0	 ldmia       sp!, {r4 - r10, lr}
   00078	e12fff1e	 bx          lr
-  0007c		 |$M44312|
+  0007c		 |$M44317|
 
 			 ENDP  ; |GPIOInterruptWakeUp|
 
 	EXPORT	|GPIOIoControl|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44329| DCD	|$LN9@GPIOIoCont|
+|$T44334| DCD	|$LN9@GPIOIoCont|
 	DCD	0x40003102
 ; Function compile flags: /Ogspy
 
@@ -1498,21 +1495,21 @@
 
   00000		 |GPIOIoControl| PROC
 
-; 340  : {    
+; 337  : {    
 
   00000		 |$LN9@GPIOIoCont|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
   00004	e24dd014	 sub         sp, sp, #0x14
-  00008		 |$M44326|
+  00008		 |$M44331|
   00008	e1a09003	 mov         r9, r3
   0000c	e1a0a002	 mov         r10, r2
   00010	e1a05000	 mov         r5, r0
 
-; 341  :     GpioDevice_t *pDevice = (GpioDevice_t*)hContext;
-; 342  :     int grp;
-; 343  :     BOOL rc = FALSE;
-; 344  : 
-; 345  :     if (GetGroupByID(pDevice,id,&grp))
+; 338  :     GpioDevice_t *pDevice = (GpioDevice_t*)hContext;
+; 339  :     int grp;
+; 340  :     BOOL rc = FALSE;
+; 341  : 
+; 342  :     if (GetGroupByID(pDevice,id,&grp))
 
   00014	e28d2010	 add         r2, sp, #0x10
   00018	e3a04000	 mov         r4, #0
@@ -1520,16 +1517,16 @@
   00020	e3500000	 cmp         r0, #0
   00024	0a000022	 beq         |$LN1@GPIOIoCont|
 
-; 346  :     {
-; 347  :         id -= pDevice->rgRanges[grp];
-; 348  :         
-; 349  :         if (pDevice->rgGpioTbls[grp])
+; 343  :     {
+; 344  :         id -= pDevice->rgRanges[grp];
+; 345  :         
+; 346  :         if (pDevice->rgGpioTbls[grp])
 
   00028	e59d8010	 ldr         r8, [sp, #0x10]
   0002c	e5951010	 ldr         r1, [r5, #0x10]
 
-; 350  :             rc = pDevice->rgGpioTbls[grp]->pfnIoControl(pDevice->rgGpioTbls[grp]->context, code, pInBuffer,
-; 351  :                 inSize, pOutBuffer, outSize, pOutSize);            
+; 347  :             rc = pDevice->rgGpioTbls[grp]->pfnIoControl(pDevice->rgGpioTbls[grp]->context, code, pInBuffer,
+; 348  :                 inSize, pOutBuffer, outSize, pOutSize);            
 
   00030	e1a02009	 mov         r2, r9
   00034	e7911108	 ldr         r1, [r1, +r8, lsl #2]
@@ -1550,14 +1547,14 @@
   00070	e1a0e00f	 mov         lr, pc
   00074	e12fff14	 bx          r4
 
-; 352  :         else
+; 349  :         else
 
   00078	ea00000c	 b           |$LN6@GPIOIoCont|
   0007c		 |$LN2@GPIOIoCont|
 
-; 353  :         {
-; 354  :             rc=DeviceIoControl(pDevice->rgHandles[grp], code, pInBuffer,
-; 355  :                 inSize, pOutBuffer, outSize, pOutSize, NULL);
+; 350  :         {
+; 351  :             rc=DeviceIoControl(pDevice->rgHandles[grp], code, pInBuffer,
+; 352  :                 inSize, pOutBuffer, outSize, pOutSize, NULL);
 
   0007c	e595300c	 ldr         r3, [r5, #0xC]
   00080	e59de040	 ldr         lr, [sp, #0x40]
@@ -1576,18 +1573,18 @@
   000b0	e1a04000	 mov         r4, r0
   000b4		 |$LN1@GPIOIoCont|
 
-; 356  :         }
-; 357  :         
-; 358  :     }
-; 359  :     return (DWORD) rc;
-; 360  :     
-; 361  : }
+; 353  :         }
+; 354  :         
+; 355  :     }
+; 356  :     return (DWORD) rc;
+; 357  :     
+; 358  : }
 
   000b4	e1a00004	 mov         r0, r4
   000b8	e28dd014	 add         sp, sp, #0x14
   000bc	e8bd47f0	 ldmia       sp!, {r4 - r10, lr}
   000c0	e12fff1e	 bx          lr
-  000c4		 |$M44327|
+  000c4		 |$M44332|
 
 			 ENDP  ; |GPIOIoControl|
 

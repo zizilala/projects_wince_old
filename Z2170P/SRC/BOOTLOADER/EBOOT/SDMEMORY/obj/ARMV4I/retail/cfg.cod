@@ -73,7 +73,7 @@
 ; File c:\wince600\platform\z2170p\src\bootloader\eboot\sdmemory\cfg.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46835| DCD	|$LN5@BLReadBoot|
+|$T46843| DCD	|$LN5@BLReadBoot|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -84,7 +84,7 @@
 ; 29   : {
 
   00000		 |$LN5@BLReadBoot|
-  00000		 |$M46832|
+  00000		 |$M46840|
 
 ; 30   :     BOOL rc = FALSE;
 ; 31   : #ifndef BSP_NO_NAND_IN_SDBOOT
@@ -177,14 +177,14 @@
 ; 115  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M46833|
+  00008		 |$M46841|
 
 			 ENDP  ; |BLReadBootCfg|
 
 	EXPORT	|BLWriteBootCfg|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46844| DCD	|$LN5@BLWriteBoo|
+|$T46852| DCD	|$LN5@BLWriteBoo|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -195,7 +195,7 @@
 ; 120  : {
 
   00000		 |$LN5@BLWriteBoo|
-  00000		 |$M46841|
+  00000		 |$M46849|
 
 ; 121  :     BOOL rc = FALSE;
 ; 122  : #ifndef BSP_NO_NAND_IN_SDBOOT
@@ -337,14 +337,14 @@
 ; 255  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M46842|
+  00008		 |$M46850|
 
 			 ENDP  ; |BLWriteBootCfg|
 
 	EXPORT	|BLReserveBootBlocks|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46853| DCD	|$LN5@BLReserveB|
+|$T46861| DCD	|$LN5@BLReserveB|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -355,7 +355,7 @@
 ; 260  : {
 
   00000		 |$LN5@BLReserveB|
-  00000		 |$M46850|
+  00000		 |$M46858|
 
 ; 261  : #ifndef BSP_NO_NAND_IN_SDBOOT
 ; 262  :     BOOL rc = FALSE;
@@ -446,48 +446,61 @@
 ; 344  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M46851|
+  00008		 |$M46859|
 
 			 ENDP  ; |BLReserveBootBlocks|
 
 	EXPORT	|BLShowLogo|
+	IMPORT	|DrawingScreen|
 	IMPORT	|ShowSDLogo|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46862| DCD	|$LN5@BLShowLogo|
-	DCD	0x40000501
+|$T46870| DCD	|$LN6@BLShowLogo|
+	DCD	0x40000901
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000		 |BLShowLogo| PROC
 
-; 349  : {
+; 350  : {
 
-  00000		 |$LN5@BLShowLogo|
+  00000		 |$LN6@BLShowLogo|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46859|
+  00004		 |$M46867|
 
-; 350  : 	//  Show the bootloader splashscreen if present on the SDCard
-; 351  : 	//if (!ShowSDLogo())			 //Ray 13-08-30 
-; 352  : 	//{
-; 353  : 		ShowSDLogo();
+; 351  : 	//  Show the bootloader splashscreen if present on the SDCard
+; 352  : 	//if (!ShowSDLogo())			 //Ray 13-08-30 
+; 353  : 	//{
+; 354  : 		//ShowLogo((UINT32)-1, 0);
+; 355  :     //}  
+; 356  :     //Below at screen show logo ,if doesn't bitmap exist be drawing screen, Ray 13-09-30      
+; 357  :     if(!ShowSDLogo())               
 
   00004	eb000000	 bl          ShowSDLogo
+  00008	e3500000	 cmp         r0, #0
 
-; 354  : 		//DrawingScreen((UINT32)-1, 0);
-; 355  : 		//ShowLogo((UINT32)-1, 0);
-; 356  :     //}  
-; 357  : 	
-; 358  : 	return TRUE;
+; 358  :     {
+; 359  : #ifndef Z2000
+; 360  :         DrawingScreen((UINT32)-1, 0);
 
-  00008	e3a00001	 mov         r0, #1
+  0000c	03a01000	 moveq       r1, #0
+  00010	03e00000	 mvneq       r0, #0
+  00014	0b000000	 bleq        DrawingScreen
 
-; 359  : }
+; 361  : #else
+; 362  :         ShowLogo((UINT32)-1, 0);
+; 363  : #endif
+; 364  :     }
+; 365  : 	return TRUE;
 
-  0000c	e49de004	 ldr         lr, [sp], #4
-  00010	e12fff1e	 bx          lr
-  00014		 |$M46860|
+  00018	e3a00001	 mov         r0, #1
+
+; 366  : }
+
+  0001c	e49de004	 ldr         lr, [sp], #4
+  00020	e12fff1e	 bx          lr
+  00024		 |$M46868|
 
 			 ENDP  ; |BLShowLogo|
 

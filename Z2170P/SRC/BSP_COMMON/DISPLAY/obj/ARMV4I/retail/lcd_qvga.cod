@@ -14,8 +14,8 @@
 
   00000			 AREA	 |.data|, DATA
 |lcd_res_params| DCD 0x6
-	DCD	0x140
 	DCD	0xf0
+	DCD	0x140
 	DCD	0x0
 	DCD	0x11
 	DCD	0x44
@@ -252,7 +252,7 @@
 ; File c:\wince600\platform\z2170p\src\bsp_common\display\lcd_qvga.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46274| DCD	|$LN14@LcdPdd_LCD|
+|$T46279| DCD	|$LN14@LcdPdd_LCD|
 	DCD	0x40004d01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -327,38 +327,38 @@
 
   00000		 |LcdPdd_LCD_InitResolution| PROC
 
-; 290  : {
+; 293  : {
 
   00000		 |$LN14@LcdPdd_LCD|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M46271|
+  00004		 |$M46276|
 
-; 291  : 	RETAILMSG(1,(L"LcdPdd_LCD_InitResolution : %x\r\n",g_dwSelectedDSSResolution)); 
+; 294  : 	RETAILMSG(1,(L"LcdPdd_LCD_InitResolution : %x\r\n",g_dwSelectedDSSResolution)); 
 
   00004	e59f4124	 ldr         r4, [pc, #0x124]
   00008	e59f011c	 ldr         r0, [pc, #0x11C]
   0000c	e5941288	 ldr         r1, [r4, #0x288]
   00010	eb000000	 bl          NKDbgPrintfW
 
-; 292  :     if (g_dwSelectedDSSResolution == OMAP_RES_INVALID)
+; 295  :     if (g_dwSelectedDSSResolution == OMAP_RES_INVALID)
 
   00014	e5943288	 ldr         r3, [r4, #0x288]
   00018	e3530008	 cmp         r3, #8
   0001c	1a000039	 bne         |$LN1@LcdPdd_LCD|
 
-; 293  :     {
-; 294  :         GetDisplayResolutionFromBootArgs((DWORD *)&g_dwSelectedDSSResolution);
+; 296  :     {
+; 297  :         GetDisplayResolutionFromBootArgs((DWORD *)&g_dwSelectedDSSResolution);
 
   00020	e2840fa2	 add         r0, r4, #0xA2, 30
   00024	eb000000	 bl          GetDisplayResolutionFromBootArgs
 
-; 295  :         RETAILMSG(1,(L"GetDisplayResolutionFromBootArgs: %x\r\n",g_dwSelectedDSSResolution));
+; 298  :         RETAILMSG(1,(L"GetDisplayResolutionFromBootArgs: %x\r\n",g_dwSelectedDSSResolution));
 
   00028	e5941288	 ldr         r1, [r4, #0x288]
   0002c	e59f00f4	 ldr         r0, [pc, #0xF4]
   00030	eb000000	 bl          NKDbgPrintfW
 
-; 296  :         if ((g_dwSelectedDSSResolution >= OMAP_RES_INVALID) || (g_dwSelectedDSSResolution <0))
+; 299  :         if ((g_dwSelectedDSSResolution >= OMAP_RES_INVALID) || (g_dwSelectedDSSResolution <0))
 
   00034	e5942288	 ldr         r2, [r4, #0x288]
   00038	e3520008	 cmp         r2, #8
@@ -367,14 +367,14 @@
   00044	5a000001	 bpl         |$LN8@LcdPdd_LCD|
   00048		 |$LN7@LcdPdd_LCD|
 
-; 297  :             g_dwSelectedDSSResolution = OMAP_LCD_DEFAULT;
+; 300  :             g_dwSelectedDSSResolution = OMAP_LCD_DEFAULT;
 
   00048	e3a02000	 mov         r2, #0
   0004c	e5842288	 str         r2, [r4, #0x288]
   00050		 |$LN8@LcdPdd_LCD|
 
-; 298  :         
-; 299  :         if (LCD_HSW > 63)
+; 301  :         
+; 302  :         if (LCD_HSW > 63)
 
   00050	e0823182	 add         r3, r2, r2, lsl #3
   00054	e0843183	 add         r3, r4, r3, lsl #3
@@ -382,15 +382,15 @@
   0005c	e353003f	 cmp         r3, #0x3F
   00060	9a000002	 bls         |$LN6@LcdPdd_LCD|
 
-; 300  :             RETAILMSG(1,(L"error LCD_HSW out of range \r\n"));
+; 303  :             RETAILMSG(1,(L"error LCD_HSW out of range \r\n"));
 
   00064	e59f00b8	 ldr         r0, [pc, #0xB8]
   00068	eb000000	 bl          NKDbgPrintfW
   0006c	e5942288	 ldr         r2, [r4, #0x288]
   00070		 |$LN6@LcdPdd_LCD|
 
-; 301  :                     
-; 302  :         if (LCD_HFP > 255)
+; 304  :                     
+; 305  :         if (LCD_HFP > 255)
 
   00070	e0823182	 add         r3, r2, r2, lsl #3
   00074	e0843183	 add         r3, r4, r3, lsl #3
@@ -398,15 +398,15 @@
   0007c	e35300ff	 cmp         r3, #0xFF
   00080	9a000002	 bls         |$LN5@LcdPdd_LCD|
 
-; 303  :             RETAILMSG(1,(L"error LCD_HFP out of range \r\n"));
+; 306  :             RETAILMSG(1,(L"error LCD_HFP out of range \r\n"));
 
   00084	e59f0094	 ldr         r0, [pc, #0x94]
   00088	eb000000	 bl          NKDbgPrintfW
   0008c	e5942288	 ldr         r2, [r4, #0x288]
   00090		 |$LN5@LcdPdd_LCD|
 
-; 304  :                     
-; 305  :         if (LCD_HBP > 255)
+; 307  :                     
+; 308  :         if (LCD_HBP > 255)
 
   00090	e0823182	 add         r3, r2, r2, lsl #3
   00094	e0843183	 add         r3, r4, r3, lsl #3
@@ -414,15 +414,15 @@
   0009c	e35300ff	 cmp         r3, #0xFF
   000a0	9a000002	 bls         |$LN4@LcdPdd_LCD|
 
-; 306  :             RETAILMSG(1,(L"error LCD_HBP out of range \r\n"));
+; 309  :             RETAILMSG(1,(L"error LCD_HBP out of range \r\n"));
 
   000a4	e59f0070	 ldr         r0, [pc, #0x70]
   000a8	eb000000	 bl          NKDbgPrintfW
   000ac	e5942288	 ldr         r2, [r4, #0x288]
   000b0		 |$LN4@LcdPdd_LCD|
 
-; 307  :                     
-; 308  :         if (LCD_VSW > 63)
+; 310  :                     
+; 311  :         if (LCD_VSW > 63)
 
   000b0	e0823182	 add         r3, r2, r2, lsl #3
   000b4	e0843183	 add         r3, r4, r3, lsl #3
@@ -430,15 +430,15 @@
   000bc	e353003f	 cmp         r3, #0x3F
   000c0	9a000002	 bls         |$LN3@LcdPdd_LCD|
 
-; 309  :             RETAILMSG(1,(L"error LCD_VSW out of range \r\n"));
+; 312  :             RETAILMSG(1,(L"error LCD_VSW out of range \r\n"));
 
   000c4	e59f004c	 ldr         r0, [pc, #0x4C]
   000c8	eb000000	 bl          NKDbgPrintfW
   000cc	e5942288	 ldr         r2, [r4, #0x288]
   000d0		 |$LN3@LcdPdd_LCD|
 
-; 310  :                     
-; 311  :         if (LCD_VFP > 255)
+; 313  :                     
+; 314  :         if (LCD_VFP > 255)
 
   000d0	e0823182	 add         r3, r2, r2, lsl #3
   000d4	e0843183	 add         r3, r4, r3, lsl #3
@@ -446,30 +446,30 @@
   000dc	e35300ff	 cmp         r3, #0xFF
   000e0	9a000002	 bls         |$LN2@LcdPdd_LCD|
 
-; 312  :             RETAILMSG(1,(L"error LCD_VFP out of range \r\n"));
+; 315  :             RETAILMSG(1,(L"error LCD_VFP out of range \r\n"));
 
   000e4	e59f0028	 ldr         r0, [pc, #0x28]
   000e8	eb000000	 bl          NKDbgPrintfW
   000ec	e5942288	 ldr         r2, [r4, #0x288]
   000f0		 |$LN2@LcdPdd_LCD|
 
-; 313  :                     
-; 314  :         if (LCD_VBP > 255)
+; 316  :                     
+; 317  :         if (LCD_VBP > 255)
 
   000f0	e0823182	 add         r3, r2, r2, lsl #3
   000f4	e0843183	 add         r3, r4, r3, lsl #3
   000f8	e5933020	 ldr         r3, [r3, #0x20]
   000fc	e35300ff	 cmp         r3, #0xFF
 
-; 315  :             RETAILMSG(1,(L"error LCD_VBP out of range \r\n"));
+; 318  :             RETAILMSG(1,(L"error LCD_VBP out of range \r\n"));
 
   00100	859f0008	 ldrhi       r0, [pc, #8]
   00104	8b000000	 blhi        NKDbgPrintfW
   00108		 |$LN1@LcdPdd_LCD|
 
-; 316  :     }
-; 317  :         
-; 318  : }
+; 319  :     }
+; 320  :         
+; 321  : }
 
   00108	e8bd4010	 ldmia       sp!, {r4, lr}
   0010c	e12fff1e	 bx          lr
@@ -492,7 +492,7 @@
   0012c	00000000	 DCD         |??_C@_1EC@MMOGAKLI@?$AAL?$AAc?$AAd?$AAP?$AAd?$AAd?$AA_?$AAL?$AAC?$AAD?$AA_?$AAI?$AAn?$AAi?$AAt?$AAR?$AAe?$AAs?$AAo?$AAl?$AAu?$AAt?$AAi?$AAo?$AAn?$AA?5?$AA?3?$AA?5?$AA?$CF?$AAx?$AA?$AN?$AA?6@|
   00130		 |$LN24@LcdPdd_LCD|
   00130	00000000	 DCD         |lcd_res_params|
-  00134		 |$M46272|
+  00134		 |$M46277|
 
 			 ENDP  ; |LcdPdd_LCD_InitResolution|
 
@@ -500,7 +500,7 @@
 	IMPORT	|ConvertCAtoPA|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46295| DCD	|$LN7@LcdPdd_Get|
+|$T46300| DCD	|$LN7@LcdPdd_Get|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -508,47 +508,47 @@
 
   00000		 |LcdPdd_GetMemory| PROC
 
-; 418  : {
+; 421  : {
 
   00000		 |$LN7@LcdPdd_Get|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M46292|
+  00004		 |$M46297|
   00004	e1a04001	 mov         r4, r1
   00008	e3500000	 cmp         r0, #0
 
-; 419  :     //  Return video memory parameters
-; 420  :     if( pVideoMemLen )
-; 421  :         *pVideoMemLen = IMAGE_WINCE_DISPLAY_SIZE;
+; 422  :     //  Return video memory parameters
+; 423  :     if( pVideoMemLen )
+; 424  :         *pVideoMemLen = IMAGE_WINCE_DISPLAY_SIZE;
 
   0000c	13a0361a	 movne       r3, #0x1A, 12
   00010	15803000	 strne       r3, [r0]
 
-; 422  : 
-; 423  :     if( pVideoMemAddr )
+; 425  : 
+; 426  :     if( pVideoMemAddr )
 
   00014	e3540000	 cmp         r4, #0
   00018	0a000002	 beq         |$LN1@LcdPdd_Get|
 
-; 424  :     {
-; 425  :         DWORD videoCAAddr = IMAGE_WINCE_DISPLAY_CA;
-; 426  :         *pVideoMemAddr = ConvertCAtoPA((DWORD *)videoCAAddr);
+; 427  :     {
+; 428  :         DWORD videoCAAddr = IMAGE_WINCE_DISPLAY_CA;
+; 429  :         *pVideoMemAddr = ConvertCAtoPA((DWORD *)videoCAAddr);
 
   0001c	e3a00322	 mov         r0, #0x22, 6
   00020	eb000000	 bl          ConvertCAtoPA
   00024	e5840000	 str         r0, [r4]
   00028		 |$LN1@LcdPdd_Get|
 
-; 427  :     }
-; 428  : 
-; 429  :     return TRUE;
+; 430  :     }
+; 431  : 
+; 432  :     return TRUE;
 
   00028	e3a00001	 mov         r0, #1
 
-; 430  : }
+; 433  : }
 
   0002c	e8bd4010	 ldmia       sp!, {r4, lr}
   00030	e12fff1e	 bx          lr
-  00034		 |$M46293|
+  00034		 |$M46298|
 
 			 ENDP  ; |LcdPdd_GetMemory|
 
@@ -561,7 +561,7 @@
 	IMPORT	|__rt_udiv|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46309| DCD	|$LN9@LcdPdd_LCD@2|
+|$T46314| DCD	|$LN9@LcdPdd_LCD@2|
 	DCD	0x40003d01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -616,35 +616,35 @@
 
   00000		 |LcdPdd_LCD_GetMode| PROC
 
-; 435  : {
+; 438  : {
 
   00000		 |$LN9@LcdPdd_LCD@2|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M46306|
+  00004		 |$M46311|
   00004	e1a08003	 mov         r8, r3
   00008	e1a05002	 mov         r5, r2
   0000c	e1a06001	 mov         r6, r1
   00010	e1a07000	 mov         r7, r0
 
-; 436  : 	RETAILMSG(1,(L"\n\r*** LcdPdd_LCD_GetMode ***\n\r"));
+; 439  : 	RETAILMSG(1,(L"\n\r*** LcdPdd_LCD_GetMode ***\n\r"));
 
   00014	e59f00d4	 ldr         r0, [pc, #0xD4]
   00018	eb000000	 bl          NKDbgPrintfW
 
-; 437  :     LcdPdd_LCD_InitResolution();        
+; 440  :     LcdPdd_LCD_InitResolution();        
 
   0001c	eb000000	 bl          LcdPdd_LCD_InitResolution
 
-; 438  :     
-; 439  :     //  Return default LCD parameters
-; 440  :     if( pPixelFormat )
+; 441  :     
+; 442  :     //  Return default LCD parameters
+; 443  :     if( pPixelFormat )
 
   00020	e59f40c4	 ldr         r4, [pc, #0xC4]
   00024	e3570000	 cmp         r7, #0
 
-; 441  :     {
-; 442  :         *pPixelFormat = DEFAULT_PIXELTYPE;
-; 443  :         RETAILMSG(1, (TEXT("[LcdPdd_LCD_GetMode] PixelFormat:%d\r\n"),*pPixelFormat));
+; 444  :     {
+; 445  :         *pPixelFormat = DEFAULT_PIXELTYPE;
+; 446  :         RETAILMSG(1, (TEXT("[LcdPdd_LCD_GetMode] PixelFormat:%d\r\n"),*pPixelFormat));
 
   00028	159f00b8	 ldrne       r0, [pc, #0xB8]
   0002c	1594e288	 ldrne       lr, [r4, #0x288]
@@ -654,17 +654,17 @@
   0003c	1587e000	 strne       lr, [r7]
   00040	1b000000	 blne        NKDbgPrintfW
 
-; 444  : 	}
-; 445  :     if( pWidth )
+; 447  : 	}
+; 448  :     if( pWidth )
 
   00044	e3560000	 cmp         r6, #0
 
-; 446  :     {
-; 447  :         *pWidth = LCD_WIDTH;
+; 449  :     {
+; 450  :         *pWidth = LCD_WIDTH;
 
   00048	15943288	 ldrne       r3, [r4, #0x288]
 
-; 448  :         RETAILMSG(1, (TEXT("[LcdPdd_LCD_GetMode] Width:%d \r\n"),*pWidth));
+; 451  :         RETAILMSG(1, (TEXT("[LcdPdd_LCD_GetMode] Width:%d \r\n"),*pWidth));
 
   0004c	159f0090	 ldrne       r0, [pc, #0x90]
   00050	10833183	 addne       r3, r3, r3, lsl #3
@@ -674,17 +674,17 @@
   00060	15863000	 strne       r3, [r6]
   00064	1b000000	 blne        NKDbgPrintfW
 
-; 449  : 	}
-; 450  :     if( pHeight )
+; 452  : 	}
+; 453  :     if( pHeight )
 
   00068	e3550000	 cmp         r5, #0
 
-; 451  :     {
-; 452  :         *pHeight = LCD_HEIGHT;
+; 454  :     {
+; 455  :         *pHeight = LCD_HEIGHT;
 
   0006c	15943288	 ldrne       r3, [r4, #0x288]
 
-; 453  :         RETAILMSG(1, (TEXT("[LcdPdd_LCD_GetMode] Height:%d \r\n"),*pHeight));
+; 456  :         RETAILMSG(1, (TEXT("[LcdPdd_LCD_GetMode] Height:%d \r\n"),*pHeight));
 
   00070	159f0068	 ldrne       r0, [pc, #0x68]
   00074	10833183	 addne       r3, r3, r3, lsl #3
@@ -694,14 +694,14 @@
   00084	15853000	 strne       r3, [r5]
   00088	1b000000	 blne        NKDbgPrintfW
 
-; 454  : 	}
-; 455  :     if ( pPixelClock )
+; 457  : 	}
+; 458  :     if ( pPixelClock )
 
   0008c	e3580000	 cmp         r8, #0
   00090	0a00000e	 beq         |$LN1@LcdPdd_LCD@2|
 
-; 456  :     {
-; 457  :         *pPixelClock = (864000000 / BSP_DSS_CLKSEL_DSS1) / BSP_LCD_PIXCLKDIV;
+; 459  :     {
+; 460  :         *pPixelClock = (864000000 / BSP_DSS_CLKSEL_DSS1) / BSP_LCD_PIXCLKDIV;
 
   00094	e5943288	 ldr         r3, [r4, #0x288]
   00098	e3a025ce	 mov         r2, #0xCE, 10
@@ -715,7 +715,7 @@
   000b8	eb000000	 bl          __rt_udiv
   000bc	e1a03000	 mov         r3, r0
 
-; 458  : 		RETAILMSG(1, (TEXT("[LcdPdd_LCD_GetMode] PixelClock:%d \r\n"),*pPixelClock));
+; 461  : 		RETAILMSG(1, (TEXT("[LcdPdd_LCD_GetMode] PixelClock:%d \r\n"),*pPixelClock));
 
   000c0	e59f0014	 ldr         r0, [pc, #0x14]
   000c4	e1a01003	 mov         r1, r3
@@ -723,12 +723,12 @@
   000cc	eb000000	 bl          NKDbgPrintfW
   000d0		 |$LN1@LcdPdd_LCD@2|
 
-; 459  : 	}
-; 460  :     return TRUE;
+; 462  : 	}
+; 463  :     return TRUE;
 
   000d0	e3a00001	 mov         r0, #1
 
-; 461  : }
+; 464  : }
 
   000d4	e8bd41f0	 ldmia       sp!, {r4 - r8, lr}
   000d8	e12fff1e	 bx          lr
@@ -745,7 +745,7 @@
   000ec	00000000	 DCD         |lcd_res_params|
   000f0		 |$LN16@LcdPdd_LCD@2|
   000f0	00000000	 DCD         |??_C@_1DO@KCGAIHAL@?$AA?6?$AA?$AN?$AA?$CK?$AA?$CK?$AA?$CK?$AA?5?$AAL?$AAc?$AAd?$AAP?$AAd?$AAd?$AA_?$AAL?$AAC?$AAD?$AA_?$AAG?$AAe?$AAt?$AAM?$AAo?$AAd?$AAe?$AA?5?$AA?$CK?$AA?$CK?$AA?$CK?$AA?6?$AA?$AN?$AA?$AA@|
-  000f4		 |$M46307|
+  000f4		 |$M46312|
 
 			 ENDP  ; |LcdPdd_LCD_GetMode|
 
@@ -760,7 +760,7 @@
 |g_pDispRegs| %	0x4
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46327| DCD	|$LN13@LcdPdd_Set|
+|$T46332| DCD	|$LN13@LcdPdd_Set|
 	DCD	0x40003201
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -778,66 +778,66 @@
 
   00000		 |LcdPdd_SetPowerLevel| PROC
 
-; 468  : {
+; 471  : {
 
   00000		 |$LN13@LcdPdd_Set|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M46324|
+  00004		 |$M46329|
   00004	e1a04000	 mov         r4, r0
 
-; 469  :     // Do nothing if LCD has not yet been initialized
-; 470  :     if (g_pDispRegs == NULL)
+; 472  :     // Do nothing if LCD has not yet been initialized
+; 473  :     if (g_pDispRegs == NULL)
 
   00008	e59f50b4	 ldr         r5, [pc, #0xB4]
   0000c	e5953000	 ldr         r3, [r5]
   00010	e3530000	 cmp         r3, #0
 
-; 471  :         return FALSE;
+; 474  :         return FALSE;
 
   00014	03a00000	 moveq       r0, #0
 
-; 529  : }   
+; 532  : }   
 
   00018	08bd4030	 ldmeqia     sp!, {r4, r5, lr}
   0001c	012fff1e	 bxeq        lr
 
-; 472  : 	RETAILMSG(1,(L"\n\r*** LcdPdd_SetPowerLevel(%d) ***\n\r",dwPowerLevel));
+; 475  : 	RETAILMSG(1,(L"\n\r*** LcdPdd_SetPowerLevel(%d) ***\n\r",dwPowerLevel));
 
   00020	e59f0098	 ldr         r0, [pc, #0x98]
   00024	e1a01004	 mov         r1, r4
   00028	eb000000	 bl          NKDbgPrintfW
 
-; 473  :     // Power display up/down
-; 474  :     switch(dwPowerLevel)
+; 476  :     // Power display up/down
+; 477  :     switch(dwPowerLevel)
 
   0002c	e3540002	 cmp         r4, #2
   00030	9a00000a	 bls         |$LN4@LcdPdd_Set|
   00034	e3540004	 cmp         r4, #4
   00038	8a00001d	 bhi         |$LN5@LcdPdd_Set|
 
-; 504  :             
-; 505  : 			// 5 - Raise INI
-; 506  : 			//LcdIniControl(TRUE);
-; 507  :             break;        
-; 508  : 
-; 509  :         case D3:
-; 510  :         case D4:
-; 511  :             // disable DVI
-; 512  :             //LcdDviEnableControl(FALSE);
-; 513  : 
-; 514  :             // LCD power disable sequence
-; 515  :             // 1 - Clear INI
-; 516  :             //LcdIniControl(FALSE);
-; 517  :                 
-; 518  :             // 2 - Delay > 5 frames
-; 519  :             //LcdSleep(20*5);
-; 520  :             
-; 521  :             // 3 - Stop all
-; 522  :             CLRREG32( &g_pDispRegs->DISPC_CONTROL, DISPC_CONTROL_LCDENABLE );        
+; 507  :             
+; 508  : 			// 5 - Raise INI
+; 509  : 			//LcdIniControl(TRUE);
+; 510  :             break;        
+; 511  : 
+; 512  :         case D3:
+; 513  :         case D4:
+; 514  :             // disable DVI
+; 515  :             //LcdDviEnableControl(FALSE);
+; 516  : 
+; 517  :             // LCD power disable sequence
+; 518  :             // 1 - Clear INI
+; 519  :             //LcdIniControl(FALSE);
+; 520  :                 
+; 521  :             // 2 - Delay > 5 frames
+; 522  :             //LcdSleep(20*5);
+; 523  :             
+; 524  :             // 3 - Stop all
+; 525  :             CLRREG32( &g_pDispRegs->DISPC_CONTROL, DISPC_CONTROL_LCDENABLE );        
 
   0003c	e5952000	 ldr         r2, [r5]
 
-; 523  :             LcdResBControl(TRUE);
+; 526  :             LcdResBControl(TRUE);
 
   00040	e3a00001	 mov         r0, #1
   00044	e5923040	 ldr         r3, [r2, #0x40]
@@ -845,59 +845,59 @@
   0004c	e5823040	 str         r3, [r2, #0x40]
   00050	eb000000	 bl          LcdResBControl
 
-; 524  :             LcdPowerControl(FALSE);
+; 527  :             LcdPowerControl(FALSE);
 
   00054	e3a00000	 mov         r0, #0
   00058	eb000000	 bl          LcdPowerControl
 
-; 525  :             break;
+; 528  :             break;
 
   0005c	ea000014	 b           |$LN5@LcdPdd_Set|
   00060		 |$LN4@LcdPdd_Set|
 
-; 475  :     {
-; 476  :         case D0:
-; 477  :         case D1:
-; 478  :         case D2:
-; 479  : 			// change output format to 18 bit
-; 480  : 			OUTREG32( &g_pDispRegs->DISPC_CONTROL,
-; 481  : 					DISPC_CONTROL_GPOUT1 | DISPC_CONTROL_GPOUT0 |
-; 482  : 					DISPC_CONTROL_TFTDATALINES_24 | DISPC_CONTROL_STNTFT);
+; 478  :     {
+; 479  :         case D0:
+; 480  :         case D1:
+; 481  :         case D2:
+; 482  : 			// change output format to 18 bit
+; 483  : 			OUTREG32( &g_pDispRegs->DISPC_CONTROL,
+; 484  : 					DISPC_CONTROL_GPOUT1 | DISPC_CONTROL_GPOUT0 |
+; 485  : 					DISPC_CONTROL_TFTDATALINES_24 | DISPC_CONTROL_STNTFT);
 
   00060	e5952000	 ldr         r2, [r5]
   00064	e3a03906	 mov         r3, #6, 18
   00068	e3833fc2	 orr         r3, r3, #0xC2, 30
   0006c	e5823040	 str         r3, [r2, #0x40]
 
-; 483  : 
-; 484  : 			// Apply display configuration
-; 485  : 			SETREG32(&g_pDispRegs->DISPC_CONTROL, DISPC_CONTROL_GOLCD);
+; 486  : 
+; 487  : 			// Apply display configuration
+; 488  : 			SETREG32(&g_pDispRegs->DISPC_CONTROL, DISPC_CONTROL_GOLCD);
 
   00070	e5923040	 ldr         r3, [r2, #0x40]
 
-; 486  : 
-; 487  : 			// LCD power enable sequence
-; 488  : 			// 1 - Turn on power
-; 489  : 			LcdPowerControl(TRUE);
+; 489  : 
+; 490  : 			// LCD power enable sequence
+; 491  : 			// 1 - Turn on power
+; 492  : 			LcdPowerControl(TRUE);
 
   00074	e3a00001	 mov         r0, #1
   00078	e3833020	 orr         r3, r3, #0x20
   0007c	e5823040	 str         r3, [r2, #0x40]
   00080	eb000000	 bl          LcdPowerControl
 
-; 490  :                         
-; 491  : 			// 2 - Start scanning
-; 492  : 			if (dwPowerLevel == D2)
-; 493  : 				CLRREG32( &g_pDispRegs->DISPC_CONTROL, DISPC_CONTROL_LCDENABLE );        
+; 493  :                         
+; 494  : 			// 2 - Start scanning
+; 495  : 			if (dwPowerLevel == D2)
+; 496  : 				CLRREG32( &g_pDispRegs->DISPC_CONTROL, DISPC_CONTROL_LCDENABLE );        
 
   00084	e5952000	 ldr         r2, [r5]
   00088	e3540002	 cmp         r4, #2
 
-; 494  : 			else
-; 495  : 				SETREG32( &g_pDispRegs->DISPC_CONTROL, DISPC_CONTROL_LCDENABLE );        
-; 496  :     
-; 497  : 			// 3 - Delay for minimum 20uS
-; 498  : 			LcdStall(50);
+; 497  : 			else
+; 498  : 				SETREG32( &g_pDispRegs->DISPC_CONTROL, DISPC_CONTROL_LCDENABLE );        
+; 499  :     
+; 500  : 			// 3 - Delay for minimum 20uS
+; 501  : 			LcdStall(50);
 
   0008c	e3a00032	 mov         r0, #0x32
   00090	e5923040	 ldr         r3, [r2, #0x40]
@@ -906,27 +906,27 @@
   0009c	e5823040	 str         r3, [r2, #0x40]
   000a0	eb000000	 bl          LcdStall
 
-; 499  :             
-; 500  : 			// 4 - Raise RESB
-; 501  : 			LcdResBControl(FALSE);
+; 502  :             
+; 503  : 			// 4 - Raise RESB
+; 504  : 			LcdResBControl(FALSE);
 
   000a4	e3a00000	 mov         r0, #0
   000a8	eb000000	 bl          LcdResBControl
 
-; 502  :             
-; 503  : 			LcdStall(10);
+; 505  :             
+; 506  : 			LcdStall(10);
 
   000ac	e3a0000a	 mov         r0, #0xA
   000b0	eb000000	 bl          LcdStall
   000b4		 |$LN5@LcdPdd_Set|
 
-; 526  :     }
-; 527  :         
-; 528  :     return TRUE;
+; 529  :     }
+; 530  :         
+; 531  :     return TRUE;
 
   000b4	e3a00001	 mov         r0, #1
 
-; 529  : }   
+; 532  : }   
 
   000b8	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   000bc	e12fff1e	 bx          lr
@@ -935,14 +935,14 @@
   000c0	00000000	 DCD         |??_C@_1EK@PCOLBNDB@?$AA?6?$AA?$AN?$AA?$CK?$AA?$CK?$AA?$CK?$AA?5?$AAL?$AAc?$AAd?$AAP?$AAd?$AAd?$AA_?$AAS?$AAe?$AAt?$AAP?$AAo?$AAw?$AAe?$AAr?$AAL?$AAe?$AAv?$AAe?$AAl?$AA?$CI?$AA?$CF?$AAd?$AA?$CJ?$AA?5?$AA?$CK@|
   000c4		 |$LN16@LcdPdd_Set|
   000c4	00000000	 DCD         |g_pDispRegs|
-  000c8		 |$M46325|
+  000c8		 |$M46330|
 
 			 ENDP  ; |LcdPdd_SetPowerLevel|
 
 	EXPORT	|LcdPdd_DVI_Select|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46340| DCD	|$LN5@LcdPdd_DVI|
+|$T46345| DCD	|$LN5@LcdPdd_DVI|
 	DCD	0x40000600
 ; Function compile flags: /Ogspy
 
@@ -950,37 +950,37 @@
 
   00000		 |LcdPdd_DVI_Select| PROC
 
-; 536  : {
+; 539  : {
 
   00000		 |$LN5@LcdPdd_DVI|
-  00000		 |$M46337|
+  00000		 |$M46342|
   00000	e1a02000	 mov         r2, r0
 
-; 537  : 
-; 538  :     // only changes the select variable, does not perform the change
-; 539  :     bDVIEnabled = bEnable;
+; 540  : 
+; 541  :     // only changes the select variable, does not perform the change
+; 542  :     bDVIEnabled = bEnable;
 
   00004	e59f3008	 ldr         r3, [pc, #8]
 
-; 540  :     return TRUE;
+; 543  :     return TRUE;
 
   00008	e3a00001	 mov         r0, #1
   0000c	e5832000	 str         r2, [r3]
 
-; 541  : }
+; 544  : }
 
   00010	e12fff1e	 bx          lr
   00014		 |$LN6@LcdPdd_DVI|
   00014		 |$LN7@LcdPdd_DVI|
   00014	00000000	 DCD         |bDVIEnabled|
-  00018		 |$M46338|
+  00018		 |$M46343|
 
 			 ENDP  ; |LcdPdd_DVI_Select|
 
 	EXPORT	|LcdPdd_DVI_Enabled|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46351| DCD	|$LN5@LcdPdd_DVI@2|
+|$T46356| DCD	|$LN5@LcdPdd_DVI@2|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -988,32 +988,32 @@
 
   00000		 |LcdPdd_DVI_Enabled| PROC
 
-; 546  : {
+; 549  : {
 
   00000		 |$LN5@LcdPdd_DVI@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46348|
+  00004		 |$M46353|
 
-; 547  :     LcdPdd_LCD_InitResolution();
+; 550  :     LcdPdd_LCD_InitResolution();
 
   00004	eb000000	 bl          LcdPdd_LCD_InitResolution
 
-; 548  :     return FALSE;
+; 551  :     return FALSE;
 
   00008	e3a00000	 mov         r0, #0
 
-; 549  : }
+; 552  : }
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M46349|
+  00014		 |$M46354|
 
 			 ENDP  ; |LcdPdd_DVI_Enabled|
 
 	EXPORT	|LcdPdd_Get_PixClkDiv|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46360| DCD	|$LN5@LcdPdd_Get@2|
+|$T46365| DCD	|$LN5@LcdPdd_Get@2|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -1021,17 +1021,17 @@
 
   00000		 |LcdPdd_Get_PixClkDiv| PROC
 
-; 554  : {
+; 557  : {
 
   00000		 |$LN5@LcdPdd_Get@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46357|
+  00004		 |$M46362|
 
-; 555  :     LcdPdd_LCD_InitResolution();
+; 558  :     LcdPdd_LCD_InitResolution();
 
   00004	eb000000	 bl          LcdPdd_LCD_InitResolution
 
-; 556  :     return LCD_PIXCLKDIV;
+; 559  :     return LCD_PIXCLKDIV;
 
   00008	e59f3014	 ldr         r3, [pc, #0x14]
   0000c	e5931288	 ldr         r1, [r3, #0x288]
@@ -1039,14 +1039,14 @@
   00014	e0813181	 add         r3, r1, r1, lsl #3
   00018	e7920183	 ldr         r0, [r2, +r3, lsl #3]
 
-; 557  : }
+; 560  : }
 
   0001c	e49de004	 ldr         lr, [sp], #4
   00020	e12fff1e	 bx          lr
   00024		 |$LN6@LcdPdd_Get@2|
   00024		 |$LN7@LcdPdd_Get@2|
   00024	00000000	 DCD         |lcd_res_params|
-  00028		 |$M46358|
+  00028		 |$M46363|
 
 			 ENDP  ; |LcdPdd_Get_PixClkDiv|
 
@@ -1064,7 +1064,7 @@
 	IMPORT	|MmMapIoSpace|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46375| DCD	|$LN6@LcdPdd_LCD@3|
+|$T46380| DCD	|$LN6@LcdPdd_LCD@3|
 	DCD	0x40008001
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1132,37 +1132,37 @@
 
   00000		 |LcdPdd_LCD_Initialize| PROC
 
-; 328  : {
+; 331  : {
 
   00000		 |$LN6@LcdPdd_LCD@3|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M46372|
+  00004		 |$M46377|
   00004	e1a04001	 mov         r4, r1
 
-; 329  :     PHYSICAL_ADDRESS pa;
-; 330  :     OMAP_PRCM_DSS_CM_REGS *pPrcmDssCM;
-; 331  :     RETAILMSG(1,(L"\n\r*** LcdPdd_LCD_Initialize ***\n\r"));
+; 332  :     PHYSICAL_ADDRESS pa;
+; 333  :     OMAP_PRCM_DSS_CM_REGS *pPrcmDssCM;
+; 334  :     RETAILMSG(1,(L"\n\r*** LcdPdd_LCD_Initialize ***\n\r"));
 
   00008	e59f01ec	 ldr         r0, [pc, #0x1EC]
   0000c	eb000000	 bl          NKDbgPrintfW
 
-; 332  : 
-; 333  : 	UNREFERENCED_PARAMETER(pVencRegs);
-; 334  : 	UNREFERENCED_PARAMETER(pRfbiRegs);
-; 335  : 	UNREFERENCED_PARAMETER(pDSSRegs);
-; 336  : 
-; 337  :     LcdPdd_LCD_InitResolution();
+; 335  : 
+; 336  : 	UNREFERENCED_PARAMETER(pVencRegs);
+; 337  : 	UNREFERENCED_PARAMETER(pRfbiRegs);
+; 338  : 	UNREFERENCED_PARAMETER(pDSSRegs);
+; 339  : 
+; 340  :     LcdPdd_LCD_InitResolution();
 
   00010	eb000000	 bl          LcdPdd_LCD_InitResolution
   00014	e3a03312	 mov         r3, #0x12, 6
 
-; 338  :     
-; 339  : 
-; 340  :     pa.QuadPart = OMAP_PRCM_DSS_CM_REGS_PA;
+; 341  :     
+; 342  : 
+; 343  :     pa.QuadPart = OMAP_PRCM_DSS_CM_REGS_PA;
 
   00018	e3830c4e	 orr         r0, r3, #0x4E, 24
 
-; 341  :     pPrcmDssCM = (OMAP_PRCM_DSS_CM_REGS*)MmMapIoSpace(pa, sizeof(OMAP_PRCM_DSS_CM_REGS), FALSE);
+; 344  :     pPrcmDssCM = (OMAP_PRCM_DSS_CM_REGS*)MmMapIoSpace(pa, sizeof(OMAP_PRCM_DSS_CM_REGS), FALSE);
 
   0001c	e3a03000	 mov         r3, #0
   00020	e3a01000	 mov         r1, #0
@@ -1170,35 +1170,35 @@
   00028	eb000000	 bl          MmMapIoSpace
   0002c	e1b05000	 movs        r5, r0
 
-; 342  :     if (pPrcmDssCM == NULL) return FALSE;
+; 345  :     if (pPrcmDssCM == NULL) return FALSE;
 
   00030	03a00000	 moveq       r0, #0
 
-; 411  : }
+; 414  : }
 
   00034	08bd4030	 ldmeqia     sp!, {r4, r5, lr}
   00038	012fff1e	 bxeq        lr
 
-; 343  : 
-; 344  :     // Store pointer to display controller for future use
-; 345  :     g_pDispRegs = pDispRegs;
+; 346  : 
+; 347  :     // Store pointer to display controller for future use
+; 348  :     g_pDispRegs = pDispRegs;
 
   0003c	e59f31b4	 ldr         r3, [pc, #0x1B4]
   00040	e5834000	 str         r4, [r3]
 
-; 346  :     
-; 347  :     // Initialize GPIO
-; 348  :     LcdInitGpio();
+; 349  :     
+; 350  :     // Initialize GPIO
+; 351  :     LcdInitGpio();
 
   00044	eb000000	 bl          LcdInitGpio
 
-; 349  :     
-; 350  :     // setup the DSS1 clock divider - disable DSS1 clock, change divider, enable DSS clock
-; 351  :     OUTREG32(&pPrcmDssCM->CM_FCLKEN_DSS, INREG32(&pPrcmDssCM->CM_FCLKEN_DSS) & ~CM_CLKEN_DSS1);
+; 352  :     
+; 353  :     // setup the DSS1 clock divider - disable DSS1 clock, change divider, enable DSS clock
+; 354  :     OUTREG32(&pPrcmDssCM->CM_FCLKEN_DSS, INREG32(&pPrcmDssCM->CM_FCLKEN_DSS) & ~CM_CLKEN_DSS1);
 
   00048	e5953000	 ldr         r3, [r5]
 
-; 352  :     OUTREG32(&pPrcmDssCM->CM_CLKSEL_DSS, BSP_CM_CLKSEL_DSS); // DSS1_ALWON_FCLK is DPLL4 clock divided by 25
+; 355  :     OUTREG32(&pPrcmDssCM->CM_CLKSEL_DSS, BSP_CM_CLKSEL_DSS); // DSS1_ALWON_FCLK is DPLL4 clock divided by 25
 
   0004c	e59f01a0	 ldr         r0, [pc, #0x1A0]
   00050	e3c33001	 bic         r3, r3, #1
@@ -1206,76 +1206,76 @@
   00058	e5903288	 ldr         r3, [r0, #0x288]
   0005c	e3a02906	 mov         r2, #6, 18
 
-; 353  :     OUTREG32(&pPrcmDssCM->CM_FCLKEN_DSS, INREG32(&pPrcmDssCM->CM_FCLKEN_DSS) | CM_CLKEN_DSS1);
-; 354  :     
-; 355  : 	OUTREG32( &pDispRegs->DISPC_CONTROL,
-; 356  : 			DISPC_CONTROL_GPOUT1 | DISPC_CONTROL_GPOUT0 |
-; 357  : 			DISPC_CONTROL_TFTDATALINES_24 | DISPC_CONTROL_STNTFT);
+; 356  :     OUTREG32(&pPrcmDssCM->CM_FCLKEN_DSS, INREG32(&pPrcmDssCM->CM_FCLKEN_DSS) | CM_CLKEN_DSS1);
+; 357  :     
+; 358  : 	OUTREG32( &pDispRegs->DISPC_CONTROL,
+; 359  : 			DISPC_CONTROL_GPOUT1 | DISPC_CONTROL_GPOUT0 |
+; 360  : 			DISPC_CONTROL_TFTDATALINES_24 | DISPC_CONTROL_STNTFT);
 
   00060	e0833183	 add         r3, r3, r3, lsl #3
   00064	e0803183	 add         r3, r0, r3, lsl #3
   00068	e593302c	 ldr         r3, [r3, #0x2C]
   0006c	e3822fc2	 orr         r2, r2, #0xC2, 30
 
-; 358  :                 
-; 359  :     //  LCD config
-; 360  :     OUTREG32( &pDispRegs->DISPC_CONFIG,
-; 361  :                 DISPC_CONFIG_FUNCGATED |
-; 362  :                 DISPC_CONFIG_LOADMODE(LCD_LOADMODE) |
-; 363  :                 DISPC_CONFIG_PALETTEGAMMATABLE
-; 364  :                 );
+; 361  :                 
+; 362  :     //  LCD config
+; 363  :     OUTREG32( &pDispRegs->DISPC_CONFIG,
+; 364  :                 DISPC_CONFIG_FUNCGATED |
+; 365  :                 DISPC_CONFIG_LOADMODE(LCD_LOADMODE) |
+; 366  :                 DISPC_CONFIG_PALETTEGAMMATABLE
+; 367  :                 );
 
   00070	e5853040	 str         r3, [r5, #0x40]
   00074	e5953000	 ldr         r3, [r5]
 
-; 365  : 
-; 366  :     // Default Color
-; 367  :     OUTREG32( &pDispRegs->DISPC_DEFAULT_COLOR0,LCD_DEFAULT_COLOR);
 ; 368  : 
-; 369  :     // Default Transparency Color
-; 370  :     OUTREG32( &pDispRegs->DISPC_TRANS_COLOR0,LCD_TRANS_COLOR);
+; 369  :     // Default Color
+; 370  :     OUTREG32( &pDispRegs->DISPC_DEFAULT_COLOR0,LCD_DEFAULT_COLOR);
+; 371  : 
+; 372  :     // Default Transparency Color
+; 373  :     OUTREG32( &pDispRegs->DISPC_TRANS_COLOR0,LCD_TRANS_COLOR);
 
   00078	e3833001	 orr         r3, r3, #1
   0007c	e5853000	 str         r3, [r5]
   00080	e5842040	 str         r2, [r4, #0x40]
   00084	e5903288	 ldr         r3, [r0, #0x288]
 
-; 371  : 
-; 372  :     // Timing logic for HSYNC signal
-; 373  :     OUTREG32( &pDispRegs->DISPC_TIMING_H,
-; 374  :                 DISPC_TIMING_H_HSW(LCD_HSW) |
-; 375  :                 DISPC_TIMING_H_HFP(LCD_HFP) |
-; 376  :                 DISPC_TIMING_H_HBP(LCD_HBP)
-; 377  :                 );
-; 378  : 
-; 379  :     // Timing logic for VSYNC signal
-; 380  :     OUTREG32( &pDispRegs->DISPC_TIMING_V,
-; 381  :                 DISPC_TIMING_V_VSW(LCD_VSW) |
-; 382  :                 DISPC_TIMING_V_VFP(LCD_VFP) |
-; 383  :                 DISPC_TIMING_V_VBP(LCD_VBP)
-; 384  :                 );
+; 374  : 
+; 375  :     // Timing logic for HSYNC signal
+; 376  :     OUTREG32( &pDispRegs->DISPC_TIMING_H,
+; 377  :                 DISPC_TIMING_H_HSW(LCD_HSW) |
+; 378  :                 DISPC_TIMING_H_HFP(LCD_HFP) |
+; 379  :                 DISPC_TIMING_H_HBP(LCD_HBP)
+; 380  :                 );
+; 381  : 
+; 382  :     // Timing logic for VSYNC signal
+; 383  :     OUTREG32( &pDispRegs->DISPC_TIMING_V,
+; 384  :                 DISPC_TIMING_V_VSW(LCD_VSW) |
+; 385  :                 DISPC_TIMING_V_VFP(LCD_VFP) |
+; 386  :                 DISPC_TIMING_V_VBP(LCD_VBP)
+; 387  :                 );
 
   00088	e0833183	 add         r3, r3, r3, lsl #3
   0008c	e0803183	 add         r3, r0, r3, lsl #3
   00090	e5933030	 ldr         r3, [r3, #0x30]
 
-; 385  : 
-; 386  :     // Signal configuration
-; 387  :     OUTREG32( &pDispRegs->DISPC_POL_FREQ, LCD_POLFREQ);
 ; 388  : 
-; 389  :     // Configures the divisor
-; 390  :     OUTREG32( &pDispRegs->DISPC_DIVISOR,
-; 391  :                 DISPC_DIVISOR_PCD(LCD_PIXCLKDIV) | DISPC_DIVISOR_LCD(LCD_LOGCLKDIV));
+; 389  :     // Signal configuration
+; 390  :     OUTREG32( &pDispRegs->DISPC_POL_FREQ, LCD_POLFREQ);
+; 391  : 
+; 392  :     // Configures the divisor
+; 393  :     OUTREG32( &pDispRegs->DISPC_DIVISOR,
+; 394  :                 DISPC_DIVISOR_PCD(LCD_PIXCLKDIV) | DISPC_DIVISOR_LCD(LCD_LOGCLKDIV));
 
   00094	e3833f41	 orr         r3, r3, #0x41, 30
   00098	e1a03083	 mov         r3, r3, lsl #1
   0009c	e5843044	 str         r3, [r4, #0x44]
   000a0	e5903288	 ldr         r3, [r0, #0x288]
 
-; 392  : 
-; 393  :     // Configures the panel size
-; 394  :     OUTREG32( &pDispRegs->DISPC_SIZE_LCD,
-; 395  :                 DISPC_SIZE_LCD_LPP(LCD_HEIGHT) | DISPC_SIZE_LCD_PPL(LCD_WIDTH));
+; 395  : 
+; 396  :     // Configures the panel size
+; 397  :     OUTREG32( &pDispRegs->DISPC_SIZE_LCD,
+; 398  :                 DISPC_SIZE_LCD_LPP(LCD_HEIGHT) | DISPC_SIZE_LCD_PPL(LCD_WIDTH));
 
   000a4	e0833183	 add         r3, r3, r3, lsl #3
   000a8	e0803183	 add         r3, r0, r3, lsl #3
@@ -1326,69 +1326,69 @@
   0015c	e1833802	 orr         r3, r3, r2, lsl #16
   00160	e584307c	 str         r3, [r4, #0x7C]
 
-; 396  : 
-; 397  :     MmUnmapIoSpace((VOID*)pPrcmDssCM, sizeof(OMAP_PRCM_DSS_CM_REGS));
+; 399  : 
+; 400  :     MmUnmapIoSpace((VOID*)pPrcmDssCM, sizeof(OMAP_PRCM_DSS_CM_REGS));
 
   00164	e3a01050	 mov         r1, #0x50
   00168	e1a00005	 mov         r0, r5
   0016c	eb000000	 bl          MmUnmapIoSpace
 
-; 398  : 
-; 399  : 	RETAILMSG(1,(L"DISPC_CONTROL = 0x%x\n\r",INREG32(&pDispRegs->DISPC_CONTROL)));
+; 401  : 
+; 402  : 	RETAILMSG(1,(L"DISPC_CONTROL = 0x%x\n\r",INREG32(&pDispRegs->DISPC_CONTROL)));
 
   00170	e5941040	 ldr         r1, [r4, #0x40]
   00174	e59f0074	 ldr         r0, [pc, #0x74]
   00178	eb000000	 bl          NKDbgPrintfW
 
-; 400  : 	RETAILMSG(1,(L"DISPC_CONFIG = 0x%x\n\r",INREG32(&pDispRegs->DISPC_CONFIG)));
+; 403  : 	RETAILMSG(1,(L"DISPC_CONFIG = 0x%x\n\r",INREG32(&pDispRegs->DISPC_CONFIG)));
 
   0017c	e5941044	 ldr         r1, [r4, #0x44]
   00180	e59f0064	 ldr         r0, [pc, #0x64]
   00184	eb000000	 bl          NKDbgPrintfW
 
-; 401  : 	RETAILMSG(1,(L"DISPC_DEFAULT_COLOR0 = 0x%x\n\r",INREG32(&pDispRegs->DISPC_DEFAULT_COLOR0)));
+; 404  : 	RETAILMSG(1,(L"DISPC_DEFAULT_COLOR0 = 0x%x\n\r",INREG32(&pDispRegs->DISPC_DEFAULT_COLOR0)));
 
   00188	e594104c	 ldr         r1, [r4, #0x4C]
   0018c	e59f0054	 ldr         r0, [pc, #0x54]
   00190	eb000000	 bl          NKDbgPrintfW
 
-; 402  : 	RETAILMSG(1,(L"DISPC_TRANS_COLOR0 = 0x%x\n\r",INREG32(&pDispRegs->DISPC_TRANS_COLOR0)));
+; 405  : 	RETAILMSG(1,(L"DISPC_TRANS_COLOR0 = 0x%x\n\r",INREG32(&pDispRegs->DISPC_TRANS_COLOR0)));
 
   00194	e5941054	 ldr         r1, [r4, #0x54]
   00198	e59f0044	 ldr         r0, [pc, #0x44]
   0019c	eb000000	 bl          NKDbgPrintfW
 
-; 403  : 	RETAILMSG(1,(L"DISPC_POL_FREQ = 0x%x\n\r",INREG32(&pDispRegs->DISPC_POL_FREQ)));
+; 406  : 	RETAILMSG(1,(L"DISPC_POL_FREQ = 0x%x\n\r",INREG32(&pDispRegs->DISPC_POL_FREQ)));
 
   001a0	e594106c	 ldr         r1, [r4, #0x6C]
   001a4	e59f0034	 ldr         r0, [pc, #0x34]
   001a8	eb000000	 bl          NKDbgPrintfW
 
-; 404  : 	RETAILMSG(1,(L"DISPC_DIVISOR = 0x%x\n\r",INREG32(&pDispRegs->DISPC_DIVISOR)));
+; 407  : 	RETAILMSG(1,(L"DISPC_DIVISOR = 0x%x\n\r",INREG32(&pDispRegs->DISPC_DIVISOR)));
 
   001ac	e5941070	 ldr         r1, [r4, #0x70]
   001b0	e59f0024	 ldr         r0, [pc, #0x24]
   001b4	eb000000	 bl          NKDbgPrintfW
 
-; 405  : 	RETAILMSG(1,(L"DISPC_SIZE_LCD = 0x%x\n\r",INREG32(&pDispRegs->DISPC_SIZE_LCD)));
+; 408  : 	RETAILMSG(1,(L"DISPC_SIZE_LCD = 0x%x\n\r",INREG32(&pDispRegs->DISPC_SIZE_LCD)));
 
   001b8	e594107c	 ldr         r1, [r4, #0x7C]
   001bc	e59f0014	 ldr         r0, [pc, #0x14]
   001c0	eb000000	 bl          NKDbgPrintfW
 
-; 406  : 	
-; 407  :     // Set initial power level
-; 408  :     LcdPdd_SetPowerLevel(D0);
+; 409  : 	
+; 410  :     // Set initial power level
+; 411  :     LcdPdd_SetPowerLevel(D0);
 
   001c4	e3a00000	 mov         r0, #0
   001c8	eb000000	 bl          LcdPdd_SetPowerLevel
 
-; 409  :   
-; 410  :     return TRUE;
+; 412  :   
+; 413  :     return TRUE;
 
   001cc	e3a00001	 mov         r0, #1
 
-; 411  : }
+; 414  : }
 
   001d0	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   001d4	e12fff1e	 bx          lr
@@ -1413,7 +1413,7 @@
   001f8	00000000	 DCD         |g_pDispRegs|
   001fc		 |$LN17@LcdPdd_LCD@3|
   001fc	00000000	 DCD         |??_C@_1EE@POJFJFPA@?$AA?6?$AA?$AN?$AA?$CK?$AA?$CK?$AA?$CK?$AA?5?$AAL?$AAc?$AAd?$AAP?$AAd?$AAd?$AA_?$AAL?$AAC?$AAD?$AA_?$AAI?$AAn?$AAi?$AAt?$AAi?$AAa?$AAl?$AAi?$AAz?$AAe?$AA?5?$AA?$CK?$AA?$CK?$AA?$CK?$AA?6@|
-  00200		 |$M46373|
+  00200		 |$M46378|
 
 			 ENDP  ; |LcdPdd_LCD_Initialize|
 

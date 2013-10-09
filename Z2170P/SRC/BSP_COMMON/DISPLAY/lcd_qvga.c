@@ -24,7 +24,7 @@
 //
 //  Defines
 //
-
+//#define Z2000 Z2000
 typedef struct OMAP_LCD_DVI_RES_PARAMS {
     DWORD pixelFmt;
     DWORD width;
@@ -50,11 +50,14 @@ OMAP_LCD_DVI_RES_PARAMS lcd_res_params[OMAP_RES_INVALID+1] =
 {
     {  
         DISPC_PIXELFORMAT_RGB16,            //pixelFmt;
+#ifdef Z2000
         320,                                //width;	320
         240,                                //height;	240
+#else        
         //Definition 2.4" TFT-LCD size, Ray 13-09-25 
-        //240,                                //width;	240
-        //320,                                //height;	320
+        240,                                //width;	240
+        320,                                //height;	320
+#endif
         0,                                  //hsw;		0
         17,                                 //hfp;		17
         68,                                 //hbp;		68

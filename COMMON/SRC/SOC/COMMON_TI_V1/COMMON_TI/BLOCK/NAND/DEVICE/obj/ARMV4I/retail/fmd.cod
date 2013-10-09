@@ -123,7 +123,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\block\nand\fmd.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46699| DCD	|$LN5@SectorAcce|
+|$T46704| DCD	|$LN5@SectorAcce|
 	DCD	0x40001601
 ; Function compile flags: /Ogspy
 
@@ -135,7 +135,7 @@
 
   00000		 |$LN5@SectorAcce|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M46696|
+  00004		 |$M46701|
 
 ; 218  :     
 ; 219  :     // Offset is provided to this function in bytes; NAND device requires words
@@ -178,14 +178,14 @@
 
   00050	e8bd4010	 ldmia       sp!, {r4, lr}
   00054	e12fff1e	 bx          lr
-  00058		 |$M46697|
+  00058		 |$M46702|
 
 			 ENDP  ; |SectorAccess|
 
 	EXPORT	|BlockAccess|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46709| DCD	|$LN5@BlockAcces|
+|$T46714| DCD	|$LN5@BlockAcces|
 	DCD	0x40000e00
 ; Function compile flags: /Ogspy
 
@@ -196,7 +196,7 @@
 ; 235  : {
 
   00000		 |$LN5@BlockAcces|
-  00000		 |$M46706|
+  00000		 |$M46711|
 
 ; 236  :     blockId *= pDevice->nandInfo.sectorsPerBlock;
 
@@ -226,14 +226,14 @@
 ; 240  : }
 
   00034	e12fff1e	 bx          lr
-  00038		 |$M46707|
+  00038		 |$M46712|
 
 			 ENDP  ; |BlockAccess|
 
 	EXPORT	|WaitOnEmptyWriteBufferStatus|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46719| DCD	|$LN9@WaitOnEmpt|
+|$T46724| DCD	|$LN9@WaitOnEmpt|
 	DCD	0x40000500
 ; Function compile flags: /Ogspy
 
@@ -244,7 +244,7 @@
 ; 249  : {
 
   00000		 |$LN9@WaitOnEmpt|
-  00000		 |$M46716|
+  00000		 |$M46721|
   00000	e590202c	 ldr         r2, [r0, #0x2C]
   00004		 |$LL3@WaitOnEmpt|
 
@@ -263,7 +263,7 @@
 ; 255  : }
 
   00010	e12fff1e	 bx          lr
-  00014		 |$M46717|
+  00014		 |$M46722|
 
 			 ENDP  ; |WaitOnEmptyWriteBufferStatus|
 
@@ -273,7 +273,7 @@
 	IMPORT	|InitializeCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46735| DCD	|$LN9@Initialize|
+|$T46740| DCD	|$LN9@Initialize|
 	DCD	0x40002301
 ; Function compile flags: /Ogspy
 
@@ -285,7 +285,7 @@
 
   00000		 |$LN9@Initialize|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M46732|
+  00004		 |$M46737|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -391,14 +391,14 @@
   00088		 |$LN10@Initialize|
   00088		 |$LN11@Initialize|
   00088	00000000	 DCD         |g_deviceRegParams|
-  0008c		 |$M46733|
+  0008c		 |$M46738|
 
 			 ENDP  ; |InitializePointers|
 
 	EXPORT	|NAND_GetGpmcRegs|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46747| DCD	|$LN5@NAND_GetGp|
+|$T46752| DCD	|$LN5@NAND_GetGp|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -409,7 +409,7 @@
 ; 313  : {
 
   00000		 |$LN5@NAND_GetGp|
-  00000		 |$M46744|
+  00000		 |$M46749|
 
 ; 314  :     return ((NandDevice_t*)hNand)->pGpmcRegs;
 
@@ -418,14 +418,14 @@
 ; 315  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M46745|
+  00008		 |$M46750|
 
 			 ENDP  ; |NAND_GetGpmcRegs|
 
 	EXPORT	|NAND_GetGeometry|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46757| DCD	|$LN5@NAND_GetGe|
+|$T46762| DCD	|$LN5@NAND_GetGe|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -436,7 +436,7 @@
 ; 324  : {
 
   00000		 |$LN5@NAND_GetGe|
-  00000		 |$M46754|
+  00000		 |$M46759|
 
 ; 325  :     return &(((NandDevice_t*)hNand)->nandInfo);
 
@@ -445,13 +445,13 @@
 ; 326  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M46755|
+  00008		 |$M46760|
 
 			 ENDP  ; |NAND_GetGeometry|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46770| DCD	|$LN9@NAND_LockB|
+|$T46775| DCD	|$LN9@NAND_LockB|
 	DCD	0x40000b00
 ; Function compile flags: /Ogspy
 
@@ -462,7 +462,7 @@
 ; 336  : {
 
   00000		 |$LN9@NAND_LockB|
-  00000		 |$M46767|
+  00000		 |$M46772|
   00000	e1b02000	 movs        r2, r0
 
 ; 337  :     BOOL rc = FALSE; 
@@ -476,7 +476,7 @@
 ; 342  : 
 ; 343  :     if (pDevice == NULL) goto cleanUp;
 
-  00008	0a000006	 beq         |$cleanUp$46064|
+  00008	0a000006	 beq         |$cleanUp$46069|
 
 ; 344  : 
 ; 345  :     if (bLock)
@@ -498,7 +498,7 @@
   0001c	13c33010	 bicne       r3, r3, #0x10
   00020	03833010	 orreq       r3, r3, #0x10
   00024	e5823050	 str         r3, [r2, #0x50]
-  00028		 |$cleanUp$46064|
+  00028		 |$cleanUp$46069|
 
 ; 354  : 
 ; 355  : cleanUp:
@@ -506,14 +506,14 @@
 ; 357  : }
 
   00028	e12fff1e	 bx          lr
-  0002c		 |$M46768|
+  0002c		 |$M46773|
 
 			 ENDP  ; |NAND_LockBlocks|
 
 	IMPORT	|MmUnmapIoSpace|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46778| DCD	|$LN7@NAND_Unini|
+|$T46783| DCD	|$LN7@NAND_Unini|
 	DCD	0x40000e01
 ; Function compile flags: /Ogspy
 
@@ -525,7 +525,7 @@
 
   00000		 |$LN7@NAND_Unini|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M46775|
+  00004		 |$M46780|
   00004	e1a04000	 mov         r4, r0
 
 ; 365  : #ifdef BOOT_MODE
@@ -565,13 +565,13 @@
 
   00030	e8bd4010	 ldmia       sp!, {r4, lr}
   00034	e12fff1e	 bx          lr
-  00038		 |$M46776|
+  00038		 |$M46781|
 
 			 ENDP  ; |NAND_Uninitialize|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46795| DCD	|$LN7@NAND_Seek|
+|$T46800| DCD	|$LN7@NAND_Seek|
 	DCD	0x40001701
 ; Function compile flags: /Ogspy
 
@@ -583,7 +583,7 @@
 
   00000		 |$LN7@NAND_Seek|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M46792|
+  00004		 |$M46797|
 
 ; 539  :     // seek to address
 ; 540  :     NandDevice_t *pDevice = (NandDevice_t*)hNand;
@@ -617,7 +617,7 @@
 
   00054	e8bd4010	 ldmia       sp!, {r4, lr}
   00058	e12fff1e	 bx          lr
-  0005c		 |$M46793|
+  0005c		 |$M46798|
 
 			 ENDP  ; |NAND_Seek|
 
@@ -627,7 +627,7 @@
 	IMPORT	|memcpy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46816| DCD	|$LN25@NAND_Read|
+|$T46821| DCD	|$LN25@NAND_Read|
 	DCD	0x40004001
 ; Function compile flags: /Ogspy
 
@@ -639,7 +639,7 @@
 
   00000		 |$LN25@NAND_Read|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M46813|
+  00004		 |$M46818|
   00004	e1b08003	 movs        r8, r3
   00008	e1a06002	 mov         r6, r2
   0000c	e1a07001	 mov         r7, r1
@@ -823,13 +823,13 @@
 
   000f8	e8bd41f0	 ldmia       sp!, {r4 - r8, lr}
   000fc	e12fff1e	 bx          lr
-  00100		 |$M46814|
+  00100		 |$M46819|
 
 			 ENDP  ; |NAND_Read|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46845| DCD	|$LN28@NAND_Write|
+|$T46850| DCD	|$LN28@NAND_Write|
 	DCD	0x40004201
 ; Function compile flags: /Ogspy
 
@@ -841,7 +841,7 @@
 
   00000		 |$LN28@NAND_Write|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M46842|
+  00004		 |$M46847|
   00004	e1b08003	 movs        r8, r3
   00008	e1a06002	 mov         r6, r2
   0000c	e1a07001	 mov         r7, r1
@@ -1039,13 +1039,13 @@
 
   00100	e8bd41f0	 ldmia       sp!, {r4 - r8, lr}
   00104	e12fff1e	 bx          lr
-  00108		 |$M46843|
+  00108		 |$M46848|
 
 			 ENDP  ; |NAND_Write|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46855| DCD	|$LN5@NAND_GetSt|
+|$T46860| DCD	|$LN5@NAND_GetSt|
 	DCD	0x40000600
 ; Function compile flags: /Ogspy
 
@@ -1056,7 +1056,7 @@
 ; 714  : {
 
   00000		 |$LN5@NAND_GetSt|
-  00000		 |$M46852|
+  00000		 |$M46857|
 
 ; 715  :     NandDevice_t *pDevice = (NandDevice_t*)hNand;
 ; 716  : 
@@ -1075,13 +1075,13 @@
 ; 720  : }
 
   00014	e12fff1e	 bx          lr
-  00018		 |$M46853|
+  00018		 |$M46858|
 
 			 ENDP  ; |NAND_GetStatus|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46866| DCD	|$LN8@NAND_Enabl|
+|$T46871| DCD	|$LN8@NAND_Enabl|
 	DCD	0x40001b01
 ; Function compile flags: /Ogspy
 
@@ -1093,7 +1093,7 @@
 
   00000		 |$LN8@NAND_Enabl|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46863|
+  00004		 |$M46868|
 
 ; 746  :     NandDevice_t *pDevice = (NandDevice_t*)hNand;
 ; 747  : 
@@ -1161,14 +1161,14 @@
 
   00064	e49de004	 ldr         lr, [sp], #4
   00068	e12fff1e	 bx          lr
-  0006c		 |$M46864|
+  0006c		 |$M46869|
 
 			 ENDP  ; |NAND_Enable|
 
 	IMPORT	|EnterCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46876| DCD	|$LN5@NAND_Mutex|
+|$T46881| DCD	|$LN5@NAND_Mutex|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -1180,7 +1180,7 @@
 
   00000		 |$LN5@NAND_Mutex|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M46873|
+  00004		 |$M46878|
   00004	e1a04000	 mov         r4, r0
 
 ; 776  : #ifdef DEVICE_MODE
@@ -1201,14 +1201,14 @@
 
   00010	e8bd4010	 ldmia       sp!, {r4, lr}
   00014	e12fff1e	 bx          lr
-  00018		 |$M46874|
+  00018		 |$M46879|
 
 			 ENDP  ; |NAND_MutexEnter|
 
 	IMPORT	|LeaveCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46886| DCD	|$LN5@NAND_Mutex@2|
+|$T46891| DCD	|$LN5@NAND_Mutex@2|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -1220,7 +1220,7 @@
 
   00000		 |$LN5@NAND_Mutex@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M46883|
+  00004		 |$M46888|
   00004	e1a04000	 mov         r4, r0
 
 ; 792  : #ifdef DEVICE_MODE
@@ -1241,13 +1241,13 @@
 
   00010	e8bd4010	 ldmia       sp!, {r4, lr}
   00014	e12fff1e	 bx          lr
-  00018		 |$M46884|
+  00018		 |$M46889|
 
 			 ENDP  ; |NAND_MutexExit|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46897| DCD	|$LN5@NAND_SendC|
+|$T46902| DCD	|$LN5@NAND_SendC|
 	DCD	0x40000500
 ; Function compile flags: /Ogspy
 
@@ -1258,7 +1258,7 @@
 ; 808  : {
 
   00000		 |$LN5@NAND_SendC|
-  00000		 |$M46894|
+  00000		 |$M46899|
   00000	e1a02001	 mov         r2, r1
 
 ; 809  :     NandDevice_t *pDevice = (NandDevice_t*)hNand;
@@ -1274,14 +1274,14 @@
 ; 812  : }
 
   00010	e12fff1e	 bx          lr
-  00014		 |$M46895|
+  00014		 |$M46900|
 
 			 ENDP  ; |NAND_SendCommand|
 
 	IMPORT	|BSPGetNandCS|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46911| DCD	|$LN8@NAND_Confi|
+|$T46916| DCD	|$LN8@NAND_Confi|
 	DCD	0x40001d01
 ; Function compile flags: /Ogspy
 
@@ -1293,7 +1293,7 @@
 
   00000		 |$LN8@NAND_Confi|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M46908|
+  00004		 |$M46913|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -1372,7 +1372,7 @@
 
   0006c	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00070	e12fff1e	 bx          lr
-  00074		 |$M46909|
+  00074		 |$M46914|
 
 			 ENDP  ; |NAND_ConfigurePrefetch|
 
@@ -1381,7 +1381,7 @@
 	IMPORT	|memcmp|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46927| DCD	|$LN7@NAND_Corre|
+|$T46932| DCD	|$LN7@NAND_Corre|
 	DCD	0x40001b02
 ; Function compile flags: /Ogspy
 
@@ -1394,7 +1394,7 @@
   00000		 |$LN7@NAND_Corre|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M46924|
+  00008		 |$M46929|
   00008	e1a05003	 mov         r5, r3
   0000c	e1a08002	 mov         r8, r2
   00010	e1a09001	 mov         r9, r1
@@ -1428,7 +1428,7 @@
   00048	e58d7000	 str         r7, [sp]
   0004c	eb000000	 bl          ECC_CorrectData
   00050	e3500000	 cmp         r0, #0
-  00054	0a000000	 beq         |$cleanUp$46342|
+  00054	0a000000	 beq         |$cleanUp$46347|
   00058		 |$LN1@NAND_Corre|
 
 ; 877  :             {
@@ -1439,7 +1439,7 @@
 ; 882  :     rc = TRUE;
 
   00058	e3a04001	 mov         r4, #1
-  0005c		 |$cleanUp$46342|
+  0005c		 |$cleanUp$46347|
 
 ; 883  :     
 ; 884  : cleanUp:
@@ -1450,14 +1450,14 @@
   00060	e28dd004	 add         sp, sp, #4
   00064	e8bd43f0	 ldmia       sp!, {r4 - r9, lr}
   00068	e12fff1e	 bx          lr
-  0006c		 |$M46925|
+  0006c		 |$M46930|
 
 			 ENDP  ; |NAND_CorrectEccData|
 
 	EXPORT	|WaitForReadyStatus|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46940| DCD	|$LN10@WaitForRea|
+|$T46945| DCD	|$LN10@WaitForRea|
 	DCD	0x40000800
 ; Function compile flags: /Ogspy
 
@@ -1468,7 +1468,7 @@
 ; 897  : {
 
   00000		 |$LN10@WaitForRea|
-  00000		 |$M46937|
+  00000		 |$M46942|
   00000	e3a02070	 mov         r2, #0x70
   00004		 |$LL2@WaitForRea|
 
@@ -1485,14 +1485,14 @@
 ; 900  : }
 
   0001c	e12fff1e	 bx          lr
-  00020		 |$M46938|
+  00020		 |$M46943|
 
 			 ENDP  ; |WaitForReadyStatus|
 
 	EXPORT	|FMD_Deinit|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46991| DCD	|$LN26@FMD_Deinit|
+|$T46996| DCD	|$LN26@FMD_Deinit|
 	DCD	0x40002b01
 ; Function compile flags: /Ogspy
 
@@ -1504,7 +1504,7 @@
 
   00000		 |$LN26@FMD_Deinit|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M46988|
+  00004		 |$M46993|
 
 ; 935  :     BOOL rc = FALSE;
 ; 936  :     if (pContext != s_hNand) goto cleanUp;
@@ -1512,7 +1512,7 @@
   00004	e59f509c	 ldr         r5, [pc, #0x9C]
   00008	e5954000	 ldr         r4, [r5]
   0000c	e1500004	 cmp         r0, r4
-  00010	1a000021	 bne         |$cleanUp$46367|
+  00010	1a000021	 bne         |$cleanUp$46372|
 
 ; 937  : 
 ; 938  :     //  Only enable during NAND read/write/erase operations
@@ -1586,7 +1586,7 @@
 
   00094	e3a03000	 mov         r3, #0
   00098	e5853000	 str         r3, [r5]
-  0009c		 |$cleanUp$46367|
+  0009c		 |$cleanUp$46372|
 
 ; 960  :     
 ; 961  : cleanUp:
@@ -1601,14 +1601,14 @@
   000a8		 |$LN27@FMD_Deinit|
   000a8		 |$LN28@FMD_Deinit|
   000a8	00000000	 DCD         |s_hNand|
-  000ac		 |$M46989|
+  000ac		 |$M46994|
 
 			 ENDP  ; |FMD_Deinit|
 
 	EXPORT	|FMD_GetInfo|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47019| DCD	|$LN16@FMD_GetInf|
+|$T47024| DCD	|$LN16@FMD_GetInf|
 	DCD	0x40001801
 ; Function compile flags: /Ogspy
 
@@ -1620,7 +1620,7 @@
 
   00000		 |$LN16@FMD_GetInf|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M47016|
+  00004		 |$M47021|
   00004	e1a0e000	 mov         lr, r0
 
 ; 976  :     BOOL rc = FALSE;
@@ -1632,7 +1632,7 @@
   0000c	e3a00000	 mov         r0, #0
   00010	e5931000	 ldr         r1, [r3]
   00014	e3510000	 cmp         r1, #0
-  00018	0a00000d	 beq         |$cleanUp$46375|
+  00018	0a00000d	 beq         |$cleanUp$46380|
 
 ; 980  : 
 ; 981  :     // Memory type is NAND
@@ -1664,7 +1664,7 @@
   00048	e591304c	 ldr         r3, [r1, #0x4C]
   0004c	e0020293	 mul         r2, r3, r2
   00050	e58e2008	 str         r2, [lr, #8]
-  00054		 |$cleanUp$46375|
+  00054		 |$cleanUp$46380|
 
 ; 991  : 
 ; 992  : cleanUp:
@@ -1676,14 +1676,14 @@
   0005c		 |$LN17@FMD_GetInf|
   0005c		 |$LN18@FMD_GetInf|
   0005c	00000000	 DCD         |s_hNand|
-  00060		 |$M47017|
+  00060		 |$M47022|
 
 			 ENDP  ; |FMD_GetInfo|
 
 	EXPORT	|FMD_ReadSectorOOB|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47115| DCD	|$LN43@FMD_ReadSe|
+|$T47120| DCD	|$LN43@FMD_ReadSe|
 	DCD	0x40004c01
 ; Function compile flags: /Ogspy
 
@@ -1695,7 +1695,7 @@
 
   00000		 |$LN43@FMD_ReadSe|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
-  00004		 |$M47112|
+  00004		 |$M47117|
   00004	e1a07001	 mov         r7, r1
   00008	e1a06000	 mov         r6, r0
 
@@ -1851,7 +1851,7 @@
   00110	e1a00004	 mov         r0, r4
   00114	e3a04001	 mov         r4, #1
   00118	e5838010	 str         r8, [r3, #0x10]
-  0011c		 |$cleanUp$46389|
+  0011c		 |$cleanUp$46394|
   0011c	eb000000	 bl          LeaveCriticalSection
   00120		 |$LN37@FMD_ReadSe|
 
@@ -1866,7 +1866,7 @@
   0012c		 |$LN44@FMD_ReadSe|
   0012c		 |$LN45@FMD_ReadSe|
   0012c	00000000	 DCD         |s_hNand|
-  00130		 |$M47113|
+  00130		 |$M47118|
 
 			 ENDP  ; |FMD_ReadSectorOOB|
 
@@ -1877,17 +1877,17 @@
 	IMPORT	|__security_check_cookie|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47345| DCD	|$LN128@FMD_ReadSe@2|
+|$T47350| DCD	|$LN128@FMD_ReadSe@2|
 	DCD	0xc0010602
 
   00000			 AREA	 |.xdata|, DATA
-|$T47341| DCD	0xffffffd8
+|$T47346| DCD	0xffffffd8
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T47341|
+  00004	00000000	 DCD         |$T47346|
 
   00008		 |FMD_ReadSector| PROC
 
@@ -1896,7 +1896,7 @@
   00008		 |$LN128@FMD_ReadSe@2|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24dd08c	 sub         sp, sp, #0x8C
-  00010		 |$M47342|
+  00010		 |$M47347|
   00010	e1a05003	 mov         r5, r3
   00014	e1a06002	 mov         r6, r2
   00018	e58d5008	 str         r5, [sp, #8]
@@ -2370,7 +2370,7 @@
 
   003cc	e5997000	 ldr         r7, [r9]
   003d0	e3a04000	 mov         r4, #0
-  003d4	ea000003	 b           |$cleanUp$46416|
+  003d4	ea000003	 b           |$cleanUp$46421|
   003d8		 |$LN125@FMD_ReadSe@2|
 
 ; 1095 : 	
@@ -2392,7 +2392,7 @@
 
   003e0	e3a04001	 mov         r4, #1
   003e4	e5832010	 str         r2, [r3, #0x10]
-  003e8		 |$cleanUp$46416|
+  003e8		 |$cleanUp$46421|
 
 ; 1216 : 
 ; 1217 : cleanUp:
@@ -2436,7 +2436,7 @@
   00418	00000000	 DCD         |s_hNand|
   0041c		 |$LN131@FMD_ReadSe@2|
   0041c	00000000	 DCD         |__security_cookie|
-  00420		 |$M47343|
+  00420		 |$M47348|
 
 			 ENDP  ; |FMD_ReadSector|
 
@@ -2445,17 +2445,17 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47535| DCD	|$LN89@FMD_WriteS|
+|$T47540| DCD	|$LN89@FMD_WriteS|
 	DCD	0xc000e302
 
   00000			 AREA	 |.xdata|, DATA
-|$T47531| DCD	0xffffffd8
+|$T47536| DCD	0xffffffd8
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T47531|
+  00004	00000000	 DCD         |$T47536|
 
   00008		 |FMD_WriteSector| PROC
 
@@ -2464,7 +2464,7 @@
   00008		 |$LN89@FMD_WriteS|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24dd05c	 sub         sp, sp, #0x5C
-  00010		 |$M47532|
+  00010		 |$M47537|
   00010	e1a06000	 mov         r6, r0
   00014	e58d6000	 str         r6, [sp]
   00018	e1a09003	 mov         r9, r3
@@ -2529,7 +2529,7 @@
 ; 1258 :     NAND_LockBlocks(s_hNand, startSector, endSector, FALSE);
 
   0007c	e594202c	 ldr         r2, [r4, #0x2C]
-  00080		 |$cleanUp$47377|
+  00080		 |$cleanUp$47382|
 
 ; 1259 :     
 ; 1260 :     while (sectors > 0)
@@ -2760,7 +2760,7 @@
 
 ; 1315 : 	     goto  skip_ecc; 	
 
-  00294	ea00000c	 b           |$skip_ecc$46489|
+  00294	ea00000c	 b           |$skip_ecc$46494|
   00298		 |$LN5@FMD_WriteS|
 
 ; 1316 :         }
@@ -2795,7 +2795,7 @@
   002c0	e3a02040	 mov         r2, #0x40
   002c4	e28d1018	 add         r1, sp, #0x18
   002c8	eb000000	 bl          NAND_Write
-  002cc		 |$skip_ecc$46489|
+  002cc		 |$skip_ecc$46494|
 
 ; 1329 : 
 ; 1330 : skip_ecc:
@@ -2864,7 +2864,7 @@
   00338	e3a01000	 mov         r1, #0
   0033c	e1a00004	 mov         r0, r4
   00340	e5923050	 ldr         r3, [r2, #0x50]
-  00344		 |$cleanUp$47494|
+  00344		 |$cleanUp$47499|
   00344	e3c33010	 bic         r3, r3, #0x10
   00348	e5823050	 str         r3, [r2, #0x50]
   0034c	eb000000	 bl          NAND_Enable
@@ -2884,7 +2884,7 @@
   0035c	03a05001	 moveq       r5, #1
   00360	e5832010	 str         r2, [r3, #0x10]
   00364	13a05000	 movne       r5, #0
-  00368		 |$cleanUp$46474|
+  00368		 |$cleanUp$46479|
 
 ; 1357 : 
 ; 1358 : cleanUp:
@@ -2915,14 +2915,14 @@
   0038c	00000000	 DCD         |s_hNand|
   00390		 |$LN93@FMD_WriteS|
   00390	00000000	 DCD         |__security_cookie|
-  00394		 |$M47533|
+  00394		 |$M47538|
 
 			 ENDP  ; |FMD_WriteSector|
 
 	EXPORT	|FMD_GetBlockStatus|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47555| DCD	|$LN13@FMD_GetBlo|
+|$T47560| DCD	|$LN13@FMD_GetBlo|
 	DCD	0x40002102
 ; Function compile flags: /Ogspy
 
@@ -2935,7 +2935,7 @@
   00000		 |$LN13@FMD_GetBlo|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
   00004	e24dd010	 sub         sp, sp, #0x10
-  00008		 |$M47552|
+  00008		 |$M47557|
 
 ; 1432 :     DWORD rc = 0;
 ; 1433 :     SECTOR_ADDR sector;
@@ -2949,7 +2949,7 @@
   0000c	e3a04000	 mov         r4, #0
   00010	e5933000	 ldr         r3, [r3]
   00014	e3530000	 cmp         r3, #0
-  00018	0a000014	 beq         |$cleanUp$46526|
+  00018	0a000014	 beq         |$cleanUp$46531|
 
 ; 1439 : 
 ; 1440 :     // Calculate sector
@@ -2971,7 +2971,7 @@
 ; 1445 :         rc = BLOCK_STATUS_UNKNOWN;
 
   00038	03a04001	 moveq       r4, #1
-  0003c	0a00000b	 beq         |$cleanUp$46526|
+  0003c	0a00000b	 beq         |$cleanUp$46531|
 
 ; 1446 :         goto cleanUp;
 ; 1447 :         }
@@ -3014,7 +3014,7 @@
 ; 1461 :         rc |= BLOCK_STATUS_RESERVED;
 
   0006c	03844008	 orreq       r4, r4, #8
-  00070		 |$cleanUp$46526|
+  00070		 |$cleanUp$46531|
 
 ; 1462 :         }
 ; 1463 : 
@@ -3029,14 +3029,14 @@
   00080		 |$LN14@FMD_GetBlo|
   00080		 |$LN15@FMD_GetBlo|
   00080	00000000	 DCD         |s_hNand|
-  00084		 |$M47553|
+  00084		 |$M47558|
 
 			 ENDP  ; |FMD_GetBlockStatus|
 
 	EXPORT	|FMD_SetBlockStatus|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47573| DCD	|$LN11@FMD_SetBlo|
+|$T47578| DCD	|$LN11@FMD_SetBlo|
 	DCD	0x40002102
 ; Function compile flags: /Ogspy
 
@@ -3049,7 +3049,7 @@
   00000		 |$LN11@FMD_SetBlo|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M47570|
+  00008		 |$M47575|
   00008	e1a06000	 mov         r6, r0
 
 ; 1478 :     BOOL rc = FALSE;
@@ -3063,7 +3063,7 @@
   00010	e3a04000	 mov         r4, #0
   00014	e5933000	 ldr         r3, [r3]
   00018	e3530000	 cmp         r3, #0
-  0001c	0a000013	 beq         |$cleanUp$46543|
+  0001c	0a000013	 beq         |$cleanUp$46548|
 
 ; 1484 : 
 ; 1485 :     // Calculate sector
@@ -3087,7 +3087,7 @@
   00038	e3a01000	 mov         r1, #0
   0003c	eb000000	 bl          FMD_ReadSector
   00040	e3500000	 cmp         r0, #0
-  00044	0a000009	 beq         |$cleanUp$46543|
+  00044	0a000009	 beq         |$cleanUp$46548|
 
 ; 1492 : 
 ; 1493 :         // Set the bad block marker
@@ -3106,7 +3106,7 @@
   0005c	e3a01000	 mov         r1, #0
   00060	eb000000	 bl          FMD_WriteSector
   00064	e3500000	 cmp         r0, #0
-  00068	0a000000	 beq         |$cleanUp$46543|
+  00068	0a000000	 beq         |$cleanUp$46548|
   0006c		 |$LN1@FMD_SetBlo|
 
 ; 1498 :         }
@@ -3129,7 +3129,7 @@
 ; 1515 :     rc = TRUE;
 
   0006c	e3a04001	 mov         r4, #1
-  00070		 |$cleanUp$46543|
+  00070		 |$cleanUp$46548|
 
 ; 1516 : 
 ; 1517 : cleanUp:
@@ -3143,14 +3143,14 @@
   00080		 |$LN12@FMD_SetBlo|
   00080		 |$LN13@FMD_SetBlo|
   00080	00000000	 DCD         |s_hNand|
-  00084		 |$M47571|
+  00084		 |$M47576|
 
 			 ENDP  ; |FMD_SetBlockStatus|
 
 	EXPORT	|FMD_PowerUp|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47625| DCD	|$LN26@FMD_PowerU|
+|$T47630| DCD	|$LN26@FMD_PowerU|
 	DCD	0x40002201
 ; Function compile flags: /Ogspy
 
@@ -3162,7 +3162,7 @@
 
   00000		 |$LN26@FMD_PowerU|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M47622|
+  00004		 |$M47627|
 
 ; 1529 :     // exit if FMD wasn't opened
 ; 1530 :     if (s_hNand == NULL) return;
@@ -3243,14 +3243,14 @@
   00084		 |$LN27@FMD_PowerU|
   00084		 |$LN28@FMD_PowerU|
   00084	00000000	 DCD         |s_hNand|
-  00088		 |$M47623|
+  00088		 |$M47628|
 
 			 ENDP  ; |FMD_PowerUp|
 
 	EXPORT	|FMD_PowerDown|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47677| DCD	|$LN26@FMD_PowerD|
+|$T47682| DCD	|$LN26@FMD_PowerD|
 	DCD	0x40002201
 ; Function compile flags: /Ogspy
 
@@ -3262,7 +3262,7 @@
 
   00000		 |$LN26@FMD_PowerD|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M47674|
+  00004		 |$M47679|
 
 ; 1562 :     // exit if FMD wasn't opened
 ; 1563 :     if (s_hNand == NULL) return;
@@ -3343,14 +3343,14 @@
   00084		 |$LN27@FMD_PowerD|
   00084		 |$LN28@FMD_PowerD|
   00084	00000000	 DCD         |s_hNand|
-  00088		 |$M47675|
+  00088		 |$M47680|
 
 			 ENDP  ; |FMD_PowerDown|
 
 	EXPORT	|FMD_OEMIoControl|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47688| DCD	|$LN5@FMD_OEMIoC|
+|$T47693| DCD	|$LN5@FMD_OEMIoC|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -3361,7 +3361,7 @@
 ; 1600 : {
 
   00000		 |$LN5@FMD_OEMIoC|
-  00000		 |$M47685|
+  00000		 |$M47690|
 
 ; 1601 : 
 ; 1602 :     UNREFERENCED_PARAMETER(code);
@@ -3379,7 +3379,7 @@
 ; 1611 : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M47686|
+  00008		 |$M47691|
 
 			 ENDP  ; |FMD_OEMIoControl|
 
@@ -3401,7 +3401,7 @@
 |s_Device| %	0x68
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47731| DCD	|$LN32@NAND_Initi|
+|$T47736| DCD	|$LN32@NAND_Initi|
 	DCD	0x4000ac02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -3482,7 +3482,7 @@
   00000		 |$LN32@NAND_Initi|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M47728|
+  00008		 |$M47733|
   00008	e1a05001	 mov         r5, r1
   0000c	e1a06000	 mov         r6, r0
 
@@ -3567,7 +3567,7 @@
 
 ; 430  :         if (pDevice->pGpmcRegs == NULL) goto cleanUp;
 
-  00070	0a00007f	 beq         |$cleanUp$46104|
+  00070	0a00007f	 beq         |$cleanUp$46109|
 
 ; 431  : 
 ; 432  :         pa.QuadPart = pRegIn->MemBase.Reg[1];
@@ -3590,7 +3590,7 @@
   00094	e594302c	 ldr         r3, [r4, #0x2C]
   00098	e3530000	 cmp         r3, #0
   0009c		 |$LN29@NAND_Initi|
-  0009c	0a000074	 beq         |$cleanUp$46104|
+  0009c	0a000074	 beq         |$cleanUp$46109|
 
 ; 436  : 
 ; 437  :         }
@@ -3720,7 +3720,7 @@
 
   00180	eb000000	 bl          BSPGetNandInfo
   00184	e1b05000	 movs        r5, r0
-  00188	0a000039	 beq         |$cleanUp$46104|
+  00188	0a000039	 beq         |$cleanUp$46109|
 
 ; 477  :     {                
 ; 478  :         goto cleanUp;
@@ -3747,7 +3747,7 @@
 
 ; 483  :         goto cleanUp;
 
-  001c0	ea00002b	 b           |$cleanUp$46104|
+  001c0	ea00002b	 b           |$cleanUp$46109|
   001c4		 |$LN1@NAND_Initi|
 
 ; 484  :     }
@@ -3862,7 +3862,7 @@
   00268	e59231e0	 ldr         r3, [r2, #0x1E0]
   0026c	e3833080	 orr         r3, r3, #0x80
   00270	e58231e0	 str         r3, [r2, #0x1E0]
-  00274		 |$cleanUp$46104|
+  00274		 |$cleanUp$46109|
 
 ; 526  : 
 ; 527  : cleanUp:
@@ -3896,13 +3896,13 @@
   002a8	01013098	 DCD         0x1013098
   002ac		 |$LN44@NAND_Initi|
   002ac	00000000	 DCD         |s_Device|
-  002b0		 |$M47729|
+  002b0		 |$M47734|
 
 			 ENDP  ; |NAND_Initialize|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47767| DCD	|$LN11@NAND_Erase|
+|$T47772| DCD	|$LN11@NAND_Erase|
 	DCD	0x40001801
 ; Function compile flags: /Ogspy
 
@@ -3914,7 +3914,7 @@
 
   00000		 |$LN11@NAND_Erase|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M47764|
+  00004		 |$M47769|
   00004	e1a0e000	 mov         lr, r0
 
 ; 729  :     NandDevice_t *pDevice = (NandDevice_t*)hNand;
@@ -3955,14 +3955,14 @@
 
   00058	e8bd4010	 ldmia       sp!, {r4, lr}
   0005c	e12fff1e	 bx          lr
-  00060		 |$M47765|
+  00060		 |$M47770|
 
 			 ENDP  ; |NAND_EraseBlock|
 
 	EXPORT	|FMD_Init|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47780| DCD	|$LN6@FMD_Init|
+|$T47785| DCD	|$LN6@FMD_Init|
 	DCD	0x40000b01
 ; Function compile flags: /Ogspy
 
@@ -3974,7 +3974,7 @@
 
   00000		 |$LN6@FMD_Init|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M47777|
+  00004		 |$M47782|
 
 ; 910  :     HANDLE hRet = NULL;
 ; 911  : 
@@ -3996,7 +3996,7 @@
 
   00014	11a04000	 movne       r4, r0
   00018	e5830000	 str         r0, [r3]
-  0001c		 |$cleanUp$46361|
+  0001c		 |$cleanUp$46366|
 
 ; 921  : 
 ; 922  : cleanUp:
@@ -4009,14 +4009,14 @@
   00028		 |$LN7@FMD_Init|
   00028		 |$LN8@FMD_Init|
   00028	00000000	 DCD         |s_hNand|
-  0002c		 |$M47778|
+  0002c		 |$M47783|
 
 			 ENDP  ; |FMD_Init|
 
 	EXPORT	|FMD_EraseBlock|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47881| DCD	|$LN45@FMD_EraseB|
+|$T47886| DCD	|$LN45@FMD_EraseB|
 	DCD	0x40004401
 ; Function compile flags: /Ogspy
 
@@ -4028,7 +4028,7 @@
 
   00000		 |$LN45@FMD_EraseB|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M47878|
+  00004		 |$M47883|
   00004	e1a05000	 mov         r5, r0
 
 ; 1377 :     BOOL rc = FALSE;
@@ -4081,7 +4081,7 @@
   00044	e3a01060	 mov         r1, #0x60
   00048	e3a000d0	 mov         r0, #0xD0
   0004c	e5923050	 ldr         r3, [r2, #0x50]
-  00050		 |$cleanUp$47805|
+  00050		 |$cleanUp$47810|
   00050	e3a0e070	 mov         lr, #0x70
   00054	e3833010	 orr         r3, r3, #0x10
   00058	e5823050	 str         r3, [r2, #0x50]
@@ -4137,7 +4137,7 @@
 ; 1408 :     rc = TRUE;
 
   000d0	03a05001	 moveq       r5, #1
-  000d4		 |$cleanUp$46513|
+  000d4		 |$cleanUp$46518|
 
 ; 1409 : 
 ; 1410 : cleanUp:
@@ -4151,7 +4151,7 @@
   000d8	e3a01000	 mov         r1, #0
   000dc	e1a00004	 mov         r0, r4
   000e0	e5923050	 ldr         r3, [r2, #0x50]
-  000e4		 |$cleanUp$47858|
+  000e4		 |$cleanUp$47863|
   000e4	e3c33010	 bic         r3, r3, #0x10
   000e8	e5823050	 str         r3, [r2, #0x50]
   000ec	eb000000	 bl          NAND_Enable
@@ -4184,7 +4184,7 @@
   0010c		 |$LN46@FMD_EraseB|
   0010c		 |$LN47@FMD_EraseB|
   0010c	00000000	 DCD         |s_hNand|
-  00110		 |$M47879|
+  00110		 |$M47884|
 
 			 ENDP  ; |FMD_EraseBlock|
 

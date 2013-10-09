@@ -1416,7 +1416,7 @@ BUILD: [01:0000001413:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001414:INFO  ] TARGETNAME: common_ti_fmd_nand_boot
 BUILD: [01:0000001415:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001416:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_fmd_nand_boot.lib
-BUILD: [01:0000001417:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_fmd_nand_boot.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm6EF.tmp
+BUILD: [01:0000001417:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_fmd_nand_boot.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm41E.tmp
 BUILD: [00:0000001418:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BLOCK\NAND\DEVICE\obj\ARMV4I\retail\fmd.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_fmd_nand_device.lib is missing.
 BUILD: [00:0000001419:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BLOCK\NAND\DEVICE\obj\ARMV4I\retail\gpmc_ecc.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_fmd_nand_device.lib is missing.
 BUILD: [00:0000001420:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BLOCK\NAND\DEVICE\obj\ARMV4I\retail\omap_bch_decoder.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_fmd_nand_device.lib is missing.
@@ -1432,7 +1432,7 @@ BUILD: [01:0000001429:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001430:INFO  ] TARGETNAME: common_ti_fmd_nand_device
 BUILD: [01:0000001431:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001432:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_fmd_nand_device.lib
-BUILD: [01:0000001433:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_fmd_nand_device.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm6F0.tmp
+BUILD: [01:0000001433:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_fmd_nand_device.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm41F.tmp
 BUILD: [00:0000001434:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\DEVICESMAP\obj\ARMV4I\retail\devicemap.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_devicesmap.lib is missing.
 BUILD: [00:0000001435:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\DEVICESMAP\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_devicesmap.lib is missing.
 BUILD: [00:0000001436:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\DEVICESMAP\ directory.
@@ -1446,7 +1446,7 @@ BUILD: [01:0000001443:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001444:INFO  ] TARGETNAME: common_ti_devicesmap
 BUILD: [01:0000001445:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001446:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_devicesmap.lib
-BUILD: [01:0000001447:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_devicesmap.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm6F1.tmp
+BUILD: [01:0000001447:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_devicesmap.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm420.tmp
 BUILD: [00:0000001448:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\GPIO\DISPATCH\OAL\obj\ARMV4I\retail\gpio_dispatch.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_gpiodispatch.lib is missing.
 BUILD: [00:0000001449:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\GPIO\DISPATCH\OAL\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_gpiodispatch.lib is missing.
 BUILD: [00:0000001450:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\GPIO\DISPATCH\OAL\ directory.
@@ -1460,7 +1460,7 @@ BUILD: [01:0000001457:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001458:INFO  ] TARGETNAME: common_ti_oal_gpiodispatch
 BUILD: [01:0000001459:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001460:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_gpiodispatch.lib
-BUILD: [01:0000001461:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_gpiodispatch.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm6F2.tmp
+BUILD: [01:0000001461:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_gpiodispatch.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm421.tmp
 BUILD: [00:0000001462:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\GPIO\DISPATCH\DEVICE\obj\ARMV4I\retail\gpio_dispatch.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_device_gpiodispatch.lib is missing.
 BUILD: [00:0000001463:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\GPIO\DISPATCH\DEVICE\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_device_gpiodispatch.lib is missing.
 BUILD: [00:0000001464:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\GPIO\DISPATCH\DEVICE\ directory.
@@ -1474,7 +1474,7 @@ BUILD: [01:0000001471:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001472:INFO  ] TARGETNAME: common_ti_device_gpiodispatch
 BUILD: [01:0000001473:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001474:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_device_gpiodispatch.lib
-BUILD: [01:0000001475:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_device_gpiodispatch.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm6F3.tmp
+BUILD: [01:0000001475:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_device_gpiodispatch.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm422.tmp
 BUILD: [00:0000001476:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\GPIO\OMAP_GPIO\DEVICE\obj\ARMV4I\retail\omap35xx_gpio.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_device_omap_gpio.lib is missing.
 BUILD: [00:0000001477:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\GPIO\OMAP_GPIO\DEVICE\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_device_omap_gpio.lib is missing.
 BUILD: [00:0000001478:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\GPIO\OMAP_GPIO\DEVICE\ directory.
@@ -1488,7 +1488,7 @@ BUILD: [01:0000001485:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001486:INFO  ] TARGETNAME: common_ti_device_omap_gpio
 BUILD: [01:0000001487:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001488:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_device_omap_gpio.lib
-BUILD: [01:0000001489:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_device_omap_gpio.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm6F4.tmp
+BUILD: [01:0000001489:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_device_omap_gpio.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm423.tmp
 BUILD: [00:0000001490:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\GPIO\OMAP_GPIO\OAL\obj\ARMV4I\retail\omap35xx_gpio.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_omap_gpio.lib is missing.
 BUILD: [00:0000001491:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\GPIO\OMAP_GPIO\OAL\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_omap_gpio.lib is missing.
 BUILD: [00:0000001492:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\GPIO\OMAP_GPIO\OAL\ directory.
@@ -1502,7 +1502,7 @@ BUILD: [01:0000001499:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001500:INFO  ] TARGETNAME: common_ti_oal_omap_gpio
 BUILD: [01:0000001501:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001502:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_omap_gpio.lib
-BUILD: [01:0000001503:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_omap_gpio.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm6F5.tmp
+BUILD: [01:0000001503:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_omap_gpio.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm424.tmp
 BUILD: [00:0000001504:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\GPIO\TCA6416_GPIO\obj\ARMV4I\retail\tca6416_gpio.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\tca6416_gpio_lib.lib is missing.
 BUILD: [00:0000001505:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\GPIO\TCA6416_GPIO\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\tca6416_gpio_lib.lib is missing.
 BUILD: [00:0000001506:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\GPIO\TCA6416_GPIO\ directory.
@@ -1516,7 +1516,7 @@ BUILD: [01:0000001513:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001514:INFO  ] TARGETNAME: tca6416_gpio_lib
 BUILD: [01:0000001515:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001516:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\tca6416_gpio_lib.lib
-BUILD: [01:0000001517:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\tca6416_gpio_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm6F6.tmp
+BUILD: [01:0000001517:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\tca6416_gpio_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm425.tmp
 BUILD: [00:0000001518:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_DEBUGSERIAL\obj\ARMV4I\retail\debugserial.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_debugserial.lib is missing.
 BUILD: [00:0000001519:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_DEBUGSERIAL\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_debugserial.lib is missing.
 BUILD: [00:0000001520:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_DEBUGSERIAL\ directory.
@@ -1530,7 +1530,7 @@ BUILD: [01:0000001527:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001528:INFO  ] TARGETNAME: common_ti_debugserial
 BUILD: [01:0000001529:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001530:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_debugserial.lib
-BUILD: [01:0000001531:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_debugserial.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm6F7.tmp
+BUILD: [01:0000001531:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_debugserial.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm426.tmp
 BUILD: [00:0000001532:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_OALI2C\obj\ARMV4I\retail\oali2c.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oali2c.lib is missing.
 BUILD: [00:0000001533:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_OALI2C\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oali2c.lib is missing.
 BUILD: [00:0000001534:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_OALI2C\ directory.
@@ -1544,7 +1544,7 @@ BUILD: [01:0000001541:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001542:INFO  ] TARGETNAME: common_ti_oali2c
 BUILD: [01:0000001543:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001544:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oali2c.lib
-BUILD: [01:0000001545:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oali2c.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm6F8.tmp
+BUILD: [01:0000001545:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oali2c.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm427.tmp
 BUILD: [00:0000001546:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_NEON\obj\ARMV4I\retail\vfphandler.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_vfpneon.lib is missing.
 BUILD: [00:0000001547:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_NEON\obj\ARMV4I\retail\vfp.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_vfpneon.lib is missing.
 BUILD: [00:0000001548:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_NEON\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_vfpneon.lib is missing.
@@ -1559,7 +1559,7 @@ BUILD: [01:0000001556:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001557:INFO  ] TARGETNAME: common_ti_vfpneon
 BUILD: [01:0000001558:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001559:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_vfpneon.lib
-BUILD: [01:0000001560:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_vfpneon.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm6F9.tmp
+BUILD: [01:0000001560:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_vfpneon.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm428.tmp
 BUILD: [00:0000001561:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_INTR\obj\ARMV4I\retail\map.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_intr.lib is missing.
 BUILD: [00:0000001562:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_INTR\obj\ARMV4I\retail\intr.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_intr.lib is missing.
 BUILD: [00:0000001563:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_INTR\obj\ARMV4I\retail\oem.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_intr.lib is missing.
@@ -1575,7 +1575,7 @@ BUILD: [01:0000001572:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001573:INFO  ] TARGETNAME: common_ti_intr
 BUILD: [01:0000001574:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001575:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_intr.lib
-BUILD: [01:0000001576:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_intr.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm6FA.tmp
+BUILD: [01:0000001576:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_intr.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm429.tmp
 BUILD: [00:0000001577:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_abort_arm920t.lib because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_cortexA8_cache.lib is missing.
 BUILD: [00:0000001578:INFO  ] Will Build C:\WINCE600\platform\common\lib\ARMV4I\retail\oal_cache.lib because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_cortexA8_cache.lib is missing.
 BUILD: [00:0000001579:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\CORTEXA8_CACHE\obj\ARMV4I\retail\init.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_cortexA8_cache.lib is missing.
@@ -1598,7 +1598,7 @@ BUILD: [01:0000001595:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001596:INFO  ] TARGETNAME: common_ti_cortexA8_cache
 BUILD: [01:0000001597:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001598:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_cortexA8_cache.lib
-BUILD: [01:0000001599:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_cortexA8_cache.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm6FB.tmp
+BUILD: [01:0000001599:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_cortexA8_cache.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm42A.tmp
 BUILD: [01:0000001600:INFO  ] 系統找不到指定的檔案。
 BUILD: [01:0000001601:INFO  ] 檔案不可以複製到檔案本身。
 BUILD: [01:0000001602:INFO  ] 複製了         0 個檔案。
@@ -1620,7 +1620,7 @@ BUILD: [01:0000001617:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001618:INFO  ] TARGETNAME: common_ti_ioctl
 BUILD: [01:0000001619:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001620:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ioctl.lib
-BUILD: [01:0000001621:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ioctl.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm6FC.tmp
+BUILD: [01:0000001621:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ioctl.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm42B.tmp
 BUILD: [01:0000001622:INFO  ] 檔案不可以複製到檔案本身。
 BUILD: [01:0000001623:INFO  ] 複製了         0 個檔案。
 BUILD: [00:0000001624:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_GTP_TIMER\PROFILER\obj\ARMV4I\retail\profiler.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_gpt_profiler.lib is missing.
@@ -1636,7 +1636,7 @@ BUILD: [01:0000001633:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001634:INFO  ] TARGETNAME: common_ti_gpt_profiler
 BUILD: [01:0000001635:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001636:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_gpt_profiler.lib
-BUILD: [01:0000001637:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_gpt_profiler.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm6FD.tmp
+BUILD: [01:0000001637:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_gpt_profiler.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm42C.tmp
 BUILD: [00:0000001638:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_GTP_TIMER\TIMER\obj\ARMV4I\retail\timer.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_gpt_systimer.lib is missing.
 BUILD: [00:0000001639:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_GTP_TIMER\TIMER\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_gpt_systimer.lib is missing.
 BUILD: [00:0000001640:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_GTP_TIMER\TIMER\ directory.
@@ -1650,7 +1650,7 @@ BUILD: [01:0000001647:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001648:INFO  ] TARGETNAME: common_ti_gpt_systimer
 BUILD: [01:0000001649:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001650:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_gpt_systimer.lib
-BUILD: [01:0000001651:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_gpt_systimer.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm6FE.tmp
+BUILD: [01:0000001651:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_gpt_systimer.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm42D.tmp
 BUILD: [00:0000001652:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_ALLOC\obj\ARMV4I\retail\alloc.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_alloc.lib is missing.
 BUILD: [00:0000001653:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_ALLOC\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_alloc.lib is missing.
 BUILD: [00:0000001654:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_ALLOC\ directory.
@@ -1664,7 +1664,7 @@ BUILD: [01:0000001661:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001662:INFO  ] TARGETNAME: common_ti_oal_alloc
 BUILD: [01:0000001663:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001664:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_alloc.lib
-BUILD: [01:0000001665:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_alloc.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm6FF.tmp
+BUILD: [01:0000001665:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_alloc.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm42E.tmp
 BUILD: [00:0000001666:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\S35390_OALRTC\obj\ARMV4I\retail\oalrtc.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_s35390_oalrtc.lib is missing.
 BUILD: [00:0000001667:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\S35390_OALRTC\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_s35390_oalrtc.lib is missing.
 BUILD: [00:0000001668:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\S35390_OALRTC\ directory.
@@ -1678,7 +1678,7 @@ BUILD: [01:0000001675:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001676:INFO  ] TARGETNAME: common_ti_s35390_oalrtc
 BUILD: [01:0000001677:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001678:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_s35390_oalrtc.lib
-BUILD: [01:0000001679:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_s35390_oalrtc.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm700.tmp
+BUILD: [01:0000001679:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_s35390_oalrtc.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm42F.tmp
 BUILD: [00:0000001680:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_POWER\obj\ARMV4I\retail\power.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_power.lib is missing.
 BUILD: [00:0000001681:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_POWER\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_power.lib is missing.
 BUILD: [00:0000001682:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_POWER\ directory.
@@ -1692,7 +1692,7 @@ BUILD: [01:0000001689:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001690:INFO  ] TARGETNAME: common_ti_oal_power
 BUILD: [01:0000001691:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001692:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_power.lib
-BUILD: [01:0000001693:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_power.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm701.tmp
+BUILD: [01:0000001693:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_power.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm430.tmp
 BUILD: [00:0000001694:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_OALPADCFG\obj\ARMV4I\retail\oalpadcfg.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oalpadcfg.lib is missing.
 BUILD: [00:0000001695:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_OALPADCFG\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oalpadcfg.lib is missing.
 BUILD: [00:0000001696:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_OALPADCFG\ directory.
@@ -1706,7 +1706,7 @@ BUILD: [01:0000001703:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001704:INFO  ] TARGETNAME: common_ti_oalpadcfg
 BUILD: [01:0000001705:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001706:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oalpadcfg.lib
-BUILD: [01:0000001707:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oalpadcfg.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm702.tmp
+BUILD: [01:0000001707:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oalpadcfg.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm431.tmp
 BUILD: [00:0000001708:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_WATCHDOG\obj\ARMV4I\retail\watchdog.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_watchdog.lib is missing.
 BUILD: [00:0000001709:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_WATCHDOG\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_watchdog.lib is missing.
 BUILD: [00:0000001710:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\OMAP_WATCHDOG\ directory.
@@ -1720,7 +1720,7 @@ BUILD: [01:0000001717:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001718:INFO  ] TARGETNAME: common_ti_oal_watchdog
 BUILD: [01:0000001719:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001720:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_watchdog.lib
-BUILD: [01:0000001721:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_watchdog.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm703.tmp
+BUILD: [01:0000001721:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_watchdog.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm432.tmp
 BUILD: [00:0000001722:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\FLASHSTORE\obj\ARMV4I\retail\flashstore.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_flashstore.lib is missing.
 BUILD: [00:0000001723:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\FLASHSTORE\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_flashstore.lib is missing.
 BUILD: [00:0000001724:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\FLASHSTORE\ directory.
@@ -1734,7 +1734,7 @@ BUILD: [01:0000001731:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001732:INFO  ] TARGETNAME: common_ti_oal_flashstore
 BUILD: [01:0000001733:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001734:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_flashstore.lib
-BUILD: [01:0000001735:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_flashstore.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm704.tmp
+BUILD: [01:0000001735:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_oal_flashstore.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm433.tmp
 BUILD: [00:0000001736:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\FATFS\obj\ARMV4I\retail\fileio.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_fatfs.lib is missing.
 BUILD: [00:0000001737:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\FATFS\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_fatfs.lib is missing.
 BUILD: [00:0000001738:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\FATFS\ directory.
@@ -1748,7 +1748,7 @@ BUILD: [01:0000001745:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001746:INFO  ] TARGETNAME: common_ti_boot_fatfs
 BUILD: [01:0000001747:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001748:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_fatfs.lib
-BUILD: [01:0000001749:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_fatfs.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm705.tmp
+BUILD: [01:0000001749:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_fatfs.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm434.tmp
 BUILD: [00:0000001750:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\SDHC\obj\ARMV4I\retail\sdhc.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdhc.lib is missing.
 BUILD: [00:0000001751:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\SDHC\obj\ARMV4I\retail\getidcode.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdhc.lib is missing.
 BUILD: [00:0000001752:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\SDHC\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdhc.lib is missing.
@@ -1763,7 +1763,7 @@ BUILD: [01:0000001760:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001761:INFO  ] TARGETNAME: common_ti_boot_sdhc
 BUILD: [01:0000001762:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001763:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdhc.lib
-BUILD: [01:0000001764:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdhc.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm706.tmp
+BUILD: [01:0000001764:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdhc.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm435.tmp
 BUILD: [00:0000001765:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\SDMEMORY\obj\ARMV4I\retail\sdcard.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdmemory.lib is missing.
 BUILD: [00:0000001766:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\SDMEMORY\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdmemory.lib is missing.
 BUILD: [00:0000001767:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\SDMEMORY\ directory.
@@ -1777,7 +1777,7 @@ BUILD: [01:0000001774:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001775:INFO  ] TARGETNAME: common_ti_boot_sdmemory
 BUILD: [01:0000001776:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001777:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdmemory.lib
-BUILD: [01:0000001778:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdmemory.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm707.tmp
+BUILD: [01:0000001778:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_boot_sdmemory.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm436.tmp
 BUILD: [00:0000001779:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\LAN911X\obj\ARMV4I\retail\lan911x.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_lan911x.lib is missing.
 BUILD: [00:0000001780:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\LAN911X\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_lan911x.lib is missing.
 BUILD: [00:0000001781:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\LAN911X\ directory.
@@ -1791,7 +1791,7 @@ BUILD: [01:0000001788:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001789:INFO  ] TARGETNAME: common_ti_ethdrv_lan911x
 BUILD: [01:0000001790:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001791:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_lan911x.lib
-BUILD: [01:0000001792:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_lan911x.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm708.tmp
+BUILD: [01:0000001792:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_lan911x.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm437.tmp
 BUILD: [00:0000001793:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\CPGMAC\obj\ARMV4I\retail\cpgmac.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_cpgmac.lib is missing.
 BUILD: [00:0000001794:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\CPGMAC\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_cpgmac.lib is missing.
 BUILD: [00:0000001795:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\CPGMAC\ directory.
@@ -1805,7 +1805,7 @@ BUILD: [01:0000001802:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001803:INFO  ] TARGETNAME: common_ti_ethdrv_cpgmac
 BUILD: [01:0000001804:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001805:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_cpgmac.lib
-BUILD: [01:0000001806:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_cpgmac.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm709.tmp
+BUILD: [01:0000001806:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_cpgmac.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm438.tmp
 BUILD: [00:0000001807:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\RNDIS\obj\ARMV4I\retail\rndis.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_rndis.lib is missing.
 BUILD: [00:0000001808:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\RNDIS\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_rndis.lib is missing.
 BUILD: [00:0000001809:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\RNDIS\ directory.
@@ -1819,7 +1819,7 @@ BUILD: [01:0000001816:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001817:INFO  ] TARGETNAME: common_ti_ethdrv_rndis
 BUILD: [01:0000001818:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001819:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_rndis.lib
-BUILD: [01:0000001820:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_rndis.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm70A.tmp
+BUILD: [01:0000001820:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_rndis.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm439.tmp
 BUILD: [00:0000001821:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\USBFN\obj\ARMV4I\retail\pdd.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_usbfn.lib is missing.
 BUILD: [00:0000001822:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\USBFN\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_usbfn.lib is missing.
 BUILD: [00:0000001823:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\USBFN\ directory.
@@ -1833,7 +1833,7 @@ BUILD: [01:0000001830:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001831:INFO  ] TARGETNAME: common_ti_ethdrv_usbfn
 BUILD: [01:0000001832:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001833:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_usbfn.lib
-BUILD: [01:0000001834:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_usbfn.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm70B.tmp
+BUILD: [01:0000001834:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ethdrv_usbfn.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm43A.tmp
 BUILD: [00:0000001835:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\DSS\DSSAI\obj\ARMV4I\retail\dssai.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_ddgpe_dssai.lib is missing.
 BUILD: [00:0000001836:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\DSS\DSSAI\obj\ARMV4I\retail\dssai_debug.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_ddgpe_dssai.lib is missing.
 BUILD: [00:0000001837:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\DSS\DSSAI\obj\ARMV4I\retail\dssai_globals.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_ddgpe_dssai.lib is missing.
@@ -1852,7 +1852,7 @@ BUILD: [01:0000001849:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001850:INFO  ] TARGETNAME: omap_ddgpe_dssai
 BUILD: [01:0000001851:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001852:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_ddgpe_dssai.lib
-BUILD: [01:0000001853:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_ddgpe_dssai.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm70C.tmp
+BUILD: [01:0000001853:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_ddgpe_dssai.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm43B.tmp
 BUILD: [00:0000001854:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\DSS\DDGPE\obj\ARMV4I\retail\omap_ddgpe.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_ddgpe_dss.lib is missing.
 BUILD: [00:0000001855:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\DSS\DDGPE\obj\ARMV4I\retail\omap_ddsurf.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_ddgpe_dss.lib is missing.
 BUILD: [00:0000001856:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\DSS\DDGPE\obj\ARMV4I\retail\omap_dmablt.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_ddgpe_dss.lib is missing.
@@ -1872,7 +1872,7 @@ BUILD: [01:0000001869:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001870:INFO  ] TARGETNAME: omap_ddgpe_dss
 BUILD: [01:0000001871:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001872:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_ddgpe_dss.lib
-BUILD: [01:0000001873:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_ddgpe_dss.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm70D.tmp
+BUILD: [01:0000001873:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_ddgpe_dss.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm43C.tmp
 BUILD: [01:0000001874:WARNN ] haldebug.obj : warning LNK4221: no public symbols found; archive member will be inaccessible
 BUILD: [00:0000001875:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\DSS\ENTRY\obj\ARMV4I\retail\entry.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_dss_entry.lib is missing.
 BUILD: [00:0000001876:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\DSS\ENTRY\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_dss_entry.lib is missing.
@@ -1887,7 +1887,7 @@ BUILD: [01:0000001884:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001885:INFO  ] TARGETNAME: omap_dss_entry
 BUILD: [01:0000001886:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001887:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_dss_entry.lib
-BUILD: [01:0000001888:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_dss_entry.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm70E.tmp
+BUILD: [01:0000001888:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_dss_entry.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm43D.tmp
 BUILD: [00:0000001889:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\SDMA\obj\ARMV4I\retail\dmamediator.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_sdmadrv.lib is missing.
 BUILD: [00:0000001890:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\SDMA\obj\ARMV4I\retail\dmacontroller.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_sdmadrv.lib is missing.
 BUILD: [00:0000001891:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\SDMA\obj\ARMV4I\retail\dma.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_sdmadrv.lib is missing.
@@ -1903,7 +1903,7 @@ BUILD: [01:0000001900:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001901:INFO  ] TARGETNAME: common_ti_sdmadrv
 BUILD: [01:0000001902:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001903:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_sdmadrv.lib
-BUILD: [01:0000001904:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_sdmadrv.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm70F.tmp
+BUILD: [01:0000001904:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_sdmadrv.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm43E.tmp
 BUILD: [00:0000001905:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\SPI\obj\ARMV4I\retail\dma_init.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_mcspi.lib is missing.
 BUILD: [00:0000001906:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\SPI\obj\ARMV4I\retail\spi.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_mcspi.lib is missing.
 BUILD: [00:0000001907:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\SPI\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_mcspi.lib is missing.
@@ -1918,7 +1918,7 @@ BUILD: [01:0000001915:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001916:INFO  ] TARGETNAME: common_ti_mcspi
 BUILD: [01:0000001917:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001918:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_mcspi.lib
-BUILD: [01:0000001919:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_mcspi.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm710.tmp
+BUILD: [01:0000001919:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_mcspi.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm43F.tmp
 BUILD: [00:0000001920:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\I2C\obj\ARMV4I\retail\i2c.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_i2c_lib.lib is missing.
 BUILD: [00:0000001921:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\I2C\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_i2c_lib.lib is missing.
 BUILD: [00:0000001922:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\I2C\ directory.
@@ -1932,7 +1932,7 @@ BUILD: [01:0000001929:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001930:INFO  ] TARGETNAME: ceddk_i2c_lib
 BUILD: [01:0000001931:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001932:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_i2c_lib.lib
-BUILD: [01:0000001933:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_i2c_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm711.tmp
+BUILD: [01:0000001933:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_i2c_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm440.tmp
 BUILD: [00:0000001934:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\DMA\obj\ARMV4I\retail\dma.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_dma_lib.lib is missing.
 BUILD: [00:0000001935:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\DMA\obj\ARMV4I\retail\dma_dedicated.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_dma_lib.lib is missing.
 BUILD: [00:0000001936:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\DMA\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_dma_lib.lib is missing.
@@ -1947,7 +1947,7 @@ BUILD: [01:0000001944:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001945:INFO  ] TARGETNAME: ceddk_dma_lib
 BUILD: [01:0000001946:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001947:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_dma_lib.lib
-BUILD: [01:0000001948:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_dma_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm712.tmp
+BUILD: [01:0000001948:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_dma_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm441.tmp
 BUILD: [00:0000001949:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\REG\obj\ARMV4I\retail\registry.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_reg_lib.lib is missing.
 BUILD: [00:0000001950:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\REG\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_reg_lib.lib is missing.
 BUILD: [00:0000001951:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\REG\ directory.
@@ -1961,7 +1961,7 @@ BUILD: [01:0000001958:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001959:INFO  ] TARGETNAME: ceddk_reg_lib
 BUILD: [01:0000001960:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001961:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_reg_lib.lib
-BUILD: [01:0000001962:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_reg_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm713.tmp
+BUILD: [01:0000001962:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_reg_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm442.tmp
 BUILD: [00:0000001963:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\PMEXT\obj\ARMV4I\retail\pmext.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_pmext_lib.lib is missing.
 BUILD: [00:0000001964:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\PMEXT\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_pmext_lib.lib is missing.
 BUILD: [00:0000001965:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\PMEXT\ directory.
@@ -1975,7 +1975,7 @@ BUILD: [01:0000001972:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001973:INFO  ] TARGETNAME: ceddk_pmext_lib
 BUILD: [01:0000001974:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001975:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_pmext_lib.lib
-BUILD: [01:0000001976:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_pmext_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm714.tmp
+BUILD: [01:0000001976:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_pmext_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm443.tmp
 BUILD: [00:0000001977:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\SPI\obj\ARMV4I\retail\mcspi.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_spi_lib.lib is missing.
 BUILD: [00:0000001978:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\SPI\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_spi_lib.lib is missing.
 BUILD: [00:0000001979:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\SPI\ directory.
@@ -1989,7 +1989,7 @@ BUILD: [01:0000001986:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000001987:INFO  ] TARGETNAME: ceddk_spi_lib
 BUILD: [01:0000001988:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000001989:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_spi_lib.lib
-BUILD: [01:0000001990:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_spi_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm715.tmp
+BUILD: [01:0000001990:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_spi_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm444.tmp
 BUILD: [00:0000001991:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\PADCFG\obj\ARMV4I\retail\padcfg.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_padcfg_lib.lib is missing.
 BUILD: [00:0000001992:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\PADCFG\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_padcfg_lib.lib is missing.
 BUILD: [00:0000001993:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\PADCFG\ directory.
@@ -2003,7 +2003,7 @@ BUILD: [01:0000002000:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002001:INFO  ] TARGETNAME: ceddk_padcfg_lib
 BUILD: [01:0000002002:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002003:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_padcfg_lib.lib
-BUILD: [01:0000002004:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_padcfg_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm716.tmp
+BUILD: [01:0000002004:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_padcfg_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm445.tmp
 BUILD: [00:0000002005:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\CLOCK\obj\ARMV4I\retail\clock.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_clock_lib.lib is missing.
 BUILD: [00:0000002006:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\CLOCK\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_clock_lib.lib is missing.
 BUILD: [00:0000002007:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\CLOCK\ directory.
@@ -2017,7 +2017,7 @@ BUILD: [01:0000002014:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002015:INFO  ] TARGETNAME: ceddk_clock_lib
 BUILD: [01:0000002016:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002017:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_clock_lib.lib
-BUILD: [01:0000002018:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_clock_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm717.tmp
+BUILD: [01:0000002018:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_clock_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm446.tmp
 BUILD: [00:0000002019:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\BUS\obj\ARMV4I\retail\bus.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_bus_lib.lib is missing.
 BUILD: [00:0000002020:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\BUS\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_bus_lib.lib is missing.
 BUILD: [00:0000002021:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\CEDDK\BUS\ directory.
@@ -2031,7 +2031,7 @@ BUILD: [01:0000002028:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002029:INFO  ] TARGETNAME: ceddk_bus_lib
 BUILD: [01:0000002030:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002031:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_bus_lib.lib
-BUILD: [01:0000002032:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_bus_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm718.tmp
+BUILD: [01:0000002032:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\ceddk_bus_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm447.tmp
 BUILD: [00:0000002033:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\SERIAL\COM_MDD2\obj\ARMV4I\retail\mdd.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_commdd2.lib is missing.
 BUILD: [00:0000002034:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\SERIAL\COM_MDD2\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_commdd2.lib is missing.
 BUILD: [00:0000002035:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\SERIAL\COM_MDD2\ directory.
@@ -2045,7 +2045,7 @@ BUILD: [01:0000002042:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002043:INFO  ] TARGETNAME: common_ti_commdd2
 BUILD: [01:0000002044:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002045:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_commdd2.lib
-BUILD: [01:0000002046:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_commdd2.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm719.tmp
+BUILD: [01:0000002046:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_commdd2.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm448.tmp
 BUILD: [00:0000002047:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\SERIAL\UART\obj\ARMV4I\retail\dma_init.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_uart.lib is missing.
 BUILD: [00:0000002048:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\SERIAL\UART\obj\ARMV4I\retail\pdd.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_uart.lib is missing.
 BUILD: [00:0000002049:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\SERIAL\UART\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_uart.lib is missing.
@@ -2060,7 +2060,7 @@ BUILD: [01:0000002057:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002058:INFO  ] TARGETNAME: common_ti_uart
 BUILD: [01:0000002059:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002060:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_uart.lib
-BUILD: [01:0000002061:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_uart.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm71A.tmp
+BUILD: [01:0000002061:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_uart.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm449.tmp
 BUILD: [00:0000002062:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\KEYS\PWRKEY\obj\ARMV4I\retail\pwrkey.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_pwrkey.lib is missing.
 BUILD: [00:0000002063:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\KEYS\PWRKEY\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_pwrkey.lib is missing.
 BUILD: [00:0000002064:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\KEYS\PWRKEY\ directory.
@@ -2074,7 +2074,7 @@ BUILD: [01:0000002071:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002072:INFO  ] TARGETNAME: common_ti_pwrkey
 BUILD: [01:0000002073:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002074:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_pwrkey.lib
-BUILD: [01:0000002075:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_pwrkey.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm71B.tmp
+BUILD: [01:0000002075:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_pwrkey.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm44A.tmp
 BUILD: [00:0000002076:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\MCBSP\obj\ARMV4I\retail\debug.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_mcbsp.lib is missing.
 BUILD: [00:0000002077:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\MCBSP\obj\ARMV4I\retail\mcbsp.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_mcbsp.lib is missing.
 BUILD: [00:0000002078:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\MCBSP\obj\ARMV4I\retail\mcbspprofile.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_mcbsp.lib is missing.
@@ -2092,7 +2092,7 @@ BUILD: [01:0000002089:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002090:INFO  ] TARGETNAME: common_ti_mcbsp
 BUILD: [01:0000002091:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002092:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_mcbsp.lib
-BUILD: [01:0000002093:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_mcbsp.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm71C.tmp
+BUILD: [01:0000002093:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_mcbsp.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm44B.tmp
 BUILD: [00:0000002094:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\KEYPAD\GPIO_KEYPAD\obj\ARMV4I\retail\gpio_keypad.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_gpio_keypad.lib is missing.
 BUILD: [00:0000002095:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\KEYPAD\GPIO_KEYPAD\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_gpio_keypad.lib is missing.
 BUILD: [00:0000002096:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\KEYPAD\GPIO_KEYPAD\ directory.
@@ -2106,7 +2106,7 @@ BUILD: [01:0000002103:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002104:INFO  ] TARGETNAME: common_ti_gpio_keypad
 BUILD: [01:0000002105:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002106:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_gpio_keypad.lib
-BUILD: [01:0000002107:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_gpio_keypad.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm71D.tmp
+BUILD: [01:0000002107:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_gpio_keypad.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm44C.tmp
 BUILD: [00:0000002108:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\SDHC\BASE\obj\ARMV4I\retail\sdhcmain.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_sdhc_base.lib is missing.
 BUILD: [00:0000002109:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\SDHC\BASE\obj\ARMV4I\retail\sdhc.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_sdhc_base.lib is missing.
 BUILD: [00:0000002110:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\SDHC\BASE\obj\ARMV4I\retail\dma.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_sdhc_base.lib is missing.
@@ -2122,7 +2122,7 @@ BUILD: [01:0000002119:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002120:INFO  ] TARGETNAME: common_ti_sdhc_base
 BUILD: [01:0000002121:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002122:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_sdhc_base.lib
-BUILD: [01:0000002123:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_sdhc_base.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm71E.tmp
+BUILD: [01:0000002123:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_sdhc_base.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm44D.tmp
 BUILD: [00:0000002124:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\WAVEDEV2\obj\ARMV4I\retail\wavemain.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_wavedev2_lib.lib is missing.
 BUILD: [00:0000002125:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\WAVEDEV2\obj\ARMV4I\retail\devctxt.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_wavedev2_lib.lib is missing.
 BUILD: [00:0000002126:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\WAVEDEV2\obj\ARMV4I\retail\strmctxt.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_wavedev2_lib.lib is missing.
@@ -2145,7 +2145,7 @@ BUILD: [01:0000002142:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002143:INFO  ] TARGETNAME: omap_wavedev2_lib
 BUILD: [01:0000002144:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002145:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_wavedev2_lib.lib
-BUILD: [01:0000002146:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_wavedev2_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm71F.tmp
+BUILD: [01:0000002146:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_wavedev2_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm44E.tmp
 BUILD: [00:0000002147:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\HECC\obj\ARMV4I\retail\omap_hecc.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_hecc.lib is missing.
 BUILD: [00:0000002148:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\HECC\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_hecc.lib is missing.
 BUILD: [00:0000002149:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\HECC\ directory.
@@ -2159,7 +2159,7 @@ BUILD: [01:0000002156:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002157:INFO  ] TARGETNAME: common_ti_hecc
 BUILD: [01:0000002158:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002159:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_hecc.lib
-BUILD: [01:0000002160:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_hecc.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm720.tmp
+BUILD: [01:0000002160:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_hecc.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm44F.tmp
 BUILD: [00:0000002161:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BACKLIGHT\obj\ARMV4I\retail\bkldrvapi.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_backlight_mdd.lib is missing.
 BUILD: [00:0000002162:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BACKLIGHT\obj\ARMV4I\retail\bkldrvmain.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_backlight_mdd.lib is missing.
 BUILD: [00:0000002163:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BACKLIGHT\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_backlight_mdd.lib is missing.
@@ -2174,7 +2174,7 @@ BUILD: [01:0000002171:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002172:INFO  ] TARGETNAME: common_ti_backlight_mdd
 BUILD: [01:0000002173:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002174:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_backlight_mdd.lib
-BUILD: [01:0000002175:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_backlight_mdd.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm721.tmp
+BUILD: [01:0000002175:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_backlight_mdd.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm450.tmp
 BUILD: [00:0000002176:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\USB\EHCIPDD\obj\ARMV4I\retail\system.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ehcihcd.lib is missing.
 BUILD: [00:0000002177:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\USB\EHCIPDD\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ehcihcd.lib is missing.
 BUILD: [00:0000002178:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\USB\EHCIPDD\ directory.
@@ -2188,7 +2188,7 @@ BUILD: [01:0000002185:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002186:INFO  ] TARGETNAME: common_ti_ehcihcd
 BUILD: [01:0000002187:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002188:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ehcihcd.lib
-BUILD: [01:0000002189:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ehcihcd.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm722.tmp
+BUILD: [01:0000002189:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_ehcihcd.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm451.tmp
 BUILD: [00:0000002190:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\USB\USB2COM\obj\ARMV4I\retail\cphysmem.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_hcd2lib.lib is missing.
 BUILD: [00:0000002191:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\USB\USB2COM\obj\ARMV4I\retail\sync.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_hcd2lib.lib is missing.
 BUILD: [00:0000002192:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\USB\USB2COM\obj\ARMV4I\retail\cdevice.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_hcd2lib.lib is missing.
@@ -2206,7 +2206,7 @@ BUILD: [01:0000002203:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002204:INFO  ] TARGETNAME: common_ti_hcd2lib
 BUILD: [01:0000002205:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002206:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_hcd2lib.lib
-BUILD: [01:0000002207:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_hcd2lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm723.tmp
+BUILD: [01:0000002207:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_hcd2lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm452.tmp
 BUILD: [00:0000002208:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\VRFB\obj\ARMV4I\retail\omap_vrfb.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_vrfb.lib is missing.
 BUILD: [00:0000002209:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\VRFB\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_vrfb.lib is missing.
 BUILD: [00:0000002210:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\VRFB\ directory.
@@ -2220,7 +2220,7 @@ BUILD: [01:0000002217:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002218:INFO  ] TARGETNAME: common_ti_vrfb
 BUILD: [01:0000002219:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002220:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_vrfb.lib
-BUILD: [01:0000002221:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_vrfb.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm724.tmp
+BUILD: [01:0000002221:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_vrfb.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm453.tmp
 BUILD: [00:0000002222:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\DEVICEMEDIATOR\obj\ARMV4I\retail\api.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\devicemediator_lib.lib is missing.
 BUILD: [00:0000002223:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\DEVICEMEDIATOR\obj\ARMV4I\retail\devicemediator.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\devicemediator_lib.lib is missing.
 BUILD: [00:0000002224:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\DEVICEMEDIATOR\obj\ARMV4I\retail\displaydevice.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\devicemediator_lib.lib is missing.
@@ -2238,7 +2238,7 @@ BUILD: [01:0000002235:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002236:INFO  ] TARGETNAME: devicemediator_lib
 BUILD: [01:0000002237:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002238:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\devicemediator_lib.lib
-BUILD: [01:0000002239:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\devicemediator_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm725.tmp
+BUILD: [01:0000002239:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\devicemediator_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm454.tmp
 BUILD: [00:0000002240:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\CONSTRAINTROOT\obj\ARMV4I\retail\constraintroot.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\constraintroot_lib.lib is missing.
 BUILD: [00:0000002241:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\CONSTRAINTROOT\obj\ARMV4I\retail\constraintadapter.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\constraintroot_lib.lib is missing.
 BUILD: [00:0000002242:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\CONSTRAINTROOT\obj\ARMV4I\retail\constraintcontainer.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\constraintroot_lib.lib is missing.
@@ -2255,7 +2255,7 @@ BUILD: [01:0000002252:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002253:INFO  ] TARGETNAME: constraintroot_lib
 BUILD: [01:0000002254:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002255:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\constraintroot_lib.lib
-BUILD: [01:0000002256:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\constraintroot_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm726.tmp
+BUILD: [01:0000002256:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\constraintroot_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm455.tmp
 BUILD: [00:0000002257:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\POWERPOLICYROOT\obj\ARMV4I\retail\policyroot.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\powerpolicyroot_lib.lib is missing.
 BUILD: [00:0000002258:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\POWERPOLICYROOT\obj\ARMV4I\retail\policyadapter.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\powerpolicyroot_lib.lib is missing.
 BUILD: [00:0000002259:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\POWERPOLICYROOT\obj\ARMV4I\retail\policycontainer.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\powerpolicyroot_lib.lib is missing.
@@ -2272,7 +2272,7 @@ BUILD: [01:0000002269:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002270:INFO  ] TARGETNAME: powerpolicyroot_lib
 BUILD: [01:0000002271:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002272:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\powerpolicyroot_lib.lib
-BUILD: [01:0000002273:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\powerpolicyroot_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm727.tmp
+BUILD: [01:0000002273:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\powerpolicyroot_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm456.tmp
 BUILD: [00:0000002274:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\CONSTRAINTADAPTERS\DVFSCONSTRAINT\obj\ARMV4I\retail\dvfsconstraint.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\dvfs_constraint_lib.lib is missing.
 BUILD: [00:0000002275:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\CONSTRAINTADAPTERS\DVFSCONSTRAINT\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\dvfs_constraint_lib.lib is missing.
 BUILD: [00:0000002276:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\CONSTRAINTADAPTERS\DVFSCONSTRAINT\ directory.
@@ -2286,7 +2286,7 @@ BUILD: [01:0000002283:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002284:INFO  ] TARGETNAME: dvfs_constraint_lib
 BUILD: [01:0000002285:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002286:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\dvfs_constraint_lib.lib
-BUILD: [01:0000002287:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\dvfs_constraint_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm728.tmp
+BUILD: [01:0000002287:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\dvfs_constraint_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm457.tmp
 BUILD: [00:0000002288:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\CONSTRAINTADAPTERS\INTERRUPTLATENCYCONSTRAINT\obj\ARMV4I\retail\intrlatencyconstraint.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\intrlatency_constraint_lib.lib is missing.
 BUILD: [00:0000002289:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\CONSTRAINTADAPTERS\INTERRUPTLATENCYCONSTRAINT\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\intrlatency_constraint_lib.lib is missing.
 BUILD: [00:0000002290:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\CONSTRAINTADAPTERS\INTERRUPTLATENCYCONSTRAINT\ directory.
@@ -2300,7 +2300,7 @@ BUILD: [01:0000002297:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002298:INFO  ] TARGETNAME: intrlatency_constraint_lib
 BUILD: [01:0000002299:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002300:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\intrlatency_constraint_lib.lib
-BUILD: [01:0000002301:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\intrlatency_constraint_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm729.tmp
+BUILD: [01:0000002301:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\intrlatency_constraint_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm458.tmp
 BUILD: [00:0000002302:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\POLICYADAPTERS\CPULOAD\obj\ARMV4I\retail\cpuloadpolicy.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\ti_cpuloadpolicy_lib.lib is missing.
 BUILD: [00:0000002303:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\POLICYADAPTERS\CPULOAD\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\ti_cpuloadpolicy_lib.lib is missing.
 BUILD: [00:0000002304:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\POLICYADAPTERS\CPULOAD\ directory.
@@ -2314,7 +2314,7 @@ BUILD: [01:0000002311:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002312:INFO  ] TARGETNAME: ti_cpuloadpolicy_lib
 BUILD: [01:0000002313:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002314:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\ti_cpuloadpolicy_lib.lib
-BUILD: [01:0000002315:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\ti_cpuloadpolicy_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm72A.tmp
+BUILD: [01:0000002315:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\ti_cpuloadpolicy_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm459.tmp
 BUILD: [00:0000002316:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\POLICYADAPTERS\SYSTEMSTATE\obj\ARMV4I\retail\systemstate.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\ti_systemstatepolicy_lib.lib is missing.
 BUILD: [00:0000002317:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\POLICYADAPTERS\SYSTEMSTATE\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\ti_systemstatepolicy_lib.lib is missing.
 BUILD: [00:0000002318:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\POLICYADAPTERS\SYSTEMSTATE\ directory.
@@ -2328,7 +2328,7 @@ BUILD: [01:0000002325:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002326:INFO  ] TARGETNAME: ti_systemstatepolicy_lib
 BUILD: [01:0000002327:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002328:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\ti_systemstatepolicy_lib.lib
-BUILD: [01:0000002329:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\ti_systemstatepolicy_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm72B.tmp
+BUILD: [01:0000002329:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\ti_systemstatepolicy_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm45A.tmp
 BUILD: [00:0000002330:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\PMEXT\obj\ARMV4I\retail\pmext.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\pmext_lib.lib is missing.
 BUILD: [00:0000002331:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\PMEXT\obj\ARMV4I\retail\debug.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\pmext_lib.lib is missing.
 BUILD: [00:0000002332:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\PMEXT\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\pmext_lib.lib is missing.
@@ -2343,7 +2343,7 @@ BUILD: [01:0000002340:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002341:INFO  ] TARGETNAME: pmext_lib
 BUILD: [01:0000002342:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002343:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\pmext_lib.lib
-BUILD: [01:0000002344:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\pmext_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm72C.tmp
+BUILD: [01:0000002344:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\pmext_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm45B.tmp
 BUILD: [00:0000002345:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\PMXPROXY\obj\ARMV4I\retail\pmxproxy.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\pmxproxy_lib.lib is missing.
 BUILD: [00:0000002346:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\PMXPROXY\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\pmxproxy_lib.lib is missing.
 BUILD: [00:0000002347:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\PM\PMXPROXY\ directory.
@@ -2357,7 +2357,7 @@ BUILD: [01:0000002354:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002355:INFO  ] TARGETNAME: pmxproxy_lib
 BUILD: [01:0000002356:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002357:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\pmxproxy_lib.lib
-BUILD: [01:0000002358:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\pmxproxy_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm72D.tmp
+BUILD: [01:0000002358:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\pmxproxy_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm45C.tmp
 BUILD: [00:0000002359:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BUS\WRAPPER\obj\ARMV4I\retail\Stream.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\wrapper_omap.lib is missing.
 BUILD: [00:0000002360:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BUS\WRAPPER\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\wrapper_omap.lib is missing.
 BUILD: [00:0000002361:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BUS\WRAPPER\ directory.
@@ -2371,7 +2371,7 @@ BUILD: [01:0000002368:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002369:INFO  ] TARGETNAME: wrapper_omap
 BUILD: [01:0000002370:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002371:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\wrapper_omap.lib
-BUILD: [01:0000002372:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\wrapper_omap.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm72E.tmp
+BUILD: [01:0000002372:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\wrapper_omap.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm45D.tmp
 BUILD: [00:0000002373:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BUS\MDD\obj\ARMV4I\retail\defaultbus.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\busMdd_omap.lib is missing.
 BUILD: [00:0000002374:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BUS\MDD\obj\ARMV4I\retail\defaultbuscontext.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\busMdd_omap.lib is missing.
 BUILD: [00:0000002375:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BUS\MDD\obj\ARMV4I\retail\defaultbuschild.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\busMdd_omap.lib is missing.
@@ -2388,7 +2388,7 @@ BUILD: [01:0000002385:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002386:INFO  ] TARGETNAME: busMdd_omap
 BUILD: [01:0000002387:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002388:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\busMdd_omap.lib
-BUILD: [01:0000002389:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\busMdd_omap.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm72F.tmp
+BUILD: [01:0000002389:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\busMdd_omap.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm45E.tmp
 BUILD: [00:0000002390:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BUS\OMAPBUS\obj\ARMV4I\retail\Bus.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\bus_omap.lib is missing.
 BUILD: [00:0000002391:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BUS\OMAPBUS\obj\ARMV4I\retail\omap35xxbus.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\bus_omap.lib is missing.
 BUILD: [00:0000002392:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BUS\OMAPBUS\obj\ARMV4I\retail\omap35xxbuschild.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\bus_omap.lib is missing.
@@ -2405,7 +2405,7 @@ BUILD: [01:0000002402:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002403:INFO  ] TARGETNAME: bus_omap
 BUILD: [01:0000002404:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002405:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\bus_omap.lib
-BUILD: [01:0000002406:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\bus_omap.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm730.tmp
+BUILD: [01:0000002406:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\bus_omap.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm45F.tmp
 BUILD: [00:0000002407:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\MUSB\USBOTG_ISP1504\obj\ARMV4I\retail\isp1504_musb.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\isp1504_usbotg.lib is missing.
 BUILD: [00:0000002408:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\MUSB\USBOTG_ISP1504\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\isp1504_usbotg.lib is missing.
 BUILD: [00:0000002409:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\MUSB\USBOTG_ISP1504\ directory.
@@ -2419,7 +2419,7 @@ BUILD: [01:0000002416:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002417:INFO  ] TARGETNAME: isp1504_usbotg
 BUILD: [01:0000002418:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002419:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\isp1504_usbotg.lib
-BUILD: [01:0000002420:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\isp1504_usbotg.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm731.tmp
+BUILD: [01:0000002420:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\isp1504_usbotg.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm460.tmp
 BUILD: [00:0000002421:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\EMAC\obj\ARMV4I\retail\Emac_Filter.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_emac_lib.lib is missing.
 BUILD: [00:0000002422:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\EMAC\obj\ARMV4I\retail\Emac_Init.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_emac_lib.lib is missing.
 BUILD: [00:0000002423:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\EMAC\obj\ARMV4I\retail\Emac_Phy.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_emac_lib.lib is missing.
@@ -2439,7 +2439,7 @@ BUILD: [01:0000002436:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002437:INFO  ] TARGETNAME: omap_emac_lib
 BUILD: [01:0000002438:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002439:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_emac_lib.lib
-BUILD: [01:0000002440:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_emac_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm732.tmp
+BUILD: [01:0000002440:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_emac_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm461.tmp
 BUILD: [00:0000002441:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\NLED\obj\ARMV4I\retail\nleddrvr.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_nled_lib.lib is missing.
 BUILD: [00:0000002442:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\NLED\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_nled_lib.lib is missing.
 BUILD: [00:0000002443:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\NLED\ directory.
@@ -2453,7 +2453,7 @@ BUILD: [01:0000002450:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002451:INFO  ] TARGETNAME: omap_nled_lib
 BUILD: [01:0000002452:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002453:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_nled_lib.lib
-BUILD: [01:0000002454:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_nled_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm733.tmp
+BUILD: [01:0000002454:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\omap_nled_lib.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm462.tmp
 BUILD: [00:0000002455:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\HDQ\obj\ARMV4I\retail\hdq.obj because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_hdq.lib is missing.
 BUILD: [00:0000002456:INFO  ] Will Build C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\HDQ\ because target: C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_hdq.lib is missing.
 BUILD: [00:0000002457:PROGC ] Building LIB Pass in C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\HDQ\ directory.
@@ -2467,7 +2467,7 @@ BUILD: [01:0000002464:INFO  ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [01:0000002465:INFO  ] TARGETNAME: common_ti_hdq
 BUILD: [01:0000002466:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORMCOMMON
 BUILD: [01:0000002467:PROGC ] Linking C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_hdq.lib
-BUILD: [01:0000002468:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_hdq.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm734.tmp
+BUILD: [01:0000002468:INFO  ] 	link -lib -out:C:\WINCE600\platform\common\lib\ARMV4I\retail\common_ti_hdq.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm463.tmp
 BUILD: [00:0000002469:PROGC ] Saving C:\WINCE600\PLATFORM\COMMON\Build.dat.
 BUILD: [00:0000002470:INFO  ] Done.
 BUILD: [00:0000002471:PROGC ] Done.
@@ -2493,5 +2493,5 @@ BUILD: [00:0000002490:PROGC ]
 BUILD: [00:0000002491:PROGC ] Total                    218         5       0
 BUILD: [00:0000002492:PROGC ] 
 BUILD: [00:0000002493:PROGC ] 5 Warnings,  0 Errors
-BUILD: [00:0000002494:PROGC ] GetSystemTimes (seconds): Idle: 87    Kernel: 152   User: 65   
-BUILD: [00:0000002495:PROGC ] Elapsed  time  (seconds): 108  
+BUILD: [00:0000002494:PROGC ] GetSystemTimes (seconds): Idle: 85    Kernel: 145   User: 64   
+BUILD: [00:0000002495:PROGC ] Elapsed  time  (seconds): 105  

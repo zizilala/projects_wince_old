@@ -107,7 +107,7 @@
 ; File c:\wince600\platform\z2170p\src\bsp_common\args\args.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46839| DCD	|$LN36@OALArgsQue|
+|$T46845| DCD	|$LN36@OALArgsQue|
 	DCD	0x40009601
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -135,7 +135,7 @@
 
   00000		 |$LN36@OALArgsQue|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
-  00004		 |$M46836|
+  00004		 |$M46842|
   00004	e1a05000	 mov         r5, r0
 
 ; 66   :     VOID *pData = NULL;
@@ -171,13 +171,13 @@
   00038	e5992000	 ldr         r2, [r9]
   0003c	e59f3208	 ldr         r3, [pc, #0x208]
   00040	e1520003	 cmp         r2, r3
-  00044	1a000075	 bne         |$cleanUp$46762|
+  00044	1a000075	 bne         |$cleanUp$46768|
   00048	e1d930b4	 ldrh        r3, [r9, #4]
   0004c	e3530001	 cmp         r3, #1
-  00050	1a000072	 bne         |$cleanUp$46762|
+  00050	1a000072	 bne         |$cleanUp$46768|
   00054	e1d930b6	 ldrh        r3, [r9, #6]
   00058	e3530001	 cmp         r3, #1
-  0005c	1a00006f	 bne         |$cleanUp$46762|
+  0005c	1a00006f	 bne         |$cleanUp$46768|
 
 ; 78   :         goto cleanUp;
 ; 79   : 
@@ -315,7 +315,7 @@
   00160	e3550002	 cmp         r5, #2
   00164	0a00000d	 beq         |$LN12@OALArgsQue|
   00168	e3550003	 cmp         r5, #3
-  0016c	0a00002b	 beq         |$cleanUp$46762|
+  0016c	0a00002b	 beq         |$cleanUp$46768|
   00170	e3550005	 cmp         r5, #5
   00174	0a000007	 beq         |$LN13@OALArgsQue|
   00178	e3550040	 cmp         r5, #0x40
@@ -335,7 +335,7 @@
 
 ; 150  :             break;
 
-  0018c	ea000023	 b           |$cleanUp$46762|
+  0018c	ea000023	 b           |$cleanUp$46768|
   00190		 |$LN11@OALArgsQue|
 
 ; 131  : 
@@ -346,7 +346,7 @@
 
 ; 134  :             break;
 
-  00194	ea000021	 b           |$cleanUp$46762|
+  00194	ea000021	 b           |$cleanUp$46768|
   00198		 |$LN13@OALArgsQue|
 
 ; 123  :     {
@@ -357,7 +357,7 @@
 
 ; 126  :             break;
 
-  0019c	ea00001f	 b           |$cleanUp$46762|
+  0019c	ea00001f	 b           |$cleanUp$46768|
   001a0		 |$LN12@OALArgsQue|
   001a0	e3a0320a	 mov         r3, #0xA, 4
 
@@ -369,7 +369,7 @@
 
 ; 130  :             break;
 
-  001a8	ea00001c	 b           |$cleanUp$46762|
+  001a8	ea00001c	 b           |$cleanUp$46768|
   001ac		 |$LN10@OALArgsQue|
 
 ; 135  : 
@@ -380,7 +380,7 @@
 
 ; 138  :             break;
 
-  001b0	ea00001a	 b           |$cleanUp$46762|
+  001b0	ea00001a	 b           |$cleanUp$46768|
   001b4		 |$LN6@OALArgsQue|
 
 ; 151  : 
@@ -391,7 +391,7 @@
 
 ; 154  :             break;
 
-  001b8	ea000018	 b           |$cleanUp$46762|
+  001b8	ea000018	 b           |$cleanUp$46768|
   001bc		 |$LN29@OALArgsQue|
 
 ; 118  :     }
@@ -420,11 +420,11 @@
 
 ; 174  :             break;
 
-  001e8	ea00000c	 b           |$cleanUp$46762|
+  001e8	ea00000c	 b           |$cleanUp$46768|
   001ec		 |$LN2@OALArgsQue|
   001ec	e3a0320a	 mov         r3, #0xA, 4
   001f0	e3834068	 orr         r4, r3, #0x68
-  001f4	ea000009	 b           |$cleanUp$46762|
+  001f4	ea000009	 b           |$cleanUp$46768|
   001f8		 |$LN3@OALArgsQue|
 
 ; 167  : 
@@ -434,7 +434,7 @@
 
   001f8	e3a0320a	 mov         r3, #0xA, 4
   001fc	e3834064	 orr         r4, r3, #0x64
-  00200	ea000006	 b           |$cleanUp$46762|
+  00200	ea000006	 b           |$cleanUp$46768|
   00204		 |$LN4@OALArgsQue|
 
 ; 158  :             break;
@@ -449,7 +449,7 @@
 
   00204	e3a0320a	 mov         r3, #0xA, 4
   00208	e3834060	 orr         r4, r3, #0x60
-  0020c	ea000003	 b           |$cleanUp$46762|
+  0020c	ea000003	 b           |$cleanUp$46768|
   00210		 |$LN9@OALArgsQue|
 
 ; 139  : 			
@@ -460,7 +460,7 @@
 
 ; 142  :             break;
 
-  00214	ea000001	 b           |$cleanUp$46762|
+  00214	ea000001	 b           |$cleanUp$46768|
   00218		 |$LN5@OALArgsQue|
   00218	e3a0320a	 mov         r3, #0xA, 4
 
@@ -469,7 +469,7 @@
 ; 157  :             pData = &pArgs->oalFlags;
 
   0021c	e3834044	 orr         r4, r3, #0x44
-  00220		 |$cleanUp$46762|
+  00220		 |$cleanUp$46768|
 
 ; 175  :     }
 ; 176  : 
@@ -501,7 +501,7 @@
   00250	00000000	 DCD         |??_C@_1CI@CLMEBIJE@?$AA?$CL?$AAO?$AAA?$AAL?$AAA?$AAr?$AAg?$AAs?$AAQ?$AAu?$AAe?$AAr?$AAy?$AA?$CI?$AA?$CF?$AAd?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@|
   00254		 |$LN43@OALArgsQue|
   00254	00000000	 DCD         |dpCurSettings|
-  00258		 |$M46837|
+  00258		 |$M46843|
 
 			 ENDP  ; |OALArgsQuery|
 

@@ -14,7 +14,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\ceddk\dll\gpio.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T38854| DCD	|$LN5@BSPGpioIni|
+|$T38858| DCD	|$LN5@BSPGpioIni|
 	DCD	0x40000d01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -34,7 +34,7 @@
 
   00000		 |$LN5@BSPGpioIni|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M38851|
+  00004		 |$M38855|
 
 ; 12   :     BSPInsertGpioDevice(0,NULL,L"GIO1:");   // Omap GPIOs
 
@@ -59,7 +59,7 @@
   0002c	00000000	 DCD         |??_C@_1M@IEOHCFKH@?$AAG?$AAI?$AAO?$AA2?$AA?3?$AA?$AA@|
   00030		 |$LN8@BSPGpioIni|
   00030	00000000	 DCD         |??_C@_1M@CHDFHAJ@?$AAG?$AAI?$AAO?$AA1?$AA?3?$AA?$AA@|
-  00034		 |$M38852|
+  00034		 |$M38856|
 
 			 ENDP  ; |BSPGpioInit|
 

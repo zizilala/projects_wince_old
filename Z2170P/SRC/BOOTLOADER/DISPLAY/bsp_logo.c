@@ -35,7 +35,7 @@
 #include "dssai.h"
 //defines SPI1, Ray 13-08-06
 HANDLE  hSPI = NULL;*/
-
+//#define Z2000 Z2000
 //------------------------------------------------------------------------------
 //
 // prototypes
@@ -53,9 +53,8 @@ UINT32 disable_lcd_backlight(void);
 void SetupDisplaySize(DWORD*, DWORD*);
 static void FlipFrameBuffer(PUCHAR , DWORD, DWORD ,PUCHAR);
 BOOL BLSDCardReadLogo(WCHAR *, UCHAR *, DWORD);		
-BOOL BLSDCardToFlash(WCHAR *);   //Initial SD Card, Ray13-09-03 
-
-
+BOOL BLSDCardToFlash(WCHAR *);                   //Initial SD Card, Ray13-09-03 
+void LcdStall(DWORD);
 
 //static void FlipFrameASCIIBuffer(PUCHAR, DWORD, DWORD,PUCHAR);
 // Fire up the LCM, Ray 13-08-06.
@@ -74,14 +73,15 @@ void GL_SetCursor(int, int);
 //
 // defines
 //
+#ifdef Z2000
 #define LOGO_WIDTH                  320	//480    // Logo bitmap image is RGB24 VGA Portrait bitmap
 #define LOGO_HEIGHT                 240	//640
-#define BYTES_PER_PIXEL             3
-
-//Definition 2.4" TFT-LCD size, Ray 13-09-25 
+#else   //Definition 2.4" TFT-LCD size, Ray 13-09-25 
 #define LOGO_WIDTH_ETD024FM         240
 #define LOGO_HEIGHT_ETD024FM        320
+#endif
 
+#define BYTES_PER_PIXEL             3
 #define DELAY_COUNT                 100 
 #define LOGO_GFX_ATTRIBUTES         (DISPC_GFX_ATTR_GFXENABLE | DISPC_GFX_ATTR_GFXFORMAT(DISPC_PIXELFORMAT_RGB24))           // RGB24 packed, enabled
 
@@ -102,18 +102,28 @@ static DWORD g_nHeight	= 0;
 static DWORD g_nWidth	= 0;
 static DWORD g_nColMax	= 0;
 static DWORD g_nRowMax	= 0;
-static PUCHAR	g_nBpp;
-static DWORD g_wFontColor = 0x000000;
-static DWORD g_wBkColor   = 0xffffff;	//RR_GG_BB	
-//static PUCHAR g_wFontColor = 0x000000;
-//static PUCHAR g_wBkColor   = 0xffffff;	//RR_GG_BB	
+static DWORD g_nBpp;
+static DWORD g_wFontColor = 0x00000000; //??_RR_GG_BB
+//static DWORD g_wFontColor2 = 0x00;
+//static DWORD g_wFontColor3 = 0x00;
+
+static DWORD g_wBkColor = 0xffffffff;	
+//static DWORD g_wBkColor2 = 0xff;	
+//static DWORD g_wBkColor3 = 0xff;	
+
+
+//static DWORD g_wFontColor = 0x000000 ;
+//static DWORD g_wBkColor = 0xffffff;	
 
 static volatile DWORD *g_dwFrameBuffer = NULL;
-//static volatile PUCHAR g_dwFrameBuffer = NULL;
 
+DWORD   g_dwLogoPosX;
+DWORD   g_dwLogoPosY;
+DWORD   g_dwLogoWidth;
+DWORD   g_dwLogoHeight;
 
-static int cur_row = 0;
-static int cur_col = 0;
+//static int cur_row = 0;
+//static int cur_col = 0;
 
 typedef struct DIRECT{
 		int left;   
@@ -373,27 +383,28 @@ typedef struct
   /*GPIOPuPd_TypeDef GPIO_PuPd;     /*!< Specifies the operating Pull-up/Pull down for the selected pins.
                                        This parameter can be a value of @ref GPIOPuPd_TypeDef */
 /*}GPIO_InitTypeDef;*/
+
 //------------------------------------------------------------------------------
-//13-08-23
-BOOL InitGraphicsEngine(DWORD nHeight, DWORD nWidth, PUCHAR nBpp, DWORD dwFrameBuffer)
+//
+//  Function:  InitGraphicsEngine
+//
+//  Initial graphics engine after Call function draw ASCII, Ray 13-10-03  
+//                
+//InitGraphicsEngine(dwLcdWidth, dwLcdHeight, pChar, framebuffer);
+BOOL InitGraphicsEngine(DWORD nWidth, DWORD nHeight, PUCHAR nBpp, DWORD dwFrameBuffer)
 {
-	//ULONG x;
-	//ULONG y;
-	//char str[] = "Z"; 
-	//int size = 2;
 	
-	//int i = 0;
-	/*UINT checkbpp = 8;		
-	if(nBpp != (PUCHAR)checkbpp)	//how to check values??
+	/*if(nBpp != (PUCHAR)checkbpp)	//how to check values??
 		return FALSE;*/
+		
 	g_nHeight = nHeight;
 	g_nWidth  = nWidth;
 	
-	g_nColMax = g_nWidth  / FONT_WIDTH;			//320 / 8   = 40(g_nColMax)
-	g_nRowMax = g_nHeight / FONT_HEIGHT;		//240 / 16 = 15(g_nRowMax )
+	g_nColMax = g_nWidth  / FONT_WIDTH;			//nWidth(240) / 8   = 30(g_nColMax)
+	g_nRowMax = g_nHeight / FONT_HEIGHT;		//nHeight(320) / 16 = 20(g_nRowMax )
 	
-	g_nBpp = nBpp;  
-	g_dwFrameBuffer = (volatile DWORD *) dwFrameBuffer;
+	g_nBpp = (DWORD)nBpp; 
+    g_dwFrameBuffer = (volatile DWORD *) dwFrameBuffer;
 
 	/*for (y = 0; y < g_nHeight; y++)		
 	{
@@ -407,11 +418,50 @@ BOOL InitGraphicsEngine(DWORD nHeight, DWORD nWidth, PUCHAR nBpp, DWORD dwFrameB
 	
 	FillASCII();
 	
+    //size = (sizeof(asciiFont)/16); 
+	//PrintStringN(str, size);
+	//PrintStringN();
+	return TRUE;
+}
+
+/*BOOL InitGraphicsEngine(DWORD nWidth, DWORD nHeight,
+                        PUCHAR nBpp, DWORD dwFrameBuffer)
+{
+	//ULONG x;
+	//ULONG y;
+	//char str[] = "Z"; 
+	//int size = 2;
+	
+	//int i = 0;
+	/*UINT checkbpp = 8;		
+	if(nBpp != (PUCHAR)checkbpp)	//how to check values??
+		return FALSE;*/
+	/*g_nWidth  = nWidth;
+	g_nHeight = nHeight;
+	
+	g_nColMax = g_nWidth  / FONT_WIDTH;			
+	g_nRowMax = g_nHeight / FONT_HEIGHT;		
+	
+	g_nBpp = nBpp;  
+	g_dwFrameBuffer = (volatile DWORD *) dwFrameBuffer;
+    */
+	/*for (y = 0; y < g_nHeight; y++)		
+	{
+		for( x = 0; x < g_nWidth; x++ )	
+        {
+			*g_nBpp++ = 0xfa;    //  Blue	
+            *g_nBpp++ = 0xce;    //  Green
+            *g_nBpp++ = 0x87;    //  Red
+		}
+	}*/
+	
+//	FillASCII();
+	
 //	size = (sizeof(asciiFont)/16); 
 	//PrintStringN(str, size);
 //	PrintStringN();
-	return TRUE;
-}
+/*	return TRUE;
+}*/
 
 //void PrintStringN(char* s, int size)
 /*void PrintStringN()
@@ -465,49 +515,139 @@ BOOL InitGraphicsEngine(DWORD nHeight, DWORD nWidth, PUCHAR nBpp, DWORD dwFrameB
 //    }
 //}
 
-/*void GL_SetCursor(int row, int col)
-{
-    cur_col = col;
-    cur_row = row;
-}*/
-
-//VOID FillASCII(INT Row, INT Col, BYTE c)
+//------------------------------------------------------------------------------
+//
+//  Function:  ShowLogo
+//
+//  The FillASCII() function major draw ASCII show char
+//
+//ifndef Z2000
+//2.4", Ray 13-10-02
 VOID FillASCII()
 {
     volatile DWORD *mem = g_dwFrameBuffer;
-    int i, j;
-	//int k;
+    //static DWORD nWidth	= 360;  
+    static DWORD nWidth	= 180;
+    //static DWORD nWidth	= 10;
+    //DWORD d4sec = 4000000;
+//    DWORD d50msec = 50000;
 	int printN=0;
 	BYTE showChar[] ={45,80,66,69,74,79,72,15,15,15};	//Loading...
+	UINT16 tempbit, i, j;
+    int p = 8;
+    unsigned long offset;
+    int offh = 0, offw = 0;
+    unsigned char bit;
+	BYTE c = 0; 
+	//BYTE c = 35;
+	static int cur_col  = 13;
+	static int cur_row  = 6;        //shift a row place equal a pixel, Ray 13-10-03  
+	BYTE n = 0;
+	int shiftPalce = 8;	
+	//DWORD	dwLength 	= 0;
+	
+	offw =  FONT_WIDTH * cur_row ;  			// offw = 8
+	printN = sizeof(showChar);
+
+	while(n < printN)
+	{
+		c = showChar[n];
+		for (i=0; i<16; i++) 
+		{
+        	//g_nWidth -= 80;
+        	offh =  FONT_HEIGHT * cur_col + i;     //offh =  16+0, 16+1.....
+            //OALLog(L"Round: %d \r\n", i);
+        	//OALLog(L"=============================\r\n");
+        	//LcdStall(d2sec);
+        	for (j=0; j<8; j++) 
+        	{
+            	tempbit = 1 << j; //OALLog(L"j: %d \r\n", j);
+            	bit = (unsigned char)tempbit;
+            	bit &= asciiFont[c][i];                 //do array location & bit 
+                //OALLog(L"bit: %c,\tasciiFont: %d  \r\n",bit , asciiFont[c][i]);
+				//offset = g_nHeight * offh + offw;     //240*16+ 8   
+                offset = nWidth * offh + offw;
+                  /*if(j== 0)
+                  {
+                    OALLog(L"offh:    %d \r\n", offh);
+                    OALLog(L"offw:    %d \r\n", offw);
+                    OALLog(L"nWidth:  %d \r\n", nWidth);  
+                    //OALLog(L"g_nWidth: %d \r\n", g_nWidth);  
+                    OALLog(L"offset:  %d \r\n", offset);
+                    OALLog(L"-----------------------------\r\n");
+                  }*/
+                if (bit) {							//Non-zero is Running
+        	  		mem[ p + offset ] = g_wFontColor;
+                   	//mem[ p + offset ] = g_wFontColor2;
+                   	//mem[ p + offset ] = g_wFontColor3;
+                	p--;
+            	}else {
+                	mem[ p + offset ] = g_wBkColor;
+         	  		//mem[ p + offset ] = g_wBkColor2;
+           	  		//mem[ p + offset ] = g_wBkColor3;
+                	p--;
+            	}
+                //LcdStall(d50msec);
+            	if(p == 0){
+                	p = 8;
+            	}
+        	}
+    	}
+		offw += shiftPalce;
+		n++;
+	}
+}
+//3.5", Ray 13-10-02
+//#else
+/*VOID FillASCII()
+{
+    volatile DWORD *mem = g_dwFrameBuffer;
+    int i, j;
+    DWORD d2sec = 2000000;
+	//int k;
+	//int printN=0;
+	//BYTE showChar[] ={45,80,66,69,74,79,72,15,15,15};	//Loading...
 	int tempbit;
     int p = 8;
     unsigned long offset;
     int offh = 0, offw = 0;
     unsigned char bit;
+	//BYTE c = 0; 
 	BYTE c = 35;
-	int	Row  = 1;
-	int Col  = 1;
-	BYTE time = 0;
-	int shiftPalce = 8;	
-	DWORD	dwLength 	= 0;
+	static int cur_col  = 1;
+	static int cur_row  = 10;        //Offset row location
+	//BYTE time = 0;
+	//int shiftPalce = 8;	
+	//DWORD	dwLength 	= 0;
 
 	
-	offw =  FONT_WIDTH * Col; 			// offw =8
-	printN = sizeof(showChar);
+	offw =  FONT_WIDTH * cur_row ; 			// offw =8
+	//printN = sizeof(showChar);
 
-	while(time < printN)
-	{
-		c = showChar[time];
+	//while(time < printN)
+	//{
+		//c = showChar[time];
 		for (i=0; i<16; i++) 
 		{
-        	offh = FONT_HEIGHT * Row + i;		//offh =  16+0, 16+1.....
+        	//offh = FONT_HEIGHT * cur_col + i;		//offh =  16+0, 16+1.....
+            offh = 2 * cur_col + i;	
+        	OALLog(L"Round: %d \r\n", i);
+        	OALLog(L"=============================\r\n");
         	for (j=0; j<8; j++) 
         	{
             	tempbit = 1 << j;
 				bit = (unsigned char)tempbit;
             	bit &= asciiFont[c][i];
-				offset = g_nWidth * offh + offw;
-				//offset = offh + offw;
+				//offset = g_nWidth * offh + offw;     //240*16+ 8   
+				offset = g_nHeight * offh; /*+ offw;*/
+				/*if( (j%2) == 0){
+                    OALLog(L"offh:     %d \r\n", offh);
+                    OALLog(L"offw:     %d \r\n", offw);
+                    OALLog(L"g_nHeight:%d \r\n", g_nHeight);  
+                    OALLog(L"offset:   %d \r\n", offset);
+                    OALLog(L"-----------------------------\r\n");
+                  }
+                  LcdStall(d2sec);
             
             	if (!bit) {							//Non-zero is Running
         	  		mem[ p + offset ] = g_wBkColor;	
@@ -522,24 +662,10 @@ VOID FillASCII()
             	}
         	}
     	}
-		offw += shiftPalce;
-		time++;
-	}
-	// Compute the size
-	dwLength = BYTES_PER_PIXEL * LOGO_WIDTH * LOGO_HEIGHT;
-	
-	//FlipFrameASCIIBuffer((PUCHAR)g_dwFrameBuffer,LOGO_HEIGHT,LOGO_WIDTH*BYTES_PER_PIXEL,(PUCHAR)g_dwFrameBuffer + dwLength);
-
-}
+}*/
+//#endif
 
 //------------------------------------------------------------------------------
-
-DWORD   g_dwLogoPosX;
-DWORD   g_dwLogoPosY;
-
-DWORD   g_dwLogoWidth;
-DWORD   g_dwLogoHeight;
-
 //(framebuffer, 240, 320*3, framebuffer + dwLength(3*240*320) )
 static void FlipFrameBuffer(PUCHAR fb, DWORD h, DWORD lineSize, PUCHAR temporaryBuffer)
 {
@@ -547,17 +673,17 @@ static void FlipFrameBuffer(PUCHAR fb, DWORD h, DWORD lineSize, PUCHAR temporary
     PUCHAR top;
     PUCHAR bottom;
 
-    top = fb;						//framebuffer
-    bottom = fb + ((h-1)*lineSize);	//bottom(area) = 0 + 239*960
+    top = fb;						//framebuffer (start address)
+    bottom = fb + ((h-1)*lineSize);	//bottom = 0 + 239*960 (i.e: Area)
     
     for (y=0; y < h/2; y++)
     {
-        memcpy(temporaryBuffer,top, lineSize);	//copy top(framebuffer)  lineSize to  temporaryBuffer
-        memcpy(top, bottom, lineSize);
-        memcpy(bottom, temporaryBuffer, lineSize);
-        top += lineSize;
-        bottom -= lineSize;
-    }
+        memcpy(temporaryBuffer, top, lineSize);	    //copy "top(source)" how much "lineSize(number)" to temporaryBuffer(destination) 
+        memcpy(top, bottom, lineSize);              //960 -> 0
+        memcpy(bottom, temporaryBuffer, lineSize);  //960 -> temp
+        top += lineSize;                            //top = 0+960
+        bottom -= lineSize;                         //bottom = 229440 -960
+     }
 }
 
 //(framebuffer, 240, 320*3, framebuffer + dwLength(3*240*320) )
@@ -584,8 +710,6 @@ static void FlipFrameBuffer(PUCHAR fb, DWORD h, DWORD lineSize, PUCHAR temporary
         bottom -= lineSize;
     }
 }*/
-
-
 //------------------------------------------------------------------------------
 //
 //  Function:  ShowLogo
@@ -593,7 +717,8 @@ static void FlipFrameBuffer(PUCHAR fb, DWORD h, DWORD lineSize, PUCHAR temporary
 //  This function shows the logo splash screen
 //
 //BOOL ShowLogo(UINT32 flashAddr, UINT32 offset)
-VOID ShowLogo(UINT32 flashAddr, UINT32 offset)//-1, 0
+#ifdef Z2000
+VOID ShowLogo(UINT32 flashAddr, UINT32 offset)
 {
     HANDLE  hFlash = NULL;		
     DWORD  framebuffer;		
@@ -652,7 +777,7 @@ VOID ShowLogo(UINT32 flashAddr, UINT32 offset)//-1, 0
 
     //  If bitmap signature is valid, display the logo, otherwise fill screen with pattern
     // if( wSignature == 0x4D42 )			Ray 13-08-01 
-   //if( wSignature != 0x4D42 )		//-0x4D42 == bitmap format values
+   if( wSignature != 0x4D42 )		//-0x4D42 == bitmap format values
 	{
 		 //  Adjust color bars to LCD size
 		g_dwLogoPosX   = 0;
@@ -715,86 +840,7 @@ VOID ShowLogo(UINT32 flashAddr, UINT32 offset)//-1, 0
 	//	Fire up the LCM, Ray 13-08-06.
 	//lcm_config();
 }
-
-//------------------------------------------------------------------------------
-//
-//  Function:   ShowSDLogo
-//
-//  This function is called to display the splaschreen bitmap from the SDCard
-//
-//
-BOOL ShowSDLogo()
-{
-    DWORD	framebuffer = 0;
-    DWORD	framebufferPA = 0;
-    DWORD	dwLcdWidth 	= 0;
-    DWORD	dwLcdHeight = 0;
-	DWORD	dwLength 	= 0;
-
-	PUCHAR 	pChar;
-	
-    // Get the LCD width and height
-    LcdPdd_LCD_GetMode( NULL, &dwLcdWidth, &dwLcdHeight, NULL );
-
-    OALMSG(OAL_INFO, (L"ShowSDLogo: dwLcdWidth = %d, dwLcdHeight = %d\r\n",dwLcdWidth,dwLcdHeight));
-	// Get the frame buffer
-	LcdPdd_GetMemory( NULL, &framebufferPA );
-	OALMSG(OAL_INFO, (L"ShowSDLogo: framebuffer = 0x%x\r\n",framebuffer));
-    framebuffer = (DWORD) OALPAtoUA(framebufferPA);
-	OALMSG(OAL_INFO, (L"ShowSDLogo: framebuffer OALPAtoUA = 0x%x\r\n",framebuffer));
-	pChar = (PUCHAR)framebuffer;
-	
-	// Compute the size
-	dwLength = BYTES_PER_PIXEL * LOGO_WIDTH * LOGO_HEIGHT;
-	OALMSG(OAL_INFO, (L"ShowSDLogo: BYTES_PER_PIXEL = %d\r\n",BYTES_PER_PIXEL));
-	OALMSG(OAL_INFO, (L"ShowSDLogo: LOGO_WIDTH = %d\r\n",LOGO_WIDTH));
-	OALMSG(OAL_INFO, (L"ShowSDLogo: LOGO_HEIGHT = %d\r\n",LOGO_HEIGHT));
-	OALMSG(OAL_INFO, (L"ShowSDLogo: size = %d\r\n",dwLength));
-
-	//Loader file name(LOGO.bmp), Ray 13-08-01
-	if (!BLSDCardReadLogo(L"LOGO.bmp", (UCHAR*)framebuffer, dwLength))	
-	{
-		return FALSE;	//BLSDCardReadLogo() it is TRUE ,if not is TRUE, it will return FALSE, Ray 13-09-04 
-	}
-
-    //  Compute position and size of logo image 
-    g_dwLogoPosX   = (dwLcdWidth - LOGO_WIDTH)/2;
-    g_dwLogoPosY   = (dwLcdHeight - LOGO_HEIGHT)/2;
-    g_dwLogoWidth  = LOGO_WIDTH;
-    g_dwLogoHeight = LOGO_HEIGHT;
-	OALMSG(OAL_INFO, (L"ShowSDLogo: g_dwLogoPosX = %d,g_dwLogoPosY = %d\r\n",g_dwLogoPosX,g_dwLogoPosY));
-	OALMSG(OAL_INFO, (L"ShowSDLogo: g_dwLogoWidth = %d,g_dwLogoHeight = %d\r\n",g_dwLogoWidth,g_dwLogoHeight));
-    
-	//As BMP are stored upside down, we need to flip the frame buffer's content
-    FlipFrameBuffer((PUCHAR)framebuffer, LOGO_HEIGHT, LOGO_WIDTH*BYTES_PER_PIXEL,(PUCHAR)framebuffer + dwLength);
-
-
-	//(framebuffer, 240, 320*3, framebuffer + dwLength(3*240*320) )
-	//initial graphics engine & Call function draw ASCII, Ray 13-08-30
-	//InitGraphicsEngine(dwLcdWidth, dwLcdHeight, pChar, framebuffer);
-	 
-	//  Fire up the LCD
-    lcd_config(framebufferPA);
-
-	return TRUE;
-	//return FALSE;
-}
-
-//------------------------------------------------------------------------------
-//  this fuction are used calling next function directive, Ray, 
-//  Function:   BLSDtoFlash
-//
-BOOL BLSDtoFlash()
-{
-	//if(BLSDCardToFlash(L"OUT_DATA.txt")){
-	if(BLSDCardToFlash(L"EBOOTSD.nb0")){
-        OALLog(L"------------\n");
-        return	TRUE;
-    }else{
-        return	FALSE;
-    }
-}
-
+#else
 //------------------------------------------------------------------------------
 //  This function are drawing screen(the same above ShowLogo()), Ray 13-09-25 
 //  Function:   DrawLogo
@@ -859,7 +905,7 @@ void DrawingScreen(UINT32 flashAddr, UINT32 offset)
     }
     
 	//  If bitmap signature is valid, display the logo, otherwise fill screen with pattern
-    //if(wSignature != 0X4D42)
+    if(wSignature != 0X4D42)
     {
         //  Adjust color bars to LCD size
         g_dwLogoPosX   = 0;
@@ -897,7 +943,7 @@ void DrawingScreen(UINT32 flashAddr, UINT32 offset)
                     }
                     else
                     {
-                        *pChar++ = 0xFF;    //  Blue
+                        *pChar++ = 0x00;    //  Blue
                         *pChar++ = 0x00;    //  Green
                         *pChar++ = 0xFF;    //  Red
                     }
@@ -906,9 +952,145 @@ void DrawingScreen(UINT32 flashAddr, UINT32 offset)
         }
 		
 	}
-    //FlipFrameBuffer((PUCHAR)frameBuffer, LOGO_HEIGHT, LOGO_WIDTH*BYTES_PER_PIXEL,(PUCHAR)frameBuffer + dwLcdFrameArea);
+	
+   // InitGraphicsEngine(dwLcdWidth, dwLcdHeight, pChar, frameBuffer);
+   //InitGraphicsEngine(LOGO_WIDTH_ETD024FM, LOGO_HEIGHT_ETD024FM, pChar, frameBuffer);
 	//  Fire up the LCD
     lcd_config(frameBufferPA); 
+}
+#endif
+
+//------------------------------------------------------------------------------
+//
+//  Function:   ShowSDLogo
+//
+//  This function is called to display the splaschreen bitmap from the SDCard
+//
+#ifdef Z2000
+BOOL ShowSDLogo()
+{
+    DWORD	framebuffer = 0;
+    DWORD	framebufferPA = 0;
+    DWORD	dwLcdWidth 	= 0;
+    DWORD	dwLcdHeight = 0;
+	DWORD	dwLength 	= 0;
+    PUCHAR 	pChar;
+	
+    // Get the LCD width and height
+    LcdPdd_LCD_GetMode( NULL, &dwLcdWidth, &dwLcdHeight, NULL );
+    OALMSG(OAL_INFO, (L"ShowSDLogo: dwLcdWidth = %d, dwLcdHeight = %d\r\n",dwLcdWidth,dwLcdHeight));
+
+	// Get the frame buffer
+	LcdPdd_GetMemory(NULL, &framebufferPA );
+	OALMSG(OAL_INFO, (L"ShowSDLogo: framebuffer = 0x%x\r\n",framebuffer));
+    framebuffer = (DWORD) OALPAtoUA(framebufferPA);
+	OALMSG(OAL_INFO, (L"ShowSDLogo: framebuffer OALPAtoUA = 0x%x\r\n",framebuffer));
+	pChar = (PUCHAR)framebuffer;
+	
+	// Compute the size
+	dwLength = BYTES_PER_PIXEL * LOGO_WIDTH * LOGO_HEIGHT;
+	OALMSG(OAL_INFO, (L"ShowSDLogo: BYTES_PER_PIXEL = %d\r\n",BYTES_PER_PIXEL));
+	OALMSG(OAL_INFO, (L"ShowSDLogo: LOGO_WIDTH = %d\r\n",LOGO_WIDTH));
+	OALMSG(OAL_INFO, (L"ShowSDLogo: LOGO_HEIGHT = %d\r\n",LOGO_HEIGHT));
+	OALMSG(OAL_INFO, (L"ShowSDLogo: size = %d\r\n",dwLength));
+
+	//Loader file name(LOGO.bmp), Ray 13-08-01
+	if (!BLSDCardReadLogo(L"LOGO.bmp", (UCHAR*)framebuffer, dwLength))	
+	{
+		return FALSE;	//BLSDCardReadLogo() it is TRUE ,if not is TRUE, it will return FALSE, Ray 13-09-04 
+	}
+
+    //  Compute position and size of logo image 
+    g_dwLogoPosX   = (dwLcdWidth - LOGO_WIDTH)/2;
+    g_dwLogoPosY   = (dwLcdHeight - LOGO_HEIGHT)/2;
+    g_dwLogoWidth  = LOGO_WIDTH;
+    g_dwLogoHeight = LOGO_HEIGHT;
+	OALMSG(OAL_INFO, (L"ShowSDLogo: g_dwLogoPosX = %d,g_dwLogoPosY = %d\r\n",g_dwLogoPosX,g_dwLogoPosY));
+	OALMSG(OAL_INFO, (L"ShowSDLogo: g_dwLogoWidth = %d,g_dwLogoHeight = %d\r\n",g_dwLogoWidth,g_dwLogoHeight));
+
+    
+	//As BMP are stored upside down, we need to flip the frame buffer's content
+    FlipFrameBuffer((PUCHAR)framebuffer, LOGO_HEIGHT, LOGO_WIDTH*BYTES_PER_PIXEL,(PUCHAR)framebuffer + dwLength);
+
+	//Initial graphics engine after Call function draw ASCII, Ray 13-08-30
+	InitGraphicsEngine(dwLcdWidth, dwLcdHeight, pChar, framebuffer);
+	
+	//  Fire up the LCD
+    lcd_config(framebufferPA);
+
+	return TRUE;
+	//return FALSE;
+}
+#else
+BOOL ShowSDLogo()
+{
+    DWORD	framebuffer = 0;
+    DWORD	framebufferPA = 0;
+    DWORD	dwLcdWidth 	= 0;
+    DWORD	dwLcdHeight = 0;
+	DWORD	dwLcdFrameArea 	= 0;
+	PUCHAR 	pChar;
+	
+    // Get the LCD width and height
+    LcdPdd_LCD_GetMode( NULL, &dwLcdWidth, &dwLcdHeight, NULL );
+
+    OALMSG(OAL_INFO, (L"ShowSDLogo: dwLcdWidth = %d, dwLcdHeight = %d\r\n",dwLcdWidth,dwLcdHeight));
+
+	// Get the frame buffer
+	LcdPdd_GetMemory( NULL, &framebufferPA );
+	OALMSG(OAL_INFO, (L"ShowSDLogo: framebuffer = 0x%x\r\n",framebuffer));
+    framebuffer = (DWORD) OALPAtoUA(framebufferPA);
+	OALMSG(OAL_INFO, (L"ShowSDLogo: framebuffer OALPAtoUA = 0x%x\r\n",framebuffer));
+	pChar = (PUCHAR)framebuffer;
+	
+	// Compute the size
+	dwLcdFrameArea = BYTES_PER_PIXEL * LOGO_WIDTH_ETD024FM * LOGO_HEIGHT_ETD024FM;
+	OALMSG(OAL_INFO, (L"ShowSDLogo: BYTES_PER_PIXEL = %d\r\n",BYTES_PER_PIXEL));
+	OALMSG(OAL_INFO, (L"ShowSDLogo: LOGO_WIDTH = %d\r\n",LOGO_WIDTH_ETD024FM));
+	OALMSG(OAL_INFO, (L"ShowSDLogo: LOGO_HEIGHT = %d\r\n",LOGO_HEIGHT_ETD024FM));
+	OALMSG(OAL_INFO, (L"ShowSDLogo: size = %d\r\n",dwLcdFrameArea));
+
+	//Loader file name(LOGO.bmp), Ray 13-08-01
+	if (!BLSDCardReadLogo(L"LOGO_VER.bmp", (UCHAR*)framebuffer, dwLcdFrameArea))	
+	{
+		return FALSE;	//BLSDCardReadLogo() it has reading logo is TRUE ,if is not; it will return FALSE, Ray 13-09-04 
+	}
+
+    //  Compute position and size of logo image 
+    g_dwLogoPosX   = (dwLcdWidth - LOGO_WIDTH_ETD024FM)/2;
+    g_dwLogoPosY   = (dwLcdHeight - LOGO_HEIGHT_ETD024FM)/2;
+    g_dwLogoWidth  = LOGO_WIDTH_ETD024FM;
+    g_dwLogoHeight = LOGO_HEIGHT_ETD024FM;
+	OALMSG(OAL_INFO, (L"ShowSDLogo: g_dwLogoPosX = %d,g_dwLogoPosY = %d\r\n",g_dwLogoPosX,g_dwLogoPosY));
+	OALMSG(OAL_INFO, (L"ShowSDLogo: g_dwLogoWidth = %d,g_dwLogoHeight = %d\r\n",g_dwLogoWidth,g_dwLogoHeight));
+    
+	//As BMP are stored upside down, we need to flip the frame buffer's content
+    FlipFrameBuffer((PUCHAR)framebuffer, LOGO_HEIGHT_ETD024FM, LOGO_WIDTH_ETD024FM * BYTES_PER_PIXEL,(PUCHAR)framebuffer + dwLcdFrameArea);
+
+    //initial graphics engine & Call function draw ASCII, Ray 13-08-30
+	InitGraphicsEngine(dwLcdWidth, dwLcdHeight, pChar, framebuffer);
+
+	//  Fire up the LCD
+    lcd_config(framebufferPA);
+
+	return TRUE;
+}
+#endif
+
+
+//------------------------------------------------------------------------------
+//  this fuction are used calling next function directive, Ray, 
+//  Function:   BLSDtoFlash
+//
+BOOL BLSDtoFlash()
+{
+	//if(BLSDCardToFlash(L"OUT_DATA.txt")){
+	if(BLSDCardToFlash(L"EBOOTSD.nb0")){
+        OALLog(L"------------\n");
+        return	TRUE;
+    }else{
+        return	FALSE;
+    }
 }
 
 //------------------------------------------------------------------------------

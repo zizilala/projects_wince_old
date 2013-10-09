@@ -344,17 +344,24 @@ cleanUp:
 }
 
 //------------------------------------------------------------------------------
+//#define Z2000
 //Ray 13-07-31 
 BOOL BLShowLogo()
 {
 	//  Show the bootloader splashscreen if present on the SDCard
 	//if (!ShowSDLogo())			 //Ray 13-08-30 
 	//{
-		ShowSDLogo();
-		//DrawingScreen((UINT32)-1, 0);
 		//ShowLogo((UINT32)-1, 0);
     //}  
-	
+    //Below at screen show logo ,if doesn't bitmap exist be drawing screen, Ray 13-09-30      
+    if(!ShowSDLogo())               
+    {
+#ifndef Z2000
+        DrawingScreen((UINT32)-1, 0);
+#else
+        ShowLogo((UINT32)-1, 0);
+#endif
+    }
 	return TRUE;
 }
 

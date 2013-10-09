@@ -46,7 +46,7 @@ SOURCES=\
     ..\flashmenu.c \
     ..\mmu.c \
     flash.c \
-    cfg.c
+    cfg.c	
 
 
 ARM_SOURCES=\
@@ -94,6 +94,7 @@ TARGETLIBS= \
     $(_TARGETPLATLIB)\$(_CPUDEPPATH)\bsp_boot_ethdrv_usbfn.lib                  \
     $(_TARGETPLATLIB)\$(_CPUDEPPATH)\bsp_display.lib                            \
     $(_TARGETPLATLIB)\$(_CPUDEPPATH)\bsp_display_init.lib						\
+	$(_PLATCOMMONLIBARMRET)\ceddk_spi_lib.lib									\
 	$(_PLATCOMMONLIBARMRET)\ceddk_spi_lib.lib									\
 	
 							

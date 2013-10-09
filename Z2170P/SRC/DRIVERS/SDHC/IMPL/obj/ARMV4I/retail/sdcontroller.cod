@@ -30,7 +30,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43702| DCD	|$LN5@SetEvent|
+|$T43706| DCD	|$LN5@SetEvent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -42,7 +42,7 @@
 
   00000		 |$LN5@SetEvent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M43699|
+  00004		 |$M43703|
 
 ; 236  : 	return EventModify(h,EVENT_SET);
 
@@ -53,14 +53,14 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M43700|
+  00014		 |$M43704|
 
 			 ENDP  ; |SetEvent|
 
 	EXPORT	|GetCurrentThread|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43711| DCD	|$LN5@GetCurrent|
+|$T43715| DCD	|$LN5@GetCurrent|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -71,7 +71,7 @@
 ; 351  : _inline HANDLE GetCurrentThread(void) {
 
   00000		 |$LN5@GetCurrent|
-  00000		 |$M43708|
+  00000		 |$M43712|
 
 ; 352  : 	return ((HANDLE)(SH_CURTHREAD+SYS_HANDLE_BASE));
 
@@ -80,7 +80,7 @@
 ; 353  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M43709|
+  00008		 |$M43713|
 
 			 ENDP  ; |GetCurrentThread|
 
@@ -100,7 +100,7 @@
 ; File c:\wince600\platform\z2170p\src\drivers\sdhc\impl\sdcontroller.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43721| DCD	|$LN5@CSDIOContr|
+|$T43725| DCD	|$LN5@CSDIOContr|
 	DCD	0x40000901
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -124,7 +124,7 @@
 
   00000		 |$LN5@CSDIOContr|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M43718|
+  00004		 |$M43722|
   00004	e1a04000	 mov         r4, r0
   00008	eb000000	 bl          |??0CSDIOControllerBase@@QAA@XZ|
   0000c	e59f300c	 ldr         r3, [pc, #0xC]
@@ -138,7 +138,7 @@
   00020		 |$LN6@CSDIOContr|
   00020		 |$LN7@CSDIOContr|
   00020	00000000	 DCD         |??_7CSDIOController@@6B@|
-  00024		 |$M43719|
+  00024		 |$M43723|
 
 			 ENDP  ; |??0CSDIOController@@QAA@XZ|, CSDIOController::CSDIOController
 
@@ -146,7 +146,7 @@
 	IMPORT	|??1CSDIOControllerBase@@QAA@XZ|	; CSDIOControllerBase::~CSDIOControllerBase
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43731| DCD	|$LN5@CSDIOContr@2|
+|$T43735| DCD	|$LN5@CSDIOContr@2|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 
@@ -158,7 +158,7 @@
 
   00000		 |$LN5@CSDIOContr@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M43728|
+  00004		 |$M43732|
   00004	e1a02000	 mov         r2, r0
   00008	e59f300c	 ldr         r3, [pc, #0xC]
 
@@ -171,7 +171,7 @@
   0001c		 |$LN6@CSDIOContr@2|
   0001c		 |$LN7@CSDIOContr@2|
   0001c	00000000	 DCD         |??_7CSDIOController@@6B@|
-  00020		 |$M43729|
+  00020		 |$M43733|
 
 			 ENDP  ; |??1CSDIOController@@QAA@XZ|, CSDIOController::~CSDIOController
 
@@ -179,7 +179,7 @@
 	IMPORT	|GPIOSetMode|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43743| DCD	|$LN6@Initialize|
+|$T43747| DCD	|$LN6@Initialize|
 	DCD	0x40001001
 ; Function compile flags: /Ogspy
 
@@ -191,7 +191,7 @@
 
   00000		 |$LN6@Initialize|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M43740|
+  00004		 |$M43744|
   00004	e1a04000	 mov         r4, r0
 
 ; 43   :     if (m_dwCardWPGPIO != (DWORD) MMC_NO_GPIO_CARD_WP)
@@ -225,14 +225,14 @@
 
   00038	e8bd4010	 ldmia       sp!, {r4, lr}
   0003c	e12fff1e	 bx          lr
-  00040		 |$M43741|
+  00040		 |$M43745|
 
 			 ENDP  ; |?InitializeWPDetect@CSDIOController@@IAAHXZ|, CSDIOController::InitializeWPDetect
 
 	EXPORT	|?DeInitializeWPDetect@CSDIOController@@IAAHXZ| ; CSDIOController::DeInitializeWPDetect
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43752| DCD	|$LN5@DeInitiali|
+|$T43756| DCD	|$LN5@DeInitiali|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -243,7 +243,7 @@
 ; 52   : {
 
   00000		 |$LN5@DeInitiali|
-  00000		 |$M43749|
+  00000		 |$M43753|
 
 ; 53   :     return TRUE;
 
@@ -252,14 +252,14 @@
 ; 54   : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M43750|
+  00008		 |$M43754|
 
 			 ENDP  ; |?DeInitializeWPDetect@CSDIOController@@IAAHXZ|, CSDIOController::DeInitializeWPDetect
 
 	IMPORT	|GPIOGetBit|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43763| DCD	|$LN8@IsWritePro|
+|$T43767| DCD	|$LN8@IsWritePro|
 	DCD	0x40000f01
 ; Function compile flags: /Ogspy
 
@@ -271,7 +271,7 @@
 
   00000		 |$LN8@IsWritePro|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M43760|
+  00004		 |$M43764|
   00004	e1a04000	 mov         r4, r0
 
 ; 59   :     BOOL fWriteProtected;
@@ -329,13 +329,13 @@
 
   00034	e8bd4010	 ldmia       sp!, {r4, lr}
   00038	e12fff1e	 bx          lr
-  0003c		 |$M43761|
+  0003c		 |$M43765|
 
 			 ENDP  ; |?IsWriteProtected@CSDIOController@@MAAHXZ|, CSDIOController::IsWriteProtected
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43775| DCD	|$LN7@SDCardDete|
+|$T43779| DCD	|$LN7@SDCardDete|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -347,7 +347,7 @@
 
   00000		 |$LN7@SDCardDete|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M43772|
+  00004		 |$M43776|
   00004	e1a04000	 mov         r4, r0
 
 ; 87   :     return GPIOGetBit(m_hGPIO, m_dwCardDetectGPIO) == m_dwCardInsertedGPIOState;
@@ -371,7 +371,7 @@
 
   00028	18bd4010	 ldmneia     sp!, {r4, lr}
   0002c	e12fff1e	 bx          lr
-  00030		 |$M43773|
+  00030		 |$M43777|
 
 			 ENDP  ; |?SDCardDetect@CSDIOController@@MAAHXZ|, CSDIOController::SDCardDetect
 
@@ -379,7 +379,7 @@
 	IMPORT	|GPIOPullup|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43785| DCD	|$LN5@Initialize@2|
+|$T43789| DCD	|$LN5@Initialize@2|
 	DCD	0x40000d01
 ; Function compile flags: /Ogspy
 
@@ -391,7 +391,7 @@
 
   00000		 |$LN5@Initialize@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M43782|
+  00004		 |$M43786|
   00004	e1a04000	 mov         r4, r0
 
 ; 93   :     GPIOSetMode(m_hGPIO, m_dwCardDetectGPIO, GPIO_DIR_INPUT | GPIO_INT_LOW_HIGH | GPIO_INT_HIGH_LOW | GPIO_DEBOUNCE_ENABLE);
@@ -416,7 +416,7 @@
 
   0002c	e8bd4010	 ldmia       sp!, {r4, lr}
   00030	e12fff1e	 bx          lr
-  00034		 |$M43783|
+  00034		 |$M43787|
 
 			 ENDP  ; |?InitializeCardDetect@CSDIOController@@IAAHXZ|, CSDIOController::InitializeCardDetect
 
@@ -426,7 +426,7 @@
 	IMPORT	|GPIOInterruptWakeUp|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43795| DCD	|$LN8@DeInitiali@2|
+|$T43799| DCD	|$LN8@DeInitiali@2|
 	DCD	0x40001901
 ; Function compile flags: /Ogspy
 
@@ -438,7 +438,7 @@
 
   00000		 |$LN8@DeInitiali@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M43792|
+  00004		 |$M43796|
   00004	e1a04000	 mov         r4, r0
 
 ; 101  :     if ( m_hGPIO )
@@ -496,7 +496,7 @@
 
   0005c	e8bd4010	 ldmia       sp!, {r4, lr}
   00060	e12fff1e	 bx          lr
-  00064		 |$M43793|
+  00064		 |$M43797|
 
 			 ENDP  ; |?DeInitializeCardDetect@CSDIOController@@IAAHXZ|, CSDIOController::DeInitializeCardDetect
 
@@ -509,7 +509,7 @@
 	IMPORT	|GPIOOpen|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43817| DCD	|$LN25@Initialize@3|
+|$T43821| DCD	|$LN25@Initialize@3|
 	DCD	0x40003701
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -560,7 +560,7 @@
 
   00000		 |$LN25@Initialize@3|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M43814|
+  00004		 |$M43818|
   00004	e1a04000	 mov         r4, r0
 
 ; 121  :     DWORD               dwCountStart;
@@ -580,7 +580,7 @@
 
 ; 126  : 		goto cleanUp;
 
-  00020	ea000027	 b           |$cleanUp$42887|
+  00020	ea000027	 b           |$cleanUp$42891|
   00024		 |$LN9@Initialize@3|
 
 ; 127  : 	}
@@ -650,7 +650,7 @@
   0007c	e5942150	 ldr         r2, [r4, #0x150]
   00080	e0403005	 sub         r3, r0, r5
   00084	e1530002	 cmp         r3, r2
-  00088	8a00000d	 bhi         |$cleanUp$42887|
+  00088	8a00000d	 bhi         |$cleanUp$42891|
   0008c		 |$LN22@Initialize@3|
   0008c	e594315c	 ldr         r3, [r4, #0x15C]
   00090	e5933014	 ldr         r3, [r3, #0x14]
@@ -693,7 +693,7 @@
   000bc		 |$LN20@Initialize@3|
   000bc	e5941170	 ldr         r1, [r4, #0x170]
   000c0	eb000000	 bl          NKDbgPrintfW
-  000c4		 |$cleanUp$42887|
+  000c4		 |$cleanUp$42891|
 
 ; 133  : 	    return FALSE;
 
@@ -712,13 +712,13 @@
   000d4	00000000	 DCD         |??_C@_1II@LJAGNIMF@?$AAN?$AAo?$AA?5?$AAw?$AAr?$AAi?$AAt?$AAe?$AA?5?$AAp?$AAr?$AAo?$AAt?$AAe?$AAc?$AAt?$AA?5?$AAG?$AAP?$AAI?$AAO?$AA?5?$AAs?$AAt?$AAa?$AAt?$AAe?$AA?5?$AAs?$AAe?$AAl?$AAe@|
   000d8		 |$LN29@Initialize@3|
   000d8	00000000	 DCD         |??_C@_1DC@NBAOLHFO@?$AAC?$AAa?$AAn?$AA?8?$AAt?$AA?5?$AAo?$AAp?$AAe?$AAn?$AA?5?$AAG?$AAP?$AAI?$AAO?$AA?5?$AAd?$AAr?$AAi?$AAv?$AAe?$AAr?$AA?$AN?$AA?6?$AA?$AA@|
-  000dc		 |$M43815|
+  000dc		 |$M43819|
 
 			 ENDP  ; |?InitializeHardware@CSDIOController@@MAAHXZ|, CSDIOController::InitializeHardware
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43832| DCD	|$LN7@Deinitiali|
+|$T43836| DCD	|$LN7@Deinitiali|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -730,7 +730,7 @@
 
   00000		 |$LN7@Deinitiali|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M43829|
+  00004		 |$M43833|
 
 ; 171  :     DeInitializeCardDetect();
 
@@ -741,7 +741,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M43830|
+  00010		 |$M43834|
 
 			 ENDP  ; |?DeinitializeHardware@CSDIOController@@MAAXXZ|, CSDIOController::DeinitializeHardware
 
@@ -757,7 +757,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43862| DCD	|$LN31@SDHCCardDe|
+|$T43866| DCD	|$LN31@SDHCCardDe|
 	DCD	0x40004f01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -790,7 +790,7 @@
 
   00000		 |$LN31@SDHCCardDe|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M43859|
+  00004		 |$M43863|
   00004	e1a04000	 mov         r4, r0
 
 ; 182  :     BOOL    bDebounce       = TRUE;
@@ -825,7 +825,7 @@
   0003c	e3130902	 tst         r3, #2, 18
   00040	159f00ec	 ldrne       r0, [pc, #0xEC]
   00044	1b000000	 blne        NKDbgPrintfW
-  00048		 |$cleanUp$42914|
+  00048		 |$cleanUp$42918|
 
 ; 245  :     }
 ; 246  : 
@@ -891,7 +891,7 @@
   00098	e5943130	 ldr         r3, [r4, #0x130]
   0009c	e1a05000	 mov         r5, r0
   000a0	e3530000	 cmp         r3, #0
-  000a4	1affffe7	 bne         |$cleanUp$42914|
+  000a4	1affffe7	 bne         |$cleanUp$42918|
 
 ; 214  :             break;
 ; 215  : 
@@ -990,13 +990,13 @@
   00134	00000000	 DCD         |??_C@_1MK@CPAEOPKO@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAC?$AAS?$AAD?$AAI?$AAO?$AAC?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl?$AAl?$AAe?$AAr?$AA?3?$AA?3?$AAS?$AAD?$AAH?$AAC?$AAC?$AAa?$AAr?$AAd@|
   00138		 |$LN34@SDHCCardDe|
   00138	00000000	 DCD         |dpCurSettings|
-  0013c		 |$M43860|
+  0013c		 |$M43864|
 
 			 ENDP  ; |?SDHCCardDetectIstThreadImpl@CSDIOController@@MAAKXZ|, CSDIOController::SDHCCardDetectIstThreadImpl
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43872| DCD	|$LN5@PreparePow|
+|$T43876| DCD	|$LN5@PreparePow|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -1007,20 +1007,20 @@
 ; 253  : {
 
   00000		 |$LN5@PreparePow|
-  00000		 |$M43869|
+  00000		 |$M43873|
 
 ; 254  :     UNREFERENCED_PARAMETER(bInPowerHandler);
 ; 255  : 	UNREFERENCED_PARAMETER(curPowerState);
 ; 256  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M43870|
+  00004		 |$M43874|
 
 			 ENDP  ; |?PreparePowerChange@CSDIOController@@MAAXW4_CEDEVICE_POWER_STATE@@H@Z|, CSDIOController::PreparePowerChange
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43879| DCD	|$LN5@PostPowerC|
+|$T43883| DCD	|$LN5@PostPowerC|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -1031,21 +1031,21 @@
 ; 259  : {
 
   00000		 |$LN5@PostPowerC|
-  00000		 |$M43876|
+  00000		 |$M43880|
 
 ; 260  :     UNREFERENCED_PARAMETER(bInPowerHandler);
 ; 261  : 	UNREFERENCED_PARAMETER(curPowerState);
 ; 262  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M43877|
+  00004		 |$M43881|
 
 			 ENDP  ; |?PostPowerChange@CSDIOController@@MAAXW4_CEDEVICE_POWER_STATE@@H@Z|, CSDIOController::PostPowerChange
 
 	IMPORT	|?SetSlotPowerState@CSDIOControllerBase@@QAAXW4_CEDEVICE_POWER_STATE@@@Z| ; CSDIOControllerBase::SetSlotPowerState
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43887| DCD	|$LN5@TurnCardPo|
+|$T43891| DCD	|$LN5@TurnCardPo|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -1057,7 +1057,7 @@
 
   00000		 |$LN5@TurnCardPo|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M43884|
+  00004		 |$M43888|
 
 ; 266  :     SetSlotPowerState( D0 );
 
@@ -1068,13 +1068,13 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M43885|
+  00014		 |$M43889|
 
 			 ENDP  ; |?TurnCardPowerOn@CSDIOController@@MAAXXZ|, CSDIOController::TurnCardPowerOn
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43895| DCD	|$LN5@TurnCardPo@2|
+|$T43899| DCD	|$LN5@TurnCardPo@2|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -1086,7 +1086,7 @@
 
   00000		 |$LN5@TurnCardPo@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M43892|
+  00004		 |$M43896|
 
 ; 271  :     SetSlotPowerState( D4 );
 
@@ -1097,7 +1097,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M43893|
+  00014		 |$M43897|
 
 			 ENDP  ; |?TurnCardPowerOff@CSDIOController@@MAAXXZ|, CSDIOController::TurnCardPowerOff
 
@@ -1105,7 +1105,7 @@
 	IMPORT	|??2@YAPAXI@Z|				; operator new
 
   00000			 AREA	 |.pdata|, PDATA
-|$T43911| DCD	|$LN9@CreateSDIO|
+|$T43915| DCD	|$LN9@CreateSDIO|
 	DCD	0x40000f01
 ; Function compile flags: /Ogspy
 
@@ -1117,7 +1117,7 @@
 
   00000		 |$LN9@CreateSDIO|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M43908|
+  00004		 |$M43912|
 
 ; 276  :     return new CSDIOController();
 
@@ -1142,7 +1142,7 @@
   00038		 |$LN10@CreateSDIO|
   00038		 |$LN11@CreateSDIO|
   00038	00000000	 DCD         |??_7CSDIOController@@6B@|
-  0003c		 |$M43909|
+  0003c		 |$M43913|
 
 			 ENDP  ; |?CreateSDIOController@@YAPAVCSDIOControllerBase@@XZ|, CreateSDIOController
 

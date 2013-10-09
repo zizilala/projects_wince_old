@@ -88,7 +88,7 @@
 ; File c:\wince600\platform\z2170p\src\bootloader\xldr\main.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47862| DCD	|$LN10@XLDRWriteH|
+|$T47867| DCD	|$LN10@XLDRWriteH|
 	DCD	0x40000b01
 ; Function compile flags: /Ogspy
 
@@ -100,7 +100,7 @@
 
   00000		 |$LN10@XLDRWriteH|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M47859|
+  00004		 |$M47864|
   00004	e1b04001	 movs        r4, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -124,14 +124,14 @@
 
   00024	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00028	e12fff1e	 bx          lr
-  0002c		 |$M47860|
+  0002c		 |$M47865|
 
 			 ENDP  ; |XLDRWriteHexString|
 
 	EXPORT	|XLDRWriteCharString|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47873| DCD	|$LN10@XLDRWriteC|
+|$T47878| DCD	|$LN10@XLDRWriteC|
 	DCD	0x40000b01
 ; Function compile flags: /Ogspy
 
@@ -143,7 +143,7 @@
 
   00000		 |$LN10@XLDRWriteC|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M47870|
+  00004		 |$M47875|
   00004	e1a04000	 mov         r4, r0
 
 ; 129  :     while (*string != '\0') OEMWriteDebugByte((UINT8)*string++);
@@ -162,7 +162,7 @@
 
   00024	e8bd4010	 ldmia       sp!, {r4, lr}
   00028	e12fff1e	 bx          lr
-  0002c		 |$M47871|
+  0002c		 |$M47876|
 
 			 ENDP  ; |XLDRWriteCharString|
 
@@ -170,7 +170,7 @@
 	IMPORT	|OEMReadDebugByte|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47888| DCD	|$LN13@XLDRReadCh|
+|$T47893| DCD	|$LN13@XLDRReadCh|
 	DCD	0x40001201
 ; Function compile flags: /Ogspy
 
@@ -182,7 +182,7 @@
 
   00000		 |$LN13@XLDRReadCh|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M47885|
+  00004		 |$M47890|
   00004	e1a06000	 mov         r6, r0
 
 ; 142  : 	INT c;
@@ -248,14 +248,14 @@
   0003c	e1a00004	 mov         r0, r4
   00040	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00044	e12fff1e	 bx          lr
-  00048		 |$M47886|
+  00048		 |$M47891|
 
 			 ENDP  ; |XLDRReadCharMaxTime|
 
 	EXPORT	|XLDRWriteChar|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47896| DCD	|$LN5@XLDRWriteC@2|
+|$T47901| DCD	|$LN5@XLDRWriteC@2|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -267,7 +267,7 @@
 
   00000		 |$LN5@XLDRWriteC@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M47893|
+  00004		 |$M47898|
 
 ; 180  : 	OEMWriteDebugByte(c);
 
@@ -277,7 +277,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M47894|
+  00010		 |$M47899|
 
 			 ENDP  ; |XLDRWriteChar|
 
@@ -288,17 +288,17 @@
 	IMPORT	|__security_check_cookie|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47930| DCD	|$LN25@XLDRPrintU|
+|$T47935| DCD	|$LN25@XLDRPrintU|
 	DCD	0xc0004602
 
   00000			 AREA	 |.xdata|, DATA
-|$T47926| DCD	0xffffffd8
+|$T47931| DCD	0xffffffd8
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T47926|
+  00004	00000000	 DCD         |$T47931|
 
   00008		 |XLDRPrintUint8| PROC
 
@@ -307,7 +307,7 @@
   00008		 |$LN25@XLDRPrintU|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24dd01c	 sub         sp, sp, #0x1C
-  00010		 |$M47927|
+  00010		 |$M47932|
   00010	e1a06002	 mov         r6, r2
   00014	e1b05001	 movs        r5, r1
   00018	e1a07000	 mov         r7, r0
@@ -449,7 +449,7 @@
   0011c		 |$LN26@XLDRPrintU|
   0011c		 |$LN27@XLDRPrintU|
   0011c	00000000	 DCD         |__security_cookie|
-  00120		 |$M47928|
+  00120		 |$M47933|
 
 			 ENDP  ; |XLDRPrintUint8|
 
@@ -457,17 +457,17 @@
 	EXPORT	|XLDRPrintUlong|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47966| DCD	|$LN26@XLDRPrintU@2|
+|$T47971| DCD	|$LN26@XLDRPrintU@2|
 	DCD	0xc0004602
 
   00000			 AREA	 |.xdata|, DATA
-|$T47962| DCD	0xffffffd8
+|$T47967| DCD	0xffffffd8
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T47962|
+  00004	00000000	 DCD         |$T47967|
 
   00008		 |XLDRPrintUlong| PROC
 
@@ -476,7 +476,7 @@
   00008		 |$LN26@XLDRPrintU@2|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24dd01c	 sub         sp, sp, #0x1C
-  00010		 |$M47963|
+  00010		 |$M47968|
   00010	e1a06002	 mov         r6, r2
   00014	e1b05001	 movs        r5, r1
   00018	e1a08000	 mov         r8, r0
@@ -619,7 +619,7 @@
   0011c		 |$LN27@XLDRPrintU@2|
   0011c		 |$LN28@XLDRPrintU@2|
   0011c	00000000	 DCD         |__security_cookie|
-  00120		 |$M47964|
+  00120		 |$M47969|
 
 			 ENDP  ; |XLDRPrintUlong|
 
@@ -628,7 +628,7 @@
 	IMPORT	|Omap_Gpio|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47976| DCD	|$LN5@BSPGpioIni|
+|$T47981| DCD	|$LN5@BSPGpioIni|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 
@@ -640,7 +640,7 @@
 
   00000		 |$LN5@BSPGpioIni|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M47973|
+  00004		 |$M47978|
 
 ; 283  :    BSPInsertGpioDevice(0,&Omap_Gpio,NULL);
 
@@ -656,14 +656,14 @@
   0001c		 |$LN6@BSPGpioIni|
   0001c		 |$LN7@BSPGpioIni|
   0001c	00000000	 DCD         |Omap_Gpio|
-  00020		 |$M47974|
+  00020		 |$M47979|
 
 			 ENDP  ; |BSPGpioInit|
 
 	EXPORT	|OALPAtoVA|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47988| DCD	|$LN5@OALPAtoVA|
+|$T47993| DCD	|$LN5@OALPAtoVA|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -674,21 +674,21 @@
 ; 734  : {
 
   00000		 |$LN5@OALPAtoVA|
-  00000		 |$M47985|
+  00000		 |$M47990|
 
 ; 735  :     UNREFERENCED_PARAMETER(cached);
 ; 736  :     return (VOID*)address;
 ; 737  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M47986|
+  00004		 |$M47991|
 
 			 ENDP  ; |OALPAtoVA|
 
 	EXPORT	|OALVAtoPA|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47998| DCD	|$LN5@OALVAtoPA|
+|$T48003| DCD	|$LN5@OALVAtoPA|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -699,19 +699,19 @@
 ; 745  : {
 
   00000		 |$LN5@OALVAtoPA|
-  00000		 |$M47995|
+  00000		 |$M48000|
 
 ; 746  :     return (UINT32)pVA;
 ; 747  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M47996|
+  00004		 |$M48001|
 
 			 ENDP  ; |OALVAtoPA|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48025| DCD	|$LN23@SetupCopyS|
+|$T48030| DCD	|$LN23@SetupCopyS|
 	DCD	0x40002801
 ; Function compile flags: /Ogspy
 
@@ -723,7 +723,7 @@
 
   00000		 |$LN23@SetupCopyS|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M48022|
+  00004		 |$M48027|
   00004	e1a01000	 mov         r1, r0
 
 ; 761  :     BOOL rc = FALSE;
@@ -737,7 +737,7 @@
 ; 766  :     if (pTableOfContents == (ROMHDR *const) -1) goto cleanUp;
 
   0000c	e3710001	 cmn         r1, #1
-  00010	0a000020	 beq         |$cleanUp$47763|
+  00010	0a000020	 beq         |$cleanUp$47768|
 
 ; 767  : 
 ; 768  :     for (loop = 0; loop < pTableOfContents->ulCopyEntries; loop++)
@@ -818,7 +818,7 @@
 ; 782  :     rc = TRUE;
 
   00094	e3a00001	 mov         r0, #1
-  00098		 |$cleanUp$47763|
+  00098		 |$cleanUp$47768|
 
 ; 783  : 
 ; 784  : cleanUp:
@@ -827,14 +827,14 @@
 
   00098	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   0009c	e12fff1e	 bx          lr
-  000a0		 |$M48023|
+  000a0		 |$M48028|
 
 			 ENDP  ; |SetupCopySection|
 
 	EXPORT	|NKDbgPrintfW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48032| DCD	|$LN5@NKDbgPrint|
+|$T48037| DCD	|$LN5@NKDbgPrint|
 	DCD	0x40000503
 ; Function compile flags: /Ogspy
 
@@ -848,7 +848,7 @@
   00000	e1a0c00d	 mov         r12, sp
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5000	 stmdb       sp!, {r12, lr}
-  0000c		 |$M48029|
+  0000c		 |$M48034|
 
 ; 795  :     //  Stubbed out to shrink XLDR binary size
 ; 796  :     UNREFERENCED_PARAMETER(pszFormat);
@@ -856,14 +856,14 @@
 
   0000c	e89d6000	 ldmia       sp, {sp, lr}
   00010	e12fff1e	 bx          lr
-  00014		 |$M48030|
+  00014		 |$M48035|
 
 			 ENDP  ; |NKDbgPrintfW|
 
 	EXPORT	|NKvDbgPrintfW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48039| DCD	|$LN5@NKvDbgPrin|
+|$T48044| DCD	|$LN5@NKvDbgPrin|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -874,7 +874,7 @@
 ; 805  : {
 
   00000		 |$LN5@NKvDbgPrin|
-  00000		 |$M48036|
+  00000		 |$M48041|
 
 ; 806  :     //  Stubbed out to shrink XLDR binary size
 ; 807  :     UNREFERENCED_PARAMETER(pszFormat);
@@ -883,7 +883,7 @@
 ; 810  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M48037|
+  00004		 |$M48042|
 
 			 ENDP  ; |NKvDbgPrintfW|
 
@@ -933,11 +933,11 @@
 |?allocationPool@?1??XLDRMain@@9@9| % 0x200		; `XLDRMain'::`2'::allocationPool
 
   00000			 AREA	 |.pdata|, PDATA
-|$T48123| DCD	|$LN81@XLDRMain|
+|$T48128| DCD	|$LN81@XLDRMain|
 	DCD	0xc0012d02
 
   00000			 AREA	 |.xdata|, DATA
-|$T48119| DCD	0xffffffd8
+|$T48124| DCD	0xffffffd8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1BC@MABDLOIF@?$AA?$AN?$AA?6?$AAH?$AAA?$AAL?$AAT?$AA?$AN?$AA?6?$AA?$AA@| DCB 0xd
@@ -1047,7 +1047,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T48119|
+  00004	00000000	 DCD         |$T48124|
 
   00008		 |XLDRMain| PROC
 
@@ -1056,7 +1056,7 @@
   00008		 |$LN81@XLDRMain|
   00008	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   0000c	e24ddff3	 sub         sp, sp, #0xF3, 30
-  00010		 |$M48120|
+  00010		 |$M48125|
   00010	e59f34a0	 ldr         r3, [pc, #0x4A0]
   00014	e5933000	 ldr         r3, [r3]
   00018	e58d33c8	 str         r3, [sp, #0x3C8]
@@ -1118,7 +1118,7 @@
   00054	e58d1014	 str         r1, [sp, #0x14]
   00058	e58d0018	 str         r0, [sp, #0x18]
   0005c	e58d401c	 str         r4, [sp, #0x1C]
-  00060	0a000044	 beq         |$cleanUp$47670|
+  00060	0a000044	 beq         |$cleanUp$47675|
   00064	e59e3020	 ldr         r3, [lr, #0x20]
   00068	e3a04000	 mov         r4, #0
   0006c	e3530000	 cmp         r3, #0
@@ -1164,7 +1164,7 @@
 
   000e4	e59f63ac	 ldr         r6, [pc, #0x3AC]
   000e8	e3a01c02	 mov         r1, #2, 24
-  000ec		 |$cleanUp$48052|
+  000ec		 |$cleanUp$48057|
   000ec	e1a00006	 mov         r0, r6
   000f0	eb000000	 bl          OALLocalAllocInit
 
@@ -1307,7 +1307,7 @@
   00170	e59f0330	 ldr         r0, [pc, #0x330]
   00174		 |$LN78@XLDRMain|
   00174	eb000000	 bl          OEMWriteDebugString
-  00178		 |$cleanUp$47670|
+  00178		 |$cleanUp$47675|
 
 ; 652  : 
 ; 653  : 	// Done.
@@ -1528,7 +1528,7 @@
 
 ; 524  : 	if(xret < 0)
 
-  001c4	4affffeb	 bmi         |$cleanUp$47670|
+  001c4	4affffeb	 bmi         |$cleanUp$47675|
 
 ; 525  : 	{
 ; 526  : 		goto cleanUp;
@@ -1557,7 +1557,7 @@
 ; 544  : 	}
 ; 545  : 	else
 
-  001d4	3affffe7	 bcc         |$cleanUp$47670|
+  001d4	3affffe7	 bcc         |$cleanUp$47675|
 
 ; 546  : 	{
 ; 547  : 		for(nand_blocks_to_write=0; nand_blocks_to_write <= NAND_MAX_BLOCKS_TO_WRITE; nand_blocks_to_write++)
@@ -1586,9 +1586,9 @@
 ; 556  : 	if ((nand_blocks_to_write == 0) || (nand_blocks_to_write > NAND_MAX_BLOCKS_TO_WRITE))
 
   001f8	e3550000	 cmp         r5, #0
-  001fc	0affffdd	 beq         |$cleanUp$47670|
+  001fc	0affffdd	 beq         |$cleanUp$47675|
   00200	e355000f	 cmp         r5, #0xF
-  00204	caffffdb	 bgt         |$cleanUp$47670|
+  00204	caffffdb	 bgt         |$cleanUp$47675|
 
 ; 557  : 	{
 ; 558  : 		goto cleanUp;
@@ -1649,7 +1649,7 @@
 
   00244	e59d303c	 ldr         r3, [sp, #0x3C]
   00248	e1540003	 cmp         r4, r3
-  0024c	2affffc9	 bcs         |$cleanUp$47670|
+  0024c	2affffc9	 bcs         |$cleanUp$47675|
   00250		 |$LL14@XLDRMain|
 
 ; 582  :         {
@@ -1677,7 +1677,7 @@
 ; 591  :     	if (block >= flashInfo.dwNumBlocks)
 
   00270	e1540003	 cmp         r4, r3
-  00274	2affffbf	 bcs         |$cleanUp$47670|
+  00274	2affffbf	 bcs         |$cleanUp$47675|
 
 ; 592  :     	{
 ; 593  :     		// No good block found!!
@@ -1961,7 +1961,7 @@
   004b4	00000000	 DCD         |pTOC|
   004b8		 |$LN103@XLDRMain|
   004b8	00000000	 DCD         |__security_cookie|
-  004bc		 |$M48121|
+  004bc		 |$M48126|
 
 			 ENDP  ; |XLDRMain|
 

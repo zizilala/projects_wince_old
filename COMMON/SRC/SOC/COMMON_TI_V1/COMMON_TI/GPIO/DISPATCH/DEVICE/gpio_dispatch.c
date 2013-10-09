@@ -163,15 +163,12 @@ VOID GPIOSetMode(HANDLE hContext, DWORD id, DWORD mode)
         if (pDevice->rgGpioTbls[grp])
         {
             pDevice->rgGpioTbls[grp]->pfnSetMode((HANDLE) pDevice->rgGpioTbls[grp]->context, id, mode);
-        }
-        else
-        {
+        }else{
             DWORD config[2];
             config[0] = id;
             config[1] = mode;
 
             DeviceIoControl(pDevice->rgHandles[grp],IOCTL_GPIO_SETMODE,config,sizeof(config),NULL,0,NULL,NULL);
-
         }
     }
 }

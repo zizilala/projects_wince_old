@@ -81,7 +81,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\oal\omap_oalpadcfg\oalpadcfg.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44681| DCD	|$LN5@OALPadCfgP|
+|$T44686| DCD	|$LN5@OALPadCfgP|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -93,7 +93,7 @@
 
   00000		 |$LN5@OALPadCfgP|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M44678|
+  00004		 |$M44683|
 
 ; 47   :     InitializeCriticalSection(&_cs);
 
@@ -119,14 +119,14 @@
   00024		 |$LN6@OALPadCfgP|
   00024		 |$LN7@OALPadCfgP|
   00024	00000000	 DCD         |_cs|
-  00028		 |$M44679|
+  00028		 |$M44684|
 
 			 ENDP  ; |OALPadCfgPostInit|
 
 	IMPORT	|EnterCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44690| DCD	|$LN6@PadCfgLock|
+|$T44695| DCD	|$LN6@PadCfgLock|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 
@@ -138,7 +138,7 @@
 
   00000		 |$LN6@PadCfgLock|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M44687|
+  00004		 |$M44692|
 
 ; 55   :     if (_PostInit)
 
@@ -159,14 +159,14 @@
   0001c		 |$LN7@PadCfgLock|
   0001c		 |$LN8@PadCfgLock|
   0001c	00000000	 DCD         |_cs|
-  00020		 |$M44688|
+  00020		 |$M44693|
 
 			 ENDP  ; |PadCfgLock|
 
 	IMPORT	|LeaveCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44699| DCD	|$LN6@PadCfgUnlo|
+|$T44704| DCD	|$LN6@PadCfgUnlo|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 
@@ -178,7 +178,7 @@
 
   00000		 |$LN6@PadCfgUnlo|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M44696|
+  00004		 |$M44701|
 
 ; 62   :     if (_PostInit)
 
@@ -199,13 +199,13 @@
   0001c		 |$LN7@PadCfgUnlo|
   0001c		 |$LN8@PadCfgUnlo|
   0001c	00000000	 DCD         |_cs|
-  00020		 |$M44697|
+  00020		 |$M44702|
 
 			 ENDP  ; |PadCfgUnlock|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44720| DCD	|$LN20@SortPadInf|
+|$T44725| DCD	|$LN20@SortPadInf|
 	DCD	0x40002801
 ; Function compile flags: /Ogspy
 
@@ -217,7 +217,7 @@
 
   00000		 |$LN20@SortPadInf|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M44717|
+  00004		 |$M44722|
   00004	e1a08000	 mov         r8, r0
 
 ; 258  :     while (padArray[nbPad].padID != (UINT16) -1)
@@ -313,7 +313,7 @@
 
   00098	e8bd41f0	 ldmia       sp!, {r4 - r8, lr}
   0009c	e12fff1e	 bx          lr
-  000a0		 |$M44718|
+  000a0		 |$M44723|
 
 			 ENDP  ; |SortPadInfoArray|
 
@@ -328,7 +328,7 @@
 |g_NbPads| %	0x4
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44737| DCD	|$LN17@FindPad|
+|$T44742| DCD	|$LN17@FindPad|
 	DCD	0x40002601
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -377,7 +377,7 @@
 
   00000		 |$LN17@FindPad|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M44734|
+  00004		 |$M44739|
   00004	e1a04000	 mov         r4, r0
 
 ; 282  :     int index = 0;
@@ -484,7 +484,7 @@
   00090	00000000	 DCD         |??_C@_1LI@PMKLMLGK@?$AAC?$AA?3?$AA?2?$AAW?$AAI?$AAN?$AAC?$AAE?$AA6?$AA0?$AA0?$AA?2?$AAP?$AAL?$AAA?$AAT?$AAF?$AAO?$AAR?$AAM?$AA?2?$AAC?$AAO?$AAM?$AAM?$AAO?$AAN?$AA?2?$AAS?$AAR?$AAC?$AA?2@|
   00094		 |$LN22@FindPad|
   00094	00000000	 DCD         |g_NbPads|
-  00098		 |$M44735|
+  00098		 |$M44740|
 
 			 ENDP  ; |FindPad|
 
@@ -492,7 +492,7 @@
 	IMPORT	|BSPGetAllPadsInfo|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44777| DCD	|$LN24@OALPadCfgI|
+|$T44782| DCD	|$LN24@OALPadCfgI|
 	DCD	0x40002e01
 ; Function compile flags: /Ogspy
 
@@ -504,7 +504,7 @@
 
   00000		 |$LN24@OALPadCfgI|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
-  00004		 |$M44774|
+  00004		 |$M44779|
 
 ; 32   :     g_bspPadInfo = BSPGetAllPadsInfo();
 
@@ -584,14 +584,14 @@
   000b4		 |$LN25@OALPadCfgI|
   000b4		 |$LN26@OALPadCfgI|
   000b4	00000000	 DCD         |g_NbPads|
-  000b8		 |$M44775|
+  000b8		 |$M44780|
 
 			 ENDP  ; |OALPadCfgInit|
 
 	EXPORT	|RequestPad|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44799| DCD	|$LN14@RequestPad|
+|$T44804| DCD	|$LN14@RequestPad|
 	DCD	0x40001f01
 ; Function compile flags: /Ogspy
 
@@ -603,7 +603,7 @@
 
   00000		 |$LN14@RequestPad|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M44796|
+  00004		 |$M44801|
 
 ; 70   :     BOOL rc = FALSE;
 ; 71   :     int padIndex;
@@ -678,7 +678,7 @@
   00078		 |$LN15@RequestPad|
   00078		 |$LN16@RequestPad|
   00078	00000000	 DCD         |g_NbPads|
-  0007c		 |$M44797|
+  0007c		 |$M44802|
 
 			 ENDP  ; |RequestPad|
 
@@ -686,7 +686,7 @@
 	IMPORT	|SOCSetPadConfig|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44821| DCD	|$LN14@ReleasePad|
+|$T44826| DCD	|$LN14@ReleasePad|
 	DCD	0x40002501
 ; Function compile flags: /Ogspy
 
@@ -698,7 +698,7 @@
 
   00000		 |$LN14@ReleasePad|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M44818|
+  00004		 |$M44823|
   00004	e1a07000	 mov         r7, r0
 
 ; 93   :     BOOL rc = FALSE;
@@ -782,14 +782,14 @@
   00090		 |$LN15@ReleasePad|
   00090		 |$LN16@ReleasePad|
   00090	00000000	 DCD         |g_NbPads|
-  00094		 |$M44819|
+  00094		 |$M44824|
 
 			 ENDP  ; |ReleasePad|
 
 	EXPORT	|ConfigurePad|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44844| DCD	|$LN14@ConfigureP|
+|$T44849| DCD	|$LN14@ConfigureP|
 	DCD	0x40002201
 ; Function compile flags: /Ogspy
 
@@ -801,7 +801,7 @@
 
   00000		 |$LN14@ConfigureP|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M44841|
+  00004		 |$M44846|
   00004	e1a08001	 mov         r8, r1
   00008	e1a07000	 mov         r7, r0
 
@@ -876,7 +876,7 @@
   00084		 |$LN15@ConfigureP|
   00084		 |$LN16@ConfigureP|
   00084	00000000	 DCD         |g_NbPads|
-  00088		 |$M44842|
+  00088		 |$M44847|
 
 			 ENDP  ; |ConfigurePad|
 
@@ -884,7 +884,7 @@
 	IMPORT	|SOCGetPadConfig|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44868| DCD	|$LN16@GetPadConf|
+|$T44873| DCD	|$LN16@GetPadConf|
 	DCD	0x40002501
 ; Function compile flags: /Ogspy
 
@@ -896,7 +896,7 @@
 
   00000		 |$LN16@GetPadConf|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M44865|
+  00004		 |$M44870|
   00004	e1b08001	 movs        r8, r1
   00008	e1a07000	 mov         r7, r0
 
@@ -988,14 +988,14 @@
   00090		 |$LN17@GetPadConf|
   00090		 |$LN18@GetPadConf|
   00090	00000000	 DCD         |g_NbPads|
-  00094		 |$M44866|
+  00094		 |$M44871|
 
 			 ENDP  ; |GetPadConfiguration|
 
 	EXPORT	|RequestAndConfigurePad|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44892| DCD	|$LN16@RequestAnd|
+|$T44897| DCD	|$LN16@RequestAnd|
 	DCD	0x40002701
 ; Function compile flags: /Ogspy
 
@@ -1007,7 +1007,7 @@
 
   00000		 |$LN16@RequestAnd|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M44889|
+  00004		 |$M44894|
   00004	e1a08001	 mov         r8, r1
   00008	e1a07000	 mov         r7, r0
 
@@ -1093,14 +1093,14 @@
   00098		 |$LN17@RequestAnd|
   00098		 |$LN18@RequestAnd|
   00098	00000000	 DCD         |g_NbPads|
-  0009c		 |$M44890|
+  0009c		 |$M44895|
 
 			 ENDP  ; |RequestAndConfigurePad|
 
 	EXPORT	|RequestAndConfigurePadArray|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44925| DCD	|$LN28@RequestAnd@2|
+|$T44930| DCD	|$LN28@RequestAnd@2|
 	DCD	0x40003801
 ; Function compile flags: /Ogspy
 
@@ -1112,7 +1112,7 @@
 
   00000		 |$LN28@RequestAnd@2|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M44922|
+  00004		 |$M44927|
   00004	e1a06000	 mov         r6, r0
 
 ; 194  :     BOOL rc = TRUE;
@@ -1149,7 +1149,7 @@
 ; 204  :         if (padIndex == -1) 
 
   00038	e3700001	 cmn         r0, #1
-  0003c	0a000008	 beq         |$error$44550|
+  0003c	0a000008	 beq         |$error$44555|
 
 ; 205  :         {
 ; 206  :             goto error;
@@ -1158,7 +1158,7 @@
 
   00040	e5943000	 ldr         r3, [r4]
   00044	e1500003	 cmp         r0, r3
-  00048	aa000005	 bge         |$error$44550|
+  00048	aa000005	 bge         |$error$44555|
 
 ; 209  :         {
 ; 210  :             ASSERT(0);
@@ -1178,7 +1178,7 @@
 
   0005c	02855008	 addeq       r5, r5, #8
   00060	0afffff0	 beq         |$LL7@RequestAnd@2|
-  00064		 |$error$44550|
+  00064		 |$error$44555|
 
 ; 233  : 
 ; 234  : error:
@@ -1258,14 +1258,14 @@
   000dc		 |$LN29@RequestAnd@2|
   000dc		 |$LN30@RequestAnd@2|
   000dc	00000000	 DCD         |g_NbPads|
-  000e0		 |$M44923|
+  000e0		 |$M44928|
 
 			 ENDP  ; |RequestAndConfigurePadArray|
 
 	EXPORT	|ReleasePadArray|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44940| DCD	|$LN9@ReleasePad@2|
+|$T44945| DCD	|$LN9@ReleasePad@2|
 	DCD	0x40000f01
 ; Function compile flags: /Ogspy
 
@@ -1277,7 +1277,7 @@
 
   00000		 |$LN9@ReleasePad@2|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M44937|
+  00004		 |$M44942|
   00004	e1a04000	 mov         r4, r0
 
 ; 241  :     BOOL rc = TRUE;
@@ -1316,7 +1316,7 @@
 
   00034	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00038	e12fff1e	 bx          lr
-  0003c		 |$M44938|
+  0003c		 |$M44943|
 
 			 ENDP  ; |ReleasePadArray|
 
@@ -1324,7 +1324,7 @@
 	IMPORT	|BSPGetDevicePadInfo|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44952| DCD	|$LN6@RequestDev|
+|$T44957| DCD	|$LN6@RequestDev|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -1336,7 +1336,7 @@
 
   00000		 |$LN6@RequestDev|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M44949|
+  00004		 |$M44954|
 
 ; 316  :     BOOL rc = FALSE;
 ; 317  :     const PAD_INFO* p = BSPGetDevicePadInfo(device);
@@ -1365,14 +1365,14 @@
   0001c	e1a00004	 mov         r0, r4
   00020	e8bd4010	 ldmia       sp!, {r4, lr}
   00024	e12fff1e	 bx          lr
-  00028		 |$M44950|
+  00028		 |$M44955|
 
 			 ENDP  ; |RequestDevicePads|
 
 	EXPORT	|ReleaseDevicePads|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44964| DCD	|$LN6@ReleaseDev|
+|$T44969| DCD	|$LN6@ReleaseDev|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -1384,7 +1384,7 @@
 
   00000		 |$LN6@ReleaseDev|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M44961|
+  00004		 |$M44966|
 
 ; 328  :     BOOL rc = FALSE;
 ; 329  :     const PAD_INFO* p = BSPGetDevicePadInfo(device);
@@ -1413,7 +1413,7 @@
   0001c	e1a00004	 mov         r0, r4
   00020	e8bd4010	 ldmia       sp!, {r4, lr}
   00024	e12fff1e	 bx          lr
-  00028		 |$M44962|
+  00028		 |$M44967|
 
 			 ENDP  ; |ReleaseDevicePads|
 

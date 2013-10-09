@@ -41,7 +41,7 @@ BUILD: [01:0000000038:INFO  ] Directory: C:\WINCE600\PLATFORM\Z2170P\SRC\BSP_COM
 BUILD: [01:0000000039:INFO  ] TARGETNAME: bsp_display_init
 BUILD: [01:0000000040:INFO  ] makefile.def: Including C:\WINCE600\public\common\oak\misc\sources.ReleaseType_PLATFORM
 BUILD: [01:0000000041:PROGC ] Linking C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_display_init.lib
-BUILD: [01:0000000042:INFO  ] 	link -lib -out:C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_display_init.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm178.tmp
+BUILD: [01:0000000042:INFO  ] 	link -lib -out:C:\WINCE600\platform\Z2170P\lib\ARMV4I\retail\bsp_display_init.lib -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm48E.tmp
 BUILD: [00:0000000043:PROGC ] Saving C:\WINCE600\PLATFORM\Z2170P\Build.dat.
 BUILD: [00:0000000044:INFO  ] Done.
 BUILD: [00:0000000045:PROGC ] Done.

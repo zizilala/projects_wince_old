@@ -89,7 +89,7 @@
 ; File c:\wince600\platform\z2170p\src\oal\oallib\power.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47243| DCD	|$LN10@BSPPowerOf|
+|$T47248| DCD	|$LN10@BSPPowerOf|
 	DCD	0x40002e01
 ; Function compile flags: /Ogspy
 
@@ -101,7 +101,7 @@
 
   00000		 |$LN10@BSPPowerOf|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M47240|
+  00004		 |$M47245|
 
 ; 85   :     // Disable Smartreflex if enabled.
 ; 86   :     if (IsSmartReflexMonitoringEnabled(kSmartReflex_Channel1))
@@ -222,7 +222,7 @@
   000b0	00000000	 DCD         |g_PrcmPrm|
   000b4		 |$LN14@BSPPowerOf|
   000b4	00000000	 DCD         |s_enableSmartReflex2|
-  000b8		 |$M47241|
+  000b8		 |$M47246|
 
 			 ENDP  ; |BSPPowerOff|
 
@@ -231,7 +231,7 @@
 	IMPORT	|OEMInitDebugSerial|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47254| DCD	|$LN8@BSPPowerOn|
+|$T47259| DCD	|$LN8@BSPPowerOn|
 	DCD	0x40002301
 ; Function compile flags: /Ogspy
 
@@ -243,7 +243,7 @@
 
   00000		 |$LN8@BSPPowerOn|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M47251|
+  00004		 |$M47256|
 
 ; 126  :     // reset wake-up enable capabilities for gptimer1
 ; 127  :     SETREG32(&g_PrcmPrm.pOMAP_WKUP_PRM->PM_WKEN_WKUP, CM_CLKEN_GPT1);
@@ -325,7 +325,7 @@
   00084	00000000	 DCD         |s_enableSmartReflex2|
   00088		 |$LN13@BSPPowerOn|
   00088	00000000	 DCD         |g_PrcmPrm|
-  0008c		 |$M47252|
+  0008c		 |$M47257|
 
 			 ENDP  ; |BSPPowerOn|
 

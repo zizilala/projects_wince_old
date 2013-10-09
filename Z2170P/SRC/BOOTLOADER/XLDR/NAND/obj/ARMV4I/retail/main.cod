@@ -89,7 +89,7 @@
 ; File c:\wince600\platform\z2170p\src\bootloader\xldr\main.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47696| DCD	|$LN5@BSPGpioIni|
+|$T47701| DCD	|$LN5@BSPGpioIni|
 	DCD	0x40000801
 ; Function compile flags: /Ogspy
 
@@ -101,7 +101,7 @@
 
   00000		 |$LN5@BSPGpioIni|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M47693|
+  00004		 |$M47698|
 
 ; 283  :    BSPInsertGpioDevice(0,&Omap_Gpio,NULL);
 
@@ -117,14 +117,14 @@
   0001c		 |$LN6@BSPGpioIni|
   0001c		 |$LN7@BSPGpioIni|
   0001c	00000000	 DCD         |Omap_Gpio|
-  00020		 |$M47694|
+  00020		 |$M47699|
 
 			 ENDP  ; |BSPGpioInit|
 
 	EXPORT	|OALPAtoVA|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47708| DCD	|$LN5@OALPAtoVA|
+|$T47713| DCD	|$LN5@OALPAtoVA|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -135,21 +135,21 @@
 ; 734  : {
 
   00000		 |$LN5@OALPAtoVA|
-  00000		 |$M47705|
+  00000		 |$M47710|
 
 ; 735  :     UNREFERENCED_PARAMETER(cached);
 ; 736  :     return (VOID*)address;
 ; 737  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M47706|
+  00004		 |$M47711|
 
 			 ENDP  ; |OALPAtoVA|
 
 	EXPORT	|OALVAtoPA|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47718| DCD	|$LN5@OALVAtoPA|
+|$T47723| DCD	|$LN5@OALVAtoPA|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -160,19 +160,19 @@
 ; 745  : {
 
   00000		 |$LN5@OALVAtoPA|
-  00000		 |$M47715|
+  00000		 |$M47720|
 
 ; 746  :     return (UINT32)pVA;
 ; 747  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M47716|
+  00004		 |$M47721|
 
 			 ENDP  ; |OALVAtoPA|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47745| DCD	|$LN23@SetupCopyS|
+|$T47750| DCD	|$LN23@SetupCopyS|
 	DCD	0x40002801
 ; Function compile flags: /Ogspy
 
@@ -184,7 +184,7 @@
 
   00000		 |$LN23@SetupCopyS|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M47742|
+  00004		 |$M47747|
   00004	e1a01000	 mov         r1, r0
 
 ; 761  :     BOOL rc = FALSE;
@@ -198,7 +198,7 @@
 ; 766  :     if (pTableOfContents == (ROMHDR *const) -1) goto cleanUp;
 
   0000c	e3710001	 cmn         r1, #1
-  00010	0a000020	 beq         |$cleanUp$47627|
+  00010	0a000020	 beq         |$cleanUp$47632|
 
 ; 767  : 
 ; 768  :     for (loop = 0; loop < pTableOfContents->ulCopyEntries; loop++)
@@ -279,7 +279,7 @@
 ; 782  :     rc = TRUE;
 
   00094	e3a00001	 mov         r0, #1
-  00098		 |$cleanUp$47627|
+  00098		 |$cleanUp$47632|
 
 ; 783  : 
 ; 784  : cleanUp:
@@ -288,14 +288,14 @@
 
   00098	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   0009c	e12fff1e	 bx          lr
-  000a0		 |$M47743|
+  000a0		 |$M47748|
 
 			 ENDP  ; |SetupCopySection|
 
 	EXPORT	|NKDbgPrintfW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47752| DCD	|$LN5@NKDbgPrint|
+|$T47757| DCD	|$LN5@NKDbgPrint|
 	DCD	0x40000503
 ; Function compile flags: /Ogspy
 
@@ -309,7 +309,7 @@
   00000	e1a0c00d	 mov         r12, sp
   00004	e92d000f	 stmdb       sp!, {r0 - r3}
   00008	e92d5000	 stmdb       sp!, {r12, lr}
-  0000c		 |$M47749|
+  0000c		 |$M47754|
 
 ; 795  :     //  Stubbed out to shrink XLDR binary size
 ; 796  :     UNREFERENCED_PARAMETER(pszFormat);
@@ -317,14 +317,14 @@
 
   0000c	e89d6000	 ldmia       sp, {sp, lr}
   00010	e12fff1e	 bx          lr
-  00014		 |$M47750|
+  00014		 |$M47755|
 
 			 ENDP  ; |NKDbgPrintfW|
 
 	EXPORT	|NKvDbgPrintfW|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47759| DCD	|$LN5@NKvDbgPrin|
+|$T47764| DCD	|$LN5@NKvDbgPrin|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -335,7 +335,7 @@
 ; 805  : {
 
   00000		 |$LN5@NKvDbgPrin|
-  00000		 |$M47756|
+  00000		 |$M47761|
 
 ; 806  :     //  Stubbed out to shrink XLDR binary size
 ; 807  :     UNREFERENCED_PARAMETER(pszFormat);
@@ -344,7 +344,7 @@
 ; 810  : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M47757|
+  00004		 |$M47762|
 
 			 ENDP  ; |NKvDbgPrintfW|
 
@@ -357,7 +357,7 @@
 	EXPORT	|??_C@_1CO@MAFCCJBC@?$AA?$AN?$AA?6?$AAF?$AAM?$AAD?$AA_?$AAG?$AAe?$AAt?$AAI?$AAn?$AAf?$AAo?$AA?5?$AAf?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1CI@HOAHMIF@?$AA?$AN?$AA?6?$AAF?$AAM?$AAD?$AA_?$AAI?$AAn?$AAi?$AAt?$AA?5?$AAf?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1GM@DIKPCKDC@?$AA?$AN?$AA?6?$AAT?$AAe?$AAx?$AAa?$AAs?$AA?5?$AAI?$AAn?$AAs?$AAt?$AAr?$AAu?$AAm?$AAe?$AAn?$AAt?$AAs?$AA?5?$AAW?$AAi?$AAn?$AAd?$AAo?$AAw?$AAs?$AA?5?$AAC?$AAE?$AA?5?$AAN@| [ DATA ] ; `string'
-	EXPORT	|??_C@_1EE@OAKDKCHO@?$AA?$AN?$AA?6?$AAB?$AAu?$AAi?$AAl?$AAt?$AA?5?$AAS?$AAe?$AAp?$AA?5?$AA2?$AA7?$AA?5?$AA2?$AA0?$AA1?$AA3?$AA?5?$AAa?$AAt?$AA?5?$AA1?$AA7?$AA?3?$AA0?$AA4?$AA?3?$AA2?$AA4?$AA?$AN@| [ DATA ] ; `string'
+	EXPORT	|??_C@_1EE@MEMMCBKL@?$AA?$AN?$AA?6?$AAB?$AAu?$AAi?$AAl?$AAt?$AA?5?$AAO?$AAc?$AAt?$AA?5?$AA?5?$AA8?$AA?5?$AA2?$AA0?$AA1?$AA3?$AA?5?$AAa?$AAt?$AA?5?$AA1?$AA6?$AA?3?$AA5?$AA3?$AA?3?$AA1?$AA4?$AA?$AN@| [ DATA ] ; `string'
 	EXPORT	|??_C@_1EG@EDBNOKCM@?$AAV?$AAe?$AAr?$AAs?$AAi?$AAo?$AAn?$AA?5?$AAZ?$AAE?$AAB?$AAE?$AAX?$AA_?$AAW?$AAI?$AAN?$AAC?$AAE?$AA_?$AAA?$AAR?$AAM?$AA_?$AAA?$AA8?$AA?5?$AA0?$AA?4?$AA0?$AA?4?$AA1@| [ DATA ] ; `string'
 	EXPORT	|??_C@_19GCHMHJHE@?$AA3?$AA7?$AA3?$AA0?$AA?$AA@| [ DATA ] ; `string'
 	EXPORT	|??_C@_19CAFJHOAJ@?$AA3?$AA5?$AA3?$AA0?$AA?$AA@| [ DATA ] ; `string'
@@ -386,7 +386,7 @@
 |?allocationPool@?1??XLDRMain@@9@9| % 0x200		; `XLDRMain'::`2'::allocationPool
 
   00000			 AREA	 |.pdata|, PDATA
-|$T47823| DCD	|$LN51@XLDRMain|
+|$T47828| DCD	|$LN51@XLDRMain|
 	DCD	0x4000b202
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -438,12 +438,12 @@
 	DCB	0x0, "E", 0x0, "V", 0x0, "M", 0x0, " ", 0x0, 0x0, 0x0 ; `string'
 
   00000			 AREA	 |.rdata|, DATA, READONLY
-|??_C@_1EE@OAKDKCHO@?$AA?$AN?$AA?6?$AAB?$AAu?$AAi?$AAl?$AAt?$AA?5?$AAS?$AAe?$AAp?$AA?5?$AA2?$AA7?$AA?5?$AA2?$AA0?$AA1?$AA3?$AA?5?$AAa?$AAt?$AA?5?$AA1?$AA7?$AA?3?$AA0?$AA4?$AA?3?$AA2?$AA4?$AA?$AN@| DCB 0xd
+|??_C@_1EE@MEMMCBKL@?$AA?$AN?$AA?6?$AAB?$AAu?$AAi?$AAl?$AAt?$AA?5?$AAO?$AAc?$AAt?$AA?5?$AA?5?$AA8?$AA?5?$AA2?$AA0?$AA1?$AA3?$AA?5?$AAa?$AAt?$AA?5?$AA1?$AA6?$AA?3?$AA5?$AA3?$AA?3?$AA1?$AA4?$AA?$AN@| DCB 0xd
 	DCB	0x0, 0xa, 0x0, "B", 0x0, "u", 0x0, "i", 0x0, "l", 0x0, "t"
-	DCB	0x0, " ", 0x0, "S", 0x0, "e", 0x0, "p", 0x0, " ", 0x0, "2"
-	DCB	0x0, "7", 0x0, " ", 0x0, "2", 0x0, "0", 0x0, "1", 0x0, "3"
-	DCB	0x0, " ", 0x0, "a", 0x0, "t", 0x0, " ", 0x0, "1", 0x0, "7"
-	DCB	0x0, ":", 0x0, "0", 0x0, "4", 0x0, ":", 0x0, "2", 0x0, "4"
+	DCB	0x0, " ", 0x0, "O", 0x0, "c", 0x0, "t", 0x0, " ", 0x0, " "
+	DCB	0x0, "8", 0x0, " ", 0x0, "2", 0x0, "0", 0x0, "1", 0x0, "3"
+	DCB	0x0, " ", 0x0, "a", 0x0, "t", 0x0, " ", 0x0, "1", 0x0, "6"
+	DCB	0x0, ":", 0x0, "5", 0x0, "3", 0x0, ":", 0x0, "1", 0x0, "4"
 	DCB	0x0, 0xd, 0x0, 0xa, 0x0, 0x0, 0x0	; `string'
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -473,7 +473,7 @@
   00000		 |$LN51@XLDRMain|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
   00004	e24ddfe6	 sub         sp, sp, #0xE6, 30
-  00008		 |$M47820|
+  00008		 |$M47825|
 
 ; 292  : #ifdef FMD_NAND
 ; 293  :     HANDLE hFMD;
@@ -519,7 +519,7 @@
   0000c	e59f72ac	 ldr         r7, [pc, #0x2AC]
   00010	e5990000	 ldr         r0, [r9]
   00014	e3700001	 cmn         r0, #1
-  00018	0a000098	 beq         |$cleanUp$47567|
+  00018	0a000098	 beq         |$cleanUp$47572|
   0001c	e5903020	 ldr         r3, [r0, #0x20]
   00020	e3a04000	 mov         r4, #0
   00024	e3530000	 cmp         r3, #0
@@ -565,7 +565,7 @@
 
   0009c	e59f8218	 ldr         r8, [pc, #0x218]
   000a0	e3a01c02	 mov         r1, #2, 24
-  000a4		 |$cleanUp$47772|
+  000a4		 |$cleanUp$47777|
   000a4	e1a00008	 mov         r0, r8
   000a8	eb000000	 bl          OALLocalAllocInit
 
@@ -728,7 +728,7 @@
 
 ; 414  :         goto cleanUp;
 
-  00150	ea00004a	 b           |$cleanUp$47567|
+  00150	ea00004a	 b           |$cleanUp$47572|
   00154		 |$LN13@XLDRMain|
 
 ; 415  :     }
@@ -750,7 +750,7 @@
 
   00164	e59f0134	 ldr         r0, [pc, #0x134]
   00168	eb000000	 bl          OEMWriteDebugString
-  0016c	ea000043	 b           |$cleanUp$47567|
+  0016c	ea000043	 b           |$cleanUp$47572|
   00170		 |$LN12@XLDRMain|
 
 ; 425  :         goto cleanUp;
@@ -963,7 +963,7 @@
 
   00278	e1a00a89	 mov         r0, r9, lsl #21
   0027c	eb000000	 bl          JumpTo
-  00280		 |$cleanUp$47567|
+  00280		 |$cleanUp$47572|
 
 ; 506  : #endif  /* MEMORY_BOOT */ //The end X-Loader, Ray 13-09-14
 ; 507  : 
@@ -1210,7 +1210,7 @@
   002a8		 |$LN60@XLDRMain|
   002a8	00000000	 DCD         |??_C@_1EG@EDBNOKCM@?$AAV?$AAe?$AAr?$AAs?$AAi?$AAo?$AAn?$AA?5?$AAZ?$AAE?$AAB?$AAE?$AAX?$AA_?$AAW?$AAI?$AAN?$AAC?$AAE?$AA_?$AAA?$AAR?$AAM?$AA_?$AAA?$AA8?$AA?5?$AA0?$AA?4?$AA0?$AA?4?$AA1@|
   002ac		 |$LN61@XLDRMain|
-  002ac	00000000	 DCD         |??_C@_1EE@OAKDKCHO@?$AA?$AN?$AA?6?$AAB?$AAu?$AAi?$AAl?$AAt?$AA?5?$AAS?$AAe?$AAp?$AA?5?$AA2?$AA7?$AA?5?$AA2?$AA0?$AA1?$AA3?$AA?5?$AAa?$AAt?$AA?5?$AA1?$AA7?$AA?3?$AA0?$AA4?$AA?3?$AA2?$AA4?$AA?$AN@|
+  002ac	00000000	 DCD         |??_C@_1EE@MEMMCBKL@?$AA?$AN?$AA?6?$AAB?$AAu?$AAi?$AAl?$AAt?$AA?5?$AAO?$AAc?$AAt?$AA?5?$AA?5?$AA8?$AA?5?$AA2?$AA0?$AA1?$AA3?$AA?5?$AAa?$AAt?$AA?5?$AA1?$AA6?$AA?3?$AA5?$AA3?$AA?3?$AA1?$AA4?$AA?$AN@|
   002b0		 |$LN62@XLDRMain|
   002b0	00000000	 DCD         |??_C@_1GM@DIKPCKDC@?$AA?$AN?$AA?6?$AAT?$AAe?$AAx?$AAa?$AAs?$AA?5?$AAI?$AAn?$AAs?$AAt?$AAr?$AAu?$AAm?$AAe?$AAn?$AAt?$AAs?$AA?5?$AAW?$AAi?$AAn?$AAd?$AAo?$AAw?$AAs?$AA?5?$AAC?$AAE?$AA?5?$AAN@|
   002b4		 |$LN63@XLDRMain|
@@ -1223,7 +1223,7 @@
   002c0	00000000	 DCD         |??_C@_19CAFJHOAJ@?$AA3?$AA5?$AA3?$AA0?$AA?$AA@|
   002c4		 |$LN67@XLDRMain|
   002c4	00000000	 DCD         |pTOC|
-  002c8		 |$M47821|
+  002c8		 |$M47826|
 
 			 ENDP  ; |XLDRMain|
 

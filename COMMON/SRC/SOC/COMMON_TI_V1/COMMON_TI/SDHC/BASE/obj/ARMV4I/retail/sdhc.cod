@@ -632,7 +632,7 @@
 ; File c:\wince600\public\common\oak\inc\pkfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44732| DCD	|$LN5@CeSetMemor|
+|$T44736| DCD	|$LN5@CeSetMemor|
 	DCD	0x40001002
 ; Function compile flags: /Ogspy
 
@@ -645,7 +645,7 @@
   00000		 |$LN5@CeSetMemor|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
   00004	e24dd00c	 sub         sp, sp, #0xC
-  00008		 |$M44729|
+  00008		 |$M44733|
   00008	e1a04003	 mov         r4, r3
   0000c	e1a03002	 mov         r3, r2
   00010	e1a02000	 mov         r2, r0
@@ -667,7 +667,7 @@
   00034	e28dd00c	 add         sp, sp, #0xC
   00038	e8bd4010	 ldmia       sp!, {r4, lr}
   0003c	e12fff1e	 bx          lr
-  00040		 |$M44730|
+  00040		 |$M44734|
 
 			 ENDP  ; |CeSetMemoryAttributes|
 
@@ -676,7 +676,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44742| DCD	|$LN5@ResetEvent|
+|$T44746| DCD	|$LN5@ResetEvent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -688,7 +688,7 @@
 
   00000		 |$LN5@ResetEvent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M44739|
+  00004		 |$M44743|
 
 ; 224  : 	return EventModify(h,EVENT_RESET);
 
@@ -699,14 +699,14 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M44740|
+  00014		 |$M44744|
 
 			 ENDP  ; |ResetEvent|
 
 	EXPORT	|SetEvent|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44752| DCD	|$LN5@SetEvent|
+|$T44756| DCD	|$LN5@SetEvent|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -718,7 +718,7 @@
 
   00000		 |$LN5@SetEvent|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M44749|
+  00004		 |$M44753|
 
 ; 236  : 	return EventModify(h,EVENT_SET);
 
@@ -729,14 +729,14 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M44750|
+  00014		 |$M44754|
 
 			 ENDP  ; |SetEvent|
 
 	EXPORT	|GetCurrentThread|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44761| DCD	|$LN5@GetCurrent|
+|$T44765| DCD	|$LN5@GetCurrent|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -747,7 +747,7 @@
 ; 351  : _inline HANDLE GetCurrentThread(void) {
 
   00000		 |$LN5@GetCurrent|
-  00000		 |$M44758|
+  00000		 |$M44762|
 
 ; 352  : 	return ((HANDLE)(SH_CURTHREAD+SYS_HANDLE_BASE));
 
@@ -756,7 +756,7 @@
 ; 353  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M44759|
+  00008		 |$M44763|
 
 			 ENDP  ; |GetCurrentThread|
 
@@ -764,7 +764,7 @@
 ; File c:\wince600\public\common\sdk\inc\creg.hxx
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44769| DCD	|$LN5@ZeroEntrie|
+|$T44773| DCD	|$LN5@ZeroEntrie|
 	DCD	0x40000600
 ; Function compile flags: /Ogspy
 
@@ -775,7 +775,7 @@
 ; 35   : 	void ZeroEntries() {
 
   00000		 |$LN5@ZeroEntrie|
-  00000		 |$M44766|
+  00000		 |$M44770|
 
 ; 36   : 		m_hKey      = NULL;
 
@@ -797,14 +797,14 @@
 ; 40   : 	}
 
   00014	e12fff1e	 bx          lr
-  00018		 |$M44767|
+  00018		 |$M44771|
 
 			 ENDP  ; |?ZeroEntries@CReg@@AAAXXZ|, CReg::ZeroEntries
 
 	EXPORT	|??0CReg@@QAA@XZ|			; CReg::CReg
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44782| DCD	|$LN7@CReg|
+|$T44786| DCD	|$LN7@CReg|
 	DCD	0x40000600
 ; Function compile flags: /Ogspy
 
@@ -815,7 +815,7 @@
 ; 63   : 	CReg() {
 
   00000		 |$LN7@CReg|
-  00000		 |$M44779|
+  00000		 |$M44783|
 
 ; 64   : 		ZeroEntries();
 
@@ -828,7 +828,7 @@
 ; 65   : 	}
 
   00014	e12fff1e	 bx          lr
-  00018		 |$M44780|
+  00018		 |$M44784|
 
 			 ENDP  ; |??0CReg@@QAA@XZ|, CReg::CReg
 
@@ -837,7 +837,7 @@
 	IMPORT	|RegCloseKey|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44790| DCD	|$LN7@CReg@2|
+|$T44794| DCD	|$LN7@CReg@2|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -849,7 +849,7 @@
 
   00000		 |$LN7@CReg@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M44787|
+  00004		 |$M44791|
   00004	e1a04000	 mov         r4, r0
 
 ; 68   : 		if(m_hKey) RegCloseKey(m_hKey); 
@@ -875,7 +875,7 @@
 
   00028	e8bd4010	 ldmia       sp!, {r4, lr}
   0002c	e12fff1e	 bx          lr
-  00030		 |$M44788|
+  00030		 |$M44792|
 
 			 ENDP  ; |??1CReg@@QAA@XZ|, CReg::~CReg
 
@@ -887,7 +887,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\sdhc\base\sdhc.cpp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44800| DCD	|$LN5@CSDIOContr|
+|$T44804| DCD	|$LN5@CSDIOContr|
 	DCD	0x40004101
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -911,7 +911,7 @@
 
   00000		 |$LN5@CSDIOContr|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M44797|
+  00004		 |$M44801|
   00004	e1a04000	 mov         r4, r0
   00008	e59f30f0	 ldr         r3, [pc, #0xF0]
 
@@ -1059,7 +1059,7 @@
   00100		 |$LN6@CSDIOContr|
   00100		 |$LN7@CSDIOContr|
   00100	00000000	 DCD         |??_7CSDIOControllerBase@@6B@|
-  00104		 |$M44798|
+  00104		 |$M44802|
 
 			 ENDP  ; |??0CSDIOControllerBase@@QAA@XZ|, CSDIOControllerBase::CSDIOControllerBase
 
@@ -1068,7 +1068,7 @@
 	IMPORT	|EnterCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44813| DCD	|$LN5@Read_MMC_S|
+|$T44817| DCD	|$LN5@Read_MMC_S|
 	DCD	0x40000b01
 ; Function compile flags: /Ogspy
 
@@ -1080,7 +1080,7 @@
 
   00000		 |$LN5@Read_MMC_S|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M44810|
+  00004		 |$M44814|
   00004	e1a04000	 mov         r4, r0
 
 ; 331  :     DWORD dwVal;
@@ -1105,14 +1105,14 @@
   00020	e1a00004	 mov         r0, r4
   00024	e8bd4010	 ldmia       sp!, {r4, lr}
   00028	e12fff1e	 bx          lr
-  0002c		 |$M44811|
+  0002c		 |$M44815|
 
 			 ENDP  ; |?Read_MMC_STAT@CSDIOControllerBase@@QAAKXZ|, CSDIOControllerBase::Read_MMC_STAT
 
 	EXPORT	|?Write_MMC_STAT@CSDIOControllerBase@@QAAXK@Z| ; CSDIOControllerBase::Write_MMC_STAT
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44822| DCD	|$LN5@Write_MMC_|
+|$T44826| DCD	|$LN5@Write_MMC_|
 	DCD	0x40000b01
 ; Function compile flags: /Ogspy
 
@@ -1124,7 +1124,7 @@
 
   00000		 |$LN5@Write_MMC_|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M44819|
+  00004		 |$M44823|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -1147,14 +1147,14 @@
 
   00024	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00028	e12fff1e	 bx          lr
-  0002c		 |$M44820|
+  0002c		 |$M44824|
 
 			 ENDP  ; |?Write_MMC_STAT@CSDIOControllerBase@@QAAXK@Z|, CSDIOControllerBase::Write_MMC_STAT
 
 	EXPORT	|?Set_MMC_STAT@CSDIOControllerBase@@QAAXK@Z| ; CSDIOControllerBase::Set_MMC_STAT
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44831| DCD	|$LN5@Set_MMC_ST|
+|$T44835| DCD	|$LN5@Set_MMC_ST|
 	DCD	0x40000b01
 ; Function compile flags: /Ogspy
 
@@ -1166,7 +1166,7 @@
 
   00000		 |$LN5@Set_MMC_ST|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M44828|
+  00004		 |$M44832|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -1189,7 +1189,7 @@
 
   00024	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00028	e12fff1e	 bx          lr
-  0002c		 |$M44829|
+  0002c		 |$M44833|
 
 			 ENDP  ; |?Set_MMC_STAT@CSDIOControllerBase@@QAAXK@Z|, CSDIOControllerBase::Set_MMC_STAT
 
@@ -1198,7 +1198,7 @@
 	IMPORT	|GetTickCount|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44848| DCD	|$LN14@SoftwareRe|
+|$T44852| DCD	|$LN14@SoftwareRe|
 	DCD	0x40001701
 ; Function compile flags: /Ogspy
 
@@ -1210,7 +1210,7 @@
 
   00000		 |$LN14@SoftwareRe|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M44845|
+  00004		 |$M44849|
   00004	e1a04000	 mov         r4, r0
 
 ; 358  :     DWORD               dwCountStart;
@@ -1273,7 +1273,7 @@
 
   00054	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00058	e12fff1e	 bx          lr
-  0005c		 |$M44846|
+  0005c		 |$M44850|
 
 			 ENDP  ; |?SoftwareReset@CSDIOControllerBase@@QAAXK@Z|, CSDIOControllerBase::SoftwareReset
 
@@ -1283,7 +1283,7 @@
 	IMPORT	|dpCurSettings|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44860| DCD	|$LN12@SetSDInter|
+|$T44864| DCD	|$LN12@SetSDInter|
 	DCD	0x40001801
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1306,7 +1306,7 @@
 
   00000		 |$LN12@SetSDInter|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M44857|
+  00004		 |$M44861|
   00004	e3510000	 cmp         r1, #0
 
 ; 388  :     if (SD_INTERFACE_SD_MMC_1BIT == eSDInterfaceMode)
@@ -1373,14 +1373,14 @@
   00058	00000000	 DCD         |??_C@_1FG@KBLCJKOK@?$AAS?$AAD?$AAH?$AAC?$AA?$CB?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?5?$AA?9?$AA?5?$AAU?$AAn?$AAe?$AAx?$AAp?$AAe?$AAc?$AAt?$AAe?$AAd?$AA?5?$AAS?$AAD?$AA?5?$AAi?$AAn?$AAt?$AAe?$AAr@|
   0005c		 |$LN15@SetSDInter|
   0005c	00000000	 DCD         |dpCurSettings|
-  00060		 |$M44858|
+  00060		 |$M44862|
 
 			 ENDP  ; |?SetSDInterfaceMode@CSDIOControllerBase@@IAAXW4SD_INTERFACE_MODE@@@Z|, CSDIOControllerBase::SetSDInterfaceMode
 
 	EXPORT	|?EnableSDHCInterrupts@CSDIOControllerBase@@QAAXXZ| ; CSDIOControllerBase::EnableSDHCInterrupts
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44871| DCD	|$LN5@EnableSDHC|
+|$T44875| DCD	|$LN5@EnableSDHC|
 	DCD	0x40001001
 ; Function compile flags: /Ogspy
 
@@ -1392,7 +1392,7 @@
 
   00000		 |$LN5@EnableSDHC|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M44868|
+  00004		 |$M44872|
   00004	e1a04000	 mov         r4, r0
 
 ; 428  :     EnterCriticalSection( &m_critSec );
@@ -1424,14 +1424,14 @@
 
   00038	e8bd4010	 ldmia       sp!, {r4, lr}
   0003c	e12fff1e	 bx          lr
-  00040		 |$M44869|
+  00040		 |$M44873|
 
 			 ENDP  ; |?EnableSDHCInterrupts@CSDIOControllerBase@@QAAXXZ|, CSDIOControllerBase::EnableSDHCInterrupts
 
 	EXPORT	|?DisableSDHCInterrupts@CSDIOControllerBase@@QAAXXZ| ; CSDIOControllerBase::DisableSDHCInterrupts
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44879| DCD	|$LN5@DisableSDH|
+|$T44883| DCD	|$LN5@DisableSDH|
 	DCD	0x40000e01
 ; Function compile flags: /Ogspy
 
@@ -1443,7 +1443,7 @@
 
   00000		 |$LN5@DisableSDH|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M44876|
+  00004		 |$M44880|
   00004	e1a04000	 mov         r4, r0
 
 ; 439  :     EnterCriticalSection( &m_critSec );
@@ -1471,14 +1471,14 @@
 
   00030	e8bd4010	 ldmia       sp!, {r4, lr}
   00034	e12fff1e	 bx          lr
-  00038		 |$M44877|
+  00038		 |$M44881|
 
 			 ENDP  ; |?DisableSDHCInterrupts@CSDIOControllerBase@@QAAXXZ|, CSDIOControllerBase::DisableSDHCInterrupts
 
 	EXPORT	|?EnableSDIOInterrupts@CSDIOControllerBase@@QAAXXZ| ; CSDIOControllerBase::EnableSDIOInterrupts
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44887| DCD	|$LN6@EnableSDIO|
+|$T44891| DCD	|$LN6@EnableSDIO|
 	DCD	0x40002001
 ; Function compile flags: /Ogspy
 
@@ -1490,7 +1490,7 @@
 
   00000		 |$LN6@EnableSDIO|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M44884|
+  00004		 |$M44888|
   00004	e1a04000	 mov         r4, r0
 
 ; 450  :     ASSERT( !m_fSDIOInterruptsEnabled );
@@ -1554,7 +1554,7 @@
 
   00078	e8bd4010	 ldmia       sp!, {r4, lr}
   0007c	e12fff1e	 bx          lr
-  00080		 |$M44885|
+  00080		 |$M44889|
 
 			 ENDP  ; |?EnableSDIOInterrupts@CSDIOControllerBase@@QAAXXZ|, CSDIOControllerBase::EnableSDIOInterrupts
 
@@ -1562,7 +1562,7 @@
 	IMPORT	|SDHCDIndicateSlotStateChange|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44903| DCD	|$LN11@AckSDIOInt|
+|$T44907| DCD	|$LN11@AckSDIOInt|
 	DCD	0x40002201
 ; Function compile flags: /Ogspy
 
@@ -1574,7 +1574,7 @@
 
   00000		 |$LN11@AckSDIOInt|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M44900|
+  00004		 |$M44904|
   00004	e1a05000	 mov         r5, r0
 
 ; 478  :     ASSERT( m_fSDIOInterruptsEnabled );
@@ -1650,14 +1650,14 @@
 
   00080	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00084	e12fff1e	 bx          lr
-  00088		 |$M44901|
+  00088		 |$M44905|
 
 			 ENDP  ; |?AckSDIOInterrupt@CSDIOControllerBase@@QAAXXZ|, CSDIOControllerBase::AckSDIOInterrupt
 
 	EXPORT	|?DisableSDIOInterrupts@CSDIOControllerBase@@QAAXXZ| ; CSDIOControllerBase::DisableSDIOInterrupts
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44911| DCD	|$LN5@DisableSDI|
+|$T44915| DCD	|$LN5@DisableSDI|
 	DCD	0x40001301
 ; Function compile flags: /Ogspy
 
@@ -1669,7 +1669,7 @@
 
   00000		 |$LN5@DisableSDI|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M44908|
+  00004		 |$M44912|
   00004	e1a04000	 mov         r4, r0
 
 ; 502  :     ASSERT( m_fSDIOInterruptsEnabled );
@@ -1709,7 +1709,7 @@
 
   00044	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00048	e12fff1e	 bx          lr
-  0004c		 |$M44909|
+  0004c		 |$M44913|
 
 			 ENDP  ; |?DisableSDIOInterrupts@CSDIOControllerBase@@QAAXXZ|, CSDIOControllerBase::DisableSDIOInterrupts
 
@@ -1717,7 +1717,7 @@
 	IMPORT	|__rt_udiv|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44936| DCD	|$LN21@SetClockRa|
+|$T44940| DCD	|$LN21@SetClockRa|
 	DCD	0x40004701
 ; Function compile flags: /Ogspy
 
@@ -1729,7 +1729,7 @@
 
   00000		 |$LN21@SetClockRa|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M44933|
+  00004		 |$M44937|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -1901,14 +1901,14 @@
   00114	05b8d800	 DCD         0x5b8d800
   00118		 |$LN24@SetClockRa|
   00118	05b8d7ff	 DCD         0x5b8d7ff
-  0011c		 |$M44934|
+  0011c		 |$M44938|
 
 			 ENDP  ; |?SetClockRate@CSDIOControllerBase@@QAAXPAK@Z|, CSDIOControllerBase::SetClockRate
 
 	EXPORT	|?IsMultipleBlockReadSupported@CSDIOControllerBase@@IAAHXZ| ; CSDIOControllerBase::IsMultipleBlockReadSupported
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44948| DCD	|$LN6@IsMultiple|
+|$T44952| DCD	|$LN6@IsMultiple|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -1919,7 +1919,7 @@
 ; 571  : {
 
   00000		 |$LN6@IsMultiple|
-  00000		 |$M44945|
+  00000		 |$M44949|
 
 ; 572  :     BOOL bVal = FALSE;//TRUE;
 ; 573  :     // work around for a OMAP35XX silicon issue (data CRC error on READ_MULTIPLE_BLOCK command)
@@ -1935,7 +1935,7 @@
 ; 580  : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M44946|
+  00008		 |$M44950|
 
 			 ENDP  ; |?IsMultipleBlockReadSupported@CSDIOControllerBase@@IAAHXZ|, CSDIOControllerBase::IsMultipleBlockReadSupported
 
@@ -1943,7 +1943,7 @@
 	EXPORT	|??_C@_1DO@OCDBIGLO@?$AAM?$AAM?$AAC?$AA?5?$AAS?$AAl?$AAo?$AAt?$AA?5?$AAn?$AAu?$AAm?$AAb?$AAe?$AAr?$AA?5?$AAi?$AAs?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAV?$AAa?$AAl?$AAi?$AAd?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44964| DCD	|$LN29@SetSDVSVol|
+|$T44968| DCD	|$LN29@SetSDVSVol|
 	DCD	0x40003001
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1964,7 +1964,7 @@
 
   00000		 |$LN29@SetSDVSVol|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M44961|
+  00004		 |$M44965|
 
 ; 586  :     UINT32 val1, val2;
 ; 587  : 
@@ -2149,7 +2149,7 @@
   000b8	00000000	 DCD         |??_C@_1DO@OCDBIGLO@?$AAM?$AAM?$AAC?$AA?5?$AAS?$AAl?$AAo?$AAt?$AA?5?$AAn?$AAu?$AAm?$AAb?$AAe?$AAr?$AA?5?$AAi?$AAs?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAV?$AAa?$AAl?$AAi?$AAd?$AA?$AN?$AA?6?$AA?$AA@|
   000bc		 |$LN32@SetSDVSVol|
   000bc	00000000	 DCD         |dpCurSettings|
-  000c0		 |$M44962|
+  000c0		 |$M44966|
 
 			 ENDP  ; |?SetSDVSVoltage@CSDIOControllerBase@@QAAXXZ|, CSDIOControllerBase::SetSDVSVoltage
 
@@ -2157,7 +2157,7 @@
 	IMPORT	|SetDevicePowerState|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T44981| DCD	|$LN16@UpdateDevi|
+|$T44985| DCD	|$LN16@UpdateDevi|
 	DCD	0x40003101
 ; Function compile flags: /Ogspy
 
@@ -2169,7 +2169,7 @@
 
   00000		 |$LN16@UpdateDevi|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M44978|
+  00004		 |$M44982|
   00004	e1a06001	 mov         r6, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -2260,14 +2260,14 @@
 
   000bc	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   000c0	e12fff1e	 bx          lr
-  000c4		 |$M44979|
+  000c4		 |$M44983|
 
 			 ENDP  ; |?UpdateDevicePowerState@CSDIOControllerBase@@QAAXH@Z|, CSDIOControllerBase::UpdateDevicePowerState
 
 	EXPORT	|?SendCmdNoResp@CSDIOControllerBase@@QAAJKK@Z| ; CSDIOControllerBase::SendCmdNoResp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45010| DCD	|$LN19@SendCmdNoR|
+|$T45014| DCD	|$LN19@SendCmdNoR|
 	DCD	0x40002d01
 ; Function compile flags: /Ogspy
 
@@ -2279,7 +2279,7 @@
 
   00000		 |$LN19@SendCmdNoR|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M45007|
+  00004		 |$M45011|
 
 ; 865  :     DWORD MMC_CMD;
 ; 866  :     DWORD dwTimeout;
@@ -2400,14 +2400,14 @@
   000b0		 |$LN20@SendCmdNoR|
   000b0		 |$LN21@SendCmdNoR|
   000b0	00000000	 DCD         |?gwaCMD@@3PAUCMD@@A|
-  000b4		 |$M45008|
+  000b4		 |$M45012|
 
 			 ENDP  ; |?SendCmdNoResp@CSDIOControllerBase@@QAAJKK@Z|, CSDIOControllerBase::SendCmdNoResp
 
 	EXPORT	|?SendInitSequence@CSDIOControllerBase@@QAAXXZ| ; CSDIOControllerBase::SendInitSequence
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45022| DCD	|$LN10@SendInitSe|
+|$T45026| DCD	|$LN10@SendInitSe|
 	DCD	0x40001d01
 ; Function compile flags: /Ogspy
 
@@ -2419,7 +2419,7 @@
 
   00000		 |$LN10@SendInitSe|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M45019|
+  00004		 |$M45023|
   00004	e1a04000	 mov         r4, r0
 
 ; 903  :     EnterCriticalSection( &m_critSec );
@@ -2476,7 +2476,7 @@
 
   0006c	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00070	e12fff1e	 bx          lr
-  00074		 |$M45020|
+  00074		 |$M45024|
 
 			 ENDP  ; |?SendInitSequence@CSDIOControllerBase@@QAAXXZ|, CSDIOControllerBase::SendInitSequence
 
@@ -2485,7 +2485,7 @@
 	IMPORT	|?SDIO_InitInputDMA@CSDIOControllerBase@@QAAXKK@Z| ; CSDIOControllerBase::SDIO_InitInputDMA
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45058| DCD	|$LN44@SendComman|
+|$T45062| DCD	|$LN44@SendComman|
 	DCD	0x4000a901
 ; Function compile flags: /Ogspy
 
@@ -2497,7 +2497,7 @@
 
   00000		 |$LN44@SendComman|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
-  00004		 |$M45055|
+  00004		 |$M45059|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -2911,7 +2911,7 @@
   002a0		 |$LN45@SendComman|
   002a0		 |$LN46@SendComman|
   002a0	00000000	 DCD         |?gwaCMD@@3PAUCMD@@A|
-  002a4		 |$M45056|
+  002a4		 |$M45060|
 
 			 ENDP  ; |?SendCommand@CSDIOControllerBase@@QAAJPAU_SD_BUS_REQUEST@@@Z|, CSDIOControllerBase::SendCommand
 
@@ -2919,7 +2919,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45075| DCD	|$LN9@CardInterr|
+|$T45079| DCD	|$LN9@CardInterr|
 	DCD	0x40001201
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\sdhc\base\sdhc.cpp
@@ -2932,7 +2932,7 @@
 
   00000		 |$LN9@CardInterr|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M45072|
+  00004		 |$M45076|
   00004	e1a04001	 mov         r4, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -2968,14 +2968,14 @@
 
   00040	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00044	e12fff1e	 bx          lr
-  00048		 |$M45073|
+  00048		 |$M45077|
 
 			 ENDP  ; |?CardInterrupt@CSDIOControllerBase@@QAAXH@Z|, CSDIOControllerBase::CardInterrupt
 
 	EXPORT	|?HandleInsertion@CSDIOControllerBase@@QAAXXZ| ; CSDIOControllerBase::HandleInsertion
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45089| DCD	|$LN13@HandleInse|
+|$T45093| DCD	|$LN13@HandleInse|
 	DCD	0x40003c02
 ; Function compile flags: /Ogspy
 
@@ -2988,7 +2988,7 @@
   00000		 |$LN13@HandleInse|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M45086|
+  00008		 |$M45090|
   00008	e1a04000	 mov         r4, r0
 
 ; 1198 :     DWORD dwClockRate = SD_DEFAULT_CARD_ID_CLOCK_RATE;
@@ -3112,7 +3112,7 @@
   000e4	e28dd004	 add         sp, sp, #4
   000e8	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   000ec	e12fff1e	 bx          lr
-  000f0		 |$M45087|
+  000f0		 |$M45091|
 
 			 ENDP  ; |?HandleInsertion@CSDIOControllerBase@@QAAXXZ|, CSDIOControllerBase::HandleInsertion
 
@@ -3120,7 +3120,7 @@
 	IMPORT	|DeleteCriticalSection|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45097| DCD	|$LN5@CSDIOContr@2|
+|$T45101| DCD	|$LN5@CSDIOContr@2|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -3132,7 +3132,7 @@
 
   00000		 |$LN5@CSDIOContr@2|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M45094|
+  00004		 |$M45098|
   00004	e1a04000	 mov         r4, r0
   00008	e59f3014	 ldr         r3, [pc, #0x14]
 
@@ -3153,7 +3153,7 @@
   00024		 |$LN6@CSDIOContr@2|
   00024		 |$LN7@CSDIOContr@2|
   00024	00000000	 DCD         |??_7CSDIOControllerBase@@6B@|
-  00028		 |$M45095|
+  00028		 |$M45099|
 
 			 ENDP  ; |??1CSDIOControllerBase@@QAA@XZ|, CSDIOControllerBase::~CSDIOControllerBase
 
@@ -3165,7 +3165,7 @@
 	IMPORT	|SDHCDDeregisterHostController|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45108| DCD	|$LN9@FreeHostCo|
+|$T45112| DCD	|$LN9@FreeHostCo|
 	DCD	0x40002501
 ; Function compile flags: /Ogspy
 
@@ -3177,7 +3177,7 @@
 
   00000		 |$LN9@FreeHostCo|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M45105|
+  00004		 |$M45109|
   00004	e3510000	 cmp         r1, #0
   00008	e1a04000	 mov         r4, r0
 
@@ -3273,14 +3273,14 @@
 
   0008c	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00090	e12fff1e	 bx          lr
-  00094		 |$M45106|
+  00094		 |$M45110|
 
 			 ENDP  ; |?FreeHostContext@CSDIOControllerBase@@QAAXHH@Z|, CSDIOControllerBase::FreeHostContext
 
 	EXPORT	|?CheckIntrStatus@CSDIOControllerBase@@QAAJKPAK@Z| ; CSDIOControllerBase::CheckIntrStatus
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45125| DCD	|$LN13@CheckIntrS|
+|$T45129| DCD	|$LN13@CheckIntrS|
 	DCD	0x40001e01
 ; Function compile flags: /Ogspy
 
@@ -3292,7 +3292,7 @@
 
   00000		 |$LN13@CheckIntrS|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M45122|
+  00004		 |$M45126|
   00004	e1a06002	 mov         r6, r2
   00008	e1a07000	 mov         r7, r0
 
@@ -3394,7 +3394,7 @@
   0006c	e1a00005	 mov         r0, r5
   00070	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   00074	e12fff1e	 bx          lr
-  00078		 |$M45123|
+  00078		 |$M45127|
 
 			 ENDP  ; |?CheckIntrStatus@CSDIOControllerBase@@QAAJKPAK@Z|, CSDIOControllerBase::CheckIntrStatus
 
@@ -3402,7 +3402,7 @@
 	IMPORT	|SDHCDIndicateBusRequestComplete|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45145| DCD	|$LN17@ProcessCom|
+|$T45149| DCD	|$LN17@ProcessCom|
 	DCD	0x40002a01
 ; Function compile flags: /Ogspy
 
@@ -3414,7 +3414,7 @@
 
   00000		 |$LN17@ProcessCom|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M45142|
+  00004		 |$M45146|
   00004	e1b06002	 movs        r6, r2
   00008	e1a05000	 mov         r5, r0
 
@@ -3531,7 +3531,7 @@
   0009c	e1a00006	 mov         r0, r6
   000a0	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   000a4	e12fff1e	 bx          lr
-  000a8		 |$M45143|
+  000a8		 |$M45147|
 
 			 ENDP  ; |?ProcessCommandTransferStatus@CSDIOControllerBase@@QAAJPAU_SD_BUS_REQUEST@@JK@Z|, CSDIOControllerBase::ProcessCommandTransferStatus
 
@@ -3540,7 +3540,7 @@
 	IMPORT	|?SDIO_StartInputDMA@CSDIOControllerBase@@QAAXXZ| ; CSDIOControllerBase::SDIO_StartInputDMA
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45166| DCD	|$LN12@StartDMARe|
+|$T45170| DCD	|$LN12@StartDMARe|
 	DCD	0x40002801
 ; Function compile flags: /Ogspy
 
@@ -3552,7 +3552,7 @@
 
   00000		 |$LN12@StartDMARe|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M45163|
+  00004		 |$M45167|
   00004	e1a07002	 mov         r7, r2
   00008	e1a08001	 mov         r8, r1
   0000c	e1a05000	 mov         r5, r0
@@ -3646,7 +3646,7 @@
   00094	e1a00006	 mov         r0, r6
   00098	e8bd41f0	 ldmia       sp!, {r4 - r8, lr}
   0009c	e12fff1e	 bx          lr
-  000a0		 |$M45164|
+  000a0		 |$M45168|
 
 			 ENDP  ; |?StartDMAReceive@CSDIOControllerBase@@QAAHPAEK@Z|, CSDIOControllerBase::StartDMAReceive
 
@@ -3655,7 +3655,7 @@
 	IMPORT	|SDPerformSafeCopy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45187| DCD	|$LN13@StartDMATr|
+|$T45191| DCD	|$LN13@StartDMATr|
 	DCD	0x40002901
 ; Function compile flags: /Ogspy
 
@@ -3667,7 +3667,7 @@
 
   00000		 |$LN13@StartDMATr|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M45184|
+  00004		 |$M45188|
   00004	e1a05000	 mov         r5, r0
 
 ; 2041 :     BOOL    bRet;
@@ -3696,7 +3696,7 @@
 ; 2059 : 
 ; 2060 :     if( bRet == FALSE)
 
-  00014	0a00001f	 beq         |$cleanUp$42970|
+  00014	0a00001f	 beq         |$cleanUp$42974|
 
 ; 2061 :         {
 ; 2062 :         goto cleanUp;
@@ -3731,7 +3731,7 @@
 ; 2072 :         bRet = FALSE;
 
   0004c	13a06000	 movne       r6, #0
-  00050	1a000010	 bne         |$cleanUp$42970|
+  00050	1a000010	 bne         |$cleanUp$42974|
 
 ; 2073 :         }
 ; 2074 :     else
@@ -3770,7 +3770,7 @@
 
   00090	e1a00005	 mov         r0, r5
   00094	eb000000	 bl          |?SDIO_StartOutputDMA@CSDIOControllerBase@@QAAXXZ|
-  00098		 |$cleanUp$42970|
+  00098		 |$cleanUp$42974|
 
 ; 2084 :         }
 ; 2085 : 
@@ -3782,7 +3782,7 @@
   00098	e1a00006	 mov         r0, r6
   0009c	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   000a0	e12fff1e	 bx          lr
-  000a4		 |$M45185|
+  000a4		 |$M45189|
 
 			 ENDP  ; |?StartDMATransmit@CSDIOControllerBase@@QAAHPAEK@Z|, CSDIOControllerBase::StartDMATransmit
 
@@ -3790,7 +3790,7 @@
 	IMPORT	|?SDIO_StopInputDMA@CSDIOControllerBase@@QAAXXZ| ; CSDIOControllerBase::SDIO_StopInputDMA
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45209| DCD	|$LN17@DataReceiv|
+|$T45213| DCD	|$LN17@DataReceiv|
 	DCD	0x40002e01
 ; Function compile flags: /Ogspy
 
@@ -3802,7 +3802,7 @@
 
   00000		 |$LN17@DataReceiv|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M45206|
+  00004		 |$M45210|
   00004	e1a06003	 mov         r6, r3
   00008	e1a04000	 mov         r4, r0
 
@@ -3929,7 +3929,7 @@
   000ac	e1a00005	 mov         r0, r5
   000b0	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   000b4	e12fff1e	 bx          lr
-  000b8		 |$M45207|
+  000b8		 |$M45211|
 
 			 ENDP  ; |?DataReceiveCompletedHandler@CSDIOControllerBase@@QAAJPAU_SD_BUS_REQUEST@@KPAW4SDHCCONTROLLERIST_STATE@@@Z|, CSDIOControllerBase::DataReceiveCompletedHandler
 
@@ -3937,7 +3937,7 @@
 	IMPORT	|?SDIO_StopOutputDMA@CSDIOControllerBase@@QAAXXZ| ; CSDIOControllerBase::SDIO_StopOutputDMA
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45229| DCD	|$LN14@DataTransm|
+|$T45233| DCD	|$LN14@DataTransm|
 	DCD	0x40002301
 ; Function compile flags: /Ogspy
 
@@ -3949,7 +3949,7 @@
 
   00000		 |$LN14@DataTransm|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M45226|
+  00004		 |$M45230|
   00004	e1a06003	 mov         r6, r3
   00008	e1a05002	 mov         r5, r2
   0000c	e1a07000	 mov         r7, r0
@@ -4051,14 +4051,14 @@
   00080	e1a00004	 mov         r0, r4
   00084	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   00088	e12fff1e	 bx          lr
-  0008c		 |$M45227|
+  0008c		 |$M45231|
 
 			 ENDP  ; |?DataTransmitCompletedHandler@CSDIOControllerBase@@QAAJPAU_SD_BUS_REQUEST@@KPAW4SDHCCONTROLLERIST_STATE@@@Z|, CSDIOControllerBase::DataTransmitCompletedHandler
 
 	EXPORT	|?SDHCCardDetectIstThread@CSDIOControllerBase@@SAKPAX@Z| ; CSDIOControllerBase::SDHCCardDetectIstThread
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45239| DCD	|$LN5@SDHCCardDe|
+|$T45243| DCD	|$LN5@SDHCCardDe|
 	DCD	0x40000701
 ; Function compile flags: /Ogspy
 
@@ -4070,7 +4070,7 @@
 
   00000		 |$LN5@SDHCCardDe|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M45236|
+  00004		 |$M45240|
 
 ; 2234 :     CSDIOControllerBase *pController = (CSDIOControllerBase*)lpParameter;
 ; 2235 :     return pController->SDHCCardDetectIstThreadImpl();
@@ -4084,14 +4084,14 @@
 
   00014	e49de004	 ldr         lr, [sp], #4
   00018	e12fff1e	 bx          lr
-  0001c		 |$M45237|
+  0001c		 |$M45241|
 
 			 ENDP  ; |?SDHCCardDetectIstThread@CSDIOControllerBase@@SAKPAX@Z|, CSDIOControllerBase::SDHCCardDetectIstThread
 
 	EXPORT	|?SDHCCancelIoHandlerImpl@CSDIOControllerBase@@QAAEEPAU_SD_BUS_REQUEST@@@Z| ; CSDIOControllerBase::SDHCCancelIoHandlerImpl
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45248| DCD	|$LN5@SDHCCancel|
+|$T45252| DCD	|$LN5@SDHCCancel|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -4102,7 +4102,7 @@
 ; 2545 : {
 
   00000		 |$LN5@SDHCCancel|
-  00000		 |$M45245|
+  00000		 |$M45249|
 
 ; 2546 :     // for now, we should never get here because all requests are non-cancelable
 ; 2547 :     // the hardware supports timeouts so it is impossible for the controller to get stuck
@@ -4118,14 +4118,14 @@
 ; 2554 : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M45246|
+  00008		 |$M45250|
 
 			 ENDP  ; |?SDHCCancelIoHandlerImpl@CSDIOControllerBase@@QAAEEPAU_SD_BUS_REQUEST@@@Z|, CSDIOControllerBase::SDHCCancelIoHandlerImpl
 
 	EXPORT	|?SetSlotPowerState@CSDIOControllerBase@@QAAXW4_CEDEVICE_POWER_STATE@@@Z| ; CSDIOControllerBase::SetSlotPowerState
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45255| DCD	|$LN5@SetSlotPow|
+|$T45259| DCD	|$LN5@SetSlotPow|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -4136,20 +4136,20 @@
 ; 3039 : {
 
   00000		 |$LN5@SetSlotPow|
-  00000		 |$M45252|
+  00000		 |$M45256|
 
 ; 3040 :     UNREFERENCED_PARAMETER(state);
 ; 3041 : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M45253|
+  00004		 |$M45257|
 
 			 ENDP  ; |?SetSlotPowerState@CSDIOControllerBase@@QAAXW4_CEDEVICE_POWER_STATE@@@Z|, CSDIOControllerBase::SetSlotPowerState
 
 	EXPORT	|?GetSlotPowerState@CSDIOControllerBase@@QAA?AW4_CEDEVICE_POWER_STATE@@XZ| ; CSDIOControllerBase::GetSlotPowerState
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45264| DCD	|$LN5@GetSlotPow|
+|$T45268| DCD	|$LN5@GetSlotPow|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -4160,7 +4160,7 @@
 ; 3045 : {
 
   00000		 |$LN5@GetSlotPow|
-  00000		 |$M45261|
+  00000		 |$M45265|
 
 ; 3046 :     return D3;
 
@@ -4169,14 +4169,14 @@
 ; 3047 : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M45262|
+  00008		 |$M45266|
 
 			 ENDP  ; |?GetSlotPowerState@CSDIOControllerBase@@QAA?AW4_CEDEVICE_POWER_STATE@@XZ|, CSDIOControllerBase::GetSlotPowerState
 
 	EXPORT	|?SDHCCancelIoHandler@CSDIOControllerBase@@SAEPAU_SDCARD_HC_CONTEXT@@KPAU_SD_BUS_REQUEST@@@Z| ; CSDIOControllerBase::SDHCCancelIoHandler
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45276| DCD	|$LN7@SDHCCancel@2|
+|$T45280| DCD	|$LN7@SDHCCancel@2|
 	DCD	0x40000200
 ; Function compile flags: /Ogspy
 
@@ -4187,7 +4187,7 @@
 ; 3390 : {
 
   00000		 |$LN7@SDHCCancel@2|
-  00000		 |$M45273|
+  00000		 |$M45277|
 
 ; 3391 :     // get our extension
 ; 3392 :     CSDIOControllerBase *pController = GET_PCONTROLLER_FROM_HCD(pHCContext);
@@ -4198,7 +4198,7 @@
 ; 3394 : }
 
   00004	e12fff1e	 bx          lr
-  00008		 |$M45274|
+  00008		 |$M45278|
 
 			 ENDP  ; |?SDHCCancelIoHandler@CSDIOControllerBase@@SAEPAU_SDCARD_HC_CONTEXT@@KPAU_SD_BUS_REQUEST@@@Z|, CSDIOControllerBase::SDHCCancelIoHandler
 
@@ -4208,7 +4208,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45292| DCD	|$LN13@SetPower|
+|$T45296| DCD	|$LN13@SetPower|
 	DCD	0x40002901
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\sdhc\base\sdhc.cpp
@@ -4221,7 +4221,7 @@
 
   00000		 |$LN13@SetPower|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M45289|
+  00004		 |$M45293|
   00004	e1a06001	 mov         r6, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -4320,14 +4320,14 @@
   00098	e1a00005	 mov         r0, r5
   0009c	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   000a0	e12fff1e	 bx          lr
-  000a4		 |$M45290|
+  000a4		 |$M45294|
 
 			 ENDP  ; |?SetPower@CSDIOControllerBase@@QAAHW4_CEDEVICE_POWER_STATE@@@Z|, CSDIOControllerBase::SetPower
 
 	EXPORT	|?PowerUp@CSDIOControllerBase@@QAAXXZ|	; CSDIOControllerBase::PowerUp
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45299| DCD	|$LN5@PowerUp|
+|$T45303| DCD	|$LN5@PowerUp|
 	DCD	0x40000100
 ; Function compile flags: /Ogspy
 
@@ -4338,12 +4338,12 @@
 ; 3516 : {
 
   00000		 |$LN5@PowerUp|
-  00000		 |$M45296|
+  00000		 |$M45300|
 
 ; 3517 : }
 
   00000	e12fff1e	 bx          lr
-  00004		 |$M45297|
+  00004		 |$M45301|
 
 			 ENDP  ; |?PowerUp@CSDIOControllerBase@@QAAXXZ|, CSDIOControllerBase::PowerUp
 
@@ -4352,7 +4352,7 @@
 	IMPORT	|SocSdhcDevconf|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45311| DCD	|$LN13@ContextRes|
+|$T45315| DCD	|$LN13@ContextRes|
 	DCD	0x40003602
 ; Function compile flags: /Ogspy
 
@@ -4365,7 +4365,7 @@
   00000		 |$LN13@ContextRes|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M45308|
+  00008		 |$M45312|
   00008	e1a04000	 mov         r4, r0
 
 ; 3528 :     SD_API_STATUS      status;              // SD status
@@ -4469,7 +4469,7 @@
 ; 3574 :     bRet = TRUE;
 
   00098	e3a05001	 mov         r5, #1
-  0009c		 |$cleanUp$43460|
+  0009c		 |$cleanUp$43464|
 
 ; 3575 : 
 ; 3576 : cleanUp:
@@ -4494,7 +4494,7 @@
 ; 3574 :     bRet = TRUE;
 
   000a8	e3a05001	 mov         r5, #1
-  000ac		 |$cleanUp_1$43460|
+  000ac		 |$cleanUp_1$43464|
 
 ; 3575 : 
 ; 3576 : cleanUp:
@@ -4524,14 +4524,14 @@
   000cc	e28dd004	 add         sp, sp, #4
   000d0	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   000d4	e12fff1e	 bx          lr
-  000d8		 |$M45309|
+  000d8		 |$M45313|
 
 			 ENDP  ; |?ContextRestore@CSDIOControllerBase@@QAAHXZ|, CSDIOControllerBase::ContextRestore
 
 	EXPORT	|?GetCommandResponse@CSDIOControllerBase@@QAAJPAU_SD_BUS_REQUEST@@@Z| ; CSDIOControllerBase::GetCommandResponse
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45348| DCD	|$LN29@GetCommand|
+|$T45352| DCD	|$LN29@GetCommand|
 	DCD	0x40005001
 ; Function compile flags: /Ogspy
 
@@ -4543,7 +4543,7 @@
 
   00000		 |$LN29@GetCommand|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M45345|
+  00004		 |$M45349|
   00004	e1a05001	 mov         r5, r1
   00008	e1a06000	 mov         r6, r0
 
@@ -4854,7 +4854,7 @@
 
   00138	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   0013c	e12fff1e	 bx          lr
-  00140		 |$M45346|
+  00140		 |$M45350|
 
 			 ENDP  ; |?GetCommandResponse@CSDIOControllerBase@@QAAJPAU_SD_BUS_REQUEST@@@Z|, CSDIOControllerBase::GetCommandResponse
 
@@ -4862,7 +4862,7 @@
 	EXPORT	|??_C@_1GE@EMGJJJMP@?$AAA?$AA?4?$AAS?$AA?4?$AA?5?$AAT?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AA?5?$AAw?$AAh?$AAi?$AAl?$AAe?$AA?5?$AAp?$AAo?$AAl?$AAl?$AAi?$AAn?$AAg?$AA?5?$AAD?$AAM?$AAA?$AA?5?$AAR@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45402| DCD	|$LN52@SDIDMARece|
+|$T45406| DCD	|$LN52@SDIDMARece|
 	DCD	0x40006801
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -4886,7 +4886,7 @@
 
   00000		 |$LN52@SDIDMARece|
   00000	e92d43f0	 stmdb       sp!, {r4 - r9, lr}
-  00004		 |$M45399|
+  00004		 |$M45403|
   00004	e1a08002	 mov         r8, r2
   00008	e1a09001	 mov         r9, r1
   0000c	e1a05000	 mov         r5, r0
@@ -4909,7 +4909,7 @@
 ; 3787 :     if( MMC_STAT & MMCHS_STAT_DTO )
 
   00028	e3140601	 tst         r4, #1, 12
-  0002c	1a00003f	 bne         |$cleanUp$43570|
+  0002c	1a00003f	 bne         |$cleanUp$43574|
 
 ; 3788 :     {
 ; 3789 :         DEBUGMSG(SDCARD_ZONE_ERROR, (TEXT("SDIDMAReceive() - exit: STAT register indicates MMC_STAT_DTO error.\n")));
@@ -4918,7 +4918,7 @@
 ; 3792 :     if( MMC_STAT & MMCHS_STAT_DCRC ) // DATA CRC Error
 
   00030	e3140602	 tst         r4, #2, 12
-  00034	1a00003d	 bne         |$cleanUp$43570|
+  00034	1a00003d	 bne         |$cleanUp$43574|
 
 ; 3793 :     {
 ; 3794 :         DEBUGMSG(SDCARD_ZONE_ERROR, (TEXT("SDIDMAReceive() - exit: STAT register indicates MMC_CRC_ERROR_RCVD error.\n")));
@@ -5115,7 +5115,7 @@
 ; 3861 :             // stop DMA
 ; 3862 :             SDIO_StopInputDMA();
 
-  00130		 |$cleanUp$43570|
+  00130		 |$cleanUp$43574|
 
 ; 3886 : 
 ; 3887 : cleanUp:
@@ -5173,7 +5173,7 @@
   00180	e1a00009	 mov         r0, r9
   00184	eb000000	 bl          SDPerformSafeCopy
   00188	e3500000	 cmp         r0, #0
-  0018c	0affffe7	 beq         |$cleanUp$43570|
+  0018c	0affffe7	 beq         |$cleanUp$43574|
 
 ; 3877 :     {
 ; 3878 :         goto cleanUp;
@@ -5194,7 +5194,7 @@
   0019c		 |$LN53@SDIDMARece|
   0019c		 |$LN54@SDIDMARece|
   0019c	00000000	 DCD         |??_C@_1GE@EMGJJJMP@?$AAA?$AA?4?$AAS?$AA?4?$AA?5?$AAT?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AA?5?$AAw?$AAh?$AAi?$AAl?$AAe?$AA?5?$AAp?$AAo?$AAl?$AAl?$AAi?$AAn?$AAg?$AA?5?$AAD?$AAM?$AAA?$AA?5?$AAR@|
-  001a0		 |$M45400|
+  001a0		 |$M45404|
 
 			 ENDP  ; |?SDIDMAReceive@CSDIOControllerBase@@QAAHPAEKH@Z|, CSDIOControllerBase::SDIDMAReceive
 
@@ -5202,7 +5202,7 @@
 	EXPORT	|??_C@_1GG@GOJDNFHN@?$AAA?$AA?4?$AAS?$AA?4?$AA?5?$AAT?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AA?5?$AAw?$AAh?$AAi?$AAl?$AAe?$AA?5?$AAp?$AAo?$AAl?$AAl?$AAi?$AAn?$AAg?$AA?5?$AAD?$AAM?$AAA?$AA?5?$AAT@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45457| DCD	|$LN50@SDIDMATran|
+|$T45461| DCD	|$LN50@SDIDMATran|
 	DCD	0x40006301
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -5226,7 +5226,7 @@
 
   00000		 |$LN50@SDIDMATran|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M45454|
+  00004		 |$M45458|
   00004	e1a05000	 mov         r5, r0
 
 ; 3897 :     DWORD dwCountStart;
@@ -5240,7 +5240,7 @@
   00008	e59500fc	 ldr         r0, [r5, #0xFC]
   0000c	eb000000	 bl          SDPerformSafeCopy
   00010	e3500000	 cmp         r0, #0
-  00014	0a000043	 beq         |$cleanUp$43616|
+  00014	0a000043	 beq         |$cleanUp$43620|
 
 ; 3904 :     {
 ; 3905 :         goto cleanUp;
@@ -5262,7 +5262,7 @@
 ; 3913 :     if( MMC_STAT & MMCHS_STAT_DTO )
 
   00030	e3140601	 tst         r4, #1, 12
-  00034	1a00003b	 bne         |$cleanUp$43616|
+  00034	1a00003b	 bne         |$cleanUp$43620|
 
 ; 3914 :     {
 ; 3915 :         DEBUGMSG(SDCARD_ZONE_ERROR, (TEXT("SDIDMATransmit() - exit: STAT register indicates MMC_STAT_DTO error.\n")));
@@ -5271,7 +5271,7 @@
 ; 3918 :     if( MMC_STAT & MMCHS_STAT_DCRC ) // DATA CRC Error
 
   00038	e3140602	 tst         r4, #2, 12
-  0003c	1a000039	 bne         |$cleanUp$43616|
+  0003c	1a000039	 bne         |$cleanUp$43620|
 
 ; 3919 :     {
 ; 3920 :         DEBUGMSG(SDCARD_ZONE_ERROR, (TEXT("SDIDMATransmit() - exit: STAT register indicates MMC_STAT_DCRC error.\n")));
@@ -5452,7 +5452,7 @@
 ; 3991 :             // stop DMA
 ; 3992 :             SDIO_StopInputDMA();
 
-  00128		 |$cleanUp$43616|
+  00128		 |$cleanUp$43620|
 
 ; 4003 : 
 ; 4004 : cleanUp:
@@ -5483,7 +5483,7 @@
 ; 4001 : 
 ; 4002 :     return TRUE;
 
-  0013c	eafffff9	 b           |$cleanUp$43616|
+  0013c	eafffff9	 b           |$cleanUp$43620|
   00140		 |$LN39@SDIDMATran|
 
 ; 3993 :             goto cleanUp;
@@ -5527,14 +5527,14 @@
   00188		 |$LN51@SDIDMATran|
   00188		 |$LN52@SDIDMATran|
   00188	00000000	 DCD         |??_C@_1GG@GOJDNFHN@?$AAA?$AA?4?$AAS?$AA?4?$AA?5?$AAT?$AAi?$AAm?$AAe?$AAo?$AAu?$AAt?$AA?5?$AAw?$AAh?$AAi?$AAl?$AAe?$AA?5?$AAp?$AAo?$AAl?$AAl?$AAi?$AAn?$AAg?$AA?5?$AAD?$AAM?$AAA?$AA?5?$AAT@|
-  0018c		 |$M45455|
+  0018c		 |$M45459|
 
 			 ENDP  ; |?SDIDMATransmit@CSDIOControllerBase@@QAAHPAEKH@Z|, CSDIOControllerBase::SDIDMATransmit
 
 	EXPORT	|?SDIPollingReceive@CSDIOControllerBase@@QAAHPAEK@Z| ; CSDIOControllerBase::SDIPollingReceive
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45547| DCD	|$LN72@SDIPolling|
+|$T45551| DCD	|$LN72@SDIPolling|
 	DCD	0x4000a401
 ; Function compile flags: /Ogspy
 
@@ -5546,7 +5546,7 @@
 
   00000		 |$LN72@SDIPolling|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
-  00004		 |$M45544|
+  00004		 |$M45548|
   00004	e1a07002	 mov         r7, r2
   00008	e1a06001	 mov         r6, r1
   0000c	e1a05000	 mov         r5, r0
@@ -5636,7 +5636,7 @@
   0008c	e5952150	 ldr         r2, [r5, #0x150]
   00090	e040300a	 sub         r3, r0, r10
   00094	e1530002	 cmp         r3, r2
-  00098	8a000079	 bhi         |$READ_ERROR$43677|
+  00098	8a000079	 bhi         |$READ_ERROR$43681|
   0009c		 |$LL16@SDIPolling|
   0009c	e28500b0	 add         r0, r5, #0xB0
   000a0	eb000000	 bl          EnterCriticalSection
@@ -5703,7 +5703,7 @@
   00108	e5952150	 ldr         r2, [r5, #0x150]
   0010c	e040300a	 sub         r3, r0, r10
   00110	e1530002	 cmp         r3, r2
-  00114	8a00005a	 bhi         |$READ_ERROR$43677|
+  00114	8a00005a	 bhi         |$READ_ERROR$43681|
   00118		 |$LN57@SDIPolling|
   00118	e28500b0	 add         r0, r5, #0xB0
   0011c	eb000000	 bl          EnterCriticalSection
@@ -5790,7 +5790,7 @@
   001ac	e5952150	 ldr         r2, [r5, #0x150]
   001b0	e0403006	 sub         r3, r0, r6
   001b4	e1530002	 cmp         r3, r2
-  001b8	8a000031	 bhi         |$READ_ERROR$43677|
+  001b8	8a000031	 bhi         |$READ_ERROR$43681|
   001bc		 |$LN69@SDIPolling|
   001bc	e28500b0	 add         r0, r5, #0xB0
   001c0	eb000000	 bl          EnterCriticalSection
@@ -5895,7 +5895,7 @@
   00278	e28500b0	 add         r0, r5, #0xB0
   0027c	e5834130	 str         r4, [r3, #0x130]
   00280	eb000000	 bl          LeaveCriticalSection
-  00284		 |$READ_ERROR$43677|
+  00284		 |$READ_ERROR$43681|
 
 ; 4115 :         return FALSE;
 
@@ -5919,14 +5919,14 @@
 
   00288	e8bd4ff0	 ldmia       sp!, {r4 - r11, lr}
   0028c	e12fff1e	 bx          lr
-  00290		 |$M45545|
+  00290		 |$M45549|
 
 			 ENDP  ; |?SDIPollingReceive@CSDIOControllerBase@@QAAHPAEK@Z|, CSDIOControllerBase::SDIPollingReceive
 
 	EXPORT	|?SDIPollingTransmit@CSDIOControllerBase@@QAAHPAEK@Z| ; CSDIOControllerBase::SDIPollingTransmit
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45612| DCD	|$LN60@SDIPolling@2|
+|$T45616| DCD	|$LN60@SDIPolling@2|
 	DCD	0x40007d01
 ; Function compile flags: /Ogspy
 
@@ -5938,7 +5938,7 @@
 
   00000		 |$LN60@SDIPolling@2|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
-  00004		 |$M45609|
+  00004		 |$M45613|
   00004	e1a06002	 mov         r6, r2
   00008	e1a07001	 mov         r7, r1
   0000c	e1a05000	 mov         r5, r0
@@ -6216,7 +6216,7 @@
   001e0	08bd4ff0	 ldmeqia     sp!, {r4 - r11, lr}
   001e4	012fff1e	 bxeq        lr
   001e8		 |$LN2@SDIPolling@2|
-  001e8		 |$WRITE_ERROR$43731|
+  001e8		 |$WRITE_ERROR$43735|
 
 ; 4213 :     }
 ; 4214 :     else
@@ -6239,7 +6239,7 @@
 
   001ec	e8bd4ff0	 ldmia       sp!, {r4 - r11, lr}
   001f0	e12fff1e	 bx          lr
-  001f4		 |$M45610|
+  001f4		 |$M45614|
 
 			 ENDP  ; |?SDIPollingTransmit@CSDIOControllerBase@@QAAHPAEK@Z|, CSDIOControllerBase::SDIPollingTransmit
 
@@ -6247,7 +6247,7 @@
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\inc\sdhc.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45621| DCD	|$LN5@SystemCloc|
+|$T45625| DCD	|$LN5@SystemCloc|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -6259,7 +6259,7 @@
 
   00000		 |$LN5@SystemCloc|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M45618|
+  00004		 |$M45622|
 
 ; 195  :         m_InternPowerState = D0;
 
@@ -6274,7 +6274,7 @@
 
   00010	e49de004	 ldr         lr, [sp], #4
   00014	e12fff1e	 bx          lr
-  00018		 |$M45619|
+  00018		 |$M45623|
 
 			 ENDP  ; |?SystemClockOn@CSDIOControllerBase@@QAAXH@Z|, CSDIOControllerBase::SystemClockOn
 
@@ -6284,7 +6284,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45647| DCD	|$LN29@SDHCPowerT|
+|$T45651| DCD	|$LN29@SDHCPowerT|
 	DCD	0x40003f01
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\sdhc\base\sdhc.cpp
@@ -6297,7 +6297,7 @@
 
   00000		 |$LN29@SDHCPowerT|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M45644|
+  00004		 |$M45648|
   00004	e1a04000	 mov         r4, r0
 
 ; 685  :     DWORD nTimeout = INFINITE;
@@ -6466,7 +6466,7 @@
 
   000f4	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   000f8	e12fff1e	 bx          lr
-  000fc		 |$M45645|
+  000fc		 |$M45649|
 
 			 ENDP  ; |?SDHCPowerTimerThreadImpl@CSDIOControllerBase@@QAAKXZ|, CSDIOControllerBase::SDHCPowerTimerThreadImpl
 
@@ -6476,7 +6476,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45666| DCD	|$LN22@UpdateSyst|
+|$T45670| DCD	|$LN22@UpdateSyst|
 	DCD	0x40003801
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\sdhc\base\sdhc.cpp
@@ -6489,7 +6489,7 @@
 
   00000		 |$LN22@UpdateSyst|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M45663|
+  00004		 |$M45667|
   00004	e3510000	 cmp         r1, #0
   00008	e1a05000	 mov         r5, r0
 
@@ -6666,7 +6666,7 @@
 
   000d8	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   000dc	e12fff1e	 bx          lr
-  000e0		 |$M45664|
+  000e0		 |$M45668|
 
 			 ENDP  ; |?UpdateSystemClock@CSDIOControllerBase@@QAAHH@Z|, CSDIOControllerBase::UpdateSystemClock
 
@@ -6675,7 +6675,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45688| DCD	|$LN20@HandleRemo|
+|$T45692| DCD	|$LN20@HandleRemo|
 	DCD	0x40004601
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\sdhc\base\sdhc.cpp
@@ -6688,7 +6688,7 @@
 
   00000		 |$LN20@HandleRemo|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M45685|
+  00004		 |$M45689|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -6866,7 +6866,7 @@
 
   00110	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00114	e12fff1e	 bx          lr
-  00118		 |$M45686|
+  00118		 |$M45690|
 
 			 ENDP  ; |?HandleRemoval@CSDIOControllerBase@@QAAXH@Z|, CSDIOControllerBase::HandleRemoval
 
@@ -6894,7 +6894,7 @@
 ; File c:\wince600\public\common\sdk\inc\creg.hxx
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45736| DCD	|$LN55@Init|
+|$T45740| DCD	|$LN55@Init|
 	DCD	0x4000c502
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -6991,7 +6991,7 @@
   00000		 |$LN55@Init|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M45733|
+  00008		 |$M45737|
   00008	e1a05001	 mov         r5, r1
   0000c	e1a04000	 mov         r4, r0
 
@@ -7427,7 +7427,7 @@
 ; 1376 :     dwRet = (DWORD) this;
 
   002e0	e1a06004	 mov         r6, r4
-  002e4		 |$cleanUp$42695|
+  002e4		 |$cleanUp$42699|
 
 ; 1377 : 
 ; 1378 : cleanUp:
@@ -7457,7 +7457,7 @@
   0030c	00000000	 DCD         |??_C@_1DE@PNOEBOJA@?$AAS?$AAD?$AAH?$AAC?$AA?3?$AA?5?$AAC?$AAP?$AAU?$AA?5?$AAr?$AAe?$AAv?$AAi?$AAs?$AAi?$AAo?$AAn?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@|
   00310		 |$LN67@Init|
   00310	01012010	 DCD         0x1012010
-  00314		 |$M45734|
+  00314		 |$M45738|
 
 			 ENDP  ; |?Init@CSDIOControllerBase@@QAAHPBG@Z|, CSDIOControllerBase::Init
 
@@ -7469,7 +7469,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45770| DCD	|$LN21@SDHCDeinit|
+|$T45774| DCD	|$LN21@SDHCDeinit|
 	DCD	0x40006602
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\sdhc\base\sdhc.cpp
@@ -7483,7 +7483,7 @@
   00000		 |$LN21@SDHCDeinit|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M45767|
+  00008		 |$M45771|
   00008	e1a05000	 mov         r5, r0
 
 ; 2250 :     DEBUGMSG(SDCARD_ZONE_INFO, (L"CSDIOControllerBase::SDHCDeinitializeImpl++\r\n"));
@@ -7759,14 +7759,14 @@
   00190	010100d8	 DCD         0x10100d8
   00194		 |$LN24@SDHCDeinit|
   00194	010100a4	 DCD         0x10100a4
-  00198		 |$M45768|
+  00198		 |$M45772|
 
 			 ENDP  ; |?SDHCDeinitializeImpl@CSDIOControllerBase@@QAAJXZ|, CSDIOControllerBase::SDHCDeinitializeImpl
 
 	EXPORT	|?SDHCBusRequestHandlerImpl_NormalPath@CSDIOControllerBase@@QAAJPAU_SD_BUS_REQUEST@@@Z| ; CSDIOControllerBase::SDHCBusRequestHandlerImpl_NormalPath
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45786| DCD	|$LN10@SDHCBusReq|
+|$T45790| DCD	|$LN10@SDHCBusReq|
 	DCD	0x40001e01
 ; Function compile flags: /Ogspy
 
@@ -7778,7 +7778,7 @@
 
   00000		 |$LN10@SDHCBusReq|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M45783|
+  00004		 |$M45787|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -7861,7 +7861,7 @@
 
   00060	13a01000	 movne       r1, #0
   00064	11a00004	 movne       r0, r4
-  00068		 |$cleanUp$43174|
+  00068		 |$cleanUp$43178|
   00068	1b000000	 blne        |?UpdateSystemClock@CSDIOControllerBase@@QAAHH@Z|
   0006c		 |$LN1@SDHCBusReq|
 
@@ -7873,14 +7873,14 @@
   0006c	e1a00005	 mov         r0, r5
   00070	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00074	e12fff1e	 bx          lr
-  00078		 |$M45784|
+  00078		 |$M45788|
 
 			 ENDP  ; |?SDHCBusRequestHandlerImpl_NormalPath@CSDIOControllerBase@@QAAJPAU_SD_BUS_REQUEST@@@Z|, CSDIOControllerBase::SDHCBusRequestHandlerImpl_NormalPath
 
 	EXPORT	|?SDHCDeinitialize@CSDIOControllerBase@@SAJPAU_SDCARD_HC_CONTEXT@@@Z| ; CSDIOControllerBase::SDHCDeinitialize
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45797| DCD	|$LN5@SDHCDeinit@2|
+|$T45801| DCD	|$LN5@SDHCDeinit@2|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -7892,7 +7892,7 @@
 
   00000		 |$LN5@SDHCDeinit@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M45794|
+  00004		 |$M45798|
 
 ; 3429 :     // get our extension
 ; 3430 :     CSDIOControllerBase *pController = GET_PCONTROLLER_FROM_HCD(pHCContext);
@@ -7907,7 +7907,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M45795|
+  00014		 |$M45799|
 
 			 ENDP  ; |?SDHCDeinitialize@CSDIOControllerBase@@SAJPAU_SDCARD_HC_CONTEXT@@@Z|, CSDIOControllerBase::SDHCDeinitialize
 
@@ -7915,7 +7915,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45813| DCD	|$LN11@PowerDown|
+|$T45817| DCD	|$LN11@PowerDown|
 	DCD	0x40002701
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\sdhc\base\sdhc.cpp
@@ -7928,7 +7928,7 @@
 
   00000		 |$LN11@PowerDown|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M45810|
+  00004		 |$M45814|
   00004	e1a04000	 mov         r4, r0
 
 ; 3479 :     // Notify bus driver
@@ -8021,14 +8021,14 @@
 
   00094	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00098	e12fff1e	 bx          lr
-  0009c		 |$M45811|
+  0009c		 |$M45815|
 
 			 ENDP  ; |?PowerDown@CSDIOControllerBase@@QAAXXZ|, CSDIOControllerBase::PowerDown
 
 	EXPORT	|?SDIReceive@CSDIOControllerBase@@QAAHPAEKH@Z| ; CSDIOControllerBase::SDIReceive
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45826| DCD	|$LN7@SDIReceive|
+|$T45830| DCD	|$LN7@SDIReceive|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -8040,7 +8040,7 @@
 
   00000		 |$LN7@SDIReceive|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M45823|
+  00004		 |$M45827|
 
 ; 3748 : #ifdef SDIO_DMA_ENABLED
 ; 3749 :     if( m_fDMATransfer )
@@ -8074,14 +8074,14 @@
 
   00020	e49de004	 ldr         lr, [sp], #4
   00024	e12fff1e	 bx          lr
-  00028		 |$M45824|
+  00028		 |$M45828|
 
 			 ENDP  ; |?SDIReceive@CSDIOControllerBase@@QAAHPAEKH@Z|, CSDIOControllerBase::SDIReceive
 
 	EXPORT	|?SDITransmit@CSDIOControllerBase@@QAAHPAEKH@Z| ; CSDIOControllerBase::SDITransmit
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45839| DCD	|$LN7@SDITransmi|
+|$T45843| DCD	|$LN7@SDITransmi|
 	DCD	0x40000a01
 ; Function compile flags: /Ogspy
 
@@ -8093,7 +8093,7 @@
 
   00000		 |$LN7@SDITransmi|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M45836|
+  00004		 |$M45840|
 
 ; 3764 : #ifdef SDIO_DMA_ENABLED
 ; 3765 :     if( m_fDMATransfer )
@@ -8127,14 +8127,14 @@
 
   00020	e49de004	 ldr         lr, [sp], #4
   00024	e12fff1e	 bx          lr
-  00028		 |$M45837|
+  00028		 |$M45841|
 
 			 ENDP  ; |?SDITransmit@CSDIOControllerBase@@QAAHPAEKH@Z|, CSDIOControllerBase::SDITransmit
 
 	EXPORT	|?SetInterface@CSDIOControllerBase@@QAAXPAU_SD_CARD_INTERFACE_EX@@@Z| ; CSDIOControllerBase::SetInterface
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45850| DCD	|$LN8@SetInterfa|
+|$T45854| DCD	|$LN8@SetInterfa|
 	DCD	0x40001a01
 ; Function compile flags: /Ogspy
 
@@ -8146,7 +8146,7 @@
 
   00000		 |$LN8@SetInterfa|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M45847|
+  00004		 |$M45851|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -8201,14 +8201,14 @@
 
   00060	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00064	e12fff1e	 bx          lr
-  00068		 |$M45848|
+  00068		 |$M45852|
 
 			 ENDP  ; |?SetInterface@CSDIOControllerBase@@QAAXPAU_SD_CARD_INTERFACE_EX@@@Z|, CSDIOControllerBase::SetInterface
 
 	EXPORT	|?SDHCPowerTimerThread@CSDIOControllerBase@@SAKPAX@Z| ; CSDIOControllerBase::SDHCPowerTimerThread
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45860| DCD	|$LN5@SDHCPowerT@2|
+|$T45864| DCD	|$LN5@SDHCPowerT@2|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -8220,7 +8220,7 @@
 
   00000		 |$LN5@SDHCPowerT@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M45857|
+  00004		 |$M45861|
 
 ; 673  :     CSDIOControllerBase *pController = (CSDIOControllerBase*)lpParameter;
 ; 674  :     return pController->SDHCPowerTimerThreadImpl();
@@ -8231,14 +8231,14 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M45858|
+  00010		 |$M45862|
 
 			 ENDP  ; |?SDHCPowerTimerThread@CSDIOControllerBase@@SAKPAX@Z|, CSDIOControllerBase::SDHCPowerTimerThread
 
 	EXPORT	|?HandleCardDetectInterrupt@CSDIOControllerBase@@QAAHK@Z| ; CSDIOControllerBase::HandleCardDetectInterrupt
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45872| DCD	|$LN7@HandleCard|
+|$T45876| DCD	|$LN7@HandleCard|
 	DCD	0x40001f01
 ; Function compile flags: /Ogspy
 
@@ -8250,7 +8250,7 @@
 
   00000		 |$LN7@HandleCard|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M45869|
+  00004		 |$M45873|
   00004	e1a05001	 mov         r5, r1
   00008	e1a04000	 mov         r4, r0
 
@@ -8349,7 +8349,7 @@
 
   00074	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   00078	e12fff1e	 bx          lr
-  0007c		 |$M45870|
+  0007c		 |$M45874|
 
 			 ENDP  ; |?HandleCardDetectInterrupt@CSDIOControllerBase@@QAAHK@Z|, CSDIOControllerBase::HandleCardDetectInterrupt
 
@@ -8358,15 +8358,15 @@
 	IMPORT	|__C_specific_handler|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45916| DCD	|$LN32@ReceiveHan|
+|$T45920| DCD	|$LN32@ReceiveHan|
 	DCD	0xc0003404
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45918| DCD	|$LN16@ReceiveHan|
+|$T45922| DCD	|$LN16@ReceiveHan|
 	DCD	0x40000301
 
   00000			 AREA	 |.xdata|, DATA
-|$T45914| DCD	0x1
+|$T45918| DCD	0x1
 	DCD	|$LN20@ReceiveHan|
 	DCD	|$LN21@ReceiveHan|
 	DCD	|$LN16@ReceiveHan|
@@ -8376,7 +8376,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T45914|
+  00004	00000000	 DCD         |$T45918|
 
   00008		 |?ReceiveHandler@CSDIOControllerBase@@QAAJPAU_SD_BUS_REQUEST@@PAW4SDHCCONTROLLERIST_STATE@@@Z| PROC ; CSDIOControllerBase::ReceiveHandler
 
@@ -8589,15 +8589,15 @@
 	EXPORT	|?TransmitHandler@CSDIOControllerBase@@QAAJPAU_SD_BUS_REQUEST@@PAW4SDHCCONTROLLERIST_STATE@@@Z| ; CSDIOControllerBase::TransmitHandler
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45964| DCD	|$LN33@TransmitHa|
+|$T45968| DCD	|$LN33@TransmitHa|
 	DCD	0xc0003804
 
   00000			 AREA	 |.pdata|, PDATA
-|$T45966| DCD	|$LN16@TransmitHa|
+|$T45970| DCD	|$LN16@TransmitHa|
 	DCD	0x40000301
 
   00000			 AREA	 |.xdata|, DATA
-|$T45962| DCD	0x1
+|$T45966| DCD	0x1
 	DCD	|$LN20@TransmitHa|
 	DCD	|$LN21@TransmitHa|
 	DCD	|$LN16@TransmitHa|
@@ -8607,7 +8607,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T45962|
+  00004	00000000	 DCD         |$T45966|
 
   00008		 |?TransmitHandler@CSDIOControllerBase@@QAAJPAU_SD_BUS_REQUEST@@PAW4SDHCCONTROLLERIST_STATE@@@Z| PROC ; CSDIOControllerBase::TransmitHandler
 
@@ -8833,19 +8833,19 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46067| DCD	|$LN98@CommandCom|
+|$T46071| DCD	|$LN98@CommandCom|
 	DCD	0xc000c205
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46069| DCD	|$LN51@CommandCom|
+|$T46073| DCD	|$LN51@CommandCom|
 	DCD	0x40000301
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46071| DCD	|$LN58@CommandCom|
+|$T46075| DCD	|$LN58@CommandCom|
 	DCD	0x40000301
 
   00000			 AREA	 |.xdata|, DATA
-|$T46065| DCD	0x2
+|$T46069| DCD	0x2
 	DCD	|$LN55@CommandCom|
 	DCD	|$LN56@CommandCom|
 	DCD	|$LN51@CommandCom|
@@ -8860,7 +8860,7 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__C_specific_handler|
-  00004	00000000	 DCD         |$T46065|
+  00004	00000000	 DCD         |$T46069|
 
   00008		 |?CommandCompleteHandler_FastPath@CSDIOControllerBase@@QAAHPAU_SD_BUS_REQUEST@@@Z| PROC ; CSDIOControllerBase::CommandCompleteHandler_FastPath
 
@@ -9096,7 +9096,7 @@
 ; 2851 :         goto TRANSFER_DONE;
 
   00134	e3a02000	 mov         r2, #0
-  00138		 |$TRANSFER_DONE$43215|
+  00138		 |$TRANSFER_DONE$43219|
 
 ; 2985 :     }
 ; 2986 : 
@@ -9472,7 +9472,7 @@
 ; 2984 :             status = SD_API_STATUS_SUCCESS;
 
   002e0	e3a04000	 mov         r4, #0
-  002e4	eaffff93	 b           |$TRANSFER_DONE$43215|
+  002e4	eaffff93	 b           |$TRANSFER_DONE$43219|
   002e8		 |$LN95@CommandCom|
 
 ; 3020 : #ifdef ENABLE_RETAIL_OUTPUT
@@ -9542,7 +9542,7 @@
 	IMPORT	|memset|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46131| DCD	|$LN70@SDHCSlotOp|
+|$T46135| DCD	|$LN70@SDHCSlotOp|
 	DCD	0x4000b002
 ; Function compile flags: /Ogspy
 
@@ -9555,7 +9555,7 @@
   00000		 |$LN70@SDHCSlotOp|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004	e24dd028	 sub         sp, sp, #0x28
-  00008		 |$M46128|
+  00008		 |$M46132|
   00008	e1a04003	 mov         r4, r3
   0000c	e1a07002	 mov         r7, r2
   00010	e1a05000	 mov         r5, r0
@@ -10204,14 +10204,14 @@
   002b8	010100a4	 DCD         0x10100a4
   002bc		 |$LN73@SDHCSlotOp|
   002bc	010100a0	 DCD         0x10100a0
-  002c0		 |$M46129|
+  002c0		 |$M46133|
 
 			 ENDP  ; |?SDHCSlotOptionHandlerImpl@CSDIOControllerBase@@QAAJEW4_SD_SLOT_OPTION_CODE@@PAXK@Z|, CSDIOControllerBase::SDHCSlotOptionHandlerImpl
 
 	EXPORT	|?SDHCSlotOptionHandler@CSDIOControllerBase@@SAJPAU_SDCARD_HC_CONTEXT@@KW4_SD_SLOT_OPTION_CODE@@PAXK@Z| ; CSDIOControllerBase::SDHCSlotOptionHandler
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46149| DCD	|$LN5@SDHCSlotOp@2|
+|$T46153| DCD	|$LN5@SDHCSlotOp@2|
 	DCD	0x40000a02
 ; Function compile flags: /Ogspy
 
@@ -10224,7 +10224,7 @@
   00000		 |$LN5@SDHCSlotOp@2|
   00000	e52de004	 str         lr, [sp, #-4]!
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M46146|
+  00008		 |$M46150|
 
 ; 3417 :     // get our extension
 ; 3418 :     CSDIOControllerBase *pController = GET_PCONTROLLER_FROM_HCD(pHCContext);
@@ -10244,14 +10244,14 @@
   0001c	e28dd004	 add         sp, sp, #4
   00020	e49de004	 ldr         lr, [sp], #4
   00024	e12fff1e	 bx          lr
-  00028		 |$M46147|
+  00028		 |$M46151|
 
 			 ENDP  ; |?SDHCSlotOptionHandler@CSDIOControllerBase@@SAJPAU_SDCARD_HC_CONTEXT@@KW4_SD_SLOT_OPTION_CODE@@PAXK@Z|, CSDIOControllerBase::SDHCSlotOptionHandler
 
 	EXPORT	|?CommandTransferCompleteHandler@CSDIOControllerBase@@QAAJPAU_SD_BUS_REQUEST@@KPAW4SDHCCONTROLLERIST_STATE@@@Z| ; CSDIOControllerBase::CommandTransferCompleteHandler
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46186| DCD	|$LN37@CommandTra|
+|$T46190| DCD	|$LN37@CommandTra|
 	DCD	0x40006802
 ; Function compile flags: /Ogspy
 
@@ -10264,7 +10264,7 @@
   00000		 |$LN37@CommandTra|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
   00004	e24dd008	 sub         sp, sp, #8
-  00008		 |$M46183|
+  00008		 |$M46187|
   00008	e1a09003	 mov         r9, r3
   0000c	e1a07001	 mov         r7, r1
   00010	e1a05000	 mov         r5, r0
@@ -10349,7 +10349,7 @@
   0009c	e28500b0	 add         r0, r5, #0xB0
   000a0	e5834130	 str         r4, [r3, #0x130]
   000a4	eb000000	 bl          LeaveCriticalSection
-  000a8	ea000036	 b           |$cleanUp$42848|
+  000a8	ea000036	 b           |$cleanUp$42852|
   000ac		 |$LN17@CommandTra|
 
 ; 1717 : 
@@ -10479,7 +10479,7 @@
 ; 1764 :         status = SD_API_STATUS_DEVICE_REMOVED;
 
   00168	03a06147	 moveq       r6, #0x47, 2
-  0016c		 |$TRANSFER_DONE$42842|
+  0016c		 |$TRANSFER_DONE$42846|
 
 ; 1765 :         }
 ; 1766 : 
@@ -10488,7 +10488,7 @@
 ; 1769 :     if (eNextControllerState == COMMAND_TRANSFER_STATE)
 
   0016c	e3580001	 cmp         r8, #1
-  00170	1a000004	 bne         |$cleanUp$42848|
+  00170	1a000004	 bne         |$cleanUp$42852|
   00174		 |$LN33@CommandTra|
 
 ; 1770 :         {
@@ -10499,7 +10499,7 @@
   0017c	e1a01007	 mov         r1, r7
   00180	e1a00005	 mov         r0, r5
   00184	eb000000	 bl          |?ProcessCommandTransferStatus@CSDIOControllerBase@@QAAJPAU_SD_BUS_REQUEST@@JK@Z|
-  00188		 |$cleanUp$42848|
+  00188		 |$cleanUp$42852|
 
 ; 1772 :         }
 ; 1773 : 
@@ -10523,14 +10523,14 @@
   00194	e28dd008	 add         sp, sp, #8
   00198	e8bd47f0	 ldmia       sp!, {r4 - r10, lr}
   0019c	e12fff1e	 bx          lr
-  001a0		 |$M46184|
+  001a0		 |$M46188|
 
 			 ENDP  ; |?CommandTransferCompleteHandler@CSDIOControllerBase@@QAAJPAU_SD_BUS_REQUEST@@KPAW4SDHCCONTROLLERIST_STATE@@@Z|, CSDIOControllerBase::CommandTransferCompleteHandler
 
 	EXPORT	|?CardBusyCompletedHandler@CSDIOControllerBase@@QAAJPAU_SD_BUS_REQUEST@@KPAW4SDHCCONTROLLERIST_STATE@@@Z| ; CSDIOControllerBase::CardBusyCompletedHandler
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46199| DCD	|$LN5@CardBusyCo|
+|$T46203| DCD	|$LN5@CardBusyCo|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -10542,7 +10542,7 @@
 
   00000		 |$LN5@CardBusyCo|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46196|
+  00004		 |$M46200|
 
 ; 2221 :     // when card busy is complete, process it as a normal command complete interrupt.
 ; 2222 :     return CommandTransferCompleteHandler(pRequest, dwIntrStatus, pNextState);
@@ -10553,14 +10553,14 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M46197|
+  00010		 |$M46201|
 
 			 ENDP  ; |?CardBusyCompletedHandler@CSDIOControllerBase@@QAAJPAU_SD_BUS_REQUEST@@KPAW4SDHCCONTROLLERIST_STATE@@@Z|, CSDIOControllerBase::CardBusyCompletedHandler
 
 	EXPORT	|?SDHCBusRequestHandlerImpl_FastPath@CSDIOControllerBase@@QAAJPAU_SD_BUS_REQUEST@@@Z| ; CSDIOControllerBase::SDHCBusRequestHandlerImpl_FastPath
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46230| DCD	|$LN22@SDHCBusReq@2|
+|$T46234| DCD	|$LN22@SDHCBusReq@2|
 	DCD	0x40006701
 ; Function compile flags: /Ogspy
 
@@ -10572,7 +10572,7 @@
 
   00000		 |$LN22@SDHCBusReq@2|
   00000	e92d47f0	 stmdb       sp!, {r4 - r10, lr}
-  00004		 |$M46227|
+  00004		 |$M46231|
   00004	e1a08001	 mov         r8, r1
   00008	e1a05000	 mov         r5, r0
 
@@ -10770,7 +10770,7 @@
   00148	e583a130	 str         r10, [r3, #0x130]
   0014c		 |$LN17@SDHCBusReq@2|
   0014c	eb000000	 bl          LeaveCriticalSection
-  00150		 |$cleanUp$43136|
+  00150		 |$cleanUp$43140|
 
 ; 2627 : 
 ; 2628 :     UpdateSystemClock(FALSE);
@@ -10804,7 +10804,7 @@
   00184	e5934130	 ldr         r4, [r3, #0x130]
   00188	eb000000	 bl          LeaveCriticalSection
   0018c	e3140801	 tst         r4, #1, 16
-  00190	0affffee	 beq         |$cleanUp$43136|
+  00190	0affffee	 beq         |$cleanUp$43140|
 
 ; 2600 :                 {
 ; 2601 :                     status = SD_API_STATUS_RESPONSE_TIMEOUT;
@@ -10814,15 +10814,15 @@
 ; 2625 : 
 ; 2626 : cleanUp:
 
-  00198	eaffffec	 b           |$cleanUp$43136|
-  0019c		 |$M46228|
+  00198	eaffffec	 b           |$cleanUp$43140|
+  0019c		 |$M46232|
 
 			 ENDP  ; |?SDHCBusRequestHandlerImpl_FastPath@CSDIOControllerBase@@QAAJPAU_SD_BUS_REQUEST@@@Z|, CSDIOControllerBase::SDHCBusRequestHandlerImpl_FastPath
 
 	EXPORT	|?SDHCBusRequestHandlerImpl@CSDIOControllerBase@@QAAJPAU_SD_BUS_REQUEST@@@Z| ; CSDIOControllerBase::SDHCBusRequestHandlerImpl
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46242| DCD	|$LN11@SDHCBusReq@3|
+|$T46246| DCD	|$LN11@SDHCBusReq@3|
 	DCD	0x40001f01
 ; Function compile flags: /Ogspy
 
@@ -10834,7 +10834,7 @@
 
   00000		 |$LN11@SDHCBusReq@3|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46239|
+  00004		 |$M46243|
 
 ; 2692 :     DEBUGCHK(pRequest);
 ; 2693 :     
@@ -10933,14 +10933,14 @@
 
   00074	e49de004	 ldr         lr, [sp], #4
   00078	e12fff1e	 bx          lr
-  0007c		 |$M46240|
+  0007c		 |$M46244|
 
 			 ENDP  ; |?SDHCBusRequestHandlerImpl@CSDIOControllerBase@@QAAJPAU_SD_BUS_REQUEST@@@Z|, CSDIOControllerBase::SDHCBusRequestHandlerImpl
 
 	EXPORT	|?SDHCBusRequestHandler@CSDIOControllerBase@@SAJPAU_SDCARD_HC_CONTEXT@@KPAU_SD_BUS_REQUEST@@@Z| ; CSDIOControllerBase::SDHCBusRequestHandler
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46254| DCD	|$LN5@SDHCBusReq@4|
+|$T46258| DCD	|$LN5@SDHCBusReq@4|
 	DCD	0x40000601
 ; Function compile flags: /Ogspy
 
@@ -10952,7 +10952,7 @@
 
   00000		 |$LN5@SDHCBusReq@4|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46251|
+  00004		 |$M46255|
 
 ; 3402 :     UNREFERENCED_PARAMETER(Slot);
 ; 3403 : 
@@ -10970,7 +10970,7 @@
 
   00010	e49de004	 ldr         lr, [sp], #4
   00014	e12fff1e	 bx          lr
-  00018		 |$M46252|
+  00018		 |$M46256|
 
 			 ENDP  ; |?SDHCBusRequestHandler@CSDIOControllerBase@@SAJPAU_SDCARD_HC_CONTEXT@@KPAU_SD_BUS_REQUEST@@@Z|, CSDIOControllerBase::SDHCBusRequestHandler
 
@@ -10979,7 +10979,7 @@
 	IMPORT	|InterruptDone|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46298| DCD	|$LN47@SDHCContro|
+|$T46302| DCD	|$LN47@SDHCContro|
 	DCD	0x40009e02
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -11011,7 +11011,7 @@
   00000		 |$LN47@SDHCContro|
   00000	e92d4ff0	 stmdb       sp!, {r4 - r11, lr}
   00004	e24dd004	 sub         sp, sp, #4
-  00008		 |$M46295|
+  00008		 |$M46299|
   00008	e1a05000	 mov         r5, r0
 
 ; 1479 :     DWORD code;
@@ -11431,14 +11431,14 @@
   00270	00000000	 DCD         |??_C@_1LK@CIILNCON@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAC?$AAS?$AAD?$AAI?$AAO?$AAC?$AAo?$AAn?$AAt?$AAr?$AAo?$AAl?$AAl?$AAe?$AAr?$AAB?$AAa?$AAs?$AAe?$AA?3?$AA?3?$AAS?$AAD?$AAH?$AAC@|
   00274		 |$LN50@SDHCContro|
   00274	00000000	 DCD         |dpCurSettings|
-  00278		 |$M46296|
+  00278		 |$M46300|
 
 			 ENDP  ; |?SDHCControllerIstThreadImpl@CSDIOControllerBase@@QAAKXZ|, CSDIOControllerBase::SDHCControllerIstThreadImpl
 
 	EXPORT	|?SDHCControllerIstThread@CSDIOControllerBase@@SAKPAX@Z| ; CSDIOControllerBase::SDHCControllerIstThread
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46311| DCD	|$LN5@SDHCContro@2|
+|$T46315| DCD	|$LN5@SDHCContro@2|
 	DCD	0x40000401
 ; Function compile flags: /Ogspy
 
@@ -11450,7 +11450,7 @@
 
   00000		 |$LN5@SDHCContro@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46308|
+  00004		 |$M46312|
 
 ; 1464 :     CSDIOControllerBase *pController = (CSDIOControllerBase*)lpParameter;
 ; 1465 :     return pController->SDHCControllerIstThreadImpl();
@@ -11461,7 +11461,7 @@
 
   00008	e49de004	 ldr         lr, [sp], #4
   0000c	e12fff1e	 bx          lr
-  00010		 |$M46309|
+  00010		 |$M46313|
 
 			 ENDP  ; |?SDHCControllerIstThread@CSDIOControllerBase@@SAKPAX@Z|, CSDIOControllerBase::SDHCControllerIstThread
 
@@ -11477,7 +11477,7 @@
 ; File c:\wince600\public\common\sdk\inc\kfuncs.h
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46338| DCD	|$LN34@SDHCInitia|
+|$T46342| DCD	|$LN34@SDHCInitia|
 	DCD	0x4000a202
 ; Function compile flags: /Ogspy
 ; File c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\sdhc\base\sdhc.cpp
@@ -11491,7 +11491,7 @@
   00000		 |$LN34@SDHCInitia|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
   00004	e24dd028	 sub         sp, sp, #0x28
-  00008		 |$M46335|
+  00008		 |$M46339|
   00008	e1a04000	 mov         r4, r0
 
 ; 2355 :     SD_API_STATUS status = SD_API_STATUS_INSUFFICIENT_RESOURCES; // intermediate status
@@ -11843,7 +11843,7 @@
 ; 2522 :     status = SD_API_STATUS_SUCCESS;
 
   00268	e3a05000	 mov         r5, #0
-  0026c		 |$cleanUp$43064|
+  0026c		 |$cleanUp$43068|
 
 ; 2525 : 
 ; 2526 :     if (!SD_API_SUCCESS(status))
@@ -11868,14 +11868,14 @@
   00280	00000000	 DCD         |?SDHCControllerIstThread@CSDIOControllerBase@@SAKPAX@Z|
   00284		 |$LN38@SDHCInitia|
   00284	01010098	 DCD         0x1010098
-  00288		 |$M46336|
+  00288		 |$M46340|
 
 			 ENDP  ; |?SDHCInitializeImpl@CSDIOControllerBase@@QAAJXZ|, CSDIOControllerBase::SDHCInitializeImpl
 
 	EXPORT	|?SDHCInitialize@CSDIOControllerBase@@SAJPAU_SDCARD_HC_CONTEXT@@@Z| ; CSDIOControllerBase::SDHCInitialize
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46353| DCD	|$LN5@SDHCInitia@2|
+|$T46357| DCD	|$LN5@SDHCInitia@2|
 	DCD	0x40000501
 ; Function compile flags: /Ogspy
 
@@ -11887,7 +11887,7 @@
 
   00000		 |$LN5@SDHCInitia@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M46350|
+  00004		 |$M46354|
 
 ; 3438 :     // get our extension
 ; 3439 :     CSDIOControllerBase *pController = GET_PCONTROLLER_FROM_HCD(pHCContext);
@@ -11902,7 +11902,7 @@
 
   0000c	e49de004	 ldr         lr, [sp], #4
   00010	e12fff1e	 bx          lr
-  00014		 |$M46351|
+  00014		 |$M46355|
 
 			 ENDP  ; |?SDHCInitialize@CSDIOControllerBase@@SAJPAU_SDCARD_HC_CONTEXT@@@Z|, CSDIOControllerBase::SDHCInitialize
 
@@ -11910,7 +11910,7 @@
 	IMPORT	|wcsncpy|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T46364| DCD	|$LN5@InterpretC|
+|$T46368| DCD	|$LN5@InterpretC|
 	DCD	0x40002201
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -11926,7 +11926,7 @@
 
   00000		 |$LN5@InterpretC|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M46361|
+  00004		 |$M46365|
   00004	e1a06000	 mov         r6, r0
 
 ; 1428 :     BOOL fRet = TRUE;
@@ -12010,7 +12010,7 @@
   00080	00000000	 DCD         |?SDHCInitialize@CSDIOControllerBase@@SAJPAU_SDCARD_HC_CONTEXT@@@Z|
   00084		 |$LN12@InterpretC|
   00084	00000000	 DCD         |??_C@_19IJCLBJAH@?$AAS?$AAD?$AAH?$AAC?$AA?$AA@|
-  00088		 |$M46362|
+  00088		 |$M46366|
 
 			 ENDP  ; |?InterpretCapabilities@CSDIOControllerBase@@UAAHXZ|, CSDIOControllerBase::InterpretCapabilities
 

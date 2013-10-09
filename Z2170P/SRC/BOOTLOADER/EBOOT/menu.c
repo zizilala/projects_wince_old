@@ -28,6 +28,9 @@
 #include "twl.h"
 #include "triton.h"
 #include "tps659xx_internals.h"
+//
+#include "sdk_i2c.h"
+
 
 //------------------------------------------------------------------------------
 //
@@ -49,25 +52,33 @@ static VOID SaveSettings(OAL_BLMENU_ITEM *pMenu);
 static VOID SetRetailMsgMode(OAL_BLMENU_ITEM *pMenu);
 static VOID SetDisplayResolution(OAL_BLMENU_ITEM *pMenu);
 static VOID SetOPPmode(OAL_BLMENU_ITEM *pMenu);
-static VOID SetBacklight(OAL_BLMENU_ITEM *pMenu);	//setup backlight, Ray 13-07-26 
-static VOID SDtoFlash(OAL_BLMENU_ITEM *pMenu);	    //File Send To Flash By SD Card, Ray 13-09-03 
-//BOOL BLSDCardToFlash(WCHAR *);			        //Initial SD Card, Ray 13-09-03 
-BOOL BLSDtoFlash(void);					            //Initial SD Card, Ray 13-09-10
+static VOID SetBacklight(OAL_BLMENU_ITEM *pMenu);	        //setup backlight, Ray 13-07-26 
+static VOID SDtoFlash(OAL_BLMENU_ITEM *pMenu);	            //File Send To Flash By SD Card, Ray 13-09-03 
+//BOOL BLSDCardToFlash(WCHAR *);			                //Initial SD Card, Ray 13-09-03 
+BOOL BLSDtoFlash(void);					                    //Initial SD Card, Ray 13-09-10
 //BOOL OEMWriteFlash(ULONG address, ULONG size);
-//BOOL WriteFlashFromEEBOOT(UINT32 address, UINT32 size);  //Write EBOOT file to Flash, Ray 13-09-14
-//VOID DumpFlashBuffer(OAL_BLMENU_ITEM *pMenu);  //Dumpping flash & buffer, Ray 13-09-16
-//BOOL WriteFlashNK(UINT32 address, UINT32 size); //XX, Ray 13-09-16
-static VOID BacklightON(OAL_BLMENU_ITEM *pMenu);   //Below instance Backlight function,Ray 13-09-18  
+//BOOL WriteFlashFromEEBOOT(UINT32 address, UINT32 size);   //Write EBOOT file to Flash, Ray 13-09-14
+//VOID DumpFlashBuffer(OAL_BLMENU_ITEM *pMenu);             //Dumpping flash & buffer, Ray 13-09-16
+//BOOL WriteFlashNK(UINT32 address, UINT32 size);           //XX, Ray 13-09-16
+static VOID BacklightON(OAL_BLMENU_ITEM *pMenu);            //Below instance Backlight function,Ray 13-09-18  
 static VOID BacklightOFF(OAL_BLMENU_ITEM *pMenu);
 static VOID BacklightBrightness(OAL_BLMENU_ITEM *pMenu);
-//VOID KeypadState();									//keypad testing, Ray 13-08-14
-VOID LCMInitial(OAL_BLMENU_ITEM *pMenu);                //Testing LCM , Ray 13-09-24
-void LCD_SPI_Init(void);                                 //LCM SPI_Init, Ray 13-09-24                             
-void spi_Low(void);                                     //LCM SPI_low, Ray 13-09-24                              
+//VOID KeypadState();									    //keypad testing, Ray 13-08-14
+VOID LCMInitial(OAL_BLMENU_ITEM *pMenu);                    //Testing LCM , Ray 13-09-24
+void spi_Low(void);                                         //LCM SPI_low, Ray 13-09-24                              
 void LcdStall(DWORD);
+//Tsting function
+void LCD_SPI_Init(void);                                    //LCM SPI_Init, Ray 13-09-24  
+VOID FillASCII();                                           //Print ASCII cahr, Ray 13-10-02
+static VOID FuelGaugeWithBattery(OAL_BLMENU_ITEM *pMenu);   //Means battery status, Ray 13-10-07
+void* I2COpen(UINT);                                        //Ray 13-10-08
+BOOL I2CSetSlaveAddress(void *, UINT16);                    //Set up slave address, Ray 13-10-08
+UINT I2CWrite(void *, UINT32, const VOID *, UINT32);          //Ray 13-10-09
+UINT I2CRead(void *, UINT32, VOID *, UINT32);                 //Ray 13-10-09
 
-
-
+//------------------------------------------------------------------------------
+#define I2C3_SCL_GPIO    184             //i2c3_scl
+#define I2C3_SDA_GPIO    185             //i2c3_sda
 
 //------------------------------------------------------------------------------
 #if BUILDING_EBOOT_SD
@@ -190,6 +201,9 @@ static OAL_BLMENU_ITEM g_menuMain[] = {
 		L'e', L"LCM Initial", LCMInitial,		                        //Ray 13-09-24 
         NULL, NULL, NULL
 	}, {
+		L'f', L"Battery Status", FuelGaugeWithBattery,		                        //Ray 13-10-07 
+        NULL, NULL, NULL
+	}, {
         L'0', L"Exit and Continue", NULL,
         NULL, NULL, NULL
     }, {
@@ -230,13 +244,16 @@ static OAL_BLMENU_ITEM g_menuMain[] = {
         L'a', L"Select OPP Mode", SetOPPmode,
         NULL, NULL, NULL
     }, {
-		L'b', L"Backlight ON/OFF", SetBacklight,	                  //Ray 13-07-26 
+		L'b', L"Backlight ON/OFF", SetBacklight,	                    //Ray 13-07-26 
         NULL, NULL, NULL
 	}, {
 		L'c', L"File Transfer from SD Card to Flash", SDtoFlash,		//Ray 13-09-03 
         NULL, NULL, NULL
 	}, {
-		L'e', L"LCM Initial", LCMInitial,		                        //Ray 13-09-24 
+		L'd', L"LCM Initial", LCMInitial,		                        //Ray 13-09-24 
+        NULL, NULL, NULL
+	},  {
+		L'e', L"Battery Status", FuelGaugeWithBattery,		            //Ray 13-10-07 
         NULL, NULL, NULL
 	}, {
         L'0', L"Exit and Continue", NULL,
@@ -339,9 +356,21 @@ typedef struct _OMAP_LCM_Initial_MENU{
 }OMAP_LCM_Initial_MENU;
 
 OMAP_LCM_Initial_MENU LCMInitiaArray[] ={
-	{LCM_HIGH, 		L"High"},
-	{LCM_LOW,	 	L"Low"},
+	{LCM_HIGH, 	 L"High"},
+	{LCM_LOW,	 L"Low"},
 	{LCM_EXIT,   L"EXIT"},
+};
+
+//Ray 13-10-08
+typedef struct _OMAP_BATTERY_MENU{
+		DWORD	 	BatteryActive;
+		LPCWSTR		BatteryName;
+}OMAP_BATTER_MENU;
+
+OMAP_BATTER_MENU BatteryStatusArray[] = {
+    {BATTERY_INIT_IC2, 	L"Initial Battery"},
+	{BATTERY_STATUS,	L"Battery Status"},
+	{BATTERY_EXIT,      L"EXIT"},
 };
 
 //------------------------------------------------------------------------------
@@ -383,10 +412,10 @@ VOID BLMenu(BOOL bForced)
     //if ((!bForced == TRUE))
 	//if ((bForced == TRUE) || (key ==  GPIOGetBit(hGPIO, 114)) && (key ==  GPIOGetBit(hGPIO, 115))) 
 	{									//Combo SIDE KEY 
+        LCD_SPI_Init();
         BLShowLogo();					//function is TRUE,so Forever go , Ray 13-07-31 
-		OALBLMenuShow(&g_menuRoot);
+        OALBLMenuShow(&g_menuRoot);
 		//KeypadState();
-		
 		// Invalidate arguments to force them to be reinitialized
         // with new config data generated by the boot menu
 		pArgs->header.signature = 0;
@@ -1136,7 +1165,7 @@ VOID LCMInitial(OAL_BLMENU_ITEM *pMenu)
 {
     WCHAR key;
     UINT32 i;
-    DWORD dTime = 5000000;
+    DWORD dTime = 10000000;
 
     UNREFERENCED_PARAMETER(pMenu);
     
@@ -1160,7 +1189,8 @@ VOID LCMInitial(OAL_BLMENU_ITEM *pMenu)
     switch(key)
 	{
 		case L'1':
-            LCD_SPI_Init();
+		    FillASCII();
+            //LCD_SPI_Init();
             LcdStall(dTime);
 			break;
 		case L'2':
@@ -1176,6 +1206,167 @@ VOID LCMInitial(OAL_BLMENU_ITEM *pMenu)
     g_bootCfg.lcmInitial = (key - L'0' - 1);
 
 }
+
+//------------------------------------------------------------------------------
+//
+//  File: FuelGaugeWithBattery(), Ray 13-10-07 
+//
+
+//typedef struct Device_t i2c_Device;
+//HANDLE hI2C;
+HANDLE hI2C;
+//hI2C = I2COpen(OMAP_DEVICE_I2C3);
+//-----------------------------------------------------------------------------
+
+BOOL BQ27410_WriteReg(UINT8 slaveaddress,UINT16 value)
+{
+    BOOL rc = FALSE;
+    UINT len;
+    
+    OALLog(L"\r Testing I2COpen()\r\n"); 
+    hI2C = I2COpen(OMAP_DEVICE_I2C3);
+    
+    if (hI2C)
+    {
+        OALLog(L"\r Testing I2CWrite(): %X\r\n", hI2C);
+
+        len = I2CWrite(hI2C, slaveaddress, &value, sizeof(UINT16));
+
+        OALLog(L"\r Testing I2CWrite(): %d\r\n", len);
+        
+        if ( len != sizeof(UINT16))
+        	RETAILMSG(1,(L"ERROR: BQ27410_WriteReg Failed!!\r\n"));
+		else
+			rc = TRUE;
+	}
+	
+	OALLog(L"\r BQ27410_WriteReg:%d\r\n",rc);
+	return rc;
+}
+//-----------------------------------------------------------------------------
+
+BOOL BQ27410_ReadReg(UINT8 slaveaddress,UINT16* data)
+{
+    BOOL rc = FALSE;
+    UINT len;
+    
+    hI2C = I2COpen(OMAP_DEVICE_I2C3);
+    //if (hI2C)
+    {
+        len = I2CRead(hI2C, slaveaddress, data, 2);
+        if ( len != sizeof(UINT16))
+        	RETAILMSG(1,(L"ERROR: BQ27410_ReadReg Failed!!\r\n"));
+		else
+			rc = TRUE;
+	}
+	
+	OALLog(L"\r BQ27410_ReadReg:%d\r\n",rc);
+    return rc;
+}
+//-----------------------------------------------------------------------------
+
+BOOL InitI2CWithBQ27410(void)
+{
+//   static i2c_Device;
+    BOOL rc = FALSE;
+    USHORT volt = 0;
+    //DWORD d1sec = 1000000   
+    DWORD d500msec = 500000;
+    //HANDLE hGPIO;
+
+    OALLog(L"\r Testing I2COpen()\r\n");
+    //initialization i2c buses, Ray 13-10-09
+    if(/*hI2C*/ (hI2C = I2COpen(OMAP_DEVICE_I2C3)) == NULL) 
+	{
+        RETAILMSG(1,(L"ERROR: bq27410_init Failed open I2C device driver\r\n"));
+        goto cleanUp;
+	}
+	
+	OALLog(L"\r Testing GPIOOpen()\r\n");  
+    //Set the initialize status of each i2c3 interface, Ray 13-10-09
+    hGPIO = GPIOOpen();
+    GPIOSetBit(hGPIO, I2C3_SCL_GPIO );
+    GPIOSetBit(hGPIO, I2C3_SDA_GPIO );
+   
+    OALLog(L"\r Testing I2CSetSlaveAddress()\r\n");
+    //Specify slave address for BQ27410 Fuel Gaug, Ray 13-10-09
+    if( I2CSetSlaveAddress(hI2C,  BQ27410_SLAVE_ADDRESS) == rc )
+		RETAILMSG(TRUE, (L"ERROR: bq27410_init - I2CSetSlaveAddress Failed\r\n") );
+
+    //Set up SubAddress(SCCB Phase 2) and the mode for transfer Ray 13-10-09
+    I2CSetSubAddressMode(hI2C, I2C_SUBADDRESS_MODE_8);
+    I2CSetBaudIndex(hI2C, FULLSPEED_MODE);
+
+    OALLog(L"\r Testing BQ27410_WriteReg()\r\n");
+    if( BQ27410_WriteReg(bq27410CMD_CNTL_LSB,  0x0C) == FALSE ) // send battery insert
+        RETAILMSG(TRUE, (L"ERROR: BatteryPDDInitialize: Battery insert Failed\r\n") );
+        OALLog(L"\r\n WriteReg OK!!\r\n");
+
+    if( BQ27410_WriteReg(bq27410CMD_CNTL_MSB,  0x0d) == FALSE ) // send battery insert
+        RETAILMSG(TRUE, (L"ERROR: BatteryPDDInitialize: Battery insert Failed\r\n") );
+        OALLog(L"\r\n WriteReg OK!!\r\n");
+        
+        LcdStall(d500msec);
+         
+    OALLog(L"\r Testing BQ27410_ReadReg()\r\n");   
+    if( BQ27410_ReadReg(bq27410CMD_VOLT_LSB, &volt) )
+		RETAILMSG(1,(L"bq27410_init: volt = %d\r\n", volt));
+		OALLog(L"\r\n ReadReg OK!!\r\n");
+		LcdStall(d500msec);
+	
+       /* BQ27410_ReadReg(bq27410CMD_FLAGS_LSB, &flags);
+        BQ27410_ReadReg(bq27410CMD_SOC_LSB,  &soc);
+        BQ27410_ReadReg(bq27410CMD_TEMP_LSB, &temp);
+        BQ27410_Rea
+        dReg(bq27410CMD_VOLT_LSB, &volt);*/
+    I2CClose(hI2C);
+	rc = TRUE;
+	//LcdStall(d1sec);
+cleanUp:
+    return rc;
+}
+//-----------------------------------------------------------------------------
+
+VOID FuelGaugeWithBattery(OAL_BLMENU_ITEM *pMenu)
+{
+    WCHAR key;
+    UINT32 i;
+
+    UNREFERENCED_PARAMETER(pMenu);
+
+    OALBLMenuHeader(L"Battery Status");
+
+    for(i=0; i<BATTERY_EXIT; i++){
+        OALLog(L" [%d] %s\r\n", i+1 , BatteryStatusArray[i].BatteryName);
+    }
+    OALLog(L" [0] Exit and Continue\r\n");
+
+    OALLog(L"\r\n Selection : ");
+
+    do {
+        key = OALBLMenuReadKey(TRUE);
+    } while (key < L'0' || key > L'0'+ i);
+    
+    OALLog(L"%c\r\n", key);
+
+    switch(key)
+    {
+        case L'1':
+            InitI2CWithBQ27410();
+            break;
+        case L'2':
+            //................
+            break;
+        default:
+			break;
+    }
+
+    // If user select exit don't change device
+    if(key == L'0') return;
+
+     g_bootCfg.BatteryStatus = (key - L'0' - 1);    
+}
+//ended of file FuelGaugeWithBattery()
 
 //------------------------------------------------------------------------------
 

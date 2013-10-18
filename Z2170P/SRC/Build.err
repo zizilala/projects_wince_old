@@ -1,4 +1,2 @@
 BUILD: [Thrd:Sequence:Type  ] Message
-BUILD: [01:0000003989:ERRORE] cfg.obj : error LNK2019: unresolved external symbol ShowLogo referenced in function BLShowLogo
-BUILD: [01:0000003990:ERRORE] C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootnd.exe : fatal error LNK1120: 1 unresolved externals
-BUILD: [01:0000003995:ERRORE] EDITBIN : fatal error LNK1104: cannot open file 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootnd.exe'
+BUILD: [01:0000000143:ERRORE] C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm505.tmp : fatal error C1083: Cannot open compiler generated file: 'C:\WINCE600\PLATFORM\Z2170P\SRC\test\testSerial\obj\ARMV4I\retail\StdAfx.obj': Permission denied

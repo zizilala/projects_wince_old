@@ -1,0 +1,617 @@
+ARM macroassembler      Page:1 
+    1 00000000          ; 
+    2 00000000          ; Copyright (c) Microsoft Corporation.  All rights reserved. 
+    3 00000000          ; 
+    4 00000000          ; 
+    5 00000000          ; Use of this sample source code is subject to the terms of the Microsoft 
+    6 00000000          ; license agreement under which you licensed this sample source code. If 
+    7 00000000          ; you did not accept the terms of the license agreement, you are not 
+    8 00000000          ; authorized to use this sample source code. For the terms of the license, 
+    9 00000000          ; please see the license agreement between you and Microsoft or, if applicable, 
+   10 00000000          ; see the LICENSE.RTF on your install media or the root of your tools installation. 
+   11 00000000          ; THE SAMPLE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES. 
+   12 00000000          ; 
+   13 00000000          ;/*  
+   14 00000000          ;** Copyright 2000-2003 Intel Corporation All Rights Reserved. 
+   15 00000000          ;** 
+   16 00000000          ;** Portions of the source code contained or described herein and all documents 
+   17 00000000          ;** related to such source code (Material) are owned by Intel Corporation 
+   18 00000000          ;** or its suppliers or licensors and is licensed by Microsoft Corporation for distribution.   
+   19 00000000          ;** Title to the Material remains with Intel Corporation or its suppliers and licensors.  
+   20 00000000          ;** Use of the Materials is subject to the terms of the Microsoft license agreement which accompanied the Materials.   
+   21 00000000          ;** No other license under any patent, copyright, trade secret or other intellectual 
+   22 00000000          ;** property right is granted to or conferred upon you by disclosure or 
+   23 00000000          ;** delivery of the Materials, either expressly, by implication, inducement, 
+   24 00000000          ;** estoppel or otherwise  
+   25 00000000          ;** Some portion of the Materials may be copyrighted by Microsoft Corporation. 
+   26 00000000          ;*/ 
+   27 00000000            
+   28 00000000            
+   29 00000000          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+   30 00000000          ;  void dirtyRectDump_core_ASM(WORD *pwSrc, WORD *pwDst,int rowLen, DWORD srcWidthB,      ; 
+   31 00000000          ;                                                 DWORD bytesPerRow, DWORD srcMarginWidth, DWORD dstMarginWidth)  ; 
+   32 00000000          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+   33 00000000            
+   34 00000000                  INCLUDE memcopy_macro.inc 
+    1 00000000          ; 
+    2 00000000          ; Copyright (c) Microsoft Corporation.  All rights reserved. 
+    3 00000000          ; 
+    4 00000000          ; 
+    5 00000000          ; Use of this sample source code is subject to the terms of the Microsoft 
+    6 00000000          ; license agreement under which you licensed this sample source code. If 
+    7 00000000          ; you did not accept the terms of the license agreement, you are not 
+    8 00000000          ; authorized to use this sample source code. For the terms of the license, 
+    9 00000000          ; please see the license agreement between you and Microsoft or, if applicable, 
+   10 00000000          ; see the LICENSE.RTF on your install media or the root of your tools installation. 
+   11 00000000          ; THE SAMPLE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES. 
+   12 00000000          ; 
+   13 00000000          ;/*  
+   14 00000000          ;** Copyright 2000-2003 Intel Corporation All Rights Reserved. 
+   15 00000000          ;** 
+   16 00000000          ;** Portions of the source code contained or described herein and all documents 
+   17 00000000          ;** related to such source code (Material) are owned by Intel Corporation 
+   18 00000000          ;** or its suppliers or licensors and is licensed by Microsoft Corporation for distribution.   
+   19 00000000          ;** Title to the Material remains with Intel Corporation or its suppliers and licensors.  
+   20 00000000          ;** Use of the Materials is subject to the terms of the Microsoft license agreement which accompanied the Materials.   
+   21 00000000          ;** No other license under any patent, copyright, trade secret or other intellectual 
+   22 00000000          ;** property right is granted to or conferred upon you by disclosure or 
+   23 00000000          ;** delivery of the Materials, either expressly, by implication, inducement, 
+   24 00000000          ;** estoppel or otherwise  
+   25 00000000          ;** Some portion of the Materials may be copyrighted by Microsoft Corporation. 
+   26 00000000          ;*/ 
+   27 00000000                  IF              :LNOT:  :DEF:   __MEMCOPY_MACRO_INC_ 
+   28 00000000                  GBLL    __MEMCOPY_MACRO_INC_ 
+   29 00000000                  ; len >= 16, use this method to avoid much pipeline stalls 
+   30 00000000                  MACRO 
+   31 00000000          $mmbtl  MEMCOPYMBTS_LG16 $pSrc, $pDst, $len, $inc0, $inc1, $tReg, $dReg0, $dReg1, $dReg2, $dReg3, $ldrop, $strop  
+   32 00000000                  ; loop unrooling at 8 now 
+   33 00000000                  movs    $tReg,          $len,           lsr #3 ; $len   --> width 
+   34 00000000                  beq             $mmbtl.COPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT 
+   35 00000000          $mmbtl.COPY_IN_16BIT_HEIGHT_LOOP_B8      
+   36 00000000                  $ldrop  $dReg0,         [$pSrc],        $inc0 
+   37 00000000                  $ldrop  $dReg1,         [$pSrc],        $inc0 
+   38 00000000                  $ldrop  $dReg2,         [$pSrc],        $inc0 
+   39 00000000                  $ldrop  $dReg3,         [$pSrc],        $inc0 
+   40 00000000                  subs    $tReg,          $tReg,          #1 
+   41 00000000            
+   42 00000000                  $strop  $dReg0,         [$pDst],        $inc1 
+   43 00000000                  $strop  $dReg1,         [$pDst],        $inc1 
+   44 00000000                  $strop  $dReg2,         [$pDst],        $inc1 
+   45 00000000                  $strop  $dReg3,         [$pDst],        $inc1 
+   46 00000000            
+   47 00000000                  $ldrop  $dReg0,         [$pSrc],        $inc0 
+   48 00000000                  $ldrop  $dReg1,         [$pSrc],        $inc0 
+   49 00000000                  $ldrop  $dReg2,         [$pSrc],        $inc0 
+   50 00000000                  $ldrop  $dReg3,         [$pSrc],        $inc0 
+   51 00000000            
+   52 00000000                  $strop  $dReg0,         [$pDst],        $inc1 
+   53 00000000                  $strop  $dReg1,         [$pDst],        $inc1 
+   54 00000000                  $strop  $dReg2,         [$pDst],        $inc1 
+   55 00000000                  $strop  $dReg3,         [$pDst],        $inc1 
+   56 00000000            
+   57 00000000                  bgt             $mmbtl.COPY_IN_16BIT_HEIGHT_LOOP_B8      
+   58 00000000                   
+   59 00000000          $mmbtl.COPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT         
+   60 00000000                  ands    $tReg,          $len,           #7 
+   61 00000000                  beq             $mmbtl.COPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   62 00000000            
+   63 00000000          $mmbtl.COPY_IN_16BIT_HEIGHT_LOOP_B1      
+   64 00000000                  $ldrop  $dReg0,         [$pSrc],        $inc0 
+   65 00000000                  subs    $tReg,          $tReg,          #1 
+   66 00000000                  $strop  $dReg0,         [$pDst],        $inc1 
+   67 00000000                  bgt             $mmbtl.COPY_IN_16BIT_HEIGHT_LOOP_B1      
+   68 00000000            
+   69 00000000          $mmbtl.COPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   70 00000000            
+   71 00000000                  MEND 
+   72 00000000                   
+   73 00000000                  ; len < 16, use this method to avoid much overheader: less register required, less branch 
+   74 00000000                  ; input: 
+   75 00000000                  ; $pSrc  ->reg pointer to the source buffer 
+   76 00000000                  ; $pDst  ->reg pointer to the destination buffer 
+   77 00000000                  ; $len   ->reg buffer length 
+   78 00000000                  ; $inc0  ->reg or immediate data(8bit?), address increasement offset for pSrc 
+   79 00000000                  ; $inc1  ->reg or immediate data(8bit?), address increasement offset for pDst 
+   80 00000000                  ; $ldrop ->load operation, can be ldr, ldrh, ldrb 
+   81 00000000                  ; $strop ->store operation, can be str, strh, strb 
+   82 00000000                  ; work registers 
+   83 00000000                  ; $dReg0 -> data reg0 
+   84 00000000                  ; $dReg1 -> data reg1, must use different register from $dReg0   
+   85 00000000                  ; use 5 registers 
+   86 00000000                  MACRO 
+   87 00000000          $mmbts  MEMCOPYMBTS_LT16 $pSrc, $pDst, $len, $inc0, $inc1, $dReg0, $dReg1, $ldrop, $strop, $ldrop2, $strop2  
+   88 00000000                  ; loop unrooling at 8 now 
+   89 00000000                  cmp                     $len,           #0 
+   90 00000000                  ble                     $mmbts.COPY_IN_16BIT_HEIGHT_LOOP_B2_EXIT 
+   91 00000000                   
+   92 00000000                  tst                     $len,           #1 
+   93 00000000                  $ldrop2         $dReg0,         [$pSrc],        $inc0 
+   94 00000000                  $strop2         $dReg0,         [$pDst],        $inc1 
+   95 00000000            
+   96 00000000                  movs    $len,           $len,           lsr #1 ; $len   --> width 
+   97 00000000                  beq             $mmbts.COPY_IN_16BIT_HEIGHT_LOOP_B2_EXIT 
+   98 00000000          $mmbts.COPY_IN_16BIT_HEIGHT_LOOP_B2      
+   99 00000000                  $ldrop  $dReg0,         [$pSrc],        $inc0 
+  100 00000000                  $ldrop  $dReg1,         [$pSrc],        $inc0 
+  101 00000000                  subs    $len,           $len,           #1 
+  102 00000000                  $strop  $dReg0,         [$pDst],        $inc1 
+  103 00000000                  $strop  $dReg1,         [$pDst],        $inc1 
+  104 00000000                  bgt             $mmbts.COPY_IN_16BIT_HEIGHT_LOOP_B2      
+  105 00000000          $mmbts.COPY_IN_16BIT_HEIGHT_LOOP_B2_EXIT         
+  106 00000000            
+  107 00000000                  MEND 
+  108 00000000                   
+  109 00000000                   
+  110 00000000                  ENDIF    
+  111 00000000                   
+  112 00000000                  END 
+   35 00000000                  EXPORT  dirtyRectDump_core_ASM 
+   36 00000000                   
+   37                           AREA    EBCOPY16OPT,    CODE,   READONLY 
+   38 00000000                   
+   39 00000000          dirtyRectDump_core_ASM 
+   40 00000000                  ; r0-> pwSrc 
+   41 00000000                  ; r1-> pwDst 
+   42 00000000                  ; r2-> rowLen 
+   43 00000000                  ; r3-> srcWidthB 
+   44 00000000                  ; r4-> bytesPerRow 
+   45 00000000                  ; r5-> srcMarginWidth 
+   46 00000000                  ; r6-> dstMarginWidth 
+   47 00000000                   
+   48 00000000          STACKDEPTH                                      EQU             (5*4) 
+   49 00000000                   
+   50 00000000          BYTESPERROW                                     EQU             (STACKDEPTH+0) 
+   51 00000000          SRCMARGINWIDTH                          EQU             (STACKDEPTH+4) 
+   52 00000000          DSTMARGINWIDTH                          EQU             (STACKDEPTH+8) 
+   53 00000000                           
+   54 00000000 e92d40f0         stmdb   sp!,    {r4-r7,r14} 
+   55 00000004                   
+   56 00000004 e59d4014         ldr             r4,             [sp,    #BYTESPERROW] 
+   57 00000008 e59d5018         ldr             r5,             [sp,    #SRCMARGINWIDTH] 
+   58 0000000c e59d601c         ldr             r6,             [sp,    #DSTMARGINWIDTH] 
+   59 00000010                   
+   60 00000010 e3520000         cmp             r2,             #0 
+   61 00000014 da00003e         ble             EXIT_POS 
+   62 00000018            
+   63 00000018 e3530000         cmp             r3,             #0 
+   64 0000001c da00003c         ble             EXIT_POS 
+   65 00000020            
+   66 00000020 e1a07002         mov             r7,             r2 
+   67 00000024 e2644000         rsb             r4,             r4,             #0      ; r4-> -bytesPerRow 
+   68 00000028 e2855002         add             r5,             r5,             #2  ; r5->srcMarginWidth+2 
+   69 0000002c                   
+   70 0000002c e3520010         cmp             r2,             #16 
+   71 00000030 ca000012         bgt             ROW_LEN_GT16 
+   72 00000034            
+   73 00000034            
+   74 00000034          IWIDTH_LOOP_LE16         
+   75 00000034                   
+   76 00000034          ROW_LEN_LE16_MMCP_LABEL MEMCOPYMBTS_LT16 r0, r1, r2, r4, #2, r12, r14, ldrh, strh, ldrneh, strneh 
+   88 00000034                  ; loop unrooling at 8 now 
+   89 00000034 e3520000         cmp                     r2,             #0 
+   90 00000038 da00000a         ble                     ROW_LEN_LE16_MMCP_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2_EXIT 
+   91 0000003c                   
+   92 0000003c e3120001         tst                     r2,             #1 
+   93 00000040 1090c0b4         ldrneh          r12,            [r0],   r4 
+   94 00000044 10c1c0b2         strneh          r12,            [r1],   #2 
+   95 00000048            
+   96 00000048 e1b020a2         movs    r2,             r2,             lsr #1 ; r2     --> width 
+   97 0000004c 0a000005         beq             ROW_LEN_LE16_MMCP_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2_EXIT 
+   98 00000050          ROW_LEN_LE16_MMCP_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2      
+   99 00000050 e090c0b4         ldrh    r12,            [r0],   r4 
+  100 00000054 e090e0b4         ldrh    r14,            [r0],   r4 
+  101 00000058 e2522001         subs    r2,             r2,             #1 
+  102 0000005c e0c1c0b2         strh    r12,            [r1],   #2 
+  103 00000060 e0c1e0b2         strh    r14,            [r1],   #2 
+  104 00000064 cafffff9         bgt             ROW_LEN_LE16_MMCP_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2      
+  105 00000068          ROW_LEN_LE16_MMCP_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B2_EXIT         
+  106 00000068            
+   77 00000068 e0800005         add             r0,             r0,             r5 
+   78 0000006c e0811006         add             r1,             r1,             r6 
+   79 00000070 e2533001         subs    r3,             r3,             #1 
+   80 00000074 e1a02007         mov             r2,             r7 
+   81 00000078 caffffed         bgt             IWIDTH_LOOP_LE16 
+   82 0000007c e8bd80f0         ldmia   sp!,    {r4-r7,pc} 
+   83 00000080                   
+   84 00000080          ROW_LEN_GT16     
+   85 00000080 e52d8004         str             r8,             [sp,    #-4]! 
+   86 00000084 e52d9004         str             r9,             [sp,    #-4]! 
+   87 00000088 e52da004         str             r10,    [sp,    #-4]! 
+   88 0000008c                   
+   89 0000008c          IWIDTH_LOOP_GT16         
+   90 0000008c            
+   91 0000008c          ROW_LEN_GT16_MMCP_LABEL MEMCOPYMBTS_LG16 r0, r1, r2, r4, #2, r10, r12, r14, r8, r9, ldrh, strh 
+   32 0000008c                  ; loop unrooling at 8 now 
+   33 0000008c e1b0a1a2         movs    r10,            r2,             lsr #3 ; r2     --> width 
+   34 00000090 0a000011         beq             ROW_LEN_GT16_MMCP_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT 
+   35 00000094          ROW_LEN_GT16_MMCP_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B8      
+   36 00000094 e090c0b4         ldrh    r12,            [r0],   r4 
+   37 00000098 e090e0b4         ldrh    r14,            [r0],   r4 
+   38 0000009c e09080b4         ldrh    r8,             [r0],   r4 
+   39 000000a0 e09090b4         ldrh    r9,             [r0],   r4 
+   40 000000a4 e25aa001         subs    r10,            r10,            #1 
+   41 000000a8            
+   42 000000a8 e0c1c0b2         strh    r12,            [r1],   #2 
+   43 000000ac e0c1e0b2         strh    r14,            [r1],   #2 
+   44 000000b0 e0c180b2         strh    r8,             [r1],   #2 
+   45 000000b4 e0c190b2         strh    r9,             [r1],   #2 
+   46 000000b8            
+   47 000000b8 e090c0b4         ldrh    r12,            [r0],   r4 
+   48 000000bc e090e0b4         ldrh    r14,            [r0],   r4 
+   49 000000c0 e09080b4         ldrh    r8,             [r0],   r4 
+   50 000000c4 e09090b4         ldrh    r9,             [r0],   r4 
+   51 000000c8            
+   52 000000c8 e0c1c0b2         strh    r12,            [r1],   #2 
+   53 000000cc e0c1e0b2         strh    r14,            [r1],   #2 
+   54 000000d0 e0c180b2         strh    r8,             [r1],   #2 
+   55 000000d4 e0c190b2         strh    r9,             [r1],   #2 
+   56 000000d8            
+   57 000000d8 caffffed         bgt             ROW_LEN_GT16_MMCP_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B8      
+   58 000000dc                   
+   59 000000dc          ROW_LEN_GT16_MMCP_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT         
+   60 000000dc e212a007         ands    r10,            r2,             #7 
+   61 000000e0 0a000003         beq             ROW_LEN_GT16_MMCP_LABELCOPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   62 000000e4            
+   63 000000e4          ROW_LEN_GT16_MMCP_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B1      
+   64 000000e4 e090c0b4         ldrh    r12,            [r0],   r4 
+   65 000000e8 e25aa001         subs    r10,            r10,            #1 
+   66 000000ec e0c1c0b2         strh    r12,            [r1],   #2 
+   67 000000f0 cafffffb         bgt             ROW_LEN_GT16_MMCP_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B1      
+   68 000000f4            
+   69 000000f4          ROW_LEN_GT16_MMCP_LABELCOPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   70 000000f4            
+   92 000000f4                  ;;pwDst +=dstMarginWidth; 
+   93 000000f4 e0800005         add             r0,             r0,             r5 
+   94 000000f8 e0811006         add             r1,             r1,             r6 
+   95 000000fc e2533001         subs    r3,             r3,             #1 
+   96 00000100 e1a02007         mov             r2,             r7 
+   97 00000104 caffffe0         bgt             IWIDTH_LOOP_GT16 
+   98 00000108            
+   99 00000108 e49da004         ldr             r10,    [sp],   #4 
+  100 0000010c e49d9004         ldr             r9,             [sp],   #4 
+  101 00000110 e49d8004         ldr             r8,             [sp],   #4 
+  102 00000114            
+  103 00000114          EXIT_POS         
+  104 00000114 e8bd80f0         ldmia   sp!,    {r4-r7,pc} 
+  105 00000118            
+  106 00000118            
+  107 00000118          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+  108 00000118          ;  void dirtyRectDump_core_wop_ASM(WORD *pwSrc, WORD *pwDst,int rowLen, DWORD srcWidthB,          ; 
+  109 00000118          ;                                                 DWORD bytesPerRow, DWORD srcMarginWidth, DWORD dstMarginWidth)  ; 
+  110 00000118          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 
+  111 00000118            
+  112 00000118                  INCLUDE memcopy_macro.inc 
+    1 00000118          ; 
+    2 00000118          ; Copyright (c) Microsoft Corporation.  All rights reserved. 
+    3 00000118          ; 
+    4 00000118          ; 
+    5 00000118          ; Use of this sample source code is subject to the terms of the Microsoft 
+    6 00000118          ; license agreement under which you licensed this sample source code. If 
+    7 00000118          ; you did not accept the terms of the license agreement, you are not 
+    8 00000118          ; authorized to use this sample source code. For the terms of the license, 
+    9 00000118          ; please see the license agreement between you and Microsoft or, if applicable, 
+   10 00000118          ; see the LICENSE.RTF on your install media or the root of your tools installation. 
+   11 00000118          ; THE SAMPLE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES. 
+   12 00000118          ; 
+   13 00000118          ;/*  
+   14 00000118          ;** Copyright 2000-2003 Intel Corporation All Rights Reserved. 
+   15 00000118          ;** 
+   16 00000118          ;** Portions of the source code contained or described herein and all documents 
+   17 00000118          ;** related to such source code (Material) are owned by Intel Corporation 
+   18 00000118          ;** or its suppliers or licensors and is licensed by Microsoft Corporation for distribution.   
+   19 00000118          ;** Title to the Material remains with Intel Corporation or its suppliers and licensors.  
+   20 00000118          ;** Use of the Materials is subject to the terms of the Microsoft license agreement which accompanied the Materials.   
+   21 00000118          ;** No other license under any patent, copyright, trade secret or other intellectual 
+   22 00000118          ;** property right is granted to or conferred upon you by disclosure or 
+   23 00000118          ;** delivery of the Materials, either expressly, by implication, inducement, 
+   24 00000118          ;** estoppel or otherwise  
+   25 00000118          ;** Some portion of the Materials may be copyrighted by Microsoft Corporation. 
+   26 00000118          ;*/ 
+   27 00000118                  IF              :LNOT:  :DEF:   __MEMCOPY_MACRO_INC_ 
+  110 00000118                  ENDIF    
+  111 00000118                   
+  112 00000118                  END 
+  113 00000118                  EXPORT  dirtyRectDump_core_wop_ASM 
+  114 00000118                   
+  115                           AREA    DISPLAYDRV,     CODE,   READONLY 
+  116 00000000                   
+  117 00000000          dirtyRectDump_core_wop_ASM 
+  118 00000000                  ; r0-> pwSrc 
+  119 00000000                  ; r1-> pwDst 
+  120 00000000                  ; r2-> rowLen 
+  121 00000000                  ; r3-> srcWidthB 
+  122 00000000                  ; r4-> bytesPerRow 
+  123 00000000                  ; r5-> srcMarginWidth 
+  124 00000000                  ; r6-> dstMarginWidth 
+  125 00000000                   
+  126 00000000          STACKDEPTH_WOP                          EQU             (9*4) 
+  127 00000000                   
+  128 00000000          BYTESPERROW_WOP                         EQU             (STACKDEPTH_WOP+0) 
+  129 00000000          SRCMARGINWIDTH_WOP                      EQU             (STACKDEPTH_WOP+4) 
+  130 00000000          DSTMARGINWIDTH_WOP                      EQU             (STACKDEPTH_WOP+8) 
+  131 00000000                           
+  132 00000000 e92d4ff0         stmdb   sp!,    {r4-r11,r14} 
+  133 00000004                   
+  134 00000004 e59d4024         ldr             r4,             [sp,    #BYTESPERROW_WOP] 
+  135 00000008 e59d5028         ldr             r5,             [sp,    #SRCMARGINWIDTH_WOP] 
+  136 0000000c e59d602c         ldr             r6,             [sp,    #DSTMARGINWIDTH_WOP] 
+  137 00000010                   
+  138 00000010 e3520000         cmp             r2,             #0 
+  139 00000014 da000082         ble             WOP_EXIT_POS 
+  140 00000018            
+  141 00000018 e3530000         cmp             r3,             #0 
+  142 0000001c da000080         ble             WOP_EXIT_POS 
+  143 00000020            
+  144 00000020 e2644000         rsb             r4,             r4,             #0      ; r4-> -bytesPerRow 
+  145 00000024 e1a07002         mov             r7,             r2 
+  146 00000028 e2855002         add             r5,             r5,             #2  ; r5->srcMarginWidth+2 
+  147 0000002c            
+  148 0000002c e3100002         tst             r0,             #2 
+  149 00000030 0a00001d         beq             WOP_4B_ALIGN 
+  150 00000034          WOP_MMCP_LABEL MEMCOPYMBTS_LG16 r0, r1, r2, r4, #2, r10, r12, r14, r8, r9, ldrh, strh 
+   32 00000034                  ; loop unrooling at 8 now 
+   33 00000034 e1b0a1a2         movs    r10,            r2,             lsr #3 ; r2     --> width 
+   34 00000038 0a000011         beq             WOP_MMCP_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT 
+   35 0000003c          WOP_MMCP_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B8       
+   36 0000003c e090c0b4         ldrh    r12,            [r0],   r4 
+   37 00000040 e090e0b4         ldrh    r14,            [r0],   r4 
+   38 00000044 e09080b4         ldrh    r8,             [r0],   r4 
+   39 00000048 e09090b4         ldrh    r9,             [r0],   r4 
+   40 0000004c e25aa001         subs    r10,            r10,            #1 
+   41 00000050            
+   42 00000050 e0c1c0b2         strh    r12,            [r1],   #2 
+   43 00000054 e0c1e0b2         strh    r14,            [r1],   #2 
+   44 00000058 e0c180b2         strh    r8,             [r1],   #2 
+   45 0000005c e0c190b2         strh    r9,             [r1],   #2 
+   46 00000060            
+   47 00000060 e090c0b4         ldrh    r12,            [r0],   r4 
+   48 00000064 e090e0b4         ldrh    r14,            [r0],   r4 
+   49 00000068 e09080b4         ldrh    r8,             [r0],   r4 
+   50 0000006c e09090b4         ldrh    r9,             [r0],   r4 
+   51 00000070            
+   52 00000070 e0c1c0b2         strh    r12,            [r1],   #2 
+   53 00000074 e0c1e0b2         strh    r14,            [r1],   #2 
+   54 00000078 e0c180b2         strh    r8,             [r1],   #2 
+   55 0000007c e0c190b2         strh    r9,             [r1],   #2 
+   56 00000080            
+   57 00000080 caffffed         bgt             WOP_MMCP_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B8       
+   58 00000084                   
+   59 00000084          WOP_MMCP_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT  
+   60 00000084 e212a007         ands    r10,            r2,             #7 
+   61 00000088 0a000003         beq             WOP_MMCP_LABELCOPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   62 0000008c            
+   63 0000008c          WOP_MMCP_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B1       
+   64 0000008c e090c0b4         ldrh    r12,            [r0],   r4 
+   65 00000090 e25aa001         subs    r10,            r10,            #1 
+   66 00000094 e0c1c0b2         strh    r12,            [r1],   #2 
+   67 00000098 cafffffb         bgt             WOP_MMCP_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B1       
+   68 0000009c            
+   69 0000009c          WOP_MMCP_LABELCOPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   70 0000009c            
+  151 0000009c e2433001         sub             r3,             r3,             #1  ; r3->srcWidthB -- 
+  152 000000a0 e0800005         add             r0,             r0,             r5  ; pwSrc +=srcMarginWidth+1 
+  153 000000a4 e0811006         add             r1,             r1,             r6  ; pwDst +=dstMarginWidth; 
+  154 000000a8                  ;************************************ 
+  155 000000a8                  ;pld            [r0] ; This will save sometime for sure.//Check the syntax 
+  156 000000a8                  ;************************************ 
+  157 000000a8 f5d0f000         DCD   0xf5d0f000 
+  158 000000ac          WOP_4B_ALIGN     
+  159 000000ac                  ; now pwSrc is 4-byte aligned 
+  160 000000ac e1b080a3         movs   r8,              r3,             lsr #1 ; r8->srcWidthB>>1 
+  161 000000b0 0a00003e         beq        WOP_4B_WIDTH_BLOCK_EXIT ; jump to the last colume in source 
+  162 000000b4                   
+  163 000000b4                  ; prepare for 0xffff 
+  164 000000b4 e3a09cff         mov             r9,             #0xff00 
+  165 000000b8 e28990ff         add             r9,             r9,             #0xff   ; r9->0xffff     
+  166 000000bc e086a087         add             r10,    r6,             r7, lsl #1; r10->pwDst2, next line in destination 
+  167 000000c0 e08aa001         add             r10,    r10,    r1 
+  168 000000c4                   
+  169 000000c4          WOP_4B_WIDTH_BLOCK_LOOP 
+  170 000000c4 e92d01e0         stmdb   sp!,    {r5-r8}            ; push and keep r5-r7 on stack 
+  171 000000c8 e1a02007         mov             r2,             r7                         ; restore r2->rowLen 
+  172 000000cc e3110002         tst             r1,             #2 
+  173 000000d0 0a000007         beq             WOP_DST_4B_ALGIN 
+  174 000000d4 e690c004         ldr             r12,    [r0],   r4 
+  175 000000d8                  ;************************************ 
+  176 000000d8                  ;pld            [r0] ; This will save sometime for sure.//Check the syntax 
+  177 000000d8                  ;pld            [r0,r4] ; This will save sometime for sure.//Check the syntax 
+  178 000000d8                  ;pld            [r0,2*r4] ; This will save sometime for sure.//Check the syntax 
+  179 000000d8                  ;pld            [r0,3*r4] ; This will save sometime for sure.//Check the syntax 
+  180 000000d8                  ;************************************ 
+  181 000000d8 f5d0f000         DCD     0xf5d0f000 
+  182 000000dc f7d0f004         DCD     0xf7d0f004 
+  183 000000e0 f7d0f0a4         DCD     0xf7d0f0a4 
+  184 000000e4                   
+  185 000000e4 e2422001         sub             r2,             r2,             #1 
+  186 000000e8 e0c1c0b2         strh    r12,    [r1],   #2                       
+  187 000000ec e009e82c         and             r14,    r9,             r12,    lsr #16 ; r14->(tmp>>16) & 0xffff 
+  188 000000f0 e0cae0b2         strh    r14,    [r10],  #2 
+  189 000000f4                   
+  190 000000f4          WOP_DST_4B_ALGIN 
+  191 000000f4                  ; now pwDst is 4-byte aligned    
+  192 000000f4 e1b0e122         movs    r14,    r2,             lsr     #2 ; r14->rowLen>>2 
+  193 000000f8 0a000012         beq             WOP_4B_WIDTH_SQUARE2 
+  194 000000fc                  ;need to keep r5, r6, r7, r8 
+  195 000000fc                   
+  196 000000fc          WOP_4B_WIDTH_SQUARE_LOOP 
+  197 000000fc                   
+  198 000000fc e6905004         ldr             r5,             [r0],   r4 
+  199 00000100 e690b004         ldr             r11,    [r0],   r4 
+  200 00000104 e6908004         ldr             r8,             [r0],   r4 
+  201 00000108 e690c004         ldr             r12,    [r0],   r4 
+  202 0000010c                   
+  203 0000010c                   
+  204 0000010c                   
+  205 0000010c e0056009         and             r6,             r5,             r9                              ; r6->tmp = tmp0 & 0xffff; 
+  206 00000110 e186680b         orr             r6,             r6,             r11, lsl #16    ; r6->tmp |= tmp1 << 16; 
+  207 00000114 f5d0f000         DCD     0xf5d0f000       
+  208 00000118 e00bb809         and             r11,    r11,    r9,  lsl #16    ; r11->tmp1 &= 0xffff0000; 
+  209 0000011c e0087009         and             r7,             r8,             r9                              ; r6->tmp = tmp0 & 0xffff; 
+  210 00000120 e18bb825         orr             r11,    r11,    r5,  lsr #16    ; r11->tmp1 |= tmp0 >> 16; 
+  211 00000124                   
+  212 00000124                   
+  213 00000124 e187780c         orr             r7,             r7,             r12, lsl #16    ; r6->tmp |= tmp1 << 16; 
+  214 00000128 e4816004         str             r6,             [r1],   #4 
+  215 0000012c e4817004         str             r7,             [r1],   #4 
+  216 00000130                   
+  217 00000130 e00cc809         and             r12,    r12,    r9,  lsl #16    ; r11->tmp1 &= 0xffff0000; 
+  218 00000134 e18cc828         orr             r12,    r12,    r8,  lsr #16    ; r11->tmp1 |= tmp0 >> 16; 
+  219 00000138 e48ab004         str             r11,    [r10],  #4 
+  220 0000013c e48ac004         str             r12,    [r10],  #4 
+  221 00000140                   
+  222 00000140                                   
+  223 00000140 e25ee001         subs    r14,    r14,    #1 
+  224 00000144 caffffec         bgt             WOP_4B_WIDTH_SQUARE_LOOP 
+  225 00000148                   
+  226 00000148                   
+  227 00000148                   
+  228 00000148                                   
+  229 00000148          WOP_4B_WIDTH_SQUARE2     
+  230 00000148 e3120002         tst             r2,             #2 
+  231 0000014c 0a000008         beq             WOP_4B_WIDTH_SQUARE2_NEXT 
+  232 00000150                   
+  233 00000150 e6905004         ldr             r5,             [r0],   r4 
+  234 00000154 e690b004         ldr             r11,    [r0],   r4 
+  235 00000158                   
+  236 00000158 e0056009         and             r6,             r5,             r9                              ; r6->tmp = tmp0 & 0xffff; 
+  237 0000015c e186680b         orr             r6,             r6,             r11, lsl #16    ; r6->tmp |= tmp1 << 16; 
+  238 00000160 f7d0f004         DCD     0xf7d0f004 
+  239 00000164 e4816004         str             r6,             [r1],   #4 
+  240 00000168                   
+  241 00000168                   
+  242 00000168 e00bb809         and             r11,    r11,    r9,  lsl #16    ; r11->tmp1 &= 0xffff0000; 
+  243 0000016c e18bb825         orr             r11,    r11,    r5,  lsr #16    ; r11->tmp1 |= tmp0 >> 16; 
+  244 00000170 e48ab004         str             r11,    [r10],  #4 
+  245 00000174                   
+  246 00000174          WOP_4B_WIDTH_SQUARE2_NEXT 
+  247 00000174            
+  248 00000174                   
+  249 00000174 e3120001         tst             r2,             #1 
+  250 00000178 0a000003         beq             WOP_4B_WIDTH_ROWLEN1_NEXT 
+  251 0000017c e690c004         ldr             r12,    [r0],   r4 
+  252 00000180 e009e82c         and             r14,    r9,             r12,    lsr #16 ; r14->(tmp>>16) & 0xffff 
+  253 00000184 e0c1c0b2         strh    r12,    [r1],   #2       
+  254 00000188 e0cae0b2         strh    r14,    [r10],  #2 
+  255 0000018c            
+  256 0000018c          WOP_4B_WIDTH_ROWLEN1_NEXT 
+  257 0000018c            
+  258 0000018c            
+  259 0000018c e8bd01e0         ldmia   sp!,    {r5-r8}            ; pop up r5-r8 from stack 
+  260 00000190            
+  261 00000190                  ;update r0->pSrc, r1->pDst, r10->pDst2 
+  262 00000190                   
+  263 00000190                   
+  264 00000190 e0811086         add             r1,             r1,             r6,             lsl #1 
+  265 00000194 e2800002         add             r0,             r0,             #2 
+  266 00000198 e0811087         add             r1,             r1,             r7,             lsl #1 
+  267 0000019c e08aa086         add             r10,    r10,    r6,             lsl #1 
+  268 000001a0 e0800005         add             r0,             r0,             r5 
+  269 000001a4 e08aa087         add             r10,    r10,    r7,             lsl #1 
+  270 000001a8 e2588001         subs   r8,              r8,             #1 
+  271 000001ac                   
+  272 000001ac caffffc4         bgt        WOP_4B_WIDTH_BLOCK_LOOP 
+  273 000001b0                   
+  274 000001b0          WOP_4B_WIDTH_BLOCK_EXIT 
+  275 000001b0          ;last colume in source 
+  276 000001b0 e3130001         tst             r3,             #1 
+  277 000001b4 0a00001a         beq             WOP_4B_WIDTH1_EXIT 
+  278 000001b8 e1a02007         mov             r2,             r7 
+  279 000001bc          WOP_4B_WIDTH1_LABEL MEMCOPYMBTS_LG16 r0, r1, r2, r4, #2, r10, r12, r14, r8, r9, ldrh, strh 
+   32 000001bc                  ; loop unrooling at 8 now 
+   33 000001bc e1b0a1a2         movs    r10,            r2,             lsr #3 ; r2     --> width 
+   34 000001c0 0a000011         beq             WOP_4B_WIDTH1_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT 
+   35 000001c4          WOP_4B_WIDTH1_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B8  
+   36 000001c4 e090c0b4         ldrh    r12,            [r0],   r4 
+   37 000001c8 e090e0b4         ldrh    r14,            [r0],   r4 
+   38 000001cc e09080b4         ldrh    r8,             [r0],   r4 
+   39 000001d0 e09090b4         ldrh    r9,             [r0],   r4 
+   40 000001d4 e25aa001         subs    r10,            r10,            #1 
+   41 000001d8            
+   42 000001d8 e0c1c0b2         strh    r12,            [r1],   #2 
+   43 000001dc e0c1e0b2         strh    r14,            [r1],   #2 
+   44 000001e0 e0c180b2         strh    r8,             [r1],   #2 
+   45 000001e4 e0c190b2         strh    r9,             [r1],   #2 
+   46 000001e8            
+   47 000001e8 e090c0b4         ldrh    r12,            [r0],   r4 
+   48 000001ec e090e0b4         ldrh    r14,            [r0],   r4 
+   49 000001f0 e09080b4         ldrh    r8,             [r0],   r4 
+   50 000001f4 e09090b4         ldrh    r9,             [r0],   r4 
+   51 000001f8            
+   52 000001f8 e0c1c0b2         strh    r12,            [r1],   #2 
+   53 000001fc e0c1e0b2         strh    r14,            [r1],   #2 
+   54 00000200 e0c180b2         strh    r8,             [r1],   #2 
+   55 00000204 e0c190b2         strh    r9,             [r1],   #2 
+   56 00000208            
+   57 00000208 caffffed         bgt             WOP_4B_WIDTH1_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B8  
+   58 0000020c                   
+   59 0000020c          WOP_4B_WIDTH1_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B8_EXIT     
+   60 0000020c e212a007         ands    r10,            r2,             #7 
+   61 00000210 0a000003         beq             WOP_4B_WIDTH1_LABELCOPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   62 00000214            
+   63 00000214          WOP_4B_WIDTH1_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B1  
+   64 00000214 e090c0b4         ldrh    r12,            [r0],   r4 
+   65 00000218 e25aa001         subs    r10,            r10,            #1 
+   66 0000021c e0c1c0b2         strh    r12,            [r1],   #2 
+   67 00000220 cafffffb         bgt             WOP_4B_WIDTH1_LABELCOPY_IN_16BIT_HEIGHT_LOOP_B1  
+   68 00000224            
+   69 00000224          WOP_4B_WIDTH1_LABELCOPY_IN_16BIT_HEIGHT_LOOP_EXIT 
+   70 00000224            
+  280 00000224            
+  281 00000224          WOP_4B_WIDTH1_EXIT 
+  282 00000224          WOP_EXIT_POS     
+  283 00000224 e8bd8ff0         ldmia   sp!,    {r4-r11,pc} 
+  284 00000228            
+  285 00000228                  EXPORT ellipse_core_ASM 
+  286 00000228            
+  287 00000228          ellipse_core_ASM 
+  288 00000228          ;       r0 --> src Color; 
+  289 00000228          ;       r1 --> line margin 
+  290 00000228          ;       r2 --> width; 
+  291 00000228          ;   r3 --> pDst Buffer 
+  292 00000228            
+  293 00000228 e92d4ff0         stmdb   sp!,    {r4-r11,r14}    ; 
+  294 0000022c e0834001         add r4, r3, r1                  ; r4 = pDst + margin 
+  295 00000230 e0835081         add r5, r3, r1, LSL #1  ; r5 = pDst + 2*margin 
+  296 00000234 e0846081         add r6, r4, r1, LSL #1  ; r6 = pDst + margin + 2* margin 
+  297 00000238 e0837101         add r7, r3, r1, LSL #2  ; r7 = pDst + 4*margin 
+  298 0000023c e0848101         add r8, r4, r1, LSL #2  ; r8 = pDst + margin + 4*margin 
+  299 00000240 e0859101         add r9, r5, r1, LSL #2  ; r9 = pDst + 2*margin + 4*margin 
+  300 00000244 e086a101         add r10,r6, r1, LSL #2  ; r10 = pDst + margin + 2*margin + 4*margin 
+  301 00000248            
+  302 00000248            
+  303 00000248 e3520007         cmp r2, #0x7; 
+  304 0000024c e1a0b1a2         mov r11, r2,LSR #3      ; 
+  305 00000250 da00000c         ble  ellipse_end        ; 
+  306 00000254                   
+  307 00000254 e1a01181         mov r1, r1, LSL #3      ; 
+  308 00000258                   
+  309 00000258          ellipse_loop 
+  310 00000258 e25bb001         subs r11, r11, #1       ; 
+  311 0000025c e08300b1         strh r0, [r3], r1       ; 
+  312 00000260 e08400b1         strh r0, [r4], r1       ; 
+  313 00000264 e08500b1         strh r0, [r5], r1       ; 
+  314 00000268 e08600b1         strh r0, [r6], r1       ; 
+  315 0000026c e08700b1         strh r0, [r7], r1       ; 
+  316 00000270 e08800b1         strh r0, [r8], r1       ; 
+  317 00000274 e08900b1         strh r0, [r9], r1       ; 
+  318 00000278 e08a00b1         strh r0, [r10], r1      ; 
+  319 0000027c 1afffff5         bne ellipse_loop        ; 
+  320 00000280                   
+  321 00000280 e2022007         and r2, r2, #0x7        ; 
+  322 00000284 e1a011a1         mov r1, r1, LSR #3      ;   
+  323 00000288            
+  324 00000288          ellipse_end 
+  325 00000288 e3520000         cmp r2, #0                      ; 
+  326 0000028c 0a000002         beq ellipse_exit        ; 
+  327 00000290            
+  328 00000290          ellipse_loop2    
+  329 00000290 e2522001         subs r2, r2, #1 
+  330 00000294 e08300b1         strh r0, [r3], r1       ; 
+  331 00000298 1afffffc         bne ellipse_loop2               ; 
+  332 0000029c            
+  333 0000029c          ellipse_exit 
+  334 0000029c e8bd8ff0         ldmia   sp!,    {r4-r11,pc}      
+  335 000002a0            
+  336 000002a0            
+  337 000002a0                  END 
+Assembly terminated, errors: 0, warnings: 0 

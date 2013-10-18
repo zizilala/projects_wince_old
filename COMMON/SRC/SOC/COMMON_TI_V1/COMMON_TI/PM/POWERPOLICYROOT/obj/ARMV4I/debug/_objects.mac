@@ -1,0 +1,6 @@
+OBJECTS=\
+    obj\ARMV4I\debug\policyroot.obj\
+    obj\ARMV4I\debug\policyadapter.obj\
+    obj\ARMV4I\debug\policycontainer.obj\
+    obj\ARMV4I\debug\api.obj
+

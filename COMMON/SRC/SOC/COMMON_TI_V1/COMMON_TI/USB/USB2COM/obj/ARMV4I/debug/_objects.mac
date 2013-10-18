@@ -1,0 +1,7 @@
+OBJECTS=\
+    obj\ARMV4I\debug\cphysmem.obj\
+    obj\ARMV4I\debug\sync.obj\
+    obj\ARMV4I\debug\cdevice.obj\
+    obj\ARMV4I\debug\hcd.obj\
+    obj\ARMV4I\debug\hcddrv.obj
+

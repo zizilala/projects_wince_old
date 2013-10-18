@@ -1,0 +1,4 @@
+OBJECTS=\
+    obj\ARMV4I\debug\pmext.obj\
+    obj\ARMV4I\debug\debug.obj
+

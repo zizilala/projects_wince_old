@@ -1,0 +1,8 @@
+OBJECTS=\
+    obj\ARMV4I\debug\dssai.obj\
+    obj\ARMV4I\debug\dssai_debug.obj\
+    obj\ARMV4I\debug\dssai_globals.obj\
+    obj\ARMV4I\debug\heap.obj\
+    obj\ARMV4I\debug\surfmgr_flat.obj\
+    obj\ARMV4I\debug\surfmgr_vrfb.obj
+

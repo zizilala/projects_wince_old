@@ -1,0 +1,5 @@
+OBJECTS=\
+    obj\ARMV4I\debug\sdhcmain.obj\
+    obj\ARMV4I\debug\sdhc.obj\
+    obj\ARMV4I\debug\dma.obj
+

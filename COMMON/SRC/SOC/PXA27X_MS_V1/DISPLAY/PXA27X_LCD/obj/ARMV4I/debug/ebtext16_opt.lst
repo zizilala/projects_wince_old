@@ -1,0 +1,278 @@
+ARM macroassembler      Page:1 
+    1 00000000          ; 
+    2 00000000          ; Copyright (c) Microsoft Corporation.  All rights reserved. 
+    3 00000000          ; 
+    4 00000000          ; 
+    5 00000000          ; Use of this sample source code is subject to the terms of the Microsoft 
+    6 00000000          ; license agreement under which you licensed this sample source code. If 
+    7 00000000          ; you did not accept the terms of the license agreement, you are not 
+    8 00000000          ; authorized to use this sample source code. For the terms of the license, 
+    9 00000000          ; please see the license agreement between you and Microsoft or, if applicable, 
+   10 00000000          ; see the LICENSE.RTF on your install media or the root of your tools installation. 
+   11 00000000          ; THE SAMPLE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES. 
+   12 00000000          ; 
+   13 00000000          ;/*  
+   14 00000000          ;** Copyright 2000-2003 Intel Corporation All Rights Reserved. 
+   15 00000000          ;** 
+   16 00000000          ;** Portions of the source code contained or described herein and all documents 
+   17 00000000          ;** related to such source code (Material) are owned by Intel Corporation 
+   18 00000000          ;** or its suppliers or licensors and is licensed by Microsoft Corporation for distribution.   
+   19 00000000          ;** Title to the Material remains with Intel Corporation or its suppliers and licensors.  
+   20 00000000          ;** Use of the Materials is subject to the terms of the Microsoft license agreement which accompanied the Materials.   
+   21 00000000          ;** No other license under any patent, copyright, trade secret or other intellectual 
+   22 00000000          ;** property right is granted to or conferred upon you by disclosure or 
+   23 00000000          ;** delivery of the Materials, either expressly, by implication, inducement, 
+   24 00000000          ;** estoppel or otherwise  
+   25 00000000          ;** Some portion of the Materials may be copyrighted by Microsoft Corporation. 
+   26 00000000          ;*/ 
+   27 00000000                   
+   28 00000000                  EXPORT  EmulatedBltText16ASM 
+   29 00000000            
+   30                           AREA    EBTEXT16OPT,    CODE,   READONLY 
+   31 00000000            
+   32 00000000          ;EmulatedBltText16ASM(BYTE* pSrcMask, WORD* pDstPixel, WORD color,  
+   33 00000000          ;int width, int height, int stepMask, int stepDst, int OffsetSrc) 
+   34 00000000            
+   35 00000000          ;stepMask and stepDst are all counted by byte 
+   36 00000000            
+   37 00000000            
+   38 00000000            
+   39 00000000            
+   40 00000000          ;r0             pSrcMask 
+   41 00000000          ;r1             pDstPixel 
+   42 00000000          ;r2             color 
+   43 00000000          ;r3             width (heer part width laterly) 
+   44 00000000          ;r4             height 
+   45 00000000          ;r5             stepMask 
+   46 00000000          ;r6             stepDst 
+   47 00000000          ;r8             OffsetSrc 
+   48 00000000            
+   49 00000000            
+   50 00000000          ;        |<-   r12   ->|<-               r3                     | 
+   51 00000000          ;    |Head residue |<-    body   part         ->|heer part  | 
+   52 00000000          ;| O O O X X X X X |X X X X X X X X|X X...   X X|X X X X X X O O| 
+   53 00000000            
+   54 00000000          STACKDEPTH              EQU             40 
+   55 00000000          HEIGHTPOS               EQU             STACKDEPTH 
+   56 00000000          STEPMASKPOS             EQU             STACKDEPTH + 4 
+   57 00000000          STEPDSTPOS              EQU             STACKDEPTH + 8 
+   58 00000000          OFFSETSRCPOS    EQU             STACKDEPTH + 12 
+   59 00000000            
+   60 00000000          EmulatedBltText16ASM 
+   61 00000000            
+   62 00000000 e92d5ff0         stmdb   sp!,    {r4-r12,r14} 
+   63 00000004                   
+   64 00000004                   
+   65 00000004 e59d6030         ldr             r6,             [sp,    #STEPDSTPOS] 
+   66 00000008 e59d8034         ldr             r8,             [sp,    #OFFSETSRCPOS] 
+   67 0000000c e59d502c         ldr             r5,             [sp,    #STEPMASKPOS] 
+   68 00000010 e59d4028         ldr             r4,             [sp,    #HEIGHTPOS] 
+   69 00000014            
+   70 00000014          ;       ands    r14,    r1,             #1 
+   71 00000014          ;       bne             EXIT_POS 
+   72 00000014                   
+   73 00000014          ;       cmp             r6,             #0 
+   74 00000014          ;       ble             EXIT_POS 
+   75 00000014                   
+   76 00000014          ;       ands    r14,            r6,             #3 
+   77 00000014          ;       bne             EXIT_POS 
+   78 00000014                   
+   79 00000014          ;       cmp             r3,             #0 
+   80 00000014          ;       ble             EXIT_POS 
+   81 00000014                   
+   82 00000014          ;       cmp             r4,             #0 
+   83 00000014          ;       ble             EXIT_POS 
+   84 00000014                   
+   85 00000014          ;       cmp             r8,             #0 
+   86 00000014          ;       blt             EXIT_POS 
+   87 00000014                   
+   88 00000014          ;       cmp             r8,             #7 
+   89 00000014          ;       bgt             EXIT_POS 
+   90 00000014                   
+   91 00000014 e1a02802         mov             r2,             r2,             LSL     #16 
+   92 00000018 e1a02822         mov             r2,             r2,             LSR #16 
+   93 0000001c e182b802         orr             r11,    r2,             r2,             LSL #16 
+   94 00000020                   
+   95 00000020                   
+   96 00000020 e2455001         sub             r5,             r5,             #1                      ; remove Head residue 
+   97 00000024                   
+   98 00000024 e083e008         add             r14,    r3,             r8 
+   99 00000028 e25ee008         subs    r14,    r14,    #8       
+  100 0000002c            
+  101 0000002c aa000003         bge             NORMAL_INIT 
+  102 00000030                   
+  103 00000030 e1a0c003         mov             r12,    r3                                      ;r12 the starting residue part number 
+  104 00000034 e0466083         sub             r6,             r6,             r3,     LSL #1 
+  105 00000038            
+  106 00000038          ;       cmp             r8,             #0 
+  107 00000038            
+  108 00000038          ;       moveq   r3,             #8 
+  109 00000038          ;       moveq   r12,    #0 
+  110 00000038                   
+  111 00000038          ;       movne   r3,             #0                                      ;r3 = body part + heer part = 0 
+  112 00000038 e3a03000         mov             r3,             #0 
+  113 0000003c                   
+  114 0000003c ea000008         b               LOOP_HEIGHT 
+  115 00000040                   
+  116 00000040          NORMAL_INIT 
+  117 00000040            
+  118 00000040 e04551ae         sub             r5,             r5,             r14,    LSR #3  ;body part, note r14 is positive here 
+  119 00000044                   
+  120 00000044 e21ec007         ands    r12,    r14,    #7 
+  121 00000048                   
+  122 00000048 12455001         subne   r5,             r5,             #1                      ; heer residue 
+  123 0000004c                                                                                          ; r5 = stepMask - width 
+  124 0000004c                                                                                           
+  125 0000004c e0466083         sub             r6,             r6,             r3,     LSL #1  ;r6 = stepDst - width 
+  126 00000050                   
+  127 00000050                   
+  128 00000050 e043c00e         sub             r12,    r3,     r14 
+  129 00000054 e1a0300e         mov             r3,             r14                                     ;r3 = body part + heer part 
+  130 00000058                   
+  131 00000058                   
+  132 00000058 e3580000         cmp             r8,             #0 
+  133 0000005c 02833008         addeq   r3,             r3,             #8 
+  134 00000060 03a0c000         moveq   r12,    #0 
+  135 00000064                   
+  136 00000064            
+  137 00000064          LOOP_HEIGHT 
+  138 00000064            
+  139 00000064            
+  140 00000064 e1b0e00c         movs    r14,    r12      
+  141 00000068            
+  142 00000068 0a000008         beq             ALIGNED_START 
+  143 0000006c                   
+  144 0000006c e4d09001         ldrb    r9,             [r0],   #1 
+  145 00000070            
+  146 00000070 e3a07080         mov             r7,             #0x80 
+  147 00000074 e1a07837         mov             r7,             r7,             LSR r8          ;r7 = Mask = 0x80 >> OffsetSrc 
+  148 00000078            
+  149 00000078            
+  150 00000078          START_REMAINS 
+  151 00000078            
+  152 00000078 e019a007         ands    r10,    r9,             r7 
+  153 0000007c                   
+  154 0000007c 11c120b0         strneh  r2,             [r1] 
+  155 00000080 e2811002         add             r1,             r1,             #2 
+  156 00000084            
+  157 00000084 e1a070a7         mov             r7,             r7,             LSR #1 
+  158 00000088                   
+  159 00000088 e25ee001         subs    r14,    r14,    #1 
+  160 0000008c 1afffff9         bne             START_REMAINS 
+  161 00000090            
+  162 00000090          ALIGNED_START 
+  163 00000090            
+  164 00000090 e1b0e1a3         movs    r14,    r3,     LSR #3 
+  165 00000094 0a000029         beq             WIDTH_REMAIN 
+  166 00000098            
+  167 00000098 e4d09001         ldrb    r9,             [r0],   #1 
+  168 0000009c            
+  169 0000009c          LOOP_WIDTH                                              ;Each Loop deal with 8 pixels 
+  170 0000009c                   
+  171 0000009c e3590000         cmp             r9,             #0 
+  172 000000a0 0a000022         beq             case_0 
+  173 000000a4            
+  174 000000a4 e35900ff         cmp             r9,             #0xff 
+  175 000000a8 0a000014         beq             case_f 
+  176 000000ac            
+  177 000000ac          case_others 
+  178 000000ac            
+  179 000000ac e219a080         ands    r10,    r9,             #0x80 
+  180 000000b0 11c120b0         strneh  r2,             [r1] 
+  181 000000b4                   
+  182 000000b4 e219a040         ands    r10,    r9,             #0x40 
+  183 000000b8 11c120b2         strneh  r2,             [r1, #2] 
+  184 000000bc            
+  185 000000bc e219a020         ands    r10,    r9,             #0x20 
+  186 000000c0 11c120b4         strneh  r2,             [r1, #4] 
+  187 000000c4                   
+  188 000000c4 e219a010         ands    r10,    r9,             #0x10 
+  189 000000c8 11c120b6         strneh  r2,             [r1, #6] 
+  190 000000cc            
+  191 000000cc e219a008         ands    r10,    r9,             #0x08 
+  192 000000d0 11c120b8         strneh  r2,             [r1, #8] 
+  193 000000d4            
+  194 000000d4 e219a004         ands    r10,    r9,             #0x04 
+  195 000000d8 11c120ba         strneh  r2,             [r1, #10] 
+  196 000000dc            
+  197 000000dc e219a002         ands    r10,    r9,             #0x02 
+  198 000000e0 11c120bc         strneh  r2,             [r1, #12] 
+  199 000000e4            
+  200 000000e4 e219a001         ands    r10,    r9,             #0x01 
+  201 000000e8 11c120be         strneh  r2,             [r1, #14] 
+  202 000000ec            
+  203 000000ec e2811010         add             r1,             r1,             #16 
+  204 000000f0 e25ee001         subs    r14,    r14,    #1 
+  205 000000f4                   
+  206 000000f4 14d09001         ldrneb  r9,             [r0],   #1 
+  207 000000f8 1affffe7         bne             LOOP_WIDTH 
+  208 000000fc            
+  209 000000fc ea00000f         b               WIDTH_REMAIN 
+  210 00000100                   
+  211 00000100          case_f 
+  212 00000100            
+  213 00000100                  ;str            r11,    [r1],   #4 
+  214 00000100                  ;str            r11,    [r1],   #4 
+  215 00000100                  ;str            r11,    [r1],   #4 
+  216 00000100                  ;str            r11,    [r1],   #4 
+  217 00000100                   
+  218 00000100 e0c120b2         strh            r2,             [r1],   #2 
+  219 00000104 e0c120b2         strh            r2,             [r1],   #2 
+  220 00000108            
+  221 00000108 e0c120b2         strh            r2,             [r1],   #2 
+  222 0000010c e0c120b2         strh            r2,             [r1],   #2               
+  223 00000110                   
+  224 00000110 e0c120b2         strh            r2,             [r1],   #2 
+  225 00000114 e0c120b2         strh            r2,             [r1],   #2 
+  226 00000118                   
+  227 00000118 e0c120b2         strh            r2,             [r1],   #2 
+  228 0000011c e0c120b2         strh            r2,             [r1],   #2 
+  229 00000120                   
+  230 00000120 e25ee001         subs    r14,    r14,    #1 
+  231 00000124 14d09001         ldrneb  r9,             [r0],   #1 
+  232 00000128 1affffdb         bne             LOOP_WIDTH 
+  233 0000012c            
+  234 0000012c ea000003         b               WIDTH_REMAIN 
+  235 00000130                   
+  236 00000130            
+  237 00000130          case_0 
+  238 00000130            
+  239 00000130 e2811010         add             r1,             r1,             #16 
+  240 00000134 e25ee001         subs    r14,    r14,    #1 
+  241 00000138 14d09001         ldrneb  r9,             [r0],   #1 
+  242 0000013c 1affffd6         bne             LOOP_WIDTH 
+  243 00000140            
+  244 00000140            
+  245 00000140          WIDTH_REMAIN 
+  246 00000140            
+  247 00000140 e213e007         ands    r14,    r3,             #7 
+  248 00000144 14d09001         ldrneb  r9,             [r0],   #1 
+  249 00000148 0a000006         beq             LOOP_UPDATE 
+  250 0000014c                   
+  251 0000014c e3a07080         mov             r7,             #0x80 
+  252 00000150            
+  253 00000150          LOOP_REMAIN 
+  254 00000150            
+  255 00000150 e019a007         ands    r10,    r9,             r7 
+  256 00000154 11c120b0         strneh  r2,             [r1] 
+  257 00000158 e2811002         add             r1,             r1,             #2 
+  258 0000015c            
+  259 0000015c e1a070a7         mov             r7,             r7,             LSR #1 
+  260 00000160 e25ee001         subs    r14,    r14,    #1 
+  261 00000164 1afffff9         bne             LOOP_REMAIN 
+  262 00000168            
+  263 00000168          LOOP_UPDATE 
+  264 00000168            
+  265 00000168 e2544001         subs    r4,             r4,             #1 
+  266 0000016c c0811006         addgt   r1,             r1,             r6      ;pDstPixel      += (stepDst - width) 
+  267 00000170 c0800005         addgt   r0,             r0,             r5      ;pSrcMask       += (stepMask - width) 
+  268 00000174 caffffba         bgt             LOOP_HEIGHT 
+  269 00000178            
+  270 00000178          EXIT_POS 
+  271 00000178                   
+  272 00000178 e3a00000         mov             r0,             #0 
+  273 0000017c e8bd9ff0         ldmia   sp!,    {r4-r12, pc} 
+  274 00000180                   
+  275 00000180            
+  276 00000180                  END 
+Assembly terminated, errors: 0, warnings: 0 

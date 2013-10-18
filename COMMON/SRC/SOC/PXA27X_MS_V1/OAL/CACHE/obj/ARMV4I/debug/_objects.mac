@@ -1,0 +1,10 @@
+OBJECTS=\
+    obj\ARMV4I\debug\cfw.obj\
+    obj\ARMV4I\debug\cachemode.obj\
+    obj\ARMV4I\debug\cleandclines.obj\
+    obj\ARMV4I\debug\flushdc.obj\
+    obj\ARMV4I\debug\flushdclines.obj\
+    obj\ARMV4I\debug\flushiclines.obj\
+    obj\ARMV4I\debug\drainwb.obj\
+    obj\ARMV4I\debug\cp14regaccess.obj
+

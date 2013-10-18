@@ -1,0 +1,7 @@
+OBJECTS=\
+    obj\ARMV4I\debug\api.obj\
+    obj\ARMV4I\debug\devicemediator.obj\
+    obj\ARMV4I\debug\displaydevice.obj\
+    obj\ARMV4I\debug\dvfslist.obj\
+    obj\ARMV4I\debug\devicelist.obj
+

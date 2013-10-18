@@ -1,0 +1,6 @@
+OBJECTS=\
+    obj\ARMV4I\debug\Bus.obj\
+    obj\ARMV4I\debug\omap35xxbus.obj\
+    obj\ARMV4I\debug\omap35xxbuschild.obj\
+    obj\ARMV4I\debug\omap35xxbuscontext.obj
+

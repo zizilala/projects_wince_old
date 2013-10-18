@@ -69,10 +69,7 @@ static DWORD GetIndexByDevice(OMAP_DEVICE dev)
     return i;
 }
 //-----------------------------------------------------------------------------
-void 
-I2CLock(
-           void           *hCtx
-           )
+void I2CLock(void *hCtx)
 {
 
     if (_bPostInit == TRUE && INTERRUPTS_STATUS())
@@ -277,21 +274,15 @@ OALI2CPostInit()
 }
 
 //-----------------------------------------------------------------------------
-BOOL
-I2CSetSlaveAddress(
-                      void           *hCtx, 
-                      UINT16          slaveAddress
-                      )
+BOOL I2CSetSlaveAddress(void *hCtx, UINT16 slaveAddress)
 {
     ((I2CContext_t*)hCtx)->slaveAddress = slaveAddress;
+   
     return TRUE;
 }
 
 //-----------------------------------------------------------------------------
-void*
-I2COpen(
-           UINT            devId
-           )
+void* I2COpen(UINT devId)
 {    
     UINT idI2C;
     
@@ -305,10 +296,10 @@ I2COpen(
     //OALMSG(OAL_LOG_WARN, (L"I2C: I2COpen bus %d\n", idI2C));
 
     // initialize structure
-    pCtx->idI2C = idI2C;
-    pCtx->device = _rgI2CDevice[idI2C].device;
+    pCtx->idI2C     = idI2C;
+    pCtx->device    = _rgI2CDevice[idI2C].device;
     pCtx->baudIndex = _rgI2CDevice[idI2C].defaultBaudIndex;
-    pCtx->timeOut = I2CDefaultI2CTimeout;
+    pCtx->timeOut   = I2CDefaultI2CTimeout;
     pCtx->slaveAddress = 0;
     pCtx->subAddressMode = I2C_SUBADDRESS_MODE_8;
     return pCtx;
@@ -325,15 +316,9 @@ I2CClose(
 }
 
 //------------------------------------------------------------------------------
-UINT
-I2CWrite(
-            VOID           *hCtx,
-            UINT32          subaddr,
-            VOID           *pBuffer,
-            UINT32          size
-            )
+UINT I2CWrite( VOID *hCtx, UINT32 subaddr, VOID *pBuffer, UINT32 size)
 {
-    I2CResult_e             rc;
+    I2CResult_e             rc; 
     UINT                    nAttempts;
     UINT16                  con_mask;
     UINT                    writeCount = (UINT)-1;
@@ -343,11 +328,14 @@ I2CWrite(
     I2C_TRANSACTION_INFO_t  transactInfo;
     I2C_BUFFER_INFO_t       rgBufferInfo[2];
 
-    I2CContext_t           *pCtx = (I2CContext_t*)hCtx;    
+    I2CContext_t           *pCtx =    (I2CContext_t*)hCtx;    
     I2CDevice_t            *pDevice = (I2CDevice_t*)&_rgI2CDevice[pCtx->idI2C];
-
+                         //The Array _rgI2CDevice[pCtx->idI2C], is i2c address
+    
     // Get hardware
     I2CLock(pCtx);
+
+    OALLog(L"\r Testing I2CWrite() of pCtx: %X\r\n", pCtx);   //Ray 13-10-14
 
     //OALMSG(OAL_LOG_WARN, (L"I2C: I2CWrite bus %d\n", idI2C));
 
@@ -361,14 +349,15 @@ I2CWrite(
     }
 #endif
 
-    // setup CONnection mask
+    // setup connection mask
     con_mask = I2C_CON_MST;
-    if ((pDevice->ownAddress& 0x80) != 0)
+    if ((pDevice->ownAddress & 0x80) != 0)
     {
         con_mask |= I2C_CON_XSA;
     }
 
     // set transfer mode bits
+    if (pCtx->baudIndex == SLOWSPEED_MODE)
     if (pCtx->baudIndex == SLOWSPEED_MODE)
     {
         con_mask |= I2C_CON_OPMODE_FS; 
@@ -386,16 +375,16 @@ I2CWrite(
     payloadCount = 0;
     if (pCtx->subAddressMode != I2C_SUBADDRESS_MODE_0)
     {
-        rgBufferInfo[payloadCount].size = pCtx->subAddressMode;
+        rgBufferInfo[payloadCount].size    = pCtx->subAddressMode;
         rgBufferInfo[payloadCount].pBuffer = (UCHAR*)&subaddr;
         ++payloadCount;
     }
 
-    rgBufferInfo[payloadCount].size = size;
+    rgBufferInfo[payloadCount].size    = size;
     rgBufferInfo[payloadCount].pBuffer = (UCHAR*)pBuffer;
     ++payloadCount;
 
-    packetInfo.count = payloadCount;
+    packetInfo.count  = payloadCount;
     packetInfo.opType = kI2C_Write;
     packetInfo.rgBuffers = rgBufferInfo;
 
@@ -409,24 +398,35 @@ I2CWrite(
         I2CSetDeviceBaudrate(pDevice, pCtx->baudIndex);
     }
 
+    
+    //tourble start, Ray 
     // write data
     nAttempts = 0;
     do
     {
-        OALMSG(OAL_LOG_WARN && nAttempts, 
-            (L"Write: Attempts = %d\r\n", (nAttempts + 1)));
+        OALLog(L"\r Testing nAttempts: %d\r\n", nAttempts);
 
+        OALMSG(OAL_LOG_WARN && nAttempts,       //nAttempts == 0 doesn't execute               
+            (L"Write: Attempts = %d\r\n", (nAttempts + 1) ));
         nAttempts++;
-        rc = I2CTransaction(&transactInfo, pCtx);
-    }
-    while (rc == kI2CRetry && (nAttempts < pDevice->maxRetries));
 
-    if (rc != kI2CSuccess)
+        OALLog(L"\r Testing pCtx: %X\r\n", pCtx);   //Check pCtx values yet exist!?, Ray 13-10-14
+
+        rc = I2CTransaction(&transactInfo, pCtx);  //trouble ,Ray 13-10-15   
+        OALLog(L"\r Testing I2CTransaction() rc: %d\r\n", rc); //rc == 2
+    }while (rc == kI2CRetry && (nAttempts < pDevice->maxRetries));
+    //3 && nAttempts < 5
+    // kI2CSuccess == 1
+    // kI2CFail    == 2
+    // kI2CRetry   == 3
+    
+            
+    if (rc != kI2CSuccess)      // rc != 1
     {
         OALMSG(OAL_LOG_WARN, (L"WARN: I2C: Write failed "
-            L"(SA=0x%02X, register=0x%08X)\r\n",
-            pCtx->slaveAddress, subaddr
-            ));
+                              L"(SA=0x%02X, register=0x%08X)\r\n",
+                              pCtx->slaveAddress, subaddr
+                              ));
 
         writeCount = (UINT)-1;
         goto cleanUp;
@@ -531,7 +531,7 @@ I2CRead(
     ++payloadCount;
 
     // link packets
-    transactInfo.count = payloadCount;
+    transactInfo.count    = payloadCount;
     transactInfo.con_mask = con_mask;
     transactInfo.rgPackets = rgPacketInfo;
 
@@ -550,8 +550,7 @@ I2CRead(
 
         nAttempts++;
         rc = I2CTransaction(&transactInfo, pCtx);
-    }
-    while (rc == kI2CRetry && (nAttempts < pDevice->maxRetries));
+    }while (rc == kI2CRetry && (nAttempts < pDevice->maxRetries));
 
     if (rc != kI2CSuccess)
     {
@@ -732,11 +731,8 @@ cleanUp:
 }
 
 //------------------------------------------------------------------------------
-static I2CResult_e
-I2CTransaction(
-                  I2C_TRANSACTION_INFO_t *pInfo,
-                  I2CContext_t           *pCtx
-                  )
+static I2CResult_e I2CTransaction(I2C_TRANSACTION_INFO_t *pInfo,
+                                  I2CContext_t           *pCtx)
 {
     UINT16                  stat;
     UINT                    con_mask;
@@ -759,6 +755,9 @@ I2CTransaction(
     I2CDevice_t            *pDevice = (I2CDevice_t*)&_rgI2CDevice[pCtx->idI2C];
     OMAP_I2C_REGS          *pI2CRegs = _rgI2CDevice[pCtx->idI2C].pI2CRegs;
 
+    OALLog(L"\r Testing I2CTransaction() ---------->\r\n");
+    OALLog(L"\r *pI2CRegs %d\r\n", *pI2CRegs);
+
     // try to reprogram device
     if (I2CReprogramDevice(pCtx) == FALSE)
     {
@@ -771,9 +770,14 @@ I2CTransaction(
     // check for high speed mode
     bHSMode = (pInfo->con_mask & I2C_CON_OPMODE_HS) != 0;
 
+    OALLog(L"\r Testing (pInfo->con_mask & I2C_CON_OPMODE_HS): %d\r\n", bHSMode);
+
     // clear status
     stat = INREG16(&pI2CRegs->STAT);
+    OALLog(L"\r stat: %d\r\n", stat);
+    
     OUTREG16(&pI2CRegs->STAT, stat);
+    
 
     // get timeout
     maxTime = pCtx->timeOut;
@@ -943,6 +947,8 @@ I2CTransaction(
         // packet complete
         if (stat & I2C_STAT_ARDY)
         {
+            OALLog(L"\r stat & I2C_STAT_ARDY: %d\r\n", stat & I2C_STAT_ARDY);
+
             // this notificaiton is needed to progress to next packet
             OUTREG16(&pI2CRegs->STAT, I2C_STAT_ARDY);
 
@@ -984,7 +990,8 @@ I2CTransaction(
                 break;
             }
         }
-
+        OALLog(L"\r Testing // packet complete,rc: %d\r\n",rc); //Ray 13-10-16
+        
         // handle possible glitches on the i2c bus or ill behaved i2c device
         if (((stat == I2C_STAT_BF) || (stat == (I2C_STAT_BF | I2C_STAT_BB))) && 
             (remainingInPacket > 0))
@@ -1029,6 +1036,9 @@ I2CTransaction(
 cleanUp:
     if (rc != kI2CSuccess)
     {
+        OALLog(L"\r Testing (rc != kI2CSuccess), So Error...\r\n");
+        
+        
         /*
         #define SHOW_I2C_REG(reg)   OALMSG(OAL_LOG_WARN, (L"I2C: %s = 0x%04x\n", TEXT(# reg), pI2CRegs->reg));
         SHOW_I2C_REG(REV)

@@ -1,0 +1,5 @@
+OBJECTS=\
+    obj\ARMV4I\debug\feature.obj\
+    obj\ARMV4I\debug\feature_arm.obj\
+    obj\ARMV4I\debug\getidcode.obj
+

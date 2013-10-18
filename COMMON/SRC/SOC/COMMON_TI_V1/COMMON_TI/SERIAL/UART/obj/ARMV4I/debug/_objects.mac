@@ -1,0 +1,4 @@
+OBJECTS=\
+    obj\ARMV4I\debug\dma_init.obj\
+    obj\ARMV4I\debug\pdd.obj
+

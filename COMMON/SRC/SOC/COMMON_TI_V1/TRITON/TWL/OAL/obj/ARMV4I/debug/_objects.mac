@@ -1,0 +1,3 @@
+OBJECTS=\
+    obj\ARMV4I\debug\twl_access.obj
+

@@ -1,0 +1,4 @@
+OBJECTS=\
+    obj\ARMV4I\debug\sdcontroller.obj\
+    obj\ARMV4I\debug\menelaus.obj
+

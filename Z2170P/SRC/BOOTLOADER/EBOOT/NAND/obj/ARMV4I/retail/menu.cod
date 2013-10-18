@@ -92,8 +92,6 @@
 	IMPORT	|OALBLMenuEnable|
 
   00000			 AREA	 |.data|, DATA
-	 COMMON	|hI2C|, 0x4
-
 	 COMMON	|hGPIO|, 0x4
 
 
@@ -885,7 +883,7 @@
 ; File c:\wince600\platform\z2170p\src\bootloader\eboot\menu.c
 
   00000			 AREA	 |.pdata|, PDATA
-|$T49032| DCD	|$LN21@BLMenu|
+|$T49201| DCD	|$LN21@BLMenu|
 	DCD	0x40003201
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -906,48 +904,48 @@
 
   00000		 |BLMenu| PROC
 
-; 374  : {
+; 407  : {
 
   00000		 |$LN21@BLMenu|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M49029|
+  00004		 |$M49198|
   00004	e1a07000	 mov         r7, r0
 
-; 375  :     UINT32 time, delay = 8;
+; 408  :     UINT32 time, delay = 8;
 
   00008	e3a05008	 mov         r5, #8
 
-; 376  :     WCHAR key = 0;
+; 409  :     WCHAR key = 0;
 
   0000c	e3a06000	 mov         r6, #0
 
-; 377  : 	//BOOL entry;
-; 378  :     BSP_ARGS *pArgs = OALCAtoUA(IMAGE_SHARE_ARGS_CA);
+; 410  : 	//BOOL entry;
+; 411  :     BSP_ARGS *pArgs = OALCAtoUA(IMAGE_SHARE_ARGS_CA);
 
   00010	e3a0820a	 mov         r8, #0xA, 4
 
-; 379  : 
-; 380  : 	HANDLE hGPIO;
-; 381  : 	hGPIO = GPIOOpen();
+; 412  : 
+; 413  : 	HANDLE hGPIO;
+; 414  : 	hGPIO = GPIOOpen();
 
   00014	eb000000	 bl          GPIOOpen
 
-; 382  : 	GPIOGetBit(hGPIO, 114);	//key SD1
+; 415  : 	GPIOGetBit(hGPIO, 114);	//key SD1
 
   00018	e3a01072	 mov         r1, #0x72
   0001c	e1a04000	 mov         r4, r0
   00020	eb000000	 bl          GPIOGetBit
 
-; 383  : 	GPIOGetBit(hGPIO, 115); //key SD3
+; 416  : 	GPIOGetBit(hGPIO, 115); //key SD3
 
   00024	e3a01073	 mov         r1, #0x73
   00028	e1a00004	 mov         r0, r4
   0002c	eb000000	 bl          GPIOGetBit
 
-; 384  :     
-; 385  :     // First let user break to menu 
-; 386  :     // Break to menu & count, Ray 13-09-26 
-; 387  :     while (!bForced && (delay > 0 && key != L' ')) 
+; 417  :     
+; 418  :     // First let user break to menu 
+; 419  :     // Break to menu & count, Ray 13-09-26 
+; 420  :     while (!bForced && (delay > 0 && key != L' ')) 
 
   00030	e3570000	 cmp         r7, #0
   00034	1a000015	 bne         |$LN6@BLMenu|
@@ -957,28 +955,28 @@
   00040	e3560020	 cmp         r6, #0x20
   00044	0a000015	 beq         |$LN1@BLMenu|
 
-; 388  :     //while (!bForced && (delay > 0 && key != GPIOGetBit(hGPIO, 114) 
-; 389  : 	//								&& key != GPIOGetBit(hGPIO, 115) )) 
-; 390  : 	{
-; 391  : 		//OALLog(L"Hit space to enter configuration menu %d...\r\n", delay);
-; 392  : 		OALLog(L"Sync-press side key to enter configuration menu %d...\r\n", delay);
+; 421  :     //while (!bForced && (delay > 0 && key != GPIOGetBit(hGPIO, 114) 
+; 422  : 	//								&& key != GPIOGetBit(hGPIO, 115) )) 
+; 423  : 	{
+; 424  : 		//OALLog(L"Hit space to enter configuration menu %d...\r\n", delay);
+; 425  : 		OALLog(L"Sync-press side key to enter configuration menu %d...\r\n", delay);
 
   00048	e59f0074	 ldr         r0, [pc, #0x74]
   0004c	e1a01005	 mov         r1, r5
   00050	eb000000	 bl          NKDbgPrintfW
 
-; 393  : 		time = OALGetTickCount();
+; 426  : 		time = OALGetTickCount();
 
   00054	eb000000	 bl          OALGetTickCount
   00058	e1a04000	 mov         r4, r0
 
-; 394  : 		while ((OALGetTickCount() - time) < 1000) 
+; 427  : 		while ((OALGetTickCount() - time) < 1000) 
 
   0005c	ea000005	 b           |$LN18@BLMenu|
   00060		 |$LL5@BLMenu|
 
-; 395  : 		{
-; 396  : 			if ((key = OALBLMenuReadKey(FALSE)) == L' ') 
+; 428  : 		{
+; 429  : 			if ((key = OALBLMenuReadKey(FALSE)) == L' ') 
 
   00060	e3a00000	 mov         r0, #0
   00064	eb000000	 bl          OALBLMenuReadKey
@@ -993,26 +991,26 @@
   00084	3afffff5	 bcc         |$LL5@BLMenu|
   00088		 |$LN15@BLMenu|
 
-; 397  : 			/*if ( (key = OALBLMenuReadKey(FALSE)) == GPIOGetBit(hGPIO, 114) 
-; 398  : 					&& (key = OALBLMenuReadKey(FALSE)) == GPIOGetBit(hGPIO, 115) )*/ 
-; 399  : 				break;
-; 400  : 		}
-; 401  : 		delay--;
+; 430  : 			/*if ( (key = OALBLMenuReadKey(FALSE)) == GPIOGetBit(hGPIO, 114) 
+; 431  : 					&& (key = OALBLMenuReadKey(FALSE)) == GPIOGetBit(hGPIO, 115) )*/ 
+; 432  : 				break;
+; 433  : 		}
+; 434  : 		delay--;
 
   00088	e2455001	 sub         r5, r5, #1
 
-; 384  :     
-; 385  :     // First let user break to menu 
-; 386  :     // Break to menu & count, Ray 13-09-26 
-; 387  :     while (!bForced && (delay > 0 && key != L' ')) 
+; 417  :     
+; 418  :     // First let user break to menu 
+; 419  :     // Break to menu & count, Ray 13-09-26 
+; 420  :     while (!bForced && (delay > 0 && key != L' ')) 
 
   0008c	eaffffe9	 b           |$LL7@BLMenu|
   00090		 |$LN6@BLMenu|
 
-; 402  : 	}
-; 403  : 	
-; 404  :     //entry = FALSE;
-; 405  :     if ((bForced == TRUE) || (key == L' '))
+; 435  : 	}
+; 436  : 	
+; 437  :     //entry = FALSE;
+; 438  :     if ((bForced == TRUE) || (key == L' '))
 
   00090	e3570001	 cmp         r7, #1
   00094	0a000001	 beq         |$LN1@BLMenu|
@@ -1021,33 +1019,33 @@
   0009c	1a000005	 bne         |$LN2@BLMenu|
   000a0		 |$LN1@BLMenu|
 
-; 406  :     //if ((!bForced == TRUE))
-; 407  : 	//if ((bForced == TRUE) || (key ==  GPIOGetBit(hGPIO, 114)) && (key ==  GPIOGetBit(hGPIO, 115))) 
-; 408  : 	{									//Combo SIDE KEY 
-; 409  :         LCD_SPI_Init();
+; 439  :     //if ((!bForced == TRUE))
+; 440  : 	//if ((bForced == TRUE) || (key ==  GPIOGetBit(hGPIO, 114)) && (key ==  GPIOGetBit(hGPIO, 115))) 
+; 441  : 	{									//Combo SIDE KEY 
+; 442  :         LCD_SPI_Init();
 
   000a0	eb000000	 bl          LCD_SPI_Init
 
-; 410  :         BLShowLogo();					//function is TRUE,so Forever go , Ray 13-07-31 
+; 443  :         BLShowLogo();					//function is TRUE,so Forever go , Ray 13-07-31 
 
   000a4	eb000000	 bl          BLShowLogo
 
-; 411  :         OALBLMenuShow(&g_menuRoot);
+; 444  :         OALBLMenuShow(&g_menuRoot);
 
   000a8	e59f0010	 ldr         r0, [pc, #0x10]
   000ac	eb000000	 bl          OALBLMenuShow
 
-; 412  : 		//KeypadState();
-; 413  : 		// Invalidate arguments to force them to be reinitialized
-; 414  :         // with new config data generated by the boot menu
-; 415  : 		pArgs->header.signature = 0;
+; 445  : 		//KeypadState();
+; 446  : 		// Invalidate arguments to force them to be reinitialized
+; 447  :         // with new config data generated by the boot menu
+; 448  : 		pArgs->header.signature = 0;
 
   000b0	e3a03000	 mov         r3, #0
   000b4	e5883000	 str         r3, [r8]
   000b8		 |$LN2@BLMenu|
 
-; 416  :     }  
-; 417  : }
+; 449  :     }  
+; 450  : }
 
   000b8	e8bd41f0	 ldmia       sp!, {r4 - r8, lr}
   000bc	e12fff1e	 bx          lr
@@ -1056,7 +1054,7 @@
   000c0	00000000	 DCD         |g_menuRoot|
   000c4		 |$LN24@BLMenu|
   000c4	00000000	 DCD         |??_C@_1HA@HEOLOGAM@?$AAS?$AAy?$AAn?$AAc?$AA?9?$AAp?$AAr?$AAe?$AAs?$AAs?$AA?5?$AAs?$AAi?$AAd?$AAe?$AA?5?$AAk?$AAe?$AAy?$AA?5?$AAt?$AAo?$AA?5?$AAe?$AAn?$AAt?$AAe?$AAr?$AA?5?$AAc?$AAo?$AAn@|
-  000c8		 |$M49030|
+  000c8		 |$M49199|
 
 			 ENDP  ; |BLMenu|
 
@@ -1076,11 +1074,11 @@
 	IMPORT	|__security_check_cookie|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T49052| DCD	|$LN12@SetMacAddr|
+|$T49221| DCD	|$LN12@SetMacAddr|
 	DCD	0xc0006502
 
   00000			 AREA	 |.xdata|, DATA
-|$T49048| DCD	0xffffffe8
+|$T49217| DCD	0xffffffe8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1FI@GAMDHEMA@?$AA?$AN?$AA?6?$AA?5?$AA?5?$AA?5?$AAW?$AAA?$AAR?$AAN?$AAI?$AAN?$AAG?$AA?3?$AA?5?$AAM?$AAA?$AAC?$AA?5?$AAa?$AAd?$AAd?$AAr?$AAe?$AAs?$AAs?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAp?$AAr@| DCB 0xd
@@ -1128,39 +1126,39 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T49048|
+  00004	00000000	 DCD         |$T49217|
 
   00008		 |SetMacAddress| PROC
 
-; 422  : {
+; 455  : {
 
   00008		 |$LN12@SetMacAddr|
   00008	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   0000c	e24dd028	 sub         sp, sp, #0x28
-  00010		 |$M49049|
+  00010		 |$M49218|
   00010	e59f3180	 ldr         r3, [pc, #0x180]
   00014	e5933000	 ldr         r3, [r3]
   00018	e58d3024	 str         r3, [sp, #0x24]
 
-; 423  :     DWORD dummy;
-; 424  : #pragma warning(push)
-; 425  : #pragma warning(disable:4204 4221)
-; 426  :     UINT16 mac[3] = {0xFFFF, 0xFFFF, 0xFFFF};
-; 427  :     // We're using OALBLMenuSetMacAddress outside of a menu, but it still requires 
-; 428  :     // a menu item input structure
-; 429  :     OAL_BLMENU_ITEM DummyMacMenuItem = 
-; 430  :     {
-; 431  :         0, NULL, NULL,
-; 432  :         L"EVM ", mac, NULL
+; 456  :     DWORD dummy;
+; 457  : #pragma warning(push)
+; 458  : #pragma warning(disable:4204 4221)
+; 459  :     UINT16 mac[3] = {0xFFFF, 0xFFFF, 0xFFFF};
+; 460  :     // We're using OALBLMenuSetMacAddress outside of a menu, but it still requires 
+; 461  :     // a menu item input structure
+; 462  :     OAL_BLMENU_ITEM DummyMacMenuItem = 
+; 463  :     {
+; 464  :         0, NULL, NULL,
+; 465  :         L"EVM ", mac, NULL
 
   0001c	e59f3170	 ldr         r3, [pc, #0x170]
 
-; 433  :     };
-; 434  : #pragma warning(pop)
-; 435  : 
-; 436  :     UNREFERENCED_PARAMETER(pMenu);
-; 437  : 
-; 438  :     OALLog(L"\r\n Set Ethernet (LAN9xxx) MAC Address:\r\n");   
+; 466  :     };
+; 467  : #pragma warning(pop)
+; 468  : 
+; 469  :     UNREFERENCED_PARAMETER(pMenu);
+; 470  : 
+; 471  :     OALLog(L"\r\n Set Ethernet (LAN9xxx) MAC Address:\r\n");   
 
   00020	e59f0168	 ldr         r0, [pc, #0x168]
   00024	e3a01cff	 mov         r1, #0xFF, 24
@@ -1181,14 +1179,14 @@
   00060	e58d7014	 str         r7, [sp, #0x14]
   00064	eb000000	 bl          NKDbgPrintfW
 
-; 439  : 	
-; 440  : 	
-; 441  :     memset(mac,0xFF,sizeof(mac));
+; 472  : 	
+; 473  : 	
+; 474  :     memset(mac,0xFF,sizeof(mac));
 
   00068	e1cd41bc	 strh        r4, [sp, #0x1C]
   0006c	e1cd41be	 strh        r4, [sp, #0x1E]
 
-; 442  :     LAN911XGetMacAddress(OALPAtoUA((DWORD) BSP_LAN9115_REGS_PA),mac);
+; 475  :     LAN911XGetMacAddress(OALPAtoUA((DWORD) BSP_LAN9115_REGS_PA),mac);
 
   00070	e3a01000	 mov         r1, #0
   00074	e3a00415	 mov         r0, #0x15, 8
@@ -1197,7 +1195,7 @@
   00080	e28d101c	 add         r1, sp, #0x1C
   00084	eb000000	 bl          LAN911XGetMacAddress
 
-; 443  :     if (((mac[0]== 0xFFFF) && (mac[1] == 0xFFFF) && (mac[2] == 0xFFFF)) || ((mac[0]== 0x0) && (mac[1] == 0x0) && (mac[2] == 0x0)))
+; 476  :     if (((mac[0]== 0xFFFF) && (mac[1] == 0xFFFF) && (mac[2] == 0xFFFF)) || ((mac[0]== 0x0) && (mac[1] == 0x0) && (mac[2] == 0x0)))
 
   00088	e1dd11bc	 ldrh        r1, [sp, #0x1C]
   0008c	e59f50f8	 ldr         r5, [pc, #0xF8]
@@ -1218,13 +1216,13 @@
   000c4	1a000005	 bne         |$LN7@SetMacAddr|
   000c8		 |$LN6@SetMacAddr|
 
-; 444  :     {
-; 445  :         RETAILMSG(1,(TEXT("mac address not found in EEPROM. Using Mac address stored with the boot settings\r\n")));
+; 477  :     {
+; 478  :         RETAILMSG(1,(TEXT("mac address not found in EEPROM. Using Mac address stored with the boot settings\r\n")));
 
   000c8	e59f00b8	 ldr         r0, [pc, #0xB8]
   000cc	eb000000	 bl          NKDbgPrintfW
 
-; 446  :         memcpy(mac,g_bootCfg.mac,sizeof(mac));       
+; 479  :         memcpy(mac,g_bootCfg.mac,sizeof(mac));       
 
   000d0	e2851066	 add         r1, r5, #0x66
   000d4	e28d001c	 add         r0, sp, #0x1C
@@ -1232,16 +1230,16 @@
   000dc	eb000000	 bl          memcpy
   000e0		 |$LN7@SetMacAddr|
 
-; 447  :     }
-; 448  : 
-; 449  :     OALBLMenuSetMacAddress(&DummyMacMenuItem);
+; 480  :     }
+; 481  : 
+; 482  :     OALBLMenuSetMacAddress(&DummyMacMenuItem);
 
   000e0	e28d0000	 add         r0, sp, #0
   000e4	eb000000	 bl          OALBLMenuSetMacAddress
 
-; 450  :     
-; 451  :     // Make sure we don't come out of OALBLMenuSetMacAddress with the original 0xFFFF FFFF FFFF or with all zeros
-; 452  :     if (((mac[0]== 0xFFFF) && (mac[1] == 0xFFFF) && (mac[2] == 0xFFFF)) || ((mac[0]== 0x0) && (mac[1] == 0x0) && (mac[2] == 0x0)))
+; 483  :     
+; 484  :     // Make sure we don't come out of OALBLMenuSetMacAddress with the original 0xFFFF FFFF FFFF or with all zeros
+; 485  :     if (((mac[0]== 0xFFFF) && (mac[1] == 0xFFFF) && (mac[2] == 0xFFFF)) || ((mac[0]== 0x0) && (mac[1] == 0x0) && (mac[2] == 0x0)))
 
   000e8	e1dd11bc	 ldrh        r1, [sp, #0x1C]
   000ec	e1dd32b0	 ldrh        r3, [sp, #0x20]
@@ -1261,29 +1259,29 @@
   00120	1a000002	 bne         |$LN4@SetMacAddr|
   00124		 |$LN3@SetMacAddr|
 
-; 453  :     {
-; 454  :         OALLog(L"\r\n   WARNING: MAC address not programmed!\r\n");
+; 486  :     {
+; 487  :         OALLog(L"\r\n   WARNING: MAC address not programmed!\r\n");
 
   00124	e59f0058	 ldr         r0, [pc, #0x58]
   00128	eb000000	 bl          NKDbgPrintfW
 
-; 455  :         return;
+; 488  :         return;
 
   0012c	ea00000f	 b           |$LN8@SetMacAddr|
   00130		 |$LN4@SetMacAddr|
 
-; 456  :     }
-; 457  :         
-; 458  :    memcpy(g_bootCfg.mac,mac,sizeof(mac));
+; 489  :     }
+; 490  :         
+; 491  :    memcpy(g_bootCfg.mac,mac,sizeof(mac));
 
   00130	e2850066	 add         r0, r5, #0x66
   00134	e28d101c	 add         r1, sp, #0x1C
   00138	e3a02006	 mov         r2, #6
   0013c	eb000000	 bl          memcpy
 
-; 459  : 
-; 460  : 
-; 461  :     if (!LAN911XFindController(OALPAtoUA((DWORD) BSP_LAN9115_REGS_PA),&dummy))
+; 492  : 
+; 493  : 
+; 494  :     if (!LAN911XFindController(OALPAtoUA((DWORD) BSP_LAN9115_REGS_PA),&dummy))
 
   00140	e3a01000	 mov         r1, #0
   00144	e3a00415	 mov         r0, #0x15, 8
@@ -1293,10 +1291,10 @@
   00154	e3500000	 cmp         r0, #0
   00158	0a000004	 beq         |$LN8@SetMacAddr|
 
-; 462  :     {     
-; 463  :         return;
-; 464  :     }
-; 465  :    LAN911XSetMacAddress(OALPAtoUA((DWORD) BSP_LAN9115_REGS_PA),mac);  
+; 495  :     {     
+; 496  :         return;
+; 497  :     }
+; 498  :    LAN911XSetMacAddress(OALPAtoUA((DWORD) BSP_LAN9115_REGS_PA),mac);  
 
   0015c	e3a01000	 mov         r1, #0
   00160	e3a00415	 mov         r0, #0x15, 8
@@ -1307,7 +1305,7 @@
   00170	e59d0024	 ldr         r0, [sp, #0x24]
   00174	eb000000	 bl          __security_check_cookie
 
-; 466  : }
+; 499  : }
 
   00178	e28dd028	 add         sp, sp, #0x28
   0017c	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
@@ -1325,7 +1323,7 @@
   00194	00000000	 DCD         |??_C@_19OEFLBHKA@?$AAE?$AAV?$AAM?$AA?5?$AA?$AA@|
   00198		 |$LN19@SetMacAddr|
   00198	00000000	 DCD         |__security_cookie|
-  0019c		 |$M49050|
+  0019c		 |$M49219|
 
 			 ENDP  ; |SetMacAddress|
 
@@ -1353,11 +1351,11 @@
 	IMPORT	|OALKitlIPtoString|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T49086| DCD	|$LN23@ShowNetwor|
+|$T49255| DCD	|$LN23@ShowNetwor|
 	DCD	0xc0007b02
 
   00000			 AREA	 |.xdata|, DATA
-|$T49082| DCD	0xffffffe8
+|$T49251| DCD	0xffffffe8
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1CM@MBNEBDDK@?$AA?5?$AA?5?$AAV?$AAM?$AAI?$AAN?$AAI?$AA?3?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$CF?$AAs?$AA?$AN?$AA?6?$AA?$AA@| DCB " "
@@ -1483,32 +1481,32 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T49082|
+  00004	00000000	 DCD         |$T49251|
 
   00008		 |ShowNetworkSettings| PROC
 
-; 522  : {
+; 555  : {
 
   00008		 |$LN23@ShowNetwor|
   00008	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   0000c	e24dd00c	 sub         sp, sp, #0xC
-  00010		 |$M49083|
+  00010		 |$M49252|
   00010	e59f31d8	 ldr         r3, [pc, #0x1D8]
   00014	e5933000	 ldr         r3, [r3]
   00018	e58d3008	 str         r3, [sp, #8]
 
-; 523  :     BOOL fValidExtMacAddr;
-; 524  :     UINT16 mac[3];
-; 525  :     UNREFERENCED_PARAMETER(pMenu);
-; 526  : 
-; 527  :     memset(mac,0xFF,sizeof(mac));
+; 556  :     BOOL fValidExtMacAddr;
+; 557  :     UINT16 mac[3];
+; 558  :     UNREFERENCED_PARAMETER(pMenu);
+; 559  : 
+; 560  :     memset(mac,0xFF,sizeof(mac));
 
   0001c	e3a03cff	 mov         r3, #0xFF, 24
   00020	e38340ff	 orr         r4, r3, #0xFF
   00024	e1cd40b0	 strh        r4, [sp]
   00028	e1cd40b2	 strh        r4, [sp, #2]
 
-; 528  :     LAN911XGetMacAddress(OALPAtoUA((DWORD) BSP_LAN9115_REGS_PA),mac);
+; 561  :     LAN911XGetMacAddress(OALPAtoUA((DWORD) BSP_LAN9115_REGS_PA),mac);
 
   0002c	e3a01000	 mov         r1, #0
   00030	e3a00415	 mov         r0, #0x15, 8
@@ -1517,7 +1515,7 @@
   0003c	e28d1000	 add         r1, sp, #0
   00040	eb000000	 bl          LAN911XGetMacAddress
 
-; 529  :     if (((mac[0]== 0xFFFF) && (mac[1] == 0xFFFF) && (mac[2] == 0xFFFF)) || ((mac[0]== 0x0) && (mac[1] == 0x0) && (mac[2] == 0x0)))
+; 562  :     if (((mac[0]== 0xFFFF) && (mac[1] == 0xFFFF) && (mac[2] == 0xFFFF)) || ((mac[0]== 0x0) && (mac[1] == 0x0) && (mac[2] == 0x0)))
 
   00044	e1dd10b0	 ldrh        r1, [sp]
   00048	e1dd30b4	 ldrh        r3, [sp, #4]
@@ -1537,35 +1535,35 @@
   0007c	1a000001	 bne         |$LN4@ShowNetwor|
   00080		 |$LN3@ShowNetwor|
 
-; 530  :     {
-; 531  :         fValidExtMacAddr = FALSE;        
+; 563  :     {
+; 564  :         fValidExtMacAddr = FALSE;        
 
   00080	e3a06000	 mov         r6, #0
 
-; 532  :     }
-; 533  :     else
+; 565  :     }
+; 566  :     else
 
   00084	ea000000	 b           |$LN1@ShowNetwor|
   00088		 |$LN4@ShowNetwor|
 
-; 534  :     {
-; 535  :         fValidExtMacAddr = TRUE;        
+; 567  :     {
+; 568  :         fValidExtMacAddr = TRUE;        
 
   00088	e3a06001	 mov         r6, #1
   0008c		 |$LN1@ShowNetwor|
 
-; 536  :     }
-; 537  : 
-; 538  : 
-; 539  :     OALLog(L"\r\n Network:\r\n");
+; 569  :     }
+; 570  : 
+; 571  : 
+; 572  :     OALLog(L"\r\n Network:\r\n");
 
   0008c	e59f0158	 ldr         r0, [pc, #0x158]
   00090	eb000000	 bl          NKDbgPrintfW
 
-; 540  :     OALLog(
-; 541  :         L"  KITL state:    %s\r\n",
-; 542  :         (g_bootCfg.kitlFlags & OAL_KITL_FLAGS_ENABLED) ? L"enabled" : L"disabled"
-; 543  :     );
+; 573  :     OALLog(
+; 574  :         L"  KITL state:    %s\r\n",
+; 575  :         (g_bootCfg.kitlFlags & OAL_KITL_FLAGS_ENABLED) ? L"enabled" : L"disabled"
+; 576  :     );
 
   00094	e59f414c	 ldr         r4, [pc, #0x14C]
   00098	e59f5144	 ldr         r5, [pc, #0x144]
@@ -1576,11 +1574,11 @@
   000ac	059f10f0	 ldreq       r1, [pc, #0xF0]
   000b0	eb000000	 bl          NKDbgPrintfW
 
-; 544  : 
-; 545  :     OALLog(
-; 546  :         L"  KITL type:     %s\r\n",
-; 547  :         (g_bootCfg.kitlFlags & OAL_KITL_FLAGS_PASSIVE) ? L"passive" : L"active"
-; 548  :     );
+; 577  : 
+; 578  :     OALLog(
+; 579  :         L"  KITL type:     %s\r\n",
+; 580  :         (g_bootCfg.kitlFlags & OAL_KITL_FLAGS_PASSIVE) ? L"passive" : L"active"
+; 581  :     );
 
   000b4	e5943030	 ldr         r3, [r4, #0x30]
   000b8	e59f011c	 ldr         r0, [pc, #0x11C]
@@ -1589,11 +1587,11 @@
   000c4	059f1108	 ldreq       r1, [pc, #0x108]
   000c8	eb000000	 bl          NKDbgPrintfW
 
-; 549  : 
-; 550  :     OALLog(
-; 551  :         L"  KITL mode:     %s\r\n",
-; 552  :         (g_bootCfg.kitlFlags & OAL_KITL_FLAGS_POLL) ? L"polled" : L"interrupt"
-; 553  :     );
+; 582  : 
+; 583  :     OALLog(
+; 584  :         L"  KITL mode:     %s\r\n",
+; 585  :         (g_bootCfg.kitlFlags & OAL_KITL_FLAGS_POLL) ? L"polled" : L"interrupt"
+; 586  :     );
 
   000cc	e5943030	 ldr         r3, [r4, #0x30]
   000d0	e59f00f8	 ldr         r0, [pc, #0xF8]
@@ -1602,10 +1600,10 @@
   000dc	059f10e4	 ldreq       r1, [pc, #0xE4]
   000e0	eb000000	 bl          NKDbgPrintfW
 
-; 554  :     OALLog(
-; 555  :         L"  DHCP:          %s\r\n",
-; 556  :         (g_bootCfg.kitlFlags & OAL_KITL_FLAGS_DHCP) ? L"enabled" : L"disabled"
-; 557  :     );
+; 587  :     OALLog(
+; 588  :         L"  DHCP:          %s\r\n",
+; 589  :         (g_bootCfg.kitlFlags & OAL_KITL_FLAGS_DHCP) ? L"enabled" : L"disabled"
+; 590  :     );
 
   000e4	e5943030	 ldr         r3, [r4, #0x30]
   000e8	e59f00d4	 ldr         r0, [pc, #0xD4]
@@ -1614,7 +1612,7 @@
   000f4	059f10a8	 ldreq       r1, [pc, #0xA8]
   000f8	eb000000	 bl          NKDbgPrintfW
 
-; 558  :     OALLog(L"  IP address:    %s\r\n", OALKitlIPtoString(g_bootCfg.ipAddress));
+; 591  :     OALLog(L"  IP address:    %s\r\n", OALKitlIPtoString(g_bootCfg.ipAddress));
 
   000fc	e5940038	 ldr         r0, [r4, #0x38]
   00100	eb000000	 bl          OALKitlIPtoString
@@ -1622,7 +1620,7 @@
   00108	e59f00b0	 ldr         r0, [pc, #0xB0]
   0010c	eb000000	 bl          NKDbgPrintfW
 
-; 559  :     OALLog(L"  IP mask:       %s\r\n", OALKitlIPtoString(g_bootCfg.ipMask));
+; 592  :     OALLog(L"  IP mask:       %s\r\n", OALKitlIPtoString(g_bootCfg.ipMask));
 
   00110	e594003c	 ldr         r0, [r4, #0x3C]
   00114	eb000000	 bl          OALKitlIPtoString
@@ -1630,7 +1628,7 @@
   0011c	e59f0098	 ldr         r0, [pc, #0x98]
   00120	eb000000	 bl          NKDbgPrintfW
 
-; 560  :     OALLog(L"  IP router:     %s\r\n", OALKitlIPtoString(g_bootCfg.ipRoute));
+; 593  :     OALLog(L"  IP router:     %s\r\n", OALKitlIPtoString(g_bootCfg.ipRoute));
 
   00124	e5940040	 ldr         r0, [r4, #0x40]
   00128	eb000000	 bl          OALKitlIPtoString
@@ -1638,9 +1636,9 @@
   00130	e59f0080	 ldr         r0, [pc, #0x80]
   00134	eb000000	 bl          NKDbgPrintfW
 
-; 561  :     OALLog(L"  Eth MAC Addr:  %s (%s)\r\n", 
-; 562  :         OALKitlMACtoString(fValidExtMacAddr ? mac : g_bootCfg.mac)
-; 563  :         ,fValidExtMacAddr ? L"EEPROM" : L"Boot settings");
+; 594  :     OALLog(L"  Eth MAC Addr:  %s (%s)\r\n", 
+; 595  :         OALKitlMACtoString(fValidExtMacAddr ? mac : g_bootCfg.mac)
+; 596  :         ,fValidExtMacAddr ? L"EEPROM" : L"Boot settings");
 
   00138	e3560000	 cmp         r6, #0
   0013c	159f7070	 ldrne       r7, [pc, #0x70]
@@ -1654,10 +1652,10 @@
   0015c	e1a02007	 mov         r2, r7
   00160	eb000000	 bl          NKDbgPrintfW
 
-; 564  :     OALLog(
-; 565  :         L"  VMINI:         %s\r\n",
-; 566  :         (g_bootCfg.kitlFlags & OAL_KITL_FLAGS_VMINI) ? L"enabled" : L"disabled"
-; 567  :     );
+; 597  :     OALLog(
+; 598  :         L"  VMINI:         %s\r\n",
+; 599  :         (g_bootCfg.kitlFlags & OAL_KITL_FLAGS_VMINI) ? L"enabled" : L"disabled"
+; 600  :     );
 
   00164	e5943030	 ldr         r3, [r4, #0x30]
   00168	e59f0038	 ldr         r0, [pc, #0x38]
@@ -1666,20 +1664,20 @@
   00174	e1a01005	 mov         r1, r5
   00178	eb000000	 bl          NKDbgPrintfW
 
-; 568  :     OALLog(L"  Note: USBFN RNDIS MAC Addr cannot be changed.\r\n");
+; 601  :     OALLog(L"  Note: USBFN RNDIS MAC Addr cannot be changed.\r\n");
 
   0017c	e59f001c	 ldr         r0, [pc, #0x1C]
   00180	eb000000	 bl          NKDbgPrintfW
 
-; 569  :     
-; 570  :     OALBLMenuReadKey(TRUE);
+; 602  :     
+; 603  :     OALBLMenuReadKey(TRUE);
 
   00184	e3a00001	 mov         r0, #1
   00188	eb000000	 bl          OALBLMenuReadKey
   0018c	e59d0008	 ldr         r0, [sp, #8]
   00190	eb000000	 bl          __security_check_cookie
 
-; 571  : }
+; 604  : }
 
   00194	e28dd00c	 add         sp, sp, #0xC
   00198	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
@@ -1727,7 +1725,7 @@
   001ec	00000000	 DCD         |??_C@_1BM@NCMLOBGF@?$AA?$AN?$AA?6?$AA?5?$AAN?$AAe?$AAt?$AAw?$AAo?$AAr?$AAk?$AA?3?$AA?$AN?$AA?6?$AA?$AA@|
   001f0		 |$LN45@ShowNetwor|
   001f0	00000000	 DCD         |__security_cookie|
-  001f4		 |$M49084|
+  001f4		 |$M49253|
 
 			 ENDP  ; |ShowNetworkSettings|
 
@@ -1738,7 +1736,7 @@
 	EXPORT	|??_C@_1EI@CAADENIK@?$AA?5?$AAS?$AAe?$AAt?$AA?5?$AAK?$AAI?$AAT?$AAL?$AA?5?$AAt?$AAo?$AA?5?$AAi?$AAn?$AAt?$AAe?$AAr?$AAr?$AAu?$AAp?$AAt?$AA?5?$AAm?$AAo?$AAd?$AAe?$AA?5?$AA?$FL?$AAy?$AA?1?$AA?9@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T49119| DCD	|$LN13@SetKitlMod|
+|$T49288| DCD	|$LN13@SetKitlMod|
 	DCD	0x40002201
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1784,49 +1782,49 @@
 
   00000		 |SetKitlMode| PROC
 
-; 576  : {
+; 609  : {
 
   00000		 |$LN13@SetKitlMod|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M49116|
+  00004		 |$M49285|
 
-; 577  :     WCHAR key;
-; 578  :     UNREFERENCED_PARAMETER(pMenu);
-; 579  : 
-; 580  :     if ((g_bootCfg.kitlFlags & OAL_KITL_FLAGS_POLL) != 0) {
+; 610  :     WCHAR key;
+; 611  :     UNREFERENCED_PARAMETER(pMenu);
+; 612  : 
+; 613  :     if ((g_bootCfg.kitlFlags & OAL_KITL_FLAGS_POLL) != 0) {
 
   00004	e59f4078	 ldr         r4, [pc, #0x78]
   00008	e5943030	 ldr         r3, [r4, #0x30]
   0000c	e3130010	 tst         r3, #0x10
 
-; 581  :         OALLog(L" Set KITL to interrupt mode [y/-]: ");
+; 614  :         OALLog(L" Set KITL to interrupt mode [y/-]: ");
 
   00010	159f0068	 ldrne       r0, [pc, #0x68]
 
-; 582  :     } else {
-; 583  :         OALLog(L" Set KITL to polled mode [y/-]: ");
+; 615  :     } else {
+; 616  :         OALLog(L" Set KITL to polled mode [y/-]: ");
 
   00014	059f0060	 ldreq       r0, [pc, #0x60]
   00018	eb000000	 bl          NKDbgPrintfW
 
-; 584  :     }    
-; 585  : 
-; 586  :     // Get key
-; 587  :     key = OALBLMenuReadKey(TRUE);
+; 617  :     }    
+; 618  : 
+; 619  :     // Get key
+; 620  :     key = OALBLMenuReadKey(TRUE);
 
   0001c	e3a00001	 mov         r0, #1
   00020	eb000000	 bl          OALBLMenuReadKey
   00024	e1a05800	 mov         r5, r0, lsl #16
 
-; 588  :     OALLog(L"%c\r\n", key);
+; 621  :     OALLog(L"%c\r\n", key);
 
   00028	e59f0048	 ldr         r0, [pc, #0x48]
   0002c	e1a05825	 mov         r5, r5, lsr #16
   00030	e1a01005	 mov         r1, r5
   00034	eb000000	 bl          NKDbgPrintfW
 
-; 589  : 
-; 590  :     if (key == L'y' || key == L'Y') {
+; 622  : 
+; 623  :     if (key == L'y' || key == L'Y') {
 
   00038	e3550079	 cmp         r5, #0x79
   0003c	0a000001	 beq         |$LN3@SetKitlMod|
@@ -1834,19 +1832,19 @@
   00044	1a000007	 bne         |$LN1@SetKitlMod|
   00048		 |$LN3@SetKitlMod|
 
-; 591  :         if ((g_bootCfg.kitlFlags & OAL_KITL_FLAGS_POLL) != 0) {
+; 624  :         if ((g_bootCfg.kitlFlags & OAL_KITL_FLAGS_POLL) != 0) {
 
   00048	e5943030	 ldr         r3, [r4, #0x30]
   0004c	e3130010	 tst         r3, #0x10
 
-; 592  :             g_bootCfg.kitlFlags &= ~OAL_KITL_FLAGS_POLL;
-; 593  :             OALLog(L" KITL set to interrupt mode\r\n");
+; 625  :             g_bootCfg.kitlFlags &= ~OAL_KITL_FLAGS_POLL;
+; 626  :             OALLog(L" KITL set to interrupt mode\r\n");
 
   00050	159f001c	 ldrne       r0, [pc, #0x1C]
 
-; 594  :         } else {
-; 595  :             g_bootCfg.kitlFlags |= OAL_KITL_FLAGS_POLL;
-; 596  :             OALLog(L" KITL set to polled mode\r\n");
+; 627  :         } else {
+; 628  :             g_bootCfg.kitlFlags |= OAL_KITL_FLAGS_POLL;
+; 629  :             OALLog(L" KITL set to polled mode\r\n");
 
   00054	059f0014	 ldreq       r0, [pc, #0x14]
   00058	13c33010	 bicne       r3, r3, #0x10
@@ -1855,9 +1853,9 @@
   00064	eb000000	 bl          NKDbgPrintfW
   00068		 |$LN1@SetKitlMod|
 
-; 597  :         }            
-; 598  :     }
-; 599  : }
+; 630  :         }            
+; 631  :     }
+; 632  : }
 
   00068	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0006c	e12fff1e	 bx          lr
@@ -1874,7 +1872,7 @@
   00080	00000000	 DCD         |??_C@_1EI@CAADENIK@?$AA?5?$AAS?$AAe?$AAt?$AA?5?$AAK?$AAI?$AAT?$AAL?$AA?5?$AAt?$AAo?$AA?5?$AAi?$AAn?$AAt?$AAe?$AAr?$AAr?$AAu?$AAp?$AAt?$AA?5?$AAm?$AAo?$AAd?$AAe?$AA?5?$AA?$FL?$AAy?$AA?1?$AA?9@|
   00084		 |$LN20@SetKitlMod|
   00084	00000000	 DCD         |g_bootCfg|
-  00088		 |$M49117|
+  00088		 |$M49286|
 
 			 ENDP  ; |SetKitlMode|
 
@@ -1884,7 +1882,7 @@
 	EXPORT	|??_C@_1EC@OPMJBCEG@?$AA?5?$AAS?$AAe?$AAt?$AA?5?$AAK?$AAI?$AAT?$AAL?$AA?5?$AAt?$AAo?$AA?5?$AAa?$AAc?$AAt?$AAi?$AAv?$AAe?$AA?5?$AAm?$AAo?$AAd?$AAe?$AA?5?$AA?$FL?$AAy?$AA?1?$AA?9?$AA?$FN?$AA?3?$AA?5@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T49136| DCD	|$LN13@SetKitlTyp|
+|$T49305| DCD	|$LN13@SetKitlTyp|
 	DCD	0x40002201
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -1926,52 +1924,52 @@
 
   00000		 |SetKitlType| PROC
 
-; 604  : {
+; 637  : {
 
   00000		 |$LN13@SetKitlTyp|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M49133|
+  00004		 |$M49302|
 
-; 605  :     WCHAR key;
-; 606  :     UNREFERENCED_PARAMETER(pMenu);
-; 607  : 
-; 608  :     if ((g_bootCfg.kitlFlags & OAL_KITL_FLAGS_PASSIVE) != 0) 
+; 638  :     WCHAR key;
+; 639  :     UNREFERENCED_PARAMETER(pMenu);
+; 640  : 
+; 641  :     if ((g_bootCfg.kitlFlags & OAL_KITL_FLAGS_PASSIVE) != 0) 
 
   00004	e59f4078	 ldr         r4, [pc, #0x78]
   00008	e5943030	 ldr         r3, [r4, #0x30]
   0000c	e3130002	 tst         r3, #2
 
-; 609  :         {
-; 610  :         OALLog(L" Set KITL to active mode [y/-]: ");
+; 642  :         {
+; 643  :         OALLog(L" Set KITL to active mode [y/-]: ");
 
   00010	159f0068	 ldrne       r0, [pc, #0x68]
 
-; 611  :         } 
-; 612  :    else 
-; 613  :         {
-; 614  :         OALLog(L" Set KITL to passive mode [y/-]: ");
+; 644  :         } 
+; 645  :    else 
+; 646  :         {
+; 647  :         OALLog(L" Set KITL to passive mode [y/-]: ");
 
   00014	059f0060	 ldreq       r0, [pc, #0x60]
   00018	eb000000	 bl          NKDbgPrintfW
 
-; 615  :         }    
-; 616  : 
-; 617  :     // Get key
-; 618  :     key = OALBLMenuReadKey(TRUE);
+; 648  :         }    
+; 649  : 
+; 650  :     // Get key
+; 651  :     key = OALBLMenuReadKey(TRUE);
 
   0001c	e3a00001	 mov         r0, #1
   00020	eb000000	 bl          OALBLMenuReadKey
   00024	e1a05800	 mov         r5, r0, lsl #16
 
-; 619  :     OALLog(L"%c\r\n", key);
+; 652  :     OALLog(L"%c\r\n", key);
 
   00028	e59f0048	 ldr         r0, [pc, #0x48]
   0002c	e1a05825	 mov         r5, r5, lsr #16
   00030	e1a01005	 mov         r1, r5
   00034	eb000000	 bl          NKDbgPrintfW
 
-; 620  : 
-; 621  :     if (key == L'y' || key == L'Y') 
+; 653  : 
+; 654  :     if (key == L'y' || key == L'Y') 
 
   00038	e3550079	 cmp         r5, #0x79
   0003c	0a000001	 beq         |$LN3@SetKitlTyp|
@@ -1979,23 +1977,23 @@
   00044	1a000007	 bne         |$LN1@SetKitlTyp|
   00048		 |$LN3@SetKitlTyp|
 
-; 622  :         {
-; 623  :         if ((g_bootCfg.kitlFlags & OAL_KITL_FLAGS_PASSIVE) != 0) 
+; 655  :         {
+; 656  :         if ((g_bootCfg.kitlFlags & OAL_KITL_FLAGS_PASSIVE) != 0) 
 
   00048	e5943030	 ldr         r3, [r4, #0x30]
   0004c	e3130002	 tst         r3, #2
 
-; 624  :             {
-; 625  :             g_bootCfg.kitlFlags &= ~OAL_KITL_FLAGS_PASSIVE;
-; 626  :             OALLog(L" KITL set to active mode\r\n");
+; 657  :             {
+; 658  :             g_bootCfg.kitlFlags &= ~OAL_KITL_FLAGS_PASSIVE;
+; 659  :             OALLog(L" KITL set to active mode\r\n");
 
   00050	159f001c	 ldrne       r0, [pc, #0x1C]
 
-; 627  :             }
-; 628  :         else 
-; 629  :             {
-; 630  :             g_bootCfg.kitlFlags |= OAL_KITL_FLAGS_PASSIVE;
-; 631  :             OALLog(L" KITL set to passive mode\r\n");
+; 660  :             }
+; 661  :         else 
+; 662  :             {
+; 663  :             g_bootCfg.kitlFlags |= OAL_KITL_FLAGS_PASSIVE;
+; 664  :             OALLog(L" KITL set to passive mode\r\n");
 
   00054	059f0014	 ldreq       r0, [pc, #0x14]
   00058	13c33002	 bicne       r3, r3, #2
@@ -2004,9 +2002,9 @@
   00064	eb000000	 bl          NKDbgPrintfW
   00068		 |$LN1@SetKitlTyp|
 
-; 632  :             }            
-; 633  :         }
-; 634  : }
+; 665  :             }            
+; 666  :         }
+; 667  : }
 
   00068	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0006c	e12fff1e	 bx          lr
@@ -2023,7 +2021,7 @@
   00080	00000000	 DCD         |??_C@_1EC@OPMJBCEG@?$AA?5?$AAS?$AAe?$AAt?$AA?5?$AAK?$AAI?$AAT?$AAL?$AA?5?$AAt?$AAo?$AA?5?$AAa?$AAc?$AAt?$AAi?$AAv?$AAe?$AA?5?$AAm?$AAo?$AAd?$AAe?$AA?5?$AA?$FL?$AAy?$AA?1?$AA?9?$AA?$FN?$AA?3?$AA?5@|
   00084		 |$LN20@SetKitlTyp|
   00084	00000000	 DCD         |g_bootCfg|
-  00088		 |$M49134|
+  00088		 |$M49303|
 
 			 ENDP  ; |SetKitlType|
 
@@ -2033,7 +2031,7 @@
 	EXPORT	|??_C@_1EK@NMKAIECH@?$AA?5?$AAD?$AAi?$AAs?$AAa?$AAb?$AAl?$AAe?$AA?5?$AAO?$AAA?$AAL?$AA?5?$AAR?$AAe?$AAt?$AAa?$AAi?$AAl?$AA?5?$AAM?$AAe?$AAs?$AAs?$AAa?$AAg?$AAe?$AAs?$AA?5?$AA?$FL?$AAy?$AA?1@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T49153| DCD	|$LN13@SetRetailM|
+|$T49322| DCD	|$LN13@SetRetailM|
 	DCD	0x40002201
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2078,50 +2076,50 @@
 
   00000		 |SetRetailMsgMode| PROC
 
-; 664  : {
+; 697  : {
 
   00000		 |$LN13@SetRetailM|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M49150|
+  00004		 |$M49319|
 
-; 665  :     WCHAR key;
-; 666  : 
-; 667  :     UNREFERENCED_PARAMETER(pMenu);
-; 668  : 
-; 669  :     if (g_bootCfg.oalFlags & BOOT_CFG_OAL_FLAGS_RETAILMSG_ENABLE) {
+; 698  :     WCHAR key;
+; 699  : 
+; 700  :     UNREFERENCED_PARAMETER(pMenu);
+; 701  : 
+; 702  :     if (g_bootCfg.oalFlags & BOOT_CFG_OAL_FLAGS_RETAILMSG_ENABLE) {
 
   00004	e59f4078	 ldr         r4, [pc, #0x78]
   00008	e5943034	 ldr         r3, [r4, #0x34]
   0000c	e3130001	 tst         r3, #1
 
-; 670  :         OALLog(L" Disable OAL Retail Messages [y/-]: ");
+; 703  :         OALLog(L" Disable OAL Retail Messages [y/-]: ");
 
   00010	159f0068	 ldrne       r0, [pc, #0x68]
 
-; 671  :     } else {
-; 672  :         OALLog(L" Enable OAL Retail Messages [y/-]: ");
+; 704  :     } else {
+; 705  :         OALLog(L" Enable OAL Retail Messages [y/-]: ");
 
   00014	059f0060	 ldreq       r0, [pc, #0x60]
   00018	eb000000	 bl          NKDbgPrintfW
 
-; 673  :     }    
-; 674  : 
-; 675  :     // Get key
-; 676  :     key = OALBLMenuReadKey(TRUE);
+; 706  :     }    
+; 707  : 
+; 708  :     // Get key
+; 709  :     key = OALBLMenuReadKey(TRUE);
 
   0001c	e3a00001	 mov         r0, #1
   00020	eb000000	 bl          OALBLMenuReadKey
   00024	e1a05800	 mov         r5, r0, lsl #16
 
-; 677  :     OALLog(L"%c\r\n", key);
+; 710  :     OALLog(L"%c\r\n", key);
 
   00028	e59f0048	 ldr         r0, [pc, #0x48]
   0002c	e1a05825	 mov         r5, r5, lsr #16
   00030	e1a01005	 mov         r1, r5
   00034	eb000000	 bl          NKDbgPrintfW
 
-; 678  : 
-; 679  :     if (key == L'y' || key == L'Y') {
+; 711  : 
+; 712  :     if (key == L'y' || key == L'Y') {
 
   00038	e3550079	 cmp         r5, #0x79
   0003c	0a000001	 beq         |$LN3@SetRetailM|
@@ -2129,22 +2127,22 @@
   00044	1a000007	 bne         |$LN1@SetRetailM|
   00048		 |$LN3@SetRetailM|
 
-; 680  :         if (g_bootCfg.oalFlags & BOOT_CFG_OAL_FLAGS_RETAILMSG_ENABLE) 
+; 713  :         if (g_bootCfg.oalFlags & BOOT_CFG_OAL_FLAGS_RETAILMSG_ENABLE) 
 
   00048	e5943034	 ldr         r3, [r4, #0x34]
   0004c	e3130001	 tst         r3, #1
 
-; 681  : 		{
-; 682  :             g_bootCfg.oalFlags &= ~BOOT_CFG_OAL_FLAGS_RETAILMSG_ENABLE;
-; 683  :             OALLog(L" OAL Retail Messages disabled\r\n");
+; 714  : 		{
+; 715  :             g_bootCfg.oalFlags &= ~BOOT_CFG_OAL_FLAGS_RETAILMSG_ENABLE;
+; 716  :             OALLog(L" OAL Retail Messages disabled\r\n");
 
   00050	159f001c	 ldrne       r0, [pc, #0x1C]
 
-; 684  :         }
-; 685  : 		else 
-; 686  : 		{
-; 687  :             g_bootCfg.oalFlags |= BOOT_CFG_OAL_FLAGS_RETAILMSG_ENABLE;
-; 688  :             OALLog(L" OAL Retail Messages enabled\r\n");
+; 717  :         }
+; 718  : 		else 
+; 719  : 		{
+; 720  :             g_bootCfg.oalFlags |= BOOT_CFG_OAL_FLAGS_RETAILMSG_ENABLE;
+; 721  :             OALLog(L" OAL Retail Messages enabled\r\n");
 
   00054	059f0014	 ldreq       r0, [pc, #0x14]
   00058	13c33001	 bicne       r3, r3, #1
@@ -2153,9 +2151,9 @@
   00064	eb000000	 bl          NKDbgPrintfW
   00068		 |$LN1@SetRetailM|
 
-; 689  :         }    
-; 690  :     }
-; 691  : }
+; 722  :         }    
+; 723  :     }
+; 724  : }
 
   00068	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   0006c	e12fff1e	 bx          lr
@@ -2172,7 +2170,7 @@
   00080	00000000	 DCD         |??_C@_1EK@NMKAIECH@?$AA?5?$AAD?$AAi?$AAs?$AAa?$AAb?$AAl?$AAe?$AA?5?$AAO?$AAA?$AAL?$AA?5?$AAR?$AAe?$AAt?$AAa?$AAi?$AAl?$AA?5?$AAM?$AAe?$AAs?$AAs?$AAa?$AAg?$AAe?$AAs?$AA?5?$AA?$FL?$AAy?$AA?1@|
   00084		 |$LN20@SetRetailM|
   00084	00000000	 DCD         |g_bootCfg|
-  00088		 |$M49151|
+  00088		 |$M49320|
 
 			 ENDP  ; |SetRetailMsgMode|
 
@@ -2182,7 +2180,7 @@
 	IMPORT	|OALBLMenuHeader|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T49173| DCD	|$LN16@SetDisplay|
+|$T49342| DCD	|$LN16@SetDisplay|
 	DCD	0x40002e01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2211,32 +2209,32 @@
 
   00000		 |SetDisplayResolution| PROC
 
-; 696  : {
+; 729  : {
 
   00000		 |$LN16@SetDisplay|
   00000	e92d4070	 stmdb       sp!, {r4 - r6, lr}
-  00004		 |$M49170|
+  00004		 |$M49339|
 
-; 697  :     WCHAR key;
-; 698  :     UINT32 i;
-; 699  : 
-; 700  :     UNREFERENCED_PARAMETER(pMenu);
-; 701  :     
-; 702  :     OALBLMenuHeader(L"Select Display Resolution");
+; 730  :     WCHAR key;
+; 731  :     UINT32 i;
+; 732  : 
+; 733  :     UNREFERENCED_PARAMETER(pMenu);
+; 734  :     
+; 735  :     OALBLMenuHeader(L"Select Display Resolution");
 
   00004	e59f00a8	 ldr         r0, [pc, #0xA8]
   00008	eb000000	 bl          OALBLMenuHeader
   0000c	e59f409c	 ldr         r4, [pc, #0x9C]
 
-; 703  : 
-; 704  :     for (i=0; i<OMAP_RES_INVALID; i++)
+; 736  : 
+; 737  :     for (i=0; i<OMAP_RES_INVALID; i++)
 
   00010	e3a05000	 mov         r5, #0
   00014	e1a06004	 mov         r6, r4
   00018		 |$LL7@SetDisplay|
 
-; 705  :     {
-; 706  :         OALLog(L" [%d] %s\r\n", i+1 , dispResMenu[i].resName);
+; 738  :     {
+; 739  :         OALLog(L" [%d] %s\r\n", i+1 , dispResMenu[i].resName);
 
   00018	e5962004	 ldr         r2, [r6, #4]
   0001c	e59f0088	 ldr         r0, [pc, #0x88]
@@ -2247,14 +2245,14 @@
   00030	e3550008	 cmp         r5, #8
   00034	3afffff7	 bcc         |$LL7@SetDisplay|
 
-; 707  :     }
-; 708  :     OALLog(L" [0] Exit and Continue\r\n");
+; 740  :     }
+; 741  :     OALLog(L" [0] Exit and Continue\r\n");
 
   00038	e59f0068	 ldr         r0, [pc, #0x68]
   0003c	eb000000	 bl          NKDbgPrintfW
 
-; 709  : 
-; 710  :     OALLog(L"\r\n Selection (actual %s): ", dispResMenu[g_bootCfg.displayRes].resName);
+; 742  : 
+; 743  :     OALLog(L"\r\n Selection (actual %s): ", dispResMenu[g_bootCfg.displayRes].resName);
 
   00040	e59f605c	 ldr         r6, [pc, #0x5C]
   00044	e59f0054	 ldr         r0, [pc, #0x54]
@@ -2264,16 +2262,16 @@
   00054	eb000000	 bl          NKDbgPrintfW
   00058		 |$LL4@SetDisplay|
 
-; 711  :     // Get key
-; 712  :     do {
-; 713  :         key = OALBLMenuReadKey(TRUE);
+; 744  :     // Get key
+; 745  :     do {
+; 746  :         key = OALBLMenuReadKey(TRUE);
 
   00058	e3a00001	 mov         r0, #1
   0005c	eb000000	 bl          OALBLMenuReadKey
   00060	e1a04800	 mov         r4, r0, lsl #16
   00064	e1a04824	 mov         r4, r4, lsr #16
 
-; 714  :     } while (key < L'0' || key > L'0' + i);    
+; 747  :     } while (key < L'0' || key > L'0' + i);    
 
   00068	e3540030	 cmp         r4, #0x30
   0006c	3afffff9	 bcc         |$LL4@SetDisplay|
@@ -2281,26 +2279,26 @@
   00074	e1540003	 cmp         r4, r3
   00078	8afffff6	 bhi         |$LL4@SetDisplay|
 
-; 715  :     OALLog(L"%c\r\n", key);
+; 748  :     OALLog(L"%c\r\n", key);
 
   0007c	e59f0018	 ldr         r0, [pc, #0x18]
   00080	e1a01004	 mov         r1, r4
   00084	eb000000	 bl          NKDbgPrintfW
 
-; 716  :     
-; 717  :     // If user select exit don't change device
-; 718  :     if (key == L'0') return;
+; 749  :     
+; 750  :     // If user select exit don't change device
+; 751  :     if (key == L'0') return;
 
   00088	e3540030	 cmp         r4, #0x30
 
-; 719  : 
-; 720  :     g_bootCfg.displayRes = (key - L'0' - 1);
+; 752  : 
+; 753  :     g_bootCfg.displayRes = (key - L'0' - 1);
 
   0008c	12443031	 subne       r3, r4, #0x31
   00090	1586306c	 strne       r3, [r6, #0x6C]
 
-; 721  : 
-; 722  : }
+; 754  : 
+; 755  : }
 
   00094	e8bd4070	 ldmia       sp!, {r4 - r6, lr}
   00098	e12fff1e	 bx          lr
@@ -2319,7 +2317,7 @@
   000b0	00000000	 DCD         |dispResMenu|
   000b4		 |$LN24@SetDisplay|
   000b4	00000000	 DCD         |??_C@_1DE@DBBLEEO@?$AAS?$AAe?$AAl?$AAe?$AAc?$AAt?$AA?5?$AAD?$AAi?$AAs?$AAp?$AAl?$AAa?$AAy?$AA?5?$AAR?$AAe?$AAs?$AAo?$AAl?$AAu?$AAt?$AAi?$AAo?$AAn?$AA?$AA@|
-  000b8		 |$M49171|
+  000b8		 |$M49340|
 
 			 ENDP  ; |SetDisplayResolution|
 
@@ -2327,7 +2325,7 @@
 	IMPORT	|g_CPUFamily|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T49196| DCD	|$LN17@SetOPPmode|
+|$T49365| DCD	|$LN17@SetOPPmode|
 	DCD	0x40003501
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2343,38 +2341,38 @@
 
   00000		 |SetOPPmode| PROC
 
-; 728  : {
+; 761  : {
 
   00000		 |$LN17@SetOPPmode|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M49193|
+  00004		 |$M49362|
 
-; 729  :     WCHAR key;
-; 730  :     UINT32 i;
-; 731  :     UINT32 len = OMAP35x_OPP_NUM;
-; 732  :     OPP_MODE_MENU * pOppMenu = oppModeMenu35x;
-; 733  : 
-; 734  :     UNREFERENCED_PARAMETER(pMenu);
-; 735  :     
-; 736  :     OALBLMenuHeader(L"Select OPP Mode");
+; 762  :     WCHAR key;
+; 763  :     UINT32 i;
+; 764  :     UINT32 len = OMAP35x_OPP_NUM;
+; 765  :     OPP_MODE_MENU * pOppMenu = oppModeMenu35x;
+; 766  : 
+; 767  :     UNREFERENCED_PARAMETER(pMenu);
+; 768  :     
+; 769  :     OALBLMenuHeader(L"Select OPP Mode");
 
   00004	e59f00c4	 ldr         r0, [pc, #0xC4]
   00008	e59f40bc	 ldr         r4, [pc, #0xBC]
   0000c	e3a05006	 mov         r5, #6
   00010	eb000000	 bl          OALBLMenuHeader
 
-; 737  : 
-; 738  :     
-; 739  :     if(g_CPUFamily == CPU_FAMILY_DM37XX)
+; 770  : 
+; 771  :     
+; 772  :     if(g_CPUFamily == CPU_FAMILY_DM37XX)
 
   00014	e59f30ac	 ldr         r3, [pc, #0xAC]
 
-; 740  :     {
-; 741  :         len = OMAP37x_OPP_NUM;
-; 742  :         pOppMenu = oppModeMenu37x;
-; 743  :     }
-; 744  :     
-; 745  :     for (i=0; i<len; i++)
+; 773  :     {
+; 774  :         len = OMAP37x_OPP_NUM;
+; 775  :         pOppMenu = oppModeMenu37x;
+; 776  :     }
+; 777  :     
+; 778  :     for (i=0; i<len; i++)
 
   00018	e3a06000	 mov         r6, #0
   0001c	e5933000	 ldr         r3, [r3]
@@ -2386,8 +2384,8 @@
   00034	e1a07004	 mov         r7, r4
   00038		 |$LL7@SetOPPmode|
 
-; 746  :     {
-; 747  :         OALLog(L" [%d] %s\r\n", i+1 , pOppMenu[i].oppModeName);
+; 779  :     {
+; 780  :         OALLog(L" [%d] %s\r\n", i+1 , pOppMenu[i].oppModeName);
 
   00038	e4972004	 ldr         r2, [r7], #4
   0003c	e59f0080	 ldr         r0, [pc, #0x80]
@@ -2398,14 +2396,14 @@
   00050	3afffff8	 bcc         |$LL7@SetOPPmode|
   00054		 |$LN5@SetOPPmode|
 
-; 748  :     }
-; 749  :     OALLog(L" [0] Exit and Continue\r\n");
+; 781  :     }
+; 782  :     OALLog(L" [0] Exit and Continue\r\n");
 
   00054	e59f0064	 ldr         r0, [pc, #0x64]
   00058	eb000000	 bl          NKDbgPrintfW
 
-; 750  : 
-; 751  :     OALLog(L"\r\n Selection (actual [%s]): ", pOppMenu[g_bootCfg.opp_mode].oppModeName);
+; 783  : 
+; 784  :     OALLog(L"\r\n Selection (actual [%s]): ", pOppMenu[g_bootCfg.opp_mode].oppModeName);
 
   0005c	e59f5058	 ldr         r5, [pc, #0x58]
   00060	e59f0050	 ldr         r0, [pc, #0x50]
@@ -2415,43 +2413,43 @@
   00070	e2866030	 add         r6, r6, #0x30
   00074		 |$LL4@SetOPPmode|
 
-; 752  :     
-; 753  :     // Get key
-; 754  :     do {
-; 755  :         key = OALBLMenuReadKey(TRUE);
+; 785  :     
+; 786  :     // Get key
+; 787  :     do {
+; 788  :         key = OALBLMenuReadKey(TRUE);
 
   00074	e3a00001	 mov         r0, #1
   00078	eb000000	 bl          OALBLMenuReadKey
   0007c	e1a04800	 mov         r4, r0, lsl #16
   00080	e1a04824	 mov         r4, r4, lsr #16
 
-; 756  :     } while (key < L'0' || key > L'0' + i);    
+; 789  :     } while (key < L'0' || key > L'0' + i);    
 
   00084	e3540030	 cmp         r4, #0x30
   00088	3afffff9	 bcc         |$LL4@SetOPPmode|
   0008c	e1540006	 cmp         r4, r6
   00090	8afffff7	 bhi         |$LL4@SetOPPmode|
 
-; 757  :     OALLog(L"%c\r\n", key);
+; 790  :     OALLog(L"%c\r\n", key);
 
   00094	e59f0018	 ldr         r0, [pc, #0x18]
   00098	e1a01004	 mov         r1, r4
   0009c	eb000000	 bl          NKDbgPrintfW
 
-; 758  :     
-; 759  :     // If user select exit don't change device
-; 760  :     if (key == L'0') return;
+; 791  :     
+; 792  :     // If user select exit don't change device
+; 793  :     if (key == L'0') return;
 
   000a0	e3540030	 cmp         r4, #0x30
 
-; 761  : 
-; 762  :     g_bootCfg.opp_mode = (key - L'0' -1);
+; 794  : 
+; 795  :     g_bootCfg.opp_mode = (key - L'0' -1);
 
   000a4	12443031	 subne       r3, r4, #0x31
   000a8	1585308c	 strne       r3, [r5, #0x8C]
 
-; 763  : 
-; 764  : }
+; 796  : 
+; 797  : }
 
   000ac	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   000b0	e12fff1e	 bx          lr
@@ -2472,14 +2470,14 @@
   000cc	00000000	 DCD         |oppModeMenu35x|
   000d0		 |$LN26@SetOPPmode|
   000d0	00000000	 DCD         |??_C@_1CA@MOPOGELI@?$AAS?$AAe?$AAl?$AAe?$AAc?$AAt?$AA?5?$AAO?$AAP?$AAP?$AA?5?$AAM?$AAo?$AAd?$AAe?$AA?$AA@|
-  000d4		 |$M49194|
+  000d4		 |$M49363|
 
 			 ENDP  ; |SetOPPmode|
 
 	IMPORT	|GPIOSetBit|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T49212| DCD	|$LN5@BacklightO|
+|$T49381| DCD	|$LN5@BacklightO|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -2487,18 +2485,18 @@
 
   00000		 |BacklightON| PROC
 
-; 788  : {
+; 821  : {
 
   00000		 |$LN5@BacklightO|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M49209|
+  00004		 |$M49378|
 
-; 789  :     //HANDLE hGPIO = NULL;
-; 790  :     hGPIO = GPIOOpen();
+; 822  :     //HANDLE hGPIO = NULL;
+; 823  :     hGPIO = GPIOOpen();
 
   00004	eb000000	 bl          GPIOOpen
 
-; 791  :     GPIOSetBit(hGPIO, BACKLIGHT_EN_GPIO);
+; 824  :     GPIOSetBit(hGPIO, BACKLIGHT_EN_GPIO);
 
   00008	e59f301c	 ldr         r3, [pc, #0x1C]
   0000c	e59fe014	 ldr         lr, [pc, #0x14]
@@ -2507,8 +2505,8 @@
   00018	e58e2000	 str         r2, [lr]
   0001c	eb000000	 bl          GPIOSetBit
 
-; 792  :     UNREFERENCED_PARAMETER(pMenu);	
-; 793  : }
+; 825  :     UNREFERENCED_PARAMETER(pMenu);	
+; 826  : }
 
   00020	e49de004	 ldr         lr, [sp], #4
   00024	e12fff1e	 bx          lr
@@ -2517,14 +2515,14 @@
   00028	00000000	 DCD         |hGPIO|
   0002c		 |$LN8@BacklightO|
   0002c	00000000	 DCD         |BACKLIGHT_EN_GPIO|
-  00030		 |$M49210|
+  00030		 |$M49379|
 
 			 ENDP  ; |BacklightON|
 
 	IMPORT	|GPIOClrBit|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T49222| DCD	|$LN5@BacklightO@2|
+|$T49391| DCD	|$LN5@BacklightO@2|
 	DCD	0x40000c01
 ; Function compile flags: /Ogspy
 
@@ -2532,18 +2530,18 @@
 
   00000		 |BacklightOFF| PROC
 
-; 796  : {
+; 829  : {
 
   00000		 |$LN5@BacklightO@2|
   00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M49219|
+  00004		 |$M49388|
 
-; 797  :     //HANDLE hGPIO = NULL;
-; 798  :     hGPIO = GPIOOpen();
+; 830  :     //HANDLE hGPIO = NULL;
+; 831  :     hGPIO = GPIOOpen();
 
   00004	eb000000	 bl          GPIOOpen
 
-; 799  :     GPIOClrBit(hGPIO, BACKLIGHT_EN_GPIO);
+; 832  :     GPIOClrBit(hGPIO, BACKLIGHT_EN_GPIO);
 
   00008	e59f301c	 ldr         r3, [pc, #0x1C]
   0000c	e59fe014	 ldr         lr, [pc, #0x14]
@@ -2552,8 +2550,8 @@
   00018	e58e2000	 str         r2, [lr]
   0001c	eb000000	 bl          GPIOClrBit
 
-; 800  :     UNREFERENCED_PARAMETER(pMenu);	
-; 801  : }
+; 833  :     UNREFERENCED_PARAMETER(pMenu);	
+; 834  : }
 
   00020	e49de004	 ldr         lr, [sp], #4
   00024	e12fff1e	 bx          lr
@@ -2562,7 +2560,7 @@
   00028	00000000	 DCD         |hGPIO|
   0002c		 |$LN8@BacklightO@2|
   0002c	00000000	 DCD         |BACKLIGHT_EN_GPIO|
-  00030		 |$M49220|
+  00030		 |$M49389|
 
 			 ENDP  ; |BacklightOFF|
 
@@ -2573,7 +2571,7 @@
 	IMPORT	|OALStall|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T49237| DCD	|$LN16@BacklightB|
+|$T49406| DCD	|$LN16@BacklightB|
 	DCD	0x40004301
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2604,45 +2602,45 @@
 
   00000		 |BacklightBrightness| PROC
 
-; 804  : {
+; 837  : {
 
   00000		 |$LN16@BacklightB|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
-  00004		 |$M49234|
+  00004		 |$M49403|
 
-; 805  :     
-; 806  : //    UINT32 AAT3123_Code[CODE_SIZE] = { 1, 4 , 7, 10, 13, 16, 19, 22, 25, 28, 31};
-; 807  :                                     /*{ 1, 2, 3, 4, 5, 6, 7, 8, 9,10,
-; 808  :                                        11,12,13,14,15,16,17,18,19,20,
-; 809  :                                        21,22,23,24,25,26,27,28,29,30,
-; 810  :                                        31,32};*/
-; 811  :     WCHAR key;
-; 812  : //    UINT32 i = 6;
-; 813  :     int k;
-; 814  :     //HANDLE hGPIO = NULL;
-; 815  :     hGPIO = GPIOOpen();
+; 838  :     
+; 839  : //    UINT32 AAT3123_Code[CODE_SIZE] = { 1, 4 , 7, 10, 13, 16, 19, 22, 25, 28, 31};
+; 840  :                                     /*{ 1, 2, 3, 4, 5, 6, 7, 8, 9,10,
+; 841  :                                        11,12,13,14,15,16,17,18,19,20,
+; 842  :                                        21,22,23,24,25,26,27,28,29,30,
+; 843  :                                        31,32};*/
+; 844  :     WCHAR key;
+; 845  : //    UINT32 i = 6;
+; 846  :     int k;
+; 847  :     //HANDLE hGPIO = NULL;
+; 848  :     hGPIO = GPIOOpen();
 
   00004	eb000000	 bl          GPIOOpen
   00008	e59f70f8	 ldr         r7, [pc, #0xF8]
   0000c	e1a03000	 mov         r3, r0
 
-; 816  :     
-; 817  :     OALBLMenuHeader(L"Select Backlight Brightness +/-");
+; 849  :     
+; 850  :     OALBLMenuHeader(L"Select Backlight Brightness +/-");
 
   00010	e59f00ec	 ldr         r0, [pc, #0xEC]
   00014	e5873000	 str         r3, [r7]
   00018	eb000000	 bl          OALBLMenuHeader
   0001c	e59f50dc	 ldr         r5, [pc, #0xDC]
 
-; 818  :     for (k=0; k< BN_EXIT ; k++)
+; 851  :     for (k=0; k< BN_EXIT ; k++)
 
   00020	e3a04000	 mov         r4, #0
   00024	e1a06005	 mov         r6, r5
   00028		 |$LL8@BacklightB|
 
-; 819  :     {
-; 820  :         OALLog(L" [%d] %s\r\n", k+1,
-; 821  :                                 backlightBN[k].bnName);
+; 852  :     {
+; 853  :         OALLog(L" [%d] %s\r\n", k+1,
+; 854  :                                 backlightBN[k].bnName);
 
   00028	e5962004	 ldr         r2, [r6, #4]
   0002c	e59f00c8	 ldr         r0, [pc, #0xC8]
@@ -2653,62 +2651,62 @@
   00040	e3540002	 cmp         r4, #2
   00044	bafffff7	 blt         |$LL8@BacklightB|
 
-; 822  : 	}
-; 823  :     OALLog(L" [0] Exit and Continue\r\n");
+; 855  : 	}
+; 856  :     OALLog(L" [0] Exit and Continue\r\n");
 
   00048	e59f00a8	 ldr         r0, [pc, #0xA8]
   0004c	eb000000	 bl          NKDbgPrintfW
 
-; 824  :     
-; 825  :     GPIOClrBit( hGPIO, BACKLIGHT_EN_GPIO);
+; 857  :     
+; 858  :     GPIOClrBit( hGPIO, BACKLIGHT_EN_GPIO);
 
   00050	e5951048	 ldr         r1, [r5, #0x48]
   00054	e5970000	 ldr         r0, [r7]
   00058	eb000000	 bl          GPIOClrBit
 
-; 826  :     OALStall(1000);
+; 859  :     OALStall(1000);
 
   0005c	e3a00ffa	 mov         r0, #0xFA, 30
   00060	eb000000	 bl          OALStall
 
-; 827  : 
-; 828  :     GPIOSetBit( hGPIO, BACKLIGHT_EN_GPIO);
+; 860  : 
+; 861  :     GPIOSetBit( hGPIO, BACKLIGHT_EN_GPIO);
 
   00064	e5951048	 ldr         r1, [r5, #0x48]
   00068	e5970000	 ldr         r0, [r7]
   0006c	eb000000	 bl          GPIOSetBit
 
-; 829  :     OALStall(1);
+; 862  :     OALStall(1);
 
   00070	e3a00001	 mov         r0, #1
   00074	eb000000	 bl          OALStall
 
-; 830  : 
-; 831  : 
-; 832  :     
-; 833  :     key = OALBLMenuReadKey(TRUE);
+; 863  : 
+; 864  : 
+; 865  :     
+; 866  :     key = OALBLMenuReadKey(TRUE);
 
   00078	e3a00001	 mov         r0, #1
   0007c	eb000000	 bl          OALBLMenuReadKey
   00080	e1a04800	 mov         r4, r0, lsl #16
   00084	e1a04824	 mov         r4, r4, lsr #16
 
-; 834  :     // Show +/- selection
-; 835  :     if(key != L'0'){
+; 867  :     // Show +/- selection
+; 868  :     if(key != L'0'){
 
   00088	e59f6064	 ldr         r6, [pc, #0x64]
 
-; 836  :             OALLog(L"\r\n Selection : ");
+; 869  :             OALLog(L"\r\n Selection : ");
 
   0008c	e59f005c	 ldr         r0, [pc, #0x5C]
   00090	e3540030	 cmp         r4, #0x30
   00094	0a000009	 beq         |$LN5@BacklightB|
   00098	eb000000	 bl          NKDbgPrintfW
 
-; 837  :         
-; 838  :         
-; 839  :        if(key == L'1'){
-; 840  :           OALLog(L"%s\r\n", backlightBN[g_bootCfg.backlighbn].bnName );
+; 870  :         
+; 871  :         
+; 872  :        if(key == L'1'){
+; 873  :           OALLog(L"%s\r\n", backlightBN[g_bootCfg.backlighbn].bnName );
 
   0009c	e5963078	 ldr         r3, [r6, #0x78]
   000a0	e3540031	 cmp         r4, #0x31
@@ -2717,133 +2715,133 @@
   000ac	05931004	 ldreq       r1, [r3, #4]
   000b0	0a000005	 beq         |$LN13@BacklightB|
 
-; 841  :        }else{
-; 842  :           OALLog(L"%s\r\n ", (backlightBN[(g_bootCfg.backlighbn) +1 ].bnName));
+; 874  :        }else{
+; 875  :           OALLog(L"%s\r\n ", (backlightBN[(g_bootCfg.backlighbn) +1 ].bnName));
 
   000b4	e59f002c	 ldr         r0, [pc, #0x2C]
   000b8	e593100c	 ldr         r1, [r3, #0xC]
 
-; 843  :        }
-; 844  : 
-; 845  :         
-; 846  :            /*switch(key)
-; 847  :             {
-; 848  :             case L'1':
-; 849  :                 
-; 850  :                 GPIOClrBit( hGPIO, BACKLIGHT_EN_GPIO);
-; 851  :                 OALStall(1000);
-; 852  : 
-; 853  :                 GPIOSetBit( hGPIO, BACKLIGHT_EN_GPIO);
-; 854  :                 OALStall(1000);
-; 855  :                 i = AAT3123_Code[i++];
-; 856  :                 OALLog(L"\r\n i: %d, AAT3123_Code[i++]:%d.",i ,AAT3123_Code[i]);
-; 857  :                 if(AAT3123_Code[i] > 31){
-; 858  :                     OALLog(L"\r\n Brightness is the largest. ");
-; 859  :                 }else{
-; 860  :                     OALLog(L"\r\n Brightness increased.");
-; 861  :                 }
-; 862  :                 break;
-; 863  :             case L'2':
-; 864  :                 
-; 865  :                 GPIOClrBit( hGPIO, BACKLIGHT_EN_GPIO);
-; 866  :                 OALStall(1000);
-; 867  : 
-; 868  :                 GPIOSetBit( hGPIO, BACKLIGHT_EN_GPIO);
-; 869  :                 OALStall(1000);
-; 870  :                 i = AAT3123_Code[i--];
-; 871  :                 if(AAT3123_Code[i] < 1){
-; 872  :                     OALLog(L"\r\n Brightness is the lowest.");
-; 873  :                 }else{
-; 874  :                     OALLog(L"\r\n Brightness  decreased.");
-; 875  :                 }
-; 876  :                 break;
-; 877  :             case L'0':
-; 878  :                // goto stop;
-; 879  :                break;
-; 880  :             }*/
-; 881  :      }else{ /*(key == L'0'){*/
+; 876  :        }
+; 877  : 
+; 878  :         
+; 879  :            /*switch(key)
+; 880  :             {
+; 881  :             case L'1':
+; 882  :                 
+; 883  :                 GPIOClrBit( hGPIO, BACKLIGHT_EN_GPIO);
+; 884  :                 OALStall(1000);
+; 885  : 
+; 886  :                 GPIOSetBit( hGPIO, BACKLIGHT_EN_GPIO);
+; 887  :                 OALStall(1000);
+; 888  :                 i = AAT3123_Code[i++];
+; 889  :                 OALLog(L"\r\n i: %d, AAT3123_Code[i++]:%d.",i ,AAT3123_Code[i]);
+; 890  :                 if(AAT3123_Code[i] > 31){
+; 891  :                     OALLog(L"\r\n Brightness is the largest. ");
+; 892  :                 }else{
+; 893  :                     OALLog(L"\r\n Brightness increased.");
+; 894  :                 }
+; 895  :                 break;
+; 896  :             case L'2':
+; 897  :                 
+; 898  :                 GPIOClrBit( hGPIO, BACKLIGHT_EN_GPIO);
+; 899  :                 OALStall(1000);
+; 900  : 
+; 901  :                 GPIOSetBit( hGPIO, BACKLIGHT_EN_GPIO);
+; 902  :                 OALStall(1000);
+; 903  :                 i = AAT3123_Code[i--];
+; 904  :                 if(AAT3123_Code[i] < 1){
+; 905  :                     OALLog(L"\r\n Brightness is the lowest.");
+; 906  :                 }else{
+; 907  :                     OALLog(L"\r\n Brightness  decreased.");
+; 908  :                 }
+; 909  :                 break;
+; 910  :             case L'0':
+; 911  :                // goto stop;
+; 912  :                break;
+; 913  :             }*/
+; 914  :      }else{ /*(key == L'0'){*/
 
   000bc	ea000002	 b           |$LN13@BacklightB|
   000c0		 |$LN5@BacklightB|
 
-; 882  :         OALLog(L"\r\n Selection : ");
+; 915  :         OALLog(L"\r\n Selection : ");
 
   000c0	eb000000	 bl          NKDbgPrintfW
 
-; 883  :         OALLog(L"%c\r\n", key);
+; 916  :         OALLog(L"%c\r\n", key);
 
   000c4	e59f0018	 ldr         r0, [pc, #0x18]
   000c8	e3a01030	 mov         r1, #0x30
   000cc		 |$LN13@BacklightB|
   000cc	eb000000	 bl          NKDbgPrintfW
 
-; 884  :      }
-; 885  :    
-; 886  :     //key = OALBLMenuReadKey(TRUE);
-; 887  :     
-; 888  :     /*do{
-; 889  :         key = OALBLMenuReadKey(TRUE);
-; 890  :         
-; 891  :     }while (key != L'0');*/
-; 892  : 
-; 893  :     /*if(key == L'0'){
-; 894  :         OALLog(L"\r\n Selection : ");
-; 895  :         OALLog(L"%c\r\n", key);
-; 896  :     }*/
-; 897  : 
-; 898  :     
-; 899  :     
-; 900  :    //do{
-; 901  :      // key = OALBLMenuReadKey(TRUE);
-; 902  :       //OALLog(L"%c\r\n", key);
-; 903  :      /* switch(key)
-; 904  :         {
-; 905  :             case L'1':
-; 906  :                 
-; 907  :                 GPIOClrBit( hGPIO, BACKLIGHT_EN_GPIO);
-; 908  :                 OALStall(1000);
-; 909  : 
-; 910  :                 GPIOSetBit( hGPIO, BACKLIGHT_EN_GPIO);
-; 911  :                 OALStall(1000);
-; 912  :                 i = AAT3123_Code[i++];
-; 913  :                 OALLog(L"\r\n i: %d, AAT3123_Code[i++]:%d.",i ,AAT3123_Code[i]);
-; 914  :                 if(AAT3123_Code[i] > 31){
-; 915  :                     OALLog(L"\r\n Brightness is the largest. ");
-; 916  :                 }else{
-; 917  :                     OALLog(L"\r\n Brightness increased.");
-; 918  :                 }
-; 919  :                 break;
-; 920  :             case L'2':
-; 921  :                 
-; 922  :                 GPIOClrBit( hGPIO, BACKLIGHT_EN_GPIO);
-; 923  :                 OALStall(1000);
-; 924  : 
-; 925  :                 GPIOSetBit( hGPIO, BACKLIGHT_EN_GPIO);
-; 926  :                 OALStall(1000);
-; 927  :                 i = AAT3123_Code[i--];
-; 928  :                 if(AAT3123_Code[i] < 1){
-; 929  :                     OALLog(L"\r\n Brightness is the lowest.");
-; 930  :                 }else{
-; 931  :                     OALLog(L"\r\n Brightness  decreased.");
-; 932  :                 }
-; 933  :                 break;
-; 934  :             
-; 935  :         }*/
-; 936  :    //}while(key != L'0');
-; 937  : 
-; 938  :    //OALLog(L"%c\r\n", key);
-; 939  :    UNREFERENCED_PARAMETER(pMenu);
-; 940  : //stop:
-; 941  :    if (key == L'0') return;
+; 917  :      }
+; 918  :    
+; 919  :     //key = OALBLMenuReadKey(TRUE);
+; 920  :     
+; 921  :     /*do{
+; 922  :         key = OALBLMenuReadKey(TRUE);
+; 923  :         
+; 924  :     }while (key != L'0');*/
+; 925  : 
+; 926  :     /*if(key == L'0'){
+; 927  :         OALLog(L"\r\n Selection : ");
+; 928  :         OALLog(L"%c\r\n", key);
+; 929  :     }*/
+; 930  : 
+; 931  :     
+; 932  :     
+; 933  :    //do{
+; 934  :      // key = OALBLMenuReadKey(TRUE);
+; 935  :       //OALLog(L"%c\r\n", key);
+; 936  :      /* switch(key)
+; 937  :         {
+; 938  :             case L'1':
+; 939  :                 
+; 940  :                 GPIOClrBit( hGPIO, BACKLIGHT_EN_GPIO);
+; 941  :                 OALStall(1000);
+; 942  : 
+; 943  :                 GPIOSetBit( hGPIO, BACKLIGHT_EN_GPIO);
+; 944  :                 OALStall(1000);
+; 945  :                 i = AAT3123_Code[i++];
+; 946  :                 OALLog(L"\r\n i: %d, AAT3123_Code[i++]:%d.",i ,AAT3123_Code[i]);
+; 947  :                 if(AAT3123_Code[i] > 31){
+; 948  :                     OALLog(L"\r\n Brightness is the largest. ");
+; 949  :                 }else{
+; 950  :                     OALLog(L"\r\n Brightness increased.");
+; 951  :                 }
+; 952  :                 break;
+; 953  :             case L'2':
+; 954  :                 
+; 955  :                 GPIOClrBit( hGPIO, BACKLIGHT_EN_GPIO);
+; 956  :                 OALStall(1000);
+; 957  : 
+; 958  :                 GPIOSetBit( hGPIO, BACKLIGHT_EN_GPIO);
+; 959  :                 OALStall(1000);
+; 960  :                 i = AAT3123_Code[i--];
+; 961  :                 if(AAT3123_Code[i] < 1){
+; 962  :                     OALLog(L"\r\n Brightness is the lowest.");
+; 963  :                 }else{
+; 964  :                     OALLog(L"\r\n Brightness  decreased.");
+; 965  :                 }
+; 966  :                 break;
+; 967  :             
+; 968  :         }*/
+; 969  :    //}while(key != L'0');
+; 970  : 
+; 971  :    //OALLog(L"%c\r\n", key);
+; 972  :    UNREFERENCED_PARAMETER(pMenu);
+; 973  : //stop:
+; 974  :    if (key == L'0') return;
 
   000d0	e3540030	 cmp         r4, #0x30
 
-; 942  :    g_bootCfg.backlighbn = (key - L'0' - 1);
+; 975  :    g_bootCfg.backlighbn = (key - L'0' - 1);
 
   000d4	12443031	 subne       r3, r4, #0x31
   000d8	15863078	 strne       r3, [r6, #0x78]
 
-; 943  : }
+; 976  : }
 
   000dc	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   000e0	e12fff1e	 bx          lr
@@ -2868,7 +2866,7 @@
   00104	00000000	 DCD         |??_C@_1EA@MCBAEIOC@?$AAS?$AAe?$AAl?$AAe?$AAc?$AAt?$AA?5?$AAB?$AAa?$AAc?$AAk?$AAl?$AAi?$AAg?$AAh?$AAt?$AA?5?$AAB?$AAr?$AAi?$AAg?$AAh?$AAt?$AAn?$AAe?$AAs?$AAs?$AA?5?$AA?$CL?$AA?1?$AA?9?$AA?$AA@|
   00108		 |$LN27@BacklightB|
   00108	00000000	 DCD         |hGPIO|
-  0010c		 |$M49235|
+  0010c		 |$M49404|
 
 			 ENDP  ; |BacklightBrightness|
 
@@ -2876,7 +2874,7 @@
 	EXPORT	|??_C@_1DA@BOLJNFCB@?$AAS?$AAe?$AAl?$AAe?$AAc?$AAt?$AA?5?$AAB?$AAa?$AAc?$AAk?$AAl?$AAi?$AAg?$AAh?$AAt?$AA?5?$AAO?$AAN?$AA?1?$AAO?$AAF?$AAF?$AA?$AA@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T49271| DCD	|$LN31@SetBacklig|
+|$T49440| DCD	|$LN31@SetBacklig|
 	DCD	0x40003401
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -2896,38 +2894,38 @@
 
   00000		 |SetBacklight| PROC
 
-; 948  : {
+; 981  : {
 
   00000		 |$LN31@SetBacklig|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M49268|
+  00004		 |$M49437|
   00004	e59f50c0	 ldr         r5, [pc, #0xC0]
   00008		 |$LL13@SetBacklig|
 
-; 949  :     //OALBLMenuShow(&g_menuBrightness);
-; 950  :     OAL_BLMENU_ITEM *pBnItem;
-; 951  :     WCHAR key;
-; 952  :     //UINT32 i;
-; 953  :     const int running = 1;
-; 954  : 	//HANDLE hGPIO;
-; 955  :    
-; 956  :     while(running)
-; 957  :     {
-; 958  :         OALBLMenuHeader(L"Select Backlight ON/OFF");
+; 982  :     //OALBLMenuShow(&g_menuBrightness);
+; 983  :     OAL_BLMENU_ITEM *pBnItem;
+; 984  :     WCHAR key;
+; 985  :     //UINT32 i;
+; 986  :     const int running = 1;
+; 987  : 	//HANDLE hGPIO;
+; 988  :    
+; 989  :     while(running)
+; 990  :     {
+; 991  :         OALBLMenuHeader(L"Select Backlight ON/OFF");
 
   00008	e59f00b8	 ldr         r0, [pc, #0xB8]
   0000c	eb000000	 bl          OALBLMenuHeader
 
-; 959  : 
-; 960  :         // Print menu items [1]~[3], Ray 13-09-23 
-; 961  :         for (pBnItem = g_menuBrightness; pBnItem->key != L'0'; pBnItem++) {
+; 992  : 
+; 993  :         // Print menu items [1]~[3], Ray 13-09-23 
+; 994  :         for (pBnItem = g_menuBrightness; pBnItem->key != L'0'; pBnItem++) {
 
   00010	e1d530b0	 ldrh        r3, [r5]
   00014	e1a04005	 mov         r4, r5
   00018	ea000004	 b           |$LN27@SetBacklig|
   0001c		 |$LL11@SetBacklig|
 
-; 962  :             OALLog(L" [%c] %s\r\n", pBnItem->key, pBnItem->text);
+; 995  :             OALLog(L" [%c] %s\r\n", pBnItem->key, pBnItem->text);
 
   0001c	e5942004	 ldr         r2, [r4, #4]
   00020	e59f009c	 ldr         r0, [pc, #0x9C]
@@ -2938,29 +2936,29 @@
   00030	e3530030	 cmp         r3, #0x30
   00034	1afffff8	 bne         |$LL11@SetBacklig|
 
-; 963  :         }
-; 964  :         OALLog(L" [0] Exit and Continue\r\n"); 
+; 996  :         }
+; 997  :         OALLog(L" [0] Exit and Continue\r\n"); 
 
   00038	e59f0080	 ldr         r0, [pc, #0x80]
   0003c	eb000000	 bl          NKDbgPrintfW
 
-; 965  :         OALLog(L"\r\n Selection : ");
+; 998  :         OALLog(L"\r\n Selection : ");
 
   00040	e59f0074	 ldr         r0, [pc, #0x74]
   00044	eb000000	 bl          NKDbgPrintfW
   00048		 |$LL8@SetBacklig|
 
-; 966  : 
-; 967  :         while(running)
-; 968  :         {
-; 969  :            // Get key
-; 970  :             key = OALBLMenuReadKey(TRUE);
+; 999  : 
+; 1000 :         while(running)
+; 1001 :         {
+; 1002 :            // Get key
+; 1003 :             key = OALBLMenuReadKey(TRUE);
 
   00048	e3a00001	 mov         r0, #1
   0004c	eb000000	 bl          OALBLMenuReadKey
 
-; 971  :             // Look for key in menu
-; 972  :             for (pBnItem = g_menuBrightness; pBnItem->key != 0; pBnItem++) {
+; 1004 :             // Look for key in menu
+; 1005 :             for (pBnItem = g_menuBrightness; pBnItem->key != 0; pBnItem++) {
 
   00050	e1a02800	 mov         r2, r0, lsl #16
   00054	e1d530b0	 ldrh        r3, [r5]
@@ -2969,7 +2967,7 @@
   00060	ea000002	 b           |$LN28@SetBacklig|
   00064		 |$LL6@SetBacklig|
 
-; 973  :                 if (pBnItem->key == key)  
+; 1006 :                 if (pBnItem->key == key)  
 
   00064	e1530002	 cmp         r3, r2
   00068	0a000002	 beq         |$LN26@SetBacklig|
@@ -2979,37 +2977,37 @@
   00074	1afffffa	 bne         |$LL6@SetBacklig|
   00078		 |$LN26@SetBacklig|
 
-; 974  :                     break;
-; 975  :             }
-; 976  :             //If we find it, break loop
-; 977  :             if (pBnItem->key != 0) 
+; 1007 :                     break;
+; 1008 :             }
+; 1009 :             //If we find it, break loop
+; 1010 :             if (pBnItem->key != 0) 
 
   00078	e1d430b0	 ldrh        r3, [r4]
   0007c	e3530000	 cmp         r3, #0
   00080	0afffff0	 beq         |$LL8@SetBacklig|
 
-; 978  :                 break;
-; 979  :         }
-; 980  : 
-; 981  :         // Show ON/OFF selection
-; 982  :     	 OALLog(L"%c\r\n", pBnItem->key);
+; 1011 :                 break;
+; 1012 :         }
+; 1013 : 
+; 1014 :         // Show ON/OFF selection
+; 1015 :     	 OALLog(L"%c\r\n", pBnItem->key);
 
   00084	e59f002c	 ldr         r0, [pc, #0x2C]
   00088	e1a01803	 mov         r1, r3, lsl #16
   0008c	e1a01821	 mov         r1, r1, lsr #16
   00090	eb000000	 bl          NKDbgPrintfW
 
-; 983  : 	    
-; 984  : 	    // When action is NULL return back to parent menu
-; 985  :         if (pBnItem->pfnAction == NULL) break;
+; 1016 : 	    
+; 1017 : 	    // When action is NULL return back to parent menu
+; 1018 :         if (pBnItem->pfnAction == NULL) break;
 
   00094	e5943008	 ldr         r3, [r4, #8]
   00098	e3530000	 cmp         r3, #0
   0009c	0a000003	 beq         |$LN22@SetBacklig|
 
-; 986  :         
-; 987  :         // Else call menu action(function pointer)
-; 988  :         pBnItem->pfnAction(pBnItem);
+; 1019 :         
+; 1020 :         // Else call menu action(function pointer)
+; 1021 :         pBnItem->pfnAction(pBnItem);
 
   000a0	e1a00004	 mov         r0, r4
   000a4	e1a0e00f	 mov         lr, pc
@@ -3017,56 +3015,56 @@
   000ac	eaffffd5	 b           |$LL13@SetBacklig|
   000b0		 |$LN22@SetBacklig|
 
-; 989  :    }	
-; 990  :    
-; 991  : 
-; 992  :     /*for (i=0; i<BACKLIGHT_EXIT; i++)
-; 993  :     {
-; 994  :         OALLog(L" [%d] %s\r\n", i+1, disBacklight[i].blName);
-; 995  : 	}
-; 996  :     OALLog(L" [0] Exit and Continue\r\n");*/
-; 997  : 	
-; 998  : 	//OALLog(L"\r\n Selection : [%s] ", disBacklight[g_bootCfg.backlight].blName);
-; 999  : 	//OALLog(L"\r\n Selection : ");
-; 1000 :     // Get key
-; 1001 :    /* do {
-; 1002 :         key = OALBLMenuReadKey(TRUE);
-; 1003 :     } while (key < L'0' || key > L'0' + i);*/ 
-; 1004 : 	
-; 1005 : 	
-; 1006 : 	// Show ON/OFF selection
-; 1007 : 	//OALLog(L"%c\r\n", key);
-; 1008 : 	
-; 1009 : 	//ON/OFF Backlight action.
-; 1010 : 	//hGPIO = GPIOOpen();
-; 1011 : 
-; 1012 : 	/*switch(key)
-; 1013 : 	{
-; 1014 : 		case L'1':
-; 1015 :             BacklightNO(hGPIO);
-; 1016 : 			//GPIOSetBit(hGPIO, 61);
-; 1017 : 			break;
-; 1018 : 		case L'2':
-; 1019 :             BacklightOFF(hGPIO);
-; 1020 : 			//GPIOClrBit(hGPIO, 61);
-; 1021 :         case L'3':
-; 1022 :             //.........
-; 1023 :             BacklightBrightness(hGPIO);
-; 1024 : 			break;
-; 1025 : 		default:
-; 1026 : 			break;
-; 1027 : 	}*/
-; 1028 : 	/*if(key == L'2'){
-; 1029 : 		GPIOClrBit(hGPIO, 61);
-; 1030 : 	}else{
-; 1031 : 		GPIOSetBit(hGPIO, 61);
-; 1032 : 	}*/
-; 1033 :     
-; 1034 : 	// If user select exit don't any change device
-; 1035 :     //if (key == L'0') return;
-; 1036 :      UNREFERENCED_PARAMETER(pMenu);
-; 1037 :     //g_bootCfg.backlight = (key - L'0' - 1);
-; 1038 : }
+; 1022 :    }	
+; 1023 :    
+; 1024 : 
+; 1025 :     /*for (i=0; i<BACKLIGHT_EXIT; i++)
+; 1026 :     {
+; 1027 :         OALLog(L" [%d] %s\r\n", i+1, disBacklight[i].blName);
+; 1028 : 	}
+; 1029 :     OALLog(L" [0] Exit and Continue\r\n");*/
+; 1030 : 	
+; 1031 : 	//OALLog(L"\r\n Selection : [%s] ", disBacklight[g_bootCfg.backlight].blName);
+; 1032 : 	//OALLog(L"\r\n Selection : ");
+; 1033 :     // Get key
+; 1034 :    /* do {
+; 1035 :         key = OALBLMenuReadKey(TRUE);
+; 1036 :     } while (key < L'0' || key > L'0' + i);*/ 
+; 1037 : 	
+; 1038 : 	
+; 1039 : 	// Show ON/OFF selection
+; 1040 : 	//OALLog(L"%c\r\n", key);
+; 1041 : 	
+; 1042 : 	//ON/OFF Backlight action.
+; 1043 : 	//hGPIO = GPIOOpen();
+; 1044 : 
+; 1045 : 	/*switch(key)
+; 1046 : 	{
+; 1047 : 		case L'1':
+; 1048 :             BacklightNO(hGPIO);
+; 1049 : 			//GPIOSetBit(hGPIO, 61);
+; 1050 : 			break;
+; 1051 : 		case L'2':
+; 1052 :             BacklightOFF(hGPIO);
+; 1053 : 			//GPIOClrBit(hGPIO, 61);
+; 1054 :         case L'3':
+; 1055 :             //.........
+; 1056 :             BacklightBrightness(hGPIO);
+; 1057 : 			break;
+; 1058 : 		default:
+; 1059 : 			break;
+; 1060 : 	}*/
+; 1061 : 	/*if(key == L'2'){
+; 1062 : 		GPIOClrBit(hGPIO, 61);
+; 1063 : 	}else{
+; 1064 : 		GPIOSetBit(hGPIO, 61);
+; 1065 : 	}*/
+; 1066 :     
+; 1067 : 	// If user select exit don't any change device
+; 1068 :     //if (key == L'0') return;
+; 1069 :      UNREFERENCED_PARAMETER(pMenu);
+; 1070 :     //g_bootCfg.backlight = (key - L'0' - 1);
+; 1071 : }
 
   000b0	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   000b4	e12fff1e	 bx          lr
@@ -3083,7 +3081,7 @@
   000c8	00000000	 DCD         |??_C@_1DA@BOLJNFCB@?$AAS?$AAe?$AAl?$AAe?$AAc?$AAt?$AA?5?$AAB?$AAa?$AAc?$AAk?$AAl?$AAi?$AAg?$AAh?$AAt?$AA?5?$AAO?$AAN?$AA?1?$AAO?$AAF?$AAF?$AA?$AA@|
   000cc		 |$LN38@SetBacklig|
   000cc	00000000	 DCD         |g_menuBrightness|
-  000d0		 |$M49269|
+  000d0		 |$M49438|
 
 			 ENDP  ; |SetBacklight|
 
@@ -3095,7 +3093,7 @@
 	EXPORT	|??_C@_1FG@GGAKBCDG@?$AAS?$AAe?$AAl?$AAe?$AAc?$AAt?$AA?5?$AAF?$AAi?$AAl?$AAe?$AA?5?$AAT?$AAr?$AAa?$AAn?$AAs?$AAf?$AAe?$AAr?$AA?5?$AAf?$AAr?$AAo?$AAm?$AA?5?$AAS?$AAD?$AA?5?$AAC?$AAa?$AAr@| [ DATA ] ; `string'
 
   00000			 AREA	 |.pdata|, PDATA
-|$T49292| DCD	|$LN27@SDtoFlash|
+|$T49461| DCD	|$LN27@SDtoFlash|
 	DCD	0x40003a01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -3141,53 +3139,53 @@
 
   00000		 |SDtoFlash| PROC
 
-; 1044 : {
+; 1077 : {
 
   00000		 |$LN27@SDtoFlash|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M49289|
+  00004		 |$M49458|
 
-; 1045 : 	WCHAR key;
-; 1046 : 	UINT32 i;
-; 1047 : //	BOOL read;
-; 1048 : //  BOOL write;
-; 1049 : 	BOOL check = TRUE;
-; 1050 : //  char size[500];
-; 1051 : //  OAL_BLMENU_ITEM dumpFlashBuFunc;
-; 1052 : //	int ch;
-; 1053 : 	
-; 1054 : 	//This function Initial SD Card file prepare file R/W
-; 1055 : 	//pRead =
-; 1056 : 	//BLSDtoFlash();
-; 1057 : 	//check = BLSDCardToFlash(L"OUT_DATA.txt");
-; 1058 : 	//read = BLSDtoFlash();
-; 1059 :     //OEMWriteFlash(IMAGE_STARTUP_IMAGE_PA,
-; 1060 :     //? Ray 13-09-16 
-; 1061 :     /*write = WriteFlashFromEEBOOT(IMAGE_STARTUP_IMAGE_PA,
-; 1062 :                          IMAGE_XLDR_BOOTSEC_NAND_SIZE + IMAGE_EBOOT_CODE_SIZE+
-; 1063 :                          IMAGE_BOOTLOADER_BITMAP_SIZE + 8);*/
-; 1064 : 
-; 1065 :     /*write = WriteFlashNK(IMAGE_STARTUP_IMAGE_PA,
-; 1066 :                          IMAGE_XLDR_BOOTSEC_NAND_SIZE + IMAGE_EBOOT_CODE_SIZE+
-; 1067 :                          IMAGE_BOOTLOADER_BITMAP_SIZE + 8);*/
-; 1068 : 
-; 1069 :     //pRead  = fopen("c:/wince600/file/output_data.txt", "r");
-; 1070 : 	//pWrite = fopen("c:/wince600/file/input_data.txt", "w");
-; 1071 : 	
-; 1072 : 	UNREFERENCED_PARAMETER(pMenu);
-; 1073 : 	OALBLMenuHeader(L"Select File Transfer from SD Card to Flash");
+; 1078 : 	WCHAR key;
+; 1079 : 	UINT32 i;
+; 1080 : //	BOOL read;
+; 1081 : //  BOOL write;
+; 1082 : 	BOOL check = TRUE;
+; 1083 : //  char size[500];
+; 1084 : //  OAL_BLMENU_ITEM dumpFlashBuFunc;
+; 1085 : //	int ch;
+; 1086 : 	
+; 1087 : 	//This function Initial SD Card file prepare file R/W
+; 1088 : 	//pRead =
+; 1089 : 	//BLSDtoFlash();
+; 1090 : 	//check = BLSDCardToFlash(L"OUT_DATA.txt");
+; 1091 : 	//read = BLSDtoFlash();
+; 1092 :     //OEMWriteFlash(IMAGE_STARTUP_IMAGE_PA,
+; 1093 :     //? Ray 13-09-16 
+; 1094 :     /*write = WriteFlashFromEEBOOT(IMAGE_STARTUP_IMAGE_PA,
+; 1095 :                          IMAGE_XLDR_BOOTSEC_NAND_SIZE + IMAGE_EBOOT_CODE_SIZE+
+; 1096 :                          IMAGE_BOOTLOADER_BITMAP_SIZE + 8);*/
+; 1097 : 
+; 1098 :     /*write = WriteFlashNK(IMAGE_STARTUP_IMAGE_PA,
+; 1099 :                          IMAGE_XLDR_BOOTSEC_NAND_SIZE + IMAGE_EBOOT_CODE_SIZE+
+; 1100 :                          IMAGE_BOOTLOADER_BITMAP_SIZE + 8);*/
+; 1101 : 
+; 1102 :     //pRead  = fopen("c:/wince600/file/output_data.txt", "r");
+; 1103 : 	//pWrite = fopen("c:/wince600/file/input_data.txt", "w");
+; 1104 : 	
+; 1105 : 	UNREFERENCED_PARAMETER(pMenu);
+; 1106 : 	OALBLMenuHeader(L"Select File Transfer from SD Card to Flash");
 
   00004	e59f00d8	 ldr         r0, [pc, #0xD8]
   00008	eb000000	 bl          OALBLMenuHeader
   0000c	e59f40cc	 ldr         r4, [pc, #0xCC]
 
-; 1074 : 
-; 1075 : 	for(i=0; i<FLASH_EXIT; i++){
+; 1107 : 
+; 1108 : 	for(i=0; i<FLASH_EXIT; i++){
 
   00010	e3a05000	 mov         r5, #0
   00014		 |$LL17@SDtoFlash|
 
-; 1076 : 		OALLog(L" [%d] %s\r\n", i+1, sdToFlash[i].sdName);
+; 1109 : 		OALLog(L" [%d] %s\r\n", i+1, sdToFlash[i].sdName);
 
   00014	e5942004	 ldr         r2, [r4, #4]
   00018	e59f00bc	 ldr         r0, [pc, #0xBC]
@@ -3198,29 +3196,29 @@
   0002c	e3550003	 cmp         r5, #3
   00030	3afffff7	 bcc         |$LL17@SDtoFlash|
 
-; 1077 : 	}
-; 1078 : 	OALLog(L" [0] Exit and Continue\r\n");
+; 1110 : 	}
+; 1111 : 	OALLog(L" [0] Exit and Continue\r\n");
 
   00034	e59f009c	 ldr         r0, [pc, #0x9C]
   00038	eb000000	 bl          NKDbgPrintfW
 
-; 1079 : 
-; 1080 : 	OALLog(L"\r\n Selection : ");
+; 1112 : 
+; 1113 : 	OALLog(L"\r\n Selection : ");
 
   0003c	e59f0090	 ldr         r0, [pc, #0x90]
   00040	eb000000	 bl          NKDbgPrintfW
   00044		 |$LL14@SDtoFlash|
 
-; 1081 : 	
-; 1082 : 	do{
-; 1083 : 		key = OALBLMenuReadKey(TRUE);
+; 1114 : 	
+; 1115 : 	do{
+; 1116 : 		key = OALBLMenuReadKey(TRUE);
 
   00044	e3a00001	 mov         r0, #1
   00048	eb000000	 bl          OALBLMenuReadKey
   0004c	e1a04800	 mov         r4, r0, lsl #16
   00050	e1a04824	 mov         r4, r4, lsr #16
 
-; 1084 : 	}while(key < L'0' || key > '0'+i);
+; 1117 : 	}while(key < L'0' || key > '0'+i);
 
   00054	e3540030	 cmp         r4, #0x30
   00058	3afffff9	 bcc         |$LL14@SDtoFlash|
@@ -3228,115 +3226,115 @@
   00060	e1540003	 cmp         r4, r3
   00064	8afffff6	 bhi         |$LL14@SDtoFlash|
 
-; 1085 : 
-; 1086 :     /*if(key < L'0' || key > '0'+2){
-; 1087 :         break;
-; 1088 :     }else if (key == '3'){
-; 1089 : 
-; 1090 :     }*/
-; 1091 : 
-; 1092 : 	OALLog(L"%c\r", key);
+; 1118 : 
+; 1119 :     /*if(key < L'0' || key > '0'+2){
+; 1120 :         break;
+; 1121 :     }else if (key == '3'){
+; 1122 : 
+; 1123 :     }*/
+; 1124 : 
+; 1125 : 	OALLog(L"%c\r", key);
 
   00068	e59f0060	 ldr         r0, [pc, #0x60]
   0006c	e1a01004	 mov         r1, r4
   00070	eb000000	 bl          NKDbgPrintfW
 
-; 1093 : 	
-; 1094 : 	switch(key)
+; 1126 : 	
+; 1127 : 	switch(key)
 
   00074	e3540031	 cmp         r4, #0x31
   00078	0a000005	 beq         |$LN9@SDtoFlash|
   0007c	e3540032	 cmp         r4, #0x32
   00080	1a000007	 bne         |$LN7@SDtoFlash|
 
-; 1101 :             }else{
-; 1102 : 				OALLog(L"File Read failure!!\n");
-; 1103 : 			} 
-; 1104 : 			
-; 1105 : 			/*if((pRead != NULL) && (pWrite!= NULL))
-; 1106 : 			{
-; 1107 : 				OALLog(L"\tReading: \r");
-; 1108 : 				while((ch = getc(pWrite)) != EOF)
-; 1109 : 				{
-; 1110 : 					OALLog(L"%c,\r\n", ch);
-; 1111 : 				}
-; 1112 : 				OALLog(L"\rFile Read end!!\n");
-; 1113 : 				fclose(pRead);
-; 1114 : 				fclose(pWrite);
-; 1115 : 			}else{
-; 1116 : 				OALLog(L"\rFile Read failure!!\n");
-; 1117 : 			}*/
-; 1118 : 			break;
-; 1119 : 		case L'2':                  //Ray 13-09-14
-; 1120 :             OALLog(L" Writing : ");
+; 1134 :             }else{
+; 1135 : 				OALLog(L"File Read failure!!\n");
+; 1136 : 			} 
+; 1137 : 			
+; 1138 : 			/*if((pRead != NULL) && (pWrite!= NULL))
+; 1139 : 			{
+; 1140 : 				OALLog(L"\tReading: \r");
+; 1141 : 				while((ch = getc(pWrite)) != EOF)
+; 1142 : 				{
+; 1143 : 					OALLog(L"%c,\r\n", ch);
+; 1144 : 				}
+; 1145 : 				OALLog(L"\rFile Read end!!\n");
+; 1146 : 				fclose(pRead);
+; 1147 : 				fclose(pWrite);
+; 1148 : 			}else{
+; 1149 : 				OALLog(L"\rFile Read failure!!\n");
+; 1150 : 			}*/
+; 1151 : 			break;
+; 1152 : 		case L'2':                  //Ray 13-09-14
+; 1153 :             OALLog(L" Writing : ");
 
   00084	e59f0040	 ldr         r0, [pc, #0x40]
   00088	eb000000	 bl          NKDbgPrintfW
 
-; 1121 :             
-; 1122 :             if(/*write ==*/ check){
-; 1123 :                 OALLog(L"File Written ok!!\n");
+; 1154 :             
+; 1155 :             if(/*write ==*/ check){
+; 1156 :                 OALLog(L"File Written ok!!\n");
 
   0008c	e59f0034	 ldr         r0, [pc, #0x34]
 
-; 1124 :             }else{  
-; 1125 :                 OALLog(L"File Write failure!!\n");
-; 1126 :             }
-; 1127 :          
-; 1128 :             /*if((pRead != NULL) && (pWrite!= NULL))
-; 1129 : 			{
-; 1130 : 				while( (ch = getc(pRead)) != EOF)
-; 1131 : 				{
-; 1132 : 					putc(ch, pWrite);
-; 1133 : 				}
-; 1134 : 				OALLog(L"\rFile Write end!!\n");
-; 1135 : 			}else{
-; 1136 : 				OALLog(L"\rFile Read failure!!\n");
-; 1137 : 			}*/
-; 1138 : 			break;
+; 1157 :             }else{  
+; 1158 :                 OALLog(L"File Write failure!!\n");
+; 1159 :             }
+; 1160 :          
+; 1161 :             /*if((pRead != NULL) && (pWrite!= NULL))
+; 1162 : 			{
+; 1163 : 				while( (ch = getc(pRead)) != EOF)
+; 1164 : 				{
+; 1165 : 					putc(ch, pWrite);
+; 1166 : 				}
+; 1167 : 				OALLog(L"\rFile Write end!!\n");
+; 1168 : 			}else{
+; 1169 : 				OALLog(L"\rFile Read failure!!\n");
+; 1170 : 			}*/
+; 1171 : 			break;
 
   00090	ea000002	 b           |$LN24@SDtoFlash|
   00094		 |$LN9@SDtoFlash|
 
-; 1095 : 	{
-; 1096 : 		case L'1':
-; 1097 :             OALLog(L" Reading : ");
+; 1128 : 	{
+; 1129 : 		case L'1':
+; 1130 :             OALLog(L" Reading : ");
 
   00094	e59f0028	 ldr         r0, [pc, #0x28]
   00098	eb000000	 bl          NKDbgPrintfW
 
-; 1098 :             
-; 1099 : 			if(/*read==*/check){
-; 1100 : 				OALLog(L"File Read ok!!\n");
+; 1131 :             
+; 1132 : 			if(/*read==*/check){
+; 1133 : 				OALLog(L"File Read ok!!\n");
 
   0009c	e59f001c	 ldr         r0, [pc, #0x1C]
   000a0		 |$LN24@SDtoFlash|
   000a0	eb000000	 bl          NKDbgPrintfW
   000a4		 |$LN7@SDtoFlash|
 
-; 1139 :        case L'3':
-; 1140 :             //OALLog(L" Show .nb0 Data : ");
-; 1141 :             //VOID DumpFlash(OAL_BLMENU_ITEM *pMenu)
-; 1142 :             //dumpFlashBuFunc.pfnAction = DumpFlashBuffer;//dumpFlashBufer;
-; 1143 :             //dumpFlashBuFunc.pfnAction = DumpFlashBuffer; 
-; 1144 :             break;
-; 1145 : 		default:break;
-; 1146 : 	}
-; 1147 : 		
-; 1148 : 	// If user select exit, don't any change device		//Ray 13-09-04	
-; 1149 : 	if(key == L'0')return;
+; 1172 :        case L'3':
+; 1173 :             //OALLog(L" Show .nb0 Data : ");
+; 1174 :             //VOID DumpFlash(OAL_BLMENU_ITEM *pMenu)
+; 1175 :             //dumpFlashBuFunc.pfnAction = DumpFlashBuffer;//dumpFlashBufer;
+; 1176 :             //dumpFlashBuFunc.pfnAction = DumpFlashBuffer; 
+; 1177 :             break;
+; 1178 : 		default:break;
+; 1179 : 	}
+; 1180 : 		
+; 1181 : 	// If user select exit, don't any change device		//Ray 13-09-04	
+; 1182 : 	if(key == L'0')return;
 
   000a4	e3540030	 cmp         r4, #0x30
 
-; 1150 : 
-; 1151 : 	//Call ShowSettings() , show current settings status
-; 1152 : 	g_bootCfg.sdtoflash = (key - L'0' - 1);
+; 1183 : 
+; 1184 : 	//Call ShowSettings() , show current settings status
+; 1185 : 	g_bootCfg.sdtoflash = (key - L'0' - 1);
 
   000a8	159f200c	 ldrne       r2, [pc, #0xC]
   000ac	12443031	 subne       r3, r4, #0x31
   000b0	15823074	 strne       r3, [r2, #0x74]
 
-; 1153 : }
+; 1186 : }
 
   000b4	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   000b8	e12fff1e	 bx          lr
@@ -3363,7 +3361,7 @@
   000e0	00000000	 DCD         |sdToFlash|
   000e4		 |$LN39@SDtoFlash|
   000e4	00000000	 DCD         |??_C@_1FG@GGAKBCDG@?$AAS?$AAe?$AAl?$AAe?$AAc?$AAt?$AA?5?$AAF?$AAi?$AAl?$AAe?$AA?5?$AAT?$AAr?$AAa?$AAn?$AAs?$AAf?$AAe?$AAr?$AA?5?$AAf?$AAr?$AAo?$AAm?$AA?5?$AAS?$AAD?$AA?5?$AAC?$AAa?$AAr@|
-  000e8		 |$M49290|
+  000e8		 |$M49459|
 
 			 ENDP  ; |SDtoFlash|
 
@@ -3373,7 +3371,7 @@
 	IMPORT	|spi_Low|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T49317| DCD	|$LN21@LCMInitial|
+|$T49486| DCD	|$LN21@LCMInitial|
 	DCD	0x40003401
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -3388,32 +3386,32 @@
 
   00000		 |LCMInitial| PROC
 
-; 1159 : {
+; 1192 : {
 
   00000		 |$LN21@LCMInitial|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M49314|
+  00004		 |$M49483|
 
-; 1160 :     WCHAR key;
-; 1161 :     UINT32 i;
-; 1162 :     DWORD dTime = 10000000;
-; 1163 : 
-; 1164 :     UNREFERENCED_PARAMETER(pMenu);
-; 1165 :     
-; 1166 :     OALBLMenuHeader(L"LCM Initial and Check");
+; 1193 :     WCHAR key;
+; 1194 :     UINT32 i;
+; 1195 :     DWORD dTime = 10000000;
+; 1196 : 
+; 1197 :     UNREFERENCED_PARAMETER(pMenu);
+; 1198 :     
+; 1199 :     OALBLMenuHeader(L"LCM Initial and Check");
 
   00004	e59f00c0	 ldr         r0, [pc, #0xC0]
   00008	eb000000	 bl          OALBLMenuHeader
   0000c	e59f40b4	 ldr         r4, [pc, #0xB4]
 
-; 1167 :     
-; 1168 :     for (i=0; i<LCM_EXIT; i++)
+; 1200 :     
+; 1201 :     for (i=0; i<LCM_EXIT; i++)
 
   00010	e3a05000	 mov         r5, #0
   00014		 |$LL12@LCMInitial|
 
-; 1169 :     {
-; 1170 :         OALLog(L" [%d] %s\r\n", i+1 , LCMInitiaArray[i].lcmIniName);
+; 1202 :     {
+; 1203 :         OALLog(L" [%d] %s\r\n", i+1 , LCMInitiaArray[i].lcmIniName);
 
   00014	e5942004	 ldr         r2, [r4, #4]
   00018	e59f00a4	 ldr         r0, [pc, #0xA4]
@@ -3424,29 +3422,29 @@
   0002c	e3550002	 cmp         r5, #2
   00030	3afffff7	 bcc         |$LL12@LCMInitial|
 
-; 1171 :     }
-; 1172 :     OALLog(L" [0] Exit and Continue\r\n");
+; 1204 :     }
+; 1205 :     OALLog(L" [0] Exit and Continue\r\n");
 
   00034	e59f0084	 ldr         r0, [pc, #0x84]
   00038	eb000000	 bl          NKDbgPrintfW
 
-; 1173 : 
-; 1174 :     OALLog(L"\r\n Selection : ");
+; 1206 : 
+; 1207 :     OALLog(L"\r\n Selection : ");
 
   0003c	e59f0078	 ldr         r0, [pc, #0x78]
   00040	eb000000	 bl          NKDbgPrintfW
   00044		 |$LL9@LCMInitial|
 
-; 1175 :     // Get key
-; 1176 :     do {
-; 1177 :         key = OALBLMenuReadKey(TRUE);
+; 1208 :     // Get key
+; 1209 :     do {
+; 1210 :         key = OALBLMenuReadKey(TRUE);
 
   00044	e3a00001	 mov         r0, #1
   00048	eb000000	 bl          OALBLMenuReadKey
   0004c	e1a04800	 mov         r4, r0, lsl #16
   00050	e1a04824	 mov         r4, r4, lsr #16
 
-; 1178 :     } while (key < L'0' || key > L'0'+ i);
+; 1211 :     } while (key < L'0' || key > L'0'+ i);
 
   00054	e3540030	 cmp         r4, #0x30
   00058	3afffff9	 bcc         |$LL9@LCMInitial|
@@ -3454,64 +3452,64 @@
   00060	e1540003	 cmp         r4, r3
   00064	8afffff6	 bhi         |$LL9@LCMInitial|
 
-; 1179 :     
-; 1180 :     OALLog(L"%c\r\n", key);
+; 1212 :     
+; 1213 :     OALLog(L"%c\r\n", key);
 
   00068	e59f0048	 ldr         r0, [pc, #0x48]
   0006c	e1a01004	 mov         r1, r4
   00070	eb000000	 bl          NKDbgPrintfW
 
-; 1181 : 
-; 1182 : 
-; 1183 :     switch(key)
+; 1214 : 
+; 1215 : 
+; 1216 :     switch(key)
 
   00074	e3540031	 cmp         r4, #0x31
   00078	0a000003	 beq         |$LN4@LCMInitial|
   0007c	e3540032	 cmp         r4, #0x32
   00080	1a000004	 bne         |$LN5@LCMInitial|
 
-; 1189 : 			break;
-; 1190 : 		case L'2':
-; 1191 :             spi_Low();
+; 1222 : 			break;
+; 1223 : 		case L'2':
+; 1224 :             spi_Low();
 
   00084	eb000000	 bl          spi_Low
 
-; 1192 :             break;
+; 1225 :             break;
 
   00088	ea000002	 b           |$LN5@LCMInitial|
   0008c		 |$LN4@LCMInitial|
 
-; 1184 : 	{
-; 1185 : 		case L'1':
-; 1186 : 		    FillASCII();
+; 1217 : 	{
+; 1218 : 		case L'1':
+; 1219 : 		    FillASCII();
 
   0008c	eb000000	 bl          FillASCII
 
-; 1187 :             //LCD_SPI_Init();
-; 1188 :             LcdStall(dTime);
+; 1220 :             //LCD_SPI_Init();
+; 1221 :             LcdStall(dTime);
 
   00090	e59f001c	 ldr         r0, [pc, #0x1C]
   00094	eb000000	 bl          LcdStall
   00098		 |$LN5@LCMInitial|
 
-; 1193 : 		default:
-; 1194 : 			break;
-; 1195 : 	}
-; 1196 :     
-; 1197 :     // If user select exit don't change device
-; 1198 :     if (key == L'0') return;
+; 1226 : 		default:
+; 1227 : 			break;
+; 1228 : 	}
+; 1229 :     
+; 1230 :     // If user select exit don't change device
+; 1231 :     if (key == L'0') return;
 
   00098	e3540030	 cmp         r4, #0x30
 
-; 1199 : 
-; 1200 :     g_bootCfg.lcmInitial = (key - L'0' - 1);
+; 1232 : 
+; 1233 :     g_bootCfg.lcmInitial = (key - L'0' - 1);
 
   0009c	159f200c	 ldrne       r2, [pc, #0xC]
   000a0	12443031	 subne       r3, r4, #0x31
   000a4	1582307c	 strne       r3, [r2, #0x7C]
 
-; 1201 : 
-; 1202 : }
+; 1234 : 
+; 1235 : }
 
   000a8	e8bd4030	 ldmia       sp!, {r4, r5, lr}
   000ac	e12fff1e	 bx          lr
@@ -3532,20 +3530,200 @@
   000c8	00000000	 DCD         |LCMInitiaArray|
   000cc		 |$LN30@LCMInitial|
   000cc	00000000	 DCD         |??_C@_1CM@IBBBDEFC@?$AAL?$AAC?$AAM?$AA?5?$AAI?$AAn?$AAi?$AAt?$AAi?$AAa?$AAl?$AA?5?$AAa?$AAn?$AAd?$AA?5?$AAC?$AAh?$AAe?$AAc?$AAk?$AA?$AA@|
-  000d0		 |$M49315|
+  000d0		 |$M49484|
 
 			 ENDP  ; |LCMInitial|
 
-	EXPORT	|InitI2CWithBQ27410|
-	EXPORT	|??_C@_1BE@BOHNCOFI@?$AAT?$AAe?$AAs?$AAt?$AAi?$AAn?$AAg?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
+	EXPORT	|BQ27410_ReadReg|
+	EXPORT	|??_C@_1CO@HAJDLAEF@?$AA?$AN?$AA?5?$AAB?$AAQ?$AA2?$AA7?$AA4?$AA1?$AA0?$AA_?$AAR?$AAe?$AAa?$AAd?$AAR?$AAe?$AAg?$AA?3?$AA?$CF?$AAd?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
+	EXPORT	|??_C@_1EE@GODOHCMN@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAB?$AAQ?$AA2?$AA7?$AA4?$AA1?$AA0?$AA_?$AAR?$AAe?$AAa?$AAd?$AAR?$AAe?$AAg?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?$CB?$AA?$CB?$AA?$AN@| [ DATA ] ; `string'
+	IMPORT	|I2CRead|
+
+  00000			 AREA	 |.bss|, NOINIT
+|hI2C|	%	0x4
+|hI2C|	%	0x4
 
   00000			 AREA	 |.pdata|, PDATA
-|$T49333| DCD	|$LN5@InitI2CWit|
-	DCD	0x40000601
+|$T49507| DCD	|$LN8@BQ27410_Re|
+	DCD	0x40001a01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
-|??_C@_1BE@BOHNCOFI@?$AAT?$AAe?$AAs?$AAt?$AAi?$AAn?$AAg?$AA?$AN?$AA?6?$AA?$AA@| DCB "T"
-	DCB	0x0, "e", 0x0, "s", 0x0, "t", 0x0, "i", 0x0, "n", 0x0, "g"
+|??_C@_1CO@HAJDLAEF@?$AA?$AN?$AA?5?$AAB?$AAQ?$AA2?$AA7?$AA4?$AA1?$AA0?$AA_?$AAR?$AAe?$AAa?$AAd?$AAR?$AAe?$AAg?$AA?3?$AA?$CF?$AAd?$AA?$AN?$AA?6?$AA?$AA@| DCB 0xd
+	DCB	0x0, " ", 0x0, "B", 0x0, "Q", 0x0, "2", 0x0, "7", 0x0, "4"
+	DCB	0x0, "1", 0x0, "0", 0x0, "_", 0x0, "R", 0x0, "e", 0x0, "a"
+	DCB	0x0, "d", 0x0, "R", 0x0, "e", 0x0, "g", 0x0, ":", 0x0, "%"
+	DCB	0x0, "d", 0x0, 0xd, 0x0, 0xa, 0x0, 0x0, 0x0 ; `string'
+
+  00000			 AREA	 |.rdata|, DATA, READONLY
+|??_C@_1EE@GODOHCMN@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAB?$AAQ?$AA2?$AA7?$AA4?$AA1?$AA0?$AA_?$AAR?$AAe?$AAa?$AAd?$AAR?$AAe?$AAg?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?$CB?$AA?$CB?$AA?$AN@| DCB "E"
+	DCB	0x0, "R", 0x0, "R", 0x0, "O", 0x0, "R", 0x0, ":", 0x0, " "
+	DCB	0x0, "B", 0x0, "Q", 0x0, "2", 0x0, "7", 0x0, "4", 0x0, "1"
+	DCB	0x0, "0", 0x0, "_", 0x0, "R", 0x0, "e", 0x0, "a", 0x0, "d"
+	DCB	0x0, "R", 0x0, "e", 0x0, "g", 0x0, " ", 0x0, "F", 0x0, "a"
+	DCB	0x0, "i", 0x0, "l", 0x0, "e", 0x0, "d", 0x0, "!", 0x0, "!"
+	DCB	0x0, 0xd, 0x0, 0xa, 0x0, 0x0, 0x0	; `string'
+; Function compile flags: /Ogspy
+
+  00000			 AREA	 |.text|, CODE, ARM
+
+  00000		 |BQ27410_ReadReg| PROC
+
+; 1276 : {
+
+  00000		 |$LN8@BQ27410_Re|
+  00000	e92d4010	 stmdb       sp!, {r4, lr}
+  00004		 |$M49504|
+  00004	e1a0e000	 mov         lr, r0
+
+; 1277 :     BOOL rc = FALSE;
+; 1278 :     DWORD len;
+; 1279 :     
+; 1280 :     if (hI2C)
+
+  00008	e59f3054	 ldr         r3, [pc, #0x54]
+  0000c	e3a04000	 mov         r4, #0
+  00010	e5930000	 ldr         r0, [r3]
+  00014	e3500000	 cmp         r0, #0
+  00018	0a000009	 beq         |$LN1@BQ27410_Re|
+
+; 1281 :     {
+; 1282 :         len = I2CRead(hI2C, slaveaddress, data, 2);
+
+  0001c	e1a02001	 mov         r2, r1
+  00020	e1a0100e	 mov         r1, lr
+  00024	e3a03002	 mov         r3, #2
+  00028	eb000000	 bl          I2CRead
+
+; 1283 :         if ( len != sizeof(UINT16))
+
+  0002c	e3500002	 cmp         r0, #2
+  00030	0a000002	 beq         |$LN2@BQ27410_Re|
+
+; 1284 :         	RETAILMSG(1,(L"ERROR: BQ27410_ReadReg Failed!!\r\n"));
+
+  00034	e59f0024	 ldr         r0, [pc, #0x24]
+  00038	eb000000	 bl          NKDbgPrintfW
+
+; 1285 : 		else
+
+  0003c	ea000000	 b           |$LN1@BQ27410_Re|
+  00040		 |$LN2@BQ27410_Re|
+
+; 1286 : 			rc = TRUE;
+
+  00040	e3a04001	 mov         r4, #1
+  00044		 |$LN1@BQ27410_Re|
+
+; 1287 : 	}
+; 1288 : 	
+; 1289 : 	OALLog(L"\r BQ27410_ReadReg:%d\r\n",rc);
+
+  00044	e59f0010	 ldr         r0, [pc, #0x10]
+  00048	e1a01004	 mov         r1, r4
+  0004c	eb000000	 bl          NKDbgPrintfW
+
+; 1290 :     return rc;
+; 1291 : }
+
+  00050	e1a00004	 mov         r0, r4
+  00054	e8bd4010	 ldmia       sp!, {r4, lr}
+  00058	e12fff1e	 bx          lr
+  0005c		 |$LN9@BQ27410_Re|
+  0005c		 |$LN10@BQ27410_Re|
+  0005c	00000000	 DCD         |??_C@_1CO@HAJDLAEF@?$AA?$AN?$AA?5?$AAB?$AAQ?$AA2?$AA7?$AA4?$AA1?$AA0?$AA_?$AAR?$AAe?$AAa?$AAd?$AAR?$AAe?$AAg?$AA?3?$AA?$CF?$AAd?$AA?$AN?$AA?6?$AA?$AA@|
+  00060		 |$LN11@BQ27410_Re|
+  00060	00000000	 DCD         |??_C@_1EE@GODOHCMN@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAB?$AAQ?$AA2?$AA7?$AA4?$AA1?$AA0?$AA_?$AAR?$AAe?$AAa?$AAd?$AAR?$AAe?$AAg?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?$CB?$AA?$CB?$AA?$AN@|
+  00064		 |$LN12@BQ27410_Re|
+  00064	00000000	 DCD         |hI2C|
+  00068		 |$M49505|
+
+			 ENDP  ; |BQ27410_ReadReg|
+
+	EXPORT	|InitI2CWithBQ27410|
+	EXPORT	|??_C@_1EG@BOGIFNHC@?$AA?$AN?$AA?5?$AAT?$AAe?$AAs?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAI?$AA2?$AAC?$AAS?$AAe?$AAt?$AAS?$AAu?$AAb?$AAA?$AAd?$AAd?$AAr?$AAe?$AAs?$AAs?$AAM?$AAo?$AAd?$AAe?$AA?$CI?$AA?$CJ@| [ DATA ] ; `string'
+	EXPORT	|??_C@_1DO@FDDDBLEK@?$AA?$AN?$AA?5?$AAT?$AAe?$AAs?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAB?$AAQ?$AA2?$AA7?$AA4?$AA1?$AA0?$AA_?$AAW?$AAr?$AAi?$AAt?$AAe?$AAR?$AAe?$AAg?$AA?$CI?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
+	EXPORT	|??_C@_1GG@JIPJEIK@?$AA?5?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAb?$AAq?$AA2?$AA7?$AA4?$AA1?$AA0?$AA_?$AAi?$AAn?$AAi?$AAt?$AA?5?$AA?9?$AA?5?$AAI?$AA2?$AAC?$AAS?$AAe?$AAt?$AAS?$AAl?$AAa@| [ DATA ] ; `string'
+	EXPORT	|??_C@_1FK@BBKNPGP@?$AA?$AN?$AA?5?$AAT?$AAe?$AAs?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAI?$AAn?$AAi?$AAt?$AAI?$AA2?$AAC?$AAW?$AAi?$AAt?$AAh?$AAB?$AAQ?$AA2?$AA7?$AA4?$AA1?$AA0?$AA?$CI?$AA?$CJ?$AA?5?$AAo@| [ DATA ] ; `string'
+	EXPORT	|??_C@_1EC@BNHJNFGL@?$AA?$AN?$AA?5?$AAT?$AAe?$AAs?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAI?$AA2?$AAC?$AAS?$AAe?$AAt?$AAS?$AAl?$AAa?$AAv?$AAe?$AAA?$AAd?$AAd?$AAr?$AAe?$AAs?$AAs?$AA?$CI?$AA?$CJ?$AA?$AN?$AA?6@| [ DATA ] ; `string'
+	EXPORT	|??_C@_1GI@DCKJGFNI@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAb?$AAq?$AA2?$AA7?$AA4?$AA1?$AA0?$AA_?$AAi?$AAn?$AAi?$AAt?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AAo?$AAp?$AAe?$AAn?$AA?5@| [ DATA ] ; `string'
+	EXPORT	|??_C@_1CM@BNHBOACG@?$AA?$AN?$AA?5?$AAT?$AAe?$AAs?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAI?$AA2?$AAC?$AAO?$AAp?$AAe?$AAn?$AA?$CI?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@| [ DATA ] ; `string'
+	IMPORT	|I2CClose|
+	IMPORT	|I2CSetBaudIndex|
+	IMPORT	|I2CSetSubAddressMode|
+	IMPORT	|I2CSetSlaveAddress|
+	IMPORT	|I2COpen|
+
+  00000			 AREA	 |.pdata|, PDATA
+|$T49521| DCD	|$LN7@InitI2CWit|
+	DCD	0x40002f01
+
+  00000			 AREA	 |.rdata|, DATA, READONLY
+|??_C@_1EG@BOGIFNHC@?$AA?$AN?$AA?5?$AAT?$AAe?$AAs?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAI?$AA2?$AAC?$AAS?$AAe?$AAt?$AAS?$AAu?$AAb?$AAA?$AAd?$AAd?$AAr?$AAe?$AAs?$AAs?$AAM?$AAo?$AAd?$AAe?$AA?$CI?$AA?$CJ@| DCB 0xd
+	DCB	0x0, " ", 0x0, "T", 0x0, "e", 0x0, "s", 0x0, "t", 0x0, "i"
+	DCB	0x0, "n", 0x0, "g", 0x0, " ", 0x0, "I", 0x0, "2", 0x0, "C"
+	DCB	0x0, "S", 0x0, "e", 0x0, "t", 0x0, "S", 0x0, "u", 0x0, "b"
+	DCB	0x0, "A", 0x0, "d", 0x0, "d", 0x0, "r", 0x0, "e", 0x0, "s"
+	DCB	0x0, "s", 0x0, "M", 0x0, "o", 0x0, "d", 0x0, "e", 0x0, "("
+	DCB	0x0, ")", 0x0, 0xd, 0x0, 0xa, 0x0, 0x0, 0x0 ; `string'
+
+  00000			 AREA	 |.rdata|, DATA, READONLY
+|??_C@_1DO@FDDDBLEK@?$AA?$AN?$AA?5?$AAT?$AAe?$AAs?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAB?$AAQ?$AA2?$AA7?$AA4?$AA1?$AA0?$AA_?$AAW?$AAr?$AAi?$AAt?$AAe?$AAR?$AAe?$AAg?$AA?$CI?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@| DCB 0xd
+	DCB	0x0, " ", 0x0, "T", 0x0, "e", 0x0, "s", 0x0, "t", 0x0, "i"
+	DCB	0x0, "n", 0x0, "g", 0x0, " ", 0x0, "B", 0x0, "Q", 0x0, "2"
+	DCB	0x0, "7", 0x0, "4", 0x0, "1", 0x0, "0", 0x0, "_", 0x0, "W"
+	DCB	0x0, "r", 0x0, "i", 0x0, "t", 0x0, "e", 0x0, "R", 0x0, "e"
+	DCB	0x0, "g", 0x0, "(", 0x0, ")", 0x0, 0xd, 0x0, 0xa, 0x0, 0x0
+	DCB	0x0					; `string'
+
+  00000			 AREA	 |.rdata|, DATA, READONLY
+|??_C@_1GG@JIPJEIK@?$AA?5?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAb?$AAq?$AA2?$AA7?$AA4?$AA1?$AA0?$AA_?$AAi?$AAn?$AAi?$AAt?$AA?5?$AA?9?$AA?5?$AAI?$AA2?$AAC?$AAS?$AAe?$AAt?$AAS?$AAl?$AAa@| DCB " "
+	DCB	0x0, "E", 0x0, "R", 0x0, "R", 0x0, "O", 0x0, "R", 0x0, ":"
+	DCB	0x0, " ", 0x0, "b", 0x0, "q", 0x0, "2", 0x0, "7", 0x0, "4"
+	DCB	0x0, "1", 0x0, "0", 0x0, "_", 0x0, "i", 0x0, "n", 0x0, "i"
+	DCB	0x0, "t", 0x0, " ", 0x0, "-", 0x0, " ", 0x0, "I", 0x0, "2"
+	DCB	0x0, "C", 0x0, "S", 0x0, "e", 0x0, "t", 0x0, "S", 0x0, "l"
+	DCB	0x0, "a", 0x0, "v", 0x0, "e", 0x0, "A", 0x0, "d", 0x0, "d"
+	DCB	0x0, "r", 0x0, "e", 0x0, "s", 0x0, "s", 0x0, " ", 0x0, "F"
+	DCB	0x0, "a", 0x0, "i", 0x0, "l", 0x0, "e", 0x0, "d", 0x0, 0xd
+	DCB	0x0, 0xa, 0x0, 0x0, 0x0			; `string'
+
+  00000			 AREA	 |.rdata|, DATA, READONLY
+|??_C@_1FK@BBKNPGP@?$AA?$AN?$AA?5?$AAT?$AAe?$AAs?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAI?$AAn?$AAi?$AAt?$AAI?$AA2?$AAC?$AAW?$AAi?$AAt?$AAh?$AAB?$AAQ?$AA2?$AA7?$AA4?$AA1?$AA0?$AA?$CI?$AA?$CJ?$AA?5?$AAo@| DCB 0xd
+	DCB	0x0, " ", 0x0, "T", 0x0, "e", 0x0, "s", 0x0, "t", 0x0, "i"
+	DCB	0x0, "n", 0x0, "g", 0x0, " ", 0x0, "I", 0x0, "n", 0x0, "i"
+	DCB	0x0, "t", 0x0, "I", 0x0, "2", 0x0, "C", 0x0, "W", 0x0, "i"
+	DCB	0x0, "t", 0x0, "h", 0x0, "B", 0x0, "Q", 0x0, "2", 0x0, "7"
+	DCB	0x0, "4", 0x0, "1", 0x0, "0", 0x0, "(", 0x0, ")", 0x0, " "
+	DCB	0x0, "o", 0x0, "f", 0x0, " ", 0x0, "h", 0x0, "I", 0x0, "2"
+	DCB	0x0, "C", 0x0, ":", 0x0, " ", 0x0, "%", 0x0, "X", 0x0, 0xd
+	DCB	0x0, 0xa, 0x0, 0x0, 0x0			; `string'
+
+  00000			 AREA	 |.rdata|, DATA, READONLY
+|??_C@_1EC@BNHJNFGL@?$AA?$AN?$AA?5?$AAT?$AAe?$AAs?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAI?$AA2?$AAC?$AAS?$AAe?$AAt?$AAS?$AAl?$AAa?$AAv?$AAe?$AAA?$AAd?$AAd?$AAr?$AAe?$AAs?$AAs?$AA?$CI?$AA?$CJ?$AA?$AN?$AA?6@| DCB 0xd
+	DCB	0x0, " ", 0x0, "T", 0x0, "e", 0x0, "s", 0x0, "t", 0x0, "i"
+	DCB	0x0, "n", 0x0, "g", 0x0, " ", 0x0, "I", 0x0, "2", 0x0, "C"
+	DCB	0x0, "S", 0x0, "e", 0x0, "t", 0x0, "S", 0x0, "l", 0x0, "a"
+	DCB	0x0, "v", 0x0, "e", 0x0, "A", 0x0, "d", 0x0, "d", 0x0, "r"
+	DCB	0x0, "e", 0x0, "s", 0x0, "s", 0x0, "(", 0x0, ")", 0x0, 0xd
+	DCB	0x0, 0xa, 0x0, 0x0, 0x0			; `string'
+
+  00000			 AREA	 |.rdata|, DATA, READONLY
+|??_C@_1GI@DCKJGFNI@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAb?$AAq?$AA2?$AA7?$AA4?$AA1?$AA0?$AA_?$AAi?$AAn?$AAi?$AAt?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AAo?$AAp?$AAe?$AAn?$AA?5@| DCB "E"
+	DCB	0x0, "R", 0x0, "R", 0x0, "O", 0x0, "R", 0x0, ":", 0x0, " "
+	DCB	0x0, "b", 0x0, "q", 0x0, "2", 0x0, "7", 0x0, "4", 0x0, "1"
+	DCB	0x0, "0", 0x0, "_", 0x0, "i", 0x0, "n", 0x0, "i", 0x0, "t"
+	DCB	0x0, " ", 0x0, "F", 0x0, "a", 0x0, "i", 0x0, "l", 0x0, "e"
+	DCB	0x0, "d", 0x0, " ", 0x0, "o", 0x0, "p", 0x0, "e", 0x0, "n"
+	DCB	0x0, " ", 0x0, "I", 0x0, "2", 0x0, "C", 0x0, " ", 0x0, "d"
+	DCB	0x0, "e", 0x0, "v", 0x0, "i", 0x0, "c", 0x0, "e", 0x0, " "
+	DCB	0x0, "d", 0x0, "r", 0x0, "i", 0x0, "v", 0x0, "e", 0x0, "r"
+	DCB	0x0, 0xd, 0x0, 0xa, 0x0, 0x0, 0x0	; `string'
+
+  00000			 AREA	 |.rdata|, DATA, READONLY
+|??_C@_1CM@BNHBOACG@?$AA?$AN?$AA?5?$AAT?$AAe?$AAs?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAI?$AA2?$AAC?$AAO?$AAp?$AAe?$AAn?$AA?$CI?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@| DCB 0xd
+	DCB	0x0, " ", 0x0, "T", 0x0, "e", 0x0, "s", 0x0, "t", 0x0, "i"
+	DCB	0x0, "n", 0x0, "g", 0x0, " ", 0x0, "I", 0x0, "2", 0x0, "C"
+	DCB	0x0, "O", 0x0, "p", 0x0, "e", 0x0, "n", 0x0, "(", 0x0, ")"
 	DCB	0x0, 0xd, 0x0, 0xa, 0x0, 0x0, 0x0	; `string'
 ; Function compile flags: /Ogspy
 
@@ -3553,86 +3731,203 @@
 
   00000		 |InitI2CWithBQ27410| PROC
 
-; 1235 : {
+; 1295 : {
 
-  00000		 |$LN5@InitI2CWit|
-  00000	e52de004	 str         lr, [sp, #-4]!
-  00004		 |$M49330|
+  00000		 |$LN7@InitI2CWit|
+  00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
+  00004		 |$M49518|
 
-; 1236 :    // static struct Device_t s_Device;
-; 1237 :     typedef struct Device_t s_Device;
-; 1238 :      OALLog(L"Testing\r\n");   
+; 1296 : //   static i2c_Device;
+; 1297 :     BOOL rc = FALSE;
+; 1298 : //    USHORT volt = 0;
+; 1299 :     //DWORD d3sec = 3000000;   
+; 1300 : //    DWORD d500msec = 500000;
+; 1301 :    
+; 1302 :     //HANDLE hGPIO;
+; 1303 : 
+; 1304 :     OALLog(L"\r Testing I2COpen()\r\n");
 
-  00004	e59f0008	 ldr         r0, [pc, #8]
-  00008	eb000000	 bl          NKDbgPrintfW
+  00004	e59f00ac	 ldr         r0, [pc, #0xAC]
+  00008	e3a04000	 mov         r4, #0
+  0000c	eb000000	 bl          NKDbgPrintfW
 
-; 1239 :     //BOOL yetSlaveAddress = FALSE;
-; 1240 : 
-; 1241 :     /* Specify slave address for BQ27410 Fuel Gauge */
-; 1242 :    // I2CSetSlaveAddress(s_Device.  BQ27410_SLAVE_ADDRESS);
-; 1243 :     //if( I2CSetSlaveAddress(s_Device.hI2C,  BQ27410_SLAVE_ADDRESS) == FALSE)
-; 1244 : 
-; 1245 :         /*RETAILMSG(1,(L"ERROR: BatteryPDDInitialize: I2CSetSlaveAddress Failed\r\n"));
-; 1246 :         I2CSetSubAddressMode(s_Device.hI2C, I2C_SUBADDRESS_MODE_8);
-; 1247 :         I2CSetBaudIndex(s_Device.hI2C, FULLSPEED_MODE);
-; 1248 : 
-; 1249 :     if( BQ27410_WriteReg(bq27410CMD_CNTL_LSB,  0x0C) == FALSE ) // send battery insert
-; 1250 : 
-; 1251 :         RETAILMSG(1,(L"ERROR: BatteryPDDInitialize: Battery insert Failed\r\n"));*/
-; 1252 : 
-; 1253 :        /* BQ27410_ReadReg(bq27410CMD_FLAGS_LSB, &flags);
-; 1254 :         BQ27410_ReadReg(bq27410CMD_SOC_LSB,  &soc);
-; 1255 :         BQ27410_ReadReg(bq27410CMD_TEMP_LSB, &temp);
-; 1256 :         BQ27410_ReadReg(bq27410CMD_VOLT_LSB, &volt);*/
-; 1257 :         return;
-; 1258 : }
+; 1305 :     //initialization i2c buses, Ray 13-10-09
+; 1306 :     if( (hI2C = I2COpen(OMAP_DEVICE_I2C3)) == NULL) 
 
-  0000c	e49de004	 ldr         lr, [sp], #4
-  00010	e12fff1e	 bx          lr
-  00014		 |$LN6@InitI2CWit|
-  00014		 |$LN7@InitI2CWit|
-  00014	00000000	 DCD         |??_C@_1BE@BOHNCOFI@?$AAT?$AAe?$AAs?$AAt?$AAi?$AAn?$AAg?$AA?$AN?$AA?6?$AA?$AA@|
-  00018		 |$M49331|
+  00010	e3a0000e	 mov         r0, #0xE
+  00014	eb000000	 bl          I2COpen
+  00018	e59f5094	 ldr         r5, [pc, #0x94]
+  0001c	e1b01000	 movs        r1, r0
+  00020	e5851000	 str         r1, [r5]
+  00024	1a000002	 bne         |$LN2@InitI2CWit|
+
+; 1307 : 	{
+; 1308 :         RETAILMSG(1,(L"ERROR: bq27410_init Failed open I2C device driver\r\n"));
+
+  00028	e59f0080	 ldr         r0, [pc, #0x80]
+  0002c	eb000000	 bl          NKDbgPrintfW
+
+; 1309 :         goto cleanUp;
+
+  00030	ea000016	 b           |$cleanUp$48917|
+  00034		 |$LN2@InitI2CWit|
+
+; 1310 : 	}
+; 1311 : 	OALLog(L"\r Testing InitI2CWithBQ27410() of hI2C: %X\r\n", hI2C);
+
+  00034	e59f0070	 ldr         r0, [pc, #0x70]
+  00038	eb000000	 bl          NKDbgPrintfW
+
+; 1312 : 	//OALLog(L"\r Testing GPIOOpen()\r\n");  
+; 1313 :     //Set the initialize status of each i2c3 interface, Ray 13-10-09
+; 1314 :     /*hGPIO = GPIOOpen();
+; 1315 :     GPIOSetBit(hGPIO, I2C3_SCL_GPIO );
+; 1316 :     GPIOSetBit(hGPIO, I2C3_SDA_GPIO );
+; 1317 :     LcdStall(d3sec);*/
+; 1318 :    
+; 1319 :     OALLog(L"\r Testing I2CSetSlaveAddress()\r\n");
+
+  0003c	e59f0064	 ldr         r0, [pc, #0x64]
+  00040	eb000000	 bl          NKDbgPrintfW
+
+; 1320 :     //Specify slave address for BQ27410 Fuel Gaug, Ray 13-10-09
+; 1321 :     if( I2CSetSlaveAddress(hI2C, BQ27410_SLAVE_ADDRESS) == rc )
+
+  00044	e5950000	 ldr         r0, [r5]
+  00048	e3a01055	 mov         r1, #0x55
+  0004c	eb000000	 bl          I2CSetSlaveAddress
+  00050	e3500000	 cmp         r0, #0
+
+; 1322 : 		RETAILMSG(TRUE, (L" ERROR: bq27410_init - I2CSetSlaveAddress Failed\r\n") );
+
+  00054	059f0048	 ldreq       r0, [pc, #0x48]
+  00058	0b000000	 bleq        NKDbgPrintfW
+
+; 1323 : 
+; 1324 :     OALLog(L"\r Testing I2CSetSubAddressMode()\r\n");
+
+  0005c	e59f003c	 ldr         r0, [pc, #0x3C]
+  00060	eb000000	 bl          NKDbgPrintfW
+
+; 1325 :     //Set up SubAddress(SCCB Phase 2) and the mode for transfer Ray 13-10-09
+; 1326 :     I2CSetSubAddressMode(hI2C, I2C_SUBADDRESS_MODE_8);
+
+  00064	e5950000	 ldr         r0, [r5]
+  00068	e3a01001	 mov         r1, #1
+  0006c	eb000000	 bl          I2CSetSubAddressMode
+
+; 1327 :     //I2CSetBaudIndex(hI2C, FULLSPEED_MODE);
+; 1328 :     I2CSetBaudIndex(hI2C, SLOWSPEED_MODE);
+
+  00070	e5950000	 ldr         r0, [r5]
+  00074	e3a01000	 mov         r1, #0
+  00078	eb000000	 bl          I2CSetBaudIndex
+
+; 1329 : 
+; 1330 :     
+; 1331 :     OALLog(L"\r Testing BQ27410_WriteReg()\r\n");
+
+  0007c	e59f0018	 ldr         r0, [pc, #0x18]
+  00080	eb000000	 bl          NKDbgPrintfW
+
+; 1332 :     /*if(// BQ27410_WriteReg(bq27410CMD_CNTL_LSB, 0x0C) == rc ) // send battery insert
+; 1333 :         BQ27410_WriteReg(bq27410CMD_CNTL_MSB, 0x0C) == rc )  //**1
+; 1334 :         RETAILMSG(TRUE, (L" ERROR: BatteryPDDInitialize: Battery insert Failed\r\n") );
+; 1335 :         OALLog(L"\r\n WriteReg OK!!\r\n");*/
+; 1336 : 
+; 1337 :     /*if( BQ27410_WriteReg(bq27410CMD_CNTL_MSB,  0x0d) == FALSE ) // send battery insert
+; 1338 :         RETAILMSG(TRUE, (L"ERROR: BatteryPDDInitialize: Battery insert Failed\r\n") );
+; 1339 :         OALLog(L"\r\n WriteReg OK!!\r\n");*/
+; 1340 :         
+; 1341 :        /* LcdStall(d500msec);
+; 1342 :          
+; 1343 :     OALLog(L"\r Testing BQ27410_ReadReg()\r\n");   
+; 1344 :     if( BQ27410_ReadReg(bq27410CMD_VOLT_LSB, &volt) )
+; 1345 : 		RETAILMSG(1,(L"bq27410_init: volt = %d\r\n", volt));
+; 1346 : 		OALLog(L"\r\n ReadReg OK!!\r\n");
+; 1347 : 		LcdStall(d500msec);*/
+; 1348 : 	
+; 1349 :        /* BQ27410_ReadReg(bq27410CMD_FLAGS_LSB, &flags);
+; 1350 :         BQ27410_ReadReg(bq27410CMD_SOC_LSB,  &soc);
+; 1351 :         BQ27410_ReadReg(bq27410CMD_TEMP_LSB, &temp);
+; 1352 :         BQ27410_Rea
+; 1353 :         dReg(bq27410CMD_VOLT_LSB, &volt);*/
+; 1354 :     I2CClose(hI2C);
+
+  00084	e5950000	 ldr         r0, [r5]
+  00088	eb000000	 bl          I2CClose
+
+; 1355 : 	rc = TRUE;
+
+  0008c	e3a04001	 mov         r4, #1
+  00090		 |$cleanUp$48917|
+
+; 1356 : 	//LcdStall(d1sec);
+; 1357 : cleanUp:
+; 1358 :     return rc;
+; 1359 : }
+
+  00090	e1a00004	 mov         r0, r4
+  00094	e8bd4030	 ldmia       sp!, {r4, r5, lr}
+  00098	e12fff1e	 bx          lr
+  0009c		 |$LN8@InitI2CWit|
+  0009c		 |$LN9@InitI2CWit|
+  0009c	00000000	 DCD         |??_C@_1DO@FDDDBLEK@?$AA?$AN?$AA?5?$AAT?$AAe?$AAs?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAB?$AAQ?$AA2?$AA7?$AA4?$AA1?$AA0?$AA_?$AAW?$AAr?$AAi?$AAt?$AAe?$AAR?$AAe?$AAg?$AA?$CI?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@|
+  000a0		 |$LN10@InitI2CWit|
+  000a0	00000000	 DCD         |??_C@_1EG@BOGIFNHC@?$AA?$AN?$AA?5?$AAT?$AAe?$AAs?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAI?$AA2?$AAC?$AAS?$AAe?$AAt?$AAS?$AAu?$AAb?$AAA?$AAd?$AAd?$AAr?$AAe?$AAs?$AAs?$AAM?$AAo?$AAd?$AAe?$AA?$CI?$AA?$CJ@|
+  000a4		 |$LN11@InitI2CWit|
+  000a4	00000000	 DCD         |??_C@_1GG@JIPJEIK@?$AA?5?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAb?$AAq?$AA2?$AA7?$AA4?$AA1?$AA0?$AA_?$AAi?$AAn?$AAi?$AAt?$AA?5?$AA?9?$AA?5?$AAI?$AA2?$AAC?$AAS?$AAe?$AAt?$AAS?$AAl?$AAa@|
+  000a8		 |$LN12@InitI2CWit|
+  000a8	00000000	 DCD         |??_C@_1EC@BNHJNFGL@?$AA?$AN?$AA?5?$AAT?$AAe?$AAs?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAI?$AA2?$AAC?$AAS?$AAe?$AAt?$AAS?$AAl?$AAa?$AAv?$AAe?$AAA?$AAd?$AAd?$AAr?$AAe?$AAs?$AAs?$AA?$CI?$AA?$CJ?$AA?$AN?$AA?6@|
+  000ac		 |$LN13@InitI2CWit|
+  000ac	00000000	 DCD         |??_C@_1FK@BBKNPGP@?$AA?$AN?$AA?5?$AAT?$AAe?$AAs?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAI?$AAn?$AAi?$AAt?$AAI?$AA2?$AAC?$AAW?$AAi?$AAt?$AAh?$AAB?$AAQ?$AA2?$AA7?$AA4?$AA1?$AA0?$AA?$CI?$AA?$CJ?$AA?5?$AAo@|
+  000b0		 |$LN14@InitI2CWit|
+  000b0	00000000	 DCD         |??_C@_1GI@DCKJGFNI@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAb?$AAq?$AA2?$AA7?$AA4?$AA1?$AA0?$AA_?$AAi?$AAn?$AAi?$AAt?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AAo?$AAp?$AAe?$AAn?$AA?5@|
+  000b4		 |$LN15@InitI2CWit|
+  000b4	00000000	 DCD         |hI2C|
+  000b8		 |$LN16@InitI2CWit|
+  000b8	00000000	 DCD         |??_C@_1CM@BNHBOACG@?$AA?$AN?$AA?5?$AAT?$AAe?$AAs?$AAt?$AAi?$AAn?$AAg?$AA?5?$AAI?$AA2?$AAC?$AAO?$AAp?$AAe?$AAn?$AA?$CI?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@|
+  000bc		 |$M49519|
 
 			 ENDP  ; |InitI2CWithBQ27410|
 
 
   00000			 AREA	 |.pdata|, PDATA
-|$T49351| DCD	|$LN23@FuelGaugeW|
-	DCD	0x40002e01
+|$T49543| DCD	|$LN21@FuelGaugeW|
+	DCD	0x40002c01
 ; Function compile flags: /Ogspy
 
   00000			 AREA	 |.text|, CODE, ARM
 
   00000		 |FuelGaugeWithBattery| PROC
 
-; 1261 : {
+; 1363 : {
 
-  00000		 |$LN23@FuelGaugeW|
+  00000		 |$LN21@FuelGaugeW|
   00000	e92d4030	 stmdb       sp!, {r4, r5, lr}
-  00004		 |$M49348|
+  00004		 |$M49540|
 
-; 1262 :     WCHAR key;
-; 1263 :     UINT32 i;
-; 1264 : 
-; 1265 :     UNREFERENCED_PARAMETER(pMenu);
-; 1266 : 
-; 1267 :     OALBLMenuHeader(L"Battery Status");
+; 1364 :     WCHAR key;
+; 1365 :     UINT32 i;
+; 1366 : 
+; 1367 :     UNREFERENCED_PARAMETER(pMenu);
+; 1368 : 
+; 1369 :     OALBLMenuHeader(L"Battery Status");
 
-  00004	e59f00a8	 ldr         r0, [pc, #0xA8]
+  00004	e59f00a0	 ldr         r0, [pc, #0xA0]
   00008	eb000000	 bl          OALBLMenuHeader
-  0000c	e59f409c	 ldr         r4, [pc, #0x9C]
+  0000c	e59f4094	 ldr         r4, [pc, #0x94]
 
-; 1268 : 
-; 1269 :     for(i=0; i<BATTERY_EXIT; i++){
+; 1370 : 
+; 1371 :     for(i=0; i<BATTERY_EXIT; i++){
 
   00010	e3a05000	 mov         r5, #0
   00014		 |$LL12@FuelGaugeW|
 
-; 1270 :         OALLog(L" [%d] %s\r\n", i+1 , BatteryStatusArray[i].BatteryName);
+; 1372 :         OALLog(L" [%d] %s\r\n", i+1 , BatteryStatusArray[i].BatteryName);
 
   00014	e5942004	 ldr         r2, [r4, #4]
-  00018	e59f008c	 ldr         r0, [pc, #0x8C]
+  00018	e59f0084	 ldr         r0, [pc, #0x84]
   0001c	e2855001	 add         r5, r5, #1
   00020	e1a01005	 mov         r1, r5
   00024	eb000000	 bl          NKDbgPrintfW
@@ -3640,29 +3935,29 @@
   0002c	e3550002	 cmp         r5, #2
   00030	3afffff7	 bcc         |$LL12@FuelGaugeW|
 
-; 1271 :     }
-; 1272 :     OALLog(L" [0] Exit and Continue\r\n");
+; 1373 :     }
+; 1374 :     OALLog(L" [0] Exit and Continue\r\n");
 
-  00034	e59f006c	 ldr         r0, [pc, #0x6C]
+  00034	e59f0064	 ldr         r0, [pc, #0x64]
   00038	eb000000	 bl          NKDbgPrintfW
 
-; 1273 : 
-; 1274 :     OALLog(L"\r\n Selection : ");
+; 1375 : 
+; 1376 :     OALLog(L"\r\n Selection : ");
 
-  0003c	e59f0060	 ldr         r0, [pc, #0x60]
+  0003c	e59f0058	 ldr         r0, [pc, #0x58]
   00040	eb000000	 bl          NKDbgPrintfW
   00044		 |$LL9@FuelGaugeW|
 
-; 1275 : 
-; 1276 :     do {
-; 1277 :         key = OALBLMenuReadKey(TRUE);
+; 1377 : 
+; 1378 :     do {
+; 1379 :         key = OALBLMenuReadKey(TRUE);
 
   00044	e3a00001	 mov         r0, #1
   00048	eb000000	 bl          OALBLMenuReadKey
   0004c	e1a04800	 mov         r4, r0, lsl #16
   00050	e1a04824	 mov         r4, r4, lsr #16
 
-; 1278 :     } while (key < L'0' || key > L'0'+ i);
+; 1380 :     } while (key < L'0' || key > L'0'+ i);
 
   00054	e3540030	 cmp         r4, #0x30
   00058	3afffff9	 bcc         |$LL9@FuelGaugeW|
@@ -3670,67 +3965,64 @@
   00060	e1540003	 cmp         r4, r3
   00064	8afffff6	 bhi         |$LL9@FuelGaugeW|
 
-; 1279 :     
-; 1280 :     OALLog(L"%c\r\n", key);
+; 1381 :     
+; 1382 :     OALLog(L"%c\r\n", key);
 
-  00068	e59f0030	 ldr         r0, [pc, #0x30]
+  00068	e59f0028	 ldr         r0, [pc, #0x28]
   0006c	e1a01004	 mov         r1, r4
   00070	eb000000	 bl          NKDbgPrintfW
 
-; 1281 : 
-; 1282 :     switch(key)
+; 1383 : 
+; 1384 :     switch(key)
 
   00074	e3540031	 cmp         r4, #0x31
 
-; 1283 :     {
-; 1284 :         case L'1':
-; 1285 :             InitI2CWithBQ27410();
+; 1385 :     {
+; 1386 :         case L'1':
+; 1387 :             InitI2CWithBQ27410();
 
-  00078	059f001c	 ldreq       r0, [pc, #0x1C]
-  0007c	0b000000	 bleq        NKDbgPrintfW
+  00078	0b000000	 bleq        InitI2CWithBQ27410
 
-; 1286 :             break;
-; 1287 :         case L'2':
-; 1288 :             //................
-; 1289 :             break;
-; 1290 :         default:
-; 1291 : 			break;
-; 1292 :     }
-; 1293 : 
-; 1294 :     // If user select exit don't change device
-; 1295 :     if(key == L'0') return;
+; 1388 :             break;
+; 1389 :         case L'2':
+; 1390 :             //................
+; 1391 :             break;
+; 1392 :         default:
+; 1393 : 			break;
+; 1394 :     }
+; 1395 : 
+; 1396 :     // If user select exit don't change device
+; 1397 :     if(key == L'0') return;
 
-  00080	e3540030	 cmp         r4, #0x30
+  0007c	e3540030	 cmp         r4, #0x30
 
-; 1296 : 
-; 1297 :      g_bootCfg.BatteryStatus = (key - L'0' - 1);    
+; 1398 : 
+; 1399 :      g_bootCfg.BatteryStatus = (key - L'0' - 1);    
 
-  00084	159f200c	 ldrne       r2, [pc, #0xC]
-  00088	12443031	 subne       r3, r4, #0x31
-  0008c	15823080	 strne       r3, [r2, #0x80]
+  00080	159f200c	 ldrne       r2, [pc, #0xC]
+  00084	12443031	 subne       r3, r4, #0x31
+  00088	15823080	 strne       r3, [r2, #0x80]
 
-; 1298 : }
+; 1400 : }
 
-  00090	e8bd4030	 ldmia       sp!, {r4, r5, lr}
-  00094	e12fff1e	 bx          lr
+  0008c	e8bd4030	 ldmia       sp!, {r4, r5, lr}
+  00090	e12fff1e	 bx          lr
+  00094		 |$LN22@FuelGaugeW|
+  00094		 |$LN23@FuelGaugeW|
+  00094	00000000	 DCD         |g_bootCfg|
   00098		 |$LN24@FuelGaugeW|
-  00098		 |$LN25@FuelGaugeW|
-  00098	00000000	 DCD         |g_bootCfg|
-  0009c		 |$LN26@FuelGaugeW|
-  0009c	00000000	 DCD         |??_C@_1BE@BOHNCOFI@?$AAT?$AAe?$AAs?$AAt?$AAi?$AAn?$AAg?$AA?$AN?$AA?6?$AA?$AA@|
-  000a0		 |$LN27@FuelGaugeW|
-  000a0	00000000	 DCD         |??_C@_19DIEGALPP@?$AA?$CF?$AAc?$AA?$AN?$AA?6?$AA?$AA@|
-  000a4		 |$LN28@FuelGaugeW|
-  000a4	00000000	 DCD         |??_C@_1CA@LBCOEEPJ@?$AA?$AN?$AA?6?$AA?5?$AAS?$AAe?$AAl?$AAe?$AAc?$AAt?$AAi?$AAo?$AAn?$AA?5?$AA?3?$AA?5?$AA?$AA@|
-  000a8		 |$LN29@FuelGaugeW|
-  000a8	00000000	 DCD         |??_C@_1DC@KGICMHCL@?$AA?5?$AA?$FL?$AA0?$AA?$FN?$AA?5?$AAE?$AAx?$AAi?$AAt?$AA?5?$AAa?$AAn?$AAd?$AA?5?$AAC?$AAo?$AAn?$AAt?$AAi?$AAn?$AAu?$AAe?$AA?$AN?$AA?6?$AA?$AA@|
-  000ac		 |$LN30@FuelGaugeW|
-  000ac	00000000	 DCD         |??_C@_1BG@LMIBJJCD@?$AA?5?$AA?$FL?$AA?$CF?$AAd?$AA?$FN?$AA?5?$AA?$CF?$AAs?$AA?$AN?$AA?6?$AA?$AA@|
-  000b0		 |$LN31@FuelGaugeW|
-  000b0	00000000	 DCD         |BatteryStatusArray|
-  000b4		 |$LN32@FuelGaugeW|
-  000b4	00000000	 DCD         |??_C@_1BO@KCFMLMDG@?$AAB?$AAa?$AAt?$AAt?$AAe?$AAr?$AAy?$AA?5?$AAS?$AAt?$AAa?$AAt?$AAu?$AAs?$AA?$AA@|
-  000b8		 |$M49349|
+  00098	00000000	 DCD         |??_C@_19DIEGALPP@?$AA?$CF?$AAc?$AA?$AN?$AA?6?$AA?$AA@|
+  0009c		 |$LN25@FuelGaugeW|
+  0009c	00000000	 DCD         |??_C@_1CA@LBCOEEPJ@?$AA?$AN?$AA?6?$AA?5?$AAS?$AAe?$AAl?$AAe?$AAc?$AAt?$AAi?$AAo?$AAn?$AA?5?$AA?3?$AA?5?$AA?$AA@|
+  000a0		 |$LN26@FuelGaugeW|
+  000a0	00000000	 DCD         |??_C@_1DC@KGICMHCL@?$AA?5?$AA?$FL?$AA0?$AA?$FN?$AA?5?$AAE?$AAx?$AAi?$AAt?$AA?5?$AAa?$AAn?$AAd?$AA?5?$AAC?$AAo?$AAn?$AAt?$AAi?$AAn?$AAu?$AAe?$AA?$AN?$AA?6?$AA?$AA@|
+  000a4		 |$LN27@FuelGaugeW|
+  000a4	00000000	 DCD         |??_C@_1BG@LMIBJJCD@?$AA?5?$AA?$FL?$AA?$CF?$AAd?$AA?$FN?$AA?5?$AA?$CF?$AAs?$AA?$AN?$AA?6?$AA?$AA@|
+  000a8		 |$LN28@FuelGaugeW|
+  000a8	00000000	 DCD         |BatteryStatusArray|
+  000ac		 |$LN29@FuelGaugeW|
+  000ac	00000000	 DCD         |??_C@_1BO@KCFMLMDG@?$AAB?$AAa?$AAt?$AAt?$AAe?$AAr?$AAy?$AA?5?$AAS?$AAt?$AAa?$AAt?$AAu?$AAs?$AA?$AA@|
+  000b0		 |$M49541|
 
 			 ENDP  ; |FuelGaugeWithBattery|
 
@@ -3740,7 +4032,7 @@
 	IMPORT	|BLWriteBootCfg|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T49369| DCD	|$LN9@SaveSettin|
+|$T49560| DCD	|$LN9@SaveSettin|
 	DCD	0x40001b01
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -3777,68 +4069,68 @@
 
   00000		 |SaveSettings| PROC
 
-; 1303 : {
+; 1406 : {
 
   00000		 |$LN9@SaveSettin|
   00000	e92d4010	 stmdb       sp!, {r4, lr}
-  00004		 |$M49366|
+  00004		 |$M49557|
 
-; 1304 :     WCHAR key;
-; 1305 :     UNREFERENCED_PARAMETER(pMenu);
-; 1306 : 
-; 1307 :     OALLog(L" Do you want save current settings [-/y]? ");
+; 1407 :     WCHAR key;
+; 1408 :     UNREFERENCED_PARAMETER(pMenu);
+; 1409 : 
+; 1410 :     OALLog(L" Do you want save current settings [-/y]? ");
 
   00004	e59f005c	 ldr         r0, [pc, #0x5C]
   00008	eb000000	 bl          NKDbgPrintfW
 
-; 1308 : 
-; 1309 :     // Get key
-; 1310 :     key = OALBLMenuReadKey(TRUE);
+; 1411 : 
+; 1412 :     // Get key
+; 1413 :     key = OALBLMenuReadKey(TRUE);
 
   0000c	e3a00001	 mov         r0, #1
   00010	eb000000	 bl          OALBLMenuReadKey
   00014	e1a04800	 mov         r4, r0, lsl #16
 
-; 1311 :     OALLog(L"%c\r\n", key);
+; 1414 :     OALLog(L"%c\r\n", key);
 
   00018	e59f0044	 ldr         r0, [pc, #0x44]
   0001c	e1a04824	 mov         r4, r4, lsr #16
   00020	e1a01004	 mov         r1, r4
   00024	eb000000	 bl          NKDbgPrintfW
 
-; 1312 : 
-; 1313 :     // Depending on result
-; 1314 :     if (key != L'y' && key != L'Y') goto cleanUp;
+; 1415 : 
+; 1416 :     // Depending on result
+; 1417 :     if (key != L'y' && key != L'Y') goto cleanUp;
 
   00028	e3540079	 cmp         r4, #0x79
   0002c	0a000001	 beq         |$LN3@SaveSettin|
   00030	e3540059	 cmp         r4, #0x59
-  00034	1a000005	 bne         |$cleanUp$48791|
+  00034	1a000005	 bne         |$cleanUp$48949|
   00038		 |$LN3@SaveSettin|
 
-; 1315 : 
-; 1316 :     if (BLWriteBootCfg(&g_bootCfg)) {
+; 1418 : 
+; 1419 :     if (BLWriteBootCfg(&g_bootCfg)) {
 
   00038	e59f0020	 ldr         r0, [pc, #0x20]
   0003c	eb000000	 bl          BLWriteBootCfg
   00040	e3500000	 cmp         r0, #0
 
-; 1317 :         OALLog(L" Current settings has been saved\r\n");
+; 1420 :         OALLog(L" Current settings has been saved\r\n");
 
   00044	159f0010	 ldrne       r0, [pc, #0x10]
 
-; 1318 :     } else {        
-; 1319 :         OALLog(L"ERROR: Settings save failed!\r\n");
+; 1421 :     } else {        
+; 1422 :         OALLog(L"ERROR: Settings save failed!\r\n");
 
   00048	059f0008	 ldreq       r0, [pc, #8]
   0004c	eb000000	 bl          NKDbgPrintfW
-  00050		 |$cleanUp$48791|
+  00050		 |$cleanUp$48949|
 
-; 1320 :     }
-; 1321 : 
-; 1322 : cleanUp:
-; 1323 :     return;
-; 1324 : }
+; 1423 :     }
+; 1424 : 
+; 1425 : cleanUp:
+; 1426 :     return;
+; 1427 : }
 
   00050	e8bd4010	 ldmia       sp!, {r4, lr}
   00054	e12fff1e	 bx          lr
@@ -3853,14 +4145,14 @@
   00064	00000000	 DCD         |??_C@_19DIEGALPP@?$AA?$CF?$AAc?$AA?$AN?$AA?6?$AA?$AA@|
   00068		 |$LN15@SaveSettin|
   00068	00000000	 DCD         |??_C@_1FG@NGGODBPB@?$AA?5?$AAD?$AAo?$AA?5?$AAy?$AAo?$AAu?$AA?5?$AAw?$AAa?$AAn?$AAt?$AA?5?$AAs?$AAa?$AAv?$AAe?$AA?5?$AAc?$AAu?$AAr?$AAr?$AAe?$AAn?$AAt?$AA?5?$AAs?$AAe?$AAt?$AAt?$AAi?$AAn@|
-  0006c		 |$M49367|
+  0006c		 |$M49558|
 
 			 ENDP  ; |SaveSettings|
 
 	EXPORT	|OALStringToUINT32|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T49390| DCD	|$LN13@OALStringT|
+|$T49581| DCD	|$LN13@OALStringT|
 	DCD	0x40001000
 ; Function compile flags: /Ogspy
 
@@ -3868,19 +4160,19 @@
 
   00000		 |OALStringToUINT32| PROC
 
-; 1329 : {
+; 1432 : {
 
   00000		 |$LN13@OALStringT|
-  00000		 |$M49387|
+  00000		 |$M49578|
   00000	e1b01000	 movs        r1, r0
 
-; 1330 :     UINT32 i = 0;
+; 1433 :     UINT32 i = 0;
 
   00004	e3a00000	 mov         r0, #0
 
-; 1331 : 
-; 1332 :     // Replace the dots with NULL terminators
-; 1333 :     while (psz != NULL && *psz != L'\0') 
+; 1434 : 
+; 1435 :     // Replace the dots with NULL terminators
+; 1436 :     while (psz != NULL && *psz != L'\0') 
 
   00008	0a00000b	 beq         |$LN10@OALStringT|
   0000c		 |$LL4@OALStringT|
@@ -3888,36 +4180,36 @@
   00010	e1b02003	 movs        r2, r3
   00014	0a000008	 beq         |$LN10@OALStringT|
 
-; 1334 :         {
-; 1335 :         if (*psz < L'0' || *psz > L'9') 
+; 1437 :         {
+; 1438 :         if (*psz < L'0' || *psz > L'9') 
 
   00018	e3520030	 cmp         r2, #0x30
   0001c	3a000006	 bcc         |$LN10@OALStringT|
   00020	e3520039	 cmp         r2, #0x39
   00024	8a000004	 bhi         |$LN10@OALStringT|
 
-; 1336 :             {
-; 1337 :             break;
-; 1338 :             }
-; 1339 :         i = i * 10 + (*psz - L'0');
+; 1439 :             {
+; 1440 :             break;
+; 1441 :             }
+; 1442 :         i = i * 10 + (*psz - L'0');
 
   00028	e0803100	 add         r3, r0, r0, lsl #2
   0002c	e0823083	 add         r3, r2, r3, lsl #1
   00030	e2430030	 sub         r0, r3, #0x30
 
-; 1340 :         psz++;
+; 1443 :         psz++;
 
   00034	e2911002	 adds        r1, r1, #2
   00038	1afffff3	 bne         |$LL4@OALStringT|
   0003c		 |$LN10@OALStringT|
 
-; 1341 :         }
-; 1342 : 
-; 1343 :     return i;
-; 1344 : }
+; 1444 :         }
+; 1445 : 
+; 1446 :     return i;
+; 1447 : }
 
   0003c	e12fff1e	 bx          lr
-  00040		 |$M49388|
+  00040		 |$M49579|
 
 			 ENDP  ; |OALStringToUINT32|
 
@@ -3935,7 +4227,7 @@
 	IMPORT	|OALKitlDeviceName|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T49405| DCD	|$LN12@ShowSettin|
+|$T49596| DCD	|$LN12@ShowSettin|
 	DCD	0x40005701
 
   00000			 AREA	 |.rdata|, DATA, READONLY
@@ -4020,26 +4312,26 @@
 
   00000		 |ShowSettings| PROC
 
-; 471  : {
+; 504  : {
 
   00000		 |$LN12@ShowSettin|
   00000	e92d41f0	 stmdb       sp!, {r4 - r8, lr}
-  00004		 |$M49402|
+  00004		 |$M49593|
   00004	e1a08000	 mov         r8, r0
 
-; 472  :     OPP_MODE_MENU * pOppMenu = oppModeMenu35x;
-; 473  :     UNREFERENCED_PARAMETER(pMenu);
-; 474  :     
-; 475  :     if(g_CPUFamily == CPU_FAMILY_DM37XX)
+; 505  :     OPP_MODE_MENU * pOppMenu = oppModeMenu35x;
+; 506  :     UNREFERENCED_PARAMETER(pMenu);
+; 507  :     
+; 508  :     if(g_CPUFamily == CPU_FAMILY_DM37XX)
 
   00008	e59f3148	 ldr         r3, [pc, #0x148]
   0000c	e59f5140	 ldr         r5, [pc, #0x140]
 
-; 476  :     {
-; 477  :         pOppMenu = oppModeMenu37x;
-; 478  :     }
-; 479  : 
-; 480  :     OALLog(L"\r\n Main:\r\n");
+; 509  :     {
+; 510  :         pOppMenu = oppModeMenu37x;
+; 511  :     }
+; 512  : 
+; 513  :     OALLog(L"\r\n Main:\r\n");
 
   00010	e59f0138	 ldr         r0, [pc, #0x138]
   00014	e5933000	 ldr         r3, [r3]
@@ -4048,10 +4340,10 @@
   00020	02857060	 addeq       r7, r5, #0x60
   00024	eb000000	 bl          NKDbgPrintfW
 
-; 481  :     OALLog(
-; 482  :         L"  Boot device:   %s\r\n",
-; 483  :         OALKitlDeviceName(&g_bootCfg.bootDevLoc, g_bootDevices)
-; 484  :     );
+; 514  :     OALLog(
+; 515  :         L"  Boot device:   %s\r\n",
+; 516  :         OALKitlDeviceName(&g_bootCfg.bootDevLoc, g_bootDevices)
+; 517  :     );
 
   00028	e59f411c	 ldr         r4, [pc, #0x11C]
   0002c	e59f1114	 ldr         r1, [pc, #0x114]
@@ -4061,10 +4353,10 @@
   0003c	e59f0100	 ldr         r0, [pc, #0x100]
   00040	eb000000	 bl          NKDbgPrintfW
 
-; 485  :     OALLog(
-; 486  :         L"  Debug device:  %s\r\n",
-; 487  :         (g_bootCfg.kitlDevLoc.LogicalLoc) ? OALKitlDeviceName(&g_bootCfg.kitlDevLoc, g_kitlDevices) : L"not specified"
-; 488  :     );
+; 518  :     OALLog(
+; 519  :         L"  Debug device:  %s\r\n",
+; 520  :         (g_bootCfg.kitlDevLoc.LogicalLoc) ? OALKitlDeviceName(&g_bootCfg.kitlDevLoc, g_kitlDevices) : L"not specified"
+; 521  :     );
 
   00044	e5943024	 ldr         r3, [r4, #0x24]
   00048	e3530000	 cmp         r3, #0
@@ -4080,10 +4372,10 @@
   00068	e59f00c8	 ldr         r0, [pc, #0xC8]
   0006c	eb000000	 bl          NKDbgPrintfW
 
-; 489  :     OALLog(
-; 490  :         L"  Retail Msgs:   %s\r\n",
-; 491  :         (g_bootCfg.oalFlags & BOOT_CFG_OAL_FLAGS_RETAILMSG_ENABLE) ? L"enabled" : L"disabled"
-; 492  :     );
+; 522  :     OALLog(
+; 523  :         L"  Retail Msgs:   %s\r\n",
+; 524  :         (g_bootCfg.oalFlags & BOOT_CFG_OAL_FLAGS_RETAILMSG_ENABLE) ? L"enabled" : L"disabled"
+; 525  :     );
 
   00070	e5943034	 ldr         r3, [r4, #0x34]
   00074	e59f60b8	 ldr         r6, [pc, #0xB8]
@@ -4093,17 +4385,17 @@
   00084	059f1094	 ldreq       r1, [pc, #0x94]
   00088	eb000000	 bl          NKDbgPrintfW
 
-; 493  :     OALLog(
-; 494  :         L"  Device ID:     %d\r\n", g_bootCfg.deviceID
-; 495  :     );
+; 526  :     OALLog(
+; 527  :         L"  Device ID:     %d\r\n", g_bootCfg.deviceID
+; 528  :     );
 
   0008c	e5941044	 ldr         r1, [r4, #0x44]
   00090	e59f0094	 ldr         r0, [pc, #0x94]
   00094	eb000000	 bl          NKDbgPrintfW
 
-; 496  :     OALLog(
-; 497  :         L"  Display Res:   %s\r\n", dispResMenu[g_bootCfg.displayRes].resName
-; 498  :     );
+; 529  :     OALLog(
+; 530  :         L"  Display Res:   %s\r\n", dispResMenu[g_bootCfg.displayRes].resName
+; 531  :     );
 
   00098	e594306c	 ldr         r3, [r4, #0x6C]
   0009c	e59f0084	 ldr         r0, [pc, #0x84]
@@ -4111,10 +4403,10 @@
   000a4	e5931004	 ldr         r1, [r3, #4]
   000a8	eb000000	 bl          NKDbgPrintfW
 
-; 499  :     OALLog(
-; 500  :         L"  Flashing NK.bin:   %s\r\n", 
-; 501  :         (g_bootCfg.flashNKFlags & ENABLE_FLASH_NK) ? L"enabled" : L"disabled"
-; 502  :     );    
+; 532  :     OALLog(
+; 533  :         L"  Flashing NK.bin:   %s\r\n", 
+; 534  :         (g_bootCfg.flashNKFlags & ENABLE_FLASH_NK) ? L"enabled" : L"disabled"
+; 535  :     );    
 
   000ac	e5943084	 ldr         r3, [r4, #0x84]
   000b0	e59f006c	 ldr         r0, [pc, #0x6C]
@@ -4123,18 +4415,18 @@
   000bc	e1a01006	 mov         r1, r6
   000c0	eb000000	 bl          NKDbgPrintfW
 
-; 503  :     OALLog(
-; 504  :         L"  OPP Mode:   %s\r\n", pOppMenu[g_bootCfg.opp_mode].oppModeName
-; 505  :     );
+; 536  :     OALLog(
+; 537  :         L"  OPP Mode:   %s\r\n", pOppMenu[g_bootCfg.opp_mode].oppModeName
+; 538  :     );
 
   000c4	e594308c	 ldr         r3, [r4, #0x8C]
   000c8	e59f004c	 ldr         r0, [pc, #0x4C]
   000cc	e7971103	 ldr         r1, [r7, +r3, lsl #2]
   000d0	eb000000	 bl          NKDbgPrintfW
 
-; 506  : 	OALLog(
-; 507  :         L"  Backlight:   %s\r\n", disBacklight[g_bootCfg.backlight].blName	//Ray 13-07-29
-; 508  :     );
+; 539  : 	OALLog(
+; 540  :         L"  Backlight:   %s\r\n", disBacklight[g_bootCfg.backlight].blName	//Ray 13-07-29
+; 541  :     );
 
   000d4	e5942070	 ldr         r2, [r4, #0x70]
   000d8	e2853070	 add         r3, r5, #0x70
@@ -4143,9 +4435,9 @@
   000e4	e5931004	 ldr         r1, [r3, #4]
   000e8	eb000000	 bl          NKDbgPrintfW
 
-; 509  : 	OALLog(
-; 510  :         L"  SD Card to Flash status:   %s\r\n", sdToFlash[g_bootCfg.sdtoflash].sdName //Ray 13-07-29
-; 511  :     );
+; 542  : 	OALLog(
+; 543  :         L"  SD Card to Flash status:   %s\r\n", sdToFlash[g_bootCfg.sdtoflash].sdName //Ray 13-07-29
+; 544  :     );
 
   000ec	e5942074	 ldr         r2, [r4, #0x74]
   000f0	e2853090	 add         r3, r5, #0x90
@@ -4154,16 +4446,16 @@
   000fc	e5931004	 ldr         r1, [r3, #4]
   00100	eb000000	 bl          NKDbgPrintfW
 
-; 512  : 	
-; 513  : #if BUILDING_EBOOT_SD
-; 514  :     ShowSDCardSettings(pMenu);
-; 515  : #endif
-; 516  :     ShowNetworkSettings(pMenu);
+; 545  : 	
+; 546  : #if BUILDING_EBOOT_SD
+; 547  :     ShowSDCardSettings(pMenu);
+; 548  : #endif
+; 549  :     ShowNetworkSettings(pMenu);
 
   00104	e1a00008	 mov         r0, r8
   00108	eb000000	 bl          ShowNetworkSettings
 
-; 517  : }
+; 550  : }
 
   0010c	e8bd41f0	 ldmia       sp!, {r4 - r8, lr}
   00110	e12fff1e	 bx          lr
@@ -4204,7 +4496,7 @@
   00154	00000000	 DCD         |dispResMenu|
   00158		 |$LN31@ShowSettin|
   00158	00000000	 DCD         |g_CPUFamily|
-  0015c		 |$M49403|
+  0015c		 |$M49594|
 
 			 ENDP  ; |ShowSettings|
 
@@ -4214,11 +4506,11 @@
 	IMPORT	|OALBLMenuReadLine|
 
   00000			 AREA	 |.pdata|, PDATA
-|$T49433| DCD	|$LN6@SetDeviceI|
+|$T49624| DCD	|$LN6@SetDeviceI|
 	DCD	0xc0001c02
 
   00000			 AREA	 |.xdata|, DATA
-|$T49429| DCD	0xfffffff4
+|$T49620| DCD	0xfffffff4
 
   00000			 AREA	 |.rdata|, DATA, READONLY
 |??_C@_1DE@MLCCPHNO@?$AA?5?$AAC?$AAu?$AAr?$AAr?$AAe?$AAn?$AAt?$AA?5?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AA?5?$AAI?$AAD?$AA?3?$AA?5?$AA?5?$AA?$CF?$AAd?$AA?$AN?$AA?6?$AA?$AA@| DCB " "
@@ -4239,65 +4531,65 @@
   00000			 AREA	 |.text|, CODE, ARM
 
   00000	00000000	 DCD         |__GSHandlerCheck|
-  00004	00000000	 DCD         |$T49429|
+  00004	00000000	 DCD         |$T49620|
 
   00008		 |SetDeviceID| PROC
 
-; 639  : {
+; 672  : {
 
   00008		 |$LN6@SetDeviceI|
   00008	e92d4010	 stmdb       sp!, {r4, lr}
   0000c	e24dd024	 sub         sp, sp, #0x24
-  00010		 |$M49430|
+  00010		 |$M49621|
   00010	e59f305c	 ldr         r3, [pc, #0x5C]
   00014	e5933000	 ldr         r3, [r3]
   00018	e58d3020	 str         r3, [sp, #0x20]
 
-; 640  :     WCHAR  szInputLine[16];
-; 641  :     UNREFERENCED_PARAMETER(pMenu);
-; 642  : 
-; 643  :     OALLog(
-; 644  :         L" Current Device ID:  %d\r\n", g_bootCfg.deviceID
-; 645  :     );
+; 673  :     WCHAR  szInputLine[16];
+; 674  :     UNREFERENCED_PARAMETER(pMenu);
+; 675  : 
+; 676  :     OALLog(
+; 677  :         L" Current Device ID:  %d\r\n", g_bootCfg.deviceID
+; 678  :     );
 
   0001c	e59f404c	 ldr         r4, [pc, #0x4C]
   00020	e59f0044	 ldr         r0, [pc, #0x44]
   00024	e5941044	 ldr         r1, [r4, #0x44]
   00028	eb000000	 bl          NKDbgPrintfW
 
-; 646  : 
-; 647  :     OALLog(L"\r\n New Device ID: ");
+; 679  : 
+; 680  :     OALLog(L"\r\n New Device ID: ");
 
   0002c	e59f0034	 ldr         r0, [pc, #0x34]
   00030	eb000000	 bl          NKDbgPrintfW
 
-; 648  : 
-; 649  :     if (OALBLMenuReadLine(szInputLine, dimof(szInputLine)) == 0) 
+; 681  : 
+; 682  :     if (OALBLMenuReadLine(szInputLine, dimof(szInputLine)) == 0) 
 
   00034	e3a01010	 mov         r1, #0x10
   00038	e28d0000	 add         r0, sp, #0
   0003c	eb000000	 bl          OALBLMenuReadLine
   00040	e3500000	 cmp         r0, #0
-  00044	0a000002	 beq         |$cleanUp$48595|
+  00044	0a000002	 beq         |$cleanUp$48730|
 
-; 650  :         {
-; 651  :         goto cleanUp;
-; 652  :         }
-; 653  : 
-; 654  :     // Get device ID
-; 655  :     g_bootCfg.deviceID = OALStringToUINT32(szInputLine);
+; 683  :         {
+; 684  :         goto cleanUp;
+; 685  :         }
+; 686  : 
+; 687  :     // Get device ID
+; 688  :     g_bootCfg.deviceID = OALStringToUINT32(szInputLine);
 
   00048	e28d0000	 add         r0, sp, #0
   0004c	eb000000	 bl          OALStringToUINT32
   00050	e5840044	 str         r0, [r4, #0x44]
-  00054		 |$cleanUp$48595|
+  00054		 |$cleanUp$48730|
   00054	e59d0020	 ldr         r0, [sp, #0x20]
   00058	eb000000	 bl          __security_check_cookie
 
-; 656  : 
-; 657  : cleanUp:
-; 658  :     return;
-; 659  : }
+; 689  : 
+; 690  : cleanUp:
+; 691  :     return;
+; 692  : }
 
   0005c	e28dd024	 add         sp, sp, #0x24
   00060	e8bd4010	 ldmia       sp!, {r4, lr}
@@ -4311,7 +4603,7 @@
   00070	00000000	 DCD         |g_bootCfg|
   00074		 |$LN11@SetDeviceI|
   00074	00000000	 DCD         |__security_cookie|
-  00078		 |$M49431|
+  00078		 |$M49622|
 
 			 ENDP  ; |SetDeviceID|
 

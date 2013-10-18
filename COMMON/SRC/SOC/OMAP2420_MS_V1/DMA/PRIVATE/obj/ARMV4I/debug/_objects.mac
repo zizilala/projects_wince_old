@@ -1,0 +1,7 @@
+OBJECTS=\
+    obj\ARMV4I\debug\dmadrv.obj\
+    obj\ARMV4I\debug\dmasys.obj\
+    obj\ARMV4I\debug\contsys.obj\
+    obj\ARMV4I\debug\contcam.obj\
+    obj\ARMV4I\debug\contstd.obj
+

@@ -1,0 +1,10 @@
+OBJECTS=\
+    obj\ARMV4I\debug\init.obj\
+    obj\ARMV4I\debug\attrib.obj\
+    obj\ARMV4I\debug\flush.obj\
+    obj\ARMV4I\debug\cacheid.obj\
+    obj\ARMV4I\debug\cachemode.obj\
+    obj\ARMV4I\debug\icache.obj\
+    obj\ARMV4I\debug\dcache.obj\
+    obj\ARMV4I\debug\tlb.obj
+

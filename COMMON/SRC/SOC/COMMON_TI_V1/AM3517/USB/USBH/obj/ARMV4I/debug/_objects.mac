@@ -1,0 +1,10 @@
+OBJECTS=\
+    obj\ARMV4I\debug\chw.obj\
+    obj\ARMV4I\debug\hcdpdd.obj\
+    obj\ARMV4I\debug\cpipe.obj\
+    obj\ARMV4I\debug\transfer.obj\
+    obj\ARMV4I\debug\cohcd.obj\
+    obj\ARMV4I\debug\desclist.obj\
+    obj\ARMV4I\debug\cppidma.obj\
+    obj\ARMV4I\debug\testmode.obj
+

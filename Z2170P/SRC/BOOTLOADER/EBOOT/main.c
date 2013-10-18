@@ -243,8 +243,11 @@ BOOL OEMPlatformInit()
     GPIOSetMode(hGPIO, SPI_DIN_PIN, GPIO_DIR_INPUT);
 
     //Initialization the "I-suqare-c (i2c3)" buses, Ray 13-10-07
+    /*GPIOSetBit(hGPIO, I2C3_SCL_GPIO );
     GPIOSetMode(hGPIO, I2C3_SCL_GPIO, GPIO_DIR_OUTPUT);
-    GPIOSetMode(hGPIO, I2C3_SDA_GPIO, GPIO_DIR_OUTPUT);
+    GPIOSetBit(hGPIO, I2C3_SDA_GPIO );
+    GPIOSetMode(hGPIO, I2C3_SDA_GPIO, GPIO_DIR_OUTPUT);*/
+
    
 	//SPI LCM setup
 	/*XX

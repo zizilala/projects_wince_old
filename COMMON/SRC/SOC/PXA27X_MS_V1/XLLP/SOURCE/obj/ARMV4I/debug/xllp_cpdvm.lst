@@ -1,0 +1,709 @@
+ARM macroassembler      Page:1 
+    1 00000000          ; 
+    2 00000000          ; Copyright (c) Microsoft Corporation.  All rights reserved. 
+    3 00000000          ; 
+    4 00000000          ; 
+    5 00000000          ; Use of this sample source code is subject to the terms of the Microsoft 
+    6 00000000          ; license agreement under which you licensed this sample source code. If 
+    7 00000000          ; you did not accept the terms of the license agreement, you are not 
+    8 00000000          ; authorized to use this sample source code. For the terms of the license, 
+    9 00000000          ; please see the license agreement between you and Microsoft or, if applicable, 
+   10 00000000          ; see the LICENSE.RTF on your install media or the root of your tools installation. 
+   11 00000000          ; THE SAMPLE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES. 
+   12 00000000          ; 
+   13 00000000          ; 
+   14 00000000          ; Copyright 2002-2003 Intel Corporation All Rights Reserved. 
+   15 00000000          ; 
+   16 00000000          ;** Portions of the source code contained or described herein and all documents 
+   17 00000000          ;** related to such source code (Material) are owned by Intel Corporation 
+   18 00000000          ;** or its suppliers or licensors and is licensed by Microsoft Corporation for distribution.   
+   19 00000000          ;** Title to the Material remains with Intel Corporation or its suppliers and licensors.  
+   20 00000000          ;** Use of the Materials is subject to the terms of the Microsoft license agreement which accompanied the Materials.   
+   21 00000000          ;** No other license under any patent, copyright, trade secret or other intellectual 
+   22 00000000          ;** property right is granted to or conferred upon you by disclosure or 
+   23 00000000          ;** delivery of the Materials, either expressly, by implication, inducement, 
+   24 00000000          ;** estoppel or otherwise  
+   25 00000000          ;** Some portion of the Materials may be copyrighted by Microsoft Corporation. 
+   26 00000000          ; 
+   27 00000000            
+   28 00000000              INCLUDE xlli_Bulverde_defs.inc   
+    1 00000000          ; 
+    2 00000000          ; Copyright (c) Microsoft Corporation.  All rights reserved. 
+    3 00000000          ; 
+    4 00000000          ; 
+    5 00000000          ; Use of this sample source code is subject to the terms of the Microsoft 
+    6 00000000          ; license agreement under which you licensed this sample source code. If 
+    7 00000000          ; you did not accept the terms of the license agreement, you are not 
+    8 00000000          ; authorized to use this sample source code. For the terms of the license, 
+    9 00000000          ; please see the license agreement between you and Microsoft or, if applicable, 
+   10 00000000          ; see the LICENSE.RTF on your install media or the root of your tools installation. 
+   11 00000000          ; THE SAMPLE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES. 
+   12 00000000          ; 
+   13 00000000          ;********************************************************************************* 
+   14 00000000          ; 
+   15 00000000          ;        COPYRIGHT (c) 2002 Intel Corporation 
+   16 00000000          ; 
+   17 00000000          ;   The information in this file is furnished for informational use only, 
+   18 00000000          ;   is subject to change without notice, and should not be construed as 
+   19 00000000          ;   a commitment by Intel Corporation. Intel Corporation assumes no 
+   20 00000000          ;   responsibility or liability for any errors or inaccuracies that may appear 
+   21 00000000          ;   in this document or any software that may be provided in association with 
+   22 00000000          ;   this document. 
+   23 00000000          ; 
+   24 00000000          ;********************************************************************************* 
+   25 00000000          ; 
+   26 00000000          ;  FILENAME:       xlli_Bulverde_defs.inc (Core processor address definitions) 
+   27 00000000          ; 
+   28 00000000          ; LAST MODIFIED:   1-Mar-2006 
+   29 00000000          ; 
+   30 00000000          ;****************************************************************************** 
+   31 00000000          ; 
+   32 00000000          ; 
+   33 00000000          ; Include file for PXA27x Processor based 
+   34 00000000          ; Cross Platform Low Level Initialization  (XLLI) 
+   35 00000000          ; 
+   36 00000000          ;****************************************************************************** 
+   37 00000000            
+   38 00000000          ;     Bit settings 
+   39 00000000          ; 
+   40 00000000          xlli_BIT_0      EQU     0x00000001 
+   41 00000000          xlli_BIT_1      EQU     0x00000002 
+   42 00000000          xlli_BIT_2      EQU     0x00000004 
+   43 00000000          xlli_BIT_3      EQU     0x00000008 
+   44 00000000          xlli_BIT_4      EQU     0x00000010 
+   45 00000000          xlli_BIT_5      EQU     0x00000020 
+   46 00000000          xlli_BIT_6      EQU     0x00000040 
+   47 00000000          xlli_BIT_7      EQU     0x00000080 
+   48 00000000          xlli_BIT_8      EQU     0x00000100 
+   49 00000000          xlli_BIT_9      EQU     0x00000200 
+   50 00000000          xlli_BIT_10     EQU     0x00000400 
+   51 00000000          xlli_BIT_11     EQU     0x00000800 
+   52 00000000          xlli_BIT_12     EQU     0x00001000 
+   53 00000000          xlli_BIT_13     EQU     0x00002000 
+   54 00000000          xlli_BIT_14     EQU     0x00004000 
+   55 00000000          xlli_BIT_15     EQU     0x00008000 
+   56 00000000          xlli_BIT_16     EQU     0x00010000 
+   57 00000000          xlli_BIT_17     EQU     0x00020000 
+   58 00000000          xlli_BIT_18     EQU     0x00040000 
+   59 00000000          xlli_BIT_19     EQU     0x00080000 
+   60 00000000          xlli_BIT_20     EQU     0x00100000 
+   61 00000000          xlli_BIT_21     EQU     0x00200000 
+   62 00000000          xlli_BIT_22     EQU     0x00400000 
+   63 00000000          xlli_BIT_23     EQU     0x00800000 
+   64 00000000          xlli_BIT_24     EQU     0x01000000 
+   65 00000000          xlli_BIT_25     EQU     0x02000000 
+   66 00000000          xlli_BIT_26     EQU     0x04000000 
+   67 00000000          xlli_BIT_27     EQU     0x08000000 
+   68 00000000          xlli_BIT_28     EQU     0x10000000 
+   69 00000000          xlli_BIT_29     EQU     0x20000000 
+   70 00000000          xlli_BIT_30     EQU     0x40000000 
+   71 00000000          xlli_BIT_31     EQU     0x80000000 
+   72 00000000            
+   73 00000000          ; 
+   74 00000000          ;  Processor stepping Values 
+   75 00000000          ; 
+   76 00000000          xlli_PXA27x_CP15_A0_Val  EQU (0x69054110) 
+   77 00000000          xlli_PXA27x_CP15_A1_Val  EQU (0x69054111) 
+   78 00000000          xlli_PXA27x_CP15_B0_Val  EQU (0x69054112) 
+   79 00000000          xlli_PXA27x_CP15_B1_Val  EQU (0x69054113) 
+   80 00000000          xlli_PXA27x_CP15_C0_Val  EQU (0x69054114) 
+   81 00000000          xlli_PXA27x_CP15_C5_Val  EQU (0x69054117) 
+   82 00000000            
+   83 00000000          xlli_PXA27x_JTAG_A0_Val  EQU (0x09265013) 
+   84 00000000          xlli_PXA27x_JTAG_A1_Val  EQU (0x19265013) 
+   85 00000000          xlli_PXA27x_JTAG_B0_Val  EQU (0x29265013) 
+   86 00000000          xlli_PXA27x_JTAG_B1_Val  EQU (0x39265013) 
+   87 00000000          xlli_PXA27x_JTAG_C0_Val  EQU (0x49265013) 
+   88 00000000          xlli_PXA27x_JTAG_C5_Val  EQU (0x79265013) 
+   89 00000000            
+   90 00000000          xlli_PXA27x_A0_stepping  EQU (0x0) 
+   91 00000000          xlli_PXA27x_A1_stepping  EQU (0x1) 
+   92 00000000          xlli_PXA27x_B0_stepping  EQU (0x2) 
+   93 00000000          xlli_PXA27x_B1_stepping  EQU (0x3) 
+   94 00000000          xlli_PXA27x_C0_stepping  EQU (0x4) 
+   95 00000000          xlli_PXA27x_C5_stepping  EQU (0x7) 
+   96 00000000            
+   97 00000000            
+   98 00000000          ; 
+   99 00000000          ; GENERAL PURPOSE I/O (GPIO) base address and register offsets from the base address 
+  100 00000000          ; 
+  101 00000000            
+  102 00000000          xlli_GPIOREGS_PHYSICAL_BASE  EQU    0x40E00000 
+  103 00000000            
+  104 00000000          ; GPIO register offsets from the base address 
+  105 00000000            
+  106 00000000          xlli_GPLR0_offset    EQU    (0x000)  ; GPIO Level registers 
+  107 00000000          xlli_GPLR1_offset    EQU    (0x004) 
+  108 00000000          xlli_GPLR2_offset    EQU    (0x008) 
+  109 00000000          xlli_GPLR3_offset    EQU    (0x100) 
+  110 00000000            
+  111 00000000          xlli_GPDR0_offset    EQU    (0x00C)  ; GPIO Direction registers 
+  112 00000000          xlli_GPDR1_offset    EQU    (0x010) 
+  113 00000000          xlli_GPDR2_offset    EQU    (0x014) 
+  114 00000000          xlli_GPDR3_offset    EQU    (0x10C) 
+  115 00000000            
+  116 00000000          xlli_GPSR0_offset    EQU    (0x018)  ; GPIO Set registers 
+  117 00000000          xlli_GPSR1_offset    EQU    (0x01C) 
+  118 00000000          xlli_GPSR2_offset    EQU    (0x020) 
+  119 00000000          xlli_GPSR3_offset    EQU    (0x118) 
+  120 00000000            
+  121 00000000          xlli_GPCR0_offset    EQU    (0x024)  ; GPIO Clear registers 
+  122 00000000          xlli_GPCR1_offset    EQU    (0x028) 
+  123 00000000          xlli_GPCR2_offset    EQU    (0x02C) 
+  124 00000000          xlli_GPCR3_offset    EQU    (0x124) 
+  125 00000000            
+  126 00000000          xlli_GAFR0_L_offset  EQU    (0x054)  ; GPIO Alternate function registers (Bits 15:0) 
+  127 00000000          xlli_GAFR0_U_offset  EQU    (0x058)  ; Bits 31:16 
+  128 00000000          xlli_GAFR1_L_offset  EQU    (0x05c)  ; Bits 47:32 
+  129 00000000          xlli_GAFR1_U_offset  EQU    (0x060)  ; Bits 63:48 
+  130 00000000          xlli_GAFR2_L_offset  EQU    (0x064)  ; Bits 79:64 
+  131 00000000          xlli_GAFR2_U_offset  EQU    (0x068)  ; Bits 95:80 
+  132 00000000          xlli_GAFR3_L_offset  EQU    (0x06C)  ; Bits 111:96 
+  133 00000000          xlli_GAFR3_U_offset  EQU    (0x070)  ; Bits 127:112 
+  134 00000000            
+  135 00000000          ; 
+  136 00000000          ; GPIO register bit masks 
+  137 00000000          ; 
+  138 00000000          xlli_GPIO_BIT_FFRXD    EQU      (xlli_BIT_2) 
+  139 00000000          xlli_GPIO_BIT_FFCTS    EQU      (xlli_BIT_3) 
+  140 00000000          xlli_GPIO_BIT_FFDCD    EQU      (xlli_BIT_4) 
+  141 00000000          xlli_GPIO_BIT_FFDSR    EQU      (xlli_BIT_5) 
+  142 00000000          xlli_GPIO_BIT_FFRI     EQU      (xlli_BIT_6) 
+  143 00000000          xlli_GPIO_BIT_FFTXD    EQU      (xlli_BIT_7) 
+  144 00000000          xlli_GPIO_BIT_FFDTR    EQU      (xlli_BIT_8) 
+  145 00000000          xlli_GPIO_BIT_FFRTS    EQU      (xlli_BIT_9) 
+  146 00000000            
+  147 00000000          xlli_GPIO_AF_BIT_FFRXD EQU      (xlli_BIT_4) 
+  148 00000000          xlli_GPIO_AF_BIT_FFCTS EQU      (xlli_BIT_6) 
+  149 00000000          xlli_GPIO_AF_BIT_FFDCD EQU      (xlli_BIT_8) 
+  150 00000000          xlli_GPIO_AF_BIT_FFDSR EQU      (xlli_BIT_10) 
+  151 00000000          xlli_GPIO_AF_BIT_FFRI  EQU      (xlli_BIT_12) 
+  152 00000000          xlli_GPIO_AF_BIT_FFTXD EQU      (xlli_BIT_15) 
+  153 00000000          xlli_GPIO_AF_BIT_FFDTR EQU      (xlli_BIT_17) 
+  154 00000000          xlli_GPIO_AF_BIT_FFRTS EQU      (xlli_BIT_19) 
+  155 00000000            
+  156 00000000          ; 
+  157 00000000          ; POWER MANAGER base address and register offsets from the base address 
+  158 00000000          ; 
+  159 00000000            
+  160 00000000          xlli_PMRCREGS_PHYSICAL_BASE  EQU    0x40F00000  
+  161 00000000            
+  162 00000000          xlli_PMCR_offset     EQU    (0x00)      ; Power Manager Control Register 
+  163 00000000          xlli_PSSR_offset     EQU    (0x04)      ; Power Manager Sleep Status Register 
+  164 00000000          xlli_PSPR_offset     EQU    (0x08)      ; Power Manager Scratch Pad Register 
+  165 00000000          xlli_PWER_offset     EQU    (0x0C)      ; Power Manager Wake-up Enable Register 
+  166 00000000          xlli_PRER_offset     EQU    (0x10)      ; Power Manager GPIO Rising-edge Detect Enable Register 
+  167 00000000          xlli_PFER_offset     EQU    (0x14)      ; Power Manager GPIO Falling-edge Detect Enable Register 
+  168 00000000          xlli_PEDR_offset     EQU    (0x18)      ; Power Manager GPIO Edge Detect Status Register 
+  169 00000000          xlli_PCFR_offset     EQU    (0x1C)      ; Power Manager General Configuration Register 
+  170 00000000          xlli_PGSR0_offset    EQU    (0x20)      ; Power Manager GPIO Sleep State Register for GP [31-0] 
+  171 00000000          xlli_PGSR1_offset    EQU    (0x24)      ; Power Manager GPIO Sleep State Register for GP [63-32] 
+  172 00000000          xlli_PGSR2_offset    EQU    (0x28)      ; Power Manager GPIO Sleep State Register for GP [95-64] 
+  173 00000000          xlli_PGSR3_offset    EQU    (0x2C)      ; Power Manager GPIO Sleep State Register for GP [120-96] 
+  174 00000000          xlli_RCSR_offset     EQU    (0x30)      ; Reset Controller Status Register 
+  175 00000000          xlli_PSLR_offset     EQU    (0x34)      ; Power Manager Sleep Mode Config Register 
+  176 00000000          xlli_PSTR_offset     EQU    (0x38)      ; Power Manager Standby Mode Config Register 
+  177 00000000          xlli_PSNR_offset     EQU    (0x3C)      ; Power Manager Sense Moce Config Register 
+  178 00000000          xlli_PVCR_offset     EQU    (0x40)      ; Power Manager Voltage Change Control Register 
+  179 00000000          xlli_PKWR_offset     EQU    (0x50)      ; Power Manager Keyboard Wake-up Enable Register 
+  180 00000000          xlli_PKSR_offset     EQU    (0x54)      ; Power Manager Keyboard Edge-Detect Status Register 
+  181 00000000          xlli_PI2DBR_offset   EQU   (0x188)      ; Power I2C Data Buffer Register 
+  182 00000000          xlli_PI2CR_offset    EQU   (0x190)      ; Power I2C Control Register 
+  183 00000000          xlli_PI2SR_offset    EQU   (0x198)      ; Power I2C Status Register 
+  184 00000000          xlli_PI2SAR_offset   EQU   (0x1A0)      ; Power I2C Slave Address Register 
+  185 00000000            
+  186 00000000          ; 
+  187 00000000          ; POWER MANAGER register bit masks  
+  188 00000000          ; 
+  189 00000000          xlli_PSSR_SSS           EQU    (0x01)   ; Software Sleep Status 
+  190 00000000          xlli_PSSR_BFS           EQU    (0x02)   ; Battery Fault Status 
+  191 00000000          xlli_PSSR_VFS           EQU    (0x04)   ; VCC Fault Status 
+  192 00000000          xlli_PSSR_PH            EQU    (0x10)   ; Peripheral Control Hold 
+  193 00000000          xlli_PSSR_RDH           EQU    (0x20)   ; Read Disable Hold 
+  194 00000000            
+  195 00000000          xlli_PCFR_OPDE          EQU    (0x01)   ; Processor (13MHz) osc power-down enable 
+  196 00000000          xlli_PCFR_FP            EQU    (0x02)   ; Float PCMCIA during sleep modes 
+  197 00000000          xlli_PCFR_FS            EQU    (0x04)   ; Float Static Chip Selects 
+  198 00000000          xlli_PCFR_GPR_EN        EQU    (0x10)   ; GPIO 1 performs GPIO reset 
+  199 00000000          xlli_PCFR_SYSEN_EN      EQU    (0x20)   ; SYS_EN pin 
+  200 00000000          xlli_PCFR_PI2C_EN       EQU    (0x40)   ; 
+  201 00000000          xlli_PCFR_DC_EN         EQU    (0x80)      ; Deep-Sleep Mode 
+  202 00000000          xlli_PCFR_FVC           EQU    (0x400)  ; 
+  203 00000000          xlli_PCFR_L1_EN         EQU    (0x800)  ; 
+  204 00000000          xlli_PCFR_GPROD         EQU    (0x1000) ; 
+  205 00000000          xlli_PCFR_PO            EQU    (0x4000) ; 
+  206 00000000          xlli_PCFR_RO            EQU    (0x8000) ; 
+  207 00000000          xlli_PCFR_USEDBITS      EQU     (xlli_PCFR_OPDE :OR: xlli_PCFR_FP :OR: xlli_PCFR_FS :OR: xlli_PCFR_GPR_EN :OR:                 
+                                         xlli_PCFR_SYSEN_EN :OR: xlli_PCFR_PI2C_EN :OR: xlli_PCFR_DC_EN :OR: xlli_PCFR_FVC :OR:                        
+                                  xlli_PCFR_L1_EN :OR: xlli_PCFR_GPROD :OR: xlli_PCFR_PO :OR: xlli_PCFR_RO) 
+  210 00000000            
+  211 00000000          xlli_PSLR_SL_PI_OFF     EQU   (0x00000000)      ; PI power domain is powered off in sleep and deep sleep mode 
+  212 00000000          xlli_PSLR_SL_PI_RETAIN  EQU   (0x00000004)      ; PI power domain retains state in sleep and deep sleep mode 
+  213 00000000          xlli_PSLR_SL_PI_RUN     EQU   (0x00000008)      ; PI power domain is active with clocks running in sleep mode (DO NOT set for  
+                        deep-sleep mode) 
+  214 00000000          xlli_PSLR_SL_PI_RSVD    EQU   (0x0000000C)      ; PI power domain reserved bits 
+  215 00000000          xlli_PSLR_SL_R0         EQU   (0x00000100)      ; SRAM Bank 0 retains state in sleep mode 
+  216 00000000          xlli_PSLR_SL_R1         EQU   (0x00000200)      ; SRAM Bank 1 retains state in sleep mode 
+  217 00000000          xlli_PSLR_SL_R2         EQU   (0x00000400)      ; SRAM Bank 2 retains state in sleep mode 
+  218 00000000          xlli_PSLR_SL_R3         EQU   (0x00000800)      ; SRAM Bank 3 retains state in sleep mode 
+  219 00000000          xlli_PSLR_SL_ROD        EQU   (0x00100000)      ; 1 = nRESET_OUT is not asserted upon entry into sleep or deep-sleep mode 
+  220 00000000          xlli_PSLR_IVF           EQU   (0x00400000)      ; 1 = No action taken when nVV_FAULT occurs in sleep mode 
+  221 00000000          xlli_PSLR_PSSD          EQU   (0x00800000)      ; 1 = shorten the wake-up delay if all corresponding power supplies are detect 
+                        ed to have powered on 
+  222 00000000          xlli_PSLR_PWR_DEL_MAX   EQU   (0x0f000000)      ; max power supply PWR_EN ramp delay 
+  223 00000000          xlli_PSLR_SYS_DEL_MAX   EQU   (0xf0000000)      ; max system power supply SYS_EN ramp delay 
+  224 00000000          xlli_PSLR_USEDBITS      EQU   (xlli_PSLR_SL_PI_RSVD :OR: xlli_PSLR_SL_R0 :OR:                                 xlli_PSLR_SL_R1  
+                        :OR: xlli_PSLR_SL_R2 :OR:                                 xlli_PSLR_SL_R3 :OR: xlli_PSLR_SL_ROD :OR:                           
+                               xlli_PSLR_IVF :OR: xlli_PSLR_PSSD :OR:                                 xlli_PSLR_PWR_DEL_MAX :OR: xlli_PSLR_SYS_DEL_MAX 
+                        ) 
+  229 00000000                                           
+  230 00000000          xlli_PWER_WE0     EQU    (0x01)      ; Wake-up Enable GPIO pin 0 
+  231 00000000          xlli_PWER_WE1     EQU    (0x02)      ; Wake-up Enable GPIO pin 1 
+  232 00000000          xlli_PWER_WERTC   EQU    (0x80000000); RTC Standby, Wake-up Enable- 
+  233 00000000            
+  234 00000000          ; 
+  235 00000000          ; MEMORY CONTROLLER base address and register offsets from the base address  
+  236 00000000          ; 
+  237 00000000            
+  238 00000000          xlli_MEMORY_CONFIG_BASE       EQU   0x48000000 
+  239 00000000            
+  240 00000000          xlli_MDCNFG_offset    EQU     (0x00) 
+  241 00000000          xlli_MDREFR_offset    EQU     (0x04) 
+  242 00000000          xlli_MSC0_offset      EQU     (0x08) 
+  243 00000000          xlli_MSC1_offset      EQU     (0x0C) 
+  244 00000000          xlli_MSC2_offset      EQU     (0x10) 
+  245 00000000          xlli_MECR_offset      EQU     (0x14) 
+  246 00000000          xlli_SXLCR_offset     EQU     (0x18) 
+  247 00000000          xlli_SXCNFG_offset    EQU     (0x1C) 
+  248 00000000          xlli_FLYCNFG_offset   EQU     (0x20) 
+  249 00000000          xlli_SXMRS_offset     EQU     (0x24)                                        
+  250 00000000          xlli_MCMEM0_offset    EQU     (0x28) 
+  251 00000000          xlli_MCMEM1_offset    EQU     (0x2C) 
+  252 00000000          xlli_MCATT0_offset    EQU     (0x30) 
+  253 00000000          xlli_MCATT1_offset    EQU     (0x34) 
+  254 00000000          xlli_MCIO0_offset     EQU     (0x38) 
+  255 00000000          xlli_MCIO1_offset     EQU     (0x3C) 
+  256 00000000          xlli_MDMRS_offset     EQU     (0x40) 
+  257 00000000          xlli_BOOT_DEF_offset  EQU     (0x44) 
+  258 00000000          xlli_ARB_CNTL_offset  EQU     (0x48) 
+  259 00000000          xlli_BSCNTR0_offset   EQU     (0x4C) 
+  260 00000000          xlli_BSCNTR1_offset   EQU     (0x50) 
+  261 00000000          xlli_LCDBSCNTR_offset EQU     (0x54) 
+  262 00000000          xlli_MDMRSLP_offset   EQU     (0x58) 
+  263 00000000          xlli_BSCNTR2_offset   EQU     (0x5C) 
+  264 00000000          xlli_BSCNTR3_offset   EQU     (0x60) 
+  265 00000000            
+  266 00000000          ; Memory Controller bit defs 
+  267 00000000            
+  268 00000000          xlli_MDREFR_K0DB4     EQU     (0x20000000)    ; Sync Static Clock 0 divide by 4 control/status 
+  269 00000000          xlli_MDREFR_K2FREE    EQU     (0x02000000)    ; Set to force SDCLK[2] to be free running 
+  270 00000000          xlli_MDREFR_K1FREE    EQU     (0x01000000)    ; Set to force SDCLK[1] to be free running 
+  271 00000000          xlli_MDREFR_K0FREE    EQU     (0x00800000)    ; Set to force SDCLK[0] to be free running 
+  272 00000000          xlli_MDREFR_SLFRSH    EQU     (0x00400000)    ; Self Refresh Control Status bit 
+  273 00000000          xlli_MDREFR_APD       EQU     (0x00100000)    ; Auto Power Down bit 
+  274 00000000          xlli_MDREFR_K2DB2     EQU     (0x00080000)    ; SDRAM clock pin 2 divide by 2 control/status 
+  275 00000000          xlli_MDREFR_K2RUN     EQU     (0x00040000)    ; SDRAM clock pin 2 run/control status 
+  276 00000000          xlli_MDREFR_K1DB2     EQU     (0x00020000)    ; SDRAM clock pin 1 divide by 2 control/status 
+  277 00000000          xlli_MDREFR_K1RUN     EQU     (0x00010000)    ; SDRAM clock pin 1 run/control status 
+  278 00000000          xlli_MDREFR_E1PIN     EQU     (0x00008000)    ; SDRAM clock Enable pin 1 level control/status 
+  279 00000000          xlli_MDREFR_K0DB2     EQU     (0x00004000)    ; Sync Static Memory Clock divide by 2 control/status 
+  280 00000000          xlli_MDREFR_K0RUN     EQU     (0x00002000)    ; Sync Static Memory Clock Pin 0 
+  281 00000000          xlli_MDREFR_E0PIN     EQU     (0x00000100)    ; SDRAM clock enable pin 0 (Cotulla ONLY!!) 
+  282 00000000            
+  283 00000000          xlli_MDCNFG_DE0       EQU     (0x00000001)    ; SDRAM enable bit for partition 0 
+  284 00000000          xlli_MDCNFG_DE1       EQU     (0x00000002)    ; SDRAM enable bit for partition 1 
+  285 00000000          xlli_MDCNFG_DE2       EQU     (0x00010000)    ; SDRAM enable bit for partition 2 
+  286 00000000          xlli_MDCNFG_DE3       EQU     (0x00020000)    ; SDRAM enable bit for partition 3 
+  287 00000000          xlli_MDCNFG_DWID0     EQU     (0x00000004)    ; SDRAM bus width (clear = 32 bits, set = 16 bits) 
+  288 00000000          xlli_MDCNFG_DWID2     EQU     (0x00040000)    ; SDRAM bus width (clear = 32 bits, set = 16 bits) 
+  289 00000000          xlli_MDCNFG_DCAC0     EQU     (0x00000008) 
+  290 00000000          xlli_MDCNFG_DCAC2     EQU     (0x00080000) 
+  291 00000000            
+  292 00000000          ; 
+  293 00000000          ; INTERNAL MEMORY CONTROLLER base address and register offsets from the base address  
+  294 00000000          ; 
+  295 00000000            
+  296 00000000          xlli_IMEMORY_CONFIG_BASE      EQU   (0x58000000) 
+  297 00000000            
+  298 00000000          xlli_IMPMCR_offset   EQU     (0x00)       ; Internal Memory Power Manager Control Register 
+  299 00000000          xlli_IMPMSR_offset   EQU     (0x08)       ; Internal Memory Power Management Status Register 
+  300 00000000            
+  301 00000000            
+  302 00000000          ; 
+  303 00000000          ; UART Definitions 
+  304 00000000          ; 
+  305 00000000          xlli_perif_base                 EQU     (0x40000000)    ; Base address of the peripherals 
+  306 00000000          xlli_ffuart_offset              EQU     (0x00100000)    ; Offset to the Full-Feature UART in the peripheral block 
+  307 00000000          xlli_btuart_offset              EQU     (0x00200000)    ; Offset to the BlueTooth UART in the peripheral block 
+  308 00000000          xlli_stuart_offset              EQU     (0x00700000)    ; Offset to the Standard UART in the peripheral block 
+  309 00000000            
+  310 00000000            
+  311 00000000          xlli_uart_thr_offset            EQU     (0x0)       ;DLAB = 0  WO  8bit - Transmit Holding Register 
+  312 00000000          xlli_uart_rbr_offset            EQU     (0x0)       ;DLAB = 0  RO  8bit - Recieve Buffer Register 
+  313 00000000          xlli_uart_dll_offset            EQU     (0x0)       ;DLAB = 1  RW  8bit - Divisor Latch Low Register 
+  314 00000000          xlli_uart_ier_offset            EQU     (0x4)       ;DLAB = 0  RW  8bit - Interrupt Enable Register 
+  315 00000000          xlli_uart_dlh_offset            EQU     (0x4)       ;DLAB = 1  RW  8bit - Divisor Latch High Register 
+  316 00000000          xlli_uart_iir_offset            EQU     (0x8)       ;DLAB = X  RO  8bit - Interrupt Identification Register 
+  317 00000000          xlli_uart_fcr_offset            EQU     (0x8)       ;DLAB = X  WO  8bit - FIFO Control Register 
+  318 00000000          xlli_uart_lcr_offset            EQU     (0xC)       ;DLAB = X  RW  8bit - Line Control Register 
+  319 00000000          xlli_uart_mcr_offset            EQU     (0x10)      ;DLAB = X  RW  8bit - Modem Control Regiser 
+  320 00000000          xlli_uart_lsr_offset            EQU     (0x14)      ;DLAB = X  RO  8bit - Line Status Register 
+  321 00000000          xlli_uart_msr_offset            EQU     (0x18)      ;DLAB = X  RO  8bit - Modem Status Register 
+  322 00000000          xlli_uart_spr_offset            EQU     (0x1C)      ;DLAB = X  RW  8bit - Scratchpad Register 
+  323 00000000          xlli_uart_isr_offset            EQU     (0x20)      ;DLAB = X  RW  8bit - Slow Infrared Select Register 
+  324 00000000          xlli_uart_for_offset            EQU     (0x24)      ;DLAB = X  RO  FIFO Occupancy Register 
+  325 00000000          xlli_uart_abr_offset            EQU     (0x28)      ;DLAB = X  RW  Autobaud Control Register 
+  326 00000000          xlli_uart_acr_offset            EQU     (0x2C)      ;DLAB = X Autobaud Count Register 
+  327 00000000            
+  328 00000000          ; 
+  329 00000000          ; INTERRUPT CONTROLLER base address and register offsets from the base address 
+  330 00000000          ;  
+  331 00000000          ; 
+  332 00000000            
+  333 00000000          xlli_INTERREGS_PHYSICAL_BASE      EQU     (0x40D00000) 
+  334 00000000            
+  335 00000000          xlli_ICIP_offset      EQU     (0x00)   ; Interrupt Controller IRQ Pending Register 
+  336 00000000          xlli_ICMR_offset      EQU     (0x04)   ; Interrupt Controller Mask Register 
+  337 00000000          xlli_ICLR_offset      EQU     (0x08)   ; Interrupt Controller Level Register 
+  338 00000000          xlli_ICFP_offset      EQU     (0x0C)   ; Interrupt Controller FIQ pending Register 
+  339 00000000          xlli_ICPR_offset      EQU     (0x10)   ; Interrupt Controller Pending Register 
+  340 00000000          xlli_ICCR_offset      EQU     (0x14)   ; Interrupt Controller Control Register 
+  341 00000000          xlli_ICHP_offset      EQU     (0x18)   ; Interrupt Controller Highest Priority Reg 
+  342 00000000          xlli_ICMR2_offset     EQU     (0xA0)   ; Interrupt Controller Mask Register 2 
+  343 00000000          xlli_ICLR2_offset     EQU     (0xA4)   ; Interrupt Controller Level Register 2 
+  344 00000000          xlli_ICCR2_offset     EQU     (0xAC)   ; Interrupt Controller Control Register 2 
+  345 00000000            
+  346 00000000          ; 
+  347 00000000          ; SSP SERIAL PORTS base address and register offsets from the base address 
+  348 00000000          ;  
+  349 00000000            
+  350 00000000          xlli_SSP_PHYSICAL_BASE EQU    (0x40100000) 
+  351 00000000            
+  352 00000000          xlli_SSCR0_1_offset    EQU    (0x00)   ; SSP 1 Control Regsiter 0 
+  353 00000000          xlli_SSCR1_1_offset    EQU    (0x04)   ; SSP 1 Control Register 1 
+  354 00000000          xlli_SSSR_1_offset     EQU    (0x08)   ; SSP 1 Status Register 
+  355 00000000          xlli_SSITR_1_offset    EQU    (0x0C)   ; SSP 1 Interrupt Test Register 
+  356 00000000          xlli_SSDR_1_offset     EQU    (0x10)   ; SSP 1 Data Write Register/Data Read Register 
+  357 00000000            
+  358 00000000          ; 
+  359 00000000          ; CLOCK REGISTERS base address and register offsets from the base address 
+  360 00000000          ;  
+  361 00000000            
+  362 00000000          xlli_CLKREGS_PHYSICAL_BASE        EQU     (0x41300000) 
+  363 00000000            
+  364 00000000          xlli_CCCR_offset     EQU     (0x00)    ; Core Clock Configuration Register 
+  365 00000000          xlli_CKEN_offset     EQU     (0x04)    ; Clock-Enable Register 
+  366 00000000          xlli_OSCC_offset     EQU     (0x08)    ; Oscillator Configuration Register 
+  367 00000000          xlli_CCSR_offset     EQU     (0x0C)    ; Core Clock Status Register 
+  368 00000000            
+  369 00000000          xlli_CCCR_A_Bit_Mask EQU     (0x1 << 25)  ; "A" bit is bit 25 in CCCR 
+  370 00000000          ; 
+  371 00000000          ; OS TIMER REGISTERS base address and register offsets from the base address 
+  372 00000000          ;  
+  373 00000000            
+  374 00000000          xlli_OSTREGS_PHYSICAL_BASE        EQU     (0x40A00000) 
+  375 00000000            
+  376 00000000          xlli_OSMR0_offset    EQU     (0x00)    ; OS Timer Match Register 0 
+  377 00000000          xlli_OSMR1_offset    EQU     (0x04)    ; OS Timer Match Register 1 
+  378 00000000          xlli_OSMR2_offset    EQU     (0x08)    ; OS Timer Match Register 2 
+  379 00000000          xlli_OSMR3_offset    EQU     (0x0C)    ; OS Timer Match Register 3 
+  380 00000000            
+  381 00000000          xlli_OSCR0_offset    EQU     (0x10)    ; OS Timer Count Register 0 
+  382 00000000          xlli_OSSR_offset     EQU     (0x14)    ; OS Timer Status Register 
+  383 00000000          xlli_OWER_offset     EQU     (0x18)    ; OS Timer Watchdog Enable Register 
+  384 00000000          xlli_OIER_offset     EQU     (0x1C)    ; OS Timer Interrupt Enable Register 
+  385 00000000            
+  386 00000000          xlli_OSCR4_offset    EQU     (0x40)    ; OS Timer Count Register 4 
+  387 00000000          xlli_OSCR5_offset    EQU     (0x44)    ; OS Timer Count Register 5 
+  388 00000000          xlli_OSCR6_offset    EQU     (0x48)    ; OS Timer Count Register 6 
+  389 00000000          xlli_OSCR7_offset    EQU     (0x4C)    ; OS Timer Count Register 7 
+  390 00000000          xlli_OSCR8_offset    EQU     (0x50)    ; OS Timer Count Register 8 
+  391 00000000          xlli_OSCR9_offset    EQU     (0x54)    ; OS Timer Count Register 9 
+  392 00000000          xlli_OSCR10_offset   EQU     (0x58)    ; OS Timer Count Register 10 
+  393 00000000          xlli_OSCR11_offset   EQU     (0x5C)    ; OS Timer Count Register 11 
+  394 00000000            
+  395 00000000          xlli_OSMR4_offset    EQU     (0x80)    ; OS Timer Match Register 4 
+  396 00000000          xlli_OSMR5_offset    EQU     (0x84)    ; OS Timer Match Register 5 
+  397 00000000          xlli_OSMR6_offset    EQU     (0x88)    ; OS Timer Match Register 6 
+  398 00000000          xlli_OSMR7_offset    EQU     (0x8C)    ; OS Timer Match Register 7 
+  399 00000000          xlli_OSMR8_offset    EQU     (0x90)    ; OS Timer Match Register 8 
+  400 00000000          xlli_OSMR9_offset    EQU     (0x94)    ; OS Timer Match Register 9 
+  401 00000000          xlli_OSMR10_offset   EQU     (0x98)    ; OS Timer Match Register 10 
+  402 00000000          xlli_OSMR11_offset   EQU     (0x9C)    ; OS Timer Match Register 11 
+  403 00000000            
+  404 00000000          xlli_OMCR4_offset    EQU     (0xC0)    ; OS Timer Match Control Register 4 
+  405 00000000          xlli_OMCR5_offset    EQU     (0xC4)    ; OS Timer Match Control Register 5 
+  406 00000000          xlli_OMCR6_offset    EQU     (0xC8)    ; OS Timer Match Control Register 6 
+  407 00000000          xlli_OMCR7_offset    EQU     (0xCC)    ; OS Timer Match Control Register 7 
+  408 00000000          xlli_OMCR8_offset    EQU     (0xD0)    ; OS Timer Match Control Register 8 
+  409 00000000          xlli_OMCR9_offset    EQU     (0xD4)    ; OS Timer Match Control Register 9 
+  410 00000000          xlli_OMCR10_offset   EQU     (0xD8)    ; OS Timer Match Control Register 10 
+  411 00000000          xlli_OMCR11_offset   EQU     (0xDC)    ; OS Timer Match Control Register 11 
+  412 00000000            
+  413 00000000          xlli_OSSR_ALL        EQU     (0xFFF)   ; Match register status "sticky bits" 
+  414 00000000          xlli_OIER_E1         EQU     (0x002)   ; Interrupt enable bit for match register #1 
+  415 00000000            
+  416 00000000          ; 
+  417 00000000          ; REAL TIME CLOCK (RTC) REGISTERS base address and register offsets from the base address 
+  418 00000000          ;  
+  419 00000000            
+  420 00000000          xlli_RTCREGS_PHYSICAL_BASE   EQU       (0x40900000) 
+  421 00000000            
+  422 00000000          xlli_RCNR_offset     EQU     (0x00)    ; RTC Counter Register 
+  423 00000000          xlli_RTAR_offset     EQU     (0x04)    ; RTC Alarm Register 
+  424 00000000          xlli_RTSR_offset     EQU     (0x08)    ; RTC Status Register 
+  425 00000000          xlli_RTTR_offset     EQU     (0x0C)    ; RTC Timer Trim Register 
+  426 00000000          xlli_RDCR_offset     EQU     (0x10)    ; RTC Day Counter Register 
+  427 00000000          xlli_RYCR_offset     EQU     (0x14)    ; RTC Year Counter Register  
+  428 00000000          xlli_RDAR1_offset    EQU     (0x18)    ; RTC Day Alarm Register 1 
+  429 00000000          xlli_RYAR1_offset    EQU     (0x1C)    ; RTC Year Alarm Register 2 
+  430 00000000          xlli_RDAR2_offset    EQU     (0x20)    ; RTC Day Alarm Register 2 
+  431 00000000          xlli_RYAR2_offset    EQU     (0x24)    ; RTC Year Alarm Register 2 
+  432 00000000          xlli_SWCR_offset     EQU     (0x28)    ; Stopwatch Counter Register 
+  433 00000000          xlli_SWAR1_offset    EQU     (0x2C)    ; Stopwatch Alarm Register 1 
+  434 00000000          xlli_SWAR2_offset    EQU     (0x30)    ; Stopwatch Alarm Register 2 
+  435 00000000          xlli_PICR_offset     EQU     (0x34)    ; Periodic Interrupt Counter Register 
+  436 00000000          xlli_PIAR_offset     EQU     (0x38)    ; Periodic Interrupt Alarm Register 
+  437 00000000            
+  438 00000000            
+  439 00000000          ; Oscillator Controller bit defs 
+  440 00000000            
+  441 00000000          xlli_OSCC_OOK        EQU     (0x01)    ; Oscillator OK bit 
+  442 00000000          xlli_OSCC_OON        EQU     (0x02)    ; Timekeeping (32.768KHz) Osc bit 
+  443 00000000          xlli_OSCC_TOUT_EN    EQU     (0x04)    ; Timekeeping Output enable 
+  444 00000000          xlli_OSCC_PIO_EN     EQU     (0x08)    ; Processor Oscillator Output Enable 
+  445 00000000          xlli_OSCC_CRI        EQU     (0x10)    ; Processor Oscillator Output Enable 
+  446 00000000            
+  447 00000000          ; 
+  448 00000000          ; Coprocessor 15 data bits 
+  449 00000000          ;  
+  450 00000000            
+  451 00000000          xlli_control_icache  EQU     (0x1000)  ; bit 12 -  i-cache bit 
+  452 00000000          xlli_control_btb     EQU     (0x0800)  ; bit 11 -  btb bit 
+  453 00000000          xlli_control_r       EQU     (0x0200)  ; Bit 9 
+  454 00000000          xlli_control_s       EQU     (0x0100)  ; Bit 8 
+  455 00000000          xlli_control_dcache  EQU     (0x0004)  ; Bit 2  -  d-cache bit 
+  456 00000000          xlli_control_mmu     EQU     (0x0001)  ; Bit 0  -  MMU bit 
+  457 00000000            
+  458 00000000            
+  459 00000000          ; 
+  460 00000000          ; CP 15 related settings 
+  461 00000000          ; 
+  462 00000000            
+  463 00000000          xlli_PID                   EQU     (0x00) 
+  464 00000000          xlli_DACR                  EQU     (0x01) 
+  465 00000000          xlli_CONTROL_DCACHE        EQU     (0x04) 
+  466 00000000          xlli_CONTROL_MINIDATA_01   EQU     (0x10) 
+  467 00000000          xlli_CONTROL_BTB           EQU     (0x800)   ; Brach Target Buffer bit 
+  468 00000000            
+  469 00000000          ; 
+  470 00000000          ; register bit masks - RCSR 
+  471 00000000          ; 
+  472 00000000          xlli_RCSR_HWR         EQU     (0x01) 
+  473 00000000          xlli_RCSR_WDR         EQU     (0x02) 
+  474 00000000          xlli_RCSR_SMR         EQU     (0x04) 
+  475 00000000          xlli_RCSR_GPR         EQU     (0x08) 
+  476 00000000          xlli_RCSR_ALL         EQU     (0xF) 
+  477 00000000            
+  478 00000000            
+  479 00000000          ; 
+  480 00000000          ;  CPSR Processor constants 
+  481 00000000            
+  482 00000000          xlli_CPSR_Mode_MASK   EQU       (0x0000001F) 
+  483 00000000          xlli_CPSR_Mode_USR    EQU       (0x10) 
+  484 00000000          xlli_CPSR_Mode_FIQ    EQU       (0x11) 
+  485 00000000          xlli_CPSR_Mode_IRQ    EQU       (0x12) 
+  486 00000000          xlli_CPSR_Mode_SVC    EQU       (0x13) 
+  487 00000000          xlli_CPSR_Mode_ABT    EQU       (0x17) 
+  488 00000000          xlli_CPSR_Mode_UND    EQU       (0x1B) 
+  489 00000000          xlli_CPSR_Mode_SYS    EQU       (0x1F) 
+  490 00000000            
+  491 00000000          xlli_CPSR_I_Bit       EQU       (0x80) 
+  492 00000000          xlli_CPSR_F_Bit       EQU       (0x40) 
+  493 00000000            
+  494 00000000            
+  495 00000000          xlli_PWRMODE_SLEEP    EQU       (0x00000003) ; Value for cp14: Reg7 to induce sleep. 
+  496 00000000            
+  497 00000000                END 
+   29 00000000              EXPORT  XllpXSC1EnterTurbo   
+   30 00000000              EXPORT  XllpXSC1ExitTurbo 
+   31 00000000              EXPORT  XllpXSC1ReadCLKCFG 
+   32 00000000              EXPORT  XllpXSC1WriteCLKCFG 
+   33 00000000              EXPORT  XllpXSC1ChangeVoltage 
+   34 00000000              EXPORT  XllpXSC1FreqChange 
+   35 00000000              EXPORT  XSC1GetCPUId 
+   36 00000000              EXPORT  XSC1GetCPSR 
+   37 00000000              EXPORT  XSC1GetSPSR 
+   38 00000000            
+   39                       AREA    |.text|, CODE, READONLY, ALIGN=5        ; Align =5 required for "ALIGN 32" to work 
+   40 00000000            
+   41 00000000          IRQ_MODE    EQU 2_10010 
+   42 00000000          SVC_MODE    EQU 2_10011 
+   43 00000000            
+   44 00000000          ; 
+   45 00000000          ; XllpXSC1EnterTurbo - Enters Turbo Mode 
+   46 00000000          ; 
+   47 00000000          ;   Uses r0 - contains value for writing to PWRMODE coprocessor register 
+   48 00000000          ;    
+   49 00000000          ;   Preserve the Fast Bus Mode, B bit. 
+   50 00000000          ; 
+   51 00000000          XllpXSC1EnterTurbo   FUNCTION 
+   52 00000000            
+   53 00000000 ee160e10     mrc     p14, 0, r0, c6, c0, 0           ; read c6 
+   54 00000004 e200000d     and     r0,  r0, #0xd                   ; clear F bit 
+   55 00000008 e3800001     orr     r0, r0, #1                      ; or in Turbo bit 
+   56 0000000c ee060e10     mcr     p14, 0, r0, c6, c0, 0           ; enter Turbo mode 
+   57 00000010                IF Interworking :LOR: Thumbing 
+   58 00000010 e12fff1e          bx  lr 
+   59 00000014                ELSE 
+   61 00000014                ENDIF 
+   62 00000014            
+   63 00000014              ENDFUNC 
+   64 00000014            
+   65 00000014          ; 
+   66 00000014          ; XllpXSC1ExitTurbo - Exits Turbo Mode 
+   67 00000014          ; 
+   68 00000014          ;   Uses r0 - contains value for writing to PWRMODE coprocessor register    
+   69 00000014          ; 
+   70 00000014          ;   Preserve the Fast Bus Mode, B bit. 
+   71 00000014          ; 
+   72 00000014          XllpXSC1ExitTurbo   FUNCTION 
+   73 00000014            
+   74 00000014 ee160e10     mrc     p14, 0, r0, c6, c0, 0       ; read c6 
+   75 00000018 e200000e     and     r0, r0, #0xe                ; clear Turbo bit to 
+   76 0000001c ee060e10     mcr     p14, 0, r0, c6, c0, 0       ; exit Turbo mode 
+   77 00000020                IF Interworking :LOR: Thumbing 
+   78 00000020 e12fff1e          bx  lr 
+   79 00000024                ELSE 
+   81 00000024                ENDIF 
+   82 00000024            
+   83 00000024              ENDFUNC 
+   84 00000024            
+   85 00000024          ; 
+   86 00000024          ;XllpXSC1ReadCLKCFG - Reads CCLKCFG register 
+   87 00000024          ; 
+   88 00000024          ;   Uses r0 - contains return value -> CCLKCFG register contents 
+   89 00000024          ; 
+   90 00000024          XllpXSC1ReadCLKCFG   FUNCTION 
+   91 00000024            
+   92 00000024 ee160e10     mrc     p14, 0, r0, c6, c0, 0       ; Read CCLKCFG 
+   93 00000028            
+   94 00000028              IF Interworking :LOR: Thumbing 
+   95 00000028 e12fff1e       bx  lr 
+   96 0000002c              ELSE 
+   98 0000002c              ENDIF 
+   99 0000002c            
+  100 0000002c              ENDFUNC 
+  101 0000002c            
+  102 0000002c            
+  103 0000002c          ;---------------------------------------------------------------------------------------- 
+  104 0000002c          ; XSC1GetCPUId - Get the CPU ID from CP15 R0 Register 
+  105 0000002c          ; 
+  106 0000002c          ; This routine reads R0 from CoProcesser 15 to get the CPU ID 
+  107 0000002c          ; 
+  108 0000002c          ;       Uses r0 - return value of CPU ID 
+  109 0000002c          ;---------------------------------------------------------------------------------------- 
+  110 0000002c          ;        LEAF_ENTRY XSC1GetCPUId 
+  111 0000002c          XSC1GetCPUId FUNCTION 
+  112 0000002c            
+  113 0000002c ee100f10     mrc     p15, 0, r0, c0, c0, 0 
+  114 00000030            
+  115 00000030              IF Interworking :LOR: Thumbing 
+  116 00000030 e12fff1e         bx  lr 
+  117 00000034              ELSE 
+  119 00000034              ENDIF 
+  120 00000034            
+  121 00000034              ENDFUNC 
+  122 00000034            
+  123 00000034            
+  124 00000034          ;---------------------------------------------------------------------------------------- 
+  125 00000034          ; XSC1GetCPSR - Returns the Current Program Status Register 
+  126 00000034          ; 
+  127 00000034          ;       Uses r0 returns CPSR 
+  128 00000034          ;---------------------------------------------------------------------------------------- 
+  129 00000034          XSC1GetCPSR FUNCTION 
+  130 00000034            
+  131 00000034 e10f0000     mrs     r0, CPSR 
+  132 00000038            
+  133 00000038              IF Interworking :LOR: Thumbing 
+  134 00000038 e12fff1e      bx  lr 
+  135 0000003c              ELSE 
+  137 0000003c              ENDIF 
+  138 0000003c            
+  139 0000003c              ENDFUNC 
+  140 0000003c            
+  141 0000003c            
+  142 0000003c          ;---------------------------------------------------------------------------------------- 
+  143 0000003c          ; XSC1GetSPSR - Returns the Saved Program Status Register 
+  144 0000003c          ; 
+  145 0000003c          ; This routine is called by the IRQ interrupt handler when 
+  146 0000003c          ; PMU is active and capturing data 
+  147 0000003c          ; 
+  148 0000003c          ;       Uses    r0 returns SPSR 
+  149 0000003c          ;---------------------------------------------------------------------------------------- 
+  150 0000003c          XSC1GetSPSR FUNCTION 
+  151 0000003c            
+  152 0000003c e14f0000     mrs     r0, SPSR 
+  153 00000040                IF Interworking :LOR: Thumbing 
+  154 00000040 e12fff1e          bx  lr 
+  155 00000044                ELSE 
+  157 00000044                ENDIF 
+  158 00000044            
+  159 00000044              ENDFUNC 
+  160 00000044            
+  161 00000044            
+  162 00000044          ; 
+  163 00000044          ; XllpXSC1ChangeVoltage - change voltage 
+  164 00000044          ; 
+  165 00000044          ;   Uses r0 - contains value for writing to PWRMODE coprocessor register    
+  166 00000044          ; 
+  167 00000044          ; 
+  168 00000044          ; 
+  169 00000044          XllpXSC1ChangeVoltage   FUNCTION 
+  170 00000044            
+  171 00000044 ee170e10     mrc     p14, 0, r0, c7, c0, 0           ; read c7 
+  172 00000048 e3800008     orr     r0, r0, #0x8                    ; Voltage change sequence begins 
+  173 0000004c ee070e10     mcr     p14, 0, r0, c7, c0, 0           ; exit Turbo mode 
+  174 00000050                IF Interworking :LOR: Thumbing 
+  175 00000050 e12fff1e          bx  lr 
+  176 00000054                ELSE 
+  178 00000054                ENDIF 
+  179 00000054            
+  180 00000054              ENDFUNC 
+  181 00000054            
+  182 00000054          XllpXSC1FreqChange  FUNCTION 
+  183 00000054          ; 
+  184 00000054          ; XSC1FreqChange - Do a Frequency Change 
+  185 00000054          ; 
+  186 00000054          ;       Uses     
+  187 00000054          ;            r0 - arg1 - mask to set the CLKCFG register 
+  188 00000054          ;                 
+  189 00000054 e3800002     orr     r0, r0, #2                      ; set F=1                
+  190 00000058 ee060e10     mcr     p14, 0, r0, c6, c0, 0           ; do Freq Change 
+  191 0000005c               
+  192 0000005c          FreqRet 
+  193 0000005c                
+  194 0000005c              IF Interworking :LOR: Thumbing 
+  195 0000005c e12fff1e         bx  lr 
+  196 00000060              ELSE 
+  198 00000060              ENDIF 
+  199 00000060            
+  200 00000060              ENDFUNC 
+  201 00000060               
+  202 00000060          XllpXSC1WriteCLKCFG FUNCTION 
+  203 00000060          ; 
+  204 00000060          ; XSC1FreqChange - Do a Frequency Change 
+  205 00000060          ; 
+  206 00000060          ;       Uses     
+  207 00000060          ;            r0 - arg1 - mask to set the CLKCFG register 
+  208 00000060          ;                 
+  209 00000060 ee060e10     mcr     p14, 0, r0, c6, c0, 0           ; do Freq Change 
+  210 00000064              IF Interworking :LOR: Thumbing 
+  211 00000064 e12fff1e         bx  lr 
+  212 00000068              ELSE 
+  214 00000068              ENDIF 
+  215 00000068            
+  216 00000068              ENDFUNC 
+  217 00000068               
+  218 00000068           END 
+Assembly terminated, errors: 0, warnings: 0 

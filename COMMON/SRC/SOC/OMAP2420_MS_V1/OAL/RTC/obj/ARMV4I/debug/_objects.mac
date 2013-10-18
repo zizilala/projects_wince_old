@@ -1,0 +1,4 @@
+OBJECTS=\
+    obj\ARMV4I\debug\rtc.obj\
+    obj\ARMV4I\debug\i2c.obj
+

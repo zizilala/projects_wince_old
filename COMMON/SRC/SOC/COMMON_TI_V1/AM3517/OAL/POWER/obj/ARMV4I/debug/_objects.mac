@@ -1,0 +1,4 @@
+OBJECTS=\
+    obj\ARMV4I\debug\power.obj\
+    obj\ARMV4I\debug\restore.obj
+

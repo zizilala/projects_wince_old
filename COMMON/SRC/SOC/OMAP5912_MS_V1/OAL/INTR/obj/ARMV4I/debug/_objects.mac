@@ -1,0 +1,5 @@
+OBJECTS=\
+    obj\ARMV4I\debug\intr.obj\
+    obj\ARMV4I\debug\fiq.obj\
+    obj\ARMV4I\debug\map.obj
+

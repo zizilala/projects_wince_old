@@ -1,0 +1,272 @@
+ARM macroassembler      Page:1 
+    1 00000000          ; 
+    2 00000000          ; Copyright (c) Microsoft Corporation.  All rights reserved. 
+    3 00000000          ; 
+    4 00000000          ; 
+    5 00000000          ; Use of this sample source code is subject to the terms of the Microsoft 
+    6 00000000          ; license agreement under which you licensed this sample source code. If 
+    7 00000000          ; you did not accept the terms of the license agreement, you are not 
+    8 00000000          ; authorized to use this sample source code. For the terms of the license, 
+    9 00000000          ; please see the license agreement between you and Microsoft or, if applicable, 
+   10 00000000          ; see the LICENSE.RTF on your install media or the root of your tools installation. 
+   11 00000000          ; THE SAMPLE SOURCE CODE IS PROVIDED "AS IS", WITH NO WARRANTIES. 
+   12 00000000          ; 
+   13 00000000          ;/*  
+   14 00000000          ;** Copyright 2000-2003 Intel Corporation All Rights Reserved. 
+   15 00000000          ;** 
+   16 00000000          ;** Portions of the source code contained or described herein and all documents 
+   17 00000000          ;** related to such source code (Material) are owned by Intel Corporation 
+   18 00000000          ;** or its suppliers or licensors and is licensed by Microsoft Corporation for distribution.   
+   19 00000000          ;** Title to the Material remains with Intel Corporation or its suppliers and licensors.  
+   20 00000000          ;** Use of the Materials is subject to the terms of the Microsoft license agreement which accompanied the Materials.   
+   21 00000000          ;** No other license under any patent, copyright, trade secret or other intellectual 
+   22 00000000          ;** property right is granted to or conferred upon you by disclosure or 
+   23 00000000          ;** delivery of the Materials, either expressly, by implication, inducement, 
+   24 00000000          ;** estoppel or otherwise  
+   25 00000000          ;** Some portion of the Materials may be copyrighted by Microsoft Corporation. 
+   26 00000000          ;*/ 
+   27 00000000                   
+   28 00000000                  EXPORT  EmulatedBltFill16ASM 
+   29 00000000            
+   30                           AREA    EBFILL16OPT,    CODE,   READONLY 
+   31 00000000            
+   32 00000000          ;EmulatedBltFill16ASM(WORD* pDst, WORD color, int width, int height, int step) 
+   33 00000000          ;step is counted by byte 
+   34 00000000          ;r0             pDst 
+   35 00000000          ;r1             color 
+   36 00000000          ;r2             width 
+   37 00000000          ;r3             height 
+   38 00000000          ;r5             temp 
+   39 00000000          ;r6             step 
+   40 00000000            
+   41 00000000          STACKDEPTH      EQU             16 
+   42 00000000          STEPPOS         EQU             STACKDEPTH 
+   43 00000000            
+   44 00000000          EmulatedBltFill16ASM 
+   45 00000000            
+   46 00000000 e92d4070         stmdb   sp!,    {r4-r6,r14} 
+   47 00000004                   
+   48 00000004 e59d6010         ldr             r6,             [sp,    #STEPPOS] 
+   49 00000008 e1814801         orr             r4,             r1,             r1,             LSL #16 
+   50 0000000c            
+   51 0000000c e3520000         cmp             r2,             #0 
+   52 00000010 0a000076         beq             EXIT_POS 
+   53 00000014            
+   54 00000014 e3530000         cmp             r3,             #0 
+   55 00000018 0a000074         beq             EXIT_POS 
+   56 0000001c            
+   57 0000001c e2105003         ands    r5,             r0,             #3              ;WORD aligned? 
+   58 00000020            
+   59 00000020 0a00003b         beq             START_0  
+   60 00000024            
+   61 00000024          START_2 
+   62 00000024            
+   63 00000024 e0466082         sub             r6,             r6,             r2,     LSL #1          ; r6 = step - width 
+   64 00000028 e2422001         sub             r2,             r2,             #1 
+   65 0000002c            
+   66 0000002c          LOOP_HEIGHT_2 
+   67 0000002c            
+   68 0000002c e0c010b2         strh    r1,             [r0],   #2 
+   69 00000030 e3520000         cmp             r2,             #0                              ;r2     -> (width - 1) 
+   70 00000034 0a000032         beq             LOOP_2_UPDATE 
+   71 00000038            
+   72 00000038 e1b052a2         movs    r5,             r2,             LSR #5 
+   73 0000003c 0a000011         beq             WIDTH_2_REMAIN 
+   74 00000040            
+   75 00000040            
+   76 00000040            
+   77 00000040          LOOP_WIDTH_2 
+   78 00000040 e4804004         str             r4,             [r0],   #4 
+   79 00000044 e4804004         str             r4,             [r0],   #4 
+   80 00000048 e4804004         str             r4,             [r0],   #4 
+   81 0000004c e4804004         str             r4,             [r0],   #4 
+   82 00000050            
+   83 00000050 e4804004         str             r4,             [r0],   #4 
+   84 00000054 e4804004         str             r4,             [r0],   #4 
+   85 00000058 e4804004         str             r4,             [r0],   #4 
+   86 0000005c e4804004         str             r4,             [r0],   #4 
+   87 00000060            
+   88 00000060 e4804004         str             r4,             [r0],   #4 
+   89 00000064 e4804004         str             r4,             [r0],   #4 
+   90 00000068 e4804004         str             r4,             [r0],   #4 
+   91 0000006c e4804004         str             r4,             [r0],   #4 
+   92 00000070            
+   93 00000070 e4804004         str             r4,             [r0],   #4 
+   94 00000074 e4804004         str             r4,             [r0],   #4 
+   95 00000078 e4804004         str             r4,             [r0],   #4 
+   96 0000007c e4804004         str             r4,             [r0],   #4 
+   97 00000080            
+   98 00000080 e2555001         subs    r5,             r5,             #1              ;Fill 32 units(16bits WORD) in each loop here 
+   99 00000084 1affffed         bne             LOOP_WIDTH_2 
+  100 00000088            
+  101 00000088            
+  102 00000088            
+  103 00000088          WIDTH_2_REMAIN 
+  104 00000088            
+  105 00000088 e212501f         ands    r5,             r2,             #31 
+  106 0000008c 0a00001c         beq             LOOP_2_UPDATE 
+  107 00000090            
+  108 00000090 e3550010         cmp             r5,             #16 
+  109 00000094 ba000009         blt             REMAIN_2_1 
+  110 00000098            
+  111 00000098 e4804004         str             r4,             [r0],   #4 
+  112 0000009c e4804004         str             r4,             [r0],   #4 
+  113 000000a0 e4804004         str             r4,             [r0],   #4 
+  114 000000a4 e4804004         str             r4,             [r0],   #4 
+  115 000000a8            
+  116 000000a8 e4804004         str             r4,             [r0],   #4 
+  117 000000ac e4804004         str             r4,             [r0],   #4 
+  118 000000b0 e4804004         str             r4,             [r0],   #4 
+  119 000000b4 e4804004         str             r4,             [r0],   #4 
+  120 000000b8            
+  121 000000b8 e2555010         subs    r5,             r5,             #16 
+  122 000000bc 0a000010         beq             LOOP_2_UPDATE    
+  123 000000c0            
+  124 000000c0          REMAIN_2_1 
+  125 000000c0                   
+  126 000000c0 e3550008         cmp             r5,             #8 
+  127 000000c4 ba000005         blt             REMAIN_2_2 
+  128 000000c8            
+  129 000000c8 e4804004         str             r4,             [r0],   #4 
+  130 000000cc e4804004         str             r4,             [r0],   #4 
+  131 000000d0 e4804004         str             r4,             [r0],   #4 
+  132 000000d4 e4804004         str             r4,             [r0],   #4 
+  133 000000d8            
+  134 000000d8 e2555008         subs    r5,             r5,             #8 
+  135 000000dc 0a000008         beq             LOOP_2_UPDATE 
+  136 000000e0            
+  137 000000e0          REMAIN_2_2 
+  138 000000e0            
+  139 000000e0 e3550004         cmp             r5,             #4 
+  140 000000e4                   
+  141 000000e4 ba000003         blt             REMAIN_2_3 
+  142 000000e8            
+  143 000000e8 e4804004         str             r4,             [r0],   #4 
+  144 000000ec e4804004         str             r4,             [r0],   #4 
+  145 000000f0            
+  146 000000f0 e2555004         subs    r5,             r5,             #4 
+  147 000000f4            
+  148 000000f4 0a000002         beq             LOOP_2_UPDATE 
+  149 000000f8            
+  150 000000f8          REMAIN_2_3 
+  151 000000f8            
+  152 000000f8 e0c010b2         strh    r1,             [r0],   #2 
+  153 000000fc e2555001         subs    r5,             r5,             #1 
+  154 00000100            
+  155 00000100 1afffffc         bne             REMAIN_2_3 
+  156 00000104            
+  157 00000104            
+  158 00000104          LOOP_2_UPDATE 
+  159 00000104            
+  160 00000104 e0800006         add             r0,             r0,             r6                      ;r6 = step - width 
+  161 00000108                   
+  162 00000108 e2533001         subs    r3,             r3,             #1 
+  163 0000010c 1affffc6         bne             LOOP_HEIGHT_2 
+  164 00000110            
+  165 00000110 ea000036         b               EXIT_POS 
+  166 00000114            
+  167 00000114            
+  168 00000114          START_0 
+  169 00000114            
+  170 00000114 e0466082         sub             r6,             r6,             r2,     LSL #1          ; r6 = step - width      
+  171 00000118            
+  172 00000118          LOOP_HEIGHT_0 
+  173 00000118 e1b052a2         movs    r5,             r2,             LSR #5 
+  174 0000011c 0a000011         beq             WIDTH_0_REMAIN 
+  175 00000120            
+  176 00000120            
+  177 00000120            
+  178 00000120          LOOP_WIDTH_0 
+  179 00000120 e4804004         str             r4,             [r0],   #4 
+  180 00000124 e4804004         str             r4,             [r0],   #4 
+  181 00000128 e4804004         str             r4,             [r0],   #4 
+  182 0000012c e4804004         str             r4,             [r0],   #4 
+  183 00000130            
+  184 00000130 e4804004         str             r4,             [r0],   #4 
+  185 00000134 e4804004         str             r4,             [r0],   #4 
+  186 00000138 e4804004         str             r4,             [r0],   #4 
+  187 0000013c e4804004         str             r4,             [r0],   #4 
+  188 00000140            
+  189 00000140 e4804004         str             r4,             [r0],   #4 
+  190 00000144 e4804004         str             r4,             [r0],   #4 
+  191 00000148 e4804004         str             r4,             [r0],   #4 
+  192 0000014c e4804004         str             r4,             [r0],   #4 
+  193 00000150            
+  194 00000150 e4804004         str             r4,             [r0],   #4 
+  195 00000154 e4804004         str             r4,             [r0],   #4 
+  196 00000158 e4804004         str             r4,             [r0],   #4 
+  197 0000015c e4804004         str             r4,             [r0],   #4 
+  198 00000160            
+  199 00000160 e2555001         subs    r5,             r5,             #1              ;Fill 32 units(16bits WORD) in each loop here 
+  200 00000164 1affffed         bne             LOOP_WIDTH_0 
+  201 00000168            
+  202 00000168            
+  203 00000168          WIDTH_0_REMAIN 
+  204 00000168            
+  205 00000168 e212501f         ands    r5,             r2,             #31 
+  206 0000016c 0a00001c         beq             LOOP_0_UPDATE 
+  207 00000170                   
+  208 00000170 e3550010         cmp             r5,             #16 
+  209 00000174 ba000009         blt             REMAIN_0_1 
+  210 00000178            
+  211 00000178 e4804004         str             r4,             [r0],   #4 
+  212 0000017c e4804004         str             r4,             [r0],   #4 
+  213 00000180 e4804004         str             r4,             [r0],   #4 
+  214 00000184 e4804004         str             r4,             [r0],   #4 
+  215 00000188            
+  216 00000188 e4804004         str             r4,             [r0],   #4 
+  217 0000018c e4804004         str             r4,             [r0],   #4 
+  218 00000190 e4804004         str             r4,             [r0],   #4 
+  219 00000194 e4804004         str             r4,             [r0],   #4 
+  220 00000198            
+  221 00000198 e2555010         subs    r5,             r5,             #16 
+  222 0000019c 0a000010         beq             LOOP_0_UPDATE    
+  223 000001a0            
+  224 000001a0          REMAIN_0_1 
+  225 000001a0                   
+  226 000001a0 e3550008         cmp             r5,             #8 
+  227 000001a4 ba000005         blt             REMAIN_0_2 
+  228 000001a8            
+  229 000001a8 e4804004         str             r4,             [r0],   #4 
+  230 000001ac e4804004         str             r4,             [r0],   #4 
+  231 000001b0 e4804004         str             r4,             [r0],   #4 
+  232 000001b4 e4804004         str             r4,             [r0],   #4 
+  233 000001b8            
+  234 000001b8 e2555008         subs    r5,             r5,             #8 
+  235 000001bc 0a000008         beq             LOOP_0_UPDATE 
+  236 000001c0            
+  237 000001c0          REMAIN_0_2 
+  238 000001c0            
+  239 000001c0 e3550004         cmp             r5,             #4 
+  240 000001c4                   
+  241 000001c4 ba000003         blt             REMAIN_0_3 
+  242 000001c8            
+  243 000001c8 e4804004         str             r4,             [r0],   #4 
+  244 000001cc e4804004         str             r4,             [r0],   #4 
+  245 000001d0            
+  246 000001d0 e2555004         subs    r5,             r5,             #4 
+  247 000001d4            
+  248 000001d4 0a000002         beq             LOOP_0_UPDATE 
+  249 000001d8            
+  250 000001d8          REMAIN_0_3 
+  251 000001d8            
+  252 000001d8 e0c010b2         strh    r1,             [r0],   #2 
+  253 000001dc e2555001         subs    r5,             r5,             #1 
+  254 000001e0            
+  255 000001e0 1afffffc         bne             REMAIN_0_3 
+  256 000001e4                   
+  257 000001e4          LOOP_0_UPDATE 
+  258 000001e4            
+  259 000001e4 e0800006         add             r0,             r0,             r6                      ;r6 = step - width 
+  260 000001e8                   
+  261 000001e8 e2533001         subs    r3,             r3,             #1 
+  262 000001ec 1affffc9         bne             LOOP_HEIGHT_0 
+  263 000001f0            
+  264 000001f0          EXIT_POS 
+  265 000001f0 e3a00000         mov             r0,             #0 
+  266 000001f4 e8bd8070         LDMIA   sp!,    {r4-r6, pc} 
+  267 000001f8            
+  268 000001f8            
+  269 000001f8            
+  270 000001f8                  end 
+Assembly terminated, errors: 0, warnings: 0 

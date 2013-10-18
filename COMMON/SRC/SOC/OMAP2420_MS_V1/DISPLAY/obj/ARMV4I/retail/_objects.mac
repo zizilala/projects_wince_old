@@ -1,7 +1,0 @@
-OBJECTS=\
-    obj\ARMV4I\retail\omap2420gpe.obj\
-    obj\ARMV4I\retail\omap2420surf.obj\
-    obj\ARMV4I\retail\haldd.obj\
-    obj\ARMV4I\retail\halcaps.obj\
-    obj\ARMV4I\retail\halsurf.obj
-

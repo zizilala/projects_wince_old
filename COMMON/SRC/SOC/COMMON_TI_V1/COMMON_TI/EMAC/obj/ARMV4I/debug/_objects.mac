@@ -1,0 +1,9 @@
+OBJECTS=\
+    obj\ARMV4I\debug\Emac_Filter.obj\
+    obj\ARMV4I\debug\Emac_Init.obj\
+    obj\ARMV4I\debug\Emac_Phy.obj\
+    obj\ARMV4I\debug\Emac_NDIS.obj\
+    obj\ARMV4I\debug\Emac_Miniport.obj\
+    obj\ARMV4I\debug\Emac_Intr.obj\
+    obj\ARMV4I\debug\Emac_Adapter.obj
+

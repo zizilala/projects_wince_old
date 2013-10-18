@@ -95,7 +95,6 @@ TARGETLIBS= \
     $(_TARGETPLATLIB)\$(_CPUDEPPATH)\bsp_display.lib                            \
     $(_TARGETPLATLIB)\$(_CPUDEPPATH)\bsp_display_init.lib						\
 	$(_PLATCOMMONLIBARMRET)\ceddk_spi_lib.lib									\
-	$(_PLATCOMMONLIBARMRET)\ceddk_spi_lib.lib									\
 	
 							
 	

@@ -1,0 +1,4 @@
+OBJECTS=\
+    obj\ARMV4I\debug\bkldrvapi.obj\
+    obj\ARMV4I\debug\bkldrvmain.obj
+

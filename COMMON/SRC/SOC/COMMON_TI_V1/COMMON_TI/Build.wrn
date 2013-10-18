@@ -3,4 +3,19 @@ BUILD: [00:0000000030:WARNS ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COM
 BUILD: [00:0000000033:WARNS ] Directory: C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\BOOT\eboot\ does not exist.
 BUILD: [01:0000000326:WARNN ] C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\CORTEXA8_CACHE\dcache.s(56) warning : A0241: Instruction clz not supported for -cpu "-arch 4t"
 BUILD: [01:0000000328:WARNN ] C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\CORTEXA8_CACHE\dcache.s(140) warning : A0241: Instruction clz not supported for -cpu "-arch 4t"
-BUILD: [01:0000001874:WARNN ] haldebug.obj : warning LNK4221: no public symbols found; archive member will be inaccessible
+BUILD: [01:0000001356:WARNN ] c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\emac\Emac_Adapter.h(27) : warning C4005: 'ZONE_INIT' : macro redefinition
+BUILD: [01:0000001358:WARNN ] c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\emac\Emac_Adapter.h(31) : warning C4005: 'ZONE_SEND' : macro redefinition
+BUILD: [01:0000001363:WARNN ] c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\emac\Emac_Adapter.h(27) : warning C4005: 'ZONE_INIT' : macro redefinition
+BUILD: [01:0000001365:WARNN ] c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\emac\Emac_Adapter.h(31) : warning C4005: 'ZONE_SEND' : macro redefinition
+BUILD: [01:0000001370:WARNN ] c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\emac\Emac_Adapter.h(27) : warning C4005: 'ZONE_INIT' : macro redefinition
+BUILD: [01:0000001372:WARNN ] c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\emac\Emac_Adapter.h(31) : warning C4005: 'ZONE_SEND' : macro redefinition
+BUILD: [01:0000001377:WARNN ] c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\emac\Emac_Adapter.h(27) : warning C4005: 'ZONE_INIT' : macro redefinition
+BUILD: [01:0000001379:WARNN ] c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\emac\Emac_Adapter.h(31) : warning C4005: 'ZONE_SEND' : macro redefinition
+BUILD: [01:0000001384:WARNN ] c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\emac\Emac_Adapter.h(27) : warning C4005: 'ZONE_INIT' : macro redefinition
+BUILD: [01:0000001386:WARNN ] c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\emac\Emac_Adapter.h(31) : warning C4005: 'ZONE_SEND' : macro redefinition
+BUILD: [01:0000001391:WARNN ] c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\emac\Emac_Adapter.h(27) : warning C4005: 'ZONE_INIT' : macro redefinition
+BUILD: [01:0000001393:WARNN ] c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\emac\Emac_Adapter.h(31) : warning C4005: 'ZONE_SEND' : macro redefinition
+BUILD: [01:0000001398:WARNN ] c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\emac\Emac_Adapter.h(27) : warning C4005: 'ZONE_INIT' : macro redefinition
+BUILD: [01:0000001400:WARNN ] c:\wince600\platform\common\src\soc\common_ti_v1\common_ti\emac\Emac_Adapter.h(31) : warning C4005: 'ZONE_SEND' : macro redefinition
+BUILD: [00:0000001605:WARNN ] C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\CORTEXA8_CACHE\: Missing source file: C:\WINCE600\platform\common\lib\ARMV4I\debug\oal_abort_arm920t.lib.
+BUILD: [00:0000001606:WARNN ] C:\WINCE600\PLATFORM\COMMON\SRC\SOC\COMMON_TI_V1\COMMON_TI\OAL\CORTEXA8_CACHE\: Missing source file: C:\WINCE600\platform\common\lib\ARMV4I\debug\oal_cache.lib.

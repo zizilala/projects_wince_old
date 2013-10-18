@@ -1,0 +1,6 @@
+OBJECTS=\
+    obj\ARMV4I\debug\constraintroot.obj\
+    obj\ARMV4I\debug\constraintadapter.obj\
+    obj\ARMV4I\debug\constraintcontainer.obj\
+    obj\ARMV4I\debug\api.obj
+

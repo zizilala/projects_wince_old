@@ -1,0 +1,8 @@
+OBJECTS=\
+    obj\ARMV4I\debug\prcm.obj\
+    obj\ARMV4I\debug\prcm_clock.obj\
+    obj\ARMV4I\debug\prcm_device.obj\
+    obj\ARMV4I\debug\prcm_domain.obj\
+    obj\ARMV4I\debug\prcm_reset.obj\
+    obj\ARMV4I\debug\prcm_volt.obj
+

@@ -1160,7 +1160,7 @@
 
 ; 331  :         goto cleanUp;
 ; 332  : 
-; 333  :     OALLocalAllocInit(allocationPool,sizeof(allocationPool));
+; 333  :     OALLocalAllocInit(allocationPool, sizeof(allocationPool));
 
   000e4	e59f63ac	 ldr         r6, [pc, #0x3AC]
   000e8	e3a01c02	 mov         r1, #2, 24

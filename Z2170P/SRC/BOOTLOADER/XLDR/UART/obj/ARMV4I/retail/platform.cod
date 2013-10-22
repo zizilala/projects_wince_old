@@ -411,10 +411,10 @@
 	DCD	0x1
 	DCW	0xc9
 	%	2
-	DCD	0x5
+	DCD	0x25
 	DCW	0xca
 	%	2
-	DCD	0x5
+	DCD	0x25
 	DCW	0x518
 	%	2
 	DCD	0x1
@@ -460,15 +460,15 @@
 
   00000		 |ConfigurePadArray| PROC
 
-; 588  : {
+; 589  : {
 
   00000		 |$LN9@ConfigureP|
   00000	e92d40f0	 stmdb       sp!, {r4 - r7, lr}
   00004		 |$M46839|
   00004	e1a04000	 mov         r4, r0
 
-; 589  :     int i=0;
-; 590  :     while (padArray[i].padID != (UINT16) -1)
+; 590  :     int i=0;
+; 591  :     while (padArray[i].padID != (UINT16) -1)
 
   00008	e1d420b0	 ldrh        r2, [r4]
   0000c	e3a03cff	 mov         r3, #0xFF, 24
@@ -481,15 +481,15 @@
   00028	e1a03004	 mov         r3, r4
   0002c		 |$LL2@ConfigureP|
 
-; 591  :     {
-; 592  :         SOCSetPadConfig(padArray[i].padID,(UINT16) padArray[i].Cfg);
+; 592  :     {
+; 593  :         SOCSetPadConfig(padArray[i].padID,(UINT16) padArray[i].Cfg);
 
   0002c	e5933004	 ldr         r3, [r3, #4]
   00030	e1a00002	 mov         r0, r2
   00034	e0031007	 and         r1, r3, r7
   00038	eb000000	 bl          SOCSetPadConfig
 
-; 593  :         i++;
+; 594  :         i++;
 
   0003c	e2866001	 add         r6, r6, #1
   00040	e0843186	 add         r3, r4, r6, lsl #3
@@ -498,8 +498,8 @@
   0004c	1afffff6	 bne         |$LL2@ConfigureP|
   00050		 |$LN1@ConfigureP|
 
-; 594  :     }
-; 595  : }
+; 595  :     }
+; 596  : }
 
   00050	e8bd40f0	 ldmia       sp!, {r4 - r7, lr}
   00054	e12fff1e	 bx          lr

@@ -46,6 +46,7 @@ void WMLCDDATA(short);
 void spi_Open(void);
 void LcdStall(DWORD);
 void LcdSleep(DWORD);
+void* I2COpen(UINT); 
 //
 #define I2C3_SCL_GPIO    184             //i2c3_scl
 #define I2C3_SDA_GPIO    185             //i2c3_sda
@@ -157,7 +158,7 @@ BOOL OEMPlatformInit()
             GPIO_PADS_37XX
 	     	USBOTG_PADS
 	     	MCSPI1_PADS                     //Addition to MCSPI1 functional, Ray 13-09-24
-            I2C3_PADS                       //Addition to MCSPI1 functional, Ray 13-10-07
+            I2C3_PADS                       //Addition to MCSPI1 functional, Ray 13-10-21
             END_OF_PAD_ARRAY
     };
     
@@ -243,10 +244,14 @@ BOOL OEMPlatformInit()
     GPIOSetMode(hGPIO, SPI_DIN_PIN, GPIO_DIR_INPUT);
 
     //Initialization the "I-suqare-c (i2c3)" buses, Ray 13-10-07
-    /*GPIOSetBit(hGPIO, I2C3_SCL_GPIO );
+    /*GPIOSetMode(hGPIO, I2C3_SCL_GPIO, INPUT_ENABLED);
+    GPIOSetMode(hGPIO, I2C3_SDA_GPIO, INPUT_ENABLED);*/
+
+    /*GPIOSetBit(hGPIO, I2C3_SCL_GPIO); 
     GPIOSetMode(hGPIO, I2C3_SCL_GPIO, GPIO_DIR_OUTPUT);
-    GPIOSetBit(hGPIO, I2C3_SDA_GPIO );
+    GPIOSetBit(hGPIO, I2C3_SDA_GPIO); 
     GPIOSetMode(hGPIO, I2C3_SDA_GPIO, GPIO_DIR_OUTPUT);*/
+    
 
    
 	//SPI LCM setup
@@ -318,6 +323,7 @@ void spiWrBitHigh(void)
     GPIOSetBit(hGPIO, SPI_CLK_PIN);
     LcdStall(delay);
     GPIOClrBit(hGPIO, SPI_CLK_PIN);
+    GPIOClose(hGPIO); 
 }
 //
 void spiWrBitLow(void)
@@ -335,6 +341,7 @@ void spiWrBitLow(void)
     LcdStall(delay);
     //LcdStall(10);
     GPIOClrBit(hGPIO, SPI_CLK_PIN);
+    GPIOClose(hGPIO); 
 }
 //
 void spi_SendData(short iSendData)
@@ -379,6 +386,7 @@ void spi_Low(void)
     GPIOClrBit(hGPIO, SPI_DOUT_PIN);
 
     //LcdStall(dTime);
+    GPIOClose(hGPIO); 
 }
 //
 void spi_Open(void)
@@ -389,6 +397,8 @@ void spi_Open(void)
     GPIOSetBit(hGPIO, SPI_CS0_PIN);
     GPIOSetBit(hGPIO, SPI_CLK_PIN);
     GPIOSetBit(hGPIO, SPI_DOUT_PIN);
+
+    GPIOClose(hGPIO);
 }
 //
 void LCD_SPI_Init(void)
@@ -599,6 +609,45 @@ void LCD_SPI_Init(void)
     //ShowLogo();   //13-09-27
     
 	//SPIClose(hSPI);
+}
+//------------------------------------------------------------------------------
+//
+//  Set up the I2C3 GPIO active for testing, Ray 13-10-21
+//
+DWORD dTime = 5000000;
+
+void I2C3_High(void)
+{
+    HANDLE hGPIO;
+    hGPIO = GPIOOpen();
+    GPIOSetBit(hGPIO, I2C3_SCL_GPIO);
+    GPIOSetBit(hGPIO, I2C3_SDA_GPIO);
+
+    /*HANDLE hI2C;
+    hI2C = I2COpen(OMAP_DEVICE_I2C3);
+    GPIOSetBit(hI2C, I2C3_SCL_GPIO);
+    GPIOSetBit(hI2C, I2C3_SDA_GPIO);*/
+
+    LcdStall(dTime);
+    GPIOClose(hGPIO);
+    //I2CClose(hI2C);
+}
+//
+void I2C3_Low(void)
+{
+    HANDLE hGPIO;
+    hGPIO = GPIOOpen();
+    GPIOClrBit(hGPIO, I2C3_SCL_GPIO);
+    GPIOClrBit(hGPIO, I2C3_SDA_GPIO);
+
+    /*HANDLE hI2C; 
+    hI2C = I2COpen(OMAP_DEVICE_I2C3);
+    GPIOSetBit(hI2C, I2C3_SCL_GPIO);
+    GPIOSetBit(hI2C, I2C3_SDA_GPIO);*/
+
+    LcdStall(dTime);
+    GPIOClose(hGPIO);
+    //I2CClose(hI2C);
 }
 
 //------------------------------------------------------------------------------
@@ -891,7 +940,7 @@ retryBootMenu:
 			pArgs->kitl.ipAddress = g_bootCfg.ipAddress;
 			pArgs->kitl.ipMask = g_bootCfg.ipMask;
 			pArgs->kitl.ipRoute = g_bootCfg.ipRoute;
-			memcpy(pArgs->kitl.mac,g_bootCfg.mac,sizeof(pArgs->kitl.mac)); 
+			memcpy(pArgs->kitl.mac, g_bootCfg.mac, sizeof(pArgs->kitl.mac)); 
  			pArgs->updateMode = FALSE;
 			pArgs->deviceID = g_bootCfg.deviceID;
 			pArgs->oalFlags = g_bootCfg.oalFlags;

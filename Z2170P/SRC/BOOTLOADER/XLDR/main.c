@@ -330,7 +330,7 @@ VOID XLDRMain()
     if (!SetupCopySection(pTOC))
         goto cleanUp;
 
-    OALLocalAllocInit(allocationPool,sizeof(allocationPool));
+    OALLocalAllocInit(allocationPool, sizeof(allocationPool));
 
 /*
     //  Enable cache based on device type

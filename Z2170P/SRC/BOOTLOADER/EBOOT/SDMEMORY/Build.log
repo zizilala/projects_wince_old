@@ -132,7 +132,7 @@ BUILD: [01:0000000129:INFO  ] FULLLIBC.LIB found in TARGETLIBS; forcing NOLIBC=1
 BUILD: [01:0000000130:INFO  ] FULLLIBC.LIB found in TARGETLIBS; forcing NOCRTDLL=1
 BUILD: [01:0000000131:INFO  ] 	set LIB=C:\WINCE600\sdk\CE\lib
 BUILD: [01:0000000132:PROGC ] Linking C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe
-BUILD: [01:0000000133:INFO  ] 	link /LARGEADDRESSAWARE -out:C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm6F3.tmp
+BUILD: [01:0000000133:INFO  ] 	link /LARGEADDRESSAWARE -out:C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe -machine:thumb @C:\DOCUME~1\RAY~1.HUA\LOCALS~1\Temp\nm7ED.tmp
 BUILD: [01:0000000134:INFO  ] Microsoft (R) Incremental Linker Version 8.00.50727.42
 BUILD: [01:0000000135:INFO  ] Copyright (C) Microsoft Corporation.  All rights reserved.
 BUILD: [01:0000000136:INFO  ] 
@@ -559,39 +559,39 @@ BUILD: [01:0000000556:INFO  ]
 BUILD: [01:0000000557:INFO  ] Finished pass 1
 BUILD: [01:0000000558:INFO  ] 
 BUILD: [01:0000000559:INFO  ]     Discarded s_binDio
-BUILD: [01:0000000560:INFO  ]     Discarded RxData
-BUILD: [01:0000000561:INFO  ]     Discarded m_fCardInserted
-BUILD: [01:0000000562:INFO  ]     Discarded m_wCTOTimeout
-BUILD: [01:0000000563:INFO  ]     Discarded m_dwCDPriority
-BUILD: [01:0000000564:INFO  ]     Discarded m_LastCommand
-BUILD: [01:0000000565:INFO  ]     Discarded m_wDTOTimeout
-BUILD: [01:0000000566:INFO  ]     Discarded m_dwControllerSysIntr
-BUILD: [01:0000000567:INFO  ]     Discarded m_dwMemLen
-BUILD: [01:0000000568:INFO  ]     Discarded m_dwSDIOPriority
-BUILD: [01:0000000569:INFO  ]     Discarded m_usMaxBlockLen
-BUILD: [01:0000000570:INFO  ]     Discarded m_hTWL
-BUILD: [01:0000000571:INFO  ]     Discarded m_dwMemBase
-BUILD: [01:0000000572:INFO  ]     Discarded '.pdata' from main.obj
-BUILD: [01:0000000573:INFO  ]     Discarded '.pdata' from main.obj
+BUILD: [01:0000000560:INFO  ]     Discarded TxData
+BUILD: [01:0000000561:INFO  ]     Discarded RxData
+BUILD: [01:0000000562:INFO  ]     Discarded tempData
+BUILD: [01:0000000563:INFO  ]     Discarded m_fCardInserted
+BUILD: [01:0000000564:INFO  ]     Discarded m_wCTOTimeout
+BUILD: [01:0000000565:INFO  ]     Discarded m_dwCDPriority
+BUILD: [01:0000000566:INFO  ]     Discarded m_LastCommand
+BUILD: [01:0000000567:INFO  ]     Discarded m_wDTOTimeout
+BUILD: [01:0000000568:INFO  ]     Discarded m_dwControllerSysIntr
+BUILD: [01:0000000569:INFO  ]     Discarded m_dwMemLen
+BUILD: [01:0000000570:INFO  ]     Discarded m_dwSDIOPriority
+BUILD: [01:0000000571:INFO  ]     Discarded m_usMaxBlockLen
+BUILD: [01:0000000572:INFO  ]     Discarded m_hTWL
+BUILD: [01:0000000573:INFO  ]     Discarded m_dwMemBase
 BUILD: [01:0000000574:INFO  ]     Discarded '.pdata' from main.obj
 BUILD: [01:0000000575:INFO  ]     Discarded '.pdata' from main.obj
-BUILD: [01:0000000576:INFO  ]     Discarded '.pdata' from flash.obj
-BUILD: [01:0000000577:INFO  ]     Discarded '.pdata' from oal_log.lib(debug.obj)
-BUILD: [01:0000000578:INFO  ]     Discarded '.pdata' from oal_blmenu.lib(menu.obj)
-BUILD: [01:0000000579:INFO  ]     Discarded '.pdata' from oal_blmenu.lib(menu.obj)
-BUILD: [01:0000000580:INFO  ]     Discarded '.pdata' from oal_blmenu.lib(menu.obj)
-BUILD: [01:0000000581:INFO  ]     Discarded '.pdata' from oal_blnk.lib(format.obj)
-BUILD: [01:0000000582:INFO  ]     Discarded '.pdata' from oal_blcommon.lib(blcommon.obj)
-BUILD: [01:0000000583:INFO  ]     Discarded '.pdata' from oal_blcommon.lib(blcommon.obj)
-BUILD: [01:0000000584:INFO  ]     Discarded '.pdata' from oal_blcommon.lib(blcommon.obj)
-BUILD: [01:0000000585:INFO  ]     Discarded '.pdata' from oal_blcommon.lib(blcommon.obj)
+BUILD: [01:0000000576:INFO  ]     Discarded '.pdata' from main.obj
+BUILD: [01:0000000577:INFO  ]     Discarded '.pdata' from main.obj
+BUILD: [01:0000000578:INFO  ]     Discarded '.pdata' from main.obj
+BUILD: [01:0000000579:INFO  ]     Discarded '.pdata' from main.obj
+BUILD: [01:0000000580:INFO  ]     Discarded '.pdata' from flash.obj
+BUILD: [01:0000000581:INFO  ]     Discarded '.pdata' from oal_log.lib(debug.obj)
+BUILD: [01:0000000582:INFO  ]     Discarded '.pdata' from oal_blmenu.lib(menu.obj)
+BUILD: [01:0000000583:INFO  ]     Discarded '.pdata' from oal_blmenu.lib(menu.obj)
+BUILD: [01:0000000584:INFO  ]     Discarded '.pdata' from oal_blmenu.lib(menu.obj)
+BUILD: [01:0000000585:INFO  ]     Discarded '.pdata' from oal_blnk.lib(format.obj)
 BUILD: [01:0000000586:INFO  ]     Discarded '.pdata' from oal_blcommon.lib(blcommon.obj)
-BUILD: [01:0000000587:INFO  ]     Discarded '.pdata' from oal_blcommon.lib(format.obj)
-BUILD: [01:0000000588:INFO  ]     Discarded '.pdata' from oal_blcommon.lib(format.obj)
-BUILD: [01:0000000589:INFO  ]     Discarded '.pdata' from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000590:INFO  ]     Discarded '.pdata' from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000591:INFO  ]     Discarded '.pdata' from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000592:INFO  ]     Discarded '.pdata' from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000587:INFO  ]     Discarded '.pdata' from oal_blcommon.lib(blcommon.obj)
+BUILD: [01:0000000588:INFO  ]     Discarded '.pdata' from oal_blcommon.lib(blcommon.obj)
+BUILD: [01:0000000589:INFO  ]     Discarded '.pdata' from oal_blcommon.lib(blcommon.obj)
+BUILD: [01:0000000590:INFO  ]     Discarded '.pdata' from oal_blcommon.lib(blcommon.obj)
+BUILD: [01:0000000591:INFO  ]     Discarded '.pdata' from oal_blcommon.lib(format.obj)
+BUILD: [01:0000000592:INFO  ]     Discarded '.pdata' from oal_blcommon.lib(format.obj)
 BUILD: [01:0000000593:INFO  ]     Discarded '.pdata' from common_ti_fmd_nand_boot.lib(fmd.obj)
 BUILD: [01:0000000594:INFO  ]     Discarded '.pdata' from common_ti_fmd_nand_boot.lib(fmd.obj)
 BUILD: [01:0000000595:INFO  ]     Discarded '.pdata' from common_ti_fmd_nand_boot.lib(fmd.obj)
@@ -607,13 +607,13 @@ BUILD: [01:0000000604:INFO  ]     Discarded '.pdata' from common_ti_fmd_nand_boo
 BUILD: [01:0000000605:INFO  ]     Discarded '.pdata' from common_ti_fmd_nand_boot.lib(fmd.obj)
 BUILD: [01:0000000606:INFO  ]     Discarded '.pdata' from common_ti_fmd_nand_boot.lib(fmd.obj)
 BUILD: [01:0000000607:INFO  ]     Discarded '.pdata' from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000608:INFO  ]     Discarded '.pdata' from common_ti_fmd_nand_boot.lib(gpmc_ecc.obj)
-BUILD: [01:0000000609:INFO  ]     Discarded '.pdata' from common_ti_debugserial.lib(debugserial.obj)
-BUILD: [01:0000000610:INFO  ]     Discarded '.pdata' from common_ti_debugserial.lib(debugserial.obj)
-BUILD: [01:0000000611:INFO  ]     Discarded '.pdata' from common_ti_oali2c.lib(oali2c.obj)
-BUILD: [01:0000000612:INFO  ]     Discarded '.pdata' from common_ti_oali2c.lib(oali2c.obj)
-BUILD: [01:0000000613:INFO  ]     Discarded '.pdata' from common_ti_oali2c.lib(oali2c.obj)
-BUILD: [01:0000000614:INFO  ]     Discarded '.pdata' from common_ti_oali2c.lib(oali2c.obj)
+BUILD: [01:0000000608:INFO  ]     Discarded '.pdata' from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000609:INFO  ]     Discarded '.pdata' from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000610:INFO  ]     Discarded '.pdata' from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000611:INFO  ]     Discarded '.pdata' from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000612:INFO  ]     Discarded '.pdata' from common_ti_fmd_nand_boot.lib(gpmc_ecc.obj)
+BUILD: [01:0000000613:INFO  ]     Discarded '.pdata' from common_ti_debugserial.lib(debugserial.obj)
+BUILD: [01:0000000614:INFO  ]     Discarded '.pdata' from common_ti_debugserial.lib(debugserial.obj)
 BUILD: [01:0000000615:INFO  ]     Discarded '.pdata' from common_ti_oali2c.lib(oali2c.obj)
 BUILD: [01:0000000616:INFO  ]     Discarded '.pdata' from common_ti_oali2c.lib(oali2c.obj)
 BUILD: [01:0000000617:INFO  ]     Discarded '.pdata' from common_ti_oali2c.lib(oali2c.obj)
@@ -622,18 +622,18 @@ BUILD: [01:0000000619:INFO  ]     Discarded '.pdata' from common_ti_oali2c.lib(o
 BUILD: [01:0000000620:INFO  ]     Discarded '.pdata' from common_ti_oali2c.lib(oali2c.obj)
 BUILD: [01:0000000621:INFO  ]     Discarded '.pdata' from common_ti_oali2c.lib(oali2c.obj)
 BUILD: [01:0000000622:INFO  ]     Discarded '.pdata' from common_ti_oali2c.lib(oali2c.obj)
-BUILD: [01:0000000623:INFO  ]     Discarded '.pdata' from OMAP3530_oalcpuver.lib(oalcpuver.obj)
-BUILD: [01:0000000624:INFO  ]     Discarded '.pdata' from common_ti_devicesmap.lib(devicemap.obj)
-BUILD: [01:0000000625:INFO  ]     Discarded '.pdata' from common_ti_devicesmap.lib(devicemap.obj)
-BUILD: [01:0000000626:INFO  ]     Discarded '.pdata' from common_ti_devicesmap.lib(devicemap.obj)
-BUILD: [01:0000000627:INFO  ]     Discarded '.pdata' from common_ti_boot_sdmemory.lib(sdcard.obj)
-BUILD: [01:0000000628:INFO  ]     Discarded '.pdata' from common_ti_boot_sdmemory.lib(sdcard.obj)
-BUILD: [01:0000000629:INFO  ]     Discarded '.pdata' from common_ti_boot_sdmemory.lib(sdcard.obj)
-BUILD: [01:0000000630:INFO  ]     Discarded '.pdata' from common_ti_boot_sdmemory.lib(sdcard.obj)
-BUILD: [01:0000000631:INFO  ]     Discarded '.pdata' from common_ti_boot_sdhc.lib(sdhc.obj)
-BUILD: [01:0000000632:INFO  ]     Discarded '.pdata' from common_ti_boot_sdhc.lib(sdhc.obj)
-BUILD: [01:0000000633:INFO  ]     Discarded '.pdata' from common_ti_boot_sdhc.lib(sdhc.obj)
-BUILD: [01:0000000634:INFO  ]     Discarded '.pdata' from common_ti_boot_sdhc.lib(sdhc.obj)
+BUILD: [01:0000000623:INFO  ]     Discarded '.pdata' from common_ti_oali2c.lib(oali2c.obj)
+BUILD: [01:0000000624:INFO  ]     Discarded '.pdata' from common_ti_oali2c.lib(oali2c.obj)
+BUILD: [01:0000000625:INFO  ]     Discarded '.pdata' from common_ti_oali2c.lib(oali2c.obj)
+BUILD: [01:0000000626:INFO  ]     Discarded '.pdata' from common_ti_oali2c.lib(oali2c.obj)
+BUILD: [01:0000000627:INFO  ]     Discarded '.pdata' from OMAP3530_oalcpuver.lib(oalcpuver.obj)
+BUILD: [01:0000000628:INFO  ]     Discarded '.pdata' from common_ti_devicesmap.lib(devicemap.obj)
+BUILD: [01:0000000629:INFO  ]     Discarded '.pdata' from common_ti_devicesmap.lib(devicemap.obj)
+BUILD: [01:0000000630:INFO  ]     Discarded '.pdata' from common_ti_devicesmap.lib(devicemap.obj)
+BUILD: [01:0000000631:INFO  ]     Discarded '.pdata' from common_ti_boot_sdmemory.lib(sdcard.obj)
+BUILD: [01:0000000632:INFO  ]     Discarded '.pdata' from common_ti_boot_sdmemory.lib(sdcard.obj)
+BUILD: [01:0000000633:INFO  ]     Discarded '.pdata' from common_ti_boot_sdmemory.lib(sdcard.obj)
+BUILD: [01:0000000634:INFO  ]     Discarded '.pdata' from common_ti_boot_sdmemory.lib(sdcard.obj)
 BUILD: [01:0000000635:INFO  ]     Discarded '.pdata' from common_ti_boot_sdhc.lib(sdhc.obj)
 BUILD: [01:0000000636:INFO  ]     Discarded '.pdata' from common_ti_boot_sdhc.lib(sdhc.obj)
 BUILD: [01:0000000637:INFO  ]     Discarded '.pdata' from common_ti_boot_sdhc.lib(sdhc.obj)
@@ -641,25 +641,25 @@ BUILD: [01:0000000638:INFO  ]     Discarded '.pdata' from common_ti_boot_sdhc.li
 BUILD: [01:0000000639:INFO  ]     Discarded '.pdata' from common_ti_boot_sdhc.lib(sdhc.obj)
 BUILD: [01:0000000640:INFO  ]     Discarded '.pdata' from common_ti_boot_sdhc.lib(sdhc.obj)
 BUILD: [01:0000000641:INFO  ]     Discarded '.pdata' from common_ti_boot_sdhc.lib(sdhc.obj)
-BUILD: [01:0000000642:INFO  ]     Discarded '.pdata' from common_ti_ethdrv_lan911x.lib(lan911x.obj)
-BUILD: [01:0000000643:INFO  ]     Discarded '.pdata' from common_ti_ethdrv_lan911x.lib(lan911x.obj)
-BUILD: [01:0000000644:INFO  ]     Discarded '.pdata' from common_ti_oal_gpiodispatch.lib(gpio_dispatch.obj)
-BUILD: [01:0000000645:INFO  ]     Discarded '.pdata' from common_ti_oal_gpiodispatch.lib(gpio_dispatch.obj)
-BUILD: [01:0000000646:INFO  ]     Discarded '.pdata' from common_ti_oal_gpiodispatch.lib(gpio_dispatch.obj)
-BUILD: [01:0000000647:INFO  ]     Discarded '.pdata' from common_ti_oal_gpiodispatch.lib(gpio_dispatch.obj)
-BUILD: [01:0000000648:INFO  ]     Discarded '.pdata' from common_ti_oal_omap_gpio.lib(omap35xx_gpio.obj)
-BUILD: [01:0000000649:INFO  ]     Discarded '.pdata' from common_ti_oal_omap_gpio.lib(omap35xx_gpio.obj)
-BUILD: [01:0000000650:INFO  ]     Discarded '.pdata' from common_ti_oal_omap_gpio.lib(omap35xx_gpio.obj)
-BUILD: [01:0000000651:INFO  ]     Discarded '.pdata' from TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
-BUILD: [01:0000000652:INFO  ]     Discarded '.pdata' from TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
-BUILD: [01:0000000653:INFO  ]     Discarded '.pdata' from TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
-BUILD: [01:0000000654:INFO  ]     Discarded '.pdata' from TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
+BUILD: [01:0000000642:INFO  ]     Discarded '.pdata' from common_ti_boot_sdhc.lib(sdhc.obj)
+BUILD: [01:0000000643:INFO  ]     Discarded '.pdata' from common_ti_boot_sdhc.lib(sdhc.obj)
+BUILD: [01:0000000644:INFO  ]     Discarded '.pdata' from common_ti_boot_sdhc.lib(sdhc.obj)
+BUILD: [01:0000000645:INFO  ]     Discarded '.pdata' from common_ti_boot_sdhc.lib(sdhc.obj)
+BUILD: [01:0000000646:INFO  ]     Discarded '.pdata' from common_ti_ethdrv_lan911x.lib(lan911x.obj)
+BUILD: [01:0000000647:INFO  ]     Discarded '.pdata' from common_ti_ethdrv_lan911x.lib(lan911x.obj)
+BUILD: [01:0000000648:INFO  ]     Discarded '.pdata' from common_ti_oal_gpiodispatch.lib(gpio_dispatch.obj)
+BUILD: [01:0000000649:INFO  ]     Discarded '.pdata' from common_ti_oal_gpiodispatch.lib(gpio_dispatch.obj)
+BUILD: [01:0000000650:INFO  ]     Discarded '.pdata' from common_ti_oal_gpiodispatch.lib(gpio_dispatch.obj)
+BUILD: [01:0000000651:INFO  ]     Discarded '.pdata' from common_ti_oal_gpiodispatch.lib(gpio_dispatch.obj)
+BUILD: [01:0000000652:INFO  ]     Discarded '.pdata' from common_ti_oal_omap_gpio.lib(omap35xx_gpio.obj)
+BUILD: [01:0000000653:INFO  ]     Discarded '.pdata' from common_ti_oal_omap_gpio.lib(omap35xx_gpio.obj)
+BUILD: [01:0000000654:INFO  ]     Discarded '.pdata' from common_ti_oal_omap_gpio.lib(omap35xx_gpio.obj)
 BUILD: [01:0000000655:INFO  ]     Discarded '.pdata' from TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
-BUILD: [01:0000000656:INFO  ]     Discarded '.pdata' from triton_oal.lib(twl_access.obj)
-BUILD: [01:0000000657:INFO  ]     Discarded '.pdata' from OMAP3530_soccfg.lib(soccfg.obj)
-BUILD: [01:0000000658:INFO  ]     Discarded '.pdata' from OMAP3530_soccfg.lib(soccfg.obj)
-BUILD: [01:0000000659:INFO  ]     Discarded '.pdata' from OMAP3530_soccfg.lib(soccfg.obj)
-BUILD: [01:0000000660:INFO  ]     Discarded '.pdata' from OMAP3530_soccfg.lib(soccfg.obj)
+BUILD: [01:0000000656:INFO  ]     Discarded '.pdata' from TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
+BUILD: [01:0000000657:INFO  ]     Discarded '.pdata' from TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
+BUILD: [01:0000000658:INFO  ]     Discarded '.pdata' from TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
+BUILD: [01:0000000659:INFO  ]     Discarded '.pdata' from TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
+BUILD: [01:0000000660:INFO  ]     Discarded '.pdata' from triton_oal.lib(twl_access.obj)
 BUILD: [01:0000000661:INFO  ]     Discarded '.pdata' from OMAP3530_soccfg.lib(soccfg.obj)
 BUILD: [01:0000000662:INFO  ]     Discarded '.pdata' from OMAP3530_soccfg.lib(soccfg.obj)
 BUILD: [01:0000000663:INFO  ]     Discarded '.pdata' from OMAP3530_soccfg.lib(soccfg.obj)
@@ -667,27 +667,27 @@ BUILD: [01:0000000664:INFO  ]     Discarded '.pdata' from OMAP3530_soccfg.lib(so
 BUILD: [01:0000000665:INFO  ]     Discarded '.pdata' from OMAP3530_soccfg.lib(soccfg.obj)
 BUILD: [01:0000000666:INFO  ]     Discarded '.pdata' from OMAP3530_soccfg.lib(soccfg.obj)
 BUILD: [01:0000000667:INFO  ]     Discarded '.pdata' from OMAP3530_soccfg.lib(soccfg.obj)
-BUILD: [01:0000000668:INFO  ]     Discarded '.pdata' from OMAP3530_oal_padcfg.lib(soc_padcfg.obj)
-BUILD: [01:0000000669:INFO  ]     Discarded '.pdata' from OMAP3530_oal_padcfg.lib(soc_padcfg.obj)
-BUILD: [01:0000000670:INFO  ]     Discarded '.pdata' from bspcfg.lib(bspcfg.obj)
-BUILD: [01:0000000671:INFO  ]     Discarded '.pdata' from bspcfg.lib(bspcfg.obj)
-BUILD: [01:0000000672:INFO  ]     Discarded '.pdata' from bspcfg.lib(bspcfg.obj)
-BUILD: [01:0000000673:INFO  ]     Discarded '.pdata' from bspcfg.lib(bspcfg.obj)
+BUILD: [01:0000000668:INFO  ]     Discarded '.pdata' from OMAP3530_soccfg.lib(soccfg.obj)
+BUILD: [01:0000000669:INFO  ]     Discarded '.pdata' from OMAP3530_soccfg.lib(soccfg.obj)
+BUILD: [01:0000000670:INFO  ]     Discarded '.pdata' from OMAP3530_soccfg.lib(soccfg.obj)
+BUILD: [01:0000000671:INFO  ]     Discarded '.pdata' from OMAP3530_soccfg.lib(soccfg.obj)
+BUILD: [01:0000000672:INFO  ]     Discarded '.pdata' from OMAP3530_oal_padcfg.lib(soc_padcfg.obj)
+BUILD: [01:0000000673:INFO  ]     Discarded '.pdata' from OMAP3530_oal_padcfg.lib(soc_padcfg.obj)
 BUILD: [01:0000000674:INFO  ]     Discarded '.pdata' from bspcfg.lib(bspcfg.obj)
 BUILD: [01:0000000675:INFO  ]     Discarded '.pdata' from bspcfg.lib(bspcfg.obj)
 BUILD: [01:0000000676:INFO  ]     Discarded '.pdata' from bspcfg.lib(bspcfg.obj)
-BUILD: [01:0000000677:INFO  ]     Discarded '.pdata' from bsp_bootstubs.lib(bsp_bootstubs.obj)
-BUILD: [01:0000000678:INFO  ]     Discarded '.pdata' from bsp_bootstubs.lib(bsp_bootstubs.obj)
-BUILD: [01:0000000679:INFO  ]     Discarded '.pdata' from bsp_bootstubs.lib(bsp_bootstubs.obj)
-BUILD: [01:0000000680:INFO  ]     Discarded '.pdata' from bsp_bootstubs.lib(bsp_bootstubs.obj)
+BUILD: [01:0000000677:INFO  ]     Discarded '.pdata' from bspcfg.lib(bspcfg.obj)
+BUILD: [01:0000000678:INFO  ]     Discarded '.pdata' from bspcfg.lib(bspcfg.obj)
+BUILD: [01:0000000679:INFO  ]     Discarded '.pdata' from bspcfg.lib(bspcfg.obj)
+BUILD: [01:0000000680:INFO  ]     Discarded '.pdata' from bspcfg.lib(bspcfg.obj)
 BUILD: [01:0000000681:INFO  ]     Discarded '.pdata' from bsp_bootstubs.lib(bsp_bootstubs.obj)
 BUILD: [01:0000000682:INFO  ]     Discarded '.pdata' from bsp_bootstubs.lib(bsp_bootstubs.obj)
 BUILD: [01:0000000683:INFO  ]     Discarded '.pdata' from bsp_bootstubs.lib(bsp_bootstubs.obj)
 BUILD: [01:0000000684:INFO  ]     Discarded '.pdata' from bsp_bootstubs.lib(bsp_bootstubs.obj)
-BUILD: [01:0000000685:INFO  ]     Discarded '.pdata' from rne_mdd.lib(rndis.obj)
-BUILD: [01:0000000686:INFO  ]     Discarded '.pdata' from rne_mdd.lib(rndis.obj)
-BUILD: [01:0000000687:INFO  ]     Discarded '.pdata' from rne_mdd.lib(rndis.obj)
-BUILD: [01:0000000688:INFO  ]     Discarded '.pdata' from rne_mdd.lib(rndis.obj)
+BUILD: [01:0000000685:INFO  ]     Discarded '.pdata' from bsp_bootstubs.lib(bsp_bootstubs.obj)
+BUILD: [01:0000000686:INFO  ]     Discarded '.pdata' from bsp_bootstubs.lib(bsp_bootstubs.obj)
+BUILD: [01:0000000687:INFO  ]     Discarded '.pdata' from bsp_bootstubs.lib(bsp_bootstubs.obj)
+BUILD: [01:0000000688:INFO  ]     Discarded '.pdata' from bsp_bootstubs.lib(bsp_bootstubs.obj)
 BUILD: [01:0000000689:INFO  ]     Discarded '.pdata' from rne_mdd.lib(rndis.obj)
 BUILD: [01:0000000690:INFO  ]     Discarded '.pdata' from rne_mdd.lib(rndis.obj)
 BUILD: [01:0000000691:INFO  ]     Discarded '.pdata' from rne_mdd.lib(rndis.obj)
@@ -695,469 +695,475 @@ BUILD: [01:0000000692:INFO  ]     Discarded '.pdata' from rne_mdd.lib(rndis.obj)
 BUILD: [01:0000000693:INFO  ]     Discarded '.pdata' from rne_mdd.lib(rndis.obj)
 BUILD: [01:0000000694:INFO  ]     Discarded '.pdata' from rne_mdd.lib(rndis.obj)
 BUILD: [01:0000000695:INFO  ]     Discarded '.pdata' from rne_mdd.lib(rndis.obj)
-BUILD: [01:0000000696:INFO  ]     Discarded '.pdata' from rne_mdd.lib(hostmini.obj)
-BUILD: [01:0000000697:INFO  ]     Discarded '.pdata' from rne_mdd.lib(hostmini.obj)
-BUILD: [01:0000000698:INFO  ]     Discarded '.pdata' from gsnull.lib(gsnull.obj)
-BUILD: [01:0000000699:INFO  ]     Discarded '.pdata' from fulllibc.lib(atox.obj)
-BUILD: [01:0000000700:INFO  ]     Discarded '.pdata' from fulllibc.lib(wcscmp.obj)
-BUILD: [01:0000000701:INFO  ]     Discarded '.pdata' from fulllibc.lib(diverr.obj)
-BUILD: [01:0000000702:INFO  ]     Discarded '.pdata' from eboot.lib(tftpd.obj)
-BUILD: [01:0000000703:INFO  ]     Discarded '.pdata' from eboot.lib(tftpd.obj)
-BUILD: [01:0000000704:INFO  ]     Discarded '.pdata' from eboot.lib(tftp.obj)
-BUILD: [01:0000000705:INFO  ]     Discarded '.pdata' from eboot.lib(tftp.obj)
-BUILD: [01:0000000706:INFO  ]     Discarded '.pdata' from eboot.lib(tftp.obj)
-BUILD: [01:0000000707:INFO  ]     Discarded '.pdata' from eboot.lib(tftp.obj)
-BUILD: [01:0000000708:INFO  ]     Discarded '.pdata' from eboot.lib(udp.obj)
-BUILD: [01:0000000709:INFO  ]     Discarded '.pdata' from eboot.lib(dhcp.obj)
-BUILD: [01:0000000710:INFO  ]     Discarded '.pdata' from eboot.lib(dhcp.obj)
-BUILD: [01:0000000711:INFO  ]     Discarded '.pdata' from eboot.lib(dhcp.obj)
-BUILD: [01:0000000712:INFO  ]     Discarded '.pdata' from bsp_display.lib(bsp_logo.obj)
-BUILD: [01:0000000713:INFO  ]     Discarded '.pdata' from bsp_display.lib(bsp_logo.obj)
-BUILD: [01:0000000714:INFO  ]     Discarded '.pdata' from bsp_display.lib(bsp_logo.obj)
-BUILD: [01:0000000715:INFO  ]     Discarded '.pdata' from bsp_display.lib(bsp_logo.obj)
+BUILD: [01:0000000696:INFO  ]     Discarded '.pdata' from rne_mdd.lib(rndis.obj)
+BUILD: [01:0000000697:INFO  ]     Discarded '.pdata' from rne_mdd.lib(rndis.obj)
+BUILD: [01:0000000698:INFO  ]     Discarded '.pdata' from rne_mdd.lib(rndis.obj)
+BUILD: [01:0000000699:INFO  ]     Discarded '.pdata' from rne_mdd.lib(rndis.obj)
+BUILD: [01:0000000700:INFO  ]     Discarded '.pdata' from rne_mdd.lib(hostmini.obj)
+BUILD: [01:0000000701:INFO  ]     Discarded '.pdata' from rne_mdd.lib(hostmini.obj)
+BUILD: [01:0000000702:INFO  ]     Discarded '.pdata' from gsnull.lib(gsnull.obj)
+BUILD: [01:0000000703:INFO  ]     Discarded '.pdata' from fulllibc.lib(atox.obj)
+BUILD: [01:0000000704:INFO  ]     Discarded '.pdata' from fulllibc.lib(wcscmp.obj)
+BUILD: [01:0000000705:INFO  ]     Discarded '.pdata' from fulllibc.lib(diverr.obj)
+BUILD: [01:0000000706:INFO  ]     Discarded '.pdata' from eboot.lib(tftpd.obj)
+BUILD: [01:0000000707:INFO  ]     Discarded '.pdata' from eboot.lib(tftpd.obj)
+BUILD: [01:0000000708:INFO  ]     Discarded '.pdata' from eboot.lib(tftp.obj)
+BUILD: [01:0000000709:INFO  ]     Discarded '.pdata' from eboot.lib(tftp.obj)
+BUILD: [01:0000000710:INFO  ]     Discarded '.pdata' from eboot.lib(tftp.obj)
+BUILD: [01:0000000711:INFO  ]     Discarded '.pdata' from eboot.lib(tftp.obj)
+BUILD: [01:0000000712:INFO  ]     Discarded '.pdata' from eboot.lib(udp.obj)
+BUILD: [01:0000000713:INFO  ]     Discarded '.pdata' from eboot.lib(dhcp.obj)
+BUILD: [01:0000000714:INFO  ]     Discarded '.pdata' from eboot.lib(dhcp.obj)
+BUILD: [01:0000000715:INFO  ]     Discarded '.pdata' from eboot.lib(dhcp.obj)
 BUILD: [01:0000000716:INFO  ]     Discarded '.pdata' from bsp_display.lib(bsp_logo.obj)
 BUILD: [01:0000000717:INFO  ]     Discarded '.pdata' from bsp_display.lib(bsp_logo.obj)
 BUILD: [01:0000000718:INFO  ]     Discarded '.pdata' from bsp_display.lib(bsp_logo.obj)
 BUILD: [01:0000000719:INFO  ]     Discarded '.pdata' from bsp_display.lib(bsp_logo.obj)
 BUILD: [01:0000000720:INFO  ]     Discarded '.pdata' from bsp_display.lib(bsp_logo.obj)
 BUILD: [01:0000000721:INFO  ]     Discarded '.pdata' from bsp_display.lib(bsp_logo.obj)
-BUILD: [01:0000000722:INFO  ]     Discarded '.pdata' from bsp_display_init.lib(lcd_qvga.obj)
-BUILD: [01:0000000723:INFO  ]     Discarded '.pdata' from bsp_display_init.lib(lcd_qvga.obj)
-BUILD: [01:0000000724:INFO  ]     Discarded '.pdata' from bsp_display_init.lib(lcd_qvga.obj)
-BUILD: [01:0000000725:INFO  ]     Discarded '.pdata' from bsp_display_init.lib(lcd_support.obj)
-BUILD: [01:0000000726:INFO  ]     Discarded '.pdata' from bsp_display_init.lib(lcd_support.obj)
-BUILD: [01:0000000727:INFO  ]     Discarded '.pdata' from bsp_display_init.lib(lcd_support.obj)
-BUILD: [01:0000000728:INFO  ]     Discarded '.pdata' from oal_io.lib(trans.obj)
-BUILD: [01:0000000729:INFO  ]     Discarded '.pdata' from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000730:INFO  ]     Discarded '.pdata' from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000731:INFO  ]     Discarded '.pdata' from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000732:INFO  ]     Discarded '.pdata' from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000722:INFO  ]     Discarded '.pdata' from bsp_display.lib(bsp_logo.obj)
+BUILD: [01:0000000723:INFO  ]     Discarded '.pdata' from bsp_display.lib(bsp_logo.obj)
+BUILD: [01:0000000724:INFO  ]     Discarded '.pdata' from bsp_display.lib(bsp_logo.obj)
+BUILD: [01:0000000725:INFO  ]     Discarded '.pdata' from bsp_display.lib(bsp_logo.obj)
+BUILD: [01:0000000726:INFO  ]     Discarded '.pdata' from bsp_display_init.lib(lcd_qvga.obj)
+BUILD: [01:0000000727:INFO  ]     Discarded '.pdata' from bsp_display_init.lib(lcd_qvga.obj)
+BUILD: [01:0000000728:INFO  ]     Discarded '.pdata' from bsp_display_init.lib(lcd_qvga.obj)
+BUILD: [01:0000000729:INFO  ]     Discarded '.pdata' from bsp_display_init.lib(lcd_support.obj)
+BUILD: [01:0000000730:INFO  ]     Discarded '.pdata' from bsp_display_init.lib(lcd_support.obj)
+BUILD: [01:0000000731:INFO  ]     Discarded '.pdata' from bsp_display_init.lib(lcd_support.obj)
+BUILD: [01:0000000732:INFO  ]     Discarded '.pdata' from oal_io.lib(trans.obj)
 BUILD: [01:0000000733:INFO  ]     Discarded '.pdata' from common_ti_oal_flashstore.lib(flashstore.obj)
 BUILD: [01:0000000734:INFO  ]     Discarded '.pdata' from common_ti_oal_flashstore.lib(flashstore.obj)
 BUILD: [01:0000000735:INFO  ]     Discarded '.pdata' from common_ti_oal_flashstore.lib(flashstore.obj)
 BUILD: [01:0000000736:INFO  ]     Discarded '.pdata' from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000737:INFO  ]     Discarded '.pdata' from common_ti_boot_fatfs.lib(fileio.obj)
-BUILD: [01:0000000738:INFO  ]     Discarded '.pdata' from common_ti_ethdrv_rndis.lib(rndis.obj)
-BUILD: [01:0000000739:INFO  ]     Discarded '.pdata' from fulllibc.lib(xtoa.obj)
-BUILD: [01:0000000740:INFO  ]     Discarded '.pdata' from fulllibc.lib(xtoa.obj)
-BUILD: [01:0000000741:INFO  ]     Discarded '.pdata' from bsp_boot_ethdrv_usbfn.lib(trans.obj)
-BUILD: [01:0000000742:INFO  ]     Discarded '.pdata' from bsp_boot_ethdrv_usbfn.lib(trans.obj)
-BUILD: [01:0000000743:INFO  ]     Discarded '.pdata' from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000744:INFO  ]     Discarded '.pdata' from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000745:INFO  ]     Discarded '.pdata' from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000746:INFO  ]     Discarded '.pdata' from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000747:INFO  ]     Discarded "`string'" (??_C@_1GM@LBPDAPNJ@?$AAI?$AAN?$AAF?$AAO?$AA?3?$AAO?$AAA?$AAL?$AAL?$AAo?$AAg?$AAS?$AAe?$AAt?$AAZ?$AAo?$AAn?$AAe?$AAs?$AA?3?$AA?5?$AAd?$AAp?$AAC?$AAu?$AAr?$AAS?$AAe?$AAt?$AAt?$AAi?$AAn@) from oal_log.lib(debug.obj)
-BUILD: [01:0000000748:INFO  ]     Discarded "`string'" (??_C@_0N@LKBAFPFA@?$CK?$CK?$CK?5auto?5?$CK?$CK?$CK?$AA@) from oal_blmenu.lib(menu.obj)
-BUILD: [01:0000000749:INFO  ]     Discarded "`string'" (??_C@_1FM@KKEGFMMC@?$AAH?$AAi?$AAt?$AA?5?$AAs?$AAp?$AAa?$AAc?$AAe?$AA?5?$AAt?$AAo?$AA?5?$AAe?$AAn?$AAt?$AAe?$AAr?$AA?5?$AAc?$AAo?$AAn?$AAf?$AAi?$AAg?$AAu?$AAr?$AAa?$AAt?$AAi?$AAo?$AAn@) from oal_blmenu.lib(menu.obj)
-BUILD: [01:0000000750:INFO  ]     Discarded "`string'" (??_C@_1DC@OGIHKHPF@?$AA?5?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AA?5?$AAI?$AAd?$AA?5?$AAs?$AAe?$AAt?$AA?5?$AAt?$AAo?$AA?5?$AA?8?$AA?$CF?$AAS?$AA?8?$AA?$AN?$AA?6?$AA?$AA@) from oal_blmenu.lib(menu.obj)
-BUILD: [01:0000000751:INFO  ]     Discarded "`string'" (??_C@_1FG@JMGBGFEJ@?$AA?5?$AAE?$AAn?$AAt?$AAe?$AAr?$AA?5?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AA?5?$AAI?$AAd?$AA?5?$AA?$CI?$AA?$CK?$AA?5?$AA?$DN?$AA?5?$AAa?$AAu?$AAt?$AAo?$AA?0?$AA?5?$AAa?$AAc?$AAt?$AAu@) from oal_blmenu.lib(menu.obj)
-BUILD: [01:0000000752:INFO  ]     Discarded "`string'" (??_C@_1FM@DHKEFDNK@?$AAW?$AAA?$AAR?$AAN?$AA?3?$AA?5?$AAI?$AA2?$AAC?$AA?3?$AA?5?$AAR?$AAe?$AAa?$AAd?$AA?5?$AAf?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AA?$CI?$AAs?$AAl?$AAa?$AAv?$AAe?$AA?5?$AAa?$AAd@) from common_ti_oali2c.lib(oali2c.obj)
-BUILD: [01:0000000753:INFO  ]     Discarded "`string'" (??_C@_1FA@EHAPGJGJ@?$AA?5?$AA?$CK?$AA?$CK?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAT?$AAo?$AAF?$AAl?$AAa?$AAs?$AAh?$AA?3?$AA?5?$AA?5?$AAC?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAo?$AAp?$AAe?$AAn@) from common_ti_boot_sdmemory.lib(sdcard.obj)
-BUILD: [01:0000000754:INFO  ]     Discarded "`string'" (??_C@_1EO@MDFFFBD@?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAT?$AAo?$AAF?$AAl?$AAa?$AAs?$AAh?$AA?3?$AA?5?$AA?5?$AAf?$AAi?$AAl?$AAe?$AAi?$AAo?$AA?5?$AAi?$AAn?$AAi?$AAt?$AA?5?$AAf?$AAa@) from common_ti_boot_sdmemory.lib(sdcard.obj)
-BUILD: [01:0000000755:INFO  ]     Discarded "`string'" (??_C@_01HMGJMAIH@B?$AA@) from rne_mdd.lib(rndis.obj)
-BUILD: [01:0000000756:INFO  ]     Discarded "`string'" (??_C@_01DGKLNCNG@R?$AA@) from rne_mdd.lib(rndis.obj)
-BUILD: [01:0000000757:INFO  ]     Discarded "`string'" (??_C@_0BN@DGLONFMO@HostMini?3?3?5MddDisconnect?$CB?$CB?$AN?6?$AA@) from rne_mdd.lib(hostmini.obj)
-BUILD: [01:0000000758:INFO  ]     Discarded "`string'" (??_C@_0CH@NEPGMPPP@Server?5Process?5Has?5UnRegistered?5@) from eboot.lib(tftpd.obj)
-BUILD: [01:0000000759:INFO  ]     Discarded "`string'" (??_C@_0BP@GBJGHCHP@?$CBTftpReturnCodes?0?5STATE_ERROR?6?$AA@) from eboot.lib(tftp.obj)
-BUILD: [01:0000000760:INFO  ]     Discarded "`string'" (??_C@_0BC@DCLKPECN@?$CB?$CB?$CB?$CB?5TFTP?5Errror?6?$AA@) from eboot.lib(tftp.obj)
-BUILD: [01:0000000761:INFO  ]     Discarded "`string'" (??_C@_0DC@EJGDJHJD@TFTPRetransmit?$CI?$CJ?5Slot?5?$CFu?0?5wDestT@) from eboot.lib(tftp.obj)
-BUILD: [01:0000000762:INFO  ]     Discarded "`string'" (??_C@_0BI@NOMLANFJ@Linked?5Timed?5Out?5By?5Odo?$AA@) from eboot.lib(tftp.obj)
-BUILD: [01:0000000763:INFO  ]     Discarded "`string'" (??_C@_0CM@MLNGGHPC@TFTPRetransmit?$CI?$CJ?3?3Error?5On?5SendU@) from eboot.lib(tftp.obj)
-BUILD: [01:0000000764:INFO  ]     Discarded "`string'" (??_C@_0DF@CLENMEEN@?$AN?6Enter?5new?5subnet?5mask?5or?5CR?5to@) from eboot.lib(dhcp.obj)
-BUILD: [01:0000000765:INFO  ]     Discarded "`string'" (??_C@_0CI@NDANHPBF@?$AN?6ReadSerialIP?$CI?$CJ?3?3Using?5IP?5Addre@) from eboot.lib(dhcp.obj)
-BUILD: [01:0000000766:INFO  ]     Discarded "`string'" (??_C@_1BM@GEPNOGL@?$AA?9?$AA?9?$AA?9?$AA?9?$AA?9?$AA?9?$AA?9?$AA?9?$AA?9?$AA?9?$AA?9?$AA?9?$AA?6?$AA?$AA@) from bsp_display.lib(bsp_logo.obj)
-BUILD: [01:0000000767:INFO  ]     Discarded "`string'" (??_C@_1BI@CGMPOLFK@?$AAE?$AAB?$AAO?$AAO?$AAT?$AAS?$AAD?$AA?4?$AAn?$AAb?$AA0?$AA?$AA@) from bsp_display.lib(bsp_logo.obj)
-BUILD: [01:0000000768:INFO  ]     Discarded "`string'" (??_C@_1DC@LNCCCMGG@?$AAd?$AAi?$AAs?$AAa?$AAb?$AAl?$AAe?$AA_?$AAl?$AAc?$AAd?$AA_?$AAb?$AAa?$AAc?$AAk?$AAl?$AAi?$AAg?$AAh?$AAt?$AA?$CL?$AA?$AN?$AA?6?$AA?$AA@) from bsp_display.lib(bsp_logo.obj)
-BUILD: [01:0000000769:INFO  ]     Discarded "`string'" (??_C@_1HM@IKCJOCJL@?$AA?9?$AAO?$AAA?$AAL?$AAT?$AAr?$AAa?$AAn?$AAs?$AAl?$AAa?$AAt?$AAe?$AAS?$AAy?$AAs?$AAt?$AAe?$AAm?$AAA?$AAd?$AAd?$AAr?$AAe?$AAs?$AAs?$AA?$CI?$AAb?$AAu?$AAs?$AAA?$AAd@) from oal_io.lib(trans.obj)
-BUILD: [01:0000000770:INFO  ]     Discarded "`string'" (??_C@_1GC@GKDDBMML@?$AA?$CL?$AAO?$AAA?$AAL?$AAT?$AAr?$AAa?$AAn?$AAs?$AAl?$AAa?$AAt?$AAe?$AAS?$AAy?$AAs?$AAt?$AAe?$AAm?$AAA?$AAd?$AAd?$AAr?$AAe?$AAs?$AAs?$AA?$CI?$AA?$CF?$AAd?$AA?0?$AA?5?$AA?$CF@) from oal_io.lib(trans.obj)
-BUILD: [01:0000000771:INFO  ]     Discarded "`string'" (??_C@_1KM@MOFGEBEH@?$AA?5?$AA?5?$AA?5?$AA?5?$AAT?$AAy?$AAp?$AAe?$AA?$DN?$AA?$CF?$AAd?$AA?0?$AA?5?$AAS?$AAt?$AAa?$AAr?$AAt?$AA?$DN?$AA0?$AAx?$AA?$CF?$AAx?$AA?0?$AA?5?$AAN?$AAu?$AAm?$AAP?$AA?$DN?$AA0?$AAx@) from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000772:INFO  ]     Discarded "`string'" (??_C@_1DK@FBKBGCAF@?$AAF?$AAl?$AAa?$AAs?$AAh?$AA?5?$AAc?$AAo?$AAn?$AAt?$AAa?$AAi?$AAn?$AAs?$AA?5?$AA?$CF?$AAu?$AA?5?$AAr?$AAe?$AAg?$AAi?$AAo?$AAn?$AAs?$AA?3?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000773:INFO  ]     Discarded "`string'" (??_C@_1FC@IDNHMBKN@?$AA?5?$AA?5?$AA?5?$AA?5?$AAN?$AAa?$AAm?$AAe?$AA?$DN?$AA?$CF?$AAs?$AA?0?$AA?5?$AAS?$AAt?$AAa?$AAr?$AAt?$AA?5?$AAb?$AAl?$AAo?$AAc?$AAk?$AA?$DN?$AA?$CF?$AAu?$AA?0?$AA?5?$AAB?$AAl?$AAo@) from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000774:INFO  ]     Discarded "`string'" (??_C@_1EM@LIDNJIDD@?$AAF?$AAl?$AAa?$AAs?$AAh?$AA?5?$AAc?$AAo?$AAn?$AAt?$AAa?$AAi?$AAn?$AAs?$AA?5?$AA?$CF?$AAu?$AA?5?$AAr?$AAe?$AAs?$AAe?$AAr?$AAv?$AAe?$AAd?$AA?5?$AAr?$AAe?$AAg?$AAi?$AAo@) from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000775:INFO  ]     Discarded "`string'" (??_C@_08GODGKFDB@MSFLSH50?$AA@) from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000776:INFO  ]     Discarded "`string'" (??_C@_1DO@DHDNAGME@?$AA?9?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?$CI?$AAr?$AAc?$AA?5?$AA?$DN?$AA?5?$AA?$CF?$AAd?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000777:INFO  ]     Discarded "`string'" (??_C@_1KE@CHNFEMEO@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAC?$AAo?$AAr?$AAr?$AAu@) from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000778:INFO  ]     Discarded "`string'" (??_C@_1HO@CIDFMKMH@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe@) from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000779:INFO  ]     Discarded "`string'" (??_C@_1HO@FLMJGLLL@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAR?$AAu?$AAn?$AA?5?$AAo@) from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000780:INFO  ]     Discarded "`string'" (??_C@_1JG@BJDMMIFN@?$AAW?$AAA?$AAR?$AAN?$AA?3?$AA?5?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd@) from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000781:INFO  ]     Discarded "`string'" (??_C@_1IE@BDHDNOD@?$AAW?$AAA?$AAR?$AAN?$AA?3?$AA?5?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd@) from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000782:INFO  ]     Discarded "`string'" (??_C@_1KK@LPEKIKDN@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe@) from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000783:INFO  ]     Discarded "`string'" (??_C@_1KG@OCIIDMHN@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAF?$AAl?$AAa?$AAs?$AAh@) from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000784:INFO  ]     Discarded "`string'" (??_C@_1HM@NGCJEILF@?$AA?$CL?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AA0@) from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000785:INFO  ]     Discarded "`string'" (??_C@_1DO@GHPAFAFJ@?$AA?9?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAE?$AAr?$AAa?$AAs?$AAe?$AA?$CI?$AAr?$AAc?$AA?5?$AA?$DN?$AA?5?$AA?$CF?$AAd?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000786:INFO  ]     Discarded "`string'" (??_C@_1HO@HCGPHIPI@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAE?$AAr?$AAa?$AAs?$AAe?$AA?3?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe@) from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000787:INFO  ]     Discarded "`string'" (??_C@_1IE@DFIGNOEA@?$AAW?$AAA?$AAR?$AAN?$AA?3?$AA?5?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAE?$AAr?$AAa?$AAs?$AAe?$AA?3?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd@) from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000788:INFO  ]     Discarded "`string'" (??_C@_1FM@COEEAOKJ@?$AAW?$AAA?$AAR?$AAN?$AA?3?$AA?5?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAE?$AAr?$AAa?$AAs?$AAe?$AA?3?$AA?5?$AAS?$AAk?$AAi?$AAp?$AA?5?$AAb@) from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000789:INFO  ]     Discarded "`string'" (??_C@_1GE@CGLPBIPN@?$AA?$CL?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAE?$AAr?$AAa?$AAs?$AAe?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AA0@) from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000790:INFO  ]     Discarded "`string'" (??_C@_1DA@MNIGJPIF@?$AA?9?$AAR?$AAN?$AAD?$AAI?$AAS?$AA_?$AAU?$AAS?$AAB?$AAF?$AAN?$AA_?$AAP?$AAD?$AAD?$AAD?$AAe?$AAn?$AAi?$AAt?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_rndis.lib(rndis.obj)
-BUILD: [01:0000000791:INFO  ]     Discarded "`string'" (??_C@_1DA@EACCPFEN@?$AA?$CL?$AAR?$AAN?$AAD?$AAI?$AAS?$AA_?$AAU?$AAS?$AAB?$AAF?$AAN?$AA_?$AAP?$AAD?$AAD?$AAD?$AAe?$AAn?$AAi?$AAt?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_rndis.lib(rndis.obj)
-BUILD: [01:0000000792:INFO  ]     Discarded "`string'" (??_C@_1DA@DEOJCLGI@?$AAO?$AAT?$AAG?$AA_?$AAR?$AAe?$AAv?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000793:INFO  ]     Discarded "`string'" (??_C@_1DA@CHHHKPND@?$AAO?$AAT?$AAG?$AA_?$AAF?$AAO?$AAR?$AAC?$AAE?$AAS?$AAT?$AAD?$AAB?$AAY?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000794:INFO  ]     Discarded "`string'" (??_C@_1DA@OENGJMCI@?$AAO?$AAT?$AAG?$AA_?$AAI?$AAN?$AAT?$AAE?$AAR?$AAF?$AAS?$AAE?$AAL?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000795:INFO  ]     Discarded "`string'" (??_C@_1DA@GEBFFKAL@?$AAO?$AAT?$AAG?$AA_?$AAS?$AAY?$AAS?$AAC?$AAO?$AAN?$AAF?$AAI?$AAG?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000796:INFO  ]     Discarded "`string'" (??_C@_1DA@CABDIMAB@?$AAO?$AAT?$AAG?$AA_?$AAS?$AAY?$AAS?$AAS?$AAT?$AAA?$AAT?$AAU?$AAS?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000797:INFO  ]     Discarded "`string'" (??_C@_1DA@DMGANBPN@?$AAO?$AAT?$AAG?$AA_?$AAS?$AAI?$AAM?$AAE?$AAN?$AAA?$AAB?$AAL?$AAE?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000798:INFO  ]     Discarded "`string'" (??_C@_1DA@IOAOHBNJ@?$AAF?$AAA?$AAd?$AAd?$AAr?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000799:INFO  ]     Discarded "`string'" (??_C@_1DA@EGGCJLAM@?$AAD?$AAe?$AAv?$AAC?$AAt?$AAl?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000800:INFO  ]     Discarded "`string'" (??_C@_1DA@LNNNDCLE@?$AAI?$AAn?$AAt?$AAr?$AAR?$AAx?$AAE?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000801:INFO  ]     Discarded "`string'" (??_C@_1DA@OIKEFDKE@?$AAI?$AAn?$AAt?$AAr?$AAT?$AAx?$AAE?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000802:INFO  ]     Discarded "`string'" (??_C@_1DA@DKPCLIME@?$AAI?$AAn?$AAt?$AAr?$AAU?$AAS?$AAB?$AAE?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000803:INFO  ]     Discarded "`string'" (??_C@_1DA@BEKHFDOA@?$AAP?$AAo?$AAw?$AAe?$AAr?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000804:INFO  ]     Discarded "`string'" (??_C@_1DA@DDJNBFOK@?$AAR?$AAx?$AAF?$AAI?$AAF?$AAO?$AAs?$AAz?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000805:INFO  ]     Discarded "`string'" (??_C@_1DA@CGHLAJLF@?$AAR?$AAx?$AAF?$AAI?$AAF?$AAO?$AAa?$AAd?$AAd?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000806:INFO  ]     Discarded "`string'" (??_C@_1DA@LODJHPCC@?$AAT?$AAx?$AAF?$AAI?$AAF?$AAO?$AAs?$AAz?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000807:INFO  ]     Discarded "`string'" (??_C@_1DA@KLNPGDHN@?$AAT?$AAx?$AAF?$AAI?$AAF?$AAO?$AAa?$AAd?$AAd?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000808:INFO  ]     Discarded ConfigurePadArray from main.obj
-BUILD: [01:0000000809:INFO  ]     Discarded WMLCDCOMD from main.obj
-BUILD: [01:0000000810:INFO  ]     Discarded WMLCDDATA from main.obj
-BUILD: [01:0000000811:INFO  ]     Discarded IsDVIMode from main.obj
-BUILD: [01:0000000812:INFO  ]     Discarded WriteFlashNK from flash.obj
-BUILD: [01:0000000813:INFO  ]     Discarded OALLogSetZones from oal_log.lib(debug.obj)
-BUILD: [01:0000000814:INFO  ]     Discarded DeviceId from oal_blmenu.lib(menu.obj)
-BUILD: [01:0000000815:INFO  ]     Discarded OALBLMenuActivate from oal_blmenu.lib(menu.obj)
-BUILD: [01:0000000816:INFO  ]     Discarded OALBLMenuSetDeviceId from oal_blmenu.lib(menu.obj)
-BUILD: [01:0000000817:INFO  ]     Discarded Reverse from oal_blnk.lib(format.obj)
-BUILD: [01:0000000818:INFO  ]     Discarded HALT from oal_blcommon.lib(blcommon.obj)
-BUILD: [01:0000000819:INFO  ]     Discarded KernelRelocate from oal_blcommon.lib(blcommon.obj)
-BUILD: [01:0000000820:INFO  ]     Discarded VerifyChecksum from oal_blcommon.lib(blcommon.obj)
-BUILD: [01:0000000821:INFO  ]     Discarded ComputeChecksum from oal_blcommon.lib(blcommon.obj)
-BUILD: [01:0000000822:INFO  ]     Discarded Nib2HexChar from oal_blcommon.lib(blcommon.obj)
-BUILD: [01:0000000823:INFO  ]     Discarded OutputString from oal_blcommon.lib(format.obj)
-BUILD: [01:0000000824:INFO  ]     Discarded inet_addr from oal_blcommon.lib(format.obj)
-BUILD: [01:0000000825:INFO  ]     Discarded SectorAccess from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000826:INFO  ]     Discarded BlockAccess from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000827:INFO  ]     Discarded WaitOnEmptyWriteBufferStatus from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000828:INFO  ]     Discarded InitializePointers from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000829:INFO  ]     Discarded NAND_GetGpmcRegs from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000830:INFO  ]     Discarded NAND_GetGeometry from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000831:INFO  ]     Discarded NAND_LockBlocks from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000832:INFO  ]     Discarded NAND_Uninitialize from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000833:INFO  ]     Discarded NAND_Seek from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000834:INFO  ]     Discarded NAND_GetStatus from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000835:INFO  ]     Discarded NAND_MutexEnter from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000836:INFO  ]     Discarded NAND_MutexExit from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000837:INFO  ]     Discarded NAND_SendCommand from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000838:INFO  ]     Discarded NAND_ConfigurePrefetch from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000839:INFO  ]     Discarded WaitForReadyStatus from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000840:INFO  ]     Discarded FMD_PowerUp from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000841:INFO  ]     Discarded FMD_PowerDown from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000842:INFO  ]     Discarded FMD_OEMIoControl from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000843:INFO  ]     Discarded NAND_EraseBlock from common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000000844:INFO  ]     Discarded CountNumberOfOnes from common_ti_fmd_nand_boot.lib(gpmc_ecc.obj)
-BUILD: [01:0000000845:INFO  ]     Discarded OEMEnableDebugOutput from common_ti_debugserial.lib(debugserial.obj)
-BUILD: [01:0000000846:INFO  ]     Discarded OEMWriteDebugLED from common_ti_debugserial.lib(debugserial.obj)
-BUILD: [01:0000000847:INFO  ]     Discarded GetIndexByDevice from common_ti_oali2c.lib(oali2c.obj)
-BUILD: [01:0000000848:INFO  ]     Discarded I2CGetTickCount from common_ti_oali2c.lib(oali2c.obj)
-BUILD: [01:0000000849:INFO  ]     Discarded I2CSetDeviceBaudrate from common_ti_oali2c.lib(oali2c.obj)
-BUILD: [01:0000000850:INFO  ]     Discarded I2CGetBufferSize from common_ti_oali2c.lib(oali2c.obj)
-BUILD: [01:0000000851:INFO  ]     Discarded I2CGetPacketSize from common_ti_oali2c.lib(oali2c.obj)
-BUILD: [01:0000000852:INFO  ]     Discarded OALI2CPostInit from common_ti_oali2c.lib(oali2c.obj)
-BUILD: [01:0000000853:INFO  ]     Discarded I2CReprogramDevice from common_ti_oali2c.lib(oali2c.obj)
-BUILD: [01:0000000854:INFO  ]     Discarded I2CSetTimeout from common_ti_oali2c.lib(oali2c.obj)
-BUILD: [01:0000000855:INFO  ]     Discarded I2CSetManualDriveMode from common_ti_oali2c.lib(oali2c.obj)
-BUILD: [01:0000000856:INFO  ]     Discarded I2CDriveSCL from common_ti_oali2c.lib(oali2c.obj)
-BUILD: [01:0000000857:INFO  ]     Discarded I2CDriveSDA from common_ti_oali2c.lib(oali2c.obj)
-BUILD: [01:0000000858:INFO  ]     Discarded I2CRawRead from common_ti_oali2c.lib(oali2c.obj)
-BUILD: [01:0000000859:INFO  ]     Discarded Get_CPUMaxSpeed from OMAP3530_oalcpuver.lib(oalcpuver.obj)
-BUILD: [01:0000000860:INFO  ]     Discarded GetDeviceByAddress from common_ti_devicesmap.lib(devicemap.obj)
-BUILD: [01:0000000861:INFO  ]     Discarded GetIrqByDevice from common_ti_devicesmap.lib(devicemap.obj)
-BUILD: [01:0000000862:INFO  ]     Discarded GetDeviceByIrq from common_ti_devicesmap.lib(devicemap.obj)
-BUILD: [01:0000000863:INFO  ]     Discarded WaitForCommandResult from common_ti_boot_sdmemory.lib(sdcard.obj)
-BUILD: [01:0000000864:INFO  ]     Discarded UTIL_csd_get_sectorsize from common_ti_boot_sdmemory.lib(sdcard.obj)
-BUILD: [01:0000000865:INFO  ]     Discarded MMCSetMMCState from common_ti_boot_sdmemory.lib(sdcard.obj)
-BUILD: [01:0000000866:INFO  ]     Discarded BLSDCardToFlash from common_ti_boot_sdmemory.lib(sdcard.obj)
-BUILD: [01:0000000867:INFO  ]     Discarded SystemClockOn from common_ti_boot_sdhc.lib(sdhc.obj)
-BUILD: [01:0000000868:INFO  ]     Discarded SystemClockOff from common_ti_boot_sdhc.lib(sdhc.obj)
-BUILD: [01:0000000869:INFO  ]     Discarded InitializeT2GPIO from common_ti_boot_sdhc.lib(sdhc.obj)
-BUILD: [01:0000000870:INFO  ]     Discarded Read_MMC_STAT from common_ti_boot_sdhc.lib(sdhc.obj)
-BUILD: [01:0000000871:INFO  ]     Discarded Write_MMC_STAT from common_ti_boot_sdhc.lib(sdhc.obj)
-BUILD: [01:0000000872:INFO  ]     Discarded Set_MMC_STAT from common_ti_boot_sdhc.lib(sdhc.obj)
-BUILD: [01:0000000873:INFO  ]     Discarded EnableSDHCInterrupts from common_ti_boot_sdhc.lib(sdhc.obj)
-BUILD: [01:0000000874:INFO  ]     Discarded SetSDVSVoltage from common_ti_boot_sdhc.lib(sdhc.obj)
-BUILD: [01:0000000875:INFO  ]     Discarded UpdateSystemClock from common_ti_boot_sdhc.lib(sdhc.obj)
-BUILD: [01:0000000876:INFO  ]     Discarded SendCmdNoResp from common_ti_boot_sdhc.lib(sdhc.obj)
-BUILD: [01:0000000877:INFO  ]     Discarded SdhcSetSlotPowerState from common_ti_boot_sdhc.lib(sdhc.obj)
-BUILD: [01:0000000878:INFO  ]     Discarded ReadMacCSR from common_ti_ethdrv_lan911x.lib(lan911x.obj)
-BUILD: [01:0000000879:INFO  ]     Discarded WriteMacCSR from common_ti_ethdrv_lan911x.lib(lan911x.obj)
-BUILD: [01:0000000880:INFO  ]     Discarded GPIOPostInit from common_ti_oal_gpiodispatch.lib(gpio_dispatch.obj)
-BUILD: [01:0000000881:INFO  ]     Discarded GPIOGetMode from common_ti_oal_gpiodispatch.lib(gpio_dispatch.obj)
-BUILD: [01:0000000882:INFO  ]     Discarded GPIOPulldown from common_ti_oal_gpiodispatch.lib(gpio_dispatch.obj)
-BUILD: [01:0000000883:INFO  ]     Discarded GPIOIoControl from common_ti_oal_gpiodispatch.lib(gpio_dispatch.obj)
-BUILD: [01:0000000884:INFO  ]     Discarded "void __cdecl InternalSetGpioBankPowerState(struct OmapGpioDevice_t *,unsigned int,enum _CEDEVICE_POWER_STATE)" (?InternalSetGpioBankPowerState@@YAXPAUOmapGpioDevice_t@@IW4_CEDEVICE_POWER_STATE@@@Z) from common_ti_oal_omap_gpio.lib(omap35xx_gpio.obj)
-BUILD: [01:0000000885:INFO  ]     Discarded "void __cdecl OmapGpioPowerUp(void *)" (?OmapGpioPowerUp@@YAXPAX@Z) from common_ti_oal_omap_gpio.lib(omap35xx_gpio.obj)
-BUILD: [01:0000000886:INFO  ]     Discarded "void __cdecl OmapGpioPowerDown(void *)" (?OmapGpioPowerDown@@YAXPAX@Z) from common_ti_oal_omap_gpio.lib(omap35xx_gpio.obj)
-BUILD: [01:0000000887:INFO  ]     Discarded "int __cdecl OpenTwl(void)" (?OpenTwl@@YAHXZ) from TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
-BUILD: [01:0000000888:INFO  ]     Discarded "void __cdecl CloseTwl(void)" (?CloseTwl@@YAXXZ) from TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
-BUILD: [01:0000000889:INFO  ]     Discarded "void __cdecl Lock(void)" (?Lock@@YAXXZ) from TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
-BUILD: [01:0000000890:INFO  ]     Discarded "void __cdecl Unlock(void)" (?Unlock@@YAXXZ) from TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
-BUILD: [01:0000000891:INFO  ]     Discarded "void __cdecl SetGpioBankPowerState(unsigned int,enum _CEDEVICE_POWER_STATE)" (?SetGpioBankPowerState@@YAXIW4_CEDEVICE_POWER_STATE@@@Z) from TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
-BUILD: [01:0000000892:INFO  ]     Discarded TWLSetValue from triton_oal.lib(twl_access.obj)
-BUILD: [01:0000000893:INFO  ]     Discarded SOCGetMCSPIDeviceByBus from OMAP3530_soccfg.lib(soccfg.obj)
-BUILD: [01:0000000894:INFO  ]     Discarded SOCGetMCBSPDeviceByBus from OMAP3530_soccfg.lib(soccfg.obj)
-BUILD: [01:0000000895:INFO  ]     Discarded SOCGetMCBSPSidetoneAddress from OMAP3530_soccfg.lib(soccfg.obj)
-BUILD: [01:0000000896:INFO  ]     Discarded SOCGetI2CDeviceByBus from OMAP3530_soccfg.lib(soccfg.obj)
-BUILD: [01:0000000897:INFO  ]     Discarded SOCGetUartDeviceByIndex from OMAP3530_soccfg.lib(soccfg.obj)
-BUILD: [01:0000000898:INFO  ]     Discarded SOCGetIntCtrlAddr from OMAP3530_soccfg.lib(soccfg.obj)
-BUILD: [01:0000000899:INFO  ]     Discarded SOCGetDSSInfo from OMAP3530_soccfg.lib(soccfg.obj)
-BUILD: [01:0000000900:INFO  ]     Discarded SOCGetDMADevice from OMAP3530_soccfg.lib(soccfg.obj)
-BUILD: [01:0000000901:INFO  ]     Discarded SOCGetVRFBDevice from OMAP3530_soccfg.lib(soccfg.obj)
-BUILD: [01:0000000902:INFO  ]     Discarded SOCGetUSBHInfo from OMAP3530_soccfg.lib(soccfg.obj)
-BUILD: [01:0000000903:INFO  ]     Discarded SOCGetHDQDevice from OMAP3530_soccfg.lib(soccfg.obj)
-BUILD: [01:0000000904:INFO  ]     Discarded MapPadRegisters from OMAP3530_oal_padcfg.lib(soc_padcfg.obj)
-BUILD: [01:0000000905:INFO  ]     Discarded SOCGetPadConfig from OMAP3530_oal_padcfg.lib(soc_padcfg.obj)
-BUILD: [01:0000000906:INFO  ]     Discarded BSPGetGpioIrq from bspcfg.lib(bspcfg.obj)
-BUILD: [01:0000000907:INFO  ]     Discarded BSPGetSysTimerDevice from bspcfg.lib(bspcfg.obj)
-BUILD: [01:0000000908:INFO  ]     Discarded BSPGetSysTimer32KClock from bspcfg.lib(bspcfg.obj)
-BUILD: [01:0000000909:INFO  ]     Discarded BSPGetGPTPerfDevice from bspcfg.lib(bspcfg.obj)
-BUILD: [01:0000000910:INFO  ]     Discarded BSPGetGPTPerfHighFreqClock from bspcfg.lib(bspcfg.obj)
-BUILD: [01:0000000911:INFO  ]     Discarded BSPGetRTCGpioIrq from bspcfg.lib(bspcfg.obj)
-BUILD: [01:0000000912:INFO  ]     Discarded BPSGetWatchdogDevice from bspcfg.lib(bspcfg.obj)
-BUILD: [01:0000000913:INFO  ]     Discarded CloseHandle from bsp_bootstubs.lib(bsp_bootstubs.obj)
-BUILD: [01:0000000914:INFO  ]     Discarded SC_CreateMutex from bsp_bootstubs.lib(bsp_bootstubs.obj)
-BUILD: [01:0000000915:INFO  ]     Discarded SC_WaitForMultiple from bsp_bootstubs.lib(bsp_bootstubs.obj)
-BUILD: [01:0000000916:INFO  ]     Discarded SC_ReleaseMutex from bsp_bootstubs.lib(bsp_bootstubs.obj)
-BUILD: [01:0000000917:INFO  ]     Discarded EnableDeviceClocksNoRefCount from bsp_bootstubs.lib(bsp_bootstubs.obj)
-BUILD: [01:0000000918:INFO  ]     Discarded BusClockRelease from bsp_bootstubs.lib(bsp_bootstubs.obj)
-BUILD: [01:0000000919:INFO  ]     Discarded BusClockRequest from bsp_bootstubs.lib(bsp_bootstubs.obj)
-BUILD: [01:0000000920:INFO  ]     Discarded CreateBusAccessHandle from bsp_bootstubs.lib(bsp_bootstubs.obj)
-BUILD: [01:0000000921:INFO  ]     Discarded PDD_IsPacketSend from rne_mdd.lib(rndis.obj)
-BUILD: [01:0000000922:INFO  ]     Discarded RndisGetIrq from rne_mdd.lib(rndis.obj)
-BUILD: [01:0000000923:INFO  ]     Discarded RndisGetPCICard from rne_mdd.lib(rndis.obj)
-BUILD: [01:0000000924:INFO  ]     Discarded RndisDeInit from rne_mdd.lib(rndis.obj)
-BUILD: [01:0000000925:INFO  ]     Discarded RndisGetPendingInts from rne_mdd.lib(rndis.obj)
-BUILD: [01:0000000926:INFO  ]     Discarded RndisSetOptions from rne_mdd.lib(rndis.obj)
-BUILD: [01:0000000927:INFO  ]     Discarded MddInitializeCriticalSection from rne_mdd.lib(rndis.obj)
-BUILD: [01:0000000928:INFO  ]     Discarded MddDeleteCriticalSection from rne_mdd.lib(rndis.obj)
-BUILD: [01:0000000929:INFO  ]     Discarded MddEnterCriticalSection from rne_mdd.lib(rndis.obj)
-BUILD: [01:0000000930:INFO  ]     Discarded MddLeaveCriticalSection from rne_mdd.lib(rndis.obj)
-BUILD: [01:0000000931:INFO  ]     Discarded RndisMiniCeLogMsg from rne_mdd.lib(rndis.obj)
-BUILD: [01:0000000932:INFO  ]     Discarded MddDisconnect from rne_mdd.lib(hostmini.obj)
-BUILD: [01:0000000933:INFO  ]     Discarded HostMiniDeInit from rne_mdd.lib(hostmini.obj)
-BUILD: [01:0000000934:INFO  ]     Discarded __security_init_cookie from gsnull.lib(gsnull.obj)
-BUILD: [01:0000000935:INFO  ]     Discarded isspace from fulllibc.lib(atox.obj)
-BUILD: [01:0000000936:INFO  ]     Discarded wcscmp from fulllibc.lib(wcscmp.obj)
-BUILD: [01:0000000937:INFO  ]     Discarded __raise_int_overflow from fulllibc.lib(diverr.obj)
-BUILD: [01:0000000938:INFO  ]     Discarded tolower from eboot.lib(tftpd.obj)
-BUILD: [01:0000000939:INFO  ]     Discarded EbootTFtpdServerUnRegister from eboot.lib(tftpd.obj)
-BUILD: [01:0000000940:INFO  ]     Discarded TFtpOpen from eboot.lib(tftp.obj)
-BUILD: [01:0000000941:INFO  ]     Discarded TFtpRead from eboot.lib(tftp.obj)
-BUILD: [01:0000000942:INFO  ]     Discarded TFtpWrite from eboot.lib(tftp.obj)
-BUILD: [01:0000000943:INFO  ]     Discarded TFTPRetransmit from eboot.lib(tftp.obj)
-BUILD: [01:0000000944:INFO  ]     Discarded DuplicateIPWarning from eboot.lib(udp.obj)
-BUILD: [01:0000000945:INFO  ]     Discarded HexToChar from eboot.lib(dhcp.obj)
-BUILD: [01:0000000946:INFO  ]     Discarded DHCPParseField from eboot.lib(dhcp.obj)
-BUILD: [01:0000000947:INFO  ]     Discarded EbootReadSerialIP from eboot.lib(dhcp.obj)
-BUILD: [01:0000000948:INFO  ]     Discarded TWLWriteByteReg from bsp_display.lib(bsp_logo.obj)
-BUILD: [01:0000000949:INFO  ]     Discarded FlipFrameBuffer from bsp_display.lib(bsp_logo.obj)
-BUILD: [01:0000000950:INFO  ]     Discarded BLSDtoFlash from bsp_display.lib(bsp_logo.obj)
-BUILD: [01:0000000951:INFO  ]     Discarded disable_dss from bsp_display.lib(bsp_logo.obj)
-BUILD: [01:0000000952:INFO  ]     Discarded disable_lcd_power from bsp_display.lib(bsp_logo.obj)
-BUILD: [01:0000000953:INFO  ]     Discarded disable_lcd_backlight from bsp_display.lib(bsp_logo.obj)
-BUILD: [01:0000000954:INFO  ]     Discarded SetupDisplaySize from bsp_display.lib(bsp_logo.obj)
-BUILD: [01:0000000955:INFO  ]     Discarded lcd_config from bsp_display.lib(bsp_logo.obj)
-BUILD: [01:0000000956:INFO  ]     Discarded lcd_shutdown from bsp_display.lib(bsp_logo.obj)
-BUILD: [01:0000000957:INFO  ]     Discarded HideLogo from bsp_display.lib(bsp_logo.obj)
-BUILD: [01:0000000958:INFO  ]     Discarded LcdPdd_DVI_Select from bsp_display_init.lib(lcd_qvga.obj)
-BUILD: [01:0000000959:INFO  ]     Discarded LcdPdd_DVI_Enabled from bsp_display_init.lib(lcd_qvga.obj)
-BUILD: [01:0000000960:INFO  ]     Discarded LcdPdd_Get_PixClkDiv from bsp_display_init.lib(lcd_qvga.obj)
-BUILD: [01:0000000961:INFO  ]     Discarded LcdDeinitGpio from bsp_display_init.lib(lcd_support.obj)
-BUILD: [01:0000000962:INFO  ]     Discarded LcdIniControl from bsp_display_init.lib(lcd_support.obj)
-BUILD: [01:0000000963:INFO  ]     Discarded LcdDviEnableControl from bsp_display_init.lib(lcd_support.obj)
-BUILD: [01:0000000964:INFO  ]     Discarded OALIoTransSystemAddress from oal_io.lib(trans.obj)
-BUILD: [01:0000000965:INFO  ]     Discarded OALFlashStoreBlockSize from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000966:INFO  ]     Discarded OALFlashStoreSectorSize from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000967:INFO  ]     Discarded IsSectorEmpty from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000968:INFO  ]     Discarded BuildLayoutInfo from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000969:INFO  ]     Discarded OALFlashStoreWrite from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000970:INFO  ]     Discarded OALFlashStoreErase from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000971:INFO  ]     Discarded OALFlashStoreReadFromReservedRegion from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000972:INFO  ]     Discarded OALFlashStoreWriteToReservedRegion from common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000000973:INFO  ]     Discarded ByteIsPowerOfTwo from common_ti_boot_fatfs.lib(fileio.obj)
-BUILD: [01:0000000974:INFO  ]     Discarded PDDDeinit from common_ti_ethdrv_rndis.lib(rndis.obj)
-BUILD: [01:0000000975:INFO  ]     Discarded _ltoa from fulllibc.lib(xtoa.obj)
-BUILD: [01:0000000976:INFO  ]     Discarded _ultoa from fulllibc.lib(xtoa.obj)
-BUILD: [01:0000000977:INFO  ]     Discarded TWLWriteByteReg from bsp_boot_ethdrv_usbfn.lib(trans.obj)
-BUILD: [01:0000000978:INFO  ]     Discarded TWLReadByteReg from bsp_boot_ethdrv_usbfn.lib(trans.obj)
-BUILD: [01:0000000979:INFO  ]     Discarded DumpUSBRegisters from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000980:INFO  ]     Discarded CalcFIFOAddr from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000981:INFO  ]     Discarded StartUSBClock from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000982:INFO  ]     Discarded UfnPdd_DllEntry from common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000000983:INFO  ]     Discarded '.xdata' from oal_blmenu.lib(menu.obj)
-BUILD: [01:0000000984:INFO  ] Starting pass 2
-BUILD: [01:0000000985:INFO  ]      cfg.obj
-BUILD: [01:0000000986:INFO  ]      flash.obj
-BUILD: [01:0000000987:INFO  ]      jumpto.obj
-BUILD: [01:0000000988:INFO  ]      startup.obj
-BUILD: [01:0000000989:INFO  ]      mmu.obj
-BUILD: [01:0000000990:INFO  ]      flashmenu.obj
-BUILD: [01:0000000991:INFO  ]      stub.obj
-BUILD: [01:0000000992:INFO  ]      menu.obj
-BUILD: [01:0000000993:INFO  ]      eth.obj
-BUILD: [01:0000000994:INFO  ]      main.obj
-BUILD: [01:0000000995:INFO  ]      oal_io.lib(trans.obj)
-BUILD: [01:0000000996:INFO  ]      oal_kitl_boot.lib(device.obj)
-BUILD: [01:0000000997:INFO  ]      oal_kitl_boot.lib(name.obj)
-BUILD: [01:0000000998:INFO  ]      oal_kitl_boot.lib(format.obj)
-BUILD: [01:0000000999:INFO  ]      oal_log.lib(log.obj)
-BUILD: [01:0000001000:INFO  ]      oal_log.lib(debug.obj)
-BUILD: [01:0000001001:INFO  ]      oal_blmenu.lib(menu.obj)
-BUILD: [01:0000001002:INFO  ]      oal_blnk.lib(format.obj)
-BUILD: [01:0000001003:INFO  ]      oal_blnk.lib(wrappers.obj)
-BUILD: [01:0000001004:INFO  ]      oal_blcommon.lib(blcommon.obj)
-BUILD: [01:0000001005:INFO  ]      oal_blcommon.lib(format.obj)
-BUILD: [01:0000001006:INFO  ]      common_ti_cortexA8_cache.lib(dcache.obj)
-BUILD: [01:0000001007:INFO  ]      common_ti_cortexA8_cache.lib(global.obj)
-BUILD: [01:0000001008:INFO  ]      common_ti_oal_flashstore.lib(flashstore.obj)
-BUILD: [01:0000001009:INFO  ]      common_ti_fmd_nand_boot.lib(fmd.obj)
-BUILD: [01:0000001010:INFO  ]      common_ti_fmd_nand_boot.lib(gpmc_ecc.obj)
-BUILD: [01:0000001011:INFO  ]      common_ti_fmd_nand_boot.lib(omap_bch_decoder.obj)
-BUILD: [01:0000001012:INFO  ]      common_ti_oal_alloc.lib(alloc.obj)
-BUILD: [01:0000001013:INFO  ]      common_ti_debugserial.lib(debugserial.obj)
-BUILD: [01:0000001014:INFO  ]      common_ti_oali2c.lib(oali2c.obj)
-BUILD: [01:0000001015:INFO  ]      OMAP3530_oalcpuver.lib(oalcpuver.obj)
-BUILD: [01:0000001016:INFO  ]      common_ti_devicesmap.lib(devicemap.obj)
-BUILD: [01:0000001017:INFO  ]      common_ti_boot_fatfs.lib(fileio.obj)
-BUILD: [01:0000001018:INFO  ]      common_ti_boot_sdmemory.lib(sdcard.obj)
-BUILD: [01:0000001019:INFO  ]      common_ti_boot_sdhc.lib(sdhc.obj)
-BUILD: [01:0000001020:INFO  ]      common_ti_boot_sdhc.lib(getidcode.obj)
-BUILD: [01:0000001021:INFO  ]      common_ti_ethdrv_lan911x.lib(lan911x.obj)
-BUILD: [01:0000001022:INFO  ]      common_ti_ethdrv_usbfn.lib(pdd.obj)
-BUILD: [01:0000001023:INFO  ]      common_ti_ethdrv_rndis.lib(rndis.obj)
-BUILD: [01:0000001024:INFO  ]      TPS659xx_misc.lib(misc.obj)
-BUILD: [01:0000001025:INFO  ]      common_ti_oal_gpiodispatch.lib(gpio_dispatch.obj)
-BUILD: [01:0000001026:INFO  ]      common_ti_oal_omap_gpio.lib(omap35xx_gpio.obj)
-BUILD: [01:0000001027:INFO  ]      TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
-BUILD: [01:0000001028:INFO  ]      triton_oal.lib(twl_access.obj)
-BUILD: [01:0000001029:INFO  ]      OMAP3530_soccfg.lib(devicemap.obj)
-BUILD: [01:0000001030:INFO  ]      OMAP3530_soccfg.lib(soccfg.obj)
-BUILD: [01:0000001031:INFO  ]      OMAP3530_sdhc_boot.lib(sdhc.obj)
-BUILD: [01:0000001032:INFO  ]      OMAP3530_oal_padcfg.lib(soc_padcfg.obj)
-BUILD: [01:0000001033:INFO  ]      bspcfg.lib(bspcfg.obj)
-BUILD: [01:0000001034:INFO  ]      bsp_bootstubs.lib(bsp_bootstubs.obj)
-BUILD: [01:0000001035:INFO  ]      bsp_stall.lib(stall.obj)
-BUILD: [01:0000001036:INFO  ]      rne_mdd.lib(rndis.obj)
-BUILD: [01:0000001037:INFO  ]      rne_mdd.lib(hostmini.obj)
-BUILD: [01:0000001038:INFO  ]      rne_mdd.lib(util.obj)
-BUILD: [01:0000001039:INFO  ]      gsnull.lib(gsnull.obj)
-BUILD: [01:0000001040:INFO  ]      fulllibc.lib(raiseexc.obj)
-BUILD: [01:0000001041:INFO  ]      fulllibc.lib(atox.obj)
-BUILD: [01:0000001042:WARNN ] fulllibc.lib(atox.obj) : warning LNK4099: PDB 'ccrtconv.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtconv.pdb'; linking object as if no debug info
-BUILD: [01:0000001043:INFO  ]      fulllibc.lib(toupper.obj)
-BUILD: [01:0000001044:WARNN ] fulllibc.lib(toupper.obj) : warning LNK4099: PDB 'ccrtconv.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtconv.pdb'; linking object as if no debug info
-BUILD: [01:0000001045:INFO  ]      fulllibc.lib(xtoa.obj)
-BUILD: [01:0000001046:WARNN ] fulllibc.lib(xtoa.obj) : warning LNK4099: PDB 'ccrtconv.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtconv.pdb'; linking object as if no debug info
-BUILD: [01:0000001047:INFO  ]      fulllibc.lib(mdsdiv64.obj)
-BUILD: [01:0000001048:INFO  ]      fulllibc.lib(__div.obj)
-BUILD: [01:0000001049:INFO  ]      fulllibc.lib(__udiv.obj)
-BUILD: [01:0000001050:INFO  ]      fulllibc.lib(diverr.obj)
-BUILD: [01:0000001051:WARNN ] fulllibc.lib(diverr.obj) : warning LNK4099: PDB 'ccrthelp.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrthelp.pdb'; linking object as if no debug info
-BUILD: [01:0000001052:INFO  ]      fulllibc.lib(memcmp.obj)
-BUILD: [01:0000001053:INFO  ]      fulllibc.lib(memcpy.obj)
-BUILD: [01:0000001054:INFO  ]      fulllibc.lib(memset.obj)
-BUILD: [01:0000001055:INFO  ]      fulllibc.lib(mdsstrcat.obj)
-BUILD: [01:0000001056:INFO  ]      fulllibc.lib(mdsstrcmp.obj)
-BUILD: [01:0000001057:INFO  ]      fulllibc.lib(strcpy.obj)
-BUILD: [01:0000001058:INFO  ]      fulllibc.lib(mdsstrlen.obj)
-BUILD: [01:0000001059:INFO  ]      fulllibc.lib(astrncmp.obj)
-BUILD: [01:0000001060:INFO  ]      fulllibc.lib(astrncpy.obj)
-BUILD: [01:0000001061:INFO  ]      fulllibc.lib(wcscpy.obj)
-BUILD: [01:0000001062:WARNN ] fulllibc.lib(wcscpy.obj) : warning LNK4099: PDB 'ccrtstrg.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtstrg.pdb'; linking object as if no debug info
-BUILD: [01:0000001063:INFO  ]      fulllibc.lib(wcscmp.obj)
-BUILD: [01:0000001064:WARNN ] fulllibc.lib(wcscmp.obj) : warning LNK4099: PDB 'ccrtstrg.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtstrg.pdb'; linking object as if no debug info
-BUILD: [01:0000001065:INFO  ]      fulllibc.lib(gshandler.obj)
-BUILD: [01:0000001066:INFO  ]      fulllibc.lib(armsecgs.obj)
-BUILD: [01:0000001067:INFO  ]      eboot.lib(edbg.obj)
-BUILD: [01:0000001068:INFO  ]      eboot.lib(dhcp.obj)
-BUILD: [01:0000001069:INFO  ]      eboot.lib(udp.obj)
-BUILD: [01:0000001070:INFO  ]      eboot.lib(tftp.obj)
-BUILD: [01:0000001071:INFO  ]      eboot.lib(tftpd.obj)
-BUILD: [01:0000001072:INFO  ]      eboot.lib(ebsimp.obj)
-BUILD: [01:0000001073:INFO  ]      bsp_boot_ethdrv_usbfn.lib(trans.obj)
-BUILD: [01:0000001074:INFO  ]      bsp_display.lib(bsp_logo.obj)
-BUILD: [01:0000001075:INFO  ]      bsp_display_init.lib(lcd_qvga.obj)
-BUILD: [01:0000001076:INFO  ]      bsp_display_init.lib(lcd_support.obj)
-BUILD: [01:0000001077:INFO  ] Finished pass 2
-BUILD: [01:0000001078:INFO  ] 	editbin /nxcompat C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe
-BUILD: [01:0000001079:INFO  ] Microsoft (R) COFF/PE Editor Version 8.00.50727.42
-BUILD: [01:0000001080:INFO  ] Copyright (C) Microsoft Corporation.  All rights reserved.
-BUILD: [01:0000001081:INFO  ] 
-BUILD: [01:0000001082:INFO  ] 
-BUILD: [01:0000001083:INFO  ] 	copylink /S:a /D:f /E:a /R:n C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe C:\WINCE600\OSDesigns\Z2170P\Z2170P\RelDir\Z2170P_ARMV4I_Release\ebootsd.exe
-BUILD: [01:0000001084:INFO  ] 	copylink /S:a /D:f /E:a /R:n C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.map C:\WINCE600\OSDesigns\Z2170P\Z2170P\RelDir\Z2170P_ARMV4I_Release\ebootsd.map
-BUILD: [01:0000001085:INFO  ] 	if exist C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.pdb copylink /S:a /D:f /E:a /R:n C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.pdb C:\WINCE600\OSDesigns\Z2170P\Z2170P\RelDir\Z2170P_ARMV4I_Release
-BUILD: [01:0000001086:INFO  ] 	if exist C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.rel copylink /S:a /D:f /E:a /R:n C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.rel C:\WINCE600\OSDesigns\Z2170P\Z2170P\RelDir\Z2170P_ARMV4I_Release\ebootsd.rel
-BUILD: [01:0000001087:INFO  ] 	romimage  ebootsd.bib
+BUILD: [01:0000000737:INFO  ]     Discarded '.pdata' from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000738:INFO  ]     Discarded '.pdata' from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000739:INFO  ]     Discarded '.pdata' from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000740:INFO  ]     Discarded '.pdata' from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000741:INFO  ]     Discarded '.pdata' from common_ti_boot_fatfs.lib(fileio.obj)
+BUILD: [01:0000000742:INFO  ]     Discarded '.pdata' from common_ti_ethdrv_rndis.lib(rndis.obj)
+BUILD: [01:0000000743:INFO  ]     Discarded '.pdata' from fulllibc.lib(xtoa.obj)
+BUILD: [01:0000000744:INFO  ]     Discarded '.pdata' from fulllibc.lib(xtoa.obj)
+BUILD: [01:0000000745:INFO  ]     Discarded '.pdata' from bsp_boot_ethdrv_usbfn.lib(trans.obj)
+BUILD: [01:0000000746:INFO  ]     Discarded '.pdata' from bsp_boot_ethdrv_usbfn.lib(trans.obj)
+BUILD: [01:0000000747:INFO  ]     Discarded '.pdata' from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000748:INFO  ]     Discarded '.pdata' from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000749:INFO  ]     Discarded '.pdata' from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000750:INFO  ]     Discarded '.pdata' from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000751:INFO  ]     Discarded "`string'" (??_C@_1GM@LBPDAPNJ@?$AAI?$AAN?$AAF?$AAO?$AA?3?$AAO?$AAA?$AAL?$AAL?$AAo?$AAg?$AAS?$AAe?$AAt?$AAZ?$AAo?$AAn?$AAe?$AAs?$AA?3?$AA?5?$AAd?$AAp?$AAC?$AAu?$AAr?$AAS?$AAe?$AAt?$AAt?$AAi?$AAn@) from oal_log.lib(debug.obj)
+BUILD: [01:0000000752:INFO  ]     Discarded "`string'" (??_C@_0N@LKBAFPFA@?$CK?$CK?$CK?5auto?5?$CK?$CK?$CK?$AA@) from oal_blmenu.lib(menu.obj)
+BUILD: [01:0000000753:INFO  ]     Discarded "`string'" (??_C@_1FM@KKEGFMMC@?$AAH?$AAi?$AAt?$AA?5?$AAs?$AAp?$AAa?$AAc?$AAe?$AA?5?$AAt?$AAo?$AA?5?$AAe?$AAn?$AAt?$AAe?$AAr?$AA?5?$AAc?$AAo?$AAn?$AAf?$AAi?$AAg?$AAu?$AAr?$AAa?$AAt?$AAi?$AAo?$AAn@) from oal_blmenu.lib(menu.obj)
+BUILD: [01:0000000754:INFO  ]     Discarded "`string'" (??_C@_1DC@OGIHKHPF@?$AA?5?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AA?5?$AAI?$AAd?$AA?5?$AAs?$AAe?$AAt?$AA?5?$AAt?$AAo?$AA?5?$AA?8?$AA?$CF?$AAS?$AA?8?$AA?$AN?$AA?6?$AA?$AA@) from oal_blmenu.lib(menu.obj)
+BUILD: [01:0000000755:INFO  ]     Discarded "`string'" (??_C@_1FG@JMGBGFEJ@?$AA?5?$AAE?$AAn?$AAt?$AAe?$AAr?$AA?5?$AAD?$AAe?$AAv?$AAi?$AAc?$AAe?$AA?5?$AAI?$AAd?$AA?5?$AA?$CI?$AA?$CK?$AA?5?$AA?$DN?$AA?5?$AAa?$AAu?$AAt?$AAo?$AA?0?$AA?5?$AAa?$AAc?$AAt?$AAu@) from oal_blmenu.lib(menu.obj)
+BUILD: [01:0000000756:INFO  ]     Discarded "`string'" (??_C@_1FM@DHKEFDNK@?$AAW?$AAA?$AAR?$AAN?$AA?3?$AA?5?$AAI?$AA2?$AAC?$AA?3?$AA?5?$AAR?$AAe?$AAa?$AAd?$AA?5?$AAf?$AAa?$AAi?$AAl?$AAe?$AAd?$AA?5?$AA?$CI?$AAs?$AAl?$AAa?$AAv?$AAe?$AA?5?$AAa?$AAd@) from common_ti_oali2c.lib(oali2c.obj)
+BUILD: [01:0000000757:INFO  ]     Discarded "`string'" (??_C@_1FA@EHAPGJGJ@?$AA?5?$AA?$CK?$AA?$CK?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAT?$AAo?$AAF?$AAl?$AAa?$AAs?$AAh?$AA?3?$AA?5?$AA?5?$AAC?$AAa?$AAn?$AAn?$AAo?$AAt?$AA?5?$AAo?$AAp?$AAe?$AAn@) from common_ti_boot_sdmemory.lib(sdcard.obj)
+BUILD: [01:0000000758:INFO  ]     Discarded "`string'" (??_C@_1EO@MDFFFBD@?$AAB?$AAL?$AAS?$AAD?$AAC?$AAa?$AAr?$AAd?$AAT?$AAo?$AAF?$AAl?$AAa?$AAs?$AAh?$AA?3?$AA?5?$AA?5?$AAf?$AAi?$AAl?$AAe?$AAi?$AAo?$AA?5?$AAi?$AAn?$AAi?$AAt?$AA?5?$AAf?$AAa@) from common_ti_boot_sdmemory.lib(sdcard.obj)
+BUILD: [01:0000000759:INFO  ]     Discarded "`string'" (??_C@_01HMGJMAIH@B?$AA@) from rne_mdd.lib(rndis.obj)
+BUILD: [01:0000000760:INFO  ]     Discarded "`string'" (??_C@_01DGKLNCNG@R?$AA@) from rne_mdd.lib(rndis.obj)
+BUILD: [01:0000000761:INFO  ]     Discarded "`string'" (??_C@_0BN@DGLONFMO@HostMini?3?3?5MddDisconnect?$CB?$CB?$AN?6?$AA@) from rne_mdd.lib(hostmini.obj)
+BUILD: [01:0000000762:INFO  ]     Discarded "`string'" (??_C@_0CH@NEPGMPPP@Server?5Process?5Has?5UnRegistered?5@) from eboot.lib(tftpd.obj)
+BUILD: [01:0000000763:INFO  ]     Discarded "`string'" (??_C@_0BP@GBJGHCHP@?$CBTftpReturnCodes?0?5STATE_ERROR?6?$AA@) from eboot.lib(tftp.obj)
+BUILD: [01:0000000764:INFO  ]     Discarded "`string'" (??_C@_0BC@DCLKPECN@?$CB?$CB?$CB?$CB?5TFTP?5Errror?6?$AA@) from eboot.lib(tftp.obj)
+BUILD: [01:0000000765:INFO  ]     Discarded "`string'" (??_C@_0DC@EJGDJHJD@TFTPRetransmit?$CI?$CJ?5Slot?5?$CFu?0?5wDestT@) from eboot.lib(tftp.obj)
+BUILD: [01:0000000766:INFO  ]     Discarded "`string'" (??_C@_0BI@NOMLANFJ@Linked?5Timed?5Out?5By?5Odo?$AA@) from eboot.lib(tftp.obj)
+BUILD: [01:0000000767:INFO  ]     Discarded "`string'" (??_C@_0CM@MLNGGHPC@TFTPRetransmit?$CI?$CJ?3?3Error?5On?5SendU@) from eboot.lib(tftp.obj)
+BUILD: [01:0000000768:INFO  ]     Discarded "`string'" (??_C@_0DF@CLENMEEN@?$AN?6Enter?5new?5subnet?5mask?5or?5CR?5to@) from eboot.lib(dhcp.obj)
+BUILD: [01:0000000769:INFO  ]     Discarded "`string'" (??_C@_0CI@NDANHPBF@?$AN?6ReadSerialIP?$CI?$CJ?3?3Using?5IP?5Addre@) from eboot.lib(dhcp.obj)
+BUILD: [01:0000000770:INFO  ]     Discarded "`string'" (??_C@_1BM@GEPNOGL@?$AA?9?$AA?9?$AA?9?$AA?9?$AA?9?$AA?9?$AA?9?$AA?9?$AA?9?$AA?9?$AA?9?$AA?9?$AA?6?$AA?$AA@) from bsp_display.lib(bsp_logo.obj)
+BUILD: [01:0000000771:INFO  ]     Discarded "`string'" (??_C@_1BI@CGMPOLFK@?$AAE?$AAB?$AAO?$AAO?$AAT?$AAS?$AAD?$AA?4?$AAn?$AAb?$AA0?$AA?$AA@) from bsp_display.lib(bsp_logo.obj)
+BUILD: [01:0000000772:INFO  ]     Discarded "`string'" (??_C@_1DC@LNCCCMGG@?$AAd?$AAi?$AAs?$AAa?$AAb?$AAl?$AAe?$AA_?$AAl?$AAc?$AAd?$AA_?$AAb?$AAa?$AAc?$AAk?$AAl?$AAi?$AAg?$AAh?$AAt?$AA?$CL?$AA?$AN?$AA?6?$AA?$AA@) from bsp_display.lib(bsp_logo.obj)
+BUILD: [01:0000000773:INFO  ]     Discarded "`string'" (??_C@_1HM@IKCJOCJL@?$AA?9?$AAO?$AAA?$AAL?$AAT?$AAr?$AAa?$AAn?$AAs?$AAl?$AAa?$AAt?$AAe?$AAS?$AAy?$AAs?$AAt?$AAe?$AAm?$AAA?$AAd?$AAd?$AAr?$AAe?$AAs?$AAs?$AA?$CI?$AAb?$AAu?$AAs?$AAA?$AAd@) from oal_io.lib(trans.obj)
+BUILD: [01:0000000774:INFO  ]     Discarded "`string'" (??_C@_1GC@GKDDBMML@?$AA?$CL?$AAO?$AAA?$AAL?$AAT?$AAr?$AAa?$AAn?$AAs?$AAl?$AAa?$AAt?$AAe?$AAS?$AAy?$AAs?$AAt?$AAe?$AAm?$AAA?$AAd?$AAd?$AAr?$AAe?$AAs?$AAs?$AA?$CI?$AA?$CF?$AAd?$AA?0?$AA?5?$AA?$CF@) from oal_io.lib(trans.obj)
+BUILD: [01:0000000775:INFO  ]     Discarded "`string'" (??_C@_1KM@MOFGEBEH@?$AA?5?$AA?5?$AA?5?$AA?5?$AAT?$AAy?$AAp?$AAe?$AA?$DN?$AA?$CF?$AAd?$AA?0?$AA?5?$AAS?$AAt?$AAa?$AAr?$AAt?$AA?$DN?$AA0?$AAx?$AA?$CF?$AAx?$AA?0?$AA?5?$AAN?$AAu?$AAm?$AAP?$AA?$DN?$AA0?$AAx@) from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000776:INFO  ]     Discarded "`string'" (??_C@_1DK@FBKBGCAF@?$AAF?$AAl?$AAa?$AAs?$AAh?$AA?5?$AAc?$AAo?$AAn?$AAt?$AAa?$AAi?$AAn?$AAs?$AA?5?$AA?$CF?$AAu?$AA?5?$AAr?$AAe?$AAg?$AAi?$AAo?$AAn?$AAs?$AA?3?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000777:INFO  ]     Discarded "`string'" (??_C@_1FC@IDNHMBKN@?$AA?5?$AA?5?$AA?5?$AA?5?$AAN?$AAa?$AAm?$AAe?$AA?$DN?$AA?$CF?$AAs?$AA?0?$AA?5?$AAS?$AAt?$AAa?$AAr?$AAt?$AA?5?$AAb?$AAl?$AAo?$AAc?$AAk?$AA?$DN?$AA?$CF?$AAu?$AA?0?$AA?5?$AAB?$AAl?$AAo@) from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000778:INFO  ]     Discarded "`string'" (??_C@_1EM@LIDNJIDD@?$AAF?$AAl?$AAa?$AAs?$AAh?$AA?5?$AAc?$AAo?$AAn?$AAt?$AAa?$AAi?$AAn?$AAs?$AA?5?$AA?$CF?$AAu?$AA?5?$AAr?$AAe?$AAs?$AAe?$AAr?$AAv?$AAe?$AAd?$AA?5?$AAr?$AAe?$AAg?$AAi?$AAo@) from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000779:INFO  ]     Discarded "`string'" (??_C@_08GODGKFDB@MSFLSH50?$AA@) from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000780:INFO  ]     Discarded "`string'" (??_C@_1DO@DHDNAGME@?$AA?9?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?$CI?$AAr?$AAc?$AA?5?$AA?$DN?$AA?5?$AA?$CF?$AAd?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000781:INFO  ]     Discarded "`string'" (??_C@_1KE@CHNFEMEO@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAC?$AAo?$AAr?$AAr?$AAu@) from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000782:INFO  ]     Discarded "`string'" (??_C@_1HO@CIDFMKMH@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe@) from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000783:INFO  ]     Discarded "`string'" (??_C@_1HO@FLMJGLLL@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAR?$AAu?$AAn?$AA?5?$AAo@) from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000784:INFO  ]     Discarded "`string'" (??_C@_1JG@BJDMMIFN@?$AAW?$AAA?$AAR?$AAN?$AA?3?$AA?5?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd@) from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000785:INFO  ]     Discarded "`string'" (??_C@_1IE@BDHDNOD@?$AAW?$AAA?$AAR?$AAN?$AA?3?$AA?5?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd@) from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000786:INFO  ]     Discarded "`string'" (??_C@_1KK@LPEKIKDN@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe@) from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000787:INFO  ]     Discarded "`string'" (??_C@_1KG@OCIIDMHN@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?3?$AA?5?$AAF?$AAl?$AAa?$AAs?$AAh@) from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000788:INFO  ]     Discarded "`string'" (??_C@_1HM@NGCJEILF@?$AA?$CL?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAW?$AAr?$AAi?$AAt?$AAe?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AA0@) from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000789:INFO  ]     Discarded "`string'" (??_C@_1DO@GHPAFAFJ@?$AA?9?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAE?$AAr?$AAa?$AAs?$AAe?$AA?$CI?$AAr?$AAc?$AA?5?$AA?$DN?$AA?5?$AA?$CF?$AAd?$AA?$CJ?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000790:INFO  ]     Discarded "`string'" (??_C@_1HO@HCGPHIPI@?$AAE?$AAR?$AAR?$AAO?$AAR?$AA?3?$AA?5?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAE?$AAr?$AAa?$AAs?$AAe?$AA?3?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe@) from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000791:INFO  ]     Discarded "`string'" (??_C@_1IE@DFIGNOEA@?$AAW?$AAA?$AAR?$AAN?$AA?3?$AA?5?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAE?$AAr?$AAa?$AAs?$AAe?$AA?3?$AA?5?$AAF?$AAa?$AAi?$AAl?$AAe?$AAd@) from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000792:INFO  ]     Discarded "`string'" (??_C@_1FM@COEEAOKJ@?$AAW?$AAA?$AAR?$AAN?$AA?3?$AA?5?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAE?$AAr?$AAa?$AAs?$AAe?$AA?3?$AA?5?$AAS?$AAk?$AAi?$AAp?$AA?5?$AAb@) from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000793:INFO  ]     Discarded "`string'" (??_C@_1GE@CGLPBIPN@?$AA?$CL?$AAO?$AAA?$AAL?$AAF?$AAl?$AAa?$AAs?$AAh?$AAS?$AAt?$AAo?$AAr?$AAe?$AAE?$AAr?$AAa?$AAs?$AAe?$AA?$CI?$AA0?$AAx?$AA?$CF?$AA0?$AA8?$AAx?$AA?0?$AA?5?$AA0?$AAx?$AA?$CF?$AA0@) from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000794:INFO  ]     Discarded "`string'" (??_C@_1DA@MNIGJPIF@?$AA?9?$AAR?$AAN?$AAD?$AAI?$AAS?$AA_?$AAU?$AAS?$AAB?$AAF?$AAN?$AA_?$AAP?$AAD?$AAD?$AAD?$AAe?$AAn?$AAi?$AAt?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_rndis.lib(rndis.obj)
+BUILD: [01:0000000795:INFO  ]     Discarded "`string'" (??_C@_1DA@EACCPFEN@?$AA?$CL?$AAR?$AAN?$AAD?$AAI?$AAS?$AA_?$AAU?$AAS?$AAB?$AAF?$AAN?$AA_?$AAP?$AAD?$AAD?$AAD?$AAe?$AAn?$AAi?$AAt?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_rndis.lib(rndis.obj)
+BUILD: [01:0000000796:INFO  ]     Discarded "`string'" (??_C@_1DA@DEOJCLGI@?$AAO?$AAT?$AAG?$AA_?$AAR?$AAe?$AAv?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000797:INFO  ]     Discarded "`string'" (??_C@_1DA@CHHHKPND@?$AAO?$AAT?$AAG?$AA_?$AAF?$AAO?$AAR?$AAC?$AAE?$AAS?$AAT?$AAD?$AAB?$AAY?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000798:INFO  ]     Discarded "`string'" (??_C@_1DA@OENGJMCI@?$AAO?$AAT?$AAG?$AA_?$AAI?$AAN?$AAT?$AAE?$AAR?$AAF?$AAS?$AAE?$AAL?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000799:INFO  ]     Discarded "`string'" (??_C@_1DA@GEBFFKAL@?$AAO?$AAT?$AAG?$AA_?$AAS?$AAY?$AAS?$AAC?$AAO?$AAN?$AAF?$AAI?$AAG?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000800:INFO  ]     Discarded "`string'" (??_C@_1DA@CABDIMAB@?$AAO?$AAT?$AAG?$AA_?$AAS?$AAY?$AAS?$AAS?$AAT?$AAA?$AAT?$AAU?$AAS?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000801:INFO  ]     Discarded "`string'" (??_C@_1DA@DMGANBPN@?$AAO?$AAT?$AAG?$AA_?$AAS?$AAI?$AAM?$AAE?$AAN?$AAA?$AAB?$AAL?$AAE?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000802:INFO  ]     Discarded "`string'" (??_C@_1DA@IOAOHBNJ@?$AAF?$AAA?$AAd?$AAd?$AAr?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000803:INFO  ]     Discarded "`string'" (??_C@_1DA@EGGCJLAM@?$AAD?$AAe?$AAv?$AAC?$AAt?$AAl?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000804:INFO  ]     Discarded "`string'" (??_C@_1DA@LNNNDCLE@?$AAI?$AAn?$AAt?$AAr?$AAR?$AAx?$AAE?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000805:INFO  ]     Discarded "`string'" (??_C@_1DA@OIKEFDKE@?$AAI?$AAn?$AAt?$AAr?$AAT?$AAx?$AAE?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000806:INFO  ]     Discarded "`string'" (??_C@_1DA@DKPCLIME@?$AAI?$AAn?$AAt?$AAr?$AAU?$AAS?$AAB?$AAE?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000807:INFO  ]     Discarded "`string'" (??_C@_1DA@BEKHFDOA@?$AAP?$AAo?$AAw?$AAe?$AAr?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000808:INFO  ]     Discarded "`string'" (??_C@_1DA@DDJNBFOK@?$AAR?$AAx?$AAF?$AAI?$AAF?$AAO?$AAs?$AAz?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000809:INFO  ]     Discarded "`string'" (??_C@_1DA@CGHLAJLF@?$AAR?$AAx?$AAF?$AAI?$AAF?$AAO?$AAa?$AAd?$AAd?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000810:INFO  ]     Discarded "`string'" (??_C@_1DA@LODJHPCC@?$AAT?$AAx?$AAF?$AAI?$AAF?$AAO?$AAs?$AAz?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000811:INFO  ]     Discarded "`string'" (??_C@_1DA@KLNPGDHN@?$AAT?$AAx?$AAF?$AAI?$AAF?$AAO?$AAa?$AAd?$AAd?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?5?$AA?$DN?$AA?5?$AA0?$AAx?$AA?$CF?$AAx?$AA?$AN?$AA?6?$AA?$AA@) from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000812:INFO  ]     Discarded ConfigurePadArray from main.obj
+BUILD: [01:0000000813:INFO  ]     Discarded WMLCDCOMD from main.obj
+BUILD: [01:0000000814:INFO  ]     Discarded WMLCDDATA from main.obj
+BUILD: [01:0000000815:INFO  ]     Discarded I2C3_High from main.obj
+BUILD: [01:0000000816:INFO  ]     Discarded I2C3_Low from main.obj
+BUILD: [01:0000000817:INFO  ]     Discarded IsDVIMode from main.obj
+BUILD: [01:0000000818:INFO  ]     Discarded WriteFlashNK from flash.obj
+BUILD: [01:0000000819:INFO  ]     Discarded OALLogSetZones from oal_log.lib(debug.obj)
+BUILD: [01:0000000820:INFO  ]     Discarded DeviceId from oal_blmenu.lib(menu.obj)
+BUILD: [01:0000000821:INFO  ]     Discarded OALBLMenuActivate from oal_blmenu.lib(menu.obj)
+BUILD: [01:0000000822:INFO  ]     Discarded OALBLMenuSetDeviceId from oal_blmenu.lib(menu.obj)
+BUILD: [01:0000000823:INFO  ]     Discarded Reverse from oal_blnk.lib(format.obj)
+BUILD: [01:0000000824:INFO  ]     Discarded HALT from oal_blcommon.lib(blcommon.obj)
+BUILD: [01:0000000825:INFO  ]     Discarded KernelRelocate from oal_blcommon.lib(blcommon.obj)
+BUILD: [01:0000000826:INFO  ]     Discarded VerifyChecksum from oal_blcommon.lib(blcommon.obj)
+BUILD: [01:0000000827:INFO  ]     Discarded ComputeChecksum from oal_blcommon.lib(blcommon.obj)
+BUILD: [01:0000000828:INFO  ]     Discarded Nib2HexChar from oal_blcommon.lib(blcommon.obj)
+BUILD: [01:0000000829:INFO  ]     Discarded OutputString from oal_blcommon.lib(format.obj)
+BUILD: [01:0000000830:INFO  ]     Discarded inet_addr from oal_blcommon.lib(format.obj)
+BUILD: [01:0000000831:INFO  ]     Discarded SectorAccess from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000832:INFO  ]     Discarded BlockAccess from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000833:INFO  ]     Discarded WaitOnEmptyWriteBufferStatus from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000834:INFO  ]     Discarded InitializePointers from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000835:INFO  ]     Discarded NAND_GetGpmcRegs from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000836:INFO  ]     Discarded NAND_GetGeometry from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000837:INFO  ]     Discarded NAND_LockBlocks from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000838:INFO  ]     Discarded NAND_Uninitialize from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000839:INFO  ]     Discarded NAND_Seek from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000840:INFO  ]     Discarded NAND_GetStatus from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000841:INFO  ]     Discarded NAND_MutexEnter from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000842:INFO  ]     Discarded NAND_MutexExit from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000843:INFO  ]     Discarded NAND_SendCommand from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000844:INFO  ]     Discarded NAND_ConfigurePrefetch from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000845:INFO  ]     Discarded WaitForReadyStatus from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000846:INFO  ]     Discarded FMD_PowerUp from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000847:INFO  ]     Discarded FMD_PowerDown from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000848:INFO  ]     Discarded FMD_OEMIoControl from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000849:INFO  ]     Discarded NAND_EraseBlock from common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000000850:INFO  ]     Discarded CountNumberOfOnes from common_ti_fmd_nand_boot.lib(gpmc_ecc.obj)
+BUILD: [01:0000000851:INFO  ]     Discarded OEMEnableDebugOutput from common_ti_debugserial.lib(debugserial.obj)
+BUILD: [01:0000000852:INFO  ]     Discarded OEMWriteDebugLED from common_ti_debugserial.lib(debugserial.obj)
+BUILD: [01:0000000853:INFO  ]     Discarded GetIndexByDevice from common_ti_oali2c.lib(oali2c.obj)
+BUILD: [01:0000000854:INFO  ]     Discarded I2CGetTickCount from common_ti_oali2c.lib(oali2c.obj)
+BUILD: [01:0000000855:INFO  ]     Discarded I2CSetDeviceBaudrate from common_ti_oali2c.lib(oali2c.obj)
+BUILD: [01:0000000856:INFO  ]     Discarded I2CGetBufferSize from common_ti_oali2c.lib(oali2c.obj)
+BUILD: [01:0000000857:INFO  ]     Discarded I2CGetPacketSize from common_ti_oali2c.lib(oali2c.obj)
+BUILD: [01:0000000858:INFO  ]     Discarded OALI2CPostInit from common_ti_oali2c.lib(oali2c.obj)
+BUILD: [01:0000000859:INFO  ]     Discarded I2CReprogramDevice from common_ti_oali2c.lib(oali2c.obj)
+BUILD: [01:0000000860:INFO  ]     Discarded I2CSetTimeout from common_ti_oali2c.lib(oali2c.obj)
+BUILD: [01:0000000861:INFO  ]     Discarded I2CSetManualDriveMode from common_ti_oali2c.lib(oali2c.obj)
+BUILD: [01:0000000862:INFO  ]     Discarded I2CDriveSCL from common_ti_oali2c.lib(oali2c.obj)
+BUILD: [01:0000000863:INFO  ]     Discarded I2CDriveSDA from common_ti_oali2c.lib(oali2c.obj)
+BUILD: [01:0000000864:INFO  ]     Discarded I2CRawRead from common_ti_oali2c.lib(oali2c.obj)
+BUILD: [01:0000000865:INFO  ]     Discarded Get_CPUMaxSpeed from OMAP3530_oalcpuver.lib(oalcpuver.obj)
+BUILD: [01:0000000866:INFO  ]     Discarded GetDeviceByAddress from common_ti_devicesmap.lib(devicemap.obj)
+BUILD: [01:0000000867:INFO  ]     Discarded GetIrqByDevice from common_ti_devicesmap.lib(devicemap.obj)
+BUILD: [01:0000000868:INFO  ]     Discarded GetDeviceByIrq from common_ti_devicesmap.lib(devicemap.obj)
+BUILD: [01:0000000869:INFO  ]     Discarded WaitForCommandResult from common_ti_boot_sdmemory.lib(sdcard.obj)
+BUILD: [01:0000000870:INFO  ]     Discarded UTIL_csd_get_sectorsize from common_ti_boot_sdmemory.lib(sdcard.obj)
+BUILD: [01:0000000871:INFO  ]     Discarded MMCSetMMCState from common_ti_boot_sdmemory.lib(sdcard.obj)
+BUILD: [01:0000000872:INFO  ]     Discarded BLSDCardToFlash from common_ti_boot_sdmemory.lib(sdcard.obj)
+BUILD: [01:0000000873:INFO  ]     Discarded SystemClockOn from common_ti_boot_sdhc.lib(sdhc.obj)
+BUILD: [01:0000000874:INFO  ]     Discarded SystemClockOff from common_ti_boot_sdhc.lib(sdhc.obj)
+BUILD: [01:0000000875:INFO  ]     Discarded InitializeT2GPIO from common_ti_boot_sdhc.lib(sdhc.obj)
+BUILD: [01:0000000876:INFO  ]     Discarded Read_MMC_STAT from common_ti_boot_sdhc.lib(sdhc.obj)
+BUILD: [01:0000000877:INFO  ]     Discarded Write_MMC_STAT from common_ti_boot_sdhc.lib(sdhc.obj)
+BUILD: [01:0000000878:INFO  ]     Discarded Set_MMC_STAT from common_ti_boot_sdhc.lib(sdhc.obj)
+BUILD: [01:0000000879:INFO  ]     Discarded EnableSDHCInterrupts from common_ti_boot_sdhc.lib(sdhc.obj)
+BUILD: [01:0000000880:INFO  ]     Discarded SetSDVSVoltage from common_ti_boot_sdhc.lib(sdhc.obj)
+BUILD: [01:0000000881:INFO  ]     Discarded UpdateSystemClock from common_ti_boot_sdhc.lib(sdhc.obj)
+BUILD: [01:0000000882:INFO  ]     Discarded SendCmdNoResp from common_ti_boot_sdhc.lib(sdhc.obj)
+BUILD: [01:0000000883:INFO  ]     Discarded SdhcSetSlotPowerState from common_ti_boot_sdhc.lib(sdhc.obj)
+BUILD: [01:0000000884:INFO  ]     Discarded ReadMacCSR from common_ti_ethdrv_lan911x.lib(lan911x.obj)
+BUILD: [01:0000000885:INFO  ]     Discarded WriteMacCSR from common_ti_ethdrv_lan911x.lib(lan911x.obj)
+BUILD: [01:0000000886:INFO  ]     Discarded GPIOPostInit from common_ti_oal_gpiodispatch.lib(gpio_dispatch.obj)
+BUILD: [01:0000000887:INFO  ]     Discarded GPIOGetMode from common_ti_oal_gpiodispatch.lib(gpio_dispatch.obj)
+BUILD: [01:0000000888:INFO  ]     Discarded GPIOPulldown from common_ti_oal_gpiodispatch.lib(gpio_dispatch.obj)
+BUILD: [01:0000000889:INFO  ]     Discarded GPIOIoControl from common_ti_oal_gpiodispatch.lib(gpio_dispatch.obj)
+BUILD: [01:0000000890:INFO  ]     Discarded "void __cdecl InternalSetGpioBankPowerState(struct OmapGpioDevice_t *,unsigned int,enum _CEDEVICE_POWER_STATE)" (?InternalSetGpioBankPowerState@@YAXPAUOmapGpioDevice_t@@IW4_CEDEVICE_POWER_STATE@@@Z) from common_ti_oal_omap_gpio.lib(omap35xx_gpio.obj)
+BUILD: [01:0000000891:INFO  ]     Discarded "void __cdecl OmapGpioPowerUp(void *)" (?OmapGpioPowerUp@@YAXPAX@Z) from common_ti_oal_omap_gpio.lib(omap35xx_gpio.obj)
+BUILD: [01:0000000892:INFO  ]     Discarded "void __cdecl OmapGpioPowerDown(void *)" (?OmapGpioPowerDown@@YAXPAX@Z) from common_ti_oal_omap_gpio.lib(omap35xx_gpio.obj)
+BUILD: [01:0000000893:INFO  ]     Discarded "int __cdecl OpenTwl(void)" (?OpenTwl@@YAHXZ) from TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
+BUILD: [01:0000000894:INFO  ]     Discarded "void __cdecl CloseTwl(void)" (?CloseTwl@@YAXXZ) from TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
+BUILD: [01:0000000895:INFO  ]     Discarded "void __cdecl Lock(void)" (?Lock@@YAXXZ) from TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
+BUILD: [01:0000000896:INFO  ]     Discarded "void __cdecl Unlock(void)" (?Unlock@@YAXXZ) from TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
+BUILD: [01:0000000897:INFO  ]     Discarded "void __cdecl SetGpioBankPowerState(unsigned int,enum _CEDEVICE_POWER_STATE)" (?SetGpioBankPowerState@@YAXIW4_CEDEVICE_POWER_STATE@@@Z) from TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
+BUILD: [01:0000000898:INFO  ]     Discarded TWLSetValue from triton_oal.lib(twl_access.obj)
+BUILD: [01:0000000899:INFO  ]     Discarded SOCGetMCSPIDeviceByBus from OMAP3530_soccfg.lib(soccfg.obj)
+BUILD: [01:0000000900:INFO  ]     Discarded SOCGetMCBSPDeviceByBus from OMAP3530_soccfg.lib(soccfg.obj)
+BUILD: [01:0000000901:INFO  ]     Discarded SOCGetMCBSPSidetoneAddress from OMAP3530_soccfg.lib(soccfg.obj)
+BUILD: [01:0000000902:INFO  ]     Discarded SOCGetI2CDeviceByBus from OMAP3530_soccfg.lib(soccfg.obj)
+BUILD: [01:0000000903:INFO  ]     Discarded SOCGetUartDeviceByIndex from OMAP3530_soccfg.lib(soccfg.obj)
+BUILD: [01:0000000904:INFO  ]     Discarded SOCGetIntCtrlAddr from OMAP3530_soccfg.lib(soccfg.obj)
+BUILD: [01:0000000905:INFO  ]     Discarded SOCGetDSSInfo from OMAP3530_soccfg.lib(soccfg.obj)
+BUILD: [01:0000000906:INFO  ]     Discarded SOCGetDMADevice from OMAP3530_soccfg.lib(soccfg.obj)
+BUILD: [01:0000000907:INFO  ]     Discarded SOCGetVRFBDevice from OMAP3530_soccfg.lib(soccfg.obj)
+BUILD: [01:0000000908:INFO  ]     Discarded SOCGetUSBHInfo from OMAP3530_soccfg.lib(soccfg.obj)
+BUILD: [01:0000000909:INFO  ]     Discarded SOCGetHDQDevice from OMAP3530_soccfg.lib(soccfg.obj)
+BUILD: [01:0000000910:INFO  ]     Discarded MapPadRegisters from OMAP3530_oal_padcfg.lib(soc_padcfg.obj)
+BUILD: [01:0000000911:INFO  ]     Discarded SOCGetPadConfig from OMAP3530_oal_padcfg.lib(soc_padcfg.obj)
+BUILD: [01:0000000912:INFO  ]     Discarded BSPGetGpioIrq from bspcfg.lib(bspcfg.obj)
+BUILD: [01:0000000913:INFO  ]     Discarded BSPGetSysTimerDevice from bspcfg.lib(bspcfg.obj)
+BUILD: [01:0000000914:INFO  ]     Discarded BSPGetSysTimer32KClock from bspcfg.lib(bspcfg.obj)
+BUILD: [01:0000000915:INFO  ]     Discarded BSPGetGPTPerfDevice from bspcfg.lib(bspcfg.obj)
+BUILD: [01:0000000916:INFO  ]     Discarded BSPGetGPTPerfHighFreqClock from bspcfg.lib(bspcfg.obj)
+BUILD: [01:0000000917:INFO  ]     Discarded BSPGetRTCGpioIrq from bspcfg.lib(bspcfg.obj)
+BUILD: [01:0000000918:INFO  ]     Discarded BPSGetWatchdogDevice from bspcfg.lib(bspcfg.obj)
+BUILD: [01:0000000919:INFO  ]     Discarded CloseHandle from bsp_bootstubs.lib(bsp_bootstubs.obj)
+BUILD: [01:0000000920:INFO  ]     Discarded SC_CreateMutex from bsp_bootstubs.lib(bsp_bootstubs.obj)
+BUILD: [01:0000000921:INFO  ]     Discarded SC_WaitForMultiple from bsp_bootstubs.lib(bsp_bootstubs.obj)
+BUILD: [01:0000000922:INFO  ]     Discarded SC_ReleaseMutex from bsp_bootstubs.lib(bsp_bootstubs.obj)
+BUILD: [01:0000000923:INFO  ]     Discarded EnableDeviceClocksNoRefCount from bsp_bootstubs.lib(bsp_bootstubs.obj)
+BUILD: [01:0000000924:INFO  ]     Discarded BusClockRelease from bsp_bootstubs.lib(bsp_bootstubs.obj)
+BUILD: [01:0000000925:INFO  ]     Discarded BusClockRequest from bsp_bootstubs.lib(bsp_bootstubs.obj)
+BUILD: [01:0000000926:INFO  ]     Discarded CreateBusAccessHandle from bsp_bootstubs.lib(bsp_bootstubs.obj)
+BUILD: [01:0000000927:INFO  ]     Discarded PDD_IsPacketSend from rne_mdd.lib(rndis.obj)
+BUILD: [01:0000000928:INFO  ]     Discarded RndisGetIrq from rne_mdd.lib(rndis.obj)
+BUILD: [01:0000000929:INFO  ]     Discarded RndisGetPCICard from rne_mdd.lib(rndis.obj)
+BUILD: [01:0000000930:INFO  ]     Discarded RndisDeInit from rne_mdd.lib(rndis.obj)
+BUILD: [01:0000000931:INFO  ]     Discarded RndisGetPendingInts from rne_mdd.lib(rndis.obj)
+BUILD: [01:0000000932:INFO  ]     Discarded RndisSetOptions from rne_mdd.lib(rndis.obj)
+BUILD: [01:0000000933:INFO  ]     Discarded MddInitializeCriticalSection from rne_mdd.lib(rndis.obj)
+BUILD: [01:0000000934:INFO  ]     Discarded MddDeleteCriticalSection from rne_mdd.lib(rndis.obj)
+BUILD: [01:0000000935:INFO  ]     Discarded MddEnterCriticalSection from rne_mdd.lib(rndis.obj)
+BUILD: [01:0000000936:INFO  ]     Discarded MddLeaveCriticalSection from rne_mdd.lib(rndis.obj)
+BUILD: [01:0000000937:INFO  ]     Discarded RndisMiniCeLogMsg from rne_mdd.lib(rndis.obj)
+BUILD: [01:0000000938:INFO  ]     Discarded MddDisconnect from rne_mdd.lib(hostmini.obj)
+BUILD: [01:0000000939:INFO  ]     Discarded HostMiniDeInit from rne_mdd.lib(hostmini.obj)
+BUILD: [01:0000000940:INFO  ]     Discarded __security_init_cookie from gsnull.lib(gsnull.obj)
+BUILD: [01:0000000941:INFO  ]     Discarded isspace from fulllibc.lib(atox.obj)
+BUILD: [01:0000000942:INFO  ]     Discarded wcscmp from fulllibc.lib(wcscmp.obj)
+BUILD: [01:0000000943:INFO  ]     Discarded __raise_int_overflow from fulllibc.lib(diverr.obj)
+BUILD: [01:0000000944:INFO  ]     Discarded tolower from eboot.lib(tftpd.obj)
+BUILD: [01:0000000945:INFO  ]     Discarded EbootTFtpdServerUnRegister from eboot.lib(tftpd.obj)
+BUILD: [01:0000000946:INFO  ]     Discarded TFtpOpen from eboot.lib(tftp.obj)
+BUILD: [01:0000000947:INFO  ]     Discarded TFtpRead from eboot.lib(tftp.obj)
+BUILD: [01:0000000948:INFO  ]     Discarded TFtpWrite from eboot.lib(tftp.obj)
+BUILD: [01:0000000949:INFO  ]     Discarded TFTPRetransmit from eboot.lib(tftp.obj)
+BUILD: [01:0000000950:INFO  ]     Discarded DuplicateIPWarning from eboot.lib(udp.obj)
+BUILD: [01:0000000951:INFO  ]     Discarded HexToChar from eboot.lib(dhcp.obj)
+BUILD: [01:0000000952:INFO  ]     Discarded DHCPParseField from eboot.lib(dhcp.obj)
+BUILD: [01:0000000953:INFO  ]     Discarded EbootReadSerialIP from eboot.lib(dhcp.obj)
+BUILD: [01:0000000954:INFO  ]     Discarded TWLWriteByteReg from bsp_display.lib(bsp_logo.obj)
+BUILD: [01:0000000955:INFO  ]     Discarded FlipFrameBuffer from bsp_display.lib(bsp_logo.obj)
+BUILD: [01:0000000956:INFO  ]     Discarded BLSDtoFlash from bsp_display.lib(bsp_logo.obj)
+BUILD: [01:0000000957:INFO  ]     Discarded disable_dss from bsp_display.lib(bsp_logo.obj)
+BUILD: [01:0000000958:INFO  ]     Discarded disable_lcd_power from bsp_display.lib(bsp_logo.obj)
+BUILD: [01:0000000959:INFO  ]     Discarded disable_lcd_backlight from bsp_display.lib(bsp_logo.obj)
+BUILD: [01:0000000960:INFO  ]     Discarded SetupDisplaySize from bsp_display.lib(bsp_logo.obj)
+BUILD: [01:0000000961:INFO  ]     Discarded lcd_config from bsp_display.lib(bsp_logo.obj)
+BUILD: [01:0000000962:INFO  ]     Discarded lcd_shutdown from bsp_display.lib(bsp_logo.obj)
+BUILD: [01:0000000963:INFO  ]     Discarded HideLogo from bsp_display.lib(bsp_logo.obj)
+BUILD: [01:0000000964:INFO  ]     Discarded LcdPdd_DVI_Select from bsp_display_init.lib(lcd_qvga.obj)
+BUILD: [01:0000000965:INFO  ]     Discarded LcdPdd_DVI_Enabled from bsp_display_init.lib(lcd_qvga.obj)
+BUILD: [01:0000000966:INFO  ]     Discarded LcdPdd_Get_PixClkDiv from bsp_display_init.lib(lcd_qvga.obj)
+BUILD: [01:0000000967:INFO  ]     Discarded LcdDeinitGpio from bsp_display_init.lib(lcd_support.obj)
+BUILD: [01:0000000968:INFO  ]     Discarded LcdIniControl from bsp_display_init.lib(lcd_support.obj)
+BUILD: [01:0000000969:INFO  ]     Discarded LcdDviEnableControl from bsp_display_init.lib(lcd_support.obj)
+BUILD: [01:0000000970:INFO  ]     Discarded OALIoTransSystemAddress from oal_io.lib(trans.obj)
+BUILD: [01:0000000971:INFO  ]     Discarded OALFlashStoreBlockSize from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000972:INFO  ]     Discarded OALFlashStoreSectorSize from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000973:INFO  ]     Discarded IsSectorEmpty from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000974:INFO  ]     Discarded BuildLayoutInfo from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000975:INFO  ]     Discarded OALFlashStoreWrite from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000976:INFO  ]     Discarded OALFlashStoreErase from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000977:INFO  ]     Discarded OALFlashStoreReadFromReservedRegion from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000978:INFO  ]     Discarded OALFlashStoreWriteToReservedRegion from common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000000979:INFO  ]     Discarded ByteIsPowerOfTwo from common_ti_boot_fatfs.lib(fileio.obj)
+BUILD: [01:0000000980:INFO  ]     Discarded PDDDeinit from common_ti_ethdrv_rndis.lib(rndis.obj)
+BUILD: [01:0000000981:INFO  ]     Discarded _ltoa from fulllibc.lib(xtoa.obj)
+BUILD: [01:0000000982:INFO  ]     Discarded _ultoa from fulllibc.lib(xtoa.obj)
+BUILD: [01:0000000983:INFO  ]     Discarded TWLWriteByteReg from bsp_boot_ethdrv_usbfn.lib(trans.obj)
+BUILD: [01:0000000984:INFO  ]     Discarded TWLReadByteReg from bsp_boot_ethdrv_usbfn.lib(trans.obj)
+BUILD: [01:0000000985:INFO  ]     Discarded DumpUSBRegisters from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000986:INFO  ]     Discarded CalcFIFOAddr from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000987:INFO  ]     Discarded StartUSBClock from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000988:INFO  ]     Discarded UfnPdd_DllEntry from common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000000989:INFO  ]     Discarded '.xdata' from oal_blmenu.lib(menu.obj)
+BUILD: [01:0000000990:INFO  ] Starting pass 2
+BUILD: [01:0000000991:INFO  ]      cfg.obj
+BUILD: [01:0000000992:INFO  ]      flash.obj
+BUILD: [01:0000000993:INFO  ]      jumpto.obj
+BUILD: [01:0000000994:INFO  ]      startup.obj
+BUILD: [01:0000000995:INFO  ]      mmu.obj
+BUILD: [01:0000000996:INFO  ]      flashmenu.obj
+BUILD: [01:0000000997:INFO  ]      stub.obj
+BUILD: [01:0000000998:INFO  ]      menu.obj
+BUILD: [01:0000000999:INFO  ]      eth.obj
+BUILD: [01:0000001000:INFO  ]      main.obj
+BUILD: [01:0000001001:INFO  ]      oal_io.lib(trans.obj)
+BUILD: [01:0000001002:INFO  ]      oal_kitl_boot.lib(device.obj)
+BUILD: [01:0000001003:INFO  ]      oal_kitl_boot.lib(name.obj)
+BUILD: [01:0000001004:INFO  ]      oal_kitl_boot.lib(format.obj)
+BUILD: [01:0000001005:INFO  ]      oal_log.lib(log.obj)
+BUILD: [01:0000001006:INFO  ]      oal_log.lib(debug.obj)
+BUILD: [01:0000001007:INFO  ]      oal_blmenu.lib(menu.obj)
+BUILD: [01:0000001008:INFO  ]      oal_blnk.lib(format.obj)
+BUILD: [01:0000001009:INFO  ]      oal_blnk.lib(wrappers.obj)
+BUILD: [01:0000001010:INFO  ]      oal_blcommon.lib(blcommon.obj)
+BUILD: [01:0000001011:INFO  ]      oal_blcommon.lib(format.obj)
+BUILD: [01:0000001012:INFO  ]      common_ti_cortexA8_cache.lib(dcache.obj)
+BUILD: [01:0000001013:INFO  ]      common_ti_cortexA8_cache.lib(global.obj)
+BUILD: [01:0000001014:INFO  ]      common_ti_oal_flashstore.lib(flashstore.obj)
+BUILD: [01:0000001015:INFO  ]      common_ti_fmd_nand_boot.lib(fmd.obj)
+BUILD: [01:0000001016:INFO  ]      common_ti_fmd_nand_boot.lib(gpmc_ecc.obj)
+BUILD: [01:0000001017:INFO  ]      common_ti_fmd_nand_boot.lib(omap_bch_decoder.obj)
+BUILD: [01:0000001018:INFO  ]      common_ti_oal_alloc.lib(alloc.obj)
+BUILD: [01:0000001019:INFO  ]      common_ti_debugserial.lib(debugserial.obj)
+BUILD: [01:0000001020:INFO  ]      common_ti_oali2c.lib(oali2c.obj)
+BUILD: [01:0000001021:INFO  ]      OMAP3530_oalcpuver.lib(oalcpuver.obj)
+BUILD: [01:0000001022:INFO  ]      common_ti_devicesmap.lib(devicemap.obj)
+BUILD: [01:0000001023:INFO  ]      common_ti_boot_fatfs.lib(fileio.obj)
+BUILD: [01:0000001024:INFO  ]      common_ti_boot_sdmemory.lib(sdcard.obj)
+BUILD: [01:0000001025:INFO  ]      common_ti_boot_sdhc.lib(sdhc.obj)
+BUILD: [01:0000001026:INFO  ]      common_ti_boot_sdhc.lib(getidcode.obj)
+BUILD: [01:0000001027:INFO  ]      common_ti_ethdrv_lan911x.lib(lan911x.obj)
+BUILD: [01:0000001028:INFO  ]      common_ti_ethdrv_usbfn.lib(pdd.obj)
+BUILD: [01:0000001029:INFO  ]      common_ti_ethdrv_rndis.lib(rndis.obj)
+BUILD: [01:0000001030:INFO  ]      TPS659xx_misc.lib(misc.obj)
+BUILD: [01:0000001031:INFO  ]      common_ti_oal_gpiodispatch.lib(gpio_dispatch.obj)
+BUILD: [01:0000001032:INFO  ]      common_ti_oal_omap_gpio.lib(omap35xx_gpio.obj)
+BUILD: [01:0000001033:INFO  ]      TPS659xx_oal_gpio.lib(tps659xx_gpio.obj)
+BUILD: [01:0000001034:INFO  ]      triton_oal.lib(twl_access.obj)
+BUILD: [01:0000001035:INFO  ]      OMAP3530_soccfg.lib(devicemap.obj)
+BUILD: [01:0000001036:INFO  ]      OMAP3530_soccfg.lib(soccfg.obj)
+BUILD: [01:0000001037:INFO  ]      OMAP3530_sdhc_boot.lib(sdhc.obj)
+BUILD: [01:0000001038:INFO  ]      OMAP3530_oal_padcfg.lib(soc_padcfg.obj)
+BUILD: [01:0000001039:INFO  ]      bspcfg.lib(bspcfg.obj)
+BUILD: [01:0000001040:INFO  ]      bsp_bootstubs.lib(bsp_bootstubs.obj)
+BUILD: [01:0000001041:INFO  ]      bsp_stall.lib(stall.obj)
+BUILD: [01:0000001042:INFO  ]      rne_mdd.lib(rndis.obj)
+BUILD: [01:0000001043:INFO  ]      rne_mdd.lib(hostmini.obj)
+BUILD: [01:0000001044:INFO  ]      rne_mdd.lib(util.obj)
+BUILD: [01:0000001045:INFO  ]      gsnull.lib(gsnull.obj)
+BUILD: [01:0000001046:INFO  ]      fulllibc.lib(raiseexc.obj)
+BUILD: [01:0000001047:INFO  ]      fulllibc.lib(atox.obj)
+BUILD: [01:0000001048:WARNN ] fulllibc.lib(atox.obj) : warning LNK4099: PDB 'ccrtconv.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtconv.pdb'; linking object as if no debug info
+BUILD: [01:0000001049:INFO  ]      fulllibc.lib(toupper.obj)
+BUILD: [01:0000001050:WARNN ] fulllibc.lib(toupper.obj) : warning LNK4099: PDB 'ccrtconv.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtconv.pdb'; linking object as if no debug info
+BUILD: [01:0000001051:INFO  ]      fulllibc.lib(xtoa.obj)
+BUILD: [01:0000001052:WARNN ] fulllibc.lib(xtoa.obj) : warning LNK4099: PDB 'ccrtconv.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtconv.pdb'; linking object as if no debug info
+BUILD: [01:0000001053:INFO  ]      fulllibc.lib(mdsdiv64.obj)
+BUILD: [01:0000001054:INFO  ]      fulllibc.lib(__div.obj)
+BUILD: [01:0000001055:INFO  ]      fulllibc.lib(__udiv.obj)
+BUILD: [01:0000001056:INFO  ]      fulllibc.lib(diverr.obj)
+BUILD: [01:0000001057:WARNN ] fulllibc.lib(diverr.obj) : warning LNK4099: PDB 'ccrthelp.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrthelp.pdb'; linking object as if no debug info
+BUILD: [01:0000001058:INFO  ]      fulllibc.lib(memcmp.obj)
+BUILD: [01:0000001059:INFO  ]      fulllibc.lib(memcpy.obj)
+BUILD: [01:0000001060:INFO  ]      fulllibc.lib(memset.obj)
+BUILD: [01:0000001061:INFO  ]      fulllibc.lib(mdsstrcat.obj)
+BUILD: [01:0000001062:INFO  ]      fulllibc.lib(mdsstrcmp.obj)
+BUILD: [01:0000001063:INFO  ]      fulllibc.lib(strcpy.obj)
+BUILD: [01:0000001064:INFO  ]      fulllibc.lib(mdsstrlen.obj)
+BUILD: [01:0000001065:INFO  ]      fulllibc.lib(astrncmp.obj)
+BUILD: [01:0000001066:INFO  ]      fulllibc.lib(astrncpy.obj)
+BUILD: [01:0000001067:INFO  ]      fulllibc.lib(wcscpy.obj)
+BUILD: [01:0000001068:WARNN ] fulllibc.lib(wcscpy.obj) : warning LNK4099: PDB 'ccrtstrg.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtstrg.pdb'; linking object as if no debug info
+BUILD: [01:0000001069:INFO  ]      fulllibc.lib(wcscmp.obj)
+BUILD: [01:0000001070:WARNN ] fulllibc.lib(wcscmp.obj) : warning LNK4099: PDB 'ccrtstrg.pdb' was not found with 'C:\WINCE600\OSDesigns\Z2170P\Z2170P\Wince600\Z2170P_ARMV4I\cesysgen\oak\lib\ARMV4I\retail\fulllibc.lib' or at 'C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ccrtstrg.pdb'; linking object as if no debug info
+BUILD: [01:0000001071:INFO  ]      fulllibc.lib(gshandler.obj)
+BUILD: [01:0000001072:INFO  ]      fulllibc.lib(armsecgs.obj)
+BUILD: [01:0000001073:INFO  ]      eboot.lib(edbg.obj)
+BUILD: [01:0000001074:INFO  ]      eboot.lib(dhcp.obj)
+BUILD: [01:0000001075:INFO  ]      eboot.lib(udp.obj)
+BUILD: [01:0000001076:INFO  ]      eboot.lib(tftp.obj)
+BUILD: [01:0000001077:INFO  ]      eboot.lib(tftpd.obj)
+BUILD: [01:0000001078:INFO  ]      eboot.lib(ebsimp.obj)
+BUILD: [01:0000001079:INFO  ]      bsp_boot_ethdrv_usbfn.lib(trans.obj)
+BUILD: [01:0000001080:INFO  ]      bsp_display.lib(bsp_logo.obj)
+BUILD: [01:0000001081:INFO  ]      bsp_display_init.lib(lcd_qvga.obj)
+BUILD: [01:0000001082:INFO  ]      bsp_display_init.lib(lcd_support.obj)
+BUILD: [01:0000001083:INFO  ] Finished pass 2
+BUILD: [01:0000001084:INFO  ] 	editbin /nxcompat C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe
+BUILD: [01:0000001085:INFO  ] Microsoft (R) COFF/PE Editor Version 8.00.50727.42
+BUILD: [01:0000001086:INFO  ] Copyright (C) Microsoft Corporation.  All rights reserved.
+BUILD: [01:0000001087:INFO  ] 
 BUILD: [01:0000001088:INFO  ] 
-BUILD: [01:0000001089:INFO  ] Windows CE ROM Image Builder v4.0.000 Copyright (c) Microsoft Corporation
-BUILD: [01:0000001090:INFO  ] Built: Jul 25 2006 16:36:51
-BUILD: [01:0000001091:INFO  ] 
-BUILD: [01:0000001092:INFO  ] Copying C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe to C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\nk.exe for debugger
-BUILD: [01:0000001093:INFO  ] Found pTOC at 00005bc8
-BUILD: [01:0000001094:INFO  ] No imports for nk.exe
-BUILD: [01:0000001095:INFO  ] Processing EBOOTSD
-BUILD: [01:0000001096:INFO  ] 
-BUILD: [01:0000001097:INFO  ] Writing C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\EBOOTSD.bin
-BUILD: [01:0000001098:INFO  ] Table of contents  87e2af7c  00000020  (        32)
-BUILD: [01:0000001099:INFO  ] Writing ROM signature and TOC pointer at 87e00040
-BUILD: [01:0000001100:INFO  ] Kernel data copy section  87e2af9c  00000010  (        16)
-BUILD: [01:0000001101:INFO  ] ROM Header                87e2af28  00000054  (        84)
-BUILD: [01:0000001102:INFO  ] First DLL Address:       4001c001
-BUILD: [01:0000001103:INFO  ] Last DLL Address:        4001c001
-BUILD: [01:0000001104:INFO  ] Physical Start Address:  87e00000
-BUILD: [01:0000001105:INFO  ] Physical End Address:    87e2c23c
-BUILD: [01:0000001106:INFO  ] Start RAM:               87e80000
-BUILD: [01:0000001107:INFO  ] Start of free RAM:       87ec3000
-BUILD: [01:0000001108:INFO  ] End of RAM:              87ed0000
-BUILD: [01:0000001109:INFO  ] Number of Modules:       1
-BUILD: [01:0000001110:INFO  ] Number of Copy Sections: 1
-BUILD: [01:0000001111:INFO  ] Copy Section Offset:     87e2af9c
-BUILD: [01:0000001112:INFO  ] FileSys 4K Chunks/Mbyte: 128 <2Mbyte  128 2-4Mbyte  0 4-6Mbyte  0 >6Mbyte
-BUILD: [01:0000001113:INFO  ] CPU Type:                    01c2h
-BUILD: [01:0000001114:INFO  ] Miscellaneous Flags:         0002h
-BUILD: [01:0000001115:INFO  ] Total ROM size:          0002c23c (    180796)
-BUILD: [01:0000001116:INFO  ] Starting ip:             87e01000
-BUILD: [01:0000001117:INFO  ] Raw files size:          00000000
-BUILD: [01:0000001118:INFO  ] Compressed files size:   00000000
-BUILD: [01:0000001119:INFO  ] Compacting bin file...
-BUILD: [01:0000001120:INFO  ] Writing rom file...
-BUILD: [01:0000001121:INFO  ] Start 87e00000 Len 00000004
-BUILD: [01:0000001122:INFO  ] Start 87e00040 Len 00000008
-BUILD: [01:0000001123:INFO  ] Start 87e00048 Len 00000004
-BUILD: [01:0000001124:INFO  ] Start 87e01000 Len 00028b2c
-BUILD: [01:0000001125:INFO  ] Start 87e2a000 Len 00000f28
-BUILD: [01:0000001126:INFO  ] Start 87e2af28 Len 00000054
-BUILD: [01:0000001127:INFO  ] Start 87e2af7c Len 00000030
-BUILD: [01:0000001128:INFO  ] Start 87e2b000 Len 0000123c
-BUILD: [01:0000001129:INFO  ] Creating rom file C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\EBOOTSD.nb0
-BUILD: [01:0000001130:INFO  ] Done!
-BUILD: [01:0000001131:INFO  ] 	xcopy /Q /I C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.bin C:\WINCE600\OSDesigns\Z2170P\Z2170P\RelDir\Z2170P_ARMV4I_Release
-BUILD: [01:0000001132:INFO  ] 複製 1 個檔案
-BUILD: [01:0000001133:INFO  ] 	xcopy /Q /I C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.nb0 C:\WINCE600\OSDesigns\Z2170P\Z2170P\RelDir\Z2170P_ARMV4I_Release
-BUILD: [01:0000001134:INFO  ] 複製 1 個檔案
-BUILD: [00:0000001135:PROGC ] Saving C:\WINCE600\PLATFORM\Z2170P\Build.dat.
-BUILD: [00:0000001136:INFO  ] Done.
-BUILD: [00:0000001137:PROGC ] Done.
-BUILD: [00:0000001138:PROGC ]                        Files  Warnings  Errors
-BUILD: [00:0000001139:PROGC ] Midl                       0         0       0
-BUILD: [00:0000001140:PROGC ] Message                    0         0       0
-BUILD: [00:0000001141:PROGC ] Precomp Header             0         0       0
-BUILD: [00:0000001142:PROGC ] Resource                   0         0       0
-BUILD: [00:0000001143:PROGC ] MASM                       0         0       0
-BUILD: [00:0000001144:PROGC ] SHASM                      0         0       0
-BUILD: [00:0000001145:PROGC ] ARMASM                     2         0       0
-BUILD: [00:0000001146:PROGC ] MIPSASM                    0         0       0
-BUILD: [00:0000001147:PROGC ] C++                        0         0       0
-BUILD: [00:0000001148:PROGC ] C                          8         0       0
-BUILD: [00:0000001149:PROGC ] Static Libraries           0         0       0
-BUILD: [00:0000001150:PROGC ] Exe's                      1         6       0
-BUILD: [00:0000001151:PROGC ] Dll's                      0         0       0
-BUILD: [00:0000001152:PROGC ] Preprocess deffile         0         0       0
-BUILD: [00:0000001153:PROGC ] Resx                       0         0       0
-BUILD: [00:0000001154:PROGC ] CSharp Compile             0         0       0
-BUILD: [00:0000001155:PROGC ] Other                      0         0       0
-BUILD: [00:0000001156:PROGC ] 
-BUILD: [00:0000001157:PROGC ] Total                     11         6       0
-BUILD: [00:0000001158:PROGC ] 
-BUILD: [00:0000001159:PROGC ] 6 Warnings,  0 Errors
-BUILD: [00:0000001160:PROGC ] GetSystemTimes (seconds): Idle: 8     Kernel: 12    User: 5    
-BUILD: [00:0000001161:PROGC ] Elapsed  time  (seconds): 8    
+BUILD: [01:0000001089:INFO  ] 	copylink /S:a /D:f /E:a /R:n C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe C:\WINCE600\OSDesigns\Z2170P\Z2170P\RelDir\Z2170P_ARMV4I_Release\ebootsd.exe
+BUILD: [01:0000001090:INFO  ] 	copylink /S:a /D:f /E:a /R:n C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.map C:\WINCE600\OSDesigns\Z2170P\Z2170P\RelDir\Z2170P_ARMV4I_Release\ebootsd.map
+BUILD: [01:0000001091:INFO  ] 	if exist C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.pdb copylink /S:a /D:f /E:a /R:n C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.pdb C:\WINCE600\OSDesigns\Z2170P\Z2170P\RelDir\Z2170P_ARMV4I_Release
+BUILD: [01:0000001092:INFO  ] 	if exist C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.rel copylink /S:a /D:f /E:a /R:n C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.rel C:\WINCE600\OSDesigns\Z2170P\Z2170P\RelDir\Z2170P_ARMV4I_Release\ebootsd.rel
+BUILD: [01:0000001093:INFO  ] 	romimage  ebootsd.bib
+BUILD: [01:0000001094:INFO  ] 
+BUILD: [01:0000001095:INFO  ] Windows CE ROM Image Builder v4.0.000 Copyright (c) Microsoft Corporation
+BUILD: [01:0000001096:INFO  ] Built: Jul 25 2006 16:36:51
+BUILD: [01:0000001097:INFO  ] 
+BUILD: [01:0000001098:INFO  ] Copying C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.exe to C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\nk.exe for debugger
+BUILD: [01:0000001099:INFO  ] Found pTOC at 00005a98
+BUILD: [01:0000001100:INFO  ] No imports for nk.exe
+BUILD: [01:0000001101:INFO  ] Processing EBOOTSD
+BUILD: [01:0000001102:INFO  ] 
+BUILD: [01:0000001103:INFO  ] Writing C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\EBOOTSD.bin
+BUILD: [01:0000001104:INFO  ] Table of contents  87e2af74  00000020  (        32)
+BUILD: [01:0000001105:INFO  ] Writing ROM signature and TOC pointer at 87e00040
+BUILD: [01:0000001106:INFO  ] Kernel data copy section  87e2af94  00000010  (        16)
+BUILD: [01:0000001107:INFO  ] ROM Header                87e2af20  00000054  (        84)
+BUILD: [01:0000001108:INFO  ] First DLL Address:       4001c001
+BUILD: [01:0000001109:INFO  ] Last DLL Address:        4001c001
+BUILD: [01:0000001110:INFO  ] Physical Start Address:  87e00000
+BUILD: [01:0000001111:INFO  ] Physical End Address:    87e2c244
+BUILD: [01:0000001112:INFO  ] Start RAM:               87e80000
+BUILD: [01:0000001113:INFO  ] Start of free RAM:       87ec3000
+BUILD: [01:0000001114:INFO  ] End of RAM:              87ed0000
+BUILD: [01:0000001115:INFO  ] Number of Modules:       1
+BUILD: [01:0000001116:INFO  ] Number of Copy Sections: 1
+BUILD: [01:0000001117:INFO  ] Copy Section Offset:     87e2af94
+BUILD: [01:0000001118:INFO  ] FileSys 4K Chunks/Mbyte: 128 <2Mbyte  128 2-4Mbyte  0 4-6Mbyte  0 >6Mbyte
+BUILD: [01:0000001119:INFO  ] CPU Type:                    01c2h
+BUILD: [01:0000001120:INFO  ] Miscellaneous Flags:         0002h
+BUILD: [01:0000001121:INFO  ] Total ROM size:          0002c244 (    180804)
+BUILD: [01:0000001122:INFO  ] Starting ip:             87e01000
+BUILD: [01:0000001123:INFO  ] Raw files size:          00000000
+BUILD: [01:0000001124:INFO  ] Compressed files size:   00000000
+BUILD: [01:0000001125:INFO  ] Compacting bin file...
+BUILD: [01:0000001126:INFO  ] Writing rom file...
+BUILD: [01:0000001127:INFO  ] Start 87e00000 Len 00000004
+BUILD: [01:0000001128:INFO  ] Start 87e00040 Len 00000008
+BUILD: [01:0000001129:INFO  ] Start 87e00048 Len 00000004
+BUILD: [01:0000001130:INFO  ] Start 87e01000 Len 00028920
+BUILD: [01:0000001131:INFO  ] Start 87e2a000 Len 00000f20
+BUILD: [01:0000001132:INFO  ] Start 87e2af20 Len 00000054
+BUILD: [01:0000001133:INFO  ] Start 87e2af74 Len 00000030
+BUILD: [01:0000001134:INFO  ] Start 87e2b000 Len 00001244
+BUILD: [01:0000001135:INFO  ] Creating rom file C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\EBOOTSD.nb0
+BUILD: [01:0000001136:INFO  ] Done!
+BUILD: [01:0000001137:INFO  ] 	xcopy /Q /I C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.bin C:\WINCE600\OSDesigns\Z2170P\Z2170P\RelDir\Z2170P_ARMV4I_Release
+BUILD: [01:0000001138:INFO  ] 複製 1 個檔案
+BUILD: [01:0000001139:INFO  ] 	xcopy /Q /I C:\WINCE600\platform\Z2170P\target\ARMV4I\retail\ebootsd.nb0 C:\WINCE600\OSDesigns\Z2170P\Z2170P\RelDir\Z2170P_ARMV4I_Release
+BUILD: [01:0000001140:INFO  ] 複製 1 個檔案
+BUILD: [00:0000001141:PROGC ] Saving C:\WINCE600\PLATFORM\Z2170P\Build.dat.
+BUILD: [00:0000001142:INFO  ] Done.
+BUILD: [00:0000001143:PROGC ] Done.
+BUILD: [00:0000001144:PROGC ]                        Files  Warnings  Errors
+BUILD: [00:0000001145:PROGC ] Midl                       0         0       0
+BUILD: [00:0000001146:PROGC ] Message                    0         0       0
+BUILD: [00:0000001147:PROGC ] Precomp Header             0         0       0
+BUILD: [00:0000001148:PROGC ] Resource                   0         0       0
+BUILD: [00:0000001149:PROGC ] MASM                       0         0       0
+BUILD: [00:0000001150:PROGC ] SHASM                      0         0       0
+BUILD: [00:0000001151:PROGC ] ARMASM                     2         0       0
+BUILD: [00:0000001152:PROGC ] MIPSASM                    0         0       0
+BUILD: [00:0000001153:PROGC ] C++                        0         0       0
+BUILD: [00:0000001154:PROGC ] C                          8         0       0
+BUILD: [00:0000001155:PROGC ] Static Libraries           0         0       0
+BUILD: [00:0000001156:PROGC ] Exe's                      1         6       0
+BUILD: [00:0000001157:PROGC ] Dll's                      0         0       0
+BUILD: [00:0000001158:PROGC ] Preprocess deffile         0         0       0
+BUILD: [00:0000001159:PROGC ] Resx                       0         0       0
+BUILD: [00:0000001160:PROGC ] CSharp Compile             0         0       0
+BUILD: [00:0000001161:PROGC ] Other                      0         0       0
+BUILD: [00:0000001162:PROGC ] 
+BUILD: [00:0000001163:PROGC ] Total                     11         6       0
+BUILD: [00:0000001164:PROGC ] 
+BUILD: [00:0000001165:PROGC ] 6 Warnings,  0 Errors
+BUILD: [00:0000001166:PROGC ] GetSystemTimes (seconds): Idle: 9     Kernel: 13    User: 4    
+BUILD: [00:0000001167:PROGC ] Elapsed  time  (seconds): 9    

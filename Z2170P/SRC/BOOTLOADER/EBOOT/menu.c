@@ -74,10 +74,12 @@ static VOID FuelGaugeWithBattery(OAL_BLMENU_ITEM *pMenu);   //Means battery stat
 void* I2COpen(UINT);                                        //Ray 13-10-08
 BOOL I2CSetSlaveAddress(void *, UINT16);                    //Set up slave address, Ray 13-10-08
 UINT I2CRead(void *, UINT32, VOID *, UINT32);               //Ray 13-10-09
-//UINT I2CWrite(VOID *, UINT32, VOID *, UINT32);           //Ray 13-10-16
+//UINT I2CWrite(VOID *, UINT32, VOID *, UINT32);            //Ray 13-10-16
 //UINT I2CWrite(void *, UINT32, const VOID *, UINT32);      //Ray 13-10-09
 
-
+//Tsting i2c3 gpio function
+void I2C3_High(void);                                       //Ray 13-10-21                                         
+void I2C3_Low(void);                                        //Ray 13-10-21
 
 
 //------------------------------------------------------------------------------
@@ -1242,7 +1244,7 @@ UINT16 tempData[32];
 
 //------------------------------------------------------------------------------
 
-BOOL BQ27410_WriteReg(UINT16 subaddr, UINT16 value)
+BOOL BQ27410_WriteReg(UINT16 subAddr, UINT16 value)
 {
     BOOL rc = FALSE;
     UINT len;
@@ -1256,7 +1258,7 @@ BOOL BQ27410_WriteReg(UINT16 subaddr, UINT16 value)
         OALLog(L"\r ------------------------------------\r\n");
         //handle , ,0x0C ,2Bytes  
         //len = I2CWrite(hI2C, bq27410CMD_CNTL_MSB, CHRG_VOLT, 2);
-        len = I2CWrite(hI2C, subaddr, &value, sizeof(UINT16));
+        len = I2CWrite(hI2C, subAddr, &value, sizeof(UINT16));
         OALLog(L"\r ------------------------------------\r\n");
         //UINT16 = 2Bytes..., so return len = 2                   
         OALLog(L"\r And Testing I2CWrite() after len: %d\r\n", len);
@@ -1272,7 +1274,7 @@ BOOL BQ27410_WriteReg(UINT16 subaddr, UINT16 value)
 }
 //-----------------------------------------------------------------------------
 
-BOOL BQ27410_ReadReg(UINT8 slaveaddress, UINT16* data)
+/*BOOL BQ27410_ReadReg(UINT8 slaveaddress, UINT16* data)
 {
     BOOL rc = FALSE;
     DWORD len;
@@ -1288,69 +1290,69 @@ BOOL BQ27410_ReadReg(UINT8 slaveaddress, UINT16* data)
 	
 	OALLog(L"\r BQ27410_ReadReg:%d\r\n",rc);
     return rc;
-}
+}*/
 //-----------------------------------------------------------------------------
 
 BOOL InitI2CWithBQ27410(void)
 {
-//   static i2c_Device;
+    //static i2c_Device;
     BOOL rc = FALSE;
-    UINT16 i =0;
-    USHORT volt = 0;
+   //UINT16 i =0;
+    //USHORT volt = 0;
     //DWORD d3sec = 3000000;   
-//    DWORD d500msec = 500000;
+    //DWORD d500msec = 500000;
    
     //HANDLE hGPIO;
 
-    OALLog(L"\r Testing I2COpen()\r\n");
     //initialization i2c buses, Ray 13-10-09
+    OALLog(L"\r Testing I2COpen()\r\n");
     if( (hI2C = I2COpen(OMAP_DEVICE_I2C3)) == NULL) 
 	{
         RETAILMSG(1,(L"ERROR: bq27410_init Failed open I2C device driver\r\n"));
         goto cleanUp;
 	}
 	OALLog(L"\r Testing InitI2CWithBQ27410() of hI2C: %X\r\n", hI2C);
+
 	//OALLog(L"\r Testing GPIOOpen()\r\n");  
     //Set the initialize status of each i2c3 interface, Ray 13-10-09
     /*hGPIO = GPIOOpen();
     GPIOSetBit(hGPIO, I2C3_SCL_GPIO );
     GPIOSetBit(hGPIO, I2C3_SDA_GPIO );
     LcdStall(d3sec);*/
-   
-    OALLog(L"\r Testing I2CSetSlaveAddress()\r\n");
+
     //Specify slave address for BQ27410 Fuel Gaug, Ray 13-10-09
+    OALLog(L"\r Testing I2CSetSlaveAddress()\r\n");
     if( I2CSetSlaveAddress(hI2C, BQ27410_SLAVE_ADDRESS) == rc )
 		RETAILMSG(TRUE, (L" ERROR: bq27410_init - I2CSetSlaveAddress Failed\r\n") );
 
     OALLog(L"\r Testing I2CSetSubAddressMode()\r\n");
     //Set up SubAddress(SCCB Phase 2) and the mode for transfer Ray 13-10-09
     I2CSetSubAddressMode(hI2C, I2C_SUBADDRESS_MODE_8);
-    //I2CSetBaudIndex(hI2C, FULLSPEED_MODE);
-    I2CSetBaudIndex(hI2C, SLOWSPEED_MODE);
+    I2CSetBaudIndex(hI2C, FULLSPEED_MODE);
+    //I2CSetBaudIndex(hI2C, SLOWSPEED_MODE);
     
-    tempData[i] = bq27410CMD_CNTL_LSB;    //0x00  
+    /*tempData[i]     = bq27410CMD_CNTL_LSB;    //0x00  
     tempData[i+1]   = bq27410CMD_CNTL_MSB;    //0x01
     
     memcpy(TxData , tempData+0, 1);
     memcpy(TxData+1 , tempData+1 , 1);
 
-
     OALLog(L"\r TxData[0X%d]\r\n", *(TxData));
-    OALLog(L"\r TxData[0X%d]\r\n", *(TxData+1));
+    OALLog(L"\r TxData[0X%d]\r\n", *(TxData+1));*/
     
     OALLog(L"\r Testing BQ27410_WriteReg()\r\n");
-    if(// BQ27410_WriteReg(bq27410CMD_CNTL_LSB, 0x0C) == rc ) // send battery insert
-        BQ27410_WriteReg( *(TxData+1), 0x02) == rc )  //**1
+    /*if(BQ27410_WriteReg(bq27410CMD_CNTL_LSB, 0x0C) == rc ) // send battery insert
+        //BQ27410_WriteReg( *(TxData+1), 0x02) == rc )  //**1
         RETAILMSG(TRUE, (L" ERROR: BatteryPDDInitialize: Battery insert Failed\r\n") );
+        OALLog(L"\r\n WriteReg OK!!\r\n");*/
+
+   if( BQ27410_WriteReg(bq27410CMD_CNTL_MSB, 0x0C) == rc ) // send battery insert
+        RETAILMSG(TRUE, (L"ERROR: BatteryPDDInitialize: Battery insert Failed\r\n") );
         OALLog(L"\r\n WriteReg OK!!\r\n");
 
-    /*if( BQ27410_WriteReg(bq27410CMD_CNTL_MSB,  0x0d) == FALSE ) // send battery insert
-        RETAILMSG(TRUE, (L"ERROR: BatteryPDDInitialize: Battery insert Failed\r\n") );
-        OALLog(L"\r\n WriteReg OK!!\r\n");*/
-        
-       //LcdStall(d500msec);
-         
-    OALLog(L"\r Testing BQ27410_ReadReg()\r\n");   
+
+    //LcdStall(d500msec);
+    /*OALLog(L"\r Testing BQ27410_ReadReg()\r\n");   
     if( BQ27410_ReadReg(bq27410CMD_VOLT_LSB, &volt) )
 		RETAILMSG(1,(L"bq27410_init: volt = %d\r\n", volt));
 		OALLog(L"\r\n ReadReg OK!!\r\n");
@@ -1395,8 +1397,10 @@ VOID FuelGaugeWithBattery(OAL_BLMENU_ITEM *pMenu)
     {
         case L'1':
             InitI2CWithBQ27410();
+            //I2C3_High();
             break;
         case L'2':
+            //I2C3_Low();
             //................
             break;
         default:
